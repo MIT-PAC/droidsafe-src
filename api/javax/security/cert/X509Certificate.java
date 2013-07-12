@@ -1,6 +1,6 @@
 package javax.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public abstract class X509Certificate extends Certificate {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.277 -0400", hash_original_method = "0337B060243DB2E8E059CE304C023100", hash_generated_method = "9BA920E90C5C7EE22A37FD86BC262ED2")
     public  X509Certificate() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,7 +79,8 @@ public abstract class X509Certificate extends Certificate {
             public PublicKey getPublicKey() {
                 return cert.getPublicKey();
             }
-            public void checkValidity() throws CertificateExpiredException,
+            @DSModeled(DSC.SAFE)
+    public void checkValidity() throws CertificateExpiredException,
                                    CertificateNotYetValidException {
                 try {
                     cert.checkValidity();
@@ -89,7 +90,8 @@ public abstract class X509Certificate extends Certificate {
                     throw new CertificateExpiredException(e.getMessage());
                 }
             }
-            public void checkValidity(Date date)
+            @DSModeled(DSC.SAFE)
+    public void checkValidity(Date date)
                             throws CertificateExpiredException,
                                    CertificateNotYetValidException {
                 try {
@@ -100,31 +102,40 @@ public abstract class X509Certificate extends Certificate {
                     throw new CertificateExpiredException(e.getMessage());
                 }
             }
-            public int getVersion() {
+            @DSModeled(DSC.SAFE)
+    public int getVersion() {
                 return 2;
             }
-            public BigInteger getSerialNumber() {
+            @DSModeled(DSC.SAFE)
+    public BigInteger getSerialNumber() {
                 return cert.getSerialNumber();
             }
-            public Principal getIssuerDN() {
+            @DSModeled(DSC.SAFE)
+    public Principal getIssuerDN() {
                 return cert.getIssuerDN();
             }
-            public Principal getSubjectDN() {
+            @DSModeled(DSC.SAFE)
+    public Principal getSubjectDN() {
                 return cert.getSubjectDN();
             }
-            public Date getNotBefore() {
+            @DSModeled(DSC.SAFE)
+    public Date getNotBefore() {
                 return cert.getNotBefore();
             }
-            public Date getNotAfter() {
+            @DSModeled(DSC.SAFE)
+    public Date getNotAfter() {
                 return cert.getNotAfter();
             }
-            public String getSigAlgName() {
+            @DSModeled(DSC.SAFE)
+    public String getSigAlgName() {
                 return cert.getSigAlgName();
             }
-            public String getSigAlgOID() {
+            @DSModeled(DSC.SAFE)
+    public String getSigAlgOID() {
                 return cert.getSigAlgOID();
             }
-            public byte[] getSigAlgParams() {
+            @DSModeled(DSC.SAFE)
+    public byte[] getSigAlgParams() {
                 return cert.getSigAlgParams();
             }
         };

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,9 +30,9 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
         DEREncodable        publicKey) {
         this.keyData = new DERBitString(publicKey);
         this.algId = algId;
-        // ---------- Original Method ----------
-        //this.keyData = new DERBitString(publicKey);
-        //this.algId = algId;
+        
+        
+        
     }
 
     
@@ -42,9 +42,9 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
         byte[]              publicKey) {
         this.keyData = new DERBitString(publicKey);
         this.algId = algId;
-        // ---------- Original Method ----------
-        //this.keyData = new DERBitString(publicKey);
-        //this.algId = algId;
+        
+        
+        
     }
 
     
@@ -58,19 +58,19 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
                     + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_835325337.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_835325337;
-        } //End block
+        } 
         Enumeration e = seq.getObjects();
         this.algId = AlgorithmIdentifier.getInstance(e.nextElement());
         this.keyData = DERBitString.getInstance(e.nextElement());
-        // ---------- Original Method ----------
-        //if (seq.size() != 2)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                    //+ seq.size());
-        //}
-        //Enumeration         e = seq.getObjects();
-        //this.algId = AlgorithmIdentifier.getInstance(e.nextElement());
-        //this.keyData = DERBitString.getInstance(e.nextElement());
+        
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
@@ -95,13 +95,14 @@ public class SubjectPublicKeyInfo extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.420 -0400", hash_original_method = "47532F5520D2937711F415E7F39EF8B8", hash_generated_method = "840056B1C1925045E309B9E4BACA04C4")
     public AlgorithmIdentifier getAlgorithmId() {
 AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1093986887 =         algId;
         varA285EDCEC70BDAD72C7F53B57CB6849B_1093986887.addTaint(taint);
         return varA285EDCEC70BDAD72C7F53B57CB6849B_1093986887;
-        // ---------- Original Method ----------
-        //return algId;
+        
+        
     }
 
     
@@ -111,19 +112,20 @@ AlgorithmIdentifier varA285EDCEC70BDAD72C7F53B57CB6849B_1093986887 =         alg
 DERObject var744C7B728C1BF7AC9370DA8D8B9598D6_1963335834 =         aIn.readObject();
         var744C7B728C1BF7AC9370DA8D8B9598D6_1963335834.addTaint(taint);
         return var744C7B728C1BF7AC9370DA8D8B9598D6_1963335834;
-        // ---------- Original Method ----------
-        //ASN1InputStream         aIn = new ASN1InputStream(keyData.getBytes());
-        //return aIn.readObject();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.421 -0400", hash_original_method = "FD0FC1FA0D4AD47E47F52CC8C4964141", hash_generated_method = "9DCF1C495BE1AF55E59A7D624250FA8B")
     public DERBitString getPublicKeyData() {
 DERBitString varE693AFBBC8CDD78D253BF1E5459B5722_1855969778 =         keyData;
         varE693AFBBC8CDD78D253BF1E5459B5722_1855969778.addTaint(taint);
         return varE693AFBBC8CDD78D253BF1E5459B5722_1855969778;
-        // ---------- Original Method ----------
-        //return keyData;
+        
+        
     }
 
     
@@ -135,11 +137,11 @@ DERBitString varE693AFBBC8CDD78D253BF1E5459B5722_1855969778 =         keyData;
 DERObject var0B338F106E3279986C87B595B0F4A439_1628341767 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_1628341767.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_1628341767;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(algId);
-        //v.add(keyData);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

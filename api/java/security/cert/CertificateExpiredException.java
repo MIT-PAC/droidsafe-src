@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class CertificateExpiredException extends CertificateException {
     public  CertificateExpiredException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.622 -0400", hash_original_method = "308175145F4FC5BAB795337D4AA9A477", hash_generated_method = "A30B860C6CB55FC6EAE15A8B4C39A0E5")
     public  CertificateExpiredException() {
-        // ---------- Original Method ----------
+        
     }
 
     

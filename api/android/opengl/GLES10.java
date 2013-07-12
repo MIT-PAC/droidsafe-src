@@ -1,6 +1,6 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,20 +11,23 @@ public class GLES10 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.322 -0400", hash_original_method = "821E4B2AC1205B57597681A054E6B512", hash_generated_method = "821E4B2AC1205B57597681A054E6B512")
     public GLES10 ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     private static void _nativeClassInit() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glActiveTexture(
         int texture
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glAlphaFunc(
         int func,
         float ref
@@ -32,6 +35,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glAlphaFuncx(
         int func,
         int ref
@@ -39,6 +43,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glBindTexture(
         int target,
         int texture
@@ -46,6 +51,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glBlendFunc(
         int sfactor,
         int dfactor
@@ -53,12 +59,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClear(
         int mask
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClearColor(
         float red,
         float green,
@@ -68,6 +76,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClearColorx(
         int red,
         int green,
@@ -77,30 +86,35 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClearDepthf(
         float depth
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClearDepthx(
         int depth
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClearStencil(
         int s
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glClientActiveTexture(
         int texture
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glColor4f(
         float red,
         float green,
@@ -110,6 +124,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glColor4x(
         int red,
         int green,
@@ -119,6 +134,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glColorMask(
         boolean red,
         boolean green,
@@ -128,6 +144,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void glColorPointerBounds(
         int size,
         int type,
@@ -161,6 +178,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glCompressedTexImage2D(
         int target,
         int level,
@@ -174,6 +192,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glCompressedTexSubImage2D(
         int target,
         int level,
@@ -188,6 +207,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glCopyTexImage2D(
         int target,
         int level,
@@ -201,6 +221,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glCopyTexSubImage2D(
         int target,
         int level,
@@ -214,12 +235,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glCullFace(
         int mode
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDeleteTextures(
         int n,
         int[] textures,
@@ -228,6 +251,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDeleteTextures(
         int n,
         java.nio.IntBuffer textures
@@ -235,18 +259,21 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDepthFunc(
         int func
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDepthMask(
         boolean flag
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDepthRangef(
         float zNear,
         float zFar
@@ -254,6 +281,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDepthRangex(
         int zNear,
         int zFar
@@ -261,18 +289,21 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDisable(
         int cap
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDisableClientState(
         int array
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDrawArrays(
         int mode,
         int first,
@@ -281,6 +312,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glDrawElements(
         int mode,
         int count,
@@ -290,28 +322,33 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glEnable(
         int cap
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glEnableClientState(
         int array
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFinish(
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFlush(
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFogf(
         int pname,
         float param
@@ -319,6 +356,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFogfv(
         int pname,
         float[] params,
@@ -327,6 +365,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFogfv(
         int pname,
         java.nio.FloatBuffer params
@@ -334,6 +373,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFogx(
         int pname,
         int param
@@ -341,6 +381,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFogxv(
         int pname,
         int[] params,
@@ -349,6 +390,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFogxv(
         int pname,
         java.nio.IntBuffer params
@@ -356,12 +398,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFrontFace(
         int mode
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFrustumf(
         float left,
         float right,
@@ -373,6 +417,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glFrustumx(
         int left,
         int right,
@@ -384,6 +429,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glGenTextures(
         int n,
         int[] textures,
@@ -392,6 +438,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glGenTextures(
         int n,
         java.nio.IntBuffer textures
@@ -399,6 +446,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int glGetError(
     ) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_807932943 = DSUtils.UNKNOWN_INT;
@@ -406,6 +454,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glGetIntegerv(
         int pname,
         int[] params,
@@ -414,6 +463,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glGetIntegerv(
         int pname,
         java.nio.IntBuffer params
@@ -421,6 +471,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static String glGetString(int name) {
     	String s = new String();
     	s.addTaint(name);
@@ -428,6 +479,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glHint(
         int target,
         int mode
@@ -435,6 +487,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightModelf(
         int pname,
         float param
@@ -442,6 +495,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightModelfv(
         int pname,
         float[] params,
@@ -450,6 +504,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightModelfv(
         int pname,
         java.nio.FloatBuffer params
@@ -457,6 +512,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightModelx(
         int pname,
         int param
@@ -464,6 +520,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightModelxv(
         int pname,
         int[] params,
@@ -472,6 +529,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightModelxv(
         int pname,
         java.nio.IntBuffer params
@@ -479,6 +537,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightf(
         int light,
         int pname,
@@ -487,6 +546,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightfv(
         int light,
         int pname,
@@ -496,6 +556,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightfv(
         int light,
         int pname,
@@ -504,6 +565,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightx(
         int light,
         int pname,
@@ -512,6 +574,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightxv(
         int light,
         int pname,
@@ -521,6 +584,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLightxv(
         int light,
         int pname,
@@ -529,23 +593,27 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLineWidth(
         float width
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLineWidthx(
         int width
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLoadIdentity(
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLoadMatrixf(
         float[] m,
         int offset
@@ -553,12 +621,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLoadMatrixf(
         java.nio.FloatBuffer m
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLoadMatrixx(
         int[] m,
         int offset
@@ -566,18 +636,21 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLoadMatrixx(
         java.nio.IntBuffer m
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glLogicOp(
         int opcode
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMaterialf(
         int face,
         int pname,
@@ -586,6 +659,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMaterialfv(
         int face,
         int pname,
@@ -595,6 +669,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMaterialfv(
         int face,
         int pname,
@@ -603,6 +678,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMaterialx(
         int face,
         int pname,
@@ -611,6 +687,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMaterialxv(
         int face,
         int pname,
@@ -620,6 +697,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMaterialxv(
         int face,
         int pname,
@@ -628,12 +706,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMatrixMode(
         int mode
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMultMatrixf(
         float[] m,
         int offset
@@ -641,12 +721,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMultMatrixf(
         java.nio.FloatBuffer m
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMultMatrixx(
         int[] m,
         int offset
@@ -654,12 +736,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMultMatrixx(
         java.nio.IntBuffer m
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMultiTexCoord4f(
         int target,
         float s,
@@ -670,6 +754,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glMultiTexCoord4x(
         int target,
         int s,
@@ -680,6 +765,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glNormal3f(
         float nx,
         float ny,
@@ -688,6 +774,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glNormal3x(
         int nx,
         int ny,
@@ -696,6 +783,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void glNormalPointerBounds(
         int type,
         int stride,
@@ -726,6 +814,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glOrthof(
         float left,
         float right,
@@ -737,6 +826,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glOrthox(
         int left,
         int right,
@@ -748,6 +838,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPixelStorei(
         int pname,
         int param
@@ -755,18 +846,21 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPointSize(
         float size
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPointSizex(
         int size
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPolygonOffset(
         float factor,
         float units
@@ -774,6 +868,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPolygonOffsetx(
         int factor,
         int units
@@ -781,16 +876,19 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPopMatrix(
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glPushMatrix(
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glReadPixels(
         int x,
         int y,
@@ -803,6 +901,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glRotatef(
         float angle,
         float x,
@@ -812,6 +911,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glRotatex(
         int angle,
         int x,
@@ -821,6 +921,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glSampleCoverage(
         float value,
         boolean invert
@@ -828,6 +929,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glSampleCoveragex(
         int value,
         boolean invert
@@ -835,6 +937,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glScalef(
         float x,
         float y,
@@ -843,6 +946,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glScalex(
         int x,
         int y,
@@ -851,6 +955,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glScissor(
         int x,
         int y,
@@ -860,12 +965,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glShadeModel(
         int mode
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glStencilFunc(
         int func,
         int ref,
@@ -874,12 +981,14 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glStencilMask(
         int mask
     ) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glStencilOp(
         int fail,
         int zfail,
@@ -888,6 +997,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void glTexCoordPointerBounds(
         int size,
         int type,
@@ -924,6 +1034,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexEnvf(
         int target,
         int pname,
@@ -932,6 +1043,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexEnvfv(
         int target,
         int pname,
@@ -941,6 +1053,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexEnvfv(
         int target,
         int pname,
@@ -949,6 +1062,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexEnvx(
         int target,
         int pname,
@@ -957,6 +1071,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexEnvxv(
         int target,
         int pname,
@@ -966,6 +1081,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexEnvxv(
         int target,
         int pname,
@@ -974,6 +1090,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexImage2D(
         int target,
         int level,
@@ -988,6 +1105,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexParameterf(
         int target,
         int pname,
@@ -996,6 +1114,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexParameterx(
         int target,
         int pname,
@@ -1004,6 +1123,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTexSubImage2D(
         int target,
         int level,
@@ -1018,6 +1138,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTranslatef(
         float x,
         float y,
@@ -1026,6 +1147,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glTranslatex(
         int x,
         int y,
@@ -1034,6 +1156,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void glVertexPointerBounds(
         int size,
         int type,
@@ -1070,6 +1193,7 @@ public class GLES10 {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void glViewport(
         int x,
         int y,

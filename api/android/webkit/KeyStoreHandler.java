@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ class KeyStoreHandler extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.512 -0400", hash_original_method = "587ABBBEDE647D3237F91706DA6610BD", hash_generated_method = "0B2E23A7411CC981C66241E70E1BCCAE")
     public  KeyStoreHandler(String mimeType) {
         mMimeType = mimeType;
-        // ---------- Original Method ----------
-        //mMimeType = mimeType;
+        
+        
     }
 
     
@@ -31,11 +31,11 @@ class KeyStoreHandler extends Handler {
         synchronized
 (mDataBuilder)        {
             mDataBuilder.append(data, 0, length);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mDataBuilder) {
-            //mDataBuilder.append(data, 0, length);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -59,30 +59,30 @@ class KeyStoreHandler extends Handler {
                 {
                     System.arraycopy(c.mArray, 0, cert, offset, c.mLength);
                     offset += c.mLength;
-                } //End block
+                } 
                 c.release();
-            } //End block
+            } 
             CertTool.addCertificate(context, type, cert);
             return;
-        } //End block
-        // ---------- Original Method ----------
-        //String type = CertTool.getCertType(mMimeType);
-        //if (type == null) return;
-        //synchronized (mDataBuilder) {
-            //byte[] cert = new byte[mDataBuilder.getByteSize()];
-            //int offset = 0;
-            //while (true) {
-                //ByteArrayBuilder.Chunk c = mDataBuilder.getFirstChunk();
-                //if (c == null) break;
-                //if (c.mLength != 0) {
-                    //System.arraycopy(c.mArray, 0, cert, offset, c.mLength);
-                    //offset += c.mLength;
-                //}
-                //c.release();
-            //}
-            //CertTool.addCertificate(context, type, cert);
-            //return;
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+                
+                
+                
+                    
+                    
+                
+                
+            
+            
+            
+        
     }
 
     

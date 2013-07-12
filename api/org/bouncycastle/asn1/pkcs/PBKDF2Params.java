@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,9 +32,9 @@ public class PBKDF2Params extends ASN1Encodable {
         int     iterationCount) {
         this.octStr = new DEROctetString(salt);
         this.iterationCount = new DERInteger(iterationCount);
-        // ---------- Original Method ----------
-        //this.octStr = new DEROctetString(salt);
-        //this.iterationCount = new DERInteger(iterationCount);
+        
+        
+        
     }
 
     
@@ -48,23 +48,23 @@ public class PBKDF2Params extends ASN1Encodable {
     if(e.hasMoreElements())        
         {
             keyLength = (DERInteger)e.nextElement();
-        } //End block
+        } 
         else
         {
             keyLength = null;
-        } //End block
-        // ---------- Original Method ----------
-        //Enumeration e = seq.getObjects();
-        //octStr = (ASN1OctetString)e.nextElement();
-        //iterationCount = (DERInteger)e.nextElement();
-        //if (e.hasMoreElements())
-        //{
-            //keyLength = (DERInteger)e.nextElement();
-        //}
-        //else
-        //{
-            //keyLength = null;
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -87,8 +87,8 @@ public class PBKDF2Params extends ASN1Encodable {
         byte[] var225742414AAD58D749DE2AEF6A3EF7B3_880256056 = (octStr.getOctets());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1159480977 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1159480977;
-        // ---------- Original Method ----------
-        //return octStr.getOctets();
+        
+        
     }
 
     
@@ -97,8 +97,8 @@ public class PBKDF2Params extends ASN1Encodable {
 BigInteger var53FCCDFC6E49719A6EF34AD5B4B147C7_157933525 =         iterationCount.getValue();
         var53FCCDFC6E49719A6EF34AD5B4B147C7_157933525.addTaint(taint);
         return var53FCCDFC6E49719A6EF34AD5B4B147C7_157933525;
-        // ---------- Original Method ----------
-        //return iterationCount.getValue();
+        
+        
     }
 
     
@@ -109,16 +109,16 @@ BigInteger var53FCCDFC6E49719A6EF34AD5B4B147C7_157933525 =         iterationCoun
 BigInteger varEEEC002E18B33BD5FAFEC405DB0C2802_1880973791 =             keyLength.getValue();
             varEEEC002E18B33BD5FAFEC405DB0C2802_1880973791.addTaint(taint);
             return varEEEC002E18B33BD5FAFEC405DB0C2802_1880973791;
-        } //End block
+        } 
 BigInteger var540C13E9E156B687226421B24F2DF178_1321302839 =         null;
         var540C13E9E156B687226421B24F2DF178_1321302839.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1321302839;
-        // ---------- Original Method ----------
-        //if (keyLength != null)
-        //{
-            //return keyLength.getValue();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -130,19 +130,19 @@ BigInteger var540C13E9E156B687226421B24F2DF178_1321302839 =         null;
     if(keyLength != null)        
         {
             v.add(keyLength);
-        } //End block
+        } 
 DERObject var0B338F106E3279986C87B595B0F4A439_298494330 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_298494330.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_298494330;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(octStr);
-        //v.add(iterationCount);
-        //if (keyLength != null)
-        //{
-            //v.add(keyLength);
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

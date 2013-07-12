@@ -1,6 +1,6 @@
 package org.bouncycastle.util.io.pem;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class PemReader extends BufferedReader {
     public  PemReader(Reader reader) {
         super(reader);
         addTaint(reader.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,24 +34,24 @@ public class PemReader extends BufferedReader {
 PemObject varF43941D02037384D10CA5FB8B762A045_1774711427 =                 loadObject(type);
                 varF43941D02037384D10CA5FB8B762A045_1774711427.addTaint(taint);
                 return varF43941D02037384D10CA5FB8B762A045_1774711427;
-            } //End block
-        } //End block
+            } 
+        } 
 PemObject var540C13E9E156B687226421B24F2DF178_706426976 =         null;
         var540C13E9E156B687226421B24F2DF178_706426976.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_706426976;
-        // ---------- Original Method ----------
-        //String line = readLine();
-        //if (line != null && line.startsWith(BEGIN))
-        //{
-            //line = line.substring(BEGIN.length());
-            //int index = line.indexOf('-');
-            //String type = line.substring(0, index);
-            //if (index > 0)
-            //{
-                //return loadObject(type);
-            //}
-        //}
-        //return null;
+        
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -72,24 +72,24 @@ PemObject var540C13E9E156B687226421B24F2DF178_706426976 =         null;
                 String value = line.substring(index + 1).trim();
                 headers.add(new PemHeader(hdr, value));
                 continue;
-            } //End block
+            } 
     if(line.indexOf(endMarker) != -1)            
             {
                 break;
-            } //End block
+            } 
             buf.append(line.trim());
-        } //End block
+        } 
     if(line == null)        
         {
             IOException varE7B2AD8B7A180FB87C1B156A33C18DBA_2143644794 = new IOException(endMarker + " not found");
             varE7B2AD8B7A180FB87C1B156A33C18DBA_2143644794.addTaint(taint);
             throw varE7B2AD8B7A180FB87C1B156A33C18DBA_2143644794;
-        } //End block
+        } 
 PemObject varE56C95CA57B81340ED810C6A8E7780EE_1882760675 =         new PemObject(type, headers, Base64.decode(buf.toString()));
         varE56C95CA57B81340ED810C6A8E7780EE_1882760675.addTaint(taint);
         return varE56C95CA57B81340ED810C6A8E7780EE_1882760675;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -67,13 +67,13 @@ public class SpellChecker implements SpellCheckerSessionListener {
         mSpellCheckSpans = new SpellCheckSpan[size];
         setLocale(mTextView.getTextServicesLocale());
         mCookie = hashCode();
-        // ---------- Original Method ----------
-        //mTextView = textView;
-        //final int size = ArrayUtils.idealObjectArraySize(1);
-        //mIds = new int[size];
-        //mSpellCheckSpans = new SpellCheckSpan[size];
-        //setLocale(mTextView.getTextServicesLocale());
-        //mCookie = hashCode();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -85,41 +85,41 @@ public class SpellChecker implements SpellCheckerSessionListener {
     if(!mTextServicesManager.isSpellCheckerEnabled())        
         {
             mSpellCheckerSession = null;
-        } //End block
+        } 
         else
         {
             mSpellCheckerSession = mTextServicesManager.newSpellCheckerSession(
                     null ,
                     mCurrentLocale, this,
                     false );
-        } //End block
+        } 
 for(int i = 0;i < mLength;i++)
         {
             mSpellCheckSpans[i].setSpellCheckInProgress(false);
             mIds[i] = -1;
-        } //End block
+        } 
         mLength = 0;
         mTextView.removeMisspelledSpans((Editable) mTextView.getText());
         mTextView.onLocaleChanged();
-        // ---------- Original Method ----------
-        //closeSession();
-        //mTextServicesManager = (TextServicesManager) mTextView.getContext().
-                //getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE);
-        //if (!mTextServicesManager.isSpellCheckerEnabled()) {
-            //mSpellCheckerSession = null;
-        //} else {
-            //mSpellCheckerSession = mTextServicesManager.newSpellCheckerSession(
-                    //null ,
-                    //mCurrentLocale, this,
-                    //false );
-        //}
-        //for (int i = 0; i < mLength; i++) {
-            //mSpellCheckSpans[i].setSpellCheckInProgress(false);
-            //mIds[i] = -1;
-        //}
-        //mLength = 0;
-        //mTextView.removeMisspelledSpans((Editable) mTextView.getText());
-        //mTextView.onLocaleChanged();
+        
+        
+        
+                
+        
+            
+        
+            
+                    
+                    
+                    
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -129,21 +129,22 @@ for(int i = 0;i < mLength;i++)
         resetSession();
         mWordIterator = new WordIterator(locale);
         mTextView.onLocaleChanged();
-        // ---------- Original Method ----------
-        //mCurrentLocale = locale;
-        //resetSession();
-        //mWordIterator = new WordIterator(locale);
-        //mTextView.onLocaleChanged();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.810 -0400", hash_original_method = "7E55E284FCAD6408034DF45536DFE0B3", hash_generated_method = "8B3A8307ED24F8C3C27EE61508CF14CF")
     private boolean isSessionActive() {
         boolean varB694535CC8119906BC8E325AD31D84D9_667023224 = (mSpellCheckerSession != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_361033334 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_361033334;
-        // ---------- Original Method ----------
-        //return mSpellCheckerSession != null;
+        
+        
     }
 
     
@@ -152,27 +153,27 @@ for(int i = 0;i < mLength;i++)
     if(mSpellCheckerSession != null)        
         {
             mSpellCheckerSession.close();
-        } //End block
+        } 
         final int length = mSpellParsers.length;
 for(int i = 0;i < length;i++)
         {
             mSpellParsers[i].finish();
-        } //End block
+        } 
     if(mSpellRunnable != null)        
         {
             mTextView.removeCallbacks(mSpellRunnable);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSpellCheckerSession != null) {
-            //mSpellCheckerSession.close();
-        //}
-        //final int length = mSpellParsers.length;
-        //for (int i = 0; i < length; i++) {
-            //mSpellParsers[i].finish();
-        //}
-        //if (mSpellRunnable != null) {
-            //mTextView.removeCallbacks(mSpellRunnable);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -186,7 +187,7 @@ for(int i = 0;i < mLength;i++)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889037781 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1889037781;
             }
-        } //End block
+        } 
     if(mLength == mSpellCheckSpans.length)        
         {
             final int newSize = mLength * 2;
@@ -196,28 +197,28 @@ for(int i = 0;i < mLength;i++)
             System.arraycopy(mSpellCheckSpans, 0, newSpellCheckSpans, 0, mLength);
             mIds = newIds;
             mSpellCheckSpans = newSpellCheckSpans;
-        } //End block
+        } 
         mSpellCheckSpans[mLength] = new SpellCheckSpan();
         mLength++;
         int var6D42D696176FEED1A0FD1C14D7B43005_338395244 = (mLength - 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1093906259 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1093906259;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mLength; i++) {
-            //if (mIds[i] < 0) return i;
-        //}
-        //if (mLength == mSpellCheckSpans.length) {
-            //final int newSize = mLength * 2;
-            //int[] newIds = new int[newSize];
-            //SpellCheckSpan[] newSpellCheckSpans = new SpellCheckSpan[newSize];
-            //System.arraycopy(mIds, 0, newIds, 0, mLength);
-            //System.arraycopy(mSpellCheckSpans, 0, newSpellCheckSpans, 0, mLength);
-            //mIds = newIds;
-            //mSpellCheckSpans = newSpellCheckSpans;
-        //}
-        //mSpellCheckSpans[mLength] = new SpellCheckSpan();
-        //mLength++;
-        //return mLength - 1;
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -229,10 +230,10 @@ for(int i = 0;i < mLength;i++)
         final int index = nextSpellCheckSpanIndex();
         editable.setSpan(mSpellCheckSpans[index], start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         mIds[index] = mSpanSequenceCounter++;
-        // ---------- Original Method ----------
-        //final int index = nextSpellCheckSpanIndex();
-        //editable.setSpan(mSpellCheckSpans[index], start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //mIds[index] = mSpanSequenceCounter++;
+        
+        
+        
+        
     }
 
     
@@ -246,28 +247,29 @@ for(int i = 0;i < mLength;i++)
                 mSpellCheckSpans[i].setSpellCheckInProgress(false);
                 mIds[i] = -1;
                 return;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mLength; i++) {
-            //if (mSpellCheckSpans[i] == spellCheckSpan) {
-                //mSpellCheckSpans[i].setSpellCheckInProgress(false);
-                //mIds[i] = -1;
-                //return;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.811 -0400", hash_original_method = "91E9278A0058E0FC6383B30785A8CFA9", hash_generated_method = "D00D41525B8D7A6F78ACFD7BB33C5992")
     public void onSelectionChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         spellCheck();
-        // ---------- Original Method ----------
-        //spellCheck();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.812 -0400", hash_original_method = "6CA87C3B81B676351D5CE260A5491025", hash_generated_method = "9EB558F4EC5C9E5B0C744066A3010CD5")
     public void spellCheck(int start, int end) {
         addTaint(end);
@@ -278,15 +280,15 @@ for(int i = 0;i < mLength;i++)
             setLocale(locale);
             start = 0;
             end = mTextView.getText().length();
-        } //End block
+        } 
         else
         {
             final boolean spellCheckerActivated = mTextServicesManager.isSpellCheckerEnabled();
     if(isSessionActive() != spellCheckerActivated)            
             {
                 resetSession();
-            } //End block
-        } //End block
+            } 
+        } 
     if(!isSessionActive())        
         return;
         final int length = mSpellParsers.length;
@@ -298,8 +300,8 @@ for(int i = 0;i < length;i++)
                 spellParser.init(start, end);
                 spellParser.parse();
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         SpellParser[] newSpellParsers = new SpellParser[length + 1];
         System.arraycopy(mSpellParsers, 0, newSpellParsers, 0, length);
         mSpellParsers = newSpellParsers;
@@ -307,11 +309,12 @@ for(int i = 0;i < length;i++)
         mSpellParsers[length] = spellParser;
         spellParser.init(start, end);
         spellParser.parse();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.812 -0400", hash_original_method = "BA5B8BA52678A659BE9D822C4132A8EA", hash_generated_method = "AB67BCC5A01FBF8BEA03192F0BA7FF3B")
     private void spellCheck() {
     if(mSpellCheckerSession == null)        
@@ -335,8 +338,8 @@ for(int i = 0;i < mLength;i++)
                         editable.subSequence(start, end).toString();
                 spellCheckSpan.setSpellCheckInProgress(true);
                 textInfos[textInfosCount++] = new TextInfo(word, mCookie, mIds[i]);
-            } //End block
-        } //End block
+            } 
+        } 
     if(textInfosCount > 0)        
         {
     if(textInfosCount < textInfos.length)            
@@ -344,19 +347,19 @@ for(int i = 0;i < mLength;i++)
                 TextInfo[] textInfosCopy = new TextInfo[textInfosCount];
                 System.arraycopy(textInfos, 0, textInfosCopy, 0, textInfosCount);
                 textInfos = textInfosCopy;
-            } //End block
+            } 
             mSpellCheckerSession.getSuggestions(textInfos, SuggestionSpan.SUGGESTIONS_MAX_SIZE,
                     false );
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.812 -0400", hash_original_method = "A75E28D7E7AFF4B0223DAD7BAD9E1275", hash_generated_method = "A68988C4E715293F9680F78AE3674700")
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(results[0].getTaint());
         Editable editable = (Editable) mTextView.getText();
 for(int i = 0;i < results.length;i++)
@@ -376,15 +379,15 @@ for(int j = 0;j < mLength;j++)
     if(!isInDictionary && looksLikeTypo)                    
                     {
                         createMisspelledSuggestionSpan(editable, suggestionsInfo, spellCheckSpan);
-                    } //End block
+                    } 
                     editable.removeSpan(spellCheckSpan);
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         scheduleNewSpellCheck();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -404,47 +407,48 @@ for(int i = 0;i < length;i++)
                 {
                     spellParser.parse();
                     break;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //final int length = mSpellParsers.length;
-            //for (int i = 0; i < length; i++) {
-                        //final SpellParser spellParser = mSpellParsers[i];
-                        //if (!spellParser.isFinished()) {
-                            //spellParser.parse();
-                            //break; 
-                        //}
-                    //}
+                } 
+            } 
+            
+            
+            
+                        
+                        
+                            
+                            
+                        
+                    
         }
 };
-        } //End block
+        } 
         else
         {
             mTextView.removeCallbacks(mSpellRunnable);
-        } //End block
+        } 
         mTextView.postDelayed(mSpellRunnable, SPELL_PAUSE_DURATION);
-        // ---------- Original Method ----------
-        //if (mSpellRunnable == null) {
-            //mSpellRunnable = new Runnable() {
-                //@Override
-                //public void run() {
-                    //final int length = mSpellParsers.length;
-                    //for (int i = 0; i < length; i++) {
-                        //final SpellParser spellParser = mSpellParsers[i];
-                        //if (!spellParser.isFinished()) {
-                            //spellParser.parse();
-                            //break; 
-                        //}
-                    //}
-                //}
-            //};
-        //} else {
-            //mTextView.removeCallbacks(mSpellRunnable);
-        //}
-        //mTextView.postDelayed(mSpellRunnable, SPELL_PAUSE_DURATION);
+        
+        
+            
+                
+                
+                    
+                    
+                        
+                        
+                            
+                            
+                        
+                    
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.814 -0400", hash_original_method = "7C6C5A03DA2C9F5FF814A532005DE2A2", hash_generated_method = "0D61409EFEB7B30B8914D0A7C9130108")
     private void createMisspelledSuggestionSpan(Editable editable, SuggestionsInfo suggestionsInfo,
             SpellCheckSpan spellCheckSpan) {
@@ -464,14 +468,14 @@ for(int i = 0;i < length;i++)
     if(spanStart != start || spanEnd != end)            
             {
                 suggestionSpans[i] = null;
-            } //End block
-        } //End block
+            } 
+        } 
         final int suggestionsCount = suggestionsInfo.getSuggestionsCount();
         String[] suggestions;
     if(suggestionsCount <= 0)        
         {
             suggestions = ArrayUtils.emptyArray(String.class);
-        } //End block
+        } 
         else
         {
             int numberOfSuggestions = 0;
@@ -493,27 +497,27 @@ for(int k = 0;k < suggests.length;k++)
                         {
                             suggestionFound = true;
                             break;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
     if(!suggestionFound)                
                 {
                     suggestions[numberOfSuggestions++] = spellSuggestion;
-                } //End block
-            } //End block
+                } 
+            } 
     if(numberOfSuggestions != suggestionsCount)            
             {
                 String[] newSuggestions = new String[numberOfSuggestions];
                 System.arraycopy(suggestions, 0, newSuggestions, 0, numberOfSuggestions);
                 suggestions = newSuggestions;
-            } //End block
-        } //End block
+            } 
+        } 
         SuggestionSpan suggestionSpan = new SuggestionSpan(mTextView.getContext(), suggestions,
                 SuggestionSpan.FLAG_EASY_CORRECT | SuggestionSpan.FLAG_MISSPELLED);
         editable.setSpan(suggestionSpan, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         mTextView.invalidateRegion(start, end, false );
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -525,7 +529,7 @@ for(int k = 0;k < suggests.length;k++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.814 -0400", hash_original_method = "A0F09AC113A054694810A2E52D3EE82C", hash_generated_method = "A0F09AC113A054694810A2E52D3EE82C")
         public SpellParser ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -535,17 +539,17 @@ for(int k = 0;k < suggests.length;k++)
             addTaint(start);
             ((Editable) mTextView.getText()).setSpan(mRange, start, end,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            // ---------- Original Method ----------
-            //((Editable) mTextView.getText()).setSpan(mRange, start, end,
-                    //Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            
+            
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.814 -0400", hash_original_method = "86B0D995E6C3BF5225FAD4AECF9F58F6", hash_generated_method = "45B8F4A922A98FCBE98DADDE73470229")
         public void finish() {
             ((Editable) mTextView.getText()).removeSpan(mRange);
-            // ---------- Original Method ----------
-            //((Editable) mTextView.getText()).removeSpan(mRange);
+            
+            
         }
 
         
@@ -554,8 +558,8 @@ for(int k = 0;k < suggests.length;k++)
             boolean varBAB72613879D558AA251DE010CEEF9CF_368948667 = (((Editable) mTextView.getText()).getSpanStart(mRange) < 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2098868339 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2098868339;
-            // ---------- Original Method ----------
-            //return ((Editable) mTextView.getText()).getSpanStart(mRange) < 0;
+            
+            
         }
 
         
@@ -574,17 +578,17 @@ for(int k = 0;k < suggests.length;k++)
     if(wordEnd != BreakIterator.DONE)                
                 {
                     wordStart = mWordIterator.getBeginning(wordEnd);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 wordEnd = mWordIterator.getEnd(wordStart);
-            } //End block
+            } 
     if(wordEnd == BreakIterator.DONE)            
             {
                 editable.removeSpan(mRange);
                 return;
-            } //End block
+            } 
             SpellCheckSpan[] spellCheckSpans = editable.getSpans(start - 1, end + 1,
                     SpellCheckSpan.class);
             SuggestionSpan[] suggestionSpans = editable.getSpans(start - 1, end + 1,
@@ -600,17 +604,17 @@ for(int k = 0;k < suggests.length;k++)
                     {
                         scheduleOtherSpellCheck = true;
                         break;
-                    } //End block
+                    } 
     if(wordStart < start && wordEnd > start)                    
                     {
                         removeSpansAt(editable, start, spellCheckSpans);
                         removeSpansAt(editable, start, suggestionSpans);
-                    } //End block
+                    } 
     if(wordStart < end && wordEnd > end)                    
                     {
                         removeSpansAt(editable, end, spellCheckSpans);
                         removeSpansAt(editable, end, suggestionSpans);
-                    } //End block
+                    } 
                     boolean createSpellCheckSpan = true;
     if(wordEnd == start)                    
                     {
@@ -621,9 +625,9 @@ for(int i = 0;i < spellCheckSpans.length;i++)
                             {
                                 createSpellCheckSpan = false;
                                 break;
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
     if(wordStart == end)                    
                     {
 for(int i = 0;i < spellCheckSpans.length;i++)
@@ -633,15 +637,15 @@ for(int i = 0;i < spellCheckSpans.length;i++)
                             {
                                 createSpellCheckSpan = false;
                                 break;
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
     if(createSpellCheckSpan)                    
                     {
                         addSpellCheckSpan(editable, wordStart, wordEnd);
-                    } //End block
+                    } 
                     wordCount++;
-                } //End block
+                } 
                 int originalWordEnd = wordEnd;
                 wordEnd = mWordIterator.following(wordEnd);
     if((wordIteratorWindowEnd < end) &&
@@ -650,26 +654,26 @@ for(int i = 0;i < spellCheckSpans.length;i++)
                     wordIteratorWindowEnd = Math.min(end, originalWordEnd + WORD_ITERATOR_INTERVAL);
                     mWordIterator.setCharSequence(editable, originalWordEnd, wordIteratorWindowEnd);
                     wordEnd = mWordIterator.following(originalWordEnd);
-                } //End block
+                } 
     if(wordEnd == BreakIterator.DONE)                
                 break;
                 wordStart = mWordIterator.getBeginning(wordEnd);
     if(wordStart == BreakIterator.DONE)                
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
     if(scheduleOtherSpellCheck)            
             {
                 editable.setSpan(mRange, wordStart, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            } //End block
+            } 
             else
             {
                 editable.removeSpan(mRange);
-            } //End block
+            } 
             spellCheck();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -689,17 +693,17 @@ for(int i = 0;i < length;i++)
     if(end < offset)                
                 continue;
                 editable.removeSpan(span);
-            } //End block
-            // ---------- Original Method ----------
-            //final int length = spans.length;
-            //for (int i = 0; i < length; i++) {
-                //final T span = spans[i];
-                //final int start = editable.getSpanStart(span);
-                //if (start > offset) continue;
-                //final int end = editable.getSpanEnd(span);
-                //if (end < offset) continue;
-                //editable.removeSpan(span);
-            //}
+            } 
+            
+            
+            
+                
+                
+                
+                
+                
+                
+            
         }
 
         

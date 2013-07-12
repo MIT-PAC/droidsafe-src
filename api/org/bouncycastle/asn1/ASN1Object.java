@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class ASN1Object extends DERObject {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.601 -0400", hash_original_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E", hash_generated_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E")
     public ASN1Object ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -36,16 +36,16 @@ public abstract class ASN1Object extends DERObject {
             boolean varB326B5062B2F0E69046810717534CB09_778649081 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1777982799 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1777982799;
-        } //End block
+        } 
         boolean varAE21F1C3C896A4F1CE4A82CF6FADAE3D_837907606 = ((o instanceof DEREncodable) && asn1Equals(((DEREncodable)o).getDERObject()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656809738 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656809738;
-        // ---------- Original Method ----------
-        //if (this == o)
-        //{
-            //return true;
-        //}
-        //return (o instanceof DEREncodable) && asn1Equals(((DEREncodable)o).getDERObject());
+        
+        
+        
+            
+        
+        
     }
 
     

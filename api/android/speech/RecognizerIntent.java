@@ -1,6 +1,6 @@
 package android.speech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class RecognizerIntent {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.180 -0400", hash_original_method = "481DA9A3FEB0B3A08BDC3010832E7C57", hash_generated_method = "54134A4D30F1224788C4C762BD8FF149")
     private  RecognizerIntent() {
-        // ---------- Original Method ----------
+        
     }
 
     

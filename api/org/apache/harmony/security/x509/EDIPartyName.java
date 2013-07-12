@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,27 +26,28 @@ public final class EDIPartyName {
         this.nameAssigner = nameAssigner;
         this.partyName = partyName;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.nameAssigner = nameAssigner;
-        //this.partyName = partyName;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.864 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "6F65B1A7357E50DD58D05122B460E2FF")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_194044832 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_66970590 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_66970590;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     

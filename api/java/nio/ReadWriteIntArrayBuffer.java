@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
       ReadWriteIntArrayBuffer(int[] array) {
         super(array);
         addTaint(array[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -19,7 +19,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
       ReadWriteIntArrayBuffer(int capacity) {
         super(capacity);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
         addTaint(arrayOffset);
         addTaint(backingArray[0]);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,8 +49,8 @@ final class ReadWriteIntArrayBuffer extends IntArrayBuffer {
 IntBuffer var27CE609FBF62030B05AE33DF0C3AF2E2_1253348701 =         ReadOnlyIntArrayBuffer.copy(this, mark);
         var27CE609FBF62030B05AE33DF0C3AF2E2_1253348701.addTaint(taint);
         return var27CE609FBF62030B05AE33DF0C3AF2E2_1253348701;
-        // ---------- Original Method ----------
-        //return ReadOnlyIntArrayBuffer.copy(this, mark);
+        
+        
     }
 
     
@@ -64,12 +64,12 @@ IntBuffer var27CE609FBF62030B05AE33DF0C3AF2E2_1253348701 =         ReadOnlyIntAr
 IntBuffer var72A74007B2BE62B849F475C7BDA4658B_83833569 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_83833569.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_83833569;
-        // ---------- Original Method ----------
-        //System.arraycopy(backingArray, position + offset, backingArray, offset, remaining());
-        //position = limit - position;
-        //limit = capacity;
-        //mark = UNSET_MARK;
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -79,52 +79,56 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_83833569 =         this;
 IntBuffer var6ED4708F04CD11720ECFFDBFD927116F_3723741 =         copy(this, mark);
         var6ED4708F04CD11720ECFFDBFD927116F_3723741.addTaint(taint);
         return var6ED4708F04CD11720ECFFDBFD927116F_3723741;
-        // ---------- Original Method ----------
-        //return copy(this, mark);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.162 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "5AD1EE2BBA43389CF6888D55254ACA35")
     @Override
     public boolean isReadOnly() {
         boolean var68934A3E9455FA72420237EB05902327_1528136679 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283455459 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_283455459;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.163 -0400", hash_original_method = "A905887CE8C7700C79178CD7C8EB8B1A", hash_generated_method = "A8F8474A2290D91DEA2FB3ECA322AE0D")
     @Override
     protected int[] protectedArray() {
         int[] var8D50CD27AA8B6BEC65C484FFCC5B2334_1379379578 = (backingArray);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_993827826 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_993827826;
-        // ---------- Original Method ----------
-        //return backingArray;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.163 -0400", hash_original_method = "F848F07A68FC53238B1B56C46C388C04", hash_generated_method = "89620A89FB351AA3A24918F06FB71C36")
     @Override
     protected int protectedArrayOffset() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_1184588618 = (offset);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817513353 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817513353;
-        // ---------- Original Method ----------
-        //return offset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.163 -0400", hash_original_method = "504D4244F3E9BA0CFC7CEE21DED3336C", hash_generated_method = "587230C9B5FC79867A587A7D6AAE8EA8")
     @Override
     protected boolean protectedHasArray() {
         boolean varB326B5062B2F0E69046810717534CB09_600091829 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862885103 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_862885103;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -137,17 +141,17 @@ IntBuffer var6ED4708F04CD11720ECFFDBFD927116F_3723741 =         copy(this, mark)
             BufferOverflowException var773478A23217201B18B531915D367F31_1729799443 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1729799443.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1729799443;
-        } //End block
+        } 
         backingArray[offset + position++] = c;
 IntBuffer var72A74007B2BE62B849F475C7BDA4658B_947549324 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_947549324.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_947549324;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferOverflowException();
-        //}
-        //backingArray[offset + position++] = c;
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -161,10 +165,10 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_947549324 =         this;
 IntBuffer var72A74007B2BE62B849F475C7BDA4658B_1747980618 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1747980618.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1747980618;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //backingArray[offset + index] = c;
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -179,19 +183,19 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_1747980618 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_967590445 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_967590445.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_967590445;
-        } //End block
+        } 
         System.arraycopy(src, srcOffset, backingArray, offset + position, intCount);
         position += intCount;
 IntBuffer var72A74007B2BE62B849F475C7BDA4658B_2035572713 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2035572713.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2035572713;
-        // ---------- Original Method ----------
-        //if (intCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //System.arraycopy(src, srcOffset, backingArray, offset + position, intCount);
-        //position += intCount;
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -201,8 +205,8 @@ IntBuffer var72A74007B2BE62B849F475C7BDA4658B_2035572713 =         this;
 IntBuffer varA43FC06BBC64B3D53A6DC8E7E28077E2_191016198 =         new ReadWriteIntArrayBuffer(remaining(), backingArray, offset + position);
         varA43FC06BBC64B3D53A6DC8E7E28077E2_191016198.addTaint(taint);
         return varA43FC06BBC64B3D53A6DC8E7E28077E2_191016198;
-        // ---------- Original Method ----------
-        //return new ReadWriteIntArrayBuffer(remaining(), backingArray, offset + position);
+        
+        
     }
 
     

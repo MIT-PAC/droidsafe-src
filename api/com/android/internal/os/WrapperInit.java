@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class WrapperInit {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.138 -0400", hash_original_method = "14AE6538EB86DCD6EBFC0019A87B65D0", hash_generated_method = "F137D9F0016E8D63FEB9D79F37359A64")
     private  WrapperInit() {
-        // ---------- Original Method ----------
+        
     }
 
     

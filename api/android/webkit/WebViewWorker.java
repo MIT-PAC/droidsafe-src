@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ final class WebViewWorker extends Handler {
     private  WebViewWorker(Looper looper) {
         super(looper);
         addTaint(looper.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,13 +45,13 @@ switch(msg.what){
             StreamLoader loader = (StreamLoader) msg.obj;
             loader.load();
             break;
-        } //End block
+        } 
         case MSG_ADD_HTTPLOADER:
         {
             FrameLoader loader = (FrameLoader) msg.obj;
             loader.handleHTTPLoad();
             break;
-        } //End block
+        } 
         case MSG_CREATE_CACHE:
         {
             CacheCreateData data = (CacheCreateData) msg.obj;
@@ -61,13 +61,13 @@ switch(msg.what){
     if(cache != null)            
             {
                 mCacheResultMap.put(data.mListener, cache);
-            } //End block
+            } 
             else
             {
                 mCacheResultMap.remove(data.mListener);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case MSG_UPDATE_CACHE_ENCODING:
         {
             CacheEncoding data = (CacheEncoding) msg.obj;
@@ -76,9 +76,9 @@ switch(msg.what){
     if(cache != null)            
             {
                 cache.encoding = data.mEncoding;
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case MSG_APPEND_CACHE:
         {
             CacheData data = (CacheData) msg.obj;
@@ -91,24 +91,24 @@ switch(msg.what){
                 {
                     CacheManager.cleanupCacheFile(cache);
                     mCacheResultMap.remove(data.mListener);
-                } //End block
+                } 
                 else
                 {
                     try 
                     {
                         cache.outStream.write(data.mChunk.mArray, 0,
                                     data.mChunk.mLength);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         CacheManager.cleanupCacheFile(cache);
                         mCacheResultMap.remove(data.mListener);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             data.mChunk.release();
             break;
-        } //End block
+        } 
         case MSG_SAVE_CACHE:
         {
             CacheSaveData data = (CacheSaveData) msg.obj;
@@ -118,9 +118,9 @@ switch(msg.what){
             {
                 CacheManager.saveCacheFile(data.mUrl, data.mPostId, cache);
                 mCacheResultMap.remove(data.mListener);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case MSG_REMOVE_CACHE:
         {
             LoadListener listener = (LoadListener) msg.obj;
@@ -129,19 +129,19 @@ switch(msg.what){
             {
                 CacheManager.cleanupCacheFile(cache);
                 mCacheResultMap.remove(listener);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case MSG_TRIM_CACHE:
         {
             CacheManager.trimCacheIfNeeded();
             break;
-        } //End block
+        } 
         case MSG_CLEAR_CACHE:
         {
             CacheManager.clearCache();
             break;
-        } //End block
+        } 
         case MSG_CACHE_TRANSACTION_TICKER:
         {
     if(!mCacheTickersBlocked)            
@@ -150,18 +150,18 @@ switch(msg.what){
                 CacheManager.startTransaction();
                 sendEmptyMessageDelayed(MSG_CACHE_TRANSACTION_TICKER,
                             CACHE_TRANSACTION_TICKER_INTERVAL);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case MSG_PAUSE_CACHE_TRANSACTION:
         {
     if(CacheManager.disableTransaction())            
             {
                 mCacheTickersBlocked = true;
                 removeMessages(MSG_CACHE_TRANSACTION_TICKER);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case MSG_RESUME_CACHE_TRANSACTION:
         {
     if(CacheManager.enableTransaction())            
@@ -169,12 +169,12 @@ switch(msg.what){
                 mCacheTickersBlocked = false;
                 sendEmptyMessageDelayed(MSG_CACHE_TRANSACTION_TICKER,
                             CACHE_TRANSACTION_TICKER_INTERVAL);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -201,7 +201,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.402 -0400", hash_original_method = "ECF9CE691C1E9D0D27062E328F2071F1", hash_generated_method = "ECF9CE691C1E9D0D27062E328F2071F1")
         public CacheCreateData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -223,7 +223,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.403 -0400", hash_original_method = "9E757DF8F2598229E9B6588D817525F8", hash_generated_method = "9E757DF8F2598229E9B6588D817525F8")
         public CacheSaveData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -242,7 +242,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.403 -0400", hash_original_method = "F4176929ED2D08D577A72138F39F258C", hash_generated_method = "F4176929ED2D08D577A72138F39F258C")
         public CacheEncoding ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -261,7 +261,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:02.403 -0400", hash_original_method = "C46F5AA83A69689BFB2DC11439BD4C32", hash_generated_method = "C46F5AA83A69689BFB2DC11439BD4C32")
         public CacheData ()
         {
-            //Synthesized constructor
+            
         }
 
 

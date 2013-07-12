@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class AndroidException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.654 -0400", hash_original_method = "B114E564F5DD3A8162C6B705516D48E4", hash_generated_method = "8C3552774B1B809997CFE9A91843D730")
     public  AndroidException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class AndroidException extends Exception {
     public  AndroidException(String name) {
         super(name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class AndroidException extends Exception {
         super(name, cause);
         addTaint(cause.getTaint());
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class AndroidException extends Exception {
     public  AndroidException(Exception cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

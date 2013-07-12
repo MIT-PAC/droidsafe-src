@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class CallForwardInfo {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.998 -0400", hash_original_method = "1AD2DD7ADA01B6155671A6205A67842C", hash_generated_method = "1AD2DD7ADA01B6155671A6205A67842C")
     public CallForwardInfo ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -42,12 +42,12 @@ String varBD27EB6ED1FF8008C8406F96DC54FF13_1856122297 =         super.toString()
             + timeSeconds + " seconds";
         varBD27EB6ED1FF8008C8406F96DC54FF13_1856122297.addTaint(taint);
         return varBD27EB6ED1FF8008C8406F96DC54FF13_1856122297;
-        // ---------- Original Method ----------
-        //return super.toString() + (status == 0 ? " not active " : " active ")
-            //+ " reason: " + reason
-            //+ " serviceClass: " + serviceClass
-            //+ " \"" + PhoneNumberUtils.stringFromStringAndTOA(number, toa) + "\" "
-            //+ timeSeconds + " seconds";
+        
+        
+            
+            
+            
+            
     }
 
     

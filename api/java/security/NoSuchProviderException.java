@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class NoSuchProviderException extends GeneralSecurityException {
     public  NoSuchProviderException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.134 -0400", hash_original_method = "1FDB64EF55F9EB878F5C396A65C339B8", hash_generated_method = "5A5F1EF7E3BC459EED9DE2EE9A1DDE35")
     public  NoSuchProviderException() {
-        // ---------- Original Method ----------
+        
     }
 
     

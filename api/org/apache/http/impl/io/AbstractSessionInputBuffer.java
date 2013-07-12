@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,7 +47,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.076 -0400", hash_original_method = "C27F370149363385AD6F9F81753F4445", hash_generated_method = "C27F370149363385AD6F9F81753F4445")
     public AbstractSessionInputBuffer ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -58,19 +58,19 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             IllegalArgumentException var6634DF518EA4C41A5618DC0E4E5C5981_1914078264 = new IllegalArgumentException("Input stream may not be null");
             var6634DF518EA4C41A5618DC0E4E5C5981_1914078264.addTaint(taint);
             throw var6634DF518EA4C41A5618DC0E4E5C5981_1914078264;
-        } //End block
+        } 
     if(buffersize <= 0)        
         {
             IllegalArgumentException varCD9999C5706CD4D5205C93CCF978BDB6_1199367761 = new IllegalArgumentException("Buffer size may not be negative or zero");
             varCD9999C5706CD4D5205C93CCF978BDB6_1199367761.addTaint(taint);
             throw varCD9999C5706CD4D5205C93CCF978BDB6_1199367761;
-        } //End block
+        } 
     if(params == null)        
         {
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1563395319 = new IllegalArgumentException("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_1563395319.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1563395319;
-        } //End block
+        } 
         this.instream = instream;
         this.buffer = new byte[buffersize];
         this.bufferpos = 0;
@@ -81,8 +81,8 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                      || this.charset.equalsIgnoreCase(HTTP.ASCII);
         this.maxLineLen = params.getIntParameter(CoreConnectionPNames.MAX_LINE_LENGTH, -1);
         this.metrics = new HttpTransportMetricsImpl();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -94,10 +94,10 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
     if(len > 0)            
             {
                 System.arraycopy(this.buffer, this.bufferpos, this.buffer, 0, len);
-            } //End block
+            } 
             this.bufferpos = 0;
             this.bufferlen = len;
-        } //End block
+        } 
         int l;
         int off = this.bufferlen;
         int len = this.buffer.length - off;
@@ -107,7 +107,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_132239990 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_618615605 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_618615605;
-        } //End block
+        } 
         else
         {
             this.bufferlen = off + l;
@@ -115,37 +115,38 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             int var2DB95E8E1A9267B7A1188556B2013B33_1226933070 = (l);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1387467463 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1387467463;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.bufferpos > 0) {
-            //int len = this.bufferlen - this.bufferpos;
-            //if (len > 0) {
-                //System.arraycopy(this.buffer, this.bufferpos, this.buffer, 0, len);
-            //}
-            //this.bufferpos = 0;
-            //this.bufferlen = len;
-        //}
-        //int l;
-        //int off = this.bufferlen;
-        //int len = this.buffer.length - off;
-        //l = this.instream.read(this.buffer, off, len);
-        //if (l == -1) {
-            //return -1;
-        //} else {
-            //this.bufferlen = off + l;
-            //this.metrics.incrementBytesTransferred(l);
-            //return l;
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
+        
+        
+        
+        
+            
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.080 -0400", hash_original_method = "BAC6DE94AA32B94037307F5D6F9840B7", hash_generated_method = "1E1508E4C991211F10D6765B2D9AC33E")
     protected boolean hasBufferedData() {
         boolean var4DBACA06678F2A41B609BA83A6C52DF8_1477219273 = (this.bufferpos < this.bufferlen);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1968324812 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1968324812;
-        // ---------- Original Method ----------
-        //return this.bufferpos < this.bufferlen;
+        
+        
     }
 
     
@@ -161,20 +162,20 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_577201540 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211586068 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_211586068;
-            } //End block
-        } //End block
+            } 
+        } 
         int varAAC17BB528ECD4E08FF5FB8BB61C371C_1507178442 = (this.buffer[this.bufferpos++] & 0xff);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1495279863 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1495279863;
-        // ---------- Original Method ----------
-        //int noRead = 0;
-        //while (!hasBufferedData()) {
-            //noRead = fillBuffer();
-            //if (noRead == -1) {
-                //return -1;
-            //}
-        //}
-        //return this.buffer[this.bufferpos++] & 0xff;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -188,7 +189,7 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             int varCFCD208495D565EF66E7DFF9F98764DA_521080159 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757622269 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_757622269;
-        } //End block
+        } 
         int noRead = 0;
         while
 (!hasBufferedData())        
@@ -199,36 +200,36 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1991996682 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215920786 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215920786;
-            } //End block
-        } //End block
+            } 
+        } 
         int chunk = this.bufferlen - this.bufferpos;
     if(chunk > len)        
         {
             chunk = len;
-        } //End block
+        } 
         System.arraycopy(this.buffer, this.bufferpos, b, off, chunk);
         this.bufferpos += chunk;
         int var5A8F4FA2AEAB5431888EE8A18CE3BCEA_2017525237 = (chunk);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1801610898 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1801610898;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return 0;
-        //}
-        //int noRead = 0;
-        //while (!hasBufferedData()) {
-            //noRead = fillBuffer();
-            //if (noRead == -1) {
-                //return -1;
-            //}
-        //}
-        //int chunk = this.bufferlen - this.bufferpos;
-        //if (chunk > len) {
-            //chunk = len;
-        //}
-        //System.arraycopy(this.buffer, this.bufferpos, b, off, chunk);
-        //this.bufferpos += chunk;
-        //return chunk;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -240,18 +241,19 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
             int varCFCD208495D565EF66E7DFF9F98764DA_361917833 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909796733 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_909796733;
-        } //End block
+        } 
         int var3AE1B8835719D1E8BA9C297EF156E04B_1281074558 = (read(b, 0, b.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816553444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1816553444;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //return 0;
-        //}
-        //return read(b, 0, b.length);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.083 -0400", hash_original_method = "25E4831B40662E7C69D1371A042407AC", hash_generated_method = "D958E97901B2E2C8324BB2040939DD5F")
     private int locateLF() {
 for(int i = this.bufferpos;i < this.bufferlen;i++)
@@ -261,18 +263,18 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_815054758 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_522775787 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_522775787;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1430107122 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670365784 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670365784;
-        // ---------- Original Method ----------
-        //for (int i = this.bufferpos; i < this.bufferlen; i++) {
-            //if (this.buffer[i] == HTTP.LF) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -284,7 +286,7 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1984940938 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1984940938.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1984940938;
-        } //End block
+        } 
         this.linebuffer.clear();
         int noRead = 0;
         boolean retry = true;
@@ -299,12 +301,12 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
                     int var1B43DD53E37A409E5FDD8776DFE8965F_878872069 = (lineFromReadBuffer(charbuffer, i));
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_149967660 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_149967660;
-                } //End block
+                } 
                 retry = false;
                 int len = i + 1 - this.bufferpos;
                 this.linebuffer.append(this.buffer, this.bufferpos, len);
                 this.bufferpos = i + 1;
-            } //End block
+            } 
             else
             {
     if(hasBufferedData())                
@@ -312,31 +314,31 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
                     int len = this.bufferlen - this.bufferpos;
                     this.linebuffer.append(this.buffer, this.bufferpos, len);
                     this.bufferpos = this.bufferlen;
-                } //End block
+                } 
                 noRead = fillBuffer();
     if(noRead == -1)                
                 {
                     retry = false;
-                } //End block
-            } //End block
+                } 
+            } 
     if(this.maxLineLen > 0 && this.linebuffer.length() >= this.maxLineLen)            
             {
                 IOException var12ACD845FE59D4DF91577F545067D44A_725649225 = new IOException("Maximum line length limit exceeded");
                 var12ACD845FE59D4DF91577F545067D44A_725649225.addTaint(taint);
                 throw var12ACD845FE59D4DF91577F545067D44A_725649225;
-            } //End block
-        } //End block
+            } 
+        } 
     if(noRead == -1 && this.linebuffer.isEmpty())        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_103290025 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1265453204 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1265453204;
-        } //End block
+        } 
         int varDE6D34CD34CA5AF9EF6CFDE35F0615AC_645255976 = (lineFromLineBuffer(charbuffer));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_839260661 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_839260661;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -350,51 +352,51 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
             {
                 l--;
                 this.linebuffer.setLength(l);
-            } //End block
+            } 
     if(l > 0)            
             {
     if(this.linebuffer.byteAt(l - 1) == HTTP.CR)                
                 {
                     l--;
                     this.linebuffer.setLength(l);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         l = this.linebuffer.length();
     if(this.ascii)        
         {
             charbuffer.append(this.linebuffer, 0, l);
-        } //End block
+        } 
         else
         {
             String s = new String(this.linebuffer.buffer(), 0, l, this.charset);
             charbuffer.append(s);
-        } //End block
+        } 
         int var2DB95E8E1A9267B7A1188556B2013B33_1334281252 = (l);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_552114288 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_552114288;
-        // ---------- Original Method ----------
-        //int l = this.linebuffer.length();
-        //if (l > 0) {
-            //if (this.linebuffer.byteAt(l - 1) == HTTP.LF) {
-                //l--;
-                //this.linebuffer.setLength(l);
-            //}
-            //if (l > 0) {
-                //if (this.linebuffer.byteAt(l - 1) == HTTP.CR) {
-                    //l--;
-                    //this.linebuffer.setLength(l);
-                //}
-            //}
-        //}
-        //l = this.linebuffer.length();
-        //if (this.ascii) {
-            //charbuffer.append(this.linebuffer, 0, l);
-        //} else {
-            //String s = new String(this.linebuffer.buffer(), 0, l, this.charset);
-            //charbuffer.append(s);
-        //}
-        //return l;
+        
+        
+        
+            
+                
+                
+            
+            
+                
+                    
+                    
+                
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -407,35 +409,35 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
     if(pos > off && this.buffer[pos - 1] == HTTP.CR)        
         {
             pos--;
-        } //End block
+        } 
         len = pos - off;
     if(this.ascii)        
         {
             charbuffer.append(this.buffer, off, len);
-        } //End block
+        } 
         else
         {
             String s = new String(this.buffer, off, len, this.charset);
             charbuffer.append(s);
-        } //End block
+        } 
         int varF5A8E923F8CD24B56B3BAB32358CC58A_130859946 = (len);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1780059370 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1780059370;
-        // ---------- Original Method ----------
-        //int off = this.bufferpos;
-        //int len;
-        //this.bufferpos = pos + 1;
-        //if (pos > off && this.buffer[pos - 1] == HTTP.CR) {
-            //pos--;
-        //}
-        //len = pos - off;
-        //if (this.ascii) {
-            //charbuffer.append(this.buffer, off, len);
-        //} else {
-            //String s = new String(this.buffer, off, len, this.charset);
-            //charbuffer.append(s);
-        //}
-        //return len;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -448,31 +450,32 @@ for(int i = this.bufferpos;i < this.bufferlen;i++)
 String varE9F5B5099F22490179F0CC31E1E62DC2_190106239 =             charbuffer.toString();
             varE9F5B5099F22490179F0CC31E1E62DC2_190106239.addTaint(taint);
             return varE9F5B5099F22490179F0CC31E1E62DC2_190106239;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_2057957870 =             null;
             var540C13E9E156B687226421B24F2DF178_2057957870.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2057957870;
-        } //End block
-        // ---------- Original Method ----------
-        //CharArrayBuffer charbuffer = new CharArrayBuffer(64);
-        //int l = readLine(charbuffer);
-        //if (l != -1) {
-            //return charbuffer.toString();
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.086 -0400", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "BDEA1EFA4B67E3D2B0B539EF7DE5BF34")
     public HttpTransportMetrics getMetrics() {
 HttpTransportMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_806041044 =         this.metrics;
         varFC1AE2E8C2526EA66FBB8E6B024A2CB6_806041044.addTaint(taint);
         return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_806041044;
-        // ---------- Original Method ----------
-        //return this.metrics;
+        
+        
     }
 
     

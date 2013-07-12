@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.917 -0400", hash_original_method = "06EACE6E653645104AEC16265D727782", hash_generated_method = "A265DEAC1EBA95E175EB1A0A29A2449C")
     protected  SSLEngineAppData() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,18 +27,19 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
                 new SSLException("Attempt to override the data"));
             var065FFEBD459357CED59A74C4E3B5A523_514230473.addTaint(taint);
             throw var065FFEBD459357CED59A74C4E3B5A523_514230473;
-        } //End block
+        } 
         buffer = src;
-        // ---------- Original Method ----------
-        //if (buffer != null) {
-            //throw new AlertException(
-                //AlertProtocol.INTERNAL_ERROR,
-                //new SSLException("Attempt to override the data"));
-        //}
-        //buffer = src;
+        
+        
+            
+                
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.918 -0400", hash_original_method = "26A62B68A47AD8599D541EA0EB845FD0", hash_generated_method = "F63F7F40D2E1B66E2F4653E1BF0B139B")
     protected int placeTo(ByteBuffer[] dsts, int offset, int length) {
         addTaint(length);
@@ -49,7 +50,7 @@ public class SSLEngineAppData implements org.apache.harmony.xnet.provider.jsse.A
             int varCFCD208495D565EF66E7DFF9F98764DA_151104617 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311384882 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_311384882;
-        } //End block
+        } 
         int pos = 0;
         int len = buffer.length;
         int rem;
@@ -61,10 +62,10 @@ for(int i=offset;i<offset+length;i++)
                 dsts[i].put(buffer, pos, len - pos);
                 pos = len;
                 break;
-            } //End block
+            } 
             dsts[i].put(buffer, pos, rem);
             pos += rem;
-        } //End block
+        } 
     if(pos != len)        
         {
             AlertException var9D1E8B54783623D66E9493E73F95A168_2015714125 = new AlertException(
@@ -74,13 +75,13 @@ for(int i=offset;i<offset+length;i++)
                     + "into the destination buffers"));
             var9D1E8B54783623D66E9493E73F95A168_2015714125.addTaint(taint);
             throw var9D1E8B54783623D66E9493E73F95A168_2015714125;
-        } //End block
+        } 
         buffer = null;
         int varF5A8E923F8CD24B56B3BAB32358CC58A_359687249 = (len);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1396901898 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1396901898;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

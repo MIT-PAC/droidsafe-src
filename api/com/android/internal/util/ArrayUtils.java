@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,11 +11,12 @@ public class ArrayUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.548 -0400", hash_original_method = "43AFEF6A809467B8D7C7F671BE94BA32", hash_generated_method = "C31BA8013CD1B4E5DD8E143F798814CA")
     private  ArrayUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static int idealByteArraySize(int need) {
+        @DSModeled(DSC.SAFE)
+    public static int idealByteArraySize(int need) {
         for (int i = 4; i < 32; i++)
             if (need <= (1 << i) - 12)
                 return (1 << i) - 12;
@@ -58,7 +59,8 @@ public class ArrayUtils {
     }
 
     
-        public static boolean equals(byte[] array1, byte[] array2, int length) {
+        @DSModeled(DSC.SAFE)
+    public static boolean equals(byte[] array1, byte[] array2, int length) {
         if (array1 == array2) {
             return true;
         }
@@ -100,7 +102,8 @@ public class ArrayUtils {
     }
 
     
-        public static boolean contains(int[] array, int value) {
+        @DSModeled(DSC.SAFE)
+    public static boolean contains(int[] array, int value) {
         for (int element : array) {
             if (element == value) {
                 return true;

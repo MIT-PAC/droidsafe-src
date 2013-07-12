@@ -1,6 +1,6 @@
 package org.json;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class JSONObject {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.552 -0400", hash_original_method = "B0BA44B1CBEEB832685DE1D9CC551D36", hash_generated_method = "8AB77AFCB9DCE98AE75372C152EFAE46")
     public  JSONObject() {
         nameValuePairs = new HashMap<String, Object>();
-        // ---------- Original Method ----------
-        //nameValuePairs = new HashMap<String, Object>();
+        
+        
     }
 
     
@@ -35,18 +35,18 @@ for(Map.Entry<?, ?> entry : contentsTyped.entrySet())
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1464463895 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_1464463895.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_1464463895;
-            } //End block
+            } 
             nameValuePairs.put(key, entry.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //Map<?, ?> contentsTyped = (Map<?, ?>) copyFrom;
-        //for (Map.Entry<?, ?> entry : contentsTyped.entrySet()) {
-            //String key = (String) entry.getKey();
-            //if (key == null) {
-                //throw new NullPointerException();
-            //}
-            //nameValuePairs.put(key, entry.getValue());
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -57,20 +57,20 @@ for(Map.Entry<?, ?> entry : contentsTyped.entrySet())
     if(object instanceof JSONObject)        
         {
             this.nameValuePairs = ((JSONObject) object).nameValuePairs;
-        } //End block
+        } 
         else
         {
             org.json.JSONException var90C9EBF3FED9A5CB53D4E04A4EF3A79E_543594911 = JSON.typeMismatch(object, "JSONObject");
             var90C9EBF3FED9A5CB53D4E04A4EF3A79E_543594911.addTaint(taint);
             throw var90C9EBF3FED9A5CB53D4E04A4EF3A79E_543594911;
-        } //End block
-        // ---------- Original Method ----------
-        //Object object = readFrom.nextValue();
-        //if (object instanceof JSONObject) {
-            //this.nameValuePairs = ((JSONObject) object).nameValuePairs;
-        //} else {
-            //throw JSON.typeMismatch(object, "JSONObject");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -78,7 +78,7 @@ for(Map.Entry<?, ?> entry : contentsTyped.entrySet())
     public  JSONObject(String json) throws JSONException {
         this(new JSONTokener(json));
         addTaint(json.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -93,15 +93,15 @@ for(String name : names)
     if(value != null)            
             {
                 nameValuePairs.put(name, value);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (String name : names) {
-            //Object value = copyFrom.opt(name);
-            //if (value != null) {
-                //nameValuePairs.put(name, value);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -110,8 +110,8 @@ for(String name : names)
         int var467D07E7C5E56858F17E6E5897393971_822826392 = (nameValuePairs.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1400508996 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1400508996;
-        // ---------- Original Method ----------
-        //return nameValuePairs.size();
+        
+        
     }
 
     
@@ -123,9 +123,9 @@ for(String name : names)
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_1743208179 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1743208179.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1743208179;
-        // ---------- Original Method ----------
-        //nameValuePairs.put(checkName(name), value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -137,9 +137,9 @@ JSONObject var72A74007B2BE62B849F475C7BDA4658B_1743208179 =         this;
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_1866911157 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1866911157.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1866911157;
-        // ---------- Original Method ----------
-        //nameValuePairs.put(checkName(name), JSON.checkDouble(value));
-        //return this;
+        
+        
+        
     }
 
     
@@ -151,9 +151,9 @@ JSONObject var72A74007B2BE62B849F475C7BDA4658B_1866911157 =         this;
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_363852557 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_363852557.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_363852557;
-        // ---------- Original Method ----------
-        //nameValuePairs.put(checkName(name), value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -165,9 +165,9 @@ JSONObject var72A74007B2BE62B849F475C7BDA4658B_363852557 =         this;
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_264636251 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_264636251.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_264636251;
-        // ---------- Original Method ----------
-        //nameValuePairs.put(checkName(name), value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -181,25 +181,25 @@ JSONObject var72A74007B2BE62B849F475C7BDA4658B_264636251 =         this;
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_703185857 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_703185857.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_703185857;
-        } //End block
+        } 
     if(value instanceof Number)        
         {
             JSON.checkDouble(((Number) value).doubleValue());
-        } //End block
+        } 
         nameValuePairs.put(checkName(name), value);
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_1878693012 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1878693012.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1878693012;
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //nameValuePairs.remove(name);
-            //return this;
-        //}
-        //if (value instanceof Number) {
-            //JSON.checkDouble(((Number) value).doubleValue());
-        //}
-        //nameValuePairs.put(checkName(name), value);
-        //return this;
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -212,15 +212,15 @@ JSONObject var72A74007B2BE62B849F475C7BDA4658B_1878693012 =         this;
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_352950631 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_352950631.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_352950631;
-        } //End block
+        } 
 JSONObject varF4258CA79FCE8127789B8A196F5E12F0_935968944 =         put(name, value);
         varF4258CA79FCE8127789B8A196F5E12F0_935968944.addTaint(taint);
         return varF4258CA79FCE8127789B8A196F5E12F0_935968944;
-        // ---------- Original Method ----------
-        //if (name == null || value == null) {
-            //return this;
-        //}
-        //return put(name, value);
+        
+        
+            
+        
+        
     }
 
     
@@ -234,44 +234,44 @@ JSONObject varF4258CA79FCE8127789B8A196F5E12F0_935968944 =         put(name, val
 JSONObject varF4258CA79FCE8127789B8A196F5E12F0_687063421 =             put(name, value);
             varF4258CA79FCE8127789B8A196F5E12F0_687063421.addTaint(taint);
             return varF4258CA79FCE8127789B8A196F5E12F0_687063421;
-        } //End block
+        } 
     if(value instanceof Number)        
         {
             JSON.checkDouble(((Number) value).doubleValue());
-        } //End block
+        } 
     if(current instanceof JSONArray)        
         {
             JSONArray array = (JSONArray) current;
             array.put(value);
-        } //End block
+        } 
         else
         {
             JSONArray array = new JSONArray();
             array.put(current);
             array.put(value);
             nameValuePairs.put(name, array);
-        } //End block
+        } 
 JSONObject var72A74007B2BE62B849F475C7BDA4658B_46505807 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_46505807.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_46505807;
-        // ---------- Original Method ----------
-        //Object current = nameValuePairs.get(checkName(name));
-        //if (current == null) {
-            //return put(name, value);
-        //}
-        //if (value instanceof Number) {
-            //JSON.checkDouble(((Number) value).doubleValue());
-        //}
-        //if (current instanceof JSONArray) {
-            //JSONArray array = (JSONArray) current;
-            //array.put(value);
-        //} else {
-            //JSONArray array = new JSONArray();
-            //array.put(current);
-            //array.put(value);
-            //nameValuePairs.put(name, array);
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -283,15 +283,15 @@ JSONObject var72A74007B2BE62B849F475C7BDA4658B_46505807 =         this;
             JSONException var9A1D8F2D16FCC2E33BC2C66F205FA660_549476096 = new JSONException("Names must be non-null");
             var9A1D8F2D16FCC2E33BC2C66F205FA660_549476096.addTaint(taint);
             throw var9A1D8F2D16FCC2E33BC2C66F205FA660_549476096;
-        } //End block
+        } 
 String varB017984728AC60AD1F0BF8734F33F15C_540300896 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_540300896.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_540300896;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new JSONException("Names must be non-null");
-        //}
-        //return name;
+        
+        
+            
+        
+        
     }
 
     
@@ -301,8 +301,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_540300896 =         name;
 Object var5C3FEDC697FE2142673642233C51611C_1351181988 =         nameValuePairs.remove(name);
         var5C3FEDC697FE2142673642233C51611C_1351181988.addTaint(taint);
         return var5C3FEDC697FE2142673642233C51611C_1351181988;
-        // ---------- Original Method ----------
-        //return nameValuePairs.remove(name);
+        
+        
     }
 
     
@@ -313,9 +313,9 @@ Object var5C3FEDC697FE2142673642233C51611C_1351181988 =         nameValuePairs.r
         boolean varDEFD64AE43306007731811C5F60CE9D5_2076662087 = (value == null || value == NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1830921365 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1830921365;
-        // ---------- Original Method ----------
-        //Object value = nameValuePairs.get(name);
-        //return value == null || value == NULL;
+        
+        
+        
     }
 
     
@@ -325,8 +325,8 @@ Object var5C3FEDC697FE2142673642233C51611C_1351181988 =         nameValuePairs.r
         boolean varC31F79B949B7EFC4BCC33E5362FF7D9E_953782191 = (nameValuePairs.containsKey(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1703529796 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1703529796;
-        // ---------- Original Method ----------
-        //return nameValuePairs.containsKey(name);
+        
+        
     }
 
     
@@ -339,16 +339,16 @@ Object var5C3FEDC697FE2142673642233C51611C_1351181988 =         nameValuePairs.r
             JSONException var5FF827AAE76577AA6C59AD8913073D0F_1982519448 = new JSONException("No value for " + name);
             var5FF827AAE76577AA6C59AD8913073D0F_1982519448.addTaint(taint);
             throw var5FF827AAE76577AA6C59AD8913073D0F_1982519448;
-        } //End block
+        } 
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1448922752 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1448922752.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1448922752;
-        // ---------- Original Method ----------
-        //Object result = nameValuePairs.get(name);
-        //if (result == null) {
-            //throw new JSONException("No value for " + name);
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -358,8 +358,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1448922752 =         result;
 Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.get(name);
         varB9044C5D5774441342719E1E55B7D84F_1137899335.addTaint(taint);
         return varB9044C5D5774441342719E1E55B7D84F_1137899335;
-        // ---------- Original Method ----------
-        //return nameValuePairs.get(name);
+        
+        
     }
 
     
@@ -373,17 +373,17 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
             org.json.JSONException varF58CE7A4254BFFEEFD830CD9FF78D7CC_1504898179 = JSON.typeMismatch(name, object, "boolean");
             varF58CE7A4254BFFEEFD830CD9FF78D7CC_1504898179.addTaint(taint);
             throw varF58CE7A4254BFFEEFD830CD9FF78D7CC_1504898179;
-        } //End block
+        } 
         boolean varB4A88417B3D0170D754C647C30B7216A_307423325 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_66915304 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_66915304;
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //Boolean result = JSON.toBoolean(object);
-        //if (result == null) {
-            //throw JSON.typeMismatch(name, object, "boolean");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -393,8 +393,8 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         boolean varCA5EADA135CE663AA3ADC46C47E21C3D_1579736992 = (optBoolean(name, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616154199 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616154199;
-        // ---------- Original Method ----------
-        //return optBoolean(name, false);
+        
+        
     }
 
     
@@ -407,10 +407,10 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         boolean varD432CC74B2878A4B571046B2CA3AAD1D_1919723130 = (result != null ? result : fallback);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1591299754 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1591299754;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //Boolean result = JSON.toBoolean(object);
-        //return result != null ? result : fallback;
+        
+        
+        
+        
     }
 
     
@@ -424,17 +424,17 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
             org.json.JSONException varDC64F5E217E93E52C55DC32B76E3DC6E_373095455 = JSON.typeMismatch(name, object, "double");
             varDC64F5E217E93E52C55DC32B76E3DC6E_373095455.addTaint(taint);
             throw varDC64F5E217E93E52C55DC32B76E3DC6E_373095455;
-        } //End block
+        } 
         double varB4A88417B3D0170D754C647C30B7216A_482307343 = (result);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_870382628 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_870382628;
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //Double result = JSON.toDouble(object);
-        //if (result == null) {
-            //throw JSON.typeMismatch(name, object, "double");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -444,8 +444,8 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         double varB835673D3752B5F2A3CCECC009044C56_2002439674 = (optDouble(name, Double.NaN));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1295531226 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1295531226;
-        // ---------- Original Method ----------
-        //return optDouble(name, Double.NaN);
+        
+        
     }
 
     
@@ -458,10 +458,10 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         double varD432CC74B2878A4B571046B2CA3AAD1D_494980481 = (result != null ? result : fallback);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1776827185 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1776827185;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //Double result = JSON.toDouble(object);
-        //return result != null ? result : fallback;
+        
+        
+        
+        
     }
 
     
@@ -475,17 +475,17 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
             org.json.JSONException var993B2EFD9D82DE5C324D7735C9A9E5F6_1865402870 = JSON.typeMismatch(name, object, "int");
             var993B2EFD9D82DE5C324D7735C9A9E5F6_1865402870.addTaint(taint);
             throw var993B2EFD9D82DE5C324D7735C9A9E5F6_1865402870;
-        } //End block
+        } 
         int varB4A88417B3D0170D754C647C30B7216A_1838460156 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_178812107 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_178812107;
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //Integer result = JSON.toInteger(object);
-        //if (result == null) {
-            //throw JSON.typeMismatch(name, object, "int");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -495,8 +495,8 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         int var84FC0CBFC698299AA22FFAC69E130380_1037427601 = (optInt(name, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191852610 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191852610;
-        // ---------- Original Method ----------
-        //return optInt(name, 0);
+        
+        
     }
 
     
@@ -509,10 +509,10 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         int varD432CC74B2878A4B571046B2CA3AAD1D_2059031305 = (result != null ? result : fallback);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500973460 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1500973460;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //Integer result = JSON.toInteger(object);
-        //return result != null ? result : fallback;
+        
+        
+        
+        
     }
 
     
@@ -526,17 +526,17 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
             org.json.JSONException var663EF30E21300B7BF6F0F99F89F7F327_609706095 = JSON.typeMismatch(name, object, "long");
             var663EF30E21300B7BF6F0F99F89F7F327_609706095.addTaint(taint);
             throw var663EF30E21300B7BF6F0F99F89F7F327_609706095;
-        } //End block
+        } 
         long varB4A88417B3D0170D754C647C30B7216A_371717140 = (result);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_371823880 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_371823880;
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //Long result = JSON.toLong(object);
-        //if (result == null) {
-            //throw JSON.typeMismatch(name, object, "long");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -546,8 +546,8 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         long varC5B1BB326733C74FD164F9452BD3B7C9_1529895684 = (optLong(name, 0L));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_665911779 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_665911779;
-        // ---------- Original Method ----------
-        //return optLong(name, 0L);
+        
+        
     }
 
     
@@ -560,10 +560,10 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
         long varD432CC74B2878A4B571046B2CA3AAD1D_798071694 = (result != null ? result : fallback);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_965351636 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_965351636;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //Long result = JSON.toLong(object);
-        //return result != null ? result : fallback;
+        
+        
+        
+        
     }
 
     
@@ -577,17 +577,17 @@ Object varB9044C5D5774441342719E1E55B7D84F_1137899335 =         nameValuePairs.g
             org.json.JSONException var6EB12F9F79CDE0595AD32A2EB3D43164_1750344479 = JSON.typeMismatch(name, object, "String");
             var6EB12F9F79CDE0595AD32A2EB3D43164_1750344479.addTaint(taint);
             throw var6EB12F9F79CDE0595AD32A2EB3D43164_1750344479;
-        } //End block
+        } 
 String varDC838461EE2FA0CA4C9BBB70A15456B0_596902225 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_596902225.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_596902225;
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //String result = JSON.toString(object);
-        //if (result == null) {
-            //throw JSON.typeMismatch(name, object, "String");
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -597,8 +597,8 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_596902225 =         result;
 String var0CE80B357AB5E5816978317628338B78_378227885 =         optString(name, "");
         var0CE80B357AB5E5816978317628338B78_378227885.addTaint(taint);
         return var0CE80B357AB5E5816978317628338B78_378227885;
-        // ---------- Original Method ----------
-        //return optString(name, "");
+        
+        
     }
 
     
@@ -611,10 +611,10 @@ String var0CE80B357AB5E5816978317628338B78_378227885 =         optString(name, "
 String varB29C31EA7BA163F0F2187995ADA1E48E_1633321034 =         result != null ? result : fallback;
         varB29C31EA7BA163F0F2187995ADA1E48E_1633321034.addTaint(taint);
         return varB29C31EA7BA163F0F2187995ADA1E48E_1633321034;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //String result = JSON.toString(object);
-        //return result != null ? result : fallback;
+        
+        
+        
+        
     }
 
     
@@ -627,20 +627,20 @@ String varB29C31EA7BA163F0F2187995ADA1E48E_1633321034 =         result != null ?
 JSONArray varA31A6C9B348464F1BAAA1B1373E54400_1620291757 =             (JSONArray) object;
             varA31A6C9B348464F1BAAA1B1373E54400_1620291757.addTaint(taint);
             return varA31A6C9B348464F1BAAA1B1373E54400_1620291757;
-        } //End block
+        } 
         else
         {
             org.json.JSONException varEAF21408DDD198DA03E57B84CD4AB662_1799758762 = JSON.typeMismatch(name, object, "JSONArray");
             varEAF21408DDD198DA03E57B84CD4AB662_1799758762.addTaint(taint);
             throw varEAF21408DDD198DA03E57B84CD4AB662_1799758762;
-        } //End block
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //if (object instanceof JSONArray) {
-            //return (JSONArray) object;
-        //} else {
-            //throw JSON.typeMismatch(name, object, "JSONArray");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -651,9 +651,9 @@ JSONArray varA31A6C9B348464F1BAAA1B1373E54400_1620291757 =             (JSONArra
 JSONArray var37D15C802F10CA15BA7D983DBF1DB879_217499875 =         object instanceof JSONArray ? (JSONArray) object : null;
         var37D15C802F10CA15BA7D983DBF1DB879_217499875.addTaint(taint);
         return var37D15C802F10CA15BA7D983DBF1DB879_217499875;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //return object instanceof JSONArray ? (JSONArray) object : null;
+        
+        
+        
     }
 
     
@@ -666,20 +666,20 @@ JSONArray var37D15C802F10CA15BA7D983DBF1DB879_217499875 =         object instanc
 JSONObject varA963CC0194E284A145B65210ED1E5C63_183320468 =             (JSONObject) object;
             varA963CC0194E284A145B65210ED1E5C63_183320468.addTaint(taint);
             return varA963CC0194E284A145B65210ED1E5C63_183320468;
-        } //End block
+        } 
         else
         {
             org.json.JSONException var36B0E52DCB924D05CBFE61A301258646_822707794 = JSON.typeMismatch(name, object, "JSONObject");
             var36B0E52DCB924D05CBFE61A301258646_822707794.addTaint(taint);
             throw var36B0E52DCB924D05CBFE61A301258646_822707794;
-        } //End block
-        // ---------- Original Method ----------
-        //Object object = get(name);
-        //if (object instanceof JSONObject) {
-            //return (JSONObject) object;
-        //} else {
-            //throw JSON.typeMismatch(name, object, "JSONObject");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -690,9 +690,9 @@ JSONObject varA963CC0194E284A145B65210ED1E5C63_183320468 =             (JSONObje
 JSONObject varE8B2189D470FA34838D00114FC8343E3_1318311293 =         object instanceof JSONObject ? (JSONObject) object : null;
         varE8B2189D470FA34838D00114FC8343E3_1318311293.addTaint(taint);
         return varE8B2189D470FA34838D00114FC8343E3_1318311293;
-        // ---------- Original Method ----------
-        //Object object = opt(name);
-        //return object instanceof JSONObject ? (JSONObject) object : null;
+        
+        
+        
     }
 
     
@@ -705,36 +705,36 @@ JSONObject varE8B2189D470FA34838D00114FC8343E3_1318311293 =         object insta
 JSONArray var540C13E9E156B687226421B24F2DF178_1476462175 =             null;
             var540C13E9E156B687226421B24F2DF178_1476462175.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1476462175;
-        } //End block
+        } 
         int length = names.length();
     if(length == 0)        
         {
 JSONArray var540C13E9E156B687226421B24F2DF178_1282732628 =             null;
             var540C13E9E156B687226421B24F2DF178_1282732628.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1282732628;
-        } //End block
+        } 
 for(int i = 0;i < length;i++)
         {
             String name = JSON.toString(names.opt(i));
             result.put(opt(name));
-        } //End block
+        } 
 JSONArray varDC838461EE2FA0CA4C9BBB70A15456B0_680356067 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_680356067.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_680356067;
-        // ---------- Original Method ----------
-        //JSONArray result = new JSONArray();
-        //if (names == null) {
-            //return null;
-        //}
-        //int length = names.length();
-        //if (length == 0) {
-            //return null;
-        //}
-        //for (int i = 0; i < length; i++) {
-            //String name = JSON.toString(names.opt(i));
-            //result.put(opt(name));
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -743,8 +743,8 @@ JSONArray varDC838461EE2FA0CA4C9BBB70A15456B0_680356067 =         result;
 Iterator var90C1FF8CAFF3DBC174B2F12D3FF74ED5_1100979877 =         nameValuePairs.keySet().iterator();
         var90C1FF8CAFF3DBC174B2F12D3FF74ED5_1100979877.addTaint(taint);
         return var90C1FF8CAFF3DBC174B2F12D3FF74ED5_1100979877;
-        // ---------- Original Method ----------
-        //return nameValuePairs.keySet().iterator();
+        
+        
     }
 
     
@@ -755,10 +755,10 @@ JSONArray varC2F50F9E81BA5C7E6E5814BD9BD1AA90_951649472 =         nameValuePairs
                 : new JSONArray(new ArrayList<String>(nameValuePairs.keySet()));
         varC2F50F9E81BA5C7E6E5814BD9BD1AA90_951649472.addTaint(taint);
         return varC2F50F9E81BA5C7E6E5814BD9BD1AA90_951649472;
-        // ---------- Original Method ----------
-        //return nameValuePairs.isEmpty()
-                //? null
-                //: new JSONArray(new ArrayList<String>(nameValuePairs.keySet()));
+        
+        
+                
+                
     }
 
     
@@ -772,21 +772,21 @@ JSONArray varC2F50F9E81BA5C7E6E5814BD9BD1AA90_951649472 =         nameValuePairs
 String varC93F6F7CA20C01E1D5F7833A2EB9AB40_1143822623 =             stringer.toString();
             varC93F6F7CA20C01E1D5F7833A2EB9AB40_1143822623.addTaint(taint);
             return varC93F6F7CA20C01E1D5F7833A2EB9AB40_1143822623;
-        } //End block
+        } 
         catch (JSONException e)
         {
 String var540C13E9E156B687226421B24F2DF178_1095727315 =             null;
             var540C13E9E156B687226421B24F2DF178_1095727315.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1095727315;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //JSONStringer stringer = new JSONStringer();
-            //writeTo(stringer);
-            //return stringer.toString();
-        //} catch (JSONException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -798,10 +798,10 @@ String var540C13E9E156B687226421B24F2DF178_1095727315 =             null;
 String varC93F6F7CA20C01E1D5F7833A2EB9AB40_2118374913 =         stringer.toString();
         varC93F6F7CA20C01E1D5F7833A2EB9AB40_2118374913.addTaint(taint);
         return varC93F6F7CA20C01E1D5F7833A2EB9AB40_2118374913;
-        // ---------- Original Method ----------
-        //JSONStringer stringer = new JSONStringer(indentSpaces);
-        //writeTo(stringer);
-        //return stringer.toString();
+        
+        
+        
+        
     }
 
     
@@ -812,14 +812,14 @@ String varC93F6F7CA20C01E1D5F7833A2EB9AB40_2118374913 =         stringer.toStrin
 for(Map.Entry<String, Object> entry : nameValuePairs.entrySet())
         {
             stringer.key(entry.getKey()).value(entry.getValue());
-        } //End block
+        } 
         stringer.endObject();
-        // ---------- Original Method ----------
-        //stringer.object();
-        //for (Map.Entry<String, Object> entry : nameValuePairs.entrySet()) {
-            //stringer.key(entry.getKey()).value(entry.getValue());
-        //}
-        //stringer.endObject();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -870,7 +870,7 @@ for(Map.Entry<String, Object> entry : nameValuePairs.entrySet())
             return "null";
         }
     };
-    // orphaned legacy method
+    
     @Override public boolean equals(Object o) {
             return o == this || o == null; 
         }

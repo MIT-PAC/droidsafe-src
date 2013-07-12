@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -79,42 +79,45 @@ public abstract class Provider extends Properties {
         this.info = info;
         versionString = String.valueOf(version);
         putProviderInfo();
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.version = version;
-        //this.info = info;
-        //versionString = String.valueOf(version);
-        //putProviderInfo();
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.328 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "789D32E6E27F738CA308B82475BF3030")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_40123290 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_40123290.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_40123290;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.328 -0400", hash_original_method = "849DADC9512AC29CFF5A5EB4D1517425", hash_generated_method = "8DF60A22786C52A6717A39A02D8A8AF4")
     public double getVersion() {
         double var2AF72F100C356273D46284F6FD1DFC08_929000179 = (version);
                 double varE8CD7DA078A86726031AD64F35F5A6C0_554422004 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_554422004;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.329 -0400", hash_original_method = "90F1C2C1B854E8544A3CF05D4B3BD6E7", hash_generated_method = "F42F7844B88B4A36F48B8E042DE87ECE")
     public String getInfo() {
 String var43CF3338FDBA93597A9562D3166E9DC4_1159343604 =         info;
         var43CF3338FDBA93597A9562D3166E9DC4_1159343604.addTaint(taint);
         return var43CF3338FDBA93597A9562D3166E9DC4_1159343604;
-        // ---------- Original Method ----------
-        //return info;
+        
+        
     }
 
     
@@ -124,11 +127,12 @@ String var43CF3338FDBA93597A9562D3166E9DC4_1159343604 =         info;
 String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version " + version;
         var50E90DE824F2DD490679392189EDA33C_618753076.addTaint(taint);
         return var50E90DE824F2DD490679392189EDA33C_618753076;
-        // ---------- Original Method ----------
-        //return name + " version " + version;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.330 -0400", hash_original_method = "53793BFB01C9C5B2BDDE9F63C2E38535", hash_generated_method = "51F2BDED737F22F77F16FE87E2A29BF1")
     @Override
     public synchronized void clear() {
@@ -136,49 +140,50 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
     if(serviceTable != null)        
         {
             serviceTable.clear();
-        } //End block
+        } 
     if(propertyServiceTable != null)        
         {
             propertyServiceTable.clear();
-        } //End block
+        } 
     if(aliasTable != null)        
         {
             aliasTable.clear();
-        } //End block
+        } 
     if(propertyAliasTable != null)        
         {
             propertyAliasTable.clear();
-        } //End block
+        } 
         changedProperties = null;
         putProviderInfo();
     if(providerNumber != -1)        
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
         servicesChanged();
-        // ---------- Original Method ----------
-        //super.clear();
-        //if (serviceTable != null) {
-            //serviceTable.clear();
-        //}
-        //if (propertyServiceTable != null) {
-            //propertyServiceTable.clear();
-        //}
-        //if (aliasTable != null) {
-            //aliasTable.clear();
-        //}
-        //if (propertyAliasTable != null) {
-            //propertyAliasTable.clear();
-        //}
-        //changedProperties = null;
-        //putProviderInfo();
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
-        //servicesChanged();
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.330 -0400", hash_original_method = "EB6BD048CAF9E12CFD99EC1891725291", hash_generated_method = "0CDD80B9CC8CC73B60130FCD06F2D900")
     @Override
     public synchronized void load(InputStream inStream) throws IOException {
@@ -186,10 +191,10 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
         Properties tmp = new Properties();
         tmp.load(inStream);
         myPutAll(tmp);
-        // ---------- Original Method ----------
-        //Properties tmp = new Properties();
-        //tmp.load(inStream);
-        //myPutAll(tmp);
+        
+        
+        
+        
     }
 
     
@@ -198,8 +203,8 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
     public synchronized void putAll(Map<?,?> t) {
         addTaint(t.getTaint());
         myPutAll(t);
-        // ---------- Original Method ----------
-        //myPutAll(t);
+        
+        
     }
 
     
@@ -209,7 +214,7 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
     if(changedProperties == null)        
         {
             changedProperties = new Properties();
-        } //End block
+        } 
         Iterator<? extends Map.Entry<?, ?>> it = t.entrySet().iterator();
         Object key;
         Object value;
@@ -221,21 +226,21 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
     if(key instanceof String && ((String) key).startsWith("Provider."))            
             {
                 continue;
-            } //End block
+            } 
             value = entry.getValue();
             super.put(key, value);
     if(changedProperties.remove(key) == null)            
             {
                 removeFromPropertyServiceTable(key);
-            } //End block
+            } 
             changedProperties.put(key, value);
-        } //End block
+        } 
     if(providerNumber != -1)        
         {
             Services.setNeedRefresh();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -245,8 +250,8 @@ String var50E90DE824F2DD490679392189EDA33C_618753076 =         name + " version 
 Set<Map.Entry<Object,Object>> varD57B937898B8DAAF433086023CDE0FFC_1089969298 =         Collections.unmodifiableSet(super.entrySet());
         varD57B937898B8DAAF433086023CDE0FFC_1089969298.addTaint(taint);
         return varD57B937898B8DAAF433086023CDE0FFC_1089969298;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableSet(super.entrySet());
+        
+        
     }
 
     
@@ -256,8 +261,8 @@ Set<Map.Entry<Object,Object>> varD57B937898B8DAAF433086023CDE0FFC_1089969298 =  
 Set<Object> varC576E95CEF2DB749DB3850658FFE6F1C_1804142262 =         Collections.unmodifiableSet(super.keySet());
         varC576E95CEF2DB749DB3850658FFE6F1C_1804142262.addTaint(taint);
         return varC576E95CEF2DB749DB3850658FFE6F1C_1804142262;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableSet(super.keySet());
+        
+        
     }
 
     
@@ -267,8 +272,8 @@ Set<Object> varC576E95CEF2DB749DB3850658FFE6F1C_1804142262 =         Collections
 Collection<Object> varF31BFB95E4035986BE22A02616A5652D_331998560 =         Collections.unmodifiableCollection(super.values());
         varF31BFB95E4035986BE22A02616A5652D_331998560.addTaint(taint);
         return varF31BFB95E4035986BE22A02616A5652D_331998560;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(super.values());
+        
+        
     }
 
     
@@ -282,38 +287,38 @@ Collection<Object> varF31BFB95E4035986BE22A02616A5652D_331998560 =         Colle
 Object var540C13E9E156B687226421B24F2DF178_1856509490 =             null;
             var540C13E9E156B687226421B24F2DF178_1856509490.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1856509490;
-        } //End block
+        } 
     if(providerNumber != -1)        
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
     if(changedProperties != null && changedProperties.remove(key) == null)        
         {
             removeFromPropertyServiceTable(key);
-        } //End block
+        } 
     if(changedProperties == null)        
         {
             changedProperties = new Properties();
-        } //End block
+        } 
         changedProperties.put(key, value);
 Object var34EAB73DB44693D365A6742CBB445BED_938195428 =         super.put(key, value);
         var34EAB73DB44693D365A6742CBB445BED_938195428.addTaint(taint);
         return var34EAB73DB44693D365A6742CBB445BED_938195428;
-        // ---------- Original Method ----------
-        //if (key instanceof String && ((String) key).startsWith("Provider.")) {
-            //return null;
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
-        //if (changedProperties != null && changedProperties.remove(key) == null) {
-            //removeFromPropertyServiceTable(key);
-        //}
-        //if (changedProperties == null) {
-            //changedProperties = new Properties();
-        //}
-        //changedProperties.put(key, value);
-        //return super.put(key, value);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -326,39 +331,40 @@ Object var34EAB73DB44693D365A6742CBB445BED_938195428 =         super.put(key, va
 Object var540C13E9E156B687226421B24F2DF178_818420744 =             null;
             var540C13E9E156B687226421B24F2DF178_818420744.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_818420744;
-        } //End block
+        } 
     if(providerNumber != -1)        
         {
             Services.setNeedRefresh();
-        } //End block
+        } 
     if(changedProperties != null && changedProperties.remove(key) == null)        
         {
             removeFromPropertyServiceTable(key);
     if(changedProperties.size() == 0)            
             {
                 changedProperties = null;
-            } //End block
-        } //End block
+            } 
+        } 
 Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key);
         varBACBF699252AC3FDC76153D632679B1D_944125132.addTaint(taint);
         return varBACBF699252AC3FDC76153D632679B1D_944125132;
-        // ---------- Original Method ----------
-        //if (key instanceof String && ((String) key).startsWith("Provider.")) {
-            //return null;
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
-        //if (changedProperties != null && changedProperties.remove(key) == null) {
-            //removeFromPropertyServiceTable(key);
-            //if (changedProperties.size() == 0) {
-                //changedProperties = null;
-            //}
-        //}
-        //return super.remove(key);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.336 -0400", hash_original_method = "73ADEB588A693290C2EBE420EE1B60DD", hash_generated_method = "D908BEC46715C96AFB7B5705E426BF8B")
      boolean implementsAlg(String serv, String alg, String attribute, String val) {
         addTaint(val.getTaint());
@@ -374,8 +380,8 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
             {
                 servAlg = serv + "." + alg;
                 prop = getPropertyIgnoreCase(servAlg);
-            } //End block
-        } //End block
+            } 
+        } 
     if(prop != null)        
         {
     if(attribute == null)            
@@ -383,31 +389,31 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
                 boolean varB326B5062B2F0E69046810717534CB09_1019494129 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_812050180 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_812050180;
-            } //End block
+            } 
             boolean var780F01F84340806DE300DADF194ECA40_1968617336 = (checkAttribute(servAlg, attribute, val));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_841821543 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_841821543;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_106162976 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253054899 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253054899;
-        // ---------- Original Method ----------
-        //String servAlg = serv + "." + alg;
-        //String prop = getPropertyIgnoreCase(servAlg);
-        //if (prop == null) {
-            //alg = getPropertyIgnoreCase("Alg.Alias." + servAlg);
-            //if (alg != null) {
-                //servAlg = serv + "." + alg;
-                //prop = getPropertyIgnoreCase(servAlg);
-            //}
-        //}
-        //if (prop != null) {
-            //if (attribute == null) {
-                //return true;
-            //}
-            //return checkAttribute(servAlg, attribute, val);
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -426,8 +432,8 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
                     boolean varB326B5062B2F0E69046810717534CB09_436478825 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1775723868 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1775723868;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(attributeValue.equalsIgnoreCase(val))                
@@ -435,44 +441,46 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
                     boolean varB326B5062B2F0E69046810717534CB09_63963792 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1173846336 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1173846336;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1461948615 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2112013440 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2112013440;
-        // ---------- Original Method ----------
-        //String attributeValue = getPropertyIgnoreCase(servAlg + ' ' + attribute);
-        //if (attributeValue != null) {
-            //if (attribute.equalsIgnoreCase("KeySize")) {
-                //if (Integer.parseInt(attributeValue) >= Integer.parseInt(val)) {
-                    //return true;
-                //}
-            //} else { 
-                //if (attributeValue.equalsIgnoreCase(val)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.338 -0400", hash_original_method = "6418C82159D4FAB251CB16B6C408D61D", hash_generated_method = "BA9FDE46C0F8402C6FB4936CC36C7FAA")
      void setProviderNumber(int n) {
         providerNumber = n;
-        // ---------- Original Method ----------
-        //providerNumber = n;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.338 -0400", hash_original_method = "6209D7B36FBC76163C52BAAF1CE53C35", hash_generated_method = "45ED5B722FA7588009D882CC6D8E6E67")
      int getProviderNumber() {
         int varBC53644233DA12363BC91D331C131157_1283667977 = (providerNumber);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718909934 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_718909934;
-        // ---------- Original Method ----------
-        //return providerNumber;
+        
+        
     }
 
     
@@ -484,7 +492,7 @@ Object varBACBF699252AC3FDC76153D632679B1D_944125132 =         super.remove(key)
 Provider.Service varDE6AB80C9B01FF02BB70F0394329E4A1_811349301 =             lastServicesByType;
             varDE6AB80C9B01FF02BB70F0394329E4A1_811349301.addTaint(taint);
             return varDE6AB80C9B01FF02BB70F0394329E4A1_811349301;
-        } //End block
+        } 
         Provider.Service service;
 for(Iterator<Service> it = getServices().iterator();it.hasNext();)
         {
@@ -496,26 +504,26 @@ for(Iterator<Service> it = getServices().iterator();it.hasNext();)
 Provider.Service var18881A382C668272945CA08D6E19E173_503835754 =                 service;
                 var18881A382C668272945CA08D6E19E173_503835754.addTaint(taint);
                 return var18881A382C668272945CA08D6E19E173_503835754;
-            } //End block
-        } //End block
+            } 
+        } 
 Provider.Service var540C13E9E156B687226421B24F2DF178_1453226377 =         null;
         var540C13E9E156B687226421B24F2DF178_1453226377.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1453226377;
-        // ---------- Original Method ----------
-        //updatePropertyServiceTable();
-        //if (lastServicesByType != null && type.equals(lastType)) {
-            //return lastServicesByType;
-        //}
-        //Provider.Service service;
-        //for (Iterator<Service> it = getServices().iterator(); it.hasNext();) {
-            //service = it.next();
-            //if (type.equals(service.type)) {
-                //lastType = type;
-                //lastServicesByType = service;
-                //return service;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -527,35 +535,35 @@ Provider.Service var540C13E9E156B687226421B24F2DF178_1453226377 =         null;
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_633185419 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_633185419.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_633185419;
-        } //End block
+        } 
     if(type.equals(lastServiceName) && algorithm.equalsIgnoreCase(lastAlgorithm))        
         {
 Provider.Service var3FAC47A7F66C9B2243E30C2F0FA5FC28_1013080195 =             returnedService;
             var3FAC47A7F66C9B2243E30C2F0FA5FC28_1013080195.addTaint(taint);
             return var3FAC47A7F66C9B2243E30C2F0FA5FC28_1013080195;
-        } //End block
+        } 
         String alg = algorithm.toUpperCase(Locale.US);
         Object o = null;
     if(serviceTable != null)        
         {
             o = serviceTable.get(type, alg);
-        } //End block
+        } 
     if(o == null && aliasTable != null)        
         {
             o = aliasTable.get(type, alg);
-        } //End block
+        } 
     if(o == null)        
         {
             updatePropertyServiceTable();
-        } //End block
+        } 
     if(o == null && propertyServiceTable != null)        
         {
             o = propertyServiceTable.get(type, alg);
-        } //End block
+        } 
     if(o == null && propertyAliasTable != null)        
         {
             o = propertyAliasTable.get(type, alg);
-        } //End block
+        } 
     if(o != null)        
         {
             lastServiceName = type;
@@ -564,12 +572,12 @@ Provider.Service var3FAC47A7F66C9B2243E30C2F0FA5FC28_1013080195 =             re
 Provider.Service var3FAC47A7F66C9B2243E30C2F0FA5FC28_1828929265 =             returnedService;
             var3FAC47A7F66C9B2243E30C2F0FA5FC28_1828929265.addTaint(taint);
             return var3FAC47A7F66C9B2243E30C2F0FA5FC28_1828929265;
-        } //End block
+        } 
 Provider.Service var540C13E9E156B687226421B24F2DF178_1898160129 =         null;
         var540C13E9E156B687226421B24F2DF178_1898160129.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1898160129;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -581,38 +589,38 @@ Provider.Service var540C13E9E156B687226421B24F2DF178_1898160129 =         null;
 Set<Provider.Service> varABF821BB60DE39D2BC9A23B426D87819_1853880284 =             lastServicesSet;
             varABF821BB60DE39D2BC9A23B426D87819_1853880284.addTaint(taint);
             return varABF821BB60DE39D2BC9A23B426D87819_1853880284;
-        } //End block
+        } 
     if(serviceTable != null)        
         {
             lastServicesSet = new HashSet<Service>(serviceTable.values());
-        } //End block
+        } 
         else
         {
             lastServicesSet = new HashSet<Service>();
-        } //End block
+        } 
     if(propertyServiceTable != null)        
         {
             lastServicesSet.addAll(propertyServiceTable.values());
-        } //End block
+        } 
         lastServicesSet = Collections.unmodifiableSet(lastServicesSet);
 Set<Provider.Service> varABF821BB60DE39D2BC9A23B426D87819_399623806 =         lastServicesSet;
         varABF821BB60DE39D2BC9A23B426D87819_399623806.addTaint(taint);
         return varABF821BB60DE39D2BC9A23B426D87819_399623806;
-        // ---------- Original Method ----------
-        //updatePropertyServiceTable();
-        //if (lastServicesSet != null) {
-            //return lastServicesSet;
-        //}
-        //if (serviceTable != null) {
-            //lastServicesSet = new HashSet<Service>(serviceTable.values());
-        //} else {
-            //lastServicesSet = new HashSet<Service>();
-        //}
-        //if (propertyServiceTable != null) {
-            //lastServicesSet.addAll(propertyServiceTable.values());
-        //}
-        //lastServicesSet = Collections.unmodifiableSet(lastServicesSet);
-        //return lastServicesSet;
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -624,50 +632,50 @@ Set<Provider.Service> varABF821BB60DE39D2BC9A23B426D87819_399623806 =         la
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1811231586 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1811231586.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1811231586;
-        } //End block
+        } 
     if("Provider".equals(s.getType()))        
         {
             return;
-        } //End block
+        } 
         servicesChanged();
     if(serviceTable == null)        
         {
             serviceTable = new TwoKeyHashMap<String, String, Service>(128);
-        } //End block
+        } 
         serviceTable.put(s.type, s.algorithm.toUpperCase(Locale.US), s);
     if(s.aliases != null)        
         {
     if(aliasTable == null)            
             {
                 aliasTable = new TwoKeyHashMap<String, String, Service>(256);
-            } //End block
+            } 
 for(String alias : s.getAliases())
             {
                 aliasTable.put(s.type, alias.toUpperCase(Locale.US), s);
-            } //End block
-        } //End block
+            } 
+        } 
         serviceInfoToProperties(s);
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new NullPointerException();
-        //}
-        //if ("Provider".equals(s.getType())) { 
-            //return;
-        //}
-        //servicesChanged();
-        //if (serviceTable == null) {
-            //serviceTable = new TwoKeyHashMap<String, String, Service>(128);
-        //}
-        //serviceTable.put(s.type, s.algorithm.toUpperCase(Locale.US), s);
-        //if (s.aliases != null) {
-            //if (aliasTable == null) {
-                //aliasTable = new TwoKeyHashMap<String, String, Service>(256);
-            //}
-            //for (String alias : s.getAliases()) {
-                //aliasTable.put(s.type, alias.toUpperCase(Locale.US), s);
-            //}
-        //}
-        //serviceInfoToProperties(s);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -679,34 +687,34 @@ for(String alias : s.getAliases())
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_2066518105 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_2066518105.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_2066518105;
-        } //End block
+        } 
         servicesChanged();
     if(serviceTable != null)        
         {
             serviceTable.remove(s.type, s.algorithm.toUpperCase(Locale.US));
-        } //End block
+        } 
     if(aliasTable != null && s.aliases != null)        
         {
 for(String alias : s.getAliases())
             {
                 aliasTable.remove(s.type, alias.toUpperCase(Locale.US));
-            } //End block
-        } //End block
+            } 
+        } 
         serviceInfoFromProperties(s);
-        // ---------- Original Method ----------
-        //if (s == null) {
-            //throw new NullPointerException();
-        //}
-        //servicesChanged();
-        //if (serviceTable != null) {
-            //serviceTable.remove(s.type, s.algorithm.toUpperCase(Locale.US));
-        //}
-        //if (aliasTable != null && s.aliases != null) {
-            //for (String alias: s.getAliases()) {
-                //aliasTable.remove(s.type, alias.toUpperCase(Locale.US));
-            //}
-        //}
-        //serviceInfoFromProperties(s);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -719,36 +727,36 @@ for(String alias : s.getAliases())
 for(Iterator<String> i = s.aliases.iterator();i.hasNext();)
             {
                 super.put("Alg.Alias." + s.type + "." + i.next(), s.algorithm);
-            } //End block
-        } //End block
+            } 
+        } 
     if(s.attributes != null)        
         {
 for(Map.Entry<String, String> entry : s.attributes.entrySet())
             {
                 super.put(s.type + "." + s.algorithm + " " + entry.getKey(),
                         entry.getValue());
-            } //End block
-        } //End block
+            } 
+        } 
     if(providerNumber != -1)        
         {
             Services.setNeedRefresh();
-        } //End block
-        // ---------- Original Method ----------
-        //super.put(s.type + "." + s.algorithm, s.className);
-        //if (s.aliases != null) {
-            //for (Iterator<String> i = s.aliases.iterator(); i.hasNext();) {
-                //super.put("Alg.Alias." + s.type + "." + i.next(), s.algorithm);
-            //}
-        //}
-        //if (s.attributes != null) {
-            //for (Map.Entry<String, String> entry : s.attributes.entrySet()) {
-                //super.put(s.type + "." + s.algorithm + " " + entry.getKey(),
-                        //entry.getValue());
-            //}
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+        
+        
+            
+                
+                        
+            
+        
+        
+            
+        
     }
 
     
@@ -761,49 +769,50 @@ for(Map.Entry<String, String> entry : s.attributes.entrySet())
 for(Iterator<String> i = s.aliases.iterator();i.hasNext();)
             {
                 super.remove("Alg.Alias." + s.type + "." + i.next());
-            } //End block
-        } //End block
+            } 
+        } 
     if(s.attributes != null)        
         {
 for(Map.Entry<String, String> entry : s.attributes.entrySet())
             {
                 super.remove(s.type + "." + s.algorithm + " " + entry.getKey());
-            } //End block
-        } //End block
+            } 
+        } 
     if(providerNumber != -1)        
         {
             Services.setNeedRefresh();
-        } //End block
-        // ---------- Original Method ----------
-        //super.remove(s.type + "." + s.algorithm);
-        //if (s.aliases != null) {
-            //for (Iterator<String> i = s.aliases.iterator(); i.hasNext();) {
-                //super.remove("Alg.Alias." + s.type + "." + i.next());
-            //}
-        //}
-        //if (s.attributes != null) {
-            //for (Map.Entry<String, String> entry : s.attributes.entrySet()) {
-                //super.remove(s.type + "." + s.algorithm + " " + entry.getKey());
-            //}
-        //}
-        //if (providerNumber != -1) {
-            //Services.setNeedRefresh();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+        
+        
+            
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.347 -0400", hash_original_method = "C88E49400116B5906A9CAC0E8D20528B", hash_generated_method = "2A8E7CFD229A5E53F7903E2AC18099A7")
     private void removeFromPropertyServiceTable(Object key) {
         addTaint(key.getTaint());
     if(key == null || !(key instanceof String))        
         {
             return;
-        } //End block
+        } 
         String k = (String) key;
     if(k.startsWith("Provider."))        
         {
             return;
-        } //End block
+        } 
         Provider.Service s;
         String serviceName;
         String algorithm = null;
@@ -819,7 +828,7 @@ for(Map.Entry<String, String> entry : s.attributes.entrySet())
     if(propertyAliasTable != null)            
             {
                 propertyAliasTable.remove(serviceName, aliasName.toUpperCase(Locale.US));
-            } //End block
+            } 
     if(propertyServiceTable != null)            
             {
 for(Iterator<Service> it = propertyServiceTable.values().iterator();it
@@ -830,16 +839,16 @@ for(Iterator<Service> it = propertyServiceTable.values().iterator();it
                     {
                         s.aliases.remove(aliasName);
                         return;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             return;
-        } //End block
+        } 
         int j = k.indexOf('.');
     if(j == -1)        
         {
             return;
-        } //End block
+        } 
         i = k.indexOf(' ');
     if(i == -1)        
         {
@@ -855,10 +864,10 @@ for(Iterator<Service> it = propertyServiceTable.values().iterator();it
 for(String alias : ser.aliases)
                     {
                         propertyAliasTable.remove(serviceName, alias.toUpperCase(Locale.US));
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         else
         {
             attribute = k.substring(i + 1);
@@ -871,14 +880,15 @@ for(String alias : ser.aliases)
                 {
                     s = (Provider.Service) o;
                     s.attributes.remove(attribute);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.353 -0400", hash_original_method = "C12B51396475B7F4EF23B74D619C33FD", hash_generated_method = "59A4818189A0EC8995B4F5535294CC25")
     private void updatePropertyServiceTable() {
         Object _key;
@@ -889,7 +899,7 @@ for(String alias : ser.aliases)
     if(changedProperties == null || changedProperties.isEmpty())        
         {
             return;
-        } //End block
+        } 
 for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterator();it
                 .hasNext();)
         {
@@ -900,13 +910,13 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
                     || !(_value instanceof String))            
             {
                 continue;
-            } //End block
+            } 
             String key = (String) _key;
             String value = (String) _value;
     if(key.startsWith("Provider"))            
             {
                 continue;
-            } //End block
+            } 
             int i;
     if(key.startsWith("Alg.Alias."))            
             {
@@ -921,11 +931,11 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyServiceTable == null)                
                 {
                     propertyServiceTable = new TwoKeyHashMap<String, String, Service>(128);
-                } //End block
+                } 
                 else
                 {
                     o = propertyServiceTable.get(serviceName, algUp);
-                } //End block
+                } 
     if(o != null)                
                 {
                     s = (Provider.Service) o;
@@ -933,9 +943,9 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyAliasTable == null)                    
                     {
                         propertyAliasTable = new TwoKeyHashMap<String, String, Service>(256);
-                    } //End block
+                    } 
                     propertyAliasTable.put(serviceName, aliasName.toUpperCase(Locale.US), s);
-                } //End block
+                } 
                 else
                 {
                     String className = (String) changedProperties
@@ -950,17 +960,17 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyAliasTable == null)                        
                         {
                             propertyAliasTable = new TwoKeyHashMap<String, String, Service>(256);
-                        } //End block
+                        } 
                         propertyAliasTable.put(serviceName, aliasName.toUpperCase(Locale.US), s);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 continue;
-            } //End block
+            } 
             int j = key.indexOf('.');
     if(j == -1)            
             {
                 continue;
-            } //End block
+            } 
             i = key.indexOf(' ');
     if(i == -1)            
             {
@@ -971,12 +981,12 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyServiceTable != null)                
                 {
                     o = propertyServiceTable.get(serviceName, alg);
-                } //End block
+                } 
     if(o != null)                
                 {
                     s = (Provider.Service) o;
                     s.className = value;
-                } //End block
+                } 
                 else
                 {
                     s = new Provider.Service(this, serviceName, algorithm,
@@ -985,10 +995,10 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyServiceTable == null)                    
                     {
                         propertyServiceTable = new TwoKeyHashMap<String, String, Service>(128);
-                    } //End block
+                    } 
                     propertyServiceTable.put(serviceName, alg, s);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 serviceName = key.substring(0, j);
@@ -999,12 +1009,12 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyServiceTable != null)                
                 {
                     o = propertyServiceTable.get(serviceName, alg);
-                } //End block
+                } 
     if(o != null)                
                 {
                     s = (Provider.Service) o;
                     s.putAttribute(attribute, value);
-                } //End block
+                } 
                 else
                 {
                     String className = (String) changedProperties
@@ -1018,28 +1028,29 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
     if(propertyServiceTable == null)                        
                         {
                             propertyServiceTable = new TwoKeyHashMap<String, String, Service>(128);
-                        } //End block
+                        } 
                         propertyServiceTable.put(serviceName, alg, s);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         servicesChanged();
         changedProperties = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.355 -0400", hash_original_method = "FD7619437CD0960F1AEBA32A154F0328", hash_generated_method = "9C6A342A2081A7D73BA214C115FEC8EA")
     private void servicesChanged() {
         lastServicesByType = null;
         lastServiceName = null;
         lastServicesSet = null;
-        // ---------- Original Method ----------
-        //lastServicesByType = null;
-        //lastServiceName = null;
-        //lastServicesSet = null;
+        
+        
+        
+        
     }
 
     
@@ -1049,11 +1060,11 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
         super.put("Provider.id version", versionString);
         super.put("Provider.id info", (info != null) ? info : "null");
         super.put("Provider.id className", this.getClass().getName());
-        // ---------- Original Method ----------
-        //super.put("Provider.id name", (name != null) ? name : "null");
-        //super.put("Provider.id version", versionString);
-        //super.put("Provider.id info", (info != null) ? info : "null");
-        //super.put("Provider.id className", this.getClass().getName());
+        
+        
+        
+        
+        
     }
 
     
@@ -1066,7 +1077,7 @@ for(Iterator<Map.Entry<Object, Object>> it = changedProperties.entrySet().iterat
 String varB5053E025797B3BF768F5C37934C244D_1657915674 =             res;
             varB5053E025797B3BF768F5C37934C244D_1657915674.addTaint(taint);
             return varB5053E025797B3BF768F5C37934C244D_1657915674;
-        } //End block
+        } 
 for(Enumeration<?> e = propertyNames();e.hasMoreElements();)
         {
             String propertyName = (String) e.nextElement();
@@ -1075,23 +1086,23 @@ for(Enumeration<?> e = propertyNames();e.hasMoreElements();)
 String varA461F56DE9B992995E45656BBAF6D5D9_83897046 =                 getProperty(propertyName);
                 varA461F56DE9B992995E45656BBAF6D5D9_83897046.addTaint(taint);
                 return varA461F56DE9B992995E45656BBAF6D5D9_83897046;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
         var540C13E9E156B687226421B24F2DF178_590479116.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_590479116;
-        // ---------- Original Method ----------
-        //String res = getProperty(key);
-        //if (res != null) {
-            //return res;
-        //}
-        //for (Enumeration<?> e = propertyNames(); e.hasMoreElements(); ) {
-            //String propertyName = (String) e.nextElement();
-            //if (key.equalsIgnoreCase(propertyName)) {
-                //return getProperty(propertyName);
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1101,10 +1112,10 @@ String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
         in.defaultReadObject();
         versionString = String.valueOf(version);
         providerNumber = -1;
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //versionString = String.valueOf(version);
-        //providerNumber = -1;
+        
+        
+        
+        
     }
 
     
@@ -1143,7 +1154,7 @@ String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1018855462 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_1018855462.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_1018855462;
-            } //End block
+            } 
             this.provider = provider;
             this.type = type;
             this.algorithm = algorithm;
@@ -1153,20 +1164,20 @@ String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
             this.attributes =
                     ((attributes != null) && (attributes.size() == 0))
                     ? Collections.<String,String>emptyMap() : attributes;
-            // ---------- Original Method ----------
-            //if (provider == null || type == null || algorithm == null
-                    //|| className == null) {
-                //throw new NullPointerException();
-            //}
-            //this.provider = provider;
-            //this.type = type;
-            //this.algorithm = algorithm;
-            //this.className = className;
-            //this.aliases = ((aliases != null) && (aliases.size() == 0))
-                    //? Collections.<String>emptyList() : aliases;
-            //this.attributes =
-                    //((attributes != null) && (attributes.size() == 0))
-                    //? Collections.<String,String>emptyMap() : attributes;
+            
+            
+                    
+                
+            
+            
+            
+            
+            
+            
+                    
+            
+                    
+                    
         }
 
         
@@ -1176,13 +1187,13 @@ String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
     if((aliases == null) || (aliases.size() == 0))            
             {
                 aliases = new ArrayList<String>();
-            } //End block
+            } 
             aliases.add(alias);
-            // ---------- Original Method ----------
-            //if ((aliases == null) || (aliases.size() == 0)) {
-                //aliases = new ArrayList<String>();
-            //}
-            //aliases.add(alias);
+            
+            
+                
+            
+            
         }
 
         
@@ -1193,13 +1204,13 @@ String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
     if((attributes == null) || (attributes.size() == 0))            
             {
                 attributes = new HashMap<String,String>();
-            } //End block
+            } 
             attributes.put(name, value);
-            // ---------- Original Method ----------
-            //if ((attributes == null) || (attributes.size() == 0)) {
-                //attributes = new HashMap<String,String>();
-            //}
-            //attributes.put(name, value);
+            
+            
+                
+            
+            
         }
 
         
@@ -1208,8 +1219,8 @@ String var540C13E9E156B687226421B24F2DF178_590479116 =         null;
 String varC5B9F25B4EEAD3E8E2C33F9429204397_270076391 =             type;
             varC5B9F25B4EEAD3E8E2C33F9429204397_270076391.addTaint(taint);
             return varC5B9F25B4EEAD3E8E2C33F9429204397_270076391;
-            // ---------- Original Method ----------
-            //return type;
+            
+            
         }
 
         
@@ -1218,8 +1229,8 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_270076391 =             type;
 String var44A46B4003FC81ACB0223385BA1FA818_1346875154 =             algorithm;
             var44A46B4003FC81ACB0223385BA1FA818_1346875154.addTaint(taint);
             return var44A46B4003FC81ACB0223385BA1FA818_1346875154;
-            // ---------- Original Method ----------
-            //return algorithm;
+            
+            
         }
 
         
@@ -1228,8 +1239,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1346875154 =             algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1021658440 =             provider;
             varC1EB7B12CCABB27D431E5B91E5FF9ECB_1021658440.addTaint(taint);
             return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1021658440;
-            // ---------- Original Method ----------
-            //return provider;
+            
+            
         }
 
         
@@ -1238,8 +1249,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1021658440 =             provider;
 String varF57DF2C3C72C0BA8574176BD3A4AA127_1928075779 =             className;
             varF57DF2C3C72C0BA8574176BD3A4AA127_1928075779.addTaint(taint);
             return varF57DF2C3C72C0BA8574176BD3A4AA127_1928075779;
-            // ---------- Original Method ----------
-            //return className;
+            
+            
         }
 
         
@@ -1251,24 +1262,24 @@ String varF57DF2C3C72C0BA8574176BD3A4AA127_1928075779 =             className;
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1407415671 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_1407415671.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_1407415671;
-            } //End block
+            } 
     if(attributes == null)            
             {
 String var540C13E9E156B687226421B24F2DF178_1641916409 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1641916409.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1641916409;
-            } //End block
+            } 
 String var0FC38B75002B91F7AC64538254F3139B_1886339521 =             attributes.get(name);
             var0FC38B75002B91F7AC64538254F3139B_1886339521.addTaint(taint);
             return var0FC38B75002B91F7AC64538254F3139B_1886339521;
-            // ---------- Original Method ----------
-            //if (name == null) {
-                //throw new NullPointerException();
-            //}
-            //if (attributes == null) {
-                //return null;
-            //}
-            //return attributes.get(name);
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -1277,15 +1288,15 @@ String var0FC38B75002B91F7AC64538254F3139B_1886339521 =             attributes.g
     if(aliases == null)            
             {
                 aliases = new ArrayList<String>(0);
-            } //End block
+            } 
 List<String> varC4595C5D23CE6BCE27277A7A63A8884D_1023743584 =             aliases;
             varC4595C5D23CE6BCE27277A7A63A8884D_1023743584.addTaint(taint);
             return varC4595C5D23CE6BCE27277A7A63A8884D_1023743584;
-            // ---------- Original Method ----------
-            //if (aliases == null){
-                //aliases = new ArrayList<String>(0);
-            //}
-            //return aliases;
+            
+            
+                
+            
+            
         }
 
         
@@ -1298,19 +1309,19 @@ List<String> varC4595C5D23CE6BCE27277A7A63A8884D_1023743584 =             aliase
     if(cl == null)                
                 {
                     cl = ClassLoader.getSystemClassLoader();
-                } //End block
+                } 
                 try 
                 {
                     implementation = Class.forName(className, true, cl);
                     lastClassName = className;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     NoSuchAlgorithmException var340B962BBAFCC29E2FBF0C494BA22619_496838485 = new NoSuchAlgorithmException(type + " " + algorithm + " implementation not found: " + e);
                     var340B962BBAFCC29E2FBF0C494BA22619_496838485.addTaint(taint);
                     throw var340B962BBAFCC29E2FBF0C494BA22619_496838485;
-                } //End block
-            } //End block
+                } 
+            } 
     if(constructorParameter == null)            
             {
                 try 
@@ -1318,21 +1329,21 @@ List<String> varC4595C5D23CE6BCE27277A7A63A8884D_1023743584 =             aliase
 Object varA51B251B917C25E5A6F890FEB4DA82F6_1513532893 =                     implementation.newInstance();
                     varA51B251B917C25E5A6F890FEB4DA82F6_1513532893.addTaint(taint);
                     return varA51B251B917C25E5A6F890FEB4DA82F6_1513532893;
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     NoSuchAlgorithmException varFE975696FAAC863E4BFAD89E5739D05E_1141776120 = new NoSuchAlgorithmException(
                             type + " " + algorithm + " implementation not found", e);
                     varFE975696FAAC863E4BFAD89E5739D05E_1141776120.addTaint(taint);
                     throw varFE975696FAAC863E4BFAD89E5739D05E_1141776120;
-                } //End block
-            } //End block
+                } 
+            } 
     if(!supportsParameter(constructorParameter))            
             {
                 InvalidParameterException varF9889E1B91A376ADDF2ACA65983F9F24_1369480329 = new InvalidParameterException(type + ": service cannot use the parameter");
                 varF9889E1B91A376ADDF2ACA65983F9F24_1369480329.addTaint(taint);
                 throw varF9889E1B91A376ADDF2ACA65983F9F24_1369480329;
-            } //End block
+            } 
             Class[] parameterTypes = new Class[1];
             Object[] initargs = { constructorParameter };
             try 
@@ -1340,36 +1351,37 @@ Object varA51B251B917C25E5A6F890FEB4DA82F6_1513532893 =                     impl
     if(type.equalsIgnoreCase("CertStore"))                
                 {
                     parameterTypes[0] = Class.forName("java.security.cert.CertStoreParameters");
-                } //End block
+                } 
                 else
                 {
                     parameterTypes[0] = constructorParameter.getClass();
-                } //End block
+                } 
 Object var6688C2BA9FE406E726A7A7FF4A097B4F_95079013 =                 implementation.getConstructor(parameterTypes)
                         .newInstance(initargs);
                 var6688C2BA9FE406E726A7A7FF4A097B4F_95079013.addTaint(taint);
                 return var6688C2BA9FE406E726A7A7FF4A097B4F_95079013;
-            } //End block
+            } 
             catch (Exception e)
             {
                 NoSuchAlgorithmException varFE975696FAAC863E4BFAD89E5739D05E_1963999809 = new NoSuchAlgorithmException(type + " " + algorithm
                         + " implementation not found", e);
                 varFE975696FAAC863E4BFAD89E5739D05E_1963999809.addTaint(taint);
                 throw varFE975696FAAC863E4BFAD89E5739D05E_1963999809;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.368 -0400", hash_original_method = "A158C77880B526D8A49B8720A1D647AC", hash_generated_method = "8C2E1AC53C0B3EED64708255AC052B2F")
         public boolean supportsParameter(Object parameter) {
             addTaint(parameter.getTaint());
             boolean varB326B5062B2F0E69046810717534CB09_727807824 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_959803364 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_959803364;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
@@ -1381,24 +1393,24 @@ Object var6688C2BA9FE406E726A7A7FF4A097B4F_95079013 =                 implementa
     if(aliases != null)            
             {
                 result = result + "\nAliases " + aliases.toString();
-            } //End block
+            } 
     if(attributes != null)            
             {
                 result = result + "\nAttributes " + attributes.toString();
-            } //End block
+            } 
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1470314333 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1470314333.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1470314333;
-            // ---------- Original Method ----------
-            //String result = "Provider " + provider.getName() + " Service "
-                    //+ type + "." + algorithm + " " + className;
-            //if (aliases != null) {
-                //result = result + "\nAliases " + aliases.toString();
-            //}
-            //if (attributes != null) {
-                //result = result + "\nAttributes " + attributes.toString();
-            //}
-            //return result;
+            
+            
+                    
+            
+                
+            
+            
+                
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,7 +56,7 @@ public class RequestHandle {
     if(headers == null)        
         {
             headers = new HashMap<String, String>();
-        } //End block
+        } 
         mHeaders = headers;
         mBodyProvider = bodyProvider;
         mBodyLength = bodyLength;
@@ -65,18 +65,18 @@ public class RequestHandle {
         mUri = uri;
         mRequestQueue = requestQueue;
         mRequest = request;
-        // ---------- Original Method ----------
-        //if (headers == null) {
-            //headers = new HashMap<String, String>();
-        //}
-        //mHeaders = headers;
-        //mBodyProvider = bodyProvider;
-        //mBodyLength = bodyLength;
-        //mMethod = method == null? "GET" : method;
-        //mUrl = url;
-        //mUri = uri;
-        //mRequestQueue = requestQueue;
-        //mRequest = request;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -96,8 +96,8 @@ public class RequestHandle {
         addTaint(url.getTaint());
         addTaint(requestQueue.getTaint());
         mConnection = conn;
-        // ---------- Original Method ----------
-        //mConnection = conn;
+        
+        
     }
 
     
@@ -106,11 +106,11 @@ public class RequestHandle {
     if(mRequest != null)        
         {
             mRequest.cancel();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRequest != null) {
-            //mRequest.cancel();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -120,11 +120,11 @@ public class RequestHandle {
     if(mRequest != null)        
         {
             mRequest.setLoadingPaused(pause);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRequest != null) {
-            //mRequest.setLoadingPaused(pause);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -134,39 +134,42 @@ public class RequestHandle {
     if(mRequest != null)        
         {
             mRequest.handleSslErrorResponse(proceed);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRequest != null) {
-            //mRequest.handleSslErrorResponse(proceed);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.505 -0400", hash_original_method = "1E2E2512E5F173592E2117FB4C479261", hash_generated_method = "4812BB003F8F7F6A6CC9A3BEF4A844BE")
     public boolean isRedirectMax() {
         boolean varE59A16454EBA0506B8807ACFE87505C0_1197445002 = (mRedirectCount >= MAX_REDIRECT_COUNT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1661139718 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1661139718;
-        // ---------- Original Method ----------
-        //return mRedirectCount >= MAX_REDIRECT_COUNT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.505 -0400", hash_original_method = "3AC7970B74E2F8214DB13CA8BCAB44BF", hash_generated_method = "60A0115C12A971F9CBEB5EC143004766")
     public int getRedirectCount() {
         int var5C719A8BE232C682CF3CBD6C1D4CA4E2_482921618 = (mRedirectCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998120919 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_998120919;
-        // ---------- Original Method ----------
-        //return mRedirectCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.506 -0400", hash_original_method = "FFEBE76B00A2A9B427C3877CD59FFD71", hash_generated_method = "75F6E6041180F5755B1072705080BEBF")
     public void setRedirectCount(int count) {
         mRedirectCount = count;
-        // ---------- Original Method ----------
-        //mRedirectCount = count;
+        
+        
     }
 
     
@@ -179,7 +182,7 @@ public class RequestHandle {
         {
             HttpLog.v("RequestHandle.setupRedirect(): redirectCount " +
                   mRedirectCount);
-        } //End block
+        } 
         mHeaders.remove(AUTHORIZATION_HEADER);
         mHeaders.remove(PROXY_AUTHORIZATION_HEADER);
     if(++mRedirectCount == MAX_REDIRECT_COUNT)        
@@ -193,68 +196,68 @@ public class RequestHandle {
             boolean var68934A3E9455FA72420237EB05902327_700463118 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1049371179 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1049371179;
-        } //End block
+        } 
     if(mUrl.startsWith("https:") && redirectTo.startsWith("http:"))        
         {
     if(HttpLog.LOGV)            
             {
                 HttpLog.v("blowing away the referer on an https -> http redirect");
-            } //End block
+            } 
             mHeaders.remove("Referer");
-        } //End block
+        } 
         mUrl = redirectTo;
         try 
         {
             mUri = new WebAddress(mUrl);
-        } //End block
+        } 
         catch (ParseException e)
         {
             e.printStackTrace();
-        } //End block
+        } 
         mHeaders.remove("Cookie");
         String cookie = CookieManager.getInstance().getCookie(mUri);
     if(cookie != null && cookie.length() > 0)        
         {
             mHeaders.put("Cookie", cookie);
-        } //End block
+        } 
     if((statusCode == 302 || statusCode == 303) && mMethod.equals("POST"))        
         {
     if(HttpLog.LOGV)            
             {
                 HttpLog.v("replacing POST with GET on redirect to " + redirectTo);
-            } //End block
+            } 
             mMethod = "GET";
-        } //End block
+        } 
     if(statusCode == 307)        
         {
             try 
             {
     if(mBodyProvider != null)                
                 mBodyProvider.reset();
-            } //End block
+            } 
             catch (java.io.IOException ex)
             {
     if(HttpLog.LOGV)                
                 {
                     HttpLog.v("setupRedirect() failed to reset body provider");
-                } //End block
+                } 
                 boolean var68934A3E9455FA72420237EB05902327_1064576549 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1378144682 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1378144682;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mHeaders.remove("Content-Type");
             mBodyProvider = null;
-        } //End block
+        } 
         mHeaders.putAll(cacheHeaders);
         createAndQueueNewRequest();
         boolean varB326B5062B2F0E69046810717534CB09_396784508 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1191571076 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1191571076;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -267,16 +270,16 @@ public class RequestHandle {
     if(HttpLog.LOGV)        
         {
             HttpLog.v("setupBasicAuthResponse(): response: " + response);
-        } //End block
+        } 
         mHeaders.put(authorizationHeader(isProxy), "Basic " + response);
         setupAuthResponse();
-        // ---------- Original Method ----------
-        //String response = computeBasicAuthResponse(username, password);
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("setupBasicAuthResponse(): response: " + response);
-        //}
-        //mHeaders.put(authorizationHeader(isProxy), "Basic " + response);
-        //setupAuthResponse();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -302,17 +305,17 @@ public class RequestHandle {
     if(HttpLog.LOGV)        
         {
             HttpLog.v("setupDigestAuthResponse(): response: " + response);
-        } //End block
+        } 
         mHeaders.put(authorizationHeader(isProxy), "Digest " + response);
         setupAuthResponse();
-        // ---------- Original Method ----------
-        //String response = computeDigestAuthResponse(
-                //username, password, realm, nonce, QOP, algorithm, opaque);
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("setupDigestAuthResponse(): response: " + response);
-        //}
-        //mHeaders.put(authorizationHeader(isProxy), "Digest " + response);
-        //setupAuthResponse();
+        
+        
+                
+        
+            
+        
+        
+        
     }
 
     
@@ -322,34 +325,35 @@ public class RequestHandle {
         {
     if(mBodyProvider != null)            
             mBodyProvider.reset();
-        } //End block
+        } 
         catch (java.io.IOException ex)
         {
     if(HttpLog.LOGV)            
             {
                 HttpLog.v("setupAuthResponse() failed to reset body provider");
-            } //End block
-        } //End block
+            } 
+        } 
         createAndQueueNewRequest();
-        // ---------- Original Method ----------
-        //try {
-            //if (mBodyProvider != null) mBodyProvider.reset();
-        //} catch (java.io.IOException ex) {
-            //if (HttpLog.LOGV) {
-                //HttpLog.v("setupAuthResponse() failed to reset body provider");
-            //}
-        //}
-        //createAndQueueNewRequest();
+        
+        
+            
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.509 -0400", hash_original_method = "E02C2F0EA498C425350A019498EEA751", hash_generated_method = "44CC3D1EEB8CC220169355D751F7FD69")
     public String getMethod() {
 String var4E41053965FCD154582D303800DDC3B2_1081005856 =         mMethod;
         var4E41053965FCD154582D303800DDC3B2_1081005856.addTaint(taint);
         return var4E41053965FCD154582D303800DDC3B2_1081005856;
-        // ---------- Original Method ----------
-        //return mMethod;
+        
+        
     }
 
     
@@ -363,8 +367,8 @@ String var4E41053965FCD154582D303800DDC3B2_1081005856 =         mMethod;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.510 -0400", hash_original_method = "8819509041D3F58366571B93CC9E3D4B", hash_generated_method = "739C8F45FA1E2134F512E5E5B3753B74")
     public void waitUntilComplete() {
         mRequest.waitUntilComplete();
-        // ---------- Original Method ----------
-        //mRequest.waitUntilComplete();
+        
+        
     }
 
     
@@ -373,11 +377,11 @@ String var4E41053965FCD154582D303800DDC3B2_1081005856 =         mMethod;
     if(mConnection != null)        
         {
             mConnection.processRequests(mRequest);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mConnection != null) {
-            //mConnection.processRequests(mRequest);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -413,24 +417,25 @@ String var4E41053965FCD154582D303800DDC3B2_1081005856 =         mMethod;
     if(opaque     != null)        
         {
             response += ", opaque=" + doubleQuote(opaque);
-        } //End block
+        } 
     if(algorithm != null)        
         {
             response += ", algorithm=" +  algorithm;
-        } //End block
+        } 
     if(QOP        != null)        
         {
             response += ", qop=" + QOP + ", nc=" + nc + ", cnonce=" + doubleQuote(cnonce);
-        } //End block
+        } 
 String var2A1114F4272D753FE23A36E3D68CD293_2131147101 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_2131147101.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_2131147101;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        public static String authorizationHeader(boolean isProxy) {
+        @DSModeled(DSC.SAFE)
+    public static String authorizationHeader(boolean isProxy) {
         if (!isProxy) {
             return AUTHORIZATION_HEADER;
         } else {
@@ -451,13 +456,13 @@ String var2A1114F4272D753FE23A36E3D68CD293_2131147101 =         response;
     if(HttpLog.LOGV)        
         {
             HttpLog.v("computeDigest(): QOP: " + QOP);
-        } //End block
+        } 
     if(QOP == null)        
         {
 String varBACC119C2FE5C504D92AB62D7F5EA510_1800341169 =             KD(H(A1), nonce + ":" + H(A2));
             varBACC119C2FE5C504D92AB62D7F5EA510_1800341169.addTaint(taint);
             return varBACC119C2FE5C504D92AB62D7F5EA510_1800341169;
-        } //End block
+        } 
         else
         {
     if(QOP.equalsIgnoreCase("auth"))            
@@ -465,23 +470,23 @@ String varBACC119C2FE5C504D92AB62D7F5EA510_1800341169 =             KD(H(A1), no
 String var5E3449934C3AE858D8B440B5E65AE8BE_988034877 =                 KD(H(A1), nonce + ":" + nc + ":" + cnonce + ":" + QOP + ":" + H(A2));
                 var5E3449934C3AE858D8B440B5E65AE8BE_988034877.addTaint(taint);
                 return var5E3449934C3AE858D8B440B5E65AE8BE_988034877;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_382118026 =         null;
         var540C13E9E156B687226421B24F2DF178_382118026.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_382118026;
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("computeDigest(): QOP: " + QOP);
-        //}
-        //if (QOP == null) {
-            //return KD(H(A1), nonce + ":" + H(A2));
-        //} else {
-            //if (QOP.equalsIgnoreCase("auth")) {
-                //return KD(H(A1), nonce + ":" + nc + ":" + cnonce + ":" + QOP + ":" + H(A2));
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -492,8 +497,8 @@ String var540C13E9E156B687226421B24F2DF178_382118026 =         null;
 String var76709ED9029AE93F2064A644EBA98F42_1515312104 =         H(secret + ":" + data);
         var76709ED9029AE93F2064A644EBA98F42_1515312104.addTaint(taint);
         return var76709ED9029AE93F2064A644EBA98F42_1515312104;
-        // ---------- Original Method ----------
-        //return H(secret + ":" + data);
+        
+        
     }
 
     
@@ -511,31 +516,31 @@ String var76709ED9029AE93F2064A644EBA98F42_1515312104 =         H(secret + ":" +
 String varFB7740F29172D304438A7CADAC1E8E80_1377559337 =                     bufferToHex(d);
                     varFB7740F29172D304438A7CADAC1E8E80_1377559337.addTaint(taint);
                     return varFB7740F29172D304438A7CADAC1E8E80_1377559337;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (NoSuchAlgorithmException e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1739391533 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_1739391533.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_1739391533;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_2107195635 =         null;
         var540C13E9E156B687226421B24F2DF178_2107195635.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2107195635;
-        // ---------- Original Method ----------
-        //if (param != null) {
-            //try {
-                //MessageDigest md5 = MessageDigest.getInstance("MD5");
-                //byte[] d = md5.digest(param.getBytes());
-                //if (d != null) {
-                    //return bufferToHex(d);
-                //}
-            //} catch (NoSuchAlgorithmException e) {
-                //throw new RuntimeException(e);
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+                
+                
+                    
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -555,40 +560,40 @@ for(int i = 0;i < length;++i)
                     byte h = (byte)((buffer[i] & 0xF0) >> 4);
                     hex.append(hexChars[h]);
                     hex.append(hexChars[l]);
-                } //End block
+                } 
 String varC16D6258A520FA38B307E45818772E68_1180139708 =                 hex.toString();
                 varC16D6258A520FA38B307E45818772E68_1180139708.addTaint(taint);
                 return varC16D6258A520FA38B307E45818772E68_1180139708;
-            } //End block
+            } 
             else
             {
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_466502251 =                 "";
                 var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_466502251.addTaint(taint);
                 return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_466502251;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1991928175 =         null;
         var540C13E9E156B687226421B24F2DF178_1991928175.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1991928175;
-        // ---------- Original Method ----------
-        //final char hexChars[] =
-            //{ '0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f' };
-        //if (buffer != null) {
-            //int length = buffer.length;
-            //if (length > 0) {
-                //StringBuilder hex = new StringBuilder(2 * length);
-                //for (int i = 0; i < length; ++i) {
-                    //byte l = (byte) (buffer[i] & 0x0F);
-                    //byte h = (byte)((buffer[i] & 0xF0) >> 4);
-                    //hex.append(hexChars[h]);
-                    //hex.append(hexChars[l]);
-                //}
-                //return hex.toString();
-            //} else {
-                //return "";
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -601,12 +606,12 @@ String var540C13E9E156B687226421B24F2DF178_1991928175 =         null;
 String var8C0C5094D0DCD3B77EA8304A17184C2B_802093085 =         Integer.toString(nextInt, 16);
         var8C0C5094D0DCD3B77EA8304A17184C2B_802093085.addTaint(taint);
         return var8C0C5094D0DCD3B77EA8304A17184C2B_802093085;
-        // ---------- Original Method ----------
-        //Random rand = new Random();
-        //int nextInt = rand.nextInt();
-        //nextInt = (nextInt == Integer.MIN_VALUE) ?
-                //Integer.MAX_VALUE : Math.abs(nextInt);
-        //return Integer.toString(nextInt, 16);
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -618,15 +623,15 @@ String var8C0C5094D0DCD3B77EA8304A17184C2B_802093085 =         Integer.toString(
 String var3D10E606FCF443A3E81B3E215B7F39EB_81063744 =             "\"" + param + "\"";
             var3D10E606FCF443A3E81B3E215B7F39EB_81063744.addTaint(taint);
             return var3D10E606FCF443A3E81B3E215B7F39EB_81063744;
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_52838389 =         null;
         var540C13E9E156B687226421B24F2DF178_52838389.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_52838389;
-        // ---------- Original Method ----------
-        //if (param != null) {
-            //return "\"" + param + "\"";
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
@@ -641,25 +646,25 @@ String var540C13E9E156B687226421B24F2DF178_52838389 =         null;
             mConnection = newHandle.mConnection;
             newHandle.processRequest();
             return;
-        } //End block
+        } 
         mRequest = mRequestQueue.queueRequest(
                 mUrl, mUri, mMethod, mHeaders, mRequest.mEventHandler,
                 mBodyProvider,
                 mBodyLength).mRequest;
-        // ---------- Original Method ----------
-        //if (mConnection != null) {
-            //RequestHandle newHandle = mRequestQueue.queueSynchronousRequest(
-                    //mUrl, mUri, mMethod, mHeaders, mRequest.mEventHandler,
-                    //mBodyProvider, mBodyLength);
-            //mRequest = newHandle.mRequest;
-            //mConnection = newHandle.mConnection;
-            //newHandle.processRequest();
-            //return;
-        //}
-        //mRequest = mRequestQueue.queueRequest(
-                //mUrl, mUri, mMethod, mHeaders, mRequest.mEventHandler,
-                //mBodyProvider,
-                //mBodyLength).mRequest;
+        
+        
+            
+                    
+                    
+            
+            
+            
+            
+        
+        
+                
+                
+                
     }
 
     

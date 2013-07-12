@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,18 +39,18 @@ for(String alias : aliases)
             {
                 checkCharsetName(alias);
                 this.aliasesSet.add(alias);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //checkCharsetName(canonicalName);
-        //this.canonicalName = canonicalName;
-        //this.aliasesSet = new HashSet<String>();
-        //if (aliases != null) {
-            //for (String alias : aliases) {
-                //checkCharsetName(alias);
-                //this.aliasesSet.add(alias);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -67,7 +67,8 @@ for(String alias : aliases)
     }
 
     
-        private static boolean isValidCharsetNameCharacter(char c) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isValidCharsetNameCharacter(char c) {
         return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') ||
                 c == '-' || c == '.' || c == ':' || c == '_';
     }
@@ -170,8 +171,8 @@ for(String alias : aliases)
 String var10DFEB18F9F7F9CEB3FED88506D04E0A_170531210 =         this.canonicalName;
         var10DFEB18F9F7F9CEB3FED88506D04E0A_170531210.addTaint(taint);
         return var10DFEB18F9F7F9CEB3FED88506D04E0A_170531210;
-        // ---------- Original Method ----------
-        //return this.canonicalName;
+        
+        
     }
 
     
@@ -180,29 +181,31 @@ String var10DFEB18F9F7F9CEB3FED88506D04E0A_170531210 =         this.canonicalNam
 Set<String> var40C06DD4FB2A29FDD3D9FA27114D7854_815168563 =         Collections.unmodifiableSet(this.aliasesSet);
         var40C06DD4FB2A29FDD3D9FA27114D7854_815168563.addTaint(taint);
         return var40C06DD4FB2A29FDD3D9FA27114D7854_815168563;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableSet(this.aliasesSet);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.750 -0400", hash_original_method = "73ACF950C7885C6BB8F7DA98628525CE", hash_generated_method = "06EFB1291A73383A1D267DD03B9D5985")
     public String displayName() {
 String var10DFEB18F9F7F9CEB3FED88506D04E0A_1877307095 =         this.canonicalName;
         var10DFEB18F9F7F9CEB3FED88506D04E0A_1877307095.addTaint(taint);
         return var10DFEB18F9F7F9CEB3FED88506D04E0A_1877307095;
-        // ---------- Original Method ----------
-        //return this.canonicalName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.751 -0400", hash_original_method = "E11EA2F6EB7DD1956A05FA3724D0F65C", hash_generated_method = "71D43D56FFCDAC2231D0D56847C750FD")
     public String displayName(Locale l) {
         addTaint(l.getTaint());
 String var10DFEB18F9F7F9CEB3FED88506D04E0A_665402086 =         this.canonicalName;
         var10DFEB18F9F7F9CEB3FED88506D04E0A_665402086.addTaint(taint);
         return var10DFEB18F9F7F9CEB3FED88506D04E0A_665402086;
-        // ---------- Original Method ----------
-        //return this.canonicalName;
+        
+        
     }
 
     
@@ -211,18 +214,19 @@ String var10DFEB18F9F7F9CEB3FED88506D04E0A_665402086 =         this.canonicalNam
         boolean varCB51E205F23C1939F459A89E6130BC67_2028234866 = (!canonicalName.startsWith("x-") && !canonicalName.startsWith("X-"));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_748882815 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_748882815;
-        // ---------- Original Method ----------
-        //return !canonicalName.startsWith("x-") && !canonicalName.startsWith("X-");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.751 -0400", hash_original_method = "CFD47AB423921DC9B7AAA90F2EE94666", hash_generated_method = "2425366DE98DAABDA25232B3D55F143E")
     public boolean canEncode() {
         boolean varB326B5062B2F0E69046810717534CB09_1781685818 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_570264981 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_570264981;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -237,22 +241,22 @@ ByteBuffer var95637A8358472CAB5AD181D75983367C_121629273 =             newEncode
                             buffer);
             var95637A8358472CAB5AD181D75983367C_121629273.addTaint(taint);
             return var95637A8358472CAB5AD181D75983367C_121629273;
-        } //End block
+        } 
         catch (CharacterCodingException ex)
         {
             Error varBA1C780040AEBF69D20F00486E0D02B6_1627587156 = new Error(ex.getMessage(), ex);
             varBA1C780040AEBF69D20F00486E0D02B6_1627587156.addTaint(taint);
             throw varBA1C780040AEBF69D20F00486E0D02B6_1627587156;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return newEncoder()
-                    //.onMalformedInput(CodingErrorAction.REPLACE)
-                    //.onUnmappableCharacter(CodingErrorAction.REPLACE).encode(
-                            //buffer);
-        //} catch (CharacterCodingException ex) {
-            //throw new Error(ex.getMessage(), ex);
-        //}
+        } 
+        
+        
+            
+                    
+                    
+                            
+        
+            
+        
     }
 
     
@@ -262,8 +266,8 @@ ByteBuffer var95637A8358472CAB5AD181D75983367C_121629273 =             newEncode
 ByteBuffer varCA7411AD321AC1B671CDFFE1D3D2FACB_633654935 =         encode(CharBuffer.wrap(s));
         varCA7411AD321AC1B671CDFFE1D3D2FACB_633654935.addTaint(taint);
         return varCA7411AD321AC1B671CDFFE1D3D2FACB_633654935;
-        // ---------- Original Method ----------
-        //return encode(CharBuffer.wrap(s));
+        
+        
     }
 
     
@@ -277,21 +281,21 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580 =             newDecod
                     .onUnmappableCharacter(CodingErrorAction.REPLACE).decode(buffer);
             var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580.addTaint(taint);
             return var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580;
-        } //End block
+        } 
         catch (CharacterCodingException ex)
         {
             Error varBA1C780040AEBF69D20F00486E0D02B6_2077125350 = new Error(ex.getMessage(), ex);
             varBA1C780040AEBF69D20F00486E0D02B6_2077125350.addTaint(taint);
             throw varBA1C780040AEBF69D20F00486E0D02B6_2077125350;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return newDecoder()
-                    //.onMalformedInput(CodingErrorAction.REPLACE)
-                    //.onUnmappableCharacter(CodingErrorAction.REPLACE).decode(buffer);
-        //} catch (CharacterCodingException ex) {
-            //throw new Error(ex.getMessage(), ex);
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+            
+        
     }
 
     
@@ -301,8 +305,8 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580 =             newDecod
         int var559C2DEB07E9C51892C555B37E09FFB6_479937663 = (this.canonicalName.compareToIgnoreCase(charset.canonicalName));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1153684841 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1153684841;
-        // ---------- Original Method ----------
-        //return this.canonicalName.compareToIgnoreCase(charset.canonicalName);
+        
+        
     }
 
     
@@ -316,16 +320,16 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580 =             newDecod
             boolean varBE0D88129CAE689FAE9C4634003460EC_1164169068 = (this.canonicalName.equals(that.canonicalName));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_156301612 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_156301612;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1858491160 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1445361822 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1445361822;
-        // ---------- Original Method ----------
-        //if (obj instanceof Charset) {
-            //Charset that = (Charset) obj;
-            //return this.canonicalName.equals(that.canonicalName);
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -335,8 +339,8 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580 =             newDecod
         int varFF837C799E5115E6D4362F2233C4456C_391778212 = (this.canonicalName.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_113539701 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_113539701;
-        // ---------- Original Method ----------
-        //return this.canonicalName.hashCode();
+        
+        
     }
 
     
@@ -346,12 +350,13 @@ CharBuffer var7F334E4D9C3050DD54B4BE69BB9C005E_1602090580 =             newDecod
 String varAE5877D4DAD502DC1B608A0F13648963_422464348 =         getClass().getName() + "[" + this.canonicalName + "]";
         varAE5877D4DAD502DC1B608A0F13648963_422464348.addTaint(taint);
         return varAE5877D4DAD502DC1B608A0F13648963_422464348;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "[" + this.canonicalName + "]";
+        
+        
     }
 
     
-        public static Charset defaultCharset() {
+        @DSModeled(DSC.SAFE)
+    public static Charset defaultCharset() {
         return DEFAULT_CHARSET;
     }
 

@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -85,7 +85,7 @@ class Request {
     if(bodyProvider == null && !"POST".equalsIgnoreCase(method))        
         {
             mHttpRequest = new BasicHttpRequest(method, getUri());
-        } //End block
+        } 
         else
         {
             mHttpRequest = new BasicHttpEntityEnclosingRequest(
@@ -93,30 +93,30 @@ class Request {
     if(bodyProvider != null)            
             {
                 setBodyProvider(bodyProvider, bodyLength);
-            } //End block
-        } //End block
+            } 
+        } 
         addHeader(HOST_HEADER, getHostPort());
         addHeader(ACCEPT_ENCODING_HEADER, "gzip");
         addHeaders(headers);
-        // ---------- Original Method ----------
-        //mEventHandler = eventHandler;
-        //mHost = host;
-        //mProxyHost = proxyHost;
-        //mPath = path;
-        //mBodyProvider = bodyProvider;
-        //mBodyLength = bodyLength;
-        //if (bodyProvider == null && !"POST".equalsIgnoreCase(method)) {
-            //mHttpRequest = new BasicHttpRequest(method, getUri());
-        //} else {
-            //mHttpRequest = new BasicHttpEntityEnclosingRequest(
-                    //method, getUri());
-            //if (bodyProvider != null) {
-                //setBodyProvider(bodyProvider, bodyLength);
-            //}
-        //}
-        //addHeader(HOST_HEADER, getHostPort());
-        //addHeader(ACCEPT_ENCODING_HEADER, "gzip");
-        //addHeaders(headers);
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+                    
+            
+                
+            
+        
+        
+        
+        
     }
 
     
@@ -126,30 +126,32 @@ class Request {
     if(!mLoadingPaused)        
         {
             notify();
-        } //End block
-        // ---------- Original Method ----------
-        //mLoadingPaused = pause;
-        //if (!mLoadingPaused) {
-            //notify();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.400 -0400", hash_original_method = "A8C7471D7BEF79EC71A4F8B9C611F231", hash_generated_method = "D70D1983B2F9D3329EE3C868A7734833")
      void setConnection(Connection connection) {
         mConnection = connection;
-        // ---------- Original Method ----------
-        //mConnection = connection;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.400 -0400", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "F85409CE4E41A66EB12FF011984D5E39")
      EventHandler getEventHandler() {
 EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHandler;
         varCF4010B9A116F4E34696F65AB43D0CCB_1428036375.addTaint(taint);
         return varCF4010B9A116F4E34696F65AB43D0CCB_1428036375;
-        // ---------- Original Method ----------
-        //return mEventHandler;
+        
+        
     }
 
     
@@ -164,7 +166,7 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
             NullPointerException varFA92B4E29571334CC61079E44EFA4AD1_1815259941 = new NullPointerException(damage);
             varFA92B4E29571334CC61079E44EFA4AD1_1815259941.addTaint(taint);
             throw varFA92B4E29571334CC61079E44EFA4AD1_1815259941;
-        } //End block
+        } 
     if(value == null || value.length() == 0)        
         {
             String damage = "Null or empty value for header \"" + name + "\"";
@@ -172,20 +174,20 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
             RuntimeException varE85E314CD46B77D37F60F484A78A8A5C_1822541909 = new RuntimeException(damage);
             varE85E314CD46B77D37F60F484A78A8A5C_1822541909.addTaint(taint);
             throw varE85E314CD46B77D37F60F484A78A8A5C_1822541909;
-        } //End block
+        } 
         mHttpRequest.addHeader(name, value);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //String damage = "Null http header name";
-            //HttpLog.e(damage);
-            //throw new NullPointerException(damage);
-        //}
-        //if (value == null || value.length() == 0) {
-            //String damage = "Null or empty value for header \"" + name + "\"";
-            //HttpLog.e(damage);
-            //throw new RuntimeException(damage);
-        //}
-        //mHttpRequest.addHeader(name, value);
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -195,7 +197,7 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
     if(headers == null)        
         {
             return;
-        } //End block
+        } 
         Entry<String, String> entry;
         Iterator<Entry<String, String>> i = headers.entrySet().iterator();
         while
@@ -203,17 +205,17 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
         {
             entry = i.next();
             addHeader(entry.getKey(), entry.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //if (headers == null) {
-            //return;
-        //}
-        //Entry<String, String> entry;
-        //Iterator<Entry<String, String>> i = headers.entrySet().iterator();
-        //while (i.hasNext()) {
-            //entry = i.next();
-            //addHeader(entry.getKey(), entry.getValue());
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -233,9 +235,9 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
                 {
                     Header header = (Header)i.next();
                     HttpLog.v(header.getName() + ": " + header.getValue());
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         requestContentProcessor.process(mHttpRequest,
                                         mConnection.getHttpContext());
         httpClientConnection.sendRequestHeader(mHttpRequest);
@@ -243,13 +245,13 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
         {
             httpClientConnection.sendRequestEntity(
                     (HttpEntityEnclosingRequest) mHttpRequest);
-        } //End block
+        } 
     if(HttpLog.LOGV)        
         {
             HttpLog.v("Request.requestSent() " + mHost.getSchemeName() + "://" + getHostPort() + mPath);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -267,7 +269,7 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
             {
                 statusLine = httpClientConnection.parseResponseHeader(header);
                 statusCode = statusLine.getStatusCode();
-            } //End block
+            } 
 } while (statusCode < HttpStatus.SC_OK);
     if(HttpLog.LOGV)        
         HttpLog.v(
@@ -296,11 +298,11 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
                     contentEncoding.getValue().equals("gzip"))                
                 {
                     nis = new GZIPInputStream(is);
-                } //End block
+                } 
                 else
                 {
                     nis = is;
-                } //End block
+                } 
                 buf = mConnection.getBuf();
                 int len = 0;
                 int lowWater = buf.length / 2;
@@ -315,40 +317,40 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
                             try 
                             {
                                 wait();
-                            } //End block
+                            } 
                             catch (InterruptedException e)
                             {
                                 HttpLog.e("Interrupted exception whilst "
                                     + "network thread paused at WebCore's request."
                                     + " " + e.getMessage());
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     len = nis.read(buf, count, buf.length - count);
     if(len != -1)                    
                     {
                         count += len;
     if(supportPartialContent)                        
                         mReceivedBytes += len;
-                    } //End block
+                    } 
     if(len == -1 || count >= lowWater)                    
                     {
     if(HttpLog.LOGV)                        
                         HttpLog.v("Request.readResponse() " + count);
                         mEventHandler.data(buf, count);
                         count = 0;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (EOFException e)
             {
     if(count > 0)                
                 {
                     mEventHandler.data(buf, count);
-                } //End block
+                } 
     if(HttpLog.LOGV)                
                 HttpLog.v( "readResponse() handling " + e);
-            } //End block
+            } 
             catch (IOException e)
             {
     if(statusCode == HttpStatus.SC_OK
@@ -357,19 +359,19 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
     if(supportPartialContent && count > 0)                    
                     {
                         mEventHandler.data(buf, count);
-                    } //End block
+                    } 
                     e.addTaint(taint);
                     throw e;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
     if(nis != null)                
                 {
                     nis.close();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mConnection.setCanPersist(entity, statusLine.getProtocolVersion(),
                 header.getConnectionType());
         mEventHandler.endData();
@@ -377,8 +379,8 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
     if(HttpLog.LOGV)        
         HttpLog.v("Request.readResponse(): done " +
                                     mHost.getSchemeName() + "://" + getHostPort() + mPath);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -387,24 +389,24 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
     if(HttpLog.LOGV)        
         {
             HttpLog.v("Request.cancel(): " + getUri());
-        } //End block
+        } 
         mLoadingPaused = false;
         notify();
         mCancelled = true;
     if(mConnection != null)        
         {
             mConnection.cancel();
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("Request.cancel(): " + getUri());
-        //}
-        //mLoadingPaused = false;
-        //notify();
-        //mCancelled = true;
-        //if (mConnection != null) {
-            //mConnection.cancel();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -418,22 +420,22 @@ EventHandler varCF4010B9A116F4E34696F65AB43D0CCB_1428036375 =         mEventHand
 String var719157C550566AE4F0CB171308C01238_780917337 =             mHost.toHostString();
             var719157C550566AE4F0CB171308C01238_780917337.addTaint(taint);
             return var719157C550566AE4F0CB171308C01238_780917337;
-        } //End block
+        } 
         else
         {
 String var2B41A99CBD069523F9E41DEBCE3F1511_653779649 =             mHost.getHostName();
             var2B41A99CBD069523F9E41DEBCE3F1511_653779649.addTaint(taint);
             return var2B41A99CBD069523F9E41DEBCE3F1511_653779649;
-        } //End block
-        // ---------- Original Method ----------
-        //String myScheme = mHost.getSchemeName();
-        //int myPort = mHost.getPort();
-        //if (myPort != 80 && myScheme.equals("http") ||
-            //myPort != 443 && myScheme.equals("https")) {
-            //return mHost.toHostString();
-        //} else {
-            //return mHost.getHostName();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -445,26 +447,27 @@ String var2B41A99CBD069523F9E41DEBCE3F1511_653779649 =             mHost.getHost
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_1193150398 =             mPath;
             var6AF672BCA4D9DB76D759DE4D6BEB1D5F_1193150398.addTaint(taint);
             return var6AF672BCA4D9DB76D759DE4D6BEB1D5F_1193150398;
-        } //End block
+        } 
 String var2C2774A4504CCD41056B65A992871E34_1794404703 =         mHost.getSchemeName() + "://" + getHostPort() + mPath;
         var2C2774A4504CCD41056B65A992871E34_1794404703.addTaint(taint);
         return var2C2774A4504CCD41056B65A992871E34_1794404703;
-        // ---------- Original Method ----------
-        //if (mProxyHost == null ||
-            //mHost.getSchemeName().equals("https")) {
-            //return mPath;
-        //}
-        //return mHost.getSchemeName() + "://" + getHostPort() + mPath;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.406 -0400", hash_original_method = "260B42F8E7BEBB3ADC717EDEB2B728A2", hash_generated_method = "7E6778AD6872290B585E091E4B356EAB")
     public String toString() {
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
         var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543.addTaint(taint);
         return var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
@@ -476,39 +479,39 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
             try 
             {
                 mBodyProvider.reset();
-            } //End block
+            } 
             catch (IOException ex)
             {
     if(HttpLog.LOGV)                
                 HttpLog.v(
                         "failed to reset body provider " +
                         getUri());
-            } //End block
+            } 
             setBodyProvider(mBodyProvider, mBodyLength);
-        } //End block
+        } 
     if(mReceivedBytes > 0)        
         {
             mFailCount = 0;
             HttpLog.v("*** Request.reset() to range:" + mReceivedBytes);
             mHttpRequest.setHeader("Range", "bytes=" + mReceivedBytes + "-");
-        } //End block
-        // ---------- Original Method ----------
-        //mHttpRequest.removeHeaders(CONTENT_LENGTH_HEADER);
-        //if (mBodyProvider != null) {
-            //try {
-                //mBodyProvider.reset();
-            //} catch (IOException ex) {
-                //if (HttpLog.LOGV) HttpLog.v(
-                        //"failed to reset body provider " +
-                        //getUri());
-            //}
-            //setBodyProvider(mBodyProvider, mBodyLength);
-        //}
-        //if (mReceivedBytes > 0) {
-            //mFailCount = 0;
-            //HttpLog.v("*** Request.reset() to range:" + mReceivedBytes);
-            //mHttpRequest.setHeader("Range", "bytes=" + mReceivedBytes + "-");
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+                
+                        
+                        
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -523,20 +526,20 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
                 mClientResource.wait();
     if(HttpLog.LOGV)                
                 HttpLog.v("Request.waitUntilComplete() done waiting");
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mClientResource) {
-            //try {
-                //if (HttpLog.LOGV) HttpLog.v("Request.waitUntilComplete()");
-                //mClientResource.wait();
-                //if (HttpLog.LOGV) HttpLog.v("Request.waitUntilComplete() done waiting");
-            //} catch (InterruptedException e) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+            
+            
+        
     }
 
     
@@ -545,11 +548,11 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
         synchronized
 (mClientResource)        {
             mClientResource.notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mClientResource) {
-            //mClientResource.notifyAll();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -574,18 +577,18 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
                     "bodyProvider must support mark()");
             varE30D6564CB78D5819B9068266E219739_784446783.addTaint(taint);
             throw varE30D6564CB78D5819B9068266E219739_784446783;
-        } //End block
+        } 
         bodyProvider.mark(Integer.MAX_VALUE);
         ((BasicHttpEntityEnclosingRequest)mHttpRequest).setEntity(
                 new InputStreamEntity(bodyProvider, bodyLength));
-        // ---------- Original Method ----------
-        //if (!bodyProvider.markSupported()) {
-            //throw new IllegalArgumentException(
-                    //"bodyProvider must support mark()");
-        //}
-        //bodyProvider.mark(Integer.MAX_VALUE);
-        //((BasicHttpEntityEnclosingRequest)mHttpRequest).setEntity(
-                //new InputStreamEntity(bodyProvider, bodyLength));
+        
+        
+            
+                    
+        
+        
+        
+                
     }
 
     
@@ -596,12 +599,12 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
     if(connection != null)        
         {
             connection.restartConnection(proceed);
-        } //End block
-        // ---------- Original Method ----------
-        //HttpsConnection connection = (HttpsConnection)(mConnection);
-        //if (connection != null) {
-            //connection.restartConnection(proceed);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -613,11 +616,11 @@ String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_201644543 =         mPath;
                 errorId,
                 mConnection.mContext.getText(
                         resourceId).toString());
-        // ---------- Original Method ----------
-        //mEventHandler.error(
-                //errorId,
-                //mConnection.mContext.getText(
-                        //resourceId).toString());
+        
+        
+                
+                
+                        
     }
 
     

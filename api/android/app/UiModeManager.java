@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class UiModeManager {
       UiModeManager() {
         mService = IUiModeManager.Stub.asInterface(
                 ServiceManager.getService(Context.UI_MODE_SERVICE));
-        // ---------- Original Method ----------
-        //mService = IUiModeManager.Stub.asInterface(
-                //ServiceManager.getService(Context.UI_MODE_SERVICE));
+        
+        
+                
     }
 
     
@@ -33,19 +33,19 @@ public class UiModeManager {
             try 
             {
                 mService.enableCarMode(flags);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.enableCarMode(flags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "disableCarMode: RemoteException", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -57,19 +57,19 @@ public class UiModeManager {
             try 
             {
                 mService.disableCarMode(flags);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.disableCarMode(flags);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "disableCarMode: RemoteException", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -82,23 +82,23 @@ public class UiModeManager {
                 int varE219EC66418E44F08D99AF6653852EED_1414674592 = (mService.getCurrentModeType());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313659873 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1313659873;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         int varB0B5851D8D0FE3A7BD00C32F6053A667_1478304827 = (Configuration.UI_MODE_TYPE_NORMAL);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456155717 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456155717;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //return mService.getCurrentModeType();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "getCurrentModeType: RemoteException", e);
-            //}
-        //}
-        //return Configuration.UI_MODE_TYPE_NORMAL;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -110,19 +110,19 @@ public class UiModeManager {
             try 
             {
                 mService.setNightMode(mode);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //mService.setNightMode(mode);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "setNightMode: RemoteException", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -135,23 +135,23 @@ public class UiModeManager {
                 int var89B2AB289C9BBE2E6DC5362B4B3C525C_1755298763 = (mService.getNightMode());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_84795553 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_84795553;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1333352234 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_996330381 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_996330381;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //try {
-                //return mService.getNightMode();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "getNightMode: RemoteException", e);
-            //}
-        //}
-        //return -1;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     

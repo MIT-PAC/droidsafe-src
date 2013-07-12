@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,15 +29,15 @@ public class Time extends ASN1Encodable implements ASN1Choice {
             IllegalArgumentException varEB3AD89893BE62E8E2C248F9BE2332CE_29654718 = new IllegalArgumentException("unknown object passed to Time");
             varEB3AD89893BE62E8E2C248F9BE2332CE_29654718.addTaint(taint);
             throw varEB3AD89893BE62E8E2C248F9BE2332CE_29654718;
-        } //End block
+        } 
         this.time = time;
-        // ---------- Original Method ----------
-        //if (!(time instanceof DERUTCTime)
-            //&& !(time instanceof DERGeneralizedTime))
-        //{
-            //throw new IllegalArgumentException("unknown object passed to Time");
-        //}
-        //this.time = time;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -53,29 +53,30 @@ public class Time extends ASN1Encodable implements ASN1Choice {
     if(year < 1950 || year > 2049)        
         {
             time = new DERGeneralizedTime(d);
-        } //End block
+        } 
         else
         {
             time = new DERUTCTime(d.substring(2));
-        } //End block
-        // ---------- Original Method ----------
-        //SimpleTimeZone      tz = new SimpleTimeZone(0, "Z");
-        //SimpleDateFormat    dateF = new SimpleDateFormat("yyyyMMddHHmmss");
-        //dateF.setTimeZone(tz);
-        //String  d = dateF.format(date) + "Z";
-        //int     year = Integer.parseInt(d.substring(0, 4));
-        //if (year < 1950 || year > 2049)
-        //{
-            //time = new DERGeneralizedTime(d);
-        //}
-        //else
-        //{
-            //time = new DERUTCTime(d.substring(2));
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
-        public static Time getInstance(
+        @DSModeled(DSC.SPEC)
+    public static Time getInstance(
         ASN1TaggedObject obj,
         boolean          explicit) {
         return getInstance(obj.getObject());
@@ -107,22 +108,22 @@ public class Time extends ASN1Encodable implements ASN1Choice {
 String var6737BDEA5D416D8B776FC3237CFB7AEE_345866125 =             ((DERUTCTime)time).getAdjustedTime();
             var6737BDEA5D416D8B776FC3237CFB7AEE_345866125.addTaint(taint);
             return var6737BDEA5D416D8B776FC3237CFB7AEE_345866125;
-        } //End block
+        } 
         else
         {
 String varF54206F6C86C22C29E8157882DDD686C_493728726 =             ((DERGeneralizedTime)time).getTime();
             varF54206F6C86C22C29E8157882DDD686C_493728726.addTaint(taint);
             return varF54206F6C86C22C29E8157882DDD686C_493728726;
-        } //End block
-        // ---------- Original Method ----------
-        //if (time instanceof DERUTCTime)
-        //{
-            //return ((DERUTCTime)time).getAdjustedTime();
-        //}
-        //else
-        //{
-            //return ((DERGeneralizedTime)time).getTime();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -135,46 +136,47 @@ String varF54206F6C86C22C29E8157882DDD686C_493728726 =             ((DERGenerali
 Date var5C4DF896594C919BFBC3B94B005A0623_457786699 =                 ((DERUTCTime)time).getAdjustedDate();
                 var5C4DF896594C919BFBC3B94B005A0623_457786699.addTaint(taint);
                 return var5C4DF896594C919BFBC3B94B005A0623_457786699;
-            } //End block
+            } 
             else
             {
 Date var8D783C4AB38B34C5480A243364749A59_75162190 =                 ((DERGeneralizedTime)time).getDate();
                 var8D783C4AB38B34C5480A243364749A59_75162190.addTaint(taint);
                 return var8D783C4AB38B34C5480A243364749A59_75162190;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ParseException e)
         {
             IllegalStateException var28109244B68609BB4DDBD618A711B019_248142880 = new IllegalStateException("invalid date string: " + e.getMessage());
             var28109244B68609BB4DDBD618A711B019_248142880.addTaint(taint);
             throw var28109244B68609BB4DDBD618A711B019_248142880;
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //if (time instanceof DERUTCTime)
-            //{
-                //return ((DERUTCTime)time).getAdjustedDate();
-            //}
-            //else
-            //{
-                //return ((DERGeneralizedTime)time).getDate();
-            //}
-        //}
-        //catch (ParseException e)
-        //{         
-            //throw new IllegalStateException("invalid date string: " + e.getMessage());
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.326 -0400", hash_original_method = "4A8C4B62F84A5603FDAAD94F25A110A4", hash_generated_method = "BF17D9376BC07B0AE09AF0FEFAB1CF8E")
     public DERObject toASN1Object() {
 DERObject varA66D020F4BCAB26A12562312D8A04DED_978425339 =         time;
         varA66D020F4BCAB26A12562312D8A04DED_978425339.addTaint(taint);
         return varA66D020F4BCAB26A12562312D8A04DED_978425339;
-        // ---------- Original Method ----------
-        //return time;
+        
+        
     }
 
     
@@ -183,8 +185,8 @@ DERObject varA66D020F4BCAB26A12562312D8A04DED_978425339 =         time;
 String varA2437939C7847B22878509056EAFE1EF_547260502 =         getTime();
         varA2437939C7847B22878509056EAFE1EF_547260502.addTaint(taint);
         return varA2437939C7847B22878509056EAFE1EF_547260502;
-        // ---------- Original Method ----------
-        //return getTime();
+        
+        
     }
 
     

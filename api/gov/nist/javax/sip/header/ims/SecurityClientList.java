@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class SecurityClientList extends SIPHeaderList<SecurityClient> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.197 -0400", hash_original_method = "917A181365931F7A6837DEBD96805F45", hash_generated_method = "E0A52096EC1B851DD08D91D4333A641E")
     public  SecurityClientList() {
         super(SecurityClient.class, SecurityClientHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,9 +22,9 @@ public class SecurityClientList extends SIPHeaderList<SecurityClient> {
 Object varF627329B9209466293A1BF71D9AF7B2B_1217703539 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_1217703539.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_1217703539;
-        // ---------- Original Method ----------
-        //SecurityClientList retval = new SecurityClientList();
-        //return retval.clonehlist(this.hlist);
+        
+        
+        
     }
 
     

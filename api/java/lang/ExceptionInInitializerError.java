@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public class ExceptionInInitializerError extends LinkageError {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.721 -0400", hash_original_method = "6D1A3A1944D703E56CAA922913525A43", hash_generated_method = "FD2365B6B4CCF743258ED4506CBE1824")
     public  ExceptionInInitializerError() {
         initCause(null);
-        // ---------- Original Method ----------
-        //initCause(null);
+        
+        
     }
 
     
@@ -23,8 +23,8 @@ public class ExceptionInInitializerError extends LinkageError {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
         initCause(null);
-        // ---------- Original Method ----------
-        //initCause(null);
+        
+        
     }
 
     
@@ -32,30 +32,32 @@ public class ExceptionInInitializerError extends LinkageError {
     public  ExceptionInInitializerError(Throwable exception) {
         this.exception = exception;
         initCause(exception);
-        // ---------- Original Method ----------
-        //this.exception = exception;
-        //initCause(exception);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.722 -0400", hash_original_method = "7090E247F85246652792FDABBC14B51F", hash_generated_method = "9F4A01771B6C43BAC0BB89D3A5AF0E67")
     public Throwable getException() {
 Throwable varB0A8CAD4B1C89FFC19A72F5757E92C21_165257240 =         exception;
         varB0A8CAD4B1C89FFC19A72F5757E92C21_165257240.addTaint(taint);
         return varB0A8CAD4B1C89FFC19A72F5757E92C21_165257240;
-        // ---------- Original Method ----------
-        //return exception;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.723 -0400", hash_original_method = "28A8EFFB85C5CFA84BB4445EFA004CE6", hash_generated_method = "C7F3F2F779A001BD380013FB395346AB")
     @Override
     public Throwable getCause() {
 Throwable varB0A8CAD4B1C89FFC19A72F5757E92C21_973260545 =         exception;
         varB0A8CAD4B1C89FFC19A72F5757E92C21_973260545.addTaint(taint);
         return varB0A8CAD4B1C89FFC19A72F5757E92C21_973260545;
-        // ---------- Original Method ----------
-        //return exception;
+        
+        
     }
 
     

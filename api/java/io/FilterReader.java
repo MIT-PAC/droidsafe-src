@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public abstract class FilterReader extends Reader {
     protected  FilterReader(Reader in) {
         super(in);
         this.in = in;
-        // ---------- Original Method ----------
-        //this.in = in;
+        
+        
     }
 
     
@@ -25,11 +25,11 @@ public abstract class FilterReader extends Reader {
         synchronized
 (lock)        {
             in.close();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //in.close();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -40,11 +40,11 @@ public abstract class FilterReader extends Reader {
         synchronized
 (lock)        {
             in.mark(readlimit);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //in.mark(readlimit);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -56,11 +56,11 @@ public abstract class FilterReader extends Reader {
             boolean var92424DC7E92354A95936078BD657F7DC_847358665 = (in.markSupported());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_958784075 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_958784075;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return in.markSupported();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -72,11 +72,11 @@ public abstract class FilterReader extends Reader {
             int varC746AA2461228F1337791E992A2C4661_886939778 = (in.read());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645543990 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645543990;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return in.read();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -91,11 +91,11 @@ public abstract class FilterReader extends Reader {
             int var16B8A5ED779D2972EF4A24F254214E3B_815086016 = (in.read(buffer, offset, count));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_318048933 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_318048933;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return in.read(buffer, offset, count);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -107,11 +107,11 @@ public abstract class FilterReader extends Reader {
             boolean varB4741C0A842F523B135730D8B82EDE85_1354515013 = (in.ready());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_494708976 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_494708976;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return in.ready();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -121,11 +121,11 @@ public abstract class FilterReader extends Reader {
         synchronized
 (lock)        {
             in.reset();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //in.reset();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -138,11 +138,11 @@ public abstract class FilterReader extends Reader {
             long var05DF4FCD0D81410756D3CF6CAF7FE43A_1516547333 = (in.skip(charCount));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_66261293 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_66261293;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return in.skip(charCount);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

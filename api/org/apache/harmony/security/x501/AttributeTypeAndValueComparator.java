@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x501;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.513 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
     public AttributeTypeAndValueComparator ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,7 +26,7 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
             int varCFCD208495D565EF66E7DFF9F98764DA_332684371 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_34649226 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_34649226;
-        } //End block
+        } 
         AttributeTypeAndValue atav1 = (AttributeTypeAndValue) obj1;
         AttributeTypeAndValue atav2 = (AttributeTypeAndValue) obj2;
         String kw1 = atav1.getType().getName();
@@ -36,40 +36,40 @@ public class AttributeTypeAndValueComparator implements Comparator, Serializable
             int var6BB61E3B7BCE0931DA574D19D1D82C88_286615029 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029216288 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029216288;
-        } //End block
+        } 
     if(kw1 == null && kw2 != null)        
         {
             int varC4CA4238A0B923820DCC509A6F75849B_1850729691 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561885564 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_561885564;
-        } //End block
+        } 
     if(kw1 != null && kw2 != null)        
         {
             int varBA95312D025F5BDE3389A33E2C5C46ED_1972436267 = (kw1.compareTo(kw2));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1807864668 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1807864668;
-        } //End block
+        } 
         int var290C36B97CAF7D5EB27E5F7093E5C382_987147921 = (compateOids(atav1.getType(), atav2.getType()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1749214288 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1749214288;
-        // ---------- Original Method ----------
-        //if (obj1 == obj2) {
-            //return 0;
-        //}
-        //AttributeTypeAndValue atav1 = (AttributeTypeAndValue) obj1;
-        //AttributeTypeAndValue atav2 = (AttributeTypeAndValue) obj2;
-        //String kw1 = atav1.getType().getName();
-        //String kw2 = atav2.getType().getName();
-        //if (kw1 != null && kw2 == null) {
-            //return -1;
-        //}
-        //if (kw1 == null && kw2 != null) {
-            //return 1;
-        //}
-        //if (kw1 != null && kw2 != null) {
-            //return kw1.compareTo(kw2);
-        //}
-        //return compateOids(atav1.getType(), atav2.getType());
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.809 -0400", hash_original_method = "099D2A6A922F722517A29E0583320390", hash_generated_method = "345D1882F6B7C7775370B2F3368D9EB6")
     public  RFC2965CommentUrlAttributeHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,12 +28,12 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
         {
             SetCookie2 cookie2 = (SetCookie2) cookie;
             cookie2.setCommentURL(commenturl);
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookie instanceof SetCookie2) {
-              //SetCookie2 cookie2 = (SetCookie2) cookie;
-              //cookie2.setCommentURL(commenturl);
-          //}
+        } 
+        
+        
+              
+              
+          
     }
 
     
@@ -41,7 +41,7 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
     public void validate(final Cookie cookie, final CookieOrigin origin) throws MalformedCookieException {
         addTaint(origin.getTaint());
         addTaint(cookie.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,8 +52,8 @@ public class RFC2965CommentUrlAttributeHandler implements CookieAttributeHandler
         boolean varB326B5062B2F0E69046810717534CB09_345155612 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1833793747 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1833793747;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

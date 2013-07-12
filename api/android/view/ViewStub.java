@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,8 +29,8 @@ public final class ViewStub extends View {
     public  ViewStub(Context context) {
         addTaint(context.getTaint());
         initialize(context);
-        // ---------- Original Method ----------
-        //initialize(context);
+        
+        
     }
 
     
@@ -39,9 +39,9 @@ public final class ViewStub extends View {
         addTaint(context.getTaint());
         mLayoutResource = layoutResource;
         initialize(context);
-        // ---------- Original Method ----------
-        //mLayoutResource = layoutResource;
-        //initialize(context);
+        
+        
+        
     }
 
     
@@ -50,7 +50,7 @@ public final class ViewStub extends View {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,16 +69,16 @@ public final class ViewStub extends View {
         mID = a.getResourceId(R.styleable.View_id, NO_ID);
         a.recycle();
         initialize(context);
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.ViewStub,
-                //defStyle, 0);
-        //mInflatedId = a.getResourceId(R.styleable.ViewStub_inflatedId, NO_ID);
-        //mLayoutResource = a.getResourceId(R.styleable.ViewStub_layout, 0);
-        //a.recycle();
-        //a = context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.View, defStyle, 0);
-        //mID = a.getResourceId(R.styleable.View_id, NO_ID);
-        //a.recycle();
-        //initialize(context);
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -88,74 +88,80 @@ public final class ViewStub extends View {
         mContext = context;
         setVisibility(GONE);
         setWillNotDraw(true);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //setVisibility(GONE);
-        //setWillNotDraw(true);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.690 -0400", hash_original_method = "DD261735D727F86389B5178B589BDC0E", hash_generated_method = "38176E1539BDAD049DB7DDE251C2427D")
     public int getInflatedId() {
         int varD1010496B3E3EC6836447943C5AA44FC_604455750 = (mInflatedId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000132754 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2000132754;
-        // ---------- Original Method ----------
-        //return mInflatedId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.691 -0400", hash_original_method = "86B5E29885E599B44EC441F118D9B30F", hash_generated_method = "EBA6AEE4A4115F5E2962979EEB78D8EF")
     public void setInflatedId(int inflatedId) {
         mInflatedId = inflatedId;
-        // ---------- Original Method ----------
-        //mInflatedId = inflatedId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.691 -0400", hash_original_method = "027E5859DCA96FAAAAB58CE710A8870F", hash_generated_method = "D912B9B6A4B1061E4FA2163524CD1DD5")
     public int getLayoutResource() {
         int varCAD69CF3708A5AE65F3F60DF86F222EC_1131134209 = (mLayoutResource);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1941891865 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1941891865;
-        // ---------- Original Method ----------
-        //return mLayoutResource;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.691 -0400", hash_original_method = "9A9CDCEDF7B2E8EB813F1BBF2264D05B", hash_generated_method = "8A1DC50EC3A8DB509125E7858400A622")
     public void setLayoutResource(int layoutResource) {
         mLayoutResource = layoutResource;
-        // ---------- Original Method ----------
-        //mLayoutResource = layoutResource;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.692 -0400", hash_original_method = "5C9393E5CC8833BE15FFC01B23AE5CB2", hash_generated_method = "629F227210A19E60C4FCCEE9AE8F490F")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         setMeasuredDimension(0, 0);
-        // ---------- Original Method ----------
-        //setMeasuredDimension(0, 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.692 -0400", hash_original_method = "D063B9229A7B99E7AD0A562CA5051177", hash_generated_method = "B4FDD4C6E53F70C771C0461AF2312DCC")
     @Override
     public void draw(Canvas canvas) {
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.692 -0400", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "8827C1FA31E6998965C439129AE20899")
     @Override
     protected void dispatchDraw(Canvas canvas) {
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -169,36 +175,36 @@ public final class ViewStub extends View {
     if(view != null)            
             {
                 view.setVisibility(visibility);
-            } //End block
+            } 
             else
             {
                 IllegalStateException var5B7DB2EA9ADA71CDB4265EB197B279A7_78210869 = new IllegalStateException("setVisibility called on un-referenced view");
                 var5B7DB2EA9ADA71CDB4265EB197B279A7_78210869.addTaint(taint);
                 throw var5B7DB2EA9ADA71CDB4265EB197B279A7_78210869;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             super.setVisibility(visibility);
     if(visibility == VISIBLE || visibility == INVISIBLE)            
             {
                 inflate();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mInflatedViewRef != null) {
-            //View view = mInflatedViewRef.get();
-            //if (view != null) {
-                //view.setVisibility(visibility);
-            //} else {
-                //throw new IllegalStateException("setVisibility called on un-referenced view");
-            //}
-        //} else {
-            //super.setVisibility(visibility);
-            //if (visibility == VISIBLE || visibility == INVISIBLE) {
-                //inflate();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -216,50 +222,51 @@ public final class ViewStub extends View {
     if(mInflatedId != NO_ID)                
                 {
                     view.setId(mInflatedId);
-                } //End block
+                } 
                 final int index = parent.indexOfChild(this);
                 parent.removeViewInLayout(this);
                 final ViewGroup.LayoutParams layoutParams = getLayoutParams();
     if(layoutParams != null)                
                 {
                     parent.addView(view, index, layoutParams);
-                } //End block
+                } 
                 else
                 {
                     parent.addView(view, index);
-                } //End block
+                } 
                 mInflatedViewRef = new WeakReference<View>(view);
     if(mInflateListener != null)                
                 {
                     mInflateListener.onInflate(this, view);
-                } //End block
+                } 
 View var057D265746AE9672AFE5F9FF6338071D_414210484 =                 view;
                 var057D265746AE9672AFE5F9FF6338071D_414210484.addTaint(taint);
                 return var057D265746AE9672AFE5F9FF6338071D_414210484;
-            } //End block
+            } 
             else
             {
                 IllegalArgumentException var1220522CB703E38D2718150BEFFACEE3_2002295537 = new IllegalArgumentException("ViewStub must have a valid layoutResource");
                 var1220522CB703E38D2718150BEFFACEE3_2002295537.addTaint(taint);
                 throw var1220522CB703E38D2718150BEFFACEE3_2002295537;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             IllegalStateException varB3F67048480D8BB699F5593D87EE912A_2141602051 = new IllegalStateException("ViewStub must have a non-null ViewGroup viewParent");
             varB3F67048480D8BB699F5593D87EE912A_2141602051.addTaint(taint);
             throw varB3F67048480D8BB699F5593D87EE912A_2141602051;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.694 -0400", hash_original_method = "082FDB27359F9D2A7A4CA2B124FBADFF", hash_generated_method = "B32FFC65DC1775C44018C6EB136B16B0")
     public void setOnInflateListener(OnInflateListener inflateListener) {
         mInflateListener = inflateListener;
-        // ---------- Original Method ----------
-        //mInflateListener = inflateListener;
+        
+        
     }
 
     

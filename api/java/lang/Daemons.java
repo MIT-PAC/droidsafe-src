@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public final class Daemons {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.047 -0400", hash_original_method = "12604031794E0E37BA5BBC4D434861F1", hash_generated_method = "12604031794E0E37BA5BBC4D434861F1")
     public Daemons ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -42,7 +42,7 @@ public final class Daemons {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.049 -0400", hash_original_method = "E956A3D7836B08A486122F00857B9C56", hash_generated_method = "E956A3D7836B08A486122F00857B9C56")
         public Daemon ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -53,30 +53,31 @@ public final class Daemons {
                 IllegalStateException varB62FF47358887E899850ABAD5F07AEDD_1727720862 = new IllegalStateException("already running");
                 varB62FF47358887E899850ABAD5F07AEDD_1727720862.addTaint(taint);
                 throw varB62FF47358887E899850ABAD5F07AEDD_1727720862;
-            } //End block
+            } 
             thread = new Thread(this, getClass().getSimpleName());
             thread.setDaemon(true);
             thread.start();
-            // ---------- Original Method ----------
-            //if (thread != null) {
-                //throw new IllegalStateException("already running");
-            //}
-            //thread = new Thread(this, getClass().getSimpleName());
-            //thread.setDaemon(true);
-            //thread.start();
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         public abstract void run();
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.051 -0400", hash_original_method = "DAD25559614D18C95C6D7AD3A5FF9D6E", hash_generated_method = "86E05CA2A6D1353660F27AAD7E84E7B7")
         protected synchronized boolean isRunning() {
             boolean varDFF88D74CC68B19FF5DB0AFB25CEF91C_2075692256 = (thread != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_451468531 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_451468531;
-            // ---------- Original Method ----------
-            //return thread != null;
+            
+            
         }
 
         
@@ -87,13 +88,13 @@ public final class Daemons {
                 IllegalStateException var9D4D07E302FAF498B25B68C78C8D69AE_899849712 = new IllegalStateException("not running");
                 var9D4D07E302FAF498B25B68C78C8D69AE_899849712.addTaint(taint);
                 throw var9D4D07E302FAF498B25B68C78C8D69AE_899849712;
-            } //End block
+            } 
             thread.interrupt();
-            // ---------- Original Method ----------
-            //if (thread == null) {
-                //throw new IllegalStateException("not running");
-            //}
-            //thread.interrupt();
+            
+            
+                
+            
+            
         }
 
         
@@ -104,13 +105,13 @@ public final class Daemons {
 (this)            {
                 threadToStop = thread;
                 thread = null;
-            } //End block
+            } 
     if(threadToStop == null)            
             {
                 IllegalStateException var9D4D07E302FAF498B25B68C78C8D69AE_131227194 = new IllegalStateException("not running");
                 var9D4D07E302FAF498B25B68C78C8D69AE_131227194.addTaint(taint);
                 throw var9D4D07E302FAF498B25B68C78C8D69AE_131227194;
-            } //End block
+            } 
             threadToStop.interrupt();
             while
 (true)            
@@ -119,28 +120,28 @@ public final class Daemons {
                 {
                     threadToStop.join();
                     return;
-                } //End block
+                } 
                 catch (InterruptedException ignored)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //Thread threadToStop;
-            //synchronized (this) {
-                //threadToStop = thread;
-                //thread = null;
-            //}
-            //if (threadToStop == null) {
-                //throw new IllegalStateException("not running");
-            //}
-            //threadToStop.interrupt();
-            //while (true) {
-                //try {
-                    //threadToStop.join();
-                    //return;
-                //} catch (InterruptedException ignored) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+                
+                
+            
+            
+                
+            
+            
+            
+                
+                    
+                    
+                
+                
+            
         }
 
         
@@ -149,8 +150,8 @@ public final class Daemons {
 StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             thread != null ? thread.getStackTrace() : EmptyArray.STACK_TRACE_ELEMENT;
             var3EF384E039755933EEB005EFF8EF56C6_174517329.addTaint(taint);
             return var3EF384E039755933EEB005EFF8EF56C6_174517329;
-            // ---------- Original Method ----------
-            //return thread != null ? thread.getStackTrace() : EmptyArray.STACK_TRACE_ELEMENT;
+            
+            
         }
 
         
@@ -163,7 +164,7 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.054 -0400", hash_original_method = "CD631EFADB4142F64B0E6D0342597BAC", hash_generated_method = "CD631EFADB4142F64B0E6D0342597BAC")
         public ReferenceQueueDaemon ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -182,33 +183,33 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
 (ReferenceQueue.unenqueued == null)                        
                         {
                             ReferenceQueue.class.wait();
-                        } //End block
+                        } 
                         list = ReferenceQueue.unenqueued;
                         ReferenceQueue.unenqueued = null;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (InterruptedException e)
                 {
                     continue;
-                } //End block
+                } 
                 enqueue(list);
-            } //End block
-            // ---------- Original Method ----------
-            //while (isRunning()) {
-                //Reference<?> list;
-                //try {
-                    //synchronized (ReferenceQueue.class) {
-                        //while (ReferenceQueue.unenqueued == null) {
-                            //ReferenceQueue.class.wait();
-                        //}
-                        //list = ReferenceQueue.unenqueued;
-                        //ReferenceQueue.unenqueued = null;
-                    //}
-                //} catch (InterruptedException e) {
-                    //continue;
-                //}
-                //enqueue(list);
-            //}
+            } 
+            
+            
+                
+                
+                    
+                        
+                            
+                        
+                        
+                        
+                    
+                
+                    
+                
+                
+            
         }
 
         
@@ -224,29 +225,29 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
                     reference = list;
                     reference.pendingNext = null;
                     list = null;
-                } //End block
+                } 
                 else
                 {
                     reference = list.pendingNext;
                     list.pendingNext = reference.pendingNext;
                     reference.pendingNext = null;
-                } //End block
+                } 
                 reference.enqueueInternal();
-            } //End block
-            // ---------- Original Method ----------
-            //while (list != null) {
-                //Reference<?> reference;
-                //if (list == list.pendingNext) {
-                    //reference = list;
-                    //reference.pendingNext = null;
-                    //list = null;
-                //} else {
-                    //reference = list.pendingNext;
-                    //list.pendingNext = reference.pendingNext;
-                    //reference.pendingNext = null;
-                //}
-                //reference.enqueueInternal();
-            //}
+            } 
+            
+            
+                
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                
+            
         }
 
         
@@ -271,7 +272,7 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.056 -0400", hash_original_method = "4CAA35D6DE3500E449D08F039EDA298E", hash_generated_method = "4CAA35D6DE3500E449D08F039EDA298E")
         public FinalizerDaemon ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -284,18 +285,18 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
                 try 
                 {
                     doFinalize((FinalizerReference<?>) queue.remove());
-                } //End block
+                } 
                 catch (InterruptedException ignored)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //while (isRunning()) {
-                //try {
-                    //doFinalize((FinalizerReference<?>) queue.remove());
-                //} catch (InterruptedException ignored) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -311,28 +312,28 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
                 finalizingStartedNanos = System.nanoTime();
                 finalizingObject = object;
                 object.finalize();
-            } //End block
+            } 
             catch (Throwable ex)
             {
                 System.logE("Uncaught exception thrown by finalizer", ex);
-            } //End block
+            } 
             finally 
             {
                 finalizingObject = null;
-            } //End block
-            // ---------- Original Method ----------
-            //FinalizerReference.remove(reference);
-            //Object object = reference.get();
-            //reference.clear();
-            //try {
-                //finalizingStartedNanos = System.nanoTime();
-                //finalizingObject = object;
-                //object.finalize();
-            //} catch (Throwable ex) {
-                //System.logE("Uncaught exception thrown by finalizer", ex);
-            //} finally {
-                //finalizingObject = null;
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+                
+                
+            
+                
+            
+                
+            
         }
 
         
@@ -348,7 +349,7 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:50.058 -0400", hash_original_method = "703968011540BAA8269C6E22457DD3B1", hash_generated_method = "703968011540BAA8269C6E22457DD3B1")
         public FinalizerWatchdogDaemon ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -365,24 +366,24 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
                 {
                     long elapsedMillis = (System.nanoTime() - startedNanos) / NANOS_PER_MILLI;
                     sleepMillis -= elapsedMillis;
-                } //End block
+                } 
     if(sleepMillis > 0)                
                 {
                     try 
                     {
                         Thread.sleep(sleepMillis);
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     {
                         continue;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(object == null
                         || object != FinalizerDaemon.INSTANCE.finalizingObject
                         || VMRuntime.getRuntime().isDebuggerActive())                
                 {
                     continue;
-                } //End block
+                } 
                 long elapsedMillis = (System.nanoTime() - startedNanos) / NANOS_PER_MILLI;
                 Exception syntheticException = new TimeoutException();
                 syntheticException.setStackTrace(FinalizerDaemon.INSTANCE.getStackTrace());
@@ -390,9 +391,9 @@ StackTraceElement[] var3EF384E039755933EEB005EFF8EF56C6_174517329 =             
                         + elapsedMillis + " ms; limit is " + MAX_FINALIZE_MILLIS + " ms",
                         syntheticException);
                 System.exit(2);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         

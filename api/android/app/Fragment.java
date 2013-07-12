@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -77,16 +77,16 @@ final class FragmentState implements Parcelable {
         mRetainInstance = frag.mRetainInstance;
         mDetached = frag.mDetached;
         mArguments = frag.mArguments;
-        // ---------- Original Method ----------
-        //mClassName = frag.getClass().getName();
-        //mIndex = frag.mIndex;
-        //mFromLayout = frag.mFromLayout;
-        //mFragmentId = frag.mFragmentId;
-        //mContainerId = frag.mContainerId;
-        //mTag = frag.mTag;
-        //mRetainInstance = frag.mRetainInstance;
-        //mDetached = frag.mDetached;
-        //mArguments = frag.mArguments;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -102,17 +102,17 @@ final class FragmentState implements Parcelable {
         mDetached = in.readInt() != 0;
         mArguments = in.readBundle();
         mSavedFragmentState = in.readBundle();
-        // ---------- Original Method ----------
-        //mClassName = in.readString();
-        //mIndex = in.readInt();
-        //mFromLayout = in.readInt() != 0;
-        //mFragmentId = in.readInt();
-        //mContainerId = in.readInt();
-        //mTag = in.readString();
-        //mRetainInstance = in.readInt() != 0;
-        //mDetached = in.readInt() != 0;
-        //mArguments = in.readBundle();
-        //mSavedFragmentState = in.readBundle();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -123,17 +123,17 @@ final class FragmentState implements Parcelable {
 Fragment var01A4E1572BEF98558ED7F4E845C07CFE_1963693674 =             mInstance;
             var01A4E1572BEF98558ED7F4E845C07CFE_1963693674.addTaint(taint);
             return var01A4E1572BEF98558ED7F4E845C07CFE_1963693674;
-        } //End block
+        } 
     if(mArguments != null)        
         {
             mArguments.setClassLoader(activity.getClassLoader());
-        } //End block
+        } 
         mInstance = Fragment.instantiate(activity, mClassName, mArguments);
     if(mSavedFragmentState != null)        
         {
             mSavedFragmentState.setClassLoader(activity.getClassLoader());
             mInstance.mSavedFragmentState = mSavedFragmentState;
-        } //End block
+        } 
         mInstance.setIndex(mIndex);
         mInstance.mFromLayout = mFromLayout;
         mInstance.mRestored = true;
@@ -146,18 +146,19 @@ Fragment var01A4E1572BEF98558ED7F4E845C07CFE_1963693674 =             mInstance;
 Fragment var01A4E1572BEF98558ED7F4E845C07CFE_1530518328 =         mInstance;
         var01A4E1572BEF98558ED7F4E845C07CFE_1530518328.addTaint(taint);
         return var01A4E1572BEF98558ED7F4E845C07CFE_1530518328;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.304 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D142CE39F4E15226FB7DD01AEB06DE2D")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_664613091 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482809082 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1482809082;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -175,17 +176,17 @@ Fragment var01A4E1572BEF98558ED7F4E845C07CFE_1530518328 =         mInstance;
         dest.writeInt(mDetached ? 1 : 0);
         dest.writeBundle(mArguments);
         dest.writeBundle(mSavedFragmentState);
-        // ---------- Original Method ----------
-        //dest.writeString(mClassName);
-        //dest.writeInt(mIndex);
-        //dest.writeInt(mFromLayout ? 1 : 0);
-        //dest.writeInt(mFragmentId);
-        //dest.writeInt(mContainerId);
-        //dest.writeString(mTag);
-        //dest.writeInt(mRetainInstance ? 1 : 0);
-        //dest.writeInt(mDetached ? 1 : 0);
-        //dest.writeBundle(mArguments);
-        //dest.writeBundle(mSavedFragmentState);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -201,12 +202,12 @@ Fragment var01A4E1572BEF98558ED7F4E845C07CFE_1530518328 =         mInstance;
             return new FragmentState[size];
         }
     };
-    // orphaned legacy method
+    
     public FragmentState createFromParcel(Parcel in) {
             return new FragmentState(in);
         }
     
-    // orphaned legacy method
+    
     public FragmentState[] newArray(int size) {
             return new FragmentState[size];
         }
@@ -331,7 +332,7 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.314 -0400", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "AF7EF93C180462CAFE5DFDA53E9C7DDF")
     public  Fragment() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -375,12 +376,12 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
         {
             mView.restoreHierarchyState(mSavedViewState);
             mSavedViewState = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSavedViewState != null) {
-            //mView.restoreHierarchyState(mSavedViewState);
-            //mSavedViewState = null;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -388,9 +389,9 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
     final void setIndex(int index) {
         mIndex = index;
         mWho = "android:fragment:" + mIndex;
-        // ---------- Original Method ----------
-        //mIndex = index;
-        //mWho = "android:fragment:" + mIndex;
+        
+        
+        
     }
 
     
@@ -399,8 +400,8 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
         boolean var62BC1991A682A21912C45ABC1AD98464_2064273913 = (mBackStackNesting > 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298527881 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298527881;
-        // ---------- Original Method ----------
-        //return mBackStackNesting > 0;
+        
+        
     }
 
     
@@ -411,8 +412,8 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
         boolean varDBD7B5E32CCD38E45E29A8227EF381FE_2046402321 = (super.equals(o));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_280963493 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_280963493;
-        // ---------- Original Method ----------
-        //return super.equals(o);
+        
+        
     }
 
     
@@ -422,8 +423,8 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
         int var805ED14872F1C08E5C4314680FD405F0_631207554 = (super.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1739137723 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1739137723;
-        // ---------- Original Method ----------
-        //return super.hashCode();
+        
+        
     }
 
     
@@ -436,38 +437,38 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
         {
             sb.append(" #");
             sb.append(mIndex);
-        } //End block
+        } 
     if(mFragmentId != 0)        
         {
             sb.append(" id=0x");
             sb.append(Integer.toHexString(mFragmentId));
-        } //End block
+        } 
     if(mTag != null)        
         {
             sb.append(" ");
             sb.append(mTag);
-        } //End block
+        } 
         sb.append('}');
 String var2460B846747F8B22185AD8BE722266A5_1057294090 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1057294090.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1057294090;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //DebugUtils.buildShortClassTag(this, sb);
-        //if (mIndex >= 0) {
-            //sb.append(" #");
-            //sb.append(mIndex);
-        //}
-        //if (mFragmentId != 0) {
-            //sb.append(" id=0x");
-            //sb.append(Integer.toHexString(mFragmentId));
-        //}
-        //if (mTag != null) {
-            //sb.append(" ");
-            //sb.append(mTag);
-        //}
-        //sb.append('}');
-        //return sb.toString();
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -476,8 +477,8 @@ String var2460B846747F8B22185AD8BE722266A5_1057294090 =         sb.toString();
         int var743B83D822DFF54AE7E24307CEF26F0C_404623500 = (mFragmentId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032177186 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2032177186;
-        // ---------- Original Method ----------
-        //return mFragmentId;
+        
+        
     }
 
     
@@ -486,8 +487,8 @@ String var2460B846747F8B22185AD8BE722266A5_1057294090 =         sb.toString();
 String varD6A25044F8E609F6CD67330C1523D33D_999558755 =         mTag;
         varD6A25044F8E609F6CD67330C1523D33D_999558755.addTaint(taint);
         return varD6A25044F8E609F6CD67330C1523D33D_999558755;
-        // ---------- Original Method ----------
-        //return mTag;
+        
+        
     }
 
     
@@ -498,13 +499,13 @@ String varD6A25044F8E609F6CD67330C1523D33D_999558755 =         mTag;
             IllegalStateException varDE71ABC2C56EA5E7A2AE33BAFF59F1E4_1181786100 = new IllegalStateException("Fragment already active");
             varDE71ABC2C56EA5E7A2AE33BAFF59F1E4_1181786100.addTaint(taint);
             throw varDE71ABC2C56EA5E7A2AE33BAFF59F1E4_1181786100;
-        } //End block
+        } 
         mArguments = args;
-        // ---------- Original Method ----------
-        //if (mIndex >= 0) {
-            //throw new IllegalStateException("Fragment already active");
-        //}
-        //mArguments = args;
+        
+        
+            
+        
+        
     }
 
     
@@ -513,8 +514,8 @@ String varD6A25044F8E609F6CD67330C1523D33D_999558755 =         mTag;
 Bundle varA1A5383052F874A8109F2B0284C0CCF1_106420832 =         mArguments;
         varA1A5383052F874A8109F2B0284C0CCF1_106420832.addTaint(taint);
         return varA1A5383052F874A8109F2B0284C0CCF1_106420832;
-        // ---------- Original Method ----------
-        //return mArguments;
+        
+        
     }
 
     
@@ -525,25 +526,26 @@ Bundle varA1A5383052F874A8109F2B0284C0CCF1_106420832 =         mArguments;
             IllegalStateException varDE71ABC2C56EA5E7A2AE33BAFF59F1E4_1887450916 = new IllegalStateException("Fragment already active");
             varDE71ABC2C56EA5E7A2AE33BAFF59F1E4_1887450916.addTaint(taint);
             throw varDE71ABC2C56EA5E7A2AE33BAFF59F1E4_1887450916;
-        } //End block
+        } 
         mSavedFragmentState = state != null && state.mState != null
                 ? state.mState : null;
-        // ---------- Original Method ----------
-        //if (mIndex >= 0) {
-            //throw new IllegalStateException("Fragment already active");
-        //}
-        //mSavedFragmentState = state != null && state.mState != null
-                //? state.mState : null;
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.331 -0400", hash_original_method = "1E1EC1C5F204666846AC7A8EC55494F6", hash_generated_method = "A9E9A3E67F9FE2F0071A3B399678868D")
     public void setTargetFragment(Fragment fragment, int requestCode) {
         mTarget = fragment;
         mTargetRequestCode = requestCode;
-        // ---------- Original Method ----------
-        //mTarget = fragment;
-        //mTargetRequestCode = requestCode;
+        
+        
+        
     }
 
     
@@ -552,8 +554,8 @@ Bundle varA1A5383052F874A8109F2B0284C0CCF1_106420832 =         mArguments;
 Fragment var1FC339B2A7C7BA226929CA8B7CC3A063_106904024 =         mTarget;
         var1FC339B2A7C7BA226929CA8B7CC3A063_106904024.addTaint(taint);
         return var1FC339B2A7C7BA226929CA8B7CC3A063_106904024;
-        // ---------- Original Method ----------
-        //return mTarget;
+        
+        
     }
 
     
@@ -562,8 +564,8 @@ Fragment var1FC339B2A7C7BA226929CA8B7CC3A063_106904024 =         mTarget;
         int var9D7EC7B2039084EAAB4A7123EC5C6A65_1650519358 = (mTargetRequestCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468037742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468037742;
-        // ---------- Original Method ----------
-        //return mTargetRequestCode;
+        
+        
     }
 
     
@@ -572,8 +574,8 @@ Fragment var1FC339B2A7C7BA226929CA8B7CC3A063_106904024 =         mTarget;
 Activity var3D4F4FFFAA1A051817B4856E624EDB92_1847374628 =         mActivity;
         var3D4F4FFFAA1A051817B4856E624EDB92_1847374628.addTaint(taint);
         return var3D4F4FFFAA1A051817B4856E624EDB92_1847374628;
-        // ---------- Original Method ----------
-        //return mActivity;
+        
+        
     }
 
     
@@ -584,15 +586,15 @@ Activity var3D4F4FFFAA1A051817B4856E624EDB92_1847374628 =         mActivity;
             IllegalStateException varE10E059A0DCA5D38245E5AD84C394857_1420046263 = new IllegalStateException("Fragment " + this + " not attached to Activity");
             varE10E059A0DCA5D38245E5AD84C394857_1420046263.addTaint(taint);
             throw varE10E059A0DCA5D38245E5AD84C394857_1420046263;
-        } //End block
+        } 
 Resources varAFF945874E0C096C77A2573F43D5E066_348676190 =         mActivity.getResources();
         varAFF945874E0C096C77A2573F43D5E066_348676190.addTaint(taint);
         return varAFF945874E0C096C77A2573F43D5E066_348676190;
-        // ---------- Original Method ----------
-        //if (mActivity == null) {
-            //throw new IllegalStateException("Fragment " + this + " not attached to Activity");
-        //}
-        //return mActivity.getResources();
+        
+        
+            
+        
+        
     }
 
     
@@ -602,8 +604,8 @@ Resources varAFF945874E0C096C77A2573F43D5E066_348676190 =         mActivity.getR
 CharSequence var45D0E050A7463DA4235EAAF453BDEF8D_316273887 =         getResources().getText(resId);
         var45D0E050A7463DA4235EAAF453BDEF8D_316273887.addTaint(taint);
         return var45D0E050A7463DA4235EAAF453BDEF8D_316273887;
-        // ---------- Original Method ----------
-        //return getResources().getText(resId);
+        
+        
     }
 
     
@@ -613,8 +615,8 @@ CharSequence var45D0E050A7463DA4235EAAF453BDEF8D_316273887 =         getResource
 String varE43003255E2CDFE3A3F854C99DB3C345_1053743315 =         getResources().getString(resId);
         varE43003255E2CDFE3A3F854C99DB3C345_1053743315.addTaint(taint);
         return varE43003255E2CDFE3A3F854C99DB3C345_1053743315;
-        // ---------- Original Method ----------
-        //return getResources().getString(resId);
+        
+        
     }
 
     
@@ -625,8 +627,8 @@ String varE43003255E2CDFE3A3F854C99DB3C345_1053743315 =         getResources().g
 String var3E6B52F63767621631F101D027EAE3AD_1406499391 =         getResources().getString(resId, formatArgs);
         var3E6B52F63767621631F101D027EAE3AD_1406499391.addTaint(taint);
         return var3E6B52F63767621631F101D027EAE3AD_1406499391;
-        // ---------- Original Method ----------
-        //return getResources().getString(resId, formatArgs);
+        
+        
     }
 
     
@@ -635,8 +637,8 @@ String var3E6B52F63767621631F101D027EAE3AD_1406499391 =         getResources().g
 FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmentManager;
         var6B50C8B57F5F4DEB31C36FD27D426C18_969476569.addTaint(taint);
         return var6B50C8B57F5F4DEB31C36FD27D426C18_969476569;
-        // ---------- Original Method ----------
-        //return mFragmentManager;
+        
+        
     }
 
     
@@ -645,8 +647,8 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean var74BA28E0570A59B6D3A6A2107C73D4CF_443607844 = (mActivity != null && mAdded);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582373928 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582373928;
-        // ---------- Original Method ----------
-        //return mActivity != null && mAdded;
+        
+        
     }
 
     
@@ -655,8 +657,8 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean var23906763A9631E67BD7C67265695AFF7_695555045 = (mDetached);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_260744481 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_260744481;
-        // ---------- Original Method ----------
-        //return mDetached;
+        
+        
     }
 
     
@@ -665,8 +667,8 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean var0F910DB84DA919CEA0C46A9368EB474F_558987945 = (mRemoving);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_581744649 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_581744649;
-        // ---------- Original Method ----------
-        //return mRemoving;
+        
+        
     }
 
     
@@ -675,8 +677,8 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean var02B7C51C439DA5E343271787FAA8C822_595402933 = (mInLayout);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_774103408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_774103408;
-        // ---------- Original Method ----------
-        //return mInLayout;
+        
+        
     }
 
     
@@ -685,8 +687,8 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean var9933B84C738DC45A33F44AE2EFCBD30F_424348187 = (mResumed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1496780688 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1496780688;
-        // ---------- Original Method ----------
-        //return mResumed;
+        
+        
     }
 
     
@@ -696,9 +698,9 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
                 && mView.getWindowToken() != null && mView.getVisibility() == View.VISIBLE);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_744342155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_744342155;
-        // ---------- Original Method ----------
-        //return isAdded() && !isHidden() && mView != null
-                //&& mView.getWindowToken() != null && mView.getVisibility() == View.VISIBLE;
+        
+        
+                
     }
 
     
@@ -707,24 +709,26 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean var6E5D0646172E31357AC5264CFC6DCF7B_837596089 = (mHidden);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121269851 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_121269851;
-        // ---------- Original Method ----------
-        //return mHidden;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.344 -0400", hash_original_method = "FE8A5DF015D2662392185902D9D0AEDD", hash_generated_method = "764071413F7B945096A2936EA3340233")
     public void onHiddenChanged(boolean hidden) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(hidden);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.345 -0400", hash_original_method = "8E671A431463BFA7D0F399C37FBCF1E9", hash_generated_method = "B4781DA0C58D757D98DF8D51D0581302")
     public void setRetainInstance(boolean retain) {
         mRetainInstance = retain;
-        // ---------- Original Method ----------
-        //mRetainInstance = retain;
+        
+        
     }
 
     
@@ -733,8 +737,8 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
         boolean varFC2473D51E767C5008A9D428BAFC8661_1440092039 = (mRetainInstance);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843043757 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1843043757;
-        // ---------- Original Method ----------
-        //return mRetainInstance;
+        
+        
     }
 
     
@@ -746,15 +750,15 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
     if(isAdded() && !isHidden())            
             {
                 mFragmentManager.invalidateOptionsMenu();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHasMenu != hasMenu) {
-            //mHasMenu = hasMenu;
-            //if (isAdded() && !isHidden()) {
-                //mFragmentManager.invalidateOptionsMenu();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -766,15 +770,15 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
     if(mHasMenu && isAdded() && !isHidden())            
             {
                 mFragmentManager.invalidateOptionsMenu();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMenuVisible != menuVisible) {
-            //mMenuVisible = menuVisible;
-            //if (mHasMenu && isAdded() && !isHidden()) {
-                //mFragmentManager.invalidateOptionsMenu();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -783,25 +787,26 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
     if(!mUserVisibleHint && isVisibleToUser && mState < STARTED)        
         {
             mFragmentManager.performPendingDeferredStart(this);
-        } //End block
+        } 
         mUserVisibleHint = isVisibleToUser;
         mDeferStart = !isVisibleToUser;
-        // ---------- Original Method ----------
-        //if (!mUserVisibleHint && isVisibleToUser && mState < STARTED) {
-            //mFragmentManager.performPendingDeferredStart(this);
-        //}
-        //mUserVisibleHint = isVisibleToUser;
-        //mDeferStart = !isVisibleToUser;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.354 -0400", hash_original_method = "16570E728AF342CDACA5E18099682804", hash_generated_method = "A82F5C12072321E4FD9D822C1BC7A177")
     public boolean getUserVisibleHint() {
         boolean varB03D0E0FBB5C01B36684AC0EA4771924_550717317 = (mUserVisibleHint);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316679934 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316679934;
-        // ---------- Original Method ----------
-        //return mUserVisibleHint;
+        
+        
     }
 
     
@@ -812,31 +817,32 @@ FragmentManager var6B50C8B57F5F4DEB31C36FD27D426C18_969476569 =         mFragmen
 LoaderManager var805CC3710F0829AF609E93E575C2DA90_782496953 =             mLoaderManager;
             var805CC3710F0829AF609E93E575C2DA90_782496953.addTaint(taint);
             return var805CC3710F0829AF609E93E575C2DA90_782496953;
-        } //End block
+        } 
     if(mActivity == null)        
         {
             IllegalStateException varE10E059A0DCA5D38245E5AD84C394857_1461207268 = new IllegalStateException("Fragment " + this + " not attached to Activity");
             varE10E059A0DCA5D38245E5AD84C394857_1461207268.addTaint(taint);
             throw varE10E059A0DCA5D38245E5AD84C394857_1461207268;
-        } //End block
+        } 
         mCheckedForLoaderManager = true;
         mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, true);
 LoaderManager var805CC3710F0829AF609E93E575C2DA90_140056690 =         mLoaderManager;
         var805CC3710F0829AF609E93E575C2DA90_140056690.addTaint(taint);
         return var805CC3710F0829AF609E93E575C2DA90_140056690;
-        // ---------- Original Method ----------
-        //if (mLoaderManager != null) {
-            //return mLoaderManager;
-        //}
-        //if (mActivity == null) {
-            //throw new IllegalStateException("Fragment " + this + " not attached to Activity");
-        //}
-        //mCheckedForLoaderManager = true;
-        //mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, true);
-        //return mLoaderManager;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.356 -0400", hash_original_method = "B68B30EDC5AB3BE8EF657FB7051C7F7E", hash_generated_method = "C1D5EA2B112F2F2B4D2BBC8E439DB56E")
     public void startActivity(Intent intent) {
         addTaint(intent.getTaint());
@@ -845,16 +851,17 @@ LoaderManager var805CC3710F0829AF609E93E575C2DA90_140056690 =         mLoaderMan
             IllegalStateException varE10E059A0DCA5D38245E5AD84C394857_1249658640 = new IllegalStateException("Fragment " + this + " not attached to Activity");
             varE10E059A0DCA5D38245E5AD84C394857_1249658640.addTaint(taint);
             throw varE10E059A0DCA5D38245E5AD84C394857_1249658640;
-        } //End block
+        } 
         mActivity.startActivityFromFragment(this, intent, -1);
-        // ---------- Original Method ----------
-        //if (mActivity == null) {
-            //throw new IllegalStateException("Fragment " + this + " not attached to Activity");
-        //}
-        //mActivity.startActivityFromFragment(this, intent, -1);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.357 -0400", hash_original_method = "849399EB62F8B6EE6A6E550D7989B87C", hash_generated_method = "73724C0C962A316A9B63962E732011F6")
     public void startActivityForResult(Intent intent, int requestCode) {
         addTaint(requestCode);
@@ -864,23 +871,24 @@ LoaderManager var805CC3710F0829AF609E93E575C2DA90_140056690 =         mLoaderMan
             IllegalStateException varE10E059A0DCA5D38245E5AD84C394857_1579739611 = new IllegalStateException("Fragment " + this + " not attached to Activity");
             varE10E059A0DCA5D38245E5AD84C394857_1579739611.addTaint(taint);
             throw varE10E059A0DCA5D38245E5AD84C394857_1579739611;
-        } //End block
+        } 
         mActivity.startActivityFromFragment(this, intent, requestCode);
-        // ---------- Original Method ----------
-        //if (mActivity == null) {
-            //throw new IllegalStateException("Fragment " + this + " not attached to Activity");
-        //}
-        //mActivity.startActivityFromFragment(this, intent, requestCode);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.357 -0400", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "13D54DC5D1A0400A81A53CF735ABCCE1")
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(data.getTaint());
         addTaint(resultCode);
         addTaint(requestCode);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -890,118 +898,126 @@ LoaderManager var805CC3710F0829AF609E93E575C2DA90_140056690 =         mLoaderMan
 LayoutInflater varC8F1AD9F765410CD70DB0833DE90DA27_2094260239 =         mActivity.getLayoutInflater();
         varC8F1AD9F765410CD70DB0833DE90DA27_2094260239.addTaint(taint);
         return varC8F1AD9F765410CD70DB0833DE90DA27_2094260239;
-        // ---------- Original Method ----------
-        //return mActivity.getLayoutInflater();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.361 -0400", hash_original_method = "B81B691062FF851E8B34D981FF83329F", hash_generated_method = "34714B2D26F8F12A9BEA730EF5CE9995")
     @Deprecated
     public void onInflate(AttributeSet attrs, Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         addTaint(attrs.getTaint());
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.362 -0400", hash_original_method = "295D90877B0CE50D1EC7F89F1D4EC254", hash_generated_method = "CF67F2C79409671D1399EE55A473BEC4")
     public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         addTaint(attrs.getTaint());
         addTaint(activity.getTaint());
         onInflate(attrs, savedInstanceState);
         mCalled = true;
-        // ---------- Original Method ----------
-        //onInflate(attrs, savedInstanceState);
-        //mCalled = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.363 -0400", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "800CFB085D8824BBFB5C33269F30F63C")
     public void onAttach(Activity activity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(activity.getTaint());
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.364 -0400", hash_original_method = "EB97CF4ACDD4FD35B8071D1AF529F576", hash_generated_method = "C91EA2FAA51A2C9800A80634059D6B44")
     public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(nextAnim);
         addTaint(enter);
         addTaint(transit);
 Animator var540C13E9E156B687226421B24F2DF178_710114242 =         null;
         var540C13E9E156B687226421B24F2DF178_710114242.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_710114242;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.364 -0400", hash_original_method = "00494AECA41C1730DF6E82548FC2C3D5", hash_generated_method = "4CCDB0DCFFB66173622F366FF1BCFCBE")
     public void onCreate(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.365 -0400", hash_original_method = "F4318A499F9B06ABC9CCF0644AE6DC10", hash_generated_method = "52769EFA20AE14D9C5042204CED1C380")
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.365 -0400", hash_original_method = "57C338AB393ED440CE12C76B2627A085", hash_generated_method = "044BB732B1E4B03B6F18BF7062544441")
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         addTaint(container.getTaint());
         addTaint(inflater.getTaint());
 View var540C13E9E156B687226421B24F2DF178_2053824516 =         null;
         var540C13E9E156B687226421B24F2DF178_2053824516.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2053824516;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.366 -0400", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "98A78FD6C503AF86402ADC465C8B24A9")
     public View getView() {
 View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
         var2A050D4EA4182130A6C1E6806618CCD0_1453418053.addTaint(taint);
         return var2A050D4EA4182130A6C1E6806618CCD0_1453418053;
-        // ---------- Original Method ----------
-        //return mView;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.367 -0400", hash_original_method = "C52625884C98429BE8DE42F4FBFE7367", hash_generated_method = "E2F05B6742F9D7E8DC9825D8FC2D9F9A")
     public void onActivityCreated(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.368 -0400", hash_original_method = "4BDF3B44AFE0C3B519B659689A5EE977", hash_generated_method = "D4A312E73DF67FA0FF56CF85862ADBB8")
     public void onStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
     if(!mLoadersStarted)        
         {
@@ -1010,125 +1026,134 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             {
                 mCheckedForLoaderManager = true;
                 mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, false);
-            } //End block
+            } 
     if(mLoaderManager != null)            
             {
                 mLoaderManager.doStart();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mCalled = true;
-        //if (!mLoadersStarted) {
-            //mLoadersStarted = true;
-            //if (!mCheckedForLoaderManager) {
-                //mCheckedForLoaderManager = true;
-                //mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, false);
-            //}
-            //if (mLoaderManager != null) {
-                //mLoaderManager.doStart();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.369 -0400", hash_original_method = "3B8608ED59C2663D271D57F8D8F534C0", hash_generated_method = "A35C9648644440B1AB73336CCB6DEAB5")
     public void onResume() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.370 -0400", hash_original_method = "9C4F98F3F5A4FCEFF66E261EDA5693F3", hash_generated_method = "AD15648AB8B6357D84B3060587BAA98F")
     public void onSaveInstanceState(Bundle outState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(outState.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.371 -0400", hash_original_method = "16A05561D5415124B893EA7E2AFB953D", hash_generated_method = "A984469EBDCC0902B8851BB94C61A9EF")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.371 -0400", hash_original_method = "CEF2FF1DA31E7EE9D761807A037B37B2", hash_generated_method = "637684B70754E8D79E076DC6A513E031")
     public void onPause() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.372 -0400", hash_original_method = "FC062A9ECA017F6E5D455E8C973942F9", hash_generated_method = "7E26AAA6FA11DEDE75C340853A5FC7A3")
     public void onStop() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.373 -0400", hash_original_method = "28328842E1AEC7ECF313405184622A29", hash_generated_method = "A607A7A5A4E7888F4F9DD46B7BE5C1AF")
     public void onLowMemory() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.374 -0400", hash_original_method = "E1E8CF8B1FBB3E8165C3219A9D0BB675", hash_generated_method = "A78B21B429C60FF0208280A2579E86CA")
     public void onTrimMemory(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(level);
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.375 -0400", hash_original_method = "E54F17C7BAFD082A48D2152349C1815A", hash_generated_method = "D6DBBF3121DDE73B3DDC3BCBF558AE8E")
     public void onDestroyView() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.377 -0400", hash_original_method = "AA4E137E24C2C382652C9FBA94B1ED31", hash_generated_method = "D2B1A11FFA3E12AD4D6638D4EEE374A3")
     public void onDestroy() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
     if(!mCheckedForLoaderManager)        
         {
             mCheckedForLoaderManager = true;
             mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, false);
-        } //End block
+        } 
     if(mLoaderManager != null)        
         {
             mLoaderManager.doDestroy();
-        } //End block
-        // ---------- Original Method ----------
-        //mCalled = true;
-        //if (!mCheckedForLoaderManager) {
-            //mCheckedForLoaderManager = true;
-            //mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, false);
-        //}
-        //if (mLoaderManager != null) {
-            //mLoaderManager.doDestroy();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.382 -0400", hash_original_method = "04633BF5293F80973E1AA355DB2C35EF", hash_generated_method = "4C027456133F87915A9EF12926708CE0")
      void initState() {
         mIndex = -1;
@@ -1151,102 +1176,108 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
         mLoaderManager = null;
         mLoadersStarted = false;
         mCheckedForLoaderManager = false;
-        // ---------- Original Method ----------
-        //mIndex = -1;
-        //mWho = null;
-        //mAdded = false;
-        //mRemoving = false;
-        //mResumed = false;
-        //mFromLayout = false;
-        //mInLayout = false;
-        //mRestored = false;
-        //mBackStackNesting = 0;
-        //mFragmentManager = null;
-        //mActivity = null;
-        //mFragmentId = 0;
-        //mContainerId = 0;
-        //mTag = null;
-        //mHidden = false;
-        //mDetached = false;
-        //mRetaining = false;
-        //mLoaderManager = null;
-        //mLoadersStarted = false;
-        //mCheckedForLoaderManager = false;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.383 -0400", hash_original_method = "EF609D2FD1394DFBC19807CB21AD7D10", hash_generated_method = "CD3AD86EF54BB27DA72F7E9F9B9DEA15")
     public void onDetach() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mCalled = true;
-        // ---------- Original Method ----------
-        //mCalled = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.384 -0400", hash_original_method = "B3C5F3D019B47C47E6111F1C7C38CA5D", hash_generated_method = "CD3DE4D46F4897BB6058BF519EF6DB27")
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(inflater.getTaint());
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.385 -0400", hash_original_method = "4CE703F4C1FA6FC474411DFE6A3F5275", hash_generated_method = "32B650DEFAD74BF60D957C3D22EC9F79")
     public void onPrepareOptionsMenu(Menu menu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.385 -0400", hash_original_method = "0E8C037F224061747BFFD0611606AAB6", hash_generated_method = "EF044D3D33EBB476DBBCFB32576782C1")
     public void onDestroyOptionsMenu() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.385 -0400", hash_original_method = "8EF9A1828892EFEBF4B93362A866125C", hash_generated_method = "C48E08C9ECF16C30406F6B8C8D788654")
     public boolean onOptionsItemSelected(MenuItem item) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(item.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_400654958 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1536069991 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1536069991;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.386 -0400", hash_original_method = "D53E4189B6E7F0EC0F9883E9844F2140", hash_generated_method = "CC9F879215C8D6911F3F43FE45124EF9")
     public void onOptionsMenuClosed(Menu menu) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.386 -0400", hash_original_method = "68082EA0714CB57B78AC95D3FF2A7AC8", hash_generated_method = "C9CB67D34E1446359FA2B8208D2404BA")
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(menuInfo.getTaint());
         addTaint(v.getTaint());
         addTaint(menu.getTaint());
         getActivity().onCreateContextMenu(menu, v, menuInfo);
-        // ---------- Original Method ----------
-        //getActivity().onCreateContextMenu(menu, v, menuInfo);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.387 -0400", hash_original_method = "1A123249F7C2C892EA53E2F44D60C1FB", hash_generated_method = "A6804032F4A398F98AB72F29BB096EED")
     public void registerForContextMenu(View view) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(view.getTaint());
         view.setOnCreateContextMenuListener(this);
-        // ---------- Original Method ----------
-        //view.setOnCreateContextMenuListener(this);
+        
+        
     }
 
     
@@ -1254,20 +1285,21 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
     public void unregisterForContextMenu(View view) {
         addTaint(view.getTaint());
         view.setOnCreateContextMenuListener(null);
-        // ---------- Original Method ----------
-        //view.setOnCreateContextMenuListener(null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.388 -0400", hash_original_method = "801D77DFDCCE5570587CA592634E3D3B", hash_generated_method = "264AB7E9766B4222687D1B1C95AAF4AF")
     public boolean onContextItemSelected(MenuItem item) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(item.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_360930837 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_146197638 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_146197638;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -1325,31 +1357,31 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             writer.print(prefix);
             writer.print("mFragmentManager=");
             writer.println(mFragmentManager);
-        } //End block
+        } 
     if(mActivity != null)        
         {
             writer.print(prefix);
             writer.print("mActivity=");
             writer.println(mActivity);
-        } //End block
+        } 
     if(mArguments != null)        
         {
             writer.print(prefix);
             writer.print("mArguments=");
             writer.println(mArguments);
-        } //End block
+        } 
     if(mSavedFragmentState != null)        
         {
             writer.print(prefix);
             writer.print("mSavedFragmentState=");
             writer.println(mSavedFragmentState);
-        } //End block
+        } 
     if(mSavedViewState != null)        
         {
             writer.print(prefix);
             writer.print("mSavedViewState=");
             writer.println(mSavedViewState);
-        } //End block
+        } 
     if(mTarget != null)        
         {
             writer.print(prefix);
@@ -1357,25 +1389,25 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             writer.print(mTarget);
             writer.print(" mTargetRequestCode=");
             writer.println(mTargetRequestCode);
-        } //End block
+        } 
     if(mNextAnim != 0)        
         {
             writer.print(prefix);
             writer.print("mNextAnim=");
             writer.println(mNextAnim);
-        } //End block
+        } 
     if(mContainer != null)        
         {
             writer.print(prefix);
             writer.print("mContainer=");
             writer.println(mContainer);
-        } //End block
+        } 
     if(mView != null)        
         {
             writer.print(prefix);
             writer.print("mView=");
             writer.println(mView);
-        } //End block
+        } 
     if(mAnimatingAway != null)        
         {
             writer.print(prefix);
@@ -1384,15 +1416,15 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             writer.print(prefix);
             writer.print("mStateAfterAnimating=");
             writer.println(mStateAfterAnimating);
-        } //End block
+        } 
     if(mLoaderManager != null)        
         {
             writer.print(prefix);
             writer.println("Loader Manager:");
             mLoaderManager.dump(prefix + "  ", fd, writer, args);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1402,12 +1434,12 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
     if(mLoaderManager != null)        
         {
             mLoaderManager.doReportStart();
-        } //End block
-        // ---------- Original Method ----------
-        //onStart();
-        //if (mLoaderManager != null) {
-            //mLoaderManager.doReportStart();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -1421,35 +1453,35 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             {
                 mCheckedForLoaderManager = true;
                 mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, false);
-            } //End block
+            } 
     if(mLoaderManager != null)            
             {
     if(mActivity == null || !mActivity.mChangingConfigurations)                
                 {
                     mLoaderManager.doStop();
-                } //End block
+                } 
                 else
                 {
                     mLoaderManager.doRetain();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //onStop();
-        //if (mLoadersStarted) {
-            //mLoadersStarted = false;
-            //if (!mCheckedForLoaderManager) {
-                //mCheckedForLoaderManager = true;
-                //mLoaderManager = mActivity.getLoaderManager(mIndex, mLoadersStarted, false);
-            //}
-            //if (mLoaderManager != null) {
-                //if (mActivity == null || !mActivity.mChangingConfigurations) {
-                    //mLoaderManager.doStop();
-                //} else {
-                    //mLoaderManager.doRetain();
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
@@ -1459,12 +1491,12 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
     if(mLoaderManager != null)        
         {
             mLoaderManager.doReportNextStart();
-        } //End block
-        // ---------- Original Method ----------
-        //onDestroyView();
-        //if (mLoaderManager != null) {
-            //mLoaderManager.doReportNextStart();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -1476,8 +1508,8 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.393 -0400", hash_original_method = "7D4CB1BC3C04B99DC21EA19CB6BAF4D3", hash_generated_method = "BAE726BCB2EFD4A0280978447E5417B6")
           SavedState(Bundle state) {
             mState = state;
-            // ---------- Original Method ----------
-            //mState = state;
+            
+            
         }
 
         
@@ -1488,23 +1520,24 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
     if(loader != null && mState != null)            
             {
                 mState.setClassLoader(loader);
-            } //End block
-            // ---------- Original Method ----------
-            //mState = in.readBundle();
-            //if (loader != null && mState != null) {
-                //mState.setClassLoader(loader);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:02.394 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3BAA9FA889D5FE09169F43C3F131D758")
         @Override
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1717632749 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781477800 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781477800;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -1514,8 +1547,8 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             addTaint(flags);
             addTaint(dest.getTaint());
             dest.writeBundle(mState);
-            // ---------- Original Method ----------
-            //dest.writeBundle(mState);
+            
+            
         }
 
         
@@ -1535,17 +1568,17 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in, null);
             }
         
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in, ClassLoader loader) {
                 return new SavedState(in, loader);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -1561,7 +1594,7 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1453418053 =         mView;
             super(msg, cause);
             addTaint(cause.getTaint());
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

@@ -1,6 +1,6 @@
 package javax.security.auth.x500;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,26 +28,26 @@ public final class X500Principal implements Serializable, Principal {
             IllegalArgumentException var4611648A39111752F4444BE2F12A2156_418841863 = new IllegalArgumentException("Name cannot be null");
             var4611648A39111752F4444BE2F12A2156_418841863.addTaint(taint);
             throw var4611648A39111752F4444BE2F12A2156_418841863;
-        } //End block
+        } 
         try 
         {
             dn = (Name) Name.ASN1.decode(name);
-        } //End block
+        } 
         catch (IOException e)
         {
             java.lang.IllegalArgumentException varCBE615D094712B7C6E39025FB16B5668_1295602942 = incorrectInputEncoding(e);
             varCBE615D094712B7C6E39025FB16B5668_1295602942.addTaint(taint);
             throw varCBE615D094712B7C6E39025FB16B5668_1295602942;
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Name cannot be null");
-        //}
-        //try {
-            //dn = (Name) Name.ASN1.decode(name);
-        //} catch (IOException e) {
-            //throw incorrectInputEncoding(e);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -58,26 +58,26 @@ public final class X500Principal implements Serializable, Principal {
             NullPointerException varF5E88630BAEB32AA1B2D44C55B908E4A_1432374836 = new NullPointerException("in == null");
             varF5E88630BAEB32AA1B2D44C55B908E4A_1432374836.addTaint(taint);
             throw varF5E88630BAEB32AA1B2D44C55B908E4A_1432374836;
-        } //End block
+        } 
         try 
         {
             dn = (Name) Name.ASN1.decode(in);
-        } //End block
+        } 
         catch (IOException e)
         {
             java.lang.IllegalArgumentException varCBE615D094712B7C6E39025FB16B5668_1952465625 = incorrectInputEncoding(e);
             varCBE615D094712B7C6E39025FB16B5668_1952465625.addTaint(taint);
             throw varCBE615D094712B7C6E39025FB16B5668_1952465625;
-        } //End block
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw new NullPointerException("in == null");
-        //}
-        //try {
-            //dn = (Name) Name.ASN1.decode(in);
-        //} catch (IOException e) {
-            //throw incorrectInputEncoding(e);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -88,26 +88,26 @@ public final class X500Principal implements Serializable, Principal {
             NullPointerException varD55C34D141FD57420C78F6F4EB8B48E8_381408716 = new NullPointerException("Name cannot be null");
             varD55C34D141FD57420C78F6F4EB8B48E8_381408716.addTaint(taint);
             throw varD55C34D141FD57420C78F6F4EB8B48E8_381408716;
-        } //End block
+        } 
         try 
         {
             dn = new Name(name);
-        } //End block
+        } 
         catch (IOException e)
         {
             java.lang.IllegalArgumentException varF3BA263C43D67A9C283EE45F1DF671F7_1716858445 = incorrectInputName(e, name);
             varF3BA263C43D67A9C283EE45F1DF671F7_1716858445.addTaint(taint);
             throw varF3BA263C43D67A9C283EE45F1DF671F7_1716858445;
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("Name cannot be null");
-        //}
-        //try {
-            //dn = new Name(name);
-        //} catch (IOException e) {
-            //throw incorrectInputName(e, name);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -118,26 +118,26 @@ public final class X500Principal implements Serializable, Principal {
             NullPointerException varD55C34D141FD57420C78F6F4EB8B48E8_993316709 = new NullPointerException("Name cannot be null");
             varD55C34D141FD57420C78F6F4EB8B48E8_993316709.addTaint(taint);
             throw varD55C34D141FD57420C78F6F4EB8B48E8_993316709;
-        } //End block
+        } 
         try 
         {
             dn = new Name(substituteNameFromMap(name, keywordMap));
-        } //End block
+        } 
         catch (IOException e)
         {
             java.lang.IllegalArgumentException varF3BA263C43D67A9C283EE45F1DF671F7_307816010 = incorrectInputName(e, name);
             varF3BA263C43D67A9C283EE45F1DF671F7_307816010.addTaint(taint);
             throw varF3BA263C43D67A9C283EE45F1DF671F7_307816010;
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("Name cannot be null");
-        //}
-        //try {
-            //dn = new Name(substituteNameFromMap(name, keywordMap));
-        //} catch (IOException e) {
-            //throw incorrectInputName(e, name);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -148,10 +148,10 @@ public final class X500Principal implements Serializable, Principal {
         iae.initCause(e);
         iae.addTaint(taint);
         throw iae;
-        // ---------- Original Method ----------
-        //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input encoding");
-        //iae.initCause(e);
-        //throw iae;
+        
+        
+        
+        
     }
 
     
@@ -163,10 +163,10 @@ public final class X500Principal implements Serializable, Principal {
         iae.initCause(e);
         iae.addTaint(taint);
         throw iae;
-        // ---------- Original Method ----------
-        //IllegalArgumentException iae = new IllegalArgumentException("Incorrect input name:" + name);
-        //iae.initCause(e);
-        //throw iae;
+        
+        
+        
+        
     }
 
     
@@ -175,15 +175,15 @@ public final class X500Principal implements Serializable, Principal {
     if(canonicalName == null)        
         {
             canonicalName = dn.getName(CANONICAL);
-        } //End block
+        } 
 String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
         var7E150FCC7E02D69327EC2754E827BBC0_1942694981.addTaint(taint);
         return var7E150FCC7E02D69327EC2754E827BBC0_1942694981;
-        // ---------- Original Method ----------
-        //if (canonicalName == null) {
-            //canonicalName = dn.getName(CANONICAL);
-        //}
-        //return canonicalName;
+        
+        
+            
+        
+        
     }
 
     
@@ -196,26 +196,26 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
             boolean varB326B5062B2F0E69046810717534CB09_1022790439 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954906732 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954906732;
-        } //End block
+        } 
     if(o == null || this.getClass() != o.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1630057361 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1301090744 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1301090744;
-        } //End block
+        } 
         X500Principal principal = (X500Principal) o;
         boolean varBFB080AED0E2AF7359E60DC9CCF7D15B_1605151750 = (getCanonicalName().equals(principal.getCanonicalName()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831756980 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831756980;
-        // ---------- Original Method ----------
-        //if (this == o) {
-            //return true;
-        //}
-        //if (o == null || this.getClass() != o.getClass()) {
-            //return false;
-        //}
-        //X500Principal principal = (X500Principal) o;
-        //return getCanonicalName().equals(principal.getCanonicalName());
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -227,11 +227,11 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
         byte[] var28E3D688A3C077B887921CEA3FB1DBC7_2146205188 = (dst);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1521149589 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1521149589;
-        // ---------- Original Method ----------
-        //byte[] src = dn.getEncoded();
-        //byte[] dst = new byte[src.length];
-        //System.arraycopy(src, 0, dst, 0, dst.length);
-        //return dst;
+        
+        
+        
+        
+        
     }
 
     
@@ -240,8 +240,8 @@ String var7E150FCC7E02D69327EC2754E827BBC0_1942694981 =         canonicalName;
 String var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483 =         dn.getName(RFC2253);
         var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483.addTaint(taint);
         return var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483;
-        // ---------- Original Method ----------
-        //return dn.getName(RFC2253);
+        
+        
     }
 
     
@@ -253,18 +253,19 @@ String var08F6DAD71EC6EDB0BE0363A140D3B809_1153128483 =         dn.getName(RFC22
 String var1C29F95F65985963179EA1C2D95D2CEA_753337713 =             getCanonicalName();
             var1C29F95F65985963179EA1C2D95D2CEA_753337713.addTaint(taint);
             return var1C29F95F65985963179EA1C2D95D2CEA_753337713;
-        } //End block
+        } 
 String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857 =         dn.getName(format);
         var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857.addTaint(taint);
         return var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857;
-        // ---------- Original Method ----------
-        //if (CANONICAL.equals(format)) {
-            //return getCanonicalName();
-        //}
-        //return dn.getName(format);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.222 -0400", hash_original_method = "F26EAC27584EEA69A397CAF64D802897", hash_generated_method = "DB40AE397DC49785DD7225433D99112A")
     public String getName(String format, Map<String, String> oidMap) {
         addTaint(oidMap.getTaint());
@@ -292,14 +293,14 @@ String var2D5D2E4F12D8C4AC82C9F6D97E3483B0_1463862857 =         dn.getName(forma
     if(commaIndex > 0)                        
                         replaceName = " " + replaceName;
                         resultName.replace(commaIndex + 1, equalIndex, replaceName);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 fromIndex = commaIndex;
-            } //End block
+            } 
 String var3318B6470F204095A1A93B089A3A90B2_1700999986 =             resultName.toString();
             var3318B6470F204095A1A93B089A3A90B2_1700999986.addTaint(taint);
             return var3318B6470F204095A1A93B089A3A90B2_1700999986;
-        } //End block
+        } 
         else
     if(format.equalsIgnoreCase("RFC2253"))        
         {
@@ -332,22 +333,22 @@ String var3318B6470F204095A1A93B089A3A90B2_1700999986 =             resultName.t
                                     subGoalEndIndex));
                     resultName.replace(commaIndex + 1, equalIndex, oidMap
                             .get(subName));
-                } //End block
+                } 
                 fromIndex = commaIndex;
                 subsidyFromIndex = subsidyEqualIndex - 1;
-            } //End block
+            } 
 String var3318B6470F204095A1A93B089A3A90B2_1024155405 =             resultName.toString();
             var3318B6470F204095A1A93B089A3A90B2_1024155405.addTaint(taint);
             return var3318B6470F204095A1A93B089A3A90B2_1024155405;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException varF9C22D5169D99F66FED780168FB8177D_1292820258 = new IllegalArgumentException("invalid format specified: " + format);
             varF9C22D5169D99F66FED780168FB8177D_1292820258.addTaint(taint);
             throw varF9C22D5169D99F66FED780168FB8177D_1292820258;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -357,8 +358,8 @@ String var3318B6470F204095A1A93B089A3A90B2_1024155405 =             resultName.t
         int varCA006599DDB1EBBCCF1A331311F932D0_308825492 = (getCanonicalName().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156242132 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156242132;
-        // ---------- Original Method ----------
-        //return getCanonicalName().hashCode();
+        
+        
     }
 
     
@@ -368,8 +369,8 @@ String var3318B6470F204095A1A93B089A3A90B2_1024155405 =             resultName.t
 String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC1779);
         var04328ADBCE8325DAA95AEC1783AFD17A_275641583.addTaint(taint);
         return var04328ADBCE8325DAA95AEC1783AFD17A_275641583;
-        // ---------- Original Method ----------
-        //return dn.getName(RFC1779);
+        
+        
     }
 
     
@@ -377,19 +378,20 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC177
     private void writeObject(ObjectOutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.writeObject(dn.getEncoded());
-        // ---------- Original Method ----------
-        //out.writeObject(dn.getEncoded());
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.224 -0400", hash_original_method = "8759D8976B48D4CB6209F3200BF3598B", hash_generated_method = "152ACDA71726E5032041ABE752F2EA68")
     private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
         dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
-        // ---------- Original Method ----------
-        //dn = (Name) Name.ASN1.decode((byte[]) in.readObject());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:10.225 -0400", hash_original_method = "84EFD5BFB0134499160A2521897988D3", hash_generated_method = "A7896ABFF1F143AF29043ED4F53678B0")
     private String substituteNameFromMap(String name, Map<String, String> keywordMap) {
         addTaint(keywordMap.getTaint());
@@ -405,25 +407,25 @@ String var04328ADBCE8325DAA95AEC1783AFD17A_275641583 =         dn.getName(RFC177
     if(keywordMap.containsKey(subName))            
             {
                 sbName.replace(commaIndex + 1, equalIndex, keywordMap.get(subName));
-            } //End block
+            } 
             fromIndex = commaIndex;
-        } //End block
+        } 
 String var25FABEFC42C74DDAF545088033E64C8D_696445534 =         sbName.toString();
         var25FABEFC42C74DDAF545088033E64C8D_696445534.addTaint(taint);
         return var25FABEFC42C74DDAF545088033E64C8D_696445534;
-        // ---------- Original Method ----------
-        //StringBuilder sbName = new StringBuilder(name);
-        //int fromIndex = sbName.length();
-        //int equalIndex;
-        //while (-1 != (equalIndex = sbName.lastIndexOf("=", fromIndex))) {
-            //int commaIndex = sbName.lastIndexOf(",", equalIndex);
-            //String subName = sbName.substring(commaIndex + 1, equalIndex).trim();
-            //if (keywordMap.containsKey(subName)) {
-                //sbName.replace(commaIndex + 1, equalIndex, keywordMap.get(subName));
-            //}
-            //fromIndex = commaIndex;
-        //}
-        //return sbName.toString();
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     

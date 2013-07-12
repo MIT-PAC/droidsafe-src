@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ public class PrefixPrinter implements Printer {
     private  PrefixPrinter(Printer printer, String prefix) {
         mPrinter = printer;
         mPrefix = prefix;
-        // ---------- Original Method ----------
-        //mPrinter = printer;
-        //mPrefix = prefix;
+        
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ public class PrefixPrinter implements Printer {
     public void println(String str) {
         addTaint(str.getTaint());
         mPrinter.println(mPrefix + str);
-        // ---------- Original Method ----------
-        //mPrinter.println(mPrefix + str);
+        
+        
     }
 
     

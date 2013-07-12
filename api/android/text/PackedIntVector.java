@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,13 +34,13 @@ class PackedIntVector {
         mRowGapLength = mRows;
         mValues = null;
         mValueGap = new int[2 * columns];
-        // ---------- Original Method ----------
-        //mColumns = columns;
-        //mRows = 0;
-        //mRowGapStart = 0;
-        //mRowGapLength = mRows;
-        //mValues = null;
-        //mValueGap = new int[2 * columns];
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -54,34 +54,34 @@ class PackedIntVector {
             IndexOutOfBoundsException varBDD876D8C48C6628B3208FA12558FDF5_2070887542 = new IndexOutOfBoundsException(row + ", " + column);
             varBDD876D8C48C6628B3208FA12558FDF5_2070887542.addTaint(taint);
             throw varBDD876D8C48C6628B3208FA12558FDF5_2070887542;
-        } //End block
+        } 
     if(row >= mRowGapStart)        
         {
             row += mRowGapLength;
-        } //End block
+        } 
         int value = mValues[row * columns + column];
         int[] valuegap = mValueGap;
     if(row >= valuegap[column])        
         {
             value += valuegap[column + columns];
-        } //End block
+        } 
         int var2063C1608D6E0BAF80249C42E2BE5804_1887975217 = (value);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842962780 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1842962780;
-        // ---------- Original Method ----------
-        //final int columns = mColumns;
-        //if (((row | column) < 0) || (row >= size()) || (column >= columns)) {
-            //throw new IndexOutOfBoundsException(row + ", " + column);
-        //}
-        //if (row >= mRowGapStart) {
-            //row += mRowGapLength;
-        //}
-        //int value = mValues[row * columns + column];
-        //int[] valuegap = mValueGap;
-        //if (row >= valuegap[column]) {
-            //value += valuegap[column + columns];
-        //}
-        //return value;
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -92,53 +92,54 @@ class PackedIntVector {
             IndexOutOfBoundsException varBDD876D8C48C6628B3208FA12558FDF5_1243659628 = new IndexOutOfBoundsException(row + ", " + column);
             varBDD876D8C48C6628B3208FA12558FDF5_1243659628.addTaint(taint);
             throw varBDD876D8C48C6628B3208FA12558FDF5_1243659628;
-        } //End block
+        } 
     if(row >= mRowGapStart)        
         {
             row += mRowGapLength;
-        } //End block
+        } 
         int[] valuegap = mValueGap;
     if(row >= valuegap[column])        
         {
             value -= valuegap[column + mColumns];
-        } //End block
+        } 
         mValues[row * mColumns + column] = value;
-        // ---------- Original Method ----------
-        //if (((row | column) < 0) || (row >= size()) || (column >= mColumns)) {
-            //throw new IndexOutOfBoundsException(row + ", " + column);
-        //}
-        //if (row >= mRowGapStart) {
-            //row += mRowGapLength;
-        //}
-        //int[] valuegap = mValueGap;
-        //if (row >= valuegap[column]) {
-            //value -= valuegap[column + mColumns];
-        //}
-        //mValues[row * mColumns + column] = value;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.296 -0400", hash_original_method = "339196B1319A98FF890A6A44D9B8F936", hash_generated_method = "A890ACBC1CA8B56AC017771E7ACC54FE")
     private void setValueInternal(int row, int column, int value) {
     if(row >= mRowGapStart)        
         {
             row += mRowGapLength;
-        } //End block
+        } 
         int[] valuegap = mValueGap;
     if(row >= valuegap[column])        
         {
             value -= valuegap[column + mColumns];
-        } //End block
+        } 
         mValues[row * mColumns + column] = value;
-        // ---------- Original Method ----------
-        //if (row >= mRowGapStart) {
-            //row += mRowGapLength;
-        //}
-        //int[] valuegap = mValueGap;
-        //if (row >= valuegap[column]) {
-            //value -= valuegap[column + mColumns];
-        //}
-        //mValues[row * mColumns + column] = value;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -151,23 +152,23 @@ class PackedIntVector {
             IndexOutOfBoundsException varFAEEDFE22EEC9BA2F9980175CF1C3DD1_1345016342 = new IndexOutOfBoundsException(startRow + ", " + column);
             varFAEEDFE22EEC9BA2F9980175CF1C3DD1_1345016342.addTaint(taint);
             throw varFAEEDFE22EEC9BA2F9980175CF1C3DD1_1345016342;
-        } //End block
+        } 
     if(startRow >= mRowGapStart)        
         {
             startRow += mRowGapLength;
-        } //End block
+        } 
         moveValueGapTo(column, startRow);
         mValueGap[column + mColumns] += delta;
-        // ---------- Original Method ----------
-        //if (((startRow | column) < 0) || (startRow > size()) ||
-                //(column >= width())) {
-            //throw new IndexOutOfBoundsException(startRow + ", " + column);
-        //}
-        //if (startRow >= mRowGapStart) {
-            //startRow += mRowGapLength;
-        //}
-        //moveValueGapTo(column, startRow);
-        //mValueGap[column + mColumns] += delta;
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -180,18 +181,18 @@ class PackedIntVector {
             IndexOutOfBoundsException var85DC1D3C6326D96841CD4E0FD5C9246A_341791529 = new IndexOutOfBoundsException("row " + row);
             var85DC1D3C6326D96841CD4E0FD5C9246A_341791529.addTaint(taint);
             throw var85DC1D3C6326D96841CD4E0FD5C9246A_341791529;
-        } //End block
+        } 
     if((values != null) && (values.length < width()))        
         {
             IndexOutOfBoundsException var9CD6FA6A5CEC43A0E95F99301E8E335E_354827217 = new IndexOutOfBoundsException("value count " + values.length);
             var9CD6FA6A5CEC43A0E95F99301E8E335E_354827217.addTaint(taint);
             throw var9CD6FA6A5CEC43A0E95F99301E8E335E_354827217;
-        } //End block
+        } 
         moveRowGapTo(row);
     if(mRowGapLength == 0)        
         {
             growBuffer();
-        } //End block
+        } 
         mRowGapStart++;
         mRowGapLength--;
     if(values == null)        
@@ -199,37 +200,37 @@ class PackedIntVector {
 for(int i = mColumns - 1;i >= 0;i--)
             {
                 setValueInternal(row, i, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
 for(int i = mColumns - 1;i >= 0;i--)
             {
                 setValueInternal(row, i, values[i]);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((row < 0) || (row > size())) {
-            //throw new IndexOutOfBoundsException("row " + row);
-        //}
-        //if ((values != null) && (values.length < width())) {
-            //throw new IndexOutOfBoundsException("value count " + values.length);
-        //}
-        //moveRowGapTo(row);
-        //if (mRowGapLength == 0) {
-            //growBuffer();
-        //}
-        //mRowGapStart++;
-        //mRowGapLength--;
-        //if (values == null) {
-            //for (int i = mColumns - 1; i >= 0; i--) {
-                //setValueInternal(row, i, 0);
-            //}
-        //} else {
-            //for (int i = mColumns - 1; i >= 0; i--) {
-                //setValueInternal(row, i, values[i]);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
     }
 
     
@@ -241,37 +242,39 @@ for(int i = mColumns - 1;i >= 0;i--)
             IndexOutOfBoundsException varBDB07202BD380498CB903939EA7731A6_489175319 = new IndexOutOfBoundsException(row + ", " + count);
             varBDB07202BD380498CB903939EA7731A6_489175319.addTaint(taint);
             throw varBDB07202BD380498CB903939EA7731A6_489175319;
-        } //End block
+        } 
         moveRowGapTo(row + count);
         mRowGapStart -= count;
         mRowGapLength += count;
-        // ---------- Original Method ----------
-        //if (((row | count) < 0) || (row + count > size())) {
-            //throw new IndexOutOfBoundsException(row + ", " + count);
-        //}
-        //moveRowGapTo(row + count);
-        //mRowGapStart -= count;
-        //mRowGapLength += count;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.299 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "C9CF86E7F63EAC004457B34A96CA30AF")
     public int size() {
         int var60FCE0CE49C68973BD6EAD5B2D3866D1_1980156883 = (mRows - mRowGapLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_124182531 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_124182531;
-        // ---------- Original Method ----------
-        //return mRows - mRowGapLength;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.299 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "872D72DB9854A3BDF8BEED9059432DC1")
     public int width() {
         int var11C985F30142FD30ACDDFE7CD3BD4A9B_652213598 = (mColumns);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306657437 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1306657437;
-        // ---------- Original Method ----------
-        //return mColumns;
+        
+        
     }
 
     
@@ -290,7 +293,7 @@ for(int i = mColumns - 1;i >= 0;i--)
             System.arraycopy(mValues, (mRows - after) * columns,
                              newvalues, (newsize - after) * columns,
                              after * columns);
-        } //End block
+        } 
 for(int i = 0;i < columns;i++)
         {
     if(valuegap[i] >= rowgapstart)            
@@ -299,14 +302,14 @@ for(int i = 0;i < columns;i++)
     if(valuegap[i] < rowgapstart)                
                 {
                     valuegap[i] = rowgapstart;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mRowGapLength += newsize - mRows;
         mRows = newsize;
         mValues = newvalues;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -320,39 +323,39 @@ for(int i = 0;i < columns;i++)
     if(where == valuegap[column])        
         {
             return;
-        } //End block
+        } 
         else
     if(where > valuegap[column])        
         {
 for(int i = valuegap[column];i < where;i++)
             {
                 values[i * columns + column] += valuegap[column + columns];
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
 for(int i = where;i < valuegap[column];i++)
             {
                 values[i * columns + column] -= valuegap[column + columns];
-            } //End block
-        } //End block
+            } 
+        } 
         valuegap[column] = where;
-        // ---------- Original Method ----------
-        //final int[] valuegap = mValueGap;
-        //final int[] values = mValues;
-        //final int columns = mColumns;
-        //if (where == valuegap[column]) {
-            //return;
-        //} else if (where > valuegap[column]) {
-            //for (int i = valuegap[column]; i < where; i++) {
-                //values[i * columns + column] += valuegap[column + columns];
-            //}
-        //} else  {
-            //for (int i = where; i < valuegap[column]; i++) {
-                //values[i * columns + column] -= valuegap[column + columns];
-            //}
-        //}
-        //valuegap[column] = where;
+        
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -361,7 +364,7 @@ for(int i = where;i < valuegap[column];i++)
     if(where == mRowGapStart)        
         {
             return;
-        } //End block
+        } 
         else
     if(where > mRowGapStart)        
         {
@@ -379,15 +382,15 @@ for(int j = 0;j < columns;j++)
     if(i >= valuegap[j])                    
                     {
                         val += valuegap[j + columns];
-                    } //End block
+                    } 
     if(destrow >= valuegap[j])                    
                     {
                         val -= valuegap[j + columns];
-                    } //End block
+                    } 
                     values[destrow * columns + j] = val;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             int moving = mRowGapStart - where;
@@ -404,18 +407,18 @@ for(int j = 0;j < columns;j++)
     if(i >= valuegap[j])                    
                     {
                         val += valuegap[j + columns];
-                    } //End block
+                    } 
     if(destrow >= valuegap[j])                    
                     {
                         val -= valuegap[j + columns];
-                    } //End block
+                    } 
                     values[destrow * columns + j] = val;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mRowGapStart = where;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,30 +26,32 @@ public final class AccessDescription {
         this.accessMethod = accessMethod;
         this.accessLocation = accessLocation;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.accessMethod = accessMethod;
-        //this.accessLocation = accessLocation;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.651 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "D65E1B412BA42E87AACF564936FA1AF9")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_713516760 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1938774539 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1938774539;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.652 -0400", hash_original_method = "4D59D0B3E432FF02219BDDB6D479EFFA", hash_generated_method = "B0C6B7B1943436B523200EAD85C391E1")
     @Override
     public String toString() {
@@ -63,15 +65,15 @@ public final class AccessDescription {
 String varEC7EB75EF3C7FA633C54FC66A0358174_113264240 =         res.toString();
         varEC7EB75EF3C7FA633C54FC66A0358174_113264240.addTaint(taint);
         return varEC7EB75EF3C7FA633C54FC66A0358174_113264240;
-        // ---------- Original Method ----------
-        //StringBuilder res = new StringBuilder();
-        //res.append("\n-- AccessDescription:");
-        //res.append("\naccessMethod:  ");
-        //res.append(accessMethod);
-        //res.append("\naccessLocation:  ");
-        //res.append(accessLocation);
-        //res.append("\n-- AccessDescription END\n");
-        //return res.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

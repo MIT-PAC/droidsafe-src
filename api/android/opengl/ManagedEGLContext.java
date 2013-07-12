@@ -1,6 +1,6 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,38 +25,39 @@ public abstract class ManagedEGLContext {
         synchronized
 (sActive)        {
             sActive.add(this);
-        } //End block
-        // ---------- Original Method ----------
-        //mContext = context;
-        //synchronized (sActive) {
-            //sActive.add(this);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.635 -0400", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "1E247494C50004D6D856CE13263E9CD1")
     public EGLContext getContext() {
 EGLContext var178E2AD52D6FBBB503F908168856B574_969427356 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_969427356.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_969427356;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.636 -0400", hash_original_method = "3A3C884C8DD72479D5B7016BF0489D57", hash_generated_method = "418519E6B0AAFC40765D5AFF890A67AE")
     public void terminate() {
         execTerminate();
-        // ---------- Original Method ----------
-        //execTerminate();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.636 -0400", hash_original_method = "B8E737E7A559452A0DBE946D6943CE60", hash_generated_method = "B6770F67CF9038CAE7126511421AF7E1")
      void execTerminate() {
         onTerminate(mContext);
-        // ---------- Original Method ----------
-        //onTerminate(mContext);
+        
+        
     }
 
     

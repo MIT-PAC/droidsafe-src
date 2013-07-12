@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,11 +27,11 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
         mDataType = dataType;
         mRole = BluetoothHealth.SINK_ROLE;
         mChannelType = BluetoothHealth.CHANNEL_TYPE_ANY;
-        // ---------- Original Method ----------
-        //mName = name;
-        //mDataType = dataType;
-        //mRole = BluetoothHealth.SINK_ROLE;
-        //mChannelType = BluetoothHealth.CHANNEL_TYPE_ANY;
+        
+        
+        
+        
+        
     }
 
     
@@ -42,11 +42,11 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
         mDataType = dataType;
         mRole = role;
         mChannelType = channelType;
-        // ---------- Original Method ----------
-        //mName = name;
-        //mDataType = dataType;
-        //mRole = role;
-        //mChannelType = channelType;
+        
+        
+        
+        
+        
     }
 
     
@@ -63,19 +63,19 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
                     mChannelType == config.getChannelType());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1977993856 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1977993856;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_745888170 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978439883 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_978439883;
-        // ---------- Original Method ----------
-        //if (o instanceof BluetoothHealthAppConfiguration) {
-            //BluetoothHealthAppConfiguration config = (BluetoothHealthAppConfiguration) o;
-            //return mName.equals(config.getName()) &&
-                    //mDataType == config.getDataType() &&
-                    //mRole == config.getRole() &&
-                    //mChannelType == config.getChannelType();
-        //}
-        //return false;
+        
+        
+            
+            
+                    
+                    
+                    
+        
+        
     }
 
     
@@ -90,13 +90,13 @@ public final class BluetoothHealthAppConfiguration implements Parcelable {
         int varB4A88417B3D0170D754C647C30B7216A_1208506305 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909253113 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909253113;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + (mName != null ? mName.hashCode() : 0);
-        //result = 31 * result + mDataType;
-        //result = 31 * result + mRole;
-        //result = 31 * result + mChannelType;
-        //return result;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -108,60 +108,65 @@ String varBC25A683492661AD32E0D02950883082_1644072259 =         "BluetoothHealth
             mChannelType + "]";
         varBC25A683492661AD32E0D02950883082_1644072259.addTaint(taint);
         return varBC25A683492661AD32E0D02950883082_1644072259;
-        // ---------- Original Method ----------
-        //return "BluetoothHealthAppConfiguration [mName = " + mName +
-            //",mDataType = " + mDataType + ", mRole = " + mRole + ",mChannelType = " +
-            //mChannelType + "]";
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.190 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BCCEA2C25606ED862B2ADCA4213B964E")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_516708681 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2011645123 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2011645123;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.191 -0400", hash_original_method = "238D6A24727CDBAF0BB96C458473CE4A", hash_generated_method = "68CDC6630FA8DAB7D982D4504010A728")
     public int getDataType() {
         int var907A03EF868C95D9758028C546F47838_898272885 = (mDataType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47751252 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_47751252;
-        // ---------- Original Method ----------
-        //return mDataType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.192 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AC177E9C5F646B3CBAD3E66AB6A9EF57")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_424711843 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_424711843.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_424711843;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.192 -0400", hash_original_method = "5596828740BFEA579FE112D16B3097DF", hash_generated_method = "BBB7FC670E01D68E58FF0341BE449B54")
     public int getRole() {
         int var6F68F3585D2AEBC6A43B8C630A289FED_1527095124 = (mRole);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571858312 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571858312;
-        // ---------- Original Method ----------
-        //return mRole;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.193 -0400", hash_original_method = "1B2362EE05FDF056E4EF857CCB8AB5A5", hash_generated_method = "582409DE19398F8CF94BD70894C9AAFE")
     public int getChannelType() {
         int varC29796028A7F353A6C6E1CD0E951F8F0_1122002585 = (mChannelType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92018195 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92018195;
-        // ---------- Original Method ----------
-        //return mChannelType;
+        
+        
     }
 
     
@@ -173,11 +178,11 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_424711843 =         mName;
         out.writeInt(mDataType);
         out.writeInt(mRole);
         out.writeInt(mChannelType);
-        // ---------- Original Method ----------
-        //out.writeString(mName);
-        //out.writeInt(mDataType);
-        //out.writeInt(mRole);
-        //out.writeInt(mChannelType);
+        
+        
+        
+        
+        
     }
 
     

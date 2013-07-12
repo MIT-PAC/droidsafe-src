@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,11 +20,12 @@ final class CertTool {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.485 -0400", hash_original_method = "1838D0FEFA9E4F93A3624A1092DC54F1", hash_generated_method = "A2E73AC90715BF3F494182DD5E1CE810")
     private  CertTool() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        static String[] getKeyStrengthList() {
+        @DSModeled(DSC.SAFE)
+    static String[] getKeyStrengthList() {
         return new String[] {"High Grade", "Medium Grade"};
     }
 

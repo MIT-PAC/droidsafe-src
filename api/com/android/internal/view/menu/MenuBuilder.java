@@ -1,6 +1,6 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -113,28 +113,29 @@ public class MenuBuilder implements Menu {
         mNonActionItems = new ArrayList<MenuItemImpl>();
         mIsActionItemsStale = true;
         setShortcutsVisibleInner(true);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mResources = context.getResources();
-        //mItems = new ArrayList<MenuItemImpl>();
-        //mVisibleItems = new ArrayList<MenuItemImpl>();
-        //mIsVisibleItemsStale = true;
-        //mActionItems = new ArrayList<MenuItemImpl>();
-        //mNonActionItems = new ArrayList<MenuItemImpl>();
-        //mIsActionItemsStale = true;
-        //setShortcutsVisibleInner(true);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.312 -0400", hash_original_method = "ED83D8C12D0CC79577D0C9BACE5D12CA", hash_generated_method = "6590D70C835FD67E6508E4DE3A066698")
     public MenuBuilder setDefaultShowAsAction(int defaultShowAsAction) {
         mDefaultShowAsAction = defaultShowAsAction;
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1631943348 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1631943348.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1631943348;
-        // ---------- Original Method ----------
-        //mDefaultShowAsAction = defaultShowAsAction;
-        //return this;
+        
+        
+        
     }
 
     
@@ -144,10 +145,10 @@ MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1631943348 =         this;
         mPresenters.add(new WeakReference<MenuPresenter>(presenter));
         presenter.initForMenu(mContext, this);
         mIsActionItemsStale = true;
-        // ---------- Original Method ----------
-        //mPresenters.add(new WeakReference<MenuPresenter>(presenter));
-        //presenter.initForMenu(mContext, this);
-        //mIsActionItemsStale = true;
+        
+        
+        
+        
     }
 
     
@@ -160,15 +161,15 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(item == null || item == presenter)            
             {
                 mPresenters.remove(ref);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter item = ref.get();
-            //if (item == null || item == presenter) {
-                //mPresenters.remove(ref);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -184,25 +185,25 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
             {
                 presenter.updateMenuView(cleared);
-            } //End block
-        } //End block
+            } 
+        } 
         startDispatchingItemsChanged();
-        // ---------- Original Method ----------
-        //if (mPresenters.isEmpty()) return;
-        //stopDispatchingItemsChanged();
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else {
-                //presenter.updateMenuView(cleared);
-            //}
-        //}
-        //startDispatchingItemsChanged();
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -222,28 +223,28 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
     if(!result)            
             {
                 result = presenter.onSubMenuSelected(subMenu);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB4A88417B3D0170D754C647C30B7216A_1931665665 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_801858342 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_801858342;
-        // ---------- Original Method ----------
-        //if (mPresenters.isEmpty()) return false;
-        //boolean result = false;
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else if (!result) {
-                //result = presenter.onSubMenuSelected(subMenu);
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -259,7 +260,7 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
             {
                 final int id = presenter.getId();
@@ -269,29 +270,29 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(state != null)                    
                     {
                         presenterStates.put(id, state);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         outState.putSparseParcelableArray(PRESENTER_KEY, presenterStates);
-        // ---------- Original Method ----------
-        //if (mPresenters.isEmpty()) return;
-        //SparseArray<Parcelable> presenterStates = new SparseArray<Parcelable>();
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else {
-                //final int id = presenter.getId();
-                //if (id > 0) {
-                    //final Parcelable state = presenter.onSaveInstanceState();
-                    //if (state != null) {
-                        //presenterStates.put(id, state);
-                    //}
-                //}
-            //}
-        //}
-        //outState.putSparseParcelableArray(PRESENTER_KEY, presenterStates);
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+                    
+                    
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -307,7 +308,7 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
             {
                 final int id = presenter.getId();
@@ -317,27 +318,27 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(parcel != null)                    
                     {
                         presenter.onRestoreInstanceState(parcel);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //SparseArray<Parcelable> presenterStates = state.getSparseParcelableArray(PRESENTER_KEY);
-        //if (presenterStates == null || mPresenters.isEmpty()) return;
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else {
-                //final int id = presenter.getId();
-                //if (id > 0) {
-                    //Parcelable parcel = presenterStates.get(id);
-                    //if (parcel != null) {
-                        //presenter.onRestoreInstanceState(parcel);
-                    //}
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+                    
+                    
+                        
+                    
+                
+            
+        
     }
 
     
@@ -345,8 +346,8 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     public void savePresenterStates(Bundle outState) {
         addTaint(outState.getTaint());
         dispatchSaveInstanceState(outState);
-        // ---------- Original Method ----------
-        //dispatchSaveInstanceState(outState);
+        
+        
     }
 
     
@@ -354,8 +355,8 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     public void restorePresenterStates(Bundle state) {
         addTaint(state.getTaint());
         dispatchRestoreInstanceState(state);
-        // ---------- Original Method ----------
-        //dispatchRestoreInstanceState(state);
+        
+        
     }
 
     
@@ -373,25 +374,25 @@ for(int i = 0;i < itemCount;i++)
     if(viewStates == null)                
                 {
                     viewStates = new SparseArray<Parcelable>();
-                } //End block
+                } 
                 v.saveHierarchyState(viewStates);
     if(item.isActionViewExpanded())                
                 {
                     outStates.putInt(EXPANDED_ACTION_VIEW_ID, item.getItemId());
-                } //End block
-            } //End block
+                } 
+            } 
     if(item.hasSubMenu())            
             {
                 final SubMenuBuilder subMenu = (SubMenuBuilder) item.getSubMenu();
                 subMenu.saveActionViewStates(outStates);
-            } //End block
-        } //End block
+            } 
+        } 
     if(viewStates != null)        
         {
             outStates.putSparseParcelableArray(getActionViewStatesKey(), viewStates);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -401,7 +402,7 @@ for(int i = 0;i < itemCount;i++)
     if(states == null)        
         {
             return;
-        } //End block
+        } 
         SparseArray<Parcelable> viewStates = states.getSparseParcelableArray(
                 getActionViewStatesKey());
         final int itemCount = size();
@@ -412,13 +413,13 @@ for(int i = 0;i < itemCount;i++)
     if(v != null && v.getId() != View.NO_ID)            
             {
                 v.restoreHierarchyState(viewStates);
-            } //End block
+            } 
     if(item.hasSubMenu())            
             {
                 final SubMenuBuilder subMenu = (SubMenuBuilder) item.getSubMenu();
                 subMenu.restoreActionViewStates(states);
-            } //End block
-        } //End block
+            } 
+        } 
         final int expandedId = states.getInt(EXPANDED_ACTION_VIEW_ID);
     if(expandedId > 0)        
         {
@@ -426,28 +427,30 @@ for(int i = 0;i < itemCount;i++)
     if(itemToExpand != null)            
             {
                 itemToExpand.expandActionView();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.314 -0400", hash_original_method = "768FCB39246CC7532FBC95D1ED9DB161", hash_generated_method = "982CBC99CDC1AC21909541C6E70AD465")
     protected String getActionViewStatesKey() {
 String var7F0932DDA550CC746E0478AD81F1022C_772189511 =         ACTION_VIEW_STATES_KEY;
         var7F0932DDA550CC746E0478AD81F1022C_772189511.addTaint(taint);
         return var7F0932DDA550CC746E0478AD81F1022C_772189511;
-        // ---------- Original Method ----------
-        //return ACTION_VIEW_STATES_KEY;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.314 -0400", hash_original_method = "80E7AE02A73BB486D54AC38F406B92BB", hash_generated_method = "00DC0446DE1FD15986660B6447845996")
     public void setCallback(Callback cb) {
         mCallback = cb;
-        // ---------- Original Method ----------
-        //mCallback = cb;
+        
+        
     }
 
     
@@ -463,22 +466,22 @@ String var7F0932DDA550CC746E0478AD81F1022C_772189511 =         ACTION_VIEW_STATE
     if(mCurrentMenuInfo != null)        
         {
             item.setMenuInfo(mCurrentMenuInfo);
-        } //End block
+        } 
         mItems.add(findInsertIndex(mItems, ordering), item);
         onItemsChanged(true);
 MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1446367233 =         item;
         var393CF4FD24220F0ED4B080A1E7108CD3_1446367233.addTaint(taint);
         return var393CF4FD24220F0ED4B080A1E7108CD3_1446367233;
-        // ---------- Original Method ----------
-        //final int ordering = getOrdering(categoryOrder);
-        //final MenuItemImpl item = new MenuItemImpl(this, group, id, categoryOrder,
-                //ordering, title, mDefaultShowAsAction);
-        //if (mCurrentMenuInfo != null) {
-            //item.setMenuInfo(mCurrentMenuInfo);
-        //}
-        //mItems.add(findInsertIndex(mItems, ordering), item);
-        //onItemsChanged(true);
-        //return item;
+        
+        
+        
+                
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -488,8 +491,8 @@ MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1446367233 =         item;
 MenuItem var552DB9240B34AB1019F776DA2C7DE6A1_784952162 =         addInternal(0, 0, 0, title);
         var552DB9240B34AB1019F776DA2C7DE6A1_784952162.addTaint(taint);
         return var552DB9240B34AB1019F776DA2C7DE6A1_784952162;
-        // ---------- Original Method ----------
-        //return addInternal(0, 0, 0, title);
+        
+        
     }
 
     
@@ -499,8 +502,8 @@ MenuItem var552DB9240B34AB1019F776DA2C7DE6A1_784952162 =         addInternal(0, 
 MenuItem var8E4AE735B91F4378877E460E8B518BDE_42514019 =         addInternal(0, 0, 0, mResources.getString(titleRes));
         var8E4AE735B91F4378877E460E8B518BDE_42514019.addTaint(taint);
         return var8E4AE735B91F4378877E460E8B518BDE_42514019;
-        // ---------- Original Method ----------
-        //return addInternal(0, 0, 0, mResources.getString(titleRes));
+        
+        
     }
 
     
@@ -513,8 +516,8 @@ MenuItem var8E4AE735B91F4378877E460E8B518BDE_42514019 =         addInternal(0, 0
 MenuItem varA29D1F492D969C5999D75E14CB65A165_950606807 =         addInternal(group, id, categoryOrder, title);
         varA29D1F492D969C5999D75E14CB65A165_950606807.addTaint(taint);
         return varA29D1F492D969C5999D75E14CB65A165_950606807;
-        // ---------- Original Method ----------
-        //return addInternal(group, id, categoryOrder, title);
+        
+        
     }
 
     
@@ -527,8 +530,8 @@ MenuItem varA29D1F492D969C5999D75E14CB65A165_950606807 =         addInternal(gro
 MenuItem var10AEF6EE9D03725BAC1D293B879788CF_1463439931 =         addInternal(group, id, categoryOrder, mResources.getString(title));
         var10AEF6EE9D03725BAC1D293B879788CF_1463439931.addTaint(taint);
         return var10AEF6EE9D03725BAC1D293B879788CF_1463439931;
-        // ---------- Original Method ----------
-        //return addInternal(group, id, categoryOrder, mResources.getString(title));
+        
+        
     }
 
     
@@ -538,8 +541,8 @@ MenuItem var10AEF6EE9D03725BAC1D293B879788CF_1463439931 =         addInternal(gr
 SubMenu varE819D5BD964C892D9F7B9B909973846F_1675690250 =         addSubMenu(0, 0, 0, title);
         varE819D5BD964C892D9F7B9B909973846F_1675690250.addTaint(taint);
         return varE819D5BD964C892D9F7B9B909973846F_1675690250;
-        // ---------- Original Method ----------
-        //return addSubMenu(0, 0, 0, title);
+        
+        
     }
 
     
@@ -549,8 +552,8 @@ SubMenu varE819D5BD964C892D9F7B9B909973846F_1675690250 =         addSubMenu(0, 0
 SubMenu varE88EB247E1F54FDF7D689BA2311EE814_1806383650 =         addSubMenu(0, 0, 0, mResources.getString(titleRes));
         varE88EB247E1F54FDF7D689BA2311EE814_1806383650.addTaint(taint);
         return varE88EB247E1F54FDF7D689BA2311EE814_1806383650;
-        // ---------- Original Method ----------
-        //return addSubMenu(0, 0, 0, mResources.getString(titleRes));
+        
+        
     }
 
     
@@ -566,11 +569,11 @@ SubMenu varE88EB247E1F54FDF7D689BA2311EE814_1806383650 =         addSubMenu(0, 0
 SubMenu var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_1657268298 =         subMenu;
         var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_1657268298.addTaint(taint);
         return var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_1657268298;
-        // ---------- Original Method ----------
-        //final MenuItemImpl item = (MenuItemImpl) addInternal(group, id, categoryOrder, title);
-        //final SubMenuBuilder subMenu = new SubMenuBuilder(mContext, this, item);
-        //item.setSubMenu(subMenu);
-        //return subMenu;
+        
+        
+        
+        
+        
     }
 
     
@@ -583,8 +586,8 @@ SubMenu var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_1657268298 =         subMenu;
 SubMenu varB3D8425F5D7AB7C35917D0BC9146DC84_2075753163 =         addSubMenu(group, id, categoryOrder, mResources.getString(title));
         varB3D8425F5D7AB7C35917D0BC9146DC84_2075753163.addTaint(taint);
         return varB3D8425F5D7AB7C35917D0BC9146DC84_2075753163;
-        // ---------- Original Method ----------
-        //return addSubMenu(group, id, categoryOrder, mResources.getString(title));
+        
+        
     }
 
     
@@ -605,7 +608,7 @@ SubMenu varB3D8425F5D7AB7C35917D0BC9146DC84_2075753163 =         addSubMenu(grou
     if((flags & FLAG_APPEND_TO_GROUP) == 0)        
         {
             removeGroup(group);
-        } //End block
+        } 
 for(int i=0;i<N;i++)
         {
             final ResolveInfo ri = lri.get(i);
@@ -620,13 +623,13 @@ for(int i=0;i<N;i++)
     if(outSpecificItems != null && ri.specificIndex >= 0)            
             {
                 outSpecificItems[ri.specificIndex] = item;
-            } //End block
-        } //End block
+            } 
+        } 
         int var8D9C307CB7F3C4A32822A51922D1CEAA_1874691062 = (N);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_184670038 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_184670038;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -634,8 +637,8 @@ for(int i=0;i<N;i++)
     public void removeItem(int id) {
         addTaint(id);
         removeItemAtInt(findItemIndex(id), true);
-        // ---------- Original Method ----------
-        //removeItemAtInt(findItemIndex(id), true);
+        
+        
     }
 
     
@@ -651,19 +654,19 @@ for(int i=0;i<N;i++)
 ((numRemoved++ < maxRemovable) && (mItems.get(i).getGroupId() == group))            
             {
                 removeItemAtInt(i, false);
-            } //End block
+            } 
             onItemsChanged(true);
-        } //End block
-        // ---------- Original Method ----------
-        //final int i = findGroupIndex(group);
-        //if (i >= 0) {
-            //final int maxRemovable = mItems.size() - i;
-            //int numRemoved = 0;
-            //while ((numRemoved++ < maxRemovable) && (mItems.get(i).getGroupId() == group)) {
-                //removeItemAtInt(i, false);
-            //}
-            //onItemsChanged(true);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -676,10 +679,10 @@ for(int i=0;i<N;i++)
         mItems.remove(index);
     if(updateChildrenOnMenuViews)        
         onItemsChanged(true);
-        // ---------- Original Method ----------
-        //if ((index < 0) || (index >= mItems.size())) return;
-        //mItems.remove(index);
-        //if (updateChildrenOnMenuViews) onItemsChanged(true);
+        
+        
+        
+        
     }
 
     
@@ -687,8 +690,8 @@ for(int i=0;i<N;i++)
     public void removeItemAt(int index) {
         addTaint(index);
         removeItemAtInt(index, true);
-        // ---------- Original Method ----------
-        //removeItemAtInt(index, true);
+        
+        
     }
 
     
@@ -700,13 +703,13 @@ for(int i=0;i<N;i++)
         mPreventDispatchingItemsChanged = false;
         mItemsChangedWhileDispatchPrevented = false;
         onItemsChanged(true);
-        // ---------- Original Method ----------
-        //mPreventDispatchingItemsChanged = true;
-        //clear();
-        //clearHeader();
-        //mPreventDispatchingItemsChanged = false;
-        //mItemsChangedWhileDispatchPrevented = false;
-        //onItemsChanged(true);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -715,15 +718,15 @@ for(int i=0;i<N;i++)
     if(mExpandedItem != null)        
         {
             collapseItemActionView(mExpandedItem);
-        } //End block
+        } 
         mItems.clear();
         onItemsChanged(true);
-        // ---------- Original Method ----------
-        //if (mExpandedItem != null) {
-            //collapseItemActionView(mExpandedItem);
-        //}
-        //mItems.clear();
-        //onItemsChanged(true);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -742,19 +745,19 @@ for(int i = 0;i < N;i++)
     if(!curItem.isCheckable())                
                 continue;
                 curItem.setCheckedInt(curItem == item);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int group = item.getGroupId();
-        //final int N = mItems.size();
-        //for (int i = 0; i < N; i++) {
-            //MenuItemImpl curItem = mItems.get(i);
-            //if (curItem.getGroupId() == group) {
-                //if (!curItem.isExclusiveCheckable()) continue;
-                //if (!curItem.isCheckable()) continue;
-                //curItem.setCheckedInt(curItem == item);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -771,17 +774,17 @@ for(int i = 0;i < N;i++)
             {
                 item.setExclusiveCheckable(exclusive);
                 item.setCheckable(checkable);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int N = mItems.size();
-        //for (int i = 0; i < N; i++) {
-            //MenuItemImpl item = mItems.get(i);
-            //if (item.getGroupId() == group) {
-                //item.setExclusiveCheckable(exclusive);
-                //item.setCheckable(checkable);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -798,20 +801,20 @@ for(int i = 0;i < N;i++)
             {
     if(item.setVisibleInt(visible))                
                 changedAtLeastOneItem = true;
-            } //End block
-        } //End block
+            } 
+        } 
     if(changedAtLeastOneItem)        
         onItemsChanged(true);
-        // ---------- Original Method ----------
-        //final int N = mItems.size();
-        //boolean changedAtLeastOneItem = false;
-        //for (int i = 0; i < N; i++) {
-            //MenuItemImpl item = mItems.get(i);
-            //if (item.getGroupId() == group) {
-                //if (item.setVisibleInt(visible)) changedAtLeastOneItem = true;
-            //}
-        //}
-        //if (changedAtLeastOneItem) onItemsChanged(true);
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -826,16 +829,16 @@ for(int i = 0;i < N;i++)
     if(item.getGroupId() == group)            
             {
                 item.setEnabled(enabled);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final int N = mItems.size();
-        //for (int i = 0; i < N; i++) {
-            //MenuItemImpl item = mItems.get(i);
-            //if (item.getGroupId() == group) {
-                //item.setEnabled(enabled);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -850,20 +853,20 @@ for(int i = 0;i < size;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1578969247 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_224761290 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_224761290;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1375484851 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1438277800 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1438277800;
-        // ---------- Original Method ----------
-        //final int size = size();
-        //for (int i = 0; i < size; i++) {
-            //MenuItemImpl item = mItems.get(i);
-            //if (item.isVisible()) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -879,7 +882,7 @@ for(int i = 0;i < size;i++)
 MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1003006265 =                 item;
                 var393CF4FD24220F0ED4B080A1E7108CD3_1003006265.addTaint(taint);
                 return var393CF4FD24220F0ED4B080A1E7108CD3_1003006265;
-            } //End block
+            } 
             else
     if(item.hasSubMenu())            
             {
@@ -889,26 +892,26 @@ MenuItem var393CF4FD24220F0ED4B080A1E7108CD3_1003006265 =                 item;
 MenuItem varDAE208F95FACCCB174179530B25805B7_229764814 =                     possibleItem;
                     varDAE208F95FACCCB174179530B25805B7_229764814.addTaint(taint);
                     return varDAE208F95FACCCB174179530B25805B7_229764814;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 MenuItem var540C13E9E156B687226421B24F2DF178_1746417028 =         null;
         var540C13E9E156B687226421B24F2DF178_1746417028.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1746417028;
-        // ---------- Original Method ----------
-        //final int size = size();
-        //for (int i = 0; i < size; i++) {
-            //MenuItemImpl item = mItems.get(i);
-            //if (item.getItemId() == id) {
-                //return item;
-            //} else if (item.hasSubMenu()) {
-                //MenuItem possibleItem = item.getSubMenu().findItem(id);
-                //if (possibleItem != null) {
-                    //return possibleItem;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -924,20 +927,20 @@ for(int i = 0;i < size;i++)
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_193543747 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900179307 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900179307;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_2000435236 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1190505664 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1190505664;
-        // ---------- Original Method ----------
-        //final int size = size();
-        //for (int i = 0; i < size; i++) {
-            //MenuItemImpl item = mItems.get(i);
-            //if (item.getItemId() == id) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -947,8 +950,8 @@ for(int i = 0;i < size;i++)
         int var6B458BB34938B6D2698FB85C1A9DF35F_766734701 = (findGroupIndex(group, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434526219 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1434526219;
-        // ---------- Original Method ----------
-        //return findGroupIndex(group, 0);
+        
+        
     }
 
     
@@ -960,7 +963,7 @@ for(int i = 0;i < size;i++)
     if(start < 0)        
         {
             start = 0;
-        } //End block
+        } 
 for(int i = start;i < size;i++)
         {
             final MenuItemImpl item = mItems.get(i);
@@ -969,23 +972,23 @@ for(int i = start;i < size;i++)
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_2003045154 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1020094067 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1020094067;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1221171844 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1557536493 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1557536493;
-        // ---------- Original Method ----------
-        //final int size = size();
-        //if (start < 0) {
-            //start = 0;
-        //}
-        //for (int i = start; i < size; i++) {
-            //final MenuItemImpl item = mItems.get(i);
-            //if (item.getGroupId() == group) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -994,8 +997,8 @@ for(int i = start;i < size;i++)
         int var9B434FD456AC2D14B6AB22377BFF1926_45047205 = (mItems.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002412466 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2002412466;
-        // ---------- Original Method ----------
-        //return mItems.size();
+        
+        
     }
 
     
@@ -1005,8 +1008,8 @@ for(int i = start;i < size;i++)
 MenuItem var955C9579A8231EA8752336C152243F31_49279496 =         mItems.get(index);
         var955C9579A8231EA8752336C152243F31_49279496.addTaint(taint);
         return var955C9579A8231EA8752336C152243F31_49279496;
-        // ---------- Original Method ----------
-        //return mItems.get(index);
+        
+        
     }
 
     
@@ -1017,8 +1020,8 @@ MenuItem var955C9579A8231EA8752336C152243F31_49279496 =         mItems.get(index
         boolean var544816AF505855E5330ACF6254CC8C80_535649621 = (findItemWithShortcutForKey(keyCode, event) != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651903107 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651903107;
-        // ---------- Original Method ----------
-        //return findItemWithShortcutForKey(keyCode, event) != null;
+        
+        
     }
 
     
@@ -1026,9 +1029,9 @@ MenuItem var955C9579A8231EA8752336C152243F31_49279496 =         mItems.get(index
     public void setQwertyMode(boolean isQwerty) {
         mQwertyMode = isQwerty;
         onItemsChanged(false);
-        // ---------- Original Method ----------
-        //mQwertyMode = isQwerty;
-        //onItemsChanged(false);
+        
+        
+        
     }
 
     
@@ -1041,13 +1044,14 @@ MenuItem var955C9579A8231EA8752336C152243F31_49279496 =         mItems.get(index
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.319 -0400", hash_original_method = "D1F1AC187BB0F0066C68CB94F0A9F578", hash_generated_method = "2A04F2CA957102C445D682DF3E2B8811")
      boolean isQwertyMode() {
         boolean var7A5D05E188FBFEFD2A6CD8C4F3BE55EF_1585077441 = (mQwertyMode);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790586038 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790586038;
-        // ---------- Original Method ----------
-        //return mQwertyMode;
+        
+        
     }
 
     
@@ -1058,10 +1062,10 @@ MenuItem var955C9579A8231EA8752336C152243F31_49279496 =         mItems.get(index
         return;
         setShortcutsVisibleInner(shortcutsVisible);
         onItemsChanged(false);
-        // ---------- Original Method ----------
-        //if (mShortcutsVisible == shortcutsVisible) return;
-        //setShortcutsVisibleInner(shortcutsVisible);
-        //onItemsChanged(false);
+        
+        
+        
+        
     }
 
     
@@ -1071,41 +1075,44 @@ MenuItem var955C9579A8231EA8752336C152243F31_49279496 =         mItems.get(index
                 && mResources.getConfiguration().keyboard != Configuration.KEYBOARD_NOKEYS
                 && mResources.getBoolean(
                         com.android.internal.R.bool.config_showMenuShortcutsWhenKeyboardPresent);
-        // ---------- Original Method ----------
-        //mShortcutsVisible = shortcutsVisible
-                //&& mResources.getConfiguration().keyboard != Configuration.KEYBOARD_NOKEYS
-                //&& mResources.getBoolean(
-                        //com.android.internal.R.bool.config_showMenuShortcutsWhenKeyboardPresent);
+        
+        
+                
+                
+                        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.320 -0400", hash_original_method = "3D6E88EAA663FB4E0596921B97D4252E", hash_generated_method = "1FD8F801E83FE3FF1DB041BFA0B08766")
     public boolean isShortcutsVisible() {
         boolean var30F8E95083FD70AE11D91E338148BC3B_1361379754 = (mShortcutsVisible);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1213329148 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1213329148;
-        // ---------- Original Method ----------
-        //return mShortcutsVisible;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.320 -0400", hash_original_method = "9FEC9CB1792EB215E49CBF732B0DBF5B", hash_generated_method = "37863C70B9A4F64BC356EB2781C91074")
      Resources getResources() {
 Resources var346B953D96D762F7FED561E83C1656CA_952996521 =         mResources;
         var346B953D96D762F7FED561E83C1656CA_952996521.addTaint(taint);
         return var346B953D96D762F7FED561E83C1656CA_952996521;
-        // ---------- Original Method ----------
-        //return mResources;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.320 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "F0B191EB275613DED05D43E9E72DBBEC")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_483091749 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_483091749.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_483091749;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
@@ -1116,8 +1123,8 @@ Context var178E2AD52D6FBBB503F908168856B574_483091749 =         mContext;
         boolean var2C2D8C32C2CAC698FCFE5145125D6C9E_834728028 = (mCallback != null && mCallback.onMenuItemSelected(menu, item));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1300849514 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1300849514;
-        // ---------- Original Method ----------
-        //return mCallback != null && mCallback.onMenuItemSelected(menu, item);
+        
+        
     }
 
     
@@ -1126,11 +1133,11 @@ Context var178E2AD52D6FBBB503F908168856B574_483091749 =         mContext;
     if(mCallback != null)        
         {
             mCallback.onMenuModeChange(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCallback != null) {
-            //mCallback.onMenuModeChange(this);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1155,24 +1162,24 @@ Context var178E2AD52D6FBBB503F908168856B574_483091749 =         mContext;
     if(item != null)        
         {
             handled = performItemAction(item, flags);
-        } //End block
+        } 
     if((flags & FLAG_ALWAYS_PERFORM_CLOSE) != 0)        
         {
             close(true);
-        } //End block
+        } 
         boolean var98F0599AF776A1FE4101C199A40EEB8F_113440599 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246081255 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246081255;
-        // ---------- Original Method ----------
-        //final MenuItemImpl item = findItemWithShortcutForKey(keyCode, event);
-        //boolean handled = false;
-        //if (item != null) {
-            //handled = performItemAction(item, flags);
-        //}
-        //if ((flags & FLAG_ALWAYS_PERFORM_CLOSE) != 0) {
-            //close(true);
-        //}
-        //return handled;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -1188,7 +1195,7 @@ Context var178E2AD52D6FBBB503F908168856B574_483091749 =         mContext;
     if(!isKeyCodeMapped && (keyCode != KeyEvent.KEYCODE_DEL))        
         {
             return;
-        } //End block
+        } 
         final int N = mItems.size();
 for(int i = 0;i < N;i++)
         {
@@ -1196,7 +1203,7 @@ for(int i = 0;i < N;i++)
     if(item.hasSubMenu())            
             {
                 ((MenuBuilder)item.getSubMenu()).findItemsWithShortcutForKey(items, keyCode, event);
-            } //End block
+            } 
             final char shortcutChar = qwerty ? item.getAlphabeticShortcut() : item.getNumericShortcut();
     if(((metaState & (KeyEvent.META_SHIFT_ON | KeyEvent.META_SYM_ON)) == 0) &&
                   (shortcutChar != 0) &&
@@ -1207,10 +1214,10 @@ for(int i = 0;i < N;i++)
                   item.isEnabled())            
             {
                 items.add(item);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1226,7 +1233,7 @@ for(int i = 0;i < N;i++)
 MenuItemImpl var540C13E9E156B687226421B24F2DF178_682536059 =             null;
             var540C13E9E156B687226421B24F2DF178_682536059.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_682536059;
-        } //End block
+        } 
         final int metaState = event.getMetaState();
         final KeyCharacterMap.KeyData possibleChars = new KeyCharacterMap.KeyData();
         event.getKeyData(possibleChars);
@@ -1236,7 +1243,7 @@ MenuItemImpl var540C13E9E156B687226421B24F2DF178_682536059 =             null;
 MenuItemImpl var74F894FE91D6EE80B7707D4B19317B89_367342784 =             items.get(0);
             var74F894FE91D6EE80B7707D4B19317B89_367342784.addTaint(taint);
             return var74F894FE91D6EE80B7707D4B19317B89_367342784;
-        } //End block
+        } 
         final boolean qwerty = isQwertyMode();
 for(int i = 0;i < size;i++)
         {
@@ -1253,13 +1260,13 @@ for(int i = 0;i < size;i++)
 MenuItemImpl var393CF4FD24220F0ED4B080A1E7108CD3_887947727 =                 item;
                 var393CF4FD24220F0ED4B080A1E7108CD3_887947727.addTaint(taint);
                 return var393CF4FD24220F0ED4B080A1E7108CD3_887947727;
-            } //End block
-        } //End block
+            } 
+        } 
 MenuItemImpl var540C13E9E156B687226421B24F2DF178_897517987 =         null;
         var540C13E9E156B687226421B24F2DF178_897517987.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_897517987;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1270,8 +1277,8 @@ MenuItemImpl var540C13E9E156B687226421B24F2DF178_897517987 =         null;
         boolean varA9BCF1E63C94B27E6CBADA0062DBE721_1268725338 = (performItemAction(findItem(id), flags));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530791607 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530791607;
-        // ---------- Original Method ----------
-        //return performItemAction(findItem(id), flags);
+        
+        
     }
 
     
@@ -1285,14 +1292,14 @@ MenuItemImpl var540C13E9E156B687226421B24F2DF178_897517987 =         null;
             boolean var68934A3E9455FA72420237EB05902327_1892877150 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057643545 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057643545;
-        } //End block
+        } 
         boolean invoked = itemImpl.invoke();
     if(itemImpl.hasCollapsibleActionView())        
         {
             invoked |= itemImpl.expandActionView();
     if(invoked)            
             close(true);
-        } //End block
+        } 
         else
     if(item.hasSubMenu())        
         {
@@ -1302,23 +1309,23 @@ MenuItemImpl var540C13E9E156B687226421B24F2DF178_897517987 =         null;
     if(provider != null && provider.hasSubMenu())            
             {
                 provider.onPrepareSubMenu(subMenu);
-            } //End block
+            } 
             invoked |= dispatchSubMenuSelected(subMenu);
     if(!invoked)            
             close(true);
-        } //End block
+        } 
         else
         {
     if((flags & FLAG_PERFORM_NO_CLOSE) == 0)            
             {
                 close(true);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varFABB19B279DE1E206FA6D493923723BA_513614462 = (invoked);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1250268533 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1250268533;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1334,39 +1341,39 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
             {
                 presenter.onCloseMenu(this, allMenusAreClosing);
-            } //End block
-        } //End block
+            } 
+        } 
         mIsClosing = false;
-        // ---------- Original Method ----------
-        //if (mIsClosing) return;
-        //mIsClosing = true;
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else {
-                //presenter.onCloseMenu(this, allMenusAreClosing);
-            //}
-        //}
-        //mIsClosing = false;
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.322 -0400", hash_original_method = "597B95CEB5AFD05C977FB508D047C50E", hash_generated_method = "21668DF8FDBDBCA1A469227829ADE78B")
     public void close() {
         close(true);
-        // ---------- Original Method ----------
-        //close(true);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.323 -0400", hash_original_method = "5A795AB2D4E1ABD04FD81F99B25E4230", hash_generated_method = "7F166D58154C121D6B00E896143568F4")
      void onItemsChanged(boolean structureChanged) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(structureChanged);
     if(!mPreventDispatchingItemsChanged)        
         {
@@ -1374,38 +1381,39 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
             {
                 mIsVisibleItemsStale = true;
                 mIsActionItemsStale = true;
-            } //End block
+            } 
             dispatchPresenterUpdate(structureChanged);
-        } //End block
+        } 
         else
         {
             mItemsChangedWhileDispatchPrevented = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mPreventDispatchingItemsChanged) {
-            //if (structureChanged) {
-                //mIsVisibleItemsStale = true;
-                //mIsActionItemsStale = true;
-            //}
-            //dispatchPresenterUpdate(structureChanged);
-        //} else {
-            //mItemsChangedWhileDispatchPrevented = true;
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.323 -0400", hash_original_method = "7EE5FE9E6BBC07EC6A3DE0DDC7903124", hash_generated_method = "C6C34B3ACFB6E10E203EE437E36232E8")
     public void stopDispatchingItemsChanged() {
     if(!mPreventDispatchingItemsChanged)        
         {
             mPreventDispatchingItemsChanged = true;
             mItemsChangedWhileDispatchPrevented = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mPreventDispatchingItemsChanged) {
-            //mPreventDispatchingItemsChanged = true;
-            //mItemsChangedWhileDispatchPrevented = false;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1416,37 +1424,37 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
         {
             mItemsChangedWhileDispatchPrevented = false;
             onItemsChanged(true);
-        } //End block
-        // ---------- Original Method ----------
-        //mPreventDispatchingItemsChanged = false;
-        //if (mItemsChangedWhileDispatchPrevented) {
-            //mItemsChangedWhileDispatchPrevented = false;
-            //onItemsChanged(true);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.323 -0400", hash_original_method = "35145509C47AC84C9D3AE9A757523F29", hash_generated_method = "87BC14FF3FF6B59C0F43CD242572A1D4")
      void onItemVisibleChanged(MenuItemImpl item) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(item.getTaint());
         mIsVisibleItemsStale = true;
         onItemsChanged(true);
-        // ---------- Original Method ----------
-        //mIsVisibleItemsStale = true;
-        //onItemsChanged(true);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.324 -0400", hash_original_method = "A132A45384AC6B24ED5C41ACBF0074C1", hash_generated_method = "C71F64C33507DF9A294146BFC5C35934")
      void onItemActionRequestChanged(MenuItemImpl item) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(item.getTaint());
         mIsActionItemsStale = true;
         onItemsChanged(true);
-        // ---------- Original Method ----------
-        //mIsActionItemsStale = true;
-        //onItemsChanged(true);
+        
+        
+        
     }
 
     
@@ -1466,24 +1474,24 @@ for(int i = 0;i < itemsSize;i++)
             item = mItems.get(i);
     if(item.isVisible())            
             mVisibleItems.add(item);
-        } //End block
+        } 
         mIsVisibleItemsStale = false;
         mIsActionItemsStale = true;
 ArrayList<MenuItemImpl> var33FFCE779C9FCF0AFFA1FF6FAAEA0DF9_1395386250 =         mVisibleItems;
         var33FFCE779C9FCF0AFFA1FF6FAAEA0DF9_1395386250.addTaint(taint);
         return var33FFCE779C9FCF0AFFA1FF6FAAEA0DF9_1395386250;
-        // ---------- Original Method ----------
-        //if (!mIsVisibleItemsStale) return mVisibleItems;
-        //mVisibleItems.clear();
-        //final int itemsSize = mItems.size();
-        //MenuItemImpl item;
-        //for (int i = 0; i < itemsSize; i++) {
-            //item = mItems.get(i);
-            //if (item.isVisible()) mVisibleItems.add(item);
-        //}
-        //mIsVisibleItemsStale = false;
-        //mIsActionItemsStale = true;
-        //return mVisibleItems;
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -1492,7 +1500,7 @@ ArrayList<MenuItemImpl> var33FFCE779C9FCF0AFFA1FF6FAAEA0DF9_1395386250 =        
     if(!mIsActionItemsStale)        
         {
             return;
-        } //End block
+        } 
         boolean flagged = false;
 for(WeakReference<MenuPresenter> ref : mPresenters)
         {
@@ -1500,12 +1508,12 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
             {
                 flagged |= presenter.flagActionItems();
-            } //End block
-        } //End block
+            } 
+        } 
     if(flagged)        
         {
             mActionItems.clear();
@@ -1518,22 +1526,22 @@ for(int i = 0;i < itemsSize;i++)
     if(item.isActionButton())                
                 {
                     mActionItems.add(item);
-                } //End block
+                } 
                 else
                 {
                     mNonActionItems.add(item);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             mActionItems.clear();
             mNonActionItems.clear();
             mNonActionItems.addAll(getVisibleItems());
-        } //End block
+        } 
         mIsActionItemsStale = false;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1543,9 +1551,9 @@ for(int i = 0;i < itemsSize;i++)
 ArrayList<MenuItemImpl> var4C3BCBFB9C785406A11CA0A78BD89521_1524872493 =         mActionItems;
         var4C3BCBFB9C785406A11CA0A78BD89521_1524872493.addTaint(taint);
         return var4C3BCBFB9C785406A11CA0A78BD89521_1524872493;
-        // ---------- Original Method ----------
-        //flagActionItems();
-        //return mActionItems;
+        
+        
+        
     }
 
     
@@ -1555,9 +1563,9 @@ ArrayList<MenuItemImpl> var4C3BCBFB9C785406A11CA0A78BD89521_1524872493 =        
 ArrayList<MenuItemImpl> var1BEF02116BD01649FAF4B06AB6C0ADD7_1396391579 =         mNonActionItems;
         var1BEF02116BD01649FAF4B06AB6C0ADD7_1396391579.addTaint(taint);
         return var1BEF02116BD01649FAF4B06AB6C0ADD7_1396391579;
-        // ---------- Original Method ----------
-        //flagActionItems();
-        //return mNonActionItems;
+        
+        
+        
     }
 
     
@@ -1567,11 +1575,11 @@ ArrayList<MenuItemImpl> var1BEF02116BD01649FAF4B06AB6C0ADD7_1396391579 =        
         mHeaderTitle = null;
         mHeaderView = null;
         onItemsChanged(false);
-        // ---------- Original Method ----------
-        //mHeaderIcon = null;
-        //mHeaderTitle = null;
-        //mHeaderView = null;
-        //onItemsChanged(false);
+        
+        
+        
+        
+        
     }
 
     
@@ -1584,50 +1592,50 @@ ArrayList<MenuItemImpl> var1BEF02116BD01649FAF4B06AB6C0ADD7_1396391579 =        
             mHeaderView = view;
             mHeaderTitle = null;
             mHeaderIcon = null;
-        } //End block
+        } 
         else
         {
     if(titleRes > 0)            
             {
                 mHeaderTitle = r.getText(titleRes);
-            } //End block
+            } 
             else
     if(title != null)            
             {
                 mHeaderTitle = title;
-            } //End block
+            } 
     if(iconRes > 0)            
             {
                 mHeaderIcon = r.getDrawable(iconRes);
-            } //End block
+            } 
             else
     if(icon != null)            
             {
                 mHeaderIcon = icon;
-            } //End block
+            } 
             mHeaderView = null;
-        } //End block
+        } 
         onItemsChanged(false);
-        // ---------- Original Method ----------
-        //final Resources r = getResources();
-        //if (view != null) {
-            //mHeaderView = view;
-            //mHeaderTitle = null;
-            //mHeaderIcon = null;
-        //} else {
-            //if (titleRes > 0) {
-                //mHeaderTitle = r.getText(titleRes);
-            //} else if (title != null) {
-                //mHeaderTitle = title;
-            //}
-            //if (iconRes > 0) {
-                //mHeaderIcon = r.getDrawable(iconRes);
-            //} else if (icon != null) {
-                //mHeaderIcon = icon;
-            //}
-            //mHeaderView = null;
-        //}
-        //onItemsChanged(false);
+        
+        
+        
+            
+            
+            
+        
+            
+                
+            
+                
+            
+            
+                
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -1638,9 +1646,9 @@ ArrayList<MenuItemImpl> var1BEF02116BD01649FAF4B06AB6C0ADD7_1396391579 =        
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_844373355 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_844373355.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_844373355;
-        // ---------- Original Method ----------
-        //setHeaderInternal(0, title, 0, null, null);
-        //return this;
+        
+        
+        
     }
 
     
@@ -1651,9 +1659,9 @@ MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_844373355 =         this;
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1460073449 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1460073449.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1460073449;
-        // ---------- Original Method ----------
-        //setHeaderInternal(titleRes, null, 0, null, null);
-        //return this;
+        
+        
+        
     }
 
     
@@ -1664,9 +1672,9 @@ MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1460073449 =         this;
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1945713 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1945713.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1945713;
-        // ---------- Original Method ----------
-        //setHeaderInternal(0, null, 0, icon, null);
-        //return this;
+        
+        
+        
     }
 
     
@@ -1677,9 +1685,9 @@ MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1945713 =         this;
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1163909941 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1163909941.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1163909941;
-        // ---------- Original Method ----------
-        //setHeaderInternal(0, null, iconRes, null, null);
-        //return this;
+        
+        
+        
     }
 
     
@@ -1690,75 +1698,82 @@ MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1163909941 =         this;
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_960098938 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_960098938.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_960098938;
-        // ---------- Original Method ----------
-        //setHeaderInternal(0, null, 0, null, view);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.333 -0400", hash_original_method = "784130069FD88AACA2FF7E14C3513725", hash_generated_method = "E57B7C839330AE6F45E0179BC15907F1")
     public CharSequence getHeaderTitle() {
 CharSequence var7DCC7A2F957B393CB2727C67254C5D1B_411217781 =         mHeaderTitle;
         var7DCC7A2F957B393CB2727C67254C5D1B_411217781.addTaint(taint);
         return var7DCC7A2F957B393CB2727C67254C5D1B_411217781;
-        // ---------- Original Method ----------
-        //return mHeaderTitle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.333 -0400", hash_original_method = "2A12D914AC47BF173D916A2E203AB0B5", hash_generated_method = "335E3D8EAE0312D5A1E9E25FBAC994D5")
     public Drawable getHeaderIcon() {
 Drawable varCA8B61EFC38E8D748E1BCFE8467D287E_844144013 =         mHeaderIcon;
         varCA8B61EFC38E8D748E1BCFE8467D287E_844144013.addTaint(taint);
         return varCA8B61EFC38E8D748E1BCFE8467D287E_844144013;
-        // ---------- Original Method ----------
-        //return mHeaderIcon;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.333 -0400", hash_original_method = "05FD519E01712AB41A2C974B75A6F049", hash_generated_method = "46BBE8F6385E1B85DCD775658A89E75A")
     public View getHeaderView() {
 View var91C9EF508B9512096DAA858981B9A59A_24702452 =         mHeaderView;
         var91C9EF508B9512096DAA858981B9A59A_24702452.addTaint(taint);
         return var91C9EF508B9512096DAA858981B9A59A_24702452;
-        // ---------- Original Method ----------
-        //return mHeaderView;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.334 -0400", hash_original_method = "1B9A2DEC3BE3351B13A5C4A669F566C3", hash_generated_method = "26E42C0B424C771CA6CE8EBFAB796995")
     public MenuBuilder getRootMenu() {
 MenuBuilder var72A74007B2BE62B849F475C7BDA4658B_1800586951 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1800586951.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1800586951;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.334 -0400", hash_original_method = "8B5C0DAA8A7CB0B223A94346B39E6366", hash_generated_method = "44FD6FA0FC67E1F797EECB25B51E33BF")
     public void setCurrentMenuInfo(ContextMenuInfo menuInfo) {
         mCurrentMenuInfo = menuInfo;
-        // ---------- Original Method ----------
-        //mCurrentMenuInfo = menuInfo;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.334 -0400", hash_original_method = "5006D7919DE7388D9F9EDDAFF142B475", hash_generated_method = "E45EEED5BD943ACCCE728FF6AF008161")
      void setOptionalIconsVisible(boolean visible) {
         mOptionalIconsVisible = visible;
-        // ---------- Original Method ----------
-        //mOptionalIconsVisible = visible;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.334 -0400", hash_original_method = "E16B8D475B8F5B112A4C02A29314D988", hash_generated_method = "264B7397BD2D7462F2911241407AA156")
      boolean getOptionalIconsVisible() {
         boolean varBFBEA2D110892FD684F3E2CEA7E7EEE0_318240777 = (mOptionalIconsVisible);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024902208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024902208;
-        // ---------- Original Method ----------
-        //return mOptionalIconsVisible;
+        
+        
     }
 
     
@@ -1778,38 +1793,38 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
     if((expanded = presenter.expandItemActionView(this, item)))            
             {
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
         startDispatchingItemsChanged();
     if(expanded)        
         {
             mExpandedItem = item;
-        } //End block
+        } 
         boolean var1A6130A21D7D578D81A168EBCF0D9921_1549382605 = (expanded);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1208899032 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1208899032;
-        // ---------- Original Method ----------
-        //if (mPresenters.isEmpty()) return false;
-        //boolean expanded = false;
-        //stopDispatchingItemsChanged();
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else if ((expanded = presenter.expandItemActionView(this, item))) {
-                //break;
-            //}
-        //}
-        //startDispatchingItemsChanged();
-        //if (expanded) {
-            //mExpandedItem = item;
-        //}
-        //return expanded;
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1830,48 +1845,49 @@ for(WeakReference<MenuPresenter> ref : mPresenters)
     if(presenter == null)            
             {
                 mPresenters.remove(ref);
-            } //End block
+            } 
             else
     if((collapsed = presenter.collapseItemActionView(this, item)))            
             {
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
         startDispatchingItemsChanged();
     if(collapsed)        
         {
             mExpandedItem = null;
-        } //End block
+        } 
         boolean var3338C02FE80EF02FC4BFB78F90BF173C_444247874 = (collapsed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_21715408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_21715408;
-        // ---------- Original Method ----------
-        //if (mPresenters.isEmpty() || mExpandedItem != item) return false;
-        //boolean collapsed = false;
-        //stopDispatchingItemsChanged();
-        //for (WeakReference<MenuPresenter> ref : mPresenters) {
-            //final MenuPresenter presenter = ref.get();
-            //if (presenter == null) {
-                //mPresenters.remove(ref);
-            //} else if ((collapsed = presenter.collapseItemActionView(this, item))) {
-                //break;
-            //}
-        //}
-        //startDispatchingItemsChanged();
-        //if (collapsed) {
-            //mExpandedItem = null;
-        //}
-        //return collapsed;
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.335 -0400", hash_original_method = "D7BAB9B2E77DBC9C3D313A6F44451B73", hash_generated_method = "B6017002D2CAAA5776E43428B4B1DB74")
     public MenuItemImpl getExpandedItem() {
 MenuItemImpl varC988F696DAE68DCF751841C7BFBE9186_351873205 =         mExpandedItem;
         varC988F696DAE68DCF751841C7BFBE9186_351873205.addTaint(taint);
         return varC988F696DAE68DCF751841C7BFBE9186_351873205;
-        // ---------- Original Method ----------
-        //return mExpandedItem;
+        
+        
     }
 
     

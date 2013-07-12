@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,19 +38,19 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
             IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_1367073197 = new IllegalArgumentException("Session input buffer may not be null");
             varB3677395451B18A3F9262E9D7FE254B3_1367073197.addTaint(taint);
             throw varB3677395451B18A3F9262E9D7FE254B3_1367073197;
-        } //End block
+        } 
         this.sessionBuffer = buffer;
         this.lineBuf = new CharArrayBuffer(128);
         this.lineFormatter = (formatter != null) ?
             formatter : BasicLineFormatter.DEFAULT;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Session input buffer may not be null");
-        //}
-        //this.sessionBuffer = buffer;
-        //this.lineBuf = new CharArrayBuffer(128);
-        //this.lineFormatter = (formatter != null) ?
-            //formatter : BasicLineFormatter.DEFAULT;
+        
+        
+            
+        
+        
+        
+        
+            
     }
 
     
@@ -68,28 +68,28 @@ public abstract class AbstractMessageWriter implements HttpMessageWriter {
             IllegalArgumentException var1AA7713A32BCFE0974EC5B02C04D6E20_488209064 = new IllegalArgumentException("HTTP message may not be null");
             var1AA7713A32BCFE0974EC5B02C04D6E20_488209064.addTaint(taint);
             throw var1AA7713A32BCFE0974EC5B02C04D6E20_488209064;
-        } //End block
+        } 
         writeHeadLine(message);
 for(Iterator it = message.headerIterator();it.hasNext();)
         {
             Header header = (Header) it.next();
             this.sessionBuffer.writeLine
                 (lineFormatter.formatHeader(this.lineBuf, header));
-        } //End block
+        } 
         this.lineBuf.clear();
         this.sessionBuffer.writeLine(this.lineBuf);
-        // ---------- Original Method ----------
-        //if (message == null) {
-            //throw new IllegalArgumentException("HTTP message may not be null");
-        //}
-        //writeHeadLine(message);
-        //for (Iterator it = message.headerIterator(); it.hasNext(); ) {
-            //Header header = (Header) it.next();
-            //this.sessionBuffer.writeLine
-                //(lineFormatter.formatHeader(this.lineBuf, header));
-        //}
-        //this.lineBuf.clear();
-        //this.sessionBuffer.writeLine(this.lineBuf);
+        
+        
+            
+        
+        
+        
+            
+            
+                
+        
+        
+        
     }
 
     

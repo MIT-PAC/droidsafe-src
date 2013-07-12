@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,9 +29,9 @@ public class ParcelFileDescriptor implements Parcelable {
         super();
         mParcelDescriptor = descriptor;
         mFileDescriptor = mParcelDescriptor.mFileDescriptor;
-        // ---------- Original Method ----------
-        //mParcelDescriptor = descriptor;
-        //mFileDescriptor = mParcelDescriptor.mFileDescriptor;
+        
+        
+        
     }
 
     
@@ -43,15 +43,15 @@ public class ParcelFileDescriptor implements Parcelable {
             NullPointerException var6CECE4DBF93816ADA1AE39F6AB5F20EC_2070871175 = new NullPointerException("descriptor must not be null");
             var6CECE4DBF93816ADA1AE39F6AB5F20EC_2070871175.addTaint(taint);
             throw var6CECE4DBF93816ADA1AE39F6AB5F20EC_2070871175;
-        } //End block
+        } 
         mFileDescriptor = descriptor;
         mParcelDescriptor = null;
-        // ---------- Original Method ----------
-        //if (descriptor == null) {
-            //throw new NullPointerException("descriptor must not be null");
-        //}
-        //mFileDescriptor = descriptor;
-        //mParcelDescriptor = null;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -84,8 +84,8 @@ public class ParcelFileDescriptor implements Parcelable {
 ParcelFileDescriptor var8F8003894920E6C8D79BF232DC1A425D_264586404 =         dup(getFileDescriptor());
         var8F8003894920E6C8D79BF232DC1A425D_264586404.addTaint(taint);
         return var8F8003894920E6C8D79BF232DC1A425D_264586404;
-        // ---------- Original Method ----------
-        //return dup(getFileDescriptor());
+        
+        
     }
 
     
@@ -113,7 +113,8 @@ ParcelFileDescriptor var8F8003894920E6C8D79BF232DC1A425D_264586404 =         dup
     }
 
     
-        public static ParcelFileDescriptor fromSocket(Socket socket) {
+        @DSModeled(DSC.SPEC)
+    public static ParcelFileDescriptor fromSocket(Socket socket) {
         FileDescriptor fd = socket.getFileDescriptor$();
         return fd != null ? new ParcelFileDescriptor(fd) : null;
     }
@@ -153,16 +154,18 @@ ParcelFileDescriptor var8F8003894920E6C8D79BF232DC1A425D_264586404 =         dup
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.130 -0400", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "A5D6CA424ABACC9D74CAAF85CD03807D")
     public FileDescriptor getFileDescriptor() {
 FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescriptor;
         varBF65C9190F4896E9BF5F66CF67037E9B_27172633.addTaint(taint);
         return varBF65C9190F4896E9BF5F66CF67037E9B_27172633;
-        // ---------- Original Method ----------
-        //return mFileDescriptor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.131 -0400", hash_original_method = "77F816B0B1C349FF3A8882E701737452", hash_generated_method = "9D70C95D5FB4E303E592A675849DC7FD")
     public long getStatSize() {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_795381302 = getTaintLong();
@@ -170,6 +173,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.131 -0400", hash_original_method = "0F9A3950A7A9E5BB31D919F8BB19673E", hash_generated_method = "34A2525E138418C3D949ECEBA789EBC5")
     public long seekTo(long pos) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_994367706 = getTaintLong();
@@ -184,18 +188,19 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
             IllegalStateException varFC8456B24C14638E092CF6A7A56825A1_496684151 = new IllegalStateException("Already closed");
             varFC8456B24C14638E092CF6A7A56825A1_496684151.addTaint(taint);
             throw varFC8456B24C14638E092CF6A7A56825A1_496684151;
-        } //End block
+        } 
         int var3476AB58648A22F39E53701B72707A3C_137151789 = (getFdNative());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682483792 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1682483792;
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("Already closed");
-        //}
-        //return getFdNative();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.132 -0400", hash_original_method = "48F8D374A617845984C88F484B28408C", hash_generated_method = "CB685F8C97FD578BA21C5BA044675FC3")
     private int getFdNative() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_456331374 = getTaintInt();
@@ -210,7 +215,7 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
             IllegalStateException varFC8456B24C14638E092CF6A7A56825A1_1203312301 = new IllegalStateException("Already closed");
             varFC8456B24C14638E092CF6A7A56825A1_1203312301.addTaint(taint);
             throw varFC8456B24C14638E092CF6A7A56825A1_1203312301;
-        } //End block
+        } 
     if(mParcelDescriptor != null)        
         {
             int fd = mParcelDescriptor.detachFd();
@@ -218,26 +223,26 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
             int var36EBA1E1E343279857EA7F69A597324E_469772218 = (fd);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_355240167 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_355240167;
-        } //End block
+        } 
         int fd = getFd();
         mClosed = true;
         Parcel.clearFileDescriptor(mFileDescriptor);
         int var36EBA1E1E343279857EA7F69A597324E_1280591150 = (fd);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899501574 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1899501574;
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("Already closed");
-        //}
-        //if (mParcelDescriptor != null) {
-            //int fd = mParcelDescriptor.detachFd();
-            //mClosed = true;
-            //return fd;
-        //}
-        //int fd = getFd();
-        //mClosed = true;
-        //Parcel.clearFileDescriptor(mFileDescriptor);
-        //return fd;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -248,25 +253,25 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
     if(mClosed)            
             return;
             mClosed = true;
-        } //End block
+        } 
     if(mParcelDescriptor != null)        
         {
             mParcelDescriptor.close();
-        } //End block
+        } 
         else
         {
             Parcel.closeFileDescriptor(mFileDescriptor);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mClosed) return;
-            //mClosed = true;
-        //}
-        //if (mParcelDescriptor != null) {
-            //mParcelDescriptor.close();
-        //} else {
-            //Parcel.closeFileDescriptor(mFileDescriptor);
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -276,8 +281,8 @@ FileDescriptor varBF65C9190F4896E9BF5F66CF67037E9B_27172633 =         mFileDescr
 String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDescriptor: " + mFileDescriptor + "}";
         varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026.addTaint(taint);
         return varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026;
-        // ---------- Original Method ----------
-        //return "{ParcelFileDescriptor: " + mFileDescriptor + "}";
+        
+        
     }
 
     
@@ -289,30 +294,31 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
     if(!mClosed)            
             {
                 close();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (!mClosed) {
-                //close();
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.134 -0400", hash_original_method = "5C5A30224996A2D414D9176559E683A9", hash_generated_method = "ECDE7F7D56D6E23A69B53860674B5960")
     public int describeContents() {
         int var7D45AD2A24206A9DE492E2B68DB53120_1162905991 = (Parcelable.CONTENTS_FILE_DESCRIPTOR);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707369432 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707369432;
-        // ---------- Original Method ----------
-        //return Parcelable.CONTENTS_FILE_DESCRIPTOR;
+        
+        
     }
 
     
@@ -326,19 +332,19 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
             try 
             {
                 close();
-            } //End block
+            } 
             catch (IOException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //out.writeFileDescriptor(mFileDescriptor);
-        //if ((flags&PARCELABLE_WRITE_RETURN_VALUE) != 0 && !mClosed) {
-            //try {
-                //close();
-            //} catch (IOException e) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -351,8 +357,8 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
         public  AutoCloseInputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
             mFd = fd;
-            // ---------- Original Method ----------
-            //mFd = fd;
+            
+            
         }
 
         
@@ -362,17 +368,17 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
             try 
             {
                 mFd.close();
-            } //End block
+            } 
             finally 
             {
                 super.close();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //mFd.close();
-            //} finally {
-                //super.close();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -389,8 +395,8 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
         public  AutoCloseOutputStream(ParcelFileDescriptor fd) {
             super(fd.getFileDescriptor());
             mFd = fd;
-            // ---------- Original Method ----------
-            //mFd = fd;
+            
+            
         }
 
         
@@ -400,17 +406,17 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
             try 
             {
                 mFd.close();
-            } //End block
+            } 
             finally 
             {
                 super.close();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //mFd.close();
-            //} finally {
-                //super.close();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -453,17 +459,17 @@ String varD0E163889A7CDE1AC2BFE5012A2D59E4_1331580026 =         "{ParcelFileDesc
             return new ParcelFileDescriptor[size];
         }
     };
-    // orphaned legacy method
+    
     public ParcelFileDescriptor() {
     	
     }
     
-    // orphaned legacy method
+    
     public ParcelFileDescriptor[] newArray(int size) {
             return new ParcelFileDescriptor[size];
         }
     
-    // orphaned legacy method
+    
     public ParcelFileDescriptor createFromParcel(Parcel in) {
             return in.readFileDescriptor();
         }

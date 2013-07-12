@@ -1,6 +1,6 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,12 +29,12 @@ public final class StructUtsname {
         this.release = release;
         this.version = version;
         this.machine = machine;
-        // ---------- Original Method ----------
-        //this.sysname = sysname;
-        //this.nodename = nodename;
-        //this.release = release;
-        //this.version = version;
-        //this.machine = machine;
+        
+        
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package javax.crypto.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,15 +19,15 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
             NullPointerException varFA3A74DCB59559DB05915F890BBC8166_1746848073 = new NullPointerException("iv == null");
             varFA3A74DCB59559DB05915F890BBC8166_1746848073.addTaint(taint);
             throw varFA3A74DCB59559DB05915F890BBC8166_1746848073;
-        } //End block
+        } 
         this.iv = new byte[iv.length];
         System.arraycopy(iv, 0, this.iv, 0, iv.length);
-        // ---------- Original Method ----------
-        //if (iv == null) {
-            //throw new NullPointerException("iv == null");
-        //}
-        //this.iv = new byte[iv.length];
-        //System.arraycopy(iv, 0, this.iv, 0, iv.length);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -39,17 +39,17 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_243689281 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_243689281.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_243689281;
-        } //End block
+        } 
         Arrays.checkOffsetAndCount(iv.length, offset, byteCount);
         this.iv = new byte[byteCount];
         System.arraycopy(iv, offset, this.iv, 0, byteCount);
-        // ---------- Original Method ----------
-        //if ((iv == null) || (iv.length - offset < byteCount)) {
-            //throw new IllegalArgumentException();
-        //}
-        //Arrays.checkOffsetAndCount(iv.length, offset, byteCount);
-        //this.iv = new byte[byteCount];
-        //System.arraycopy(iv, offset, this.iv, 0, byteCount);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -60,10 +60,10 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
         byte[] var9B207167E5381C47682C6B4F58A623FB_700806137 = (res);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_495602951 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_495602951;
-        // ---------- Original Method ----------
-        //byte[] res = new byte[iv.length];
-        //System.arraycopy(iv, 0, res, 0, iv.length);
-        //return res;
+        
+        
+        
+        
     }
 
     

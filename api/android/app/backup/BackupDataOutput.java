@@ -1,6 +1,6 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,13 +27,13 @@ public class BackupDataOutput {
             RuntimeException varD18F42038ED5A65B5B920440D9607511_1857350818 = new RuntimeException("Native initialization failed with fd=" + fd);
             varD18F42038ED5A65B5B920440D9607511_1857350818.addTaint(taint);
             throw varD18F42038ED5A65B5B920440D9607511_1857350818;
-        } //End block
-        // ---------- Original Method ----------
-        //if (fd == null) throw new NullPointerException();
-        //mBackupWriter = ctor(fd);
-        //if (mBackupWriter == 0) {
-            //throw new RuntimeException("Native initialization failed with fd=" + fd);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -47,20 +47,20 @@ public class BackupDataOutput {
             int varB4A88417B3D0170D754C647C30B7216A_1448501016 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1735256726 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1735256726;
-        } //End block
+        } 
         else
         {
             IOException var4138A9E13F8C9D20923834ABCA8008BB_1996849575 = new IOException("result=0x" + Integer.toHexString(result));
             var4138A9E13F8C9D20923834ABCA8008BB_1996849575.addTaint(taint);
             throw var4138A9E13F8C9D20923834ABCA8008BB_1996849575;
-        } //End block
-        // ---------- Original Method ----------
-        //int result = writeEntityHeader_native(mBackupWriter, key, dataSize);
-        //if (result >= 0) {
-            //return result;
-        //} else {
-            //throw new IOException("result=0x" + Integer.toHexString(result));
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -74,20 +74,20 @@ public class BackupDataOutput {
             int varB4A88417B3D0170D754C647C30B7216A_286384920 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345889150 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_345889150;
-        } //End block
+        } 
         else
         {
             IOException var4138A9E13F8C9D20923834ABCA8008BB_549005449 = new IOException("result=0x" + Integer.toHexString(result));
             var4138A9E13F8C9D20923834ABCA8008BB_549005449.addTaint(taint);
             throw var4138A9E13F8C9D20923834ABCA8008BB_549005449;
-        } //End block
-        // ---------- Original Method ----------
-        //int result = writeEntityData_native(mBackupWriter, data, size);
-        //if (result >= 0) {
-            //return result;
-        //} else {
-            //throw new IOException("result=0x" + Integer.toHexString(result));
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -95,8 +95,8 @@ public class BackupDataOutput {
     public void setKeyPrefix(String keyPrefix) {
         addTaint(keyPrefix.getTaint());
         setKeyPrefix_native(mBackupWriter, keyPrefix);
-        // ---------- Original Method ----------
-        //setKeyPrefix_native(mBackupWriter, keyPrefix);
+        
+        
     }
 
     
@@ -105,17 +105,17 @@ public class BackupDataOutput {
         try 
         {
             dtor(mBackupWriter);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //dtor(mBackupWriter);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

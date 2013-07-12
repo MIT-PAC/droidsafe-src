@@ -1,6 +1,6 @@
 package javax.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public abstract class SAXParser {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.861 -0400", hash_original_method = "60861A80C08610A003AEF9BD086AC67B", hash_generated_method = "D85D3D2B092B8D57ADC303B7697DCEA9")
     protected  SAXParser() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,12 +34,12 @@ public abstract class SAXParser {
             );
         var7C551673C8356EEBC5D7497F7A95F3F8_1503495508.addTaint(taint);
         throw var7C551673C8356EEBC5D7497F7A95F3F8_1503495508;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This SAXParser, \"" + this.getClass().getName() + "\", does not support the reset functionality."
-            //+ "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
-            //+ " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
-            //);
+        
+        
+            
+            
+            
+            
     }
 
     
@@ -52,15 +52,15 @@ public abstract class SAXParser {
             IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_2075750969 = new IllegalArgumentException("InputStream cannot be null");
             varC815381FE103054CE280DFD5B97A6E37_2075750969.addTaint(taint);
             throw varC815381FE103054CE280DFD5B97A6E37_2075750969;
-        } //End block
+        } 
         InputSource input = new InputSource(is);
         this.parse(input, hb);
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputStream cannot be null");
-        //}
-        //InputSource input = new InputSource(is);
-        //this.parse(input, hb);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -77,17 +77,17 @@ public abstract class SAXParser {
             IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_1688792754 = new IllegalArgumentException("InputStream cannot be null");
             varC815381FE103054CE280DFD5B97A6E37_1688792754.addTaint(taint);
             throw varC815381FE103054CE280DFD5B97A6E37_1688792754;
-        } //End block
+        } 
         InputSource input = new InputSource(is);
         input.setSystemId(systemId);
         this.parse(input, hb);
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputStream cannot be null");
-        //}
-        //InputSource input = new InputSource(is);
-        //input.setSystemId(systemId);
-        //this.parse(input, hb);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -100,15 +100,15 @@ public abstract class SAXParser {
             IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_658104498 = new IllegalArgumentException("InputStream cannot be null");
             varC815381FE103054CE280DFD5B97A6E37_658104498.addTaint(taint);
             throw varC815381FE103054CE280DFD5B97A6E37_658104498;
-        } //End block
+        } 
         InputSource input = new InputSource(is);
         this.parse(input, dh);
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputStream cannot be null");
-        //}
-        //InputSource input = new InputSource(is);
-        //this.parse(input, dh);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -125,17 +125,17 @@ public abstract class SAXParser {
             IllegalArgumentException varC815381FE103054CE280DFD5B97A6E37_1314825627 = new IllegalArgumentException("InputStream cannot be null");
             varC815381FE103054CE280DFD5B97A6E37_1314825627.addTaint(taint);
             throw varC815381FE103054CE280DFD5B97A6E37_1314825627;
-        } //End block
+        } 
         InputSource input = new InputSource(is);
         input.setSystemId(systemId);
         this.parse(input, dh);
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputStream cannot be null");
-        //}
-        //InputSource input = new InputSource(is);
-        //input.setSystemId(systemId);
-        //this.parse(input, dh);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -148,15 +148,15 @@ public abstract class SAXParser {
             IllegalArgumentException var43E55EBB1529700CC8D575B1A62B12AE_230111906 = new IllegalArgumentException("uri cannot be null");
             var43E55EBB1529700CC8D575B1A62B12AE_230111906.addTaint(taint);
             throw var43E55EBB1529700CC8D575B1A62B12AE_230111906;
-        } //End block
+        } 
         InputSource input = new InputSource(uri);
         this.parse(input, hb);
-        // ---------- Original Method ----------
-        //if (uri == null) {
-            //throw new IllegalArgumentException("uri cannot be null");
-        //}
-        //InputSource input = new InputSource(uri);
-        //this.parse(input, hb);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -169,15 +169,15 @@ public abstract class SAXParser {
             IllegalArgumentException var43E55EBB1529700CC8D575B1A62B12AE_1812973058 = new IllegalArgumentException("uri cannot be null");
             var43E55EBB1529700CC8D575B1A62B12AE_1812973058.addTaint(taint);
             throw var43E55EBB1529700CC8D575B1A62B12AE_1812973058;
-        } //End block
+        } 
         InputSource input = new InputSource(uri);
         this.parse(input, dh);
-        // ---------- Original Method ----------
-        //if (uri == null) {
-            //throw new IllegalArgumentException("uri cannot be null");
-        //}
-        //InputSource input = new InputSource(uri);
-        //this.parse(input, dh);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -190,24 +190,24 @@ public abstract class SAXParser {
             IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_471055354 = new IllegalArgumentException("File cannot be null");
             varFEC080412D1250CB64DE25E01D0B1780_471055354.addTaint(taint);
             throw varFEC080412D1250CB64DE25E01D0B1780_471055354;
-        } //End block
+        } 
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
     if(DEBUG)        
         {
             System.out.println("Escaped URI = " + escapedURI);
-        } //End block
+        } 
         InputSource input = new InputSource(escapedURI);
         this.parse(input, hb);
-        // ---------- Original Method ----------
-        //if (f == null) {
-            //throw new IllegalArgumentException("File cannot be null");
-        //}
-        //String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
-        //if (DEBUG) {
-            //System.out.println("Escaped URI = " + escapedURI);
-        //}
-        //InputSource input = new InputSource(escapedURI);
-        //this.parse(input, hb);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -220,24 +220,24 @@ public abstract class SAXParser {
             IllegalArgumentException varFEC080412D1250CB64DE25E01D0B1780_286011670 = new IllegalArgumentException("File cannot be null");
             varFEC080412D1250CB64DE25E01D0B1780_286011670.addTaint(taint);
             throw varFEC080412D1250CB64DE25E01D0B1780_286011670;
-        } //End block
+        } 
         String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
     if(DEBUG)        
         {
             System.out.println("Escaped URI = " + escapedURI);
-        } //End block
+        } 
         InputSource input = new InputSource(escapedURI);
         this.parse(input, dh);
-        // ---------- Original Method ----------
-        //if (f == null) {
-            //throw new IllegalArgumentException("File cannot be null");
-        //}
-        //String escapedURI = FilePathToURI.filepath2URI(f.getAbsolutePath());
-        //if (DEBUG) {
-            //System.out.println("Escaped URI = " + escapedURI);
-        //}
-        //InputSource input = new InputSource(escapedURI);
-        //this.parse(input, dh);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -250,7 +250,7 @@ public abstract class SAXParser {
             IllegalArgumentException varA613319797731CA5E15D0EBCB2C00F66_234066608 = new IllegalArgumentException("InputSource cannot be null");
             varA613319797731CA5E15D0EBCB2C00F66_234066608.addTaint(taint);
             throw varA613319797731CA5E15D0EBCB2C00F66_234066608;
-        } //End block
+        } 
         Parser parser = this.getParser();
     if(hb != null)        
         {
@@ -258,20 +258,20 @@ public abstract class SAXParser {
             parser.setEntityResolver(hb);
             parser.setErrorHandler(hb);
             parser.setDTDHandler(hb);
-        } //End block
+        } 
         parser.parse(is);
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputSource cannot be null");
-        //}
-        //Parser parser = this.getParser();
-        //if (hb != null) {
-            //parser.setDocumentHandler(hb);
-            //parser.setEntityResolver(hb);
-            //parser.setErrorHandler(hb);
-            //parser.setDTDHandler(hb);
-        //}
-        //parser.parse(is);
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -284,7 +284,7 @@ public abstract class SAXParser {
             IllegalArgumentException varA613319797731CA5E15D0EBCB2C00F66_386498270 = new IllegalArgumentException("InputSource cannot be null");
             varA613319797731CA5E15D0EBCB2C00F66_386498270.addTaint(taint);
             throw varA613319797731CA5E15D0EBCB2C00F66_386498270;
-        } //End block
+        } 
         XMLReader reader = this.getXMLReader();
     if(dh != null)        
         {
@@ -292,20 +292,20 @@ public abstract class SAXParser {
             reader.setEntityResolver(dh);
             reader.setErrorHandler(dh);
             reader.setDTDHandler(dh);
-        } //End block
+        } 
         reader.parse(is);
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new IllegalArgumentException("InputSource cannot be null");
-        //}
-        //XMLReader reader = this.getXMLReader();
-        //if (dh != null) {
-            //reader.setContentHandler(dh);
-            //reader.setEntityResolver(dh);
-            //reader.setErrorHandler(dh);
-            //reader.setDTDHandler(dh);
-        //}
-        //reader.parse(is);
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -340,14 +340,14 @@ public abstract class SAXParser {
             );
         varE9742D55AB47AEF31209978AAE994BE9_1689864285.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_1689864285;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -362,14 +362,14 @@ public abstract class SAXParser {
             );
         varE9742D55AB47AEF31209978AAE994BE9_1978241853.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_1978241853;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     

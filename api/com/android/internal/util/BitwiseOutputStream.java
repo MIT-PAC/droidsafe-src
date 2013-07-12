@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,10 +21,10 @@ public class BitwiseOutputStream {
         mBuf = new byte[startingLength];
         mEnd = startingLength << 3;
         mPos = 0;
-        // ---------- Original Method ----------
-        //mBuf = new byte[startingLength];
-        //mEnd = startingLength << 3;
-        //mPos = 0;
+        
+        
+        
+        
     }
 
     
@@ -36,11 +36,11 @@ public class BitwiseOutputStream {
         byte[] var0A94B194638DDB595BED320A270BC946_686506304 = (newBuf);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_253780481 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_253780481;
-        // ---------- Original Method ----------
-        //int len = (mPos >>> 3) + ((mPos & 0x07) > 0 ? 1 : 0);
-        //byte[] newBuf = new byte[len];
-        //System.arraycopy(mBuf, 0, newBuf, 0, len);
-        //return newBuf;
+        
+        
+        
+        
+        
     }
 
     
@@ -52,11 +52,11 @@ public class BitwiseOutputStream {
         byte[] newBuf = new byte[(mPos + bits) >>> 2];
         System.arraycopy(mBuf, 0, newBuf, 0, mEnd >>> 3);
         mBuf = newBuf;
-        // ---------- Original Method ----------
-        //if ((mPos + bits) < mEnd) return;
-        //byte[] newBuf = new byte[(mPos + bits) >>> 2];
-        //System.arraycopy(mBuf, 0, newBuf, 0, mEnd >>> 3);
-        //mBuf = newBuf;
+        
+        
+        
+        
+        
     }
 
     
@@ -67,7 +67,7 @@ public class BitwiseOutputStream {
             AccessException varC19FF9A33E636231793F43F4DF35322B_241134 = new AccessException("illegal write (" + bits + " bits)");
             varC19FF9A33E636231793F43F4DF35322B_241134.addTaint(taint);
             throw varC19FF9A33E636231793F43F4DF35322B_241134;
-        } //End block
+        } 
         possExpand(bits);
         data &= (-1 >>> (32 - bits));
         int index = mPos >>> 3;
@@ -77,18 +77,18 @@ public class BitwiseOutputStream {
         mBuf[index] |= data >>> 8;
     if(offset < 8)        
         mBuf[index + 1] |= data & 0xFF;
-        // ---------- Original Method ----------
-        //if ((bits < 0) || (bits > 8)) {
-            //throw new AccessException("illegal write (" + bits + " bits)");
-        //}
-        //possExpand(bits);
-        //data &= (-1 >>> (32 - bits));
-        //int index = mPos >>> 3;
-        //int offset = 16 - (mPos & 0x07) - bits;
-        //data <<= offset;
-        //mPos += bits;
-        //mBuf[index] |= data >>> 8;
-        //if (offset < 8) mBuf[index + 1] |= data & 0xFF;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -102,15 +102,15 @@ for(int i = 0;i < arr.length;i++)
     if(increment > 0)            
             {
                 write(increment, (byte)(arr[i] >>> (8 - increment)));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < arr.length; i++) {
-            //int increment = Math.min(8, bits - (i << 3));
-            //if (increment > 0) {
-                //write(increment, (byte)(arr[i] >>> (8 - increment)));
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -118,9 +118,9 @@ for(int i = 0;i < arr.length;i++)
     public void skip(int bits) {
         possExpand(bits);
         mPos += bits;
-        // ---------- Original Method ----------
-        //possExpand(bits);
-        //mPos += bits;
+        
+        
+        
     }
 
     
@@ -130,7 +130,7 @@ for(int i = 0;i < arr.length;i++)
         public  AccessException(String s) {
             super("BitwiseOutputStream access failed: " + s);
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

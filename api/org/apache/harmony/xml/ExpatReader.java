@@ -1,6 +1,6 @@
 package org.apache.harmony.xml;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,7 +45,7 @@ public class ExpatReader implements XMLReader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.011 -0400", hash_original_method = "0527B9275A46E7773519FE6EE020706F", hash_generated_method = "0527B9275A46E7773519FE6EE020706F")
     public ExpatReader ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -57,7 +57,7 @@ public class ExpatReader implements XMLReader {
             NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_593708383 = new NullPointerException("name == null");
             varA117BA528B11F7D1AC96CABFD5286E5C_593708383.addTaint(taint);
             throw varA117BA528B11F7D1AC96CABFD5286E5C_593708383;
-        } //End block
+        } 
     if(name.equals(Feature.VALIDATION)
                 || name.equals(Feature.EXTERNAL_GENERAL_ENTITIES)
                 || name.equals(Feature.EXTERNAL_PARAMETER_ENTITIES))        
@@ -65,47 +65,47 @@ public class ExpatReader implements XMLReader {
             boolean var68934A3E9455FA72420237EB05902327_2145034625 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_455322978 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_455322978;
-        } //End block
+        } 
     if(name.equals(Feature.NAMESPACES))        
         {
             boolean varA1F90DC0949B964CF3CD56D32EFE56BC_2099184947 = (processNamespaces);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553683428 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_553683428;
-        } //End block
+        } 
     if(name.equals(Feature.NAMESPACE_PREFIXES))        
         {
             boolean var927838188E10ED01C9B4CBE415401448_1767680685 = (processNamespacePrefixes);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_36509761 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_36509761;
-        } //End block
+        } 
     if(name.equals(Feature.STRING_INTERNING))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_615041569 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_113591089 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_113591089;
-        } //End block
+        } 
         SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_1708840675 = new SAXNotRecognizedException(name);
         var5FC954F6CCADD58BC8498AD6F3DB9EC4_1708840675.addTaint(taint);
         throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_1708840675;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //if (name.equals(Feature.VALIDATION)
-                //|| name.equals(Feature.EXTERNAL_GENERAL_ENTITIES)
-                //|| name.equals(Feature.EXTERNAL_PARAMETER_ENTITIES)) {
-            //return false;
-        //}
-        //if (name.equals(Feature.NAMESPACES)) {
-            //return processNamespaces;
-        //}
-        //if (name.equals(Feature.NAMESPACE_PREFIXES)) {
-            //return processNamespacePrefixes;
-        //}
-        //if (name.equals(Feature.STRING_INTERNING)) {
-            //return true;
-        //}
-        //throw new SAXNotRecognizedException(name);
+        
+        
+            
+        
+        
+                
+                
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -117,7 +117,7 @@ public class ExpatReader implements XMLReader {
             NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_94576399 = new NullPointerException("name == null");
             varA117BA528B11F7D1AC96CABFD5286E5C_94576399.addTaint(taint);
             throw varA117BA528B11F7D1AC96CABFD5286E5C_94576399;
-        } //End block
+        } 
     if(name.equals(Feature.VALIDATION)
                 || name.equals(Feature.EXTERNAL_GENERAL_ENTITIES)
                 || name.equals(Feature.EXTERNAL_PARAMETER_ENTITIES))        
@@ -127,40 +127,40 @@ public class ExpatReader implements XMLReader {
                 SAXNotSupportedException var53E60CACA3362DC1DCF43B01E153E97C_1577493763 = new SAXNotSupportedException("Cannot enable " + name);
                 var53E60CACA3362DC1DCF43B01E153E97C_1577493763.addTaint(taint);
                 throw var53E60CACA3362DC1DCF43B01E153E97C_1577493763;
-            } //End block
+            } 
             else
             {
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
     if(name.equals(Feature.NAMESPACES))        
         {
             processNamespaces = value;
             return;
-        } //End block
+        } 
     if(name.equals(Feature.NAMESPACE_PREFIXES))        
         {
             processNamespacePrefixes = value;
             return;
-        } //End block
+        } 
     if(name.equals(Feature.STRING_INTERNING))        
         {
     if(value)            
             {
                 return;
-            } //End block
+            } 
             else
             {
                 SAXNotSupportedException var48CABC7DECC68EFB24C707B5924BC004_2041571425 = new SAXNotSupportedException("Cannot disable " + name);
                 var48CABC7DECC68EFB24C707B5924BC004_2041571425.addTaint(taint);
                 throw var48CABC7DECC68EFB24C707B5924BC004_2041571425;
-            } //End block
-        } //End block
+            } 
+        } 
         SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_1274798315 = new SAXNotRecognizedException(name);
         var5FC954F6CCADD58BC8498AD6F3DB9EC4_1274798315.addTaint(taint);
         throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_1274798315;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -172,24 +172,24 @@ public class ExpatReader implements XMLReader {
             NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_492066998 = new NullPointerException("name == null");
             varA117BA528B11F7D1AC96CABFD5286E5C_492066998.addTaint(taint);
             throw varA117BA528B11F7D1AC96CABFD5286E5C_492066998;
-        } //End block
+        } 
     if(name.equals(LEXICAL_HANDLER_PROPERTY))        
         {
 Object varF24ED8F881B00D87C96DB18E799E5B4E_1684895060 =             lexicalHandler;
             varF24ED8F881B00D87C96DB18E799E5B4E_1684895060.addTaint(taint);
             return varF24ED8F881B00D87C96DB18E799E5B4E_1684895060;
-        } //End block
+        } 
         SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_2090841915 = new SAXNotRecognizedException(name);
         var5FC954F6CCADD58BC8498AD6F3DB9EC4_2090841915.addTaint(taint);
         throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_2090841915;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //if (name.equals(LEXICAL_HANDLER_PROPERTY)) {
-            //return lexicalHandler;
-        //}
-        //throw new SAXNotRecognizedException(name);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -201,143 +201,155 @@ Object varF24ED8F881B00D87C96DB18E799E5B4E_1684895060 =             lexicalHandl
             NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_1102521633 = new NullPointerException("name == null");
             varA117BA528B11F7D1AC96CABFD5286E5C_1102521633.addTaint(taint);
             throw varA117BA528B11F7D1AC96CABFD5286E5C_1102521633;
-        } //End block
+        } 
     if(name.equals(LEXICAL_HANDLER_PROPERTY))        
         {
     if(value instanceof LexicalHandler || value == null)            
             {
                 this.lexicalHandler = (LexicalHandler) value;
                 return;
-            } //End block
+            } 
             SAXNotSupportedException varDD284D957193ADFAF1F18F3E92F263A1_518591071 = new SAXNotSupportedException("value doesn't implement " +
                     "org.xml.sax.ext.LexicalHandler");
             varDD284D957193ADFAF1F18F3E92F263A1_518591071.addTaint(taint);
             throw varDD284D957193ADFAF1F18F3E92F263A1_518591071;
-        } //End block
+        } 
         SAXNotRecognizedException var5FC954F6CCADD58BC8498AD6F3DB9EC4_244770639 = new SAXNotRecognizedException(name);
         var5FC954F6CCADD58BC8498AD6F3DB9EC4_244770639.addTaint(taint);
         throw var5FC954F6CCADD58BC8498AD6F3DB9EC4_244770639;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //if (name.equals(LEXICAL_HANDLER_PROPERTY)) {
-            //if (value instanceof LexicalHandler || value == null) {
-                //this.lexicalHandler = (LexicalHandler) value;
-                //return;
-            //}
-            //throw new SAXNotSupportedException("value doesn't implement " +
-                    //"org.xml.sax.ext.LexicalHandler");
-        //}
-        //throw new SAXNotRecognizedException(name);
+        
+        
+            
+        
+        
+            
+                
+                
+            
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.015 -0400", hash_original_method = "4AC4E6C4007D28BC651CD7E6B362DD6C", hash_generated_method = "63D835E03E7F509982E0571C1C9770D9")
     public void setEntityResolver(EntityResolver resolver) {
         this.entityResolver = resolver;
-        // ---------- Original Method ----------
-        //this.entityResolver = resolver;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.015 -0400", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "460900C55F5652C346A398068CE496A1")
     public EntityResolver getEntityResolver() {
 EntityResolver varB87C3AFF5DDB8AE3D0CC56605478B984_830015387 =         entityResolver;
         varB87C3AFF5DDB8AE3D0CC56605478B984_830015387.addTaint(taint);
         return varB87C3AFF5DDB8AE3D0CC56605478B984_830015387;
-        // ---------- Original Method ----------
-        //return entityResolver;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "C5C8FE4AAF9C21A7CE3D34FBCBA58D65", hash_generated_method = "8B0F5ED3687EC3A90BA8E74AD080DCEE")
     public void setDTDHandler(DTDHandler dtdHandler) {
         this.dtdHandler = dtdHandler;
-        // ---------- Original Method ----------
-        //this.dtdHandler = dtdHandler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "3C3FF5FAEB1A6BEF84D72357FA4D72D5")
     public DTDHandler getDTDHandler() {
 DTDHandler varA6420E370A0D0E7B2C08F2BBD64CCBA1_466222319 =         dtdHandler;
         varA6420E370A0D0E7B2C08F2BBD64CCBA1_466222319.addTaint(taint);
         return varA6420E370A0D0E7B2C08F2BBD64CCBA1_466222319;
-        // ---------- Original Method ----------
-        //return dtdHandler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "2FAFDB8E70CAAF64BA45E64983BDD69F", hash_generated_method = "A94027FF3EBB8EC2D5A71E5B3D4DF058")
     public void setContentHandler(ContentHandler handler) {
         this.contentHandler = handler;
-        // ---------- Original Method ----------
-        //this.contentHandler = handler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.016 -0400", hash_original_method = "E04698427463FF6147E1A918B2D0CE2E", hash_generated_method = "51AC84000EC4268178BC4317AE4E245B")
     public ContentHandler getContentHandler() {
 ContentHandler var3013AD2E73283A2E190EF56C6A56B21E_253131022 =         this.contentHandler;
         var3013AD2E73283A2E190EF56C6A56B21E_253131022.addTaint(taint);
         return var3013AD2E73283A2E190EF56C6A56B21E_253131022;
-        // ---------- Original Method ----------
-        //return this.contentHandler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.017 -0400", hash_original_method = "7B962796A6AC5EDA23D64E3C68EF714F", hash_generated_method = "6F05662BE8FCA118F2F6EF361C757A69")
     public void setErrorHandler(ErrorHandler handler) {
         this.errorHandler = handler;
-        // ---------- Original Method ----------
-        //this.errorHandler = handler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.017 -0400", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "150D780AEFDEC21A9287BA77A2E517B3")
     public ErrorHandler getErrorHandler() {
 ErrorHandler var814E1CB3DFFE2674E65471BBF7C52ECD_339476575 =         errorHandler;
         var814E1CB3DFFE2674E65471BBF7C52ECD_339476575.addTaint(taint);
         return var814E1CB3DFFE2674E65471BBF7C52ECD_339476575;
-        // ---------- Original Method ----------
-        //return errorHandler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.017 -0400", hash_original_method = "6DC1F08FFDA197EBCFE51BBDA6091085", hash_generated_method = "64EBCB4E3826189DF08A334F48EFF248")
     public LexicalHandler getLexicalHandler() {
 LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHandler;
         varF24ED8F881B00D87C96DB18E799E5B4E_767331437.addTaint(taint);
         return varF24ED8F881B00D87C96DB18E799E5B4E_767331437;
-        // ---------- Original Method ----------
-        //return lexicalHandler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.018 -0400", hash_original_method = "46969CCBA4951230BBEE4D65C754FA21", hash_generated_method = "453F77C804B47DFB6BD13C7EAAB6638F")
     public void setLexicalHandler(LexicalHandler lexicalHandler) {
         this.lexicalHandler = lexicalHandler;
-        // ---------- Original Method ----------
-        //this.lexicalHandler = lexicalHandler;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.018 -0400", hash_original_method = "8B578359B2B86A936D64E613060A616F", hash_generated_method = "17FFA7C518350684BC738B6453A4D203")
     public boolean isNamespaceProcessingEnabled() {
         boolean varA1F90DC0949B964CF3CD56D32EFE56BC_1832916148 = (processNamespaces);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2006482292 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2006482292;
-        // ---------- Original Method ----------
-        //return processNamespaces;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.018 -0400", hash_original_method = "B86489F53C66FA94BF60F43E844ECD38", hash_generated_method = "7BDAE2666FC1C25E8AEF559C34924293")
     public void setNamespaceProcessingEnabled(boolean processNamespaces) {
         this.processNamespaces = processNamespaces;
-        // ---------- Original Method ----------
-        //this.processNamespaces = processNamespaces;
+        
+        
     }
 
     
@@ -351,20 +363,20 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
                     "feature is enabled.");
             varFF1A17A1196885D99838768CDEBF7BD9_11538587.addTaint(taint);
             throw varFF1A17A1196885D99838768CDEBF7BD9_11538587;
-        } //End block
+        } 
         Reader reader = input.getCharacterStream();
     if(reader != null)        
         {
             try 
             {
                 parse(reader, input.getPublicId(), input.getSystemId());
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(reader);
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         InputStream in = input.getByteStream();
         String encoding = input.getEncoding();
     if(in != null)        
@@ -372,31 +384,31 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
             try 
             {
                 parse(in, encoding, input.getPublicId(), input.getSystemId());
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(in);
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         String systemId = input.getSystemId();
     if(systemId == null)        
         {
             SAXException varEB69E75D6AFFEB43170B9CA8B920E515_1395936589 = new SAXException("No input specified.");
             varEB69E75D6AFFEB43170B9CA8B920E515_1395936589.addTaint(taint);
             throw varEB69E75D6AFFEB43170B9CA8B920E515_1395936589;
-        } //End block
+        } 
         in = ExpatParser.openUrl(systemId);
         try 
         {
             parse(in, encoding, input.getPublicId(), systemId);
-        } //End block
+        } 
         finally 
         {
             IoUtils.closeQuietly(in);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -413,15 +425,15 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
                 systemId
         );
         parser.parseDocument(in);
-        // ---------- Original Method ----------
-        //ExpatParser parser = new ExpatParser(
-                //ExpatParser.CHARACTER_ENCODING,
-                //this,
-                //processNamespaces,
-                //publicId,
-                //systemId
-        //);
-        //parser.parseDocument(in);
+        
+        
+                
+                
+                
+                
+                
+        
+        
     }
 
     
@@ -440,15 +452,15 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
                 systemId
         );
         parser.parseDocument(in);
-        // ---------- Original Method ----------
-        //ExpatParser parser = new ExpatParser(
-                //encoding,
-                //this,
-                //processNamespaces,
-                //publicId,
-                //systemId
-        //);
-        //parser.parseDocument(in);
+        
+        
+                
+                
+                
+                
+                
+        
+        
     }
 
     
@@ -456,8 +468,8 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
     public void parse(String systemId) throws IOException, SAXException {
         addTaint(systemId.getTaint());
         parse(new InputSource(systemId));
-        // ---------- Original Method ----------
-        //parse(new InputSource(systemId));
+        
+        
     }
 
     
@@ -466,7 +478,7 @@ LexicalHandler varF24ED8F881B00D87C96DB18E799E5B4E_767331437 =         lexicalHa
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.020 -0400", hash_original_method = "0B4D9136485558B251EF1E44EE499FB7", hash_generated_method = "0B4D9136485558B251EF1E44EE499FB7")
         public Feature ()
         {
-            //Synthesized constructor
+            
         }
 
 

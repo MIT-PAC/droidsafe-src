@@ -1,6 +1,6 @@
 package android.test.suitebuilder;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class TestPredicates {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.576 -0400", hash_original_method = "4FB472B861AF10AEED876CF7DD7E397C", hash_generated_method = "4FB472B861AF10AEED876CF7DD7E397C")
     public TestPredicates ()
     {
-        //Synthesized constructor
+        
     }
 
 

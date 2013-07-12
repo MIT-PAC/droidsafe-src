@@ -1,6 +1,6 @@
 package android.net.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,11 +9,12 @@ public class SipErrorCode {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.316 -0400", hash_original_method = "298DBB0089D5BDD0947985D624D66502", hash_generated_method = "A393C2CD781F4E1A7DF9F09461968B5C")
     private  SipErrorCode() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static String toString(int errorCode) {
+        @DSModeled(DSC.SAFE)
+    public static String toString(int errorCode) {
         switch (errorCode) {
             case NO_ERROR:
                 return "NO_ERROR";

@@ -1,6 +1,6 @@
 package android.support.v4.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class IntentCompat {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.305 -0400", hash_original_method = "83FA4EBC7BDF0C9600DF4B8A1228BD78", hash_generated_method = "16347C92B7A5F44FF250E58B89036E6B")
     private  IntentCompat() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class IntentCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.306 -0400", hash_original_method = "6D338D1BF47181449ED1EB8AE28F9864", hash_generated_method = "6D338D1BF47181449ED1EB8AE28F9864")
         public IntentCompatImplBase ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -52,11 +52,11 @@ public class IntentCompat {
 Intent var095937E5B36214360A2644916BF0E8DF_322119356 =             intent;
             var095937E5B36214360A2644916BF0E8DF_322119356.addTaint(taint);
             return var095937E5B36214360A2644916BF0E8DF_322119356;
-            // ---------- Original Method ----------
-            //Intent intent = new Intent(Intent.ACTION_MAIN);
-            //intent.setComponent(componentName);
-            //intent.addCategory(Intent.CATEGORY_LAUNCHER);
-            //return intent;
+            
+            
+            
+            
+            
         }
 
         
@@ -71,10 +71,10 @@ Intent var095937E5B36214360A2644916BF0E8DF_322119356 =             intent;
 Intent var095937E5B36214360A2644916BF0E8DF_1136360523 =             intent;
             var095937E5B36214360A2644916BF0E8DF_1136360523.addTaint(taint);
             return var095937E5B36214360A2644916BF0E8DF_1136360523;
-            // ---------- Original Method ----------
-            //Intent intent = new Intent(selectorAction);
-            //intent.addCategory(selectorCategory);
-            //return intent;
+            
+            
+            
+            
         }
 
         
@@ -88,11 +88,11 @@ Intent var095937E5B36214360A2644916BF0E8DF_1136360523 =             intent;
 Intent var095937E5B36214360A2644916BF0E8DF_1359411964 =             intent;
             var095937E5B36214360A2644916BF0E8DF_1359411964.addTaint(taint);
             return var095937E5B36214360A2644916BF0E8DF_1359411964;
-            // ---------- Original Method ----------
-            //Intent intent = makeMainActivity(mainActivity);
-            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
-                    //| IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-            //return intent;
+            
+            
+            
+                    
+            
         }
 
         
@@ -105,7 +105,7 @@ Intent var095937E5B36214360A2644916BF0E8DF_1359411964 =             intent;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.308 -0400", hash_original_method = "771759B32AFF7941C560E51066B77792", hash_generated_method = "771759B32AFF7941C560E51066B77792")
         public IntentCompatImplHC ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -116,8 +116,8 @@ Intent var095937E5B36214360A2644916BF0E8DF_1359411964 =             intent;
 Intent var794116B7ABB37746D51F28497CB0A71E_1547658811 =             IntentCompatHoneycomb.makeMainActivity(componentName);
             var794116B7ABB37746D51F28497CB0A71E_1547658811.addTaint(taint);
             return var794116B7ABB37746D51F28497CB0A71E_1547658811;
-            // ---------- Original Method ----------
-            //return IntentCompatHoneycomb.makeMainActivity(componentName);
+            
+            
         }
 
         
@@ -128,8 +128,8 @@ Intent var794116B7ABB37746D51F28497CB0A71E_1547658811 =             IntentCompat
 Intent var0DF19734A7165BB16E7A28B8E7E316CC_817972055 =             IntentCompatHoneycomb.makeRestartActivityTask(componentName);
             var0DF19734A7165BB16E7A28B8E7E316CC_817972055.addTaint(taint);
             return var0DF19734A7165BB16E7A28B8E7E316CC_817972055;
-            // ---------- Original Method ----------
-            //return IntentCompatHoneycomb.makeRestartActivityTask(componentName);
+            
+            
         }
 
         
@@ -142,7 +142,7 @@ Intent var0DF19734A7165BB16E7A28B8E7E316CC_817972055 =             IntentCompatH
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.309 -0400", hash_original_method = "26768481DD7BD2C237C8D66F6E165213", hash_generated_method = "26768481DD7BD2C237C8D66F6E165213")
         public IntentCompatImplIcsMr1 ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -154,8 +154,8 @@ Intent var0DF19734A7165BB16E7A28B8E7E316CC_817972055 =             IntentCompatH
 Intent var00B60DE45C0C785AE3844E3463BF8647_582476478 =             IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
             var00B60DE45C0C785AE3844E3463BF8647_582476478.addTaint(taint);
             return var00B60DE45C0C785AE3844E3463BF8647_582476478;
-            // ---------- Original Method ----------
-            //return IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
+            
+            
         }
 
         

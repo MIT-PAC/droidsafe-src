@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public abstract class IccServiceTable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.637 -0400", hash_original_method = "267DA89C5A4C09BB5FED527397C007E9", hash_generated_method = "6C2507E3F5C81255379CE53C88536A64")
     protected  IccServiceTable(byte[] table) {
         mServiceTable = table;
-        // ---------- Original Method ----------
-        //mServiceTable = table;
+        
+        
     }
 
     
@@ -34,20 +34,20 @@ public abstract class IccServiceTable {
             boolean var68934A3E9455FA72420237EB05902327_266475278 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_719046489 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_719046489;
-        } //End block
+        } 
         int bit = service % 8;
         boolean varB345937E40A8A0014E6B02C6F9646B71_1870125924 = ((mServiceTable[offset] & (1 << bit)) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1397117321 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1397117321;
-        // ---------- Original Method ----------
-        //int offset = service / 8;
-        //if (offset >= mServiceTable.length) {
-            //Log.e(getTag(), "isAvailable for service " + (service + 1) + " fails, max service is " +
-                    //(mServiceTable.length * 8));
-            //return false;
-        //}
-        //int bit = service % 8;
-        //return (mServiceTable[offset] & (1 << bit)) != 0;
+        
+        
+        
+            
+                    
+            
+        
+        
+        
     }
 
     
@@ -68,28 +68,28 @@ for(int bit = 0;bit < 8;bit++)
     if(addComma)                    
                     {
                         builder.append(", ");
-                    } //End block
+                    } 
                     else
                     {
                         addComma = true;
-                    } //End block
+                    } 
                     int ordinal = (i * 8) + bit;
     if(ordinal < values.length)                    
                     {
                         builder.append(values[ordinal]);
-                    } //End block
+                    } 
                     else
                     {
                         builder.append('#').append(ordinal + 1);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
 String varE73F52FBE730D91DF2815386BE1EE641_463293889 =         builder.append(" }").toString();
         varE73F52FBE730D91DF2815386BE1EE641_463293889.addTaint(taint);
         return varE73F52FBE730D91DF2815386BE1EE641_463293889;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

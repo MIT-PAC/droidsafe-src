@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,18 +17,20 @@ public class Executors {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.941 -0400", hash_original_method = "F4CB3C27487DF72857FE3507DC40AD75", hash_generated_method = "27F2BAE4FD286E326334A8739E3D4262")
     private  Executors() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static ExecutorService newFixedThreadPool(int nThreads) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
                                       new LinkedBlockingQueue<Runnable>());
     }
 
     
-        public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newFixedThreadPool(int nThreads, ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
                                       new LinkedBlockingQueue<Runnable>(),
@@ -36,7 +38,8 @@ public class Executors {
     }
 
     
-        public static ExecutorService newSingleThreadExecutor() {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newSingleThreadExecutor() {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
@@ -44,7 +47,8 @@ public class Executors {
     }
 
     
-        public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactory) {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
                                     0L, TimeUnit.MILLISECONDS,
@@ -53,14 +57,16 @@ public class Executors {
     }
 
     
-        public static ExecutorService newCachedThreadPool() {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
                                       new SynchronousQueue<Runnable>());
     }
 
     
-        public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService newCachedThreadPool(ThreadFactory threadFactory) {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                       60L, TimeUnit.SECONDS,
                                       new SynchronousQueue<Runnable>(),
@@ -68,49 +74,57 @@ public class Executors {
     }
 
     
-        public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newSingleThreadScheduledExecutor() {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1));
     }
 
     
-        public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newSingleThreadScheduledExecutor(ThreadFactory threadFactory) {
         return new DelegatedScheduledExecutorService
             (new ScheduledThreadPoolExecutor(1, threadFactory));
     }
 
     
-        public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
         return new ScheduledThreadPoolExecutor(corePoolSize);
     }
 
     
-        public static ScheduledExecutorService newScheduledThreadPool(
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService newScheduledThreadPool(
             int corePoolSize, ThreadFactory threadFactory) {
         return new ScheduledThreadPoolExecutor(corePoolSize, threadFactory);
     }
 
     
-        public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
+        @DSModeled(DSC.SAFE)
+    public static ExecutorService unconfigurableExecutorService(ExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
         return new DelegatedExecutorService(executor);
     }
 
     
-        public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
+        @DSModeled(DSC.SAFE)
+    public static ScheduledExecutorService unconfigurableScheduledExecutorService(ScheduledExecutorService executor) {
         if (executor == null)
             throw new NullPointerException();
         return new DelegatedScheduledExecutorService(executor);
     }
 
     
-        public static ThreadFactory defaultThreadFactory() {
+        @DSModeled(DSC.SAFE)
+    public static ThreadFactory defaultThreadFactory() {
         return new DefaultThreadFactory();
     }
 
     
-        public static ThreadFactory privilegedThreadFactory() {
+        @DSModeled(DSC.SAFE)
+    public static ThreadFactory privilegedThreadFactory() {
         return new PrivilegedThreadFactory();
     }
 
@@ -171,9 +185,9 @@ public class Executors {
           RunnableAdapter(Runnable task, T result) {
             this.task = task;
             this.result = result;
-            // ---------- Original Method ----------
-            //this.task = task;
-            //this.result = result;
+            
+            
+            
         }
 
         
@@ -183,9 +197,9 @@ public class Executors {
 T varDC838461EE2FA0CA4C9BBB70A15456B0_1852082106 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1852082106.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1852082106;
-            // ---------- Original Method ----------
-            //task.run();
-            //return result;
+            
+            
+            
         }
 
         
@@ -205,9 +219,9 @@ T varDC838461EE2FA0CA4C9BBB70A15456B0_1852082106 =             result;
           PrivilegedCallable(Callable<T> task) {
             this.task = task;
             this.acc = AccessController.getContext();
-            // ---------- Original Method ----------
-            //this.task = task;
-            //this.acc = AccessController.getContext();
+            
+            
+            
         }
 
         
@@ -222,34 +236,34 @@ T var8C0E7955A367AA4C5A2C7492B4312867_977516067 =                 AccessControll
 T var1E6FFBD2B2AE8130DD2A092BC0BC400B_1871312491 =                 task.call();
                 var1E6FFBD2B2AE8130DD2A092BC0BC400B_1871312491.addTaint(taint);
                 return var1E6FFBD2B2AE8130DD2A092BC0BC400B_1871312491;
-                // ---------- Original Method ----------
-                //return task.call();
+                
+                
             }
 }, acc);
                 var8C0E7955A367AA4C5A2C7492B4312867_977516067.addTaint(taint);
                 return var8C0E7955A367AA4C5A2C7492B4312867_977516067;
-            } //End block
+            } 
             catch (PrivilegedActionException e)
             {
                 Exception varB727EB75A5923A25079A15DB07B65969_1926769963 = e.getException();
                 varB727EB75A5923A25079A15DB07B65969_1926769963.addTaint(taint);
                 throw varB727EB75A5923A25079A15DB07B65969_1926769963;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //return AccessController.doPrivileged(
-                    //new PrivilegedExceptionAction<T>() {
-                        //public T run() throws Exception {
-                            //return task.call();
-                        //}
-                    //}, acc);
-            //} catch (PrivilegedActionException e) {
-                //throw e.getException();
-            //}
+            } 
+            
+            
+                
+                    
+                        
+                            
+                        
+                    
+            
+                
+            
         }
 
         
-        // orphaned legacy method
+        
         public T run() throws Exception {
                             return task.call();
                         }
@@ -276,19 +290,19 @@ T var1E6FFBD2B2AE8130DD2A092BC0BC400B_1871312491 =                 task.call();
             {
                 sm.checkPermission(new RuntimePermission("getContextClassLoader"));
                 sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            } //End block
+            } 
             this.task = task;
             this.acc = AccessController.getContext();
             this.ccl = Thread.currentThread().getContextClassLoader();
-            // ---------- Original Method ----------
-            //SecurityManager sm = System.getSecurityManager();
-            //if (sm != null) {
-                //sm.checkPermission(new RuntimePermission("getContextClassLoader")); 
-                //sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            //}
-            //this.task = task;
-            //this.acc = AccessController.getContext();
-            //this.ccl = Thread.currentThread().getContextClassLoader();
+            
+            
+            
+                
+                
+            
+            
+            
+            
         }
 
         
@@ -309,47 +323,47 @@ T varBCBFD1547E568D77EC8B60D97435E881_964807118 =                 AccessControll
                     {
                         t.setContextClassLoader(ccl);
                         savedcl = cl;
-                    } //End block
+                    } 
 T var1E6FFBD2B2AE8130DD2A092BC0BC400B_480532354 =                     task.call();
                     var1E6FFBD2B2AE8130DD2A092BC0BC400B_480532354.addTaint(taint);
                     return var1E6FFBD2B2AE8130DD2A092BC0BC400B_480532354;
-                } //End block
+                } 
                 finally 
                 {
     if(savedcl != null)                    
                     t.setContextClassLoader(savedcl);
-                } //End block
-                // ---------- Original Method ----------
-                //ClassLoader savedcl = null;
-                //Thread t = Thread.currentThread();
-                //try {
-                                //ClassLoader cl = t.getContextClassLoader();
-                                //if (ccl != cl) {
-                                    //t.setContextClassLoader(ccl);
-                                    //savedcl = cl;
-                                //}
-                                //return task.call();
-                            //} finally {
-                                //if (savedcl != null)
-                                    //t.setContextClassLoader(savedcl);
-                            //}
+                } 
+                
+                
+                
+                
+                                
+                                
+                                    
+                                    
+                                
+                                
+                            
+                                
+                                    
+                            
             }
 }, acc);
                 varBCBFD1547E568D77EC8B60D97435E881_964807118.addTaint(taint);
                 return varBCBFD1547E568D77EC8B60D97435E881_964807118;
-            } //End block
+            } 
             catch (PrivilegedActionException e)
             {
                 Exception varB727EB75A5923A25079A15DB07B65969_1592493440 = e.getException();
                 varB727EB75A5923A25079A15DB07B65969_1592493440.addTaint(taint);
                 throw varB727EB75A5923A25079A15DB07B65969_1592493440;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
-        // orphaned legacy method
+        
         public T run() throws Exception {
                             ClassLoader savedcl = null;
                             Thread t = Thread.currentThread();
@@ -389,13 +403,13 @@ T var1E6FFBD2B2AE8130DD2A092BC0BC400B_480532354 =                     task.call(
             namePrefix = "pool-" +
                           poolNumber.getAndIncrement() +
                          "-thread-";
-            // ---------- Original Method ----------
-            //SecurityManager s = System.getSecurityManager();
-            //group = (s != null) ? s.getThreadGroup() :
-                                  //Thread.currentThread().getThreadGroup();
-            //namePrefix = "pool-" +
-                          //poolNumber.getAndIncrement() +
-                         //"-thread-";
+            
+            
+            
+                                  
+            
+                          
+                         
         }
 
         
@@ -412,15 +426,15 @@ T var1E6FFBD2B2AE8130DD2A092BC0BC400B_480532354 =                     task.call(
 Thread varE0D714D758F1540A8DF364A965AF9150_526642371 =             t;
             varE0D714D758F1540A8DF364A965AF9150_526642371.addTaint(taint);
             return varE0D714D758F1540A8DF364A965AF9150_526642371;
-            // ---------- Original Method ----------
-            //Thread t = new Thread(group, r,
-                                  //namePrefix + threadNumber.getAndIncrement(),
-                                  //0);
-            //if (t.isDaemon())
-                //t.setDaemon(false);
-            //if (t.getPriority() != Thread.NORM_PRIORITY)
-                //t.setPriority(Thread.NORM_PRIORITY);
-            //return t;
+            
+            
+                                  
+                                  
+            
+                
+            
+                
+            
         }
 
         
@@ -447,17 +461,17 @@ Thread varE0D714D758F1540A8DF364A965AF9150_526642371 =             t;
             {
                 sm.checkPermission(new RuntimePermission("getContextClassLoader"));
                 sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            } //End block
+            } 
             this.acc = AccessController.getContext();
             this.ccl = Thread.currentThread().getContextClassLoader();
-            // ---------- Original Method ----------
-            //SecurityManager sm = System.getSecurityManager();
-            //if (sm != null) {
-                //sm.checkPermission(new RuntimePermission("getContextClassLoader")); 
-                //sm.checkPermission(new RuntimePermission("setContextClassLoader"));
-            //}
-            //this.acc = AccessController.getContext();
-            //this.ccl = Thread.currentThread().getContextClassLoader();
+            
+            
+            
+                
+                
+            
+            
+            
         }
 
         
@@ -475,36 +489,36 @@ Thread var801BC3E623C83925F37035F64FDA758D_962732214 =             super.newThre
 Void var540C13E9E156B687226421B24F2DF178_1627636724 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1627636724.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1627636724;
-                    // ---------- Original Method ----------
-                    //Thread.currentThread().setContextClassLoader(ccl);
-                    //r.run();
-                    //return null;
+                    
+                    
+                    
+                    
                 }
 }, acc);
-                // ---------- Original Method ----------
-                //AccessController.doPrivileged(new PrivilegedAction<Void>() {
-                        //public Void run() {
-                            //Thread.currentThread().setContextClassLoader(ccl);
-                            //r.run();
-                            //return null;
-                        //}
-                    //}, acc);
+                
+                
+                        
+                            
+                            
+                            
+                        
+                    
             }
 });
             var801BC3E623C83925F37035F64FDA758D_962732214.addTaint(taint);
             return var801BC3E623C83925F37035F64FDA758D_962732214;
-            // ---------- Original Method ----------
-            //return super.newThread(new Runnable() {
-                //public void run() {
-                    //AccessController.doPrivileged(new PrivilegedAction<Void>() {
-                        //public Void run() {
-                            //Thread.currentThread().setContextClassLoader(ccl);
-                            //r.run();
-                            //return null;
-                        //}
-                    //}, acc);
-                //}
-            //});
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                        
+                    
+                
+            
         }
 
         
@@ -520,8 +534,8 @@ Void var540C13E9E156B687226421B24F2DF178_1627636724 =                     null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.957 -0400", hash_original_method = "69B8656E71D4B49ACEB9CE44B20A63F5", hash_generated_method = "FF9F28349FB8E5F20D2028CD89D51AA0")
           DelegatedExecutorService(ExecutorService executor) {
             e = executor;
-            // ---------- Original Method ----------
-            //e = executor;
+            
+            
         }
 
         
@@ -529,16 +543,16 @@ Void var540C13E9E156B687226421B24F2DF178_1627636724 =                     null;
         public void execute(Runnable command) {
             addTaint(command.getTaint());
             e.execute(command);
-            // ---------- Original Method ----------
-            //e.execute(command);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.958 -0400", hash_original_method = "AC5ABD61901BFC6045B0080105C55DDA", hash_generated_method = "870B34DC67E6CAF4D4CA22846B67BE5A")
         public void shutdown() {
             e.shutdown();
-            // ---------- Original Method ----------
-            //e.shutdown();
+            
+            
         }
 
         
@@ -547,8 +561,8 @@ Void var540C13E9E156B687226421B24F2DF178_1627636724 =                     null;
 List<Runnable> varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660 =             e.shutdownNow();
             varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660.addTaint(taint);
             return varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660;
-            // ---------- Original Method ----------
-            //return e.shutdownNow();
+            
+            
         }
 
         
@@ -557,8 +571,8 @@ List<Runnable> varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660 =             e.shu
             boolean varC6BFDE34389895E5EC4C039BD088BBC2_1072579422 = (e.isShutdown());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1808514395 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1808514395;
-            // ---------- Original Method ----------
-            //return e.isShutdown();
+            
+            
         }
 
         
@@ -567,8 +581,8 @@ List<Runnable> varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660 =             e.shu
             boolean var9CE7EBB7372D816EEE62EC46692AA90B_2081984493 = (e.isTerminated());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1521707067 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1521707067;
-            // ---------- Original Method ----------
-            //return e.isTerminated();
+            
+            
         }
 
         
@@ -579,8 +593,8 @@ List<Runnable> varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660 =             e.shu
             boolean varF366CFDDB9AAE5CFAA90DAA671DBA4AC_630302767 = (e.awaitTermination(timeout, unit));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_640633988 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_640633988;
-            // ---------- Original Method ----------
-            //return e.awaitTermination(timeout, unit);
+            
+            
         }
 
         
@@ -590,8 +604,8 @@ List<Runnable> varE7D27192245C2FE3CA0A1CDFDB021EEB_110328660 =             e.shu
 Future<?> var3A821B5C48F3C73F2F85580271A54221_83310055 =             e.submit(task);
             var3A821B5C48F3C73F2F85580271A54221_83310055.addTaint(taint);
             return var3A821B5C48F3C73F2F85580271A54221_83310055;
-            // ---------- Original Method ----------
-            //return e.submit(task);
+            
+            
         }
 
         
@@ -601,8 +615,8 @@ Future<?> var3A821B5C48F3C73F2F85580271A54221_83310055 =             e.submit(ta
 Future<T> var3A821B5C48F3C73F2F85580271A54221_1188930025 =             e.submit(task);
             var3A821B5C48F3C73F2F85580271A54221_1188930025.addTaint(taint);
             return var3A821B5C48F3C73F2F85580271A54221_1188930025;
-            // ---------- Original Method ----------
-            //return e.submit(task);
+            
+            
         }
 
         
@@ -613,8 +627,8 @@ Future<T> var3A821B5C48F3C73F2F85580271A54221_1188930025 =             e.submit(
 Future<T> varEAF64FBE2776E66AA7D7A86DC0368144_280892647 =             e.submit(task, result);
             varEAF64FBE2776E66AA7D7A86DC0368144_280892647.addTaint(taint);
             return varEAF64FBE2776E66AA7D7A86DC0368144_280892647;
-            // ---------- Original Method ----------
-            //return e.submit(task, result);
+            
+            
         }
 
         
@@ -624,8 +638,8 @@ Future<T> varEAF64FBE2776E66AA7D7A86DC0368144_280892647 =             e.submit(t
 List<Future<T>> var501DF73082C68D7843A2F94A5A9D39DE_71047622 =             e.invokeAll(tasks);
             var501DF73082C68D7843A2F94A5A9D39DE_71047622.addTaint(taint);
             return var501DF73082C68D7843A2F94A5A9D39DE_71047622;
-            // ---------- Original Method ----------
-            //return e.invokeAll(tasks);
+            
+            
         }
 
         
@@ -638,8 +652,8 @@ List<Future<T>> var501DF73082C68D7843A2F94A5A9D39DE_71047622 =             e.inv
 List<Future<T>> var87E281F68E17B3CFFAEC895C8A8BFC68_804337449 =             e.invokeAll(tasks, timeout, unit);
             var87E281F68E17B3CFFAEC895C8A8BFC68_804337449.addTaint(taint);
             return var87E281F68E17B3CFFAEC895C8A8BFC68_804337449;
-            // ---------- Original Method ----------
-            //return e.invokeAll(tasks, timeout, unit);
+            
+            
         }
 
         
@@ -649,8 +663,8 @@ List<Future<T>> var87E281F68E17B3CFFAEC895C8A8BFC68_804337449 =             e.in
 T var7ECF5F9BD3788A61679614FEA5EAB1C2_1915503339 =             e.invokeAny(tasks);
             var7ECF5F9BD3788A61679614FEA5EAB1C2_1915503339.addTaint(taint);
             return var7ECF5F9BD3788A61679614FEA5EAB1C2_1915503339;
-            // ---------- Original Method ----------
-            //return e.invokeAny(tasks);
+            
+            
         }
 
         
@@ -663,8 +677,8 @@ T var7ECF5F9BD3788A61679614FEA5EAB1C2_1915503339 =             e.invokeAny(tasks
 T varE9E99FB5B2AB72C024FC741DCEE9DEC0_397899579 =             e.invokeAny(tasks, timeout, unit);
             varE9E99FB5B2AB72C024FC741DCEE9DEC0_397899579.addTaint(taint);
             return varE9E99FB5B2AB72C024FC741DCEE9DEC0_397899579;
-            // ---------- Original Method ----------
-            //return e.invokeAny(tasks, timeout, unit);
+            
+            
         }
 
         
@@ -678,15 +692,15 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_397899579 =             e.invokeAny(tasks,
           FinalizableDelegatedExecutorService(ExecutorService executor) {
             super(executor);
             addTaint(executor.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:07.962 -0400", hash_original_method = "EFBA277C67FEFB15F281D1F7A5118361", hash_generated_method = "75FB1DC5FB180CA67655AFF259FD4832")
         protected void finalize() {
             super.shutdown();
-            // ---------- Original Method ----------
-            //super.shutdown();
+            
+            
         }
 
         
@@ -703,8 +717,8 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_397899579 =             e.invokeAny(tasks,
           DelegatedScheduledExecutorService(ScheduledExecutorService executor) {
             super(executor);
             e = executor;
-            // ---------- Original Method ----------
-            //e = executor;
+            
+            
         }
 
         
@@ -716,8 +730,8 @@ T varE9E99FB5B2AB72C024FC741DCEE9DEC0_397899579 =             e.invokeAny(tasks,
 ScheduledFuture<?> var892BAF045ECBDE9C241F5DCF1E691A8C_709367732 =             e.schedule(command, delay, unit);
             var892BAF045ECBDE9C241F5DCF1E691A8C_709367732.addTaint(taint);
             return var892BAF045ECBDE9C241F5DCF1E691A8C_709367732;
-            // ---------- Original Method ----------
-            //return e.schedule(command, delay, unit);
+            
+            
         }
 
         
@@ -729,8 +743,8 @@ ScheduledFuture<?> var892BAF045ECBDE9C241F5DCF1E691A8C_709367732 =             e
 ScheduledFuture<V> var25477A3DA2D98386CF98CD42AD75D94E_1923230214 =             e.schedule(callable, delay, unit);
             var25477A3DA2D98386CF98CD42AD75D94E_1923230214.addTaint(taint);
             return var25477A3DA2D98386CF98CD42AD75D94E_1923230214;
-            // ---------- Original Method ----------
-            //return e.schedule(callable, delay, unit);
+            
+            
         }
 
         
@@ -743,8 +757,8 @@ ScheduledFuture<V> var25477A3DA2D98386CF98CD42AD75D94E_1923230214 =             
 ScheduledFuture<?> var620733992FDA5475960C5660CA3DFFF4_596188277 =             e.scheduleAtFixedRate(command, initialDelay, period, unit);
             var620733992FDA5475960C5660CA3DFFF4_596188277.addTaint(taint);
             return var620733992FDA5475960C5660CA3DFFF4_596188277;
-            // ---------- Original Method ----------
-            //return e.scheduleAtFixedRate(command, initialDelay, period, unit);
+            
+            
         }
 
         
@@ -757,8 +771,8 @@ ScheduledFuture<?> var620733992FDA5475960C5660CA3DFFF4_596188277 =             e
 ScheduledFuture<?> var53F2CCDC6067CE879ED6DFB893DF41AA_703097685 =             e.scheduleWithFixedDelay(command, initialDelay, delay, unit);
             var53F2CCDC6067CE879ED6DFB893DF41AA_703097685.addTaint(taint);
             return var53F2CCDC6067CE879ED6DFB893DF41AA_703097685;
-            // ---------- Original Method ----------
-            //return e.scheduleWithFixedDelay(command, initialDelay, delay, unit);
+            
+            
         }
 
         

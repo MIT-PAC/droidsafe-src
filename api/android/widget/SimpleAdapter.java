@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,12 +50,12 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
         mFrom = from;
         mTo = to;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        // ---------- Original Method ----------
-        //mData = data;
-        //mResource = mDropDownResource = resource;
-        //mFrom = from;
-        //mTo = to;
-        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -64,8 +64,8 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
         int var9987FB1A7FBC9F7F6B09B5AA2A98E534_791744511 = (mData.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885855142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885855142;
-        // ---------- Original Method ----------
-        //return mData.size();
+        
+        
     }
 
     
@@ -75,19 +75,20 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
 Object var97565132EBA5A592B8E95DB1E8B35615_1549300669 =         mData.get(position);
         var97565132EBA5A592B8E95DB1E8B35615_1549300669.addTaint(taint);
         return var97565132EBA5A592B8E95DB1E8B35615_1549300669;
-        // ---------- Original Method ----------
-        //return mData.get(position);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.520 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "F66A80FBAA68BD860385E3405A160C7B")
     public long getItemId(int position) {
         addTaint(position);
         long var4757FE07FD492A8BE0EA6A760D683D6E_1499287747 = (position);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_469286022 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_469286022;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
@@ -99,8 +100,8 @@ Object var97565132EBA5A592B8E95DB1E8B35615_1549300669 =         mData.get(positi
 View varC7C74D1A1F888482D2EEA96BBD632B6B_984153649 =         createViewFromResource(position, convertView, parent, mResource);
         varC7C74D1A1F888482D2EEA96BBD632B6B_984153649.addTaint(taint);
         return varC7C74D1A1F888482D2EEA96BBD632B6B_984153649;
-        // ---------- Original Method ----------
-        //return createViewFromResource(position, convertView, parent, mResource);
+        
+        
     }
 
     
@@ -115,32 +116,33 @@ View varC7C74D1A1F888482D2EEA96BBD632B6B_984153649 =         createViewFromResou
     if(convertView == null)        
         {
             v = mInflater.inflate(resource, parent, false);
-        } //End block
+        } 
         else
         {
             v = convertView;
-        } //End block
+        } 
         bindView(position, v);
 View var6DC76BC51820DD65E8396280E884AA78_1380290836 =         v;
         var6DC76BC51820DD65E8396280E884AA78_1380290836.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_1380290836;
-        // ---------- Original Method ----------
-        //View v;
-        //if (convertView == null) {
-            //v = mInflater.inflate(resource, parent, false);
-        //} else {
-            //v = convertView;
-        //}
-        //bindView(position, v);
-        //return v;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.523 -0400", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "166D468151E808B5172814612FD9B5A0")
     public void setDropDownViewResource(int resource) {
         this.mDropDownResource = resource;
-        // ---------- Original Method ----------
-        //this.mDropDownResource = resource;
+        
+        
     }
 
     
@@ -153,8 +155,8 @@ View var6DC76BC51820DD65E8396280E884AA78_1380290836 =         v;
 View var73BABEDDC942C821B8059F08E1C361F2_996811737 =         createViewFromResource(position, convertView, parent, mDropDownResource);
         var73BABEDDC942C821B8059F08E1C361F2_996811737.addTaint(taint);
         return var73BABEDDC942C821B8059F08E1C361F2_996811737;
-        // ---------- Original Method ----------
-        //return createViewFromResource(position, convertView, parent, mDropDownResource);
+        
+        
     }
 
     
@@ -166,7 +168,7 @@ View var73BABEDDC942C821B8059F08E1C361F2_996811737 =         createViewFromResou
     if(dataSet == null)        
         {
             return;
-        } //End block
+        } 
         final ViewBinder binder = mViewBinder;
         final String[] from = mFrom;
         final int[] to = mTo;
@@ -181,12 +183,12 @@ for(int i = 0;i < count;i++)
     if(text == null)                
                 {
                     text = "";
-                } //End block
+                } 
                 boolean bound = false;
     if(binder != null)                
                 {
                     bound = binder.setViewValue(v, data, text);
-                } //End block
+                } 
     if(!bound)                
                 {
     if(v instanceof Checkable)                    
@@ -194,12 +196,12 @@ for(int i = 0;i < count;i++)
     if(data instanceof Boolean)                        
                         {
                             ((Checkable) v).setChecked((Boolean) data);
-                        } //End block
+                        } 
                         else
     if(v instanceof TextView)                        
                         {
                             setViewText((TextView) v, text);
-                        } //End block
+                        } 
                         else
                         {
                             IllegalStateException varC2F770133D589D9A5ACC832FC7436CEA_839811524 = new IllegalStateException(v.getClass().getName() +
@@ -207,55 +209,57 @@ for(int i = 0;i < count;i++)
                                     (data == null ? "<unknown type>" : data.getClass()));
                             varC2F770133D589D9A5ACC832FC7436CEA_839811524.addTaint(taint);
                             throw varC2F770133D589D9A5ACC832FC7436CEA_839811524;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(v instanceof TextView)                    
                     {
                         setViewText((TextView) v, text);
-                    } //End block
+                    } 
                     else
     if(v instanceof ImageView)                    
                     {
     if(data instanceof Integer)                        
                         {
                             setViewImage((ImageView) v, (Integer) data);
-                        } //End block
+                        } 
                         else
                         {
                             setViewImage((ImageView) v, text);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         IllegalStateException var06E706E4A7789AB3ED57CA59EF0FA959_663539024 = new IllegalStateException(v.getClass().getName() + " is not a " +
                                 " view that can be bounds by this SimpleAdapter");
                         var06E706E4A7789AB3ED57CA59EF0FA959_663539024.addTaint(taint);
                         throw var06E706E4A7789AB3ED57CA59EF0FA959_663539024;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.526 -0400", hash_original_method = "E0E2C9BDE209838004B6CAB60CB87613", hash_generated_method = "093A047A583632EF79C7DA846FBAACD5")
     public ViewBinder getViewBinder() {
 ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
         var3599647BDC732C2D53724CC7D8743271_562632273.addTaint(taint);
         return var3599647BDC732C2D53724CC7D8743271_562632273;
-        // ---------- Original Method ----------
-        //return mViewBinder;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.526 -0400", hash_original_method = "119DFC3ED073D5B4FB9A3C0337902379", hash_generated_method = "3E071F9EE6E9AEAADA16E4C43987A93F")
     public void setViewBinder(ViewBinder viewBinder) {
         mViewBinder = viewBinder;
-        // ---------- Original Method ----------
-        //mViewBinder = viewBinder;
+        
+        
     }
 
     
@@ -264,8 +268,8 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
         addTaint(value);
         addTaint(v.getTaint());
         v.setImageResource(value);
-        // ---------- Original Method ----------
-        //v.setImageResource(value);
+        
+        
     }
 
     
@@ -276,17 +280,17 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
         try 
         {
             v.setImageResource(Integer.parseInt(value));
-        } //End block
+        } 
         catch (NumberFormatException nfe)
         {
             v.setImageURI(Uri.parse(value));
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //v.setImageResource(Integer.parseInt(value));
-        //} catch (NumberFormatException nfe) {
-            //v.setImageURI(Uri.parse(value));
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -295,8 +299,8 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
         addTaint(text.getTaint());
         addTaint(v.getTaint());
         v.setText(text);
-        // ---------- Original Method ----------
-        //v.setText(text);
+        
+        
     }
 
     
@@ -305,15 +309,15 @@ ViewBinder var3599647BDC732C2D53724CC7D8743271_562632273 =         mViewBinder;
     if(mFilter == null)        
         {
             mFilter = new SimpleFilter();
-        } //End block
+        } 
 Filter var6104E4BD549FCD2640641D136DD683A6_438946575 =         mFilter;
         var6104E4BD549FCD2640641D136DD683A6_438946575.addTaint(taint);
         return var6104E4BD549FCD2640641D136DD683A6_438946575;
-        // ---------- Original Method ----------
-        //if (mFilter == null) {
-            //mFilter = new SimpleFilter();
-        //}
-        //return mFilter;
+        
+        
+            
+        
+        
     }
 
     
@@ -322,7 +326,7 @@ Filter var6104E4BD549FCD2640641D136DD683A6_438946575 =         mFilter;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.528 -0400", hash_original_method = "D26AD51AFC295494F6A54B60978FDA11", hash_generated_method = "D26AD51AFC295494F6A54B60978FDA11")
         public SimpleFilter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -334,13 +338,13 @@ Filter var6104E4BD549FCD2640641D136DD683A6_438946575 =         mFilter;
     if(mUnfilteredData == null)            
             {
                 mUnfilteredData = new ArrayList<Map<String, ?>>(mData);
-            } //End block
+            } 
     if(prefix == null || prefix.length() == 0)            
             {
                 ArrayList<Map<String, ?>> list = mUnfilteredData;
                 results.values = list;
                 results.count = list.size();
-            } //End block
+            } 
             else
             {
                 String prefixString = prefix.toString().toLowerCase();
@@ -365,19 +369,19 @@ for(int k = 0;k < wordCount;k++)
                                 {
                                     newValues.add(h);
                                     break;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
                 results.values = newValues;
                 results.count = newValues.size();
-            } //End block
+            } 
 FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_943229878 =             results;
             var238ECCC9872FFCA0B3C3DB83598FF044_943229878.addTaint(taint);
             return var238ECCC9872FFCA0B3C3DB83598FF044_943229878;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -390,18 +394,18 @@ FilterResults var238ECCC9872FFCA0B3C3DB83598FF044_943229878 =             result
     if(results.count > 0)            
             {
                 notifyDataSetChanged();
-            } //End block
+            } 
             else
             {
                 notifyDataSetInvalidated();
-            } //End block
-            // ---------- Original Method ----------
-            //mData = (List<Map<String, ?>>) results.values;
-            //if (results.count > 0) {
-                //notifyDataSetChanged();
-            //} else {
-                //notifyDataSetInvalidated();
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+            
         }
 
         

@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,7 +35,7 @@ public class AdnRecord implements Parcelable {
     public  AdnRecord(byte[] record) {
         this(0, 0, record);
         addTaint(record[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,10 +45,10 @@ public class AdnRecord implements Parcelable {
         this.efid = efid;
         this.recordNumber = recordNumber;
         parseRecord(record);
-        // ---------- Original Method ----------
-        //this.efid = efid;
-        //this.recordNumber = recordNumber;
-        //parseRecord(record);
+        
+        
+        
+        
     }
 
     
@@ -57,7 +57,7 @@ public class AdnRecord implements Parcelable {
         this(0, 0, alphaTag, number);
         addTaint(number.getTaint());
         addTaint(alphaTag.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -67,7 +67,7 @@ public class AdnRecord implements Parcelable {
         addTaint(emails[0].getTaint());
         addTaint(number.getTaint());
         addTaint(alphaTag.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,12 +78,12 @@ public class AdnRecord implements Parcelable {
         this.alphaTag = alphaTag;
         this.number = number;
         this.emails = emails;
-        // ---------- Original Method ----------
-        //this.efid = efid;
-        //this.recordNumber = recordNumber;
-        //this.alphaTag = alphaTag;
-        //this.number = number;
-        //this.emails = emails;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -94,50 +94,54 @@ public class AdnRecord implements Parcelable {
         this.alphaTag = alphaTag;
         this.number = number;
         this.emails = null;
-        // ---------- Original Method ----------
-        //this.efid = efid;
-        //this.recordNumber = recordNumber;
-        //this.alphaTag = alphaTag;
-        //this.number = number;
-        //this.emails = null;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.642 -0400", hash_original_method = "AC3A7A9E3A191B711B11224D0DA9AF99", hash_generated_method = "4146F1D3429F8D89CE9864394C17F1CA")
     public String getAlphaTag() {
 String var64C27E170699D534429D7BBF1BBBEA29_474577840 =         alphaTag;
         var64C27E170699D534429D7BBF1BBBEA29_474577840.addTaint(taint);
         return var64C27E170699D534429D7BBF1BBBEA29_474577840;
-        // ---------- Original Method ----------
-        //return alphaTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.643 -0400", hash_original_method = "EC6570D4091CFB302FD4A14DB7A9F4B4", hash_generated_method = "63741F62152C56B84AEC2F95C7D2F069")
     public String getNumber() {
 String var63E80DF571E08DAA47BEFBF0BD0EEBAD_1068949344 =         number;
         var63E80DF571E08DAA47BEFBF0BD0EEBAD_1068949344.addTaint(taint);
         return var63E80DF571E08DAA47BEFBF0BD0EEBAD_1068949344;
-        // ---------- Original Method ----------
-        //return number;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.643 -0400", hash_original_method = "92D2F53049B5866D80AA794995783C1B", hash_generated_method = "DE5E7621EC3910B6192CB981E84C2D6A")
     public String[] getEmails() {
 String[] var72203EAA7D038E15106184833E380CD2_424939144 =         emails;
         var72203EAA7D038E15106184833E380CD2_424939144.addTaint(taint);
         return var72203EAA7D038E15106184833E380CD2_424939144;
-        // ---------- Original Method ----------
-        //return emails;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.643 -0400", hash_original_method = "318E4DB00CD29A795BAB76EF64647C6C", hash_generated_method = "8AD750FE9F5EE2A604E640BF0FA92A76")
     public void setEmails(String[] emails) {
         this.emails = emails;
-        // ---------- Original Method ----------
-        //this.emails = emails;
+        
+        
     }
 
     
@@ -146,8 +150,8 @@ String[] var72203EAA7D038E15106184833E380CD2_424939144 =         emails;
 String var3150255CB96D67940667A85BE93CA1C9_382501963 =         "ADN Record '" + alphaTag + "' '" + number + " " + emails + "'";
         var3150255CB96D67940667A85BE93CA1C9_382501963.addTaint(taint);
         return var3150255CB96D67940667A85BE93CA1C9_382501963;
-        // ---------- Original Method ----------
-        //return "ADN Record '" + alphaTag + "' '" + number + " " + emails + "'";
+        
+        
     }
 
     
@@ -156,18 +160,19 @@ String var3150255CB96D67940667A85BE93CA1C9_382501963 =         "ADN Record '" + 
         boolean varB679BA4A49178A5FFFFB2091D165AB85_880215156 = (TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_415085531 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_415085531;
-        // ---------- Original Method ----------
-        //return TextUtils.isEmpty(alphaTag) && TextUtils.isEmpty(number) && emails == null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.644 -0400", hash_original_method = "D17030B2DC40ED56DDEA746A2C4F2F4F", hash_generated_method = "9760759648391A2B209060E1D7A1199C")
     public boolean hasExtendedRecord() {
         boolean varF09E7BA1B696F5D5907F2CB3ADB1E96C_1695346652 = (extRecord != 0 && extRecord != 0xff);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984289170 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984289170;
-        // ---------- Original Method ----------
-        //return extRecord != 0 && extRecord != 0xff;
+        
+        
     }
 
     
@@ -193,20 +198,21 @@ String var3150255CB96D67940667A85BE93CA1C9_382501963 =         "ADN Record '" + 
                 Arrays.equals(emails, adn.emails)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1501137087 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1501137087;
-        // ---------- Original Method ----------
-        //return ( stringCompareNullEqualsEmpty(alphaTag, adn.alphaTag) &&
-                //stringCompareNullEqualsEmpty(number, adn.number) &&
-                //Arrays.equals(emails, adn.emails));
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.645 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "00C9AD1A067CAF7F15ACAC19C9087E1D")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_773249365 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327640290 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1327640290;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -219,12 +225,12 @@ String var3150255CB96D67940667A85BE93CA1C9_382501963 =         "ADN Record '" + 
         dest.writeString(alphaTag);
         dest.writeString(number);
         dest.writeStringArray(emails);
-        // ---------- Original Method ----------
-        //dest.writeInt(efid);
-        //dest.writeInt(recordNumber);
-        //dest.writeString(alphaTag);
-        //dest.writeString(number);
-        //dest.writeStringArray(emails);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -239,13 +245,13 @@ String var3150255CB96D67940667A85BE93CA1C9_382501963 =         "ADN Record '" + 
 for(int i = 0;i < recordSize;i++)
         {
             adnString[i] = (byte) 0xFF;
-        } //End block
+        } 
     if(TextUtils.isEmpty(number))        
         {
             byte[] varE863D3BDC3BCB42847496E9E323A25CB_203774414 = (adnString);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1282498452 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1282498452;
-        } //End block
+        } 
         else
     if(number.length()
                 > (ADN_DIALING_NUMBER_END - ADN_DIALING_NUMBER_START + 1) * 2)        
@@ -253,14 +259,14 @@ for(int i = 0;i < recordSize;i++)
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1478389896 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_337100439 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_337100439;
-        } //End block
+        } 
         else
     if(alphaTag != null && alphaTag.length() > footerOffset)        
         {
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1801755820 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_478874818 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_478874818;
-        } //End block
+        } 
         else
         {
             bcdNumber = PhoneNumberUtils.numberToCalledPartyBCD(number);
@@ -276,13 +282,13 @@ for(int i = 0;i < recordSize;i++)
             {
                 byteTag = GsmAlphabet.stringToGsm8BitPacked(alphaTag);
                 System.arraycopy(byteTag, 0, adnString, 0, byteTag.length);
-            } //End block
+            } 
             byte[] varE863D3BDC3BCB42847496E9E323A25CB_326195632 = (adnString);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1468778079 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1468778079;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -293,39 +299,39 @@ for(int i = 0;i < recordSize;i++)
     if(extRecord.length != EXT_RECORD_LENGTH_BYTES)            
             {
                 return;
-            } //End block
+            } 
     if((extRecord[0] & EXT_RECORD_TYPE_MASK)
                     != EXT_RECORD_TYPE_ADDITIONAL_DATA)            
             {
                 return;
-            } //End block
+            } 
     if((0xff & extRecord[1]) > MAX_EXT_CALLED_PARTY_LENGTH)            
             {
                 return;
-            } //End block
+            } 
             number += PhoneNumberUtils.calledPartyBCDFragmentToString(
                                         extRecord, 2, 0xff & extRecord[1]);
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (extRecord.length != EXT_RECORD_LENGTH_BYTES) {
-                //return;
-            //}
-            //if ((extRecord[0] & EXT_RECORD_TYPE_MASK)
-                    //!= EXT_RECORD_TYPE_ADDITIONAL_DATA) {
-                //return;
-            //}
-            //if ((0xff & extRecord[1]) > MAX_EXT_CALLED_PARTY_LENGTH) {
-                //return;
-            //}
-            //number += PhoneNumberUtils.calledPartyBCDFragmentToString(
-                                        //extRecord, 2, 0xff & extRecord[1]);
-        //} catch (RuntimeException ex) {
-            //Log.w(LOG_TAG, "Error parsing AdnRecord ext record", ex);
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                    
+                
+            
+            
+                
+            
+            
+                                        
+        
+            
+        
     }
 
     
@@ -341,20 +347,20 @@ for(int i = 0;i < recordSize;i++)
             {
                 number = "";
                 return;
-            } //End block
+            } 
             number = PhoneNumberUtils.calledPartyBCDToString(
                             record, footerOffset + 1, numberLength);
             extRecord = 0xff & record[record.length - 1];
             emails = null;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             number = "";
             alphaTag = "";
             emails = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -421,7 +427,7 @@ for(int i = 0;i < recordSize;i++)
             return new AdnRecord[size];
         }
     };
-    // orphaned legacy method
+    
     public AdnRecord createFromParcel(Parcel source) {
             int efid;
             int recordNumber;
@@ -438,7 +444,7 @@ for(int i = 0;i < recordSize;i++)
             return new AdnRecord(efid, recordNumber, alphaTag, number, emails);
         }
     
-    // orphaned legacy method
+    
     public AdnRecord[] newArray(int size) {
             return new AdnRecord[size];
         }

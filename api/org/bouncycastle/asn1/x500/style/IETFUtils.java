@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x500.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public class IETFUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.854 -0400", hash_original_method = "A1DC5483E864AC4E5F00EC3185D86BA1", hash_generated_method = "A1DC5483E864AC4E5F00EC3185D86BA1")
     public IETFUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 

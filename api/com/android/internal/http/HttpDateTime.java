@@ -1,6 +1,6 @@
 package com.android.internal.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public final class HttpDateTime {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.638 -0400", hash_original_method = "7CB4B1DA681A2A8A056262512BDE8871", hash_generated_method = "7CB4B1DA681A2A8A056262512BDE8871")
     public HttpDateTime ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -153,10 +153,10 @@ public final class HttpDateTime {
             this.hour = h;
             this.minute = m;
             this.second = s;
-            // ---------- Original Method ----------
-            //this.hour = h;
-            //this.minute = m;
-            //this.second = s;
+            
+            
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,15 +45,15 @@ public class Surface implements Parcelable {
     if(DEBUG_RELEASE)        
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
         initFromSurfaceTexture(surfaceTexture);
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
-        //initFromSurfaceTexture(surfaceTexture);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -70,15 +70,15 @@ public class Surface implements Parcelable {
     if(DEBUG_RELEASE)        
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
         init(s,pid,null,display,w,h,format,flags);
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
-        //init(s,pid,null,display,w,h,format,flags);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -95,17 +95,17 @@ public class Surface implements Parcelable {
     if(DEBUG_RELEASE)        
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
         init(s,pid,name,display,w,h,format,flags);
         mName = name;
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
-        //init(s,pid,name,display,w,h,format,flags);
-        //mName = name;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -114,13 +114,13 @@ public class Surface implements Parcelable {
     if(DEBUG_RELEASE)        
         {
             mCreationStack = new Exception();
-        } //End block
+        } 
         mCanvas = new CompatibleCanvas();
-        // ---------- Original Method ----------
-        //if (DEBUG_RELEASE) {
-            //mCreationStack = new Exception();
-        //}
-        //mCanvas = new CompatibleCanvas();
+        
+        
+            
+        
+        
     }
 
     
@@ -128,11 +128,12 @@ public class Surface implements Parcelable {
     private  Surface(Parcel source) throws OutOfResourcesException {
         addTaint(source.getTaint());
         init(source);
-        // ---------- Original Method ----------
-        //init(source);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.767 -0400", hash_original_method = "F1240C06AF1BA9E648B2E780B8155F1C", hash_generated_method = "89E2D39579F04F40DC2F94259E91576B")
     public boolean isValid() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_177570529 = getTaintBoolean();
@@ -140,6 +141,7 @@ public class Surface implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.767 -0400", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "41B8B73906B263B02861ABB4EEE712F2")
     public void release() {
     }
@@ -151,16 +153,18 @@ public class Surface implements Parcelable {
 Canvas var22D4613C7A7305DB019C02B164A77F20_1436555271 =         lockCanvasNative(dirty);
         var22D4613C7A7305DB019C02B164A77F20_1436555271.addTaint(taint);
         return var22D4613C7A7305DB019C02B164A77F20_1436555271;
-        // ---------- Original Method ----------
-        //return lockCanvasNative(dirty);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.767 -0400", hash_original_method = "1664CDF216B0331D581B002047F21426", hash_generated_method = "BEEB767D1AF96D89BEAA4AD680C9B81D")
     public void unlockCanvasAndPost(Canvas canvas) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.768 -0400", hash_original_method = "9F24053A4EC94DBA8AA05836E657F81D", hash_generated_method = "B038027C53527359282F71DFE3BF979F")
     public void unlockCanvas(Canvas canvas) {
     }
@@ -172,26 +176,29 @@ Canvas var22D4613C7A7305DB019C02B164A77F20_1436555271 =         lockCanvasNative
 String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" + mName + ", identity=" + getIdentity() + ")";
         var25EF7C530E07F3C308EB714ECC7303B9_1010474690.addTaint(taint);
         return var25EF7C530E07F3C308EB714ECC7303B9_1010474690;
-        // ---------- Original Method ----------
-        //return "Surface(name=" + mName + ", identity=" + getIdentity() + ")";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.768 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "07D8714296556B94275971F2C607068D")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_712736686 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973206299 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1973206299;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.768 -0400", hash_original_method = "A2AACDDA330848E1D1B1D4F055379C04", hash_generated_method = "6B3262E758E40230A0EC3EBB44B77D83")
     public void readFromParcel(Parcel source) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.768 -0400", hash_original_method = "C84F8D8C205C1B394ACE8E5A5C73E3F6", hash_generated_method = "ED3C20853EE283140D61863E7CC05F99")
     public void writeToParcel(Parcel dest, int flags) {
     }
@@ -202,23 +209,26 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.769 -0400", hash_original_method = "1CEDD42C8B2FBCD0475C0CDDE7D9C910", hash_generated_method = "F18D52817B86CDD9D9B7AFE1583B9211")
     public void copyFrom(Surface o) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.769 -0400", hash_original_method = "16EE9E8EF08EFD3BA0284B735E7BCC13", hash_generated_method = "F539196FFF94F06C660BECF76F48FD3B")
     public void transferFrom(Surface o) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.769 -0400", hash_original_method = "4CE5C8D563EAB7D0D818407349F1750B", hash_generated_method = "227652615E7D2E3EB12C89C2BD1B2EE2")
     public int getGenerationId() {
         int var53362B083976939F1558AE45894FA6BA_1328830572 = (mSurfaceGenerationId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415980790 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415980790;
-        // ---------- Original Method ----------
-        //return mSurfaceGenerationId;
+        
+        
     }
 
     
@@ -230,16 +240,17 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
             float appScale = translator.applicationScale;
             mCompatibleMatrix = new Matrix();
             mCompatibleMatrix.setScale(appScale, appScale);
-        } //End block
-        // ---------- Original Method ----------
-        //if (translator != null) {
-            //float appScale = translator.applicationScale;
-            //mCompatibleMatrix = new Matrix();
-            //mCompatibleMatrix.setScale(appScale, appScale);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.770 -0400", hash_original_method = "73111F72F4AB0474EB2CFBD7E4AF4E1A", hash_generated_method = "1FA264C4250124C0FC0A99BBC4E0C9DF")
     public void destroy() {
     }
@@ -294,6 +305,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.772 -0400", hash_original_method = "428DEA65454197BAB1AB2F833BF39B55", hash_generated_method = "E0D75CEE93E7BC9B4DD23C1CF3F705CA")
     public void setLayer(int zorder) {
     }
@@ -304,61 +316,72 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
         addTaint(y);
         addTaint(x);
         setPosition((float)x, (float)y);
-        // ---------- Original Method ----------
-        //setPosition((float)x, (float)y);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.772 -0400", hash_original_method = "D556E449F3DAE9E225E5655A6439B288", hash_generated_method = "01FE99E049CADF15099A4358AD7A0805")
     public void setPosition(float x, float y) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.773 -0400", hash_original_method = "7F2FB86FF01FCE5B1880FA85C66C3806", hash_generated_method = "0C10C6ECA537BF9EC48FDC78E37F8231")
     public void setSize(int w, int h) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.773 -0400", hash_original_method = "58365D1B8E35BD4BC81D336D692C97A2", hash_generated_method = "2CAEE5E9ABBD44ABA77ACDEBF6780153")
     public void hide() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.773 -0400", hash_original_method = "9067AC917FFB66A9E8FF84EA37A89CBE", hash_generated_method = "5B805FC97056DA9ABD80353A6133FF8B")
     public void show() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.773 -0400", hash_original_method = "8BC3F7928D017996CA20E3AD22A58A3C", hash_generated_method = "8C6B9697066F095BC8F8EF08CAE0653C")
     public void setTransparentRegionHint(Region region) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.773 -0400", hash_original_method = "021CC1A8FCE5777EEDC941EBD3709765", hash_generated_method = "67D2E54DFF8E42EBA7F80A015B7CFC5C")
     public void setAlpha(float alpha) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.773 -0400", hash_original_method = "C221BDABC27AE9327206947389DE8DAC", hash_generated_method = "53D9B02179F6297CD55494A6D45AF1D9")
     public void setMatrix(float dsdx, float dtdx, float dsdy, float dtdy) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.774 -0400", hash_original_method = "1F5223037E46C5C80D7D4FC991D282C9", hash_generated_method = "35DAF2726170E3F4ED3AD17631545F9B")
     public void freeze() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.774 -0400", hash_original_method = "510610C10E363AFDA52A6703982BC316", hash_generated_method = "3D863391F4DF022CA3C29E823A9BD026")
     public void unfreeze() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.774 -0400", hash_original_method = "B3E5D6D54C5D692662BF006C8E303D59", hash_generated_method = "38006CD8D091D568FF5D25EE4FF6244D")
     public void setFreezeTint(int tint) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.774 -0400", hash_original_method = "C7085AACC0EA197CCDBEBDC91CFFCA9E", hash_generated_method = "70F2C2CA80B62E417117E816D656E3E8")
     public void setFlags(int flags, int mask) {
     }
@@ -370,54 +393,58 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
         try 
         {
             super.finalize();
-        } //End block
+        } 
         finally 
         {
     if(mNativeSurface != 0 || mSurfaceControl != 0)            
             {
     if(DEBUG_RELEASE)                
                 {
-                } //End block
+                } 
                 else
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             release();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} finally {
-            //if (mNativeSurface != 0 || mSurfaceControl != 0) {
-                //if (DEBUG_RELEASE) {
-                    //Log.w(LOG_TAG, "Surface.finalize() has work. You should have called release() (" 
-                            //+ mNativeSurface + ", " + mSurfaceControl + ")", mCreationStack);
-                //} else {
-                    //Log.w(LOG_TAG, "Surface.finalize() has work. You should have called release() (" 
-                            //+ mNativeSurface + ", " + mSurfaceControl + ")");
-                //}
-            //}
-            //release();            
-        //}
+        } 
+        
+        
+            
+        
+            
+                
+                    
+                            
+                
+                    
+                            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.775 -0400", hash_original_method = "6CC4E2A6788D537FAA561FF2F1482110", hash_generated_method = "AD08DA90139772E5809887C477D9C600")
     private void init(SurfaceSession s,
             int pid, String name, int display, int w, int h, int format, int flags) throws OutOfResourcesException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.775 -0400", hash_original_method = "F10A64920BEF86A35D10AFBE49D37C12", hash_generated_method = "56C7840171875D3B671212B1B91DD491")
     private void init(Parcel source) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.776 -0400", hash_original_method = "EBFCAC1A806E7105045857BE7B671E13", hash_generated_method = "79DA3604975EAAE9A3B23926E4F66416")
     private void initFromSurfaceTexture(SurfaceTexture surfaceTexture) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.776 -0400", hash_original_method = "A65BCA62207C2D99277C23D442CBFDBD", hash_generated_method = "5B8C18D3A5160F609E3240FF54CD8EEF")
     private int getIdentity() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_796670490 = getTaintInt();
@@ -429,7 +456,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.776 -0400", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "A594474F57F2910DF90E8F2B34F97C87")
         public  OutOfResourcesException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -437,7 +464,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
         public  OutOfResourcesException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -453,7 +480,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.777 -0400", hash_original_method = "9F84EE428B625E49141923C25C0021D6", hash_generated_method = "9F84EE428B625E49141923C25C0021D6")
         public CompatibleCanvas ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -464,16 +491,16 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     if(mCompatibilityTranslator != null)            
             {
                 w = (int)(w * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            } //End block
+            } 
             int varF1290186A5D0B1CEAB27F4E77C0C5D68_1635248822 = (w);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490522124 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490522124;
-            // ---------- Original Method ----------
-            //int w = super.getWidth();
-            //if (mCompatibilityTranslator != null) {
-                //w = (int)(w * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            //}
-            //return w;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -484,16 +511,16 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     if(mCompatibilityTranslator != null)            
             {
                 h = (int)(h * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            } //End block
+            } 
             int var2510C39011C5BE704182423E3A695E91_1789495449 = (h);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750648178 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750648178;
-            // ---------- Original Method ----------
-            //int h = super.getHeight();
-            //if (mCompatibilityTranslator != null) {
-                //h = (int)(h * mCompatibilityTranslator.applicationInvertedScale + .5f);
-            //}
-            //return h;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -504,21 +531,21 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     if(mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix))            
             {
                 super.setMatrix(matrix);
-            } //End block
+            } 
             else
             {
                 Matrix m = new Matrix(mCompatibleMatrix);
                 m.preConcat(matrix);
                 super.setMatrix(m);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mCompatibleMatrix == null || mOrigMatrix == null || mOrigMatrix.equals(matrix)) {
-                //super.setMatrix(matrix);
-            //} else {
-                //Matrix m = new Matrix(mCompatibleMatrix);
-                //m.preConcat(matrix);
-                //super.setMatrix(m);
-            //}
+            } 
+            
+            
+                
+            
+                
+                
+                
+            
         }
 
         
@@ -530,14 +557,14 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
     if(mOrigMatrix == null)            
             {
                 mOrigMatrix = new Matrix();
-            } //End block
+            } 
             mOrigMatrix.set(m);
-            // ---------- Original Method ----------
-            //super.getMatrix(m);
-            //if (mOrigMatrix == null) {
-                //mOrigMatrix = new Matrix(); 
-            //}
-            //mOrigMatrix.set(m);
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -623,7 +650,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
             return new Surface[size];
         }
     };
-    // orphaned legacy method
+    
     public Surface createFromParcel(Parcel source) {
             try {
                 return new Surface(source);
@@ -633,7 +660,7 @@ String var25EF7C530E07F3C308EB714ECC7303B9_1010474690 =         "Surface(name=" 
             return null;
         }
     
-    // orphaned legacy method
+    
     public Surface[] newArray(int size) {
             return new Surface[size];
         }

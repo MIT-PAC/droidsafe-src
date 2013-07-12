@@ -1,6 +1,6 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,22 +36,22 @@ public class VersionInfo {
                 ("Package identifier must not be null.");
             varCFB8741E3841429A4652974A36687704_91974363.addTaint(taint);
             throw varCFB8741E3841429A4652974A36687704_91974363;
-        } //End block
+        } 
         infoPackage     = pckg;
         infoModule      = (module  != null) ? module  : UNAVAILABLE;
         infoRelease     = (release != null) ? release : UNAVAILABLE;
         infoTimestamp   = (time    != null) ? time    : UNAVAILABLE;
         infoClassloader = (clsldr  != null) ? clsldr  : UNAVAILABLE;
-        // ---------- Original Method ----------
-        //if (pckg == null) {
-            //throw new IllegalArgumentException
-                //("Package identifier must not be null.");
-        //}
-        //infoPackage     = pckg;
-        //infoModule      = (module  != null) ? module  : UNAVAILABLE;
-        //infoRelease     = (release != null) ? release : UNAVAILABLE;
-        //infoTimestamp   = (time    != null) ? time    : UNAVAILABLE;
-        //infoClassloader = (clsldr  != null) ? clsldr  : UNAVAILABLE;
+        
+        
+            
+                
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ public class VersionInfo {
 String varAA055AF7498388EB82F572AD27B27479_1877586888 =         infoPackage;
         varAA055AF7498388EB82F572AD27B27479_1877586888.addTaint(taint);
         return varAA055AF7498388EB82F572AD27B27479_1877586888;
-        // ---------- Original Method ----------
-        //return infoPackage;
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ String varAA055AF7498388EB82F572AD27B27479_1877586888 =         infoPackage;
 String var606B884BA5A756273394B916A155F040_802693379 =         infoModule;
         var606B884BA5A756273394B916A155F040_802693379.addTaint(taint);
         return var606B884BA5A756273394B916A155F040_802693379;
-        // ---------- Original Method ----------
-        //return infoModule;
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ String var606B884BA5A756273394B916A155F040_802693379 =         infoModule;
 String var6C4195C569DF6472690519AC429B94E4_1198040329 =         infoRelease;
         var6C4195C569DF6472690519AC429B94E4_1198040329.addTaint(taint);
         return var6C4195C569DF6472690519AC429B94E4_1198040329;
-        // ---------- Original Method ----------
-        //return infoRelease;
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ String var6C4195C569DF6472690519AC429B94E4_1198040329 =         infoRelease;
 String var7C48C24921EE033BF6772198C34357EE_1190658941 =         infoTimestamp;
         var7C48C24921EE033BF6772198C34357EE_1190658941.addTaint(taint);
         return var7C48C24921EE033BF6772198C34357EE_1190658941;
-        // ---------- Original Method ----------
-        //return infoTimestamp;
+        
+        
     }
 
     
@@ -100,8 +100,8 @@ String var7C48C24921EE033BF6772198C34357EE_1190658941 =         infoTimestamp;
 String var36BEBB44E6CD616E742E932C9DA9302B_1492589597 =         infoClassloader;
         var36BEBB44E6CD616E742E932C9DA9302B_1492589597.addTaint(taint);
         return var36BEBB44E6CD616E742E932C9DA9302B_1492589597;
-        // ---------- Original Method ----------
-        //return infoClassloader;
+        
+        
     }
 
     
@@ -123,21 +123,21 @@ String var36BEBB44E6CD616E742E932C9DA9302B_1492589597 =         infoClassloader;
 String var2460B846747F8B22185AD8BE722266A5_71766982 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_71766982.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_71766982;
-        // ---------- Original Method ----------
-        //StringBuffer sb = new StringBuffer
-            //(20 + infoPackage.length() + infoModule.length() +
-             //infoRelease.length() + infoTimestamp.length() +
-             //infoClassloader.length());
-        //sb.append("VersionInfo(")
-            //.append(infoPackage).append(':').append(infoModule);
-        //if (!UNAVAILABLE.equals(infoRelease))
-            //sb.append(':').append(infoRelease);
-        //if (!UNAVAILABLE.equals(infoTimestamp))
-            //sb.append(':').append(infoTimestamp);
-        //sb.append(')');
-        //if (!UNAVAILABLE.equals(infoClassloader))
-            //sb.append('@').append(infoClassloader);
-        //return sb.toString();
+        
+        
+            
+             
+             
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
     }
 
     

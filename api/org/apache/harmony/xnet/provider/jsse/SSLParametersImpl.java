@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -65,69 +65,70 @@ public class SSLParametersImpl implements Cloneable {
     if((kms == null) || (kms.length == 0))        
         {
             keyManager = getDefaultKeyManager();
-        } //End block
+        } 
         else
         {
             keyManager = findX509KeyManager(kms);
-        } //End block
+        } 
     if(keyManager == null)        
         {
             KeyManagementException varB4B4897F7D1096437D542031D15D197C_1467194387 = new KeyManagementException("No X509KeyManager found");
             varB4B4897F7D1096437D542031D15D197C_1467194387.addTaint(taint);
             throw varB4B4897F7D1096437D542031D15D197C_1467194387;
-        } //End block
+        } 
     if((tms == null) || (tms.length == 0))        
         {
             trustManager = getDefaultTrustManager();
-        } //End block
+        } 
         else
         {
             trustManager = findX509TrustManager(tms);
-        } //End block
+        } 
     if(trustManager == null)        
         {
             KeyManagementException varA449CBA60048DE5D62BF8B7E29C90C7A_21087978 = new KeyManagementException("No X509TrustManager found");
             varA449CBA60048DE5D62BF8B7E29C90C7A_21087978.addTaint(taint);
             throw varA449CBA60048DE5D62BF8B7E29C90C7A_21087978;
-        } //End block
+        } 
         secureRandom = sr;
-        // ---------- Original Method ----------
-        //this.serverSessionContext = serverSessionContext;
-        //this.clientSessionContext = clientSessionContext;
-        //if ((kms == null) || (kms.length == 0)) {
-            //keyManager = getDefaultKeyManager();
-        //} else {
-            //keyManager = findX509KeyManager(kms);
-        //}
-        //if (keyManager == null) {
-            //throw new KeyManagementException("No X509KeyManager found");
-        //}
-        //if ((tms == null) || (tms.length == 0)) {
-            //trustManager = getDefaultTrustManager();
-        //} else {
-            //trustManager = findX509TrustManager(tms);
-        //}
-        //if (trustManager == null) {
-            //throw new KeyManagementException("No X509TrustManager found");
-        //}
-        //secureRandom = sr;
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.448 -0400", hash_original_method = "F41241796D4BD57A765BA19A5F557DE2", hash_generated_method = "9C1850C76ABA5B9108E7EEE63E045CEE")
     protected CipherSuite[] getEnabledCipherSuitesMember() {
     if(enabledCipherSuites == null)        
         {
             this.enabledCipherSuites = CipherSuite.DEFAULT_CIPHER_SUITES;
-        } //End block
+        } 
 CipherSuite[] var4FE9A25924581DEE872791EA4874412D_735839407 =         enabledCipherSuites;
         var4FE9A25924581DEE872791EA4874412D_735839407.addTaint(taint);
         return var4FE9A25924581DEE872791EA4874412D_735839407;
-        // ---------- Original Method ----------
-        //if (enabledCipherSuites == null) {
-            //this.enabledCipherSuites = CipherSuite.DEFAULT_CIPHER_SUITES;
-        //}
-        //return enabledCipherSuites;
+        
+        
+            
+        
+        
     }
 
     
@@ -144,43 +145,47 @@ CipherSuite[] var4FE9A25924581DEE872791EA4874412D_735839407 =         enabledCip
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.448 -0400", hash_original_method = "658F9BFC8B9B3779298360EB3ED283E0", hash_generated_method = "8BB6337DE4072076CF7A5E8A61234307")
     protected ServerSessionContext getServerSessionContext() {
 ServerSessionContext var100440D65E59DFFC2F85188BB92C5DF8_1298691268 =         serverSessionContext;
         var100440D65E59DFFC2F85188BB92C5DF8_1298691268.addTaint(taint);
         return var100440D65E59DFFC2F85188BB92C5DF8_1298691268;
-        // ---------- Original Method ----------
-        //return serverSessionContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.449 -0400", hash_original_method = "F2ACF841A45F78E0C0C46B366B8BBEF0", hash_generated_method = "CC45356794EF01747168AA88063AE63D")
     protected ClientSessionContext getClientSessionContext() {
 ClientSessionContext varF881C293692092C9564353C09AD998B5_1310822193 =         clientSessionContext;
         varF881C293692092C9564353C09AD998B5_1310822193.addTaint(taint);
         return varF881C293692092C9564353C09AD998B5_1310822193;
-        // ---------- Original Method ----------
-        //return clientSessionContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.449 -0400", hash_original_method = "55EECB48B318CBDDE6A76E7D2964C45E", hash_generated_method = "76E978F4AAEFA968BB1F850B93C75A21")
     protected X509KeyManager getKeyManager() {
 X509KeyManager varB2F1F4ADA8F75A61CE21B0CA3AA12DC4_1860059375 =         keyManager;
         varB2F1F4ADA8F75A61CE21B0CA3AA12DC4_1860059375.addTaint(taint);
         return varB2F1F4ADA8F75A61CE21B0CA3AA12DC4_1860059375;
-        // ---------- Original Method ----------
-        //return keyManager;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.449 -0400", hash_original_method = "6C6A481BDDE46D9B11307A3C2E7627FB", hash_generated_method = "F9CDED4DDE051F2BDCAF4A19F3619780")
     protected X509TrustManager getTrustManager() {
 X509TrustManager var56C611970C82E9A90BA55937E8F17214_1013280382 =         trustManager;
         var56C611970C82E9A90BA55937E8F17214_1013280382.addTaint(taint);
         return var56C611970C82E9A90BA55937E8F17214_1013280382;
-        // ---------- Original Method ----------
-        //return trustManager;
+        
+        
     }
 
     
@@ -191,36 +196,37 @@ X509TrustManager var56C611970C82E9A90BA55937E8F17214_1013280382 =         trustM
 SecureRandom var61F46EA9C65D699D838C78C67875DF31_1103775485 =             secureRandom;
             var61F46EA9C65D699D838C78C67875DF31_1103775485.addTaint(taint);
             return var61F46EA9C65D699D838C78C67875DF31_1103775485;
-        } //End block
+        } 
         SecureRandom result = defaultSecureRandom;
     if(result == null)        
         {
             defaultSecureRandom = result = new SecureRandom();
-        } //End block
+        } 
         secureRandom = result;
 SecureRandom var61F46EA9C65D699D838C78C67875DF31_1453313361 =         secureRandom;
         var61F46EA9C65D699D838C78C67875DF31_1453313361.addTaint(taint);
         return var61F46EA9C65D699D838C78C67875DF31_1453313361;
-        // ---------- Original Method ----------
-        //if (secureRandom != null) {
-            //return secureRandom;
-        //}
-        //SecureRandom result = defaultSecureRandom;
-        //if (result == null) {
-            //defaultSecureRandom = result = new SecureRandom();
-        //}
-        //secureRandom = result;
-        //return secureRandom;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.450 -0400", hash_original_method = "3F930A54995EF963563BF853943EBA6D", hash_generated_method = "DA50588A3021FBA80EDDE15AE9B87B6B")
     protected SecureRandom getSecureRandomMember() {
 SecureRandom var61F46EA9C65D699D838C78C67875DF31_630056372 =         secureRandom;
         var61F46EA9C65D699D838C78C67875DF31_630056372.addTaint(taint);
         return var61F46EA9C65D699D838C78C67875DF31_630056372;
-        // ---------- Original Method ----------
-        //return secureRandom;
+        
+        
     }
 
     
@@ -233,20 +239,20 @@ SecureRandom var61F46EA9C65D699D838C78C67875DF31_630056372 =         secureRando
 for(int i = 0;i< enabledCipherSuites.length;i++)
             {
                 enabledCipherSuiteNames[i] = enabledCipherSuites[i].getName();
-            } //End block
-        } //End block
+            } 
+        } 
 String[] varF3F84C88F370917D7BACDC6E9882C7DE_1030281656 =         enabledCipherSuiteNames.clone();
         varF3F84C88F370917D7BACDC6E9882C7DE_1030281656.addTaint(taint);
         return varF3F84C88F370917D7BACDC6E9882C7DE_1030281656;
-        // ---------- Original Method ----------
-        //if (enabledCipherSuiteNames == null) {
-            //CipherSuite[] enabledCipherSuites = getEnabledCipherSuitesMember();
-            //enabledCipherSuiteNames = new String[enabledCipherSuites.length];
-            //for (int i = 0; i< enabledCipherSuites.length; i++) {
-                //enabledCipherSuiteNames[i] = enabledCipherSuites[i].getName();
-            //}
-        //}
-        //return enabledCipherSuiteNames.clone();
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -257,7 +263,7 @@ String[] varF3F84C88F370917D7BACDC6E9882C7DE_1030281656 =         enabledCipherS
             IllegalArgumentException var807CC84CDC4277C5BED4C8C99CADE6D9_763031725 = new IllegalArgumentException("suites == null");
             var807CC84CDC4277C5BED4C8C99CADE6D9_763031725.addTaint(taint);
             throw var807CC84CDC4277C5BED4C8C99CADE6D9_763031725;
-        } //End block
+        } 
         CipherSuite[] cipherSuites = new CipherSuite[suites.length];
 for(int i=0;i<suites.length;i++)
         {
@@ -267,34 +273,34 @@ for(int i=0;i<suites.length;i++)
                 IllegalArgumentException var858B7BFBFA45D338547759A820F9FB09_1903545729 = new IllegalArgumentException("suites[" + i + "] == null");
                 var858B7BFBFA45D338547759A820F9FB09_1903545729.addTaint(taint);
                 throw var858B7BFBFA45D338547759A820F9FB09_1903545729;
-            } //End block
+            } 
             cipherSuites[i] = CipherSuite.getByName(suite);
     if(cipherSuites[i] == null || !cipherSuites[i].supported)            
             {
                 IllegalArgumentException varA6DDD6B50C3C1A02D7FC8AF815250187_1162485280 = new IllegalArgumentException(suite + " is not supported.");
                 varA6DDD6B50C3C1A02D7FC8AF815250187_1162485280.addTaint(taint);
                 throw varA6DDD6B50C3C1A02D7FC8AF815250187_1162485280;
-            } //End block
-        } //End block
+            } 
+        } 
         enabledCipherSuites = cipherSuites;
         enabledCipherSuiteNames = suites;
-        // ---------- Original Method ----------
-        //if (suites == null) {
-            //throw new IllegalArgumentException("suites == null");
-        //}
-        //CipherSuite[] cipherSuites = new CipherSuite[suites.length];
-        //for (int i=0; i<suites.length; i++) {
-            //String suite = suites[i];
-            //if (suite == null) {
-                //throw new IllegalArgumentException("suites[" + i + "] == null");
-            //}
-            //cipherSuites[i] = CipherSuite.getByName(suite);
-            //if (cipherSuites[i] == null || !cipherSuites[i].supported) {
-                //throw new IllegalArgumentException(suite + " is not supported.");
-            //}
-        //}
-        //enabledCipherSuites = cipherSuites;
-        //enabledCipherSuiteNames = suites;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -303,8 +309,8 @@ for(int i=0;i<suites.length;i++)
 String[] var7F784EE3631AE57BC482259F3F556633_217484113 =         enabledProtocols.clone();
         var7F784EE3631AE57BC482259F3F556633_217484113.addTaint(taint);
         return var7F784EE3631AE57BC482259F3F556633_217484113;
-        // ---------- Original Method ----------
-        //return enabledProtocols.clone();
+        
+        
     }
 
     
@@ -315,7 +321,7 @@ String[] var7F784EE3631AE57BC482259F3F556633_217484113 =         enabledProtocol
             IllegalArgumentException var2822E6C7CFBEAB80136C7D0521361E0E_927324299 = new IllegalArgumentException("protocols == null");
             var2822E6C7CFBEAB80136C7D0521361E0E_927324299.addTaint(taint);
             throw var2822E6C7CFBEAB80136C7D0521361E0E_927324299;
-        } //End block
+        } 
 for(int i=0;i<protocols.length;i++)
         {
             String protocol = protocols[i];
@@ -324,105 +330,113 @@ for(int i=0;i<protocols.length;i++)
                 IllegalArgumentException varF04D0F97B47B7F5B7599232D02F2FC50_924227921 = new IllegalArgumentException("protocols[" + i + "] == null");
                 varF04D0F97B47B7F5B7599232D02F2FC50_924227921.addTaint(taint);
                 throw varF04D0F97B47B7F5B7599232D02F2FC50_924227921;
-            } //End block
+            } 
     if(!ProtocolVersion.isSupported(protocol))            
             {
                 IllegalArgumentException var197A1530EEB0493EE1C3EF8D1914D69C_336192631 = new IllegalArgumentException("Protocol " + protocol + " is not supported.");
                 var197A1530EEB0493EE1C3EF8D1914D69C_336192631.addTaint(taint);
                 throw var197A1530EEB0493EE1C3EF8D1914D69C_336192631;
-            } //End block
-        } //End block
+            } 
+        } 
         enabledProtocols = protocols;
-        // ---------- Original Method ----------
-        //if (protocols == null) {
-            //throw new IllegalArgumentException("protocols == null");
-        //}
-        //for (int i=0; i<protocols.length; i++) {
-            //String protocol = protocols[i];
-            //if (protocol == null) {
-                //throw new IllegalArgumentException("protocols[" + i + "] == null");
-            //}
-            //if (!ProtocolVersion.isSupported(protocol)) {
-                //throw new IllegalArgumentException("Protocol " + protocol + " is not supported.");
-            //}
-        //}
-        //enabledProtocols = protocols;
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.453 -0400", hash_original_method = "D4C2A3C88DBFC7AAADB7163E376EACA1", hash_generated_method = "887DE4735EDEE4C8E4C83849AF3EB99A")
     protected void setUseClientMode(boolean mode) {
         client_mode = mode;
-        // ---------- Original Method ----------
-        //client_mode = mode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.454 -0400", hash_original_method = "90A3F3D7EBB1ED0C929CAB981D05518C", hash_generated_method = "A9AF8E43DA0FF0DB02C8744B47A89F68")
     protected boolean getUseClientMode() {
         boolean var81E447258804BADEDC394F9945D6641A_15178822 = (client_mode);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868085253 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868085253;
-        // ---------- Original Method ----------
-        //return client_mode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.454 -0400", hash_original_method = "2F62AC894AF3F12D83050C91D4850055", hash_generated_method = "52A5FCBC97E504C4D517CB08073F3187")
     protected void setNeedClientAuth(boolean need) {
         need_client_auth = need;
         want_client_auth = false;
-        // ---------- Original Method ----------
-        //need_client_auth = need;
-        //want_client_auth = false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.455 -0400", hash_original_method = "2471CA6C7557FB2D62663705E2DBC565", hash_generated_method = "D6393CFFA7195B5571C5A74977E16C91")
     protected boolean getNeedClientAuth() {
         boolean var5F0E053B848765DC1E643EA106B30957_1895381007 = (need_client_auth);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_571696006 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_571696006;
-        // ---------- Original Method ----------
-        //return need_client_auth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.455 -0400", hash_original_method = "AF76AB0175AB43F1BF7C9A05C2972923", hash_generated_method = "720F660EEC765CE9DA60BECAD1888659")
     protected void setWantClientAuth(boolean want) {
         want_client_auth = want;
         need_client_auth = false;
-        // ---------- Original Method ----------
-        //want_client_auth = want;
-        //need_client_auth = false;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.455 -0400", hash_original_method = "180B768884625BF4E09AC4E909474C3B", hash_generated_method = "C4EF4F937BC12B95AF7321EBA329A5EB")
     protected boolean getWantClientAuth() {
         boolean var50809B1BF60864131797768ED7DF2BCB_247117342 = (want_client_auth);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2077558550 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2077558550;
-        // ---------- Original Method ----------
-        //return want_client_auth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.456 -0400", hash_original_method = "982E0D6CA0433DE88B1B4310D3610067", hash_generated_method = "28552D8F807A40A67118E4FFED07DB76")
     protected void setEnableSessionCreation(boolean flag) {
         enable_session_creation = flag;
-        // ---------- Original Method ----------
-        //enable_session_creation = flag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.456 -0400", hash_original_method = "73058AE9A102A5DCB03ABA90C3F4D3DE", hash_generated_method = "AB69E64167858BAC3F9847E256D841A5")
     protected boolean getEnableSessionCreation() {
         boolean varDA1F4A09E5BAA4AF184991F774AB6DE4_378939758 = (enable_session_creation);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927812142 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_927812142;
-        // ---------- Original Method ----------
-        //return enable_session_creation;
+        
+        
     }
 
     
@@ -434,19 +448,19 @@ for(int i=0;i<protocols.length;i++)
 Object var46F3A0D86742C1D6E099C2B166941A33_1482783171 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_1482783171.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_1482783171;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_892247247 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_892247247.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_892247247;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -476,7 +490,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1482783171 =             super.clone(
     }
 
     
-        private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
+        @DSModeled(DSC.SAFE)
+    private static X509KeyManager findX509KeyManager(KeyManager[] kms) {
         for (KeyManager km : kms) {
             if (km instanceof X509KeyManager) {
                 return (X509KeyManager)km;
@@ -511,7 +526,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1482783171 =             super.clone(
     }
 
     
-        private static X509TrustManager findX509TrustManager(TrustManager[] tms) {
+        @DSModeled(DSC.SAFE)
+    private static X509TrustManager findX509TrustManager(TrustManager[] tms) {
         for (TrustManager tm : tms) {
             if (tm instanceof X509TrustManager) {
                 return (X509TrustManager)tm;

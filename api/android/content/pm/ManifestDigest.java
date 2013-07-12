@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,16 +18,16 @@ public class ManifestDigest implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.860 -0400", hash_original_method = "241EA3F870D09C8B7DFC477170347AB4", hash_generated_method = "2AB590B81F932E0A610817C3AFE1AF52")
       ManifestDigest(byte[] digest) {
         mDigest = digest;
-        // ---------- Original Method ----------
-        //mDigest = digest;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.860 -0400", hash_original_method = "95270655529A33593B4B2CDF05A8799C", hash_generated_method = "81E6E9333D28391C1F01F5EDAEBA2B05")
     private  ManifestDigest(Parcel source) {
         mDigest = source.createByteArray();
-        // ---------- Original Method ----------
-        //mDigest = source.createByteArray();
+        
+        
     }
 
     
@@ -51,14 +51,15 @@ public class ManifestDigest implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.861 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DEEA74C88E538BB12767A143F4E30494")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_244982338 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008396628 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2008396628;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -71,17 +72,17 @@ public class ManifestDigest implements Parcelable {
             boolean var68934A3E9455FA72420237EB05902327_1916042231 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1719796835 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1719796835;
-        } //End block
+        } 
         final ManifestDigest other = (ManifestDigest) o;
         boolean varEC6894E4244360D23FB7E1DEE71DDD52_993518813 = (this == other || Arrays.equals(mDigest, other.mDigest));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1903609398 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1903609398;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ManifestDigest)) {
-            //return false;
-        //}
-        //final ManifestDigest other = (ManifestDigest) o;
-        //return this == other || Arrays.equals(mDigest, other.mDigest);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -91,8 +92,8 @@ public class ManifestDigest implements Parcelable {
         int varB7779D66595E29BE488B7CF2CDC93AED_1097765906 = (Arrays.hashCode(mDigest));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58065356 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_58065356;
-        // ---------- Original Method ----------
-        //return Arrays.hashCode(mDigest);
+        
+        
     }
 
     
@@ -108,23 +109,23 @@ for(int i = 0;i < N;i++)
             final byte b = mDigest[i];
             IntegralToString.appendByteAsHex(sb, b, false);
             sb.append(',');
-        } //End block
+        } 
         sb.append('}');
 String var2460B846747F8B22185AD8BE722266A5_1506058822 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1506058822.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1506058822;
-        // ---------- Original Method ----------
-        //final StringBuilder sb = new StringBuilder(TO_STRING_PREFIX.length()
-                //+ (mDigest.length * 3) + 1);
-        //sb.append(TO_STRING_PREFIX);
-        //final int N = mDigest.length;
-        //for (int i = 0; i < N; i++) {
-            //final byte b = mDigest[i];
-            //IntegralToString.appendByteAsHex(sb, b, false);
-            //sb.append(',');
-        //}
-        //sb.append('}');
-        //return sb.toString();
+        
+        
+                
+        
+        
+        
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -134,8 +135,8 @@ String var2460B846747F8B22185AD8BE722266A5_1506058822 =         sb.toString();
         addTaint(flags);
         addTaint(dest.getTaint());
         dest.writeByteArray(mDigest);
-        // ---------- Original Method ----------
-        //dest.writeByteArray(mDigest);
+        
+        
     }
 
     
@@ -159,12 +160,12 @@ String var2460B846747F8B22185AD8BE722266A5_1506058822 =         sb.toString();
             return new ManifestDigest[size];
         }
     };
-    // orphaned legacy method
+    
     public ManifestDigest createFromParcel(Parcel source) {
             return new ManifestDigest(source);
         }
     
-    // orphaned legacy method
+    
     public ManifestDigest[] newArray(int size) {
             return new ManifestDigest[size];
         }

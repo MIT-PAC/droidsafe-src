@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,24 +32,24 @@ public class IssuerSerial extends ASN1Encodable {
             IllegalArgumentException varA2072CF614C7B8C7696DD5A02DBCCE9C_738515351 = new IllegalArgumentException("Bad sequence size: " + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_738515351.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_738515351;
-        } //End block
+        } 
         issuer = GeneralNames.getInstance(seq.getObjectAt(0));
         serial = DERInteger.getInstance(seq.getObjectAt(1));
     if(seq.size() == 3)        
         {
             issuerUID = DERBitString.getInstance(seq.getObjectAt(2));
-        } //End block
-        // ---------- Original Method ----------
-        //if (seq.size() != 2 && seq.size() != 3)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: " + seq.size());
-        //}
-        //issuer = GeneralNames.getInstance(seq.getObjectAt(0));
-        //serial = DERInteger.getInstance(seq.getObjectAt(1));
-        //if (seq.size() == 3)
-        //{
-            //issuerUID = DERBitString.getInstance(seq.getObjectAt(2));
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -59,9 +59,9 @@ public class IssuerSerial extends ASN1Encodable {
         DERInteger      serial) {
         this.issuer = issuer;
         this.serial = serial;
-        // ---------- Original Method ----------
-        //this.issuer = issuer;
-        //this.serial = serial;
+        
+        
+        
     }
 
     
@@ -86,33 +86,36 @@ public class IssuerSerial extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.126 -0400", hash_original_method = "C6A01CC056B505ECB1961F3D46D5E125", hash_generated_method = "4E581FF7D88EEF02F5E8BD40D66AD5BA")
     public GeneralNames getIssuer() {
 GeneralNames var8EF52627413B91AB97DB59853805E979_90335660 =         issuer;
         var8EF52627413B91AB97DB59853805E979_90335660.addTaint(taint);
         return var8EF52627413B91AB97DB59853805E979_90335660;
-        // ---------- Original Method ----------
-        //return issuer;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.127 -0400", hash_original_method = "4A26172B3E4E9D1CBD95C0010541030C", hash_generated_method = "070DB87715416938A451B19FC32DDB0B")
     public DERInteger getSerial() {
 DERInteger var071C6561B4B2655A6920B0B7F1E6ECD0_1909554665 =         serial;
         var071C6561B4B2655A6920B0B7F1E6ECD0_1909554665.addTaint(taint);
         return var071C6561B4B2655A6920B0B7F1E6ECD0_1909554665;
-        // ---------- Original Method ----------
-        //return serial;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.127 -0400", hash_original_method = "6FC86B4935E8EDEA9326972109BFF43A", hash_generated_method = "752999F3D4A5508548F86EFCE9B79272")
     public DERBitString getIssuerUID() {
 DERBitString var81B1BFDC984EDD98A3FFF7ED3A8DDFA3_541272309 =         issuerUID;
         var81B1BFDC984EDD98A3FFF7ED3A8DDFA3_541272309.addTaint(taint);
         return var81B1BFDC984EDD98A3FFF7ED3A8DDFA3_541272309;
-        // ---------- Original Method ----------
-        //return issuerUID;
+        
+        
     }
 
     
@@ -124,19 +127,19 @@ DERBitString var81B1BFDC984EDD98A3FFF7ED3A8DDFA3_541272309 =         issuerUID;
     if(issuerUID != null)        
         {
             v.add(issuerUID);
-        } //End block
+        } 
 DERObject var0B338F106E3279986C87B595B0F4A439_1024731792 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_1024731792.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_1024731792;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(issuer);
-        //v.add(serial);
-        //if (issuerUID != null)
-        //{
-            //v.add(issuerUID);
-        //}
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

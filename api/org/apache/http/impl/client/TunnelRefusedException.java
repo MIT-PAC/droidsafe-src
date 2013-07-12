@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,18 +17,19 @@ public class TunnelRefusedException extends HttpException {
         super(message);
         addTaint(message.getTaint());
         this.response = response;
-        // ---------- Original Method ----------
-        //this.response = response;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.677 -0400", hash_original_method = "3C5BCF9DD6B811984123D054EF330499", hash_generated_method = "EA0B559023C3AF69733C4B5FD7DD4CEC")
     public HttpResponse getResponse() {
 HttpResponse var9180F5C05EE7124E45D77914B849345D_344063422 =         this.response;
         var9180F5C05EE7124E45D77914B849345D_344063422.addTaint(taint);
         return var9180F5C05EE7124E45D77914B849345D_344063422;
-        // ---------- Original Method ----------
-        //return this.response;
+        
+        
     }
 
     

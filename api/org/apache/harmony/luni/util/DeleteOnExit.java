@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class DeleteOnExit extends Thread {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.389 -0400", hash_original_method = "80FBB7FC28966FEC5371F3D04A9D4E08", hash_generated_method = "80FBB7FC28966FEC5371F3D04A9D4E08")
     public DeleteOnExit ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -37,14 +37,14 @@ public class DeleteOnExit extends Thread {
     if(!files.contains(filename))            
             {
                 files.add(filename);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(files) {
-            //if (!files.contains(filename)) {
-                //files.add(filename);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -55,12 +55,12 @@ public class DeleteOnExit extends Thread {
 for(int i = files.size() - 1;i >= 0;i--)
         {
             new File(files.get(i)).delete();
-        } //End block
-        // ---------- Original Method ----------
-        //Collections.sort(files);
-        //for (int i = files.size() - 1; i >= 0; i--) {
-            //new File(files.get(i)).delete();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     

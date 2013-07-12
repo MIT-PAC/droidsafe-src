@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class ReferToParser extends AddressParametersParser {
     public  ReferToParser(String referTo) {
         super(referTo);
         addTaint(referTo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,10 +21,11 @@ public class ReferToParser extends AddressParametersParser {
     protected  ReferToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:41.627 -0400", hash_original_method = "3469BCE5DE818D1E33012B0295E9EC56", hash_generated_method = "554F6CA0A2ABE4B73EEAF9477BBDDCA6")
     public SIPHeader parse() throws ParseException {
         headerName(TokenTypes.REFER_TO);
@@ -34,12 +35,12 @@ public class ReferToParser extends AddressParametersParser {
 SIPHeader varF03467BD7719B93D23F3A1857BAA9912_1135718305 =         referTo;
         varF03467BD7719B93D23F3A1857BAA9912_1135718305.addTaint(taint);
         return varF03467BD7719B93D23F3A1857BAA9912_1135718305;
-        // ---------- Original Method ----------
-        //headerName(TokenTypes.REFER_TO);
-        //ReferTo referTo = new ReferTo();
-        //super.parse(referTo);
-        //this.lexer.match('\n');
-        //return referTo;
+        
+        
+        
+        
+        
+        
     }
 
     

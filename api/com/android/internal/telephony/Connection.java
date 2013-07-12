@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,40 +14,43 @@ public abstract class Connection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.190 -0400", hash_original_method = "4879E6D30CC79D00A25F9B445CF68B6E", hash_generated_method = "4879E6D30CC79D00A25F9B445CF68B6E")
     public Connection ()
     {
-        //Synthesized constructor
+        
     }
 
 
     public abstract String getAddress();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.190 -0400", hash_original_method = "2C38CD1ADD524A252486CD5B36783C9F", hash_generated_method = "2053269B1DE259C170699FD7C45B086A")
     public String getCnapName() {
 String var540C13E9E156B687226421B24F2DF178_1468343352 =         null;
         var540C13E9E156B687226421B24F2DF178_1468343352.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1468343352;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.190 -0400", hash_original_method = "451C5F2C0CC4276FE6380FF80081B9A6", hash_generated_method = "2610E815C854724C6E644B5A42385214")
     public String getOrigDialString() {
 String var540C13E9E156B687226421B24F2DF178_533871726 =         null;
         var540C13E9E156B687226421B24F2DF178_533871726.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_533871726;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.191 -0400", hash_original_method = "2E0374E6F9E8D6BE31ABEC176AD57E5E", hash_generated_method = "F9F94B7C5743935E0D390ADC84C13156")
     public int getCnapNamePresentation() {
         int varCFCD208495D565EF66E7DFF9F98764DA_96718879 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1538858346 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1538858346;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -84,21 +87,21 @@ String var540C13E9E156B687226421B24F2DF178_533871726 =         null;
 Call.State varFE024FD31643F7C6DFE624852D2887B2_424989496 =             Call.State.IDLE;
             varFE024FD31643F7C6DFE624852D2887B2_424989496.addTaint(taint);
             return varFE024FD31643F7C6DFE624852D2887B2_424989496;
-        } //End block
+        } 
         else
         {
 Call.State varB35ECCCBCBE811C03907584456C32BD3_927868199 =             c.getState();
             varB35ECCCBCBE811C03907584456C32BD3_927868199.addTaint(taint);
             return varB35ECCCBCBE811C03907584456C32BD3_927868199;
-        } //End block
-        // ---------- Original Method ----------
-        //Call c;
-        //c = getCall();
-        //if (c == null) {
-            //return Call.State.IDLE;
-        //} else {
-            //return c.getState();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -107,8 +110,8 @@ Call.State varB35ECCCBCBE811C03907584456C32BD3_927868199 =             c.getStat
         boolean varE6F07A787781536ED97E7FF34498F89F_703642500 = (getState().isAlive());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2106442992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2106442992;
-        // ---------- Original Method ----------
-        //return getState().isAlive();
+        
+        
     }
 
     
@@ -117,26 +120,28 @@ Call.State varB35ECCCBCBE811C03907584456C32BD3_927868199 =             c.getStat
         boolean varE5A9397BC8DB5D2D7096BFF8E63CC3A1_1641313482 = (getState().isRinging());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_380981111 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_380981111;
-        // ---------- Original Method ----------
-        //return getState().isRinging();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.194 -0400", hash_original_method = "E65D3701CFC74E9E6B255CE6C7739495", hash_generated_method = "3FE49831D46C682F36DA5DD87D2F172A")
     public Object getUserData() {
 Object var9007C9FCC94862CF7404FC37365C2BDF_677848448 =         userData;
         var9007C9FCC94862CF7404FC37365C2BDF_677848448.addTaint(taint);
         return var9007C9FCC94862CF7404FC37365C2BDF_677848448;
-        // ---------- Original Method ----------
-        //return userData;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.194 -0400", hash_original_method = "02A60C1B56AFD4C316BCBE2C50A969C7", hash_generated_method = "DA96F33A9905D9C28F1D373D4DFB95DB")
     public void setUserData(Object userdata) {
         this.userData = userdata;
-        // ---------- Original Method ----------
-        //this.userData = userdata;
+        
+        
     }
 
     
@@ -146,11 +151,12 @@ Object var9007C9FCC94862CF7404FC37365C2BDF_677848448 =         userData;
     public abstract void separate() throws CallStateException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.195 -0400", hash_original_method = "46262E10525A1E414BE5248C4690B238", hash_generated_method = "6791C272C5B27827C93CE851BE8811EA")
     public void clearUserData() {
         userData = null;
-        // ---------- Original Method ----------
-        //userData = null;
+        
+        
     }
 
     
@@ -186,27 +192,27 @@ Object var9007C9FCC94862CF7404FC37365C2BDF_677848448 =         userData;
                     .append(" postdial: " + getRemainingPostDialString())
                     .append(" cnap name: " + getCnapName())
                     .append("(" + getCnapNamePresentation() + ")");
-        } //End block
+        } 
         str.append(" incoming: " + isIncoming())
                 .append(" state: " + getState())
                 .append(" post dial state: " + getPostDialState());
 String var24D7484D779E22452A6C5FBC9AEC25FA_1750623617 =         str.toString();
         var24D7484D779E22452A6C5FBC9AEC25FA_1750623617.addTaint(taint);
         return var24D7484D779E22452A6C5FBC9AEC25FA_1750623617;
-        // ---------- Original Method ----------
-        //StringBuilder str = new StringBuilder(128);
-        //if (Log.isLoggable(LOG_TAG, Log.DEBUG)) {
-            //str.append("addr: " + getAddress())
-                    //.append(" pres.: " + getNumberPresentation())
-                    //.append(" dial: " + getOrigDialString())
-                    //.append(" postdial: " + getRemainingPostDialString())
-                    //.append(" cnap name: " + getCnapName())
-                    //.append("(" + getCnapNamePresentation() + ")");
-        //}
-        //str.append(" incoming: " + isIncoming())
-                //.append(" state: " + getState())
-                //.append(" post dial state: " + getPostDialState());
-        //return str.toString();
+        
+        
+        
+            
+                    
+                    
+                    
+                    
+                    
+        
+        
+                
+                
+        
     }
 
     

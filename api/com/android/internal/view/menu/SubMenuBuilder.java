@@ -1,6 +1,6 @@
 package com.android.internal.view.menu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
         addTaint(context.getTaint());
         mParentMenu = parentMenu;
         mItem = item;
-        // ---------- Original Method ----------
-        //mParentMenu = parentMenu;
-        //mItem = item;
+        
+        
+        
     }
 
     
@@ -36,8 +36,8 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     public void setQwertyMode(boolean isQwerty) {
         addTaint(isQwerty);
         mParentMenu.setQwertyMode(isQwerty);
-        // ---------- Original Method ----------
-        //mParentMenu.setQwertyMode(isQwerty);
+        
+        
     }
 
     
@@ -47,8 +47,8 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
         boolean varD995D230E45CB8887C100072E7C2959F_1965306344 = (mParentMenu.isQwertyMode());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_437857295 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_437857295;
-        // ---------- Original Method ----------
-        //return mParentMenu.isQwertyMode();
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
     public void setShortcutsVisible(boolean shortcutsVisible) {
         addTaint(shortcutsVisible);
         mParentMenu.setShortcutsVisible(shortcutsVisible);
-        // ---------- Original Method ----------
-        //mParentMenu.setShortcutsVisible(shortcutsVisible);
+        
+        
     }
 
     
@@ -68,28 +68,30 @@ public class SubMenuBuilder extends MenuBuilder implements SubMenu {
         boolean var4073E0CD81748E5654D8BEE884DCD5E9_403185 = (mParentMenu.isShortcutsVisible());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_709357062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_709357062;
-        // ---------- Original Method ----------
-        //return mParentMenu.isShortcutsVisible();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.542 -0400", hash_original_method = "EFEC7F93A39736AF8130A49104B9A895", hash_generated_method = "90CD870133FC87AECCB31999792D3994")
     public Menu getParentMenu() {
 Menu varF208CAAF42A19269A08D768D04E791E1_733320622 =         mParentMenu;
         varF208CAAF42A19269A08D768D04E791E1_733320622.addTaint(taint);
         return varF208CAAF42A19269A08D768D04E791E1_733320622;
-        // ---------- Original Method ----------
-        //return mParentMenu;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.542 -0400", hash_original_method = "B68A5ADECB21212250B72B1DD0399FE9", hash_generated_method = "F67E638FD9757A0DAB487BFE6909832A")
     public MenuItem getItem() {
 MenuItem varB8B55D922EB39771645EDB9C40F92DB5_1891286340 =         mItem;
         varB8B55D922EB39771645EDB9C40F92DB5_1891286340.addTaint(taint);
         return varB8B55D922EB39771645EDB9C40F92DB5_1891286340;
-        // ---------- Original Method ----------
-        //return mItem;
+        
+        
     }
 
     
@@ -98,19 +100,20 @@ MenuItem varB8B55D922EB39771645EDB9C40F92DB5_1891286340 =         mItem;
     public void setCallback(Callback callback) {
         addTaint(callback.getTaint());
         mParentMenu.setCallback(callback);
-        // ---------- Original Method ----------
-        //mParentMenu.setCallback(callback);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.542 -0400", hash_original_method = "DFDE0312E92BA6118839C252C79690F8", hash_generated_method = "9A200FA2681F212731B998B5937826EF")
     @Override
     public MenuBuilder getRootMenu() {
 MenuBuilder varF208CAAF42A19269A08D768D04E791E1_387127469 =         mParentMenu;
         varF208CAAF42A19269A08D768D04E791E1_387127469.addTaint(taint);
         return varF208CAAF42A19269A08D768D04E791E1_387127469;
-        // ---------- Original Method ----------
-        //return mParentMenu;
+        
+        
     }
 
     
@@ -123,9 +126,9 @@ MenuBuilder varF208CAAF42A19269A08D768D04E791E1_387127469 =         mParentMenu;
                 mParentMenu.dispatchMenuItemSelected(menu, item));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1159199252 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1159199252;
-        // ---------- Original Method ----------
-        //return super.dispatchMenuItemSelected(menu, item) ||
-                //mParentMenu.dispatchMenuItemSelected(menu, item);
+        
+        
+                
     }
 
     
@@ -136,9 +139,9 @@ MenuBuilder varF208CAAF42A19269A08D768D04E791E1_387127469 =         mParentMenu;
 SubMenu var72A74007B2BE62B849F475C7BDA4658B_989215832 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_989215832.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_989215832;
-        // ---------- Original Method ----------
-        //mItem.setIcon(icon);
-        //return this;
+        
+        
+        
     }
 
     
@@ -149,9 +152,9 @@ SubMenu var72A74007B2BE62B849F475C7BDA4658B_989215832 =         this;
 SubMenu var72A74007B2BE62B849F475C7BDA4658B_1813874634 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1813874634.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1813874634;
-        // ---------- Original Method ----------
-        //mItem.setIcon(iconRes);
-        //return this;
+        
+        
+        
     }
 
     
@@ -161,8 +164,8 @@ SubMenu var72A74007B2BE62B849F475C7BDA4658B_1813874634 =         this;
 SubMenu var97F4EDDD5BAE9296D77C62210B3282BD_1120644958 =         (SubMenu) super.setHeaderIconInt(icon);
         var97F4EDDD5BAE9296D77C62210B3282BD_1120644958.addTaint(taint);
         return var97F4EDDD5BAE9296D77C62210B3282BD_1120644958;
-        // ---------- Original Method ----------
-        //return (SubMenu) super.setHeaderIconInt(icon);
+        
+        
     }
 
     
@@ -172,8 +175,8 @@ SubMenu var97F4EDDD5BAE9296D77C62210B3282BD_1120644958 =         (SubMenu) super
 SubMenu var795F46ADD5399CF35528DC3F178813AD_1366462558 =         (SubMenu) super.setHeaderIconInt(iconRes);
         var795F46ADD5399CF35528DC3F178813AD_1366462558.addTaint(taint);
         return var795F46ADD5399CF35528DC3F178813AD_1366462558;
-        // ---------- Original Method ----------
-        //return (SubMenu) super.setHeaderIconInt(iconRes);
+        
+        
     }
 
     
@@ -183,8 +186,8 @@ SubMenu var795F46ADD5399CF35528DC3F178813AD_1366462558 =         (SubMenu) super
 SubMenu varC06140364D3E2369C22D1E22A57FCFF6_1630603497 =         (SubMenu) super.setHeaderTitleInt(title);
         varC06140364D3E2369C22D1E22A57FCFF6_1630603497.addTaint(taint);
         return varC06140364D3E2369C22D1E22A57FCFF6_1630603497;
-        // ---------- Original Method ----------
-        //return (SubMenu) super.setHeaderTitleInt(title);
+        
+        
     }
 
     
@@ -194,8 +197,8 @@ SubMenu varC06140364D3E2369C22D1E22A57FCFF6_1630603497 =         (SubMenu) super
 SubMenu varFCE46281593FBC2055B0F03413AC873C_563869976 =         (SubMenu) super.setHeaderTitleInt(titleRes);
         varFCE46281593FBC2055B0F03413AC873C_563869976.addTaint(taint);
         return varFCE46281593FBC2055B0F03413AC873C_563869976;
-        // ---------- Original Method ----------
-        //return (SubMenu) super.setHeaderTitleInt(titleRes);
+        
+        
     }
 
     
@@ -205,8 +208,8 @@ SubMenu varFCE46281593FBC2055B0F03413AC873C_563869976 =         (SubMenu) super.
 SubMenu var018BD80D9611AACB04043AA4590875FA_1575234677 =         (SubMenu) super.setHeaderViewInt(view);
         var018BD80D9611AACB04043AA4590875FA_1575234677.addTaint(taint);
         return var018BD80D9611AACB04043AA4590875FA_1575234677;
-        // ---------- Original Method ----------
-        //return (SubMenu) super.setHeaderViewInt(view);
+        
+        
     }
 
     
@@ -217,8 +220,8 @@ SubMenu var018BD80D9611AACB04043AA4590875FA_1575234677 =         (SubMenu) super
         boolean var28B1E20F172049504707C87CEBC9CBAA_364522488 = (mParentMenu.expandItemActionView(item));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_989655860 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_989655860;
-        // ---------- Original Method ----------
-        //return mParentMenu.expandItemActionView(item);
+        
+        
     }
 
     
@@ -229,8 +232,8 @@ SubMenu var018BD80D9611AACB04043AA4590875FA_1575234677 =         (SubMenu) super
         boolean var91064DE1D3289D616DC5D379565708CC_203845310 = (mParentMenu.collapseItemActionView(item));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_188242606 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_188242606;
-        // ---------- Original Method ----------
-        //return mParentMenu.collapseItemActionView(item);
+        
+        
     }
 
     
@@ -243,16 +246,16 @@ SubMenu var018BD80D9611AACB04043AA4590875FA_1575234677 =         (SubMenu) super
 String var540C13E9E156B687226421B24F2DF178_1142621257 =             null;
             var540C13E9E156B687226421B24F2DF178_1142621257.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1142621257;
-        } //End block
+        } 
 String var4D0F444A49EDFBA8040B4459D86C8C87_237136054 =         super.getActionViewStatesKey() + ":" + itemId;
         var4D0F444A49EDFBA8040B4459D86C8C87_237136054.addTaint(taint);
         return var4D0F444A49EDFBA8040B4459D86C8C87_237136054;
-        // ---------- Original Method ----------
-        //final int itemId = mItem != null ? mItem.getItemId() : 0;
-        //if (itemId == 0) {
-            //return null;
-        //}
-        //return super.getActionViewStatesKey() + ":" + itemId;
+        
+        
+        
+            
+        
+        
     }
 
     

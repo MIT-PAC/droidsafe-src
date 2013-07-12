@@ -1,6 +1,6 @@
 package com.android.internal.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,7 +49,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     public  AbsActionBarView(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -58,7 +58,7 @@ public abstract class AbsActionBarView extends ViewGroup {
         super(context, attrs);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,14 +68,14 @@ public abstract class AbsActionBarView extends ViewGroup {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.577 -0400", hash_original_method = "A484FDB326818C55D115F236B23DD701", hash_generated_method = "8421EFCC81A17DB87F0ECC5198A416D9")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
         super.onConfigurationChanged(newConfig);
         TypedArray a = getContext().obtainStyledAttributes(null, R.styleable.ActionBar,
@@ -86,40 +86,42 @@ public abstract class AbsActionBarView extends ViewGroup {
         {
             setSplitActionBar(getContext().getResources().getBoolean(
                     com.android.internal.R.bool.split_action_bar_is_narrow));
-        } //End block
+        } 
     if(mActionMenuPresenter != null)        
         {
             mActionMenuPresenter.onConfigurationChanged(newConfig);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //TypedArray a = getContext().obtainStyledAttributes(null, R.styleable.ActionBar,
-                //com.android.internal.R.attr.actionBarStyle, 0);
-        //setContentHeight(a.getLayoutDimension(R.styleable.ActionBar_height, 0));
-        //a.recycle();
-        //if (mSplitWhenNarrow) {
-            //setSplitActionBar(getContext().getResources().getBoolean(
-                    //com.android.internal.R.bool.split_action_bar_is_narrow));
-        //}
-        //if (mActionMenuPresenter != null) {
-            //mActionMenuPresenter.onConfigurationChanged(newConfig);
-        //}
+        } 
+        
+        
+        
+                
+        
+        
+        
+            
+                    
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.577 -0400", hash_original_method = "D4ADA7B8094B8C24856ACB21A2F3F966", hash_generated_method = "2774B4992A13F924AB31013753167D87")
     public void setSplitActionBar(boolean split) {
         mSplitActionBar = split;
-        // ---------- Original Method ----------
-        //mSplitActionBar = split;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.578 -0400", hash_original_method = "68FCF08F15ACE8E4E864370710ECF8B3", hash_generated_method = "EFC04914301CDD5999164CC812B627A5")
     public void setSplitWhenNarrow(boolean splitWhenNarrow) {
         mSplitWhenNarrow = splitWhenNarrow;
-        // ---------- Original Method ----------
-        //mSplitWhenNarrow = splitWhenNarrow;
+        
+        
     }
 
     
@@ -127,27 +129,29 @@ public abstract class AbsActionBarView extends ViewGroup {
     public void setContentHeight(int height) {
         mContentHeight = height;
         requestLayout();
-        // ---------- Original Method ----------
-        //mContentHeight = height;
-        //requestLayout();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.579 -0400", hash_original_method = "AB5D9AC478BBA1C6AA700AA7486698D8", hash_generated_method = "42DA680F456B0688C3D54DCDF8F89351")
     public int getContentHeight() {
         int varF40FB88A5310D2E8A8F0AC8C692796A5_588320704 = (mContentHeight);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719716381 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719716381;
-        // ---------- Original Method ----------
-        //return mContentHeight;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.580 -0400", hash_original_method = "3A09CE20A6543F8D9E8109683BD6E731", hash_generated_method = "1A26F6E86D020C5E2F245C84AB51C6BF")
     public void setSplitView(ActionBarContainer splitView) {
         mSplitView = splitView;
-        // ---------- Original Method ----------
-        //mSplitView = splitView;
+        
+        
     }
 
     
@@ -158,15 +162,15 @@ public abstract class AbsActionBarView extends ViewGroup {
             int var118A2AD99A701291A6244621E05EAB9A_1409158368 = (mVisAnimListener.mFinalVisibility);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_535697569 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_535697569;
-        } //End block
+        } 
         int var166FFC3829FC1035C266CC4C4D713A8C_153832016 = (getVisibility());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1687170732 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1687170732;
-        // ---------- Original Method ----------
-        //if (mVisibilityAnim != null) {
-            //return mVisAnimListener.mFinalVisibility;
-        //}
-        //return getVisibility();
+        
+        
+            
+        
+        
     }
 
     
@@ -176,7 +180,7 @@ public abstract class AbsActionBarView extends ViewGroup {
     if(mVisibilityAnim != null)        
         {
             mVisibilityAnim.cancel();
-        } //End block
+        } 
     if(visibility == VISIBLE)        
         {
     if(getVisibility() != VISIBLE)            
@@ -185,8 +189,8 @@ public abstract class AbsActionBarView extends ViewGroup {
     if(mSplitView != null && mMenuView != null)                
                 {
                     mMenuView.setAlpha(0);
-                } //End block
-            } //End block
+                } 
+            } 
             ObjectAnimator anim = ObjectAnimator.ofFloat(this, "alpha", 1);
             anim.setDuration(FADE_DURATION);
             anim.setInterpolator(sAlphaInterpolator);
@@ -198,13 +202,13 @@ public abstract class AbsActionBarView extends ViewGroup {
                 set.addListener(mVisAnimListener.withFinalVisibility(visibility));
                 set.play(anim).with(splitAnim);
                 set.start();
-            } //End block
+            } 
             else
             {
                 anim.addListener(mVisAnimListener.withFinalVisibility(visibility));
                 anim.start();
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             ObjectAnimator anim = ObjectAnimator.ofFloat(this, "alpha", 0);
@@ -218,15 +222,15 @@ public abstract class AbsActionBarView extends ViewGroup {
                 set.addListener(mVisAnimListener.withFinalVisibility(visibility));
                 set.play(anim).with(splitAnim);
                 set.start();
-            } //End block
+            } 
             else
             {
                 anim.addListener(mVisAnimListener.withFinalVisibility(visibility));
                 anim.start();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -237,13 +241,13 @@ public abstract class AbsActionBarView extends ViewGroup {
     if(mVisibilityAnim != null)        
         {
             mVisibilityAnim.end();
-        } //End block
+        } 
         super.setVisibility(visibility);
-        // ---------- Original Method ----------
-        //if (mVisibilityAnim != null) {
-            //mVisibilityAnim.end();
-        //}
-        //super.setVisibility(visibility);
+        
+        
+            
+        
+        
     }
 
     
@@ -254,15 +258,15 @@ public abstract class AbsActionBarView extends ViewGroup {
             boolean varBFC2B6A46330B4A2C0833A7CFFCAD0E6_1384120773 = (mActionMenuPresenter.showOverflowMenu());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1216206056 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1216206056;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1810635502 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146119169 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146119169;
-        // ---------- Original Method ----------
-        //if (mActionMenuPresenter != null) {
-            //return mActionMenuPresenter.showOverflowMenu();
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -272,16 +276,16 @@ public abstract class AbsActionBarView extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.585 -0400", hash_original_method = "2C58279E0E2988284D33F5FBC58AA75D", hash_generated_method = "09EE0F572B2A69A085769CC77C52E2CA")
         public void run() {
             showOverflowMenu();
-            // ---------- Original Method ----------
-            //showOverflowMenu();
+            
+            
         }
 });
-        // ---------- Original Method ----------
-        //post(new Runnable() {
-            //public void run() {
-                //showOverflowMenu();
-            //}
-        //});
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -292,15 +296,15 @@ public abstract class AbsActionBarView extends ViewGroup {
             boolean var5C0D979EB15917E48FF5FEE985A01770_3740901 = (mActionMenuPresenter.hideOverflowMenu());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1230550249 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1230550249;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1055327249 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510764726 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_510764726;
-        // ---------- Original Method ----------
-        //if (mActionMenuPresenter != null) {
-            //return mActionMenuPresenter.hideOverflowMenu();
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -311,15 +315,15 @@ public abstract class AbsActionBarView extends ViewGroup {
             boolean varAED510BBF3E16C2B886300C9FBDF94E1_964794281 = (mActionMenuPresenter.isOverflowMenuShowing());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1123345473 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1123345473;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_90942491 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_67018834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_67018834;
-        // ---------- Original Method ----------
-        //if (mActionMenuPresenter != null) {
-            //return mActionMenuPresenter.isOverflowMenuShowing();
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -328,8 +332,8 @@ public abstract class AbsActionBarView extends ViewGroup {
         boolean var0407F9259A8F0659777734FF7C947718_1479526133 = (mActionMenuPresenter != null && mActionMenuPresenter.isOverflowReserved());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_311118864 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_311118864;
-        // ---------- Original Method ----------
-        //return mActionMenuPresenter != null && mActionMenuPresenter.isOverflowReserved();
+        
+        
     }
 
     
@@ -338,11 +342,11 @@ public abstract class AbsActionBarView extends ViewGroup {
     if(mActionMenuPresenter != null)        
         {
             mActionMenuPresenter.dismissPopupMenus();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mActionMenuPresenter != null) {
-            //mActionMenuPresenter.dismissPopupMenus();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -360,12 +364,12 @@ public abstract class AbsActionBarView extends ViewGroup {
         int var5685DA2162D26409CBA45AC55FBEF80A_825597845 = (Math.max(0, availableWidth));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13820721 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13820721;
-        // ---------- Original Method ----------
-        //child.measure(MeasureSpec.makeMeasureSpec(availableWidth, MeasureSpec.AT_MOST),
-                //childSpecHeight);
-        //availableWidth -= child.getMeasuredWidth();
-        //availableWidth -= spacing;
-        //return Math.max(0, availableWidth);
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -382,12 +386,12 @@ public abstract class AbsActionBarView extends ViewGroup {
         int varF224CB0AD2B63E1D0A5F37B6E86F1183_478312984 = (childWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881696122 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881696122;
-        // ---------- Original Method ----------
-        //int childWidth = child.getMeasuredWidth();
-        //int childHeight = child.getMeasuredHeight();
-        //int childTop = y + (contentHeight - childHeight) / 2;
-        //child.layout(x, childTop, x + childWidth, childTop + childHeight);
-        //return childWidth;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -404,12 +408,12 @@ public abstract class AbsActionBarView extends ViewGroup {
         int varF224CB0AD2B63E1D0A5F37B6E86F1183_177143670 = (childWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108462653 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1108462653;
-        // ---------- Original Method ----------
-        //int childWidth = child.getMeasuredWidth();
-        //int childHeight = child.getMeasuredHeight();
-        //int childTop = y + (contentHeight - childHeight) / 2;
-        //child.layout(x - childWidth, childTop, x, childTop + childHeight);
-        //return childWidth;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -424,41 +428,42 @@ public abstract class AbsActionBarView extends ViewGroup {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.588 -0400", hash_original_method = "80D34182BA082FA1C0AC7FE2CE12E2A6", hash_generated_method = "80D34182BA082FA1C0AC7FE2CE12E2A6")
         public VisibilityAnimListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.589 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "8228809A759C1FB306F4F325FED8D50D")
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             mFinalVisibility = visibility;
 VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_58454927 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_58454927.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_58454927;
-            // ---------- Original Method ----------
-            //mFinalVisibility = visibility;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.589 -0400", hash_original_method = "9145E12DF11688F9DD8CB4C23A0F2F13", hash_generated_method = "43A419CBA987813FF6A97459EB9F4822")
         @Override
         public void onAnimationStart(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
             setVisibility(VISIBLE);
             mVisibilityAnim = animation;
             mCanceled = false;
-            // ---------- Original Method ----------
-            //setVisibility(VISIBLE);
-            //mVisibilityAnim = animation;
-            //mCanceled = false;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.589 -0400", hash_original_method = "D1281410E67CFC6892364AC0D96A57F2", hash_generated_method = "4A086F0917800DBFFB372EEFD955EEDC")
         @Override
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mCanceled)            
             return;
@@ -467,34 +472,36 @@ VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_58454927 =           
     if(mSplitView != null && mMenuView != null)            
             {
                 mMenuView.setVisibility(mFinalVisibility);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mCanceled) return;
-            //mVisibilityAnim = null;
-            //setVisibility(mFinalVisibility);
-            //if (mSplitView != null && mMenuView != null) {
-                //mMenuView.setVisibility(mFinalVisibility);
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.590 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "8F11757114E12F8DD42F47845FC47878")
         @Override
         public void onAnimationCancel(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
             mCanceled = true;
-            // ---------- Original Method ----------
-            //mCanceled = true;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:31.590 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
         @Override
         public void onAnimationRepeat(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

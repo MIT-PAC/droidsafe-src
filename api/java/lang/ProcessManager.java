@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,14 +39,14 @@ final class ProcessManager {
         };
         reaperThread.setDaemon(true);
         reaperThread.start();
-        // ---------- Original Method ----------
-        //Thread reaperThread = new Thread(ProcessManager.class.getName()) {
-            //@Override public void run() {
-                //watchChildren();
-            //}
-        //};
-        //reaperThread.setDaemon(true);
-        //reaperThread.start();
+        
+        
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -59,18 +59,19 @@ final class ProcessManager {
             synchronized
 (processReferences)            {
                 processReferences.remove(reference.processId);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //ProcessReference reference;
-        //while ((reference = referenceQueue.poll()) != null) {
-            //synchronized (processReferences) {
-                //processReferences.remove(reference.processId);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.151 -0400", hash_original_method = "534F9793819E6D7D8427F97C64CDA54E", hash_generated_method = "2123021B1F5D618555B37AA362473E87")
     private void watchChildren() {
         MutableInt status = new MutableInt(-1);
@@ -84,42 +85,42 @@ final class ProcessManager {
     if(WIFEXITED(status.value))                
                 {
                     exitValue = WEXITSTATUS(status.value);
-                } //End block
+                } 
                 else
     if(WIFSIGNALED(status.value))                
                 {
                     exitValue = WTERMSIG(status.value);
-                } //End block
+                } 
                 else
     if(WIFSTOPPED(status.value))                
                 {
                     exitValue = WSTOPSIG(status.value);
-                } //End block
+                } 
                 else
                 {
                     AssertionError varF8F88ED512E91040281B4876FE7446E1_1313623804 = new AssertionError("unexpected status from waitpid: " + status.value);
                     varF8F88ED512E91040281B4876FE7446E1_1313623804.addTaint(taint);
                     throw varF8F88ED512E91040281B4876FE7446E1_1313623804;
-                } //End block
+                } 
                 onExit(pid, exitValue);
-            } //End block
+            } 
             catch (ErrnoException errnoException)
             {
     if(errnoException.errno == ECHILD)                
                 {
                     waitForMoreChildren();
                     continue;
-                } //End block
+                } 
                 else
                 {
                     AssertionError var8D75DBC63153835F7D08A31E99200A1F_1957361804 = new AssertionError(errnoException);
                     var8D75DBC63153835F7D08A31E99200A1F_1957361804.addTaint(taint);
                     throw var8D75DBC63153835F7D08A31E99200A1F_1957361804;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -132,27 +133,27 @@ final class ProcessManager {
 (processReferences)        {
             cleanUp();
             processReference = processReferences.remove(pid);
-        } //End block
+        } 
     if(processReference != null)        
         {
             ProcessImpl process = processReference.get();
     if(process != null)            
             {
                 process.setExitValue(exitValue);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //ProcessReference processReference = null;
-        //synchronized (processReferences) {
-            //cleanUp();
-            //processReference = processReferences.remove(pid);
-        //}
-        //if (processReference != null) {
-            //ProcessImpl process = processReference.get();
-            //if (process != null) {
-                //process.setExitValue(exitValue);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -165,29 +166,29 @@ final class ProcessManager {
                 try 
                 {
                     processReferences.wait();
-                } //End block
+                } 
                 catch (InterruptedException ex)
                 {
                     AssertionError var678BDEFCD94D0450C0B290A7DCB9D6BB_190782314 = new AssertionError("unexpected interrupt");
                     var678BDEFCD94D0450C0B290A7DCB9D6BB_190782314.addTaint(taint);
                     throw var678BDEFCD94D0450C0B290A7DCB9D6BB_190782314;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (processReferences) {
-            //if (processReferences.isEmpty()) {
-                //try {
-                    //processReferences.wait();
-                //} catch (InterruptedException ex) {
-                    //throw new AssertionError("unexpected interrupt");
-                //}
-            //} else {
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+            
+        
     }
 
     
@@ -200,6 +201,7 @@ final class ProcessManager {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.154 -0400", hash_original_method = "3D8923075A9F95B30754D64C899AFA66", hash_generated_method = "0A556E8E584BEA2A27AA6BB6FBCDB843")
     public Process exec(String[] taintedCommand, String[] taintedEnvironment, File workingDirectory,
             boolean redirectErrorStream) throws IOException {
@@ -212,13 +214,13 @@ final class ProcessManager {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_623171565 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_623171565.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_623171565;
-        } //End block
+        } 
     if(taintedCommand.length == 0)        
         {
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1498929262 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1498929262.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1498929262;
-        } //End block
+        } 
         String[] command = taintedCommand.clone();
         String[] environment = taintedEnvironment != null ? taintedEnvironment.clone() : null;
 for(String arg : command)
@@ -228,8 +230,8 @@ for(String arg : command)
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_826078130 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_826078130.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_826078130;
-            } //End block
-        } //End block
+            } 
+        } 
     if(environment != null)        
         {
 for(String env : environment)
@@ -239,9 +241,9 @@ for(String env : environment)
                     NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1458262494 = new NullPointerException();
                     var7338BC9F48D81FE0BBD6183F4014DCC4_1458262494.addTaint(taint);
                     throw var7338BC9F48D81FE0BBD6183F4014DCC4_1458262494;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         FileDescriptor in = new FileDescriptor();
         FileDescriptor out = new FileDescriptor();
         FileDescriptor err = new FileDescriptor();
@@ -254,7 +256,7 @@ for(String env : environment)
             try 
             {
                 pid = exec(command, environment, workingPath, in, out, err, redirectErrorStream);
-            } //End block
+            } 
             catch (IOException e)
             {
                 IOException wrapper = new IOException("Error running exec()."
@@ -264,7 +266,7 @@ for(String env : environment)
                 wrapper.initCause(e);
                 wrapper.addTaint(taint);
                 throw wrapper;
-            } //End block
+            } 
             ProcessImpl process = new ProcessImpl(pid, in, out, err);
             ProcessReference processReference = new ProcessReference(process, referenceQueue);
             processReferences.put(pid, processReference);
@@ -272,13 +274,14 @@ for(String env : environment)
 Process var95FD552219433D6B22709796B000B842_497972066 =             process;
             var95FD552219433D6B22709796B000B842_497972066.addTaint(taint);
             return var95FD552219433D6B22709796B000B842_497972066;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
-        public static ProcessManager getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ProcessManager getInstance() {
         return instance;
     }
 
@@ -309,11 +312,11 @@ Process var95FD552219433D6B22709796B000B842_497972066 =             process;
             this.errorStream = new ProcessInputStream(err);
             this.inputStream = new ProcessInputStream(in);
             this.outputStream = new ProcessOutputStream(out);
-            // ---------- Original Method ----------
-            //this.pid = pid;
-            //this.errorStream = new ProcessInputStream(err);
-            //this.inputStream = new ProcessInputStream(in);
-            //this.outputStream = new ProcessOutputStream(out);
+            
+            
+            
+            
+            
         }
 
         
@@ -322,26 +325,27 @@ Process var95FD552219433D6B22709796B000B842_497972066 =             process;
             try 
             {
                 Libcore.os.kill(pid, SIGKILL);
-            } //End block
+            } 
             catch (ErrnoException e)
             {
                 System.logI("Failed to destroy process " + pid, e);
-            } //End block
+            } 
             IoUtils.closeQuietly(inputStream);
             IoUtils.closeQuietly(errorStream);
             IoUtils.closeQuietly(outputStream);
-            // ---------- Original Method ----------
-            //try {
-                //Libcore.os.kill(pid, SIGKILL);
-            //} catch (ErrnoException e) {
-                //System.logI("Failed to destroy process " + pid, e);
-            //}
-            //IoUtils.closeQuietly(inputStream);
-            //IoUtils.closeQuietly(errorStream);
-            //IoUtils.closeQuietly(outputStream);
+            
+            
+                
+            
+                
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.158 -0400", hash_original_method = "72D26C729273916A38DD81F020E1EC4C", hash_generated_method = "914CDF754E3AA7F1D2B7707BBB9CB7F6")
         public int exitValue() {
             synchronized
@@ -352,52 +356,56 @@ Process var95FD552219433D6B22709796B000B842_497972066 =             process;
                             "Process has not yet terminated.");
                     varCC1DF42533230565D98A5648D23AFD0F_135671760.addTaint(taint);
                     throw varCC1DF42533230565D98A5648D23AFD0F_135671760;
-                } //End block
+                } 
                 int varE81D8D8B20784FD6FAA308CE4E476F25_1742852999 = (exitValue);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324778054 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324778054;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (exitValueMutex) {
-                //if (exitValue == null) {
-                    //throw new IllegalThreadStateException(
-                            //"Process has not yet terminated.");
-                //}
-                //return exitValue;
-            //}
+            } 
+            
+            
+                
+                    
+                            
+                
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.158 -0400", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "DC4229DAF1BA1AC4AE41498832914C11")
         public InputStream getErrorStream() {
 InputStream varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084 =             this.errorStream;
             varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084.addTaint(taint);
             return varDB29EBF3A5CF9520B6DB980D65A9FD74_720131084;
-            // ---------- Original Method ----------
-            //return this.errorStream;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.159 -0400", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "32F475F8FAC2B689A0BCE672AC8254F2")
         public InputStream getInputStream() {
 InputStream varE57B54F82EC7D518A03C88F3C045BF46_1627563577 =             this.inputStream;
             varE57B54F82EC7D518A03C88F3C045BF46_1627563577.addTaint(taint);
             return varE57B54F82EC7D518A03C88F3C045BF46_1627563577;
-            // ---------- Original Method ----------
-            //return this.inputStream;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.159 -0400", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "64E8D0428FEC803958B2551331636C59")
         public OutputStream getOutputStream() {
 OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.outputStream;
             varD1FAACFBEB53C1408150BAABD3C85558_801006663.addTaint(taint);
             return varD1FAACFBEB53C1408150BAABD3C85558_801006663;
-            // ---------- Original Method ----------
-            //return this.outputStream;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.160 -0400", hash_original_method = "BE1794A2A2D4EC2F61628D9639894105", hash_generated_method = "35F54CB500AC3A3A81322851EC3FF204")
         public int waitFor() throws InterruptedException {
             synchronized
@@ -406,44 +414,46 @@ OutputStream varD1FAACFBEB53C1408150BAABD3C85558_801006663 =             this.ou
 (exitValue == null)                
                 {
                     exitValueMutex.wait();
-                } //End block
+                } 
                 int varE81D8D8B20784FD6FAA308CE4E476F25_134270522 = (exitValue);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887449100 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887449100;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (exitValueMutex) {
-                //while (exitValue == null) {
-                    //exitValueMutex.wait();
-                //}
-                //return exitValue;
-            //}
+            } 
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.161 -0400", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "48BDFD8466D48ABFC4C9C7823F423F61")
          void setExitValue(int exitValue) {
             synchronized
 (exitValueMutex)            {
                 this.exitValue = exitValue;
                 exitValueMutex.notifyAll();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (exitValueMutex) {
-                //this.exitValue = exitValue;
-                //exitValueMutex.notifyAll();
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.161 -0400", hash_original_method = "945EE59E08960A318B9D424632962227", hash_generated_method = "BD576A764BD2198D1F3F177F2DF1B894")
         @Override
         public String toString() {
 String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651 =             "Process[pid=" + pid + "]";
             var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651.addTaint(taint);
             return var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651;
-            // ---------- Original Method ----------
-            //return "Process[pid=" + pid + "]";
+            
+            
         }
 
         
@@ -461,8 +471,8 @@ String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651 =             "Process[pid
             super(referent, referenceQueue);
             addTaint(referenceQueue.getTaint());
             this.processId = referent.pid;
-            // ---------- Original Method ----------
-            //this.processId = referent.pid;
+            
+            
         }
 
         
@@ -475,10 +485,11 @@ String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651 =             "Process[pid
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.163 -0400", hash_original_method = "862B9F300CC2459FB61E8AEDFA0DE051", hash_generated_method = "862B9F300CC2459FB61E8AEDFA0DE051")
         public ProcessReferenceQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.163 -0400", hash_original_method = "A8419736BED4DA94F6EABC777190260F", hash_generated_method = "38D5F61652F8EA8BCD2618CD1704AB8A")
         @Override
         public ProcessReference poll() {
@@ -486,9 +497,9 @@ String var7F08C3EC7CEBE6D57C12B6ED1F6F42CA_1696433651 =             "Process[pid
 ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (ProcessReference) reference;
             varD01FA5E21A742C1114FBE0E758C3D263_1844305177.addTaint(taint);
             return varD01FA5E21A742C1114FBE0E758C3D263_1844305177;
-            // ---------- Original Method ----------
-            //Object reference = super.poll();
-            //return (ProcessReference) reference;
+            
+            
+            
         }
 
         
@@ -505,8 +516,8 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (P
         private  ProcessInputStream(FileDescriptor fd) {
             super(fd);
             this.fd = fd;
-            // ---------- Original Method ----------
-            //this.fd = fd;
+            
+            
         }
 
         
@@ -516,7 +527,7 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (P
             try 
             {
                 super.close();
-            } //End block
+            } 
             finally 
             {
                 synchronized
@@ -524,25 +535,25 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (P
                     try 
                     {
                         IoUtils.close(fd);
-                    } //End block
+                    } 
                     finally 
                     {
                         fd = null;
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //super.close();
-            //} finally {
-                //synchronized (this) {
-                    //try {
-                        //IoUtils.close(fd);
-                    //} finally {
-                        //fd = null;
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+            
+                
+                    
+                        
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -559,8 +570,8 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (P
         private  ProcessOutputStream(FileDescriptor fd) {
             super(fd);
             this.fd = fd;
-            // ---------- Original Method ----------
-            //this.fd = fd;
+            
+            
         }
 
         
@@ -570,7 +581,7 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (P
             try 
             {
                 super.close();
-            } //End block
+            } 
             finally 
             {
                 synchronized
@@ -578,25 +589,25 @@ ProcessReference varD01FA5E21A742C1114FBE0E758C3D263_1844305177 =             (P
                     try 
                     {
                         IoUtils.close(fd);
-                    } //End block
+                    } 
                     finally 
                     {
                         fd = null;
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //super.close();
-            //} finally {
-                //synchronized (this) {
-                    //try {
-                        //IoUtils.close(fd);
-                    //} finally {
-                        //fd = null;
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+            
+                
+                    
+                        
+                    
+                        
+                    
+                
+            
         }
 
         

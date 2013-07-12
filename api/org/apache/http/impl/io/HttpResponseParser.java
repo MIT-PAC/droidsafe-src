@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,15 +40,15 @@ public class HttpResponseParser extends AbstractMessageParser {
             IllegalArgumentException var4DE4C2B8B51C37D4C049343CDF1871A3_711428915 = new IllegalArgumentException("Response factory may not be null");
             var4DE4C2B8B51C37D4C049343CDF1871A3_711428915.addTaint(taint);
             throw var4DE4C2B8B51C37D4C049343CDF1871A3_711428915;
-        } //End block
+        } 
         this.responseFactory = responseFactory;
         this.lineBuf = new CharArrayBuffer(128);
-        // ---------- Original Method ----------
-        //if (responseFactory == null) {
-            //throw new IllegalArgumentException("Response factory may not be null");
-        //}
-        //this.responseFactory = responseFactory;
-        //this.lineBuf = new CharArrayBuffer(128);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -63,21 +63,21 @@ public class HttpResponseParser extends AbstractMessageParser {
             NoHttpResponseException var8E6E6A11E770AF132B510E2C0E1EA88C_1890209473 = new NoHttpResponseException("The target server failed to respond");
             var8E6E6A11E770AF132B510E2C0E1EA88C_1890209473.addTaint(taint);
             throw var8E6E6A11E770AF132B510E2C0E1EA88C_1890209473;
-        } //End block
+        } 
         ParserCursor cursor = new ParserCursor(0, this.lineBuf.length());
         StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
 HttpMessage varFF4A03EE8787FE969C6D68F686A70D62_174530077 =         this.responseFactory.newHttpResponse(statusline, null);
         varFF4A03EE8787FE969C6D68F686A70D62_174530077.addTaint(taint);
         return varFF4A03EE8787FE969C6D68F686A70D62_174530077;
-        // ---------- Original Method ----------
-        //this.lineBuf.clear();
-        //int i = sessionBuffer.readLine(this.lineBuf);
-        //if (i == -1) {
-            //throw new NoHttpResponseException("The target server failed to respond");
-        //}
-        //ParserCursor cursor = new ParserCursor(0, this.lineBuf.length());
-        //StatusLine statusline = lineParser.parseStatusLine(this.lineBuf, cursor);
-        //return this.responseFactory.newHttpResponse(statusline, null);
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     

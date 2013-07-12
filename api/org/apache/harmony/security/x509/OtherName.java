@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,7 +28,7 @@ public final class OtherName {
         this(typeID, value, null);
         addTaint(value[0]);
         addTaint(typeID.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,37 +37,39 @@ public final class OtherName {
         this.typeID = typeID;
         this.value = value;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //this.typeID = typeID;
-        //this.value = value;
-        //this.encoding = encoding;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.221 -0400", hash_original_method = "7B542DE43DC21978E6F04336AAB05EBD", hash_generated_method = "1A52B556E7F9D2509506FB25B56E94D6")
     public byte[] getValue() {
         byte[] var2063C1608D6E0BAF80249C42E2BE5804_1091574093 = (value);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_61404714 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_61404714;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.221 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "F8A042C9C70DF18D5CF9FB60962BA5D0")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1882866369 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_593192106 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_593192106;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     

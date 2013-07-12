@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,19 +17,20 @@ public class PluginList {
     @Deprecated
     public  PluginList() {
         mPlugins = new ArrayList<Plugin>();
-        // ---------- Original Method ----------
-        //mPlugins = new ArrayList<Plugin>();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.914 -0400", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "C590C9210FFCD6381096622595377CFE")
     @Deprecated
     public synchronized List getList() {
 List varCE31BA4CD4F7594C4294BA5D3443F606_959204321 =         mPlugins;
         varCE31BA4CD4F7594C4294BA5D3443F606_959204321.addTaint(taint);
         return varCE31BA4CD4F7594C4294BA5D3443F606_959204321;
-        // ---------- Original Method ----------
-        //return mPlugins;
+        
+        
     }
 
     
@@ -40,11 +41,11 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_959204321 =         mPlugins;
     if(!mPlugins.contains(plugin))        
         {
             mPlugins.add(plugin);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mPlugins.contains(plugin)) {
-            //mPlugins.add(plugin);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -56,12 +57,12 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_959204321 =         mPlugins;
     if(location != -1)        
         {
             mPlugins.remove(location);
-        } //End block
-        // ---------- Original Method ----------
-        //int location = mPlugins.indexOf(plugin);
-        //if (location != -1) {
-            //mPlugins.remove(location);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -69,8 +70,8 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_959204321 =         mPlugins;
     @Deprecated
     public synchronized void clear() {
         mPlugins.clear();
-        // ---------- Original Method ----------
-        //mPlugins.clear();
+        
+        
     }
 
     
@@ -83,16 +84,16 @@ List varCE31BA4CD4F7594C4294BA5D3443F606_959204321 =         mPlugins;
         {
             Plugin plugin = mPlugins.get(position);
             plugin.dispatchClickEvent(context);
-        } //End block
+        } 
         catch (IndexOutOfBoundsException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Plugin plugin = mPlugins.get(position);
-            //plugin.dispatchClickEvent(context);
-        //} catch (IndexOutOfBoundsException e) {
-        //}
+        } 
+        
+        
+            
+            
+        
+        
     }
 
     

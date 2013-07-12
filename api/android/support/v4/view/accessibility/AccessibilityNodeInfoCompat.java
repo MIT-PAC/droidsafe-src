@@ -1,6 +1,6 @@
 package android.support.v4.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,18 +19,19 @@ public class AccessibilityNodeInfoCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.427 -0400", hash_original_method = "27EEB78B664A0859CE9D2482B14EDA44", hash_generated_method = "5D13B8B7945325E456070CD74C88BF1B")
     public  AccessibilityNodeInfoCompat(Object info) {
         mInfo = info;
-        // ---------- Original Method ----------
-        //mInfo = info;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.427 -0400", hash_original_method = "180B11831FF091AFD58918B491DA5734", hash_generated_method = "0D80E28D842867A1C78BBB09740F1F89")
     public Object getImpl() {
 Object var3A968EAC93D51342CCDD9EFE8723F737_432726549 =         mInfo;
         var3A968EAC93D51342CCDD9EFE8723F737_432726549.addTaint(taint);
         return var3A968EAC93D51342CCDD9EFE8723F737_432726549;
-        // ---------- Original Method ----------
-        //return mInfo;
+        
+        
     }
 
     
@@ -53,8 +54,8 @@ Object var3A968EAC93D51342CCDD9EFE8723F737_432726549 =         mInfo;
     public void setSource(View source) {
         addTaint(source.getTaint());
         IMPL.setSource(mInfo, source);
-        // ---------- Original Method ----------
-        //IMPL.setSource(mInfo, source);
+        
+        
     }
 
     
@@ -63,8 +64,8 @@ Object var3A968EAC93D51342CCDD9EFE8723F737_432726549 =         mInfo;
         int varA6542EF1E8520CFD8FA35E921B4733FA_956217164 = (IMPL.getWindowId(mInfo));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868804489 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1868804489;
-        // ---------- Original Method ----------
-        //return IMPL.getWindowId(mInfo);
+        
+        
     }
 
     
@@ -73,8 +74,8 @@ Object var3A968EAC93D51342CCDD9EFE8723F737_432726549 =         mInfo;
         int var023CE45408957D180E638B192CAE01B2_1572839966 = (IMPL.getChildCount(mInfo));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_535407912 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_535407912;
-        // ---------- Original Method ----------
-        //return IMPL.getChildCount(mInfo);
+        
+        
     }
 
     
@@ -84,8 +85,8 @@ Object var3A968EAC93D51342CCDD9EFE8723F737_432726549 =         mInfo;
 AccessibilityNodeInfoCompat var2605D89E858102C2A1CCC621632F47F1_1193371344 =         new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
         var2605D89E858102C2A1CCC621632F47F1_1193371344.addTaint(taint);
         return var2605D89E858102C2A1CCC621632F47F1_1193371344;
-        // ---------- Original Method ----------
-        //return new AccessibilityNodeInfoCompat(IMPL.getChild(mInfo, index));
+        
+        
     }
 
     
@@ -93,8 +94,8 @@ AccessibilityNodeInfoCompat var2605D89E858102C2A1CCC621632F47F1_1193371344 =    
     public void addChild(View child) {
         addTaint(child.getTaint());
         IMPL.addChild(mInfo, child);
-        // ---------- Original Method ----------
-        //IMPL.addChild(mInfo, child);
+        
+        
     }
 
     
@@ -103,8 +104,8 @@ AccessibilityNodeInfoCompat var2605D89E858102C2A1CCC621632F47F1_1193371344 =    
         int var8569F370D1382923E0B8563F43031884_703096837 = (IMPL.getActions(mInfo));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431151661 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431151661;
-        // ---------- Original Method ----------
-        //return IMPL.getActions(mInfo);
+        
+        
     }
 
     
@@ -112,8 +113,8 @@ AccessibilityNodeInfoCompat var2605D89E858102C2A1CCC621632F47F1_1193371344 =    
     public void addAction(int action) {
         addTaint(action);
         IMPL.addAction(mInfo, action);
-        // ---------- Original Method ----------
-        //IMPL.addAction(mInfo, action);
+        
+        
     }
 
     
@@ -123,8 +124,8 @@ AccessibilityNodeInfoCompat var2605D89E858102C2A1CCC621632F47F1_1193371344 =    
         boolean var390DBE2902D20317D8BAAE03F4F21A62_560081173 = (IMPL.performAction(mInfo, action));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1216695789 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1216695789;
-        // ---------- Original Method ----------
-        //return IMPL.performAction(mInfo, action);
+        
+        
     }
 
     
@@ -138,19 +139,19 @@ for(int i = 0;i < infoCount;i++)
         {
             Object info = infos.get(i);
             result.add(new AccessibilityNodeInfoCompat(info));
-        } //End block
+        } 
 List<AccessibilityNodeInfoCompat> varDC838461EE2FA0CA4C9BBB70A15456B0_1236820076 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1236820076.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1236820076;
-        // ---------- Original Method ----------
-        //List<AccessibilityNodeInfoCompat> result = new ArrayList<AccessibilityNodeInfoCompat>();
-        //List<Object> infos = IMPL.findAccessibilityNodeInfosByText(mInfo, text);
-        //final int infoCount = infos.size();
-        //for (int i = 0; i < infoCount; i++) {
-            //Object info = infos.get(i);
-            //result.add(new AccessibilityNodeInfoCompat(info));
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -159,8 +160,8 @@ List<AccessibilityNodeInfoCompat> varDC838461EE2FA0CA4C9BBB70A15456B0_1236820076
 AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =         new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
         var3A7512F2201A458C8A653FFCCAFC5906_1119747503.addTaint(taint);
         return var3A7512F2201A458C8A653FFCCAFC5906_1119747503;
-        // ---------- Original Method ----------
-        //return new AccessibilityNodeInfoCompat(IMPL.getParent(mInfo));
+        
+        
     }
 
     
@@ -168,8 +169,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setParent(View parent) {
         addTaint(parent.getTaint());
         IMPL.setParent(mInfo, parent);
-        // ---------- Original Method ----------
-        //IMPL.setParent(mInfo, parent);
+        
+        
     }
 
     
@@ -177,8 +178,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void getBoundsInParent(Rect outBounds) {
         addTaint(outBounds.getTaint());
         IMPL.getBoundsInParent(mInfo, outBounds);
-        // ---------- Original Method ----------
-        //IMPL.getBoundsInParent(mInfo, outBounds);
+        
+        
     }
 
     
@@ -186,8 +187,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setBoundsInParent(Rect bounds) {
         addTaint(bounds.getTaint());
         IMPL.setBoundsInParent(mInfo, bounds);
-        // ---------- Original Method ----------
-        //IMPL.setBoundsInParent(mInfo, bounds);
+        
+        
     }
 
     
@@ -195,8 +196,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void getBoundsInScreen(Rect outBounds) {
         addTaint(outBounds.getTaint());
         IMPL.getBoundsInScreen(mInfo, outBounds);
-        // ---------- Original Method ----------
-        //IMPL.getBoundsInScreen(mInfo, outBounds);
+        
+        
     }
 
     
@@ -204,8 +205,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setBoundsInScreen(Rect bounds) {
         addTaint(bounds.getTaint());
         IMPL.setBoundsInParent(mInfo, bounds);
-        // ---------- Original Method ----------
-        //IMPL.setBoundsInParent(mInfo, bounds);
+        
+        
     }
 
     
@@ -214,8 +215,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var685F4011AF6E4D2986BDCC68720B0399_1655170794 = (IMPL.isCheckable(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399576290 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399576290;
-        // ---------- Original Method ----------
-        //return IMPL.isCheckable(mInfo);
+        
+        
     }
 
     
@@ -223,8 +224,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setCheckable(boolean checkable) {
         addTaint(checkable);
         IMPL.setCheckable(mInfo, checkable);
-        // ---------- Original Method ----------
-        //IMPL.setCheckable(mInfo, checkable);
+        
+        
     }
 
     
@@ -233,8 +234,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var33F9D569DBB4402543C1779FBB014D50_493997062 = (IMPL.isChecked(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1305018691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1305018691;
-        // ---------- Original Method ----------
-        //return IMPL.isChecked(mInfo);
+        
+        
     }
 
     
@@ -242,8 +243,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setChecked(boolean checked) {
         addTaint(checked);
         IMPL.setChecked(mInfo, checked);
-        // ---------- Original Method ----------
-        //IMPL.setChecked(mInfo, checked);
+        
+        
     }
 
     
@@ -252,8 +253,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var3BB37A0698B8505BC22CF5C6D88C0EEB_1657496669 = (IMPL.isFocusable(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_996431503 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_996431503;
-        // ---------- Original Method ----------
-        //return IMPL.isFocusable(mInfo);
+        
+        
     }
 
     
@@ -261,8 +262,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setFocusable(boolean focusable) {
         addTaint(focusable);
         IMPL.setFocusable(mInfo, focusable);
-        // ---------- Original Method ----------
-        //IMPL.setFocusable(mInfo, focusable);
+        
+        
     }
 
     
@@ -271,8 +272,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var00711EF416F1BA8A3800587F0BAC689D_1339865852 = (IMPL.isFocused(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_898647230 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_898647230;
-        // ---------- Original Method ----------
-        //return IMPL.isFocused(mInfo);
+        
+        
     }
 
     
@@ -280,8 +281,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setFocused(boolean focused) {
         addTaint(focused);
         IMPL.setFocused(mInfo, focused);
-        // ---------- Original Method ----------
-        //IMPL.setFocused(mInfo, focused);
+        
+        
     }
 
     
@@ -290,8 +291,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean varE100557C9239498F7159ABAB0035E995_940130348 = (IMPL.isSelected(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2015286202 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2015286202;
-        // ---------- Original Method ----------
-        //return IMPL.isSelected(mInfo);
+        
+        
     }
 
     
@@ -299,8 +300,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setSelected(boolean selected) {
         addTaint(selected);
         IMPL.setSelected(mInfo, selected);
-        // ---------- Original Method ----------
-        //IMPL.setSelected(mInfo, selected);
+        
+        
     }
 
     
@@ -309,8 +310,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var50B5B2E08A22B3AD29A9E7E355DB395A_420013070 = (IMPL.isClickable(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_494829271 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_494829271;
-        // ---------- Original Method ----------
-        //return IMPL.isClickable(mInfo);
+        
+        
     }
 
     
@@ -318,8 +319,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setClickable(boolean clickable) {
         addTaint(clickable);
         IMPL.setClickable(mInfo, clickable);
-        // ---------- Original Method ----------
-        //IMPL.setClickable(mInfo, clickable);
+        
+        
     }
 
     
@@ -328,8 +329,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean varF4EAA6F4997241DF13A848FDABDE2DE3_307075281 = (IMPL.isLongClickable(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107668378 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107668378;
-        // ---------- Original Method ----------
-        //return IMPL.isLongClickable(mInfo);
+        
+        
     }
 
     
@@ -337,8 +338,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setLongClickable(boolean longClickable) {
         addTaint(longClickable);
         IMPL.setLongClickable(mInfo, longClickable);
-        // ---------- Original Method ----------
-        //IMPL.setLongClickable(mInfo, longClickable);
+        
+        
     }
 
     
@@ -347,8 +348,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var51B48439FD11F5F658E2CBFAF91AFAA8_1082600975 = (IMPL.isEnabled(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1268102770 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1268102770;
-        // ---------- Original Method ----------
-        //return IMPL.isEnabled(mInfo);
+        
+        
     }
 
     
@@ -356,8 +357,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setEnabled(boolean enabled) {
         addTaint(enabled);
         IMPL.setEnabled(mInfo, enabled);
-        // ---------- Original Method ----------
-        //IMPL.setEnabled(mInfo, enabled);
+        
+        
     }
 
     
@@ -366,8 +367,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var5B3CA3EE69541E38082AD0239B1B6074_1041055154 = (IMPL.isPassword(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1841965751 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1841965751;
-        // ---------- Original Method ----------
-        //return IMPL.isPassword(mInfo);
+        
+        
     }
 
     
@@ -375,8 +376,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setPassword(boolean password) {
         addTaint(password);
         IMPL.setPassword(mInfo, password);
-        // ---------- Original Method ----------
-        //IMPL.setPassword(mInfo, password);
+        
+        
     }
 
     
@@ -385,8 +386,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
         boolean var386B817CD3380B6278D51C5463FC5279_2139523913 = (IMPL.isScrollable(mInfo));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1517755505 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1517755505;
-        // ---------- Original Method ----------
-        //return IMPL.isScrollable(mInfo);
+        
+        
     }
 
     
@@ -394,8 +395,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
     public void setScrollable(boolean scrollable) {
         addTaint(scrollable);
         IMPL.setScrollable(mInfo, scrollable);
-        // ---------- Original Method ----------
-        //IMPL.setScrollable(mInfo, scrollable);
+        
+        
     }
 
     
@@ -404,8 +405,8 @@ AccessibilityNodeInfoCompat var3A7512F2201A458C8A653FFCCAFC5906_1119747503 =    
 CharSequence varE0B20734E37C2B46025E4F8131365FD2_1203027428 =         IMPL.getPackageName(mInfo);
         varE0B20734E37C2B46025E4F8131365FD2_1203027428.addTaint(taint);
         return varE0B20734E37C2B46025E4F8131365FD2_1203027428;
-        // ---------- Original Method ----------
-        //return IMPL.getPackageName(mInfo);
+        
+        
     }
 
     
@@ -413,8 +414,8 @@ CharSequence varE0B20734E37C2B46025E4F8131365FD2_1203027428 =         IMPL.getPa
     public void setPackageName(CharSequence packageName) {
         addTaint(packageName.getTaint());
         IMPL.setPackageName(mInfo, packageName);
-        // ---------- Original Method ----------
-        //IMPL.setPackageName(mInfo, packageName);
+        
+        
     }
 
     
@@ -423,8 +424,8 @@ CharSequence varE0B20734E37C2B46025E4F8131365FD2_1203027428 =         IMPL.getPa
 CharSequence var13976FE2411926A27FCB8E00EEE7AAD4_103175263 =         IMPL.getClassName(mInfo);
         var13976FE2411926A27FCB8E00EEE7AAD4_103175263.addTaint(taint);
         return var13976FE2411926A27FCB8E00EEE7AAD4_103175263;
-        // ---------- Original Method ----------
-        //return IMPL.getClassName(mInfo);
+        
+        
     }
 
     
@@ -432,8 +433,8 @@ CharSequence var13976FE2411926A27FCB8E00EEE7AAD4_103175263 =         IMPL.getCla
     public void setClassName(CharSequence className) {
         addTaint(className.getTaint());
         IMPL.setClassName(mInfo, className);
-        // ---------- Original Method ----------
-        //IMPL.setClassName(mInfo, className);
+        
+        
     }
 
     
@@ -442,8 +443,8 @@ CharSequence var13976FE2411926A27FCB8E00EEE7AAD4_103175263 =         IMPL.getCla
 CharSequence var1DF1200F05671DF9D4AB0C5F6C8DAAA4_383345745 =         IMPL.getText(mInfo);
         var1DF1200F05671DF9D4AB0C5F6C8DAAA4_383345745.addTaint(taint);
         return var1DF1200F05671DF9D4AB0C5F6C8DAAA4_383345745;
-        // ---------- Original Method ----------
-        //return IMPL.getText(mInfo);
+        
+        
     }
 
     
@@ -451,8 +452,8 @@ CharSequence var1DF1200F05671DF9D4AB0C5F6C8DAAA4_383345745 =         IMPL.getTex
     public void setText(CharSequence text) {
         addTaint(text.getTaint());
         IMPL.setText(mInfo, text);
-        // ---------- Original Method ----------
-        //IMPL.setText(mInfo, text);
+        
+        
     }
 
     
@@ -461,8 +462,8 @@ CharSequence var1DF1200F05671DF9D4AB0C5F6C8DAAA4_383345745 =         IMPL.getTex
 CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getContentDescription(mInfo);
         varC4BA732E0BE0020738370211FB549BA9_606706761.addTaint(taint);
         return varC4BA732E0BE0020738370211FB549BA9_606706761;
-        // ---------- Original Method ----------
-        //return IMPL.getContentDescription(mInfo);
+        
+        
     }
 
     
@@ -470,16 +471,16 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getCon
     public void setContentDescription(CharSequence contentDescription) {
         addTaint(contentDescription.getTaint());
         IMPL.setContentDescription(mInfo, contentDescription);
-        // ---------- Original Method ----------
-        //IMPL.setContentDescription(mInfo, contentDescription);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.435 -0400", hash_original_method = "4012C2A77CF6E1C54F1B4372AFDF8962", hash_generated_method = "C65940CB1FE55E31C8C8CA907DBC92D5")
     public void recycle() {
         IMPL.recycle(mInfo);
-        // ---------- Original Method ----------
-        //IMPL.recycle(mInfo);
+        
+        
     }
 
     
@@ -489,8 +490,8 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getCon
         int var625C9F3E5BE1C6E8EA2CEBDE7561D065_1128275659 = ((mInfo == null) ? 0 : mInfo.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537784730 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_537784730;
-        // ---------- Original Method ----------
-        //return (mInfo == null) ? 0 : mInfo.hashCode();
+        
+        
     }
 
     
@@ -503,19 +504,19 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getCon
             boolean varB326B5062B2F0E69046810717534CB09_1180826739 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432815212 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432815212;
-        } //End block
+        } 
     if(obj == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1560944583 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_884364045 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_884364045;
-        } //End block
+        } 
     if(getClass() != obj.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1404064476 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1682299973 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1682299973;
-        } //End block
+        } 
         AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
     if(mInfo == null)        
         {
@@ -524,37 +525,37 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getCon
                 boolean var68934A3E9455FA72420237EB05902327_505057881 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2073336527 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2073336527;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(!mInfo.equals(other.mInfo))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1664987229 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_891998014 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_891998014;
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_114668780 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715491035 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_715491035;
-        // ---------- Original Method ----------
-        //if (this == obj) {
-            //return true;
-        //}
-        //if (obj == null) {
-            //return false;
-        //}
-        //if (getClass() != obj.getClass()) {
-            //return false;
-        //}
-        //AccessibilityNodeInfoCompat other = (AccessibilityNodeInfoCompat) obj;
-        //if (mInfo == null) {
-            //if (other.mInfo != null) {
-                //return false;
-            //}
-        //} else if (!mInfo.equals(other.mInfo)) {
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -563,55 +564,60 @@ CharSequence varC4BA732E0BE0020738370211FB549BA9_606706761 =         IMPL.getCon
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.437 -0400", hash_original_method = "D9A4AFBF5AD5A775B6C1281730E5BA11", hash_generated_method = "D9A4AFBF5AD5A775B6C1281730E5BA11")
         public AccessibilityNodeInfoStubImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.437 -0400", hash_original_method = "817FD8D623FDA4524F619AFC293F09EC", hash_generated_method = "D5D4022990DEAD48A85F705CDB622F5A")
         public Object obtain() {
 Object var540C13E9E156B687226421B24F2DF178_808166371 =             null;
             var540C13E9E156B687226421B24F2DF178_808166371.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_808166371;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.438 -0400", hash_original_method = "92695667FFAB3FACD22606EFAA0A43BA", hash_generated_method = "3316DA34065811E54A817134D83B2F07")
         public Object obtain(View source) {
             addTaint(source.getTaint());
 Object var540C13E9E156B687226421B24F2DF178_889612174 =             null;
             var540C13E9E156B687226421B24F2DF178_889612174.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_889612174;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.438 -0400", hash_original_method = "773588C99ADE780DBDFC19514017BC1F", hash_generated_method = "F65D175F9E8D4235E70A65B85D1D6DF9")
         public Object obtain(Object info) {
             addTaint(info.getTaint());
 Object var540C13E9E156B687226421B24F2DF178_1425950464 =             null;
             var540C13E9E156B687226421B24F2DF178_1425950464.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1425950464;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.438 -0400", hash_original_method = "8D71C6A90F236F7F17CE9F0DA3BE99D2", hash_generated_method = "5F00060CAB9B4B2566E623D909A28FE0")
         public void addAction(Object info, int action) {
             addTaint(action);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "6B9372E604C01DF70F526B6A8E570148", hash_generated_method = "46FE01FA0CFC681CC6BB779E2143207C")
         public void addChild(Object info, View child) {
             addTaint(child.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -622,38 +628,42 @@ Object var540C13E9E156B687226421B24F2DF178_1425950464 =             null;
 List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1417429793 =             Collections.emptyList();
             varB803AB532741AA7D5C2F301CCDDD25F2_1417429793.addTaint(taint);
             return varB803AB532741AA7D5C2F301CCDDD25F2_1417429793;
-            // ---------- Original Method ----------
-            //return Collections.emptyList();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "62879C9A6873AFA1FE78492502C9E8C1", hash_generated_method = "F15F3C6378A0EB8262B7DB43AE2DAB92")
         public int getActions(Object info) {
             addTaint(info.getTaint());
             int varCFCD208495D565EF66E7DFF9F98764DA_297897070 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19342186 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19342186;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "194BB4DCA6CDD611708C0DBE13AE8AE6", hash_generated_method = "3C000B93FEEBF5C47B18A21222CC810A")
         public void getBoundsInParent(Object info, Rect outBounds) {
             addTaint(outBounds.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "AD025A7E801C16406D0F86CAFA041F7F", hash_generated_method = "5D8984E8D4D82D8FAB88F2396774FB3D")
         public void getBoundsInScreen(Object info, Rect outBounds) {
             addTaint(outBounds.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.440 -0400", hash_original_method = "3EFC24789BAB789DBA02244C19291A8A", hash_generated_method = "B71B41DBB9198D4625D271667D1DCF98")
         public Object getChild(Object info, int index) {
             addTaint(index);
@@ -661,198 +671,216 @@ List<Object> varB803AB532741AA7D5C2F301CCDDD25F2_1417429793 =             Collec
 Object var540C13E9E156B687226421B24F2DF178_1652273479 =             null;
             var540C13E9E156B687226421B24F2DF178_1652273479.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1652273479;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "DE0573752D5D98EE2B44C4024F5102E5", hash_generated_method = "18E4BFD3CBC3B7C85C1F836576FB2414")
         public int getChildCount(Object info) {
             addTaint(info.getTaint());
             int varCFCD208495D565EF66E7DFF9F98764DA_1635645950 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303838947 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1303838947;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "0F7CFAB631E1B134DCF395A7797DAF67", hash_generated_method = "6AFC8E1C58F1EF8B49A1E2C09DCA84BB")
         public CharSequence getClassName(Object info) {
             addTaint(info.getTaint());
 CharSequence var540C13E9E156B687226421B24F2DF178_1241824492 =             null;
             var540C13E9E156B687226421B24F2DF178_1241824492.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1241824492;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "7D3E1748FD6A5B3BAF1D83AAF2AE15DE", hash_generated_method = "FA9ACF20C1D1EECBE251FD87B5AFD1E0")
         public CharSequence getContentDescription(Object info) {
             addTaint(info.getTaint());
 CharSequence var540C13E9E156B687226421B24F2DF178_1883021215 =             null;
             var540C13E9E156B687226421B24F2DF178_1883021215.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1883021215;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "D7A11002847EF3E5746055DA2B429105", hash_generated_method = "840A10C11F625CFCF0C73C32E040FCF9")
         public CharSequence getPackageName(Object info) {
             addTaint(info.getTaint());
 CharSequence var540C13E9E156B687226421B24F2DF178_1042185895 =             null;
             var540C13E9E156B687226421B24F2DF178_1042185895.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1042185895;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "6E57EFC15A3C835051BC240D78A056B3", hash_generated_method = "E59699C758BD75ECA3EE10C939ED4E79")
         public AccessibilityNodeInfoCompat getParent(Object info) {
             addTaint(info.getTaint());
 AccessibilityNodeInfoCompat var540C13E9E156B687226421B24F2DF178_1877188321 =             null;
             var540C13E9E156B687226421B24F2DF178_1877188321.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1877188321;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "CA1AE5519AB49B9F955ADEDF9C3C214E", hash_generated_method = "2BBBE4890CE78135D8A064EB22399A63")
         public CharSequence getText(Object info) {
             addTaint(info.getTaint());
 CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
             var540C13E9E156B687226421B24F2DF178_1133351793.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1133351793;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "EB7D2054B13C972973DD67D9B21CE0E5", hash_generated_method = "39F00A135E0FCDC08564EB6E3D504AC0")
         public int getWindowId(Object info) {
             addTaint(info.getTaint());
             int varCFCD208495D565EF66E7DFF9F98764DA_1368157400 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1321451042 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1321451042;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "4E39FE68FD90D69FA08C7AD1E979DF07", hash_generated_method = "59AC79102ED947719B0A68AB337E82C3")
         public boolean isCheckable(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1796400207 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_905008998 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_905008998;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "F2469434A89FA62BE9B2DB78034140F5", hash_generated_method = "1E4BC1BBD7C3C1788A30166BA998FB4A")
         public boolean isChecked(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_973715926 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1797244315 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1797244315;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.441 -0400", hash_original_method = "F7781A93E107315385A57825C2B0B78A", hash_generated_method = "BD931D612AE8190488F89D6B8E368336")
         public boolean isClickable(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1580812162 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1419631328 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1419631328;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "6BAAC3777342DFE283E965C06FC8D874", hash_generated_method = "46AF711618D2C154FE2D10DA39F30350")
         public boolean isEnabled(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1353960777 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676074586 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_676074586;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "24826F7A102BA4F82C9D9B08241E284F", hash_generated_method = "764AA6091638EB62DFD6CD04F68E3833")
         public boolean isFocusable(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_775096175 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1288206780 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1288206780;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "4D0616B5A88718B8558E59C7943E57B4", hash_generated_method = "7E95670C8A616A815A44B6D3F90A7F53")
         public boolean isFocused(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1154861829 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1126037952 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1126037952;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "3EB36752093CDD3C24048A6DFD7EC73D", hash_generated_method = "EFB04FF8029F59F220C58561DD56EEC3")
         public boolean isLongClickable(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1050610516 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1077752052 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1077752052;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "CB922389EC3BD00D9BEE74A550F7293C", hash_generated_method = "7DE2B4B0395E660931920AD997CB0642")
         public boolean isPassword(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1682702315 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1615458006 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1615458006;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "0A24FC3E128A848006031E8724C7F0A9", hash_generated_method = "EAE2E3387051016ED9DBA4DABAC29B55")
         public boolean isScrollable(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1622152994 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2138773013 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2138773013;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "6AFAC3555346166234EF254615BCA05C", hash_generated_method = "B9F0E6F56D9A90457D724526AA7E6450")
         public boolean isSelected(Object info) {
             addTaint(info.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_363254039 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1640444738 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1640444738;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "FCBED87974E8349E51CFE67F3FE8BAAB", hash_generated_method = "8C68181E4C0717CF9F807899FBAE7752")
         public boolean performAction(Object info, int action) {
             addTaint(action);
@@ -860,159 +888,178 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
             boolean var68934A3E9455FA72420237EB05902327_1808186975 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313531709 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313531709;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "6311EA40C38D5B6B34E9E1F7C3DBB879", hash_generated_method = "C7F581AF90B338E0925C62A3024C6F67")
         public void setBoundsInParent(Object info, Rect bounds) {
             addTaint(bounds.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.442 -0400", hash_original_method = "D2C9C693466BA3A7E4B14036D2B17A5B", hash_generated_method = "E05AFA6EA9AAF9FB0ECD646B93254DD9")
         public void setBoundsInScreen(Object info, Rect bounds) {
             addTaint(bounds.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "38431A6D5EE00E0099D8DB2DEFF6D601", hash_generated_method = "804DCE913D9E6070F8E550B71AD22B80")
         public void setCheckable(Object info, boolean checkable) {
             addTaint(checkable);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "4FE562645B89F53A2E3F577D51BE4F8C", hash_generated_method = "4543C14DB341621D93F6F2621D639CFB")
         public void setChecked(Object info, boolean checked) {
             addTaint(checked);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "82032763AB44B88BDF6C3C4AC2ABB1CF", hash_generated_method = "161EF9CD79B216300D2AF4B61D1E4F45")
         public void setClassName(Object info, CharSequence className) {
             addTaint(className.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "31E6103163DC809F9F67CE01A33EE87B", hash_generated_method = "D519D0F39A07EEB0AEEBA5E5875F6150")
         public void setClickable(Object info, boolean clickable) {
             addTaint(clickable);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "B500330A66D743DBA7E460FD212D7744", hash_generated_method = "27D40B14BF3DEDB56AAB9AECA05C82A0")
         public void setContentDescription(Object info, CharSequence contentDescription) {
             addTaint(contentDescription.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "2E8A30481E49B666D7564B714DFA8A28", hash_generated_method = "CA3CFCFE549F59FC75A446D5BCE0A521")
         public void setEnabled(Object info, boolean enabled) {
             addTaint(enabled);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "6FC489938507A8AC8A67E31F4C0F3485", hash_generated_method = "BD5881FAC223E930D2E2E37E44B33C3C")
         public void setFocusable(Object info, boolean focusable) {
             addTaint(focusable);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "D760A9B869FD1EE026AE8BC4B17036E8", hash_generated_method = "14E41B822435BE880FB3392798601F91")
         public void setFocused(Object info, boolean focused) {
             addTaint(focused);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "FD5EDA58E4935860A3097167F37FF25A", hash_generated_method = "3DDF3ED1B3E0FC0801A2CBFA37667157")
         public void setLongClickable(Object info, boolean longClickable) {
             addTaint(longClickable);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "7ACCCA5C650FD61E0E741AE4759FF12D", hash_generated_method = "3D2CB84EBAF7AE0D0E07B4791BF148D9")
         public void setPackageName(Object info, CharSequence packageName) {
             addTaint(packageName.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "69043B1B7F4EB8EB9BDC8511E4B08BEE", hash_generated_method = "4A942148EB5C52DD6E700A02688275C9")
         public void setParent(Object info, View parent) {
             addTaint(parent.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.443 -0400", hash_original_method = "363672B9055A3FB9061F2E3103405704", hash_generated_method = "B195B3F20A419F8DC07BEA2D24B96A97")
         public void setPassword(Object info, boolean password) {
             addTaint(password);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "709C7E935F852B3F6266600FDF6B6337", hash_generated_method = "DE0FD2B7B59EB7B909C49C4E237BDD07")
         public void setScrollable(Object info, boolean scrollable) {
             addTaint(scrollable);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "3EF8627D1C0109EB2B6665EF94BA680A", hash_generated_method = "8F344D2BAB0B685E1E5931897D28D77F")
         public void setSelected(Object info, boolean selected) {
             addTaint(selected);
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "483D361A53672C2015F284EB727D68EB", hash_generated_method = "6E7CE2F4361113870428E586C12141BF")
         public void setSource(Object info, View source) {
             addTaint(source.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "A82131F0C1B3FA9CC52D0C37845C305A", hash_generated_method = "A869718C721ADA1CBF5B40E6DCF8AA00")
         public void setText(Object info, CharSequence text) {
             addTaint(text.getTaint());
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "83070C3537D062E3CF530D85D02FB919", hash_generated_method = "9CA19930CBA17161800873D06B09C0C2")
         public void recycle(Object info) {
             addTaint(info.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1025,7 +1072,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.444 -0400", hash_original_method = "21FE378E79CF4BF2260F84D20D666AC8", hash_generated_method = "21FE378E79CF4BF2260F84D20D666AC8")
         public AccessibilityNodeInfoIcsImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1035,8 +1082,8 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1133351793 =             null;
 Object var18E616ED4124E416419712D8A33E1555_170373124 =             AccessibilityNodeInfoCompatIcs.obtain();
             var18E616ED4124E416419712D8A33E1555_170373124.addTaint(taint);
             return var18E616ED4124E416419712D8A33E1555_170373124;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain();
+            
+            
         }
 
         
@@ -1047,8 +1094,8 @@ Object var18E616ED4124E416419712D8A33E1555_170373124 =             Accessibility
 Object var72AFDB1E0D71CABB69ABFDF218476CD8_188178075 =             AccessibilityNodeInfoCompatIcs.obtain(source);
             var72AFDB1E0D71CABB69ABFDF218476CD8_188178075.addTaint(taint);
             return var72AFDB1E0D71CABB69ABFDF218476CD8_188178075;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain(source);
+            
+            
         }
 
         
@@ -1059,8 +1106,8 @@ Object var72AFDB1E0D71CABB69ABFDF218476CD8_188178075 =             Accessibility
 Object var9655CD537A169570B739BF9CC4952AF2_650992883 =             AccessibilityNodeInfoCompatIcs.obtain(info);
             var9655CD537A169570B739BF9CC4952AF2_650992883.addTaint(taint);
             return var9655CD537A169570B739BF9CC4952AF2_650992883;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.obtain(info);
+            
+            
         }
 
         
@@ -1070,8 +1117,8 @@ Object var9655CD537A169570B739BF9CC4952AF2_650992883 =             Accessibility
             addTaint(action);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.addAction(info, action);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.addAction(info, action);
+            
+            
         }
 
         
@@ -1081,8 +1128,8 @@ Object var9655CD537A169570B739BF9CC4952AF2_650992883 =             Accessibility
             addTaint(child.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.addChild(info, child);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.addChild(info, child);
+            
+            
         }
 
         
@@ -1094,8 +1141,8 @@ Object var9655CD537A169570B739BF9CC4952AF2_650992883 =             Accessibility
 List<Object> var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379 =             AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
             var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379.addTaint(taint);
             return var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.findAccessibilityNodeInfosByText(info, text);
+            
+            
         }
 
         
@@ -1106,8 +1153,8 @@ List<Object> var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379 =             Access
             int varE1C5C8F3250A60420574AB5876C073E0_1855756292 = (AccessibilityNodeInfoCompatIcs.getActions(info));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831996085 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1831996085;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getActions(info);
+            
+            
         }
 
         
@@ -1117,8 +1164,8 @@ List<Object> var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379 =             Access
             addTaint(outBounds.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.getBoundsInParent(info, outBounds);
+            
+            
         }
 
         
@@ -1128,8 +1175,8 @@ List<Object> var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379 =             Access
             addTaint(outBounds.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.getBoundsInScreen(info, outBounds);
+            
+            
         }
 
         
@@ -1141,8 +1188,8 @@ List<Object> var8DC6DAB02BA4C7815AC89010EB33D0AD_1881054379 =             Access
 AccessibilityNodeInfoCompat varC082D3DF38BC3C4721A24C567F2203D9_1471267681 =             new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
             varC082D3DF38BC3C4721A24C567F2203D9_1471267681.addTaint(taint);
             return varC082D3DF38BC3C4721A24C567F2203D9_1471267681;
-            // ---------- Original Method ----------
-            //return new AccessibilityNodeInfoCompat(IMPL.getChild(info, index));
+            
+            
         }
 
         
@@ -1153,8 +1200,8 @@ AccessibilityNodeInfoCompat varC082D3DF38BC3C4721A24C567F2203D9_1471267681 =    
             int var453D2111E45109D707554F829D387FC3_1993815781 = (AccessibilityNodeInfoCompatIcs.getChildCount(info));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110855952 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2110855952;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getChildCount(info);
+            
+            
         }
 
         
@@ -1165,8 +1212,8 @@ AccessibilityNodeInfoCompat varC082D3DF38BC3C4721A24C567F2203D9_1471267681 =    
 CharSequence varC282983408C091643715DAD53F515590_674055932 =             AccessibilityNodeInfoCompatIcs.getClassName(info);
             varC282983408C091643715DAD53F515590_674055932.addTaint(taint);
             return varC282983408C091643715DAD53F515590_674055932;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getClassName(info);
+            
+            
         }
 
         
@@ -1177,8 +1224,8 @@ CharSequence varC282983408C091643715DAD53F515590_674055932 =             Accessi
 CharSequence var32F5476EEDF6FF1279E269184BC4EEF0_1572147903 =             AccessibilityNodeInfoCompatIcs.getContentDescription(info);
             var32F5476EEDF6FF1279E269184BC4EEF0_1572147903.addTaint(taint);
             return var32F5476EEDF6FF1279E269184BC4EEF0_1572147903;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getContentDescription(info);
+            
+            
         }
 
         
@@ -1189,8 +1236,8 @@ CharSequence var32F5476EEDF6FF1279E269184BC4EEF0_1572147903 =             Access
 CharSequence var25E39EB6D9B13CC71DEE96F6E8413836_865906446 =             AccessibilityNodeInfoCompatIcs.getPackageName(info);
             var25E39EB6D9B13CC71DEE96F6E8413836_865906446.addTaint(taint);
             return var25E39EB6D9B13CC71DEE96F6E8413836_865906446;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getPackageName(info);
+            
+            
         }
 
         
@@ -1201,8 +1248,8 @@ CharSequence var25E39EB6D9B13CC71DEE96F6E8413836_865906446 =             Accessi
 AccessibilityNodeInfoCompat var7941D4894D6ACA970D05A94330CFE6E2_887091023 =             new AccessibilityNodeInfoCompat(IMPL.getParent(info));
             var7941D4894D6ACA970D05A94330CFE6E2_887091023.addTaint(taint);
             return var7941D4894D6ACA970D05A94330CFE6E2_887091023;
-            // ---------- Original Method ----------
-            //return new AccessibilityNodeInfoCompat(IMPL.getParent(info));
+            
+            
         }
 
         
@@ -1213,8 +1260,8 @@ AccessibilityNodeInfoCompat var7941D4894D6ACA970D05A94330CFE6E2_887091023 =     
 CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             AccessibilityNodeInfoCompatIcs.getText(info);
             varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769.addTaint(taint);
             return varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getText(info);
+            
+            
         }
 
         
@@ -1225,8 +1272,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             int var7E755BE734029BAEE15574E279891519_1098529521 = (AccessibilityNodeInfoCompatIcs.getWindowId(info));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837189111 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_837189111;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.getWindowId(info);
+            
+            
         }
 
         
@@ -1237,8 +1284,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var6EBF9497CE9D8DB73C60338542DEE7A0_130791064 = (AccessibilityNodeInfoCompatIcs.isCheckable(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1719116738 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1719116738;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isCheckable(info);
+            
+            
         }
 
         
@@ -1249,8 +1296,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var5FE936E046D67E017ADAFED3989D8217_1565504117 = (AccessibilityNodeInfoCompatIcs.isChecked(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_638117008 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_638117008;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isChecked(info);
+            
+            
         }
 
         
@@ -1261,8 +1308,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var7F39A5797EB1A99D99E2343C7CAE7411_499970168 = (AccessibilityNodeInfoCompatIcs.isClickable(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4021691 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_4021691;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isClickable(info);
+            
+            
         }
 
         
@@ -1273,8 +1320,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var882EA9E175AFA2A78B164B1A1EDAA334_337639130 = (AccessibilityNodeInfoCompatIcs.isEnabled(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_164195099 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_164195099;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isEnabled(info);
+            
+            
         }
 
         
@@ -1285,8 +1332,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean varF205ED058EE2032775A632B9C55F0576_544780594 = (AccessibilityNodeInfoCompatIcs.isFocusable(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_478233429 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_478233429;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isFocusable(info);
+            
+            
         }
 
         
@@ -1297,8 +1344,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var968A4F44201F839E9BD8A149DDC95B50_120362914 = (AccessibilityNodeInfoCompatIcs.isFocused(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864739858 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_864739858;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isFocused(info);
+            
+            
         }
 
         
@@ -1309,8 +1356,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var7FD4110AC14E635626C3442A1C47C6C0_51982282 = (AccessibilityNodeInfoCompatIcs.isLongClickable(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1488279192 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1488279192;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isLongClickable(info);
+            
+            
         }
 
         
@@ -1321,8 +1368,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var591107E717E8BE76738CDD50302FB72E_1396462391 = (AccessibilityNodeInfoCompatIcs.isPassword(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_761834890 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_761834890;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isPassword(info);
+            
+            
         }
 
         
@@ -1333,8 +1380,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var0DBA0213B6D1A14FBEE7922D4AE5EFDB_1327277023 = (AccessibilityNodeInfoCompatIcs.isScrollable(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_567346630 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_567346630;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isScrollable(info);
+            
+            
         }
 
         
@@ -1345,8 +1392,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean var64D15A97240D47FE0C8EC2B678FEEE31_484667914 = (AccessibilityNodeInfoCompatIcs.isSelected(info));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_51824513 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_51824513;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.isSelected(info);
+            
+            
         }
 
         
@@ -1358,8 +1405,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             boolean varF9AF688EECBFC4106C6E922E0F041AEF_726354747 = (AccessibilityNodeInfoCompatIcs.performAction(info, action));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1817727042 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1817727042;
-            // ---------- Original Method ----------
-            //return AccessibilityNodeInfoCompatIcs.performAction(info, action);
+            
+            
         }
 
         
@@ -1369,8 +1416,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(bounds.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setBoundsInParent(info, bounds);
+            
+            
         }
 
         
@@ -1380,8 +1427,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(bounds.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setBoundsInScreen(info, bounds);
+            
+            
         }
 
         
@@ -1391,8 +1438,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(checkable);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setCheckable(info, checkable);
+            
+            
         }
 
         
@@ -1402,8 +1449,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(checked);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setChecked(info, checked);
+            
+            
         }
 
         
@@ -1413,8 +1460,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(className.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setClassName(info, className);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setClassName(info, className);
+            
+            
         }
 
         
@@ -1424,8 +1471,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(clickable);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setClickable(info, clickable);
+            
+            
         }
 
         
@@ -1435,8 +1482,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(contentDescription.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setContentDescription(info, contentDescription);
+            
+            
         }
 
         
@@ -1446,8 +1493,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(enabled);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setEnabled(info, enabled);
+            
+            
         }
 
         
@@ -1457,8 +1504,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(focusable);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setFocusable(info, focusable);
+            
+            
         }
 
         
@@ -1468,8 +1515,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(focused);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setFocused(info, focused);
+            
+            
         }
 
         
@@ -1479,8 +1526,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(longClickable);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setLongClickable(info, longClickable);
+            
+            
         }
 
         
@@ -1490,8 +1537,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(packageName.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setPackageName(info, packageName);
+            
+            
         }
 
         
@@ -1501,8 +1548,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(parent.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setParent(info, parent);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setParent(info, parent);
+            
+            
         }
 
         
@@ -1512,8 +1559,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(password);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setPassword(info, password);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setPassword(info, password);
+            
+            
         }
 
         
@@ -1523,8 +1570,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(scrollable);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setScrollable(info, scrollable);
+            
+            
         }
 
         
@@ -1534,8 +1581,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(selected);
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setSelected(info, selected);
+            
+            
         }
 
         
@@ -1545,8 +1592,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(source.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setSource(info, source);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setSource(info, source);
+            
+            
         }
 
         
@@ -1556,8 +1603,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
             addTaint(text.getTaint());
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.setText(info, text);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.setText(info, text);
+            
+            
         }
 
         
@@ -1566,8 +1613,8 @@ CharSequence varC39EDBF46B20FFFBE67EBDDAFFAF4404_1131715769 =             Access
         public void recycle(Object info) {
             addTaint(info.getTaint());
             AccessibilityNodeInfoCompatIcs.recycle(info);
-            // ---------- Original Method ----------
-            //AccessibilityNodeInfoCompatIcs.recycle(info);
+            
+            
         }
 
         

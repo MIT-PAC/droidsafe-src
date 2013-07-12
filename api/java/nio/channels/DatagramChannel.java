@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
     protected  DatagramChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,8 +32,8 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
         int var26420A318B0E3FC748622014FFE9C3B7_1784199895 = ((SelectionKey.OP_READ | SelectionKey.OP_WRITE));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487022456 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487022456;
-        // ---------- Original Method ----------
-        //return (SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        
+        
     }
 
     
@@ -69,8 +69,8 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
         long varFE1CA8A4AFFB15DED53509F1AD9D6EED_1088782948 = (read(targets, 0, targets.length));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1587940389 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1587940389;
-        // ---------- Original Method ----------
-        //return read(targets, 0, targets.length);
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ public abstract class DatagramChannel extends AbstractSelectableChannel implemen
         long varE628A2D924D52EAEBDED640B5A4AC008_1760061163 = (write(sources, 0, sources.length));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_892548913 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_892548913;
-        // ---------- Original Method ----------
-        //return write(sources, 0, sources.length);
+        
+        
     }
 
     

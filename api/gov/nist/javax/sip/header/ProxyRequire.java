@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.745 -0400", hash_original_method = "313262BBE47BF259092F8848A4D13338", hash_generated_method = "8A94E0C1BEC1D37D30D767A123DE1038")
     public  ProxyRequire() {
         super(PROXY_REQUIRE);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,21 +23,23 @@ public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
     public  ProxyRequire(String s) {
         super(PROXY_REQUIRE);
         optionTag = s;
-        // ---------- Original Method ----------
-        //optionTag = s;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.746 -0400", hash_original_method = "9C711BE19A8C0E0A7CB116A3F753C6F0", hash_generated_method = "13D199B500AE8AD90EE291792B358D97")
     public String encodeBody() {
 String var05FAD6E650FDF64778D62F7CDA67F749_989902278 =         optionTag;
         var05FAD6E650FDF64778D62F7CDA67F749_989902278.addTaint(taint);
         return var05FAD6E650FDF64778D62F7CDA67F749_989902278;
-        // ---------- Original Method ----------
-        //return optionTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.746 -0400", hash_original_method = "DE0D7BEB729218B451469620CB6256C4", hash_generated_method = "6EE4FBC4D3D96EC0E776A3841E0CCE48")
     public void setOptionTag(String optionTag) throws ParseException {
     if(optionTag == null)        
@@ -47,20 +49,21 @@ String var05FAD6E650FDF64778D62F7CDA67F749_989902278 =         optionTag;
         throw var00B4EC6108EE40C7D058C430CB5F37BA_348582856;
         }
         this.optionTag = optionTag;
-        // ---------- Original Method ----------
-        //if (optionTag == null)
-            //throw new NullPointerException("JAIN-SIP Exception, ProxyRequire, setOptionTag(), the optionTag parameter is null");
-        //this.optionTag = optionTag;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.746 -0400", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "8FEA6E5A33BC25E87ACB41669F55C761")
     public String getOptionTag() {
 String var05FAD6E650FDF64778D62F7CDA67F749_1051343040 =         optionTag;
         var05FAD6E650FDF64778D62F7CDA67F749_1051343040.addTaint(taint);
         return var05FAD6E650FDF64778D62F7CDA67F749_1051343040;
-        // ---------- Original Method ----------
-        //return optionTag;
+        
+        
     }
 
     

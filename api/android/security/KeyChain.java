@@ -1,6 +1,6 @@
 package android.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,11 +35,12 @@ public final class KeyChain {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.028 -0400", hash_original_method = "72F463E9A92E033797A9FA0AB2D9F5CF", hash_generated_method = "72F463E9A92E033797A9FA0AB2D9F5CF")
     public KeyChain ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static Intent createInstallIntent() {
+        @DSModeled(DSC.SPEC)
+    public static Intent createInstallIntent() {
         Intent intent = new Intent(ACTION_INSTALL);
         intent.setClassName("com.android.certinstaller",
                             "com.android.certinstaller.CertInstallerMain");
@@ -192,8 +193,8 @@ public final class KeyChain {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.032 -0400", hash_original_method = "C9AAF5E97D9880605AC7CEDD0F5EF602", hash_generated_method = "734EA7C6CEA33BDAA3DD6D725B46AD40")
         private  AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
             this.keyChainAliasResponse = keyChainAliasResponse;
-            // ---------- Original Method ----------
-            //this.keyChainAliasResponse = keyChainAliasResponse;
+            
+            
         }
 
         
@@ -202,8 +203,8 @@ public final class KeyChain {
         public void alias(String alias) {
             addTaint(alias.getTaint());
             keyChainAliasResponse.alias(alias);
-            // ---------- Original Method ----------
-            //keyChainAliasResponse.alias(alias);
+            
+            
         }
 
         
@@ -229,10 +230,10 @@ public final class KeyChain {
             this.context = context;
             this.serviceConnection = serviceConnection;
             this.service = service;
-            // ---------- Original Method ----------
-            //this.context = context;
-            //this.serviceConnection = serviceConnection;
-            //this.service = service;
+            
+            
+            
+            
         }
 
         
@@ -240,18 +241,19 @@ public final class KeyChain {
         @Override
         public void close() {
             context.unbindService(serviceConnection);
-            // ---------- Original Method ----------
-            //context.unbindService(serviceConnection);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.035 -0400", hash_original_method = "954EE7241574324971051CDC9EEAAD50", hash_generated_method = "AD7E82270459456EC781B9D51F5711B1")
         public IKeyChainService getService() {
 IKeyChainService var18881A382C668272945CA08D6E19E173_1025493662 =             service;
             var18881A382C668272945CA08D6E19E173_1025493662.addTaint(taint);
             return var18881A382C668272945CA08D6E19E173_1025493662;
-            // ---------- Original Method ----------
-            //return service;
+            
+            
         }
 
         

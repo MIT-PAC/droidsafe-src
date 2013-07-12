@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,12 +35,12 @@ public class SimTlv {
         this.tlvLength = length;
         curOffset = offset;
         hasValidTlvObject = parseCurrentTlvObject();
-        // ---------- Original Method ----------
-        //this.record = record;
-        //this.tlvOffset = offset;
-        //this.tlvLength = length;
-        //curOffset = offset;
-        //hasValidTlvObject = parseCurrentTlvObject();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -57,24 +57,26 @@ public class SimTlv {
         boolean varD91501AE627873BC4A3030BD7AD0D179_545985968 = (hasValidTlvObject);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_715139979 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_715139979;
-        // ---------- Original Method ----------
-        //if (!hasValidTlvObject) return false;
-        //curOffset = curDataOffset + curDataLength;
-        //hasValidTlvObject = parseCurrentTlvObject();
-        //return hasValidTlvObject;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.649 -0400", hash_original_method = "6E8A16A8DAAB3D52539EED38524C3D56", hash_generated_method = "CFEB0194BE8D4DE1D2AC852610DC2567")
     public boolean isValidObject() {
         boolean varD91501AE627873BC4A3030BD7AD0D179_1812187988 = (hasValidTlvObject);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1296309727 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1296309727;
-        // ---------- Original Method ----------
-        //return hasValidTlvObject;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.649 -0400", hash_original_method = "6A87500957D7F16920BD9A3282060AAA", hash_generated_method = "DFBBAE40261C4385BF271B6317BC8BB9")
     public int getTag() {
     if(!hasValidTlvObject)        
@@ -86,9 +88,9 @@ public class SimTlv {
         int varD79CED434C53030CA3BD0EDB662DECAA_812693474 = (record[curOffset] & 0xff);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1997117439 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1997117439;
-        // ---------- Original Method ----------
-        //if (!hasValidTlvObject) return 0;
-        //return record[curOffset] & 0xff;
+        
+        
+        
     }
 
     
@@ -105,14 +107,15 @@ public class SimTlv {
         byte[] var2CB9DF9898E55FD0AD829DC202DDBD1C_1920875471 = (ret);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2069067887 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2069067887;
-        // ---------- Original Method ----------
-        //if (!hasValidTlvObject) return null;
-        //byte[] ret = new byte[curDataLength];
-        //System.arraycopy(record, curDataOffset, ret, 0, curDataLength);
-        //return ret;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.651 -0400", hash_original_method = "F0FED94C714DCB7A0D654E5FF6165803", hash_generated_method = "185F735666EC66585FA2801ADAE05C43")
     private boolean parseCurrentTlvObject() {
         try 
@@ -122,61 +125,61 @@ public class SimTlv {
                 boolean var68934A3E9455FA72420237EB05902327_282312399 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1083046292 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1083046292;
-            } //End block
+            } 
     if((record[curOffset + 1] & 0xff) < 0x80)            
             {
                 curDataLength = record[curOffset + 1] & 0xff;
                 curDataOffset = curOffset + 2;
-            } //End block
+            } 
             else
     if((record[curOffset + 1] & 0xff) == 0x81)            
             {
                 curDataLength = record[curOffset + 2] & 0xff;
                 curDataOffset = curOffset + 3;
-            } //End block
+            } 
             else
             {
                 boolean var68934A3E9455FA72420237EB05902327_1259736935 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_59523449 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_59523449;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ArrayIndexOutOfBoundsException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_1285066174 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1397473701 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1397473701;
-        } //End block
+        } 
     if(curDataLength + curDataOffset > tlvOffset + tlvLength)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1761335376 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_401993407 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_401993407;
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_151698927 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1871155193 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1871155193;
-        // ---------- Original Method ----------
-        //try {
-            //if (record[curOffset] == 0 || (record[curOffset] & 0xff) == 0xff) {
-                //return false;
-            //}
-            //if ((record[curOffset + 1] & 0xff) < 0x80) {
-                //curDataLength = record[curOffset + 1] & 0xff;
-                //curDataOffset = curOffset + 2;
-            //} else if ((record[curOffset + 1] & 0xff) == 0x81) {
-                //curDataLength = record[curOffset + 2] & 0xff;
-                //curDataOffset = curOffset + 3;
-            //} else {
-                //return false;
-            //}
-        //} catch (ArrayIndexOutOfBoundsException ex) {
-            //return false;
-        //}
-        //if (curDataLength + curDataOffset > tlvOffset + tlvLength) {
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+                
+            
+            
+                
+                
+            
+                
+                
+            
+                
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     

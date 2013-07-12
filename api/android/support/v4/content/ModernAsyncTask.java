@@ -1,6 +1,6 @@
 package android.support.v4.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,10 +45,10 @@ abstract class ModernAsyncTask<Params, Progress, Result> {
 Result var3E54577D8BA0B3895F3C3277069ED558_954375863 =             postResult(doInBackground(mParams));
             var3E54577D8BA0B3895F3C3277069ED558_954375863.addTaint(taint);
             return var3E54577D8BA0B3895F3C3277069ED558_954375863;
-            // ---------- Original Method ----------
-            //mTaskInvoked.set(true);
-            //Process.setThreadPriority(Process.THREAD_PRIORITY_BACKGROUND);
-            //return postResult(doInBackground(mParams));
+            
+            
+            
+            
         }
 };
         mFuture = new FutureTask<Result>(mWorker) {        
@@ -59,48 +59,48 @@ Result var3E54577D8BA0B3895F3C3277069ED558_954375863 =             postResult(do
             {
                 final Result result = get();
                 postResultIfNotInvoked(result);
-            } //End block
+            } 
             catch (InterruptedException e)
             {
                 android.util.Log.w(LOG_TAG, e);
-            } //End block
+            } 
             catch (ExecutionException e)
             {
                 RuntimeException varF8D4F5B31C1D2B7927B6CFBBA0286D57_1431498030 = new RuntimeException("An error occured while executing doInBackground()",
                             e.getCause());
                 varF8D4F5B31C1D2B7927B6CFBBA0286D57_1431498030.addTaint(taint);
                 throw varF8D4F5B31C1D2B7927B6CFBBA0286D57_1431498030;
-            } //End block
+            } 
             catch (CancellationException e)
             {
                 postResultIfNotInvoked(null);
-            } //End block
+            } 
             catch (Throwable t)
             {
                 RuntimeException var16B9994CE83BD3E7B18E1E37D2B3693B_2040801856 = new RuntimeException("An error occured while executing "
                             + "doInBackground()", t);
                 var16B9994CE83BD3E7B18E1E37D2B3693B_2040801856.addTaint(taint);
                 throw var16B9994CE83BD3E7B18E1E37D2B3693B_2040801856;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                    //final Result result = get();
-                    //postResultIfNotInvoked(result);
-                //} catch (InterruptedException e) {
-                    //android.util.Log.w(LOG_TAG, e);
-                //} catch (ExecutionException e) {
-                    //throw new RuntimeException("An error occured while executing doInBackground()",
-                            //e.getCause());
-                //} catch (CancellationException e) {
-                    //postResultIfNotInvoked(null);
-                //} catch (Throwable t) {
-                    //throw new RuntimeException("An error occured while executing "
-                            //+ "doInBackground()", t);
-                //}
+            } 
+            
+            
+                    
+                    
+                
+                    
+                
+                    
+                            
+                
+                    
+                
+                    
+                            
+                
         }
 };
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -109,7 +109,8 @@ Result var3E54577D8BA0B3895F3C3277069ED558_954375863 =             postResult(do
     }
 
     
-        public static void setDefaultExecutor(Executor exec) {
+        @DSModeled(DSC.SAFE)
+    public static void setDefaultExecutor(Executor exec) {
         sDefaultExecutor = exec;
     }
 
@@ -121,12 +122,12 @@ Result var3E54577D8BA0B3895F3C3277069ED558_954375863 =             postResult(do
     if(!wasTaskInvoked)        
         {
             postResult(result);
-        } //End block
-        // ---------- Original Method ----------
-        //final boolean wasTaskInvoked = mTaskInvoked.get();
-        //if (!wasTaskInvoked) {
-            //postResult(result);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -139,11 +140,11 @@ Result var3E54577D8BA0B3895F3C3277069ED558_954375863 =             postResult(do
 Result varDC838461EE2FA0CA4C9BBB70A15456B0_440737117 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_440737117.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_440737117;
-        // ---------- Original Method ----------
-        //Message message = sHandler.obtainMessage(MESSAGE_POST_RESULT,
-                //new AsyncTaskResult<Result>(this, result));
-        //message.sendToTarget();
-        //return result;
+        
+        
+                
+        
+        
     }
 
     
@@ -152,54 +153,56 @@ Result varDC838461EE2FA0CA4C9BBB70A15456B0_440737117 =         result;
 Status var6300E74790326279AA67EB8DFA2C84B0_560194753 =         mStatus;
         var6300E74790326279AA67EB8DFA2C84B0_560194753.addTaint(taint);
         return var6300E74790326279AA67EB8DFA2C84B0_560194753;
-        // ---------- Original Method ----------
-        //return mStatus;
+        
+        
     }
 
     
     protected abstract Result doInBackground(Params... params);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.420 -0400", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "C0199AA9BD1E0917DA5290FDB264C17A")
     protected void onPreExecute() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.420 -0400", hash_original_method = "815F7407CD3192690B947D6EE1FFAB09", hash_generated_method = "C976233E37033A3D91D226FE1079E594")
     @SuppressWarnings({"UnusedDeclaration"})
     protected void onPostExecute(Result result) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(result.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.421 -0400", hash_original_method = "157B3FBC0632B3CAE882248D445D8AAC", hash_generated_method = "840A874EFC9E5D7D09065733171CECD0")
     @SuppressWarnings({"UnusedDeclaration"})
     protected void onProgressUpdate(Progress... values) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(values[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.421 -0400", hash_original_method = "D59B5ED17FD1F167CEB40DD1D5E0C9AC", hash_generated_method = "828E716C9F83A225045546A9111AE69D")
     @SuppressWarnings({"UnusedParameters"})
     protected void onCancelled(Result result) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(result.getTaint());
         onCancelled();
-        // ---------- Original Method ----------
-        //onCancelled();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.421 -0400", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "71F6D962409DFEB2E35ECE3ED38075C4")
     protected void onCancelled() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -208,8 +211,8 @@ Status var6300E74790326279AA67EB8DFA2C84B0_560194753 =         mStatus;
         boolean var7E7FA29716C4CBE4B16D639A4F3CDD24_1600252634 = (mFuture.isCancelled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675559868 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_675559868;
-        // ---------- Original Method ----------
-        //return mFuture.isCancelled();
+        
+        
     }
 
     
@@ -219,8 +222,8 @@ Status var6300E74790326279AA67EB8DFA2C84B0_560194753 =         mStatus;
         boolean varC56519D800A095069C9D4DD00872ADF8_829898096 = (mFuture.cancel(mayInterruptIfRunning));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1495932625 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1495932625;
-        // ---------- Original Method ----------
-        //return mFuture.cancel(mayInterruptIfRunning);
+        
+        
     }
 
     
@@ -229,8 +232,8 @@ Status var6300E74790326279AA67EB8DFA2C84B0_560194753 =         mStatus;
 Result var3209BEC855B70D6C26F0EC9DBDDA58B7_1588452824 =         mFuture.get();
         var3209BEC855B70D6C26F0EC9DBDDA58B7_1588452824.addTaint(taint);
         return var3209BEC855B70D6C26F0EC9DBDDA58B7_1588452824;
-        // ---------- Original Method ----------
-        //return mFuture.get();
+        
+        
     }
 
     
@@ -242,8 +245,8 @@ Result var3209BEC855B70D6C26F0EC9DBDDA58B7_1588452824 =         mFuture.get();
 Result var5F8E5ACBC39B5812EA5F66BAABC411DD_1867499034 =         mFuture.get(timeout, unit);
         var5F8E5ACBC39B5812EA5F66BAABC411DD_1867499034.addTaint(taint);
         return var5F8E5ACBC39B5812EA5F66BAABC411DD_1867499034;
-        // ---------- Original Method ----------
-        //return mFuture.get(timeout, unit);
+        
+        
     }
 
     
@@ -253,8 +256,8 @@ Result var5F8E5ACBC39B5812EA5F66BAABC411DD_1867499034 =         mFuture.get(time
 ModernAsyncTask<Params, Progress, Result> var0A631FF6F1525828AF54B1432444F062_1886240901 =         executeOnExecutor(sDefaultExecutor, params);
         var0A631FF6F1525828AF54B1432444F062_1886240901.addTaint(taint);
         return var0A631FF6F1525828AF54B1432444F062_1886240901;
-        // ---------- Original Method ----------
-        //return executeOnExecutor(sDefaultExecutor, params);
+        
+        
     }
 
     
@@ -277,7 +280,7 @@ switch(mStatus){
             var4AC73FB34036B56D3B47DF6B5659E72C_1064589088.addTaint(taint);
             throw var4AC73FB34036B56D3B47DF6B5659E72C_1064589088;
 }
-        } //End block
+        } 
         mStatus = Status.RUNNING;
         onPreExecute();
         mWorker.mParams = params;
@@ -285,23 +288,23 @@ switch(mStatus){
 ModernAsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_418575499 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_418575499.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_418575499;
-        // ---------- Original Method ----------
-        //if (mStatus != Status.PENDING) {
-            //switch (mStatus) {
-                //case RUNNING:
-                    //throw new IllegalStateException("Cannot execute task:"
-                            //+ " the task is already running.");
-                //case FINISHED:
-                    //throw new IllegalStateException("Cannot execute task:"
-                            //+ " the task has already been executed "
-                            //+ "(a task can be executed only once)");
-            //}
-        //}
-        //mStatus = Status.RUNNING;
-        //onPreExecute();
-        //mWorker.mParams = params;
-        //exec.execute(mFuture);
-        //return this;
+        
+        
+            
+                
+                    
+                            
+                
+                    
+                            
+                            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -317,12 +320,12 @@ ModernAsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_41
         {
             sHandler.obtainMessage(MESSAGE_POST_PROGRESS,
                     new AsyncTaskResult<Progress>(this, values)).sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isCancelled()) {
-            //sHandler.obtainMessage(MESSAGE_POST_PROGRESS,
-                    //new AsyncTaskResult<Progress>(this, values)).sendToTarget();
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -332,19 +335,19 @@ ModernAsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_41
     if(isCancelled())        
         {
             onCancelled(result);
-        } //End block
+        } 
         else
         {
             onPostExecute(result);
-        } //End block
+        } 
         mStatus = Status.FINISHED;
-        // ---------- Original Method ----------
-        //if (isCancelled()) {
-            //onCancelled(result);
-        //} else {
-            //onPostExecute(result);
-        //}
-        //mStatus = Status.FINISHED;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -360,7 +363,7 @@ ModernAsyncTask<Params, Progress, Result> var72A74007B2BE62B849F475C7BDA4658B_41
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.425 -0400", hash_original_method = "702720A53E3CB2FDA0E1C09BCF5135A3", hash_generated_method = "702720A53E3CB2FDA0E1C09BCF5135A3")
         public InternalHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -378,16 +381,16 @@ switch(msg.what){
             result.mTask.onProgressUpdate(result.mData);
             break;
 }
-            // ---------- Original Method ----------
-            //AsyncTaskResult result = (AsyncTaskResult) msg.obj;
-            //switch (msg.what) {
-                //case MESSAGE_POST_RESULT:
-                    //result.mTask.finish(result.mData[0]);
-                    //break;
-                //case MESSAGE_POST_PROGRESS:
-                    //result.mTask.onProgressUpdate(result.mData);
-                    //break;
-            //}
+            
+            
+            
+                
+                    
+                    
+                
+                    
+                    
+            
         }
 
         
@@ -403,7 +406,7 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.425 -0400", hash_original_method = "6133B28C5B62218BD6304F54DA37E6FE", hash_generated_method = "6133B28C5B62218BD6304F54DA37E6FE")
         public WorkerRunnable ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -423,9 +426,9 @@ switch(msg.what){
           AsyncTaskResult(ModernAsyncTask task, Data... data) {
             mTask = task;
             mData = data;
-            // ---------- Original Method ----------
-            //mTask = task;
-            //mData = data;
+            
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -69,16 +69,16 @@ public class SyncOperation implements Comparable {
         {
             this.expedited = true;
             this.earliestRunTime = now;
-        } //End block
+        } 
         else
         {
             this.expedited = false;
             this.earliestRunTime = now + delayInMs;
-        } //End block
+        } 
         updateEffectiveRunTime();
         this.key = toKey();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -95,18 +95,18 @@ public class SyncOperation implements Comparable {
         this.allowParallelSyncs = other.allowParallelSyncs;
         this.updateEffectiveRunTime();
         this.key = toKey();
-        // ---------- Original Method ----------
-        //this.account = other.account;
-        //this.syncSource = other.syncSource;
-        //this.authority = other.authority;
-        //this.extras = new Bundle(other.extras);
-        //this.expedited = other.expedited;
-        //this.earliestRunTime = SystemClock.elapsedRealtime();
-        //this.backoff = other.backoff;
-        //this.delayUntil = other.delayUntil;
-        //this.allowParallelSyncs = other.allowParallelSyncs;
-        //this.updateEffectiveRunTime();
-        //this.key = toKey();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -116,11 +116,11 @@ public class SyncOperation implements Comparable {
     if(!extras.getBoolean(extraName, false))        
         {
             extras.remove(extraName);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!extras.getBoolean(extraName, false)) {
-            //extras.remove(extraName);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -129,8 +129,8 @@ public class SyncOperation implements Comparable {
 String varA6B8BD37985A60A440C49B7AA6CF67BB_317893941 =         dump(true);
         varA6B8BD37985A60A440C49B7AA6CF67BB_317893941.addTaint(taint);
         return varA6B8BD37985A60A440C49B7AA6CF67BB_317893941;
-        // ---------- Original Method ----------
-        //return dump(true);
+        
+        
     }
 
     
@@ -147,31 +147,31 @@ String varA6B8BD37985A60A440C49B7AA6CF67BB_317893941 =         dump(true);
     if(expedited)        
         {
             sb.append(", EXPEDITED");
-        } //End block
+        } 
     if(!useOneLine && !extras.keySet().isEmpty())        
         {
             sb.append("\n    ");
             extrasToStringBuilder(extras, sb);
-        } //End block
+        } 
 String var2460B846747F8B22185AD8BE722266A5_461449386 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_461449386.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_461449386;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append(account.name);
-        //sb.append(" (" + account.type + ")");
-        //sb.append(", " + authority);
-        //sb.append(", ");
-        //sb.append(SyncStorageEngine.SOURCES[syncSource]);
-        //sb.append(", earliestRunTime " + earliestRunTime);
-        //if (expedited) {
-            //sb.append(", EXPEDITED");
-        //}
-        //if (!useOneLine && !extras.keySet().isEmpty()) {
-            //sb.append("\n    ");
-            //extrasToStringBuilder(extras, sb);
-        //}
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -180,8 +180,8 @@ String var2460B846747F8B22185AD8BE722266A5_461449386 =         sb.toString();
         boolean var7DDE28B1FD1D777B1D79F3951983CA43_1616680318 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_158280822 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_158280822;
-        // ---------- Original Method ----------
-        //return extras.getBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, false);
+        
+        
     }
 
     
@@ -190,8 +190,8 @@ String var2460B846747F8B22185AD8BE722266A5_461449386 =         sb.toString();
         boolean var38DDFF7D7CA52472479FAE474236403E_221701813 = (extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_558846959 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_558846959;
-        // ---------- Original Method ----------
-        //return extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false);
+        
+        
     }
 
     
@@ -205,13 +205,13 @@ String var2460B846747F8B22185AD8BE722266A5_461449386 =         sb.toString();
 String var2460B846747F8B22185AD8BE722266A5_596931214 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_596931214.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_596931214;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append("authority: ").append(authority);
-        //sb.append(" account {name=" + account.name + ", type=" + account.type + "}");
-        //sb.append(" extras: ");
-        //extrasToStringBuilder(extras, sb);
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -231,15 +231,16 @@ String var2460B846747F8B22185AD8BE722266A5_596931214 =         sb.toString();
                 : Math.max(
                     Math.max(earliestRunTime, delayUntil),
                     backoff);
-        // ---------- Original Method ----------
-        //effectiveRunTime = ignoreBackoff()
-                //? earliestRunTime
-                //: Math.max(
-                    //Math.max(earliestRunTime, delayUntil),
-                    //backoff);
+        
+        
+                
+                
+                    
+                    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.152 -0400", hash_original_method = "94E2F05BFAF6BA397C21B12E8FAD132F", hash_generated_method = "B45AA2EE7192560A4DCD36C738915A9A")
     public int compareTo(Object o) {
         addTaint(o.getTaint());
@@ -249,25 +250,25 @@ String var2460B846747F8B22185AD8BE722266A5_596931214 =         sb.toString();
             int var80440E4CBF7F6673ABE975925C8046F6_1248373653 = (expedited ? -1 : 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681490826 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681490826;
-        } //End block
+        } 
     if(effectiveRunTime == other.effectiveRunTime)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1842387142 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_492066812 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_492066812;
-        } //End block
+        } 
         int var4285BC5F081472817EFC10DE6C29FAC1_1460457951 = (effectiveRunTime < other.effectiveRunTime ? -1 : 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_279392797 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_279392797;
-        // ---------- Original Method ----------
-        //SyncOperation other = (SyncOperation)o;
-        //if (expedited != other.expedited) {
-            //return expedited ? -1 : 1;
-        //}
-        //if (effectiveRunTime == other.effectiveRunTime) {
-            //return 0;
-        //}
-        //return effectiveRunTime < other.effectiveRunTime ? -1 : 1;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

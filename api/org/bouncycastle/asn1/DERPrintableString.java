@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,15 +18,15 @@ public class DERPrintableString extends ASN1Object implements DERString {
 for(int i = 0;i != cs.length;i++)
         {
             cs[i] = (char)(string[i] & 0xff);
-        } //End block
+        } 
         this.string = new String(cs).intern();
-        // ---------- Original Method ----------
-        //char[]  cs = new char[string.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)(string[i] & 0xff);
-        //}
-        //this.string = new String(cs).intern();
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -35,7 +35,7 @@ for(int i = 0;i != cs.length;i++)
         String   string) {
         this(string, false);
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,14 +49,14 @@ for(int i = 0;i != cs.length;i++)
             IllegalArgumentException var004F07C3BE12B584F6B99C05A347E3ED_89093871 = new IllegalArgumentException("string contains illegal characters");
             var004F07C3BE12B584F6B99C05A347E3ED_89093871.addTaint(taint);
             throw var004F07C3BE12B584F6B99C05A347E3ED_89093871;
-        } //End block
+        } 
         this.string = string.intern();
-        // ---------- Original Method ----------
-        //if (validate && !isPrintableString(string))
-        //{
-            //throw new IllegalArgumentException("string contains illegal characters");
-        //}
-        //this.string = string.intern();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -85,13 +85,14 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.171 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "CF7D2D922FDCB76B1369BE7E88BE4FA9")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_2105646936 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_2105646936.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_2105646936;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -102,18 +103,18 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_2105646936 =         string;
 for(int i = 0;i != cs.length;i++)
         {
             bs[i] = (byte)cs[i];
-        } //End block
+        } 
         byte[] var7C9DF801238ABE28CAE2675FD3166A1A_695737386 = (bs);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1478282196 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1478282196;
-        // ---------- Original Method ----------
-        //char[]  cs = string.toCharArray();
-        //byte[]  bs = new byte[cs.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //bs[i] = (byte)cs[i];
-        //}
-        //return bs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -122,8 +123,8 @@ for(int i = 0;i != cs.length;i++)
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(PRINTABLE_STRING, this.getOctets());
-        // ---------- Original Method ----------
-        //out.writeEncoded(PRINTABLE_STRING, this.getOctets());
+        
+        
     }
 
     
@@ -132,8 +133,8 @@ for(int i = 0;i != cs.length;i++)
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_1670358406 = (this.getString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248094040 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248094040;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     
@@ -146,28 +147,29 @@ for(int i = 0;i != cs.length;i++)
             boolean var68934A3E9455FA72420237EB05902327_1338166807 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1523633568 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1523633568;
-        } //End block
+        } 
         DERPrintableString s = (DERPrintableString)o;
         boolean varEDB7CD599351FA878152EF17A169B1A6_486160867 = (this.getString().equals(s.getString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1587448259 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1587448259;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERPrintableString))
-        //{
-            //return false;
-        //}
-        //DERPrintableString  s = (DERPrintableString)o;
-        //return this.getString().equals(s.getString());
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.173 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "5CC6CE383862492D394A9F80BBA03690")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_116784829 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_116784829.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_116784829;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     

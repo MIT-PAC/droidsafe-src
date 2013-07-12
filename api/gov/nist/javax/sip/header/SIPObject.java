@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,29 +15,31 @@ public abstract class SIPObject extends GenericObject {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.397 -0400", hash_original_method = "F2415C91D035ABB45320678077A163BD", hash_generated_method = "90A009E0ECCD723DE48100CDD9B85812")
     protected  SIPObject() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.397 -0400", hash_original_method = "BC21211AABBF5A727CE8CE0C8A5F5ABC", hash_generated_method = "07941E956AE5C75C7E5403F7A3FDE19E")
     public void dbgPrint() {
         super.dbgPrint();
-        // ---------- Original Method ----------
-        //super.dbgPrint();
+        
+        
     }
 
     
     public abstract String encode();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.398 -0400", hash_original_method = "23BD5BF1494AAB1936A4882B6C7896EB", hash_generated_method = "208E8B8A72D73600AA1860159B874DF6")
     public StringBuffer encode(StringBuffer buffer) {
         addTaint(buffer.getTaint());
 StringBuffer var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_1553383214 =         buffer.append(encode());
         var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_1553383214.addTaint(taint);
         return var7758A6E5CA5A3C31A1AD4D3B1CB2BC22_1553383214;
-        // ---------- Original Method ----------
-        //return buffer.append(encode());
+        
+        
     }
 
     
@@ -76,11 +78,11 @@ for(int i = 0;i < fields.length;i++)
     if(fieldName.compareTo("stringRepresentation") == 0)                
                 {
                     continue;
-                } //End block
+                } 
     if(fieldName.compareTo("indentation") == 0)                
                 {
                     continue;
-                } //End block
+                } 
                 try 
                 {
     if(fieldType.isPrimitive())                    
@@ -94,7 +96,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1982274202 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1982274202;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("short") == 0)                        
                         {
@@ -104,7 +106,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1973359159 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1973359159;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("char") == 0)                        
                         {
@@ -114,7 +116,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_449853096 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_449853096;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("long") == 0)                        
                         {
@@ -124,7 +126,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_33290337 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_33290337;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("boolean") == 0)                        
                         {
@@ -134,7 +136,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1973071364 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1973071364;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("double") == 0)                        
                         {
@@ -144,7 +146,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1422286221 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1422286221;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("float") == 0)                        
                         {
@@ -154,8 +156,8 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1728254929 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1728254929;
                             }
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(g.get(that) == f.get(this))                    
                     continue;
@@ -180,28 +182,28 @@ for(int i = 0;i < fields.length;i++)
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_3118267 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_3118267;
                     }
-                } //End block
+                } 
                 catch (IllegalAccessException ex1)
                 {
                     System.out.println("accessed field " + fieldName);
                     System.out.println("modifier  " + modifier);
                     System.out.println("modifier.private  " + Modifier.PRIVATE);
                     InternalErrorHandler.handleException(ex1);
-                } //End block
-            } //End block
+                } 
+            } 
     if(myclass.equals(SIPObject.class))            
             break;
             else
             {
                 myclass = myclass.getSuperclass();
                 hisclass = hisclass.getSuperclass();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1635642110 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1836753410 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1836753410;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -213,7 +215,7 @@ for(int i = 0;i < fields.length;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1431760187 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174196340 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174196340;
-        } //End block
+        } 
     if(!this.getClass().equals(other.getClass()))        
         {
         boolean var68934A3E9455FA72420237EB05902327_1986765726 = (false);
@@ -240,11 +242,11 @@ for(int i = 0;i < fields.length;i++)
     if(fieldName.compareTo("stringRepresentation") == 0)                
                 {
                     continue;
-                } //End block
+                } 
     if(fieldName.compareTo("indentation") == 0)                
                 {
                     continue;
-                } //End block
+                } 
                 try 
                 {
     if(fieldType.isPrimitive())                    
@@ -258,7 +260,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1151038119 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1151038119;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("short") == 0)                        
                         {
@@ -268,7 +270,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1877844892 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1877844892;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("char") == 0)                        
                         {
@@ -278,7 +280,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_443585169 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_443585169;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("long") == 0)                        
                         {
@@ -288,7 +290,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1081580350 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1081580350;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("boolean") == 0)                        
                         {
@@ -298,7 +300,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1168919414 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1168919414;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("double") == 0)                        
                         {
@@ -308,7 +310,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1693982134 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1693982134;
                             }
-                        } //End block
+                        } 
                         else
     if(fname.compareTo("float") == 0)                        
                         {
@@ -318,13 +320,13 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011011876 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011011876;
                             }
-                        } //End block
+                        } 
                         else
                         {
                             InternalErrorHandler.handleException(
                                 "unknown type");
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         Object myObj = f.get(this);
@@ -355,7 +357,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2093026178 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2093026178;
                             }
-                        } //End block
+                        } 
                         else
     if(hisObj != null
                                 && GenericObject.isMySubclass(myObj.getClass())
@@ -373,7 +375,7 @@ for(int i = 0;i < fields.length;i++)
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649658056 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_649658056;
                             }
-                        } //End block
+                        } 
                         else
     if(GenericObject.isMySubclass(myObj.getClass())
                                 && !((GenericObject) myObj).match(hisObj))                        
@@ -390,26 +392,26 @@ for(int i = 0;i < fields.length;i++)
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44344770 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_44344770;
                         }
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (IllegalAccessException ex1)
                 {
                     InternalErrorHandler.handleException(ex1);
-                } //End block
-            } //End block
+                } 
+            } 
     if(myclass.equals(SIPObject.class))            
             break;
             else
             {
                 myclass = myclass.getSuperclass();
                 hisclass = hisclass.getSuperclass();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1283655679 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1701721617 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1701721617;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -431,11 +433,11 @@ for(int i = 0;i < fields.length;i++)
     if(fieldName.compareTo("stringRepresentation") == 0)            
             {
                 continue;
-            } //End block
+            } 
     if(fieldName.compareTo("indentation") == 0)            
             {
                 continue;
-            } //End block
+            } 
             sprint(fieldName + ":");
             try 
             {
@@ -447,44 +449,44 @@ for(int i = 0;i < fields.length;i++)
                     {
                         int intfield = f.getInt(this);
                         sprint(intfield);
-                    } //End block
+                    } 
                     else
     if(fname.compareTo("short") == 0)                    
                     {
                         short shortField = f.getShort(this);
                         sprint(shortField);
-                    } //End block
+                    } 
                     else
     if(fname.compareTo("char") == 0)                    
                     {
                         char charField = f.getChar(this);
                         sprint(charField);
-                    } //End block
+                    } 
                     else
     if(fname.compareTo("long") == 0)                    
                     {
                         long longField = f.getLong(this);
                         sprint(longField);
-                    } //End block
+                    } 
                     else
     if(fname.compareTo("boolean") == 0)                    
                     {
                         boolean booleanField = f.getBoolean(this);
                         sprint(booleanField);
-                    } //End block
+                    } 
                     else
     if(fname.compareTo("double") == 0)                    
                     {
                         double doubleField = f.getDouble(this);
                         sprint(doubleField);
-                    } //End block
+                    } 
                     else
     if(fname.compareTo("float") == 0)                    
                     {
                         float floatField = f.getFloat(this);
                         sprint(floatField);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(GenericObject.class.isAssignableFrom(fieldType))                
                 {
@@ -493,12 +495,12 @@ for(int i = 0;i < fields.length;i++)
                         sprint(
                             ((GenericObject) f.get(this)).debugDump(
                                 indentation + 1));
-                    } //End block
+                    } 
                     else
                     {
                         sprint("<null>");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(GenericObjectList.class.isAssignableFrom(fieldType))                
                 {
@@ -507,48 +509,49 @@ for(int i = 0;i < fields.length;i++)
                         sprint(
                             ((GenericObjectList) f.get(this)).debugDump(
                                 indentation + 1));
-                    } //End block
+                    } 
                     else
                     {
                         sprint("<null>");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
     if(f.get(this) != null)                    
                     {
                         sprint(f.get(this).getClass().getName() + ":");
-                    } //End block
+                    } 
                     else
                     {
                         sprint(fieldType.getName() + ":");
-                    } //End block
+                    } 
                     sprint("{");
     if(f.get(this) != null)                    
                     {
                         sprint(f.get(this).toString());
-                    } //End block
+                    } 
                     else
                     {
                         sprint("<null>");
-                    } //End block
+                    } 
                     sprint("}");
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IllegalAccessException ex1)
             {
                 continue;
-            } //End block
-        } //End block
+            } 
+        } 
         sprint("}");
 String var8D11C2D110975896438D6F91C60E6D6F_91847864 =         stringRepresentation;
         var8D11C2D110975896438D6F91C60E6D6F_91847864.addTaint(taint);
         return var8D11C2D110975896438D6F91C60E6D6F_91847864;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.409 -0400", hash_original_method = "85620320EA37710A8866ECA4B349D636", hash_generated_method = "9E784F5A1E55B17FF2B7EC47E5633BD1")
     public String debugDump(int indent) {
         addTaint(indent);
@@ -559,22 +562,23 @@ String var8D11C2D110975896438D6F91C60E6D6F_91847864 =         stringRepresentati
 String varF9E19AD6135C970F387F77C6F3DE4477_862223103 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_862223103.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_862223103;
-        // ---------- Original Method ----------
-        //int save = indentation;
-        //indentation = indent;
-        //String retval = this.debugDump();
-        //indentation = save;
-        //return retval;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.409 -0400", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "A8F0E6EA96099695703075A86C4A3000")
     public String toString() {
 String varB17575D7C845B2C662583710539AAEBB_2084241096 =         this.encode();
         varB17575D7C845B2C662583710539AAEBB_2084241096.addTaint(taint);
         return varB17575D7C845B2C662583710539AAEBB_2084241096;
-        // ---------- Original Method ----------
-        //return this.encode();
+        
+        
     }
 
     

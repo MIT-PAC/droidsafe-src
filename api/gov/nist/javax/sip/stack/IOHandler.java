@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,9 +30,9 @@ class IOHandler {
     protected  IOHandler(SIPTransactionStack sipStack) {
         this.sipStack = (SipStackImpl) sipStack;
         this.socketTable = new ConcurrentHashMap<String, Socket>();
-        // ---------- Original Method ----------
-        //this.sipStack = (SipStackImpl) sipStack;
-        //this.socketTable = new ConcurrentHashMap<String, Socket>();
+        
+        
+        
     }
 
     
@@ -41,24 +41,26 @@ class IOHandler {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.501 -0400", hash_original_method = "C27932DA9A29AAAE15A518DF16F6A526", hash_generated_method = "E68C363F6D49FA8E4C6F973D09518EB5")
     protected void putSocket(String key, Socket sock) {
         addTaint(sock.getTaint());
         addTaint(key.getTaint());
         socketTable.put(key, sock);
-        // ---------- Original Method ----------
-        //socketTable.put(key, sock);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.501 -0400", hash_original_method = "89115ADF83703D7A5E1F215A0319659A", hash_generated_method = "F0AB9D8B6CDFD6571B0D2E20B2EE540F")
     protected Socket getSocket(String key) {
         addTaint(key.getTaint());
 Socket var1C4C10334B791AF9AB0467C72691123D_1038535706 =         (Socket) socketTable.get(key);
         var1C4C10334B791AF9AB0467C72691123D_1038535706.addTaint(taint);
         return var1C4C10334B791AF9AB0467C72691123D_1038535706;
-        // ---------- Original Method ----------
-        //return (Socket) socketTable.get(key);
+        
+        
     }
 
     
@@ -66,8 +68,8 @@ Socket var1C4C10334B791AF9AB0467C72691123D_1038535706 =         (Socket) socketT
     protected void removeSocket(String key) {
         addTaint(key.getTaint());
         socketTable.remove(key);
-        // ---------- Original Method ----------
-        //socketTable.remove(key);
+        
+        
     }
 
     
@@ -83,18 +85,18 @@ for(int p = 0;p < length;p += chunksize)
             {
                 int chunk = p + chunksize < length ? chunksize : length - p;
                 outputStream.write(bytes, p, chunk);
-            } //End block
-        } //End block
+            } 
+        } 
         outputStream.flush();
-        // ---------- Original Method ----------
-        //synchronized (outputStream) {
-            //int chunksize = 8 * 1024;
-            //for (int p = 0; p < length; p += chunksize) {
-                //int chunk = p + chunksize < length ? chunksize : length - p;
-                //outputStream.write(bytes, p, chunk);
-            //}
-        //}
-        //outputStream.flush();
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -112,22 +114,23 @@ for(int p = 0;p < length;p += chunksize)
             clientSock = sipStack.getNetworkLayer().createSocket(dst, dstPort, localAddress,
                     localPort);
             putSocket(key, clientSock);
-        } //End block
+        } 
 SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock.getLocalSocketAddress();
         var70ADFD022F13ED9D3F6C14787284317D_105508478.addTaint(taint);
         return var70ADFD022F13ED9D3F6C14787284317D_105508478;
-        // ---------- Original Method ----------
-        //String key = makeKey(dst, dstPort);
-        //Socket clientSock = getSocket(key);
-        //if (clientSock == null) {
-            //clientSock = sipStack.getNetworkLayer().createSocket(dst, dstPort, localAddress,
-                    //localPort);
-            //putSocket(key, clientSock);
-        //}
-        //return clientSock.getLocalSocketAddress();
+        
+        
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.507 -0400", hash_original_method = "4FFA41D6F7F1FFB50CF7951492094FCE", hash_generated_method = "5D76C975E9B6EB434B12A44535463D8C")
     public Socket sendBytes(InetAddress senderAddress, InetAddress receiverAddress,
             int contactPort, String transport, byte[] bytes, boolean retry,
@@ -147,11 +150,11 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
             sipStack.getStackLogger().logDebug(
                     "sendBytes " + transport + " inAddr " + receiverAddress.getHostAddress()
                             + " port = " + contactPort + " length = " + length);
-        } //End block
+        } 
     if(sipStack.isLoggingEnabled() && sipStack.isLogStackTraceOnMessageSend())        
         {
             sipStack.getStackLogger().logStackTrace(StackLogger.TRACE_INFO);
-        } //End block
+        } 
     if(transport.compareToIgnoreCase(TCP) == 0)        
         {
             String key = makeKey(receiverAddress, contactPort);
@@ -164,14 +167,14 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
                             "Could not acquire IO Semaphore after 10 seconds -- giving up ");
                     var2DD6CC0C3A6B1EFCF909AF4AEED83567_1993339861.addTaint(taint);
                     throw var2DD6CC0C3A6B1EFCF909AF4AEED83567_1993339861;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (InterruptedException ex)
             {
                 IOException varABD98BB3731DB97FC3481A2F15C0E069_1189187285 = new IOException("exception in acquiring sem");
                 varABD98BB3731DB97FC3481A2F15C0E069_1189187285.addTaint(taint);
                 throw varABD98BB3731DB97FC3481A2F15C0E069_1189187285;
-            } //End block
+            } 
             Socket clientSock = getSocket(key);
             try 
             {
@@ -184,14 +187,14 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
                         {
                             sipStack.getStackLogger().logDebug("inaddr = " + receiverAddress);
                             sipStack.getStackLogger().logDebug("port = " + contactPort);
-                        } //End block
+                        } 
                         clientSock = sipStack.getNetworkLayer().createSocket(receiverAddress,
                                 contactPort, senderAddress);
                         OutputStream outputStream = clientSock.getOutputStream();
                         writeChunks(outputStream, bytes, length);
                         putSocket(key, clientSock);
                         break;
-                    } //End block
+                    } 
                     else
                     {
                         try 
@@ -199,7 +202,7 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
                             OutputStream outputStream = clientSock.getOutputStream();
                             writeChunks(outputStream, bytes, length);
                             break;
-                        } //End block
+                        } 
                         catch (IOException ex)
                         {
     if(sipStack.isLoggingEnabled())                            
@@ -209,20 +212,20 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
                             try 
                             {
                                 clientSock.close();
-                            } //End block
+                            } 
                             catch (Exception e)
                             {
-                            } //End block
+                            } 
                             clientSock = null;
                             retry_count++;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
                 ioSemaphore.release();
-            } //End block
+            } 
     if(clientSock == null)            
             {
     if(sipStack.isLoggingEnabled())                
@@ -230,19 +233,19 @@ SocketAddress var70ADFD022F13ED9D3F6C14787284317D_105508478 =         clientSock
                     sipStack.getStackLogger().logDebug(this.socketTable.toString());
                     sipStack.getStackLogger().logError(
                             "Could not connect to " + receiverAddress + ":" + contactPort);
-                } //End block
+                } 
                 IOException varB3CFEA0C43C3483A685A0A72FE42C36A_1161462028 = new IOException("Could not connect to " + receiverAddress + ":"
                         + contactPort);
                 varB3CFEA0C43C3483A685A0A72FE42C36A_1161462028.addTaint(taint);
                 throw varB3CFEA0C43C3483A685A0A72FE42C36A_1161462028;
-            } //End block
+            } 
             else
             {
 Socket var8B5650BAADD309AEF2F5CD57ED239E43_1412891508 =             clientSock;
             var8B5650BAADD309AEF2F5CD57ED239E43_1412891508.addTaint(taint);
             return var8B5650BAADD309AEF2F5CD57ED239E43_1412891508;
             }
-        } //End block
+        } 
         else
     if(transport.compareToIgnoreCase(TLS) == 0)        
         {
@@ -256,13 +259,13 @@ Socket var8B5650BAADD309AEF2F5CD57ED239E43_1412891508 =             clientSock;
                 var27E8C74399A62292247CE1E2792AEF30_55611408.addTaint(taint);
                 throw var27E8C74399A62292247CE1E2792AEF30_55611408;
                 }
-            } //End block
+            } 
             catch (InterruptedException ex)
             {
                 IOException varABD98BB3731DB97FC3481A2F15C0E069_1242828914 = new IOException("exception in acquiring sem");
                 varABD98BB3731DB97FC3481A2F15C0E069_1242828914.addTaint(taint);
                 throw varABD98BB3731DB97FC3481A2F15C0E069_1242828914;
-            } //End block
+            } 
             Socket clientSock = getSocket(key);
             try 
             {
@@ -275,7 +278,7 @@ Socket var8B5650BAADD309AEF2F5CD57ED239E43_1412891508 =             clientSock;
                         {
                             sipStack.getStackLogger().logDebug("inaddr = " + receiverAddress);
                             sipStack.getStackLogger().logDebug("port = " + contactPort);
-                        } //End block
+                        } 
                         clientSock = sipStack.getNetworkLayer().createSSLSocket(receiverAddress,
                                 contactPort, senderAddress);
                         SSLSocket sslsock = (SSLSocket) clientSock;
@@ -290,7 +293,7 @@ Socket var8B5650BAADD309AEF2F5CD57ED239E43_1412891508 =             clientSock;
                         writeChunks(outputStream, bytes, length);
                         putSocket(key, clientSock);
                         break;
-                    } //End block
+                    } 
                     else
                     {
                         try 
@@ -298,7 +301,7 @@ Socket var8B5650BAADD309AEF2F5CD57ED239E43_1412891508 =             clientSock;
                             OutputStream outputStream = clientSock.getOutputStream();
                             writeChunks(outputStream, bytes, length);
                             break;
-                        } //End block
+                        } 
                         catch (IOException ex)
                         {
     if(sipStack.isLoggingEnabled())                            
@@ -307,34 +310,34 @@ Socket var8B5650BAADD309AEF2F5CD57ED239E43_1412891508 =             clientSock;
                             try 
                             {
                                 clientSock.close();
-                            } //End block
+                            } 
                             catch (Exception e)
                             {
-                            } //End block
+                            } 
                             clientSock = null;
                             retry_count++;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
                 ioSemaphore.release();
-            } //End block
+            } 
     if(clientSock == null)            
             {
                 IOException varB3CFEA0C43C3483A685A0A72FE42C36A_1076358907 = new IOException("Could not connect to " + receiverAddress + ":"
                         + contactPort);
                 varB3CFEA0C43C3483A685A0A72FE42C36A_1076358907.addTaint(taint);
                 throw varB3CFEA0C43C3483A685A0A72FE42C36A_1076358907;
-            } //End block
+            } 
             else
             {
 Socket var8B5650BAADD309AEF2F5CD57ED239E43_352182106 =             clientSock;
             var8B5650BAADD309AEF2F5CD57ED239E43_352182106.addTaint(taint);
             return var8B5650BAADD309AEF2F5CD57ED239E43_352182106;
             }
-        } //End block
+        } 
         else
         {
             DatagramSocket datagramSock = sipStack.getNetworkLayer().createDatagramSocket();
@@ -346,9 +349,9 @@ Socket var8B5650BAADD309AEF2F5CD57ED239E43_352182106 =             clientSock;
 Socket var540C13E9E156B687226421B24F2DF178_2136313105 =             null;
             var540C13E9E156B687226421B24F2DF178_2136313105.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2136313105;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -360,19 +363,19 @@ for(Enumeration<Socket> values = socketTable.elements();values.hasMoreElements()
             try 
             {
                 s.close();
-            } //End block
+            } 
             catch (IOException ex)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (Enumeration<Socket> values = socketTable.elements(); values.hasMoreElements();) {
-            //Socket s = (Socket) values.nextElement();
-            //try {
-                //s.close();
-            //} catch (IOException ex) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     

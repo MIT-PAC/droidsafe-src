@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,11 +43,11 @@ public final class EriManager {
         this.mContext = context;
         this.mEriFileSource = eriFileSource;
         this.mEriFile = new EriFile();
-        // ---------- Original Method ----------
-        //this.mPhone = phone;
-        //this.mContext = context;
-        //this.mEriFileSource = eriFileSource;
-        //this.mEriFile = new EriFile();
+        
+        
+        
+        
+        
     }
 
     
@@ -55,9 +55,9 @@ public final class EriManager {
     public void dispose() {
         mEriFile = new EriFile();
         isEriFileLoaded = false;
-        // ---------- Original Method ----------
-        //mEriFile = new EriFile();
-        //isEriFileLoaded = false;
+        
+        
+        
     }
 
     
@@ -75,31 +75,33 @@ switch(mEriFileSource){
         loadEriFileFromXml();
         break;
 }
-        // ---------- Original Method ----------
-        //switch (mEriFileSource) {
-        //case ERI_FROM_MODEM:
-            //loadEriFileFromModem();
-            //break;
-        //case ERI_FROM_FILE_SYSTEM:
-            //loadEriFileFromFileSystem();
-            //break;
-        //case ERI_FROM_XML:
-        //default:
-            //loadEriFileFromXml();
-            //break;
-        //}
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.018 -0400", hash_original_method = "F319D2CF7E3E715B8D39AE2FABF6BF7B", hash_generated_method = "E557464B9F1CB4500DE84483A9542396")
     private void loadEriFileFromModem() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.019 -0400", hash_original_method = "A745E0763E42351C9DE31AD2579A5B7C", hash_generated_method = "E7A0D2EF52E0D62B1AC03B9954F84BEF")
     private void loadEriFileFromFileSystem() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -118,25 +120,25 @@ switch(mEriFileSource){
             parser.setInput(stream, null);
     if(DBG)            
             Log.d(LOG_TAG, "loadEriFileFromXml: opened alternate file");
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
     if(DBG)            
             Log.d(LOG_TAG, "loadEriFileFromXml: no alternate file");
             parser = null;
-        } //End block
+        } 
         catch (XmlPullParserException e)
         {
     if(DBG)            
             Log.d(LOG_TAG, "loadEriFileFromXml: no parser for alternate file");
             parser = null;
-        } //End block
+        } 
     if(parser == null)        
         {
     if(DBG)            
             Log.d(LOG_TAG, "loadEriFileFromXml: open normal file");
             parser = r.getXml(com.android.internal.R.xml.eri);
-        } //End block
+        } 
         try 
         {
             XmlUtils.beginDocument(parser, "EriFile");
@@ -155,7 +157,7 @@ switch(mEriFileSource){
     if(name == null)                
                 {
     if(parsedEriEntries != mEriFile.mNumberOfEriEntries){ }                    break;
-                } //End block
+                } 
                 else
     if(name.equals("CallPromptId"))                
                 {
@@ -164,11 +166,11 @@ switch(mEriFileSource){
     if(id >= 0 && id <= 2)                    
                     {
                         mEriFile.mCallPromptId[id] = text;
-                    } //End block
+                    } 
                     else
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(name.equals("EriInfo"))                
                 {
@@ -183,74 +185,78 @@ switch(mEriFileSource){
                     parsedEriEntries++;
                     mEriFile.mRoamIndTable.put(roamingIndicator, new EriInfo (roamingIndicator,
                             iconIndex, iconMode, eriText, callPromptId, alertId));
-                } //End block
-            } //End block
+                } 
+            } 
     if(DBG)            
             Log.d(LOG_TAG, "loadEriFileFromXml: eri parsing successful, file loaded");
             isEriFileLoaded = true;
-        } //End block
+        } 
         catch (Exception e)
         {
-        } //End block
+        } 
         finally 
         {
     if(parser instanceof XmlResourceParser)            
             {
                 ((XmlResourceParser)parser).close();
-            } //End block
+            } 
             try 
             {
     if(stream != null)                
                 {
                     stream.close();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.023 -0400", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "CB31412093EB33B26603AC3CF4DE3727")
     public int getEriFileVersion() {
         int var84CA50330295D6872A385F9A7A9BE91E_1964787058 = (mEriFile.mVersionNumber);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117474906 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117474906;
-        // ---------- Original Method ----------
-        //return mEriFile.mVersionNumber;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.023 -0400", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "3D21865797EB1C87458FD0EB022A0B74")
     public int getEriNumberOfEntries() {
         int varC749F5B583DFAF595D13626B09EB5960_1433053090 = (mEriFile.mNumberOfEriEntries);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_852106267 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_852106267;
-        // ---------- Original Method ----------
-        //return mEriFile.mNumberOfEriEntries;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.024 -0400", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "7A84E495C421EFC7387C8415011008BA")
     public int getEriFileType() {
         int varE91C92CE404E86D048540B9EF5715810_1042623721 = (mEriFile.mEriFileType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_611403944 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_611403944;
-        // ---------- Original Method ----------
-        //return mEriFile.mEriFileType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.024 -0400", hash_original_method = "82EFBDE53CEDFA09C7F551715591238A", hash_generated_method = "689C9D36EE160C291630AC63B3F72D8B")
     public boolean isEriFileLoaded() {
         boolean var583264D6B6FB2E8327A962B767E7361D_643632940 = (isEriFileLoaded);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1461459396 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1461459396;
-        // ---------- Original Method ----------
-        //return isEriFileLoaded;
+        
+        
     }
 
     
@@ -262,19 +268,19 @@ switch(mEriFileSource){
 EriInfo var95BC62916B4AC2E6FB714DE628BBC803_481102501 =             mEriFile.mRoamIndTable.get(roamingIndicator);
             var95BC62916B4AC2E6FB714DE628BBC803_481102501.addTaint(taint);
             return var95BC62916B4AC2E6FB714DE628BBC803_481102501;
-        } //End block
+        } 
         else
         {
 EriInfo var540C13E9E156B687226421B24F2DF178_908746322 =             null;
             var540C13E9E156B687226421B24F2DF178_908746322.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_908746322;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mEriFile.mRoamIndTable.containsKey(roamingIndicator)) {
-            //return mEriFile.mRoamIndTable.get(roamingIndicator);
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -295,8 +301,8 @@ EriInfo var540C13E9E156B687226421B24F2DF178_908746322 =             null;
 EriDisplayInformation varEDFF4FBBF053B5DC2B444ADFA049EE0F_1183659705 =                 ret;
                 varEDFF4FBBF053B5DC2B444ADFA049EE0F_1183659705.addTaint(taint);
                 return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1183659705;
-            } //End block
-        } //End block
+            } 
+        } 
 switch(roamInd){
         case EriInfo.ROAMING_INDICATOR_ON:
         ret = new EriDisplayInformation(
@@ -388,7 +394,7 @@ switch(roamInd){
                             EriInfo.ROAMING_ICON_MODE_FLASH,
                             mContext.getText(com.android.internal
                                                             .R.string.roamingText2).toString());
-            } //End block
+            } 
             else
             {
     if(VDBG){ }switch(defRoamInd){
@@ -416,8 +422,8 @@ switch(roamInd){
                 default:
                 ret = new EriDisplayInformation(-1, -1, "ERI text");
 }
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             EriInfo eriInfo = getEriInfo(roamInd);
@@ -426,7 +432,7 @@ switch(roamInd){
             {
     if(VDBG)                
                 {
-                } //End block
+                } 
     if(defEriInfo == null)                
                 {
                     ret = new EriDisplayInformation(
@@ -434,32 +440,32 @@ switch(roamInd){
                                 EriInfo.ROAMING_ICON_MODE_NORMAL,
                                 mContext.getText(com.android.internal
                                                              .R.string.roamingText0).toString());
-                } //End block
+                } 
                 else
                 {
     if(VDBG)                    
                     {
-                    } //End block
+                    } 
                     ret = new EriDisplayInformation(
                                 defEriInfo.mIconIndex,
                                 defEriInfo.mIconMode,
                                 defEriInfo.mEriText);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(VDBG){ }                ret = new EriDisplayInformation(
                             eriInfo.mIconIndex,
                             eriInfo.mIconMode,
                             eriInfo.mEriText);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
 }    if(VDBG){ }EriDisplayInformation varEDFF4FBBF053B5DC2B444ADFA049EE0F_324800950 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_324800950.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_324800950;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -470,8 +476,8 @@ switch(roamInd){
         int varE3CFB090E31C59B45B8B8A4F5A1D2081_1415283383 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817550202 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1817550202;
-        // ---------- Original Method ----------
-        //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex;
+        
+        
     }
 
     
@@ -482,8 +488,8 @@ switch(roamInd){
         int var01BB9FB3014BF1591D6FFB2DCA98BCD5_1121988975 = (getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781214975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781214975;
-        // ---------- Original Method ----------
-        //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode;
+        
+        
     }
 
     
@@ -494,8 +500,8 @@ switch(roamInd){
 String var3179FF429DC1C911ED4D261268562F01_1141217174 =         getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
         var3179FF429DC1C911ED4D261268562F01_1141217174.addTaint(taint);
         return var3179FF429DC1C911ED4D261268562F01_1141217174;
-        // ---------- Original Method ----------
-        //return getEriDisplayInformation(roamInd, defRoamInd).mEriIconText;
+        
+        
     }
 
     
@@ -523,12 +529,12 @@ String var3179FF429DC1C911ED4D261268562F01_1141217174 =         getEriDisplayInf
             this.mEriFileType = -1;
             this.mCallPromptId = new String[] { "", "", "" };
             this.mRoamIndTable = new HashMap<Integer, EriInfo>();
-            // ---------- Original Method ----------
-            //this.mVersionNumber = -1;
-            //this.mNumberOfEriEntries = 0;
-            //this.mEriFileType = -1;
-            //this.mCallPromptId = new String[] { "", "", "" };
-            //this.mRoamIndTable = new HashMap<Integer, EriInfo>();
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -552,10 +558,10 @@ String var3179FF429DC1C911ED4D261268562F01_1141217174 =         getEriDisplayInf
             mEriIconIndex = eriIconIndex;
             mEriIconMode = eriIconMode;
             mEriIconText = eriIconText;
-            // ---------- Original Method ----------
-            //mEriIconIndex = eriIconIndex;
-            //mEriIconMode = eriIconMode;
-            //mEriIconText = eriIconText;
+            
+            
+            
+            
         }
 
         
@@ -566,9 +572,9 @@ String var8A9C20A1070AC6BE778DE672504894BA_1623972914 =             "EriDisplayI
                     + mEriIconMode + " EriIconText: " + mEriIconText + " }";
             var8A9C20A1070AC6BE778DE672504894BA_1623972914.addTaint(taint);
             return var8A9C20A1070AC6BE778DE672504894BA_1623972914;
-            // ---------- Original Method ----------
-            //return "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
-                    //+ mEriIconMode + " EriIconText: " + mEriIconText + " }";
+            
+            
+                    
         }
 
         

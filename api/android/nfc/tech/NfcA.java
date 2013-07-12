@@ -1,6 +1,6 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,10 +26,10 @@ public final class NfcA extends BasicTagTechnology {
         Bundle extras = tag.getTechExtras(TagTechnology.NFC_A);
         mSak = extras.getShort(EXTRA_SAK);
         mAtqa = extras.getByteArray(EXTRA_ATQA);
-        // ---------- Original Method ----------
-        //Bundle extras = tag.getTechExtras(TagTechnology.NFC_A);
-        //mSak = extras.getShort(EXTRA_SAK);
-        //mAtqa = extras.getByteArray(EXTRA_ATQA);
+        
+        
+        
+        
     }
 
     
@@ -43,23 +43,25 @@ public final class NfcA extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.023 -0400", hash_original_method = "0C48EFD3E17B27EC975A7F66A0C95A20", hash_generated_method = "F08FF1999AE761B5FD7815119F263680")
     public byte[] getAtqa() {
         byte[] var4EF49BE6708038B4A5F17316299AFECA_1253793270 = (mAtqa);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1873522143 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1873522143;
-        // ---------- Original Method ----------
-        //return mAtqa;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.023 -0400", hash_original_method = "82922CBBC94A0186459AA7EC846F5755", hash_generated_method = "98FDE62431CDBC7B7D136DB2F3F34C1A")
     public short getSak() {
         short var24C549BDE566021D468B833DEAD531B5_962468347 = (mSak);
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1191938175 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1191938175;
-        // ---------- Original Method ----------
-        //return mSak;
+        
+        
     }
 
     
@@ -69,8 +71,8 @@ public final class NfcA extends BasicTagTechnology {
         byte[] varEE32C696607EBC614D9A30134ACB1AE3_1416265337 = (transceive(data, true));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1354553857 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1354553857;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
@@ -79,8 +81,8 @@ public final class NfcA extends BasicTagTechnology {
         int var534FE261D7083B235B3B010A14A83EE1_645172412 = (getMaxTransceiveLengthInternal());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1419382572 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1419382572;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     
@@ -95,20 +97,20 @@ public final class NfcA extends BasicTagTechnology {
                 IllegalArgumentException varDB68BEF11A046B44BA82450BD6BDD1ED_306863090 = new IllegalArgumentException("The supplied timeout is not valid");
                 varDB68BEF11A046B44BA82450BD6BDD1ED_306863090.addTaint(taint);
                 throw varDB68BEF11A046B44BA82450BD6BDD1ED_306863090;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(TagTechnology.NFC_A, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -119,20 +121,20 @@ public final class NfcA extends BasicTagTechnology {
             int var1CA2E2BEF68B21ADD9658321AAB5D35A_1395083272 = (mTag.getTagService().getTimeout(TagTechnology.NFC_A));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1530510547 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1530510547;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_857380078 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137548393 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2137548393;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.NFC_A);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     

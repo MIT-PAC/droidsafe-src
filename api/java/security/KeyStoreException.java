@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class KeyStoreException extends GeneralSecurityException {
     public  KeyStoreException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.055 -0400", hash_original_method = "A81CEEB8E106BDB258202C5859E57972", hash_generated_method = "B0CFCB7D37C93DFA922912D5B07DB53B")
     public  KeyStoreException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class KeyStoreException extends GeneralSecurityException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class KeyStoreException extends GeneralSecurityException {
     public  KeyStoreException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

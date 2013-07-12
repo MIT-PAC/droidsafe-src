@@ -1,6 +1,6 @@
 package java.nio.channels.spi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,8 +38,8 @@ public abstract class AbstractSelector extends Selector {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.710 -0400", hash_original_method = "56B85F67F1D1FE1953948CC1AC991A83", hash_generated_method = "1EF6A0AD4A4810B794CD069187876910")
     protected  AbstractSelector(SelectorProvider selectorProvider) {
         provider = selectorProvider;
-        // ---------- Original Method ----------
-        //provider = selectorProvider;
+        
+        
     }
 
     
@@ -49,11 +49,11 @@ public abstract class AbstractSelector extends Selector {
     if(isOpen.getAndSet(false))        
         {
             implCloseSelector();
-        } //End block
-        // ---------- Original Method ----------
-        //if (isOpen.getAndSet(false)) {
-            //implCloseSelector();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -66,8 +66,8 @@ public abstract class AbstractSelector extends Selector {
         boolean varA9BD2A9A78890AD5528095EA0674C311_1447443642 = (isOpen.get());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045434912 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1045434912;
-        // ---------- Original Method ----------
-        //return isOpen.get();
+        
+        
     }
 
     
@@ -77,8 +77,8 @@ public abstract class AbstractSelector extends Selector {
 SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1707364861 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_1707364861.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1707364861;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ SelectorProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1707364861 =         provid
 Set<SelectionKey> var091462B1A8133F0DFC29D67499143648_587406252 =         cancelledKeysSet;
         var091462B1A8133F0DFC29D67499143648_587406252.addTaint(taint);
         return var091462B1A8133F0DFC29D67499143648_587406252;
-        // ---------- Original Method ----------
-        //return cancelledKeysSet;
+        
+        
     }
 
     
@@ -101,25 +101,25 @@ Set<SelectionKey> var091462B1A8133F0DFC29D67499143648_587406252 =         cancel
         addTaint(key.getTaint());
         ((AbstractSelectableChannel) key.channel()).deregister(key);
         key.isValid = false;
-        // ---------- Original Method ----------
-        //((AbstractSelectableChannel) key.channel()).deregister(key);
-        //key.isValid = false;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.713 -0400", hash_original_method = "AA766DB2603B8BA0677C23360DB2CC44", hash_generated_method = "8222DDE0C91F60DCC81236F2688EE27B")
     protected final void begin() {
         Thread.currentThread().pushInterruptAction$(wakeupRunnable);
-        // ---------- Original Method ----------
-        //Thread.currentThread().pushInterruptAction$(wakeupRunnable);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.713 -0400", hash_original_method = "6596DDA3D801AC8A1D2C849102101590", hash_generated_method = "0600DADCB34C678203658AE168281499")
     protected final void end() {
         Thread.currentThread().popInterruptAction$(wakeupRunnable);
-        // ---------- Original Method ----------
-        //Thread.currentThread().popInterruptAction$(wakeupRunnable);
+        
+        
     }
 
     
@@ -129,11 +129,11 @@ Set<SelectionKey> var091462B1A8133F0DFC29D67499143648_587406252 =         cancel
         synchronized
 (cancelledKeysSet)        {
             cancelledKeysSet.add(key);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (cancelledKeysSet) {
-            //cancelledKeysSet.add(key);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

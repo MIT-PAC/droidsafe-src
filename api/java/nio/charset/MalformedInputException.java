@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,18 +13,19 @@ public class MalformedInputException extends CharacterCodingException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.880 -0400", hash_original_method = "18BAC8E5082B44B03924789E1D8CD6BE", hash_generated_method = "8016B46A7DF01A09F456F05131FC6411")
     public  MalformedInputException(int length) {
         this.inputLength = length;
-        // ---------- Original Method ----------
-        //this.inputLength = length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.881 -0400", hash_original_method = "99174ED6911F5F8CBB68A90343CD57CF", hash_generated_method = "6D84D548DFF3F7022950CC2CDA0B8455")
     public int getInputLength() {
         int varF1CEB9E26A0768A795CBAD9C5D7C65DC_1099032230 = (this.inputLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2042834114 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2042834114;
-        // ---------- Original Method ----------
-        //return this.inputLength;
+        
+        
     }
 
     
@@ -34,8 +35,8 @@ public class MalformedInputException extends CharacterCodingException {
 String var81FD86717EF7CC5DC6C9094CF8A5F984_1761422402 =         "Length: " + inputLength;
         var81FD86717EF7CC5DC6C9094CF8A5F984_1761422402.addTaint(taint);
         return var81FD86717EF7CC5DC6C9094CF8A5F984_1761422402;
-        // ---------- Original Method ----------
-        //return "Length: " + inputLength;
+        
+        
     }
 
     

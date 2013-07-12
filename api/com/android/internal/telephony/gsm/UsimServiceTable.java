@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class UsimServiceTable extends IccServiceTable {
     public  UsimServiceTable(byte[] table) {
         super(table);
         addTaint(table[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,19 +22,20 @@ public final class UsimServiceTable extends IccServiceTable {
         boolean var2EDD1F513AFE4DE46B928F411AF48E9D_64647600 = (super.isAvailable(service.ordinal()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_420583590 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_420583590;
-        // ---------- Original Method ----------
-        //return super.isAvailable(service.ordinal());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.015 -0400", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "CBD92C69ADB6364634CD0DDA799A49B3")
     @Override
     protected String getTag() {
 String var577DBB8C3CC289BB3D816ABEFC0282D3_1934231122 =         "UsimServiceTable";
         var577DBB8C3CC289BB3D816ABEFC0282D3_1934231122.addTaint(taint);
         return var577DBB8C3CC289BB3D816ABEFC0282D3_1934231122;
-        // ---------- Original Method ----------
-        //return "UsimServiceTable";
+        
+        
     }
 
     
@@ -44,8 +45,8 @@ String var577DBB8C3CC289BB3D816ABEFC0282D3_1934231122 =         "UsimServiceTabl
 Object[] var74892C36FDC595431098BEF14C91C82B_508596038 =         UsimService.values();
         var74892C36FDC595431098BEF14C91C82B_508596038.addTaint(taint);
         return var74892C36FDC595431098BEF14C91C82B_508596038;
-        // ---------- Original Method ----------
-        //return UsimService.values();
+        
+        
     }
 
     

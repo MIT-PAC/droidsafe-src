@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     public  PrivacyParser(String privacyType) {
         super(privacyType);
         addTaint(privacyType.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
     protected  PrivacyParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -62,19 +62,19 @@ public class PrivacyParser extends HeaderParser implements TokenTypes {
                     privacy.setPrivacy(token.getTokenValue());
                     this.lexer.SPorHT();
                     privacyList.add(privacy);
-                } //End block
-            } //End block
+                } 
+            } 
 SIPHeader varBC40B48158CF46DAFC762B89C302D71E_1510168961 =             privacyList;
             varBC40B48158CF46DAFC762B89C302D71E_1510168961.addTaint(taint);
             return varBC40B48158CF46DAFC762B89C302D71E_1510168961;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("PrivacyParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

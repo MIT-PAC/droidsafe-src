@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,7 +35,7 @@ public class IccCardApplication {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.409 -0400", hash_original_method = "988872E45A8DACD07B268FFABAB213D3", hash_generated_method = "988872E45A8DACD07B268FFABAB213D3")
     public IccCardApplication ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -70,20 +70,20 @@ switch(type){
 }AppType var8E2188952A7BCB9378EAD1CB3B12F354_960278151 =         newType;
         var8E2188952A7BCB9378EAD1CB3B12F354_960278151.addTaint(taint);
         return var8E2188952A7BCB9378EAD1CB3B12F354_960278151;
-        // ---------- Original Method ----------
-        //AppType newType;
-        //switch(type) {
-            //case 0: newType = AppType.APPTYPE_UNKNOWN; break;
-            //case 1: newType = AppType.APPTYPE_SIM;     break;
-            //case 2: newType = AppType.APPTYPE_USIM;    break;
-            //case 3: newType = AppType.APPTYPE_RUIM;    break;
-            //case 4: newType = AppType.APPTYPE_CSIM;    break;
-            //case 5: newType = AppType.APPTYPE_ISIM;    break;
-            //default:
-                //throw new RuntimeException(
-                            //"Unrecognized RIL_AppType: " +type);
-        //}
-        //return newType;
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                
+                            
+        
+        
     }
 
     
@@ -118,20 +118,20 @@ switch(state){
 }AppState var31EB68C9B68454C3598B329347109187_1682418677 =         newState;
         var31EB68C9B68454C3598B329347109187_1682418677.addTaint(taint);
         return var31EB68C9B68454C3598B329347109187_1682418677;
-        // ---------- Original Method ----------
-        //AppState newState;
-        //switch(state) {
-            //case 0: newState = AppState.APPSTATE_UNKNOWN;  break;
-            //case 1: newState = AppState.APPSTATE_DETECTED; break;
-            //case 2: newState = AppState.APPSTATE_PIN; break;
-            //case 3: newState = AppState.APPSTATE_PUK; break;
-            //case 4: newState = AppState.APPSTATE_SUBSCRIPTION_PERSO; break;
-            //case 5: newState = AppState.APPSTATE_READY; break;
-            //default:
-                //throw new RuntimeException(
-                            //"Unrecognized RIL_AppState: " +state);
-        //}
-        //return newState;
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+                
+                            
+        
+        
     }
 
     
@@ -223,8 +223,8 @@ switch(substate){
 }PersoSubState varE34FE27A163408B374DCA10F14961DC6_2052475586 =         newSubState;
         varE34FE27A163408B374DCA10F14961DC6_2052475586.addTaint(taint);
         return varE34FE27A163408B374DCA10F14961DC6_2052475586;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -258,8 +258,8 @@ switch(state){
 }PinState var5071417210D5BE9B29FEA26318D07CF1_1893297361 =         newPinState;
         var5071417210D5BE9B29FEA26318D07CF1_1893297361.addTaint(taint);
         return var5071417210D5BE9B29FEA26318D07CF1_1893297361;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -271,32 +271,32 @@ switch(state){
     if(app_state == AppState.APPSTATE_SUBSCRIPTION_PERSO)        
         {
             sb.append(",").append(perso_substate);
-        } //End block
+        } 
     if(app_type == AppType.APPTYPE_CSIM ||
                 app_type == AppType.APPTYPE_USIM ||
                 app_type == AppType.APPTYPE_ISIM)        
         {
             sb.append(",pin1=").append(pin1);
             sb.append(",pin2=").append(pin2);
-        } //End block
+        } 
         sb.append("}");
 String var2460B846747F8B22185AD8BE722266A5_741263392 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_741263392.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_741263392;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append("{").append(app_type).append(",").append(app_state);
-        //if (app_state == AppState.APPSTATE_SUBSCRIPTION_PERSO) {
-            //sb.append(",").append(perso_substate);
-        //}
-        //if (app_type == AppType.APPTYPE_CSIM ||
-                //app_type == AppType.APPTYPE_USIM ||
-                //app_type == AppType.APPTYPE_ISIM) {
-            //sb.append(",pin1=").append(pin1);
-            //sb.append(",pin2=").append(pin2);
-        //}
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+            
+        
+        
+                
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -317,18 +317,23 @@ String var2460B846747F8B22185AD8BE722266A5_741263392 =         sb.toString();
         APPSTATE_PUK,
         APPSTATE_SUBSCRIPTION_PERSO,
         APPSTATE_READY;
+        @DSModeled(DSC.SAFE)
         boolean isPinRequired() {
             return this == APPSTATE_PIN;
         }
+        @DSModeled(DSC.SAFE)
         boolean isPukRequired() {
             return this == APPSTATE_PUK;
         }
+        @DSModeled(DSC.SAFE)
         boolean isSubscriptionPersoEnabled() {
             return this == APPSTATE_SUBSCRIPTION_PERSO;
         }
+        @DSModeled(DSC.SAFE)
         boolean isAppReady() {
             return this == APPSTATE_READY;
         }
+        @DSModeled(DSC.SAFE)
         boolean isAppNotReady() {
             return this == APPSTATE_UNKNOWN  ||
                    this == APPSTATE_DETECTED;
@@ -362,6 +367,7 @@ String var2460B846747F8B22185AD8BE722266A5_741263392 =         sb.toString();
         PERSOSUBSTATE_RUIM_CORPORATE_PUK,
         PERSOSUBSTATE_RUIM_SERVICE_PROVIDER_PUK,
         PERSOSUBSTATE_RUIM_RUIM_PUK;
+        @DSModeled(DSC.SAFE)
         boolean isPersoSubStateUnknown() {
             return this == PERSOSUBSTATE_UNKNOWN;
         }

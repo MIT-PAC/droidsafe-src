@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class CallInfoParser extends ParametersParser {
     public  CallInfoParser(String callInfo) {
         super(callInfo);
         addTaint(callInfo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class CallInfoParser extends ParametersParser {
     protected  CallInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,19 +63,19 @@ public class CallInfoParser extends ParametersParser {
                     this.lexer.SPorHT();
                     super.parse(callInfo);
                     list.add(callInfo);
-                } //End block
-            } //End block
+                } 
+            } 
 SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1273476542 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_1273476542.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_1273476542;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("CallInfoParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

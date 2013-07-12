@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ public abstract class RemoteCallback implements Parcelable {
     public  RemoteCallback(Handler handler) {
         mHandler = handler;
         mTarget = new LocalCallback();
-        // ---------- Original Method ----------
-        //mHandler = handler;
-        //mTarget = new LocalCallback();
+        
+        
+        
     }
 
     
@@ -27,9 +27,9 @@ public abstract class RemoteCallback implements Parcelable {
       RemoteCallback(IRemoteCallback target) {
         mHandler = null;
         mTarget = target;
-        // ---------- Original Method ----------
-        //mHandler = null;
-        //mTarget = target;
+        
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ public abstract class RemoteCallback implements Parcelable {
     public void sendResult(Bundle bundle) throws RemoteException {
         addTaint(bundle.getTaint());
         mTarget.sendResult(bundle);
-        // ---------- Original Method ----------
-        //mTarget.sendResult(bundle);
+        
+        
     }
 
     
@@ -53,30 +53,30 @@ public abstract class RemoteCallback implements Parcelable {
             boolean var68934A3E9455FA72420237EB05902327_521456363 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_515274466 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_515274466;
-        } //End block
+        } 
         try 
         {
             boolean varD1389714F0F009155EA48014426114F1_701251164 = (mTarget.asBinder().equals(((RemoteCallback)otherObj)
                     .mTarget.asBinder()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_215765768 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_215765768;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_15781775 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2080251390 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2080251390;
-        // ---------- Original Method ----------
-        //if (otherObj == null) {
-            //return false;
-        //}
-        //try {
-            //return mTarget.asBinder().equals(((RemoteCallback)otherObj)
-                    //.mTarget.asBinder());
-        //} catch (ClassCastException e) {
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -85,18 +85,19 @@ public abstract class RemoteCallback implements Parcelable {
         int var015DBE14D40CCC902461F5EB4537F2D8_86819813 = (mTarget.asBinder().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83125136 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83125136;
-        // ---------- Original Method ----------
-        //return mTarget.asBinder().hashCode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.480 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4F15F82CC6001D306B926A8E2DC9D811")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1323276851 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6051536 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6051536;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -105,8 +106,8 @@ public abstract class RemoteCallback implements Parcelable {
         addTaint(flags);
         addTaint(out.getTaint());
         out.writeStrongBinder(mTarget.asBinder());
-        // ---------- Original Method ----------
-        //out.writeStrongBinder(mTarget.asBinder());
+        
+        
     }
 
     
@@ -118,16 +119,16 @@ public abstract class RemoteCallback implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.482 -0400", hash_original_method = "8836597D628A377AAE6A26C90BCE24D7", hash_generated_method = "A82DFEA894E0637039F25C70A44639EF")
           DeliverResult(Bundle result) {
             mResult = result;
-            // ---------- Original Method ----------
-            //mResult = result;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.482 -0400", hash_original_method = "603C18F53B6556C1CA52545158AE7A51", hash_generated_method = "9E0214968917459FE5CC8F87C4155B4C")
         public void run() {
             onResult(mResult);
-            // ---------- Original Method ----------
-            //onResult(mResult);
+            
+            
         }
 
         
@@ -140,7 +141,7 @@ public abstract class RemoteCallback implements Parcelable {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.483 -0400", hash_original_method = "BFAA87962CCB587EAFEDF8FD650DFE0B", hash_generated_method = "BFAA87962CCB587EAFEDF8FD650DFE0B")
         public LocalCallback ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -148,8 +149,8 @@ public abstract class RemoteCallback implements Parcelable {
         public void sendResult(Bundle bundle) {
             addTaint(bundle.getTaint());
             mHandler.post(new DeliverResult(bundle));
-            // ---------- Original Method ----------
-            //mHandler.post(new DeliverResult(bundle));
+            
+            
         }
 
         
@@ -163,15 +164,16 @@ public abstract class RemoteCallback implements Parcelable {
           RemoteCallbackProxy(IRemoteCallback target) {
             super(target);
             addTaint(target.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.484 -0400", hash_original_method = "C1383866A4D5D22E2E944ECBE9D44118", hash_generated_method = "53C9A15F32E108D2F7A58D17A06027A8")
         protected void onResult(Bundle bundle) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(bundle.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -193,14 +195,14 @@ public abstract class RemoteCallback implements Parcelable {
             return new RemoteCallback[size];
         }
     };
-    // orphaned legacy method
+    
     public RemoteCallback createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();
             return target != null ? new RemoteCallbackProxy(
                     IRemoteCallback.Stub.asInterface(target)) : null;
         }
     
-    // orphaned legacy method
+    
     public RemoteCallback[] newArray(int size) {
             return new RemoteCallback[size];
         }

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class DateParser extends HeaderParser {
     public  DateParser(String date) {
         super(date);
         addTaint(date.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,10 +22,11 @@ public class DateParser extends HeaderParser {
     protected  DateParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.414 -0400", hash_original_method = "6D964EF3409A9BCD4AB46A00BDF7E85B", hash_generated_method = "F37080439D445BC0EDE4DFA763270E73")
     public SIPHeader parse() throws ParseException {
     if(debug)        
@@ -53,35 +54,35 @@ public class DateParser extends HeaderParser {
 SIPHeader varF9E19AD6135C970F387F77C6F3DE4477_1940701119 =             retval;
             varF9E19AD6135C970F387F77C6F3DE4477_1940701119.addTaint(taint);
             return varF9E19AD6135C970F387F77C6F3DE4477_1940701119;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("DateParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("DateParser.parse");
-        //try {
-            //headerName(TokenTypes.DATE);
-            //wkday();
-            //lexer.match(',');
-            //lexer.match(' ');
-            //Calendar cal = date();
-            //lexer.match(' ');
-            //time(cal);
-            //lexer.match(' ');
-            //String tzone = this.lexer.ttoken().toLowerCase();
-            //if (!"gmt".equals(tzone))
-                //throw createParseException("Bad Time Zone " + tzone);
-            //this.lexer.match('\n');
-            //SIPDateHeader retval = new SIPDateHeader();
-            //retval.setDate(cal);
-            //return retval;
-        //} finally {
-            //if (debug)
-                //dbg_leave("DateParser.parse");
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

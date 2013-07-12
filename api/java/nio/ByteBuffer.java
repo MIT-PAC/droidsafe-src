@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         super(0, capacity, block);
         addTaint(block.getTaint());
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,8 +56,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         byte[] var68B89E48382A0AA51B25AC59599E2EB0_1152179693 = (protectedArray());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_104300312 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_104300312;
-        // ---------- Original Method ----------
-        //return protectedArray();
+        
+        
     }
 
     
@@ -66,8 +66,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
         int var0B794CE56A38A9F3BFDD2D53E83BB109_944309757 = (protectedArrayOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1729281203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1729281203;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+        
+        
     }
 
     
@@ -95,6 +95,7 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
     public abstract ByteBuffer compact();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.959 -0400", hash_original_method = "278C7A58B0643B88C9704D6A9846EFB3", hash_generated_method = "FD43E8FFFB891D849CD08851282BA034")
     public int compareTo(ByteBuffer otherBuffer) {
         addTaint(otherBuffer.getTaint());
@@ -114,31 +115,31 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
                 int var0D4D283E60262FF52C1A7D956005837E_2029151191 = (thisByte < otherByte ? -1 : 1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466546260 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466546260;
-            } //End block
+            } 
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
+        } 
         int var1DC167191FBC7DAD3BADAE830552C692_556133156 = (remaining() - otherBuffer.remaining());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039915133 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039915133;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //byte thisByte, otherByte;
-        //while (compareRemaining > 0) {
-            //thisByte = get(thisPos);
-            //otherByte = otherBuffer.get(otherPos);
-            //if (thisByte != otherByte) {
-                //return thisByte < otherByte ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        
+        
+                
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -154,14 +155,14 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
             boolean var68934A3E9455FA72420237EB05902327_839744814 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1281843326 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1281843326;
-        } //End block
+        } 
         ByteBuffer otherBuffer = (ByteBuffer) other;
     if(remaining() != otherBuffer.remaining())        
         {
             boolean var68934A3E9455FA72420237EB05902327_517654058 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2027364525 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2027364525;
-        } //End block
+        } 
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
@@ -169,25 +170,25 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
 (equalSoFar && (myPosition < limit))        
         {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
+        } 
         boolean var4A97EF18B93B276118DD50585250A586_1490626516 = (equalSoFar);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298332701 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298332701;
-        // ---------- Original Method ----------
-        //if (!(other instanceof ByteBuffer)) {
-            //return false;
-        //}
-        //ByteBuffer otherBuffer = (ByteBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -200,8 +201,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
 ByteBuffer varAF8F268F60258FE30F192DE78F11CD4A_358581275 =         get(dst, 0, dst.length);
         varAF8F268F60258FE30F192DE78F11CD4A_358581275.addTaint(taint);
         return varAF8F268F60258FE30F192DE78F11CD4A_358581275;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+        
+        
     }
 
     
@@ -216,23 +217,23 @@ ByteBuffer varAF8F268F60258FE30F192DE78F11CD4A_358581275 =         get(dst, 0, d
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1789751521 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1789751521.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1789751521;
-        } //End block
+        } 
 for(int i = dstOffset;i < dstOffset + byteCount;++i)
         {
             dst[i] = get();
-        } //End block
+        } 
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_187515551 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_187515551.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_187515551;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, byteCount);
-        //if (byteCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + byteCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -280,8 +281,8 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_187515551 =         this;
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_1691644099 = (protectedHasArray());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2023297597 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2023297597;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+        
+        
     }
 
     
@@ -294,17 +295,17 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_187515551 =         this;
 (myPosition < limit)        
         {
             hash = hash + get(myPosition++);
-        } //End block
+        } 
         int var0800FC577294C34E0B28AD2839435945_1596674481 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_30405431 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_30405431;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + get(myPosition++);
-        //}
-        //return hash;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -316,8 +317,8 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_187515551 =         this;
 ByteOrder var23C56E10BB5D9B298C705EBA6A502E06_96160417 =         order;
         var23C56E10BB5D9B298C705EBA6A502E06_96160417.addTaint(taint);
         return var23C56E10BB5D9B298C705EBA6A502E06_96160417;
-        // ---------- Original Method ----------
-        //return order;
+        
+        
     }
 
     
@@ -328,24 +329,25 @@ ByteOrder var23C56E10BB5D9B298C705EBA6A502E06_96160417 =         order;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1430488684 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1430488684.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1430488684;
-        // ---------- Original Method ----------
-        //orderImpl(byteOrder);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.967 -0400", hash_original_method = "00AA16AC102512E5E69E8EC846E58DBE", hash_generated_method = "EEE8ADFFC18A9307F1FC3AED3CFCDD49")
      void orderImpl(ByteOrder byteOrder) {
     if(byteOrder == null)        
         {
             byteOrder = ByteOrder.LITTLE_ENDIAN;
-        } //End block
+        } 
         order = byteOrder;
-        // ---------- Original Method ----------
-        //if (byteOrder == null) {
-            //byteOrder = ByteOrder.LITTLE_ENDIAN;
-        //}
-        //order = byteOrder;
+        
+        
+            
+        
+        
     }
 
     
@@ -367,8 +369,8 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1430488684 =         this;
 ByteBuffer var7D505613BED257805463C43ADCB4DBAD_1760799234 =         put(src, 0, src.length);
         var7D505613BED257805463C43ADCB4DBAD_1760799234.addTaint(taint);
         return var7D505613BED257805463C43ADCB4DBAD_1760799234;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+        
+        
     }
 
     
@@ -383,23 +385,23 @@ ByteBuffer var7D505613BED257805463C43ADCB4DBAD_1760799234 =         put(src, 0, 
             BufferOverflowException var773478A23217201B18B531915D367F31_2042124396 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_2042124396.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_2042124396;
-        } //End block
+        } 
 for(int i = srcOffset;i < srcOffset + byteCount;++i)
         {
             put(src[i]);
-        } //End block
+        } 
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_357134210 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_357134210.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_357134210;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, byteCount);
-        //if (byteCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + byteCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -411,35 +413,35 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_357134210 =         this;
             IllegalArgumentException var479F56667826C83D81840AC62422458B_1567434804 = new IllegalArgumentException("src == this");
             var479F56667826C83D81840AC62422458B_1567434804.addTaint(taint);
             throw var479F56667826C83D81840AC62422458B_1567434804;
-        } //End block
+        } 
         int srcByteCount = src.remaining();
     if(srcByteCount > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_813346446 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_813346446.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_813346446;
-        } //End block
+        } 
         Object srcObject = src.isDirect() ? src : NioUtils.unsafeArray(src);
         int srcOffset = src.position();
     if(!src.isDirect())        
         {
             srcOffset += NioUtils.unsafeArrayOffset(src);
-        } //End block
+        } 
         ByteBuffer dst = this;
         Object dstObject = dst.isDirect() ? dst : NioUtils.unsafeArray(dst);
         int dstOffset = dst.position();
     if(!dst.isDirect())        
         {
             dstOffset += NioUtils.unsafeArrayOffset(dst);
-        } //End block
+        } 
         Memory.memmove(dstObject, dstOffset, srcObject, srcOffset, srcByteCount);
         src.position(src.limit());
         dst.position(dst.position() + srcByteCount);
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1716899012 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1716899012.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1716899012;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class Pipe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.647 -0400", hash_original_method = "AB1C252ACF4CEE3E1F01631225D9EB55", hash_generated_method = "FDC0FEC870B63611D7A177DD42514223")
     protected  Pipe() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,7 +33,7 @@ public abstract class Pipe {
         protected  SinkChannel(SelectorProvider provider) {
             super(provider);
             addTaint(provider.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -43,8 +43,8 @@ public abstract class Pipe {
             int var53A444133ECFA2A63AB8406200B028D1_1590976626 = (SelectionKey.OP_WRITE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1267108520 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1267108520;
-            // ---------- Original Method ----------
-            //return SelectionKey.OP_WRITE;
+            
+            
         }
 
         
@@ -58,7 +58,7 @@ public abstract class Pipe {
         protected  SourceChannel(SelectorProvider provider) {
             super(provider);
             addTaint(provider.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -68,8 +68,8 @@ public abstract class Pipe {
             int varA020689BBAF72FA5CC26EDDF439F5FFD_847478766 = (SelectionKey.OP_READ);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583562569 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583562569;
-            // ---------- Original Method ----------
-            //return SelectionKey.OP_READ;
+            
+            
         }
 
         

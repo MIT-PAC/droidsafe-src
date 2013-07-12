@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,15 +18,16 @@ public class AlertProtocol {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.796 -0400", hash_original_method = "E092E2209250C02F09C22B7C95E9AB91", hash_generated_method = "89DDAFEDBDC6600ADF822412966FC90D")
     protected  AlertProtocol() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.797 -0400", hash_original_method = "4783F18A2AEFB1BF115D21F8D4F4E6FF", hash_generated_method = "A9742893573022675C3B4131750B59FD")
     protected void setRecordProtocol(SSLRecordProtocol recordProtocol) {
         this.recordProtocol = recordProtocol;
-        // ---------- Original Method ----------
-        //this.recordProtocol = recordProtocol;
+        
+        
     }
 
     
@@ -35,25 +36,26 @@ public class AlertProtocol {
     if(logger != null)        
         {
             logger.println("Alert.alert: "+level+" "+description);
-        } //End block
+        } 
         this.alert[0] = level;
         this.alert[1] = description;
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("Alert.alert: "+level+" "+description);
-        //}
-        //this.alert[0] = level;
-        //this.alert[1] = description;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.798 -0400", hash_original_method = "5D3BF0EC0666EBF860C9DC61576F480B", hash_generated_method = "E593376A677B1AC088A7D399F18E755E")
     protected byte getDescriptionCode() {
         byte var620A6AC45EE78D7706DC40FF04546662_372648948 = ((alert[0] != 0) ? alert[1] : -100);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_647334895 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_647334895;
-        // ---------- Original Method ----------
-        //return (alert[0] != 0) ? alert[1] : -100;
+        
+        
     }
 
     
@@ -62,36 +64,39 @@ public class AlertProtocol {
     if(logger != null)        
         {
             logger.println("Alert.setProcessed");
-        } //End block
+        } 
         this.alert[0] = 0;
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("Alert.setProcessed");
-        //}
-        //this.alert[0] = 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.799 -0400", hash_original_method = "45A2D96003EBC85CF21133EEF592859F", hash_generated_method = "F2121E639CDA58002A9E98F6562C5C00")
     protected boolean hasAlert() {
         boolean var68AFB5175E9F0A0516B6810C0EF77DEA_228581885 = ((alert[0] != 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1033163274 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1033163274;
-        // ---------- Original Method ----------
-        //return (alert[0] != 0);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.799 -0400", hash_original_method = "7F9DD2505076B3CAC6687DC8D86BE7DC", hash_generated_method = "63742973F426DD285A7B2280F61D6E45")
     protected boolean isFatalAlert() {
         boolean varDD20D07BB5078E6B573E185AE98D6430_904636299 = ((alert[0] == 2));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_155248262 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_155248262;
-        // ---------- Original Method ----------
-        //return (alert[0] == 2);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.800 -0400", hash_original_method = "4ED335C5479EFEAB65BE48D985C7B953", hash_generated_method = "A21C5E2F377146D632506D33A54CA8EF")
     protected String getAlertDescription() {
 switch(alert[1]){
@@ -190,8 +195,8 @@ String varEE238629FB375A59BD9F5B21CE2E346D_1653020383 =         "no_renegotiatio
 }String var540C13E9E156B687226421B24F2DF178_654815929 =         null;
         var540C13E9E156B687226421B24F2DF178_654815929.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_654815929;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -201,21 +206,22 @@ String varEE238629FB375A59BD9F5B21CE2E346D_1653020383 =         "no_renegotiatio
         byte[] var9B207167E5381C47682C6B4F58A623FB_781554493 = (res);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_283162872 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_283162872;
-        // ---------- Original Method ----------
-        //byte[] res = recordProtocol.wrap(ContentType.ALERT, alert, 0, 2);
-        //return res;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.801 -0400", hash_original_method = "18F927F44CECC98A241CC5D3FE86DBCB", hash_generated_method = "F942F8E12961415D1B4D2C24C8077619")
     protected void shutdown() {
         alert[0] = 0;
         alert[1] = 0;
         recordProtocol = null;
-        // ---------- Original Method ----------
-        //alert[0] = 0;
-        //alert[1] = 0;
-        //recordProtocol = null;
+        
+        
+        
+        
     }
 
     

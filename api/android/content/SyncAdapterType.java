@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,13 +42,13 @@ public class SyncAdapterType implements Parcelable {
             IllegalArgumentException varA93699DE5E3452160763FFD32794DC21_928619962 = new IllegalArgumentException("the authority must not be empty: " + authority);
             varA93699DE5E3452160763FFD32794DC21_928619962.addTaint(taint);
             throw varA93699DE5E3452160763FFD32794DC21_928619962;
-        } //End block
+        } 
     if(TextUtils.isEmpty(accountType))        
         {
             IllegalArgumentException var9EF813351D0B3CE30E14DE9AE8813AA0_1460611349 = new IllegalArgumentException("the accountType must not be empty: " + accountType);
             var9EF813351D0B3CE30E14DE9AE8813AA0_1460611349.addTaint(taint);
             throw var9EF813351D0B3CE30E14DE9AE8813AA0_1460611349;
-        } //End block
+        } 
         this.authority = authority;
         this.accountType = accountType;
         this.userVisible = userVisible;
@@ -57,21 +57,21 @@ public class SyncAdapterType implements Parcelable {
         this.allowParallelSyncs = false;
         this.settingsActivity = null;
         this.isKey = false;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority)) {
-            //throw new IllegalArgumentException("the authority must not be empty: " + authority);
-        //}
-        //if (TextUtils.isEmpty(accountType)) {
-            //throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-        //}
-        //this.authority = authority;
-        //this.accountType = accountType;
-        //this.userVisible = userVisible;
-        //this.supportsUploading = supportsUploading;
-        //this.isAlwaysSyncable = false;
-        //this.allowParallelSyncs = false;
-        //this.settingsActivity = null;
-        //this.isKey = false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -86,13 +86,13 @@ public class SyncAdapterType implements Parcelable {
             IllegalArgumentException varA93699DE5E3452160763FFD32794DC21_238666707 = new IllegalArgumentException("the authority must not be empty: " + authority);
             varA93699DE5E3452160763FFD32794DC21_238666707.addTaint(taint);
             throw varA93699DE5E3452160763FFD32794DC21_238666707;
-        } //End block
+        } 
     if(TextUtils.isEmpty(accountType))        
         {
             IllegalArgumentException var9EF813351D0B3CE30E14DE9AE8813AA0_708697072 = new IllegalArgumentException("the accountType must not be empty: " + accountType);
             var9EF813351D0B3CE30E14DE9AE8813AA0_708697072.addTaint(taint);
             throw var9EF813351D0B3CE30E14DE9AE8813AA0_708697072;
-        } //End block
+        } 
         this.authority = authority;
         this.accountType = accountType;
         this.userVisible = userVisible;
@@ -101,21 +101,21 @@ public class SyncAdapterType implements Parcelable {
         this.allowParallelSyncs = allowParallelSyncs;
         this.settingsActivity = settingsActivity;
         this.isKey = false;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority)) {
-            //throw new IllegalArgumentException("the authority must not be empty: " + authority);
-        //}
-        //if (TextUtils.isEmpty(accountType)) {
-            //throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-        //}
-        //this.authority = authority;
-        //this.accountType = accountType;
-        //this.userVisible = userVisible;
-        //this.supportsUploading = supportsUploading;
-        //this.isAlwaysSyncable = isAlwaysSyncable;
-        //this.allowParallelSyncs = allowParallelSyncs;
-        //this.settingsActivity = settingsActivity;
-        //this.isKey = false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -126,13 +126,13 @@ public class SyncAdapterType implements Parcelable {
             IllegalArgumentException varA93699DE5E3452160763FFD32794DC21_515249203 = new IllegalArgumentException("the authority must not be empty: " + authority);
             varA93699DE5E3452160763FFD32794DC21_515249203.addTaint(taint);
             throw varA93699DE5E3452160763FFD32794DC21_515249203;
-        } //End block
+        } 
     if(TextUtils.isEmpty(accountType))        
         {
             IllegalArgumentException var9EF813351D0B3CE30E14DE9AE8813AA0_122989684 = new IllegalArgumentException("the accountType must not be empty: " + accountType);
             var9EF813351D0B3CE30E14DE9AE8813AA0_122989684.addTaint(taint);
             throw var9EF813351D0B3CE30E14DE9AE8813AA0_122989684;
-        } //End block
+        } 
         this.authority = authority;
         this.accountType = accountType;
         this.userVisible = true;
@@ -141,21 +141,21 @@ public class SyncAdapterType implements Parcelable {
         this.allowParallelSyncs = false;
         this.settingsActivity = null;
         this.isKey = true;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority)) {
-            //throw new IllegalArgumentException("the authority must not be empty: " + authority);
-        //}
-        //if (TextUtils.isEmpty(accountType)) {
-            //throw new IllegalArgumentException("the accountType must not be empty: " + accountType);
-        //}
-        //this.authority = authority;
-        //this.accountType = accountType;
-        //this.userVisible = true;
-        //this.supportsUploading = true;
-        //this.isAlwaysSyncable = false;
-        //this.allowParallelSyncs = false;
-        //this.settingsActivity = null;
-        //this.isKey = true;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -170,7 +170,7 @@ public class SyncAdapterType implements Parcelable {
                 source.readInt() != 0,
                 source.readString());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -182,16 +182,16 @@ public class SyncAdapterType implements Parcelable {
                     "this method is not allowed to be called when this is a key");
             var9AC4E6CF5DB1A8600BB25EB267540083_1510546225.addTaint(taint);
             throw var9AC4E6CF5DB1A8600BB25EB267540083_1510546225;
-        } //End block
+        } 
         boolean var617A9A4A6D58471D2E103EEF489AA5B6_1254138680 = (supportsUploading);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_835355222 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_835355222;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return supportsUploading;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -203,16 +203,16 @@ public class SyncAdapterType implements Parcelable {
                     "this method is not allowed to be called when this is a key");
             var9AC4E6CF5DB1A8600BB25EB267540083_133991078.addTaint(taint);
             throw var9AC4E6CF5DB1A8600BB25EB267540083_133991078;
-        } //End block
+        } 
         boolean varDCC9B65BEB3A994B069BE8FDD23F9E0B_1256994253 = (userVisible);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868203997 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868203997;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return userVisible;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -224,16 +224,16 @@ public class SyncAdapterType implements Parcelable {
                     "this method is not allowed to be called when this is a key");
             var9AC4E6CF5DB1A8600BB25EB267540083_1834000692.addTaint(taint);
             throw var9AC4E6CF5DB1A8600BB25EB267540083_1834000692;
-        } //End block
+        } 
         boolean var577E05B3572C976DAF60C9783F6204CF_1911574861 = (allowParallelSyncs);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18951465 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_18951465;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return allowParallelSyncs;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -245,16 +245,16 @@ public class SyncAdapterType implements Parcelable {
                     "this method is not allowed to be called when this is a key");
             var9AC4E6CF5DB1A8600BB25EB267540083_1676026109.addTaint(taint);
             throw var9AC4E6CF5DB1A8600BB25EB267540083_1676026109;
-        } //End block
+        } 
         boolean var391766E6A8AA19C7BFCC7418EF28F75F_1491092994 = (isAlwaysSyncable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_824689836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_824689836;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return isAlwaysSyncable;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -266,16 +266,16 @@ public class SyncAdapterType implements Parcelable {
                     "this method is not allowed to be called when this is a key");
             var9AC4E6CF5DB1A8600BB25EB267540083_372916513.addTaint(taint);
             throw var9AC4E6CF5DB1A8600BB25EB267540083_372916513;
-        } //End block
+        } 
 String var99638EA45B20928CF2245440E0728CEF_35102691 =         settingsActivity;
         var99638EA45B20928CF2245440E0728CEF_35102691.addTaint(taint);
         return var99638EA45B20928CF2245440E0728CEF_35102691;
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException(
-                    //"this method is not allowed to be called when this is a key");
-        //}
-        //return settingsActivity;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -303,11 +303,11 @@ String var99638EA45B20928CF2245440E0728CEF_35102691 =         settingsActivity;
         boolean var57D246962AD954851DEF5671274CAB5A_332383307 = (authority.equals(other.authority) && accountType.equals(other.accountType));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1075215384 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1075215384;
-        // ---------- Original Method ----------
-        //if (o == this) return true;
-        //if (!(o instanceof SyncAdapterType)) return false;
-        //final SyncAdapterType other = (SyncAdapterType)o;
-        //return authority.equals(other.authority) && accountType.equals(other.accountType);
+        
+        
+        
+        
+        
     }
 
     
@@ -319,11 +319,11 @@ String var99638EA45B20928CF2245440E0728CEF_35102691 =         settingsActivity;
         int varB4A88417B3D0170D754C647C30B7216A_1900971267 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415813182 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415813182;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + authority.hashCode();
-        //result = 31 * result + accountType.hashCode();
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
@@ -336,7 +336,7 @@ String var7E9C2CCED9F9AFA21A27D93287F98B75_1507776365 =             "SyncAdapter
                     + "}";
             var7E9C2CCED9F9AFA21A27D93287F98B75_1507776365.addTaint(taint);
             return var7E9C2CCED9F9AFA21A27D93287F98B75_1507776365;
-        } //End block
+        } 
         else
         {
 String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterType {name=" + authority
@@ -349,32 +349,33 @@ String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterT
                     + "}";
             var2060563EFD93E4F59770E183A15C5E49_309341817.addTaint(taint);
             return var2060563EFD93E4F59770E183A15C5E49_309341817;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //return "SyncAdapterType Key {name=" + authority
-                    //+ ", type=" + accountType
-                    //+ "}";
-        //} else {
-            //return "SyncAdapterType {name=" + authority
-                    //+ ", type=" + accountType
-                    //+ ", userVisible=" + userVisible
-                    //+ ", supportsUploading=" + supportsUploading
-                    //+ ", isAlwaysSyncable=" + isAlwaysSyncable
-                    //+ ", allowParallelSyncs=" + allowParallelSyncs
-                    //+ ", settingsActivity=" + settingsActivity
-                    //+ "}";
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.405 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BB2802F7D8EFD80FDB4A277F621056D4")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2063300135 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375517932 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_375517932;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -387,7 +388,7 @@ String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterT
             IllegalStateException var00D58C44047647550D0AAF5EF75BF7AD_822773569 = new IllegalStateException("keys aren't parcelable");
             var00D58C44047647550D0AAF5EF75BF7AD_822773569.addTaint(taint);
             throw var00D58C44047647550D0AAF5EF75BF7AD_822773569;
-        } //End block
+        } 
         dest.writeString(authority);
         dest.writeString(accountType);
         dest.writeInt(userVisible ? 1 : 0);
@@ -395,17 +396,17 @@ String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterT
         dest.writeInt(isAlwaysSyncable ? 1 : 0);
         dest.writeInt(allowParallelSyncs ? 1 : 0);
         dest.writeString(settingsActivity);
-        // ---------- Original Method ----------
-        //if (isKey) {
-            //throw new IllegalStateException("keys aren't parcelable");
-        //}
-        //dest.writeString(authority);
-        //dest.writeString(accountType);
-        //dest.writeInt(userVisible ? 1 : 0);
-        //dest.writeInt(supportsUploading ? 1 : 0);
-        //dest.writeInt(isAlwaysSyncable ? 1 : 0);
-        //dest.writeInt(allowParallelSyncs ? 1 : 0);
-        //dest.writeString(settingsActivity);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -420,12 +421,12 @@ String var2060563EFD93E4F59770E183A15C5E49_309341817 =             "SyncAdapterT
             return new SyncAdapterType[size];
         }
     };
-    // orphaned legacy method
+    
     public SyncAdapterType createFromParcel(Parcel source) {
             return new SyncAdapterType(source);
         }
     
-    // orphaned legacy method
+    
     public SyncAdapterType[] newArray(int size) {
             return new SyncAdapterType[size];
         }

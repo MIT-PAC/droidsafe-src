@@ -1,6 +1,6 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,11 +23,12 @@ public class MediaMetadataRetriever {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.163 -0400", hash_original_method = "38580FA1CFCA0A8BC70F7859DD8ED432", hash_generated_method = "2AB8306B5DA12B671F5FB6B56B3C1E94")
     public  MediaMetadataRetriever() {
         native_setup();
-        // ---------- Original Method ----------
-        //native_setup();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.163 -0400", hash_original_method = "D47DF3C9D755BEB92AD11CA5A5487AA8", hash_generated_method = "4AD2FDC9F80F0B04601FEE229A9BF7B6")
     public void setDataSource(String path) throws IllegalArgumentException {
     }
@@ -45,27 +46,29 @@ for(Map.Entry<String, String> entry : headers.entrySet())
             keys[i] = entry.getKey();
             values[i] = entry.getValue();
             ++i;
-        } //End block
+        } 
         _setDataSource(uri, keys, values);
-        // ---------- Original Method ----------
-        //int i = 0;
-        //String[] keys = new String[headers.size()];
-        //String[] values = new String[headers.size()];
-        //for (Map.Entry<String, String> entry: headers.entrySet()) {
-            //keys[i] = entry.getKey();
-            //values[i] = entry.getValue();
-            //++i;
-        //}
-        //_setDataSource(uri, keys, values);
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.165 -0400", hash_original_method = "1285CC494A70498EAD553FCD7C19AE34", hash_generated_method = "CC3B57E8B0C4743A2F6D81D0F777FEA9")
     private void _setDataSource(
         String uri, String[] keys, String[] values) throws IllegalArgumentException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.165 -0400", hash_original_method = "BC4C0D4D9E4315B0C10CA47469C111B0", hash_generated_method = "E7A6E29F361A076E33A7A9D7B091463E")
     public void setDataSource(FileDescriptor fd, long offset, long length) throws IllegalArgumentException {
     }
@@ -75,11 +78,12 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     public void setDataSource(FileDescriptor fd) throws IllegalArgumentException {
         addTaint(fd.getTaint());
         setDataSource(fd, 0, 0x7ffffffffffffffL);
-        // ---------- Original Method ----------
-        //setDataSource(fd, 0, 0x7ffffffffffffffL);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.167 -0400", hash_original_method = "701A3FA8EE72D63C1258CD78285617D5", hash_generated_method = "BECA68699FB03A16C2B7D3EC59903F66")
     public void setDataSource(Context context, Uri uri) throws IllegalArgumentException, SecurityException {
         addTaint(uri.getTaint());
@@ -89,13 +93,13 @@ for(Map.Entry<String, String> entry : headers.entrySet())
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1364294702 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1364294702.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1364294702;
-        } //End block
+        } 
         String scheme = uri.getScheme();
     if(scheme == null || scheme.equals("file"))        
         {
             setDataSource(uri.getPath());
             return;
-        } //End block
+        } 
         AssetFileDescriptor fd = null;
         try 
         {
@@ -103,39 +107,39 @@ for(Map.Entry<String, String> entry : headers.entrySet())
             try 
             {
                 fd = resolver.openAssetFileDescriptor(uri, "r");
-            } //End block
+            } 
             catch (FileNotFoundException e)
             {
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1318122365 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_1318122365.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_1318122365;
-            } //End block
+            } 
     if(fd == null)            
             {
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1089262285 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_1089262285.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_1089262285;
-            } //End block
+            } 
             FileDescriptor descriptor = fd.getFileDescriptor();
     if(!descriptor.valid())            
             {
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_55551782 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_55551782.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_55551782;
-            } //End block
+            } 
     if(fd.getDeclaredLength() < 0)            
             {
                 setDataSource(descriptor);
-            } //End block
+            } 
             else
             {
                 setDataSource(descriptor, fd.getStartOffset(), fd.getDeclaredLength());
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         catch (SecurityException ex)
         {
-        } //End block
+        } 
         finally 
         {
             try 
@@ -143,18 +147,19 @@ for(Map.Entry<String, String> entry : headers.entrySet())
     if(fd != null)                
                 {
                     fd.close();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException ioEx)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         setDataSource(uri.toString());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.169 -0400", hash_original_method = "8FC26B688DF40812E766667E74AA42B9", hash_generated_method = "FE2CB58CC88315CB1A432EFEAAD82A77")
     public String extractMetadata(int keyCode) {
     	String s = new String();
@@ -173,16 +178,16 @@ for(Map.Entry<String, String> entry : headers.entrySet())
             IllegalArgumentException var69FA22AAC4421AB12EC13C7D968494DA_4761250 = new IllegalArgumentException("Unsupported option: " + option);
             var69FA22AAC4421AB12EC13C7D968494DA_4761250.addTaint(taint);
             throw var69FA22AAC4421AB12EC13C7D968494DA_4761250;
-        } //End block
+        } 
 Bitmap varAB1C2407842D2F107CAF6F34F7AFC9D8_1164847493 =         _getFrameAtTime(timeUs, option);
         varAB1C2407842D2F107CAF6F34F7AFC9D8_1164847493.addTaint(taint);
         return varAB1C2407842D2F107CAF6F34F7AFC9D8_1164847493;
-        // ---------- Original Method ----------
-        //if (option < OPTION_PREVIOUS_SYNC ||
-            //option > OPTION_CLOSEST) {
-            //throw new IllegalArgumentException("Unsupported option: " + option);
-        //}
-        //return _getFrameAtTime(timeUs, option);
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -192,8 +197,8 @@ Bitmap varAB1C2407842D2F107CAF6F34F7AFC9D8_1164847493 =         _getFrameAtTime(
 Bitmap var4259E13E89B1A6DF5254A409FDE05C54_190113005 =         getFrameAtTime(timeUs, OPTION_CLOSEST_SYNC);
         var4259E13E89B1A6DF5254A409FDE05C54_190113005.addTaint(taint);
         return var4259E13E89B1A6DF5254A409FDE05C54_190113005;
-        // ---------- Original Method ----------
-        //return getFrameAtTime(timeUs, OPTION_CLOSEST_SYNC);
+        
+        
     }
 
     
@@ -202,11 +207,12 @@ Bitmap var4259E13E89B1A6DF5254A409FDE05C54_190113005 =         getFrameAtTime(ti
 Bitmap var09EE212372AEDF5BF1A18C39AF757758_1819394725 =         getFrameAtTime(-1, OPTION_CLOSEST_SYNC);
         var09EE212372AEDF5BF1A18C39AF757758_1819394725.addTaint(taint);
         return var09EE212372AEDF5BF1A18C39AF757758_1819394725;
-        // ---------- Original Method ----------
-        //return getFrameAtTime(-1, OPTION_CLOSEST_SYNC);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.171 -0400", hash_original_method = "0267DF76D9FDF0A85486B93D0A2D882E", hash_generated_method = "EAEEF9DF0C3B11B82EFDFB7406623787")
     private Bitmap _getFrameAtTime(long timeUs, int option) {
     	Bitmap bmp = BitmapFactory.decodeByteArray(new byte[] {1}, DSUtils.UNKNOWN_INT, DSUtils.UNKNOWN_INT);
@@ -221,11 +227,12 @@ Bitmap var09EE212372AEDF5BF1A18C39AF757758_1819394725 =         getFrameAtTime(-
         byte[] varBA8CC16872951490579C3C533928EA6B_534648944 = (getEmbeddedPicture(EMBEDDED_PICTURE_TYPE_ANY));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_435592321 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_435592321;
-        // ---------- Original Method ----------
-        //return getEmbeddedPicture(EMBEDDED_PICTURE_TYPE_ANY);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.172 -0400", hash_original_method = "B906FFDB309D75A064AF9D81EE962B1C", hash_generated_method = "4631A70DC1808FF39F95B6091BA79E21")
     private byte[] getEmbeddedPicture(int pictureType) {
         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_271450804 = {getTaintByte()};
@@ -233,16 +240,19 @@ Bitmap var09EE212372AEDF5BF1A18C39AF757758_1819394725 =         getFrameAtTime(-
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.173 -0400", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "41B8B73906B263B02861ABB4EEE712F2")
     public void release() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.173 -0400", hash_original_method = "B91E9A85D17B4C3984DC1E936380BF22", hash_generated_method = "F98B222B7869F5CF2D166DFFD6958B3E")
     private void native_setup() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static void native_init() {
     }
 
@@ -252,23 +262,24 @@ Bitmap var09EE212372AEDF5BF1A18C39AF757758_1819394725 =         getFrameAtTime(-
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.174 -0400", hash_original_method = "24D5F4C50C2ABC5729410C2F2E889F36", hash_generated_method = "734DC2542CF2E5732EF16DF74CC2E89A")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             native_finalize();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //native_finalize();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

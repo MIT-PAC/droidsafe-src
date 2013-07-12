@@ -1,6 +1,6 @@
 package javax.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ final class DefaultServerSocketFactory extends ServerSocketFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.504 -0400", hash_original_method = "8A4D96D5B28C2AFD105167087B65524F", hash_generated_method = "8A4D96D5B28C2AFD105167087B65524F")
     public DefaultServerSocketFactory ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -23,8 +23,8 @@ final class DefaultServerSocketFactory extends ServerSocketFactory {
 ServerSocket var0DF332023E849EB0317104A964F1F502_2108043422 =         new ServerSocket();
         var0DF332023E849EB0317104A964F1F502_2108043422.addTaint(taint);
         return var0DF332023E849EB0317104A964F1F502_2108043422;
-        // ---------- Original Method ----------
-        //return new ServerSocket();
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ ServerSocket var0DF332023E849EB0317104A964F1F502_2108043422 =         new Server
 ServerSocket varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821 =         new ServerSocket(port);
         varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821.addTaint(taint);
         return varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821;
-        // ---------- Original Method ----------
-        //return new ServerSocket(port);
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ ServerSocket varABE3B6A1CDC7C9D14D97B943CEECAC98_306247821 =         new ServerS
 ServerSocket var32E1DD942B0D675FF44A81F59EAA4D4B_603361903 =         new ServerSocket(port, backlog);
         var32E1DD942B0D675FF44A81F59EAA4D4B_603361903.addTaint(taint);
         return var32E1DD942B0D675FF44A81F59EAA4D4B_603361903;
-        // ---------- Original Method ----------
-        //return new ServerSocket(port, backlog);
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ ServerSocket var32E1DD942B0D675FF44A81F59EAA4D4B_603361903 =         new ServerS
 ServerSocket varBEC696F7A4363189EF3CF61AC6A0FF58_1019577876 =         new ServerSocket(port, backlog, iAddress);
         varBEC696F7A4363189EF3CF61AC6A0FF58_1019577876.addTaint(taint);
         return varBEC696F7A4363189EF3CF61AC6A0FF58_1019577876;
-        // ---------- Original Method ----------
-        //return new ServerSocket(port, backlog, iAddress);
+        
+        
     }
 
     

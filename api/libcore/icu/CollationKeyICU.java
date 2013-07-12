@@ -1,6 +1,6 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public final class CollationKeyICU extends CollationKey {
         super(source);
         addTaint(source.getTaint());
         this.bytes = bytes;
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
+        
+        
     }
 
     
@@ -32,11 +32,11 @@ public final class CollationKeyICU extends CollationKey {
     if(other instanceof CollationKeyICU)        
         {
             rhsBytes = ((CollationKeyICU) other).bytes;
-        } //End block
+        } 
         else
         {
             rhsBytes = other.toByteArray();
-        } //End block
+        } 
     if(bytes == null || bytes.length == 0)        
         {
     if(rhsBytes == null || rhsBytes.length == 0)            
@@ -44,11 +44,11 @@ public final class CollationKeyICU extends CollationKey {
                 int varCFCD208495D565EF66E7DFF9F98764DA_612747322 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1286596992 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1286596992;
-            } //End block
+            } 
             int var6BB61E3B7BCE0931DA574D19D1D82C88_290705780 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456489946 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1456489946;
-        } //End block
+        } 
         else
         {
     if(rhsBytes == null || rhsBytes.length == 0)            
@@ -56,8 +56,8 @@ public final class CollationKeyICU extends CollationKey {
                 int varC4CA4238A0B923820DCC509A6F75849B_775684583 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_17596266 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_17596266;
-            } //End block
-        } //End block
+            } 
+        } 
         int count = Math.min(bytes.length, rhsBytes.length);
 for(int i = 0;i < count;++i)
         {
@@ -68,31 +68,31 @@ for(int i = 0;i < count;++i)
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_667587377 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1276467692 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1276467692;
-            } //End block
+            } 
     if(s > t)            
             {
                 int varC4CA4238A0B923820DCC509A6F75849B_66435575 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307705898 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1307705898;
-            } //End block
-        } //End block
+            } 
+        } 
     if(bytes.length < rhsBytes.length)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_14072989 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_694106465 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_694106465;
-        } //End block
+        } 
     if(bytes.length > rhsBytes.length)        
         {
             int varC4CA4238A0B923820DCC509A6F75849B_262536994 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_912858608 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_912858608;
-        } //End block
+        } 
         int varCFCD208495D565EF66E7DFF9F98764DA_1178518159 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197848417 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197848417;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -105,27 +105,28 @@ for(int i = 0;i < count;++i)
             boolean varB326B5062B2F0E69046810717534CB09_1859209238 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1337791518 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1337791518;
-        } //End block
+        } 
     if(!(object instanceof CollationKey))        
         {
             boolean var68934A3E9455FA72420237EB05902327_834479618 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1990501621 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1990501621;
-        } //End block
+        } 
         boolean varF5A675BF26AB588750C6F1EDB4828A8C_82139518 = (compareTo((CollationKey) object) == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2043434284 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2043434284;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (!(object instanceof CollationKey)) {
-            //return false;
-        //}
-        //return compareTo((CollationKey) object) == 0;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.543 -0400", hash_original_method = "14EA39361109DCC90111D16D29CE0C8D", hash_generated_method = "52C33AB7FCE5DEBCB92EBCC52792E7CB")
     @Override
     public int hashCode() {
@@ -139,31 +140,31 @@ for(int i = 0;i < len;)
                 {
                     hashCode = (hashCode * 37) + bytes[i];
                     i += inc;
-                } //End block
-            } //End block
+                } 
+            } 
     if(hashCode == 0)            
             {
                 hashCode = 1;
-            } //End block
-        } //End block
+            } 
+        } 
         int var550D1CC054A1B23A411DDDA46FD64811_15865451 = (hashCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237579059 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237579059;
-        // ---------- Original Method ----------
-        //if (hashCode == 0) {
-            //if (bytes != null && bytes.length != 0) {
-                //int len = bytes.length;
-                //int inc = ((len - 32) / 32) + 1;
-                //for (int i = 0; i < len;) {
-                    //hashCode = (hashCode * 37) + bytes[i];
-                    //i += inc;
-                //}
-            //}
-            //if (hashCode == 0) {
-                //hashCode = 1;
-            //}
-        //}
-        //return hashCode;
+        
+        
+            
+                
+                
+                
+                    
+                    
+                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -175,15 +176,15 @@ for(int i = 0;i < len;)
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_784896419 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2114528806 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_2114528806;
-        } //End block
+        } 
         byte[] var93C13AC1A46225B267C2E61D60802F40_1359903646 = (bytes.clone());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1229838331 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1229838331;
-        // ---------- Original Method ----------
-        //if (bytes == null || bytes.length == 0) {
-            //return null;
-        //}
-        //return bytes.clone();
+        
+        
+            
+        
+        
     }
 
     

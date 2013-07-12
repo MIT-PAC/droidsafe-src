@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public final class CookieSyncManager extends WebSyncManager {
     private  CookieSyncManager(Context context) {
         super(context, "CookieSyncManager");
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,15 +51,15 @@ public final class CookieSyncManager extends WebSyncManager {
 ArrayList<Cookie> var3225A295C909FE34C2F651B1B1E38297_1147183861 =             new ArrayList<Cookie>();
             var3225A295C909FE34C2F651B1B1E38297_1147183861.addTaint(taint);
             return var3225A295C909FE34C2F651B1B1E38297_1147183861;
-        } //End block
+        } 
 ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataBase.getCookiesForDomain(domain);
         var632770A87E3F4018887846A1E06A14AE_676505759.addTaint(taint);
         return var632770A87E3F4018887846A1E06A14AE_676505759;
-        // ---------- Original Method ----------
-        //if (mDataBase == null) {
-            //return new ArrayList<Cookie>();
-        //}
-        //return mDataBase.getCookiesForDomain(domain);
+        
+        
+            
+        
+        
     }
 
     
@@ -68,13 +68,13 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
     if(mDataBase == null)        
         {
             return;
-        } //End block
+        } 
         mDataBase.clearCookies();
-        // ---------- Original Method ----------
-        //if (mDataBase == null) {
-            //return;
-        //}
-        //mDataBase.clearCookies();
+        
+        
+            
+        
+        
     }
 
     
@@ -85,15 +85,15 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
             boolean var68934A3E9455FA72420237EB05902327_2082180150 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1703775509 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1703775509;
-        } //End block
+        } 
         boolean var27C29B458C338D3EBC7707B36B390E0F_759350633 = (mDataBase.hasCookies());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586007306 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_586007306;
-        // ---------- Original Method ----------
-        //if (mDataBase == null) {
-            //return false;
-        //}
-        //return mDataBase.hasCookies();
+        
+        
+            
+        
+        
     }
 
     
@@ -102,13 +102,13 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
     if(mDataBase == null)        
         {
             return;
-        } //End block
+        } 
         mDataBase.clearSessionCookies();
-        // ---------- Original Method ----------
-        //if (mDataBase == null) {
-            //return;
-        //}
-        //mDataBase.clearSessionCookies();
+        
+        
+            
+        
+        
     }
 
     
@@ -118,13 +118,13 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
     if(mDataBase == null)        
         {
             return;
-        } //End block
+        } 
         mDataBase.clearExpiredCookies(now);
-        // ---------- Original Method ----------
-        //if (mDataBase == null) {
-            //return;
-        //}
-        //mDataBase.clearExpiredCookies(now);
+        
+        
+            
+        
+        
     }
 
     
@@ -132,16 +132,16 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
     protected void syncFromRamToFlash() {
     if(DebugFlags.COOKIE_SYNC_MANAGER)        
         {
-        } //End block
+        } 
         CookieManager manager = CookieManager.getInstance();
     if(!manager.acceptCookie())        
         {
             return;
-        } //End block
+        } 
     if(JniUtil.useChromiumHttpStack())        
         {
             manager.flushCookieStore();
-        } //End block
+        } 
         else
         {
             ArrayList<Cookie> cookieList = manager.getUpdatedCookiesSince(mLastUpdate);
@@ -149,30 +149,30 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
             syncFromRamToFlash(cookieList);
             ArrayList<Cookie> lruList = manager.deleteLRUDomain();
             syncFromRamToFlash(lruList);
-        } //End block
+        } 
     if(DebugFlags.COOKIE_SYNC_MANAGER)        
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (DebugFlags.COOKIE_SYNC_MANAGER) {
-            //Log.v(LOGTAG, "CookieSyncManager::syncFromRamToFlash STARTS");
-        //}
-        //CookieManager manager = CookieManager.getInstance();
-        //if (!manager.acceptCookie()) {
-            //return;
-        //}
-        //if (JniUtil.useChromiumHttpStack()) {
-            //manager.flushCookieStore();
-        //} else {
-            //ArrayList<Cookie> cookieList = manager.getUpdatedCookiesSince(mLastUpdate);
-            //mLastUpdate = System.currentTimeMillis();
-            //syncFromRamToFlash(cookieList);
-            //ArrayList<Cookie> lruList = manager.deleteLRUDomain();
-            //syncFromRamToFlash(lruList);
-        //}
-        //if (DebugFlags.COOKIE_SYNC_MANAGER) {
-            //Log.v(LOGTAG, "CookieSyncManager::syncFromRamToFlash DONE");
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+            
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -190,35 +190,35 @@ ArrayList<Cookie> var632770A87E3F4018887846A1E06A14AE_676505759 =         mDataB
                 {
                     mDataBase.deleteCookies(cookie.domain, cookie.path,
                             cookie.name);
-                } //End block
+                } 
     if(cookie.mode != Cookie.MODE_DELETED)                
                 {
                     mDataBase.addCookie(cookie);
                     CookieManager.getInstance().syncedACookie(cookie);
-                } //End block
+                } 
                 else
                 {
                     CookieManager.getInstance().deleteACookie(cookie);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Iterator<Cookie> iter = list.iterator();
-        //while (iter.hasNext()) {
-            //Cookie cookie = iter.next();
-            //if (cookie.mode != Cookie.MODE_NORMAL) {
-                //if (cookie.mode != Cookie.MODE_NEW) {
-                    //mDataBase.deleteCookies(cookie.domain, cookie.path,
-                            //cookie.name);
-                //}
-                //if (cookie.mode != Cookie.MODE_DELETED) {
-                    //mDataBase.addCookie(cookie);
-                    //CookieManager.getInstance().syncedACookie(cookie);
-                //} else {
-                    //CookieManager.getInstance().deleteACookie(cookie);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                    
+                            
+                
+                
+                    
+                    
+                
+                    
+                
+            
+        
     }
 
     

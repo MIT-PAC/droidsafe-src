@@ -1,6 +1,6 @@
 package org.ccil.cowan.tagsoup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,7 +50,7 @@ public class HTMLScanner implements Scanner, Locator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.992 -0400", hash_original_method = "A8030374AECACF3BB4D2A2FA58C4A7D8", hash_generated_method = "A8030374AECACF3BB4D2A2FA58C4A7D8")
     public HTMLScanner ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -60,60 +60,65 @@ public class HTMLScanner implements Scanner, Locator {
         addTaint(r.getTaint());
     if(c != -1)        
         r.unread(c);
-        // ---------- Original Method ----------
-        //if (c != -1) r.unread(c);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.993 -0400", hash_original_method = "17D8C6B884298309CDBB8C115CEF45AD", hash_generated_method = "E5597068B836FEC5C9765ADE726C71BA")
     public int getLineNumber() {
         int var2E34B41773FC69D7C11F409A5E94C2B9_1493464564 = (theLastLine);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459707206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459707206;
-        // ---------- Original Method ----------
-        //return theLastLine;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.993 -0400", hash_original_method = "CC76CCC6A19838EC65870F98307D39F4", hash_generated_method = "72B5E9F19657072655A1B6A29C8D2EB5")
     public int getColumnNumber() {
         int varD0ED4454AD7B9B58066BE371F3FE580C_850599511 = (theLastColumn);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_842996395 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_842996395;
-        // ---------- Original Method ----------
-        //return theLastColumn;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.993 -0400", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "0669C8949DE761F402D4CE1FEBFF049B")
     public String getPublicId() {
 String var1DBC46D2465A49E95EB3980BC6533132_1515840402 =         thePublicid;
         var1DBC46D2465A49E95EB3980BC6533132_1515840402.addTaint(taint);
         return var1DBC46D2465A49E95EB3980BC6533132_1515840402;
-        // ---------- Original Method ----------
-        //return thePublicid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.994 -0400", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "69007188F4DADCEF0F15A63A44C46B4F")
     public String getSystemId() {
 String varA3B6F3DF0A8A325DDC3609E1800ED4DA_1486417855 =         theSystemid;
         varA3B6F3DF0A8A325DDC3609E1800ED4DA_1486417855.addTaint(taint);
         return varA3B6F3DF0A8A325DDC3609E1800ED4DA_1486417855;
-        // ---------- Original Method ----------
-        //return theSystemid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.995 -0400", hash_original_method = "0F092EE343E640C5A578BAEFAE8AEFB5", hash_generated_method = "75FB287F9A48CFCE5989892AD073900A")
     public void resetDocumentLocator(String publicid, String systemid) {
         thePublicid = publicid;
         theSystemid = systemid;
         theLastLine = theLastColumn = theCurrentLine = theCurrentColumn = 0;
-        // ---------- Original Method ----------
-        //thePublicid = publicid;
-        //theSystemid = systemid;
-        //theLastLine = theLastColumn = theCurrentLine = theCurrentColumn = 0;
+        
+        
+        
+        
     }
 
     
@@ -126,16 +131,16 @@ String varA3B6F3DF0A8A325DDC3609E1800ED4DA_1486417855 =         theSystemid;
     if(r0 instanceof PushbackReader)        
         {
             r = (PushbackReader)r0;
-        } //End block
+        } 
         else
     if(r0 instanceof BufferedReader)        
         {
             r = new PushbackReader(r0);
-        } //End block
+        } 
         else
         {
             r = new PushbackReader(new BufferedReader(r0, 200));
-        } //End block
+        } 
         int firstChar = r.read();
     if(firstChar != '\uFEFF')        
         unread(r, firstChar);
@@ -152,17 +157,17 @@ String varA3B6F3DF0A8A325DDC3609E1800ED4DA_1486417855 =         theSystemid;
                 {
                     unread(r, ch);
                     ch = '\n';
-                } //End block
-            } //End block
+                } 
+            } 
     if(ch == '\n')            
             {
                 theCurrentLine++;
                 theCurrentColumn = 0;
-            } //End block
+            } 
             else
             {
                 theCurrentColumn++;
-            } //End block
+            } 
     if(!(ch >= 0x20 || ch == '\n' || ch == '\t' || ch == -1))            
             continue;
             int action = 0;
@@ -173,20 +178,20 @@ for(int i = 0;i < statetable.length;i += 4)
     if(action != 0)                    
                     break;
                     continue;
-                } //End block
+                } 
     if(statetable[i+1] == 0)                
                 {
                     action = statetable[i+2];
                     theNextState = statetable[i+3];
-                } //End block
+                } 
                 else
     if(statetable[i+1] == ch)                
                 {
                     action = statetable[i+2];
                     theNextState = statetable[i+3];
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
 switch(action){
             case 0:
             Error varB82BAE6527CD51306D59675D0459D506_2047006265 = new Error(
@@ -252,32 +257,32 @@ Integer.toString(theState));
                 theNextState = S_NCR;
                 save(ch, h);
                 break;
-            } //End block
+            } 
             else
     if(theState == S_NCR && (ch1 == 'x' || ch1 == 'X'))            
             {
                 theNextState = S_XNCR;
                 save(ch, h);
                 break;
-            } //End block
+            } 
             else
     if(theState == S_ENT && Character.isLetterOrDigit(ch1))            
             {
                 save(ch, h);
                 break;
-            } //End block
+            } 
             else
     if(theState == S_NCR && Character.isDigit(ch1))            
             {
                 save(ch, h);
                 break;
-            } //End block
+            } 
             else
     if(theState == S_XNCR && (Character.isDigit(ch1) || "abcdefABCDEF".indexOf(ch1) != -1))            
             {
                 save(ch, h);
                 break;
-            } //End block
+            } 
             h.entity(theOutputBuffer, 1, theSize - 1);
             int ent = h.getEntity();
     if(ent != 0)            
@@ -286,38 +291,38 @@ Integer.toString(theState));
     if(ent >= 0x80 && ent <= 0x9F)                
                 {
                     ent = theWinMap[ent-0x80];
-                } //End block
+                } 
     if(ent < 0x20)                
                 {
                     ent = 0x20;
-                } //End block
+                } 
                 else
     if(ent >= 0xD800 && ent <= 0xDFFF)                
                 {
                     ent = 0;
-                } //End block
+                } 
                 else
     if(ent <= 0xFFFF)                
                 {
                     save(ent, h);
-                } //End block
+                } 
                 else
                 {
                     ent -= 0x10000;
                     save((ent>>10) + 0xD800, h);
                     save((ent&0x3FF) + 0xDC00, h);
-                } //End block
+                } 
     if(ch != ';')                
                 {
                     unread(r, ch);
                     theCurrentColumn--;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 unread(r, ch);
                 theCurrentColumn--;
-            } //End block
+            } 
             theNextState = S_PCDATA;
             break;
             case A_ETAG:
@@ -417,28 +422,30 @@ Integer.toString(theState));
             var0FB12B56B461A3FE1F82DABD91C7306F_146130306.addTaint(taint);
             throw var0FB12B56B461A3FE1F82DABD91C7306F_146130306;
 }            theState = theNextState;
-        } //End block
+        } 
         h.eof(theOutputBuffer, 0, 0);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.004 -0400", hash_original_method = "5C668F99FD089E189A03C18C500CC1BE", hash_generated_method = "184BAEB313A1690D7B9F3C377B2C05BA")
     private void mark() {
         theLastColumn = theCurrentColumn;
         theLastLine = theCurrentLine;
-        // ---------- Original Method ----------
-        //theLastColumn = theCurrentColumn;
-        //theLastLine = theCurrentLine;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.005 -0400", hash_original_method = "ADD8A6D3E398AE84BB2395E77CB3DD25", hash_generated_method = "1EF97924DE4200F8FC7B47D12F17ED38")
     public void startCDATA() {
         theNextState = S_CDATA;
-        // ---------- Original Method ----------
-        //theNextState = S_CDATA;
+        
+        
     }
 
     
@@ -451,28 +458,28 @@ Integer.toString(theState));
             {
                 h.pcdata(theOutputBuffer, 0, theSize);
                 theSize = 0;
-            } //End block
+            } 
             else
             {
                 char[] newOutputBuffer = new char[theOutputBuffer.length * 2];
                 System.arraycopy(theOutputBuffer, 0, newOutputBuffer, 0, theSize+1);
                 theOutputBuffer = newOutputBuffer;
-            } //End block
-        } //End block
+            } 
+        } 
         theOutputBuffer[theSize++] = (char)ch;
-        // ---------- Original Method ----------
-        //if (theSize >= theOutputBuffer.length - 20) {
-			//if (theState == S_PCDATA || theState == S_CDATA) {
-				//h.pcdata(theOutputBuffer, 0, theSize);
-				//theSize = 0;
-				//}
-			//else {
-				//char[] newOutputBuffer = new char[theOutputBuffer.length * 2];
-                                //System.arraycopy(theOutputBuffer, 0, newOutputBuffer, 0, theSize+1);
-				//theOutputBuffer = newOutputBuffer;
-				//}
-			//}
-        //theOutputBuffer[theSize++] = (char)ch;
+        
+        
+			
+				
+				
+				
+			
+				
+                                
+				
+				
+			
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,9 +30,9 @@ public class ChunkedOutputStream extends OutputStream {
         super();
         this.cache = new byte[bufferSize];
         this.out = out;
-        // ---------- Original Method ----------
-        //this.cache = new byte[bufferSize];
-        //this.out = out;
+        
+        
+        
     }
 
     
@@ -40,10 +40,11 @@ public class ChunkedOutputStream extends OutputStream {
     public  ChunkedOutputStream(final SessionOutputBuffer out) throws IOException {
         this(out, 2048);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.157 -0400", hash_original_method = "320F140F8D57B27D338CDA0750999A03", hash_generated_method = "24651ED8CD5565703872EAAEB1079B47")
     protected void flushCache() throws IOException {
     if(this.cachePosition > 0)        
@@ -52,14 +53,14 @@ public class ChunkedOutputStream extends OutputStream {
             this.out.write(this.cache, 0, this.cachePosition);
             this.out.writeLine("");
             this.cachePosition = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.cachePosition > 0) {
-            //this.out.writeLine(Integer.toHexString(this.cachePosition));
-            //this.out.write(this.cache, 0, this.cachePosition);
-            //this.out.writeLine("");
-            //this.cachePosition = 0;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -73,12 +74,12 @@ public class ChunkedOutputStream extends OutputStream {
         this.out.write(bufferToAppend, off, len);
         this.out.writeLine("");
         this.cachePosition = 0;
-        // ---------- Original Method ----------
-        //this.out.writeLine(Integer.toHexString(this.cachePosition + len));
-        //this.out.write(this.cache, 0, this.cachePosition);
-        //this.out.write(bufferToAppend, off, len);
-        //this.out.writeLine("");
-        //this.cachePosition = 0;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -86,9 +87,9 @@ public class ChunkedOutputStream extends OutputStream {
     protected void writeClosingChunk() throws IOException {
         this.out.writeLine("0");
         this.out.writeLine("");
-        // ---------- Original Method ----------
-        //this.out.writeLine("0");
-        //this.out.writeLine("");
+        
+        
+        
     }
 
     
@@ -99,16 +100,17 @@ public class ChunkedOutputStream extends OutputStream {
             flushCache();
             writeClosingChunk();
             this.wroteLastChunk = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.wroteLastChunk) {
-            //flushCache();
-            //writeClosingChunk();
-            //this.wroteLastChunk = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.158 -0400", hash_original_method = "97963AB3B21DB4797CA6C19C718B8A38", hash_generated_method = "10485433EF2AFBE6389B1ECD83F83636")
     public void write(int b) throws IOException {
     if(this.closed)        
@@ -116,18 +118,18 @@ public class ChunkedOutputStream extends OutputStream {
             IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_1325239503 = new IOException("Attempted write to closed stream.");
             varB052DBEEB15E0A31B3EDC9E0CDC85E32_1325239503.addTaint(taint);
             throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_1325239503;
-        } //End block
+        } 
         this.cache[this.cachePosition] = (byte) b;
         this.cachePosition++;
     if(this.cachePosition == this.cache.length)        
         flushCache();
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //this.cache[this.cachePosition] = (byte) b;
-        //this.cachePosition++;
-        //if (this.cachePosition == this.cache.length) flushCache();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -135,8 +137,8 @@ public class ChunkedOutputStream extends OutputStream {
     public void write(byte b[]) throws IOException {
         addTaint(b[0]);
         write(b, 0, b.length);
-        // ---------- Original Method ----------
-        //write(b, 0, b.length);
+        
+        
     }
 
     
@@ -149,36 +151,37 @@ public class ChunkedOutputStream extends OutputStream {
             IOException varB052DBEEB15E0A31B3EDC9E0CDC85E32_1964634894 = new IOException("Attempted write to closed stream.");
             varB052DBEEB15E0A31B3EDC9E0CDC85E32_1964634894.addTaint(taint);
             throw varB052DBEEB15E0A31B3EDC9E0CDC85E32_1964634894;
-        } //End block
+        } 
     if(len >= this.cache.length - this.cachePosition)        
         {
             flushCacheWithAppend(src, off, len);
-        } //End block
+        } 
         else
         {
             System.arraycopy(src, off, cache, this.cachePosition, len);
             this.cachePosition += len;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted write to closed stream.");
-        //}
-        //if (len >= this.cache.length - this.cachePosition) {
-            //flushCacheWithAppend(src, off, len);
-        //} else {
-            //System.arraycopy(src, off, cache, this.cachePosition, len);
-            //this.cachePosition += len;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.160 -0400", hash_original_method = "1D035E07BE479B8A909681E6BF90CFBD", hash_generated_method = "A492F731C1F84352887E9BB507A040A1")
     public void flush() throws IOException {
         flushCache();
         this.out.flush();
-        // ---------- Original Method ----------
-        //flushCache();
-        //this.out.flush();
+        
+        
+        
     }
 
     
@@ -189,13 +192,13 @@ public class ChunkedOutputStream extends OutputStream {
             this.closed = true;
             finish();
             this.out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!this.closed) {
-            //this.closed = true;
-            //finish();
-            //this.out.flush();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     

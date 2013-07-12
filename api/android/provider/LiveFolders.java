@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public final class LiveFolders implements BaseColumns {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.323 -0400", hash_original_method = "AC1503908FF1AD4721E32C0243019CC7", hash_generated_method = "DF05606085D9909BFDB2B4F1B47DE39C")
     private  LiveFolders() {
-        // ---------- Original Method ----------
+        
     }
 
     

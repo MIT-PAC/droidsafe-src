@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.075 -0400", hash_original_method = "CAC1D7DD6777B55F66B86A8C606BDF3F", hash_generated_method = "BFE754B09B264D46E6FE8D5188A03DEF")
     public  CSeq() {
         super(CSEQ);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,12 +29,13 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
         this();
         this.seqno = Long.valueOf(seqno);
         this.method = SIPRequest.getCannonicalName(method);
-        // ---------- Original Method ----------
-        //this.seqno = Long.valueOf(seqno);
-        //this.method = SIPRequest.getCannonicalName(method);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.077 -0400", hash_original_method = "4EDEC57C2297C20220D48BA90CD455C6", hash_generated_method = "9EE330B119AAF76BDCE9E647B750123A")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -45,61 +46,66 @@ public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
                 && this.getMethod().equals( o.getMethod() ));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803870048 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_803870048;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1915402067 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1412232445 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1412232445;
-        // ---------- Original Method ----------
-        //if (other instanceof CSeqHeader) {
-            //final CSeqHeader o = (CSeqHeader) other;
-            //return this.getSeqNumber() == o.getSeqNumber()
-                //&& this.getMethod().equals( o.getMethod() );
-        //}
-        //return false;
+        
+        
+            
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.077 -0400", hash_original_method = "DA29AB595B7A4A125EF99100FA337502", hash_generated_method = "1D1083C43C4D32F6EFF97DA6931FF1A9")
     public String encode() {
 String var4D54AC96FDD6E716CB6C2C0211520077_820677834 =         headerName + COLON + SP + encodeBody() + NEWLINE;
         var4D54AC96FDD6E716CB6C2C0211520077_820677834.addTaint(taint);
         return var4D54AC96FDD6E716CB6C2C0211520077_820677834;
-        // ---------- Original Method ----------
-        //return headerName + COLON + SP + encodeBody() + NEWLINE;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.078 -0400", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "EC783A68E7F0199D2D581C0E39EDC5E9")
     public String encodeBody() {
 String varB9AAF3B320DC07C68A40DABE06BFAFD1_2103785911 =         encodeBody(new StringBuffer()).toString();
         varB9AAF3B320DC07C68A40DABE06BFAFD1_2103785911.addTaint(taint);
         return varB9AAF3B320DC07C68A40DABE06BFAFD1_2103785911;
-        // ---------- Original Method ----------
-        //return encodeBody(new StringBuffer()).toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.078 -0400", hash_original_method = "406CBE421082AA424BCBC4FB260BE3F4", hash_generated_method = "86E559E33ECE0A60D7DFE7020EE8E824")
     protected StringBuffer encodeBody(StringBuffer buffer) {
         addTaint(buffer.getTaint());
 StringBuffer varA1E43DCB3174BD2194B740F873FB644F_1696407171 =         buffer.append(seqno).append(SP).append(method.toUpperCase());
         varA1E43DCB3174BD2194B740F873FB644F_1696407171.addTaint(taint);
         return varA1E43DCB3174BD2194B740F873FB644F_1696407171;
-        // ---------- Original Method ----------
-        //return buffer.append(seqno).append(SP).append(method.toUpperCase());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.078 -0400", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "7CB1A539847B68DF6A6AF784C9E89485")
     public String getMethod() {
 String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
         var27E3C5B2D4A798771E5F53D6527EECD0_179234729.addTaint(taint);
         return var27E3C5B2D4A798771E5F53D6527EECD0_179234729;
-        // ---------- Original Method ----------
-        //return method;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.079 -0400", hash_original_method = "0BFD480B5A908D011772234303C89701", hash_generated_method = "34E0DCCC464669B4E53F5177B255CCE4")
     public void setSeqNumber(long sequenceNumber) throws InvalidArgumentException {
     if(sequenceNumber < 0)        
@@ -120,28 +126,30 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
         throw var10286898EE50EE90C3FFCA11303C1E0F_1127374605;
         }
         seqno = Long.valueOf(sequenceNumber);
-        // ---------- Original Method ----------
-        //if (sequenceNumber < 0 )
-            //throw new InvalidArgumentException(
-                //"JAIN-SIP Exception, CSeq, setSequenceNumber(), "
-                    //+ "the sequence number parameter is < 0 : " + sequenceNumber);
-        //else if ( sequenceNumber >  ((long)1)<<32 - 1)
-            //throw new InvalidArgumentException(
-                    //"JAIN-SIP Exception, CSeq, setSequenceNumber(), "
-                        //+ "the sequence number parameter is too large : " + sequenceNumber);
-        //seqno = Long.valueOf(sequenceNumber);
+        
+        
+            
+                
+                    
+        
+            
+                    
+                        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.079 -0400", hash_original_method = "AC14810648D4561552145A0674E118CB", hash_generated_method = "CFB014E73D2787B90A121FAE2CBF9569")
     public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentException {
         addTaint(sequenceNumber);
         this.setSeqNumber( (long) sequenceNumber );
-        // ---------- Original Method ----------
-        //this.setSeqNumber( (long) sequenceNumber );
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.080 -0400", hash_original_method = "5BC8CE15D24F53FCB65EDFE00EEC2F3C", hash_generated_method = "97F46A731B7C3747C0FC1F35FF6FCB5E")
     public void setMethod(String meth) throws ParseException {
     if(meth == null)        
@@ -153,15 +161,16 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
         throw var5EF9346A7A063AE03B0B3A8C458E9F37_609147268;
         }
         this.method = SIPRequest.getCannonicalName(meth);
-        // ---------- Original Method ----------
-        //if (meth == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception, CSeq"
-                    //+ ", setMethod(), the meth parameter is null");
-        //this.method = SIPRequest.getCannonicalName(meth);
+        
+        
+            
+                
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.080 -0400", hash_original_method = "C444FE335840CD646F9A52EE546690DB", hash_generated_method = "97FF518A397E0595D262B3055DF1FDA2")
     public int getSequenceNumber() {
     if(this.seqno == null)        
@@ -176,21 +185,22 @@ String var27E3C5B2D4A798771E5F53D6527EECD0_179234729 =         method;
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447100103 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1447100103;
         }
-        // ---------- Original Method ----------
-        //if (this.seqno == null)
-            //return 0;
-        //else
-            //return this.seqno.intValue();
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.080 -0400", hash_original_method = "6A4C94B16343774E5C3F1252C6DA6DFA", hash_generated_method = "06E41C49C3865FF07263046E4482E498")
     public long getSeqNumber() {
         long varE69C616A1F2EAB093AFAF63BC63AB707_1384200157 = (this.seqno.longValue());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1121513389 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1121513389;
-        // ---------- Original Method ----------
-        //return this.seqno.longValue();
+        
+        
     }
 
     

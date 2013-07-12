@@ -1,6 +1,6 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,14 +14,14 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.667 -0400", hash_original_method = "A3EEEE607FBEBD432F4111F47BB23345", hash_generated_method = "C1B1444E172E49708F3A7562ABBF445D")
     public  AtomicInteger(int initialValue) {
         value = initialValue;
-        // ---------- Original Method ----------
-        //value = initialValue;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.667 -0400", hash_original_method = "3B74ED36698F9901BA50127D104C26DE", hash_generated_method = "3FC2676712951E4C0961989AC4A65B09")
     public  AtomicInteger() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,16 +30,16 @@ public class AtomicInteger extends Number implements java.io.Serializable {
         int var2063C1608D6E0BAF80249C42E2BE5804_1304699371 = (value);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468199399 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1468199399;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.668 -0400", hash_original_method = "E51FD8A91C159D9D3ED3BF52073569AD", hash_generated_method = "046E83718895B73384C8E1C3323B55FE")
     public final void set(int newValue) {
         value = newValue;
-        // ---------- Original Method ----------
-        //value = newValue;
+        
+        
     }
 
     
@@ -47,8 +47,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     public final void lazySet(int newValue) {
         addTaint(newValue);
         unsafe.putOrderedInt(this, valueOffset, newValue);
-        // ---------- Original Method ----------
-        //unsafe.putOrderedInt(this, valueOffset, newValue);
+        
+        
     }
 
     
@@ -64,13 +64,13 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401501915 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_401501915;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //if (compareAndSet(current, newValue))
-                //return current;
-        //}
+        } 
+        
+        
+            
+            
+                
+        
     }
 
     
@@ -81,8 +81,8 @@ for(;;)
         boolean var9ECD13C81C2E348618ED34F20B495F3C_1345037290 = (unsafe.compareAndSwapInt(this, valueOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235988320 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_235988320;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ for(;;)
         boolean var9ECD13C81C2E348618ED34F20B495F3C_1484301770 = (unsafe.compareAndSwapInt(this, valueOffset, expect, update));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1514964233 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1514964233;
-        // ---------- Original Method ----------
-        //return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+        
+        
     }
 
     
@@ -110,14 +110,14 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979657390 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979657390;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + 1;
-            //if (compareAndSet(current, next))
-                //return current;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -133,14 +133,14 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701587918 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701587918;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current - 1;
-            //if (compareAndSet(current, next))
-                //return current;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -157,14 +157,14 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_665762482 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_665762482;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + delta;
-            //if (compareAndSet(current, next))
-                //return current;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -180,14 +180,14 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247075838 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1247075838;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + 1;
-            //if (compareAndSet(current, next))
-                //return next;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -203,14 +203,14 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156988771 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_156988771;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current - 1;
-            //if (compareAndSet(current, next))
-                //return next;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+        
     }
 
     
@@ -227,64 +227,69 @@ for(;;)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11479181 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11479181;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int current = get();
-            //int next = current + delta;
-            //if (compareAndSet(current, next))
-                //return next;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.673 -0400", hash_original_method = "0CBFF056CB46F189F8DC45AFB469D5F9", hash_generated_method = "52F7C3656875F2F1D825245BDCF5A258")
     public String toString() {
 String var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785 =         Integer.toString(get());
         var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785.addTaint(taint);
         return var4E885050482FEFC0B8A7BD9BDC7A8B32_1774817785;
-        // ---------- Original Method ----------
-        //return Integer.toString(get());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.673 -0400", hash_original_method = "B90EC926C8275C97256DF1E0AD9FC076", hash_generated_method = "76CD00BBCEABA9E662EBF1BD1E31FED8")
     public int intValue() {
         int var712109514C51D8578A1A5952B71603F1_989662081 = (get());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1241403641 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1241403641;
-        // ---------- Original Method ----------
-        //return get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.673 -0400", hash_original_method = "41D936CCD9A9D16949AE3FD60738B8AD", hash_generated_method = "C0D6DA988002ADFE51D4CFE7BF79DC51")
     public long longValue() {
         long varEF8EBDCB13F038D7FE9358CB4031A910_1679481521 = ((long)get());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1592756169 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1592756169;
-        // ---------- Original Method ----------
-        //return (long)get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.674 -0400", hash_original_method = "F8181329F165428C51D2197BB97797EF", hash_generated_method = "335B54511E9CD4E357B63E7A8088189A")
     public float floatValue() {
         float varD2E2C7D4AF1D6700F4955F8F274EC437_1867034678 = ((float)get());
                 float var546ADE640B6EDFBC8A086EF31347E768_1788347547 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1788347547;
-        // ---------- Original Method ----------
-        //return (float)get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.674 -0400", hash_original_method = "486C42E34E3619D90E05BCBEDA3844AE", hash_generated_method = "22AC321DAE0BEB1E5E7FB26F35A49FB5")
     public double doubleValue() {
         double varCE9198F98D4461AFF8CDC2D1ABAB9B8A_995666189 = ((double)get());
                 double varE8CD7DA078A86726031AD64F35F5A6C0_2138453346 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_2138453346;
-        // ---------- Original Method ----------
-        //return (double)get();
+        
+        
     }
 
     

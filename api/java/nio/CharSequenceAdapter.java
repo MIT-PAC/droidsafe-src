@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ final class CharSequenceAdapter extends CharBuffer {
       CharSequenceAdapter(CharSequence chseq) {
         super(chseq.length());
         sequence = chseq;
-        // ---------- Original Method ----------
-        //sequence = chseq;
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ final class CharSequenceAdapter extends CharBuffer {
 CharBuffer var398C146492D42068C7FF67EDC7FA3DFF_652583381 =         duplicate();
         var398C146492D42068C7FF67EDC7FA3DFF_652583381.addTaint(taint);
         return var398C146492D42068C7FF67EDC7FA3DFF_652583381;
-        // ---------- Original Method ----------
-        //return duplicate();
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ CharBuffer var398C146492D42068C7FF67EDC7FA3DFF_652583381 =         duplicate();
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_111519326 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_111519326.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_111519326;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ CharBuffer var398C146492D42068C7FF67EDC7FA3DFF_652583381 =         duplicate();
 CharBuffer var965D66642EAD7AFBE0072E15599E3F83_1983904258 =         copy(this);
         var965D66642EAD7AFBE0072E15599E3F83_1983904258.addTaint(taint);
         return var965D66642EAD7AFBE0072E15599E3F83_1983904258;
-        // ---------- Original Method ----------
-        //return copy(this);
+        
+        
     }
 
     
@@ -70,15 +70,15 @@ CharBuffer var965D66642EAD7AFBE0072E15599E3F83_1983904258 =         copy(this);
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1133431093 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1133431093.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1133431093;
-        } //End block
+        } 
         char varBEE718100952C651DF86BF6E6F0F1572_634339082 = (sequence.charAt(position++));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_615557449 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_615557449;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferUnderflowException();
-        //}
-        //return sequence.charAt(position++);
+        
+        
+            
+        
+        
     }
 
     
@@ -90,9 +90,9 @@ CharBuffer var965D66642EAD7AFBE0072E15599E3F83_1983904258 =         copy(this);
         char var42A709BEAE205361BD0518C297967B5E_262257134 = (sequence.charAt(index));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_183176826 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_183176826;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //return sequence.charAt(index);
+        
+        
+        
     }
 
     
@@ -108,44 +108,46 @@ CharBuffer var965D66642EAD7AFBE0072E15599E3F83_1983904258 =         copy(this);
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_176953912 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_176953912.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_176953912;
-        } //End block
+        } 
         int newPosition = position + charCount;
         sequence.toString().getChars(position, newPosition, dst, dstOffset);
         position = newPosition;
 CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1324760627 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1324760627.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1324760627;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, charCount);
-        //if (charCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //int newPosition = position + charCount;
-        //sequence.toString().getChars(position, newPosition, dst, dstOffset);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.057 -0400", hash_original_method = "5B6C9F359344527666A57577F107BCAE", hash_generated_method = "7A2FF67159A3DFCCE9C1D2CA02D1E0F0")
     @Override
     public boolean isDirect() {
         boolean var68934A3E9455FA72420237EB05902327_1002126073 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041371811 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041371811;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.058 -0400", hash_original_method = "D0F583BEFACE4F70BE4011CED42FF4E6", hash_generated_method = "DCD47E4398C8A6A0B3DAB6D5D823D01F")
     @Override
     public boolean isReadOnly() {
         boolean varB326B5062B2F0E69046810717534CB09_334020946 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1234208643 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1234208643;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -155,8 +157,8 @@ CharBuffer var72A74007B2BE62B849F475C7BDA4658B_1324760627 =         this;
 ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nativeOrder();
         var1B533639214E0AD13A9C318946B77D59_1559606087.addTaint(taint);
         return var1B533639214E0AD13A9C318946B77D59_1559606087;
-        // ---------- Original Method ----------
-        //return ByteOrder.nativeOrder();
+        
+        
     }
 
     
@@ -166,8 +168,8 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_313148994 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_313148994.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_313148994;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -177,19 +179,20 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1352932787 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1352932787.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1352932787;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.059 -0400", hash_original_method = "22273AD75DCD1D369E6F6089E4C15AAA", hash_generated_method = "8FBDCBFF4B156060F8BFA678A17909A9")
     @Override
     protected boolean protectedHasArray() {
         boolean var68934A3E9455FA72420237EB05902327_1434342221 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1100730891 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1100730891;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -200,8 +203,8 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_544374488 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_544374488.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_544374488;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -213,8 +216,8 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1632845030 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1632845030.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1632845030;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -227,8 +230,8 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_1973576788 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_1973576788.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_1973576788;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -241,8 +244,8 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
         ReadOnlyBufferException varA14F16C43B102D90B34008C8FF8087F8_529649543 = new ReadOnlyBufferException();
         varA14F16C43B102D90B34008C8FF8087F8_529649543.addTaint(taint);
         throw varA14F16C43B102D90B34008C8FF8087F8_529649543;
-        // ---------- Original Method ----------
-        //throw new ReadOnlyBufferException();
+        
+        
     }
 
     
@@ -252,8 +255,8 @@ ByteOrder var1B533639214E0AD13A9C318946B77D59_1559606087 =         ByteOrder.nat
 CharBuffer varF34F14547C6001CCAD65B14263B2DA92_390573374 =         new CharSequenceAdapter(sequence.subSequence(position, limit));
         varF34F14547C6001CCAD65B14263B2DA92_390573374.addTaint(taint);
         return varF34F14547C6001CCAD65B14263B2DA92_390573374;
-        // ---------- Original Method ----------
-        //return new CharSequenceAdapter(sequence.subSequence(position, limit));
+        
+        
     }
 
     
@@ -269,12 +272,12 @@ CharBuffer varF34F14547C6001CCAD65B14263B2DA92_390573374 =         new CharSeque
 CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_1735191670 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1735191670.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1735191670;
-        // ---------- Original Method ----------
-        //checkStartEndRemaining(start, end);
-        //CharSequenceAdapter result = copy(this);
-        //result.position = position + start;
-        //result.limit = position + end;
-        //return result;
+        
+        
+        
+        
+        
+        
     }
 
     

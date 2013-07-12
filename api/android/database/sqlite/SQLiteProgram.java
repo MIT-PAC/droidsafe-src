@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,7 +36,7 @@ public abstract class SQLiteProgram extends SQLiteClosable {
         this(db, sql, null, true);
         addTaint(sql.getTaint());
         addTaint(db.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -71,17 +71,18 @@ switch(n){
 for(int i = 0;i < size;i++)
             {
                 this.addToBindArgs(i + 1, bindArgs[i]);
-            } //End block
-        } //End block
+            } 
+        } 
     if(compileFlag)        
         {
             compileAndbindAllArgs();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.077 -0400", hash_original_method = "EE8899F672BCD12A22959F518D1125AF", hash_generated_method = "0F180997DE6C247BFFF13B002088130B")
     private void compileSql() {
     if((mStatementType & STATEMENT_CACHEABLE) == 0)        
@@ -89,51 +90,51 @@ for(int i = 0;i < size;i++)
             mCompiledSql = new SQLiteCompiledSql(mDatabase, mSql);
             nStatement = mCompiledSql.nStatement;
             return;
-        } //End block
+        } 
         mCompiledSql = mDatabase.getCompiledStatementForSql(mSql);
     if(mCompiledSql == null)        
         {
             mCompiledSql = new SQLiteCompiledSql(mDatabase, mSql);
             mCompiledSql.acquire();
             mDatabase.addToCompiledQueries(mSql, mCompiledSql);
-        } //End block
+        } 
         else
         {
     if(!mCompiledSql.acquire())            
             {
                 int last = mCompiledSql.nStatement;
                 mCompiledSql = new SQLiteCompiledSql(mDatabase, mSql);
-            } //End block
-        } //End block
+            } 
+        } 
         nStatement = mCompiledSql.nStatement;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.078 -0400", hash_original_method = "300DFE9F6A4C69242F1C212512462325", hash_generated_method = "1CD0B8729AFD456C5EE63418C49A729F")
     @Override
     protected void onAllReferencesReleased() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         release();
         mDatabase.removeSQLiteClosable(this);
         mDatabase.releaseReference();
-        // ---------- Original Method ----------
-        //release();
-        //mDatabase.removeSQLiteClosable(this);
-        //mDatabase.releaseReference();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.078 -0400", hash_original_method = "A968FD9C775F09F9345F28805B1169A5", hash_generated_method = "431B9CF113097FF3B598F21FC4A441C4")
     @Override
     protected void onAllReferencesReleasedFromContainer() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         release();
         mDatabase.releaseReference();
-        // ---------- Original Method ----------
-        //release();
-        //mDatabase.releaseReference();
+        
+        
+        
     }
 
     
@@ -142,17 +143,17 @@ for(int i = 0;i < size;i++)
     if(mCompiledSql == null)        
         {
             return;
-        } //End block
+        } 
         mDatabase.releaseCompiledSqlObj(mSql, mCompiledSql);
         mCompiledSql = null;
         nStatement = 0;
-        // ---------- Original Method ----------
-        //if (mCompiledSql == null) {
-            //return;
-        //}
-        //mDatabase.releaseCompiledSqlObj(mSql, mCompiledSql);
-        //mCompiledSql = null;
-        //nStatement = 0;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -162,11 +163,12 @@ for(int i = 0;i < size;i++)
         int var6BB61E3B7BCE0931DA574D19D1D82C88_957850290 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007712089 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1007712089;
-        // ---------- Original Method ----------
-        //return -1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.080 -0400", hash_original_method = "76820A9DAA0EF4EAA60C4E690E9DF41D", hash_generated_method = "A84A95168B876C426101582751B7AF71")
      int getSqlStatementId() {
         synchronized
@@ -174,30 +176,32 @@ for(int i = 0;i < size;i++)
             int var4918C4CA7D6F695C693ED491EB162A1A_963958129 = ((mCompiledSql == null) ? 0 : nStatement);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957657641 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1957657641;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(this) {
-        //return (mCompiledSql == null) ? 0 : nStatement;
-      //}
+        } 
+        
+        
+        
+      
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.084 -0400", hash_original_method = "D92A66541C65863AB0B524498A872E5D", hash_generated_method = "432E1DD1FACC9C0A5D35ACA8E5B1C59F")
      String getSqlString() {
 String varFA0654C7C9BA8BFE449D55D59921973A_116778010 =         mSql;
         varFA0654C7C9BA8BFE449D55D59921973A_116778010.addTaint(taint);
         return varFA0654C7C9BA8BFE449D55D59921973A_116778010;
-        // ---------- Original Method ----------
-        //return mSql;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.085 -0400", hash_original_method = "B49B29A59D94DA04C289B1136BB98967", hash_generated_method = "046053F787B905BEE6F718979435D937")
     @Deprecated
     protected void compile(String sql, boolean forceCompilation) {
         addTaint(forceCompilation);
         addTaint(sql.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -231,14 +235,14 @@ switch(type){
                 native_bind_string(index, (String) value);
                 break;
 }
-            } //End block
+            } 
             finally 
             {
                 releaseReference();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -246,8 +250,8 @@ switch(type){
     public void bindNull(int index) {
         addTaint(index);
         bind(Cursor.FIELD_TYPE_NULL, index, null);
-        // ---------- Original Method ----------
-        //bind(Cursor.FIELD_TYPE_NULL, index, null);
+        
+        
     }
 
     
@@ -256,8 +260,8 @@ switch(type){
         addTaint(value);
         addTaint(index);
         bind(Cursor.FIELD_TYPE_INTEGER, index, value);
-        // ---------- Original Method ----------
-        //bind(Cursor.FIELD_TYPE_INTEGER, index, value);
+        
+        
     }
 
     
@@ -266,8 +270,8 @@ switch(type){
         addTaint(value);
         addTaint(index);
         bind(Cursor.FIELD_TYPE_FLOAT, index, value);
-        // ---------- Original Method ----------
-        //bind(Cursor.FIELD_TYPE_FLOAT, index, value);
+        
+        
     }
 
     
@@ -280,13 +284,13 @@ switch(type){
             IllegalArgumentException var1B10C3318ED242E38C9DC3019BCD228A_1594121947 = new IllegalArgumentException("the bind value at index " + index + " is null");
             var1B10C3318ED242E38C9DC3019BCD228A_1594121947.addTaint(taint);
             throw var1B10C3318ED242E38C9DC3019BCD228A_1594121947;
-        } //End block
+        } 
         bind(Cursor.FIELD_TYPE_STRING, index, value);
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //throw new IllegalArgumentException("the bind value at index " + index + " is null");
-        //}
-        //bind(Cursor.FIELD_TYPE_STRING, index, value);
+        
+        
+            
+        
+        
     }
 
     
@@ -299,13 +303,13 @@ switch(type){
             IllegalArgumentException var1B10C3318ED242E38C9DC3019BCD228A_594121016 = new IllegalArgumentException("the bind value at index " + index + " is null");
             var1B10C3318ED242E38C9DC3019BCD228A_594121016.addTaint(taint);
             throw var1B10C3318ED242E38C9DC3019BCD228A_594121016;
-        } //End block
+        } 
         bind(Cursor.FIELD_TYPE_BLOB, index, value);
-        // ---------- Original Method ----------
-        //if (value == null) {
-            //throw new IllegalArgumentException("the bind value at index " + index + " is null");
-        //}
-        //bind(Cursor.FIELD_TYPE_BLOB, index, value);
+        
+        
+            
+        
+        
     }
 
     
@@ -315,29 +319,29 @@ switch(type){
     if(this.nStatement == 0)        
         {
             return;
-        } //End block
+        } 
         mDatabase.verifyDbIsOpen();
         acquireReference();
         try 
         {
             native_clear_bindings();
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //mBindArgs = null;
-        //if (this.nStatement == 0) {
-            //return;
-        //}
-        //mDatabase.verifyDbIsOpen();
-        //acquireReference();
-        //try {
-            //native_clear_bindings();
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -347,14 +351,14 @@ switch(type){
     if(nHandle == 0 || !mDatabase.isOpen())        
         {
             return;
-        } //End block
+        } 
         releaseReference();
-        // ---------- Original Method ----------
-        //mBindArgs = null;
-        //if (nHandle == 0 || !mDatabase.isOpen()) {
-            //return;
-        //}
-        //releaseReference();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -365,13 +369,13 @@ switch(type){
     if(mBindArgs == null)        
         {
             mBindArgs = new HashMap<Integer, Object>();
-        } //End block
+        } 
         mBindArgs.put(index, value);
-        // ---------- Original Method ----------
-        //if (mBindArgs == null) {
-            //mBindArgs = new HashMap<Integer, Object>();
-        //}
-        //mBindArgs.put(index, value);
+        
+        
+            
+        
+        
     }
 
     
@@ -384,34 +388,34 @@ switch(type){
                 IllegalArgumentException varBFEA1441ABE667E9505EB481DC35CD36_1434845885 = new IllegalArgumentException("Can't pass bindargs for this sql :" + mSql);
                 varBFEA1441ABE667E9505EB481DC35CD36_1434845885.addTaint(taint);
                 throw varBFEA1441ABE667E9505EB481DC35CD36_1434845885;
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(nStatement == 0)        
         {
             compileSql();
-        } //End block
+        } 
     if(mBindArgs == null)        
         {
             return;
-        } //End block
+        } 
 for(int index : mBindArgs.keySet())
         {
             Object value = mBindArgs.get(index);
     if(value == null)            
             {
                 native_bind_null(index);
-            } //End block
+            } 
             else
     if(value instanceof Double || value instanceof Float)            
             {
                 native_bind_double(index, ((Number) value).doubleValue());
-            } //End block
+            } 
             else
     if(value instanceof Number)            
             {
                 native_bind_long(index, ((Number) value).longValue());
-            } //End block
+            } 
             else
     if(value instanceof Boolean)            
             {
@@ -420,24 +424,24 @@ for(int index : mBindArgs.keySet())
     if(bool)                
                 {
                     native_bind_long(index, 1);
-                } //End block
+                } 
                 else
                 {
                     native_bind_long(index, 0);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(value instanceof byte[])            
             {
                 native_bind_blob(index, (byte[]) value);
-            } //End block
+            } 
             else
             {
                 native_bind_string(index, value.toString());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -447,28 +451,28 @@ for(int index : mBindArgs.keySet())
     if(bindArgs == null)        
         {
             return;
-        } //End block
+        } 
         int size = bindArgs.length;
 for(int i = 0;i < size;i++)
         {
             bindString(i + 1, bindArgs[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //if (bindArgs == null) {
-            //return;
-        //}
-        //int size = bindArgs.length;
-        //for (int i = 0; i < size; i++) {
-            //bindString(i + 1, bindArgs[i]);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.090 -0400", hash_original_method = "B3D61FB7C94FF71F95332257D7EBBE92", hash_generated_method = "8CD7EC8DFFC384BDEDA0FF75DA7E64C6")
     synchronized final void setNativeHandle(int nHandle) {
         this.nHandle = nHandle;
-        // ---------- Original Method ----------
-        //this.nHandle = nHandle;
+        
+        
     }
 
     

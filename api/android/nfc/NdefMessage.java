@@ -1,6 +1,6 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,12 +21,12 @@ public final class NdefMessage implements Parcelable {
             FormatException var909CC158F8D0CD2718467C2758534619_1476577572 = new FormatException("Error while parsing NDEF message");
             var909CC158F8D0CD2718467C2758534619_1476577572.addTaint(taint);
             throw var909CC158F8D0CD2718467C2758534619_1476577572;
-        } //End block
-        // ---------- Original Method ----------
-        //mRecords = null;
-        //if (parseNdefMessage(data) == -1) {
-            //throw new FormatException("Error while parsing NDEF message");
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -34,9 +34,9 @@ public final class NdefMessage implements Parcelable {
     public  NdefMessage(NdefRecord[] records) {
         mRecords = new NdefRecord[records.length];
         System.arraycopy(records, 0, mRecords, 0, records.length);
-        // ---------- Original Method ----------
-        //mRecords = new NdefRecord[records.length];
-        //System.arraycopy(records, 0, mRecords, 0, records.length);
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public final class NdefMessage implements Parcelable {
 NdefRecord[] varF67461EBF6F3AD62E0D22C61B69D5998_547589382 =         mRecords.clone();
         varF67461EBF6F3AD62E0D22C61B69D5998_547589382.addTaint(taint);
         return varF67461EBF6F3AD62E0D22C61B69D5998_547589382;
-        // ---------- Original Method ----------
-        //return mRecords.clone();
+        
+        
     }
 
     
@@ -66,59 +66,60 @@ for(int i = 0;i < mRecords.length;i++)
     if(i == 0)            
             {
                 record[0] |= FLAG_MB;
-            } //End block
+            } 
             else
             {
                 record[0] &= ~FLAG_MB;
-            } //End block
+            } 
     if(i == (mRecords.length - 1))            
             {
                 record[0] |= FLAG_ME;
-            } //End block
+            } 
             else
             {
                 record[0] &= ~FLAG_ME;
-            } //End block
+            } 
             System.arraycopy(msg, 0, tmp, 0, msg.length);
             System.arraycopy(record, 0, tmp, msg.length, record.length);
             msg = tmp;
-        } //End block
+        } 
         byte[] var6E2BAAF3B97DBEEF01C0043275F9A0E7_1445615293 = (msg);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1955207431 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1955207431;
-        // ---------- Original Method ----------
-        //if ((mRecords == null) || (mRecords.length == 0))
-            //return new byte[0];
-        //byte[] msg = {};
-        //for (int i = 0; i < mRecords.length; i++) {
-            //byte[] record = mRecords[i].toByteArray();
-            //byte[] tmp = new byte[msg.length + record.length];
-            //if (i == 0) {
-                //record[0] |= FLAG_MB;
-            //} else {
-                //record[0] &= ~FLAG_MB;
-            //}
-            //if (i == (mRecords.length - 1)) {
-                //record[0] |= FLAG_ME;
-            //} else {
-                //record[0] &= ~FLAG_ME;
-            //}
-            //System.arraycopy(msg, 0, tmp, 0, msg.length);
-            //System.arraycopy(record, 0, tmp, msg.length, record.length);
-            //msg = tmp;
-        //}
-        //return msg;
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+                
+            
+            
+                
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.531 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E31B4C49DD4EBE0A21B84FED4C0079C7")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_263546349 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881558517 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1881558517;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -129,12 +130,13 @@ for(int i = 0;i < mRecords.length;i++)
         addTaint(dest.getTaint());
         dest.writeInt(mRecords.length);
         dest.writeTypedArray(mRecords, flags);
-        // ---------- Original Method ----------
-        //dest.writeInt(mRecords.length);
-        //dest.writeTypedArray(mRecords, flags);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.532 -0400", hash_original_method = "58C82E5C0DBA98ED651A9002B9916229", hash_generated_method = "CE01ADC8DDB25FC358733D7B0668DACF")
     private int parseNdefMessage(byte[] data) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_905133781 = getTaintInt();

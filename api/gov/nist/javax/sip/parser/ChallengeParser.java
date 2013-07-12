@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public abstract class ChallengeParser extends HeaderParser {
     protected  ChallengeParser(String challenge) {
         super(challenge);
         addTaint(challenge.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,10 +22,11 @@ public abstract class ChallengeParser extends HeaderParser {
     protected  ChallengeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:39.954 -0400", hash_original_method = "9DA7C681662806B106F4C258133C7994", hash_generated_method = "E6D914E68849AB28C98C072C729961EF")
     protected void parseParameter(AuthenticationHeader header) throws ParseException {
         addTaint(header.getTaint());
@@ -35,22 +36,22 @@ public abstract class ChallengeParser extends HeaderParser {
         {
             NameValue nv = this.nameValue('=');
             header.setParameter(nv);
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parseParameter");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //header.setParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
+            
+                
+        
     }
 
     
@@ -74,32 +75,32 @@ public abstract class ChallengeParser extends HeaderParser {
                 break;
                 this.lexer.match(',');
                 this.lexer.SPorHT();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ParseException ex)
         {
             ex.addTaint(taint);
             throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        //this.lexer.SPorHT();
-        //lexer.match(TokenTypes.ID);
-        //Token type = lexer.getNextToken();
-        //this.lexer.SPorHT();
-        //header.setScheme(type.getTokenValue());
-        //try {
-            //while (lexer.lookAhead(0) != '\n') {
-                //this.parseParameter(header);
-                //this.lexer.SPorHT();
-                //char la = lexer.lookAhead(0);
-                //if (la == '\n' || la == '\0')
-                    //break;
-                //this.lexer.match(',');
-                //this.lexer.SPorHT();
-            //}
-        //} catch (ParseException ex) {
-            //throw ex;
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                    
+                
+                
+            
+        
+            
+        
     }
 
     

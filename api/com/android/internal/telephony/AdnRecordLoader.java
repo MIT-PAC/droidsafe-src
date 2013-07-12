@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,12 +44,13 @@ public class AdnRecordLoader extends Handler {
         super(phone.getHandler().getLooper());
         this.phone = phone;
         LOG_TAG = phone.getPhoneName();
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //LOG_TAG = phone.getPhoneName();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.743 -0400", hash_original_method = "E52409147EA4C18E8F78BAF12B808BF8", hash_generated_method = "6EB46D6941E8B29BDE235893777C0E24")
     public void loadFromEF(int ef, int extensionEF, int recordNumber,
                 Message response) {
@@ -60,14 +61,14 @@ public class AdnRecordLoader extends Handler {
         phone.mIccFileHandler.loadEFLinearFixed(
                     ef, recordNumber,
                     obtainMessage(EVENT_ADN_LOAD_DONE));
-        // ---------- Original Method ----------
-        //this.ef = ef;
-        //this.extensionEF = extensionEF;
-        //this.recordNumber = recordNumber;
-        //this.userResponse = response;
-        //phone.mIccFileHandler.loadEFLinearFixed(
-                    //ef, recordNumber,
-                    //obtainMessage(EVENT_ADN_LOAD_DONE));
+        
+        
+        
+        
+        
+        
+                    
+                    
     }
 
     
@@ -80,13 +81,13 @@ public class AdnRecordLoader extends Handler {
         phone.mIccFileHandler.loadEFLinearFixedAll(
                     ef,
                     obtainMessage(EVENT_ADN_LOAD_ALL_DONE));
-        // ---------- Original Method ----------
-        //this.ef = ef;
-        //this.extensionEF = extensionEF;
-        //this.userResponse = response;
-        //phone.mIccFileHandler.loadEFLinearFixedAll(
-                    //ef,
-                    //obtainMessage(EVENT_ADN_LOAD_ALL_DONE));
+        
+        
+        
+        
+        
+                    
+                    
     }
 
     
@@ -101,14 +102,14 @@ public class AdnRecordLoader extends Handler {
         this.pin2 = pin2;
         phone.mIccFileHandler.getEFLinearRecordSize( ef,
             obtainMessage(EVENT_EF_LINEAR_RECORD_SIZE_DONE, adn));
-        // ---------- Original Method ----------
-        //this.ef = ef;
-        //this.extensionEF = extensionEF;
-        //this.recordNumber = recordNumber;
-        //this.userResponse = response;
-        //this.pin2 = pin2;
-        //phone.mIccFileHandler.getEFLinearRecordSize( ef,
-            //obtainMessage(EVENT_EF_LINEAR_RECORD_SIZE_DONE, adn));
+        
+        
+        
+        
+        
+        
+        
+            
     }
 
     
@@ -130,7 +131,7 @@ switch(msg.what){
                                 ar.exception);
                 varC51911099FA91E04721D7BDC774E1027_1340075437.addTaint(taint);
                 throw varC51911099FA91E04721D7BDC774E1027_1340075437;
-            } //End block
+            } 
             int[] recordSize = (int[])ar.result;
     if(recordSize.length != 3 || recordNumber > recordSize[2])            
             {
@@ -138,7 +139,7 @@ switch(msg.what){
                                 ar.exception);
                 var25AD32CD0F9A49CFFCDF53497D016656_131978165.addTaint(taint);
                 throw var25AD32CD0F9A49CFFCDF53497D016656_131978165;
-            } //End block
+            } 
             data = adn.buildAdnString(recordSize[0]);
     if(data == null)            
             {
@@ -146,7 +147,7 @@ switch(msg.what){
                                 ar.exception);
                 var0C054DA902C88BC47446B1BB25D3FD68_1067910436.addTaint(taint);
                 throw var0C054DA902C88BC47446B1BB25D3FD68_1067910436;
-            } //End block
+            } 
             phone.mIccFileHandler.updateEFLinearFixed(ef, recordNumber,
                             data, pin2, obtainMessage(EVENT_UPDATE_RECORD_DONE));
             pendingExtLoads = 1;
@@ -159,7 +160,7 @@ switch(msg.what){
                                 ar.exception);
                 var0F83784C75FD467A442A454B10CCC970_1414535769.addTaint(taint);
                 throw var0F83784C75FD467A442A454B10CCC970_1414535769;
-            } //End block
+            } 
             pendingExtLoads = 0;
             result = null;
             break;
@@ -171,14 +172,14 @@ switch(msg.what){
                 RuntimeException var76F55B79A1D977F13CF67C2A3432F11F_476168507 = new RuntimeException("load failed", ar.exception);
                 var76F55B79A1D977F13CF67C2A3432F11F_476168507.addTaint(taint);
                 throw var76F55B79A1D977F13CF67C2A3432F11F_476168507;
-            } //End block
+            } 
     if(false)            
             {
                 Log.d(LOG_TAG,"ADN EF: 0x"
                             + Integer.toHexString(ef)
                             + ":" + recordNumber
                             + "\n" + IccUtils.bytesToHexString(data));
-            } //End block
+            } 
             adn = new AdnRecord(ef, recordNumber, data);
             result = adn;
     if(adn.hasExtendedRecord())            
@@ -187,7 +188,7 @@ switch(msg.what){
                 phone.mIccFileHandler.loadEFLinearFixed(
                             extensionEF, adn.extRecord,
                             obtainMessage(EVENT_EXT_RECORD_LOAD_DONE, adn));
-            } //End block
+            } 
             break;
             case EVENT_EXT_RECORD_LOAD_DONE:
             ar = (AsyncResult)(msg.obj);
@@ -198,7 +199,7 @@ switch(msg.what){
                 RuntimeException var76F55B79A1D977F13CF67C2A3432F11F_342403850 = new RuntimeException("load failed", ar.exception);
                 var76F55B79A1D977F13CF67C2A3432F11F_342403850.addTaint(taint);
                 throw var76F55B79A1D977F13CF67C2A3432F11F_342403850;
-            } //End block
+            } 
             Log.d(LOG_TAG,"ADN extension EF: 0x"
                         + Integer.toHexString(extensionEF)
                         + ":" + adn.extRecord
@@ -214,7 +215,7 @@ switch(msg.what){
                 RuntimeException var76F55B79A1D977F13CF67C2A3432F11F_685666302 = new RuntimeException("load failed", ar.exception);
                 var76F55B79A1D977F13CF67C2A3432F11F_685666302.addTaint(taint);
                 throw var76F55B79A1D977F13CF67C2A3432F11F_685666302;
-            } //End block
+            } 
             adns = new ArrayList<AdnRecord>(datas.size());
             result = adns;
             pendingExtLoads = 0;
@@ -228,11 +229,11 @@ for(int i = 0, s = datas.size();i < s;i++)
                     phone.mIccFileHandler.loadEFLinearFixed(
                                 extensionEF, adn.extRecord,
                                 obtainMessage(EVENT_EXT_RECORD_LOAD_DONE, adn));
-                } //End block
-            } //End block
+                } 
+            } 
             break;
 }
-        } //End block
+        } 
         catch (RuntimeException exc)
         {
     if(userResponse != null)            
@@ -241,18 +242,18 @@ for(int i = 0, s = datas.size();i < s;i++)
                                 .exception = exc;
                 userResponse.sendToTarget();
                 userResponse = null;
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(userResponse != null && pendingExtLoads == 0)        
         {
             AsyncResult.forMessage(userResponse).result
                 = result;
             userResponse.sendToTarget();
             userResponse = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

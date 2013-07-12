@@ -1,6 +1,6 @@
 package org.apache.harmony.dalvik.ddmc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class ChunkHandler {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:28.043 -0400", hash_original_method = "0BD4350C5F4AC480382F0B830C677606", hash_generated_method = "85D4A412A038AD8195337BC6AC5AD626")
     public  ChunkHandler() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,7 +24,8 @@ public abstract class ChunkHandler {
     public abstract Chunk handleChunk(Chunk request);
 
     
-        public static Chunk createFailChunk(int errorCode, String msg) {
+        @DSModeled(DSC.SPEC)
+    public static Chunk createFailChunk(int errorCode, String msg) {
         if (msg == null)
             msg = "";
         ByteBuffer out = ByteBuffer.allocate(8 + msg.length() * 2);

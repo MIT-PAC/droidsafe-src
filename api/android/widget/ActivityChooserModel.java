@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -83,21 +83,21 @@ public class ActivityChooserModel extends DataSetObservable {
                 && !historyFileName.endsWith(HISTORY_FILE_EXTENSION))        
         {
             mHistoryFileName = historyFileName + HISTORY_FILE_EXTENSION;
-        } //End block
+        } 
         else
         {
             mHistoryFileName = historyFileName;
-        } //End block
+        } 
         mPackageMonitor.register(mContext, true);
-        // ---------- Original Method ----------
-        //mContext = context.getApplicationContext();
-        //if (!TextUtils.isEmpty(historyFileName)
-                //&& !historyFileName.endsWith(HISTORY_FILE_EXTENSION)) {
-            //mHistoryFileName = historyFileName + HISTORY_FILE_EXTENSION;
-        //} else {
-            //mHistoryFileName = historyFileName;
-        //}
-        //mPackageMonitor.register(mContext, true);
+        
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -114,6 +114,7 @@ public class ActivityChooserModel extends DataSetObservable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.027 -0400", hash_original_method = "E9FF7BF71184D5918A5528B39387C05B", hash_generated_method = "18CCE81ABD65A10D68A1CBBC40B99539")
     public void setIntent(Intent intent) {
         synchronized
@@ -121,21 +122,22 @@ public class ActivityChooserModel extends DataSetObservable {
     if(mIntent == intent)            
             {
                 return;
-            } //End block
+            } 
             mIntent = intent;
             loadActivitiesLocked();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mIntent == intent) {
-                //return;
-            //}
-            //mIntent = intent;
-            //loadActivitiesLocked();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.027 -0400", hash_original_method = "27A17A1D87D77EAA50C2FB6DFA94EC7A", hash_generated_method = "77ABD44B9D8F61CE9BB5AB6B101AB3AA")
     public Intent getIntent() {
         synchronized
@@ -143,11 +145,11 @@ public class ActivityChooserModel extends DataSetObservable {
 Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_103879965 =             mIntent;
             var4DCF8E3D75AE0B94CDA94656DCE16BCE_103879965.addTaint(taint);
             return var4DCF8E3D75AE0B94CDA94656DCE16BCE_103879965;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mIntent;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -158,11 +160,11 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_103879965 =             mIntent;
             int varEE9CF3CA592A4FE681A759B4BC597948_1184923941 = (mActivites.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209198310 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209198310;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mActivites.size();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -174,11 +176,11 @@ Intent var4DCF8E3D75AE0B94CDA94656DCE16BCE_103879965 =             mIntent;
 ResolveInfo var16A1693659E349C4F10493D7FEF7AF3F_829195627 =             mActivites.get(index).resolveInfo;
             var16A1693659E349C4F10493D7FEF7AF3F_829195627.addTaint(taint);
             return var16A1693659E349C4F10493D7FEF7AF3F_829195627;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mActivites.get(index).resolveInfo;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -195,24 +197,25 @@ for(int i = 0;i < activityCount;i++)
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_1244482790 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1156308952 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1156308952;
-            } //End block
-        } //End block
+            } 
+        } 
         int varF059DD129FB8A61588D41BA6DF391A4E_576091437 = (INVALID_INDEX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865166633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865166633;
-        // ---------- Original Method ----------
-        //List<ActivityResolveInfo> activities = mActivites;
-        //final int activityCount = activities.size();
-        //for (int i = 0; i < activityCount; i++) {
-            //ActivityResolveInfo currentActivity = activities.get(i);
-            //if (currentActivity.resolveInfo == activity) {
-                //return i;
-            //}
-        //}
-        //return INVALID_INDEX;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.029 -0400", hash_original_method = "2E1571A22B1C1279902BA9C2D35CCDAC", hash_generated_method = "B0E9A5ED63AB4F9A396283F5587CCCC4")
     public Intent chooseActivity(int index) {
         addTaint(index);
@@ -232,24 +235,25 @@ for(int i = 0;i < activityCount;i++)
 Intent var540C13E9E156B687226421B24F2DF178_1593986974 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1593986974.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1593986974;
-            } //End block
-        } //End block
+            } 
+        } 
         HistoricalRecord historicalRecord = new HistoricalRecord(chosenName,
                 System.currentTimeMillis(), DEFAULT_HISTORICAL_RECORD_WEIGHT);
         addHisoricalRecord(historicalRecord);
 Intent varE44B24DC285915FA809667F86F15DD6A_167663593 =         choiceIntent;
         varE44B24DC285915FA809667F86F15DD6A_167663593.addTaint(taint);
         return varE44B24DC285915FA809667F86F15DD6A_167663593;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.029 -0400", hash_original_method = "56E3863DC4DFDE24EBD2068470DB48E1", hash_generated_method = "502DB08B7514528D4C4579AC10A6BA23")
     public void setOnChooseActivityListener(OnChooseActivityListener listener) {
         mActivityChoserModelPolicy = listener;
-        // ---------- Original Method ----------
-        //mActivityChoserModelPolicy = listener;
+        
+        
     }
 
     
@@ -262,18 +266,18 @@ Intent varE44B24DC285915FA809667F86F15DD6A_167663593 =         choiceIntent;
 ResolveInfo varF81D77FBBA6386BD228B5E33DB7741BD_1793684156 =                 mActivites.get(0).resolveInfo;
                 varF81D77FBBA6386BD228B5E33DB7741BD_1793684156.addTaint(taint);
                 return varF81D77FBBA6386BD228B5E33DB7741BD_1793684156;
-            } //End block
-        } //End block
+            } 
+        } 
 ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
         var540C13E9E156B687226421B24F2DF178_2034006306.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2034006306;
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (!mActivites.isEmpty()) {
-                //return mActivites.get(0).resolveInfo;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -287,33 +291,33 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
         {
             weight = oldDefaultActivity.weight - newDefaultActivity.weight
                 + DEFAULT_ACTIVITY_INFLATION;
-        } //End block
+        } 
         else
         {
             weight = DEFAULT_HISTORICAL_RECORD_WEIGHT;
-        } //End block
+        } 
         ComponentName defaultName = new ComponentName(
                 newDefaultActivity.resolveInfo.activityInfo.packageName,
                 newDefaultActivity.resolveInfo.activityInfo.name);
         HistoricalRecord historicalRecord = new HistoricalRecord(defaultName,
                 System.currentTimeMillis(), weight);
         addHisoricalRecord(historicalRecord);
-        // ---------- Original Method ----------
-        //ActivityResolveInfo newDefaultActivity = mActivites.get(index);
-        //ActivityResolveInfo oldDefaultActivity = mActivites.get(0);
-        //final float weight;
-        //if (oldDefaultActivity != null) {
-            //weight = oldDefaultActivity.weight - newDefaultActivity.weight
-                //+ DEFAULT_ACTIVITY_INFLATION;
-        //} else {
-            //weight = DEFAULT_HISTORICAL_RECORD_WEIGHT;
-        //}
-        //ComponentName defaultName = new ComponentName(
-                //newDefaultActivity.resolveInfo.activityInfo.packageName,
-                //newDefaultActivity.resolveInfo.activityInfo.name);
-        //HistoricalRecord historicalRecord = new HistoricalRecord(defaultName,
-                //System.currentTimeMillis(), weight);
-        //addHisoricalRecord(historicalRecord);
+        
+        
+        
+        
+        
+            
+                
+        
+            
+        
+        
+                
+                
+        
+                
+        
     }
 
     
@@ -324,25 +328,25 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
     if(!mCanReadHistoricalData || !mHistoricalRecordsChanged)            
             {
                 return;
-            } //End block
+            } 
             mCanReadHistoricalData = false;
             mReadShareHistoryCalled = true;
     if(!TextUtils.isEmpty(mHistoryFileName))            
             {
                 AsyncTask.SERIAL_EXECUTOR.execute(new HistoryLoader());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (!mCanReadHistoricalData || !mHistoricalRecordsChanged) {
-                //return;
-            //}
-            //mCanReadHistoricalData = false;
-            //mReadShareHistoryCalled = true;
-            //if (!TextUtils.isEmpty(mHistoryFileName)) {
-                //AsyncTask.SERIAL_EXECUTOR.execute(new HistoryLoader());
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -355,32 +359,32 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
                 IllegalStateException var3FA515C78C3446B25BEB037F7FE64FCA_142800854 = new IllegalStateException("No preceding call to #readHistoricalData");
                 var3FA515C78C3446B25BEB037F7FE64FCA_142800854.addTaint(taint);
                 throw var3FA515C78C3446B25BEB037F7FE64FCA_142800854;
-            } //End block
+            } 
     if(!mHistoricalRecordsChanged)            
             {
                 return;
-            } //End block
+            } 
             mHistoricalRecordsChanged = false;
             mCanReadHistoricalData = true;
     if(!TextUtils.isEmpty(mHistoryFileName))            
             {
                 AsyncTask.SERIAL_EXECUTOR.execute(new HistoryPersister());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (!mReadShareHistoryCalled) {
-                //throw new IllegalStateException("No preceding call to #readHistoricalData");
-            //}
-            //if (!mHistoricalRecordsChanged) {
-                //return;
-            //}
-            //mHistoricalRecordsChanged = false;
-            //mCanReadHistoricalData = true;
-            //if (!TextUtils.isEmpty(mHistoryFileName)) {
-                //AsyncTask.SERIAL_EXECUTOR.execute(new HistoryPersister());
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -391,18 +395,18 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
     if(mActivitySorter == activitySorter)            
             {
                 return;
-            } //End block
+            } 
             mActivitySorter = activitySorter;
             sortActivities();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mActivitySorter == activitySorter) {
-                //return;
-            //}
-            //mActivitySorter = activitySorter;
-            //sortActivities();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -415,16 +419,16 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
                 mActivitySorter.sort(mIntent, mActivites,
                         Collections.unmodifiableList(mHistoricalRecords));
                 notifyChanged();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mActivitySorter != null && !mActivites.isEmpty()) {
-                //mActivitySorter.sort(mIntent, mActivites,
-                        //Collections.unmodifiableList(mHistoricalRecords));
-                //notifyChanged();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                        
+                
+            
+        
     }
 
     
@@ -435,23 +439,24 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
     if(mHistoryMaxSize == historyMaxSize)            
             {
                 return;
-            } //End block
+            } 
             mHistoryMaxSize = historyMaxSize;
             pruneExcessiveHistoricalRecordsLocked();
             sortActivities();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (mHistoryMaxSize == historyMaxSize) {
-                //return;
-            //}
-            //mHistoryMaxSize = historyMaxSize;
-            //pruneExcessiveHistoricalRecordsLocked();
-            //sortActivities();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.033 -0400", hash_original_method = "EBCBD4C754CE0391425067ED25453667", hash_generated_method = "A8FC30E53376B527FEB1470AA1C77A25")
     public int getHistoryMaxSize() {
         synchronized
@@ -459,11 +464,11 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
             int var60A475C6BC545DF9382D60CA60C0AFD1_1953826610 = (mHistoryMaxSize);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144643831 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144643831;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mHistoryMaxSize;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -474,11 +479,11 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
             int varE99D5D1CE9ABD5BEC8AFB022AE600BF5_548844989 = (mHistoricalRecords.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358531586 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358531586;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //return mHistoricalRecords.size();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -487,9 +492,9 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
     protected void finalize() throws Throwable {
         super.finalize();
         mPackageMonitor.unregister();
-        // ---------- Original Method ----------
-        //super.finalize();
-        //mPackageMonitor.unregister();
+        
+        
+        
     }
 
     
@@ -505,22 +510,22 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
                 pruneExcessiveHistoricalRecordsLocked();
                 persistHistoricalData();
                 sortActivities();
-            } //End block
+            } 
             boolean varB60ED88355AC3F6898FD8A7AB1734D06_500519009 = (added);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1481567760 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1481567760;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //final boolean added = mHistoricalRecords.add(historicalRecord);
-            //if (added) {
-                //mHistoricalRecordsChanged = true;
-                //pruneExcessiveHistoricalRecordsLocked();
-                //persistHistoricalData();
-                //sortActivities();
-            //}
-            //return added;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+                
+                
+            
+            
+        
     }
 
     
@@ -531,28 +536,28 @@ ResolveInfo var540C13E9E156B687226421B24F2DF178_2034006306 =         null;
     if(pruneCount <= 0)        
         {
             return;
-        } //End block
+        } 
         mHistoricalRecordsChanged = true;
 for(int i = 0;i < pruneCount;i++)
         {
             HistoricalRecord prunedRecord = choiceRecords.remove(0);
     if(DEBUG)            
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //List<HistoricalRecord> choiceRecords = mHistoricalRecords;
-        //final int pruneCount = choiceRecords.size() - mHistoryMaxSize;
-        //if (pruneCount <= 0) {
-            //return;
-        //}
-        //mHistoricalRecordsChanged = true;
-        //for (int i = 0; i < pruneCount; i++) {
-            //HistoricalRecord prunedRecord = choiceRecords.remove(0);
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Pruned: " + prunedRecord);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -567,27 +572,27 @@ for(int i = 0;i < resolveInfoCount;i++)
             {
                 ResolveInfo resolveInfo = resolveInfos.get(i);
                 mActivites.add(new ActivityResolveInfo(resolveInfo));
-            } //End block
+            } 
             sortActivities();
-        } //End block
+        } 
         else
         {
             notifyChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //mActivites.clear();
-        //if (mIntent != null) {
-            //List<ResolveInfo> resolveInfos =
-                //mContext.getPackageManager().queryIntentActivities(mIntent, 0);
-            //final int resolveInfoCount = resolveInfos.size();
-            //for (int i = 0; i < resolveInfoCount; i++) {
-                //ResolveInfo resolveInfo = resolveInfos.get(i);
-                //mActivites.add(new ActivityResolveInfo(resolveInfo));
-            //}
-            //sortActivities();
-        //} else {
-            //notifyChanged();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -604,28 +609,28 @@ for(int i = 0;i < historicalRecords.size();i++)
             {
                 historicalRecords.remove(historicalRecord);
                 recordsRemoved = true;
-            } //End block
-        } //End block
+            } 
+        } 
     if(recordsRemoved)        
         {
             mHistoricalRecordsChanged = true;
             sortActivities();
-        } //End block
-        // ---------- Original Method ----------
-        //boolean recordsRemoved = false;
-        //List<HistoricalRecord> historicalRecords = mHistoricalRecords;
-        //for (int i = 0; i < historicalRecords.size(); i++) {
-            //HistoricalRecord historicalRecord = historicalRecords.get(i);
-            //String recordPackageName = historicalRecord.activity.getPackageName();
-            //if (recordPackageName.equals(packageName)) {
-                //historicalRecords.remove(historicalRecord);
-                //recordsRemoved = true;
-            //}
-        //}
-        //if (recordsRemoved) {
-            //mHistoricalRecordsChanged = true;
-            //sortActivities();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+                
+                
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -646,7 +651,7 @@ for(int i = 0;i < historicalRecords.size();i++)
             addTaint(weight);
             addTaint(time);
             addTaint(activityName.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -655,10 +660,10 @@ for(int i = 0;i < historicalRecords.size();i++)
             this.activity = activityName;
             this.time = time;
             this.weight = weight;
-            // ---------- Original Method ----------
-            //this.activity = activityName;
-            //this.time = time;
-            //this.weight = weight;
+            
+            
+            
+            
         }
 
         
@@ -673,13 +678,13 @@ for(int i = 0;i < historicalRecords.size();i++)
             int varB4A88417B3D0170D754C647C30B7216A_444501621 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144583827 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_144583827;
-            // ---------- Original Method ----------
-            //final int prime = 31;
-            //int result = 1;
-            //result = prime * result + ((activity == null) ? 0 : activity.hashCode());
-            //result = prime * result + (int) (time ^ (time >>> 32));
-            //result = prime * result + Float.floatToIntBits(weight);
-            //return result;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -692,19 +697,19 @@ for(int i = 0;i < historicalRecords.size();i++)
                 boolean varB326B5062B2F0E69046810717534CB09_699900856 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_323444312 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_323444312;
-            } //End block
+            } 
     if(obj == null)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_930755937 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1737871158 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1737871158;
-            } //End block
+            } 
     if(getClass() != obj.getClass())            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1114881774 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_26004996 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_26004996;
-            } //End block
+            } 
             HistoricalRecord other = (HistoricalRecord) obj;
     if(activity == null)            
             {
@@ -713,55 +718,55 @@ for(int i = 0;i < historicalRecords.size();i++)
                     boolean var68934A3E9455FA72420237EB05902327_666115236 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548231778 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_548231778;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(!activity.equals(other.activity))            
             {
                 boolean var68934A3E9455FA72420237EB05902327_693832802 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2078106528 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2078106528;
-            } //End block
+            } 
     if(time != other.time)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_779162594 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_518239596 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_518239596;
-            } //End block
+            } 
     if(Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight))            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1207296786 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_702478615 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_702478615;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1996226709 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81008861 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_81008861;
-            // ---------- Original Method ----------
-            //if (this == obj) {
-                //return true;
-            //}
-            //if (obj == null) {
-                //return false;
-            //}
-            //if (getClass() != obj.getClass()) {
-                //return false;
-            //}
-            //HistoricalRecord other = (HistoricalRecord) obj;
-            //if (activity == null) {
-                //if (other.activity != null) {
-                    //return false;
-                //}
-            //} else if (!activity.equals(other.activity)) {
-                //return false;
-            //}
-            //if (time != other.time) {
-                //return false;
-            //}
-            //if (Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight)) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
+                
+                    
+                
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -777,14 +782,14 @@ for(int i = 0;i < historicalRecords.size();i++)
 String varF4CF030572656354ACFDF83FEE21D7A6_1739663309 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_1739663309.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_1739663309;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder();
-            //builder.append("[");
-            //builder.append("; activity:").append(activity);
-            //builder.append("; time:").append(time);
-            //builder.append("; weight:").append(new BigDecimal(weight));
-            //builder.append("]");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -803,8 +808,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1739663309 =             builder.toSt
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.038 -0400", hash_original_method = "FE163077B7530186AE819FA48AA47F8E", hash_generated_method = "5FF0866FAB3426E950C36794AFE28F97")
         public  ActivityResolveInfo(ResolveInfo resolveInfo) {
             this.resolveInfo = resolveInfo;
-            // ---------- Original Method ----------
-            //this.resolveInfo = resolveInfo;
+            
+            
         }
 
         
@@ -814,8 +819,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1739663309 =             builder.toSt
             int var870AB715848EE80A9C18EC07E4D8B063_1149628024 = (31 + Float.floatToIntBits(weight));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_56413215 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_56413215;
-            // ---------- Original Method ----------
-            //return 31 + Float.floatToIntBits(weight);
+            
+            
         }
 
         
@@ -828,44 +833,44 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1739663309 =             builder.toSt
                 boolean varB326B5062B2F0E69046810717534CB09_697877547 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_663467207 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_663467207;
-            } //End block
+            } 
     if(obj == null)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_870660888 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_491740537 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_491740537;
-            } //End block
+            } 
     if(getClass() != obj.getClass())            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1927762861 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645907023 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_645907023;
-            } //End block
+            } 
             ActivityResolveInfo other = (ActivityResolveInfo) obj;
     if(Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight))            
             {
                 boolean var68934A3E9455FA72420237EB05902327_182784202 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1197612815 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1197612815;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_873462077 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_59824851 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_59824851;
-            // ---------- Original Method ----------
-            //if (this == obj) {
-                //return true;
-            //}
-            //if (obj == null) {
-                //return false;
-            //}
-            //if (getClass() != obj.getClass()) {
-                //return false;
-            //}
-            //ActivityResolveInfo other = (ActivityResolveInfo) obj;
-            //if (Float.floatToIntBits(weight) != Float.floatToIntBits(other.weight)) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -875,8 +880,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1739663309 =             builder.toSt
             int var7DDFDF7A874F602BD83F39F6B9E3E74A_980285156 = (Float.floatToIntBits(another.weight) - Float.floatToIntBits(weight));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658253279 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1658253279;
-            // ---------- Original Method ----------
-            //return  Float.floatToIntBits(another.weight) - Float.floatToIntBits(weight);
+            
+            
         }
 
         
@@ -891,13 +896,13 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1739663309 =             builder.toSt
 String varF4CF030572656354ACFDF83FEE21D7A6_629620740 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_629620740.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_629620740;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder();
-            //builder.append("[");
-            //builder.append("resolveInfo:").append(resolveInfo.toString());
-            //builder.append("; weight:").append(new BigDecimal(weight));
-            //builder.append("]");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -913,7 +918,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_629620740 =             builder.toStr
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.040 -0400", hash_original_method = "4BF496988E00827DD1484620E43167BF", hash_generated_method = "4BF496988E00827DD1484620E43167BF")
         public DefaultSorter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -932,7 +937,7 @@ for(int i = 0;i < activityCount;i++)
                 activity.weight = 0.0f;
                 String packageName = activity.resolveInfo.activityInfo.packageName;
                 packageNameToActivityMap.put(packageName, activity);
-            } //End block
+            } 
             final int lastShareIndex = historicalRecords.size() - 1;
             float nextRecordWeight = 1;
 for(int i = lastShareIndex;i >= 0;i--)
@@ -944,17 +949,17 @@ for(int i = lastShareIndex;i >= 0;i--)
                 {
                     activity.weight += historicalRecord.weight * nextRecordWeight;
                     nextRecordWeight = nextRecordWeight * WEIGHT_DECAY_COEFFICIENT;
-                } //End block
-            } //End block
+                } 
+            } 
             Collections.sort(activities);
     if(DEBUG)            
             {
 for(int i = 0;i < activityCount;i++)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -970,7 +975,7 @@ for(int i = 0;i < activityCount;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.044 -0400", hash_original_method = "0F6CF60457783C48329031B15DA96823", hash_generated_method = "0F6CF60457783C48329031B15DA96823")
         public HistoryLoader ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -980,14 +985,14 @@ for(int i = 0;i < activityCount;i++)
             try 
             {
                 fis = mContext.openFileInput(mHistoryFileName);
-            } //End block
+            } 
             catch (FileNotFoundException fnfe)
             {
     if(DEBUG)                
                 {
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
             try 
             {
                 XmlPullParser parser = Xml.newPullParser();
@@ -997,14 +1002,14 @@ for(int i = 0;i < activityCount;i++)
 (type != XmlPullParser.END_DOCUMENT && type != XmlPullParser.START_TAG)                
                 {
                     type = parser.next();
-                } //End block
+                } 
     if(!TAG_HISTORICAL_RECORDS.equals(parser.getName()))                
                 {
                     XmlPullParserException var5FBDE362DFFC3C24BCC88AAC42CB95AA_879850502 = new XmlPullParserException("Share records file does not start with "
                             + TAG_HISTORICAL_RECORDS + " tag.");
                     var5FBDE362DFFC3C24BCC88AAC42CB95AA_879850502.addTaint(taint);
                     throw var5FBDE362DFFC3C24BCC88AAC42CB95AA_879850502;
-                } //End block
+                } 
                 List<HistoricalRecord> readRecords = new ArrayList<HistoricalRecord>();
                 while
 (true)                
@@ -1013,18 +1018,18 @@ for(int i = 0;i < activityCount;i++)
     if(type == XmlPullParser.END_DOCUMENT)                    
                     {
                         break;
-                    } //End block
+                    } 
     if(type == XmlPullParser.END_TAG || type == XmlPullParser.TEXT)                    
                     {
                         continue;
-                    } //End block
+                    } 
                     String nodeName = parser.getName();
     if(!TAG_HISTORICAL_RECORD.equals(nodeName))                    
                     {
                         XmlPullParserException varF3F51246E63940A674F24490F1D3073F_294848831 = new XmlPullParserException("Share records file not well-formed.");
                         varF3F51246E63940A674F24490F1D3073F_294848831.addTaint(taint);
                         throw varF3F51246E63940A674F24490F1D3073F_294848831;
-                    } //End block
+                    } 
                     String activity = parser.getAttributeValue(null, ATTRIBUTE_ACTIVITY);
                     final long time = Long.parseLong(parser.getAttributeValue(null, ATTRIBUTE_TIME));
                     final float weight = Float.parseFloat(parser.getAttributeValue(null, ATTRIBUTE_WEIGHT));
@@ -1033,11 +1038,11 @@ for(int i = 0;i < activityCount;i++)
                     readRecords.add(readRecord);
     if(DEBUG)                    
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(DEBUG)                
                 {
-                } //End block
+                } 
                 synchronized
 (mInstanceLock)                {
                     Set<HistoricalRecord> uniqueShareRecords = new LinkedHashSet<HistoricalRecord>(readRecords);
@@ -1047,11 +1052,11 @@ for(int i = historicalRecordsCount - 1;i >= 0;i--)
                     {
                         HistoricalRecord historicalRecord = historicalRecords.get(i);
                         uniqueShareRecords.add(historicalRecord);
-                    } //End block
+                    } 
     if(historicalRecords.size() == uniqueShareRecords.size())                    
                     {
                         return;
-                    } //End block
+                    } 
                     historicalRecords.clear();
                     historicalRecords.addAll(uniqueShareRecords);
                     mHistoricalRecordsChanged = true;
@@ -1060,19 +1065,19 @@ for(int i = historicalRecordsCount - 1;i >= 0;i--)
             public void run() {
                 pruneExcessiveHistoricalRecordsLocked();
                 sortActivities();
-                // ---------- Original Method ----------
-                //pruneExcessiveHistoricalRecordsLocked();
-                //sortActivities();
+                
+                
+                
             }
 });
-                } //End block
-            } //End block
+                } 
+            } 
             catch (XmlPullParserException xppe)
             {
-            } //End block
+            } 
             catch (IOException ioe)
             {
-            } //End block
+            } 
             finally 
             {
     if(fis != null)                
@@ -1080,14 +1085,14 @@ for(int i = historicalRecordsCount - 1;i >= 0;i--)
                     try 
                     {
                         fis.close();
-                    } //End block
+                    } 
                     catch (IOException ioe)
                     {
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -1100,7 +1105,7 @@ for(int i = historicalRecordsCount - 1;i >= 0;i--)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.046 -0400", hash_original_method = "F652F13A8701B98B9D8C3619B90FF892", hash_generated_method = "F652F13A8701B98B9D8C3619B90FF892")
         public HistoryPersister ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1111,15 +1116,15 @@ for(int i = historicalRecordsCount - 1;i >= 0;i--)
             synchronized
 (mInstanceLock)            {
                 records = new ArrayList<HistoricalRecord>(mHistoricalRecords);
-            } //End block
+            } 
             try 
             {
                 fos = mContext.openFileOutput(mHistoryFileName, Context.MODE_PRIVATE);
-            } //End block
+            } 
             catch (FileNotFoundException fnfe)
             {
                 return;
-            } //End block
+            } 
             XmlSerializer serializer = Xml.newSerializer();
             try 
             {
@@ -1137,23 +1142,23 @@ for(int i = 0;i < recordCount;i++)
                     serializer.endTag(null, TAG_HISTORICAL_RECORD);
     if(DEBUG)                    
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
                 serializer.endTag(null, TAG_HISTORICAL_RECORDS);
                 serializer.endDocument();
     if(DEBUG)                
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IllegalArgumentException iae)
             {
-            } //End block
+            } 
             catch (IllegalStateException ise)
             {
-            } //End block
+            } 
             catch (IOException ioe)
             {
-            } //End block
+            } 
             finally 
             {
     if(fos != null)                
@@ -1161,14 +1166,14 @@ for(int i = 0;i < recordCount;i++)
                     try 
                     {
                         fos.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -1181,79 +1186,79 @@ for(int i = 0;i < recordCount;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.050 -0400", hash_original_method = "7270678089AB03BAD6BBDC9C3DB17F70", hash_generated_method = "7270678089AB03BAD6BBDC9C3DB17F70")
         public DataModelPackageMonitor ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.050 -0400", hash_original_method = "C89F5C92B68E48D5DAFC93C690A3926A", hash_generated_method = "E306A83B5D5ECCC6744562B574EF6635")
         @Override
         public void onPackageAdded(String packageName, int uid) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(uid);
             addTaint(packageName.getTaint());
             synchronized
 (mInstanceLock)            {
                 loadActivitiesLocked();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //loadActivitiesLocked();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.050 -0400", hash_original_method = "E08DC591D228402C0DBF164DF68C0AF4", hash_generated_method = "376D22EF41EB921C8D87080758BA8B82")
         @Override
         public void onPackageAppeared(String packageName, int reason) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(reason);
             addTaint(packageName.getTaint());
             synchronized
 (mInstanceLock)            {
                 loadActivitiesLocked();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //loadActivitiesLocked();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.051 -0400", hash_original_method = "A7BE115B10A66075A04B7082DDA7D411", hash_generated_method = "3DD87351A4166C3F8D12994C5ED5D241")
         @Override
         public void onPackageRemoved(String packageName, int uid) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(uid);
             addTaint(packageName.getTaint());
             synchronized
 (mInstanceLock)            {
                 pruneHistoricalRecordsForPackageLocked(packageName);
                 loadActivitiesLocked();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //pruneHistoricalRecordsForPackageLocked(packageName);
-                //loadActivitiesLocked();
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.051 -0400", hash_original_method = "31BBEB936625AC985495016944655B18", hash_generated_method = "94862DE920213039998047DC3EF605EF")
         @Override
         public void onPackageDisappeared(String packageName, int reason) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(reason);
             addTaint(packageName.getTaint());
             synchronized
 (mInstanceLock)            {
                 pruneHistoricalRecordsForPackageLocked(packageName);
                 loadActivitiesLocked();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mInstanceLock) {
-                //pruneHistoricalRecordsForPackageLocked(packageName);
-                //loadActivitiesLocked();
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         

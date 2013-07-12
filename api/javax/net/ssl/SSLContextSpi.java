@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class SSLContextSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.832 -0400", hash_original_method = "C071A8DB81BAA2AB9BA30E20CDF7E4D3", hash_generated_method = "540369CB178536FB780D6C1CC0EB32F7")
     public  SSLContextSpi() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,8 +43,8 @@ public abstract class SSLContextSpi {
 javax.net.ssl.SSLParameters var0D24C82A180A38AA13BFD398679AE174_1912972933 =         createSSLParameters(false);
         var0D24C82A180A38AA13BFD398679AE174_1912972933.addTaint(taint);
         return var0D24C82A180A38AA13BFD398679AE174_1912972933;
-        // ---------- Original Method ----------
-        //return createSSLParameters(false);
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ javax.net.ssl.SSLParameters var0D24C82A180A38AA13BFD398679AE174_1912972933 =    
 javax.net.ssl.SSLParameters varFE76CDC4E3DE17434647E2DDA62A2469_571315456 =         createSSLParameters(true);
         varFE76CDC4E3DE17434647E2DDA62A2469_571315456.addTaint(taint);
         return varFE76CDC4E3DE17434647E2DDA62A2469_571315456;
-        // ---------- Original Method ----------
-        //return createSSLParameters(true);
+        
+        
     }
 
     
@@ -71,12 +71,12 @@ javax.net.ssl.SSLParameters varFE76CDC4E3DE17434647E2DDA62A2469_571315456 =     
             {
                 cipherSuites = s.getSupportedCipherSuites();
                 protocols = s.getSupportedProtocols();
-            } //End block
+            } 
             else
             {
                 cipherSuites = s.getEnabledCipherSuites();
                 protocols = s.getEnabledProtocols();
-            } //End block
+            } 
             p.setCipherSuites(cipherSuites);
             p.setProtocols(protocols);
             p.setNeedClientAuth(s.getNeedClientAuth());
@@ -84,15 +84,15 @@ javax.net.ssl.SSLParameters varFE76CDC4E3DE17434647E2DDA62A2469_571315456 =     
 javax.net.ssl.SSLParameters var74E4690D9F2A026504928C017944E149_184850854 =             p;
             var74E4690D9F2A026504928C017944E149_184850854.addTaint(taint);
             return var74E4690D9F2A026504928C017944E149_184850854;
-        } //End block
+        } 
         catch (IOException e)
         {
             UnsupportedOperationException varE5FD55B20B4036F962796E854825EB0C_532410159 = new UnsupportedOperationException("Could not access supported SSL parameters");
             varE5FD55B20B4036F962796E854825EB0C_532410159.addTaint(taint);
             throw varE5FD55B20B4036F962796E854825EB0C_532410159;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

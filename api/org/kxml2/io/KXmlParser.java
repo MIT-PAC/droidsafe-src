@@ -1,6 +1,6 @@
 package org.kxml2.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -131,18 +131,20 @@ public class KXmlParser implements XmlPullParser, Closeable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.010 -0400", hash_original_method = "010DAC0EB3331EDC25D05B4FF02298A9", hash_generated_method = "010DAC0EB3331EDC25D05B4FF02298A9")
     public KXmlParser ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.011 -0400", hash_original_method = "A527DEDBB8977F1D947B829D15DAACC5", hash_generated_method = "1634D7B912087B274B9C21F12413F3E3")
     public void keepNamespaceAttributes() {
         this.keepNamespaceAttributes = true;
-        // ---------- Original Method ----------
-        //this.keepNamespaceAttributes = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.013 -0400", hash_original_method = "F08928441827C23946744248151D18D9", hash_generated_method = "211EF4522C01DA71BD0B15A20A7E3534")
     private boolean adjustNsp() throws XmlPullParserException {
         boolean any = false;
@@ -155,21 +157,21 @@ for(int i = 0;i < attributeCount << 2;i += 4)
             {
                 prefix = attrName.substring(0, cut);
                 attrName = attrName.substring(cut + 1);
-            } //End block
+            } 
             else
     if(attrName.equals("xmlns"))            
             {
                 prefix = attrName;
                 attrName = null;
-            } //End block
+            } 
             else
             {
                 continue;
-            } //End block
+            } 
     if(!prefix.equals("xmlns"))            
             {
                 any = true;
-            } //End block
+            } 
             else
             {
                 int j = (nspCounts[depth]++) << 1;
@@ -179,12 +181,12 @@ for(int i = 0;i < attributeCount << 2;i += 4)
     if(attrName != null && attributes[i + 3].isEmpty())                
                 {
                     checkRelaxed("illegal empty namespace");
-                } //End block
+                } 
     if(keepNamespaceAttributes)                
                 {
                     attributes[i] = "http://www.w3.org/2000/xmlns/";
                     any = true;
-                } //End block
+                } 
                 else
                 {
                     System.arraycopy(
@@ -194,9 +196,9 @@ for(int i = 0;i < attributeCount << 2;i += 4)
                             i,
                             ((--attributeCount) << 2) - i);
                     i -= 4;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(any)        
         {
 for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
@@ -209,7 +211,7 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
                             "illegal attribute name: " + attrName + " at " + this);
                     varED97AAB5843948CA47DCBF2C58EC51F0_1257266409.addTaint(taint);
                     throw varED97AAB5843948CA47DCBF2C58EC51F0_1257266409;
-                } //End block
+                } 
                 else
     if(cut != -1)                
                 {
@@ -222,37 +224,37 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
                                 "Undefined Prefix: " + attrPrefix + " in " + this);
                         varB9AFB5BE9C6FD0ABD6B99FD1168B2524_1709049132.addTaint(taint);
                         throw varB9AFB5BE9C6FD0ABD6B99FD1168B2524_1709049132;
-                    } //End block
+                    } 
                     attributes[i] = attrNs;
                     attributes[i + 1] = attrPrefix;
                     attributes[i + 2] = attrName;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int cut = name.indexOf(':');
     if(cut == 0)        
         {
             checkRelaxed("illegal tag name: " + name);
-        } //End block
+        } 
     if(cut != -1)        
         {
             prefix = name.substring(0, cut);
             name = name.substring(cut + 1);
-        } //End block
+        } 
         this.namespace = getNamespace(prefix);
     if(this.namespace == null)        
         {
     if(prefix != null)            
             {
                 checkRelaxed("undefined prefix: " + prefix);
-            } //End block
+            } 
             this.namespace = NO_NAMESPACE;
-        } //End block
+        } 
         boolean var100B8CAD7CF2A56F6DF78F171F97A1EC_1005649565 = (any);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_560883510 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_560883510;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -265,22 +267,23 @@ for(int i = (attributeCount << 2) - 4;i >= 0;i -= 4)
 String[] var9AD71BA773C278799FE3A7FBD26098B3_1388737501 =             arr;
             var9AD71BA773C278799FE3A7FBD26098B3_1388737501.addTaint(taint);
             return var9AD71BA773C278799FE3A7FBD26098B3_1388737501;
-        } //End block
+        } 
         String[] bigger = new String[required + 16];
         System.arraycopy(arr, 0, bigger, 0, arr.length);
 String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
         varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254.addTaint(taint);
         return varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254;
-        // ---------- Original Method ----------
-        //if (arr.length >= required) {
-            //return arr;
-        //}
-        //String[] bigger = new String[required + 16];
-        //System.arraycopy(arr, 0, bigger, 0, arr.length);
-        //return bigger;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.015 -0400", hash_original_method = "4A7BCCF6DFE9CB9D8E85D47BF7F54B1D", hash_generated_method = "3FC55F660F05A22148EE091F1D56FFA0")
     private void checkRelaxed(String errorMessage) throws XmlPullParserException {
     if(!relaxed)        
@@ -288,18 +291,18 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
             XmlPullParserException varF7F90359353F211275A8867F31AB1A82_261161522 = new XmlPullParserException(errorMessage, this, null);
             varF7F90359353F211275A8867F31AB1A82_261161522.addTaint(taint);
             throw varF7F90359353F211275A8867F31AB1A82_261161522;
-        } //End block
+        } 
     if(error == null)        
         {
             error = "Error: " + errorMessage;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!relaxed) {
-            //throw new XmlPullParserException(errorMessage, this, null);
-        //}
-        //if (error == null) {
-            //error = "Error: " + errorMessage;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -308,8 +311,8 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
         int varC0EE87846FC78145B4BC7514BFB544D2_891028178 = (next(false));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_440558054 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_440558054;
-        // ---------- Original Method ----------
-        //return next(false);
+        
+        
     }
 
     
@@ -318,11 +321,12 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
         int varC0DF60F8FB8FC082186698EDB84E0827_201135285 = (next(true));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_135486227 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_135486227;
-        // ---------- Original Method ----------
-        //return next(true);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.019 -0400", hash_original_method = "55251A1079E5B9F4E3B9F053CFE6FD44", hash_generated_method = "6AF000803E605A8682943475700A3B9B")
     private int next(boolean justOneToken) throws IOException, XmlPullParserException {
     if(reader == null)        
@@ -330,11 +334,11 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
             XmlPullParserException var4CF0DAF003AB8E43B9866AA41ADA04C7_147332196 = new XmlPullParserException("setInput() must be called first.", this, null);
             var4CF0DAF003AB8E43B9866AA41ADA04C7_147332196.addTaint(taint);
             throw var4CF0DAF003AB8E43B9866AA41ADA04C7_147332196;
-        } //End block
+        } 
     if(type == END_TAG)        
         {
             depth--;
-        } //End block
+        } 
     if(degenerated)        
         {
             degenerated = false;
@@ -342,7 +346,7 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
             int var599DCCE2998A6B40B1E38E8C6006CB0A_1624240821 = (type);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927318969 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927318969;
-        } //End block
+        } 
     if(error != null)        
         {
     if(justOneToken)            
@@ -353,18 +357,18 @@ String[] varDA86C97D19AAB90DE46D3E10F1791C1F_2104226254 =         bigger;
                 int var599DCCE2998A6B40B1E38E8C6006CB0A_147524887 = (type);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1691767951 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1691767951;
-            } //End block
+            } 
             else
             {
                 error = null;
-            } //End block
-        } //End block
+            } 
+        } 
         type = peekType(false);
     if(type == XML_DECLARATION)        
         {
             readXmlDeclaration();
             type = peekType(false);
-        } //End block
+        } 
         text = null;
         isWhitespace = true;
         prefix = null;
@@ -397,13 +401,13 @@ switch(type){
                 readEntity(entityTextBuilder, true, throwOnResolveFailure, ValueContext.TEXT);
                 text = entityTextBuilder.toString();
                 break;
-            } //End block
+            } 
             case TEXT:
             text = readValue('<', !justOneToken, throwOnResolveFailure, ValueContext.TEXT);
     if(depth == 0 && isWhitespace)            
             {
                 type = IGNORABLE_WHITESPACE;
-            } //End block
+            } 
             break;
             case CDSECT:
             read(START_CDATA);
@@ -414,7 +418,7 @@ switch(type){
     if(justOneToken)            
             {
                 text = commentText;
-            } //End block
+            } 
             break;
             case PROCESSING_INSTRUCTION:
             read(START_PROCESSING_INSTRUCTION);
@@ -422,7 +426,7 @@ switch(type){
     if(justOneToken)            
             {
                 text = processingInstruction;
-            } //End block
+            } 
             break;
             case DOCDECL:
             readDoctype(justOneToken);
@@ -436,17 +440,17 @@ switch(type){
                 XmlPullParserException var6568179198AC1CED0517BEE7BC41907C_959932220 = new XmlPullParserException("Unexpected token", this, null);
                 var6568179198AC1CED0517BEE7BC41907C_959932220.addTaint(taint);
                 throw var6568179198AC1CED0517BEE7BC41907C_959932220;
-            } //End block
+            } 
     if(justOneToken)            
             {
                 int var599DCCE2998A6B40B1E38E8C6006CB0A_1328743358 = (type);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_139197815 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_139197815;
-            } //End block
+            } 
     if(type == IGNORABLE_WHITESPACE)            
             {
                 text = null;
-            } //End block
+            } 
             int peek = peekType(false);
     if(text != null && !text.isEmpty() && peek < TEXT)            
             {
@@ -454,11 +458,11 @@ switch(type){
                 int var599DCCE2998A6B40B1E38E8C6006CB0A_1013639660 = (type);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288655640 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288655640;
-            } //End block
+            } 
             type = peek;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -471,7 +475,7 @@ switch(type){
         {
             result = new StringBuilder();
             result.append(text);
-        } //End block
+        } 
     search        :
         while
 (true)        
@@ -483,9 +487,9 @@ switch(type){
     if(result == null)                    
                     {
                         result = new StringBuilder();
-                    } //End block
+                    } 
                     result.append(buffer, start, position - start);
-                } //End block
+                } 
     if(!fillBuffer(delimiter.length))                
                 {
                     checkRelaxed(UNEXPECTED_EOF);
@@ -493,19 +497,19 @@ switch(type){
 String var540C13E9E156B687226421B24F2DF178_796900099 =                     null;
                     var540C13E9E156B687226421B24F2DF178_796900099.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_796900099;
-                } //End block
+                } 
                 start = position;
-            } //End block
+            } 
 for(int i = 0;i < delimiter.length;i++)
             {
     if(buffer[position + i] != delimiter[i])                
                 {
                     position++;
                     continue search;
-                } //End block
-            } //End block
+                } 
+            } 
             break;
-        } //End block
+        } 
         int end = position;
         position += delimiter.length;
     if(!returnText)        
@@ -513,23 +517,23 @@ for(int i = 0;i < delimiter.length;i++)
 String var540C13E9E156B687226421B24F2DF178_1502153014 =             null;
             var540C13E9E156B687226421B24F2DF178_1502153014.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1502153014;
-        } //End block
+        } 
         else
     if(result == null)        
         {
 String varBBF641BD706477AE0FC4DD5EE67F18D3_220729326 =             stringPool.get(buffer, start, end - start);
             varBBF641BD706477AE0FC4DD5EE67F18D3_220729326.addTaint(taint);
             return varBBF641BD706477AE0FC4DD5EE67F18D3_220729326;
-        } //End block
+        } 
         else
         {
             result.append(buffer, start, end - start);
 String varE65B3A02759122992CB82C0E651AD408_1741463049 =             result.toString();
             varE65B3A02759122992CB82C0E651AD408_1741463049.addTaint(taint);
             return varE65B3A02759122992CB82C0E651AD408_1741463049;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -538,49 +542,50 @@ String varE65B3A02759122992CB82C0E651AD408_1741463049 =             result.toStr
     if(bufferStartLine != 0 || bufferStartColumn != 0 || position != 0)        
         {
             checkRelaxed("processing instructions must not start with xml");
-        } //End block
+        } 
         read(START_PROCESSING_INSTRUCTION);
         parseStartTag(true, true);
     if(attributeCount < 1 || !"version".equals(attributes[2]))        
         {
             checkRelaxed("version expected");
-        } //End block
+        } 
         version = attributes[3];
         int pos = 1;
     if(pos < attributeCount && "encoding".equals(attributes[2 + 4]))        
         {
             encoding = attributes[3 + 4];
             pos++;
-        } //End block
+        } 
     if(pos < attributeCount && "standalone".equals(attributes[4 * pos + 2]))        
         {
             String st = attributes[3 + 4 * pos];
     if("yes".equals(st))            
             {
                 standalone = Boolean.TRUE;
-            } //End block
+            } 
             else
     if("no".equals(st))            
             {
                 standalone = Boolean.FALSE;
-            } //End block
+            } 
             else
             {
                 checkRelaxed("illegal standalone value: " + st);
-            } //End block
+            } 
             pos++;
-        } //End block
+        } 
     if(pos != attributeCount)        
         {
             checkRelaxed("unexpected attributes in XML declaration");
-        } //End block
+        } 
         isWhitespace = true;
         text = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.022 -0400", hash_original_method = "15C58CE8BC29A2518B63BEC83A754E2C", hash_generated_method = "0770F803744ADDF40B931175D7F0D21A")
     private String readComment(boolean returnText) throws IOException, XmlPullParserException {
         addTaint(returnText);
@@ -590,29 +595,29 @@ String varE65B3A02759122992CB82C0E651AD408_1741463049 =             result.toStr
 String var00CC6E8910B870D548D0A77501AD6071_582262677 =             readUntil(END_COMMENT, returnText);
             var00CC6E8910B870D548D0A77501AD6071_582262677.addTaint(taint);
             return var00CC6E8910B870D548D0A77501AD6071_582262677;
-        } //End block
+        } 
         String commentText = readUntil(COMMENT_DOUBLE_DASH, returnText);
     if(peekCharacter() != '>')        
         {
             XmlPullParserException var3610F7DF0EB2F92D8BFAAAE51489E465_1643782436 = new XmlPullParserException("Comments may not contain --", this, null);
             var3610F7DF0EB2F92D8BFAAAE51489E465_1643782436.addTaint(taint);
             throw var3610F7DF0EB2F92D8BFAAAE51489E465_1643782436;
-        } //End block
+        } 
         position++;
 String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
         varE26F82105FF0C27B3E7345DB912CF13C_1103722027.addTaint(taint);
         return varE26F82105FF0C27B3E7345DB912CF13C_1103722027;
-        // ---------- Original Method ----------
-        //read(START_COMMENT);
-        //if (relaxed) {
-            //return readUntil(END_COMMENT, returnText);
-        //}
-        //String commentText = readUntil(COMMENT_DOUBLE_DASH, returnText);
-        //if (peekCharacter() != '>') {
-            //throw new XmlPullParserException("Comments may not contain --", this, null);
-        //}
-        //position++;
-        //return commentText;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -625,7 +630,7 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
         {
             bufferCapture = new StringBuilder();
             startPosition = position;
-        } //End block
+        } 
         try 
         {
             skip();
@@ -635,9 +640,9 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
     if(peekCharacter() == '[')            
             {
                 readInternalSubset();
-            } //End block
+            } 
             skip();
-        } //End block
+        } 
         finally 
         {
     if(saveDtdText)            
@@ -646,34 +651,34 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
                 bufferCapture.delete(0, startPosition);
                 text = bufferCapture.toString();
                 bufferCapture = null;
-            } //End block
-        } //End block
+            } 
+        } 
         read('>');
-        // ---------- Original Method ----------
-        //read(START_DOCTYPE);
-        //int startPosition = -1;
-        //if (saveDtdText) {
-            //bufferCapture = new StringBuilder();
-            //startPosition = position;
-        //}
-        //try {
-            //skip();
-            //rootElementName = readName();
-            //readExternalId(true, true);
-            //skip();
-            //if (peekCharacter() == '[') {
-                //readInternalSubset();
-            //}
-            //skip();
-        //} finally {
-            //if (saveDtdText) {
-                //bufferCapture.append(buffer, 0, position);
-                //bufferCapture.delete(0, startPosition);
-                //text = bufferCapture.toString();
-                //bufferCapture = null;
-            //}
-        //}
-        //read('>');
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+        
+            
+                
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -686,7 +691,7 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
     if(c == 'S')        
         {
             read(SYSTEM);
-        } //End block
+        } 
         else
     if(c == 'P')        
         {
@@ -695,18 +700,18 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
     if(assignFields)            
             {
                 publicId = readQuotedId(true);
-            } //End block
+            } 
             else
             {
                 readQuotedId(false);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1019323197 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785484713 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_785484713;
-        } //End block
+        } 
         skip();
     if(!requireSystemName)        
         {
@@ -716,48 +721,48 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
                 boolean varB326B5062B2F0E69046810717534CB09_429721075 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_439040698 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_439040698;
-            } //End block
-        } //End block
+            } 
+        } 
     if(assignFields)        
         {
             systemId = readQuotedId(true);
-        } //End block
+        } 
         else
         {
             readQuotedId(false);
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1311631973 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647101174 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647101174;
-        // ---------- Original Method ----------
-        //skip();
-        //int c = peekCharacter();
-        //if (c == 'S') {
-            //read(SYSTEM);
-        //} else if (c == 'P') {
-            //read(PUBLIC);
-            //skip();
-            //if (assignFields) {
-                //publicId = readQuotedId(true);
-            //} else {
-                //readQuotedId(false);
-            //}
-        //} else {
-            //return false;
-        //}
-        //skip();
-        //if (!requireSystemName) {
-            //int delimiter = peekCharacter();
-            //if (delimiter != '"' && delimiter != '\'') {
-                //return true; 
-            //}
-        //}
-        //if (assignFields) {
-            //systemId = readQuotedId(true);
-        //} else {
-            //readQuotedId(false);
-        //}
-        //return true;
+        
+        
+        
+        
+            
+        
+            
+            
+            
+                
+            
+                
+            
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -769,37 +774,38 @@ String varE26F82105FF0C27B3E7345DB912CF13C_1103722027 =         commentText;
     if(quote == '"')        
         {
             delimiter = DOUBLE_QUOTE;
-        } //End block
+        } 
         else
     if(quote == '\'')        
         {
             delimiter = SINGLE_QUOTE;
-        } //End block
+        } 
         else
         {
             XmlPullParserException var9958E51E6EA0EC4500213F257AE7D963_43555743 = new XmlPullParserException("Expected a quoted string", this, null);
             var9958E51E6EA0EC4500213F257AE7D963_43555743.addTaint(taint);
             throw var9958E51E6EA0EC4500213F257AE7D963_43555743;
-        } //End block
+        } 
         position++;
 String varA5E0B5AD4D45D338445123EC5807E7E2_371238369 =         readUntil(delimiter, returnText);
         varA5E0B5AD4D45D338445123EC5807E7E2_371238369.addTaint(taint);
         return varA5E0B5AD4D45D338445123EC5807E7E2_371238369;
-        // ---------- Original Method ----------
-        //int quote = peekCharacter();
-        //char[] delimiter;
-        //if (quote == '"') {
-            //delimiter = DOUBLE_QUOTE;
-        //} else if (quote == '\'') {
-            //delimiter = SINGLE_QUOTE;
-        //} else {
-            //throw new XmlPullParserException("Expected a quoted string", this, null);
-        //}
-        //position++;
-        //return readUntil(delimiter, returnText);
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.023 -0400", hash_original_method = "065EAF2A999BF53AAEE6E5D55221F190", hash_generated_method = "660DB3B63EE7812DFBAAF2DFAF78D52B")
     private void readInternalSubset() throws IOException, XmlPullParserException {
         read('[');
@@ -811,7 +817,7 @@ String varA5E0B5AD4D45D338445123EC5807E7E2_371238369 =         readUntil(delimit
             {
                 position++;
                 return;
-            } //End block
+            } 
             int declarationType = peekType(true);
 switch(declarationType){
             case ELEMENTDECL:
@@ -843,9 +849,9 @@ switch(declarationType){
             var6568179198AC1CED0517BEE7BC41907C_1162167142.addTaint(taint);
             throw var6568179198AC1CED0517BEE7BC41907C_1162167142;
 }
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -857,13 +863,13 @@ switch(declarationType){
         readContentSpec();
         skip();
         read('>');
-        // ---------- Original Method ----------
-        //read(START_ELEMENT);
-        //skip();
-        //readName();
-        //readContentSpec();
-        //skip();
-        //read('>');
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -879,61 +885,61 @@ switch(declarationType){
     if(c == '(')                    
                     {
                         depth++;
-                    } //End block
+                    } 
                     else
     if(c == ')')                    
                     {
                         depth--;
-                    } //End block
+                    } 
                     position++;
                     c = peekCharacter();
-                } //End block
+                } 
 } while (depth > 0);
     if(c == '*' || c == '?' || c == '+')            
             {
                 position++;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(c == EMPTY[0])        
         {
             read(EMPTY);
-        } //End block
+        } 
         else
     if(c == ANY[0])        
         {
             read(ANY);
-        } //End block
+        } 
         else
         {
             XmlPullParserException var0902E2A75BDFF4C07E24B65B174DABCB_387418687 = new XmlPullParserException("Expected element content spec", this, null);
             var0902E2A75BDFF4C07E24B65B174DABCB_387418687.addTaint(taint);
             throw var0902E2A75BDFF4C07E24B65B174DABCB_387418687;
-        } //End block
-        // ---------- Original Method ----------
-        //skip();
-        //int c = peekCharacter();
-        //if (c == '(') {
-            //int depth = 0;
-            //do {
-                //if (c == '(') {
-                    //depth++;
-                //} else if (c == ')') {
-                    //depth--;
-                //}
-                //position++;
-                //c = peekCharacter();
-            //} while (depth > 0);
-            //if (c == '*' || c == '?' || c == '+') {
-                //position++;
-            //}
-        //} else if (c == EMPTY[0]) {
-            //read(EMPTY);
-        //} else if (c == ANY[0]) {
-            //read(ANY);
-        //} else {
-            //throw new XmlPullParserException("Expected element content spec", this, null);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+                
+                
+            
+            
+                
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -951,7 +957,7 @@ switch(declarationType){
             {
                 position++;
                 return;
-            } //End block
+            } 
             String attributeName = readName();
             skip();
     if(position + 1 >= limit && !fillBuffer(2))            
@@ -959,12 +965,12 @@ switch(declarationType){
                 XmlPullParserException varDFFB3FEA2AE02DD0180081583451C756_919468866 = new XmlPullParserException("Malformed attribute list", this, null);
                 varDFFB3FEA2AE02DD0180081583451C756_919468866.addTaint(taint);
                 throw varDFFB3FEA2AE02DD0180081583451C756_919468866;
-            } //End block
+            } 
     if(buffer[position] == NOTATION[0] && buffer[position + 1] == NOTATION[1])            
             {
                 read(NOTATION);
                 skip();
-            } //End block
+            } 
             c = peekCharacter();
     if(c == '(')            
             {
@@ -980,24 +986,24 @@ switch(declarationType){
                     {
                         position++;
                         break;
-                    } //End block
+                    } 
                     else
     if(c == '|')                    
                     {
                         position++;
-                    } //End block
+                    } 
                     else
                     {
                         XmlPullParserException var582CCDF2D68C7942DB58B35263B317FE_1191387508 = new XmlPullParserException("Malformed attribute type", this, null);
                         var582CCDF2D68C7942DB58B35263B317FE_1191387508.addTaint(taint);
                         throw var582CCDF2D68C7942DB58B35263B317FE_1191387508;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
                 readName();
-            } //End block
+            } 
             skip();
             c = peekCharacter();
     if(c == '#')            
@@ -1007,36 +1013,36 @@ switch(declarationType){
     if(c == 'R')                
                 {
                     read(REQUIRED);
-                } //End block
+                } 
                 else
     if(c == 'I')                
                 {
                     read(IMPLIED);
-                } //End block
+                } 
                 else
     if(c == 'F')                
                 {
                     read(FIXED);
-                } //End block
+                } 
                 else
                 {
                     XmlPullParserException var582CCDF2D68C7942DB58B35263B317FE_619348833 = new XmlPullParserException("Malformed attribute type", this, null);
                     var582CCDF2D68C7942DB58B35263B317FE_619348833.addTaint(taint);
                     throw var582CCDF2D68C7942DB58B35263B317FE_619348833;
-                } //End block
+                } 
                 skip();
                 c = peekCharacter();
-            } //End block
+            } 
     if(c == '"' || c == '\'')            
             {
                 position++;
                 String value = readValue((char) c, true, true, ValueContext.ATTRIBUTE);
                 position++;
                 defineAttributeDefault(elementName, attributeName, value);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1048,24 +1054,24 @@ switch(declarationType){
     if(defaultAttributes == null)        
         {
             defaultAttributes = new HashMap<String, Map<String, String>>();
-        } //End block
+        } 
         Map<String, String> elementAttributes = defaultAttributes.get(elementName);
     if(elementAttributes == null)        
         {
             elementAttributes = new HashMap<String, String>();
             defaultAttributes.put(elementName, elementAttributes);
-        } //End block
+        } 
         elementAttributes.put(attributeName, value);
-        // ---------- Original Method ----------
-        //if (defaultAttributes == null) {
-            //defaultAttributes = new HashMap<String, Map<String, String>>();
-        //}
-        //Map<String, String> elementAttributes = defaultAttributes.get(elementName);
-        //if (elementAttributes == null) {
-            //elementAttributes = new HashMap<String, String>();
-            //defaultAttributes.put(elementName, elementAttributes);
-        //}
-        //elementAttributes.put(attributeName, value);
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1079,7 +1085,7 @@ switch(declarationType){
             generalEntity = false;
             position++;
             skip();
-        } //End block
+        } 
         String name = readName();
         skip();
         int quote = peekCharacter();
@@ -1089,7 +1095,7 @@ switch(declarationType){
             position++;
             entityValue = readValue((char) quote, true, false, ValueContext.ENTITY_DECLARATION);
             position++;
-        } //End block
+        } 
         else
     if(readExternalId(true, false))        
         {
@@ -1100,26 +1106,26 @@ switch(declarationType){
                 read(NDATA);
                 skip();
                 readName();
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             XmlPullParserException var97FE2DE75BA38352C45B5BAD5DDCF17C_1180593895 = new XmlPullParserException("Expected entity value or external ID", this, null);
             var97FE2DE75BA38352C45B5BAD5DDCF17C_1180593895.addTaint(taint);
             throw var97FE2DE75BA38352C45B5BAD5DDCF17C_1180593895;
-        } //End block
+        } 
     if(generalEntity && processDocDecl)        
         {
     if(documentEntities == null)            
             {
                 documentEntities = new HashMap<String, char[]>();
-            } //End block
+            } 
             documentEntities.put(name, entityValue.toCharArray());
-        } //End block
+        } 
         skip();
         read('>');
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1134,19 +1140,19 @@ switch(declarationType){
                     "Expected external ID or public ID for notation", this, null);
             varDD7666CD6F88637B3702BD58D2E225DF_94804057.addTaint(taint);
             throw varDD7666CD6F88637B3702BD58D2E225DF_94804057;
-        } //End block
+        } 
         skip();
         read('>');
-        // ---------- Original Method ----------
-        //read(START_NOTATION);
-        //skip();
-        //readName();
-        //if (!readExternalId(false, false)) {
-            //throw new XmlPullParserException(
-                    //"Expected external ID or public ID for notation", this, null);
-        //}
-        //skip();
-        //read('>');
+        
+        
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -1163,13 +1169,13 @@ switch(declarationType){
             checkRelaxed("read end tag " + name + " with no tags open");
             type = COMMENT;
             return;
-        } //End block
+        } 
     if(name.equals(elementStack[sp + 3]))        
         {
             namespace = elementStack[sp];
             prefix = elementStack[sp + 1];
             name = elementStack[sp + 2];
-        } //End block
+        } 
         else
     if(!relaxed)        
         {
@@ -1177,27 +1183,27 @@ switch(declarationType){
                     "expected: /" + elementStack[sp + 3] + " read: " + name, this, null);
             var74E19E0F273201E17E5C777053489DFA_2080432125.addTaint(taint);
             throw var74E19E0F273201E17E5C777053489DFA_2080432125;
-        } //End block
-        // ---------- Original Method ----------
-        //read('<');
-        //read('/');
-        //name = readName();
-        //skip();
-        //read('>');
-        //int sp = (depth - 1) * 4;
-        //if (depth == 0) {
-            //checkRelaxed("read end tag " + name + " with no tags open");
-            //type = COMMENT;
-            //return;
-        //}
-        //if (name.equals(elementStack[sp + 3])) {
-            //namespace = elementStack[sp];
-            //prefix = elementStack[sp + 1];
-            //name = elementStack[sp + 2];
-        //} else if (!relaxed) {
-            //throw new XmlPullParserException(
-                    //"expected: /" + elementStack[sp + 3] + " read: " + name, this, null);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+            
+            
+        
+            
+                    
+        
     }
 
     
@@ -1209,7 +1215,7 @@ switch(declarationType){
             int var4620EC92A1E599503D1824B7D72639A9_1112487056 = (END_DOCUMENT);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339945340 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_339945340;
-        } //End block
+        } 
 switch(buffer[position]){
         case '&':
         int var77EB38A526F13B944BE9FFA37C0D5C6A_965488086 = (ENTITY_REF);
@@ -1221,7 +1227,7 @@ switch(buffer[position]){
             XmlPullParserException var3DFB54749ACACF9DD48E3182FCAC485A_189389433 = new XmlPullParserException("Dangling <", this, null);
             var3DFB54749ACACF9DD48E3182FCAC485A_189389433.addTaint(taint);
             throw var3DFB54749ACACF9DD48E3182FCAC485A_189389433;
-        } //End block
+        } 
 switch(buffer[position + 1]){
         case '/':
         int varE4525DD614186FFA3EEBD69C3B4CC14E_236868025 = (END_TAG);
@@ -1237,13 +1243,13 @@ switch(buffer[position + 1]){
             int var2EC6BCD132BB17876F851855A88A4941_1291125691 = (XML_DECLARATION);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329124395 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329124395;
-        } //End block
+        } 
         else
         {
             int var5156999A1C0B07BE533189D5F7C5A86C_1356034151 = (PROCESSING_INSTRUCTION);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801756638 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_801756638;
-        } //End block
+        } 
         case '!':
 switch(buffer[position + 2]){
         case 'D':
@@ -1293,18 +1299,19 @@ switch(buffer[position + 3]){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533397404 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533397404;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.029 -0400", hash_original_method = "2D33E593F3270AF80057D4A47B14E7B9", hash_generated_method = "E4DB1B5E5C3C101F48FF578468F46D0F")
     private void parseStartTag(boolean xmldecl, boolean throwOnResolveFailure) throws IOException, XmlPullParserException {
         addTaint(xmldecl);
     if(!xmldecl)        
         {
             read('<');
-        } //End block
+        } 
         name = readName();
         attributeCount = 0;
         while
@@ -1315,7 +1322,7 @@ switch(buffer[position + 3]){
             {
                 checkRelaxed(UNEXPECTED_EOF);
                 return;
-            } //End block
+            } 
             int c = buffer[position];
     if(xmldecl)            
             {
@@ -1324,8 +1331,8 @@ switch(buffer[position + 3]){
                     position++;
                     read('>');
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(c == '/')                
@@ -1335,14 +1342,14 @@ switch(buffer[position + 3]){
                     skip();
                     read('>');
                     break;
-                } //End block
+                } 
                 else
     if(c == '>')                
                 {
                     position++;
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             String attrName = readName();
             int i = (attributeCount++) * 4;
             attributes = ensureCapacity(attributes, i + 4);
@@ -1354,7 +1361,7 @@ switch(buffer[position + 3]){
             {
                 checkRelaxed(UNEXPECTED_EOF);
                 return;
-            } //End block
+            } 
     if(buffer[position] == '=')            
             {
                 position++;
@@ -1363,41 +1370,41 @@ switch(buffer[position + 3]){
                 {
                     checkRelaxed(UNEXPECTED_EOF);
                     return;
-                } //End block
+                } 
                 char delimiter = buffer[position];
     if(delimiter == '\'' || delimiter == '"')                
                 {
                     position++;
-                } //End block
+                } 
                 else
     if(relaxed)                
                 {
                     delimiter = ' ';
-                } //End block
+                } 
                 else
                 {
                     XmlPullParserException var1392FFD2A9C3E00300A14C932038F2B8_2080811389 = new XmlPullParserException("attr value delimiter missing!", this, null);
                     var1392FFD2A9C3E00300A14C932038F2B8_2080811389.addTaint(taint);
                     throw var1392FFD2A9C3E00300A14C932038F2B8_2080811389;
-                } //End block
+                } 
                 attributes[i + 3] = readValue(delimiter, true, throwOnResolveFailure,
                         ValueContext.ATTRIBUTE);
     if(delimiter != ' ')                
                 {
                     position++;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(relaxed)            
             {
                 attributes[i + 3] = attrName;
-            } //End block
+            } 
             else
             {
                 checkRelaxed("Attr.value missing f. " + attrName);
                 attributes[i + 3] = attrName;
-            } //End block
-        } //End block
+            } 
+        } 
         int sp = depth++ * 4;
         elementStack = ensureCapacity(elementStack, sp + 4);
         elementStack[sp + 3] = name;
@@ -1406,16 +1413,16 @@ switch(buffer[position + 3]){
             int[] bigger = new int[depth + 4];
             System.arraycopy(nspCounts, 0, bigger, 0, nspCounts.length);
             nspCounts = bigger;
-        } //End block
+        } 
         nspCounts[depth] = nspCounts[depth - 1];
     if(processNsp)        
         {
             adjustNsp();
-        } //End block
+        } 
         else
         {
             namespace = "";
-        } //End block
+        } 
     if(defaultAttributes != null)        
         {
             Map<String, String> elementDefaultAttributes = defaultAttributes.get(name);
@@ -1426,21 +1433,21 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
     if(getAttributeValue(null, entry.getKey()) != null)                    
                     {
                         continue;
-                    } //End block
+                    } 
                     int i = (attributeCount++) * 4;
                     attributes = ensureCapacity(attributes, i + 4);
                     attributes[i] = "";
                     attributes[i + 1] = null;
                     attributes[i + 2] = entry.getKey();
                     attributes[i + 3] = entry.getValue();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         elementStack[sp] = namespace;
         elementStack[sp + 1] = prefix;
         elementStack[sp + 2] = name;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1457,7 +1464,7 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
             AssertionError varA81442E36297E737EB908877E58260E8_1561056958 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_1561056958.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_1561056958;
-        } //End block
+        } 
         out.append('&');
         while
 (true)        
@@ -1468,7 +1475,7 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
                 out.append(';');
                 position++;
                 break;
-            } //End block
+            } 
             else
     if(c >= 128
                     || (c >= '0' && c <= '9')
@@ -1480,24 +1487,24 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
             {
                 position++;
                 out.append((char) c);
-            } //End block
+            } 
             else
     if(relaxed)            
             {
                 return;
-            } //End block
+            } 
             else
             {
                 XmlPullParserException varAB6FA04EF629B3C4ED1F39725CB5C59A_890455574 = new XmlPullParserException("unterminated entity ref", this, null);
                 varAB6FA04EF629B3C4ED1F39725CB5C59A_890455574.addTaint(taint);
                 throw varAB6FA04EF629B3C4ED1F39725CB5C59A_890455574;
-            } //End block
-        } //End block
+            } 
+        } 
         String code = out.substring(start + 1, out.length() - 1);
     if(isEntityToken)        
         {
             name = code;
-        } //End block
+        } 
     if(code.startsWith("#"))        
         {
             try 
@@ -1509,24 +1516,24 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
                 out.appendCodePoint(c);
                 unresolved = false;
                 return;
-            } //End block
+            } 
             catch (NumberFormatException notANumber)
             {
                 XmlPullParserException var11F315A97541D485B88EE83C2381B42D_1861350482 = new XmlPullParserException("Invalid character reference: &" + code);
                 var11F315A97541D485B88EE83C2381B42D_1861350482.addTaint(taint);
                 throw var11F315A97541D485B88EE83C2381B42D_1861350482;
-            } //End block
+            } 
             catch (IllegalArgumentException invalidCodePoint)
             {
                 XmlPullParserException var11F315A97541D485B88EE83C2381B42D_49253060 = new XmlPullParserException("Invalid character reference: &" + code);
                 var11F315A97541D485B88EE83C2381B42D_49253060.addTaint(taint);
                 throw var11F315A97541D485B88EE83C2381B42D_49253060;
-            } //End block
-        } //End block
+            } 
+        } 
     if(valueContext == ValueContext.ENTITY_DECLARATION)        
         {
             return;
-        } //End block
+        } 
         String defaultEntity = DEFAULT_ENTITIES.get(code);
     if(defaultEntity != null)        
         {
@@ -1534,7 +1541,7 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
             unresolved = false;
             out.append(defaultEntity);
             return;
-        } //End block
+        } 
         char[] resolved;
     if(documentEntities != null && (resolved = documentEntities.get(code)) != null)        
         {
@@ -1543,25 +1550,25 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
     if(processDocDecl)            
             {
                 pushContentSource(resolved);
-            } //End block
+            } 
             else
             {
                 out.append(resolved);
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(systemId != null)        
         {
             out.delete(start, out.length());
             return;
-        } //End block
+        } 
         unresolved = true;
     if(throwOnResolveFailure)        
         {
             checkRelaxed("unresolved: &" + code + ";");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1578,7 +1585,7 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
         {
             result = new StringBuilder();
             result.append(text);
-        } //End block
+        } 
         while
 (true)        
         {
@@ -1589,24 +1596,24 @@ for(Map.Entry<String, String> entry : elementDefaultAttributes.entrySet())
     if(result == null)                    
                     {
                         result = new StringBuilder();
-                    } //End block
+                    } 
                     result.append(buffer, start, position - start);
-                } //End block
+                } 
     if(!fillBuffer(1))                
                 {
 String varB3E8B857398D63B539DB3DAF908624D5_77085470 =                     result != null ? result.toString() : "";
                     varB3E8B857398D63B539DB3DAF908624D5_77085470.addTaint(taint);
                     return varB3E8B857398D63B539DB3DAF908624D5_77085470;
-                } //End block
+                } 
                 start = position;
-            } //End block
+            } 
             char c = buffer[position];
     if(c == delimiter
                     || (delimiter == ' ' && (c <= ' ' || c == '>'))
                     || c == '&' && !resolveEntities)            
             {
                 break;
-            } //End block
+            } 
     if(c != '\r'
                     && (c != '\n' || valueContext != ValueContext.ATTRIBUTE)
                     && c != '&'
@@ -1617,25 +1624,25 @@ String varB3E8B857398D63B539DB3DAF908624D5_77085470 =                     result
                 isWhitespace &= (c <= ' ');
                 position++;
                 continue;
-            } //End block
+            } 
     if(result == null)            
             {
                 result = new StringBuilder();
-            } //End block
+            } 
             result.append(buffer, start, position - start);
     if(c == '\r')            
             {
     if((position + 1 < limit || fillBuffer(2)) && buffer[position + 1] == '\n')                
                 {
                     position++;
-                } //End block
+                } 
                 c = (valueContext == ValueContext.ATTRIBUTE) ? ' ' : '\n';
-            } //End block
+            } 
             else
     if(c == '\n')            
             {
                 c = ' ';
-            } //End block
+            } 
             else
     if(c == '&')            
             {
@@ -1643,16 +1650,16 @@ String varB3E8B857398D63B539DB3DAF908624D5_77085470 =                     result
                 readEntity(result, false, throwOnResolveFailure, valueContext);
                 start = position;
                 continue;
-            } //End block
+            } 
             else
     if(c == '<')            
             {
     if(valueContext == ValueContext.ATTRIBUTE)                
                 {
                     checkRelaxed("Illegal: \"<\" inside attribute value");
-                } //End block
+                } 
                 isWhitespace = false;
-            } //End block
+            } 
             else
     if(c == ']')            
             {
@@ -1660,9 +1667,9 @@ String varB3E8B857398D63B539DB3DAF908624D5_77085470 =                     result
                         && buffer[position + 1] == ']' && buffer[position + 2] == '>')                
                 {
                     checkRelaxed("Illegal: \"]]>\" outside CDATA section");
-                } //End block
+                } 
                 isWhitespace = false;
-            } //End block
+            } 
             else
     if(c == '%')            
             {
@@ -1670,32 +1677,32 @@ String varB3E8B857398D63B539DB3DAF908624D5_77085470 =                     result
                         this, null);
                 varCFB8CD41BB68E41ACD16317507A00885_1972455671.addTaint(taint);
                 throw varCFB8CD41BB68E41ACD16317507A00885_1972455671;
-            } //End block
+            } 
             else
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_663471216 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_663471216.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_663471216;
-            } //End block
+            } 
             position++;
             result.append(c);
             start = position;
-        } //End block
+        } 
     if(result == null)        
         {
 String var71E646E551E14CBAFAEFFF0085BD89CB_394122856 =             stringPool.get(buffer, start, position - start);
             var71E646E551E14CBAFAEFFF0085BD89CB_394122856.addTaint(taint);
             return var71E646E551E14CBAFAEFFF0085BD89CB_394122856;
-        } //End block
+        } 
         else
         {
             result.append(buffer, start, position - start);
 String varE65B3A02759122992CB82C0E651AD408_1607249982 =             result.toString();
             varE65B3A02759122992CB82C0E651AD408_1607249982.addTaint(taint);
             return varE65B3A02759122992CB82C0E651AD408_1607249982;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1706,14 +1713,14 @@ String varE65B3A02759122992CB82C0E651AD408_1607249982 =             result.toStr
     if(c != expected)        
         {
             checkRelaxed("expected: '" + expected + "' actual: '" + ((char) c) + "'");
-        } //End block
+        } 
         position++;
-        // ---------- Original Method ----------
-        //int c = peekCharacter();
-        //if (c != expected) {
-            //checkRelaxed("expected: '" + expected + "' actual: '" + ((char) c) + "'");
-        //}
-        //position++;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1723,28 +1730,28 @@ String varE65B3A02759122992CB82C0E651AD408_1607249982 =             result.toStr
         {
             checkRelaxed("expected: '" + new String(chars) + "' but was EOF");
             return;
-        } //End block
+        } 
 for(int i = 0;i < chars.length;i++)
         {
     if(buffer[position + i] != chars[i])            
             {
                 checkRelaxed("expected: \"" + new String(chars) + "\" but was \""
                         + new String(buffer, position, chars.length) + "...\"");
-            } //End block
-        } //End block
+            } 
+        } 
         position += chars.length;
-        // ---------- Original Method ----------
-        //if (position + chars.length >= limit && !fillBuffer(chars.length)) {
-            //checkRelaxed("expected: '" + new String(chars) + "' but was EOF");
-            //return;
-        //}
-        //for (int i = 0; i < chars.length; i++) {
-            //if (buffer[position + i] != chars[i]) {
-                //checkRelaxed("expected: \"" + new String(chars) + "\" but was \""
-                        //+ new String(buffer, position, chars.length) + "...\"");
-            //}
-        //}
-        //position += chars.length;
+        
+        
+            
+            
+        
+        
+            
+                
+                        
+            
+        
+        
     }
 
     
@@ -1755,18 +1762,19 @@ for(int i = 0;i < chars.length;i++)
             int varC10F61EE85ECF5D0D12BB992411DA83D_591318793 = (buffer[position]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055255130 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1055255130;
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_334354574 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936332274 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936332274;
-        // ---------- Original Method ----------
-        //if (position < limit || fillBuffer(1)) {
-            //return buffer[position];
-        //}
-        //return -1;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.034 -0400", hash_original_method = "DC49987172506F0F8D59FF3F96E536A7", hash_generated_method = "AE6ECC1A5A1EFC73ECB1A1362A530A80")
     private boolean fillBuffer(int minimum) throws IOException, XmlPullParserException {
         addTaint(minimum);
@@ -1778,40 +1786,40 @@ for(int i = 0;i < chars.length;i++)
                 XmlPullParserException var6DCA400C07A1C497A37665E832C66BCE_1620997478 = new XmlPullParserException("Unbalanced entity!", this, null);
                 var6DCA400C07A1C497A37665E832C66BCE_1620997478.addTaint(taint);
                 throw var6DCA400C07A1C497A37665E832C66BCE_1620997478;
-            } //End block
+            } 
             popContentSource();
     if(limit - position >= minimum)            
             {
                 boolean varB326B5062B2F0E69046810717534CB09_238090468 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_165431797 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_165431797;
-            } //End block
-        } //End block
+            } 
+        } 
 for(int i = 0;i < position;i++)
         {
     if(buffer[i] == '\n')            
             {
                 bufferStartLine++;
                 bufferStartColumn = 0;
-            } //End block
+            } 
             else
             {
                 bufferStartColumn++;
-            } //End block
-        } //End block
+            } 
+        } 
     if(bufferCapture != null)        
         {
             bufferCapture.append(buffer, 0, position);
-        } //End block
+        } 
     if(limit != position)        
         {
             limit -= position;
             System.arraycopy(buffer, position, buffer, 0, limit);
-        } //End block
+        } 
         else
         {
             limit = 0;
-        } //End block
+        } 
         position = 0;
         int total;
         while
@@ -1823,13 +1831,13 @@ for(int i = 0;i < position;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1635887862 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773181299 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773181299;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1467799907 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1762093906 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1762093906;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1841,7 +1849,7 @@ for(int i = 0;i < position;i++)
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1658643557 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1658643557.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1658643557;
-        } //End block
+        } 
         int start = position;
         StringBuilder result = null;
         char c = buffer[position];
@@ -1853,14 +1861,14 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1658643557 =             "";
                 || relaxed)        
         {
             position++;
-        } //End block
+        } 
         else
         {
             checkRelaxed("name expected");
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_557832359 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_557832359.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_557832359;
-        } //End block
+        } 
         while
 (true)        
         {
@@ -1869,16 +1877,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_557832359 =             "";
     if(result == null)                
                 {
                     result = new StringBuilder();
-                } //End block
+                } 
                 result.append(buffer, start, position - start);
     if(!fillBuffer(1))                
                 {
 String varE65B3A02759122992CB82C0E651AD408_759842393 =                     result.toString();
                     varE65B3A02759122992CB82C0E651AD408_759842393.addTaint(taint);
                     return varE65B3A02759122992CB82C0E651AD408_759842393;
-                } //End block
+                } 
                 start = position;
-            } //End block
+            } 
             c = buffer[position];
     if((c >= 'a' && c <= 'z')
                     || (c >= 'A' && c <= 'Z')
@@ -1891,23 +1899,23 @@ String varE65B3A02759122992CB82C0E651AD408_759842393 =                     resul
             {
                 position++;
                 continue;
-            } //End block
+            } 
     if(result == null)            
             {
 String var71E646E551E14CBAFAEFFF0085BD89CB_1343851758 =                 stringPool.get(buffer, start, position - start);
                 var71E646E551E14CBAFAEFFF0085BD89CB_1343851758.addTaint(taint);
                 return var71E646E551E14CBAFAEFFF0085BD89CB_1343851758;
-            } //End block
+            } 
             else
             {
                 result.append(buffer, start, position - start);
 String varE65B3A02759122992CB82C0E651AD408_283578567 =                 result.toString();
                 varE65B3A02759122992CB82C0E651AD408_283578567.addTaint(taint);
                 return varE65B3A02759122992CB82C0E651AD408_283578567;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1920,20 +1928,21 @@ String varE65B3A02759122992CB82C0E651AD408_283578567 =                 result.to
     if(c > ' ')            
             {
                 break;
-            } //End block
+            } 
             position++;
-        } //End block
-        // ---------- Original Method ----------
-        //while (position < limit || fillBuffer(1)) {
-            //int c = buffer[position];
-            //if (c > ' ') {
-                //break;
-            //}
-            //position++;
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.036 -0400", hash_original_method = "46D251D7075E8F175BB5AD72794934F4", hash_generated_method = "7263440324760450D6FF789C509F096B")
     public void setInput(Reader reader) throws XmlPullParserException {
         this.reader = reader;
@@ -1948,32 +1957,32 @@ String varE65B3A02759122992CB82C0E651AD408_283578567 =                 result.to
     if(reader == null)        
         {
             return;
-        } //End block
+        } 
         position = 0;
         limit = 0;
         bufferStartLine = 0;
         bufferStartColumn = 0;
         depth = 0;
         documentEntities = null;
-        // ---------- Original Method ----------
-        //this.reader = reader;
-        //type = START_DOCUMENT;
-        //name = null;
-        //namespace = null;
-        //degenerated = false;
-        //attributeCount = -1;
-        //encoding = null;
-        //version = null;
-        //standalone = null;
-        //if (reader == null) {
-            //return;
-        //}
-        //position = 0;
-        //limit = 0;
-        //bufferStartLine = 0;
-        //bufferStartColumn = 0;
-        //depth = 0;
-        //documentEntities = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1988,7 +1997,7 @@ String varE65B3A02759122992CB82C0E651AD408_283578567 =                 result.to
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_42003105 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_42003105.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_42003105;
-        } //End block
+        } 
         try 
         {
     if(detectCharset)            
@@ -2001,10 +2010,10 @@ String varE65B3A02759122992CB82C0E651AD408_283578567 =                 result.to
     if(i == -1)                    
                     {
                         break;
-                    } //End block
+                    } 
                     firstFourBytes = (firstFourBytes << 8) | i;
                     buffer[limit++] = (char) i;
-                } //End block
+                } 
     if(limit == 4)                
                 {
 switch(firstFourBytes){
@@ -2046,7 +2055,7 @@ switch(firstFourBytes){
     if(i == -1)                        
                         {
                             break;
-                        } //End block
+                        } 
                         buffer[limit++] = (char) i;
     if(i == '>')                        
                         {
@@ -2058,14 +2067,14 @@ switch(firstFourBytes){
 (s.charAt(i0) != '"' && s.charAt(i0) != '\'')                                
                                 {
                                     i0++;
-                                } //End block
+                                } 
                                 char deli = s.charAt(i0++);
                                 int i1 = s.indexOf(deli, i0);
                                 charset = s.substring(i0, i1);
-                            } //End block
+                            } 
                             break;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     break;
                     default:
     if((firstFourBytes & 0x0ffff0000) == 0x0feff0000)                    
@@ -2073,28 +2082,28 @@ switch(firstFourBytes){
                         charset = "UTF-16BE";
                         buffer[0] = (char) ((buffer[2] << 8) | buffer[3]);
                         limit = 1;
-                    } //End block
+                    } 
                     else
     if((firstFourBytes & 0x0ffff0000) == 0x0fffe0000)                    
                     {
                         charset = "UTF-16LE";
                         buffer[0] = (char) ((buffer[3] << 8) | buffer[2]);
                         limit = 1;
-                    } //End block
+                    } 
                     else
     if((firstFourBytes & 0x0ffffff00) == 0x0efbbbf00)                    
                     {
                         charset = "UTF-8";
                         buffer[0] = buffer[3];
                         limit = 1;
-                    } //End block
+                    } 
 }
-                } //End block
-            } //End block
+                } 
+            } 
     if(charset == null)            
             {
                 charset = "UTF-8";
-            } //End block
+            } 
             int savedLimit = limit;
             setInput(new InputStreamReader(is, charset));
             encoding = charset;
@@ -2103,16 +2112,16 @@ switch(firstFourBytes){
             {
                 limit--;
                 System.arraycopy(buffer, 1, buffer, 0, limit);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             XmlPullParserException var5115E6D99501005DD169C20F2FC34568_202632366 = new XmlPullParserException("Invalid stream or encoding: " + e, this, e);
             var5115E6D99501005DD169C20F2FC34568_202632366.addTaint(taint);
             throw var5115E6D99501005DD169C20F2FC34568_202632366;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2121,11 +2130,11 @@ switch(firstFourBytes){
     if(reader != null)        
         {
             reader.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (reader != null) {
-            //reader.close();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -2137,50 +2146,52 @@ switch(firstFourBytes){
             boolean var09024CE37019EE47CD92BC3C6111FC3E_1121513538 = (processNsp);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1727032816 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1727032816;
-        } //End block
+        } 
         else
     if(FEATURE_RELAXED.equals(feature))        
         {
             boolean var81F32BE24A2A62FC472CC43EDC97E65B_1389527403 = (relaxed);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_573762744 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_573762744;
-        } //End block
+        } 
         else
     if(FEATURE_PROCESS_DOCDECL.equals(feature))        
         {
             boolean var61D7C74417362A394394F7DA60F28955_911517181 = (processDocDecl);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_676381929 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_676381929;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1224432952 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394126119 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394126119;
-        } //End block
-        // ---------- Original Method ----------
-        //if (XmlPullParser.FEATURE_PROCESS_NAMESPACES.equals(feature)) {
-            //return processNsp;
-        //} else if (FEATURE_RELAXED.equals(feature)) {
-            //return relaxed;
-        //} else if (FEATURE_PROCESS_DOCDECL.equals(feature)) {
-            //return processDocDecl;
-        //} else {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.038 -0400", hash_original_method = "A279F06C875438B49B8D4A1047D2C8F6", hash_generated_method = "A0B37AB5E18FD13F29E051A23642F2C8")
     public String getInputEncoding() {
 String varE424DD5E6E58EB63E1272B71B5A81966_1325654914 =         encoding;
         varE424DD5E6E58EB63E1272B71B5A81966_1325654914.addTaint(taint);
         return varE424DD5E6E58EB63E1272B71B5A81966_1325654914;
-        // ---------- Original Method ----------
-        //return encoding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.039 -0400", hash_original_method = "139FEB1FB1AC644E29BB2080E735DCAB", hash_generated_method = "B9D33CFD21A2ADCBF5ABC35159474074")
     public void defineEntityReplacementText(String entity, String value) throws XmlPullParserException {
         addTaint(value.getTaint());
@@ -2191,32 +2202,32 @@ String varE424DD5E6E58EB63E1272B71B5A81966_1325654914 =         encoding;
                     "Entity replacement text may not be defined with DOCTYPE processing enabled.");
             var4CC0DDC3E31B5D70BD0EC7E6B6D64CF1_814345312.addTaint(taint);
             throw var4CC0DDC3E31B5D70BD0EC7E6B6D64CF1_814345312;
-        } //End block
+        } 
     if(reader == null)        
         {
             IllegalStateException var612298139D745C579CB4AF9E1D11E154_1065194536 = new IllegalStateException(
                     "Entity replacement text must be defined after setInput()");
             var612298139D745C579CB4AF9E1D11E154_1065194536.addTaint(taint);
             throw var612298139D745C579CB4AF9E1D11E154_1065194536;
-        } //End block
+        } 
     if(documentEntities == null)        
         {
             documentEntities = new HashMap<String, char[]>();
-        } //End block
+        } 
         documentEntities.put(entity, value.toCharArray());
-        // ---------- Original Method ----------
-        //if (processDocDecl) {
-            //throw new IllegalStateException(
-                    //"Entity replacement text may not be defined with DOCTYPE processing enabled.");
-        //}
-        //if (reader == null) {
-            //throw new IllegalStateException(
-                    //"Entity replacement text must be defined after setInput()");
-        //}
-        //if (documentEntities == null) {
-            //documentEntities = new HashMap<String, char[]>();
-        //}
-        //documentEntities.put(entity, value.toCharArray());
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
+        
+            
+        
+        
     }
 
     
@@ -2228,67 +2239,70 @@ String varE424DD5E6E58EB63E1272B71B5A81966_1325654914 =         encoding;
 Object varE87BEFBC04DA371DFA5B07C77A4407CB_409025344 =             version;
             varE87BEFBC04DA371DFA5B07C77A4407CB_409025344.addTaint(taint);
             return varE87BEFBC04DA371DFA5B07C77A4407CB_409025344;
-        } //End block
+        } 
         else
     if(property.equals(PROPERTY_XMLDECL_STANDALONE))        
         {
 Object var0A92F512F6C388B59F324CF6065C09B7_227671636 =             standalone;
             var0A92F512F6C388B59F324CF6065C09B7_227671636.addTaint(taint);
             return var0A92F512F6C388B59F324CF6065C09B7_227671636;
-        } //End block
+        } 
         else
     if(property.equals(PROPERTY_LOCATION))        
         {
 Object var6A827605B4DF9F7656BD024AEBD8048A_933334601 =             location != null ? location : reader.toString();
             var6A827605B4DF9F7656BD024AEBD8048A_933334601.addTaint(taint);
             return var6A827605B4DF9F7656BD024AEBD8048A_933334601;
-        } //End block
+        } 
         else
         {
 Object var540C13E9E156B687226421B24F2DF178_1940929005 =             null;
             var540C13E9E156B687226421B24F2DF178_1940929005.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1940929005;
-        } //End block
-        // ---------- Original Method ----------
-        //if (property.equals(PROPERTY_XMLDECL_VERSION)) {
-            //return version;
-        //} else if (property.equals(PROPERTY_XMLDECL_STANDALONE)) {
-            //return standalone;
-        //} else if (property.equals(PROPERTY_LOCATION)) {
-            //return location != null ? location : reader.toString();
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.039 -0400", hash_original_method = "9C3E6BF1FDA5FCF82C61137F91620CE9", hash_generated_method = "A4571504006C487C0EBDA26861C2605E")
     public String getRootElementName() {
 String var6D4B8E852BD53E9EF524EDC454541154_113058373 =         rootElementName;
         var6D4B8E852BD53E9EF524EDC454541154_113058373.addTaint(taint);
         return var6D4B8E852BD53E9EF524EDC454541154_113058373;
-        // ---------- Original Method ----------
-        //return rootElementName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.039 -0400", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "27D6E5A543D17F0E0101F9062EF15649")
     public String getSystemId() {
 String varB7D0727ACC7388EA86587212DD1C6E9F_803900981 =         systemId;
         varB7D0727ACC7388EA86587212DD1C6E9F_803900981.addTaint(taint);
         return varB7D0727ACC7388EA86587212DD1C6E9F_803900981;
-        // ---------- Original Method ----------
-        //return systemId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.039 -0400", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "32684470E7AE6FA56824D4FDEB230548")
     public String getPublicId() {
 String var76991CCBEF027A0871CF61642EBA53AB_1862987416 =         publicId;
         var76991CCBEF027A0871CF61642EBA53AB_1862987416.addTaint(taint);
         return var76991CCBEF027A0871CF61642EBA53AB_1862987416;
-        // ---------- Original Method ----------
-        //return publicId;
+        
+        
     }
 
     
@@ -2300,37 +2314,39 @@ String var76991CCBEF027A0871CF61642EBA53AB_1862987416 =         publicId;
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_369571677 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_369571677.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_369571677;
-        } //End block
+        } 
         int varD4EAE5957398257BA2774804216EDCA8_515507764 = (nspCounts[depth]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_445529385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_445529385;
-        // ---------- Original Method ----------
-        //if (depth > this.depth) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return nspCounts[depth];
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.040 -0400", hash_original_method = "DA805E6BD1FA77EA77FFD933A59A1A79", hash_generated_method = "CA888D0EC1D9A2AAAE02FC7E67C49040")
     public String getNamespacePrefix(int pos) {
         addTaint(pos);
 String var28DD094C4A269FA6BE7EA94910B6C125_217693388 =         nspStack[pos * 2];
         var28DD094C4A269FA6BE7EA94910B6C125_217693388.addTaint(taint);
         return var28DD094C4A269FA6BE7EA94910B6C125_217693388;
-        // ---------- Original Method ----------
-        //return nspStack[pos * 2];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.040 -0400", hash_original_method = "BEA3C6D36DAA76218F10B33482B7D86B", hash_generated_method = "E9C702ECEA7DE9774DBC18BAB0238DBA")
     public String getNamespaceUri(int pos) {
         addTaint(pos);
 String var2ED7D22F6ECDAFD296AE1EE24D673F78_1057050671 =         nspStack[(pos * 2) + 1];
         var2ED7D22F6ECDAFD296AE1EE24D673F78_1057050671.addTaint(taint);
         return var2ED7D22F6ECDAFD296AE1EE24D673F78_1057050671;
-        // ---------- Original Method ----------
-        //return nspStack[(pos * 2) + 1];
+        
+        
     }
 
     
@@ -2342,13 +2358,13 @@ String var2ED7D22F6ECDAFD296AE1EE24D673F78_1057050671 =         nspStack[(pos * 
 String varB42E997512DFFB350471AB44C36A387C_9676325 =             "http://www.w3.org/XML/1998/namespace";
             varB42E997512DFFB350471AB44C36A387C_9676325.addTaint(taint);
             return varB42E997512DFFB350471AB44C36A387C_9676325;
-        } //End block
+        } 
     if("xmlns".equals(prefix))        
         {
 String var9D449F1D53C2C64B85A7AEF148BB8C58_507613724 =             "http://www.w3.org/2000/xmlns/";
             var9D449F1D53C2C64B85A7AEF148BB8C58_507613724.addTaint(taint);
             return var9D449F1D53C2C64B85A7AEF148BB8C58_507613724;
-        } //End block
+        } 
 for(int i = (getNamespaceCount(depth) << 1) - 2;i >= 0;i -= 2)
         {
     if(prefix == null)            
@@ -2358,49 +2374,51 @@ for(int i = (getNamespaceCount(depth) << 1) - 2;i >= 0;i -= 2)
 String var7C146870E87A0CC7077FCAFD76B21B23_2100871539 =                     nspStack[i + 1];
                     var7C146870E87A0CC7077FCAFD76B21B23_2100871539.addTaint(taint);
                     return var7C146870E87A0CC7077FCAFD76B21B23_2100871539;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(prefix.equals(nspStack[i]))            
             {
 String var7C146870E87A0CC7077FCAFD76B21B23_2063854833 =                 nspStack[i + 1];
                 var7C146870E87A0CC7077FCAFD76B21B23_2063854833.addTaint(taint);
                 return var7C146870E87A0CC7077FCAFD76B21B23_2063854833;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1691216939 =         null;
         var540C13E9E156B687226421B24F2DF178_1691216939.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1691216939;
-        // ---------- Original Method ----------
-        //if ("xml".equals(prefix)) {
-            //return "http://www.w3.org/XML/1998/namespace";
-        //}
-        //if ("xmlns".equals(prefix)) {
-            //return "http://www.w3.org/2000/xmlns/";
-        //}
-        //for (int i = (getNamespaceCount(depth) << 1) - 2; i >= 0; i -= 2) {
-            //if (prefix == null) {
-                //if (nspStack[i] == null) {
-                    //return nspStack[i + 1];
-                //}
-            //} else if (prefix.equals(nspStack[i])) {
-                //return nspStack[i + 1];
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+                    
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.040 -0400", hash_original_method = "FBD5046615AAE9EDCC3CA2ADE86A92C3", hash_generated_method = "BF33394417587346694684C48911DE97")
     public int getDepth() {
         int var12A055BF01A31369FE81AC35D85C7BC1_1204056171 = (depth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157285785 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1157285785;
-        // ---------- Original Method ----------
-        //return depth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.041 -0400", hash_original_method = "B71BFE480A942DC6AFBA741559BFFBE0", hash_generated_method = "2814772166184A50FD24CBD83BB105C6")
     public String getPositionDescription() {
         StringBuilder buf = new StringBuilder(type < TYPES.length ? TYPES[type] : "unknown");
@@ -2410,16 +2428,16 @@ String var540C13E9E156B687226421B24F2DF178_1691216939 =         null;
     if(degenerated)            
             {
                 buf.append("(empty) ");
-            } //End block
+            } 
             buf.append('<');
     if(type == END_TAG)            
             {
                 buf.append('/');
-            } //End block
+            } 
     if(prefix != null)            
             {
                 buf.append("{" + namespace + "}" + prefix + ":");
-            } //End block
+            } 
             buf.append(name);
             int cnt = attributeCount * 4;
 for(int i = 0;i < cnt;i += 4)
@@ -2428,55 +2446,56 @@ for(int i = 0;i < cnt;i += 4)
     if(attributes[i + 1] != null)                
                 {
                     buf.append("{" + attributes[i] + "}" + attributes[i + 1] + ":");
-                } //End block
+                } 
                 buf.append(attributes[i + 2] + "='" + attributes[i + 3] + "'");
-            } //End block
+            } 
             buf.append('>');
-        } //End block
+        } 
         else
     if(type == IGNORABLE_WHITESPACE)        
         {
             ;
-        } //End block
+        } 
         else
     if(type != TEXT)        
         {
             buf.append(getText());
-        } //End block
+        } 
         else
     if(isWhitespace)        
         {
             buf.append("(whitespace)");
-        } //End block
+        } 
         else
         {
             String text = getText();
     if(text.length() > 16)            
             {
                 text = text.substring(0, 16) + "...";
-            } //End block
+            } 
             buf.append(text);
-        } //End block
+        } 
         buf.append("@" + getLineNumber() + ":" + getColumnNumber());
     if(location != null)        
         {
             buf.append(" in ");
             buf.append(location);
-        } //End block
+        } 
         else
     if(reader != null)        
         {
             buf.append(" in ");
             buf.append(reader.toString());
-        } //End block
+        } 
 String var4FC680801218E6372BC708D6FA44AE60_514329275 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_514329275.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_514329275;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.042 -0400", hash_original_method = "114340E3BA1FFC2D8A54D30C75AB06FF", hash_generated_method = "1B951B6D4921C629A167460DF101F7EF")
     public int getLineNumber() {
         int result = bufferStartLine;
@@ -2485,22 +2504,23 @@ for(int i = 0;i < position;i++)
     if(buffer[i] == '\n')            
             {
                 result++;
-            } //End block
-        } //End block
+            } 
+        } 
         int varF64046F266CBAF40120066872DBDD441_928717163 = (result + 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415896314 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1415896314;
-        // ---------- Original Method ----------
-        //int result = bufferStartLine;
-        //for (int i = 0; i < position; i++) {
-            //if (buffer[i] == '\n') {
-                //result++;
-            //}
-        //}
-        //return result + 1;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.042 -0400", hash_original_method = "C138C40AD0ECD6D56D342D21687BD452", hash_generated_method = "E928D5313B60DA3A88D6A6624FA9981C")
     public int getColumnNumber() {
         int result = bufferStartColumn;
@@ -2509,25 +2529,25 @@ for(int i = 0;i < position;i++)
     if(buffer[i] == '\n')            
             {
                 result = 0;
-            } //End block
+            } 
             else
             {
                 result++;
-            } //End block
-        } //End block
+            } 
+        } 
         int varF64046F266CBAF40120066872DBDD441_33740728 = (result + 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1011175593 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1011175593;
-        // ---------- Original Method ----------
-        //int result = bufferStartColumn;
-        //for (int i = 0; i < position; i++) {
-            //if (buffer[i] == '\n') {
-                //result = 0;
-            //} else {
-                //result++;
-            //}
-        //}
-        //return result + 1;
+        
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -2538,18 +2558,19 @@ for(int i = 0;i < position;i++)
             XmlPullParserException var0E39FCFE316D256922D5404E03912988_74683087 = new XmlPullParserException(ILLEGAL_TYPE, this, null);
             var0E39FCFE316D256922D5404E03912988_74683087.addTaint(taint);
             throw var0E39FCFE316D256922D5404E03912988_74683087;
-        } //End block
+        } 
         boolean varFDBE2C32DE81904D31506233605042C8_848086744 = (isWhitespace);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_8672736 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_8672736;
-        // ---------- Original Method ----------
-        //if (type != TEXT && type != IGNORABLE_WHITESPACE && type != CDSECT) {
-            //throw new XmlPullParserException(ILLEGAL_TYPE, this, null);
-        //}
-        //return isWhitespace;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.043 -0400", hash_original_method = "96BD4C193A5C47E4BA7EA81CE7C395CC", hash_generated_method = "D1F997C721703916CD51DD64349FA37F")
     public String getText() {
     if(type < TEXT || (type == ENTITY_REF && unresolved))        
@@ -2557,28 +2578,28 @@ for(int i = 0;i < position;i++)
 String var540C13E9E156B687226421B24F2DF178_1685251767 =             null;
             var540C13E9E156B687226421B24F2DF178_1685251767.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1685251767;
-        } //End block
+        } 
         else
     if(text == null)        
         {
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_224208652 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_224208652.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_224208652;
-        } //End block
+        } 
         else
         {
 String var79CC641C1148018540A26F7ADC424893_555240264 =             text;
             var79CC641C1148018540A26F7ADC424893_555240264.addTaint(taint);
             return var79CC641C1148018540A26F7ADC424893_555240264;
-        } //End block
-        // ---------- Original Method ----------
-        //if (type < TEXT || (type == ENTITY_REF && unresolved)) {
-            //return null;
-        //} else if (text == null) {
-            //return "";
-        //} else {
-            //return text;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -2593,54 +2614,57 @@ String var79CC641C1148018540A26F7ADC424893_555240264 =             text;
             char[] var37A6259CC0C1DAE299A7866489DFF0BD_828324824 = (null);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1818300053 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1818300053;
-        } //End block
+        } 
         char[] result = text.toCharArray();
         poslen[0] = 0;
         poslen[1] = result.length;
         char[] varB4A88417B3D0170D754C647C30B7216A_639331234 = (result);
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_559955950 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_559955950;
-        // ---------- Original Method ----------
-        //String text = getText();
-        //if (text == null) {
-            //poslen[0] = -1;
-            //poslen[1] = -1;
-            //return null;
-        //}
-        //char[] result = text.toCharArray();
-        //poslen[0] = 0;
-        //poslen[1] = result.length;
-        //return result;
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.044 -0400", hash_original_method = "A99E1DDB500E37E7767EA602F963D96D", hash_generated_method = "53A4E2EF3F50285EE6CDAD8B266EC90A")
     public String getNamespace() {
 String varF28472CCCF41AB611991133D8001D83B_927876154 =         namespace;
         varF28472CCCF41AB611991133D8001D83B_927876154.addTaint(taint);
         return varF28472CCCF41AB611991133D8001D83B_927876154;
-        // ---------- Original Method ----------
-        //return namespace;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.046 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "5737165CF45FA5B4373B8466E5A5B087")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_878701076 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_878701076.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_878701076;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.046 -0400", hash_original_method = "FA5CE5A0FCC0C736D9446FFEBD0CAB9D", hash_generated_method = "71971FC2E0DE382C7E0E706EDBA98144")
     public String getPrefix() {
 String varA4C254BE9F2C23429A8ED0933F20FF43_1594018441 =         prefix;
         varA4C254BE9F2C23429A8ED0933F20FF43_1594018441.addTaint(taint);
         return varA4C254BE9F2C23429A8ED0933F20FF43_1594018441;
-        // ---------- Original Method ----------
-        //return prefix;
+        
+        
     }
 
     
@@ -2651,47 +2675,50 @@ String varA4C254BE9F2C23429A8ED0933F20FF43_1594018441 =         prefix;
             XmlPullParserException var0E39FCFE316D256922D5404E03912988_1060632957 = new XmlPullParserException(ILLEGAL_TYPE, this, null);
             var0E39FCFE316D256922D5404E03912988_1060632957.addTaint(taint);
             throw var0E39FCFE316D256922D5404E03912988_1060632957;
-        } //End block
+        } 
         boolean var41E5137359BCC159984E1D58F1F76D16_399278947 = (degenerated);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045215062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1045215062;
-        // ---------- Original Method ----------
-        //if (type != START_TAG) {
-            //throw new XmlPullParserException(ILLEGAL_TYPE, this, null);
-        //}
-        //return degenerated;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.046 -0400", hash_original_method = "E7902A71CF05159AEACA5707956D2FB0", hash_generated_method = "24B346735E0891A51FDBF3650E1A89C8")
     public int getAttributeCount() {
         int varBB16AB716A8B7609C0ECC6FB65BADCBC_1569060428 = (attributeCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958822911 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_958822911;
-        // ---------- Original Method ----------
-        //return attributeCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.046 -0400", hash_original_method = "D075B222334138AA51A395211AD5E8BA", hash_generated_method = "E44BDDE8484A55E054A7929A4686EDC8")
     public String getAttributeType(int index) {
         addTaint(index);
 String var51FC5D2EB0F14BB856F2382E944EB3B9_408440467 =         "CDATA";
         var51FC5D2EB0F14BB856F2382E944EB3B9_408440467.addTaint(taint);
         return var51FC5D2EB0F14BB856F2382E944EB3B9_408440467;
-        // ---------- Original Method ----------
-        //return "CDATA";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.047 -0400", hash_original_method = "506EE66AC609639C08948796E644B012", hash_generated_method = "3BB6598A8A89AC568C567B500627E754")
     public boolean isAttributeDefault(int index) {
         addTaint(index);
         boolean var68934A3E9455FA72420237EB05902327_102713829 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1532136594 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1532136594;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -2703,15 +2730,15 @@ String var51FC5D2EB0F14BB856F2382E944EB3B9_408440467 =         "CDATA";
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_2038918463 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_2038918463.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_2038918463;
-        } //End block
+        } 
 String varFD8AF74A04190B1E28D4241B313BABB3_72137902 =         attributes[index * 4];
         varFD8AF74A04190B1E28D4241B313BABB3_72137902.addTaint(taint);
         return varFD8AF74A04190B1E28D4241B313BABB3_72137902;
-        // ---------- Original Method ----------
-        //if (index >= attributeCount) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return attributes[index * 4];
+        
+        
+            
+        
+        
     }
 
     
@@ -2723,15 +2750,15 @@ String varFD8AF74A04190B1E28D4241B313BABB3_72137902 =         attributes[index *
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_170016369 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_170016369.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_170016369;
-        } //End block
+        } 
 String var41D414F922460E1F53D03833DEC045A1_2115571807 =         attributes[(index * 4) + 2];
         var41D414F922460E1F53D03833DEC045A1_2115571807.addTaint(taint);
         return var41D414F922460E1F53D03833DEC045A1_2115571807;
-        // ---------- Original Method ----------
-        //if (index >= attributeCount) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return attributes[(index * 4) + 2];
+        
+        
+            
+        
+        
     }
 
     
@@ -2743,15 +2770,15 @@ String var41D414F922460E1F53D03833DEC045A1_2115571807 =         attributes[(inde
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_24626285 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_24626285.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_24626285;
-        } //End block
+        } 
 String var9190C8629103C195F5830FB51A9DF1AD_163522217 =         attributes[(index * 4) + 1];
         var9190C8629103C195F5830FB51A9DF1AD_163522217.addTaint(taint);
         return var9190C8629103C195F5830FB51A9DF1AD_163522217;
-        // ---------- Original Method ----------
-        //if (index >= attributeCount) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return attributes[(index * 4) + 1];
+        
+        
+            
+        
+        
     }
 
     
@@ -2763,15 +2790,15 @@ String var9190C8629103C195F5830FB51A9DF1AD_163522217 =         attributes[(index
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1157783168 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1157783168.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1157783168;
-        } //End block
+        } 
 String varDAA352E3F1F9CFE8C08DAA579A0C75EE_1586524108 =         attributes[(index * 4) + 3];
         varDAA352E3F1F9CFE8C08DAA579A0C75EE_1586524108.addTaint(taint);
         return varDAA352E3F1F9CFE8C08DAA579A0C75EE_1586524108;
-        // ---------- Original Method ----------
-        //if (index >= attributeCount) {
-            //throw new IndexOutOfBoundsException();
-        //}
-        //return attributes[(index * 4) + 3];
+        
+        
+            
+        
+        
     }
 
     
@@ -2787,29 +2814,30 @@ for(int i = (attributeCount * 4) - 4;i >= 0;i -= 4)
 String var49AEFA578E1E8F419A6718675760D2B5_119968512 =                 attributes[i + 3];
                 var49AEFA578E1E8F419A6718675760D2B5_119968512.addTaint(taint);
                 return var49AEFA578E1E8F419A6718675760D2B5_119968512;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_286912116 =         null;
         var540C13E9E156B687226421B24F2DF178_286912116.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_286912116;
-        // ---------- Original Method ----------
-        //for (int i = (attributeCount * 4) - 4; i >= 0; i -= 4) {
-            //if (attributes[i + 2].equals(name)
-                    //&& (namespace == null || attributes[i].equals(namespace))) {
-                //return attributes[i + 3];
-            //}
-        //}
-        //return null;
+        
+        
+            
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.048 -0400", hash_original_method = "0457ED08CBFC1348E0AAA3CE0D692605", hash_generated_method = "E7B79515DD448069D804982B4A163CAA")
     public int getEventType() throws XmlPullParserException {
         int var599DCCE2998A6B40B1E38E8C6006CB0A_425378497 = (type);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314706142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1314706142;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
@@ -2819,25 +2847,25 @@ String var540C13E9E156B687226421B24F2DF178_286912116 =         null;
     if(type == TEXT && isWhitespace)        
         {
             next();
-        } //End block
+        } 
     if(type != END_TAG && type != START_TAG)        
         {
             XmlPullParserException var4FB2E3745E0E1B121B0F5C2C50CDA3DE_906863116 = new XmlPullParserException("unexpected type", this, null);
             var4FB2E3745E0E1B121B0F5C2C50CDA3DE_906863116.addTaint(taint);
             throw var4FB2E3745E0E1B121B0F5C2C50CDA3DE_906863116;
-        } //End block
+        } 
         int var599DCCE2998A6B40B1E38E8C6006CB0A_1129457008 = (type);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769345537 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_769345537;
-        // ---------- Original Method ----------
-        //next();
-        //if (type == TEXT && isWhitespace) {
-            //next();
-        //}
-        //if (type != END_TAG && type != START_TAG) {
-            //throw new XmlPullParserException("unexpected type", this, null);
-        //}
-        //return type;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -2854,14 +2882,14 @@ String var540C13E9E156B687226421B24F2DF178_286912116 =         null;
                     "expected: " + TYPES[type] + " {" + namespace + "}" + name, this, null);
             var36B64AF4BC95700D426ABC3010D26FD5_530199894.addTaint(taint);
             throw var36B64AF4BC95700D426ABC3010D26FD5_530199894;
-        } //End block
-        // ---------- Original Method ----------
-        //if (type != this.type
-                //|| (namespace != null && !namespace.equals(getNamespace()))
-                //|| (name != null && !name.equals(getName()))) {
-            //throw new XmlPullParserException(
-                    //"expected: " + TYPES[type] + " {" + namespace + "}" + name, this, null);
-        //}
+        } 
+        
+        
+                
+                
+            
+                    
+        
     }
 
     
@@ -2872,43 +2900,43 @@ String var540C13E9E156B687226421B24F2DF178_286912116 =         null;
             XmlPullParserException varA0906E3B6E3ABABB2B627A16BC707250_2031205985 = new XmlPullParserException("precondition: START_TAG", this, null);
             varA0906E3B6E3ABABB2B627A16BC707250_2031205985.addTaint(taint);
             throw varA0906E3B6E3ABABB2B627A16BC707250_2031205985;
-        } //End block
+        } 
         next();
         String result;
     if(type == TEXT)        
         {
             result = getText();
             next();
-        } //End block
+        } 
         else
         {
             result = "";
-        } //End block
+        } 
     if(type != END_TAG)        
         {
             XmlPullParserException varA3E37C0C1EFF20DD4A8E615260CDC2A9_930072989 = new XmlPullParserException("END_TAG expected", this, null);
             varA3E37C0C1EFF20DD4A8E615260CDC2A9_930072989.addTaint(taint);
             throw varA3E37C0C1EFF20DD4A8E615260CDC2A9_930072989;
-        } //End block
+        } 
 String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_757820824.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_757820824;
-        // ---------- Original Method ----------
-        //if (type != START_TAG) {
-            //throw new XmlPullParserException("precondition: START_TAG", this, null);
-        //}
-        //next();
-        //String result;
-        //if (type == TEXT) {
-            //result = getText();
-            //next();
-        //} else {
-            //result = "";
-        //}
-        //if (type != END_TAG) {
-            //throw new XmlPullParserException("END_TAG expected", this, null);
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -2918,33 +2946,33 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
     if(XmlPullParser.FEATURE_PROCESS_NAMESPACES.equals(feature))        
         {
             processNsp = value;
-        } //End block
+        } 
         else
     if(XmlPullParser.FEATURE_PROCESS_DOCDECL.equals(feature))        
         {
             processDocDecl = value;
-        } //End block
+        } 
         else
     if(FEATURE_RELAXED.equals(feature))        
         {
             relaxed = value;
-        } //End block
+        } 
         else
         {
             XmlPullParserException var81E6717CF1B869AC866C4996999889A4_1092648562 = new XmlPullParserException("unsupported feature: " + feature, this, null);
             var81E6717CF1B869AC866C4996999889A4_1092648562.addTaint(taint);
             throw var81E6717CF1B869AC866C4996999889A4_1092648562;
-        } //End block
-        // ---------- Original Method ----------
-        //if (XmlPullParser.FEATURE_PROCESS_NAMESPACES.equals(feature)) {
-            //processNsp = value;
-        //} else if (XmlPullParser.FEATURE_PROCESS_DOCDECL.equals(feature)) {
-            //processDocDecl = value;
-        //} else if (FEATURE_RELAXED.equals(feature)) {
-            //relaxed = value;
-        //} else {
-            //throw new XmlPullParserException("unsupported feature: " + feature, this, null);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -2954,19 +2982,19 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
     if(property.equals(PROPERTY_LOCATION))        
         {
             location = String.valueOf(value);
-        } //End block
+        } 
         else
         {
             XmlPullParserException varB468B3442E1126E27A432EF95994AE35_926441178 = new XmlPullParserException("unsupported property: " + property);
             varB468B3442E1126E27A432EF95994AE35_926441178.addTaint(taint);
             throw varB468B3442E1126E27A432EF95994AE35_926441178;
-        } //End block
-        // ---------- Original Method ----------
-        //if (property.equals(PROPERTY_LOCATION)) {
-            //location = String.valueOf(value);
-        //} else {
-            //throw new XmlPullParserException("unsupported property: " + property);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -2976,11 +3004,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
         buffer = newBuffer;
         position = 0;
         limit = newBuffer.length;
-        // ---------- Original Method ----------
-        //nextContentSource = new ContentSource(nextContentSource, buffer, position, limit);
-        //buffer = newBuffer;
-        //position = 0;
-        //limit = newBuffer.length;
+        
+        
+        
+        
+        
     }
 
     
@@ -2990,11 +3018,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
         position = nextContentSource.position;
         limit = nextContentSource.limit;
         nextContentSource = nextContentSource.next;
-        // ---------- Original Method ----------
-        //buffer = nextContentSource.buffer;
-        //position = nextContentSource.position;
-        //limit = nextContentSource.limit;
-        //nextContentSource = nextContentSource.next;
+        
+        
+        
+        
+        
     }
 
     
@@ -3025,11 +3053,11 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_757820824 =         result;
             this.buffer = buffer;
             this.position = position;
             this.limit = limit;
-            // ---------- Original Method ----------
-            //this.next = next;
-            //this.buffer = buffer;
-            //this.position = position;
-            //this.limit = limit;
+            
+            
+            
+            
+            
         }
 
         

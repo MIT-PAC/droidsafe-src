@@ -1,6 +1,6 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,7 +35,7 @@ public class TextAppearanceSpan extends MetricAffectingSpan implements Parcelabl
         this(context, appearance, -1);
         addTaint(appearance);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -75,10 +75,10 @@ switch(tf){
                                             com.android.internal.R.styleable.Theme);
             textColor = a.getColorStateList(colorList);
             a.recycle();
-        } //End block
+        } 
         mTextColor = textColor;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -90,12 +90,12 @@ switch(tf){
         mTextSize = size;
         mTextColor = color;
         mTextColorLink = linkColor;
-        // ---------- Original Method ----------
-        //mTypeface = family;
-        //mStyle = style;
-        //mTextSize = size;
-        //mTextColor = color;
-        //mTextColorLink = linkColor;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -107,56 +107,59 @@ switch(tf){
     if(src.readInt() != 0)        
         {
             mTextColor = ColorStateList.CREATOR.createFromParcel(src);
-        } //End block
+        } 
         else
         {
             mTextColor = null;
-        } //End block
+        } 
     if(src.readInt() != 0)        
         {
             mTextColorLink = ColorStateList.CREATOR.createFromParcel(src);
-        } //End block
+        } 
         else
         {
             mTextColorLink = null;
-        } //End block
-        // ---------- Original Method ----------
-        //mTypeface = src.readString();
-        //mStyle = src.readInt();
-        //mTextSize = src.readInt();
-        //if (src.readInt() != 0) {
-            //mTextColor = ColorStateList.CREATOR.createFromParcel(src);
-        //} else {
-            //mTextColor = null;
-        //}
-        //if (src.readInt() != 0) {
-            //mTextColorLink = ColorStateList.CREATOR.createFromParcel(src);
-        //} else {
-            //mTextColorLink = null;
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.466 -0400", hash_original_method = "06416282EB1641FCC18F44A861BC9EFB", hash_generated_method = "A258B445884A26A50E15C719CB61CFBF")
     public int getSpanTypeId() {
         int varCD492B187E15F56C7810FD02C1C1708D_1119830376 = (TextUtils.TEXT_APPEARANCE_SPAN);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1161921743 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1161921743;
-        // ---------- Original Method ----------
-        //return TextUtils.TEXT_APPEARANCE_SPAN;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.466 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6C79C77D3DBC65EE38323C99DBD80414")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1190499834 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620580325 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620580325;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.467 -0400", hash_original_method = "5C4A27F4DE181F367842F0367978AD5D", hash_generated_method = "7DA90968403CA01593CD3D4060F07B81")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -168,89 +171,95 @@ switch(tf){
         {
             dest.writeInt(1);
             mTextColor.writeToParcel(dest, flags);
-        } //End block
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
     if(mTextColorLink != null)        
         {
             dest.writeInt(1);
             mTextColorLink.writeToParcel(dest, flags);
-        } //End block
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeString(mTypeface);
-        //dest.writeInt(mStyle);
-        //dest.writeInt(mTextSize);
-        //if (mTextColor != null) {
-            //dest.writeInt(1);
-            //mTextColor.writeToParcel(dest, flags);
-        //} else {
-            //dest.writeInt(0);
-        //}
-        //if (mTextColorLink != null) {
-            //dest.writeInt(1);
-            //mTextColorLink.writeToParcel(dest, flags);
-        //} else {
-            //dest.writeInt(0);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.468 -0400", hash_original_method = "15042A588BD36B3AABC957E25B6ABB68", hash_generated_method = "A61E03F579694A9DFFA4E2218A488863")
     public String getFamily() {
 String varCA555E983FC958B176FA6EA9B4C69E1B_579250326 =         mTypeface;
         varCA555E983FC958B176FA6EA9B4C69E1B_579250326.addTaint(taint);
         return varCA555E983FC958B176FA6EA9B4C69E1B_579250326;
-        // ---------- Original Method ----------
-        //return mTypeface;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.469 -0400", hash_original_method = "BEF77474BA0C11C6EB44F1454E52790F", hash_generated_method = "A01544514362077A5FFABB621C2B7E28")
     public ColorStateList getTextColor() {
 ColorStateList varF2B26C798C9C7016812AC3DA166887CA_1108125951 =         mTextColor;
         varF2B26C798C9C7016812AC3DA166887CA_1108125951.addTaint(taint);
         return varF2B26C798C9C7016812AC3DA166887CA_1108125951;
-        // ---------- Original Method ----------
-        //return mTextColor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.470 -0400", hash_original_method = "9E3E27CD0F13B768F4263E5569C857AD", hash_generated_method = "063D1208F5472BB2F0099905E5BC6F10")
     public ColorStateList getLinkTextColor() {
 ColorStateList varAF7DFF38BBEA0BE796D66E10E6013A75_1970140066 =         mTextColorLink;
         varAF7DFF38BBEA0BE796D66E10E6013A75_1970140066.addTaint(taint);
         return varAF7DFF38BBEA0BE796D66E10E6013A75_1970140066;
-        // ---------- Original Method ----------
-        //return mTextColorLink;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.470 -0400", hash_original_method = "AB3DB1BB0D199EBBBA8548C5EC0C310E", hash_generated_method = "537751D4802D966455E0F07717A3FAF0")
     public int getTextSize() {
         int var327DC1284D23313571A41B232E2678D5_1199531578 = (mTextSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1073370430 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1073370430;
-        // ---------- Original Method ----------
-        //return mTextSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.471 -0400", hash_original_method = "3C882FE9CECBB039C8EAD0BA2E56F794", hash_generated_method = "F1D28F91DD652E1702A81AA31FBFD3CC")
     public int getTextStyle() {
         int var16896C9E7463BF6DF9DB6B58257F1327_686031400 = (mStyle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134052294 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134052294;
-        // ---------- Original Method ----------
-        //return mStyle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.472 -0400", hash_original_method = "91F606F0F4AED8EEECD78BF397028020", hash_generated_method = "4F19D8391DA71ED6B19F64C983040062")
     @Override
     public void updateDrawState(TextPaint ds) {
@@ -259,22 +268,23 @@ ColorStateList varAF7DFF38BBEA0BE796D66E10E6013A75_1970140066 =         mTextCol
     if(mTextColor != null)        
         {
             ds.setColor(mTextColor.getColorForState(ds.drawableState, 0));
-        } //End block
+        } 
     if(mTextColorLink != null)        
         {
             ds.linkColor = mTextColorLink.getColorForState(ds.drawableState, 0);
-        } //End block
-        // ---------- Original Method ----------
-        //updateMeasureState(ds);
-        //if (mTextColor != null) {
-            //ds.setColor(mTextColor.getColorForState(ds.drawableState, 0));
-        //}
-        //if (mTextColorLink != null) {
-            //ds.linkColor = mTextColorLink.getColorForState(ds.drawableState, 0);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.474 -0400", hash_original_method = "F4F67354DC20CE392F9DCE12B9A9C5F1", hash_generated_method = "F4AA129A814E6EBF4E894C70E491C4E6")
     @Override
     public void updateMeasureState(TextPaint ds) {
@@ -286,38 +296,38 @@ ColorStateList varAF7DFF38BBEA0BE796D66E10E6013A75_1970140066 =         mTextCol
     if(tf != null)            
             {
                 style = tf.getStyle();
-            } //End block
+            } 
             style |= mStyle;
     if(mTypeface != null)            
             {
                 tf = Typeface.create(mTypeface, style);
-            } //End block
+            } 
             else
     if(tf == null)            
             {
                 tf = Typeface.defaultFromStyle(style);
-            } //End block
+            } 
             else
             {
                 tf = Typeface.create(tf, style);
-            } //End block
+            } 
             int fake = style & ~tf.getStyle();
     if((fake & Typeface.BOLD) != 0)            
             {
                 ds.setFakeBoldText(true);
-            } //End block
+            } 
     if((fake & Typeface.ITALIC) != 0)            
             {
                 ds.setTextSkewX(-0.25f);
-            } //End block
+            } 
             ds.setTypeface(tf);
-        } //End block
+        } 
     if(mTextSize > 0)        
         {
             ds.setTextSize(mTextSize);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

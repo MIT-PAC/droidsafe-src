@@ -1,6 +1,6 @@
 package java.util.jar;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,22 +38,22 @@ class InitManifest {
             IOException var0831C9BE204AB13EF0238C04376F6DD3_833549185 = new IOException("Missing version attribute: " + ver);
             var0831C9BE204AB13EF0238C04376F6DD3_833549185.addTaint(taint);
             throw var0831C9BE204AB13EF0238C04376F6DD3_833549185;
-        } //End block
+        } 
         main.put(name, value);
         while
 (readHeader())        
         {
             main.put(name, value);
-        } //End block
-        // ---------- Original Method ----------
-        //this.buf = buf;
-        //if (!readHeader() || (ver != null && !name.equals(ver))) {
-            //throw new IOException("Missing version attribute: " + ver);
-        //}
-        //main.put(name, value);
-        //while (readHeader()) {
-            //main.put(name, value);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -71,18 +71,18 @@ class InitManifest {
                 IOException varAD9A06B8AAA3550867E8063419E348E5_1196987842 = new IOException("Entry is not named");
                 varAD9A06B8AAA3550867E8063419E348E5_1196987842.addTaint(taint);
                 throw varAD9A06B8AAA3550867E8063419E348E5_1196987842;
-            } //End block
+            } 
             String entryNameValue = value;
             Attributes entry = entries.get(entryNameValue);
     if(entry == null)            
             {
                 entry = new Attributes(12);
-            } //End block
+            } 
             while
 (readHeader())            
             {
                 entry.put(name, value);
-            } //End block
+            } 
     if(chunks != null)            
             {
     if(chunks.get(entryNameValue) != null)                
@@ -90,24 +90,25 @@ class InitManifest {
                     IOException varCE5112C6459A339D160B40CEDAC59F04_1743647491 = new IOException("A jar verifier does not support more than one entry with the same name");
                     varCE5112C6459A339D160B40CEDAC59F04_1743647491.addTaint(taint);
                     throw varCE5112C6459A339D160B40CEDAC59F04_1743647491;
-                } //End block
+                } 
                 chunks.put(entryNameValue, new Manifest.Chunk(mark, pos));
                 mark = pos;
-            } //End block
+            } 
             entries.put(entryNameValue, entry);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.005 -0400", hash_original_method = "DA9F28DCB522B20E2FDE0CD9A032935D", hash_generated_method = "24EBB4184C14A79962A37F3D0675C854")
      int getPos() {
         int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_2062740336 = (pos);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_941798907 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_941798907;
-        // ---------- Original Method ----------
-        //return pos;
+        
+        
     }
 
     
@@ -119,22 +120,22 @@ class InitManifest {
             boolean var68934A3E9455FA72420237EB05902327_755453544 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_885630790 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_885630790;
-        } //End block
+        } 
         readName();
         consecutiveLineBreaks = 0;
         readValue();
         boolean var5E22E1CA341CF35C52AB9E4BC4A0FE1E_1699249025 = (consecutiveLineBreaks > 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1882608792 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1882608792;
-        // ---------- Original Method ----------
-        //if (consecutiveLineBreaks > 1) {
-            //consecutiveLineBreaks = 0;
-            //return false;
-        //}
-        //readName();
-        //consecutiveLineBreaks = 0;
-        //readValue();
-        //return consecutiveLineBreaks > 0;
+        
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -147,43 +148,43 @@ class InitManifest {
     if(buf[pos++] != ':')            
             {
                 continue;
-            } //End block
+            } 
             String name = new String(buf, mark, pos - mark - 1, Charsets.US_ASCII);
     if(buf[pos++] != ' ')            
             {
                 IOException varDD22C780180FD1E1DC67DBA9556D737B_2142827190 = new IOException(String.format("Invalid value for attribute '%s'", name));
                 varDD22C780180FD1E1DC67DBA9556D737B_2142827190.addTaint(taint);
                 throw varDD22C780180FD1E1DC67DBA9556D737B_2142827190;
-            } //End block
+            } 
             try 
             {
                 this.name = new Attributes.Name(name);
-            } //End block
+            } 
             catch (IllegalArgumentException e)
             {
                 IOException varDFC4605B531BC1C5380FD94E58912494_2123656203 = new IOException(e.getMessage());
                 varDFC4605B531BC1C5380FD94E58912494_2123656203.addTaint(taint);
                 throw varDFC4605B531BC1C5380FD94E58912494_2123656203;
-            } //End block
+            } 
             return;
-        } //End block
-        // ---------- Original Method ----------
-        //int mark = pos;
-        //while (pos < buf.length) {
-            //if (buf[pos++] != ':') {
-                //continue;
-            //}
-            //String name = new String(buf, mark, pos - mark - 1, Charsets.US_ASCII);
-            //if (buf[pos++] != ' ') {
-                //throw new IOException(String.format("Invalid value for attribute '%s'", name));
-            //}
-            //try {
-                //this.name = new Attributes.Name(name);
-            //} catch (IllegalArgumentException e) {
-                //throw new IOException(e.getMessage());
-            //}
-            //return;
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+            
+                
+            
+            
+                
+            
+                
+            
+            
+        
     }
 
     
@@ -206,11 +207,11 @@ switch(next){
     if(lastCr)            
             {
                 lastCr = false;
-            } //End block
+            } 
             else
             {
                 consecutiveLineBreaks++;
-            } //End block
+            } 
             continue;
             case '\r':
             lastCr = true;
@@ -223,18 +224,18 @@ switch(next){
                 mark = pos;
                 consecutiveLineBreaks = 0;
                 continue;
-            } //End block
+            } 
 }    if(consecutiveLineBreaks >= 1)            
             {
                 pos--;
                 break;
-            } //End block
+            } 
             last = pos;
-        } //End block
+        } 
         valueBuffer.write(buf, mark, last - mark);
         value = valueBuffer.toString(Charsets.UTF_8);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

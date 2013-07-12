@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,155 +43,170 @@ public class HttpAuthHeader {
     if(header != null)        
         {
             parseHeader(header);
-        } //End block
-        // ---------- Original Method ----------
-        //if (header != null) {
-            //parseHeader(header);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.165 -0400", hash_original_method = "E3B47ECF178F55BDD1E428FED9536544", hash_generated_method = "DB99FACA868FFB4060267BB2DE375A93")
     public boolean isProxy() {
         boolean varDE5F3ADAFBA0C6CBA55780675ACC563E_2120894217 = (mIsProxy);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1262142184 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1262142184;
-        // ---------- Original Method ----------
-        //return mIsProxy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.166 -0400", hash_original_method = "F484596B8E11A4861D504E7FDD37DA10", hash_generated_method = "DD3E3DD04D17DDB30604953E8A9252B1")
     public void setProxy() {
         mIsProxy = true;
-        // ---------- Original Method ----------
-        //mIsProxy = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.166 -0400", hash_original_method = "DC420B5834A563247800515BC4094ADD", hash_generated_method = "AB090890B94C5CCE9ABEC833E46753D7")
     public String getUsername() {
 String var283B9DD020EB2821600E129BC9B96F6C_621538079 =         mUsername;
         var283B9DD020EB2821600E129BC9B96F6C_621538079.addTaint(taint);
         return var283B9DD020EB2821600E129BC9B96F6C_621538079;
-        // ---------- Original Method ----------
-        //return mUsername;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.167 -0400", hash_original_method = "0E33D9E279BEDC5DAB4D3AD6DE953552", hash_generated_method = "3955AB7BA77A651158545815C33BA20C")
     public void setUsername(String username) {
         mUsername = username;
-        // ---------- Original Method ----------
-        //mUsername = username;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.168 -0400", hash_original_method = "352B20CA8286B4BCFAD735A80A162186", hash_generated_method = "B94FB24C3DA0DB6389F95B6A882A3762")
     public String getPassword() {
 String var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282 =         mPassword;
         var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282.addTaint(taint);
         return var8A1D2454BCA4BED59D7FC1FA34A5817A_1154109282;
-        // ---------- Original Method ----------
-        //return mPassword;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.168 -0400", hash_original_method = "5BECAD2A732AB83E1664BF3A6C903529", hash_generated_method = "0844A0EC752FFDF12DBAC561F066925A")
     public void setPassword(String password) {
         mPassword = password;
-        // ---------- Original Method ----------
-        //mPassword = password;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.169 -0400", hash_original_method = "C2242C4025DD65A560A889E41F117AB7", hash_generated_method = "74A2C624574FAEA9F536CA7CE9D112D5")
     public boolean isBasic() {
         boolean var344CDD0B32278D6F0479629B38EE4FB6_1024827901 = (mScheme == BASIC);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_208437973 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_208437973;
-        // ---------- Original Method ----------
-        //return mScheme == BASIC;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.169 -0400", hash_original_method = "C6AFC1E0D0B142E9C4DE27602A4BC054", hash_generated_method = "021C7CA17FD38F17FF8D62CA05BCEFEA")
     public boolean isDigest() {
         boolean var7E1D6E88AE66122283033958CA4447A5_468777110 = (mScheme == DIGEST);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_665031347 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_665031347;
-        // ---------- Original Method ----------
-        //return mScheme == DIGEST;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.170 -0400", hash_original_method = "29E6CF58C110B66305B7C71C00259314", hash_generated_method = "2F05D4C807503DD336C39B4ECEAFD5DD")
     public int getScheme() {
         int var51CA147512905722A26C3D219A583C78_1057820441 = (mScheme);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232461975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232461975;
-        // ---------- Original Method ----------
-        //return mScheme;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.171 -0400", hash_original_method = "3E3CDB0E616B9E56522984F92CB979FB", hash_generated_method = "410C46F192EEA9673930174EC9182B2D")
     public boolean getStale() {
         boolean var152C8B4B0CCFD745368735E28EBFFA00_2096543329 = (mStale);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1021915386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1021915386;
-        // ---------- Original Method ----------
-        //return mStale;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.172 -0400", hash_original_method = "E61C0128BAAE9B474452BFCEF0497CDD", hash_generated_method = "C3508266D1E76CE37B47009FBFB55689")
     public String getRealm() {
 String var67C0344E1DC3B1D95F644291EF949DFF_1406688278 =         mRealm;
         var67C0344E1DC3B1D95F644291EF949DFF_1406688278.addTaint(taint);
         return var67C0344E1DC3B1D95F644291EF949DFF_1406688278;
-        // ---------- Original Method ----------
-        //return mRealm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.173 -0400", hash_original_method = "B08110B485A4DA24A232A0CC9BEA47F4", hash_generated_method = "EE4DDD3F1AE367488BEED9A5A22915BA")
     public String getNonce() {
 String varEABCD339805209D3F9FB66B444AEC327_659288602 =         mNonce;
         varEABCD339805209D3F9FB66B444AEC327_659288602.addTaint(taint);
         return varEABCD339805209D3F9FB66B444AEC327_659288602;
-        // ---------- Original Method ----------
-        //return mNonce;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.173 -0400", hash_original_method = "40DED5E91C6F5AFDC12D505952D89AC1", hash_generated_method = "C9B24509A4CB2AD720D25EE6345C3D09")
     public String getOpaque() {
 String varD348638229B29F337841BA6DC87C999F_1429140659 =         mOpaque;
         varD348638229B29F337841BA6DC87C999F_1429140659.addTaint(taint);
         return varD348638229B29F337841BA6DC87C999F_1429140659;
-        // ---------- Original Method ----------
-        //return mOpaque;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.174 -0400", hash_original_method = "7F9926D57780B6A835584FF0B4884044", hash_generated_method = "219F311D72E34FF32B9A8FAF414DE608")
     public String getQop() {
 String var5DFA3C48EEFA60EFF5B348166AD9F9F0_1669471049 =         mQop;
         var5DFA3C48EEFA60EFF5B348166AD9F9F0_1669471049.addTaint(taint);
         return var5DFA3C48EEFA60EFF5B348166AD9F9F0_1669471049;
-        // ---------- Original Method ----------
-        //return mQop;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.174 -0400", hash_original_method = "0FF39221585FBFD96D2157CC36F75665", hash_generated_method = "E5CEE22145EC5ADB2B08BB94AE137B06")
     public String getAlgorithm() {
 String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;
         var38B0E4F53D6ADAB33FE69F422516B97C_900027051.addTaint(taint);
         return var38B0E4F53D6ADAB33FE69F422516B97C_900027051;
-        // ---------- Original Method ----------
-        //return mAlgorithm;
+        
+        
     }
 
     
@@ -204,7 +219,7 @@ String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;
                 boolean varB326B5062B2F0E69046810717534CB09_782536005 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1898128847 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1898128847;
-            } //End block
+            } 
             else
             {
     if(mScheme == DIGEST)                
@@ -213,25 +228,25 @@ String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;
                         (mQop == null || mQop.equals("auth")));
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1616890899 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1616890899;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1307431351 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293646602 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293646602;
-        // ---------- Original Method ----------
-        //if (mRealm != null) {
-            //if (mScheme == BASIC) {
-                //return true;
-            //} else {
-                //if (mScheme == DIGEST) {
-                    //return
-                        //mAlgorithm.equals("md5") &&
-                        //(mQop == null || mQop.equals("auth"));
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+                
+                    
+                        
+                        
+                
+            
+        
+        
     }
 
     
@@ -241,7 +256,7 @@ String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;
     if(HttpLog.LOGV)        
         {
             HttpLog.v("HttpAuthHeader.parseHeader(): header: " + header);
-        } //End block
+        } 
     if(header != null)        
         {
             String parameters = parseScheme(header);
@@ -250,21 +265,21 @@ String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;
     if(mScheme != UNKNOWN)                
                 {
                     parseParameters(parameters);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("HttpAuthHeader.parseHeader(): header: " + header);
-        //}
-        //if (header != null) {
-            //String parameters = parseScheme(header);
-            //if (parameters != null) {
-                //if (mScheme != UNKNOWN) {
-                    //parseParameters(parameters);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -281,39 +296,39 @@ String var38B0E4F53D6ADAB33FE69F422516B97C_900027051 =         mAlgorithm;
                 {
                     mScheme = DIGEST;
                     mAlgorithm = "md5";
-                } //End block
+                } 
                 else
                 {
     if(scheme.equalsIgnoreCase(BASIC_TOKEN))                    
                     {
                         mScheme = BASIC;
-                    } //End block
-                } //End block
+                    } 
+                } 
 String var9CDFC82E8557C9B0092FA616C6CDAFB3_2050623851 =                 header.substring(i + 1);
                 var9CDFC82E8557C9B0092FA616C6CDAFB3_2050623851.addTaint(taint);
                 return var9CDFC82E8557C9B0092FA616C6CDAFB3_2050623851;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_2022842797 =         null;
         var540C13E9E156B687226421B24F2DF178_2022842797.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2022842797;
-        // ---------- Original Method ----------
-        //if (header != null) {
-            //int i = header.indexOf(' ');
-            //if (i >= 0) {
-                //String scheme = header.substring(0, i).trim();
-                //if (scheme.equalsIgnoreCase(DIGEST_TOKEN)) {
-                    //mScheme = DIGEST;
-                    //mAlgorithm = "md5";
-                //} else {
-                    //if (scheme.equalsIgnoreCase(BASIC_TOKEN)) {
-                        //mScheme = BASIC;
-                    //}
-                //}
-                //return header.substring(i + 1);
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+                    
+                        
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -324,7 +339,7 @@ String var540C13E9E156B687226421B24F2DF178_2022842797 =         null;
         {
             HttpLog.v("HttpAuthHeader.parseParameters():" +
                       " parameters: " + parameters);
-        } //End block
+        } 
     if(parameters != null)        
         {
             int i;
@@ -334,32 +349,32 @@ String var540C13E9E156B687226421B24F2DF178_2022842797 =         null;
     if(i < 0)                    
                     {
                         parseParameter(parameters);
-                    } //End block
+                    } 
                     else
                     {
                         parseParameter(parameters.substring(0, i));
                         parameters = parameters.substring(i + 1);
-                    } //End block
-                } //End block
+                    } 
+                } 
 } while (i >= 0);
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("HttpAuthHeader.parseParameters():" +
-                      //" parameters: " + parameters);
-        //}
-        //if (parameters != null) {
-            //int i;
-            //do {
-                //i = parameters.indexOf(',');
-                //if (i < 0) {
-                    //parseParameter(parameters);
-                //} else {
-                    //parseParameter(parameters.substring(0, i));
-                    //parameters = parameters.substring(i + 1);
-                //}
-            //} while (i >= 0);
-        //}
+        } 
+        
+        
+            
+                      
+        
+        
+            
+            
+                
+                
+                    
+                
+                    
+                    
+                
+            
+        
     }
 
     
@@ -378,41 +393,41 @@ String var540C13E9E156B687226421B24F2DF178_2022842797 =         null;
                     HttpLog.v("HttpAuthHeader.parseParameter():" +
                               " token: " + token +
                               " value: " + value);
-                } //End block
+                } 
     if(token.equalsIgnoreCase(REALM_TOKEN))                
                 {
                     mRealm = value;
-                } //End block
+                } 
                 else
                 {
     if(mScheme == DIGEST)                    
                     {
                         parseParameter(token, value);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (parameter != null) {
-            //int i = parameter.indexOf('=');
-            //if (i >= 0) {
-                //String token = parameter.substring(0, i).trim();
-                //String value =
-                    //trimDoubleQuotesIfAny(parameter.substring(i + 1).trim());
-                //if (HttpLog.LOGV) {
-                    //HttpLog.v("HttpAuthHeader.parseParameter():" +
-                              //" token: " + token +
-                              //" value: " + value);
-                //}
-                //if (token.equalsIgnoreCase(REALM_TOKEN)) {
-                    //mRealm = value;
-                //} else {
-                    //if (mScheme == DIGEST) {
-                        //parseParameter(token, value);
-                    //}
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                    
+                
+                    
+                              
+                              
+                
+                
+                    
+                
+                    
+                        
+                    
+                
+            
+        
     }
 
     
@@ -425,51 +440,51 @@ String var540C13E9E156B687226421B24F2DF178_2022842797 =         null;
             {
                 mNonce = value;
                 return;
-            } //End block
+            } 
     if(token.equalsIgnoreCase(STALE_TOKEN))            
             {
                 parseStale(value);
                 return;
-            } //End block
+            } 
     if(token.equalsIgnoreCase(OPAQUE_TOKEN))            
             {
                 mOpaque = value;
                 return;
-            } //End block
+            } 
     if(token.equalsIgnoreCase(QOP_TOKEN))            
             {
                 mQop = value.toLowerCase();
                 return;
-            } //End block
+            } 
     if(token.equalsIgnoreCase(ALGORITHM_TOKEN))            
             {
                 mAlgorithm = value.toLowerCase();
                 return;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (token != null && value != null) {
-            //if (token.equalsIgnoreCase(NONCE_TOKEN)) {
-                //mNonce = value;
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(STALE_TOKEN)) {
-                //parseStale(value);
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(OPAQUE_TOKEN)) {
-                //mOpaque = value;
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(QOP_TOKEN)) {
-                //mQop = value.toLowerCase();
-                //return;
-            //}
-            //if (token.equalsIgnoreCase(ALGORITHM_TOKEN)) {
-                //mAlgorithm = value.toLowerCase();
-                //return;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -481,14 +496,14 @@ String var540C13E9E156B687226421B24F2DF178_2022842797 =         null;
     if(value.equalsIgnoreCase("true"))            
             {
                 mStale = true;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (value != null) {
-            //if (value.equalsIgnoreCase("true")) {
-                //mStale = true;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     

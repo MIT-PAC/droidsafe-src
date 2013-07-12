@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,10 +27,10 @@ public class Looper {
         mQueue = new MessageQueue();
         mRun = true;
         mThread = Thread.currentThread();
-        // ---------- Original Method ----------
-        //mQueue = new MessageQueue();
-        //mRun = true;
-        //mThread = Thread.currentThread();
+        
+        
+        
+        
     }
 
     
@@ -49,12 +49,14 @@ public class Looper {
     }
 
     
-        private synchronized static void setMainLooper(Looper looper) {
+        @DSModeled(DSC.SAFE)
+    private synchronized static void setMainLooper(Looper looper) {
         mMainLooper = looper;
     }
 
     
-        public synchronized static Looper getMainLooper() {
+        @DSModeled(DSC.SAFE)
+    public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
 
@@ -111,11 +113,12 @@ public class Looper {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.567 -0400", hash_original_method = "46140967D8D75055A47353664A71B7EC", hash_generated_method = "3C77C8DE8680E0A60FA1F4CB39038FA7")
     public void setMessageLogging(Printer printer) {
         mLogging = printer;
-        // ---------- Original Method ----------
-        //mLogging = printer;
+        
+        
     }
 
     
@@ -128,29 +131,31 @@ public class Looper {
     public void quit() {
         Message msg = Message.obtain();
         mQueue.enqueueMessage(msg, 0);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //mQueue.enqueueMessage(msg, 0);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.568 -0400", hash_original_method = "10A14FF061E08E67689F0F5686D6176F", hash_generated_method = "E870E62E2985D82C8C8D19872824FE81")
     public Thread getThread() {
 Thread varFA48872E2EC416027B4C49FE68CA50D2_897475245 =         mThread;
         varFA48872E2EC416027B4C49FE68CA50D2_897475245.addTaint(taint);
         return varFA48872E2EC416027B4C49FE68CA50D2_897475245;
-        // ---------- Original Method ----------
-        //return mThread;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.568 -0400", hash_original_method = "9CC180E1B870A467FDD64311213EECB9", hash_generated_method = "2F30A9E7C05D3D6EBE085AD28D2184B7")
     public MessageQueue getQueue() {
 MessageQueue var50E51770E0A0DA5CD7716ADC83B54E12_2123858558 =         mQueue;
         var50E51770E0A0DA5CD7716ADC83B54E12_2123858558.addTaint(taint);
         return var50E51770E0A0DA5CD7716ADC83B54E12_2123858558;
-        // ---------- Original Method ----------
-        //return mQueue;
+        
+        
     }
 
     
@@ -176,29 +181,29 @@ MessageQueue var50E51770E0A0DA5CD7716ADC83B54E12_2123858558 =         mQueue;
                     pw.println("  Message " + n + ": " + msg.toString(now));
                     n++;
                     msg = msg.next;
-                } //End block
+                } 
                 pw.println("(Total messages: " + n + ")");
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //pw = PrefixPrinter.create(pw, prefix);
-        //pw.println(this.toString());
-        //pw.println("mRun=" + mRun);
-        //pw.println("mThread=" + mThread);
-        //pw.println("mQueue=" + ((mQueue != null) ? mQueue : "(null"));
-        //if (mQueue != null) {
-            //synchronized (mQueue) {
-                //long now = SystemClock.uptimeMillis();
-                //Message msg = mQueue.mMessages;
-                //int n = 0;
-                //while (msg != null) {
-                    //pw.println("  Message " + n + ": " + msg.toString(now));
-                    //n++;
-                    //msg = msg.next;
-                //}
-                //pw.println("(Total messages: " + n + ")");
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                    
+                    
+                    
+                
+                
+            
+        
     }
 
     
@@ -207,8 +212,8 @@ MessageQueue var50E51770E0A0DA5CD7716ADC83B54E12_2123858558 =         mQueue;
 String var1D29CD85C81BB849FC1C0ED8B418DFD9_772542939 =         "Looper{" + Integer.toHexString(System.identityHashCode(this)) + "}";
         var1D29CD85C81BB849FC1C0ED8B418DFD9_772542939.addTaint(taint);
         return var1D29CD85C81BB849FC1C0ED8B418DFD9_772542939;
-        // ---------- Original Method ----------
-        //return "Looper{" + Integer.toHexString(System.identityHashCode(this)) + "}";
+        
+        
     }
 
     

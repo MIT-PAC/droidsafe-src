@@ -1,6 +1,6 @@
 package android.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -61,19 +61,19 @@ public final class AccessibilityManager {
         {
             final int stateFlags = mService.addClient(mClient);
             setState(stateFlags);
-        } //End block
+        } 
         catch (RemoteException re)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //mHandler = new MyHandler(context.getMainLooper());
-        //mService = service;
-        //try {
-            //final int stateFlags = mService.addClient(mClient);
-            //setState(stateFlags);
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "AccessibilityManagerService is dead", re);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -89,6 +89,7 @@ public final class AccessibilityManager {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.154 -0400", hash_original_method = "20CDD5F21F40208C5206265F82FC5959", hash_generated_method = "256636AA5D4BCBB851B5FF1A745305CF")
     public boolean isEnabled() {
         synchronized
@@ -96,14 +97,15 @@ public final class AccessibilityManager {
             boolean var1D09076915F0C1B535F8F7A6899A12CD_210896214 = (mIsEnabled);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_337394764 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_337394764;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mHandler) {
-            //return mIsEnabled;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.155 -0400", hash_original_method = "7B07E9E942D9981C7AD5D7B1A6A19F18", hash_generated_method = "E94172307C2CEF33AF2B1CAB05AB5B3A")
     public boolean isTouchExplorationEnabled() {
         synchronized
@@ -111,11 +113,11 @@ public final class AccessibilityManager {
             boolean varCC9FEDC5C3C4EEA9B9546C6E636B6B06_1888133147 = (mIsTouchExplorationEnabled);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252887295 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_252887295;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mHandler) {
-            //return mIsTouchExplorationEnabled;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -124,8 +126,8 @@ public final class AccessibilityManager {
 IAccessibilityManagerClient var0B90A2BCE1CB89BF0EC0C688F79755B8_2072276043 =         (IAccessibilityManagerClient) mClient.asBinder();
         var0B90A2BCE1CB89BF0EC0C688F79755B8_2072276043.addTaint(taint);
         return var0B90A2BCE1CB89BF0EC0C688F79755B8_2072276043;
-        // ---------- Original Method ----------
-        //return (IAccessibilityManagerClient) mClient.asBinder();
+        
+        
     }
 
     
@@ -137,7 +139,7 @@ IAccessibilityManagerClient var0B90A2BCE1CB89BF0EC0C688F79755B8_2072276043 =    
             IllegalStateException var6475C4D7B3336019B637BA2F24732F01_931872411 = new IllegalStateException("Accessibility off. Did you forget to check that?");
             var6475C4D7B3336019B637BA2F24732F01_931872411.addTaint(taint);
             throw var6475C4D7B3336019B637BA2F24732F01_931872411;
-        } //End block
+        } 
         boolean doRecycle = false;
         try 
         {
@@ -147,38 +149,38 @@ IAccessibilityManagerClient var0B90A2BCE1CB89BF0EC0C688F79755B8_2072276043 =    
             Binder.restoreCallingIdentity(identityToken);
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException re)
         {
-        } //End block
+        } 
         finally 
         {
     if(doRecycle)            
             {
                 event.recycle();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mIsEnabled) {
-            //throw new IllegalStateException("Accessibility off. Did you forget to check that?");
-        //}
-        //boolean doRecycle = false;
-        //try {
-            //event.setEventTime(SystemClock.uptimeMillis());
-            //long identityToken = Binder.clearCallingIdentity();
-            //doRecycle = mService.sendAccessibilityEvent(event);
-            //Binder.restoreCallingIdentity(identityToken);
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, event + " sent");
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error during sending " + event + " ", re);
-        //} finally {
-            //if (doRecycle) {
-                //event.recycle();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
+            
+        
+            
+                
+            
+        
     }
 
     
@@ -189,29 +191,29 @@ IAccessibilityManagerClient var0B90A2BCE1CB89BF0EC0C688F79755B8_2072276043 =    
             IllegalStateException var6475C4D7B3336019B637BA2F24732F01_10333248 = new IllegalStateException("Accessibility off. Did you forget to check that?");
             var6475C4D7B3336019B637BA2F24732F01_10333248.addTaint(taint);
             throw var6475C4D7B3336019B637BA2F24732F01_10333248;
-        } //End block
+        } 
         try 
         {
             mService.interrupt();
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException re)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mIsEnabled) {
-            //throw new IllegalStateException("Accessibility off. Did you forget to check that?");
-        //}
-        //try {
-            //mService.interrupt();
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Requested interrupt from all services");
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while requesting interrupt from all services. ", re);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -225,19 +227,19 @@ for(int i = 0;i < infoCount;i++)
         {
             AccessibilityServiceInfo info = infos.get(i);
             services.add(info.getResolveInfo().serviceInfo);
-        } //End block
+        } 
 List<ServiceInfo> var74779B63588794B1BDB8F8A951D65A09_905557457 =         Collections.unmodifiableList(services);
         var74779B63588794B1BDB8F8A951D65A09_905557457.addTaint(taint);
         return var74779B63588794B1BDB8F8A951D65A09_905557457;
-        // ---------- Original Method ----------
-        //List<AccessibilityServiceInfo> infos = getInstalledAccessibilityServiceList();
-        //List<ServiceInfo> services = new ArrayList<ServiceInfo>();
-        //final int infoCount = infos.size();
-        //for (int i = 0; i < infoCount; i++) {
-            //AccessibilityServiceInfo info = infos.get(i);
-            //services.add(info.getResolveInfo().serviceInfo);
-        //}
-        //return Collections.unmodifiableList(services);
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -249,25 +251,25 @@ List<ServiceInfo> var74779B63588794B1BDB8F8A951D65A09_905557457 =         Collec
             services = mService.getInstalledAccessibilityServiceList();
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException re)
         {
-        } //End block
+        } 
 List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1656576863 =         Collections.unmodifiableList(services);
         var74779B63588794B1BDB8F8A951D65A09_1656576863.addTaint(taint);
         return var74779B63588794B1BDB8F8A951D65A09_1656576863;
-        // ---------- Original Method ----------
-        //List<AccessibilityServiceInfo> services = null;
-        //try {
-            //services = mService.getInstalledAccessibilityServiceList();
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Installed AccessibilityServices " + services);
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while obtaining the installed AccessibilityServices. ", re);
-        //}
-        //return Collections.unmodifiableList(services);
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -281,25 +283,25 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1656576863 = 
             services = mService.getEnabledAccessibilityServiceList(feedbackTypeFlags);
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException re)
         {
-        } //End block
+        } 
 List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1096540779 =         Collections.unmodifiableList(services);
         var74779B63588794B1BDB8F8A951D65A09_1096540779.addTaint(taint);
         return var74779B63588794B1BDB8F8A951D65A09_1096540779;
-        // ---------- Original Method ----------
-        //List<AccessibilityServiceInfo> services = null;
-        //try {
-            //services = mService.getEnabledAccessibilityServiceList(feedbackTypeFlags);
-            //if (DEBUG) {
-                //Log.i(LOG_TAG, "Installed AccessibilityServices " + services);
-            //}
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while obtaining the installed AccessibilityServices. ", re);
-        //}
-        //return Collections.unmodifiableList(services);
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -310,8 +312,8 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1096540779 = 
         boolean var2C5A5236155593B4358D863171B0BDD6_1583330803 = (mAccessibilityStateChangeListeners.add(listener));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_339645961 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_339645961;
-        // ---------- Original Method ----------
-        //return mAccessibilityStateChangeListeners.add(listener);
+        
+        
     }
 
     
@@ -322,8 +324,8 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1096540779 = 
         boolean var85C8C39FFA5F20612971B1AF401EF0C0_53521128 = (mAccessibilityStateChangeListeners.remove(listener));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535310138 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_535310138;
-        // ---------- Original Method ----------
-        //return mAccessibilityStateChangeListeners.remove(listener);
+        
+        
     }
 
     
@@ -332,10 +334,10 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1096540779 = 
         final boolean accessibilityEnabled = (stateFlags & STATE_FLAG_ACCESSIBILITY_ENABLED) != 0;
         setAccessibilityState(accessibilityEnabled);
         mIsTouchExplorationEnabled = (stateFlags & STATE_FLAG_TOUCH_EXPLORATION_ENABLED) != 0;
-        // ---------- Original Method ----------
-        //final boolean accessibilityEnabled = (stateFlags & STATE_FLAG_ACCESSIBILITY_ENABLED) != 0;
-        //setAccessibilityState(accessibilityEnabled);
-        //mIsTouchExplorationEnabled = (stateFlags & STATE_FLAG_TOUCH_EXPLORATION_ENABLED) != 0;
+        
+        
+        
+        
     }
 
     
@@ -347,15 +349,15 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1096540779 = 
             {
                 mIsEnabled = isEnabled;
                 notifyAccessibilityStateChanged();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mHandler) {
-            //if (isEnabled != mIsEnabled) {
-                //mIsEnabled = isEnabled;
-                //notifyAccessibilityStateChanged();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -365,12 +367,12 @@ List<AccessibilityServiceInfo> var74779B63588794B1BDB8F8A951D65A09_1096540779 = 
 for(int i = 0;i < listenerCount;i++)
         {
             mAccessibilityStateChangeListeners.get(i).onAccessibilityStateChanged(mIsEnabled);
-        } //End block
-        // ---------- Original Method ----------
-        //final int listenerCount = mAccessibilityStateChangeListeners.size();
-        //for (int i = 0; i < listenerCount; i++) {
-            //mAccessibilityStateChangeListeners.get(i).onAccessibilityStateChanged(mIsEnabled);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -384,20 +386,20 @@ for(int i = 0;i < listenerCount;i++)
             int var945A9B0E1DAFACBDF82326BF6F30DAD2_912312639 = (mService.addAccessibilityInteractionConnection(windowToken, connection));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237968345 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1237968345;
-        } //End block
+        } 
         catch (RemoteException re)
         {
-        } //End block
+        } 
         int var90ACE5ECCD5C32263347610AED8D56A0_1017876542 = (View.NO_ID);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427353310 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427353310;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.addAccessibilityInteractionConnection(windowToken, connection);
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while adding an accessibility interaction connection. ", re);
-        //}
-        //return View.NO_ID;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -407,16 +409,16 @@ for(int i = 0;i < listenerCount;i++)
         try 
         {
             mService.removeAccessibilityInteractionConnection(windowToken);
-        } //End block
+        } 
         catch (RemoteException re)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.removeAccessibilityInteractionConnection(windowToken);
-        //} catch (RemoteException re) {
-            //Log.e(LOG_TAG, "Error while removing an accessibility interaction connection. ", re);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -426,7 +428,7 @@ for(int i = 0;i < listenerCount;i++)
           MyHandler(Looper mainLooper) {
             super(mainLooper);
             addTaint(mainLooper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -440,14 +442,14 @@ switch(message.what){
             return;
             default :
 }
-            // ---------- Original Method ----------
-            //switch (message.what) {
-                //case DO_SET_STATE :
-                    //setState(message.arg1);
-                    //return;
-                //default :
-                    //Log.w(LOG_TAG, "Unknown message type: " + message.what);
-            //}
+            
+            
+                
+                    
+                    
+                
+                    
+            
         }
 
         

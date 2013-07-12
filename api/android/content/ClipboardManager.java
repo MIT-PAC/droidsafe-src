@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,8 +56,8 @@ public class ClipboardManager extends android.text.ClipboardManager {
     public  ClipboardManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -79,15 +79,15 @@ public class ClipboardManager extends android.text.ClipboardManager {
         try 
         {
             getService().setPrimaryClip(clip);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //getService().setPrimaryClip(clip);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -98,19 +98,19 @@ public class ClipboardManager extends android.text.ClipboardManager {
 ClipData varEA460A7A81D36BB15FF7AEC2DAF2CE12_1631368215 =             getService().getPrimaryClip(mContext.getPackageName());
             varEA460A7A81D36BB15FF7AEC2DAF2CE12_1631368215.addTaint(taint);
             return varEA460A7A81D36BB15FF7AEC2DAF2CE12_1631368215;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 ClipData var540C13E9E156B687226421B24F2DF178_2139866064 =             null;
             var540C13E9E156B687226421B24F2DF178_2139866064.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2139866064;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().getPrimaryClip(mContext.getPackageName());
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -121,19 +121,19 @@ ClipData var540C13E9E156B687226421B24F2DF178_2139866064 =             null;
 ClipDescription var44B2C124A428D0DD59ED267CFD8E15D8_2085197025 =             getService().getPrimaryClipDescription();
             var44B2C124A428D0DD59ED267CFD8E15D8_2085197025.addTaint(taint);
             return var44B2C124A428D0DD59ED267CFD8E15D8_2085197025;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 ClipDescription var540C13E9E156B687226421B24F2DF178_1074079760 =             null;
             var540C13E9E156B687226421B24F2DF178_1074079760.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1074079760;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().getPrimaryClipDescription();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -144,19 +144,19 @@ ClipDescription var540C13E9E156B687226421B24F2DF178_1074079760 =             nul
             boolean var5B2E53189D3D8689EE1BFBF67B84E4B5_381930797 = (getService().hasPrimaryClip());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1847791540 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1847791540;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_84172728 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510062042 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_510062042;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().hasPrimaryClip();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -171,24 +171,24 @@ ClipDescription var540C13E9E156B687226421B24F2DF178_1074079760 =             nul
                 {
                     getService().addPrimaryClipChangedListener(
                             mPrimaryClipChangedServiceListener);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             mPrimaryClipChangedListeners.add(what);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mPrimaryClipChangedListeners) {
-            //if (mPrimaryClipChangedListeners.size() == 0) {
-                //try {
-                    //getService().addPrimaryClipChangedListener(
-                            //mPrimaryClipChangedServiceListener);
-                //} catch (RemoteException e) {
-                //}
-            //}
-            //mPrimaryClipChangedListeners.add(what);
-        //}
+        } 
+        
+        
+            
+                
+                    
+                            
+                
+                
+            
+            
+        
     }
 
     
@@ -204,23 +204,23 @@ ClipDescription var540C13E9E156B687226421B24F2DF178_1074079760 =             nul
                 {
                     getService().removePrimaryClipChangedListener(
                             mPrimaryClipChangedServiceListener);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mPrimaryClipChangedListeners) {
-            //mPrimaryClipChangedListeners.remove(what);
-            //if (mPrimaryClipChangedListeners.size() == 0) {
-                //try {
-                    //getService().removePrimaryClipChangedListener(
-                            //mPrimaryClipChangedServiceListener);
-                //} catch (RemoteException e) {
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                    
+                            
+                
+                
+            
+        
     }
 
     
@@ -232,16 +232,16 @@ ClipDescription var540C13E9E156B687226421B24F2DF178_1074079760 =             nul
 CharSequence varEC8188868AFABB27F958E34809640CFA_2014433212 =             clip.getItemAt(0).coerceToText(mContext);
             varEC8188868AFABB27F958E34809640CFA_2014433212.addTaint(taint);
             return varEC8188868AFABB27F958E34809640CFA_2014433212;
-        } //End block
+        } 
 CharSequence var540C13E9E156B687226421B24F2DF178_1775055560 =         null;
         var540C13E9E156B687226421B24F2DF178_1775055560.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1775055560;
-        // ---------- Original Method ----------
-        //ClipData clip = getPrimaryClip();
-        //if (clip != null && clip.getItemCount() > 0) {
-            //return clip.getItemAt(0).coerceToText(mContext);
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -249,8 +249,8 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1775055560 =         null;
     public void setText(CharSequence text) {
         addTaint(text.getTaint());
         setPrimaryClip(ClipData.newPlainText(null, text));
-        // ---------- Original Method ----------
-        //setPrimaryClip(ClipData.newPlainText(null, text));
+        
+        
     }
 
     
@@ -261,19 +261,19 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1775055560 =         null;
             boolean var81667AFC854212260A8335B5C89C7E10_1772935123 = (getService().hasClipboardText());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_690236131 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_690236131;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_258487346 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070906096 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070906096;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return getService().hasClipboardText();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -286,25 +286,25 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1775055560 =         null;
     if(N <= 0)            
             {
                 return;
-            } //End block
+            } 
             listeners = mPrimaryClipChangedListeners.toArray();
-        } //End block
+        } 
 for(int i=0;i<listeners.length;i++)
         {
             ((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //Object[] listeners;
-        //synchronized (mPrimaryClipChangedListeners) {
-            //final int N = mPrimaryClipChangedListeners.size();
-            //if (N <= 0) {
-                //return;
-            //}
-            //listeners = mPrimaryClipChangedListeners.toArray();
-        //}
-        //for (int i=0; i<listeners.length; i++) {
-            //((OnPrimaryClipChangedListener)listeners[i]).onPrimaryClipChanged();
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+            
+        
     }
 
     

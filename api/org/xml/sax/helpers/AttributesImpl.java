@@ -1,6 +1,6 @@
 package org.xml.sax.helpers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public class AttributesImpl implements Attributes {
     public  AttributesImpl() {
         length = 0;
         data = null;
-        // ---------- Original Method ----------
-        //length = 0;
-        //data = null;
+        
+        
+        
     }
 
     
@@ -28,21 +28,23 @@ public class AttributesImpl implements Attributes {
     public  AttributesImpl(Attributes atts) {
         addTaint(atts.getTaint());
         setAttributes(atts);
-        // ---------- Original Method ----------
-        //setAttributes(atts);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.314 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "A3DD437CC267C864CC76871EE0501103")
     public int getLength() {
         int var2FA47F7C65FEC19CC163B195725E3844_1444376772 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483095495 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483095495;
-        // ---------- Original Method ----------
-        //return length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.314 -0400", hash_original_method = "1BF0AE5363A8618B6A71FCEE06881B7C", hash_generated_method = "15BCB2EE81B095450A9F489FE8E78880")
     public String getURI(int index) {
         addTaint(index);
@@ -51,22 +53,23 @@ public class AttributesImpl implements Attributes {
 String var95434D24A9F9C0BB221335CC7B21DB58_27644048 =             data[index*5];
             var95434D24A9F9C0BB221335CC7B21DB58_27644048.addTaint(taint);
             return var95434D24A9F9C0BB221335CC7B21DB58_27644048;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_1368728123 =             null;
             var540C13E9E156B687226421B24F2DF178_1368728123.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1368728123;
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //return data[index*5];
-    //} else {
-        //return null;
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.315 -0400", hash_original_method = "92B1686F7E458511CE45EC4DB3E3CE89", hash_generated_method = "1E3A821F5BCB50AB8EE9ABB261657215")
     public String getLocalName(int index) {
         addTaint(index);
@@ -75,22 +78,23 @@ String var540C13E9E156B687226421B24F2DF178_1368728123 =             null;
 String varF55F81CCFE212CE75C71B6A4F79FDCBE_150579585 =             data[index*5+1];
             varF55F81CCFE212CE75C71B6A4F79FDCBE_150579585.addTaint(taint);
             return varF55F81CCFE212CE75C71B6A4F79FDCBE_150579585;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_219942284 =             null;
             var540C13E9E156B687226421B24F2DF178_219942284.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_219942284;
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //return data[index*5+1];
-    //} else {
-        //return null;
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.316 -0400", hash_original_method = "32BD7D7FFA2C46007E9D534F2070D779", hash_generated_method = "562F3D82468E81CEA390083E240B9B2A")
     public String getQName(int index) {
         addTaint(index);
@@ -99,22 +103,23 @@ String var540C13E9E156B687226421B24F2DF178_219942284 =             null;
 String var4CDEDB5A63059951DB3E8DDA3B424519_1003847359 =             data[index*5+2];
             var4CDEDB5A63059951DB3E8DDA3B424519_1003847359.addTaint(taint);
             return var4CDEDB5A63059951DB3E8DDA3B424519_1003847359;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_770300917 =             null;
             var540C13E9E156B687226421B24F2DF178_770300917.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_770300917;
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //return data[index*5+2];
-    //} else {
-        //return null;
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.317 -0400", hash_original_method = "CD55E4A1C2CBE3FE53B5A622E57F028C", hash_generated_method = "4F94B2F2DA9398989DFE19A9BFC46B8A")
     public String getType(int index) {
         addTaint(index);
@@ -123,22 +128,23 @@ String var540C13E9E156B687226421B24F2DF178_770300917 =             null;
 String varBFB9612AF994A88438B71FEDF20B7958_1723758878 =             data[index*5+3];
             varBFB9612AF994A88438B71FEDF20B7958_1723758878.addTaint(taint);
             return varBFB9612AF994A88438B71FEDF20B7958_1723758878;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_2135764046 =             null;
             var540C13E9E156B687226421B24F2DF178_2135764046.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2135764046;
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //return data[index*5+3];
-    //} else {
-        //return null;
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.317 -0400", hash_original_method = "7BC4C2655702EDFE2361F9F97C33BDBD", hash_generated_method = "70B662A64161CDE87E7A8757AA88195F")
     public String getValue(int index) {
         addTaint(index);
@@ -147,19 +153,19 @@ String var540C13E9E156B687226421B24F2DF178_2135764046 =             null;
 String var8077B4B05F2B5CDB78D827F9A6A6B085_902638784 =             data[index*5+4];
             var8077B4B05F2B5CDB78D827F9A6A6B085_902638784.addTaint(taint);
             return var8077B4B05F2B5CDB78D827F9A6A6B085_902638784;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_1129970386 =             null;
             var540C13E9E156B687226421B24F2DF178_1129970386.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1129970386;
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //return data[index*5+4];
-    //} else {
-        //return null;
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -175,19 +181,19 @@ for(int i = 0;i < max;i += 5)
                 int var4ACA45CA7574117645E1AA3B47DBA994_1336645648 = (i / 5);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883636331 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1883636331;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1323772301 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936413515 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1936413515;
-        // ---------- Original Method ----------
-        //int max = length * 5;
-        //for (int i = 0; i < max; i += 5) {
-        //if (data[i].equals(uri) && data[i+1].equals(localName)) {
-        //return i / 5;
-        //}
-    //}
-        //return -1;
+        
+        
+        
+        
+        
+        
+    
+        
     }
 
     
@@ -202,19 +208,19 @@ for(int i = 0;i < max;i += 5)
                 int var4ACA45CA7574117645E1AA3B47DBA994_634417705 = (i / 5);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422363514 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422363514;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1410752078 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006535306 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006535306;
-        // ---------- Original Method ----------
-        //int max = length * 5;
-        //for (int i = 0; i < max; i += 5) {
-        //if (data[i+2].equals(qName)) {
-        //return i / 5;
-        //}
-    //}
-        //return -1;
+        
+        
+        
+        
+        
+        
+    
+        
     }
 
     
@@ -230,19 +236,19 @@ for(int i = 0;i < max;i += 5)
 String varCB7F46453B963C1F8700DDE6A3A7C24F_518302488 =                 data[i+3];
                 varCB7F46453B963C1F8700DDE6A3A7C24F_518302488.addTaint(taint);
                 return varCB7F46453B963C1F8700DDE6A3A7C24F_518302488;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1681446473 =         null;
         var540C13E9E156B687226421B24F2DF178_1681446473.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1681446473;
-        // ---------- Original Method ----------
-        //int max = length * 5;
-        //for (int i = 0; i < max; i += 5) {
-        //if (data[i].equals(uri) && data[i+1].equals(localName)) {
-        //return data[i+3];
-        //}
-    //}
-        //return null;
+        
+        
+        
+        
+        
+        
+    
+        
     }
 
     
@@ -257,19 +263,19 @@ for(int i = 0;i < max;i += 5)
 String varCB7F46453B963C1F8700DDE6A3A7C24F_1927674740 =                 data[i+3];
                 varCB7F46453B963C1F8700DDE6A3A7C24F_1927674740.addTaint(taint);
                 return varCB7F46453B963C1F8700DDE6A3A7C24F_1927674740;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_2109125692 =         null;
         var540C13E9E156B687226421B24F2DF178_2109125692.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2109125692;
-        // ---------- Original Method ----------
-        //int max = length * 5;
-        //for (int i = 0; i < max; i += 5) {
-        //if (data[i+2].equals(qName)) {
-        //return data[i+3];
-        //}
-    //}
-        //return null;
+        
+        
+        
+        
+        
+        
+    
+        
     }
 
     
@@ -285,19 +291,19 @@ for(int i = 0;i < max;i += 5)
 String var0C1EB3387F710BB8CDFBF236935915BE_208453044 =                 data[i+4];
                 var0C1EB3387F710BB8CDFBF236935915BE_208453044.addTaint(taint);
                 return var0C1EB3387F710BB8CDFBF236935915BE_208453044;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1870420051 =         null;
         var540C13E9E156B687226421B24F2DF178_1870420051.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1870420051;
-        // ---------- Original Method ----------
-        //int max = length * 5;
-        //for (int i = 0; i < max; i += 5) {
-        //if (data[i].equals(uri) && data[i+1].equals(localName)) {
-        //return data[i+4];
-        //}
-    //}
-        //return null;
+        
+        
+        
+        
+        
+        
+    
+        
     }
 
     
@@ -312,36 +318,37 @@ for(int i = 0;i < max;i += 5)
 String var0C1EB3387F710BB8CDFBF236935915BE_839867185 =                 data[i+4];
                 var0C1EB3387F710BB8CDFBF236935915BE_839867185.addTaint(taint);
                 return var0C1EB3387F710BB8CDFBF236935915BE_839867185;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1662727279 =         null;
         var540C13E9E156B687226421B24F2DF178_1662727279.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1662727279;
-        // ---------- Original Method ----------
-        //int max = length * 5;
-        //for (int i = 0; i < max; i += 5) {
-        //if (data[i+2].equals(qName)) {
-        //return data[i+4];
-        //}
-    //}
-        //return null;
+        
+        
+        
+        
+        
+        
+    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.321 -0400", hash_original_method = "03C848B66796F8DBDE7832677AAFA935", hash_generated_method = "6A5B90232418EF65C55D8A5A53AB2614")
     public void clear() {
     if(data != null)        
         {
 for(int i = 0;i < (length * 5);i++)
             data [i] = null;
-        } //End block
+        } 
         length = 0;
-        // ---------- Original Method ----------
-        //if (data != null) {
-        //for (int i = 0; i < (length * 5); i++)
-        //data [i] = null;
-    //}
-        //length = 0;
+        
+        
+        
+        
+    
+        
     }
 
     
@@ -359,21 +366,21 @@ for(int i = 0;i < length;i++)
                 data[i*5+2] = atts.getQName(i);
                 data[i*5+3] = atts.getType(i);
                 data[i*5+4] = atts.getValue(i);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //clear();
-        //length = atts.getLength();
-        //if (length > 0) {
-            //data = new String[length*5];
-            //for (int i = 0; i < length; i++) {
-                //data[i*5] = atts.getURI(i);
-                //data[i*5+1] = atts.getLocalName(i);
-                //data[i*5+2] = atts.getQName(i);
-                //data[i*5+3] = atts.getType(i);
-                //data[i*5+4] = atts.getValue(i);
-            //}
-    //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+                
+                
+                
+                
+            
+    
     }
 
     
@@ -387,14 +394,14 @@ for(int i = 0;i < length;i++)
         data[length*5+3] = type;
         data[length*5+4] = value;
         length++;
-        // ---------- Original Method ----------
-        //ensureCapacity(length+1);
-        //data[length*5] = uri;
-        //data[length*5+1] = localName;
-        //data[length*5+2] = qName;
-        //data[length*5+3] = type;
-        //data[length*5+4] = value;
-        //length++;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -408,21 +415,21 @@ for(int i = 0;i < length;i++)
             data[index*5+2] = qName;
             data[index*5+3] = type;
             data[index*5+4] = value;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //data[index*5] = uri;
-        //data[index*5+1] = localName;
-        //data[index*5+2] = qName;
-        //data[index*5+3] = type;
-        //data[index*5+4] = value;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -434,7 +441,7 @@ for(int i = 0;i < length;i++)
             {
                 System.arraycopy(data, (index+1)*5, data, index*5,
                  (length-index-1)*5);
-            } //End block
+            } 
             index = (length - 1) * 5;
             data [index++] = null;
             data [index++] = null;
@@ -442,27 +449,27 @@ for(int i = 0;i < length;i++)
             data [index++] = null;
             data [index] = null;
             length--;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //if (index < length - 1) {
-        //System.arraycopy(data, (index+1)*5, data, index*5,
-                 //(length-index-1)*5);
-        //}
-        //index = (length - 1) * 5;
-        //data [index++] = null;
-        //data [index++] = null;
-        //data [index++] = null;
-        //data [index++] = null;
-        //data [index] = null;
-        //length--;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+        
+                 
+        
+        
+        
+        
+        
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -471,17 +478,17 @@ for(int i = 0;i < length;i++)
     if(index >= 0 && index < length)        
         {
             data[index*5] = uri;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //data[index*5] = uri;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -490,17 +497,17 @@ for(int i = 0;i < length;i++)
     if(index >= 0 && index < length)        
         {
             data[index*5+1] = localName;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //data[index*5+1] = localName;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -509,17 +516,17 @@ for(int i = 0;i < length;i++)
     if(index >= 0 && index < length)        
         {
             data[index*5+2] = qName;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //data[index*5+2] = qName;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -528,17 +535,17 @@ for(int i = 0;i < length;i++)
     if(index >= 0 && index < length)        
         {
             data[index*5+3] = type;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //data[index*5+3] = type;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -547,17 +554,17 @@ for(int i = 0;i < length;i++)
     if(index >= 0 && index < length)        
         {
             data[index*5+4] = value;
-        } //End block
+        } 
         else
         {
             badIndex(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (index >= 0 && index < length) {
-        //data[index*5+4] = value;
-    //} else {
-        //badIndex(index);
-    //}
+        } 
+        
+        
+        
+    
+        
+    
     }
 
     
@@ -567,54 +574,54 @@ for(int i = 0;i < length;i++)
     if(n <= 0)        
         {
             return;
-        } //End block
+        } 
         int max;
     if(data == null || data.length == 0)        
         {
             max = 25;
-        } //End block
+        } 
         else
     if(data.length >= n * 5)        
         {
             return;
-        } //End block
+        } 
         else
         {
             max = data.length;
-        } //End block
+        } 
         while
 (max < n * 5)        
         {
             max *= 2;
-        } //End block
+        } 
         String newData[] = new String[max];
     if(length > 0)        
         {
             System.arraycopy(data, 0, newData, 0, length*5);
-        } //End block
+        } 
         data = newData;
-        // ---------- Original Method ----------
-        //if (n <= 0) {
-            //return;
-        //}
-        //int max;
-        //if (data == null || data.length == 0) {
-            //max = 25;
-        //}
-        //else if (data.length >= n * 5) {
-            //return;
-        //}
-        //else {
-            //max = data.length;
-        //}
-        //while (max < n * 5) {
-            //max *= 2;
-        //}
-        //String newData[] = new String[max];
-        //if (length > 0) {
-            //System.arraycopy(data, 0, newData, 0, length*5);
-        //}
-        //data = newData;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -625,10 +632,10 @@ for(int i = 0;i < length;i++)
         ArrayIndexOutOfBoundsException var06403C82FB97763551DB036E1D4BB483_1503336089 = new ArrayIndexOutOfBoundsException(msg);
         var06403C82FB97763551DB036E1D4BB483_1503336089.addTaint(taint);
         throw var06403C82FB97763551DB036E1D4BB483_1503336089;
-        // ---------- Original Method ----------
-        //String msg =
-        //"Attempt to modify attribute at illegal index: " + index;
-        //throw new ArrayIndexOutOfBoundsException(msg);
+        
+        
+        
+        
     }
 
     

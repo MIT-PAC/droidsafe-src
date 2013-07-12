@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -68,7 +68,7 @@ class TextLine {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.113 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
     public TextLine ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -124,7 +124,7 @@ class TextLine {
             IllegalArgumentException var8EF2EA489585A5793B8925C4F03F0829_945444540 = new IllegalArgumentException("Directions cannot be null");
             var8EF2EA489585A5793B8925C4F03F0829_945444540.addTaint(taint);
             throw var8EF2EA489585A5793B8925C4F03F0829_945444540;
-        } //End block
+        } 
         mHasTabs = hasTabs;
         mSpanned = null;
         boolean hasReplacement = false;
@@ -133,14 +133,14 @@ class TextLine {
             mSpanned = (Spanned) text;
             mReplacementSpanSpanSet.init(mSpanned, start, limit);
             hasReplacement = mReplacementSpanSpanSet.numberOfSpans > 0;
-        } //End block
+        } 
         mCharsValid = hasReplacement || hasTabs || directions != Layout.DIRS_ALL_LEFT_TO_RIGHT;
     if(mCharsValid)        
         {
     if(mChars == null || mChars.length < mLen)            
             {
                 mChars = new char[ArrayUtils.idealCharArraySize(mLen)];
-            } //End block
+            } 
             TextUtils.getChars(text, start, limit, mChars, 0);
     if(hasReplacement)            
             {
@@ -154,14 +154,14 @@ for(int i = start, inext;i < limit;i = inext)
 for(int j = i - start + 1, e = inext - start;j < e;++j)
                         {
                             chars[j] = '\ufeff';
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         mTabs = tabStops;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -178,13 +178,13 @@ for(int j = i - start + 1, e = inext - start;j < e;++j)
             {
                 drawRun(c, 0, mLen, false, x, top, y, bottom, false);
                 return;
-            } //End block
+            } 
     if(mDirections == Layout.DIRS_ALL_RIGHT_TO_LEFT)            
             {
                 drawRun(c, 0, mLen, true, x, top, y, bottom, false);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         float h = 0;
         int[] runs = mDirections.mDirections;
         RectF emojiRect = null;
@@ -196,7 +196,7 @@ for(int i = 0;i < runs.length;i += 2)
     if(runLimit > mLen)            
             {
                 runLimit = mLen;
-            } //End block
+            } 
             boolean runIsRtl = (runs[i+1] & Layout.RUN_RTL_FLAG) != 0;
             int segstart = runStart;
 for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
@@ -212,15 +212,15 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     if(codept >= Layout.MIN_EMOJI && codept <= Layout.MAX_EMOJI)                        
                         {
                             bm = Layout.EMOJI_FACTORY.getBitmapFromAndroidPua(codept);
-                        } //End block
+                        } 
                         else
     if(codept > 0xffff)                        
                         {
                             ++j;
                             continue;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
     if(j == runLimit || codept == '\t' || bm != null)                
                 {
                     h += drawRun(c, segstart, j, runIsRtl, x+h, top, y, bottom,
@@ -228,7 +228,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     if(codept == '\t')                    
                     {
                         h = mDir * nextTab(h * mDir);
-                    } //End block
+                    } 
                     else
     if(bm != null)                    
                     {
@@ -239,19 +239,19 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     if(emojiRect == null)                        
                         {
                             emojiRect = new RectF();
-                        } //End block
+                        } 
                         emojiRect.set(x + h, y + bmAscent,
                                 x + h + width, y);
                         c.drawBitmap(bm, null, emojiRect, mPaint);
                         h += width;
                         j++;
-                    } //End block
+                    } 
                     segstart = j + 1;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -261,8 +261,8 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
         float varCA3676A736B9AEF236D373DAF5F8A8BD_719850083 = (measure(mLen, false, fmi));
                 float var546ADE640B6EDFBC8A086EF31347E768_547086273 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_547086273;
-        // ---------- Original Method ----------
-        //return measure(mLen, false, fmi);
+        
+        
     }
 
     
@@ -277,7 +277,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
             float varCFCD208495D565EF66E7DFF9F98764DA_2144485147 = (0);
                         float var546ADE640B6EDFBC8A086EF31347E768_1481777597 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1481777597;
-        } //End block
+        } 
         float h = 0;
     if(!mHasTabs)        
         {
@@ -286,14 +286,14 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
                 float varD8C26A00544BF185216AE9587E201F4B_232049649 = (measureRun(0, offset, mLen, false, fmi));
                                 float var546ADE640B6EDFBC8A086EF31347E768_1032443341 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_1032443341;
-            } //End block
+            } 
     if(mDirections == Layout.DIRS_ALL_RIGHT_TO_LEFT)            
             {
                 float varAFC11B24CA9B0417E04E74CB8335A043_291865073 = (measureRun(0, offset, mLen, true, fmi));
                                 float var546ADE640B6EDFBC8A086EF31347E768_1808355274 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_1808355274;
-            } //End block
-        } //End block
+            } 
+        } 
         char[] chars = mChars;
         int[] runs = mDirections.mDirections;
 for(int i = 0;i < runs.length;i += 2)
@@ -303,7 +303,7 @@ for(int i = 0;i < runs.length;i += 2)
     if(runLimit > mLen)            
             {
                 runLimit = mLen;
-            } //End block
+            } 
             boolean runIsRtl = (runs[i+1] & Layout.RUN_RTL_FLAG) != 0;
             int segstart = runStart;
 for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
@@ -319,15 +319,15 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     if(codept >= Layout.MIN_EMOJI && codept <= Layout.MAX_EMOJI)                        
                         {
                             bm = Layout.EMOJI_FACTORY.getBitmapFromAndroidPua(codept);
-                        } //End block
+                        } 
                         else
     if(codept > 0xffff)                        
                         {
                             ++j;
                             continue;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
     if(j == runLimit || codept == '\t' || bm != null)                
                 {
                     boolean inSegment = target >= segstart && target < j;
@@ -337,7 +337,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
                         float varFA5C38CF86CB7664782CEB7AB6041127_478147683 = (h += measureRun(segstart, offset, j, runIsRtl, fmi));
                                                 float var546ADE640B6EDFBC8A086EF31347E768_768154917 = getTaintFloat();
                         return var546ADE640B6EDFBC8A086EF31347E768_768154917;
-                    } //End block
+                    } 
                     float w = measureRun(segstart, j, j, runIsRtl, fmi);
                     h += advance ? w : -w;
     if(inSegment)                    
@@ -345,7 +345,7 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
                         float varE0FB591AA13046F431755A91C042765A_385880426 = (h += measureRun(segstart, offset, j, runIsRtl, null));
                                                 float var546ADE640B6EDFBC8A086EF31347E768_1363667195 = getTaintFloat();
                         return var546ADE640B6EDFBC8A086EF31347E768_1363667195;
-                    } //End block
+                    } 
     if(codept == '\t')                    
                     {
     if(offset == j)                        
@@ -353,31 +353,31 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
                             float var2510C39011C5BE704182423E3A695E91_1932502932 = (h);
                                                         float var546ADE640B6EDFBC8A086EF31347E768_462452550 = getTaintFloat();
                             return var546ADE640B6EDFBC8A086EF31347E768_462452550;
-                        } //End block
+                        } 
                         h = mDir * nextTab(h * mDir);
     if(target == j)                        
                         {
                             float var2510C39011C5BE704182423E3A695E91_279632556 = (h);
                                                         float var546ADE640B6EDFBC8A086EF31347E768_1727273943 = getTaintFloat();
                             return var546ADE640B6EDFBC8A086EF31347E768_1727273943;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(bm != null)                    
                     {
                         float bmAscent = ascent(j);
                         float wid = bm.getWidth() * -bmAscent / bm.getHeight();
                         h += mDir * wid;
                         j++;
-                    } //End block
+                    } 
                     segstart = j + 1;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         float var2510C39011C5BE704182423E3A695E91_1508994324 = (h);
                 float var546ADE640B6EDFBC8A086EF31347E768_326010429 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_326010429;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -402,20 +402,20 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
             float varF1290186A5D0B1CEAB27F4E77C0C5D68_433260050 = (w);
                         float var546ADE640B6EDFBC8A086EF31347E768_236463232 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_236463232;
-        } //End block
+        } 
         float var5B806A8FD0815835AF834A951658C654_1412739284 = (handleRun(start, limit, limit, runIsRtl, c, x, top,
                 y, bottom, null, needWidth));
                 float var546ADE640B6EDFBC8A086EF31347E768_169562478 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_169562478;
-        // ---------- Original Method ----------
-        //if ((mDir == Layout.DIR_LEFT_TO_RIGHT) == runIsRtl) {
-            //float w = -measureRun(start, limit, limit, runIsRtl, null);
-            //handleRun(start, limit, limit, runIsRtl, c, x + w, top,
-                    //y, bottom, null, false);
-            //return w;
-        //}
-        //return handleRun(start, limit, limit, runIsRtl, c, x, top,
-                //y, bottom, null, needWidth);
+        
+        
+            
+            
+                    
+            
+        
+        
+                
     }
 
     
@@ -430,8 +430,8 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
         float var1B298E88DAA78E81443AFF35B67538B1_2033767440 = (handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true));
                 float var546ADE640B6EDFBC8A086EF31347E768_1594603503 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1594603503;
-        // ---------- Original Method ----------
-        //return handleRun(start, offset, limit, runIsRtl, null, 0, 0, 0, 0, fmi, true);
+        
+        
     }
 
     
@@ -452,12 +452,12 @@ for(int j = mHasTabs ? runStart : runLimit;j <= runLimit;j++)
     if(cursor == lineStart)        
         {
             runIndex = -2;
-        } //End block
+        } 
         else
     if(cursor == lineEnd)        
         {
             runIndex = runs.length;
-        } //End block
+        } 
         else
         {
 for(runIndex = 0;runIndex < runs.length;runIndex += 2)
@@ -469,7 +469,7 @@ for(runIndex = 0;runIndex < runs.length;runIndex += 2)
     if(runLimit > lineEnd)                    
                     {
                         runLimit = lineEnd;
-                    } //End block
+                    } 
     if(cursor < runLimit)                    
                     {
                         runLevel = (runs[runIndex+1] >>> Layout.RUN_LEVEL_SHIFT) &
@@ -491,7 +491,7 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
     if(prevRunLimit > lineEnd)                                    
                                     {
                                         prevRunLimit = lineEnd;
-                                    } //End block
+                                    } 
     if(pos < prevRunLimit)                                    
                                     {
                                         prevRunLevel = (runs[prevRunIndex+1] >>> Layout.RUN_LEVEL_SHIFT)
@@ -504,15 +504,15 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
                                             runLimit = prevRunLimit;
                                             trailing = true;
                                             break;
-                                        } //End block
-                                    } //End block
-                                } //End block
-                            } //End block
-                        } //End block
+                                        } 
+                                    } 
+                                } 
+                            } 
+                        } 
                         break;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(runIndex != runs.length)            
             {
                 boolean runIsRtl = (runLevel & 0x1) != 0;
@@ -526,10 +526,10 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
                         int varA44B1DB7E51DCB32F152F35D1542F927_472999455 = (newCaret);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743673889 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_743673889;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         while
 (true)        
         {
@@ -543,7 +543,7 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
     if(otherRunLimit > lineEnd)                
                 {
                     otherRunLimit = lineEnd;
-                } //End block
+                } 
                 int otherRunLevel = (runs[otherRunIndex+1] >>> Layout.RUN_LEVEL_SHIFT) &
                 Layout.RUN_LEVEL_MASK;
                 boolean otherRunIsRtl = (otherRunLevel & 1) != 0;
@@ -558,31 +558,31 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
                         runIndex = otherRunIndex;
                         runLevel = otherRunLevel;
                         continue;
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
     if(otherRunLevel < runLevel)                
                 {
                     newCaret = advance ? otherRunStart : otherRunLimit;
-                } //End block
+                } 
                 break;
-            } //End block
+            } 
     if(newCaret == -1)            
             {
                 newCaret = advance ? mLen + 1 : -1;
                 break;
-            } //End block
+            } 
     if(newCaret <= lineEnd)            
             {
                 newCaret = advance ? lineEnd : lineStart;
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         int varA44B1DB7E51DCB32F152F35D1542F927_2033678407 = (newCaret);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719832441 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_719832441;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -602,11 +602,11 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
                 int var6B52596A9B4175F4D7F1FABD51E2E7FC_30256205 = (TextUtils.getOffsetAfter(mText, offset + mStart) - mStart);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672914667 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672914667;
-            } //End block
+            } 
             int var2F0C4267C87745D020BF5404EE5190A4_145726379 = (TextUtils.getOffsetBefore(mText, offset + mStart) - mStart);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164626720 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164626720;
-        } //End block
+        } 
         TextPaint wp = mWorkPaint;
         wp.set(mPaint);
         int spanStart = runStart;
@@ -614,7 +614,7 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
     if(mSpanned == null)        
         {
             spanLimit = runLimit;
-        } //End block
+        } 
         else
         {
             int target = after ? offset + 1 : offset;
@@ -627,9 +627,9 @@ for(prevRunIndex = 0;prevRunIndex < runs.length;prevRunIndex += 2)
     if(spanLimit >= target)                
                 {
                     break;
-                } //End block
+                } 
                 spanStart = spanLimit;
-            } //End block
+            } 
             MetricAffectingSpan[] spans = mSpanned.getSpans(mStart + spanStart,
                     mStart + spanLimit, MetricAffectingSpan.class);
             spans = TextUtils.removeEmptySpans(spans, mSpanned, MetricAffectingSpan.class);
@@ -642,20 +642,20 @@ for(int j = 0;j < spans.length;j++)
     if(span instanceof ReplacementSpan)                    
                     {
                         replacement = (ReplacementSpan)span;
-                    } //End block
+                    } 
                     else
                     {
                         span.updateMeasureState(wp);
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(replacement != null)                
                 {
                     int var0A648F3009EE37B492262A02201E0599_1762561297 = (after ? spanLimit : spanStart);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129180532 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2129180532;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int flags = runIsRtl ? Paint.DIRECTION_RTL : Paint.DIRECTION_LTR;
         int cursorOpt = after ? Paint.CURSOR_AFTER : Paint.CURSOR_BEFORE;
     if(mCharsValid)        
@@ -664,16 +664,16 @@ for(int j = 0;j < spans.length;j++)
                     flags, offset, cursorOpt));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451370022 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451370022;
-        } //End block
+        } 
         else
         {
             int var1A92DB2830D2A0432E634183CF42DD43_1093517349 = (wp.getTextRunCursor(mText, mStart + spanStart,
                     mStart + spanLimit, flags, mStart + offset, cursorOpt) - mStart);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147364567 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_147364567;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -720,14 +720,14 @@ for(int j = 0;j < spans.length;j++)
     if(fmi != null)        
         {
             expandMetricsFromPaint(fmi, wp);
-        } //End block
+        } 
         int runLen = end - start;
     if(runLen == 0)        
         {
             float var7DFF51CA8EB990122513F24FFDAA4D9A_882993522 = (0f);
                         float var546ADE640B6EDFBC8A086EF31347E768_2119354595 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2119354595;
-        } //End block
+        } 
         float ret = 0;
         int contextLen = contextEnd - contextStart;
     if(needWidth || (c != null && (wp.bgColor != 0 || wp.underlineColor != 0 || runIsRtl)))        
@@ -737,21 +737,21 @@ for(int j = 0;j < spans.length;j++)
             {
                 ret = wp.getTextRunAdvances(mChars, start, runLen,
                         contextStart, contextLen, flags, null, 0);
-            } //End block
+            } 
             else
             {
                 int delta = mStart;
                 ret = wp.getTextRunAdvances(mText, delta + start,
                         delta + end, delta + contextStart, delta + contextEnd,
                         flags, null, 0);
-            } //End block
-        } //End block
+            } 
+        } 
     if(c != null)        
         {
     if(runIsRtl)            
             {
                 x -= ret;
-            } //End block
+            } 
     if(wp.bgColor != 0)            
             {
                 int previousColor = wp.getColor();
@@ -761,7 +761,7 @@ for(int j = 0;j < spans.length;j++)
                 c.drawRect(x, top, x + ret, bottom, wp);
                 wp.setStyle(previousStyle);
                 wp.setColor(previousColor);
-            } //End block
+            } 
     if(wp.underlineColor != 0)            
             {
                 float underlineTop = y + wp.baselineShift + (1.0f / 9.0f) * wp.getTextSize();
@@ -775,15 +775,15 @@ for(int j = 0;j < spans.length;j++)
                 wp.setStyle(previousStyle);
                 wp.setColor(previousColor);
                 wp.setAntiAlias(previousAntiAlias);
-            } //End block
+            } 
             drawTextRun(c, wp, start, end, contextStart, contextEnd, runIsRtl,
                     x, y + wp.baselineShift);
-        } //End block
+        } 
         float varC9DB84E689736EF40376FD0AD37C61A1_1778336462 = (runIsRtl ? -ret : ret);
                 float var546ADE640B6EDFBC8A086EF31347E768_961832422 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_961832422;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -822,28 +822,28 @@ for(int j = 0;j < spans.length;j++)
                 previousDescent = fmi.descent;
                 previousBottom  = fmi.bottom;
                 previousLeading = fmi.leading;
-            } //End block
+            } 
             ret = replacement.getSize(wp, mText, textStart, textLimit, fmi);
     if(needUpdateMetrics)            
             {
                 updateMetrics(fmi, previousTop, previousAscent, previousDescent, previousBottom,
                         previousLeading);
-            } //End block
-        } //End block
+            } 
+        } 
     if(c != null)        
         {
     if(runIsRtl)            
             {
                 x -= ret;
-            } //End block
+            } 
             replacement.draw(c, mText, textStart, textLimit,
                     x, top, y, bottom, wp);
-        } //End block
+        } 
         float varC9DB84E689736EF40376FD0AD37C61A1_1624968523 = (runIsRtl ? -ret : ret);
                 float var546ADE640B6EDFBC8A086EF31347E768_361810648 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_361810648;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -869,11 +869,11 @@ for(int j = 0;j < spans.length;j++)
     if(fmi != null)            
             {
                 expandMetricsFromPaint(fmi, wp);
-            } //End block
+            } 
             float var7DFF51CA8EB990122513F24FFDAA4D9A_806300157 = (0f);
                         float var546ADE640B6EDFBC8A086EF31347E768_1986088720 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1986088720;
-        } //End block
+        } 
     if(mSpanned == null)        
         {
             TextPaint wp = mWorkPaint;
@@ -883,7 +883,7 @@ for(int j = 0;j < spans.length;j++)
                     y, bottom, fmi, needWidth || mlimit < measureLimit));
                         float var546ADE640B6EDFBC8A086EF31347E768_1503886339 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1503886339;
-        } //End block
+        } 
         mMetricAffectingSpanSpanSet.init(mSpanned, mStart + start, mStart + limit);
         mCharacterStyleSpanSet.init(mSpanned, mStart + start, mStart + limit);
         final float originalX = x;
@@ -904,23 +904,23 @@ for(int j = 0;j < mMetricAffectingSpanSpanSet.numberOfSpans;j++)
     if(span instanceof ReplacementSpan)                
                 {
                     replacement = (ReplacementSpan)span;
-                } //End block
+                } 
                 else
                 {
                     span.updateDrawState(wp);
-                } //End block
-            } //End block
+                } 
+            } 
     if(replacement != null)            
             {
                 x += handleReplacement(replacement, wp, i, mlimit, runIsRtl, c, x, top, y,
                         bottom, fmi, needWidth || mlimit < measureLimit);
                 continue;
-            } //End block
+            } 
     if(c == null)            
             {
                 x += handleText(wp, i, mlimit, i, inext, runIsRtl, c, x, top,
                         y, bottom, fmi, needWidth || mlimit < measureLimit);
-            } //End block
+            } 
             else
             {
 for(int j = i, jnext;j < mlimit;j = jnext)
@@ -935,17 +935,17 @@ for(int k = 0;k < mCharacterStyleSpanSet.numberOfSpans;k++)
                         continue;
                         CharacterStyle span = mCharacterStyleSpanSet.spans[k];
                         span.updateDrawState(wp);
-                    } //End block
+                    } 
                     x += handleText(wp, j, jnext, i, inext, runIsRtl, c, x,
                             top, y, bottom, fmi, needWidth || jnext < measureLimit);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         float var31624121923BF38606FE3CEF1FCF0D33_718861988 = (x - originalX);
                 float var546ADE640B6EDFBC8A086EF31347E768_1562838961 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1562838961;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -968,25 +968,25 @@ for(int k = 0;k < mCharacterStyleSpanSet.numberOfSpans;k++)
             int contextCount = contextEnd - contextStart;
             c.drawTextRun(mChars, start, count, contextStart, contextCount,
                     x, y, flags, wp);
-        } //End block
+        } 
         else
         {
             int delta = mStart;
             c.drawTextRun(mText, delta + start, delta + end,
                     delta + contextStart, delta + contextEnd, x, y, flags, wp);
-        } //End block
-        // ---------- Original Method ----------
-        //int flags = runIsRtl ? Canvas.DIRECTION_RTL : Canvas.DIRECTION_LTR;
-        //if (mCharsValid) {
-            //int count = end - start;
-            //int contextCount = contextEnd - contextStart;
-            //c.drawTextRun(mChars, start, count, contextStart, contextCount,
-                    //x, y, flags, wp);
-        //} else {
-            //int delta = mStart;
-            //c.drawTextRun(mText, delta + start, delta + end,
-                    //delta + contextStart, delta + contextEnd, x, y, flags, wp);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                    
+        
+            
+            
+                    
+        
     }
 
     
@@ -998,7 +998,7 @@ for(int k = 0;k < mCharacterStyleSpanSet.numberOfSpans;k++)
             float var7898FDD4C57CA196F4A9E38681132907_2120157086 = (mPaint.ascent());
                         float var546ADE640B6EDFBC8A086EF31347E768_908526220 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_908526220;
-        } //End block
+        } 
         pos += mStart;
         MetricAffectingSpan[] spans = mSpanned.getSpans(pos, pos + 1, MetricAffectingSpan.class);
     if(spans.length == 0)        
@@ -1006,31 +1006,31 @@ for(int k = 0;k < mCharacterStyleSpanSet.numberOfSpans;k++)
             float var7898FDD4C57CA196F4A9E38681132907_330311212 = (mPaint.ascent());
                         float var546ADE640B6EDFBC8A086EF31347E768_1783644421 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1783644421;
-        } //End block
+        } 
         TextPaint wp = mWorkPaint;
         wp.set(mPaint);
 for(MetricAffectingSpan span : spans)
         {
             span.updateMeasureState(wp);
-        } //End block
+        } 
         float var5C9EBDA144BF3D2209A03E490A1D8FCF_871288918 = (wp.ascent());
                 float var546ADE640B6EDFBC8A086EF31347E768_1591756513 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1591756513;
-        // ---------- Original Method ----------
-        //if (mSpanned == null) {
-            //return mPaint.ascent();
-        //}
-        //pos += mStart;
-        //MetricAffectingSpan[] spans = mSpanned.getSpans(pos, pos + 1, MetricAffectingSpan.class);
-        //if (spans.length == 0) {
-            //return mPaint.ascent();
-        //}
-        //TextPaint wp = mWorkPaint;
-        //wp.set(mPaint);
-        //for (MetricAffectingSpan span : spans) {
-            //span.updateMeasureState(wp);
-        //}
-        //return wp.ascent();
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1042,15 +1042,15 @@ for(MetricAffectingSpan span : spans)
             float varD60E858AEC91970560957EBE8A5A4BFA_2119447773 = (mTabs.nextTab(h));
                         float var546ADE640B6EDFBC8A086EF31347E768_1449939229 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1449939229;
-        } //End block
+        } 
         float var8B6EF79F5A67BF3F92C4BE109AF2E02D_1705101949 = (TabStops.nextDefaultStop(h, TAB_INCREMENT));
                 float var546ADE640B6EDFBC8A086EF31347E768_482409740 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_482409740;
-        // ---------- Original Method ----------
-        //if (mTabs != null) {
-            //return mTabs.nextTab(h);
-        //}
-        //return TabStops.nextDefaultStop(h, TAB_INCREMENT);
+        
+        
+            
+        
+        
     }
 
     
@@ -1078,9 +1078,9 @@ for(MetricAffectingSpan span : spans)
           SpanSet(Class<? extends E> type) {
             classType = type;
             numberOfSpans = 0;
-            // ---------- Original Method ----------
-            //classType = type;
-            //numberOfSpans = 0;
+            
+            
+            
         }
 
         
@@ -1098,7 +1098,7 @@ for(MetricAffectingSpan span : spans)
                 spanStarts = new int[length];
                 spanEnds = new int[length];
                 spanFlags = new int[length];
-            } //End block
+            } 
             numberOfSpans = 0;
 for(int i = 0;i < length;i++)
             {
@@ -1113,12 +1113,13 @@ for(int i = 0;i < length;i++)
                 spanEnds[numberOfSpans] = spanEnd;
                 spanFlags[numberOfSpans] = spanFlag;
                 numberOfSpans++;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.143 -0400", hash_original_method = "14C2C64E52F272A1D061AF5FA0B61C4E", hash_generated_method = "81BA2FF1F5DA38840243945B12F72089")
         public boolean hasSpansIntersecting(int start, int end) {
             addTaint(end);
@@ -1130,19 +1131,20 @@ for(int i = 0;i < numberOfSpans;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_2136207264 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_369326936 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_369326936;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_2136096444 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1020278572 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1020278572;
-            // ---------- Original Method ----------
-            //for (int i = 0; i < numberOfSpans; i++) {
-                //if (spanStarts[i] >= end || spanEnds[i] <= start) continue;
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.144 -0400", hash_original_method = "70A36A49F9CEFC761501124E36FC2A8C", hash_generated_method = "40CFA94D2445185CC7C5A4BE071416E5")
          int getNextTransition(int start, int limit) {
             addTaint(limit);
@@ -1155,31 +1157,32 @@ for(int i = 0;i < numberOfSpans;i++)
                 limit = spanStart;
     if(spanEnd > start && spanEnd < limit)                
                 limit = spanEnd;
-            } //End block
+            } 
             int varAA9F73EEA60A006820D0F8768BC8A3FC_1224428036 = (limit);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1164987394 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1164987394;
-            // ---------- Original Method ----------
-            //for (int i = 0; i < numberOfSpans; i++) {
-                //final int spanStart = spanStarts[i];
-                //final int spanEnd = spanEnds[i];
-                //if (spanStart > start && spanStart < limit) limit = spanStart;
-                //if (spanEnd > start && spanEnd < limit) limit = spanEnd;
-            //}
-            //return limit;
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.144 -0400", hash_original_method = "5E840A260140B15B0CFAF6F2BC649D6A", hash_generated_method = "45D6B23027A8EAF82BF142D1CA4A1B6A")
         public void recycle() {
 for(int i = 0;i < numberOfSpans;i++)
             {
                 spans[i] = null;
-            } //End block
-            // ---------- Original Method ----------
-            //for (int i = 0; i < numberOfSpans; i++) {
-                //spans[i] = null; 
-            //}
+            } 
+            
+            
+                
+            
         }
 
         

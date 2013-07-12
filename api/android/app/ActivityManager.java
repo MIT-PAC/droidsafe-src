@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,12 +46,13 @@ public class ActivityManager {
       ActivityManager(Context context, Handler handler) {
         mContext = context;
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mHandler = handler;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.206 -0400", hash_original_method = "BCFF8F5D8C51374E31DC49464CB803A5", hash_generated_method = "AA511CEF284171E9C10FFB191DEB239E")
     public int getFrontActivityScreenCompatMode() {
         try 
@@ -59,40 +60,42 @@ public class ActivityManager {
             int var85EC4FE60F2667A907857E134B9CFFC9_252034279 = (ActivityManagerNative.getDefault().getFrontActivityScreenCompatMode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212573128 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1212573128;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1378936871 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1059314516 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1059314516;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getFrontActivityScreenCompatMode();
-        //} catch (RemoteException e) {
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.207 -0400", hash_original_method = "1AD781893C5FA74DDB5BF5981AAFC282", hash_generated_method = "292FBFDB967E21EB4FA781B8ED2465D7")
     public void setFrontActivityScreenCompatMode(int mode) {
         addTaint(mode);
         try 
         {
             ActivityManagerNative.getDefault().setFrontActivityScreenCompatMode(mode);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().setFrontActivityScreenCompatMode(mode);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.208 -0400", hash_original_method = "08DE0842CE89FB88CEE40B6F1F1D5D8A", hash_generated_method = "F6000083F5FBD2EAA7F0847C9C4AF02E")
     public int getPackageScreenCompatMode(String packageName) {
         addTaint(packageName.getTaint());
@@ -101,22 +104,23 @@ public class ActivityManager {
             int var23AEDB3E6A7B06B005D0239E9297E556_1475301198 = (ActivityManagerNative.getDefault().getPackageScreenCompatMode(packageName));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441572553 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_441572553;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_213663100 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885074591 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_885074591;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getPackageScreenCompatMode(packageName);
-        //} catch (RemoteException e) {
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.209 -0400", hash_original_method = "6272BC343B5B54EAA927E2C6A7A229FA", hash_generated_method = "6B35E24D2497A6B3C5FCDFCA33B241FB")
     public void setPackageScreenCompatMode(String packageName, int mode) {
         addTaint(mode);
@@ -124,18 +128,19 @@ public class ActivityManager {
         try 
         {
             ActivityManagerNative.getDefault().setPackageScreenCompatMode(packageName, mode);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().setPackageScreenCompatMode(packageName, mode);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.210 -0400", hash_original_method = "43CD4547C63AA5BA08A4BB7431262A61", hash_generated_method = "04C52000C4176B1D11373F7EAE7F44A9")
     public boolean getPackageAskScreenCompat(String packageName) {
         addTaint(packageName.getTaint());
@@ -144,22 +149,23 @@ public class ActivityManager {
             boolean var29565157EE07737BBE501363FB3E67D6_513480165 = (ActivityManagerNative.getDefault().getPackageAskScreenCompat(packageName));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_482948718 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_482948718;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1610722665 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140448322 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_140448322;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getPackageAskScreenCompat(packageName);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.212 -0400", hash_original_method = "3BC1D3C0234B303E106B1ACB51D8D800", hash_generated_method = "BF4BDAD98F7D8D6BBA3D593620CA942F")
     public void setPackageAskScreenCompat(String packageName, boolean ask) {
         addTaint(ask);
@@ -167,15 +173,15 @@ public class ActivityManager {
         try 
         {
             ActivityManagerNative.getDefault().setPackageAskScreenCompat(packageName, ask);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().setPackageAskScreenCompat(packageName, ask);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -184,12 +190,13 @@ public class ActivityManager {
         int var7C0269C7BF81D9BBC3B9645D88A1F7A4_1723630000 = (staticGetMemoryClass());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_424601544 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_424601544;
-        // ---------- Original Method ----------
-        //return staticGetMemoryClass();
+        
+        
     }
 
     
-        static public int staticGetMemoryClass() {
+        @DSModeled(DSC.SPEC)
+    static public int staticGetMemoryClass() {
         String vmHeapSize = SystemProperties.get("dalvik.vm.heapgrowthlimit", "");
         if (vmHeapSize != null && !"".equals(vmHeapSize)) {
             return Integer.parseInt(vmHeapSize.substring(0, vmHeapSize.length()-1));
@@ -203,12 +210,13 @@ public class ActivityManager {
         int var58F00E58ADDE6235C0F80A2D83E9CE86_1543189660 = (staticGetLargeMemoryClass());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635804437 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635804437;
-        // ---------- Original Method ----------
-        //return staticGetLargeMemoryClass();
+        
+        
     }
 
     
-        static public int staticGetLargeMemoryClass() {
+        @DSModeled(DSC.SPEC)
+    static public int staticGetLargeMemoryClass() {
         String vmHeapSize = SystemProperties.get("dalvik.vm.heapsize", "16m");
         return Integer.parseInt(vmHeapSize.substring(0, vmHeapSize.length()-1));
     }
@@ -250,20 +258,20 @@ List<RecentTaskInfo> var40137D8CC172F88C3474F80F31994E8E_1562909253 =           
                     flags);
             var40137D8CC172F88C3474F80F31994E8E_1562909253.addTaint(taint);
             return var40137D8CC172F88C3474F80F31994E8E_1562909253;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 List<RecentTaskInfo> var540C13E9E156B687226421B24F2DF178_1572507275 =             null;
             var540C13E9E156B687226421B24F2DF178_1572507275.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1572507275;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getRecentTasks(maxNum,
-                    //flags);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+                    
+        
+            
+        
     }
 
     
@@ -277,19 +285,19 @@ List<RecentTaskInfo> var540C13E9E156B687226421B24F2DF178_1572507275 =           
 List<RunningTaskInfo> varFA1868C6A28ADCCCB0AC54F8108500C3_1870493029 =             ActivityManagerNative.getDefault().getTasks(maxNum, flags, receiver);
             varFA1868C6A28ADCCCB0AC54F8108500C3_1870493029.addTaint(taint);
             return varFA1868C6A28ADCCCB0AC54F8108500C3_1870493029;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 List<RunningTaskInfo> var540C13E9E156B687226421B24F2DF178_298061906 =             null;
             var540C13E9E156B687226421B24F2DF178_298061906.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_298061906;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getTasks(maxNum, flags, receiver);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -299,8 +307,8 @@ List<RunningTaskInfo> var540C13E9E156B687226421B24F2DF178_298061906 =           
 List<RunningTaskInfo> varF494B0EB5A0A149E15717B260CBB12D0_534902339 =         getRunningTasks(maxNum, 0, null);
         varF494B0EB5A0A149E15717B260CBB12D0_534902339.addTaint(taint);
         return varF494B0EB5A0A149E15717B260CBB12D0_534902339;
-        // ---------- Original Method ----------
-        //return getRunningTasks(maxNum, 0, null);
+        
+        
     }
 
     
@@ -313,19 +321,19 @@ List<RunningTaskInfo> varF494B0EB5A0A149E15717B260CBB12D0_534902339 =         ge
             boolean var197D5FC761D0A9B06C5DC41514936305_1665605511 = (ActivityManagerNative.getDefault().removeSubTask(taskId, subTaskIndex));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1051855515 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1051855515;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1237912855 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1898480350 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1898480350;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().removeSubTask(taskId, subTaskIndex);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -338,22 +346,23 @@ List<RunningTaskInfo> varF494B0EB5A0A149E15717B260CBB12D0_534902339 =         ge
             boolean varEB7E295219F88B8C13298587B70564E5_1932286576 = (ActivityManagerNative.getDefault().removeTask(taskId, flags));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_910270796 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_910270796;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1309388095 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1142995762 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1142995762;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().removeTask(taskId, flags);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.225 -0400", hash_original_method = "90A15739ABCD71E20C2601B2E690D2DC", hash_generated_method = "4C2797F0CB67B242F320F9F41366BB94")
     public TaskThumbnails getTaskThumbnails(int id) throws SecurityException {
         addTaint(id);
@@ -362,19 +371,19 @@ List<RunningTaskInfo> varF494B0EB5A0A149E15717B260CBB12D0_534902339 =         ge
 TaskThumbnails varA77DEACFE74A359C0B0FFF07C1CD80A1_513824525 =             ActivityManagerNative.getDefault().getTaskThumbnails(id);
             varA77DEACFE74A359C0B0FFF07C1CD80A1_513824525.addTaint(taint);
             return varA77DEACFE74A359C0B0FFF07C1CD80A1_513824525;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 TaskThumbnails var540C13E9E156B687226421B24F2DF178_2134908251 =             null;
             var540C13E9E156B687226421B24F2DF178_2134908251.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2134908251;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getTaskThumbnails(id);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -385,15 +394,15 @@ TaskThumbnails var540C13E9E156B687226421B24F2DF178_2134908251 =             null
         try 
         {
             ActivityManagerNative.getDefault().moveTaskToFront(taskId, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().moveTaskToFront(taskId, flags);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -406,23 +415,24 @@ List<RunningServiceInfo> varD378F9DE7055085E8F272534A9235CD7_1503561655 =       
                     .getServices(maxNum, 0);
             varD378F9DE7055085E8F272534A9235CD7_1503561655.addTaint(taint);
             return varD378F9DE7055085E8F272534A9235CD7_1503561655;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 List<RunningServiceInfo> var540C13E9E156B687226421B24F2DF178_190884002 =             null;
             var540C13E9E156B687226421B24F2DF178_190884002.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_190884002;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault()
-                    //.getServices(maxNum, 0);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.230 -0400", hash_original_method = "3F37B5EEA2E0ADFF7012B4DB8D3BC71C", hash_generated_method = "10AA30611EF1A2AFFDFF6BA67D081CD0")
     public PendingIntent getRunningServiceControlPanel(ComponentName service) throws SecurityException {
         addTaint(service.getTaint());
@@ -432,41 +442,43 @@ PendingIntent var213DD055D20310587F04A5D1E46185E0_994135193 =             Activi
                     .getRunningServiceControlPanel(service);
             var213DD055D20310587F04A5D1E46185E0_994135193.addTaint(taint);
             return var213DD055D20310587F04A5D1E46185E0_994135193;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 PendingIntent var540C13E9E156B687226421B24F2DF178_426205698 =             null;
             var540C13E9E156B687226421B24F2DF178_426205698.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_426205698;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault()
-                    //.getRunningServiceControlPanel(service);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+                    
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.231 -0400", hash_original_method = "B6E6E4E46821E411AC60EE30A7424576", hash_generated_method = "EDAA90C91D42C8F58DED2EFAE6FC74E1")
     public void getMemoryInfo(MemoryInfo outInfo) {
         addTaint(outInfo.getTaint());
         try 
         {
             ActivityManagerNative.getDefault().getMemoryInfo(outInfo);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().getMemoryInfo(outInfo);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.236 -0400", hash_original_method = "F72074CE1B364F8B93C8BBDF31501500", hash_generated_method = "F36465ED1AB159D281335AAC823BBB65")
     public boolean clearApplicationUserData(String packageName, IPackageDataObserver observer) {
         addTaint(observer.getTaint());
@@ -477,20 +489,20 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_426205698 =             null;
                     observer));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_214271346 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_214271346;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1851206584 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_569210911 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_569210911;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().clearApplicationUserData(packageName, 
-                    //observer);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+                    
+        
+            
+        
     }
 
     
@@ -501,19 +513,19 @@ PendingIntent var540C13E9E156B687226421B24F2DF178_426205698 =             null;
 List<ProcessErrorStateInfo> var46705B02D2781B280397912B487DB235_968323652 =             ActivityManagerNative.getDefault().getProcessesInErrorState();
             var46705B02D2781B280397912B487DB235_968323652.addTaint(taint);
             return var46705B02D2781B280397912B487DB235_968323652;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 List<ProcessErrorStateInfo> var540C13E9E156B687226421B24F2DF178_1676101965 =             null;
             var540C13E9E156B687226421B24F2DF178_1676101965.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1676101965;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getProcessesInErrorState();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -524,22 +536,23 @@ List<ProcessErrorStateInfo> var540C13E9E156B687226421B24F2DF178_1676101965 =    
 List<ApplicationInfo> var9D8ED15C0618F5471391B2043D92D50B_832243729 =             ActivityManagerNative.getDefault().getRunningExternalApplications();
             var9D8ED15C0618F5471391B2043D92D50B_832243729.addTaint(taint);
             return var9D8ED15C0618F5471391B2043D92D50B_832243729;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 List<ApplicationInfo> var540C13E9E156B687226421B24F2DF178_813140419 =             null;
             var540C13E9E156B687226421B24F2DF178_813140419.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_813140419;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getRunningExternalApplications();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.262 -0400", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "95B24944A650E4126F006C50060C7E3F")
     public List<RunningAppProcessInfo> getRunningAppProcesses() {
         try 
@@ -547,19 +560,19 @@ List<ApplicationInfo> var540C13E9E156B687226421B24F2DF178_813140419 =           
 List<RunningAppProcessInfo> varCD0D34372A7CD13D7400312057BCAF26_205683906 =             ActivityManagerNative.getDefault().getRunningAppProcesses();
             varCD0D34372A7CD13D7400312057BCAF26_205683906.addTaint(taint);
             return varCD0D34372A7CD13D7400312057BCAF26_205683906;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 List<RunningAppProcessInfo> var540C13E9E156B687226421B24F2DF178_393423956 =             null;
             var540C13E9E156B687226421B24F2DF178_393423956.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_393423956;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getRunningAppProcesses();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -571,29 +584,30 @@ List<RunningAppProcessInfo> var540C13E9E156B687226421B24F2DF178_393423956 =     
 Debug.MemoryInfo[] varE9F2BC2BE5672A709A377F37802908A3_363889354 =             ActivityManagerNative.getDefault().getProcessMemoryInfo(pids);
             varE9F2BC2BE5672A709A377F37802908A3_363889354.addTaint(taint);
             return varE9F2BC2BE5672A709A377F37802908A3_363889354;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 Debug.MemoryInfo[] var540C13E9E156B687226421B24F2DF178_1026233107 =             null;
             var540C13E9E156B687226421B24F2DF178_1026233107.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1026233107;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getProcessMemoryInfo(pids);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.265 -0400", hash_original_method = "AB97F58AF8359C056EB136FA16E11328", hash_generated_method = "7475D0571E9FBA018F9BE0E931453FCB")
     @Deprecated
     public void restartPackage(String packageName) {
         addTaint(packageName.getTaint());
         killBackgroundProcesses(packageName);
-        // ---------- Original Method ----------
-        //killBackgroundProcesses(packageName);
+        
+        
     }
 
     
@@ -603,15 +617,15 @@ Debug.MemoryInfo[] var540C13E9E156B687226421B24F2DF178_1026233107 =             
         try 
         {
             ActivityManagerNative.getDefault().killBackgroundProcesses(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().killBackgroundProcesses(packageName);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -621,18 +635,19 @@ Debug.MemoryInfo[] var540C13E9E156B687226421B24F2DF178_1026233107 =             
         try 
         {
             ActivityManagerNative.getDefault().forceStopPackage(packageName);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ActivityManagerNative.getDefault().forceStopPackage(packageName);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.270 -0400", hash_original_method = "002CA49339A7476A8E8EF41ECCC37BDD", hash_generated_method = "69396D63FA55B69FF87A80ED2805DF28")
     public ConfigurationInfo getDeviceConfigurationInfo() {
         try 
@@ -640,19 +655,19 @@ Debug.MemoryInfo[] var540C13E9E156B687226421B24F2DF178_1026233107 =             
 ConfigurationInfo var1BEBC3AD422C2B2DC4AFB98E2ED25E8C_199126559 =             ActivityManagerNative.getDefault().getDeviceConfigurationInfo();
             var1BEBC3AD422C2B2DC4AFB98E2ED25E8C_199126559.addTaint(taint);
             return var1BEBC3AD422C2B2DC4AFB98E2ED25E8C_199126559;
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
 ConfigurationInfo var540C13E9E156B687226421B24F2DF178_379805851 =         null;
         var540C13E9E156B687226421B24F2DF178_379805851.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_379805851;
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().getDeviceConfigurationInfo();
-        //} catch (RemoteException e) {
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -666,7 +681,7 @@ ConfigurationInfo var540C13E9E156B687226421B24F2DF178_379805851 =         null;
             int var35F3675343000D6BB5F10CE451A571A4_1591904123 = (density);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627482855 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627482855;
-        } //End block
+        } 
 switch(density){
         case DisplayMetrics.DENSITY_LOW:
         int var658F3F952DCB16846B62366921BBE33F_1727367999 = (DisplayMetrics.DENSITY_MEDIUM);
@@ -689,25 +704,25 @@ switch(density){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372836626 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372836626;
 }
-        // ---------- Original Method ----------
-        //final Resources res = mContext.getResources();
-        //final int density = res.getDisplayMetrics().densityDpi;
-        //if ((res.getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK)
-                //!= Configuration.SCREENLAYOUT_SIZE_XLARGE) {
-            //return density;
-        //}
-        //switch (density) {
-            //case DisplayMetrics.DENSITY_LOW:
-                //return DisplayMetrics.DENSITY_MEDIUM;
-            //case DisplayMetrics.DENSITY_MEDIUM:
-                //return DisplayMetrics.DENSITY_HIGH;
-            //case DisplayMetrics.DENSITY_HIGH:
-                //return DisplayMetrics.DENSITY_XHIGH;
-            //case DisplayMetrics.DENSITY_XHIGH:
-                //return DisplayMetrics.DENSITY_MEDIUM * 2;
-            //default:
-                //return density;
-        //}
+        
+        
+        
+        
+                
+            
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -721,7 +736,7 @@ switch(density){
             int varF7BD60B75B29D79B660A2859395C1A24_653702990 = (size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088458959 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2088458959;
-        } //End block
+        } 
         final int density = res.getDisplayMetrics().densityDpi;
 switch(density){
         case DisplayMetrics.DENSITY_LOW:
@@ -745,12 +760,13 @@ switch(density){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81487832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_81487832;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        public static boolean isUserAMonkey() {
+        @DSModeled(DSC.SPEC)
+    public static boolean isUserAMonkey() {
         try {
             return ActivityManagerNative.getDefault().isUserAMonkey();
         } catch (RemoteException e) {
@@ -759,7 +775,8 @@ switch(density){
     }
 
     
-        public static boolean isRunningInTestHarness() {
+        @DSModeled(DSC.SPEC)
+    public static boolean isRunningInTestHarness() {
         return SystemProperties.getBoolean("ro.test_harness", false);
     }
 
@@ -775,34 +792,35 @@ switch(density){
 Map<String, Integer> var7084C1AAB31A68AB6122451D4464DD6B_1983318254 =                 new HashMap<String, Integer>();
                 var7084C1AAB31A68AB6122451D4464DD6B_1983318254.addTaint(taint);
                 return var7084C1AAB31A68AB6122451D4464DD6B_1983318254;
-            } //End block
+            } 
             PkgUsageStats[] allPkgUsageStats = usageStatsService.getAllPkgUsageStats();
     if(allPkgUsageStats == null)            
             {
 Map<String, Integer> var7084C1AAB31A68AB6122451D4464DD6B_402245011 =                 new HashMap<String, Integer>();
                 var7084C1AAB31A68AB6122451D4464DD6B_402245011.addTaint(taint);
                 return var7084C1AAB31A68AB6122451D4464DD6B_402245011;
-            } //End block
+            } 
             Map<String, Integer> launchCounts = new HashMap<String, Integer>();
 for(PkgUsageStats pkgUsageStats : allPkgUsageStats)
             {
                 launchCounts.put(pkgUsageStats.packageName, pkgUsageStats.launchCount);
-            } //End block
+            } 
 Map<String, Integer> varE4AEB0B82BEBF7B4317AD5BD2009A8A3_1797754675 =             launchCounts;
             varE4AEB0B82BEBF7B4317AD5BD2009A8A3_1797754675.addTaint(taint);
             return varE4AEB0B82BEBF7B4317AD5BD2009A8A3_1797754675;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 Map<String, Integer> var7084C1AAB31A68AB6122451D4464DD6B_683334250 =             new HashMap<String, Integer>();
             var7084C1AAB31A68AB6122451D4464DD6B_683334250.addTaint(taint);
             return var7084C1AAB31A68AB6122451D4464DD6B_683334250;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.288 -0400", hash_original_method = "97D195D4FE7E8BCA1AFB9969B53F0E5E", hash_generated_method = "C71A7A08A4CC6D227AA51AD2C32916B2")
     public PkgUsageStats[] getAllPackageUsageStats() {
         try 
@@ -814,25 +832,25 @@ Map<String, Integer> var7084C1AAB31A68AB6122451D4464DD6B_683334250 =            
 PkgUsageStats[] varF2054C496D383FD188971744EC896BCE_489341364 =                 usageStatsService.getAllPkgUsageStats();
                 varF2054C496D383FD188971744EC896BCE_489341364.addTaint(taint);
                 return varF2054C496D383FD188971744EC896BCE_489341364;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
 PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new PkgUsageStats[0];
         var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451.addTaint(taint);
         return var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451;
-        // ---------- Original Method ----------
-        //try {
-            //IUsageStats usageStatsService = IUsageStats.Stub.asInterface(
-                    //ServiceManager.getService("usagestats"));
-            //if (usageStatsService != null) {
-                //return usageStatsService.getAllPkgUsageStats();
-            //}
-        //} catch (RemoteException e) {
-            //Log.w(TAG, "Could not query usage stats", e);
-        //}
-        //return new PkgUsageStats[0];
+        
+        
+            
+                    
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -844,19 +862,19 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
             boolean var808AE75FB1C3653CD6B7ED2E21C574EE_1374091289 = (ActivityManagerNative.getDefault().switchUser(userid));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_797622400 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_797622400;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1784291844 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_21849700 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_21849700;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault().switchUser(userid);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -879,7 +897,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.294 -0400", hash_original_method = "C08B7337C6B109635FE340903513A97B", hash_generated_method = "3151CC50C901E54C1039F8A4558613C1")
         public  RecentTaskInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -887,21 +905,23 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         private  RecentTaskInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.296 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2E400E1EAA5D5D443FCDFF35C1611995")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_247624941 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027453082 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027453082;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.297 -0400", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "321882FE2925192DA8F2604DA4ADFD84")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -912,29 +932,30 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
             {
                 dest.writeInt(1);
                 baseIntent.writeToParcel(dest, 0);
-            } //End block
+            } 
             else
             {
                 dest.writeInt(0);
-            } //End block
+            } 
             ComponentName.writeToParcel(origActivity, dest);
             TextUtils.writeToParcel(description, dest,
                     Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-            // ---------- Original Method ----------
-            //dest.writeInt(id);
-            //dest.writeInt(persistentId);
-            //if (baseIntent != null) {
-                //dest.writeInt(1);
-                //baseIntent.writeToParcel(dest, 0);
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //ComponentName.writeToParcel(origActivity, dest);
-            //TextUtils.writeToParcel(description, dest,
-                    //Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
+            
+                    
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.299 -0400", hash_original_method = "F67217ABAEC36040C8F444901EE65BC8", hash_generated_method = "737445A4B4398911F8EE4077C7D15577")
         public void readFromParcel(Parcel source) {
             id = source.readInt();
@@ -942,23 +963,23 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
     if(source.readInt() != 0)            
             {
                 baseIntent = Intent.CREATOR.createFromParcel(source);
-            } //End block
+            } 
             else
             {
                 baseIntent = null;
-            } //End block
+            } 
             origActivity = ComponentName.readFromParcel(source);
             description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-            // ---------- Original Method ----------
-            //id = source.readInt();
-            //persistentId = source.readInt();
-            //if (source.readInt() != 0) {
-                //baseIntent = Intent.CREATOR.createFromParcel(source);
-            //} else {
-                //baseIntent = null;
-            //}
-            //origActivity = ComponentName.readFromParcel(source);
-            //description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -973,12 +994,12 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
                 return new RecentTaskInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public RecentTaskInfo createFromParcel(Parcel source) {
                 return new RecentTaskInfo(source);
             }
         
-        // orphaned legacy method
+        
         public RecentTaskInfo[] newArray(int size) {
                 return new RecentTaskInfo[size];
             }
@@ -1012,7 +1033,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.311 -0400", hash_original_method = "6DA0A8D9CEF41C0CB91D2D95D7E71D44", hash_generated_method = "00FB201893D0BF493904CEE004049E1E")
         public  RunningTaskInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1020,18 +1041,19 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         private  RunningTaskInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.313 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2D9C98A71D6D0287A8F3D6239C790B07")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_650137635 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545254515 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_545254515;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -1046,29 +1068,29 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
             {
                 dest.writeInt(1);
                 thumbnail.writeToParcel(dest, 0);
-            } //End block
+            } 
             else
             {
                 dest.writeInt(0);
-            } //End block
+            } 
             TextUtils.writeToParcel(description, dest,
                     Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
             dest.writeInt(numActivities);
             dest.writeInt(numRunning);
-            // ---------- Original Method ----------
-            //dest.writeInt(id);
-            //ComponentName.writeToParcel(baseActivity, dest);
-            //ComponentName.writeToParcel(topActivity, dest);
-            //if (thumbnail != null) {
-                //dest.writeInt(1);
-                //thumbnail.writeToParcel(dest, 0);
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //TextUtils.writeToParcel(description, dest,
-                    //Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-            //dest.writeInt(numActivities);
-            //dest.writeInt(numRunning);
+            
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
+                    
+            
+            
         }
 
         
@@ -1080,26 +1102,26 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
     if(source.readInt() != 0)            
             {
                 thumbnail = Bitmap.CREATOR.createFromParcel(source);
-            } //End block
+            } 
             else
             {
                 thumbnail = null;
-            } //End block
+            } 
             description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
             numActivities = source.readInt();
             numRunning = source.readInt();
-            // ---------- Original Method ----------
-            //id = source.readInt();
-            //baseActivity = ComponentName.readFromParcel(source);
-            //topActivity = ComponentName.readFromParcel(source);
-            //if (source.readInt() != 0) {
-                //thumbnail = Bitmap.CREATOR.createFromParcel(source);
-            //} else {
-                //thumbnail = null;
-            //}
-            //description = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-            //numActivities = source.readInt();
-            //numRunning = source.readInt();
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -1113,12 +1135,12 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
                 return new RunningTaskInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public RunningTaskInfo createFromParcel(Parcel source) {
                 return new RunningTaskInfo(source);
             }
         
-        // orphaned legacy method
+        
         public RunningTaskInfo[] newArray(int size) {
                 return new RunningTaskInfo[size];
             }
@@ -1140,7 +1162,7 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.324 -0400", hash_original_method = "EB2263C71F650A09D4909FB1B34C782F", hash_generated_method = "1036CA739667021DAECAC8857E8C6B4B")
         public  TaskThumbnails() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1148,11 +1170,12 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
         private  TaskThumbnails(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.325 -0400", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "20057F8AC2021F627556FDF078025FC4")
         public Bitmap getSubThumbnail(int index) {
             addTaint(index);
@@ -1161,32 +1184,34 @@ PkgUsageStats[] var381BAFB9B44AE92A1ACB9C805E12C8FF_1888856451 =         new Pkg
 Bitmap var769843AE8CBBC01E399CD067844F9A42_808441125 =                 retriever.getThumbnail(index);
                 var769843AE8CBBC01E399CD067844F9A42_808441125.addTaint(taint);
                 return var769843AE8CBBC01E399CD067844F9A42_808441125;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
                 var540C13E9E156B687226421B24F2DF178_475369158.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_475369158;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //return retriever.getThumbnail(index);
-            //} catch (RemoteException e) {
-                //return null;
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.326 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC6F03A1818D82FB21DED0A509ECAC1B")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_2084835252 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253424922 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_253424922;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.327 -0400", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "649E474CF53A49C585B6D248D5F44E31")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1195,45 +1220,46 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             {
                 dest.writeInt(1);
                 mainThumbnail.writeToParcel(dest, 0);
-            } //End block
+            } 
             else
             {
                 dest.writeInt(0);
-            } //End block
+            } 
             dest.writeInt(numSubThumbbails);
             dest.writeStrongInterface(retriever);
-            // ---------- Original Method ----------
-            //if (mainThumbnail != null) {
-                //dest.writeInt(1);
-                //mainThumbnail.writeToParcel(dest, 0);
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //dest.writeInt(numSubThumbbails);
-            //dest.writeStrongInterface(retriever);
+            
+            
+                
+                
+            
+                
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.328 -0400", hash_original_method = "19A7C144CCAE5CD51406B760DF512EA1", hash_generated_method = "1C64A9953DE77D495AC2AFE2E389DEB7")
         public void readFromParcel(Parcel source) {
     if(source.readInt() != 0)            
             {
                 mainThumbnail = Bitmap.CREATOR.createFromParcel(source);
-            } //End block
+            } 
             else
             {
                 mainThumbnail = null;
-            } //End block
+            } 
             numSubThumbbails = source.readInt();
             retriever = IThumbnailRetriever.Stub.asInterface(source.readStrongBinder());
-            // ---------- Original Method ----------
-            //if (source.readInt() != 0) {
-                //mainThumbnail = Bitmap.CREATOR.createFromParcel(source);
-            //} else {
-                //mainThumbnail = null;
-            //}
-            //numSubThumbbails = source.readInt();
-            //retriever = IThumbnailRetriever.Stub.asInterface(source.readStrongBinder());
+            
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -1247,12 +1273,12 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
                 return new TaskThumbnails[size];
             }
         };
-        // orphaned legacy method
+        
         public TaskThumbnails createFromParcel(Parcel source) {
                 return new TaskThumbnails(source);
             }
         
-        // orphaned legacy method
+        
         public TaskThumbnails[] newArray(int size) {
                 return new TaskThumbnails[size];
             }
@@ -1307,7 +1333,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.336 -0400", hash_original_method = "621426751430068D32289E518662756C", hash_generated_method = "822CEFC1BD8FA9077CAB00884D317765")
         public  RunningServiceInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1315,21 +1341,23 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         private  RunningServiceInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.337 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "183C421E6BA130834990AE25991BCFC2")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1471210936 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2108379696 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2108379696;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.338 -0400", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "DC89A843B04BF96AEC3880A7C3A6139E")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1348,24 +1376,25 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             dest.writeInt(this.flags);
             dest.writeString(clientPackage);
             dest.writeInt(clientLabel);
-            // ---------- Original Method ----------
-            //ComponentName.writeToParcel(service, dest);
-            //dest.writeInt(pid);
-            //dest.writeInt(uid);
-            //dest.writeString(process);
-            //dest.writeInt(foreground ? 1 : 0);
-            //dest.writeLong(activeSince);
-            //dest.writeInt(started ? 1 : 0);
-            //dest.writeInt(clientCount);
-            //dest.writeInt(crashCount);
-            //dest.writeLong(lastActivityTime);
-            //dest.writeLong(restarting);
-            //dest.writeInt(this.flags);
-            //dest.writeString(clientPackage);
-            //dest.writeInt(clientLabel);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.342 -0400", hash_original_method = "264C3E4C1DAB76B38CA08CE45829A86C", hash_generated_method = "DD78297D77B49BEF3DC4CE1566C885A4")
         public void readFromParcel(Parcel source) {
             service = ComponentName.readFromParcel(source);
@@ -1382,21 +1411,21 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             flags = source.readInt();
             clientPackage = source.readString();
             clientLabel = source.readInt();
-            // ---------- Original Method ----------
-            //service = ComponentName.readFromParcel(source);
-            //pid = source.readInt();
-            //uid = source.readInt();
-            //process = source.readString();
-            //foreground = source.readInt() != 0;
-            //activeSince = source.readLong();
-            //started = source.readInt() != 0;
-            //clientCount = source.readInt();
-            //crashCount = source.readInt();
-            //lastActivityTime = source.readLong();
-            //restarting = source.readLong();
-            //flags = source.readInt();
-            //clientPackage = source.readString();
-            //clientLabel = source.readInt();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1422,12 +1451,12 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
                 return new RunningServiceInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public RunningServiceInfo createFromParcel(Parcel source) {
                 return new RunningServiceInfo(source);
             }
         
-        // orphaned legacy method
+        
         public RunningServiceInfo[] newArray(int size) {
                 return new RunningServiceInfo[size];
             }
@@ -1461,7 +1490,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.349 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
         public  MemoryInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1469,21 +1498,23 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         private  MemoryInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.351 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D95224592CF87E01C69CA3619EC7A1D4")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1313476518 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66984583 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66984583;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.354 -0400", hash_original_method = "F89D0A9B79191784D882D224AE236CD7", hash_generated_method = "5DFCC9E4FCFBF20D2556175A8DBE4ABC")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1495,17 +1526,18 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             dest.writeLong(secondaryServerThreshold);
             dest.writeLong(visibleAppThreshold);
             dest.writeLong(foregroundAppThreshold);
-            // ---------- Original Method ----------
-            //dest.writeLong(availMem);
-            //dest.writeLong(threshold);
-            //dest.writeInt(lowMemory ? 1 : 0);
-            //dest.writeLong(hiddenAppThreshold);
-            //dest.writeLong(secondaryServerThreshold);
-            //dest.writeLong(visibleAppThreshold);
-            //dest.writeLong(foregroundAppThreshold);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.360 -0400", hash_original_method = "63344B29322BA9906ACD5F2C274D4AFB", hash_generated_method = "BC66AADD41130FA5D032784C56DC61C2")
         public void readFromParcel(Parcel source) {
             availMem = source.readLong();
@@ -1515,14 +1547,14 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             secondaryServerThreshold = source.readLong();
             visibleAppThreshold = source.readLong();
             foregroundAppThreshold = source.readLong();
-            // ---------- Original Method ----------
-            //availMem = source.readLong();
-            //threshold = source.readLong();
-            //lowMemory = source.readInt() != 0;
-            //hiddenAppThreshold = source.readLong();
-            //secondaryServerThreshold = source.readLong();
-            //visibleAppThreshold = source.readLong();
-            //foregroundAppThreshold = source.readLong();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1537,12 +1569,12 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
                 return new MemoryInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public MemoryInfo createFromParcel(Parcel source) {
                 return new MemoryInfo(source);
             }
         
-        // orphaned legacy method
+        
         public MemoryInfo[] newArray(int size) {
                 return new MemoryInfo[size];
             }
@@ -1582,7 +1614,7 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.367 -0400", hash_original_method = "5ED73996FC5896C9F894604FFBFF8609", hash_generated_method = "3E55B7B14A298521D7B421AC3B025230")
         public  ProcessErrorStateInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1590,21 +1622,23 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         private  ProcessErrorStateInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.368 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6C2D634FDEA540475EAD5E9644D2BACF")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_2014749877 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408865066 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1408865066;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.369 -0400", hash_original_method = "38EC9879A184B274D068BE64A2E942B7", hash_generated_method = "43404B0934AC1C5079D02D0C1B406402")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1617,18 +1651,19 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             dest.writeString(shortMsg);
             dest.writeString(longMsg);
             dest.writeString(stackTrace);
-            // ---------- Original Method ----------
-            //dest.writeInt(condition);
-            //dest.writeString(processName);
-            //dest.writeInt(pid);
-            //dest.writeInt(uid);
-            //dest.writeString(tag);
-            //dest.writeString(shortMsg);
-            //dest.writeString(longMsg);
-            //dest.writeString(stackTrace);
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.372 -0400", hash_original_method = "7EE07760084269563BF2AEE27C9085AD", hash_generated_method = "6FF9C96E0672E5AF8E3073FD70A01A17")
         public void readFromParcel(Parcel source) {
             condition = source.readInt();
@@ -1639,15 +1674,15 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             shortMsg = source.readString();
             longMsg = source.readString();
             stackTrace = source.readString();
-            // ---------- Original Method ----------
-            //condition = source.readInt();
-            //processName = source.readString();
-            //pid = source.readInt();
-            //uid = source.readInt();
-            //tag = source.readString();
-            //shortMsg = source.readString();
-            //longMsg = source.readString();
-            //stackTrace = source.readString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1671,12 +1706,12 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
                 return new ProcessErrorStateInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public ProcessErrorStateInfo createFromParcel(Parcel source) {
                 return new ProcessErrorStateInfo(source);
             }
         
-        // orphaned legacy method
+        
         public ProcessErrorStateInfo[] newArray(int size) {
                 return new ProcessErrorStateInfo[size];
             }
@@ -1724,9 +1759,9 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         public  RunningAppProcessInfo() {
             importance = IMPORTANCE_FOREGROUND;
             importanceReasonCode = REASON_UNKNOWN;
-            // ---------- Original Method ----------
-            //importance = IMPORTANCE_FOREGROUND;
-            //importanceReasonCode = REASON_UNKNOWN;
+            
+            
+            
         }
 
         
@@ -1735,10 +1770,10 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             processName = pProcessName;
             pid = pPid;
             pkgList = pArr;
-            // ---------- Original Method ----------
-            //processName = pProcessName;
-            //pid = pPid;
-            //pkgList = pArr;
+            
+            
+            
+            
         }
 
         
@@ -1746,21 +1781,23 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
         private  RunningAppProcessInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.384 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3CF290FD96EA98A2973ED95D03283F6F")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1331529340 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_84379879 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_84379879;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.385 -0400", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "CEDF08416D24385EF3D9C0DBF02DA77B")
         public void writeToParcel(Parcel dest, int flags) {
             addTaint(flags);
@@ -1776,21 +1813,22 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             dest.writeInt(importanceReasonPid);
             ComponentName.writeToParcel(importanceReasonComponent, dest);
             dest.writeInt(importanceReasonImportance);
-            // ---------- Original Method ----------
-            //dest.writeString(processName);
-            //dest.writeInt(pid);
-            //dest.writeInt(uid);
-            //dest.writeStringArray(pkgList);
-            //dest.writeInt(this.flags);
-            //dest.writeInt(importance);
-            //dest.writeInt(lru);
-            //dest.writeInt(importanceReasonCode);
-            //dest.writeInt(importanceReasonPid);
-            //ComponentName.writeToParcel(importanceReasonComponent, dest);
-            //dest.writeInt(importanceReasonImportance);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:57.387 -0400", hash_original_method = "41C420DA0EF6445C06E1F94D547B6411", hash_generated_method = "6CEE33DDD5B34CFCAE50871715C114F5")
         public void readFromParcel(Parcel source) {
             processName = source.readString();
@@ -1804,18 +1842,18 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
             importanceReasonPid = source.readInt();
             importanceReasonComponent = ComponentName.readFromParcel(source);
             importanceReasonImportance = source.readInt();
-            // ---------- Original Method ----------
-            //processName = source.readString();
-            //pid = source.readInt();
-            //uid = source.readInt();
-            //pkgList = source.readStringArray();
-            //flags = source.readInt();
-            //importance = source.readInt();
-            //lru = source.readInt();
-            //importanceReasonCode = source.readInt();
-            //importanceReasonPid = source.readInt();
-            //importanceReasonComponent = ComponentName.readFromParcel(source);
-            //importanceReasonImportance = source.readInt();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1866,12 +1904,12 @@ Bitmap var540C13E9E156B687226421B24F2DF178_475369158 =                 null;
                 return new RunningAppProcessInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public RunningAppProcessInfo createFromParcel(Parcel source) {
                 return new RunningAppProcessInfo(source);
             }
         
-        // orphaned legacy method
+        
         public RunningAppProcessInfo[] newArray(int size) {
                 return new RunningAppProcessInfo[size];
             }

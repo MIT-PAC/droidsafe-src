@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,10 +12,11 @@ public class ASN1SetOf extends ASN1ValueCollection {
     public  ASN1SetOf(ASN1Type type) {
         super(TAG_SETOF, type);
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.687 -0400", hash_original_method = "F57C1115BE0470F5CDF9CC2B3F700EBD", hash_generated_method = "C235DED4668E88F4C1BE79E8EFE24848")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -25,16 +26,16 @@ public class ASN1SetOf extends ASN1ValueCollection {
 Object var540C13E9E156B687226421B24F2DF178_1184401685 =             null;
             var540C13E9E156B687226421B24F2DF178_1184401685.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1184401685;
-        } //End block
+        } 
 Object var6AD043AF0280111F31D0D60A6CD70863_1780058769 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1780058769.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1780058769;
-        // ---------- Original Method ----------
-        //in.readSetOf(this);
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -42,8 +43,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1780058769 =         getDecodedObject
     public final void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeSetOf(this);
-        // ---------- Original Method ----------
-        //out.encodeSetOf(this);
+        
+        
     }
 
     
@@ -51,8 +52,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1780058769 =         getDecodedObject
     public final void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.getSetOfLength(this);
-        // ---------- Original Method ----------
-        //out.getSetOfLength(this);
+        
+        
     }
 
     

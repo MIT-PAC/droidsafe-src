@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,11 +32,12 @@ public class ContextWrapper extends Context {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.096 -0400", hash_original_method = "10030D2DB2A8F36EE12AB3354BCBF9E2", hash_generated_method = "6955E83EDFF1B7CDF47D712DAA27309B")
     public  ContextWrapper(Context base) {
         mBase = base;
-        // ---------- Original Method ----------
-        //mBase = base;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.096 -0400", hash_original_method = "C93782FE26B0F4F6F9B761D03AD74E79", hash_generated_method = "066905D89BDC055A650C0005D1012740")
     protected void attachBaseContext(Context base) {
     if(mBase != null)        
@@ -44,23 +45,24 @@ public class ContextWrapper extends Context {
             IllegalStateException var66C5824069E0964DC69656CAA57B8B9F_927334478 = new IllegalStateException("Base context already set");
             var66C5824069E0964DC69656CAA57B8B9F_927334478.addTaint(taint);
             throw var66C5824069E0964DC69656CAA57B8B9F_927334478;
-        } //End block
+        } 
         mBase = base;
-        // ---------- Original Method ----------
-        //if (mBase != null) {
-            //throw new IllegalStateException("Base context already set");
-        //}
-        //mBase = base;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.097 -0400", hash_original_method = "348D9A1AC27363C49C4D9EF878F36A33", hash_generated_method = "526E349042DB87E698E97A52C04E6A1E")
     public Context getBaseContext() {
 Context varA148490A8BFC4E02B4B251DB8934259F_1512515247 =         mBase;
         varA148490A8BFC4E02B4B251DB8934259F_1512515247.addTaint(taint);
         return varA148490A8BFC4E02B4B251DB8934259F_1512515247;
-        // ---------- Original Method ----------
-        //return mBase;
+        
+        
     }
 
     
@@ -70,8 +72,8 @@ Context varA148490A8BFC4E02B4B251DB8934259F_1512515247 =         mBase;
 AssetManager var76C3CF86EE6D54B30C36C32803928372_988831513 =         mBase.getAssets();
         var76C3CF86EE6D54B30C36C32803928372_988831513.addTaint(taint);
         return var76C3CF86EE6D54B30C36C32803928372_988831513;
-        // ---------- Original Method ----------
-        //return mBase.getAssets();
+        
+        
     }
 
     
@@ -81,8 +83,8 @@ AssetManager var76C3CF86EE6D54B30C36C32803928372_988831513 =         mBase.getAs
 Resources varC0A9C6BE038D35ACBF64CA430137389B_1800566200 =         mBase.getResources();
         varC0A9C6BE038D35ACBF64CA430137389B_1800566200.addTaint(taint);
         return varC0A9C6BE038D35ACBF64CA430137389B_1800566200;
-        // ---------- Original Method ----------
-        //return mBase.getResources();
+        
+        
     }
 
     
@@ -92,8 +94,8 @@ Resources varC0A9C6BE038D35ACBF64CA430137389B_1800566200 =         mBase.getReso
 PackageManager var2460232D63BA9F10997363947D615C09_175595636 =         mBase.getPackageManager();
         var2460232D63BA9F10997363947D615C09_175595636.addTaint(taint);
         return var2460232D63BA9F10997363947D615C09_175595636;
-        // ---------- Original Method ----------
-        //return mBase.getPackageManager();
+        
+        
     }
 
     
@@ -103,8 +105,8 @@ PackageManager var2460232D63BA9F10997363947D615C09_175595636 =         mBase.get
 ContentResolver var00D3C554E0AB15EA09A7796CA11174FA_1854027769 =         mBase.getContentResolver();
         var00D3C554E0AB15EA09A7796CA11174FA_1854027769.addTaint(taint);
         return var00D3C554E0AB15EA09A7796CA11174FA_1854027769;
-        // ---------- Original Method ----------
-        //return mBase.getContentResolver();
+        
+        
     }
 
     
@@ -114,8 +116,8 @@ ContentResolver var00D3C554E0AB15EA09A7796CA11174FA_1854027769 =         mBase.g
 Looper var08A834780F62DEFB0CC11359A8BF5D1E_637031569 =         mBase.getMainLooper();
         var08A834780F62DEFB0CC11359A8BF5D1E_637031569.addTaint(taint);
         return var08A834780F62DEFB0CC11359A8BF5D1E_637031569;
-        // ---------- Original Method ----------
-        //return mBase.getMainLooper();
+        
+        
     }
 
     
@@ -125,8 +127,8 @@ Looper var08A834780F62DEFB0CC11359A8BF5D1E_637031569 =         mBase.getMainLoop
 Context var297DFF380BA41D2B4D2B12F4EF189288_579452063 =         mBase.getApplicationContext();
         var297DFF380BA41D2B4D2B12F4EF189288_579452063.addTaint(taint);
         return var297DFF380BA41D2B4D2B12F4EF189288_579452063;
-        // ---------- Original Method ----------
-        //return mBase.getApplicationContext();
+        
+        
     }
 
     
@@ -135,8 +137,8 @@ Context var297DFF380BA41D2B4D2B12F4EF189288_579452063 =         mBase.getApplica
     public void setTheme(int resid) {
         addTaint(resid);
         mBase.setTheme(resid);
-        // ---------- Original Method ----------
-        //mBase.setTheme(resid);
+        
+        
     }
 
     
@@ -146,8 +148,8 @@ Context var297DFF380BA41D2B4D2B12F4EF189288_579452063 =         mBase.getApplica
         int var694ACEAE2EB299A90303D08BF5923279_1561710635 = (mBase.getThemeResId());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422457082 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422457082;
-        // ---------- Original Method ----------
-        //return mBase.getThemeResId();
+        
+        
     }
 
     
@@ -157,19 +159,20 @@ Context var297DFF380BA41D2B4D2B12F4EF189288_579452063 =         mBase.getApplica
 Resources.Theme var76B6B77AD887645DC7839F859C86DB3B_2122336811 =         mBase.getTheme();
         var76B6B77AD887645DC7839F859C86DB3B_2122336811.addTaint(taint);
         return var76B6B77AD887645DC7839F859C86DB3B_2122336811;
-        // ---------- Original Method ----------
-        //return mBase.getTheme();
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.103 -0400", hash_original_method = "325690D530E21A0AB255EE9D69D84488", hash_generated_method = "B04E6E0C0E09B4E871218F0DFCFE9B7D")
     @Override
     public ClassLoader getClassLoader() {
 ClassLoader varA8807F3BF816B843E87ECF72F437B526_545859320 =         mBase.getClassLoader();
         varA8807F3BF816B843E87ECF72F437B526_545859320.addTaint(taint);
         return varA8807F3BF816B843E87ECF72F437B526_545859320;
-        // ---------- Original Method ----------
-        //return mBase.getClassLoader();
+        
+        
     }
 
     
@@ -179,8 +182,8 @@ ClassLoader varA8807F3BF816B843E87ECF72F437B526_545859320 =         mBase.getCla
 String varCC969730AEDAE2CF8E546E89D9BA5651_45307614 =         mBase.getPackageName();
         varCC969730AEDAE2CF8E546E89D9BA5651_45307614.addTaint(taint);
         return varCC969730AEDAE2CF8E546E89D9BA5651_45307614;
-        // ---------- Original Method ----------
-        //return mBase.getPackageName();
+        
+        
     }
 
     
@@ -190,8 +193,8 @@ String varCC969730AEDAE2CF8E546E89D9BA5651_45307614 =         mBase.getPackageNa
 ApplicationInfo var5A440309FC948E478F14554A984E3988_467298648 =         mBase.getApplicationInfo();
         var5A440309FC948E478F14554A984E3988_467298648.addTaint(taint);
         return var5A440309FC948E478F14554A984E3988_467298648;
-        // ---------- Original Method ----------
-        //return mBase.getApplicationInfo();
+        
+        
     }
 
     
@@ -201,8 +204,8 @@ ApplicationInfo var5A440309FC948E478F14554A984E3988_467298648 =         mBase.ge
 String varF7B3E0E6C53211CB95758CA5835079A9_105841666 =         mBase.getPackageResourcePath();
         varF7B3E0E6C53211CB95758CA5835079A9_105841666.addTaint(taint);
         return varF7B3E0E6C53211CB95758CA5835079A9_105841666;
-        // ---------- Original Method ----------
-        //return mBase.getPackageResourcePath();
+        
+        
     }
 
     
@@ -212,8 +215,8 @@ String varF7B3E0E6C53211CB95758CA5835079A9_105841666 =         mBase.getPackageR
 String var3FBCA4B17D2D1E884408A8469AF743F1_901841560 =         mBase.getPackageCodePath();
         var3FBCA4B17D2D1E884408A8469AF743F1_901841560.addTaint(taint);
         return var3FBCA4B17D2D1E884408A8469AF743F1_901841560;
-        // ---------- Original Method ----------
-        //return mBase.getPackageCodePath();
+        
+        
     }
 
     
@@ -224,8 +227,8 @@ String var3FBCA4B17D2D1E884408A8469AF743F1_901841560 =         mBase.getPackageC
 File varCEC3785B29BF636922E886A7D1379E30_413335080 =         mBase.getSharedPrefsFile(name);
         varCEC3785B29BF636922E886A7D1379E30_413335080.addTaint(taint);
         return varCEC3785B29BF636922E886A7D1379E30_413335080;
-        // ---------- Original Method ----------
-        //return mBase.getSharedPrefsFile(name);
+        
+        
     }
 
     
@@ -237,8 +240,8 @@ File varCEC3785B29BF636922E886A7D1379E30_413335080 =         mBase.getSharedPref
 SharedPreferences varA54C5E6B915CFF7C92731136C531E733_948584785 =         mBase.getSharedPreferences(name, mode);
         varA54C5E6B915CFF7C92731136C531E733_948584785.addTaint(taint);
         return varA54C5E6B915CFF7C92731136C531E733_948584785;
-        // ---------- Original Method ----------
-        //return mBase.getSharedPreferences(name, mode);
+        
+        
     }
 
     
@@ -249,8 +252,8 @@ SharedPreferences varA54C5E6B915CFF7C92731136C531E733_948584785 =         mBase.
 FileInputStream varA1D772851A48D51218F8D32143265657_345837757 =         mBase.openFileInput(name);
         varA1D772851A48D51218F8D32143265657_345837757.addTaint(taint);
         return varA1D772851A48D51218F8D32143265657_345837757;
-        // ---------- Original Method ----------
-        //return mBase.openFileInput(name);
+        
+        
     }
 
     
@@ -262,8 +265,8 @@ FileInputStream varA1D772851A48D51218F8D32143265657_345837757 =         mBase.op
 FileOutputStream varFFB8432828FDF9D378486365E66D6F43_1608459833 =         mBase.openFileOutput(name, mode);
         varFFB8432828FDF9D378486365E66D6F43_1608459833.addTaint(taint);
         return varFFB8432828FDF9D378486365E66D6F43_1608459833;
-        // ---------- Original Method ----------
-        //return mBase.openFileOutput(name, mode);
+        
+        
     }
 
     
@@ -274,8 +277,8 @@ FileOutputStream varFFB8432828FDF9D378486365E66D6F43_1608459833 =         mBase.
         boolean varA056F9400684E1AB0C1979E72E321ABB_1784594274 = (mBase.deleteFile(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_571049053 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_571049053;
-        // ---------- Original Method ----------
-        //return mBase.deleteFile(name);
+        
+        
     }
 
     
@@ -286,8 +289,8 @@ FileOutputStream varFFB8432828FDF9D378486365E66D6F43_1608459833 =         mBase.
 File var027FB8FEB8CEEAB5567BEEBFDAE53C40_411589596 =         mBase.getFileStreamPath(name);
         var027FB8FEB8CEEAB5567BEEBFDAE53C40_411589596.addTaint(taint);
         return var027FB8FEB8CEEAB5567BEEBFDAE53C40_411589596;
-        // ---------- Original Method ----------
-        //return mBase.getFileStreamPath(name);
+        
+        
     }
 
     
@@ -297,8 +300,8 @@ File var027FB8FEB8CEEAB5567BEEBFDAE53C40_411589596 =         mBase.getFileStream
 String[] var157EF2457324FF8491DE605BB8617635_1565245910 =         mBase.fileList();
         var157EF2457324FF8491DE605BB8617635_1565245910.addTaint(taint);
         return var157EF2457324FF8491DE605BB8617635_1565245910;
-        // ---------- Original Method ----------
-        //return mBase.fileList();
+        
+        
     }
 
     
@@ -308,8 +311,8 @@ String[] var157EF2457324FF8491DE605BB8617635_1565245910 =         mBase.fileList
 File varF2FADB399563D1D269193BECAD845418_1863960964 =         mBase.getFilesDir();
         varF2FADB399563D1D269193BECAD845418_1863960964.addTaint(taint);
         return varF2FADB399563D1D269193BECAD845418_1863960964;
-        // ---------- Original Method ----------
-        //return mBase.getFilesDir();
+        
+        
     }
 
     
@@ -320,8 +323,8 @@ File varF2FADB399563D1D269193BECAD845418_1863960964 =         mBase.getFilesDir(
 File var077416DCEAEB550F87765A85F649EFCF_779740390 =         mBase.getExternalFilesDir(type);
         var077416DCEAEB550F87765A85F649EFCF_779740390.addTaint(taint);
         return var077416DCEAEB550F87765A85F649EFCF_779740390;
-        // ---------- Original Method ----------
-        //return mBase.getExternalFilesDir(type);
+        
+        
     }
 
     
@@ -331,8 +334,8 @@ File var077416DCEAEB550F87765A85F649EFCF_779740390 =         mBase.getExternalFi
 File var295ECEB91C0400D7F2A0D868D0A8D0B6_441639565 =         mBase.getObbDir();
         var295ECEB91C0400D7F2A0D868D0A8D0B6_441639565.addTaint(taint);
         return var295ECEB91C0400D7F2A0D868D0A8D0B6_441639565;
-        // ---------- Original Method ----------
-        //return mBase.getObbDir();
+        
+        
     }
 
     
@@ -342,8 +345,8 @@ File var295ECEB91C0400D7F2A0D868D0A8D0B6_441639565 =         mBase.getObbDir();
 File var8A45B00CB25A88AC49713690DA087678_1450969313 =         mBase.getCacheDir();
         var8A45B00CB25A88AC49713690DA087678_1450969313.addTaint(taint);
         return var8A45B00CB25A88AC49713690DA087678_1450969313;
-        // ---------- Original Method ----------
-        //return mBase.getCacheDir();
+        
+        
     }
 
     
@@ -353,8 +356,8 @@ File var8A45B00CB25A88AC49713690DA087678_1450969313 =         mBase.getCacheDir(
 File varDEBDCE48CEB098BDA05FAAF605206941_1960128016 =         mBase.getExternalCacheDir();
         varDEBDCE48CEB098BDA05FAAF605206941_1960128016.addTaint(taint);
         return varDEBDCE48CEB098BDA05FAAF605206941_1960128016;
-        // ---------- Original Method ----------
-        //return mBase.getExternalCacheDir();
+        
+        
     }
 
     
@@ -366,8 +369,8 @@ File varDEBDCE48CEB098BDA05FAAF605206941_1960128016 =         mBase.getExternalC
 File varD632E5C6B0038D67DB2E4A0B5DECF9E7_1930045383 =         mBase.getDir(name, mode);
         varD632E5C6B0038D67DB2E4A0B5DECF9E7_1930045383.addTaint(taint);
         return varD632E5C6B0038D67DB2E4A0B5DECF9E7_1930045383;
-        // ---------- Original Method ----------
-        //return mBase.getDir(name, mode);
+        
+        
     }
 
     
@@ -380,8 +383,8 @@ File varD632E5C6B0038D67DB2E4A0B5DECF9E7_1930045383 =         mBase.getDir(name,
 SQLiteDatabase varB8E18523B77D58562EBFF56A60961FED_333920359 =         mBase.openOrCreateDatabase(name, mode, factory);
         varB8E18523B77D58562EBFF56A60961FED_333920359.addTaint(taint);
         return varB8E18523B77D58562EBFF56A60961FED_333920359;
-        // ---------- Original Method ----------
-        //return mBase.openOrCreateDatabase(name, mode, factory);
+        
+        
     }
 
     
@@ -396,8 +399,8 @@ SQLiteDatabase varB8E18523B77D58562EBFF56A60961FED_333920359 =         mBase.ope
 SQLiteDatabase var097237F008AD8FB2F6D3A10F81DFE394_813039712 =         mBase.openOrCreateDatabase(name, mode, factory, errorHandler);
         var097237F008AD8FB2F6D3A10F81DFE394_813039712.addTaint(taint);
         return var097237F008AD8FB2F6D3A10F81DFE394_813039712;
-        // ---------- Original Method ----------
-        //return mBase.openOrCreateDatabase(name, mode, factory, errorHandler);
+        
+        
     }
 
     
@@ -408,8 +411,8 @@ SQLiteDatabase var097237F008AD8FB2F6D3A10F81DFE394_813039712 =         mBase.ope
         boolean varC01567A12CDB38AE2A5D9E9A12DB0662_1353819980 = (mBase.deleteDatabase(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_334249082 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_334249082;
-        // ---------- Original Method ----------
-        //return mBase.deleteDatabase(name);
+        
+        
     }
 
     
@@ -420,8 +423,8 @@ SQLiteDatabase var097237F008AD8FB2F6D3A10F81DFE394_813039712 =         mBase.ope
 File var71C1048CD82987A9AFA5C47AC5FC7AA1_2123368129 =         mBase.getDatabasePath(name);
         var71C1048CD82987A9AFA5C47AC5FC7AA1_2123368129.addTaint(taint);
         return var71C1048CD82987A9AFA5C47AC5FC7AA1_2123368129;
-        // ---------- Original Method ----------
-        //return mBase.getDatabasePath(name);
+        
+        
     }
 
     
@@ -431,8 +434,8 @@ File var71C1048CD82987A9AFA5C47AC5FC7AA1_2123368129 =         mBase.getDatabaseP
 String[] varD7EC4DC557A648709205D012632CA3B8_2072281074 =         mBase.databaseList();
         varD7EC4DC557A648709205D012632CA3B8_2072281074.addTaint(taint);
         return varD7EC4DC557A648709205D012632CA3B8_2072281074;
-        // ---------- Original Method ----------
-        //return mBase.databaseList();
+        
+        
     }
 
     
@@ -442,8 +445,8 @@ String[] varD7EC4DC557A648709205D012632CA3B8_2072281074 =         mBase.database
 Drawable var5A2D53E6B0246B0EFCBBDEA5C0B24CCA_87569521 =         mBase.getWallpaper();
         var5A2D53E6B0246B0EFCBBDEA5C0B24CCA_87569521.addTaint(taint);
         return var5A2D53E6B0246B0EFCBBDEA5C0B24CCA_87569521;
-        // ---------- Original Method ----------
-        //return mBase.getWallpaper();
+        
+        
     }
 
     
@@ -453,8 +456,8 @@ Drawable var5A2D53E6B0246B0EFCBBDEA5C0B24CCA_87569521 =         mBase.getWallpap
 Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWallpaper();
         varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033.addTaint(taint);
         return varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033;
-        // ---------- Original Method ----------
-        //return mBase.peekWallpaper();
+        
+        
     }
 
     
@@ -464,8 +467,8 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
         int var9EC8F9D2ACA2DBF0A07FBE7ABC00542F_2331800 = (mBase.getWallpaperDesiredMinimumWidth());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_688749983 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_688749983;
-        // ---------- Original Method ----------
-        //return mBase.getWallpaperDesiredMinimumWidth();
+        
+        
     }
 
     
@@ -475,8 +478,8 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
         int varC71999CF10189161372166F7AA625785_1871449646 = (mBase.getWallpaperDesiredMinimumHeight());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1577866682 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1577866682;
-        // ---------- Original Method ----------
-        //return mBase.getWallpaperDesiredMinimumHeight();
+        
+        
     }
 
     
@@ -485,8 +488,8 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     public void setWallpaper(Bitmap bitmap) throws IOException {
         addTaint(bitmap.getTaint());
         mBase.setWallpaper(bitmap);
-        // ---------- Original Method ----------
-        //mBase.setWallpaper(bitmap);
+        
+        
     }
 
     
@@ -495,8 +498,8 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     public void setWallpaper(InputStream data) throws IOException {
         addTaint(data.getTaint());
         mBase.setWallpaper(data);
-        // ---------- Original Method ----------
-        //mBase.setWallpaper(data);
+        
+        
     }
 
     
@@ -504,18 +507,19 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     @Override
     public void clearWallpaper() throws IOException {
         mBase.clearWallpaper();
-        // ---------- Original Method ----------
-        //mBase.clearWallpaper();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.117 -0400", hash_original_method = "130F62140951A945508EBFB32B94A765", hash_generated_method = "6C0DD6BCBBFEDC54885AA9284A0144DE")
     @Override
     public void startActivity(Intent intent) {
         addTaint(intent.getTaint());
         mBase.startActivity(intent);
-        // ---------- Original Method ----------
-        //mBase.startActivity(intent);
+        
+        
     }
 
     
@@ -524,11 +528,12 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
     public void startActivities(Intent[] intents) {
         addTaint(intents[0].getTaint());
         mBase.startActivities(intents);
-        // ---------- Original Method ----------
-        //mBase.startActivities(intents);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.118 -0400", hash_original_method = "D7C74DA04A5B79EC6630FAD526B70ED6", hash_generated_method = "A632291B20B3DE68B7E953C351EB0FF0")
     @Override
     public void startIntentSender(IntentSender intent,
@@ -540,33 +545,36 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
         addTaint(intent.getTaint());
         mBase.startIntentSender(intent, fillInIntent, flagsMask,
                 flagsValues, extraFlags);
-        // ---------- Original Method ----------
-        //mBase.startIntentSender(intent, fillInIntent, flagsMask,
-                //flagsValues, extraFlags);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.118 -0400", hash_original_method = "CD7D57CF51FEE3E0548133C9C2D084D1", hash_generated_method = "2D4547361562E88556ED9736EB460F84")
     @Override
     public void sendBroadcast(Intent intent) {
         addTaint(intent.getTaint());
         mBase.sendBroadcast(intent);
-        // ---------- Original Method ----------
-        //mBase.sendBroadcast(intent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.119 -0400", hash_original_method = "0D532949C3012CD33C142E9B5D03BB61", hash_generated_method = "A8FB3D04861B2339CDAE5E4596923A4A")
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         addTaint(receiverPermission.getTaint());
         addTaint(intent.getTaint());
         mBase.sendBroadcast(intent, receiverPermission);
-        // ---------- Original Method ----------
-        //mBase.sendBroadcast(intent, receiverPermission);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.119 -0400", hash_original_method = "F587D697CC21A22CF1C16322E48A38D4", hash_generated_method = "C9C94ADA00BA37E857FAA86E21A31BC7")
     @Override
     public void sendOrderedBroadcast(Intent intent,
@@ -574,11 +582,12 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
         addTaint(receiverPermission.getTaint());
         addTaint(intent.getTaint());
         mBase.sendOrderedBroadcast(intent, receiverPermission);
-        // ---------- Original Method ----------
-        //mBase.sendOrderedBroadcast(intent, receiverPermission);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.120 -0400", hash_original_method = "DEE55BD129D883E4F2F6F72EA9382082", hash_generated_method = "082C177ACFA1C32AABD3FB1FE7240D4E")
     @Override
     public void sendOrderedBroadcast(
@@ -595,23 +604,25 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
         mBase.sendOrderedBroadcast(intent, receiverPermission,
                 resultReceiver, scheduler, initialCode,
                 initialData, initialExtras);
-        // ---------- Original Method ----------
-        //mBase.sendOrderedBroadcast(intent, receiverPermission,
-                //resultReceiver, scheduler, initialCode,
-                //initialData, initialExtras);
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.120 -0400", hash_original_method = "E4D0FD66C31D49EF8A28B259CA31F5AB", hash_generated_method = "433BD975A8F7FD246F85B9A7F3CA304F")
     @Override
     public void sendStickyBroadcast(Intent intent) {
         addTaint(intent.getTaint());
         mBase.sendStickyBroadcast(intent);
-        // ---------- Original Method ----------
-        //mBase.sendStickyBroadcast(intent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.121 -0400", hash_original_method = "7E21CD2A51D6CF22EBBD91300928AE98", hash_generated_method = "A71CA7EDD1C215242F89D9F6DDE7F0F4")
     @Override
     public void sendStickyOrderedBroadcast(
@@ -627,44 +638,47 @@ Drawable varF5795CFDDA47D7C8C04AD6D839A0BFDB_1736030033 =         mBase.peekWall
         mBase.sendStickyOrderedBroadcast(intent,
                 resultReceiver, scheduler, initialCode,
                 initialData, initialExtras);
-        // ---------- Original Method ----------
-        //mBase.sendStickyOrderedBroadcast(intent,
-                //resultReceiver, scheduler, initialCode,
-                //initialData, initialExtras);
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.121 -0400", hash_original_method = "F6F4D7B74D392C087E12FF2E322B2B45", hash_generated_method = "BB41DCBD5702AF661DEFFC83F1A9A7E4")
     @Override
     public void removeStickyBroadcast(Intent intent) {
         addTaint(intent.getTaint());
         mBase.removeStickyBroadcast(intent);
-        // ---------- Original Method ----------
-        //mBase.removeStickyBroadcast(intent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.122 -0400", hash_original_method = "D33A933E89CAAB59BCB5CB9CA20F9A5A", hash_generated_method = "9E3FAE62FAAB1243C426756B6F93F385")
     @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
 Intent varAAEB1FD17C7C2C043C7061A56E2F4939_1592084704 =         mBase.registerReceiver(receiver, filter);
         varAAEB1FD17C7C2C043C7061A56E2F4939_1592084704.addTaint(taint);
         return varAAEB1FD17C7C2C043C7061A56E2F4939_1592084704;
-        // ---------- Original Method ----------
-        //return mBase.registerReceiver(receiver, filter);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.122 -0400", hash_original_method = "C498ADCED351E80E96A53362B4745838", hash_generated_method = "7B7783EC1051F09D68D997082DBFA54F")
     @Override
     public Intent registerReceiver(
         BroadcastReceiver receiver, IntentFilter filter,
         String broadcastPermission, Handler scheduler) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(scheduler.getTaint());
         addTaint(broadcastPermission.getTaint());
         addTaint(filter.getTaint());
@@ -673,9 +687,9 @@ Intent var59A1EE21EC52E3621468EDA989E22DE4_1112668110 =         mBase.registerRe
                 scheduler);
         var59A1EE21EC52E3621468EDA989E22DE4_1112668110.addTaint(taint);
         return var59A1EE21EC52E3621468EDA989E22DE4_1112668110;
-        // ---------- Original Method ----------
-        //return mBase.registerReceiver(receiver, filter, broadcastPermission,
-                //scheduler);
+        
+        
+                
     }
 
     
@@ -684,11 +698,12 @@ Intent var59A1EE21EC52E3621468EDA989E22DE4_1112668110 =         mBase.registerRe
     public void unregisterReceiver(BroadcastReceiver receiver) {
         addTaint(receiver.getTaint());
         mBase.unregisterReceiver(receiver);
-        // ---------- Original Method ----------
-        //mBase.unregisterReceiver(receiver);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.123 -0400", hash_original_method = "460FA5078659EEF29B84A9C36C1BA43F", hash_generated_method = "DF84EAD3CC9618C064C57B2ABAED1091")
     @Override
     public ComponentName startService(Intent service) {
@@ -696,11 +711,12 @@ Intent var59A1EE21EC52E3621468EDA989E22DE4_1112668110 =         mBase.registerRe
 ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.startService(service);
         var3735A6AF9994E0412D2412319D7B8378_1315187816.addTaint(taint);
         return var3735A6AF9994E0412D2412319D7B8378_1315187816;
-        // ---------- Original Method ----------
-        //return mBase.startService(service);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.123 -0400", hash_original_method = "2538E8D6E7BE6E9AB177EECCCE1CB620", hash_generated_method = "83144571358D607A4863707AB807BA88")
     @Override
     public boolean stopService(Intent name) {
@@ -708,11 +724,12 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
         boolean var39629D3681F516448922905A6CE13AFB_1481277645 = (mBase.stopService(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1731590484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1731590484;
-        // ---------- Original Method ----------
-        //return mBase.stopService(name);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.124 -0400", hash_original_method = "67132A5BC1B8EF0B15B0E872390898A0", hash_generated_method = "046F545F87BBD35B604C5F5B33AD3582")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn,
@@ -723,8 +740,8 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
         boolean var0C90BE0BE336E1F418604232563A281D_1775050025 = (mBase.bindService(service, conn, flags));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_607539041 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_607539041;
-        // ---------- Original Method ----------
-        //return mBase.bindService(service, conn, flags);
+        
+        
     }
 
     
@@ -733,8 +750,8 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
     public void unbindService(ServiceConnection conn) {
         addTaint(conn.getTaint());
         mBase.unbindService(conn);
-        // ---------- Original Method ----------
-        //mBase.unbindService(conn);
+        
+        
     }
 
     
@@ -748,8 +765,8 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
         boolean var7484A730D276F213FA9C17D958113A5D_1922267064 = (mBase.startInstrumentation(className, profileFile, arguments));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_124331522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_124331522;
-        // ---------- Original Method ----------
-        //return mBase.startInstrumentation(className, profileFile, arguments);
+        
+        
     }
 
     
@@ -760,8 +777,8 @@ ComponentName var3735A6AF9994E0412D2412319D7B8378_1315187816 =         mBase.sta
 Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemService(name);
         varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580.addTaint(taint);
         return varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580;
-        // ---------- Original Method ----------
-        //return mBase.getSystemService(name);
+        
+        
     }
 
     
@@ -774,8 +791,8 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         int var225C5302911F0602FFAEA8401DD39B27_945134728 = (mBase.checkPermission(permission, pid, uid));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215431266 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_215431266;
-        // ---------- Original Method ----------
-        //return mBase.checkPermission(permission, pid, uid);
+        
+        
     }
 
     
@@ -786,8 +803,8 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         int var4A7B40AB7CD5B1B8F72D9323B100FB29_969955717 = (mBase.checkCallingPermission(permission));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132506781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2132506781;
-        // ---------- Original Method ----------
-        //return mBase.checkCallingPermission(permission);
+        
+        
     }
 
     
@@ -798,8 +815,8 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         int var0C61C1C30616180086F9A01C06F0D3E7_411664526 = (mBase.checkCallingOrSelfPermission(permission));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359116369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359116369;
-        // ---------- Original Method ----------
-        //return mBase.checkCallingOrSelfPermission(permission);
+        
+        
     }
 
     
@@ -812,8 +829,8 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(pid);
         addTaint(permission.getTaint());
         mBase.enforcePermission(permission, pid, uid, message);
-        // ---------- Original Method ----------
-        //mBase.enforcePermission(permission, pid, uid, message);
+        
+        
     }
 
     
@@ -823,8 +840,8 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(message.getTaint());
         addTaint(permission.getTaint());
         mBase.enforceCallingPermission(permission, message);
-        // ---------- Original Method ----------
-        //mBase.enforceCallingPermission(permission, message);
+        
+        
     }
 
     
@@ -835,11 +852,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(message.getTaint());
         addTaint(permission.getTaint());
         mBase.enforceCallingOrSelfPermission(permission, message);
-        // ---------- Original Method ----------
-        //mBase.enforceCallingOrSelfPermission(permission, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.128 -0400", hash_original_method = "C92445D33E31E73A915DF30F0CA49E37", hash_generated_method = "132BCFF17972778D1A25AAD25445FF99")
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
@@ -847,22 +865,24 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(uri.getTaint());
         addTaint(toPackage.getTaint());
         mBase.grantUriPermission(toPackage, uri, modeFlags);
-        // ---------- Original Method ----------
-        //mBase.grantUriPermission(toPackage, uri, modeFlags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.128 -0400", hash_original_method = "10A2FB283E31FE469317FAE71C7AF4F8", hash_generated_method = "1679A68408B187F348A87F616C937E3F")
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
         addTaint(modeFlags);
         addTaint(uri.getTaint());
         mBase.revokeUriPermission(uri, modeFlags);
-        // ---------- Original Method ----------
-        //mBase.revokeUriPermission(uri, modeFlags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.129 -0400", hash_original_method = "F52277BFC8F41FE72798C9E8418C1E24", hash_generated_method = "4340D7FC38C4770DED9FF3F4BCC9A04C")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -873,11 +893,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         int var8F55548F65F71E2A5461DF44F624EEC9_1403587014 = (mBase.checkUriPermission(uri, pid, uid, modeFlags));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243860103 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243860103;
-        // ---------- Original Method ----------
-        //return mBase.checkUriPermission(uri, pid, uid, modeFlags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.133 -0400", hash_original_method = "43D2E9446750BEAA21B381D934BB37A3", hash_generated_method = "A6AEF7DB6914888ECB63D32432101608")
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
@@ -886,11 +907,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         int varACB43B79235C3B0DC9433FF0728C1DCF_37460114 = (mBase.checkCallingUriPermission(uri, modeFlags));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594238910 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594238910;
-        // ---------- Original Method ----------
-        //return mBase.checkCallingUriPermission(uri, modeFlags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.134 -0400", hash_original_method = "4761F75E9F6B51877289AE555068D313", hash_generated_method = "6194C0764CC0102C41DF0956BADBAEAF")
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
@@ -899,11 +921,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         int var85446D6CED60A79A17B56581080F6A79_320657377 = (mBase.checkCallingOrSelfUriPermission(uri, modeFlags));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106379123 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2106379123;
-        // ---------- Original Method ----------
-        //return mBase.checkCallingOrSelfUriPermission(uri, modeFlags);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.137 -0400", hash_original_method = "2B7D942FC66EB790715A21C2BF13434D", hash_generated_method = "F0998A30BC18E11B4149625B9C7B5D73")
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
@@ -918,12 +941,13 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
                 pid, uid, modeFlags));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49120339 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49120339;
-        // ---------- Original Method ----------
-        //return mBase.checkUriPermission(uri, readPermission, writePermission,
-                //pid, uid, modeFlags);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.139 -0400", hash_original_method = "BB196C48EA062CF760A21CBEDF203044", hash_generated_method = "7C03E4DB56E7305AF6AE41949E41BC7E")
     @Override
     public void enforceUriPermission(
@@ -934,11 +958,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(pid);
         addTaint(uri.getTaint());
         mBase.enforceUriPermission(uri, pid, uid, modeFlags, message);
-        // ---------- Original Method ----------
-        //mBase.enforceUriPermission(uri, pid, uid, modeFlags, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.139 -0400", hash_original_method = "B8C6D02BD75567C0C6C58E522F178982", hash_generated_method = "DE6C889E3693A351428610E1ACF6025F")
     @Override
     public void enforceCallingUriPermission(
@@ -947,11 +972,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(modeFlags);
         addTaint(uri.getTaint());
         mBase.enforceCallingUriPermission(uri, modeFlags, message);
-        // ---------- Original Method ----------
-        //mBase.enforceCallingUriPermission(uri, modeFlags, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.140 -0400", hash_original_method = "7C2103EAC397ACBBFFA65707A1212FAD", hash_generated_method = "3351654B17DB77690AFE3B21DB48B639")
     @Override
     public void enforceCallingOrSelfUriPermission(
@@ -960,11 +986,12 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         addTaint(modeFlags);
         addTaint(uri.getTaint());
         mBase.enforceCallingOrSelfUriPermission(uri, modeFlags, message);
-        // ---------- Original Method ----------
-        //mBase.enforceCallingOrSelfUriPermission(uri, modeFlags, message);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.141 -0400", hash_original_method = "2C0B32E644AD3E21F1765D96680E56CD", hash_generated_method = "CE3F3633A60AF1182BE1E840ED3A323A")
     @Override
     public void enforceUriPermission(
@@ -980,10 +1007,10 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
         mBase.enforceUriPermission(
                 uri, readPermission, writePermission, pid, uid, modeFlags,
                 message);
-        // ---------- Original Method ----------
-        //mBase.enforceUriPermission(
-                //uri, readPermission, writePermission, pid, uid, modeFlags,
-                //message);
+        
+        
+                
+                
     }
 
     
@@ -995,8 +1022,8 @@ Object varCEE83A4312F10FC75EECB5EAD4E09ED3_1196453580 =         mBase.getSystemS
 Context var20C383631F12A3C087EA6F1851C212D7_778061249 =         mBase.createPackageContext(packageName, flags);
         var20C383631F12A3C087EA6F1851C212D7_778061249.addTaint(taint);
         return var20C383631F12A3C087EA6F1851C212D7_778061249;
-        // ---------- Original Method ----------
-        //return mBase.createPackageContext(packageName, flags);
+        
+        
     }
 
     
@@ -1006,8 +1033,8 @@ Context var20C383631F12A3C087EA6F1851C212D7_778061249 =         mBase.createPack
         boolean varA24AECECD71E5C87C380584CAA5E94A0_1675730576 = (mBase.isRestricted());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2069298907 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2069298907;
-        // ---------- Original Method ----------
-        //return mBase.isRestricted();
+        
+        
     }
 
     

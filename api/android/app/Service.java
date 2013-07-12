@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.001 -0400", hash_original_method = "D0179C650F036CDA92B50348E0090B82", hash_generated_method = "F9D63210E10597231C4F4BD03B0C29AC")
     public  Service() {
         super(null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,31 +49,34 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
 Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplication;
         varF254F0ADF054F0318B65674CA3670A5E_1757843628.addTaint(taint);
         return varF254F0ADF054F0318B65674CA3670A5E_1757843628;
-        // ---------- Original Method ----------
-        //return mApplication;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.003 -0400", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "7564C9BAB223A8E7FAC043FBCC648B76")
     public void onCreate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.004 -0400", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "971934BB7442F3327C364E7975D13DB5")
     @Deprecated
     public void onStart(Intent intent, int startId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(startId);
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.006 -0400", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "7FBC39536527FD9AB7A7B12E449DDA0E")
     public int onStartCommand(Intent intent, int flags, int startId) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(startId);
         addTaint(flags);
         addTaint(intent.getTaint());
@@ -81,78 +84,85 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
         int var1DF5CB6D30AD18B675A53B382DD16814_1181002469 = (mStartCompatibility ? START_STICKY_COMPATIBILITY : START_STICKY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003906881 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003906881;
-        // ---------- Original Method ----------
-        //onStart(intent, startId);
-        //return mStartCompatibility ? START_STICKY_COMPATIBILITY : START_STICKY;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.006 -0400", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "E5C4FFF396F837C85A1D40A9B232BFA0")
     public void onDestroy() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.007 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.007 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.008 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(level);
-        // ---------- Original Method ----------
+        
     }
 
     
     public abstract IBinder onBind(Intent intent);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.008 -0400", hash_original_method = "5942B5AC8056FD2F0F888A571E85A724", hash_generated_method = "8B0F8908DE5F6296A2E05C1011AEDFE0")
     public boolean onUnbind(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(intent.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_1297269147 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550908499 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_550908499;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.009 -0400", hash_original_method = "96E602EF97C136D1349E20B0217FC297", hash_generated_method = "8F8E56AABCA0613BF8FBF0BDA2865E2C")
     public void onRebind(Intent intent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(intent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.009 -0400", hash_original_method = "8FB0E93CA9596F065DFD6DBA45B93821", hash_generated_method = "B691CB7FFACC5EF486F16983D7110EA8")
     public void onTaskRemoved(Intent rootIntent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(rootIntent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.010 -0400", hash_original_method = "63DABFC9549E2FB476F01FDE2AC0A25B", hash_generated_method = "9C957CF5C3759100051FFDCA4A386C02")
     public final void stopSelf() {
         stopSelf(-1);
-        // ---------- Original Method ----------
-        //stopSelf(-1);
+        
+        
     }
 
     
@@ -162,24 +172,24 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
     if(mActivityManager == null)        
         {
             return;
-        } //End block
+        } 
         try 
         {
             mActivityManager.stopServiceToken(
                     new ComponentName(this, mClassName), mToken, startId);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (mActivityManager == null) {
-            //return;
-        //}
-        //try {
-            //mActivityManager.stopServiceToken(
-                    //new ComponentName(this, mClassName), mToken, startId);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -191,30 +201,30 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
             boolean var68934A3E9455FA72420237EB05902327_1901199571 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825599471 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825599471;
-        } //End block
+        } 
         try 
         {
             boolean var5A15ADBAAF6E0EB999554F48783E42C0_619129561 = (mActivityManager.stopServiceToken(
                     new ComponentName(this, mClassName), mToken, startId));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_694398220 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_694398220;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1195413662 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548780759 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_548780759;
-        // ---------- Original Method ----------
-        //if (mActivityManager == null) {
-            //return false;
-        //}
-        //try {
-            //return mActivityManager.stopServiceToken(
-                    //new ComponentName(this, mClassName), mToken, startId);
-        //} catch (RemoteException ex) {
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -222,8 +232,8 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
     @Deprecated
     public final void setForeground(boolean isForeground) {
         addTaint(isForeground);
-        // ---------- Original Method ----------
-        //Log.w(TAG, "setForeground: ignoring old API call on " + getClass().getName());
+        
+        
     }
 
     
@@ -236,17 +246,17 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
             mActivityManager.setServiceForeground(
                     new ComponentName(this, mClassName), mToken, id,
                     notification, true);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mActivityManager.setServiceForeground(
-                    //new ComponentName(this, mClassName), mToken, id,
-                    //notification, true);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
@@ -258,17 +268,17 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
             mActivityManager.setServiceForeground(
                     new ComponentName(this, mClassName), mToken, 0, null,
                     removeNotification);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mActivityManager.setServiceForeground(
-                    //new ComponentName(this, mClassName), mToken, 0, null,
-                    //removeNotification);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
@@ -278,8 +288,8 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
         addTaint(writer.getTaint());
         addTaint(fd.getTaint());
         writer.println("nothing to dump");
-        // ---------- Original Method ----------
-        //writer.println("nothing to dump");
+        
+        
     }
 
     
@@ -297,15 +307,15 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
         mActivityManager = (IActivityManager)activityManager;
         mStartCompatibility = getApplicationInfo().targetSdkVersion
                 < Build.VERSION_CODES.ECLAIR;
-        // ---------- Original Method ----------
-        //attachBaseContext(context);
-        //mThread = thread;
-        //mClassName = className;
-        //mToken = token;
-        //mApplication = application;
-        //mActivityManager = (IActivityManager)activityManager;
-        //mStartCompatibility = getApplicationInfo().targetSdkVersion
-                //< Build.VERSION_CODES.ECLAIR;
+        
+        
+        
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -314,8 +324,8 @@ Application varF254F0ADF054F0318B65674CA3670A5E_1757843628 =         mApplicatio
 String varDD9C2143734A2F5CB66BF5CFBE75CE5F_1161159149 =         mClassName;
         varDD9C2143734A2F5CB66BF5CFBE75CE5F_1161159149.addTaint(taint);
         return varDD9C2143734A2F5CB66BF5CFBE75CE5F_1161159149;
-        // ---------- Original Method ----------
-        //return mClassName;
+        
+        
     }
 
     

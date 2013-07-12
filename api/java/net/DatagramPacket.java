@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public final class DatagramPacket {
         this(data, 0, length);
         addTaint(length);
         addTaint(data[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,8 +40,8 @@ public final class DatagramPacket {
         addTaint(offset);
         addTaint(data[0]);
         setData(data, offset, length);
-        // ---------- Original Method ----------
-        //setData(data, offset, length);
+        
+        
     }
 
     
@@ -55,9 +55,9 @@ public final class DatagramPacket {
         addTaint(data[0]);
         setPort(aPort);
         address = host;
-        // ---------- Original Method ----------
-        //setPort(aPort);
-        //address = host;
+        
+        
+        
     }
 
     
@@ -68,7 +68,7 @@ public final class DatagramPacket {
         addTaint(host.getTaint());
         addTaint(length);
         addTaint(data[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,8 +79,8 @@ public final class DatagramPacket {
         addTaint(length);
         addTaint(data[0]);
         setSocketAddress(sockAddr);
-        // ---------- Original Method ----------
-        //setSocketAddress(sockAddr);
+        
+        
     }
 
     
@@ -93,66 +93,72 @@ public final class DatagramPacket {
         addTaint(offset);
         addTaint(data[0]);
         setSocketAddress(sockAddr);
-        // ---------- Original Method ----------
-        //setSocketAddress(sockAddr);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.514 -0400", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "202F84321EA165D345F9205E8AF747AC")
     public synchronized InetAddress getAddress() {
 InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
         var814577DDD37BAFB17E08CBEFDB411BAE_750542648.addTaint(taint);
         return var814577DDD37BAFB17E08CBEFDB411BAE_750542648;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.515 -0400", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "3320AEC7F42ADE4E379A849942B34452")
     public synchronized byte[] getData() {
         byte[] var8D777F385D3DFEC8815D20F7496026DC_1301930227 = (data);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1124904119 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1124904119;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.515 -0400", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "410842D78D65BB116562653640C4B06D")
     public synchronized int getLength() {
         int var2FA47F7C65FEC19CC163B195725E3844_832958853 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594585513 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594585513;
-        // ---------- Original Method ----------
-        //return length;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.516 -0400", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "AA72BCD11BB5A774DA9ECDBC76B20446")
     public synchronized int getOffset() {
         int var7A86C157EE9713C34FBD7A1EE40F0C5A_1801315639 = (offset);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771290092 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771290092;
-        // ---------- Original Method ----------
-        //return offset;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.516 -0400", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "EADBAF92ED4576C142D3C29408E35E3A")
     public synchronized int getPort() {
         int var901555FB06E346CB065CEB9808DCFC25_1512787092 = (port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214308098 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214308098;
-        // ---------- Original Method ----------
-        //return port;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.517 -0400", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "D8DF36BE09A5C0C183F7A65469BFBDCD")
     public synchronized void setAddress(InetAddress addr) {
         address = addr;
-        // ---------- Original Method ----------
-        //address = addr;
+        
+        
     }
 
     
@@ -163,43 +169,45 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_25946464 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_25946464.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_25946464;
-        } //End block
+        } 
         this.data = data;
         this.offset = offset;
         this.length = byteCount;
         this.capacity = byteCount;
-        // ---------- Original Method ----------
-        //if ((offset | byteCount) < 0 || offset > data.length || byteCount > data.length - offset) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.data = data;
-        //this.offset = offset;
-        //this.length = byteCount;
-        //this.capacity = byteCount;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.519 -0400", hash_original_method = "90578DC03777F39E5EBE6643D9CBD4FE", hash_generated_method = "F1FEFC07A80B686715A77B87B4CF8AB9")
     public synchronized void setData(byte[] buf) {
         length = buf.length;
         capacity = buf.length;
         data = buf;
         offset = 0;
-        // ---------- Original Method ----------
-        //length = buf.length;
-        //capacity = buf.length;
-        //data = buf;
-        //offset = 0;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.520 -0400", hash_original_method = "59C864B14A0070866D297CD091E1F29D", hash_generated_method = "B08F1460AC9CE86D3366EFCAF33FE7D7")
     synchronized int getCapacity() {
         int var7BD14A231864E618E1840C7E117E59C1_205682587 = (capacity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833088091 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1833088091;
-        // ---------- Original Method ----------
-        //return capacity;
+        
+        
     }
 
     
@@ -207,9 +215,9 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
     public synchronized void setLength(int length) {
         setLengthOnly(length);
         this.capacity = length;
-        // ---------- Original Method ----------
-        //setLengthOnly(length);
-        //this.capacity = length;
+        
+        
+        
     }
 
     
@@ -221,14 +229,14 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
                     ", buffer size=" + data.length);
             var262F27E12A9C32D12DC57A578C38084E_275469921.addTaint(taint);
             throw var262F27E12A9C32D12DC57A578C38084E_275469921;
-        } //End block
+        } 
         this.length = length;
-        // ---------- Original Method ----------
-        //if (length < 0 || offset + length > data.length) {
-            //throw new IndexOutOfBoundsException("length=" + length + ", offset=" + offset +
-                    //", buffer size=" + data.length);
-        //}
-        //this.length = length;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -239,13 +247,13 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
             IllegalArgumentException varBD3B2D468FFD082696C46A032ABFAA1F_322591847 = new IllegalArgumentException("Port out of range: " + aPort);
             varBD3B2D468FFD082696C46A032ABFAA1F_322591847.addTaint(taint);
             throw varBD3B2D468FFD082696C46A032ABFAA1F_322591847;
-        } //End block
+        } 
         port = aPort;
-        // ---------- Original Method ----------
-        //if (aPort < 0 || aPort > 65535) {
-            //throw new IllegalArgumentException("Port out of range: " + aPort);
-        //}
-        //port = aPort;
+        
+        
+            
+        
+        
     }
 
     
@@ -254,8 +262,8 @@ InetAddress var814577DDD37BAFB17E08CBEFDB411BAE_750542648 =         address;
 SocketAddress var3731533601FB8E22E4B6038576E63FE5_2064687791 =         new InetSocketAddress(getAddress(), getPort());
         var3731533601FB8E22E4B6038576E63FE5_2064687791.addTaint(taint);
         return var3731533601FB8E22E4B6038576E63FE5_2064687791;
-        // ---------- Original Method ----------
-        //return new InetSocketAddress(getAddress(), getPort());
+        
+        
     }
 
     
@@ -268,27 +276,27 @@ SocketAddress var3731533601FB8E22E4B6038576E63FE5_2064687791 =         new InetS
                     (sockAddr == null ? null : sockAddr.getClass()));
             var6557C2EA5B0CB00A26D2A66FC9689864_1170290516.addTaint(taint);
             throw var6557C2EA5B0CB00A26D2A66FC9689864_1170290516;
-        } //End block
+        } 
         InetSocketAddress inetAddr = (InetSocketAddress) sockAddr;
     if(inetAddr.isUnresolved())        
         {
             IllegalArgumentException varAC5D37D883D53A7A168540FB6F85003B_1004216910 = new IllegalArgumentException("Socket address unresolved: " + sockAddr);
             varAC5D37D883D53A7A168540FB6F85003B_1004216910.addTaint(taint);
             throw varAC5D37D883D53A7A168540FB6F85003B_1004216910;
-        } //End block
+        } 
         port = inetAddr.getPort();
         address = inetAddr.getAddress();
-        // ---------- Original Method ----------
-        //if (!(sockAddr instanceof InetSocketAddress)) {
-            //throw new IllegalArgumentException("Socket address not an InetSocketAddress: " +
-                    //(sockAddr == null ? null : sockAddr.getClass()));
-        //}
-        //InetSocketAddress inetAddr = (InetSocketAddress) sockAddr;
-        //if (inetAddr.isUnresolved()) {
-            //throw new IllegalArgumentException("Socket address unresolved: " + sockAddr);
-        //}
-        //port = inetAddr.getPort();
-        //address = inetAddr.getAddress();
+        
+        
+            
+                    
+        
+        
+        
+            
+        
+        
+        
     }
 
     

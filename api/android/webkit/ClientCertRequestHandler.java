@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,11 +32,11 @@ public final class ClientCertRequestHandler {
         mHandle = handle;
         mHostAndPort = host_and_port;
         mTable = table;
-        // ---------- Original Method ----------
-        //mBrowserFrame = browserFrame;
-        //mHandle = handle;
-        //mHostAndPort = host_and_port;
-        //mTable = table;
+        
+        
+        
+        
+        
     }
 
     
@@ -49,33 +49,33 @@ public final class ClientCertRequestHandler {
         try 
         {
             chainBytes = NativeCrypto.encodeCertificates(chain);
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             mBrowserFrame.nativeSslClientCert(mHandle, null, null);
             return;
-        } //End block
+        } 
         mTable.Allow(mHostAndPort, privateKeyBytes, chainBytes);
         mBrowserFrame.nativeSslClientCert(mHandle, privateKeyBytes, chainBytes);
-        // ---------- Original Method ----------
-        //byte[] privateKeyBytes = privateKey.getEncoded();
-        //byte[][] chainBytes;
-        //try {
-            //chainBytes = NativeCrypto.encodeCertificates(chain);
-        //} catch (CertificateEncodingException e) {
-            //mBrowserFrame.nativeSslClientCert(mHandle, null, null);
-            //return;
-        //}
-        //mTable.Allow(mHostAndPort, privateKeyBytes, chainBytes);
-        //mBrowserFrame.nativeSslClientCert(mHandle, privateKeyBytes, chainBytes);
+        
+        
+        
+        
+            
+        
+            
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.499 -0400", hash_original_method = "FA404A4E1A97322F22CB23ECA9545548", hash_generated_method = "6C467D92C3B4D0C786BB58115DA32A26")
     public void ignore() {
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
-        // ---------- Original Method ----------
-        //mBrowserFrame.nativeSslClientCert(mHandle, null, null);
+        
+        
     }
 
     
@@ -83,9 +83,9 @@ public final class ClientCertRequestHandler {
     public void cancel() {
         mTable.Deny(mHostAndPort);
         mBrowserFrame.nativeSslClientCert(mHandle, null, null);
-        // ---------- Original Method ----------
-        //mTable.Deny(mHostAndPort);
-        //mBrowserFrame.nativeSslClientCert(mHandle, null, null);
+        
+        
+        
     }
 
     

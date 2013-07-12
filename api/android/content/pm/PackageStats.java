@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,8 +39,8 @@ public class PackageStats implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.992 -0400", hash_original_method = "737D88E00D7006B4B823AA249FAC1157", hash_generated_method = "5E53E1C258E36EC9592C568752FD2612")
     public  PackageStats(String pkgName) {
         packageName = pkgName;
-        // ---------- Original Method ----------
-        //packageName = pkgName;
+        
+        
     }
 
     
@@ -55,16 +55,16 @@ public class PackageStats implements Parcelable {
         externalCacheSize = source.readLong();
         externalMediaSize = source.readLong();
         externalObbSize = source.readLong();
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //codeSize = source.readLong();
-        //dataSize = source.readLong();
-        //cacheSize = source.readLong();
-        //externalCodeSize = source.readLong();
-        //externalDataSize = source.readLong();
-        //externalCacheSize = source.readLong();
-        //externalMediaSize = source.readLong();
-        //externalObbSize = source.readLong();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -79,19 +79,20 @@ public class PackageStats implements Parcelable {
         externalCacheSize = pStats.externalCacheSize;
         externalMediaSize = pStats.externalMediaSize;
         externalObbSize = pStats.externalObbSize;
-        // ---------- Original Method ----------
-        //packageName = pStats.packageName;
-        //codeSize = pStats.codeSize;
-        //dataSize = pStats.dataSize;
-        //cacheSize = pStats.cacheSize;
-        //externalCodeSize = pStats.externalCodeSize;
-        //externalDataSize = pStats.externalDataSize;
-        //externalCacheSize = pStats.externalCacheSize;
-        //externalMediaSize = pStats.externalMediaSize;
-        //externalObbSize = pStats.externalObbSize;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.995 -0400", hash_original_method = "3FE5C26F51751E2E83526086B9D94747", hash_generated_method = "88EB71437735669EFDA93D7B67FF9F74")
     public String toString() {
         final StringBuilder sb = new StringBuilder("PackageStats{");
@@ -117,41 +118,43 @@ public class PackageStats implements Parcelable {
 String var2460B846747F8B22185AD8BE722266A5_321758442 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_321758442.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_321758442;
-        // ---------- Original Method ----------
-        //final StringBuilder sb = new StringBuilder("PackageStats{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(" packageName=");
-        //sb.append(packageName);
-        //sb.append(",codeSize=");
-        //sb.append(codeSize);
-        //sb.append(",dataSize=");
-        //sb.append(dataSize);
-        //sb.append(",cacheSize=");
-        //sb.append(cacheSize);
-        //sb.append(",externalCodeSize=");
-        //sb.append(externalCodeSize);
-        //sb.append(",externalDataSize=");
-        //sb.append(externalDataSize);
-        //sb.append(",externalCacheSize=");
-        //sb.append(externalCacheSize);
-        //sb.append(",externalMediaSize=");
-        //sb.append(externalMediaSize);
-        //sb.append(",externalObbSize=");
-        //sb.append(externalObbSize);
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.996 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC6FC74B11B282DF905FDC81A7CA7BEF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_800195307 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022269727 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2022269727;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:13.996 -0400", hash_original_method = "458D37590174ACFE991A170204705742", hash_generated_method = "AC049E07A9482650F5A15F2661ABFA24")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);
@@ -165,16 +168,16 @@ String var2460B846747F8B22185AD8BE722266A5_321758442 =         sb.toString();
         dest.writeLong(externalCacheSize);
         dest.writeLong(externalMediaSize);
         dest.writeLong(externalObbSize);
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeLong(codeSize);
-        //dest.writeLong(dataSize);
-        //dest.writeLong(cacheSize);
-        //dest.writeLong(externalCodeSize);
-        //dest.writeLong(externalDataSize);
-        //dest.writeLong(externalCacheSize);
-        //dest.writeLong(externalMediaSize);
-        //dest.writeLong(externalObbSize);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -190,12 +193,12 @@ String var2460B846747F8B22185AD8BE722266A5_321758442 =         sb.toString();
             return new PackageStats[size];
         }
     };
-    // orphaned legacy method
+    
     public PackageStats createFromParcel(Parcel in) {
             return new PackageStats(in);
         }
     
-    // orphaned legacy method
+    
     public PackageStats[] newArray(int size) {
             return new PackageStats[size];
         }

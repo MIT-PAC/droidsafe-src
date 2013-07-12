@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ErrorInfoParser extends ParametersParser {
     public  ErrorInfoParser(String errorInfo) {
         super(errorInfo);
         addTaint(errorInfo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class ErrorInfoParser extends ParametersParser {
     protected  ErrorInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,23 +53,23 @@ public class ErrorInfoParser extends ParametersParser {
     if(lexer.lookAhead(0) == ',')                        
                         {
                             this.lexer.match(',');
-                        } //End block
+                        } 
                         else
                         break;
-                    } //End block
+                    } 
 } while (true);
-            } //End block
+            } 
 SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_410240638 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_410240638.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_410240638;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("ErrorInfoParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

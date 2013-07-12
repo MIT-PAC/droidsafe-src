@@ -1,6 +1,6 @@
 package android.os.storage;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,14 +43,14 @@ public class StorageVolume implements Parcelable {
         mMtpReserveSpace = mtpReserveSpace;
         mAllowMassStorage = allowMassStorage;
         mMaxFileSize = maxFileSize;
-        // ---------- Original Method ----------
-        //mPath = path;
-        //mDescription = description;
-        //mRemovable = removable;
-        //mEmulated = emulated;
-        //mMtpReserveSpace = mtpReserveSpace;
-        //mAllowMassStorage = allowMassStorage;
-        //mMaxFileSize = maxFileSize;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -66,103 +66,112 @@ public class StorageVolume implements Parcelable {
         mAllowMassStorage = allowMassStorage;
         mStorageId = storageId;
         mMaxFileSize = maxFileSize;
-        // ---------- Original Method ----------
-        //mPath = path;
-        //mDescription = description;
-        //mRemovable = removable;
-        //mEmulated = emulated;
-        //mMtpReserveSpace = mtpReserveSpace;
-        //mAllowMassStorage = allowMassStorage;
-        //mStorageId = storageId;
-        //mMaxFileSize = maxFileSize;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.144 -0400", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "31AE5325311C652EAEF1D2DBB618913C")
     public String getPath() {
 String var6AF672BCA4D9DB76D759DE4D6BEB1D5F_500619381 =         mPath;
         var6AF672BCA4D9DB76D759DE4D6BEB1D5F_500619381.addTaint(taint);
         return var6AF672BCA4D9DB76D759DE4D6BEB1D5F_500619381;
-        // ---------- Original Method ----------
-        //return mPath;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.144 -0400", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "31DFDA3773CCBA7572B3EAD39CA9446C")
     public String getDescription() {
 String var2094894B2BDB1315AACD05A5CC5702EE_1705989994 =         mDescription;
         var2094894B2BDB1315AACD05A5CC5702EE_1705989994.addTaint(taint);
         return var2094894B2BDB1315AACD05A5CC5702EE_1705989994;
-        // ---------- Original Method ----------
-        //return mDescription;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.145 -0400", hash_original_method = "C8355C5823499E966C6E9C9BBED7B59B", hash_generated_method = "830C8D07CE6232800B0E0E597FB44657")
     public boolean isRemovable() {
         boolean varBA2C430BDE7AD99954A160F0B96DA6E4_571106939 = (mRemovable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_160340479 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_160340479;
-        // ---------- Original Method ----------
-        //return mRemovable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.145 -0400", hash_original_method = "3969E4BD26F514DAFEA3D81664C42C95", hash_generated_method = "642FF4D5739F4DE6C15C55C105CD4326")
     public boolean isEmulated() {
         boolean varBB81BAE7E9AD52D1C2A9CFC73AB6E39F_655980240 = (mEmulated);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_540747083 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_540747083;
-        // ---------- Original Method ----------
-        //return mEmulated;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.145 -0400", hash_original_method = "D91614A87EF069B6CB0CB580F9424F2A", hash_generated_method = "6FCFFAFFA6A92146CACA517342EABA39")
     public int getStorageId() {
         int varA211BEEE10AFE736EE5E9E3E7140A322_1897537352 = (mStorageId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063641458 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2063641458;
-        // ---------- Original Method ----------
-        //return mStorageId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.146 -0400", hash_original_method = "DF85DF3474DF218FD90EC56A476BBB47", hash_generated_method = "F681C9EB234C13040C7D4D682143B82F")
     public void setStorageId(int index) {
         mStorageId = ((index + 1) << 16) + 1;
-        // ---------- Original Method ----------
-        //mStorageId = ((index + 1) << 16) + 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.146 -0400", hash_original_method = "AD5CC5267CED7BD79E23E2B3D995596D", hash_generated_method = "358CE18BEFAFCCB84A66C31FC2DD0804")
     public int getMtpReserveSpace() {
         int var44CF13B011CB07C962C5DA973669BEB6_2048028752 = (mMtpReserveSpace);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_229873438 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_229873438;
-        // ---------- Original Method ----------
-        //return mMtpReserveSpace;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.148 -0400", hash_original_method = "70EAD3302E25E04AF22ADA1536C85D6E", hash_generated_method = "47EE097EEB0C2D58A75B69C4CD64A56D")
     public boolean allowMassStorage() {
         boolean var570ECAEBA3421EAED0D3DCFAEDD80845_659560678 = (mAllowMassStorage);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971631871 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_971631871;
-        // ---------- Original Method ----------
-        //return mAllowMassStorage;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.148 -0400", hash_original_method = "F3A7583351778AC1576078A1D9F37684", hash_generated_method = "F0B15067E07B60EE77DF5F0A63764AF6")
     public long getMaxFileSize() {
         long var902454EC5B152CFEA9735C0AAF77CDE8_1833299975 = (mMaxFileSize);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_528037043 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_528037043;
-        // ---------- Original Method ----------
-        //return mMaxFileSize;
+        
+        
     }
 
     
@@ -176,16 +185,16 @@ String var2094894B2BDB1315AACD05A5CC5702EE_1705989994 =         mDescription;
             boolean var9B8452F3AD11AF21C68F28464D024491_1945287903 = ((mPath.equals(volume.mPath)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_921523996 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_921523996;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_656534878 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1527565058 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1527565058;
-        // ---------- Original Method ----------
-        //if (obj instanceof StorageVolume && mPath != null) {
-            //StorageVolume volume = (StorageVolume)obj;
-            //return (mPath.equals(volume.mPath));
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -195,8 +204,8 @@ String var2094894B2BDB1315AACD05A5CC5702EE_1705989994 =         mDescription;
         int var91505B387843ABE5CFE8E6D2D0D4EF18_1055566111 = (mPath.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925320620 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_925320620;
-        // ---------- Original Method ----------
-        //return mPath.hashCode();
+        
+        
     }
 
     
@@ -209,21 +218,22 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_575296915 =         "StorageVolume [m
                 + mRemovable + ", mStorageId=" + mStorageId + "]";
         var9443433D85C13A1FE1614AF3CE2A3CEF_575296915.addTaint(taint);
         return var9443433D85C13A1FE1614AF3CE2A3CEF_575296915;
-        // ---------- Original Method ----------
-        //return "StorageVolume [mAllowMassStorage=" + mAllowMassStorage + ", mDescription="
-                //+ mDescription + ", mEmulated=" + mEmulated + ", mMaxFileSize=" + mMaxFileSize
-                //+ ", mMtpReserveSpace=" + mMtpReserveSpace + ", mPath=" + mPath + ", mRemovable="
-                //+ mRemovable + ", mStorageId=" + mStorageId + "]";
+        
+        
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.149 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E2B33A22618A3E99C15D461ADCE26A89")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1750334563 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_656776145 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_656776145;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -239,15 +249,15 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_575296915 =         "StorageVolume [m
         parcel.writeInt(mMtpReserveSpace);
         parcel.writeInt(mAllowMassStorage ? 1 : 0);
         parcel.writeLong(mMaxFileSize);
-        // ---------- Original Method ----------
-        //parcel.writeString(mPath);
-        //parcel.writeString(mDescription);
-        //parcel.writeInt(mRemovable ? 1 : 0);
-        //parcel.writeInt(mEmulated ? 1 : 0);
-        //parcel.writeInt(mStorageId);
-        //parcel.writeInt(mMtpReserveSpace);
-        //parcel.writeInt(mAllowMassStorage ? 1 : 0);
-        //parcel.writeLong(mMaxFileSize);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -276,7 +286,7 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_575296915 =         "StorageVolume [m
             return new StorageVolume[size];
         }
     };
-    // orphaned legacy method
+    
     public StorageVolume createFromParcel(Parcel in) {
             String path = in.readString();
             String description = in.readString();
@@ -291,7 +301,7 @@ String var9443433D85C13A1FE1614AF3CE2A3CEF_575296915 =         "StorageVolume [m
                     storageId, allowMassStorage == 1, maxFileSize);
         }
     
-    // orphaned legacy method
+    
     public StorageVolume[] newArray(int size) {
             return new StorageVolume[size];
         }

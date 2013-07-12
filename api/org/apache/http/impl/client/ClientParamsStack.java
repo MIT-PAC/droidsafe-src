@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,11 +33,11 @@ public class ClientParamsStack extends AbstractHttpParams {
         clientParams      = cparams;
         requestParams     = rparams;
         overrideParams    = oparams;
-        // ---------- Original Method ----------
-        //applicationParams = aparams;
-        //clientParams      = cparams;
-        //requestParams     = rparams;
-        //overrideParams    = oparams;
+        
+        
+        
+        
+        
     }
 
     
@@ -48,7 +48,7 @@ public class ClientParamsStack extends AbstractHttpParams {
              stack.getRequestParams(),
              stack.getOverrideParams());
         addTaint(stack.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -65,7 +65,7 @@ public class ClientParamsStack extends AbstractHttpParams {
         addTaint(cparams.getTaint());
         addTaint(aparams.getTaint());
         addTaint(stack.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -74,8 +74,8 @@ public class ClientParamsStack extends AbstractHttpParams {
 HttpParams var7945C5CD29912AE84B51B5555B2E3FD1_503131686 =         applicationParams;
         var7945C5CD29912AE84B51B5555B2E3FD1_503131686.addTaint(taint);
         return var7945C5CD29912AE84B51B5555B2E3FD1_503131686;
-        // ---------- Original Method ----------
-        //return applicationParams;
+        
+        
     }
 
     
@@ -84,8 +84,8 @@ HttpParams var7945C5CD29912AE84B51B5555B2E3FD1_503131686 =         applicationPa
 HttpParams var4ED3C0E8A5C13064D8D55F030D61EBE8_627590206 =         clientParams;
         var4ED3C0E8A5C13064D8D55F030D61EBE8_627590206.addTaint(taint);
         return var4ED3C0E8A5C13064D8D55F030D61EBE8_627590206;
-        // ---------- Original Method ----------
-        //return clientParams;
+        
+        
     }
 
     
@@ -94,8 +94,8 @@ HttpParams var4ED3C0E8A5C13064D8D55F030D61EBE8_627590206 =         clientParams;
 HttpParams var62C79F52706619CE99D0ED6A53571A56_1574160781 =         requestParams;
         var62C79F52706619CE99D0ED6A53571A56_1574160781.addTaint(taint);
         return var62C79F52706619CE99D0ED6A53571A56_1574160781;
-        // ---------- Original Method ----------
-        //return requestParams;
+        
+        
     }
 
     
@@ -104,8 +104,8 @@ HttpParams var62C79F52706619CE99D0ED6A53571A56_1574160781 =         requestParam
 HttpParams var882137B6A0312415D38CC638EFA3E6F8_1533749947 =         overrideParams;
         var882137B6A0312415D38CC638EFA3E6F8_1533749947.addTaint(taint);
         return var882137B6A0312415D38CC638EFA3E6F8_1533749947;
-        // ---------- Original Method ----------
-        //return overrideParams;
+        
+        
     }
 
     
@@ -118,53 +118,53 @@ HttpParams var882137B6A0312415D38CC638EFA3E6F8_1533749947 =         overridePara
                 ("Parameter name must not be null.");
             var3FC67FE07BF58C90BEBF6F753BF67E4C_1576264033.addTaint(taint);
             throw var3FC67FE07BF58C90BEBF6F753BF67E4C_1576264033;
-        } //End block
+        } 
         Object result = null;
     if(overrideParams != null)        
         {
             result = overrideParams.getParameter(name);
-        } //End block
+        } 
     if((result == null) && (requestParams != null))        
         {
             result = requestParams.getParameter(name);
-        } //End block
+        } 
     if((result == null) && (clientParams != null))        
         {
             result = clientParams.getParameter(name);
-        } //End block
+        } 
     if((result == null) && (applicationParams != null))        
         {
             result = applicationParams.getParameter(name);
-        } //End block
+        } 
     if(this.log.isDebugEnabled())        
         {
             this.log.debug("'" + name + "': " + result);
-        } //End block
+        } 
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1966650131 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1966650131.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1966650131;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException
-                //("Parameter name must not be null.");
-        //}
-        //Object result = null;
-        //if (overrideParams != null) {
-            //result = overrideParams.getParameter(name);
-        //}
-        //if ((result == null) && (requestParams != null)) {
-            //result = requestParams.getParameter(name);
-        //}
-        //if ((result == null) && (clientParams != null)) {
-            //result = clientParams.getParameter(name);
-        //}
-        //if ((result == null) && (applicationParams != null)) {
-            //result = applicationParams.getParameter(name);
-        //}
-        //if (this.log.isDebugEnabled()) {
-            //this.log.debug("'" + name + "': " + result);
-        //}
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -176,9 +176,9 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1966650131 =         result;
             ("Setting parameters in a stack is not supported.");
         var557F47975E6EEF696214487688534EB1_1910862985.addTaint(taint);
         throw var557F47975E6EEF696214487688534EB1_1910862985;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException
-            //("Setting parameters in a stack is not supported.");
+        
+        
+            
     }
 
     
@@ -189,19 +189,20 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1966650131 =         result;
         ("Removing parameters in a stack is not supported.");
         var5A55E1140B542B4286586C76AEBC5187_4457249.addTaint(taint);
         throw var5A55E1140B542B4286586C76AEBC5187_4457249;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException
-        //("Removing parameters in a stack is not supported.");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.374 -0400", hash_original_method = "EA9D71906AA8F5EAFC46BDFADD14632A", hash_generated_method = "4E02A34A2490DE1E370102611A4110D3")
     public HttpParams copy() {
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_589795936 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_589795936.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_589795936;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     

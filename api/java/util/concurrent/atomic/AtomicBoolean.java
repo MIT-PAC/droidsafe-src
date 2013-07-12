@@ -1,6 +1,6 @@
 package java.util.concurrent.atomic;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,14 +14,14 @@ public class AtomicBoolean implements java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.653 -0400", hash_original_method = "2D4043190EFF6FBF71F6E61F91ACE979", hash_generated_method = "FFDDA23FDAF935FA94934FA7D0DF7A90")
     public  AtomicBoolean(boolean initialValue) {
         value = initialValue ? 1 : 0;
-        // ---------- Original Method ----------
-        //value = initialValue ? 1 : 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.653 -0400", hash_original_method = "4EFA45A0BE6632C845A9BA70932A5A0A", hash_generated_method = "6F354300E0EEDCD66A892901A02868C4")
     public  AtomicBoolean() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,8 +30,8 @@ public class AtomicBoolean implements java.io.Serializable {
         boolean var80940A95783E22E347BA247FD5DDC6D8_1388993774 = (value != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1739617769 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1739617769;
-        // ---------- Original Method ----------
-        //return value != 0;
+        
+        
     }
 
     
@@ -44,13 +44,14 @@ public class AtomicBoolean implements java.io.Serializable {
         boolean var5CA3B571703752D24BCB264E904FBACC_1008659883 = (unsafe.compareAndSwapInt(this, valueOffset, e, u));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1915550624 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1915550624;
-        // ---------- Original Method ----------
-        //int e = expect ? 1 : 0;
-        //int u = update ? 1 : 0;
-        //return unsafe.compareAndSwapInt(this, valueOffset, e, u);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.654 -0400", hash_original_method = "788D44D9ED0FFD916FA1001367F68A82", hash_generated_method = "81215A83F9A8580C423DE29DCDA26868")
     public boolean weakCompareAndSet(boolean expect, boolean update) {
         addTaint(update);
@@ -60,18 +61,18 @@ public class AtomicBoolean implements java.io.Serializable {
         boolean var5CA3B571703752D24BCB264E904FBACC_1828864992 = (unsafe.compareAndSwapInt(this, valueOffset, e, u));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_415987399 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_415987399;
-        // ---------- Original Method ----------
-        //int e = expect ? 1 : 0;
-        //int u = update ? 1 : 0;
-        //return unsafe.compareAndSwapInt(this, valueOffset, e, u);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.655 -0400", hash_original_method = "FD0CF162327E2AB30C8884FB52F6FB5F", hash_generated_method = "8AC023BF8D2529665F05AB859DBF8644")
     public final void set(boolean newValue) {
         value = newValue ? 1 : 0;
-        // ---------- Original Method ----------
-        //value = newValue ? 1 : 0;
+        
+        
     }
 
     
@@ -80,9 +81,9 @@ public class AtomicBoolean implements java.io.Serializable {
         addTaint(newValue);
         int v = newValue ? 1 : 0;
         unsafe.putOrderedInt(this, valueOffset, v);
-        // ---------- Original Method ----------
-        //int v = newValue ? 1 : 0;
-        //unsafe.putOrderedInt(this, valueOffset, v);
+        
+        
+        
     }
 
     
@@ -98,23 +99,24 @@ for(;;)
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1519342935 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1519342935;
             }
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //boolean current = get();
-            //if (compareAndSet(current, newValue))
-                //return current;
-        //}
+        } 
+        
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.656 -0400", hash_original_method = "A5A2E0E9AE6072C3F7FFFC3FCCD2C5BC", hash_generated_method = "37134153D4AD0410A98E6157CD5BB53C")
     public String toString() {
 String var04FF01733FCCCBE212341A4CEBFC4CB8_684806915 =         Boolean.toString(get());
         var04FF01733FCCCBE212341A4CEBFC4CB8_684806915.addTaint(taint);
         return var04FF01733FCCCBE212341A4CEBFC4CB8_684806915;
-        // ---------- Original Method ----------
-        //return Boolean.toString(get());
+        
+        
     }
 
     

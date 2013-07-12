@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,23 +53,24 @@ public class SSLRecordProtocol {
         this.alertProtocol.setRecordProtocol(this);
         this.in = in;
         this.appData = appData;
-        // ---------- Original Method ----------
-        //this.handshakeProtocol = handshakeProtocol;
-        //this.handshakeProtocol.setRecordProtocol(this);
-        //this.alertProtocol = alertProtocol;
-        //this.alertProtocol.setRecordProtocol(this);
-        //this.in = in;
-        //this.appData = appData;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.182 -0400", hash_original_method = "19D70A4F8DD7A34083C18DBEE5C3AF9E", hash_generated_method = "369996266563CB6F91A4C99B03F4FA75")
     protected SSLSessionImpl getSession() {
 SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_1382051866.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_1382051866;
-        // ---------- Original Method ----------
-        //return session;
+        
+        
     }
 
     
@@ -80,10 +81,10 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             : 5 + activeReadState.getMinFragmentSize());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431019754 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_431019754;
-        // ---------- Original Method ----------
-        //return (activeReadState == null)
-            //? 6 
-            //: 5 + activeReadState.getMinFragmentSize();
+        
+        
+            
+            
     }
 
     
@@ -95,7 +96,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             int var239CE55A5AE9BDD83798F7C4033F7869_237016237 = (5+data_size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1921669162 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1921669162;
-        } //End block
+        } 
         else
         {
             int res = 5 + activeWriteState.getFragmentSize(data_size);
@@ -104,16 +105,16 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                 : res);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13059894 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13059894;
-        } //End block
-        // ---------- Original Method ----------
-        //if (activeWriteState == null) {
-            //return 5+data_size; 
-        //} else {
-            //int res = 5 + activeWriteState.getFragmentSize(data_size);
-            //return (res > MAX_CIPHERED_DATA_LENGTH)
-                //? MAX_CIPHERED_DATA_LENGTH 
-                //: res;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+                
+        
     }
 
     
@@ -126,25 +127,25 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             int varC2E6165532CF4FFAEB702006BA2AB3A9_1205895236 = (MAX_DATA_LENGTH);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_85082469 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_85082469;
-        } //End block
+        } 
     if(activeReadState == null)        
         {
             int varE77ED5820E231418AE62BDD254429D27_276529485 = (record_size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596138751 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596138751;
-        } //End block
+        } 
         int var5856C8FCCA560CBE844D87CBDAA00F35_492178147 = (activeReadState.getContentSize(record_size));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1396932752 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1396932752;
-        // ---------- Original Method ----------
-        //record_size -= 5;
-        //if (record_size > MAX_CIPHERED_DATA_LENGTH) {
-            //return MAX_DATA_LENGTH;
-        //}
-        //if (activeReadState == null) {
-            //return record_size;
-        //}
-        //return activeReadState.getContentSize(record_size);
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -156,9 +157,9 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
         byte[] var2519B23D0F73BF8C42649E975474F591_950698638 = (wrap(content_type, fragment, 0, fragment.length));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2143114080 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2143114080;
-        // ---------- Original Method ----------
-        //byte[] fragment = dataStream.getData(MAX_DATA_LENGTH);
-        //return wrap(content_type, fragment, 0, fragment.length);
+        
+        
+        
     }
 
     
@@ -174,7 +175,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             logger.println("SSLRecordProtocol.wrap: TLSPlaintext.fragment["
                     +len+"]:");
             logger.print(fragment, offset, len);
-        } //End block
+        } 
     if(len > MAX_DATA_LENGTH)        
         {
             AlertException var72ECBD9ACE893B3681FE38634B652114_1459125955 = new AlertException(
@@ -184,7 +185,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                     + " > MAX_DATA_LENGTH == "+MAX_DATA_LENGTH));
             var72ECBD9ACE893B3681FE38634B652114_1459125955.addTaint(taint);
             throw var72ECBD9ACE893B3681FE38634B652114_1459125955;
-        } //End block
+        } 
         byte[] ciphered_fragment = fragment;
     if(activeWriteState != null)        
         {
@@ -198,19 +199,19 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                         "The ciphered data increased more than on 1024 bytes"));
                 var95CD82F8DA13841835B0AC4A3FE97ADC_1737569161.addTaint(taint);
                 throw var95CD82F8DA13841835B0AC4A3FE97ADC_1737569161;
-            } //End block
+            } 
     if(logger != null)            
             {
                 logger.println("SSLRecordProtocol.wrap: TLSCiphertext.fragment["
                         +ciphered_fragment.length+"]:");
                 logger.print(ciphered_fragment);
-            } //End block
-        } //End block
+            } 
+        } 
         byte[] var1170D28E7A60B066BB4D9CED6205C833_2091942992 = (packetize(content_type, version, ciphered_fragment));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_730385087 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_730385087;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -225,32 +226,32 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
         {
             buff[1] = version[0];
             buff[2] = version[1];
-        } //End block
+        } 
         else
         {
             buff[1] = 3;
             buff[2] = 1;
-        } //End block
+        } 
         buff[3] = (byte) ((0x00FF00 & fragment.length) >> 8);
         buff[4] = (byte) (0x0000FF & fragment.length);
         System.arraycopy(fragment, 0, buff, 5, fragment.length);
         byte[] var93B3D744BAB6E783CC1F4A2C79531378_2080140765 = (buff);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1107975538 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1107975538;
-        // ---------- Original Method ----------
-        //byte[] buff = new byte[5+fragment.length];
-        //buff[0] = type;
-        //if (version != null) {
-            //buff[1] = version[0];
-            //buff[2] = version[1];
-        //} else {
-            //buff[1] = 3;
-            //buff[2] = 1;
-        //}
-        //buff[3] = (byte) ((0x00FF00 & fragment.length) >> 8);
-        //buff[4] = (byte) (0x0000FF & fragment.length);
-        //System.arraycopy(fragment, 0, buff, 5, fragment.length);
-        //return buff;
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -262,31 +263,31 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             {
                 logger.println("SSLRecordProtocol.setSession: Set pending session");
                 logger.println("  cipher name: " + session.getCipherSuite());
-            } //End block
+            } 
             this.session = session;
             pendingConnectionState = ((version == null) || (version[1] == 1))
                 ? (ConnectionState) new ConnectionStateTLS(getSession())
                 : (ConnectionState) new ConnectionStateSSLv3(getSession());
             sessionWasChanged = true;
-        } //End block
+        } 
         else
         {
             sessionWasChanged = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!sessionWasChanged) {
-            //if (logger != null) {
-                //logger.println("SSLRecordProtocol.setSession: Set pending session");
-                //logger.println("  cipher name: " + session.getCipherSuite());
-            //}
-            //this.session = session;
-            //pendingConnectionState = ((version == null) || (version[1] == 1))
-                //? (ConnectionState) new ConnectionStateTLS(getSession())
-                //: (ConnectionState) new ConnectionStateSSLv3(getSession());
-            //sessionWasChanged = true;
-        //} else {
-            //sessionWasChanged = false;
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+            
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -300,14 +301,14 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                     ContentType.CHANGE_CIPHER_SPEC, version[0],
                         version[1], 0, 1, 1
                 };
-        } //End block
+        } 
         else
         {
             change_cipher_spec_message =
                 packetize(ContentType.CHANGE_CIPHER_SPEC, version,
                         activeWriteState.encrypt(ContentType.CHANGE_CIPHER_SPEC,
                             change_cipher_spec_byte, 0, 1));
-        } //End block
+        } 
         setSession(session);
         activeWriteState = pendingConnectionState;
     if(logger != null)        
@@ -315,12 +316,12 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             logger.println("SSLRecordProtocol.getChangeCipherSpecMesage");
             logger.println("activeWriteState = pendingConnectionState");
             logger.print(change_cipher_spec_message);
-        } //End block
+        } 
         byte[] varE46FA0A0A49AA2023DD3EA49E87E6F0B_71455669 = (change_cipher_spec_message);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_797528402 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_797528402;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -329,7 +330,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
     if(logger != null)        
         {
             logger.println("SSLRecordProtocol.unwrap: BEGIN [");
-        } //End block
+        } 
         int type = in.readUint8();
     if((type < ContentType.CHANGE_CIPHER_SPEC)
                 || (type > ContentType.APPLICATION_DATA))        
@@ -337,7 +338,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
     if(logger != null)            
             {
                 logger.println("Non v3.1 message type:" + type);
-            } //End block
+            } 
     if(type >= 0x80)            
             {
                 int length = (type & 0x7f) << 8 | in.read();
@@ -347,21 +348,21 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                 {
                     logger.println(
                             "SSLRecordProtocol:unwrap ] END, SSLv2 type");
-                } //End block
+                } 
                 int var7BE4F7A8C74B1CEA810A58C415AC26C8_1043069754 = (ContentType.HANDSHAKE);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944442521 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1944442521;
-            } //End block
+            } 
             AlertException var88B2FB02D6F7A28025E19E24D8F6BCC7_1048195334 = new AlertException(AlertProtocol.UNEXPECTED_MESSAGE,
                     new SSLProtocolException(
                         "Unexpected message type has been received: "+type));
             var88B2FB02D6F7A28025E19E24D8F6BCC7_1048195334.addTaint(taint);
             throw var88B2FB02D6F7A28025E19E24D8F6BCC7_1048195334;
-        } //End block
+        } 
     if(logger != null)        
         {
             logger.println("Got the message of type: " + type);
-        } //End block
+        } 
     if(version != null)        
         {
     if((in.read() != version[0])
@@ -373,17 +374,17 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                             type));
                 var88B2FB02D6F7A28025E19E24D8F6BCC7_2030149396.addTaint(taint);
                 throw var88B2FB02D6F7A28025E19E24D8F6BCC7_2030149396;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             in.skip(2);
-        } //End block
+        } 
         int length = in.readUint16();
     if(logger != null)        
         {
             logger.println("TLSCiphertext.fragment["+length+"]: ...");
-        } //End block
+        } 
     if(length > MAX_CIPHERED_DATA_LENGTH)        
         {
             AlertException varF6B25F46FA3E04711B13E7DDE0524207_1135453860 = new AlertException(AlertProtocol.RECORD_OVERFLOW,
@@ -391,12 +392,12 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                         "Received message is too big."));
             varF6B25F46FA3E04711B13E7DDE0524207_1135453860.addTaint(taint);
             throw varF6B25F46FA3E04711B13E7DDE0524207_1135453860;
-        } //End block
+        } 
         byte[] fragment = in.read(length);
     if(logger != null)        
         {
             logger.print(fragment);
-        } //End block
+        } 
     if(activeReadState != null)        
         {
             fragment = activeReadState.decrypt((byte) type, fragment);
@@ -404,8 +405,8 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
             {
                 logger.println("TLSPlaintext.fragment:");
                 logger.print(fragment);
-            } //End block
-        } //End block
+            } 
+        } 
     if(fragment.length > MAX_DATA_LENGTH)        
         {
             AlertException var288609FC07EF2A149C439A51D7E06583_1703578050 = new AlertException(AlertProtocol.DECOMPRESSION_FAILURE,
@@ -413,7 +414,7 @@ SSLSessionImpl varD555E544A66E0F97DA6BCDE940E3E79C_1382051866 =         session;
                         "Decompressed plain data is too big."));
             var288609FC07EF2A149C439A51D7E06583_1703578050.addTaint(taint);
             throw var288609FC07EF2A149C439A51D7E06583_1703578050;
-        } //End block
+        } 
 switch(type){
         case ContentType.CHANGE_CIPHER_SPEC:
         handshakeProtocol.receiveChangeCipherSpec();
@@ -421,7 +422,7 @@ switch(type){
     if(logger != null)        
         {
             logger.println("activeReadState = pendingConnectionState");
-        } //End block
+        } 
         activeReadState = pendingConnectionState;
         break;
         case ContentType.ALERT:
@@ -436,7 +437,7 @@ switch(type){
             logger.println(
                             "TLSCiphertext.unwrap: APP DATA["+length+"]:");
             logger.println(new String(fragment));
-        } //End block
+        } 
         appData.append(fragment);
         break;
         default:
@@ -449,12 +450,12 @@ switch(type){
 }    if(logger != null)        
         {
             logger.println("SSLRecordProtocol:unwrap ] END, type: " + type);
-        } //End block
+        } 
         int var599DCCE2998A6B40B1E38E8C6006CB0A_2090928948 = (type);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2072903657 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2072903657;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -465,21 +466,22 @@ switch(type){
     if(logger != null)        
         {
             logger.println("SSLRecordProtocol.allert: "+level+" "+description);
-        } //End block
+        } 
         alertProtocol.alert(level, description);
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("SSLRecordProtocol.allert: "+level+" "+description);
-        //}
-        //alertProtocol.alert(level, description);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.196 -0400", hash_original_method = "DE69782F4CD99CC5C5DEED4E3A6B9F4E", hash_generated_method = "8F61383BC58CF2000382CEE86F416B66")
     protected void setVersion(byte[] ver) {
         this.version = ver;
-        // ---------- Original Method ----------
-        //this.version = ver;
+        
+        
     }
 
     
@@ -494,37 +496,37 @@ switch(type){
     if(pendingConnectionState != null)        
         {
             pendingConnectionState.shutdown();
-        } //End block
+        } 
         pendingConnectionState = null;
     if(activeReadState != null)        
         {
             activeReadState.shutdown();
-        } //End block
+        } 
         activeReadState = null;
     if(activeReadState != null)        
         {
             activeReadState.shutdown();
-        } //End block
+        } 
         activeWriteState = null;
-        // ---------- Original Method ----------
-        //session = null;
-        //version = null;
-        //in = null;
-        //handshakeProtocol = null;
-        //alertProtocol = null;
-        //appData = null;
-        //if (pendingConnectionState != null) {
-            //pendingConnectionState.shutdown();
-        //}
-        //pendingConnectionState = null;
-        //if (activeReadState != null) {
-            //activeReadState.shutdown();
-        //}
-        //activeReadState = null;
-        //if (activeReadState != null) {
-            //activeReadState.shutdown();
-        //}
-        //activeWriteState = null;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     

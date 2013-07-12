@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,10 +23,10 @@ public class InetSocketAddress extends SocketAddress {
         this.addr = null;
         this.hostname = null;
         this.port = -1;
-        // ---------- Original Method ----------
-        //this.addr = null;
-        //this.hostname = null;
-        //this.port = -1;
+        
+        
+        
+        
     }
 
     
@@ -34,7 +34,7 @@ public class InetSocketAddress extends SocketAddress {
     public  InetSocketAddress(int port) {
         this((InetAddress) null, port);
         addTaint(port);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,17 +45,17 @@ public class InetSocketAddress extends SocketAddress {
             IllegalArgumentException var85A8ACB08F64870E8355BDC8963AF636_1666235347 = new IllegalArgumentException("port=" + port);
             var85A8ACB08F64870E8355BDC8963AF636_1666235347.addTaint(taint);
             throw var85A8ACB08F64870E8355BDC8963AF636_1666235347;
-        } //End block
+        } 
         this.addr = (address == null) ? Inet4Address.ANY : address;
         this.hostname = null;
         this.port = port;
-        // ---------- Original Method ----------
-        //if (port < 0 || port > 65535) {
-            //throw new IllegalArgumentException("port=" + port);
-        //}
-        //this.addr = (address == null) ? Inet4Address.ANY : address;
-        //this.hostname = null;
-        //this.port = port;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -64,7 +64,7 @@ public class InetSocketAddress extends SocketAddress {
         this(host, port, true);
         addTaint(port);
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -76,7 +76,7 @@ public class InetSocketAddress extends SocketAddress {
             IllegalArgumentException var6CDF6FA7F951A63D323FEB16F3FFED6C_473371318 = new IllegalArgumentException("host=" + hostname + ", port=" + port);
             var6CDF6FA7F951A63D323FEB16F3FFED6C_473371318.addTaint(taint);
             throw var6CDF6FA7F951A63D323FEB16F3FFED6C_473371318;
-        } //End block
+        } 
         InetAddress addr = null;
     if(needResolved)        
         {
@@ -84,29 +84,29 @@ public class InetSocketAddress extends SocketAddress {
             {
                 addr = InetAddress.getByName(hostname);
                 hostname = null;
-            } //End block
+            } 
             catch (UnknownHostException ignored)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         this.addr = addr;
         this.hostname = hostname;
         this.port = port;
-        // ---------- Original Method ----------
-        //if (hostname == null || port < 0 || port > 65535) {
-            //throw new IllegalArgumentException("host=" + hostname + ", port=" + port);
-        //}
-        //InetAddress addr = null;
-        //if (needResolved) {
-            //try {
-                //addr = InetAddress.getByName(hostname);
-                //hostname = null;
-            //} catch (UnknownHostException ignored) {
-            //}
-        //}
-        //this.addr = addr;
-        //this.hostname = hostname;
-        //this.port = port;
+        
+        
+            
+        
+        
+        
+            
+                
+                
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -120,8 +120,8 @@ public class InetSocketAddress extends SocketAddress {
         int var901555FB06E346CB065CEB9808DCFC25_1198874680 = (port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_766950991 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_766950991;
-        // ---------- Original Method ----------
-        //return port;
+        
+        
     }
 
     
@@ -130,8 +130,8 @@ public class InetSocketAddress extends SocketAddress {
 InetAddress var93F8352EAB50DBA73F526833D82E48F9_397726426 =         addr;
         var93F8352EAB50DBA73F526833D82E48F9_397726426.addTaint(taint);
         return var93F8352EAB50DBA73F526833D82E48F9_397726426;
-        // ---------- Original Method ----------
-        //return addr;
+        
+        
     }
 
     
@@ -140,8 +140,8 @@ InetAddress var93F8352EAB50DBA73F526833D82E48F9_397726426 =         addr;
 String varAC60CAEE0ED0B1E182673A2E3E7A6307_893171917 =         (addr != null) ? addr.getHostName() : hostname;
         varAC60CAEE0ED0B1E182673A2E3E7A6307_893171917.addTaint(taint);
         return varAC60CAEE0ED0B1E182673A2E3E7A6307_893171917;
-        // ---------- Original Method ----------
-        //return (addr != null) ? addr.getHostName() : hostname;
+        
+        
     }
 
     
@@ -150,8 +150,8 @@ String varAC60CAEE0ED0B1E182673A2E3E7A6307_893171917 =         (addr != null) ? 
 String varA176FBB649535D87C7C729399E998756_1281109013 =         (hostname != null) ? hostname : addr.getHostAddress();
         varA176FBB649535D87C7C729399E998756_1281109013.addTaint(taint);
         return varA176FBB649535D87C7C729399E998756_1281109013;
-        // ---------- Original Method ----------
-        //return (hostname != null) ? hostname : addr.getHostAddress();
+        
+        
     }
 
     
@@ -160,8 +160,8 @@ String varA176FBB649535D87C7C729399E998756_1281109013 =         (hostname != nul
         boolean varAF772B268FBA8C120460CEDF303B798C_1292870208 = (addr == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1917602495 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1917602495;
-        // ---------- Original Method ----------
-        //return addr == null;
+        
+        
     }
 
     
@@ -171,8 +171,8 @@ String varA176FBB649535D87C7C729399E998756_1281109013 =         (hostname != nul
 String var1B7CAFC033DE18D29F647AE499B2444D_551237079 =         ((addr != null) ? addr.toString() : hostname) + ":" + port;
         var1B7CAFC033DE18D29F647AE499B2444D_551237079.addTaint(taint);
         return var1B7CAFC033DE18D29F647AE499B2444D_551237079;
-        // ---------- Original Method ----------
-        //return ((addr != null) ? addr.toString() : hostname) + ":" + port;
+        
+        
     }
 
     
@@ -185,53 +185,53 @@ String var1B7CAFC033DE18D29F647AE499B2444D_551237079 =         ((addr != null) ?
             boolean varB326B5062B2F0E69046810717534CB09_1113278648 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104587834 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2104587834;
-        } //End block
+        } 
     if(!(socketAddr instanceof InetSocketAddress))        
         {
             boolean var68934A3E9455FA72420237EB05902327_865555202 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_703524657 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_703524657;
-        } //End block
+        } 
         InetSocketAddress iSockAddr = (InetSocketAddress) socketAddr;
     if(port != iSockAddr.port)        
         {
             boolean var68934A3E9455FA72420237EB05902327_984221644 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_532754372 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_532754372;
-        } //End block
+        } 
     if((addr == null) && (iSockAddr.addr == null))        
         {
             boolean varBAB89A7C24C90095B361AC56141979C1_1911578426 = (hostname.equals(iSockAddr.hostname));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1459445365 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1459445365;
-        } //End block
+        } 
     if(addr == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_235069207 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1776697712 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1776697712;
-        } //End block
+        } 
         boolean var625AACD729EAE77DCC7B80EB17B04339_1795315201 = (addr.equals(iSockAddr.addr));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121072492 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1121072492;
-        // ---------- Original Method ----------
-        //if (this == socketAddr) {
-            //return true;
-        //}
-        //if (!(socketAddr instanceof InetSocketAddress)) {
-            //return false;
-        //}
-        //InetSocketAddress iSockAddr = (InetSocketAddress) socketAddr;
-        //if (port != iSockAddr.port) {
-            //return false;
-        //}
-        //if ((addr == null) && (iSockAddr.addr == null)) {
-            //return hostname.equals(iSockAddr.hostname);
-        //}
-        //if (addr == null) {
-            //return false;
-        //}
-        //return addr.equals(iSockAddr.addr);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -243,15 +243,15 @@ String var1B7CAFC033DE18D29F647AE499B2444D_551237079 =         ((addr != null) ?
             int var6A7487EEFDF19E84AC70A27C0BADA2F0_16127556 = (hostname.hashCode() + port);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756857787 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756857787;
-        } //End block
+        } 
         int var00EDC9A626FBDEBADB981528C3D06165_1050192754 = (addr.hashCode() + port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1930092101 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1930092101;
-        // ---------- Original Method ----------
-        //if (addr == null) {
-            //return hostname.hashCode() + port;
-        //}
-        //return addr.hashCode() + port;
+        
+        
+            
+        
+        
     }
 
     
@@ -259,8 +259,8 @@ String var1B7CAFC033DE18D29F647AE499B2444D_551237079 =         ((addr != null) ?
     private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         addTaint(stream.getTaint());
         stream.defaultReadObject();
-        // ---------- Original Method ----------
-        //stream.defaultReadObject();
+        
+        
     }
 
     

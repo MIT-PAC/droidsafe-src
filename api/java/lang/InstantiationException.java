@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class InstantiationException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.910 -0400", hash_original_method = "4FE52ED96718E49A2C12E29EB6D41BB1", hash_generated_method = "41A9F8C5A9604CBE4AC2140585ED8858")
     public  InstantiationException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class InstantiationException extends Exception {
     public  InstantiationException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,7 +25,7 @@ public class InstantiationException extends Exception {
       InstantiationException(Class<?> clazz) {
         super(clazz.getName());
         addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

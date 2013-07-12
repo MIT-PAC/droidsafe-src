@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,14 +24,14 @@ public class BasicPoolEntryRef extends WeakReference<BasicPoolEntry> {
                 ("Pool entry must not be null.");
             varD6302AFC160661DCD8E9B63B55D40A10_1991837704.addTaint(taint);
             throw varD6302AFC160661DCD8E9B63B55D40A10_1991837704;
-        } //End block
+        } 
         route = entry.getPlannedRoute();
-        // ---------- Original Method ----------
-        //if (entry == null) {
-            //throw new IllegalArgumentException
-                //("Pool entry must not be null.");
-        //}
-        //route = entry.getPlannedRoute();
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -40,8 +40,8 @@ public class BasicPoolEntryRef extends WeakReference<BasicPoolEntry> {
 HttpRoute varB98EE6416538ED05061231EA0E9F2622_2020790081 =         this.route;
         varB98EE6416538ED05061231EA0E9F2622_2020790081.addTaint(taint);
         return varB98EE6416538ED05061231EA0E9F2622_2020790081;
-        // ---------- Original Method ----------
-        //return this.route;
+        
+        
     }
 
     

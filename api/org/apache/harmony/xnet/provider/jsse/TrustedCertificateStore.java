@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,7 +39,7 @@ public final class TrustedCertificateStore {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.794 -0400", hash_original_method = "2FF99D64326A5347B39C240182ABD235", hash_generated_method = "D7D90E22E15F31DCC7BD51E02E748945")
     public  TrustedCertificateStore() {
         this(CA_CERTS_DIR_SYSTEM, CA_CERTS_DIR_ADDED, CA_CERTS_DIR_DELETED);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,10 +48,10 @@ public final class TrustedCertificateStore {
         this.systemDir = systemDir;
         this.addedDir = addedDir;
         this.deletedDir = deletedDir;
-        // ---------- Original Method ----------
-        //this.systemDir = systemDir;
-        //this.addedDir = addedDir;
-        //this.deletedDir = deletedDir;
+        
+        
+        
+        
     }
 
     
@@ -71,8 +71,8 @@ public final class TrustedCertificateStore {
 Certificate var34CF93B0721C7E0C6C2DF014388C5C0F_708685985 =         getCertificate(alias, false);
         var34CF93B0721C7E0C6C2DF014388C5C0F_708685985.addTaint(taint);
         return var34CF93B0721C7E0C6C2DF014388C5C0F_708685985;
-        // ---------- Original Method ----------
-        //return getCertificate(alias, false);
+        
+        
     }
 
     
@@ -86,7 +86,7 @@ Certificate var34CF93B0721C7E0C6C2DF014388C5C0F_708685985 =         getCertifica
 Certificate var540C13E9E156B687226421B24F2DF178_1130281241 =             null;
             var540C13E9E156B687226421B24F2DF178_1130281241.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1130281241;
-        } //End block
+        } 
         X509Certificate cert = readCertificate(file);
     if(cert == null || (isSystem(alias)
                              && !includeDeletedSystem
@@ -95,22 +95,22 @@ Certificate var540C13E9E156B687226421B24F2DF178_1130281241 =             null;
 Certificate var540C13E9E156B687226421B24F2DF178_92039865 =             null;
             var540C13E9E156B687226421B24F2DF178_92039865.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_92039865;
-        } //End block
+        } 
 Certificate var0676091B2EE61AF2C17793D245ACD3DD_1279015249 =         cert;
         var0676091B2EE61AF2C17793D245ACD3DD_1279015249.addTaint(taint);
         return var0676091B2EE61AF2C17793D245ACD3DD_1279015249;
-        // ---------- Original Method ----------
-        //File file = fileForAlias(alias);
-        //if (file == null || (isUser(alias) && isTombstone(file))) {
-            //return null;
-        //}
-        //X509Certificate cert = readCertificate(file);
-        //if (cert == null || (isSystem(alias)
-                             //&& !includeDeletedSystem
-                             //&& isDeletedSystemCertificate(cert))) {
-            //return null;
-        //}
-        //return cert;
+        
+        
+        
+            
+        
+        
+        
+                             
+                             
+            
+        
+        
     }
 
     
@@ -122,48 +122,48 @@ Certificate var0676091B2EE61AF2C17793D245ACD3DD_1279015249 =         cert;
             NullPointerException varA41DA010B75092C1DC41FB26CB17ACAE_347912020 = new NullPointerException("alias == null");
             varA41DA010B75092C1DC41FB26CB17ACAE_347912020.addTaint(taint);
             throw varA41DA010B75092C1DC41FB26CB17ACAE_347912020;
-        } //End block
+        } 
         File file;
     if(isSystem(alias))        
         {
             file = new File(systemDir, alias.substring(PREFIX_SYSTEM.length()));
-        } //End block
+        } 
         else
     if(isUser(alias))        
         {
             file = new File(addedDir, alias.substring(PREFIX_USER.length()));
-        } //End block
+        } 
         else
         {
 File var540C13E9E156B687226421B24F2DF178_734888676 =             null;
             var540C13E9E156B687226421B24F2DF178_734888676.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_734888676;
-        } //End block
+        } 
     if(!file.exists() || isTombstone(file))        
         {
 File var540C13E9E156B687226421B24F2DF178_728598863 =             null;
             var540C13E9E156B687226421B24F2DF178_728598863.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_728598863;
-        } //End block
+        } 
 File varADCB75793FA1DABACC5DEBFFAE466050_349170514 =         file;
         varADCB75793FA1DABACC5DEBFFAE466050_349170514.addTaint(taint);
         return varADCB75793FA1DABACC5DEBFFAE466050_349170514;
-        // ---------- Original Method ----------
-        //if (alias == null) {
-            //throw new NullPointerException("alias == null");
-        //}
-        //File file;
-        //if (isSystem(alias)) {
-            //file = new File(systemDir, alias.substring(PREFIX_SYSTEM.length()));
-        //} else if (isUser(alias)) {
-            //file = new File(addedDir, alias.substring(PREFIX_USER.length()));
-        //} else {
-            //return null;
-        //}
-        //if (!file.exists() || isTombstone(file)) {
-            //return null;
-        //}
-        //return file;
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -173,8 +173,8 @@ File varADCB75793FA1DABACC5DEBFFAE466050_349170514 =         file;
         boolean var1B093743044925EF47B4A58AB54ED1F4_1648784267 = (file.length() == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_739830155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_739830155;
-        // ---------- Original Method ----------
-        //return file.length() == 0;
+        
+        
     }
 
     
@@ -186,7 +186,7 @@ File varADCB75793FA1DABACC5DEBFFAE466050_349170514 =         file;
 X509Certificate var540C13E9E156B687226421B24F2DF178_1960837073 =             null;
             var540C13E9E156B687226421B24F2DF178_1960837073.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1960837073;
-        } //End block
+        } 
         InputStream is = null;
         try 
         {
@@ -194,38 +194,38 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_1960837073 =             nul
 X509Certificate var9BCAF5C8FABC3B464F8FED85E7673E82_266922838 =             (X509Certificate) CERT_FACTORY.generateCertificate(is);
             var9BCAF5C8FABC3B464F8FED85E7673E82_266922838.addTaint(taint);
             return var9BCAF5C8FABC3B464F8FED85E7673E82_266922838;
-        } //End block
+        } 
         catch (IOException e)
         {
 X509Certificate var540C13E9E156B687226421B24F2DF178_1497475197 =             null;
             var540C13E9E156B687226421B24F2DF178_1497475197.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1497475197;
-        } //End block
+        } 
         catch (CertificateException e)
         {
 X509Certificate var540C13E9E156B687226421B24F2DF178_184946694 =             null;
             var540C13E9E156B687226421B24F2DF178_184946694.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_184946694;
-        } //End block
+        } 
         finally 
         {
             IoUtils.closeQuietly(is);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!file.isFile()) {
-            //return null;
-        //}
-        //InputStream is = null;
-        //try {
-            //is = new BufferedInputStream(new FileInputStream(file));
-            //return (X509Certificate) CERT_FACTORY.generateCertificate(is);
-        //} catch (IOException e) {
-            //return null;
-        //} catch (CertificateException e) {
-            //return null;
-        //} finally {
-            //IoUtils.closeQuietly(is);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -242,25 +242,25 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_184946694 =             null
         {
             os = new FileOutputStream(file);
             os.write(cert.getEncoded());
-        } //End block
+        } 
         finally 
         {
             IoUtils.closeQuietly(os);
-        } //End block
+        } 
         file.setReadable(true, false);
-        // ---------- Original Method ----------
-        //File dir = file.getParentFile();
-        //dir.mkdirs();
-        //dir.setReadable(true, false);
-        //dir.setExecutable(true, false);
-        //OutputStream os = null;
-        //try {
-            //os = new FileOutputStream(file);
-            //os.write(cert.getEncoded());
-        //} finally {
-            //IoUtils.closeQuietly(os);
-        //}
-        //file.setReadable(true, false);
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -270,8 +270,8 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_184946694 =             null
         boolean var1CD6EA7BB8481483763D77050B420765_1166521038 = (getCertificateFile(deletedDir, x).exists());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1503944024 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1503944024;
-        // ---------- Original Method ----------
-        //return getCertificateFile(deletedDir, x).exists();
+        
+        
     }
 
     
@@ -283,37 +283,37 @@ X509Certificate var540C13E9E156B687226421B24F2DF178_184946694 =             null
 Date var540C13E9E156B687226421B24F2DF178_391453721 =             null;
             var540C13E9E156B687226421B24F2DF178_391453721.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_391453721;
-        } //End block
+        } 
         File file = fileForAlias(alias);
     if(file == null)        
         {
 Date var540C13E9E156B687226421B24F2DF178_371606336 =             null;
             var540C13E9E156B687226421B24F2DF178_371606336.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_371606336;
-        } //End block
+        } 
         long time = file.lastModified();
     if(time == 0)        
         {
 Date var540C13E9E156B687226421B24F2DF178_223717154 =             null;
             var540C13E9E156B687226421B24F2DF178_223717154.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_223717154;
-        } //End block
+        } 
 Date var896776638DD62A3893EDE2E435DD8281_1018263486 =         new Date(time);
         var896776638DD62A3893EDE2E435DD8281_1018263486.addTaint(taint);
         return var896776638DD62A3893EDE2E435DD8281_1018263486;
-        // ---------- Original Method ----------
-        //if (!containsAlias(alias)) {
-            //return null;
-        //}
-        //File file = fileForAlias(alias);
-        //if (file == null) {
-            //return null;
-        //}
-        //long time = file.lastModified();
-        //if (time == 0) {
-            //return null;
-        //}
-        //return new Date(time);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -325,11 +325,11 @@ Date var896776638DD62A3893EDE2E435DD8281_1018263486 =         new Date(time);
 Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_398527806 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_398527806.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_398527806;
-        // ---------- Original Method ----------
-        //Set<String> result = new HashSet<String>();
-        //addAliases(result, PREFIX_USER, addedDir);
-        //addAliases(result, PREFIX_SYSTEM, systemDir);
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
@@ -340,10 +340,10 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_398527806 =         result;
 Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1528143766 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1528143766.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1528143766;
-        // ---------- Original Method ----------
-        //Set<String> result = new HashSet<String>();
-        //addAliases(result, PREFIX_USER, addedDir);
-        //return result;
+        
+        
+        
+        
     }
 
     
@@ -356,26 +356,26 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1528143766 =         result;
     if(files == null)        
         {
             return;
-        } //End block
+        } 
 for(String filename : files)
         {
             String alias = prefix + filename;
     if(containsAlias(alias))            
             {
                 result.add(alias);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //String[] files = dir.list();
-        //if (files == null) {
-            //return;
-        //}
-        //for (String filename : files) {
-            //String alias = prefix + filename;
-            //if (containsAlias(alias)) {
-                //result.add(alias);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -388,31 +388,31 @@ for(String filename : files)
 Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_605477722 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_605477722.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_605477722;
-        } //End block
+        } 
 for(String filename : files)
         {
             String alias = PREFIX_SYSTEM + filename;
     if(containsAlias(alias, true))            
             {
                 result.add(alias);
-            } //End block
-        } //End block
+            } 
+        } 
 Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1057505065 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1057505065.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1057505065;
-        // ---------- Original Method ----------
-        //Set<String> result = new HashSet<String>();
-        //String[] files = systemDir.list();
-        //if (files == null) {
-            //return result;
-        //}
-        //for (String filename : files) {
-            //String alias = PREFIX_SYSTEM + filename;
-            //if (containsAlias(alias, true)) {
-                //result.add(alias);
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -422,8 +422,8 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1057505065 =         result;
         boolean var06E3CB8F0C80A8165722275EEE68A85C_494701259 = (containsAlias(alias, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687466738 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687466738;
-        // ---------- Original Method ----------
-        //return containsAlias(alias, false);
+        
+        
     }
 
     
@@ -434,8 +434,8 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1057505065 =         result;
         boolean var3449F19C692B39D6ED693477F288EFDB_511994875 = (getCertificate(alias, includeDeletedSystem) != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687080627 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687080627;
-        // ---------- Original Method ----------
-        //return getCertificate(alias, includeDeletedSystem) != null;
+        
+        
     }
 
     
@@ -447,7 +447,7 @@ Set<String> varDC838461EE2FA0CA4C9BBB70A15456B0_1057505065 =         result;
 String var540C13E9E156B687226421B24F2DF178_137565105 =             null;
             var540C13E9E156B687226421B24F2DF178_137565105.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_137565105;
-        } //End block
+        } 
         X509Certificate x = (X509Certificate) c;
         File user = getCertificateFile(addedDir, x);
     if(user.exists())        
@@ -455,40 +455,40 @@ String var540C13E9E156B687226421B24F2DF178_137565105 =             null;
 String var79C1D66B74638932E1A2EB20AD554BDF_214087631 =             PREFIX_USER + user.getName();
             var79C1D66B74638932E1A2EB20AD554BDF_214087631.addTaint(taint);
             return var79C1D66B74638932E1A2EB20AD554BDF_214087631;
-        } //End block
+        } 
     if(isDeletedSystemCertificate(x))        
         {
 String var540C13E9E156B687226421B24F2DF178_340861345 =             null;
             var540C13E9E156B687226421B24F2DF178_340861345.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_340861345;
-        } //End block
+        } 
         File system = getCertificateFile(systemDir, x);
     if(system.exists())        
         {
 String var7496BDA00E051F88FD6DD694E3969BA4_1567289567 =             PREFIX_SYSTEM + system.getName();
             var7496BDA00E051F88FD6DD694E3969BA4_1567289567.addTaint(taint);
             return var7496BDA00E051F88FD6DD694E3969BA4_1567289567;
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_1005527781 =         null;
         var540C13E9E156B687226421B24F2DF178_1005527781.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1005527781;
-        // ---------- Original Method ----------
-        //if (c == null || !(c instanceof X509Certificate)) {
-            //return null;
-        //}
-        //X509Certificate x = (X509Certificate) c;
-        //File user = getCertificateFile(addedDir, x);
-        //if (user.exists()) {
-            //return PREFIX_USER + user.getName();
-        //}
-        //if (isDeletedSystemCertificate(x)) {
-            //return null;
-        //}
-        //File system = getCertificateFile(systemDir, x);
-        //if (system.exists()) {
-            //return PREFIX_SYSTEM + system.getName();
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -504,13 +504,13 @@ String var540C13E9E156B687226421B24F2DF178_1005527781 =         null;
 File var908387D27739B0137405CF0F79F5D3A2_1567570415 =         findCert(dir, x.getSubjectX500Principal(), selector, File.class);
         var908387D27739B0137405CF0F79F5D3A2_1567570415.addTaint(taint);
         return var908387D27739B0137405CF0F79F5D3A2_1567570415;
-        // ---------- Original Method ----------
-        //CertSelector selector = new CertSelector() {
-            //@Override public boolean match(X509Certificate cert) {
-                //return cert.equals(x);
-            //}
-        //};
-        //return findCert(dir, x.getSubjectX500Principal(), selector, File.class);
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -531,7 +531,7 @@ File var908387D27739B0137405CF0F79F5D3A2_1567570415 =         findCert(dir, x.ge
             boolean varB326B5062B2F0E69046810717534CB09_931965599 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742999253 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_742999253;
-        } //End block
+        } 
         X509Certificate system = findCert(systemDir,
                                           c.getSubjectX500Principal(),
                                           selector,
@@ -539,24 +539,24 @@ File var908387D27739B0137405CF0F79F5D3A2_1567570415 =         findCert(dir, x.ge
         boolean var197FF1C305F491512393422FC0EA510B_65214866 = (system != null && !isDeletedSystemCertificate(system));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1103599878 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1103599878;
-        // ---------- Original Method ----------
-        //CertSelector selector = new CertSelector() {
-            //@Override public boolean match(X509Certificate ca) {
-                //return ca.getPublicKey().equals(c.getPublicKey());
-            //}
-        //};
-        //boolean user = findCert(addedDir,
-                                //c.getSubjectX500Principal(),
-                                //selector,
-                                //Boolean.class);
-        //if (user) {
-            //return true;
-        //}
-        //X509Certificate system = findCert(systemDir,
-                                          //c.getSubjectX500Principal(),
-                                          //selector,
-                                          //X509Certificate.class);
-        //return system != null && !isDeletedSystemCertificate(system);
+        
+        
+            
+                
+            
+        
+        
+                                
+                                
+                                
+        
+            
+        
+        
+                                          
+                                          
+                                          
+        
     }
 
     
@@ -580,38 +580,38 @@ File var908387D27739B0137405CF0F79F5D3A2_1567570415 =         findCert(dir, x.ge
 X509Certificate var1ABA5703084F105A1CF02655AEDE82C9_1796117660 =             user;
             var1ABA5703084F105A1CF02655AEDE82C9_1796117660.addTaint(taint);
             return var1ABA5703084F105A1CF02655AEDE82C9_1796117660;
-        } //End block
+        } 
         X509Certificate system = findCert(systemDir, issuer, selector, X509Certificate.class);
     if(system != null && !isDeletedSystemCertificate(system))        
         {
 X509Certificate varAAC0E5809FFEDD1FFBA9E1AB58112E83_850913407 =             system;
             varAAC0E5809FFEDD1FFBA9E1AB58112E83_850913407.addTaint(taint);
             return varAAC0E5809FFEDD1FFBA9E1AB58112E83_850913407;
-        } //End block
+        } 
 X509Certificate var540C13E9E156B687226421B24F2DF178_387682560 =         null;
         var540C13E9E156B687226421B24F2DF178_387682560.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_387682560;
-        // ---------- Original Method ----------
-        //CertSelector selector = new CertSelector() {
-            //@Override public boolean match(X509Certificate ca) {
-                //try {
-                    //c.verify(ca.getPublicKey());
-                    //return true;
-                //} catch (Exception e) {
-                    //return false;
-                //}
-            //}
-        //};
-        //X500Principal issuer = c.getIssuerX500Principal();
-        //X509Certificate user = findCert(addedDir, issuer, selector, X509Certificate.class);
-        //if (user != null) {
-            //return user;
-        //}
-        //X509Certificate system = findCert(systemDir, issuer, selector, X509Certificate.class);
-        //if (system != null && !isDeletedSystemCertificate(system)) {
-            //return system;
-        //}
-        //return null;
+        
+        
+            
+                
+                    
+                    
+                
+                    
+                
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -633,26 +633,26 @@ for(int index = 0;true;index++)
 T varEEA82B1F5951E79A49A59D17E2B4064C_1827828418 =                     (T) Boolean.FALSE;
                     varEEA82B1F5951E79A49A59D17E2B4064C_1827828418.addTaint(taint);
                     return varEEA82B1F5951E79A49A59D17E2B4064C_1827828418;
-                } //End block
+                } 
     if(desiredReturnType == File.class)                
                 {
 T varF370AF19C57A14797EFDE924F649B8A2_812464626 =                     (T) file;
                     varF370AF19C57A14797EFDE924F649B8A2_812464626.addTaint(taint);
                     return varF370AF19C57A14797EFDE924F649B8A2_812464626;
-                } //End block
+                } 
 T var540C13E9E156B687226421B24F2DF178_1649080552 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1649080552.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1649080552;
-            } //End block
+            } 
     if(isTombstone(file))            
             {
                 continue;
-            } //End block
+            } 
             X509Certificate cert = readCertificate(file);
     if(cert == null)            
             {
                 continue;
-            } //End block
+            } 
     if(selector.match(cert))            
             {
     if(desiredReturnType == X509Certificate.class)                
@@ -660,26 +660,26 @@ T var540C13E9E156B687226421B24F2DF178_1649080552 =                 null;
 T var317015959638CAF4FFAC3A88AE5CE017_909999849 =                     (T) cert;
                     var317015959638CAF4FFAC3A88AE5CE017_909999849.addTaint(taint);
                     return var317015959638CAF4FFAC3A88AE5CE017_909999849;
-                } //End block
+                } 
     if(desiredReturnType == Boolean.class)                
                 {
 T varE0E5C48B656ACCBA0CDB3CC6914BAD9C_170739478 =                     (T) Boolean.TRUE;
                     varE0E5C48B656ACCBA0CDB3CC6914BAD9C_170739478.addTaint(taint);
                     return varE0E5C48B656ACCBA0CDB3CC6914BAD9C_170739478;
-                } //End block
+                } 
     if(desiredReturnType == File.class)                
                 {
 T varF370AF19C57A14797EFDE924F649B8A2_1442166942 =                     (T) file;
                     varF370AF19C57A14797EFDE924F649B8A2_1442166942.addTaint(taint);
                     return varF370AF19C57A14797EFDE924F649B8A2_1442166942;
-                } //End block
+                } 
                 AssertionError varA81442E36297E737EB908877E58260E8_1369099906 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_1369099906.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_1369099906;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -690,9 +690,9 @@ T varF370AF19C57A14797EFDE924F649B8A2_1442166942 =                     (T) file;
 String var8E81D6965289FBD7A7179D30AB2A8DC2_316708972 =         IntegralToString.intToHexString(hash, false, 8);
         var8E81D6965289FBD7A7179D30AB2A8DC2_316708972.addTaint(taint);
         return var8E81D6965289FBD7A7179D30AB2A8DC2_316708972;
-        // ---------- Original Method ----------
-        //int hash = NativeCrypto.X509_NAME_hash_old(name);
-        //return IntegralToString.intToHexString(hash, false, 8);
+        
+        
+        
     }
 
     
@@ -704,8 +704,8 @@ String var8E81D6965289FBD7A7179D30AB2A8DC2_316708972 =         IntegralToString.
 File var7052B15222CCC1779653D77CA0B77A2A_1214886192 =         new File(dir, hash + '.' + index);
         var7052B15222CCC1779653D77CA0B77A2A_1214886192.addTaint(taint);
         return var7052B15222CCC1779653D77CA0B77A2A_1214886192;
-        // ---------- Original Method ----------
-        //return new File(dir, hash + '.' + index);
+        
+        
     }
 
     
@@ -717,7 +717,7 @@ File var7052B15222CCC1779653D77CA0B77A2A_1214886192 =         new File(dir, hash
             NullPointerException var525F7DA6B6A738254A551583BF1EC23F_1812134748 = new NullPointerException("cert == null");
             var525F7DA6B6A738254A551583BF1EC23F_1812134748.addTaint(taint);
             throw var525F7DA6B6A738254A551583BF1EC23F_1812134748;
-        } //End block
+        } 
         File system = getCertificateFile(systemDir, cert);
     if(system.exists())        
         {
@@ -729,37 +729,37 @@ File var7052B15222CCC1779653D77CA0B77A2A_1214886192 =         new File(dir, hash
                     IOException var5A30D546C7E155FB9F49096879543BC5_1800580797 = new IOException("Could not remove " + deleted);
                     var5A30D546C7E155FB9F49096879543BC5_1800580797.addTaint(taint);
                     throw var5A30D546C7E155FB9F49096879543BC5_1800580797;
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         File user = getCertificateFile(addedDir, cert);
     if(user.exists())        
         {
             return;
-        } //End block
+        } 
         writeCertificate(user, cert);
-        // ---------- Original Method ----------
-        //if (cert == null) {
-            //throw new NullPointerException("cert == null");
-        //}
-        //File system = getCertificateFile(systemDir, cert);
-        //if (system.exists()) {
-            //File deleted = getCertificateFile(deletedDir, cert);
-            //if (deleted.exists()) {
-                //if (!deleted.delete()) {
-                    //throw new IOException("Could not remove " + deleted);
-                //}
-                //return;
-            //}
-            //return;
-        //}
-        //File user = getCertificateFile(addedDir, cert);
-        //if (user.exists()) {
-            //return;
-        //}
-        //writeCertificate(user, cert);
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -769,58 +769,58 @@ File var7052B15222CCC1779653D77CA0B77A2A_1214886192 =         new File(dir, hash
     if(alias == null)        
         {
             return;
-        } //End block
+        } 
         File file = fileForAlias(alias);
     if(file == null)        
         {
             return;
-        } //End block
+        } 
     if(isSystem(alias))        
         {
             X509Certificate cert = readCertificate(file);
     if(cert == null)            
             {
                 return;
-            } //End block
+            } 
             File deleted = getCertificateFile(deletedDir, cert);
     if(deleted.exists())            
             {
                 return;
-            } //End block
+            } 
             writeCertificate(deleted, cert);
             return;
-        } //End block
+        } 
     if(isUser(alias))        
         {
             new FileOutputStream(file).close();
             removeUnnecessaryTombstones(alias);
             return;
-        } //End block
-        // ---------- Original Method ----------
-        //if (alias == null) {
-            //return;
-        //}
-        //File file = fileForAlias(alias);
-        //if (file == null) {
-            //return;
-        //}
-        //if (isSystem(alias)) {
-            //X509Certificate cert = readCertificate(file);
-            //if (cert == null) {
-                //return;
-            //}
-            //File deleted = getCertificateFile(deletedDir, cert);
-            //if (deleted.exists()) {
-                //return;
-            //}
-            //writeCertificate(deleted, cert);
-            //return;
-        //}
-        //if (isUser(alias)) {
-            //new FileOutputStream(file).close();
-            //removeUnnecessaryTombstones(alias);
-            //return;
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -832,20 +832,20 @@ File var7052B15222CCC1779653D77CA0B77A2A_1214886192 =         new File(dir, hash
             AssertionError var72D8AB7BCDD494F890D03A431A840183_1301481991 = new AssertionError(alias);
             var72D8AB7BCDD494F890D03A431A840183_1301481991.addTaint(taint);
             throw var72D8AB7BCDD494F890D03A431A840183_1301481991;
-        } //End block
+        } 
         int dotIndex = alias.lastIndexOf('.');
     if(dotIndex == -1)        
         {
             AssertionError var72D8AB7BCDD494F890D03A431A840183_787766397 = new AssertionError(alias);
             var72D8AB7BCDD494F890D03A431A840183_787766397.addTaint(taint);
             throw var72D8AB7BCDD494F890D03A431A840183_787766397;
-        } //End block
+        } 
         String hash = alias.substring(PREFIX_USER.length(), dotIndex);
         int lastTombstoneIndex = Integer.parseInt(alias.substring(dotIndex + 1));
     if(file(addedDir, hash, lastTombstoneIndex + 1).exists())        
         {
             return;
-        } //End block
+        } 
         while
 (lastTombstoneIndex >= 0)        
         {
@@ -853,38 +853,38 @@ File var7052B15222CCC1779653D77CA0B77A2A_1214886192 =         new File(dir, hash
     if(!isTombstone(file))            
             {
                 break;
-            } //End block
+            } 
     if(!file.delete())            
             {
                 IOException var44ECDF313521F25CE095DEA823617EAC_1447956543 = new IOException("Could not remove " + file);
                 var44ECDF313521F25CE095DEA823617EAC_1447956543.addTaint(taint);
                 throw var44ECDF313521F25CE095DEA823617EAC_1447956543;
-            } //End block
+            } 
             lastTombstoneIndex--;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isUser(alias)) {
-            //throw new AssertionError(alias);
-        //}
-        //int dotIndex = alias.lastIndexOf('.');
-        //if (dotIndex == -1) {
-            //throw new AssertionError(alias);
-        //}
-        //String hash = alias.substring(PREFIX_USER.length(), dotIndex);
-        //int lastTombstoneIndex = Integer.parseInt(alias.substring(dotIndex + 1));
-        //if (file(addedDir, hash, lastTombstoneIndex + 1).exists()) {
-            //return;
-        //}
-        //while (lastTombstoneIndex >= 0) {
-            //File file = file(addedDir, hash, lastTombstoneIndex);
-            //if (!isTombstone(file)) {
-                //break;
-            //}
-            //if (!file.delete()) {
-                //throw new IOException("Could not remove " + file);
-            //}
-            //lastTombstoneIndex--;
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+                
+            
+            
+        
     }
 
     

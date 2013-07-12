@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,7 +41,7 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.087 -0400", hash_original_method = "632CB0CBBBC44DF00B6EA380FB3D1564", hash_generated_method = "7E050AD6D76868049EBE527D41ED6759")
     public  LinkedBlockingQueue() {
         this(Integer.MAX_VALUE);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,10 +55,10 @@ public class LinkedBlockingQueue<E> extends AbstractQueue<E> implements Blocking
         }
         this.capacity = capacity;
         last = head = new Node<E>(null);
-        // ---------- Original Method ----------
-        //if (capacity <= 0) throw new IllegalArgumentException();
-        //this.capacity = capacity;
-        //last = head = new Node<E>(null);
+        
+        
+        
+        
     }
 
     
@@ -87,33 +87,34 @@ for(E e : c)
                 }
                 enqueue(new Node<E>(e));
                 ++n;
-            } //End block
+            } 
             count.set(n);
-        } //End block
+        } 
         finally 
         {
             putLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock putLock = this.putLock;
-        //putLock.lock();
-        //try {
-            //int n = 0;
-            //for (E e : c) {
-                //if (e == null)
-                    //throw new NullPointerException();
-                //if (n == capacity)
-                    //throw new IllegalStateException("Queue full");
-                //enqueue(new Node<E>(e));
-                //++n;
-            //}
-            //count.set(n);
-        //} finally {
-            //putLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.089 -0400", hash_original_method = "15D22B562F85AEAC3F4AC4996FFD23A3", hash_generated_method = "C88CC2A92019BFE63FC44817948B087E")
     private void signalNotEmpty() {
         final ReentrantLock takeLock = this.takeLock;
@@ -121,22 +122,23 @@ for(E e : c)
         try 
         {
             notEmpty.signal();
-        } //End block
+        } 
         finally 
         {
             takeLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock takeLock = this.takeLock;
-        //takeLock.lock();
-        //try {
-            //notEmpty.signal();
-        //} finally {
-            //takeLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.090 -0400", hash_original_method = "23256B84FD63DB25D1FF9FA99CF29C9A", hash_generated_method = "72C992F6506997D32138FF21DE2D90EF")
     private void signalNotFull() {
         final ReentrantLock putLock = this.putLock;
@@ -144,27 +146,27 @@ for(E e : c)
         try 
         {
             notFull.signal();
-        } //End block
+        } 
         finally 
         {
             putLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock putLock = this.putLock;
-        //putLock.lock();
-        //try {
-            //notFull.signal();
-        //} finally {
-            //putLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.090 -0400", hash_original_method = "050BE5B4C52573633224C87BCCA985D9", hash_generated_method = "1294900CE5F97C64F9A5E140C9BF1299")
     private void enqueue(Node<E> node) {
         last = last.next = node;
-        // ---------- Original Method ----------
-        //last = last.next = node;
+        
+        
     }
 
     
@@ -179,54 +181,58 @@ for(E e : c)
 E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_899084514.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_899084514;
-        // ---------- Original Method ----------
-        //Node<E> h = head;
-        //Node<E> first = h.next;
-        //h.next = h;
-        //head = first;
-        //E x = first.item;
-        //first.item = null;
-        //return x;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "8626572E0FE15707F18ECC5A9712CA34", hash_generated_method = "3646A04C6AE367BA0A6AA42D1CCE1C16")
      void fullyLock() {
         putLock.lock();
         takeLock.lock();
-        // ---------- Original Method ----------
-        //putLock.lock();
-        //takeLock.lock();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "5557FE5692936575245483F7CDC5CE2B", hash_generated_method = "DB6AEC1BC900D9A1E58F0AE1939A9554")
      void fullyUnlock() {
         takeLock.unlock();
         putLock.unlock();
-        // ---------- Original Method ----------
-        //takeLock.unlock();
-        //putLock.unlock();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.091 -0400", hash_original_method = "FC3CFC9E56AD635CFF4ED177A60462DA", hash_generated_method = "C7EA02A46EC74F4935771B2FF852AEF5")
     public int size() {
         int varF07AF9B5EBE1BDA12C06190B44E1F695_564188709 = (count.get());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1138107082 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1138107082;
-        // ---------- Original Method ----------
-        //return count.get();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.092 -0400", hash_original_method = "F6FFB0DBE2C073472862E76EB78E2D9E", hash_generated_method = "AC4D89C7277413D54827388C0ACC3AE5")
     public int remainingCapacity() {
         int var3C1171412FC071707DFA3A3D59A03AD0_1663170439 = (capacity - count.get());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710265063 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710265063;
-        // ---------- Original Method ----------
-        //return capacity - count.get();
+        
+        
     }
 
     
@@ -250,38 +256,38 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
 (count.get() == capacity)            
             {
                 notFull.await();
-            } //End block
+            } 
             enqueue(node);
             c = count.getAndIncrement();
     if(c + 1 < capacity)            
             notFull.signal();
-        } //End block
+        } 
         finally 
         {
             putLock.unlock();
-        } //End block
+        } 
     if(c == 0)        
         signalNotEmpty();
-        // ---------- Original Method ----------
-        //if (e == null) throw new NullPointerException();
-        //int c = -1;
-        //Node<E> node = new Node(e);
-        //final ReentrantLock putLock = this.putLock;
-        //final AtomicInteger count = this.count;
-        //putLock.lockInterruptibly();
-        //try {
-            //while (count.get() == capacity) {
-                //notFull.await();
-            //}
-            //enqueue(node);
-            //c = count.getAndIncrement();
-            //if (c + 1 < capacity)
-                //notFull.signal();
-        //} finally {
-            //putLock.unlock();
-        //}
-        //if (c == 0)
-            //signalNotEmpty();
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+            
+            
+            
+            
+                
+        
+            
+        
+        
+            
     }
 
     
@@ -313,44 +319,44 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_753548151;
                 }
                 nanos = notFull.awaitNanos(nanos);
-            } //End block
+            } 
             enqueue(new Node<E>(e));
             c = count.getAndIncrement();
     if(c + 1 < capacity)            
             notFull.signal();
-        } //End block
+        } 
         finally 
         {
             putLock.unlock();
-        } //End block
+        } 
     if(c == 0)        
         signalNotEmpty();
         boolean varB326B5062B2F0E69046810717534CB09_5488510 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1358640120 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1358640120;
-        // ---------- Original Method ----------
-        //if (e == null) throw new NullPointerException();
-        //long nanos = unit.toNanos(timeout);
-        //int c = -1;
-        //final ReentrantLock putLock = this.putLock;
-        //final AtomicInteger count = this.count;
-        //putLock.lockInterruptibly();
-        //try {
-            //while (count.get() == capacity) {
-                //if (nanos <= 0)
-                    //return false;
-                //nanos = notFull.awaitNanos(nanos);
-            //}
-            //enqueue(new Node<E>(e));
-            //c = count.getAndIncrement();
-            //if (c + 1 < capacity)
-                //notFull.signal();
-        //} finally {
-            //putLock.unlock();
-        //}
-        //if (c == 0)
-            //signalNotEmpty();
-        //return true;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+            
+            
+            
+                
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -382,42 +388,43 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
                 c = count.getAndIncrement();
     if(c + 1 < capacity)                
                 notFull.signal();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             putLock.unlock();
-        } //End block
+        } 
     if(c == 0)        
         signalNotEmpty();
         boolean var6EBA6DF55A2DFD6D58CC892FE0ED47AD_1774016166 = (c >= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1192899545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1192899545;
-        // ---------- Original Method ----------
-        //if (e == null) throw new NullPointerException();
-        //final AtomicInteger count = this.count;
-        //if (count.get() == capacity)
-            //return false;
-        //int c = -1;
-        //Node<E> node = new Node(e);
-        //final ReentrantLock putLock = this.putLock;
-        //putLock.lock();
-        //try {
-            //if (count.get() < capacity) {
-                //enqueue(node);
-                //c = count.getAndIncrement();
-                //if (c + 1 < capacity)
-                    //notFull.signal();
-            //}
-        //} finally {
-            //putLock.unlock();
-        //}
-        //if (c == 0)
-            //signalNotEmpty();
-        //return c >= 0;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                    
+            
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.095 -0400", hash_original_method = "022306A077B45DC674F98467F25F93CD", hash_generated_method = "0D8B55611074D550C570D4DB4AB88BFC")
     public E take() throws InterruptedException {
         E x;
@@ -431,44 +438,45 @@ E varEA5659DA512DECF23E6D37EE8060D074_899084514 =         x;
 (count.get() == 0)            
             {
                 notEmpty.await();
-            } //End block
+            } 
             x = dequeue();
             c = count.getAndDecrement();
     if(c > 1)            
             notEmpty.signal();
-        } //End block
+        } 
         finally 
         {
             takeLock.unlock();
-        } //End block
+        } 
     if(c == capacity)        
         signalNotFull();
 E varEA5659DA512DECF23E6D37EE8060D074_1243331420 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_1243331420.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_1243331420;
-        // ---------- Original Method ----------
-        //E x;
-        //int c = -1;
-        //final AtomicInteger count = this.count;
-        //final ReentrantLock takeLock = this.takeLock;
-        //takeLock.lockInterruptibly();
-        //try {
-            //while (count.get() == 0) {
-                //notEmpty.await();
-            //}
-            //x = dequeue();
-            //c = count.getAndDecrement();
-            //if (c > 1)
-                //notEmpty.signal();
-        //} finally {
-            //takeLock.unlock();
-        //}
-        //if (c == capacity)
-            //signalNotFull();
-        //return x;
+        
+        
+        
+        
+        
+        
+        
+            
+                
+            
+            
+            
+            
+                
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.096 -0400", hash_original_method = "AA8094BF5AEC46D297071331A526D258", hash_generated_method = "A05100EBE43044EC2412FABB33010E5C")
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -491,47 +499,48 @@ E var540C13E9E156B687226421B24F2DF178_499703755 =                 null;
                 return var540C13E9E156B687226421B24F2DF178_499703755;
                 }
                 nanos = notEmpty.awaitNanos(nanos);
-            } //End block
+            } 
             x = dequeue();
             c = count.getAndDecrement();
     if(c > 1)            
             notEmpty.signal();
-        } //End block
+        } 
         finally 
         {
             takeLock.unlock();
-        } //End block
+        } 
     if(c == capacity)        
         signalNotFull();
 E varEA5659DA512DECF23E6D37EE8060D074_800526200 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_800526200.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_800526200;
-        // ---------- Original Method ----------
-        //E x = null;
-        //int c = -1;
-        //long nanos = unit.toNanos(timeout);
-        //final AtomicInteger count = this.count;
-        //final ReentrantLock takeLock = this.takeLock;
-        //takeLock.lockInterruptibly();
-        //try {
-            //while (count.get() == 0) {
-                //if (nanos <= 0)
-                    //return null;
-                //nanos = notEmpty.awaitNanos(nanos);
-            //}
-            //x = dequeue();
-            //c = count.getAndDecrement();
-            //if (c > 1)
-                //notEmpty.signal();
-        //} finally {
-            //takeLock.unlock();
-        //}
-        //if (c == capacity)
-            //signalNotFull();
-        //return x;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+            
+            
+            
+                
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.097 -0400", hash_original_method = "D22B106AF12DCACC53C408D22FAEA025", hash_generated_method = "B1B813049B49A64C8696FB2C86CF5C38")
     public E poll() {
         final AtomicInteger count = this.count;
@@ -553,41 +562,42 @@ E var540C13E9E156B687226421B24F2DF178_155349774 =         null;
                 c = count.getAndDecrement();
     if(c > 1)                
                 notEmpty.signal();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             takeLock.unlock();
-        } //End block
+        } 
     if(c == capacity)        
         signalNotFull();
 E varEA5659DA512DECF23E6D37EE8060D074_338865570 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_338865570.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_338865570;
-        // ---------- Original Method ----------
-        //final AtomicInteger count = this.count;
-        //if (count.get() == 0)
-            //return null;
-        //E x = null;
-        //int c = -1;
-        //final ReentrantLock takeLock = this.takeLock;
-        //takeLock.lock();
-        //try {
-            //if (count.get() > 0) {
-                //x = dequeue();
-                //c = count.getAndDecrement();
-                //if (c > 1)
-                    //notEmpty.signal();
-            //}
-        //} finally {
-            //takeLock.unlock();
-        //}
-        //if (c == capacity)
-            //signalNotFull();
-        //return x;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                    
+            
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.097 -0400", hash_original_method = "6BD887DAC1ACD373E1861DD85FA5D83B", hash_generated_method = "8F12978D611BE6A567FF4A216ED63296")
     public E peek() {
     if(count.get() == 0)        
@@ -613,25 +623,25 @@ E var30B383EF1E5A298C086E51BB7B7C5921_1084538550 =             first.item;
             var30B383EF1E5A298C086E51BB7B7C5921_1084538550.addTaint(taint);
             return var30B383EF1E5A298C086E51BB7B7C5921_1084538550;
             }
-        } //End block
+        } 
         finally 
         {
             takeLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //if (count.get() == 0)
-            //return null;
-        //final ReentrantLock takeLock = this.takeLock;
-        //takeLock.lock();
-        //try {
-            //Node<E> first = head.next;
-            //if (first == null)
-                //return null;
-            //else
-                //return first.item;
-        //} finally {
-            //takeLock.unlock();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+                
+        
+            
+        
     }
 
     
@@ -644,16 +654,17 @@ E var30B383EF1E5A298C086E51BB7B7C5921_1084538550 =             first.item;
         last = trail;
     if(count.getAndDecrement() == capacity)        
         notFull.signal();
-        // ---------- Original Method ----------
-        //p.item = null;
-        //trail.next = p.next;
-        //if (last == p)
-            //last = trail;
-        //if (count.getAndDecrement() == capacity)
-            //notFull.signal();
+        
+        
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.099 -0400", hash_original_method = "43DA2AA0857729B72806FF0ABDC45219", hash_generated_method = "AF9C551BD52AA17369D231186AFCA796")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
@@ -674,35 +685,36 @@ for(Node<E> trail = head, p = trail.next;p != null;trail = p,p = p.next)
                     boolean varB326B5062B2F0E69046810717534CB09_231912406 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_443621637 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_443621637;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_1396411989 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63831662 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_63831662;
-        } //End block
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //if (o == null) return false;
-        //fullyLock();
-        //try {
-            //for (Node<E> trail = head, p = trail.next;
-                 //p != null;
-                 //trail = p, p = p.next) {
-                //if (o.equals(p.item)) {
-                    //unlink(p, trail);
-                    //return true;
-                //}
-            //}
-            //return false;
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+                 
+                 
+                
+                    
+                    
+                
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.100 -0400", hash_original_method = "A4E3D89F8C47A7118ADD1757BF8D3A46", hash_generated_method = "C6907FBD5F332A70552046A7F86B1865")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -725,25 +737,26 @@ for(Node<E> p = head.next;p != null;p = p.next)
             boolean var68934A3E9455FA72420237EB05902327_565207444 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_655113324 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_655113324;
-        } //End block
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //if (o == null) return false;
-        //fullyLock();
-        //try {
-            //for (Node<E> p = head.next; p != null; p = p.next)
-                //if (o.equals(p.item))
-                    //return true;
-            //return false;
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+                
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.101 -0400", hash_original_method = "A06A302045E6771EA320A7223F86E4E8", hash_generated_method = "095BB8E063A0970787CEF9A1283A4C12")
     public Object[] toArray() {
         fullyLock();
@@ -757,23 +770,23 @@ for(Node<E> p = head.next;p != null;p = p.next)
 Object[] var3F5343BF1D849954A73F0BB303805FFD_332685010 =             a;
             var3F5343BF1D849954A73F0BB303805FFD_332685010.addTaint(taint);
             return var3F5343BF1D849954A73F0BB303805FFD_332685010;
-        } //End block
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //fullyLock();
-        //try {
-            //int size = count.get();
-            //Object[] a = new Object[size];
-            //int k = 0;
-            //for (Node<E> p = head.next; p != null; p = p.next)
-                //a[k++] = p.item;
-            //return a;
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -796,30 +809,31 @@ for(Node<E> p = head.next;p != null;p = p.next)
 T[] var3F5343BF1D849954A73F0BB303805FFD_1439153755 =             a;
             var3F5343BF1D849954A73F0BB303805FFD_1439153755.addTaint(taint);
             return var3F5343BF1D849954A73F0BB303805FFD_1439153755;
-        } //End block
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //fullyLock();
-        //try {
-            //int size = count.get();
-            //if (a.length < size)
-                //a = (T[])java.lang.reflect.Array.newInstance
-                    //(a.getClass().getComponentType(), size);
-            //int k = 0;
-            //for (Node<E> p = head.next; p != null; p = p.next)
-                //a[k++] = (T)p.item;
-            //if (a.length > k)
-                //a[k] = null;
-            //return a;
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+                    
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.102 -0400", hash_original_method = "74ADAA84A44AA4C99AF60EA5FA9916C8", hash_generated_method = "710DFC9267982D1481F721B21163BA21")
     public String toString() {
         fullyLock();
@@ -846,34 +860,35 @@ String var9C07C753C7E9BC277E7521552478C668_1606931693 =                 sb.appen
                 return var9C07C753C7E9BC277E7521552478C668_1606931693;
                 }
                 sb.append(',').append(' ');
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //fullyLock();
-        //try {
-            //Node<E> p = head.next;
-            //if (p == null)
-                //return "[]";
-            //StringBuilder sb = new StringBuilder();
-            //sb.append('[');
-            //for (;;) {
-                //E e = p.item;
-                //sb.append(e == this ? "(this Collection)" : e);
-                //p = p.next;
-                //if (p == null)
-                    //return sb.append(']').toString();
-                //sb.append(',').append(' ');
-            //}
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+            
+            
+                
+                
+                
+                
+                    
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.103 -0400", hash_original_method = "2B97B8EA201FFE74530152ABDF41ED91", hash_generated_method = "2579CD725F5E3B0D02F69C687EF47762")
     public void clear() {
         fullyLock();
@@ -883,28 +898,28 @@ for(Node<E> p, h = head;(p = h.next) != null;h = p)
             {
                 h.next = h;
                 p.item = null;
-            } //End block
+            } 
             head = last;
     if(count.getAndSet(0) == capacity)            
             notFull.signal();
-        } //End block
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //fullyLock();
-        //try {
-            //for (Node<E> p, h = head; (p = h.next) != null; h = p) {
-                //h.next = h;
-                //p.item = null;
-            //}
-            //head = last;
-            //if (count.getAndSet(0) == capacity)
-                //notFull.signal();
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+            
+                
+                
+            
+            
+            
+                
+        
+            
+        
     }
 
     
@@ -914,8 +929,8 @@ for(Node<E> p, h = head;(p = h.next) != null;h = p)
         int var3828B170D96FB98999BED4414DDE0658_1016575615 = (drainTo(c, Integer.MAX_VALUE));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331996135 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331996135;
-        // ---------- Original Method ----------
-        //return drainTo(c, Integer.MAX_VALUE);
+        
+        
     }
 
     
@@ -954,28 +969,28 @@ for(Node<E> p, h = head;(p = h.next) != null;h = p)
                     h.next = h;
                     h = p;
                     ++i;
-                } //End block
+                } 
                 int var7B8B965AD4BCA0E41AB51DE7B31363A1_242415029 = (n);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688225390 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688225390;
-            } //End block
+            } 
             finally 
             {
     if(i > 0)                
                 {
                     head = h;
                     signalNotFull = (count.getAndAdd(-i) == capacity);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             takeLock.unlock();
     if(signalNotFull)            
             signalNotFull();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -984,11 +999,12 @@ for(Node<E> p, h = head;(p = h.next) != null;h = p)
 Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1543783174 =         new Itr();
         varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1543783174.addTaint(taint);
         return varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1543783174;
-        // ---------- Original Method ----------
-        //return new Itr();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.106 -0400", hash_original_method = "407E789BCFB8527B31EA0FCB2D45014F", hash_generated_method = "3FC85FCF0701BFD63D43A7F2EA01AB0D")
     private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
         addTaint(s.getTaint());
@@ -999,24 +1015,25 @@ Iterator<E> varB10D928EC6DDAEBFD727C2EDCEC6EDF5_1543783174 =         new Itr();
 for(Node<E> p = head.next;p != null;p = p.next)
             s.writeObject(p.item);
             s.writeObject(null);
-        } //End block
+        } 
         finally 
         {
             fullyUnlock();
-        } //End block
-        // ---------- Original Method ----------
-        //fullyLock();
-        //try {
-            //s.defaultWriteObject();
-            //for (Node<E> p = head.next; p != null; p = p.next)
-                //s.writeObject(p.item);
-            //s.writeObject(null);
-        //} finally {
-            //fullyUnlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.106 -0400", hash_original_method = "2A845E5CA6C44D2307376F014D4A5DD1", hash_generated_method = "A3E6A002B5F48C4FDF8D7D334C83F6BF")
     private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
         addTaint(s.getTaint());
@@ -1029,18 +1046,18 @@ for(;;)
     if(item == null)            
             break;
             add(item);
-        } //End block
-        // ---------- Original Method ----------
-        //s.defaultReadObject();
-        //count.set(0);
-        //last = head = new Node<E>(null);
-        //for (;;) {
-            //@SuppressWarnings("unchecked")
-            //E item = (E)s.readObject();
-            //if (item == null)
-                //break;
-            //add(item);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -1055,8 +1072,8 @@ for(;;)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.107 -0400", hash_original_method = "E24CFB813CF8D6D3545154C1747D57F8", hash_generated_method = "F143FACCEFEC2EC78FAE43B87B01534B")
           Node(E x) {
             item = x;
-            // ---------- Original Method ----------
-            //item = x;
+            
+            
         }
 
         
@@ -1083,30 +1100,31 @@ for(;;)
                 current = head.next;
     if(current != null)                
                 currentElement = current.item;
-            } //End block
+            } 
             finally 
             {
                 fullyUnlock();
-            } //End block
-            // ---------- Original Method ----------
-            //fullyLock();
-            //try {
-                //current = head.next;
-                //if (current != null)
-                    //currentElement = current.item;
-            //} finally {
-                //fullyUnlock();
-            //}
+            } 
+            
+            
+            
+                
+                
+                    
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.108 -0400", hash_original_method = "930D47D628EF4F4226A6936FD0C40F3E", hash_generated_method = "C2DB4269EC3C8157422A50E5C75B51AA")
         public boolean hasNext() {
             boolean var97D04F0DD15D17F3CFE71371925A4C92_1139515096 = (current != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1043425146 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1043425146;
-            // ---------- Original Method ----------
-            //return current != null;
+            
+            
         }
 
         
@@ -1129,19 +1147,20 @@ Node<E> var0478718F0636FB61899C13801CE9FE09_87483396 =                 s;
                 return var0478718F0636FB61899C13801CE9FE09_87483396;
                 }
                 p = s;
-            } //End block
-            // ---------- Original Method ----------
-            //for (;;) {
-                //Node<E> s = p.next;
-                //if (s == p)
-                    //return head.next;
-                //if (s == null || s.item != null)
-                    //return s;
-                //p = s;
-            //}
+            } 
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.110 -0400", hash_original_method = "B1551F09E1CC1CE37F95082545A7F15D", hash_generated_method = "6862ED38DA8964035EE37FD2D699345B")
         public E next() {
             fullyLock();
@@ -1160,24 +1179,24 @@ Node<E> var0478718F0636FB61899C13801CE9FE09_87483396 =                 s;
 E varEA5659DA512DECF23E6D37EE8060D074_922981628 =                 x;
                 varEA5659DA512DECF23E6D37EE8060D074_922981628.addTaint(taint);
                 return varEA5659DA512DECF23E6D37EE8060D074_922981628;
-            } //End block
+            } 
             finally 
             {
                 fullyUnlock();
-            } //End block
-            // ---------- Original Method ----------
-            //fullyLock();
-            //try {
-                //if (current == null)
-                    //throw new NoSuchElementException();
-                //E x = currentElement;
-                //lastRet = current;
-                //current = nextNode(current);
-                //currentElement = (current == null) ? null : current.item;
-                //return x;
-            //} finally {
-                //fullyUnlock();
-            //}
+            } 
+            
+            
+            
+                
+                    
+                
+                
+                
+                
+                
+            
+                
+            
         }
 
         
@@ -1200,31 +1219,31 @@ for(Node<E> trail = head, p = trail.next;p != null;trail = p,p = p.next)
                     {
                         unlink(p, trail);
                         break;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             finally 
             {
                 fullyUnlock();
-            } //End block
-            // ---------- Original Method ----------
-            //if (lastRet == null)
-                //throw new IllegalStateException();
-            //fullyLock();
-            //try {
-                //Node<E> node = lastRet;
-                //lastRet = null;
-                //for (Node<E> trail = head, p = trail.next;
-                     //p != null;
-                     //trail = p, p = p.next) {
-                    //if (p == node) {
-                        //unlink(p, trail);
-                        //break;
-                    //}
-                //}
-            //} finally {
-                //fullyUnlock();
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+                
+                
+                     
+                     
+                    
+                        
+                        
+                    
+                
+            
+                
+            
         }
 
         

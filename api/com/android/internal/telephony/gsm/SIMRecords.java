@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -90,18 +90,18 @@ public class SIMRecords extends IccRecords {
         p.mCM.setOnSmsOnSim(this, EVENT_SMS_ON_SIM, null);
         p.mCM.registerForIccRefresh(this, EVENT_SIM_REFRESH, null);
         onRadioOffOrNotAvailable();
-        // ---------- Original Method ----------
-        //adnCache = new AdnRecordCache(phone);
-        //mVmConfig = new VoiceMailConstants();
-        //mSpnOverride = new SpnOverride();
-        //recordsRequested = false;
-        //recordsToLoad = 0;
-        //p.mCM.registerForSIMReady(this, EVENT_SIM_READY, null);
-        //p.mCM.registerForOffOrNotAvailable(
-                        //this, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
-        //p.mCM.setOnSmsOnSim(this, EVENT_SMS_ON_SIM, null);
-        //p.mCM.registerForIccRefresh(this, EVENT_SIM_REFRESH, null);
-        //onRadioOffOrNotAvailable();
+        
+        
+        
+        
+        
+        
+        
+        
+                        
+        
+        
+        
     }
 
     
@@ -111,25 +111,26 @@ public class SIMRecords extends IccRecords {
         phone.mCM.unregisterForSIMReady(this);
         phone.mCM.unregisterForOffOrNotAvailable( this);
         phone.mCM.unregisterForIccRefresh(this);
-        // ---------- Original Method ----------
-        //phone.mCM.unregisterForSIMReady(this);
-        //phone.mCM.unregisterForOffOrNotAvailable( this);
-        //phone.mCM.unregisterForIccRefresh(this);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.500 -0400", hash_original_method = "D676C6F3D2367DC0A4942786FE826692", hash_generated_method = "35C5FCD8B031F81FC9AEB8B01B34AD1B")
     protected void finalize() {
     if(DBG)        
         Log.d(LOG_TAG, "SIMRecords finalized");
-        // ---------- Original Method ----------
-        //if(DBG) Log.d(LOG_TAG, "SIMRecords finalized");
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.502 -0400", hash_original_method = "1C495E4F05849546A87C14B5D6E64BED", hash_generated_method = "DFF28017DADF7D467DB4EC42F6547305")
     protected void onRadioOffOrNotAvailable() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         imsi = null;
         msisdn = null;
         voiceMailNum = null;
@@ -146,55 +147,58 @@ public class SIMRecords extends IccRecords {
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, null);
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY, null);
         recordsRequested = false;
-        // ---------- Original Method ----------
-        //imsi = null;
-        //msisdn = null;
-        //voiceMailNum = null;
-        //countVoiceMessages = 0;
-        //mncLength = UNINITIALIZED;
-        //iccid = null;
-        //spnDisplayCondition = -1;
-        //efMWIS = null;
-        //efCPHS_MWI = null;
-        //spdiNetworks = null;
-        //pnnHomeName = null;
-        //adnCache.reset();
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, null);
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, null);
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY, null);
-        //recordsRequested = false;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.503 -0400", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "8F0B09BE495CA805214ED7DBABC48145")
     @Override
     public String getIMSI() {
 String var7E6C08CD026D24533A35AD442337F3B6_1480098468 =         imsi;
         var7E6C08CD026D24533A35AD442337F3B6_1480098468.addTaint(taint);
         return var7E6C08CD026D24533A35AD442337F3B6_1480098468;
-        // ---------- Original Method ----------
-        //return imsi;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.503 -0400", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "FD485CC9B7C1A235FC39025D3659A131")
     public String getMsisdnNumber() {
 String var98EB500E04B2E653D67441C7876346A8_1436815686 =         msisdn;
         var98EB500E04B2E653D67441C7876346A8_1436815686.addTaint(taint);
         return var98EB500E04B2E653D67441C7876346A8_1436815686;
-        // ---------- Original Method ----------
-        //return msisdn;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.503 -0400", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "F8CC020FC727E91A95AE46747D81FECC")
     @Override
     public UsimServiceTable getUsimServiceTable() {
 UsimServiceTable varA1A437D900A7A3D6B8B13150EDD0F8C9_1291576203 =         mUsimServiceTable;
         varA1A437D900A7A3D6B8B13150EDD0F8C9_1291576203.addTaint(taint);
         return varA1A437D900A7A3D6B8B13150EDD0F8C9_1291576203;
-        // ---------- Original Method ----------
-        //return mUsimServiceTable;
+        
+        
     }
 
     
@@ -211,33 +215,35 @@ UsimServiceTable varA1A437D900A7A3D6B8B13150EDD0F8C9_1291576203 =         mUsimS
         AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
         new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
                 obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
-        // ---------- Original Method ----------
-        //msisdn = number;
-        //msisdnTag = alphaTag;
-        //if(DBG) log("Set MSISDN: " + msisdnTag + " " +  "xxxxxxx");
-        //AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
-        //new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
-                //obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
+        
+        
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.504 -0400", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "4068CC2005B75DABF6FF256CECC2A6C4")
     public String getMsisdnAlphaTag() {
 String varC96C703C1B21896256515C79C6D4E9E0_983564929 =         msisdnTag;
         varC96C703C1B21896256515C79C6D4E9E0_983564929.addTaint(taint);
         return varC96C703C1B21896256515C79C6D4E9E0_983564929;
-        // ---------- Original Method ----------
-        //return msisdnTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.505 -0400", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "A54C094924C5A034F4286E40D5DDFA64")
     public String getVoiceMailNumber() {
 String var44EE7E1B561BBC95B6BC657CD14BC65B_74948197 =         voiceMailNum;
         var44EE7E1B561BBC95B6BC657CD14BC65B_74948197.addTaint(taint);
         return var44EE7E1B561BBC95B6BC657CD14BC65B_74948197;
-        // ---------- Original Method ----------
-        //return voiceMailNum;
+        
+        
     }
 
     
@@ -253,7 +259,7 @@ String var44EE7E1B561BBC95B6BC657CD14BC65B_74948197 =         voiceMailNum;
                     new IccVmFixedException("Voicemail number is fixed by operator");
             onComplete.sendToTarget();
             return;
-        } //End block
+        } 
         newVoiceMailNum = voiceNumber;
         newVoiceMailTag = alphaTag;
         AdnRecord adn = new AdnRecord(newVoiceMailTag, newVoiceMailNum);
@@ -262,32 +268,33 @@ String var44EE7E1B561BBC95B6BC657CD14BC65B_74948197 =         voiceMailNum;
             new AdnRecordLoader(phone).updateEF(adn, EF_MBDN, EF_EXT6,
                     mailboxIndex, null,
                     obtainMessage(EVENT_SET_MBDN_DONE, onComplete));
-        } //End block
+        } 
         else
     if(isCphsMailboxEnabled())        
         {
             new AdnRecordLoader(phone).updateEF(adn, EF_MAILBOX_CPHS,
                     EF_EXT1, 1, null,
                     obtainMessage(EVENT_SET_CPHS_MAILBOX_DONE, onComplete));
-        } //End block
+        } 
         else
         {
             AsyncResult.forMessage((onComplete)).exception =
                     new IccVmNotSupportedException("Update SIM voice mailbox error");
             onComplete.sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.506 -0400", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "4CDE5AAFB54079079A4FC3F598E68F75")
     public String getVoiceMailAlphaTag() {
 String var1EB462B75D8B935982B4AE1475F7B8DA_2023903571 =         voiceMailTag;
         var1EB462B75D8B935982B4AE1475F7B8DA_2023903571.addTaint(taint);
         return var1EB462B75D8B935982B4AE1475F7B8DA_2023903571;
-        // ---------- Original Method ----------
-        //return voiceMailTag;
+        
+        
     }
 
     
@@ -297,16 +304,16 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_2023903571 =         voiceMailTag;
     if(line != 1)        
         {
             return;
-        } //End block
+        } 
     if(countWaiting < 0)        
         {
             countWaiting = -1;
-        } //End block
+        } 
         else
     if(countWaiting > 0xff)        
         {
             countWaiting = 0xff;
-        } //End block
+        } 
         countVoiceMessages = countWaiting;
         phone.notifyMessageWaitingIndicator();
         try 
@@ -318,15 +325,15 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_2023903571 =         voiceMailTag;
     if(countWaiting < 0)                
                 {
                     efMWIS[1] = 0;
-                } //End block
+                } 
                 else
                 {
                     efMWIS[1] = (byte) countWaiting;
-                } //End block
+                } 
                 phone.getIccFileHandler().updateEFLinearFixed(
                     EF_MWIS, 1, efMWIS, null,
                     obtainMessage (EVENT_UPDATE_DONE, EF_MWIS));
-            } //End block
+            } 
     if(efCPHS_MWI != null)            
             {
                 efCPHS_MWI[0] = (byte)((efCPHS_MWI[0] & 0xf0)
@@ -334,27 +341,29 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_2023903571 =         voiceMailTag;
                 phone.getIccFileHandler().updateEFTransparent(
                     EF_VOICE_MAIL_INDICATOR_CPHS, efCPHS_MWI,
                     obtainMessage (EVENT_UPDATE_DONE, EF_VOICE_MAIL_INDICATOR_CPHS));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ArrayIndexOutOfBoundsException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.508 -0400", hash_original_method = "2A8D94361FF074096EDCA291A7FA986D", hash_generated_method = "852B205E01DA66F0550F7EC54E1D7B33")
     @Override
     public boolean getVoiceCallForwardingFlag() {
         boolean varD3724EA3C1583660418AAE7549D15B6B_1996913794 = (callForwardingEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1810472580 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1810472580;
-        // ---------- Original Method ----------
-        //return callForwardingEnabled;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.509 -0400", hash_original_method = "141082A6B47AB008F9D1AEFE7E7266B0", hash_generated_method = "143CA58C7ACBB4AF31F06B668F7781D1")
     @Override
     public void setVoiceCallForwardingFlag(int line, boolean enable) {
@@ -370,53 +379,53 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_2023903571 =         voiceMailTag;
     if(enable)                
                 {
                     mEfCfis[1] |= 1;
-                } //End block
+                } 
                 else
                 {
                     mEfCfis[1] &= 0xfe;
-                } //End block
+                } 
                 phone.getIccFileHandler().updateEFLinearFixed(
                         EF_CFIS, 1, mEfCfis, null,
                         obtainMessage (EVENT_UPDATE_DONE, EF_CFIS));
-            } //End block
+            } 
     if(mEfCff != null)            
             {
     if(enable)                
                 {
                     mEfCff[0] = (byte) ((mEfCff[0] & CFF_LINE1_RESET)
                             | CFF_UNCONDITIONAL_ACTIVE);
-                } //End block
+                } 
                 else
                 {
                     mEfCff[0] = (byte) ((mEfCff[0] & CFF_LINE1_RESET)
                             | CFF_UNCONDITIONAL_DEACTIVE);
-                } //End block
+                } 
                 phone.getIccFileHandler().updateEFTransparent(
                         EF_CFF_CPHS, mEfCff,
                         obtainMessage (EVENT_UPDATE_DONE, EF_CFF_CPHS));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ArrayIndexOutOfBoundsException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.509 -0400", hash_original_method = "3729AD4A21CE0EDB3800382FBE3F87EC", hash_generated_method = "FB2E11D8C5262225A0975154FE9E69F0")
     public void onRefresh(boolean fileChanged, int[] fileList) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(fileList[0]);
         addTaint(fileChanged);
     if(fileChanged)        
         {
             fetchSimRecords();
-        } //End block
-        // ---------- Original Method ----------
-        //if (fileChanged) {
-            //fetchSimRecords();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -429,27 +438,27 @@ String var1EB462B75D8B935982B4AE1475F7B8DA_2023903571 =         voiceMailTag;
 String var540C13E9E156B687226421B24F2DF178_978032994 =             null;
             var540C13E9E156B687226421B24F2DF178_978032994.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_978032994;
-        } //End block
+        } 
     if(mncLength == UNINITIALIZED || mncLength == UNKNOWN)        
         {
             Log.d(LOG_TAG, "getSIMOperatorNumeric: bad mncLength");
 String var540C13E9E156B687226421B24F2DF178_261278789 =             null;
             var540C13E9E156B687226421B24F2DF178_261278789.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_261278789;
-        } //End block
+        } 
 String var0F857FEA33A34E9B69DCBF8027B96239_216261945 =         imsi.substring(0, 3 + mncLength);
         var0F857FEA33A34E9B69DCBF8027B96239_216261945.addTaint(taint);
         return var0F857FEA33A34E9B69DCBF8027B96239_216261945;
-        // ---------- Original Method ----------
-        //if (imsi == null) {
-            //Log.d(LOG_TAG, "getOperatorNumeric: IMSI == null");
-            //return null;
-        //}
-        //if (mncLength == UNINITIALIZED || mncLength == UNKNOWN) {
-            //Log.d(LOG_TAG, "getSIMOperatorNumeric: bad mncLength");
-            //return null;
-        //}
-        //return imsi.substring(0, 3 + mncLength);
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -475,12 +484,12 @@ switch(msg.what){
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             imsi = (String) ar.result;
     if(imsi != null && (imsi.length() < 6 || imsi.length() > 15))            
             {
                 imsi = null;
-            } //End block
+            } 
             Log.d(LOG_TAG, "IMSI: " +  "xxxxxxx");
     if(((mncLength == UNKNOWN) || (mncLength == 2)) &&
                         ((imsi != null) && (imsi.length() >= 6)))            
@@ -492,25 +501,25 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                     {
                         mncLength = 3;
                         break;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(mncLength == UNKNOWN)            
             {
                 try 
                 {
                     int mcc = Integer.parseInt(imsi.substring(0,3));
                     mncLength = MccTable.smallestDigitsMccForMnc(mcc);
-                } //End block
+                } 
                 catch (NumberFormatException e)
                 {
                     mncLength = UNKNOWN;
-                } //End block
-            } //End block
+                } 
+            } 
     if(mncLength != UNKNOWN && mncLength != UNINITIALIZED)            
             {
                 MccTable.updateMccMncConfiguration(phone, imsi.substring(0, 3 + mncLength));
-            } //End block
+            } 
             phone.mIccCard.broadcastIccStateChangedIntent(
                         SimCard.INTENT_VALUE_ICC_IMSI, null);
             break;
@@ -529,20 +538,20 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                 {
                     Log.d(LOG_TAG, "Got valid mailbox number for MBDN");
                     isValidMbdn = true;
-                } //End block
-            } //End block
+                } 
+            } 
             recordsToLoad += 1;
     if(isValidMbdn)            
             {
                 new AdnRecordLoader(phone).loadFromEF(EF_MBDN, EF_EXT6,
                             mailboxIndex, obtainMessage(EVENT_GET_MBDN_DONE));
-            } //End block
+            } 
             else
             {
                 new AdnRecordLoader(phone).loadFromEF(EF_MAILBOX_CPHS,
                             EF_EXT1, 1,
                             obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
-            } //End block
+            } 
             break;
             case EVENT_GET_CPHS_MAILBOX_DONE:
             case EVENT_GET_MBDN_DONE:
@@ -560,9 +569,9 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                     new AdnRecordLoader(phone).loadFromEF(
                                 EF_MAILBOX_CPHS, EF_EXT1, 1,
                                 obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
-                } //End block
+                } 
                 break;
-            } //End block
+            } 
             adn = (AdnRecord)ar.result;
             Log.d(LOG_TAG, "VM: " + adn +
                         ((msg.what == EVENT_GET_CPHS_MAILBOX_DONE) ? " EF[MAILBOX]" : " EF[MBDN]"));
@@ -573,7 +582,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                             EF_MAILBOX_CPHS, EF_EXT1, 1,
                             obtainMessage(EVENT_GET_CPHS_MAILBOX_DONE));
                 break;
-            } //End block
+            } 
             voiceMailNum = adn.getNumber();
             voiceMailTag = adn.getAlphaTag();
             break;
@@ -584,7 +593,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
             {
                 Log.d(LOG_TAG, "Invalid or missing EF[MSISDN]");
                 break;
-            } //End block
+            } 
             adn = (AdnRecord)ar.result;
             msisdn = adn.getNumber();
             msisdnTag = adn.getAlphaTag();
@@ -598,7 +607,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                 AsyncResult.forMessage(((Message) ar.userObj)).exception
                             = ar.exception;
                 ((Message) ar.userObj).sendToTarget();
-            } //End block
+            } 
             break;
             case EVENT_GET_MWIS_DONE:
             isRecordLoadResponse = true;
@@ -607,7 +616,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             Log.d(LOG_TAG, "EF_MWIS: " +
                    IccUtils.bytesToHexString(data));
             efMWIS = data;
@@ -615,13 +624,13 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
             {
                 Log.d(LOG_TAG, "SIMRecords: Uninitialized record MWIS");
                 break;
-            } //End block
+            } 
             boolean voiceMailWaiting = ((data[0] & 0x01) != 0);
             countVoiceMessages = data[1] & 0xff;
     if(voiceMailWaiting && countVoiceMessages == 0)            
             {
                 countVoiceMessages = -1;
-            } //End block
+            } 
             phone.notifyMessageWaitingIndicator();
             break;
             case EVENT_GET_VOICE_MAIL_INDICATOR_CPHS_DONE:
@@ -631,7 +640,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             efCPHS_MWI = data;
     if(efMWIS == null)            
             {
@@ -639,14 +648,14 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(indicator == 0xA)                
                 {
                     countVoiceMessages = -1;
-                } //End block
+                } 
                 else
     if(indicator == 0x5)                
                 {
                     countVoiceMessages = 0;
-                } //End block
+                } 
                 phone.notifyMessageWaitingIndicator();
-            } //End block
+            } 
             break;
             case EVENT_GET_ICCID_DONE:
             isRecordLoadResponse = true;
@@ -655,7 +664,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             iccid = IccUtils.bcdToString(data, 0, data.length);
             Log.d(LOG_TAG, "iccid: " + iccid);
             break;
@@ -668,25 +677,25 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)                
                 {
                     break;
-                } //End block
+                } 
                 Log.d(LOG_TAG, "EF_AD: " +
                             IccUtils.bytesToHexString(data));
     if(data.length < 3)                
                 {
                     Log.d(LOG_TAG, "SIMRecords: Corrupt AD data on SIM");
                     break;
-                } //End block
+                } 
     if(data.length == 3)                
                 {
                     Log.d(LOG_TAG, "SIMRecords: MNC length not present in EF_AD");
                     break;
-                } //End block
+                } 
                 mncLength = (int)data[3] & 0xf;
     if(mncLength == 0xf)                
                 {
                     mncLength = UNKNOWN;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
     if(((mncLength == UNINITIALIZED) || (mncLength == UNKNOWN) ||
@@ -699,9 +708,9 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                         {
                             mncLength = 3;
                             break;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
     if(mncLength == UNKNOWN || mncLength == UNINITIALIZED)                
                 {
     if(imsi != null)                    
@@ -710,23 +719,23 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                         {
                             int mcc = Integer.parseInt(imsi.substring(0,3));
                             mncLength = MccTable.smallestDigitsMccForMnc(mcc);
-                        } //End block
+                        } 
                         catch (NumberFormatException e)
                         {
                             mncLength = UNKNOWN;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         mncLength = UNKNOWN;
                         Log.d(LOG_TAG, "SIMRecords: MNC length not present in EF_AD");
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(imsi != null && mncLength != UNKNOWN)                
                 {
                     MccTable.updateMccMncConfiguration(phone, imsi.substring(0, 3 + mncLength));
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case EVENT_GET_SPN_DONE:
             isRecordLoadResponse = true;
@@ -740,7 +749,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             Log.d(LOG_TAG, "EF_CFF_CPHS: " +
                         IccUtils.bytesToHexString(data));
             mEfCff = data;
@@ -749,7 +758,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
                 callForwardingEnabled =
                         ((data[0] & CFF_LINE1_MASK) == CFF_UNCONDITIONAL_ACTIVE);
                 phone.notifyCallForwardingIndicator();
-            } //End block
+            } 
             break;
             case EVENT_GET_SPDI_DONE:
             isRecordLoadResponse = true;
@@ -758,14 +767,14 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             parseEfSpdi(data);
             break;
             case EVENT_UPDATE_DONE:
             ar = (AsyncResult)msg.obj;
     if(ar.exception != null)            
             {
-            } //End block
+            } 
             break;
             case EVENT_GET_PNN_DONE:
             isRecordLoadResponse = true;
@@ -774,7 +783,7 @@ for(String mccmnc : MCCMNC_CODES_HAVING_3DIGITS_MNC)
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             SimTlv tlv = new SimTlv(data, 0, data.length);
 for(;tlv.isValidObject();tlv.nextObject())
             {
@@ -784,8 +793,8 @@ for(;tlv.isValidObject();tlv.nextObject())
                             = IccUtils.networkNameToString(
                                 tlv.getData(), 0, tlv.getData().length);
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case EVENT_GET_ALL_SMS_DONE:
             isRecordLoadResponse = true;
@@ -802,13 +811,13 @@ for(;tlv.isValidObject();tlv.nextObject())
             int[] index = (int[])ar.result;
     if(ar.exception != null || index.length != 1)            
             {
-            } //End block
+            } 
             else
             {
                 Log.d(LOG_TAG, "READ EF_SMS RECORD index=" + index[0]);
                 phone.getIccFileHandler().loadEFLinearFixed(EF_SMS,index[0],
                             obtainMessage(EVENT_GET_SMS_DONE));
-            } //End block
+            } 
             break;
             case EVENT_GET_SMS_DONE:
             isRecordLoadResponse = false;
@@ -816,10 +825,10 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(ar.exception == null)            
             {
                 handleSms((byte[])ar.result);
-            } //End block
+            } 
             else
             {
-            } //End block
+            } 
             break;
             case EVENT_GET_SST_DONE:
             isRecordLoadResponse = true;
@@ -828,7 +837,7 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             mUsimServiceTable = new UsimServiceTable(data);
     if(DBG)            
             log("SST: " + mUsimServiceTable);
@@ -839,7 +848,7 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             mCphsInfo = (byte[])ar.result;
     if(DBG)            
             log("iCPHS: " + IccUtils.bytesToHexString(mCphsInfo));
@@ -851,7 +860,7 @@ for(;tlv.isValidObject();tlv.nextObject())
             {
                 voiceMailNum = newVoiceMailNum;
                 voiceMailTag = newVoiceMailTag;
-            } //End block
+            } 
     if(isCphsMailboxEnabled())            
             {
                 adn = new AdnRecord(voiceMailTag, voiceMailNum);
@@ -864,12 +873,12 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(DBG)                    
                     log("Callback with MBDN successful.");
                     onCphsCompleted = null;
-                } //End block
+                } 
                 new AdnRecordLoader(phone).
                             updateEF(adn, EF_MAILBOX_CPHS, EF_EXT1, 1, null,
                             obtainMessage(EVENT_SET_CPHS_MAILBOX_DONE,
                                     onCphsCompleted));
-            } //End block
+            } 
             else
             {
     if(ar.userObj != null)                
@@ -877,8 +886,8 @@ for(;tlv.isValidObject();tlv.nextObject())
                     AsyncResult.forMessage(((Message) ar.userObj)).exception
                                 = ar.exception;
                     ((Message) ar.userObj).sendToTarget();
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case EVENT_SET_CPHS_MAILBOX_DONE:
             isRecordLoadResponse = false;
@@ -887,13 +896,13 @@ for(;tlv.isValidObject();tlv.nextObject())
             {
                 voiceMailNum = newVoiceMailNum;
                 voiceMailTag = newVoiceMailTag;
-            } //End block
+            } 
             else
             {
     if(DBG)                
                 log("Set CPHS MailBox with exception: "
                             + ar.exception);
-            } //End block
+            } 
     if(ar.userObj != null)            
             {
     if(DBG)                
@@ -901,7 +910,7 @@ for(;tlv.isValidObject();tlv.nextObject())
                 AsyncResult.forMessage(((Message) ar.userObj)).exception
                             = ar.exception;
                 ((Message) ar.userObj).sendToTarget();
-            } //End block
+            } 
             break;
             case EVENT_SIM_REFRESH:
             isRecordLoadResponse = false;
@@ -911,7 +920,7 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(ar.exception == null)            
             {
                 handleSimRefresh((int[])(ar.result));
-            } //End block
+            } 
             break;
             case EVENT_GET_CFIS_DONE:
             isRecordLoadResponse = true;
@@ -920,7 +929,7 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             Log.d(LOG_TAG, "EF_CFIS: " +
                    IccUtils.bytesToHexString(data));
             mEfCfis = data;
@@ -933,29 +942,30 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             data = (byte[])ar.result;
             handleEfCspData(data);
             break;
             default:
             super.handleMessage(msg);
 }
-        } //End block
+        } 
         catch (RuntimeException exc)
         {
-        } //End block
+        } 
         finally 
         {
     if(isRecordLoadResponse)            
             {
                 onRecordLoaded();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.523 -0400", hash_original_method = "E530DF481CB4FAA0037A4FE4ABD87373", hash_generated_method = "C3B313B63E3F12189A4CDF66E93DCE86")
     private void handleFileUpdate(int efid) {
         addTaint(efid);
@@ -980,8 +990,8 @@ switch(efid){
         fetchSimRecords();
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -993,7 +1003,7 @@ switch(efid){
     if(DBG)            
             log("handleSimRefresh without input");
             return;
-        } //End block
+        } 
 switch((result[0])){
         case CommandsInterface.SIM_REFRESH_FILE_UPDATED:
     if(DBG)        
@@ -1017,8 +1027,8 @@ switch((result[0])){
         log("handleSimRefresh with unknown operation");
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1028,8 +1038,8 @@ switch((result[0])){
         int varE5ED295C769EEBC0A65C2734AD107BE1_1441421372 = (phone.mSMS.dispatchMessage(message));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144180234 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1144180234;
-        // ---------- Original Method ----------
-        //return phone.mSMS.dispatchMessage(message);
+        
+        
     }
 
     
@@ -1045,17 +1055,17 @@ switch((result[0])){
             System.arraycopy(ba, 1, pdu, 0, n - 1);
             SmsMessage message = SmsMessage.createFromPdu(pdu);
             dispatchGsmMessage(message);
-        } //End block
-        // ---------- Original Method ----------
-        //if (ba[0] != 0)
-            //Log.d("ENF", "status : " + ba[0]);
-        //if (ba[0] == 3) {
-            //int n = ba.length;
-            //byte[] pdu = new byte[n - 1];
-            //System.arraycopy(ba, 1, pdu, 0, n - 1);
-            //SmsMessage message = SmsMessage.createFromPdu(pdu);
-            //dispatchGsmMessage(message);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1078,41 +1088,41 @@ for(int i = 0;i < count;i++)
                 {
                     phone.getIccFileHandler().updateEFLinearFixed(EF_SMS,
                             i, ba, null, obtainMessage(EVENT_MARK_SMS_READ_DONE, i));
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.525 -0400", hash_original_method = "2DE8400081AD5D0DFDE4A5A335B40E41", hash_generated_method = "C104623C9674E8CB54610FBF96F1D2A1")
     protected void onRecordLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         recordsToLoad -= 1;
     if(recordsToLoad == 0 && recordsRequested == true)        
         {
             onAllRecordsLoaded();
-        } //End block
+        } 
         else
     if(recordsToLoad < 0)        
         {
             recordsToLoad = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //recordsToLoad -= 1;
-        //if (recordsToLoad == 0 && recordsRequested == true) {
-            //onAllRecordsLoaded();
-        //} else if (recordsToLoad < 0) {
-            //Log.e(LOG_TAG, "SIMRecords: recordsToLoad <0, programmer error suspected");
-            //recordsToLoad = 0;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.525 -0400", hash_original_method = "66CB4A941BE4FC702CDC8E50BFF0F26C", hash_generated_method = "6C07A1C855C3E96F544C2F489525F323")
     protected void onAllRecordsLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Log.d(LOG_TAG, "SIMRecords: record load complete");
         String operator = getOperatorNumeric();
         phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
@@ -1120,50 +1130,52 @@ for(int i = 0;i < count;i++)
         {
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
                     MccTable.countryCodeForMcc(Integer.parseInt(imsi.substring(0,3))));
-        } //End block
+        } 
         else
         {
-        } //End block
+        } 
         setVoiceMailByCountry(operator);
         setSpnFromConfig(operator);
         recordsLoadedRegistrants.notifyRegistrants(
             new AsyncResult(null, null, null));
         phone.mIccCard.broadcastIccStateChangedIntent(
                 SimCard.INTENT_VALUE_ICC_LOADED, null);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "SIMRecords: record load complete");
-        //String operator = getOperatorNumeric();
-        //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
-        //if (imsi != null) {
-            //phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
-                    //MccTable.countryCodeForMcc(Integer.parseInt(imsi.substring(0,3))));
-        //}
-        //else {
-            //Log.e("SIM", "[SIMRecords] onAllRecordsLoaded: imsi is NULL!");
-        //}
-        //setVoiceMailByCountry(operator);
-        //setSpnFromConfig(operator);
-        //recordsLoadedRegistrants.notifyRegistrants(
-            //new AsyncResult(null, null, null));
-        //phone.mIccCard.broadcastIccStateChangedIntent(
-                //SimCard.INTENT_VALUE_ICC_LOADED, null);
+        
+        
+        
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+        
+        
+            
+        
+                
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.525 -0400", hash_original_method = "F5FC22B4152F67EB826E6610A6C9072B", hash_generated_method = "BB334338599B6594E2EAD946A566C2B6")
     private void setSpnFromConfig(String carrier) {
         addTaint(carrier.getTaint());
     if(mSpnOverride.containsCarrier(carrier))        
         {
             spn = mSpnOverride.getSpn(carrier);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSpnOverride.containsCarrier(carrier)) {
-            //spn = mSpnOverride.getSpn(carrier);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.525 -0400", hash_original_method = "0A1C3646AC6E538340751C4EFB011D4A", hash_generated_method = "02885CD3E9F7FBF827794AA8BF44D7C1")
     private void setVoiceMailByCountry(String spn) {
         addTaint(spn.getTaint());
@@ -1172,26 +1184,27 @@ for(int i = 0;i < count;i++)
             isVoiceMailFixed = true;
             voiceMailNum = mVmConfig.getVoiceMailNumber(spn);
             voiceMailTag = mVmConfig.getVoiceMailTag(spn);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mVmConfig.containsCarrier(spn)) {
-            //isVoiceMailFixed = true;
-            //voiceMailNum = mVmConfig.getVoiceMailNumber(spn);
-            //voiceMailTag = mVmConfig.getVoiceMailTag(spn);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.526 -0400", hash_original_method = "9A96815ED791357C0C0DD55806DDDE67", hash_generated_method = "F27FE7CD305FE9A5DC0CE32EB9377D86")
     public void onSimReady() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         phone.mIccCard.broadcastIccStateChangedIntent(
                 SimCard.INTENT_VALUE_ICC_READY, null);
         fetchSimRecords();
-        // ---------- Original Method ----------
-        //phone.mIccCard.broadcastIccStateChangedIntent(
-                //SimCard.INTENT_VALUE_ICC_READY, null);
-        //fetchSimRecords();
+        
+        
+                
+        
     }
 
     
@@ -1235,7 +1248,7 @@ for(int i = 0;i < count;i++)
         {
             iccFh.loadEFLinearFixedAll(EF_SMS, obtainMessage(EVENT_GET_ALL_SMS_DONE));
             recordsToLoad++;
-        } //End block
+        } 
     if(CRASH_RIL)        
         {
             String sms = "0107912160130310f20404d0110041007030208054832b0120"
@@ -1247,9 +1260,9 @@ for(int i = 0;i < count;i++)
             byte[] ba = IccUtils.hexStringToBytes(sms);
             iccFh.updateEFLinearFixed(EF_SMS, 1, ba, null,
                             obtainMessage(EVENT_MARK_SMS_READ_DONE, 1));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1261,7 +1274,7 @@ for(int i = 0;i < count;i++)
     if(spn == null || spnDisplayCondition == -1)        
         {
             rule = SPN_RULE_SHOW_PLMN;
-        } //End block
+        } 
         else
     if(isOnMatchingPlmn(plmn))        
         {
@@ -1269,35 +1282,35 @@ for(int i = 0;i < count;i++)
     if((spnDisplayCondition & 0x01) == 0x01)            
             {
                 rule |= SPN_RULE_SHOW_PLMN;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             rule = SPN_RULE_SHOW_PLMN;
     if((spnDisplayCondition & 0x02) == 0x00)            
             {
                 rule |= SPN_RULE_SHOW_SPN;
-            } //End block
-        } //End block
+            } 
+        } 
         int var981C1E7B3795DA18687613FBD66D4954_986309498 = (rule);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251790232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1251790232;
-        // ---------- Original Method ----------
-        //int rule;
-        //if (spn == null || spnDisplayCondition == -1) {
-            //rule = SPN_RULE_SHOW_PLMN;
-        //} else if (isOnMatchingPlmn(plmn)) {
-            //rule = SPN_RULE_SHOW_SPN;
-            //if ((spnDisplayCondition & 0x01) == 0x01) {
-                //rule |= SPN_RULE_SHOW_PLMN;
-            //}
-        //} else {
-            //rule = SPN_RULE_SHOW_PLMN;
-            //if ((spnDisplayCondition & 0x02) == 0x00) {
-                //rule |= SPN_RULE_SHOW_SPN;
-            //}
-        //}
-        //return rule;
+        
+        
+        
+            
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1315,7 +1328,7 @@ for(int i = 0;i < count;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1992273244 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908944161 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_908944161;
-        } //End block
+        } 
     if(spdiNetworks != null)        
         {
 for(String spdiNet : spdiNetworks)
@@ -1325,25 +1338,25 @@ for(String spdiNet : spdiNetworks)
                     boolean varB326B5062B2F0E69046810717534CB09_672167930 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1666979931 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1666979931;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_645784473 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783076555 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_783076555;
-        // ---------- Original Method ----------
-        //if (plmn == null) return false;
-        //if (plmn.equals(getOperatorNumeric())) {
-            //return true;
-        //}
-        //if (spdiNetworks != null) {
-            //for (String spdiNet : spdiNetworks) {
-                //if (plmn.equals(spdiNet)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -1355,7 +1368,7 @@ for(String spdiNet : spdiNetworks)
     if(start)        
         {
             spnState = Get_Spn_Fsm_State.INIT;
-        } //End block
+        } 
 switch(spnState){
         case INIT:
         spn = null;
@@ -1375,7 +1388,7 @@ switch(spnState){
                             + " spnDisplayCondition: " + spnDisplayCondition);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
             spnState = Get_Spn_Fsm_State.IDLE;
-        } //End block
+        } 
         else
         {
             phone.getIccFileHandler().loadEFTransparent( EF_SPN_CPHS,
@@ -1383,7 +1396,7 @@ switch(spnState){
             recordsToLoad++;
             spnState = Get_Spn_Fsm_State.READ_SPN_CPHS;
             spnDisplayCondition = -1;
-        } //End block
+        } 
         break;
         case READ_SPN_CPHS:
     if(ar != null && ar.exception == null)        
@@ -1395,14 +1408,14 @@ switch(spnState){
             log("Load EF_SPN_CPHS: " + spn);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
             spnState = Get_Spn_Fsm_State.IDLE;
-        } //End block
+        } 
         else
         {
             phone.getIccFileHandler().loadEFTransparent(
                             EF_SPN_SHORT_CPHS, obtainMessage(EVENT_GET_SPN_DONE));
             recordsToLoad++;
             spnState = Get_Spn_Fsm_State.READ_SPN_SHORT_CPHS;
-        } //End block
+        } 
         break;
         case READ_SPN_SHORT_CPHS:
     if(ar != null && ar.exception == null)        
@@ -1413,19 +1426,19 @@ switch(spnState){
     if(DBG)            
             log("Load EF_SPN_SHORT_CPHS: " + spn);
             phone.setSystemProperty(PROPERTY_ICC_OPERATOR_ALPHA, spn);
-        } //End block
+        } 
         else
         {
     if(DBG)            
             log("No SPN loaded in either CHPS or 3GPP");
-        } //End block
+        } 
         spnState = Get_Spn_Fsm_State.IDLE;
         break;
         default:
         spnState = Get_Spn_Fsm_State.IDLE;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1439,17 +1452,17 @@ for(;tlv.isValidObject();tlv.nextObject())
     if(tlv.getTag() == TAG_SPDI)            
             {
                 tlv = new SimTlv(tlv.getData(), 0, tlv.getData().length);
-            } //End block
+            } 
     if(tlv.getTag() == TAG_SPDI_PLMN_LIST)            
             {
                 plmnEntries = tlv.getData();
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
     if(plmnEntries == null)        
         {
             return;
-        } //End block
+        } 
         spdiNetworks = new ArrayList<String>(plmnEntries.length / 3);
 for(int i = 0;i + 2 < plmnEntries.length;i += 3)
         {
@@ -1459,13 +1472,14 @@ for(int i = 0;i + 2 < plmnEntries.length;i += 3)
             {
                 log("EF_SPDI network: " + plmnCode);
                 spdiNetworks.add(plmnCode);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.528 -0400", hash_original_method = "3EE42FFEB0B4A779D022FF2A029DBC31", hash_generated_method = "AC743444500D273EE488674F6928BAE5")
     private boolean isCphsMailboxEnabled() {
     if(mCphsInfo == null)        
@@ -1477,9 +1491,9 @@ for(int i = 0;i + 2 < plmnEntries.length;i += 3)
         boolean varE23B3FF493A708924D170B3D94CFC53B_1306632758 = (((mCphsInfo[1] & CPHS_SST_MBN_MASK) == CPHS_SST_MBN_ENABLED ));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1222023368 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1222023368;
-        // ---------- Original Method ----------
-        //if (mCphsInfo == null)  return false;
-        //return ((mCphsInfo[1] & CPHS_SST_MBN_MASK) == CPHS_SST_MBN_ENABLED );
+        
+        
+        
     }
 
     
@@ -1487,26 +1501,27 @@ for(int i = 0;i + 2 < plmnEntries.length;i += 3)
     protected void log(String s) {
         addTaint(s.getTaint());
         Log.d(LOG_TAG, "[SIMRecords] " + s);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[SIMRecords] " + s);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.529 -0400", hash_original_method = "747DCE9A0C1CA0D85263EB0A5CECAE60", hash_generated_method = "9369A1FBEE7E35E0523A47E129631C96")
     protected void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[SIMRecords] " + s);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.529 -0400", hash_original_method = "545A7868DCB44F353BBAB91C69F027BF", hash_generated_method = "5A038018F68ED2C715A920EF4B22DCA1")
     public boolean isCspPlmnEnabled() {
         boolean varB70AE412AC2324E79674A75FFD9621A7_395740140 = (mCspPlmnEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1502955815 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1502955815;
-        // ---------- Original Method ----------
-        //return mCspPlmnEnabled;
+        
+        
     }
 
     
@@ -1523,17 +1538,17 @@ for(int i = 0;i < usedCspGroups;i++)
     if((data[(2 * i) + 1] & 0x80) == 0x80)                
                 {
                     mCspPlmnEnabled = true;
-                } //End block
+                } 
                 else
                 {
                     mCspPlmnEnabled = false;
                     phone.setNetworkSelectionModeAutomatic(null);
-                } //End block
+                } 
                 return;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     

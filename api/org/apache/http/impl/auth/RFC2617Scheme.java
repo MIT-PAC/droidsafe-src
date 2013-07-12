@@ -1,6 +1,6 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public abstract class RFC2617Scheme extends AuthSchemeBase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.204 -0400", hash_original_method = "80ED69FEE6B04980340E6722B9C707A6", hash_generated_method = "B90D9EB300F2A770A1CD2621E397D28E")
     public  RFC2617Scheme() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,23 +41,23 @@ public abstract class RFC2617Scheme extends AuthSchemeBase {
             MalformedChallengeException varB4181F999E7B1D8DD4899D0721FD90A4_2073893567 = new MalformedChallengeException("Authentication challenge is empty");
             varB4181F999E7B1D8DD4899D0721FD90A4_2073893567.addTaint(taint);
             throw varB4181F999E7B1D8DD4899D0721FD90A4_2073893567;
-        } //End block
+        } 
         this.params = new HashMap<String, String>(elements.length);
 for(HeaderElement element : elements)
         {
             this.params.put(element.getName(), element.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //HeaderValueParser parser = BasicHeaderValueParser.DEFAULT;
-        //ParserCursor cursor = new ParserCursor(pos, buffer.length());
-        //HeaderElement[] elements = parser.parseElements(buffer, cursor);
-        //if (elements.length == 0) {
-            //throw new MalformedChallengeException("Authentication challenge is empty");
-        //}
-        //this.params = new HashMap<String, String>(elements.length);
-        //for (HeaderElement element : elements) {
-            //this.params.put(element.getName(), element.getValue());
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -66,15 +66,15 @@ for(HeaderElement element : elements)
     if(this.params == null)        
         {
             this.params = new HashMap<String, String>();
-        } //End block
+        } 
 Map<String, String> var751A5B03769AE238544A23D7966F9A50_444792342 =         this.params;
         var751A5B03769AE238544A23D7966F9A50_444792342.addTaint(taint);
         return var751A5B03769AE238544A23D7966F9A50_444792342;
-        // ---------- Original Method ----------
-        //if (this.params == null) {
-            //this.params = new HashMap<String, String>();
-        //}
-        //return this.params;
+        
+        
+            
+        
+        
     }
 
     
@@ -86,24 +86,24 @@ Map<String, String> var751A5B03769AE238544A23D7966F9A50_444792342 =         this
             IllegalArgumentException var27808EC28D2A61D0D9CEDF204AE56875_769319361 = new IllegalArgumentException("Parameter name may not be null");
             var27808EC28D2A61D0D9CEDF204AE56875_769319361.addTaint(taint);
             throw var27808EC28D2A61D0D9CEDF204AE56875_769319361;
-        } //End block
+        } 
     if(this.params == null)        
         {
 String var540C13E9E156B687226421B24F2DF178_1254667546 =             null;
             var540C13E9E156B687226421B24F2DF178_1254667546.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1254667546;
-        } //End block
+        } 
 String varFBF77A7E99F84EB59C163A59DAFE14E8_69305885 =         this.params.get(name.toLowerCase(Locale.ENGLISH));
         varFBF77A7E99F84EB59C163A59DAFE14E8_69305885.addTaint(taint);
         return varFBF77A7E99F84EB59C163A59DAFE14E8_69305885;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Parameter name may not be null"); 
-        //}
-        //if (this.params == null) {
-            //return null;
-        //}
-        //return this.params.get(name.toLowerCase(Locale.ENGLISH));
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ String varFBF77A7E99F84EB59C163A59DAFE14E8_69305885 =         this.params.get(na
 String var11FB4A81E0A819600072705611ABDD2B_1241592002 =         getParameter("realm");
         var11FB4A81E0A819600072705611ABDD2B_1241592002.addTaint(taint);
         return var11FB4A81E0A819600072705611ABDD2B_1241592002;
-        // ---------- Original Method ----------
-        //return getParameter("realm");
+        
+        
     }
 
     

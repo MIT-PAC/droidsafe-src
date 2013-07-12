@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,7 +47,7 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.776 -0400", hash_original_method = "90469C020BD0C2691C8C778F609E10DE", hash_generated_method = "F008BABB63E20BD366844A0FEDDC4004")
     public  DefaultClientConnection() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,8 +56,8 @@ public class DefaultClientConnection extends SocketHttpClientConnection implemen
 HttpHost var67C71439C5981484698447EE93E1A003_40045649 =         this.targetHost;
         var67C71439C5981484698447EE93E1A003_40045649.addTaint(taint);
         return var67C71439C5981484698447EE93E1A003_40045649;
-        // ---------- Original Method ----------
-        //return this.targetHost;
+        
+        
     }
 
     
@@ -66,8 +66,8 @@ HttpHost var67C71439C5981484698447EE93E1A003_40045649 =         this.targetHost;
         boolean var1589795B26F953D6CF1D3B000BEE1AEA_929109999 = (this.connSecure);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822659791 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1822659791;
-        // ---------- Original Method ----------
-        //return this.connSecure;
+        
+        
     }
 
     
@@ -77,11 +77,12 @@ HttpHost var67C71439C5981484698447EE93E1A003_40045649 =         this.targetHost;
 Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
         var6B38E62DD669FDAB6F1C8B30960FAB66_57846144.addTaint(taint);
         return var6B38E62DD669FDAB6F1C8B30960FAB66_57846144;
-        // ---------- Original Method ----------
-        //return this.socket;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.778 -0400", hash_original_method = "DA5079B0FADB5957D7F2D5BE061C8D7D", hash_generated_method = "1B52CF874175932E319734A3F5BF879D")
     public void opening(Socket sock, HttpHost target) throws IOException {
         assertNotOpen();
@@ -93,15 +94,15 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
             IOException varA5CC848843DF75C6BC8F83E942245B6E_1908668533 = new IOException("Connection already shutdown");
             varA5CC848843DF75C6BC8F83E942245B6E_1908668533.addTaint(taint);
             throw varA5CC848843DF75C6BC8F83E942245B6E_1908668533;
-        } //End block
-        // ---------- Original Method ----------
-        //assertNotOpen();
-        //this.socket = sock;
-        //this.targetHost = target;
-        //if (this.shutdown) {
-            //sock.close(); 
-            //throw new IOException("Connection already shutdown");
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -115,17 +116,17 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_1362078535.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_1362078535;
-        } //End block
+        } 
         this.connSecure = secure;
         bind(this.socket, params);
-        // ---------- Original Method ----------
-        //assertNotOpen();
-        //if (params == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //this.connSecure = secure;
-        //bind(this.socket, params);
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
@@ -138,13 +139,13 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
         Socket sock = this.socket;
     if(sock != null)        
         sock.close();
-        // ---------- Original Method ----------
-        //log.debug("Connection shut down");
-        //shutdown = true;
-        //super.shutdown();
-        //Socket sock = this.socket;
-        //if (sock != null)
-            //sock.close();
+        
+        
+        
+        
+        
+        
+            
     }
 
     
@@ -153,9 +154,9 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
     public void close() throws IOException {
         log.debug("Connection closed");
         super.close();
-        // ---------- Original Method ----------
-        //log.debug("Connection closed");
-        //super.close();
+        
+        
+        
     }
 
     
@@ -175,19 +176,19 @@ Socket var6B38E62DD669FDAB6F1C8B30960FAB66_57846144 =         this.socket;
     if(wireLog.isDebugEnabled())        
         {
             inbuffer = new LoggingSessionInputBuffer(inbuffer, new Wire(wireLog));
-        } //End block
+        } 
 SessionInputBuffer var736A436546842D53E14743BF3FAC79E6_1756664708 =         inbuffer;
         var736A436546842D53E14743BF3FAC79E6_1756664708.addTaint(taint);
         return var736A436546842D53E14743BF3FAC79E6_1756664708;
-        // ---------- Original Method ----------
-        //SessionInputBuffer inbuffer = super.createSessionInputBuffer(
-                //socket, 
-                //buffersize,
-                //params);
-        //if (wireLog.isDebugEnabled()) {
-            //inbuffer = new LoggingSessionInputBuffer(inbuffer, new Wire(wireLog));
-        //}
-        //return inbuffer;
+        
+        
+                
+                
+                
+        
+            
+        
+        
     }
 
     
@@ -207,19 +208,19 @@ SessionInputBuffer var736A436546842D53E14743BF3FAC79E6_1756664708 =         inbu
     if(wireLog.isDebugEnabled())        
         {
             outbuffer = new LoggingSessionOutputBuffer(outbuffer, new Wire(wireLog));
-        } //End block
+        } 
 SessionOutputBuffer var6647B0BB282283042E6D25A390B5E288_275660229 =         outbuffer;
         var6647B0BB282283042E6D25A390B5E288_275660229.addTaint(taint);
         return var6647B0BB282283042E6D25A390B5E288_275660229;
-        // ---------- Original Method ----------
-        //SessionOutputBuffer outbuffer = super.createSessionOutputBuffer(
-                //socket,
-                //buffersize,
-                //params);
-        //if (wireLog.isDebugEnabled()) {
-            //outbuffer = new LoggingSessionOutputBuffer(outbuffer, new Wire(wireLog));
-        //}
-        //return outbuffer;
+        
+        
+                
+                
+                
+        
+            
+        
+        
     }
 
     
@@ -236,12 +237,13 @@ HttpMessageParser var77984927842A040FCF920A71EAA2A2B9_2021865070 =         new D
             (buffer, null, responseFactory, params);
         var77984927842A040FCF920A71EAA2A2B9_2021865070.addTaint(taint);
         return var77984927842A040FCF920A71EAA2A2B9_2021865070;
-        // ---------- Original Method ----------
-        //return new DefaultResponseParser
-            //(buffer, null, responseFactory, params);
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.781 -0400", hash_original_method = "9118767905DEE596C55572AB6CA12E81", hash_generated_method = "AEAE634CAAE0B50CFA044743B6022C4B")
     public void update(Socket sock, HttpHost target,
                        boolean secure, HttpParams params) throws IOException {
@@ -253,37 +255,37 @@ HttpMessageParser var77984927842A040FCF920A71EAA2A2B9_2021865070 =         new D
                 ("Target host must not be null.");
             varEC83656C97A1AEE534C63E8749A9F3F6_1657433304.addTaint(taint);
             throw varEC83656C97A1AEE534C63E8749A9F3F6_1657433304;
-        } //End block
+        } 
     if(params == null)        
         {
             IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_1849001602 = new IllegalArgumentException
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_1849001602.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_1849001602;
-        } //End block
+        } 
     if(sock != null)        
         {
             this.socket = sock;
             bind(sock, params);
-        } //End block
+        } 
         targetHost = target;
         connSecure = secure;
-        // ---------- Original Method ----------
-        //assertOpen();
-        //if (target == null) {
-            //throw new IllegalArgumentException
-                //("Target host must not be null.");
-        //}
-        //if (params == null) {
-            //throw new IllegalArgumentException
-                //("Parameters must not be null.");
-        //}
-        //if (sock != null) {
-            //this.socket = sock;
-            //bind(sock, params);
-        //}
-        //targetHost = target;
-        //connSecure = secure;
+        
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -298,21 +300,21 @@ HttpMessageParser var77984927842A040FCF920A71EAA2A2B9_2021865070 =         new D
 for(Header header : headers)
             {
                 headerLog.debug("<< " + header.toString());
-            } //End block
-        } //End block
+            } 
+        } 
 HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1700496422 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1700496422.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1700496422;
-        // ---------- Original Method ----------
-        //HttpResponse response = super.receiveResponseHeader();
-        //if (headerLog.isDebugEnabled()) {
-            //headerLog.debug("<< " + response.getStatusLine().toString());
-            //Header[] headers = response.getAllHeaders();
-            //for (Header header : headers) {
-                //headerLog.debug("<< " + header.toString());
-            //}
-        //}
-        //return response;
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -328,17 +330,17 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1700496422 =         response;
 for(Header header : headers)
             {
                 headerLog.debug(">> " + header.toString());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.sendRequestHeader(request);
-        //if (headerLog.isDebugEnabled()) {
-            //headerLog.debug(">> " + request.getRequestLine().toString());
-            //Header[] headers = request.getAllHeaders();
-            //for (Header header : headers) {
-                //headerLog.debug(">> " + header.toString());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     

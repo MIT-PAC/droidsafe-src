@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,13 +16,13 @@ public class DashPathEffect extends PathEffect {
             ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_827280248 = new ArrayIndexOutOfBoundsException();
             var37DB57B1FEB1C9FBA644A093BFA8B678_827280248.addTaint(taint);
             throw var37DB57B1FEB1C9FBA644A093BFA8B678_827280248;
-        } //End block
+        } 
         native_instance = nativeCreate(intervals, phase);
-        // ---------- Original Method ----------
-        //if (intervals.length < 2) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_instance = nativeCreate(intervals, phase);
+        
+        
+            
+        
+        
     }
 
     

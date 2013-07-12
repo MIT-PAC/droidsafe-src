@@ -1,6 +1,6 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,9 +20,9 @@ public class AccelerateInterpolator implements Interpolator {
     public  AccelerateInterpolator() {
         mFactor = 1.0f;
         mDoubleFactor = 2.0;
-        // ---------- Original Method ----------
-        //mFactor = 1.0f;
-        //mDoubleFactor = 2.0;
+        
+        
+        
     }
 
     
@@ -30,9 +30,9 @@ public class AccelerateInterpolator implements Interpolator {
     public  AccelerateInterpolator(float factor) {
         mFactor = factor;
         mDoubleFactor = 2 * mFactor;
-        // ---------- Original Method ----------
-        //mFactor = factor;
-        //mDoubleFactor = 2 * mFactor;
+        
+        
+        
     }
 
     
@@ -44,12 +44,12 @@ public class AccelerateInterpolator implements Interpolator {
         mFactor = a.getFloat(com.android.internal.R.styleable.AccelerateInterpolator_factor, 1.0f);
         mDoubleFactor = 2 * mFactor;
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a =
-            //context.obtainStyledAttributes(attrs, com.android.internal.R.styleable.AccelerateInterpolator);
-        //mFactor = a.getFloat(com.android.internal.R.styleable.AccelerateInterpolator_factor, 1.0f);
-        //mDoubleFactor = 2 * mFactor;
-        //a.recycle();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -61,19 +61,19 @@ public class AccelerateInterpolator implements Interpolator {
             float var882BDEA7773A3C8A17444B90E648DBEC_732980518 = (input * input);
                         float var546ADE640B6EDFBC8A086EF31347E768_1171695250 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1171695250;
-        } //End block
+        } 
         else
         {
             float var9818D6E8E33B7E9F5F48A6DDF22A4C5C_212516167 = ((float)Math.pow(input, mDoubleFactor));
                         float var546ADE640B6EDFBC8A086EF31347E768_572901828 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_572901828;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFactor == 1.0f) {
-            //return input * input;
-        //} else {
-            //return (float)Math.pow(input, mDoubleFactor);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

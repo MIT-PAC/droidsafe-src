@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,14 +52,14 @@ public final class RuimRecords extends IccRecords {
         p.mCM.registerForOffOrNotAvailable(this, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
         p.mCM.registerForIccRefresh(this, EVENT_RUIM_REFRESH, null);
         onRadioOffOrNotAvailable();
-        // ---------- Original Method ----------
-        //adnCache = new AdnRecordCache(phone);
-        //recordsRequested = false;
-        //recordsToLoad = 0;
-        //p.mCM.registerForRUIMReady(this, EVENT_RUIM_READY, null);
-        //p.mCM.registerForOffOrNotAvailable(this, EVENT_RADIO_OFF_OR_NOT_AVAILABLE, null);
-        //p.mCM.registerForIccRefresh(this, EVENT_RUIM_REFRESH, null);
-        //onRadioOffOrNotAvailable();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -69,68 +69,73 @@ public final class RuimRecords extends IccRecords {
         phone.mCM.unregisterForRUIMReady(this);
         phone.mCM.unregisterForOffOrNotAvailable( this);
         phone.mCM.unregisterForIccRefresh(this);
-        // ---------- Original Method ----------
-        //phone.mCM.unregisterForRUIMReady(this);
-        //phone.mCM.unregisterForOffOrNotAvailable( this);
-        //phone.mCM.unregisterForIccRefresh(this);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.104 -0400", hash_original_method = "F3AC7B1645E4B6C17E75361C82F92F71", hash_generated_method = "8135547F7335BCC93E8ADF2EAD79E568")
     @Override
     protected void finalize() {
     if(DBG)        
         Log.d(LOG_TAG, "RuimRecords finalized");
-        // ---------- Original Method ----------
-        //if(DBG) Log.d(LOG_TAG, "RuimRecords finalized");
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.105 -0400", hash_original_method = "890888F3646E6C0F40397D6A9CAE2069", hash_generated_method = "C164568DFBFDA4D969CE0DF6F4836D64")
     @Override
     protected void onRadioOffOrNotAvailable() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         countVoiceMessages = 0;
         mncLength = UNINITIALIZED;
         iccid = null;
         adnCache.reset();
         recordsRequested = false;
-        // ---------- Original Method ----------
-        //countVoiceMessages = 0;
-        //mncLength = UNINITIALIZED;
-        //iccid = null;
-        //adnCache.reset();
-        //recordsRequested = false;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.105 -0400", hash_original_method = "08E37B8778E680438FC3D481E4B7618D", hash_generated_method = "B8F1992B1DC6810C46EA447585FBAFFB")
     public String getMdnNumber() {
 String var1FDFB70D070E103265F511CBBD7E87E9_586734361 =         mMyMobileNumber;
         var1FDFB70D070E103265F511CBBD7E87E9_586734361.addTaint(taint);
         return var1FDFB70D070E103265F511CBBD7E87E9_586734361;
-        // ---------- Original Method ----------
-        //return mMyMobileNumber;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.106 -0400", hash_original_method = "70E8E8D1A91067A8AAF119FFCE233CA9", hash_generated_method = "8538A985133D4F9B9C9C91E6B20D2B72")
     public String getCdmaMin() {
 String var3AED8228038CC465260B536B9B728D30_1672547918 =         mMin2Min1;
         var3AED8228038CC465260B536B9B728D30_1672547918.addTaint(taint);
         return var3AED8228038CC465260B536B9B728D30_1672547918;
-        // ---------- Original Method ----------
-        //return mMin2Min1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.106 -0400", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "A91846B73E27B531502EA4394663C909")
     public String getPrlVersion() {
 String varF0DFA2A5AE60E78166448A9BF5899625_1636971454 =         mPrlVersion;
         varF0DFA2A5AE60E78166448A9BF5899625_1636971454.addTaint(taint);
         return varF0DFA2A5AE60E78166448A9BF5899625_1636971454;
-        // ---------- Original Method ----------
-        //return mPrlVersion;
+        
+        
     }
 
     
@@ -143,28 +148,28 @@ String varF0DFA2A5AE60E78166448A9BF5899625_1636971454 =         mPrlVersion;
         AsyncResult.forMessage((onComplete)).exception =
                 new IccException("setVoiceMailNumber not implemented");
         onComplete.sendToTarget();
-        // ---------- Original Method ----------
-        //AsyncResult.forMessage((onComplete)).exception =
-                //new IccException("setVoiceMailNumber not implemented");
-        //onComplete.sendToTarget();
-        //Log.e(LOG_TAG, "method setVoiceMailNumber is not implemented");
+        
+        
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.109 -0400", hash_original_method = "1D5D0C2F4FF0286B2839C7504C536EE3", hash_generated_method = "72BD7942533D93BFB9764D286429D53E")
     @Override
     public void onRefresh(boolean fileChanged, int[] fileList) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(fileList[0]);
         addTaint(fileChanged);
     if(fileChanged)        
         {
             fetchRuimRecords();
-        } //End block
-        // ---------- Original Method ----------
-        //if (fileChanged) {
-            //fetchRuimRecords();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -175,26 +180,26 @@ String varF0DFA2A5AE60E78166448A9BF5899625_1636971454 =         mPrlVersion;
 String var540C13E9E156B687226421B24F2DF178_397969300 =             null;
             var540C13E9E156B687226421B24F2DF178_397969300.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_397969300;
-        } //End block
+        } 
     if(mncLength != UNINITIALIZED && mncLength != UNKNOWN)        
         {
 String var037E65592CE79D6DE6FB65BCCEB02E99_1929922221 =             mImsi.substring(0, 3 + mncLength);
             var037E65592CE79D6DE6FB65BCCEB02E99_1929922221.addTaint(taint);
             return var037E65592CE79D6DE6FB65BCCEB02E99_1929922221;
-        } //End block
+        } 
         int mcc = Integer.parseInt(mImsi.substring(0,3));
 String var61ABF2776DBD6C902397B405DE533C4D_999774386 =         mImsi.substring(0, 3 + MccTable.smallestDigitsMccForMnc(mcc));
         var61ABF2776DBD6C902397B405DE533C4D_999774386.addTaint(taint);
         return var61ABF2776DBD6C902397B405DE533C4D_999774386;
-        // ---------- Original Method ----------
-        //if (mImsi == null) {
-            //return null;
-        //}
-        //if (mncLength != UNINITIALIZED && mncLength != UNKNOWN) {
-            //return mImsi.substring(0, 3 + mncLength);
-        //}
-        //int mcc = Integer.parseInt(mImsi.substring(0,3));
-        //return mImsi.substring(0, 3 + MccTable.smallestDigitsMccForMnc(mcc));
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -223,12 +228,12 @@ switch(msg.what){
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             mImsi = (String) ar.result;
     if(mImsi != null && (mImsi.length() < 6 || mImsi.length() > 15))            
             {
                 mImsi = null;
-            } //End block
+            } 
             Log.d(LOG_TAG, "IMSI: " + mImsi.substring(0, 6) + "xxxxxxxxx");
             String operatorNumeric = getRUIMOperatorNumeric();
     if(operatorNumeric != null)            
@@ -236,8 +241,8 @@ switch(msg.what){
     if(operatorNumeric.length() <= 6)                
                 {
                     MccTable.updateMccMncConfiguration(phone, operatorNumeric);
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case EVENT_GET_CDMA_SUBSCRIPTION_DONE:
             ar = (AsyncResult)msg.obj;
@@ -245,7 +250,7 @@ switch(msg.what){
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             mMyMobileNumber = localTemp[0];
             mMin2Min1 = localTemp[3];
             mPrlVersion = localTemp[4];
@@ -258,7 +263,7 @@ switch(msg.what){
     if(ar.exception != null)            
             {
                 break;
-            } //End block
+            } 
             iccid = IccUtils.bcdToString(data, 0, data.length);
             Log.d(LOG_TAG, "iccid: " + iccid);
             break;
@@ -266,7 +271,7 @@ switch(msg.what){
             ar = (AsyncResult)msg.obj;
     if(ar.exception != null)            
             {
-            } //End block
+            } 
             break;
             case EVENT_GET_ALL_SMS_DONE:
             case EVENT_MARK_SMS_READ_DONE:
@@ -282,54 +287,54 @@ switch(msg.what){
     if(ar.exception == null)            
             {
                 handleRuimRefresh((int[])(ar.result));
-            } //End block
+            } 
             break;
 }
-        } //End block
+        } 
         catch (RuntimeException exc)
         {
-        } //End block
+        } 
         finally 
         {
     if(isRecordLoadResponse)            
             {
                 onRecordLoaded();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.115 -0400", hash_original_method = "7082FCE9B35AC4F9F043D561172547FE", hash_generated_method = "F63B5B9289591575DB6AD56FDD6563CC")
     @Override
     protected void onRecordLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         recordsToLoad -= 1;
     if(recordsToLoad == 0 && recordsRequested == true)        
         {
             onAllRecordsLoaded();
-        } //End block
+        } 
         else
     if(recordsToLoad < 0)        
         {
             recordsToLoad = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //recordsToLoad -= 1;
-        //if (recordsToLoad == 0 && recordsRequested == true) {
-            //onAllRecordsLoaded();
-        //} else if (recordsToLoad < 0) {
-            //Log.e(LOG_TAG, "RuimRecords: recordsToLoad <0, programmer error suspected");
-            //recordsToLoad = 0;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.116 -0400", hash_original_method = "E50365918A8B4813331E3A24E11292EF", hash_generated_method = "FBF5B9BBF59482AF31F258DFBEBA6FA4")
     @Override
     protected void onAllRecordsLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Log.d(LOG_TAG, "RuimRecords: record load complete");
         String operator = getRUIMOperatorNumeric();
         SystemProperties.set(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
@@ -337,23 +342,23 @@ switch(msg.what){
         {
             SystemProperties.set(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
                     MccTable.countryCodeForMcc(Integer.parseInt(mImsi.substring(0,3))));
-        } //End block
+        } 
         recordsLoadedRegistrants.notifyRegistrants(
             new AsyncResult(null, null, null));
         phone.mIccCard.broadcastIccStateChangedIntent(
                 RuimCard.INTENT_VALUE_ICC_LOADED, null);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "RuimRecords: record load complete");
-        //String operator = getRUIMOperatorNumeric();
-        //SystemProperties.set(PROPERTY_ICC_OPERATOR_NUMERIC, operator);
-        //if (mImsi != null) {
-            //SystemProperties.set(PROPERTY_ICC_OPERATOR_ISO_COUNTRY,
-                    //MccTable.countryCodeForMcc(Integer.parseInt(mImsi.substring(0,3))));
-        //}
-        //recordsLoadedRegistrants.notifyRegistrants(
-            //new AsyncResult(null, null, null));
-        //phone.mIccCard.broadcastIccStateChangedIntent(
-                //RuimCard.INTENT_VALUE_ICC_LOADED, null);
+        
+        
+        
+        
+        
+            
+                    
+        
+        
+            
+        
+                
     }
 
     
@@ -363,11 +368,11 @@ switch(msg.what){
                 RuimCard.INTENT_VALUE_ICC_READY, null);
         fetchRuimRecords();
         phone.mCM.getCDMASubscription(obtainMessage(EVENT_GET_CDMA_SUBSCRIPTION_DONE));
-        // ---------- Original Method ----------
-        //phone.mIccCard.broadcastIccStateChangedIntent(
-                //RuimCard.INTENT_VALUE_ICC_READY, null);
-        //fetchRuimRecords();
-        //phone.mCM.getCDMASubscription(obtainMessage(EVENT_GET_CDMA_SUBSCRIPTION_DONE));
+        
+        
+                
+        
+        
     }
 
     
@@ -379,17 +384,18 @@ switch(msg.what){
         phone.getIccFileHandler().loadEFTransparent(EF_ICCID,
                 obtainMessage(EVENT_GET_ICCID_DONE));
         recordsToLoad++;
-        // ---------- Original Method ----------
-        //recordsRequested = true;
-        //Log.v(LOG_TAG, "RuimRecords:fetchRuimRecords " + recordsToLoad);
-        //phone.mCM.getIMSI(obtainMessage(EVENT_GET_IMSI_DONE));
-        //recordsToLoad++;
-        //phone.getIccFileHandler().loadEFTransparent(EF_ICCID,
-                //obtainMessage(EVENT_GET_ICCID_DONE));
-        //recordsToLoad++;
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.117 -0400", hash_original_method = "409F5B7F98F19D492107B7A38CA851EE", hash_generated_method = "6F33CEDDA1A92A6AF0E269D09793F3C5")
     @Override
     public int getDisplayRule(String plmn) {
@@ -397,8 +403,8 @@ switch(msg.what){
         int varCFCD208495D565EF66E7DFF9F98764DA_306238683 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1530894485 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1530894485;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -410,32 +416,33 @@ switch(msg.what){
     if(line != 1)        
         {
             return;
-        } //End block
+        } 
     if(countWaiting < 0)        
         {
             countWaiting = -1;
-        } //End block
+        } 
         else
     if(countWaiting > 0xff)        
         {
             countWaiting = 0xff;
-        } //End block
+        } 
         countVoiceMessages = countWaiting;
         ((CDMAPhone) phone).notifyMessageWaitingIndicator();
-        // ---------- Original Method ----------
-        //if (line != 1) {
-            //return;
-        //}
-        //if (countWaiting < 0) {
-            //countWaiting = -1;
-        //} else if (countWaiting > 0xff) {
-            //countWaiting = 0xff;
-        //}
-        //countVoiceMessages = countWaiting;
-        //((CDMAPhone) phone).notifyMessageWaitingIndicator();
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.119 -0400", hash_original_method = "BF9176F3CF68AA171F4E13CD5AF3ED9E", hash_generated_method = "DB8AD3E07BE7726A72327FFBE1B7A781")
     private void handleRuimRefresh(int[] result) {
         addTaint(result[0]);
@@ -444,7 +451,7 @@ switch(msg.what){
     if(DBG)            
             log("handleRuimRefresh without input");
             return;
-        } //End block
+        } 
 switch((result[0])){
         case CommandsInterface.SIM_REFRESH_FILE_UPDATED:
     if(DBG)        
@@ -467,8 +474,8 @@ switch((result[0])){
         log("handleRuimRefresh with unknown operation");
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -477,8 +484,8 @@ switch((result[0])){
     protected void log(String s) {
         addTaint(s.getTaint());
         Log.d(LOG_TAG, "[RuimRecords] " + s);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[RuimRecords] " + s);
+        
+        
     }
 
     
@@ -486,8 +493,8 @@ switch((result[0])){
     @Override
     protected void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[RuimRecords] " + s);
+        
+        
     }
 
     

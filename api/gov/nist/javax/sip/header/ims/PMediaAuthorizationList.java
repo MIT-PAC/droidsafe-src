@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class PMediaAuthorizationList extends SIPHeaderList<PMediaAuthorization> 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.998 -0400", hash_original_method = "656C497A7A9D2E8465BD84DF21BD0C00", hash_generated_method = "9BCAC9929D32D2F555BF0B2B59C10BB5")
     public  PMediaAuthorizationList() {
         super(PMediaAuthorization.class, PMediaAuthorizationHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,9 +21,9 @@ public class PMediaAuthorizationList extends SIPHeaderList<PMediaAuthorization> 
 Object varF627329B9209466293A1BF71D9AF7B2B_1345178600 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_1345178600.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_1345178600;
-        // ---------- Original Method ----------
-        //PMediaAuthorizationList retval = new PMediaAuthorizationList();
-        //return retval.clonehlist(this.hlist);
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class CallLog {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.986 -0400", hash_original_method = "EA6E95983D6BBE8DD1267831A542BD27", hash_generated_method = "EA6E95983D6BBE8DD1267831A542BD27")
     public CallLog ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -29,11 +29,12 @@ public class CallLog {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.987 -0400", hash_original_method = "E2028324A117DAF09158B486FB038B63", hash_generated_method = "E2028324A117DAF09158B486FB038B63")
         public Calls ()
         {
-            //Synthesized constructor
+            
         }
 
 
-                public static Uri addCall(CallerInfo ci, Context context, String number,
+                @DSModeled(DSC.SPEC)
+        public static Uri addCall(CallerInfo ci, Context context, String number,
                 int presentation, int callType, long start, int duration) {
             final ContentResolver resolver = context.getContentResolver();
             if (presentation == Connection.PRESENTATION_RESTRICTED) {
@@ -119,7 +120,8 @@ public class CallLog {
         }
 
         
-                private static void removeExpiredEntries(Context context) {
+                @DSModeled(DSC.SPEC)
+        private static void removeExpiredEntries(Context context) {
             final ContentResolver resolver = context.getContentResolver();
             resolver.delete(CONTENT_URI, "_id IN " +
                     "(SELECT _id FROM calls ORDER BY " + DEFAULT_SORT_ORDER

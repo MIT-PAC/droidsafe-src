@@ -1,6 +1,6 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class GZIPOutputStream extends DeflaterOutputStream {
     public  GZIPOutputStream(OutputStream os) throws IOException {
         this(os, BUF_SIZE);
         addTaint(os.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,13 +31,13 @@ public class GZIPOutputStream extends DeflaterOutputStream {
         writeLong(0);
         out.write(0);
         out.write(0);
-        // ---------- Original Method ----------
-        //writeShort(GZIPInputStream.GZIP_MAGIC);
-        //out.write(Deflater.DEFLATED);
-        //out.write(0);
-        //writeLong(0);
-        //out.write(0);
-        //out.write(0);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -47,10 +47,10 @@ public class GZIPOutputStream extends DeflaterOutputStream {
         super.finish();
         writeLong(crc.getValue());
         writeLong(crc.tbytes);
-        // ---------- Original Method ----------
-        //super.finish();
-        //writeLong(crc.getValue());
-        //writeLong(crc.tbytes);
+        
+        
+        
+        
     }
 
     
@@ -62,9 +62,9 @@ public class GZIPOutputStream extends DeflaterOutputStream {
         addTaint(buffer[0]);
         super.write(buffer, off, nbytes);
         crc.update(buffer, off, nbytes);
-        // ---------- Original Method ----------
-        //super.write(buffer, off, nbytes);
-        //crc.update(buffer, off, nbytes);
+        
+        
+        
     }
 
     
@@ -79,13 +79,13 @@ public class GZIPOutputStream extends DeflaterOutputStream {
         long var865C0C0B4AB0E063E5CAA3387C1A8741_876511722 = (i);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1376540271 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1376540271;
-        // ---------- Original Method ----------
-        //int unsigned = (int) i;
-        //out.write(unsigned & 0xFF);
-        //out.write((unsigned >> 8) & 0xFF);
-        //out.write((unsigned >> 16) & 0xFF);
-        //out.write((unsigned >> 24) & 0xFF);
-        //return i;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -97,10 +97,10 @@ public class GZIPOutputStream extends DeflaterOutputStream {
         int var865C0C0B4AB0E063E5CAA3387C1A8741_397981042 = (i);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681628579 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681628579;
-        // ---------- Original Method ----------
-        //out.write(i & 0xFF);
-        //out.write((i >> 8) & 0xFF);
-        //return i;
+        
+        
+        
+        
     }
 
     

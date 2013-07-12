@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -109,8 +109,8 @@ public abstract class RegisteredServicesCache<V> {
         sdFilter.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_AVAILABLE);
         sdFilter.addAction(Intent.ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE);
         mContext.registerReceiver(receiver, sdFilter);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -123,21 +123,21 @@ public abstract class RegisteredServicesCache<V> {
         synchronized
 (mServicesLock)        {
             services = mServices;
-        } //End block
+        } 
         fout.println("RegisteredServicesCache: " + services.size() + " services");
 for(ServiceInfo info : services.values())
         {
             fout.println("  " + info);
-        } //End block
-        // ---------- Original Method ----------
-        //Map<V, ServiceInfo<V>> services;
-        //synchronized (mServicesLock) {
-            //services = mServices;
-        //}
-        //fout.println("RegisteredServicesCache: " + services.size() + " services");
-        //for (ServiceInfo info : services.values()) {
-            //fout.println("  " + info);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -148,11 +148,11 @@ for(ServiceInfo info : services.values())
 RegisteredServicesCacheListener<V> varB7C366B3FCCD3E2168CA30DDDB430A4F_1127172539 =             mListener;
             varB7C366B3FCCD3E2168CA30DDDB430A4F_1127172539.addTaint(taint);
             return varB7C366B3FCCD3E2168CA30DDDB430A4F_1127172539;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mListener;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -161,20 +161,20 @@ RegisteredServicesCacheListener<V> varB7C366B3FCCD3E2168CA30DDDB430A4F_112717253
     if(handler == null)        
         {
             handler = new Handler(mContext.getMainLooper());
-        } //End block
+        } 
         synchronized
 (this)        {
             mHandler = handler;
             mListener = listener;
-        } //End block
-        // ---------- Original Method ----------
-        //if (handler == null) {
-            //handler = new Handler(mContext.getMainLooper());
-        //}
-        //synchronized (this) {
-            //mHandler = handler;
-            //mListener = listener;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -185,46 +185,46 @@ RegisteredServicesCacheListener<V> varB7C366B3FCCD3E2168CA30DDDB430A4F_112717253
     if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
             Log.d(TAG, "notifyListener: " + type + " is " + (removed ? "removed" : "added"));
-        } //End block
+        } 
         RegisteredServicesCacheListener<V> listener;
         Handler handler;
         synchronized
 (this)        {
             listener = mListener;
             handler = mHandler;
-        } //End block
+        } 
     if(listener == null)        
         {
             return;
-        } //End block
+        } 
         final RegisteredServicesCacheListener<V> listener2 = listener;
         handler.post(new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.305 -0400", hash_original_method = "895F39B4216C41C2813EBDFABEA40262", hash_generated_method = "2A8550E57F5B9632D66DC046840BC57C")
         public void run() {
             listener2.onServiceChanged(type, removed);
-            // ---------- Original Method ----------
-            //listener2.onServiceChanged(type, removed);
+            
+            
         }
 });
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-            //Log.d(TAG, "notifyListener: " + type + " is " + (removed ? "removed" : "added"));
-        //}
-        //RegisteredServicesCacheListener<V> listener;
-        //Handler handler;
-        //synchronized (this) {
-            //listener = mListener;
-            //handler = mHandler;
-        //}
-        //if (listener == null) {
-            //return;
-        //}
-        //final RegisteredServicesCacheListener<V> listener2 = listener;
-        //handler.post(new Runnable() {
-            //public void run() {
-                //listener2.onServiceChanged(type, removed);
-            //}
-        //});
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -236,11 +236,11 @@ RegisteredServicesCacheListener<V> varB7C366B3FCCD3E2168CA30DDDB430A4F_112717253
 ServiceInfo<V> var17D506CF4FAD98387DEE85476DC28B5A_912680204 =             mServices.get(type);
             var17D506CF4FAD98387DEE85476DC28B5A_912680204.addTaint(taint);
             return var17D506CF4FAD98387DEE85476DC28B5A_912680204;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mServicesLock) {
-            //return mServices.get(type);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -251,11 +251,11 @@ ServiceInfo<V> var17D506CF4FAD98387DEE85476DC28B5A_912680204 =             mServ
 Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1055063893 =             Collections.unmodifiableCollection(mServices.values());
             var01EADE7461BB4905E6FEDFBECC0D286A_1055063893.addTaint(taint);
             return var01EADE7461BB4905E6FEDFBECC0D286A_1055063893;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mServicesLock) {
-            //return Collections.unmodifiableCollection(mServices.values());
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -265,12 +265,12 @@ Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1055063893 =     
     if(receiver != null)        
         {
             mContext.unregisterReceiver(receiver);
-        } //End block
-        // ---------- Original Method ----------
-        //final BroadcastReceiver receiver = mReceiver.getAndSet(null);
-        //if (receiver != null) {
-            //mContext.unregisterReceiver(receiver);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -279,15 +279,15 @@ Collection<ServiceInfo<V>> var01EADE7461BB4905E6FEDFBECC0D286A_1055063893 =     
     protected void finalize() throws Throwable {
     if(mReceiver.get() != null)        
         {
-        } //End block
+        } 
         close();
         super.finalize();
-        // ---------- Original Method ----------
-        //if (mReceiver.get() != null) {
-            //Log.e(TAG, "RegisteredServicesCache finalized without being closed");
-        //}
-        //close();
-        //super.finalize();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -305,35 +305,36 @@ for(String name : packages)
                     boolean varB326B5062B2F0E69046810717534CB09_241611383 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351253747 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_351253747;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (PackageManager.NameNotFoundException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1143900197 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1959158653 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1959158653;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_770747462 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_809983860 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_809983860;
-        // ---------- Original Method ----------
-        //String[] packages = mContext.getPackageManager().getPackagesForUid(callerUid);
-        //for (String name : packages) {
-            //try {
-                //PackageInfo packageInfo =
-                        //mContext.getPackageManager().getPackageInfo(name, 0 );
-                //if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
-                    //return true;
-                //}
-            //} catch (PackageManager.NameNotFoundException e) {
-                //return false;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                        
+                
+                    
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.309 -0400", hash_original_method = "7FD7D9F6A29EBA7075A2BE7C2AD27E68", hash_generated_method = "44DB6FEB9E3A22E5F8DCB6563D037A9D")
      void generateServicesMap() {
         PackageManager pm = mContext.getPackageManager();
@@ -348,22 +349,22 @@ for(ResolveInfo resolveInfo : resolveInfos)
     if(info == null)                
                 {
                     continue;
-                } //End block
+                } 
                 serviceInfos.add(info);
-            } //End block
+            } 
             catch (XmlPullParserException e)
             {
-            } //End block
+            } 
             catch (IOException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         synchronized
 (mServicesLock)        {
     if(mPersistentServices == null)            
             {
                 readPersistentServicesLocked();
-            } //End block
+            } 
             mServices = Maps.newHashMap();
             StringBuilder changes = new StringBuilder();
 for(ServiceInfo<V> info : serviceInfos)
@@ -377,17 +378,17 @@ for(ServiceInfo<V> info : serviceInfos)
     if(!mPersistentServicesFileDidNotExist)                    
                     {
                         notifyListener(info.type, false );
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(previousUid == info.uid)                
                 {
     if(Log.isLoggable(TAG, Log.VERBOSE))                    
                     {
                         changes.append("  Existing service (nop): ").append(info).append("\n");
-                    } //End block
+                    } 
                     mServices.put(info.type, info);
-                } //End block
+                } 
                 else
     if(inSystemImage(info.uid)
                         || !containsTypeAndUid(serviceInfos, info.type, previousUid))                
@@ -396,51 +397,51 @@ for(ServiceInfo<V> info : serviceInfos)
                     {
                         changes.append("  System service replacing existing: ").append(info)
                                 .append("\n");
-                    } //End block
+                    } 
                     else
                     {
                         changes.append("  Existing service replacing a removed service: ")
                                 .append(info).append("\n");
-                    } //End block
+                    } 
                     mServices.put(info.type, info);
                     mPersistentServices.put(info.type, info.uid);
                     notifyListener(info.type, false );
-                } //End block
+                } 
                 else
                 {
                     changes.append("  Existing service with new uid ignored: ").append(info)
                             .append("\n");
-                } //End block
-            } //End block
+                } 
+            } 
             ArrayList<V> toBeRemoved = Lists.newArrayList();
 for(V v1 : mPersistentServices.keySet())
             {
     if(!containsType(serviceInfos, v1))                
                 {
                     toBeRemoved.add(v1);
-                } //End block
-            } //End block
+                } 
+            } 
 for(V v1 : toBeRemoved)
             {
                 mPersistentServices.remove(v1);
                 changes.append("  Service removed: ").append(v1).append("\n");
                 notifyListener(v1, true );
-            } //End block
+            } 
     if(changes.length() > 0)            
             {
                 Log.d(TAG, "generateServicesMap(" + mInterfaceName + "): " +
                         serviceInfos.size() + " services:\n" + changes);
                 writePersistentServicesLocked();
-            } //End block
+            } 
             else
             {
                 Log.d(TAG, "generateServicesMap(" + mInterfaceName + "): " +
                         serviceInfos.size() + " services unchanged");
-            } //End block
+            } 
             mPersistentServicesFileDidNotExist = false;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -455,18 +456,18 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1112860063 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_778082936 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_778082936;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1234799973 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387789143 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_387789143;
-        // ---------- Original Method ----------
-        //for (int i = 0, N = serviceInfos.size(); i < N; i++) {
-            //if (serviceInfos.get(i).type.equals(type)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -483,19 +484,19 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1736112450 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495731628 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_495731628;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1850856783 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1398235120 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1398235120;
-        // ---------- Original Method ----------
-        //for (int i = 0, N = serviceInfos.size(); i < N; i++) {
-            //final ServiceInfo<V> serviceInfo = serviceInfos.get(i);
-            //if (serviceInfo.type.equals(type) && serviceInfo.uid == uid) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -514,14 +515,14 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
                 XmlPullParserException var95BB56C5DE56B4BDF53EBEFA6B676EBE_324550711 = new XmlPullParserException("No " + mMetaDataName + " meta-data");
                 var95BB56C5DE56B4BDF53EBEFA6B676EBE_324550711.addTaint(taint);
                 throw var95BB56C5DE56B4BDF53EBEFA6B676EBE_324550711;
-            } //End block
+            } 
             AttributeSet attrs = Xml.asAttributeSet(parser);
             int type;
             while
 ((type=parser.next()) != XmlPullParser.END_DOCUMENT
                     && type != XmlPullParser.START_TAG)            
             {
-            } //End block
+            } 
             String nodeName = parser.getName();
     if(!mAttributesName.equals(nodeName))            
             {
@@ -529,7 +530,7 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
                         "Meta-data does not start with " + mAttributesName +  " tag");
                 var8E5C999F953BBE8E0285A3211C1F9189_576581430.addTaint(taint);
                 throw var8E5C999F953BBE8E0285A3211C1F9189_576581430;
-            } //End block
+            } 
             V v = parseServiceAttributes(pm.getResourcesForApplication(si.applicationInfo),
                     si.packageName, attrs);
     if(v == null)            
@@ -537,28 +538,28 @@ for(int i = 0, N = serviceInfos.size();i < N;i++)
 ServiceInfo<V> var540C13E9E156B687226421B24F2DF178_1520700474 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1520700474.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1520700474;
-            } //End block
+            } 
             final android.content.pm.ServiceInfo serviceInfo = service.serviceInfo;
             final ApplicationInfo applicationInfo = serviceInfo.applicationInfo;
             final int uid = applicationInfo.uid;
 ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new ServiceInfo<V>(v, componentName, uid);
             var34F12F499D790BEB43A634C29A234DB8_834937039.addTaint(taint);
             return var34F12F499D790BEB43A634C29A234DB8_834937039;
-        } //End block
+        } 
         catch (NameNotFoundException e)
         {
             XmlPullParserException var4053B6FE06E8EE292A126000654E7DC8_2081263244 = new XmlPullParserException(
                     "Unable to load resources for pacakge " + si.packageName);
             var4053B6FE06E8EE292A126000654E7DC8_2081263244.addTaint(taint);
             throw var4053B6FE06E8EE292A126000654E7DC8_2081263244;
-        } //End block
+        } 
         finally 
         {
     if(parser != null)            
             parser.close();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -568,7 +569,7 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new S
     if(mSerializerAndParser == null)        
         {
             return;
-        } //End block
+        } 
         FileInputStream fis = null;
         try 
         {
@@ -576,7 +577,7 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new S
     if(mPersistentServicesFileDidNotExist)            
             {
                 return;
-            } //End block
+            } 
             fis = mPersistentServicesFile.openRead();
             XmlPullParser parser = Xml.newPullParser();
             parser.setInput(fis, null);
@@ -585,7 +586,7 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new S
 (eventType != XmlPullParser.START_TAG)            
             {
                 eventType = parser.next();
-            } //End block
+            } 
             String tagName = parser.getName();
     if("services".equals(tagName))            
             {
@@ -601,20 +602,20 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new S
     if(service == null)                                
                                 {
                                     break;
-                                } //End block
+                                } 
                                 String uidString = parser.getAttributeValue(null, "uid");
                                 int uid = Integer.parseInt(uidString);
                                 mPersistentServices.put(service, uid);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         eventType = parser.next();
-                    } //End block
+                    } 
 } while (eventType != XmlPullParser.END_DOCUMENT);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
-        } //End block
+        } 
         finally 
         {
     if(fis != null)            
@@ -622,14 +623,14 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new S
                 try 
                 {
                     fis.close();
-                } //End block
+                } 
                 catch (java.io.IOException e1)
                 {
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -638,7 +639,7 @@ ServiceInfo<V> var34F12F499D790BEB43A634C29A234DB8_834937039 =             new S
     if(mSerializerAndParser == null)        
         {
             return;
-        } //End block
+        } 
         FileOutputStream fos = null;
         try 
         {
@@ -654,20 +655,20 @@ for(Map.Entry<V, Integer> service : mPersistentServices.entrySet())
                 out.attribute(null, "uid", Integer.toString(service.getValue()));
                 mSerializerAndParser.writeAsXml(service.getKey(), out);
                 out.endTag(null, "service");
-            } //End block
+            } 
             out.endTag(null, "services");
             out.endDocument();
             mPersistentServicesFile.finishWrite(fos);
-        } //End block
+        } 
         catch (java.io.IOException e1)
         {
     if(fos != null)            
             {
                 mPersistentServicesFile.failWrite(fos);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -691,10 +692,10 @@ for(Map.Entry<V, Integer> service : mPersistentServices.entrySet())
             this.type = type;
             this.componentName = componentName;
             this.uid = uid;
-            // ---------- Original Method ----------
-            //this.type = type;
-            //this.componentName = componentName;
-            //this.uid = uid;
+            
+            
+            
+            
         }
 
         
@@ -704,8 +705,8 @@ for(Map.Entry<V, Integer> service : mPersistentServices.entrySet())
 String varC4E2D8367AC7DBE709E4A97317782E38_1785173697 =             "ServiceInfo: " + type + ", " + componentName + ", uid " + uid;
             varC4E2D8367AC7DBE709E4A97317782E38_1785173697.addTaint(taint);
             return varC4E2D8367AC7DBE709E4A97317782E38_1785173697;
-            // ---------- Original Method ----------
-            //return "ServiceInfo: " + type + ", " + componentName + ", uid " + uid;
+            
+            
         }
 
         

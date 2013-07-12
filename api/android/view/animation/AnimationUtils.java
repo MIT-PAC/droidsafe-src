@@ -1,6 +1,6 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class AnimationUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.720 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
     public AnimationUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -49,12 +49,14 @@ public class AnimationUtils {
     }
 
     
-        private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+        @DSModeled(DSC.SPEC)
+    private static Animation createAnimationFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         return createAnimationFromXml(c, parser, null, Xml.asAttributeSet(parser));
     }
 
     
-        private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
+        @DSModeled(DSC.SPEC)
+    private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
             AnimationSet parent, AttributeSet attrs) throws XmlPullParserException, IOException {
         Animation anim = null;
         int type;
@@ -87,7 +89,8 @@ public class AnimationUtils {
     }
 
     
-        public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
+        @DSModeled(DSC.SPEC)
+    public static LayoutAnimationController loadLayoutAnimation(Context context, int id) throws NotFoundException {
         XmlResourceParser parser = null;
         try {
             parser = context.getResources().getAnimation(id);
@@ -108,13 +111,15 @@ public class AnimationUtils {
     }
 
     
-        private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+        @DSModeled(DSC.SPEC)
+    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser) throws XmlPullParserException, IOException {
         return createLayoutAnimationFromXml(c, parser, Xml.asAttributeSet(parser));
     }
 
     
-        private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
+        @DSModeled(DSC.SPEC)
+    private static LayoutAnimationController createLayoutAnimationFromXml(Context c,
             XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
         LayoutAnimationController controller = null;
         int type;
@@ -193,7 +198,8 @@ public class AnimationUtils {
     }
 
     
-        private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
+        @DSModeled(DSC.SPEC)
+    private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser parser) throws XmlPullParserException, IOException {
         Interpolator interpolator = null;
         int type;
         int depth = parser.getDepth();

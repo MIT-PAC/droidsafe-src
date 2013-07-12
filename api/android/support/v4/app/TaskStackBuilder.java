@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,8 +26,8 @@ public class TaskStackBuilder implements Iterable<Intent> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.238 -0400", hash_original_method = "D42A6E80ABDCC8C3AC78797ED9ABE957", hash_generated_method = "970E403029151A4E9DDC271056142D70")
     private  TaskStackBuilder(Context a) {
         mSourceContext = a;
-        // ---------- Original Method ----------
-        //mSourceContext = a;
+        
+        
     }
 
     
@@ -36,6 +36,7 @@ public class TaskStackBuilder implements Iterable<Intent> {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.238 -0400", hash_original_method = "511DF8C4B67F5D7A80704A12F82C5852", hash_generated_method = "0A33019EAC02EEE2BF8DD3B636188267")
     public TaskStackBuilder addNextIntent(Intent nextIntent) {
         addTaint(nextIntent.getTaint());
@@ -43,9 +44,9 @@ public class TaskStackBuilder implements Iterable<Intent> {
 TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_386703269 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_386703269.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_386703269;
-        // ---------- Original Method ----------
-        //mIntents.add(nextIntent);
-        //return this;
+        
+        
+        
     }
 
     
@@ -61,30 +62,30 @@ TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_386703269 =         this;
             try 
             {
                 parent = NavUtils.getParentActivityIntent(sourceActivity, parent.getComponent());
-            } //End block
+            } 
             catch (NameNotFoundException e)
             {
                 IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_1903231510 = new IllegalArgumentException(e);
                 varB5003C51895A632D49EB91E1ECEE1438_1903231510.addTaint(taint);
                 throw varB5003C51895A632D49EB91E1ECEE1438_1903231510;
-            } //End block
-        } //End block
+            } 
+        } 
 TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_1636713457 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1636713457.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1636713457;
-        // ---------- Original Method ----------
-        //final int insertAt = mIntents.size();
-        //Intent parent = NavUtils.getParentActivityIntent(sourceActivity);
-        //while (parent != null) {
-            //mIntents.add(insertAt, parent);
-            //try {
-                //parent = NavUtils.getParentActivityIntent(sourceActivity, parent.getComponent());
-            //} catch (NameNotFoundException e) {
-                //Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
-                //throw new IllegalArgumentException(e);
-            //}
-        //}
-        //return this;
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -100,30 +101,30 @@ TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_1636713457 =         this;
             {
                 mIntents.add(insertAt, parent);
                 parent = NavUtils.getParentActivityIntent(mSourceContext, parent.getComponent());
-            } //End block
-        } //End block
+            } 
+        } 
         catch (NameNotFoundException e)
         {
             IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_2071641690 = new IllegalArgumentException(e);
             varB5003C51895A632D49EB91E1ECEE1438_2071641690.addTaint(taint);
             throw varB5003C51895A632D49EB91E1ECEE1438_2071641690;
-        } //End block
+        } 
 TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_2097346849 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2097346849.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2097346849;
-        // ---------- Original Method ----------
-        //final int insertAt = mIntents.size();
-        //try {
-            //Intent parent = NavUtils.getParentActivityIntent(mSourceContext, sourceActivityClass);
-            //while (parent != null) {
-                //mIntents.add(insertAt, parent);
-                //parent = NavUtils.getParentActivityIntent(mSourceContext, parent.getComponent());
-            //}
-        //} catch (NameNotFoundException e) {
-            //Log.e(TAG, "Bad ComponentName while traversing activity parent metadata");
-            //throw new IllegalArgumentException(e);
-        //}
-        //return this;
+        
+        
+        
+            
+            
+                
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -132,19 +133,20 @@ TaskStackBuilder var72A74007B2BE62B849F475C7BDA4658B_2097346849 =         this;
         int varE259DDE2EAFE48E5D8266C32CA0C5CC8_1672789787 = (mIntents.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_690023577 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_690023577;
-        // ---------- Original Method ----------
-        //return mIntents.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.240 -0400", hash_original_method = "59669D711935F600119486724ABE92DB", hash_generated_method = "AC9A352967ABE216837BAB39930EAFCB")
     public Intent getIntent(int index) {
         addTaint(index);
 Intent varB61F6019BB592036C72F58753E1878A1_820030719 =         mIntents.get(index);
         varB61F6019BB592036C72F58753E1878A1_820030719.addTaint(taint);
         return varB61F6019BB592036C72F58753E1878A1_820030719;
-        // ---------- Original Method ----------
-        //return mIntents.get(index);
+        
+        
     }
 
     
@@ -153,8 +155,8 @@ Intent varB61F6019BB592036C72F58753E1878A1_820030719 =         mIntents.get(inde
 Iterator<Intent> varDCE3F2C6DE8648EB944C31405F1E2F2B_426790741 =         mIntents.iterator();
         varDCE3F2C6DE8648EB944C31405F1E2F2B_426790741.addTaint(taint);
         return varDCE3F2C6DE8648EB944C31405F1E2F2B_426790741;
-        // ---------- Original Method ----------
-        //return mIntents.iterator();
+        
+        
     }
 
     
@@ -166,7 +168,7 @@ Iterator<Intent> varDCE3F2C6DE8648EB944C31405F1E2F2B_426790741 =         mIntent
                     "No intents added to TaskStackBuilder; cannot startActivities");
             var025A81657BDAAD1A92F07EE376428737_729293231.addTaint(taint);
             throw var025A81657BDAAD1A92F07EE376428737_729293231;
-        } //End block
+        } 
         Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
         intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
                 IntentCompat.FLAG_ACTIVITY_CLEAR_TASK |
@@ -176,21 +178,21 @@ Iterator<Intent> varDCE3F2C6DE8648EB944C31405F1E2F2B_426790741 =         mIntent
             Intent topIntent = intents[intents.length - 1];
             topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mSourceContext.startActivity(topIntent);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIntents.isEmpty()) {
-            //throw new IllegalStateException(
-                    //"No intents added to TaskStackBuilder; cannot startActivities");
-        //}
-        //Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
-        //intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                //IntentCompat.FLAG_ACTIVITY_CLEAR_TASK |
-                //IntentCompat.FLAG_ACTIVITY_TASK_ON_HOME);
-        //if (!ActivityCompat.startActivities((Activity) mSourceContext, intents)) {
-            //Intent topIntent = intents[intents.length - 1];
-            //topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //mSourceContext.startActivity(topIntent);
-        //}
+        } 
+        
+        
+            
+                    
+        
+        
+        
+                
+                
+        
+            
+            
+            
+        
     }
 
     
@@ -202,9 +204,9 @@ Iterator<Intent> varDCE3F2C6DE8648EB944C31405F1E2F2B_426790741 =         mIntent
 PendingIntent var8C66BCFAD345254529DBEC59C73D54DE_1198383151 =         IMPL.getPendingIntent(mSourceContext, intents, requestCode, flags);
         var8C66BCFAD345254529DBEC59C73D54DE_1198383151.addTaint(taint);
         return var8C66BCFAD345254529DBEC59C73D54DE_1198383151;
-        // ---------- Original Method ----------
-        //Intent[] intents = mIntents.toArray(new Intent[mIntents.size()]);
-        //return IMPL.getPendingIntent(mSourceContext, intents, requestCode, flags);
+        
+        
+        
     }
 
     
@@ -213,7 +215,7 @@ PendingIntent var8C66BCFAD345254529DBEC59C73D54DE_1198383151 =         IMPL.getP
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.242 -0400", hash_original_method = "A4B09A1D14221C9A079C3523AB777622", hash_generated_method = "A4B09A1D14221C9A079C3523AB777622")
         public TaskStackBuilderImplBase ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -229,10 +231,10 @@ PendingIntent var8C66BCFAD345254529DBEC59C73D54DE_1198383151 =         IMPL.getP
 PendingIntent var78B913836D3EA934C43638960253A32F_216252252 =             PendingIntent.getActivity(context, requestCode, topIntent, flags);
             var78B913836D3EA934C43638960253A32F_216252252.addTaint(taint);
             return var78B913836D3EA934C43638960253A32F_216252252;
-            // ---------- Original Method ----------
-            //Intent topIntent = intents[intents.length - 1];
-            //topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //return PendingIntent.getActivity(context, requestCode, topIntent, flags);
+            
+            
+            
+            
         }
 
         
@@ -245,7 +247,7 @@ PendingIntent var78B913836D3EA934C43638960253A32F_216252252 =             Pendin
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.243 -0400", hash_original_method = "A254BA88AEF3ECF74695EB22288FD591", hash_generated_method = "A254BA88AEF3ECF74695EB22288FD591")
         public TaskStackBuilderImplHoneycomb ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -262,11 +264,11 @@ PendingIntent var2C930E320285304BFF0164FE1FA117C9_278187354 =             TaskSt
                     intents, flags);
             var2C930E320285304BFF0164FE1FA117C9_278187354.addTaint(taint);
             return var2C930E320285304BFF0164FE1FA117C9_278187354;
-            // ---------- Original Method ----------
-            //intents[0].addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-                    //IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
-            //return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode,
-                    //intents, flags);
+            
+            
+                    
+            
+                    
         }
 
         

@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,12 +18,13 @@ public class Vibrator {
     public  Vibrator() {
         mService = IVibratorService.Stub.asInterface(
                 ServiceManager.getService("vibrator"));
-        // ---------- Original Method ----------
-        //mService = IVibratorService.Stub.asInterface(
-                //ServiceManager.getService("vibrator"));
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.805 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "7D9E8CA44EA90635EDE1B76D1A7A6E42")
     public boolean hasVibrator() {
     if(mService == null)        
@@ -31,56 +32,57 @@ public class Vibrator {
             boolean var68934A3E9455FA72420237EB05902327_1800828460 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962793543 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962793543;
-        } //End block
+        } 
         try 
         {
             boolean var8053111FFFF928B3F2AEA20179772E4E_1443624658 = (mService.hasVibrator());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_4904924 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_4904924;
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2115980921 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1518356056 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1518356056;
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //Log.w(TAG, "Failed to vibrate; no vibrator service.");
-            //return false;
-        //}
-        //try {
-            //return mService.hasVibrator();
-        //} catch (RemoteException e) {
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.805 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
     public void vibrate(long milliseconds) {
         addTaint(milliseconds);
     if(mService == null)        
         {
             return;
-        } //End block
+        } 
         try 
         {
             mService.vibrate(milliseconds, mToken);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //Log.w(TAG, "Failed to vibrate; no vibrator service.");
-            //return;
-        //}
-        //try {
-            //mService.vibrate(milliseconds, mToken);
-        //} catch (RemoteException e) {
-            //Log.w(TAG, "Failed to vibrate.", e);
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -91,62 +93,63 @@ public class Vibrator {
     if(mService == null)        
         {
             return;
-        } //End block
+        } 
     if(repeat < pattern.length)        
         {
             try 
             {
                 mService.vibratePattern(pattern, repeat, mToken);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_1407612409 = new ArrayIndexOutOfBoundsException();
             var37DB57B1FEB1C9FBA644A093BFA8B678_1407612409.addTaint(taint);
             throw var37DB57B1FEB1C9FBA644A093BFA8B678_1407612409;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //Log.w(TAG, "Failed to vibrate; no vibrator service.");
-            //return;
-        //}
-        //if (repeat < pattern.length) {
-            //try {
-                //mService.vibratePattern(pattern, repeat, mToken);
-            //} catch (RemoteException e) {
-                //Log.w(TAG, "Failed to vibrate.", e);
-            //}
-        //} else {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.808 -0400", hash_original_method = "9CFB04510A80ABA723862EE634095A2D", hash_generated_method = "8D41DB29BDA8014ECBFFAFF7A98E566E")
     public void cancel() {
     if(mService == null)        
         {
             return;
-        } //End block
+        } 
         try 
         {
             mService.cancelVibrate(mToken);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //return;
-        //}
-        //try {
-            //mService.cancelVibrate(mToken);
-        //} catch (RemoteException e) {
-            //Log.w(TAG, "Failed to cancel vibration.", e);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     

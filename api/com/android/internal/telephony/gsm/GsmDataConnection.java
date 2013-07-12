@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class GsmDataConnection extends DataConnection {
         addTaint(id);
         addTaint(name.getTaint());
         addTaint(phone.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,7 +47,7 @@ public class GsmDataConnection extends DataConnection {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.144 -0400", hash_original_method = "B9699B49BCC7654BF74B38BF9D177791", hash_generated_method = "F6E635B2039B55317FF4BC305148AE05")
     @Override
     protected void onConnect(ConnectionParams cp) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(cp.getTaint());
         mApn = cp.apn;
     if(DBG)        
@@ -64,50 +64,53 @@ public class GsmDataConnection extends DataConnection {
         {
             authType = (mApn.user != null) ? RILConstants.SETUP_DATA_AUTH_PAP_CHAP :
                 RILConstants.SETUP_DATA_AUTH_NONE;
-        } //End block
+        } 
         String protocol;
     if(phone.getServiceState().getRoaming())        
         {
             protocol = mApn.roamingProtocol;
-        } //End block
+        } 
         else
         {
             protocol = mApn.protocol;
-        } //End block
+        } 
         phone.mCM.setupDataCall(
                 Integer.toString(getRadioTechnology(RILConstants.SETUP_DATA_TECH_GSM)),
                 Integer.toString(mProfileId),
                 mApn.apn, mApn.user, mApn.password,
                 Integer.toString(authType),
                 protocol, msg);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.145 -0400", hash_original_method = "A22DEA53C24C8CD549338E7FA6E130EF", hash_generated_method = "727F58AE6FDA84B9FCAE25982BC0A444")
     public void setProfileId(int profileId) {
         mProfileId = profileId;
-        // ---------- Original Method ----------
-        //mProfileId = profileId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.145 -0400", hash_original_method = "F4D053905D2BF654ACB2CC18D573B985", hash_generated_method = "18B038629154ACE35F23D879106FDD78")
     public int getProfileId() {
         int varAD5F16B5D45AD9FEEE13E88B2059EC91_753884532 = (mProfileId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_607679812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_607679812;
-        // ---------- Original Method ----------
-        //return mProfileId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.145 -0400", hash_original_method = "49E60EF07FF1E574F2B5B752F6A3111C", hash_generated_method = "6098E4E3C54C8A106210FF605DE9D6C0")
     public void setActiveApnType(String apnType) {
         mActiveApnType = apnType;
-        // ---------- Original Method ----------
-        //mActiveApnType = apnType;
+        
+        
     }
 
     
@@ -119,13 +122,14 @@ String var4AD72B987A838A37F68883A3F1D1CCD2_282568977 =         "State=" + getCur
                " lastFailCause=" + lastFailCause;
         var4AD72B987A838A37F68883A3F1D1CCD2_282568977.addTaint(taint);
         return var4AD72B987A838A37F68883A3F1D1CCD2_282568977;
-        // ---------- Original Method ----------
-        //return "State=" + getCurrentState().getName() + " Apn=" + mApn +
-               //" create=" + createTime + " lastFail=" + lastFailTime +
-               //" lastFailCause=" + lastFailCause;
+        
+        
+               
+               
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.146 -0400", hash_original_method = "0657EF2F9C80323FA50A03320BF221A9", hash_generated_method = "653BB26450CA3C1B9334A1BD77B08829")
     @Override
     protected boolean isDnsOk(String[] domainNameServers) {
@@ -143,37 +147,39 @@ String var4AD72B987A838A37F68883A3F1D1CCD2_282568977 =         "State=" + getCur
                 boolean var68934A3E9455FA72420237EB05902327_930552855 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101721628 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_101721628;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1448870168 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1665158364 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1665158364;
-        // ---------- Original Method ----------
-        //if (NULL_IP.equals(domainNameServers[0]) && NULL_IP.equals(domainNameServers[1])
-                //&& !phone.isDnsCheckDisabled()) {
-            //if (!mApn.types[0].equals(Phone.APN_TYPE_MMS)
-                //|| !isIpAddress(mApn.mmsProxy)) {
-                //log(String.format(
-                        //"isDnsOk: return false apn.types[0]=%s APN_TYPE_MMS=%s isIpAddress(%s)=%s",
-                        //mApn.types[0], Phone.APN_TYPE_MMS, mApn.mmsProxy,
-                        //isIpAddress(mApn.mmsProxy)));
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+                
+            
+                
+                
+                        
+                        
+                        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.147 -0400", hash_original_method = "E3E03901000B497B61536E572BF51316", hash_generated_method = "3D39A3641D1F679267312BB4AD7C571C")
     @Override
     protected void log(String s) {
         addTaint(s.getTaint());
         Log.d(LOG_TAG, "[" + getName() + "] " + s);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[" + getName() + "] " + s);
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.147 -0400", hash_original_method = "0EBFCAAE2D7BDF5375234415A0DA2D8D", hash_generated_method = "B9E598FAC711D8BCAA2B6697F27647FE")
     private boolean isIpAddress(String address) {
         addTaint(address.getTaint());
@@ -186,9 +192,9 @@ String var4AD72B987A838A37F68883A3F1D1CCD2_282568977 =         "State=" + getCur
         boolean var1D94E909116588975EF937A195F1A6B2_548786897 = (Patterns.IP_ADDRESS.matcher(address).matches());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1033186479 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1033186479;
-        // ---------- Original Method ----------
-        //if (address == null) return false;
-        //return Patterns.IP_ADDRESS.matcher(address).matches();
+        
+        
+        
     }
 
     

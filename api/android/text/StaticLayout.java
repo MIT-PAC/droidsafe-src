@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -60,7 +60,7 @@ public class StaticLayout extends Layout {
         addTaint(width);
         addTaint(paint.getTaint());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,7 +79,7 @@ public class StaticLayout extends Layout {
         addTaint(width);
         addTaint(paint.getTaint());
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -100,7 +100,7 @@ public class StaticLayout extends Layout {
         addTaint(bufend);
         addTaint(bufstart);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -122,7 +122,7 @@ public class StaticLayout extends Layout {
         addTaint(bufend);
         addTaint(bufstart);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -147,7 +147,7 @@ public class StaticLayout extends Layout {
         addTaint(bufend);
         addTaint(bufstart);
         addTaint(source.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -182,12 +182,12 @@ public class StaticLayout extends Layout {
             e.mMethod = ellipsize;
             mEllipsizedWidth = ellipsizedWidth;
             mColumns = COLUMNS_ELLIPSIZE;
-        } //End block
+        } 
         else
         {
             mColumns = COLUMNS_NORMAL;
             mEllipsizedWidth = outerwidth;
-        } //End block
+        } 
         mLines = new int[ArrayUtils.idealIntArraySize(2 * mColumns)];
         mLineDirections = new Directions[
                              ArrayUtils.idealIntArraySize(2 * mColumns)];
@@ -198,8 +198,8 @@ public class StaticLayout extends Layout {
                  ellipsize);
         mMeasured = MeasuredText.recycle(mMeasured);
         mFontMetricsInt = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -212,15 +212,16 @@ public class StaticLayout extends Layout {
         mLineDirections = new Directions[
                              ArrayUtils.idealIntArraySize(2 * mColumns)];
         mMeasured = MeasuredText.obtain();
-        // ---------- Original Method ----------
-        //mColumns = COLUMNS_ELLIPSIZE;
-        //mLines = new int[ArrayUtils.idealIntArraySize(2 * mColumns)];
-        //mLineDirections = new Directions[
-                             //ArrayUtils.idealIntArraySize(2 * mColumns)];
-        //mMeasured = MeasuredText.obtain();
+        
+        
+        
+        
+                             
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.919 -0400", hash_original_method = "36200F938D6B110E70DA8FCD0A142EF7", hash_generated_method = "0E8F9F13FCDBB03D7B2BA016C7665249")
      void generate(CharSequence source, int bufStart, int bufEnd,
                         TextPaint paint, int outerWidth,
@@ -276,8 +277,8 @@ for(int i = 0;i < sp.length;i++)
                         LeadingMarginSpan2 lms2 = (LeadingMarginSpan2) lms;
                         int lmsFirstLine = getLineForOffset(spanned.getSpanStart(lms2));
                         firstWidthLineLimit = lmsFirstLine + lms2.getLeadingMarginLineCount();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 chooseHt = getParagraphSpans(spanned, paraStart, paraEnd, LineHeightSpan.class);
     if(chooseHt.length != 0)                
                 {
@@ -286,21 +287,21 @@ for(int i = 0;i < sp.length;i++)
                     {
                         chooseHtv = new int[ArrayUtils.idealIntArraySize(
                                             chooseHt.length)];
-                    } //End block
+                    } 
 for(int i = 0;i < chooseHt.length;i++)
                     {
                         int o = spanned.getSpanStart(chooseHt[i]);
     if(o < paraStart)                        
                         {
                             chooseHtv[i] = getLineTop(getLineForOffset(o));
-                        } //End block
+                        } 
                         else
                         {
                             chooseHtv[i] = v;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             measured.setPara(source, paraStart, paraEnd, textDir);
             char[] chs = measured.mChars;
             float[] widths = measured.mWidths;
@@ -338,15 +339,15 @@ for(int spanStart = paraStart, spanEnd = spanStart, nextSpanStart;spanStart < pa
     if(spanned == null)                    
                     {
                         measured.addStyleRun(paint, spanLen, fm);
-                    } //End block
+                    } 
                     else
                     {
                         MetricAffectingSpan[] spans = spanned.getSpans(spanStart, spanEnd, MetricAffectingSpan.class);
                         spans = TextUtils.removeEmptySpans(spans, spanned,
                                 MetricAffectingSpan.class);
                         measured.addStyleRun(paint, spans, spanLen, fm);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 nextSpanStart = spanEnd;
                 int fmTop = fm.top;
                 int fmBottom = fm.bottom;
@@ -357,7 +358,7 @@ for(int j = spanStart;j < spanEnd;j++)
                     char c = chs[j - paraStart];
     if(c == CHAR_NEW_LINE)                    
                     {
-                    } //End block
+                    } 
                     else
     if(c == CHAR_TAB)                    
                     {
@@ -372,18 +373,18 @@ for(int j = spanStart;j < spanEnd;j++)
     if(spans.length > 0)                                
                                 {
                                     tabStops = new TabStops(TAB_INCREMENT, spans);
-                                } //End block
-                            } //End block
-                        } //End block
+                                } 
+                            } 
+                        } 
     if(tabStops != null)                        
                         {
                             w = tabStops.nextTab(w);
-                        } //End block
+                        } 
                         else
                         {
                             w = TabStops.nextDefaultStop(w, TAB_INCREMENT);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(c >= CHAR_FIRST_HIGH_SURROGATE && c <= CHAR_LAST_LOW_SURROGATE
                             && j + 1 < spanEnd)                    
@@ -398,30 +399,30 @@ for(int j = spanStart;j < spanEnd;j++)
     if(spanned == null)                                
                                 {
                                     whichPaint = paint;
-                                } //End block
+                                } 
                                 else
                                 {
                                     whichPaint = mWorkPaint;
-                                } //End block
+                                } 
                                 float wid = bm.getWidth() * -whichPaint.ascent() / bm.getHeight();
                                 w += wid;
                                 hasTabOrEmoji = true;
                                 j++;
-                            } //End block
+                            } 
                             else
                             {
                                 w += widths[j - paraStart];
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
                         {
                             w += widths[j - paraStart];
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         w += widths[j - paraStart];
-                    } //End block
+                    } 
     if(w <= width)                    
                     {
                         fitWidth = w;
@@ -454,8 +455,8 @@ for(int j = spanStart;j < spanEnd;j++)
                             okDescent = fitDescent;
     if(fitBottom > okBottom)                            
                             okBottom = fitBottom;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         final boolean moreChars = (j + 1 < spanEnd);
@@ -473,14 +474,14 @@ for(int j = spanStart;j < spanEnd;j++)
 (ok < spanEnd && chs[ok - paraStart] == CHAR_SPACE)                            
                             {
                                 ok++;
-                            } //End block
+                            } 
                             endPos = ok;
                             above = okAscent;
                             below = okDescent;
                             top = okTop;
                             bottom = okBottom;
                             currentTextWidth = okWidth;
-                        } //End block
+                        } 
                         else
     if(fit != here)                        
                         {
@@ -490,7 +491,7 @@ for(int j = spanStart;j < spanEnd;j++)
                             top = fitTop;
                             bottom = fitBottom;
                             currentTextWidth = fitWidth;
-                        } //End block
+                        } 
                         else
                         {
                             endPos = here + 1;
@@ -499,7 +500,7 @@ for(int j = spanStart;j < spanEnd;j++)
                             top = fm.top;
                             bottom = fm.bottom;
                             currentTextWidth = widths[here - paraStart];
-                        } //End block
+                        } 
                         v = out(source, here, endPos,
                                 above, below, top, bottom,
                                 v, spacingmult, spacingadd, chooseHt,chooseHtv, fm, hasTabOrEmoji,
@@ -510,11 +511,11 @@ for(int j = spanStart;j < spanEnd;j++)
     if(here < spanStart)                        
                         {
                             j = nextSpanStart = here;
-                        } //End block
+                        } 
                         else
                         {
                             j = here - 1;
-                        } //End block
+                        } 
                         ok = fit = here;
                         w = 0;
                         fitAscent = fitDescent = fitTop = fitBottom = 0;
@@ -522,14 +523,14 @@ for(int j = spanStart;j < spanEnd;j++)
     if(--firstWidthLineLimit <= 0)                        
                         {
                             width = restWidth;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(mLineCount >= mMaximumVisibleLineCount)                    
                     {
                         break;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(paraEnd != here && mLineCount < mMaximumVisibleLineCount)            
             {
     if((fitTop | fitBottom | fitDescent | fitAscent) == 0)                
@@ -539,7 +540,7 @@ for(int j = spanStart;j < spanEnd;j++)
                     fitBottom = fm.bottom;
                     fitAscent = fm.ascent;
                     fitDescent = fm.descent;
-                } //End block
+                } 
                 v = out(source,
                         here, paraEnd, fitAscent, fitDescent,
                         fitTop, fitBottom,
@@ -550,11 +551,11 @@ for(int j = spanStart;j < spanEnd;j++)
                         includepad, trackpad, chs,
                         widths, paraStart, ellipsize,
                         ellipsizedWidth, w, paint, paraEnd != bufEnd);
-            } //End block
+            } 
             paraStart = paraEnd;
     if(paraEnd == bufEnd)            
             break;
-        } //End block
+        } 
     if((bufEnd == bufStart || source.charAt(bufEnd - 1) == CHAR_NEW_LINE) &&
                 mLineCount < mMaximumVisibleLineCount)        
         {
@@ -569,9 +570,9 @@ for(int j = spanStart;j < spanEnd;j++)
                     includepad, trackpad, null,
                     null, bufStart, ellipsize,
                     ellipsizedWidth, 0, paint, false);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -701,7 +702,7 @@ for(int j = spanStart;j < spanEnd;j++)
             System.arraycopy(mLineDirections, 0, grow2, 0,
                              mLineDirections.length);
             mLineDirections = grow2;
-        } //End block
+        } 
     if(chooseHt != null)        
         {
             fm.ascent = above;
@@ -714,39 +715,39 @@ for(int i = 0;i < chooseHt.length;i++)
                 {
                     ((LineHeightSpan.WithDensity) chooseHt[i]).
                         chooseHeight(text, start, end, chooseHtv[i], v, fm, paint);
-                } //End block
+                } 
                 else
                 {
                     chooseHt[i].chooseHeight(text, start, end, chooseHtv[i], v, fm);
-                } //End block
-            } //End block
+                } 
+            } 
             above = fm.ascent;
             below = fm.descent;
             top = fm.top;
             bottom = fm.bottom;
-        } //End block
+        } 
     if(j == 0)        
         {
     if(trackPad)            
             {
                 mTopPadding = top - above;
-            } //End block
+            } 
     if(includePad)            
             {
                 above = top;
-            } //End block
-        } //End block
+            } 
+        } 
     if(end == bufEnd)        
         {
     if(trackPad)            
             {
                 mBottomPadding = bottom - below;
-            } //End block
+            } 
     if(includePad)            
             {
                 below = bottom;
-            } //End block
-        } //End block
+            } 
+        } 
         int extra;
     if(needMultiply)        
         {
@@ -754,16 +755,16 @@ for(int i = 0;i < chooseHt.length;i++)
     if(ex >= 0)            
             {
                 extra = (int)(ex + EXTRA_ROUNDING);
-            } //End block
+            } 
             else
             {
                 extra = -(int)(-ex + EXTRA_ROUNDING);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             extra = 0;
-        } //End block
+        } 
         lines[off + START] = start;
         lines[off + TOP] = v;
         lines[off + DESCENT] = below + extra;
@@ -777,12 +778,12 @@ for(int i = 0;i < chooseHt.length;i++)
     if(easy)        
         {
             mLineDirections[j] = linedirs;
-        } //End block
+        } 
         else
         {
             mLineDirections[j] = AndroidBidi.directions(dir, chdirs, start - widthStart, chs,
                     start - widthStart, end - start);
-        } //End block
+        } 
     if(ellipsize != null)        
         {
             boolean firstLine = (j == 0);
@@ -797,17 +798,18 @@ for(int i = 0;i < chooseHt.length;i++)
                 calculateEllipsis(start, end, widths, widthStart,
                         ellipsisWidth, ellipsize, j,
                         textWidth, paint, forceEllipsis);
-            } //End block
-        } //End block
+            } 
+        } 
         mLineCount++;
         int var9E3669D19B675BD57058FD4664205D2A_482559658 = (v);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498763337 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_498763337;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.936 -0400", hash_original_method = "12884526F2C70C1C98137C0940B4D04E", hash_generated_method = "CEA2B4A8C3EE1C16FB28783952E70CB8")
     private void calculateEllipsis(int lineStart, int lineEnd,
                                    float[] widths, int widthStart,
@@ -828,7 +830,7 @@ for(int i = 0;i < chooseHt.length;i++)
             mLines[mColumns * line + ELLIPSIS_START] = 0;
             mLines[mColumns * line + ELLIPSIS_COUNT] = 0;
             return;
-        } //End block
+        } 
         float ellipsisWidth = paint.measureText(
                 (where == TextUtils.TruncateAt.END_SMALL) ? ELLIPSIS_TWO_DOTS : ELLIPSIS_NORMAL);
         int ellipsisStart = 0;
@@ -846,19 +848,19 @@ for(i = len;i >= 0;i--)
     if(w + sum + ellipsisWidth > avail)                    
                     {
                         break;
-                    } //End block
+                    } 
                     sum += w;
-                } //End block
+                } 
                 ellipsisStart = 0;
                 ellipsisCount = i;
-            } //End block
+            } 
             else
             {
     if(Log.isLoggable(TAG, Log.WARN))                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
     if(where == TextUtils.TruncateAt.END || where == TextUtils.TruncateAt.MARQUEE ||
                 where == TextUtils.TruncateAt.END_SMALL)        
@@ -871,17 +873,17 @@ for(i = 0;i < len;i++)
     if(w + sum + ellipsisWidth > avail)                
                 {
                     break;
-                } //End block
+                } 
                 sum += w;
-            } //End block
+            } 
             ellipsisStart = i;
             ellipsisCount = len - i;
     if(forceEllipsis && ellipsisCount == 0 && len > 0)            
             {
                 ellipsisStart = len - 1;
                 ellipsisCount = 1;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(mMaximumVisibleLineCount == 1)            
@@ -897,9 +899,9 @@ for(right = len;right >= 0;right--)
     if(w + rsum > ravail)                    
                     {
                         break;
-                    } //End block
+                    } 
                     rsum += w;
-                } //End block
+                } 
                 float lavail = avail - ellipsisWidth - rsum;
 for(left = 0;left < right;left++)
                 {
@@ -907,26 +909,27 @@ for(left = 0;left < right;left++)
     if(w + lsum > lavail)                    
                     {
                         break;
-                    } //End block
+                    } 
                     lsum += w;
-                } //End block
+                } 
                 ellipsisStart = left;
                 ellipsisCount = right - left;
-            } //End block
+            } 
             else
             {
     if(Log.isLoggable(TAG, Log.WARN))                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mLines[mColumns * line + ELLIPSIS_START] = ellipsisStart;
         mLines[mColumns * line + ELLIPSIS_COUNT] = ellipsisCount;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.938 -0400", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "DF8990C0288B587AD7FAA7120F74CCF3")
     @Override
     public int getLineForVertical(int vertical) {
@@ -942,56 +945,58 @@ for(left = 0;left < right;left++)
     if(lines[mColumns * guess + TOP] > vertical)            
             {
                 high = guess;
-            } //End block
+            } 
             else
             {
                 low = guess;
-            } //End block
-        } //End block
+            } 
+        } 
     if(low < 0)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_592392156 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_8466814 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_8466814;
-        } //End block
+        } 
         else
         {
             int var53CCED8D281A1A0ACE3CB6594DAAA4F7_1262467350 = (low);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039070474 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039070474;
-        } //End block
-        // ---------- Original Method ----------
-        //int high = mLineCount;
-        //int low = -1;
-        //int guess;
-        //int[] lines = mLines;
-        //while (high - low > 1) {
-            //guess = (high + low) >> 1;
-            //if (lines[mColumns * guess + TOP] > vertical){
-                //high = guess;
-            //} else {
-                //low = guess;
-            //}
-        //}
-        //if (low < 0) {
-            //return 0;
-        //} else {
-            //return low;
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.938 -0400", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "E8ADCEE0AEE232F39FE32D33B28BB694")
     @Override
     public int getLineCount() {
         int var6CD75FA86B8D1E573AF761513C2464BF_626800368 = (mLineCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915671808 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915671808;
-        // ---------- Original Method ----------
-        //return mLineCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.939 -0400", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "7EA3A0DCE0B7049F5A26A3774F3B5E2F")
     @Override
     public int getLineTop(int line) {
@@ -1001,20 +1006,21 @@ for(left = 0;left < right;left++)
                 line != mLineCount)        
         {
             top += getBottomPadding();
-        } //End block
+        } 
         int varB28354B543375BFA94DABAEDA722927F_607781372 = (top);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633633131 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633633131;
-        // ---------- Original Method ----------
-        //int top = mLines[mColumns * line + TOP];
-        //if (mMaximumVisibleLineCount > 0 && line >= mMaximumVisibleLineCount &&
-                //line != mLineCount) {
-            //top += getBottomPadding();
-        //}
-        //return top;
+        
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.940 -0400", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "1F38880A5444BDCCF3F25FD1579BD74B")
     @Override
     public int getLineDescent(int line) {
@@ -1024,20 +1030,21 @@ for(left = 0;left < right;left++)
                 line != mLineCount)        
         {
             descent += getBottomPadding();
-        } //End block
+        } 
         int var02E251094E7D27130BE25530E2AE708F_1265502905 = (descent);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620807428 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620807428;
-        // ---------- Original Method ----------
-        //int descent = mLines[mColumns * line + DESCENT];
-        //if (mMaximumVisibleLineCount > 0 && line >= mMaximumVisibleLineCount - 1 && 
-                //line != mLineCount) {
-            //descent += getBottomPadding();
-        //}
-        //return descent;
+        
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.940 -0400", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "A8898A96626BCFFAC443D7EA7FFF9A91")
     @Override
     public int getLineStart(int line) {
@@ -1045,11 +1052,12 @@ for(left = 0;left < right;left++)
         int varA236F9AAFD383F910E16D130FD4460AA_925144204 = (mLines[mColumns * line + START] & START_MASK);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1968937648 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1968937648;
-        // ---------- Original Method ----------
-        //return mLines[mColumns * line + START] & START_MASK;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.940 -0400", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "E364DC2CCA82F7EC0272F3BC0032F24C")
     @Override
     public int getParagraphDirection(int line) {
@@ -1057,11 +1065,12 @@ for(left = 0;left < right;left++)
         int varD206AA20A02B3C3423F47B565283AEB2_108777367 = (mLines[mColumns * line + DIR] >> DIR_SHIFT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344779637 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1344779637;
-        // ---------- Original Method ----------
-        //return mLines[mColumns * line + DIR] >> DIR_SHIFT;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.941 -0400", hash_original_method = "F549BE615B108927B3399A138AFD2460", hash_generated_method = "DBE74D3EBF4F6EC14B39E897F2AEC108")
     @Override
     public boolean getLineContainsTab(int line) {
@@ -1069,8 +1078,8 @@ for(left = 0;left < right;left++)
         boolean varEAA7A5E9F6A1747F15652A220F84C985_165094307 = ((mLines[mColumns * line + TAB] & TAB_MASK) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1774762214 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1774762214;
-        // ---------- Original Method ----------
-        //return (mLines[mColumns * line + TAB] & TAB_MASK) != 0;
+        
+        
     }
 
     
@@ -1081,33 +1090,36 @@ for(left = 0;left < right;left++)
 Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirections[line];
         var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284.addTaint(taint);
         return var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284;
-        // ---------- Original Method ----------
-        //return mLineDirections[line];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.941 -0400", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "A6CE4E56947F9AC7C623529B22CD3270")
     @Override
     public int getTopPadding() {
         int varA6796D45932911E4DA1D9D40D1BD23B8_703248797 = (mTopPadding);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710524039 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710524039;
-        // ---------- Original Method ----------
-        //return mTopPadding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.941 -0400", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "B378FCD25E9189D670F048407CAF2BBA")
     @Override
     public int getBottomPadding() {
         int var097A31AA17188409E251DABE4869FAFE_1437696408 = (mBottomPadding);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1616311834 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1616311834;
-        // ---------- Original Method ----------
-        //return mBottomPadding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.942 -0400", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "7DBBDAF9D4F1F869E7689A92F455D1DD")
     @Override
     public int getEllipsisCount(int line) {
@@ -1117,18 +1129,19 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
             int varCFCD208495D565EF66E7DFF9F98764DA_1617359474 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894803293 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1894803293;
-        } //End block
+        } 
         int var164F2D90430640C214700DE2F8701F43_741057194 = (mLines[mColumns * line + ELLIPSIS_COUNT]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461943825 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_461943825;
-        // ---------- Original Method ----------
-        //if (mColumns < COLUMNS_ELLIPSIZE) {
-            //return 0;
-        //}
-        //return mLines[mColumns * line + ELLIPSIS_COUNT];
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.942 -0400", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "48263A550B1E382AA04240773DB898AE")
     @Override
     public int getEllipsisStart(int line) {
@@ -1138,42 +1151,45 @@ Directions var2C5AC76C50C05D38FDB9FE7FB8F55AEC_107587284 =         mLineDirectio
             int varCFCD208495D565EF66E7DFF9F98764DA_822274380 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193148994 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193148994;
-        } //End block
+        } 
         int var960908427674FD2D3D677D9555CC8698_286222716 = (mLines[mColumns * line + ELLIPSIS_START]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447520760 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_447520760;
-        // ---------- Original Method ----------
-        //if (mColumns < COLUMNS_ELLIPSIZE) {
-            //return 0;
-        //}
-        //return mLines[mColumns * line + ELLIPSIS_START];
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.943 -0400", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "19180E3B2AE221730BBDB1C11A2F3AC9")
     @Override
     public int getEllipsizedWidth() {
         int var5713AC9F49879DE1055FA780DFEFDF1C_328959846 = (mEllipsizedWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914414621 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914414621;
-        // ---------- Original Method ----------
-        //return mEllipsizedWidth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.943 -0400", hash_original_method = "B52C8C631677053C363ACE90856C8484", hash_generated_method = "95EDBE59F598FE401B87F39CB299AF78")
      void prepare() {
         mMeasured = MeasuredText.obtain();
-        // ---------- Original Method ----------
-        //mMeasured = MeasuredText.obtain();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.943 -0400", hash_original_method = "C0F6C3CAFEEBD4E75E81773515CBCC0B", hash_generated_method = "25F76FF05D99A4E8F3EC719ABEED0A6E")
      void finish() {
         mMeasured = MeasuredText.recycle(mMeasured);
-        // ---------- Original Method ----------
-        //mMeasured = MeasuredText.recycle(mMeasured);
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class MalformedChallengeException extends ProtocolException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.091 -0400", hash_original_method = "67DFA658E3AD1AB9DCC34A02D12F48C7", hash_generated_method = "DD7135A6F0879132601ED482F5246AAD")
     public  MalformedChallengeException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -19,7 +19,7 @@ public class MalformedChallengeException extends ProtocolException {
     public  MalformedChallengeException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class MalformedChallengeException extends ProtocolException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

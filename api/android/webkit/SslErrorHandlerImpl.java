@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,11 +32,11 @@ class SslErrorHandlerImpl extends SslErrorHandler {
         mSslPrefTable = new Bundle();
         mOriginHandler = null;
         mLoadListener = null;
-        // ---------- Original Method ----------
-        //mLoaderQueue = new LinkedList<LoadListener>();
-        //mSslPrefTable = new Bundle();
-        //mOriginHandler = null;
-        //mLoadListener = null;
+        
+        
+        
+        
+        
     }
 
     
@@ -44,12 +44,13 @@ class SslErrorHandlerImpl extends SslErrorHandler {
     private  SslErrorHandlerImpl(SslErrorHandler origin, LoadListener listener) {
         mOriginHandler = origin;
         mLoadListener = listener;
-        // ---------- Original Method ----------
-        //mOriginHandler = origin;
-        //mLoadListener = listener;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.193 -0400", hash_original_method = "325914DF32EF22A63CA2688A9A750F18", hash_generated_method = "D63105C2C8701C1D85ED39AB6E6A320D")
     @Override
     public void handleMessage(Message msg) {
@@ -63,21 +64,21 @@ switch(msg.what){
                             msg.arg1 == 1);
             mLoaderQueue.remove(loader);
             fastProcessQueuedSslErrors();
-        } //End block
+        } 
         break;
 }
-        // ---------- Original Method ----------
-        //switch (msg.what) {
-            //case HANDLE_RESPONSE:
-                //LoadListener loader = (LoadListener) msg.obj;
-                //synchronized (SslErrorHandlerImpl.this) {
-                    //handleSslErrorResponse(loader, loader.sslError(),
-                            //msg.arg1 == 1);
-                    //mLoaderQueue.remove(loader);
-                    //fastProcessQueuedSslErrors();
-                //}
-                //break;
-        //}
+        
+        
+            
+                
+                
+                    
+                            
+                    
+                    
+                
+                
+        
     }
 
     
@@ -88,16 +89,16 @@ switch(msg.what){
     if(success)        
         {
             outState.putBundle("ssl-error-handler", mSslPrefTable);
-        } //End block
+        } 
         boolean var260CA9DD8A4577FC00B7BD5810298076_941514654 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1490628408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1490628408;
-        // ---------- Original Method ----------
-        //boolean success = (outState != null);
-        //if (success) {
-            //outState.putBundle("ssl-error-handler", mSslPrefTable);
-        //}
-        //return success;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -110,28 +111,29 @@ switch(msg.what){
     if(success)            
             {
                 mSslPrefTable = inState.getBundle("ssl-error-handler");
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var260CA9DD8A4577FC00B7BD5810298076_1053901191 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_223767814 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_223767814;
-        // ---------- Original Method ----------
-        //boolean success = (inState != null);
-        //if (success) {
-            //success = inState.containsKey("ssl-error-handler");
-            //if (success) {
-                //mSslPrefTable = inState.getBundle("ssl-error-handler");
-            //}
-        //}
-        //return success;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.195 -0400", hash_original_method = "1C1564A7BC8E1B5AD415E60E6B0CBA09", hash_generated_method = "5E67DCC1BF128A2422A3A2FE824DEC86")
     synchronized void clear() {
         mSslPrefTable.clear();
-        // ---------- Original Method ----------
-        //mSslPrefTable.clear();
+        
+        
     }
 
     
@@ -140,26 +142,26 @@ switch(msg.what){
         addTaint(loader.getTaint());
     if(DebugFlags.SSL_ERROR_HANDLER)        
         {
-        } //End block
+        } 
     if(!loader.cancelled())        
         {
             mLoaderQueue.offer(loader);
     if(loader == mLoaderQueue.peek())            
             {
                 fastProcessQueuedSslErrors();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (DebugFlags.SSL_ERROR_HANDLER) {
-            //Log.v(LOGTAG, "SslErrorHandler.handleSslErrorRequest(): " +
-                  //"url=" + loader.url());
-        //}
-        //if (!loader.cancelled()) {
-            //mLoaderQueue.offer(loader);
-            //if (loader == mLoaderQueue.peek()) {
-                //fastProcessQueuedSslErrors();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                  
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -172,34 +174,34 @@ switch(msg.what){
         final int primary = error.getPrimaryError();
     if(DebugFlags.SSL_ERROR_HANDLER)        
         {
-        } //End block
+        } 
     if(mSslPrefTable.containsKey(host) && primary <= mSslPrefTable.getInt(host))        
         {
     if(!loader.cancelled())            
             {
                 loader.handleSslErrorResponse(true);
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1904213828 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1031450909 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1031450909;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1011821723 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689491973 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689491973;
-        // ---------- Original Method ----------
-        //final String host = loader.host();
-        //final int primary = error.getPrimaryError();
-        //if (DebugFlags.SSL_ERROR_HANDLER) {
-            //assert host != null;
-            //assert primary != -1;
-        //}
-        //if (mSslPrefTable.containsKey(host) && primary <= mSslPrefTable.getInt(host)) {
-            //if (!loader.cancelled()) {
-                //loader.handleSslErrorResponse(true);
-            //}
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -208,8 +210,8 @@ switch(msg.what){
         while
 (processNextLoader())        
         ;
-        // ---------- Original Method ----------
-        //while (processNextLoader());
+        
+        
     }
 
     
@@ -224,43 +226,43 @@ switch(msg.what){
                 boolean varB326B5062B2F0E69046810717534CB09_1778576240 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_491358044 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_491358044;
-            } //End block
+            } 
             SslError error = loader.sslError();
     if(DebugFlags.SSL_ERROR_HANDLER)            
             {
-            } //End block
+            } 
     if(checkSslPrefTable(loader, error))            
             {
                 mLoaderQueue.remove(loader);
                 boolean varB326B5062B2F0E69046810717534CB09_66378145 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_415678294 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_415678294;
-            } //End block
+            } 
             CallbackProxy proxy = loader.getFrame().getCallbackProxy();
             proxy.onReceivedSslError(new SslErrorHandlerImpl(this, loader), error);
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_454049905 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_545803346 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_545803346;
-        // ---------- Original Method ----------
-        //LoadListener loader = mLoaderQueue.peek();
-        //if (loader != null) {
-            //if (loader.cancelled()) {
-                //mLoaderQueue.remove(loader);
-                //return true;
-            //}
-            //SslError error = loader.sslError();
-            //if (DebugFlags.SSL_ERROR_HANDLER) {
-                //assert error != null;
-            //}
-            //if (checkSslPrefTable(loader, error)) {
-                //mLoaderQueue.remove(loader);
-                //return true;
-            //}
-            //CallbackProxy proxy = loader.getFrame().getCallbackProxy();
-            //proxy.onReceivedSslError(new SslErrorHandlerImpl(this, loader), error);
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                
+            
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -268,9 +270,9 @@ switch(msg.what){
     public void proceed() {
         mOriginHandler.sendMessage(mOriginHandler.obtainMessage(
                 HANDLE_RESPONSE, 1, 0, mLoadListener));
-        // ---------- Original Method ----------
-        //mOriginHandler.sendMessage(mOriginHandler.obtainMessage(
-                //HANDLE_RESPONSE, 1, 0, mLoadListener));
+        
+        
+                
     }
 
     
@@ -278,9 +280,9 @@ switch(msg.what){
     public void cancel() {
         mOriginHandler.sendMessage(mOriginHandler.obtainMessage(
                 HANDLE_RESPONSE, 0, 0, mLoadListener));
-        // ---------- Original Method ----------
-        //mOriginHandler.sendMessage(mOriginHandler.obtainMessage(
-                //HANDLE_RESPONSE, 0, 0, mLoadListener));
+        
+        
+                
     }
 
     
@@ -292,10 +294,10 @@ switch(msg.what){
         addTaint(loader.getTaint());
     if(DebugFlags.SSL_ERROR_HANDLER)        
         {
-        } //End block
+        } 
     if(DebugFlags.SSL_ERROR_HANDLER)        
         {
-        } //End block
+        } 
     if(!loader.cancelled())        
         {
     if(proceed)            
@@ -304,17 +306,17 @@ switch(msg.what){
                 String host = loader.host();
     if(DebugFlags.SSL_ERROR_HANDLER)                
                 {
-                } //End block
+                } 
                 boolean hasKey = mSslPrefTable.containsKey(host);
     if(!hasKey || primary > mSslPrefTable.getInt(host))                
                 {
                     mSslPrefTable.putInt(host, primary);
-                } //End block
-            } //End block
+                } 
+            } 
             loader.handleSslErrorResponse(proceed);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

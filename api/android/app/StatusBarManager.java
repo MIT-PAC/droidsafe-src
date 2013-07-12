@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,8 +27,8 @@ public class StatusBarManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.170 -0400", hash_original_method = "3CFEC728F9006821D55520F81F0C151A", hash_generated_method = "AA88790BF74B94A758B0908E6E9AD026")
       StatusBarManager(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -40,20 +40,20 @@ public class StatusBarManager {
                     ServiceManager.getService(Context.STATUS_BAR_SERVICE));
     if(mService == null)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
 IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mService;
         var72B03849F9527CD4AC8A54AA9B97A48C_303959598.addTaint(taint);
         return var72B03849F9527CD4AC8A54AA9B97A48C_303959598;
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //mService = IStatusBarService.Stub.asInterface(
-                    //ServiceManager.getService(Context.STATUS_BAR_SERVICE));
-            //if (mService == null) {
-                //Slog.w("StatusBarManager", "warning: no STATUS_BAR_SERVICE");
-            //}
-        //}
-        //return mService;
+        
+        
+            
+                    
+            
+                
+            
+        
+        
     }
 
     
@@ -66,23 +66,23 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     if(svc != null)            
             {
                 svc.disable(what, mToken, mContext.getPackageName());
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_982989535 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_982989535.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_982989535;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.disable(what, mToken, mContext.getPackageName());
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -94,23 +94,23 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     if(svc != null)            
             {
                 svc.expand();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_2135486884 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_2135486884.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_2135486884;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.expand();
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -122,26 +122,27 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     if(svc != null)            
             {
                 svc.collapse();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_439126179 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_439126179.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_439126179;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.collapse();
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.174 -0400", hash_original_method = "8A330421DEC3E061C169D87595A7D18D", hash_generated_method = "5F15D37204D20F27C203D3C3A3C5DD25")
     public void setIcon(String slot, int iconId, int iconLevel, String contentDescription) {
         addTaint(contentDescription.getTaint());
@@ -155,27 +156,28 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
             {
                 svc.setIcon(slot, mContext.getPackageName(), iconId, iconLevel,
                     contentDescription);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_2123760266 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_2123760266.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_2123760266;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.setIcon(slot, mContext.getPackageName(), iconId, iconLevel,
-                    //contentDescription);
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.174 -0400", hash_original_method = "D02D0B03CC45E73478507B52DB06904B", hash_generated_method = "3E0FDF0963B63E3ACFC0381258551D37")
     public void removeIcon(String slot) {
         addTaint(slot.getTaint());
@@ -185,26 +187,27 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     if(svc != null)            
             {
                 svc.removeIcon(slot);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_701020946 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_701020946.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_701020946;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.removeIcon(slot);
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:05.175 -0400", hash_original_method = "59E45760864584BE81198BD1AADB01C2", hash_generated_method = "A99C47B526A71DDF9346A0D269EF4B8A")
     public void setIconVisibility(String slot, boolean visible) {
         addTaint(visible);
@@ -215,23 +218,23 @@ IStatusBarService var72B03849F9527CD4AC8A54AA9B97A48C_303959598 =         mServi
     if(svc != null)            
             {
                 svc.setIconVisibility(slot, visible);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_846198244 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_846198244.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_846198244;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //final IStatusBarService svc = getService();
-            //if (svc != null) {
-                //svc.setIconVisibility(slot, visible);
-            //}
-        //} catch (RemoteException ex) {
-            //throw new RuntimeException(ex);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     

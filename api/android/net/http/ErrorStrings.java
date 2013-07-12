@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class ErrorStrings {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.059 -0400", hash_original_method = "15196F3BFA8B9637883B8AE296FFF8F2", hash_generated_method = "0498F89C8088675FDFC23A8A118F14B3")
     private  ErrorStrings() {
-        // ---------- Original Method ----------
+        
     }
 
     

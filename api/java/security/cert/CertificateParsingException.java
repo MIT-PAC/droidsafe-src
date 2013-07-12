@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,13 +11,13 @@ public class CertificateParsingException extends CertificateException {
     public  CertificateParsingException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.648 -0400", hash_original_method = "8DA8B534EA167A5C50442E9F25486020", hash_generated_method = "B20A17E5EA8D79E40D983186BAEA27C7")
     public  CertificateParsingException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class CertificateParsingException extends CertificateException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class CertificateParsingException extends CertificateException {
     public  CertificateParsingException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

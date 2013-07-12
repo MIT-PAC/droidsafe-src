@@ -1,6 +1,6 @@
 package android.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,12 +31,12 @@ public class CdmaCellLocation extends CellLocation {
         this.mBaseStationLongitude = INVALID_LAT_LONG;
         this.mSystemId = -1;
         this.mNetworkId = -1;
-        // ---------- Original Method ----------
-        //this.mBaseStationId = -1;
-        //this.mBaseStationLatitude = INVALID_LAT_LONG;
-        //this.mBaseStationLongitude = INVALID_LAT_LONG;
-        //this.mSystemId = -1;
-        //this.mNetworkId = -1;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -47,65 +47,71 @@ public class CdmaCellLocation extends CellLocation {
         this.mBaseStationLongitude = bundle.getInt("baseStationLongitude", mBaseStationLongitude);
         this.mSystemId = bundle.getInt("systemId", mSystemId);
         this.mNetworkId = bundle.getInt("networkId", mNetworkId);
-        // ---------- Original Method ----------
-        //this.mBaseStationId = bundle.getInt("baseStationId", mBaseStationId);
-        //this.mBaseStationLatitude = bundle.getInt("baseStationLatitude", mBaseStationLatitude);
-        //this.mBaseStationLongitude = bundle.getInt("baseStationLongitude", mBaseStationLongitude);
-        //this.mSystemId = bundle.getInt("systemId", mSystemId);
-        //this.mNetworkId = bundle.getInt("networkId", mNetworkId);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "5BA2DB973405907BCB7576020C4BB767", hash_generated_method = "ED79183241E911A02CADDEB67E7995B1")
     public int getBaseStationId() {
         int var83DE69BDE54D9DD130453E5F2CB98A4F_59585234 = (this.mBaseStationId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181498993 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181498993;
-        // ---------- Original Method ----------
-        //return this.mBaseStationId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "8D32771FFADF2E37F4C4C4E7BB2945F8", hash_generated_method = "FDBBB60D6486707E8F8E62B504326D2C")
     public int getBaseStationLatitude() {
         int varD18636815E0D0DF6EA3F7C118258ED98_1135826708 = (this.mBaseStationLatitude);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_541391277 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_541391277;
-        // ---------- Original Method ----------
-        //return this.mBaseStationLatitude;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "B2E759A184D0C15083668122E08B0641", hash_generated_method = "A47F9B97D7616B259EF552A745EC3326")
     public int getBaseStationLongitude() {
         int var0C827E6E4C71764E5957681DD67AB006_1598289313 = (this.mBaseStationLongitude);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052010069 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1052010069;
-        // ---------- Original Method ----------
-        //return this.mBaseStationLongitude;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.721 -0400", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "04EC874B8F75B1ECBFD7677D98579191")
     public int getSystemId() {
         int varDC9AC627E8999951F7D1333DA260C4E1_504554422 = (this.mSystemId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771148511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771148511;
-        // ---------- Original Method ----------
-        //return this.mSystemId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.722 -0400", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "284F46BFEF2A56E12E4AA9C18DC301B9")
     public int getNetworkId() {
         int varC36C789BAAC39C6FF0348461365E3AA8_569870999 = (this.mNetworkId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1068341373 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1068341373;
-        // ---------- Original Method ----------
-        //return this.mNetworkId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.723 -0400", hash_original_method = "0C9042B8D6AE69440E11B69CE7953639", hash_generated_method = "677DCE7DC5322BDEF3694C512B2DB3B9")
     public void setStateInvalid() {
         this.mBaseStationId = -1;
@@ -113,28 +119,30 @@ public class CdmaCellLocation extends CellLocation {
         this.mBaseStationLongitude = INVALID_LAT_LONG;
         this.mSystemId = -1;
         this.mNetworkId = -1;
-        // ---------- Original Method ----------
-        //this.mBaseStationId = -1;
-        //this.mBaseStationLatitude = INVALID_LAT_LONG;
-        //this.mBaseStationLongitude = INVALID_LAT_LONG;
-        //this.mSystemId = -1;
-        //this.mNetworkId = -1;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.724 -0400", hash_original_method = "61B794D65EE283C3FD04A14E94D0946D", hash_generated_method = "95DF98EF65A56ED2B9C5F0DB04FA3610")
     public void setCellLocationData(int baseStationId, int baseStationLatitude,
          int baseStationLongitude) {
         this.mBaseStationId = baseStationId;
         this.mBaseStationLatitude = baseStationLatitude;
         this.mBaseStationLongitude = baseStationLongitude;
-        // ---------- Original Method ----------
-        //this.mBaseStationId = baseStationId;
-        //this.mBaseStationLatitude = baseStationLatitude;
-        //this.mBaseStationLongitude = baseStationLongitude;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.725 -0400", hash_original_method = "4013196C0844C1883550E95EB904B1DA", hash_generated_method = "8A3DA43B0D301E0F9071C09FBAB3053B")
     public void setCellLocationData(int baseStationId, int baseStationLatitude,
          int baseStationLongitude, int systemId, int networkId) {
@@ -143,15 +151,16 @@ public class CdmaCellLocation extends CellLocation {
         this.mBaseStationLongitude = baseStationLongitude;
         this.mSystemId = systemId;
         this.mNetworkId = networkId;
-        // ---------- Original Method ----------
-        //this.mBaseStationId = baseStationId;
-        //this.mBaseStationLatitude = baseStationLatitude;
-        //this.mBaseStationLongitude = baseStationLongitude;
-        //this.mSystemId = systemId;
-        //this.mNetworkId = networkId;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.725 -0400", hash_original_method = "E85418559CBFBFDF0470CD6A904DEAD1", hash_generated_method = "BBC2EFAE3337287FD5918DC403AFB421")
     @Override
     public int hashCode() {
@@ -159,9 +168,9 @@ public class CdmaCellLocation extends CellLocation {
                 ^ this.mSystemId ^ this.mNetworkId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490286353 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1490286353;
-        // ---------- Original Method ----------
-        //return this.mBaseStationId ^ this.mBaseStationLatitude ^ this.mBaseStationLongitude
-                //^ this.mSystemId ^ this.mNetworkId;
+        
+        
+                
     }
 
     
@@ -173,19 +182,19 @@ public class CdmaCellLocation extends CellLocation {
         try 
         {
             s = (CdmaCellLocation)o;
-        } //End block
+        } 
         catch (ClassCastException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_1614797215 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084996222 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084996222;
-        } //End block
+        } 
     if(o == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_167399238 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_648540434 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_648540434;
-        } //End block
+        } 
         boolean varA7F8E6B062F01F0CC05C597986949F61_1794460216 = ((equalsHandlesNulls(this.mBaseStationId, s.mBaseStationId) &&
                 equalsHandlesNulls(this.mBaseStationLatitude, s.mBaseStationLatitude) &&
                 equalsHandlesNulls(this.mBaseStationLongitude, s.mBaseStationLongitude) &&
@@ -194,22 +203,22 @@ public class CdmaCellLocation extends CellLocation {
         ));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1476076099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1476076099;
-        // ---------- Original Method ----------
-        //CdmaCellLocation s;
-        //try {
-            //s = (CdmaCellLocation)o;
-        //} catch (ClassCastException ex) {
-            //return false;
-        //}
-        //if (o == null) {
-            //return false;
-        //}
-        //return (equalsHandlesNulls(this.mBaseStationId, s.mBaseStationId) &&
-                //equalsHandlesNulls(this.mBaseStationLatitude, s.mBaseStationLatitude) &&
-                //equalsHandlesNulls(this.mBaseStationLongitude, s.mBaseStationLongitude) &&
-                //equalsHandlesNulls(this.mSystemId, s.mSystemId) &&
-                //equalsHandlesNulls(this.mNetworkId, s.mNetworkId)
-        //);
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
+                
+                
+                
+                
+        
     }
 
     
@@ -223,12 +232,12 @@ String varD00AE8B4DB8250B02A118CD67CC66F17_955463290 =         "[" + this.mBaseS
                    + this.mNetworkId + "]";
         varD00AE8B4DB8250B02A118CD67CC66F17_955463290.addTaint(taint);
         return varD00AE8B4DB8250B02A118CD67CC66F17_955463290;
-        // ---------- Original Method ----------
-        //return "[" + this.mBaseStationId + ","
-                   //+ this.mBaseStationLatitude + ","
-                   //+ this.mBaseStationLongitude + ","
-                   //+ this.mSystemId + ","
-                   //+ this.mNetworkId + "]";
+        
+        
+                   
+                   
+                   
+                   
     }
 
     
@@ -245,15 +254,16 @@ String varD00AE8B4DB8250B02A118CD67CC66F17_955463290 =         "[" + this.mBaseS
         bundleToFill.putInt("baseStationLongitude", this.mBaseStationLongitude);
         bundleToFill.putInt("systemId", this.mSystemId);
         bundleToFill.putInt("networkId", this.mNetworkId);
-        // ---------- Original Method ----------
-        //bundleToFill.putInt("baseStationId", this.mBaseStationId);
-        //bundleToFill.putInt("baseStationLatitude", this.mBaseStationLatitude);
-        //bundleToFill.putInt("baseStationLongitude", this.mBaseStationLongitude);
-        //bundleToFill.putInt("systemId", this.mSystemId);
-        //bundleToFill.putInt("networkId", this.mNetworkId);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.727 -0400", hash_original_method = "8DF1697B3E0EEA68CA131C0067500EBA", hash_generated_method = "1794D8401C4AD6551BA43E8E7C63CC7B")
     public boolean isEmpty() {
         boolean var27982435A14BB8D93E80836A7CB07524_1431264457 = ((this.mBaseStationId == -1 &&
@@ -263,12 +273,12 @@ String varD00AE8B4DB8250B02A118CD67CC66F17_955463290 =         "[" + this.mBaseS
                 this.mNetworkId == -1));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1603313009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1603313009;
-        // ---------- Original Method ----------
-        //return (this.mBaseStationId == -1 &&
-                //this.mBaseStationLatitude == INVALID_LAT_LONG &&
-                //this.mBaseStationLongitude == INVALID_LAT_LONG &&
-                //this.mSystemId == -1 &&
-                //this.mNetworkId == -1);
+        
+        
+                
+                
+                
+                
     }
 
     

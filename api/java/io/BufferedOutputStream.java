@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class BufferedOutputStream extends FilterOutputStream {
     public  BufferedOutputStream(OutputStream out) {
         this(out, 8192);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,13 +31,13 @@ public class BufferedOutputStream extends FilterOutputStream {
             IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_86586959 = new IllegalArgumentException("size <= 0");
             var5AFB46BA040E4CEE38200888DC74991F_86586959.addTaint(taint);
             throw var5AFB46BA040E4CEE38200888DC74991F_86586959;
-        } //End block
+        } 
         buf = new byte[size];
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //buf = new byte[size];
+        
+        
+            
+        
+        
     }
 
     
@@ -47,10 +47,10 @@ public class BufferedOutputStream extends FilterOutputStream {
         checkNotClosed();
         flushInternal();
         out.flush();
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //flushInternal();
-        //out.flush();
+        
+        
+        
+        
     }
 
     
@@ -61,11 +61,11 @@ public class BufferedOutputStream extends FilterOutputStream {
             IOException varED812FFE0FE88798191D2BDE77D59D44_744223777 = new IOException("BufferedOutputStream is closed");
             varED812FFE0FE88798191D2BDE77D59D44_744223777.addTaint(taint);
             throw varED812FFE0FE88798191D2BDE77D59D44_744223777;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //throw new IOException("BufferedOutputStream is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -80,38 +80,38 @@ public class BufferedOutputStream extends FilterOutputStream {
             NullPointerException varD1F0B530B211C354FD4DD40207900970_468845177 = new NullPointerException("buffer == null");
             varD1F0B530B211C354FD4DD40207900970_468845177.addTaint(taint);
             throw varD1F0B530B211C354FD4DD40207900970_468845177;
-        } //End block
+        } 
         byte[] internalBuffer = buf;
     if(length >= internalBuffer.length)        
         {
             flushInternal();
             out.write(buffer, offset, length);
             return;
-        } //End block
+        } 
         Arrays.checkOffsetAndCount(buffer.length, offset, length);
     if(length > (internalBuffer.length - count))        
         {
             flushInternal();
-        } //End block
+        } 
         System.arraycopy(buffer, offset, internalBuffer, count, length);
         count += length;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //if (buffer == null) {
-            //throw new NullPointerException("buffer == null");
-        //}
-        //byte[] internalBuffer = buf;
-        //if (length >= internalBuffer.length) {
-            //flushInternal();
-            //out.write(buffer, offset, length);
-            //return;
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        //if (length > (internalBuffer.length - count)) {
-            //flushInternal();
-        //}
-        //System.arraycopy(buffer, offset, internalBuffer, count, length);
-        //count += length;
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -121,24 +121,24 @@ public class BufferedOutputStream extends FilterOutputStream {
     if(buf == null)        
         {
             return;
-        } //End block
+        } 
         try 
         {
             super.close();
-        } //End block
+        } 
         finally 
         {
             buf = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //return;
-        //}
-        //try {
-            //super.close();
-        //} finally {
-            //buf = null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -150,15 +150,15 @@ public class BufferedOutputStream extends FilterOutputStream {
         {
             out.write(buf, 0, count);
             count = 0;
-        } //End block
+        } 
         buf[count++] = (byte) oneByte;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //if (count == buf.length) {
-            //out.write(buf, 0, count);
-            //count = 0;
-        //}
-        //buf[count++] = (byte) oneByte;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -168,12 +168,12 @@ public class BufferedOutputStream extends FilterOutputStream {
         {
             out.write(buf, 0, count);
             count = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (count > 0) {
-            //out.write(buf, 0, count);
-            //count = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     

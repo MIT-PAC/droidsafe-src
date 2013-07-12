@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ public class SQLiteQuery extends SQLiteProgram {
         addTaint(db.getTaint());
         mOffsetIndex = offsetIndex;
         bindAllArgsAsStrings(bindArgs);
-        // ---------- Original Method ----------
-        //mOffsetIndex = offsetIndex;
-        //bindAllArgsAsStrings(bindArgs);
+        
+        
+        
     }
 
     
@@ -37,9 +37,9 @@ public class SQLiteQuery extends SQLiteProgram {
         addTaint(db.getTaint());
         this.mBindArgs = query.mBindArgs;
         this.mOffsetIndex = query.mOffsetIndex;
-        // ---------- Original Method ----------
-        //this.mBindArgs = query.mBindArgs;
-        //this.mOffsetIndex = query.mOffsetIndex;
+        
+        
+        
     }
 
     
@@ -91,42 +91,42 @@ public class SQLiteQuery extends SQLiteProgram {
                                 + ", args=[" + (mBindArgs != null ?
                                         TextUtils.join(", ", mBindArgs.values()) : "")
                                 + "]");
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mDatabase.logTimeStat(mSql, timeStart);
                 int var998EA97634C71C025EB15D1618C2A376_1949907513 = (numRows);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450804565 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450804565;
-            } //End block
+            } 
             catch (IllegalStateException e)
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_1633642402 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21307016 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21307016;
-            } //End block
+            } 
             catch (SQLiteDatabaseCorruptException e)
             {
                 mDatabase.onCorruption();
                 e.addTaint(taint);
                 throw e;
-            } //End block
+            } 
             catch (SQLiteException e)
             {
                 e.addTaint(taint);
                 throw e;
-            } //End block
+            } 
             finally 
             {
                 window.releaseReference();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             releaseReference();
             mDatabase.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -138,18 +138,18 @@ public class SQLiteQuery extends SQLiteProgram {
             int var38E37CE3C8D0439303E00926E6741308_273887339 = (nativeColumnCount(nStatement));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041550991 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041550991;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeColumnCount(nStatement);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -162,18 +162,18 @@ public class SQLiteQuery extends SQLiteProgram {
 String var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472 =             nativeColumnName(nStatement, columnIndex);
             var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472.addTaint(taint);
             return var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeColumnName(nStatement, columnIndex);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -183,8 +183,8 @@ String var96AFF3FBA6F9E943FBE0AF3FA990EC97_1567942472 =             nativeColumn
 String var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056 =         "SQLiteQuery: " + mSql;
         var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056.addTaint(taint);
         return var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056;
-        // ---------- Original Method ----------
-        //return "SQLiteQuery: " + mSql;
+        
+        
     }
 
     
@@ -193,9 +193,9 @@ String var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056 =         "SQLiteQuery: " 
     public void close() {
         super.close();
         mClosed = true;
-        // ---------- Original Method ----------
-        //super.close();
-        //mClosed = true;
+        
+        
+        
     }
 
     
@@ -206,13 +206,13 @@ String var3EFB8F4E9BBF4DC978F8DF4F177CC507_1873868056 =         "SQLiteQuery: " 
             IllegalStateException var6CAE77F670F1174A16CD140BED6B8FCA_1298339125 = new IllegalStateException("requerying a closed cursor");
             var6CAE77F670F1174A16CD140BED6B8FCA_1298339125.addTaint(taint);
             throw var6CAE77F670F1174A16CD140BED6B8FCA_1298339125;
-        } //End block
+        } 
         compileAndbindAllArgs();
-        // ---------- Original Method ----------
-        //if (mClosed) {
-            //throw new IllegalStateException("requerying a closed cursor");
-        //}
-        //compileAndbindAllArgs();
+        
+        
+            
+        
+        
     }
 
     

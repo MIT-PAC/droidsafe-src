@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ProxyRequireParser extends HeaderParser {
     public  ProxyRequireParser(String require) {
         super(require);
         addTaint(require.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class ProxyRequireParser extends HeaderParser {
     protected  ProxyRequireParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,19 +55,19 @@ public class ProxyRequireParser extends HeaderParser {
                     r.setOptionTag(token.getTokenValue());
                     this.lexer.SPorHT();
                     list.add(r);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("ProxyRequireParser.parse");
-        } //End block
+        } 
 SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1850235612 =         list;
         varED12C351C2E8CA4F85F097DDC7E77B4D_1850235612.addTaint(taint);
         return varED12C351C2E8CA4F85F097DDC7E77B4D_1850235612;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

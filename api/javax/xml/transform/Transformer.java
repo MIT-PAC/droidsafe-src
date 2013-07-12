@@ -1,6 +1,6 @@
 package javax.xml.transform;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public abstract class Transformer {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.001 -0400", hash_original_method = "962E0FC22D29E2A2CD7F27A68548CC24", hash_generated_method = "CCED2B9E561763560F0FF6AAF0DC8DE8")
     protected  Transformer() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,12 +23,12 @@ public abstract class Transformer {
             );
         var9FEFF5D8C55012A46466386638F52029_1010514486.addTaint(taint);
         throw var9FEFF5D8C55012A46466386638F52029_1010514486;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This Transformer, \"" + this.getClass().getName() + "\", does not support the reset functionality."
-            //+ "  Specification \"" + this.getClass().getPackage().getSpecificationTitle() + "\""
-            //+ " version \"" + this.getClass().getPackage().getSpecificationVersion() + "\""
-            //);
+        
+        
+            
+            
+            
+            
     }
 
     

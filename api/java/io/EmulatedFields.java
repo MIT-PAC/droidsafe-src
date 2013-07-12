@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ class EmulatedFields {
         addTaint(fields[0].getTaint());
         buildSlots(fields);
         declaredFields = declared;
-        // ---------- Original Method ----------
-        //buildSlots(fields);
-        //declaredFields = declared;
+        
+        
+        
     }
 
     
@@ -32,14 +32,14 @@ for(int i = 0;i < fields.length;i++)
             ObjectSlot s = new ObjectSlot();
             slotsToSerialize[i] = s;
             s.field = fields[i];
-        } //End block
-        // ---------- Original Method ----------
-        //slotsToSerialize = new ObjectSlot[fields.length];
-        //for (int i = 0; i < fields.length; i++) {
-            //ObjectSlot s = new ObjectSlot();
-            //slotsToSerialize[i] = s;
-            //s.field = fields[i];
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -52,16 +52,16 @@ for(int i = 0;i < fields.length;i++)
             IllegalArgumentException var266A5B958E32404FEB0F90FEA16B41BC_404852100 = new IllegalArgumentException("no field '" + name + "'");
             var266A5B958E32404FEB0F90FEA16B41BC_404852100.addTaint(taint);
             throw var266A5B958E32404FEB0F90FEA16B41BC_404852100;
-        } //End block
+        } 
         boolean varCF67B36A00C2480A4BC9F654704FBB20_361269746 = (slot.defaulted);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1611178220 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1611178220;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findSlot(name, null);
-        //if (slot == null) {
-            //throw new IllegalArgumentException("no field '" + name + "'");
-        //}
-        //return slot.defaulted;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ for(int i = 0;i < slotsToSerialize.length;i++)
 ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1569949057 =                         slot;
                         varA75FD01756DA9A5E923BE95AEE2FE369_1569949057.addTaint(taint);
                         return varA75FD01756DA9A5E923BE95AEE2FE369_1569949057;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
     if(fieldType == null)                    
@@ -91,16 +91,16 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1569949057 =                     
 ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_1973890783 =                         slot;
                         varA75FD01756DA9A5E923BE95AEE2FE369_1973890783.addTaint(taint);
                         return varA75FD01756DA9A5E923BE95AEE2FE369_1973890783;
-                    } //End block
+                    } 
     if(slot.field.getType().isAssignableFrom(fieldType))                    
                     {
 ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_209192974 =                         slot;
                         varA75FD01756DA9A5E923BE95AEE2FE369_209192974.addTaint(taint);
                         return varA75FD01756DA9A5E923BE95AEE2FE369_209192974;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(declaredFields != null)        
         {
 for(int i = 0;i < declaredFields.length;i++)
@@ -117,15 +117,15 @@ for(int i = 0;i < declaredFields.length;i++)
 ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_911043566 =                         slot;
                         varA75FD01756DA9A5E923BE95AEE2FE369_911043566.addTaint(taint);
                         return varA75FD01756DA9A5E923BE95AEE2FE369_911043566;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
 ObjectSlot var540C13E9E156B687226421B24F2DF178_1120664692 =         null;
         var540C13E9E156B687226421B24F2DF178_1120664692.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1120664692;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -139,16 +139,16 @@ ObjectSlot var540C13E9E156B687226421B24F2DF178_1120664692 =         null;
             IllegalArgumentException varD7878EE2158883478A72E59B7F02CD3F_723434452 = new IllegalArgumentException("no field '" + name + "' of type " + type);
             varD7878EE2158883478A72E59B7F02CD3F_723434452.addTaint(taint);
             throw varD7878EE2158883478A72E59B7F02CD3F_723434452;
-        } //End block
+        } 
 ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         varA75FD01756DA9A5E923BE95AEE2FE369_500709432.addTaint(taint);
         return varA75FD01756DA9A5E923BE95AEE2FE369_500709432;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findSlot(name, type);
-        //if (slot == null || (type == null && slot.field.getType().isPrimitive())) {
-            //throw new IllegalArgumentException("no field '" + name + "' of type " + type);
-        //}
-        //return slot;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -160,9 +160,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         byte var1D281A78AD32B82A51CC04AF6274114A_220541722 = (slot.defaulted ? defaultValue : ((Byte) slot.fieldValue).byteValue());
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_603013088 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_603013088;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, byte.class);
-        //return slot.defaulted ? defaultValue : ((Byte) slot.fieldValue).byteValue();
+        
+        
+        
     }
 
     
@@ -174,9 +174,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         char varB58266EE075128F3D1257F8A548D9C48_1896910903 = (slot.defaulted ? defaultValue : ((Character) slot.fieldValue).charValue());
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1831395886 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1831395886;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, char.class);
-        //return slot.defaulted ? defaultValue : ((Character) slot.fieldValue).charValue();
+        
+        
+        
     }
 
     
@@ -188,9 +188,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         double varF588637FF811446962953644BED4129E_1123760184 = (slot.defaulted ? defaultValue : ((Double) slot.fieldValue).doubleValue());
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1856607106 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1856607106;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, double.class);
-        //return slot.defaulted ? defaultValue : ((Double) slot.fieldValue).doubleValue();
+        
+        
+        
     }
 
     
@@ -202,9 +202,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         float var44D5397B0A068E142893A86C6CDD3289_654104422 = (slot.defaulted ? defaultValue : ((Float) slot.fieldValue).floatValue());
                 float var546ADE640B6EDFBC8A086EF31347E768_1699750766 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1699750766;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, float.class);
-        //return slot.defaulted ? defaultValue : ((Float) slot.fieldValue).floatValue();
+        
+        
+        
     }
 
     
@@ -216,9 +216,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         int varB53885FAFCA9992C3A3559F66DF73055_1134595703 = (slot.defaulted ? defaultValue : ((Integer) slot.fieldValue).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544643477 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1544643477;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, int.class);
-        //return slot.defaulted ? defaultValue : ((Integer) slot.fieldValue).intValue();
+        
+        
+        
     }
 
     
@@ -230,9 +230,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
         long varAEB0AA055AE72774FF7575974581D595_1047586048 = (slot.defaulted ? defaultValue : ((Long) slot.fieldValue).longValue());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1344620809 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1344620809;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, long.class);
-        //return slot.defaulted ? defaultValue : ((Long) slot.fieldValue).longValue();
+        
+        
+        
     }
 
     
@@ -244,9 +244,9 @@ ObjectSlot varA75FD01756DA9A5E923BE95AEE2FE369_500709432 =         slot;
 Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ? defaultValue : slot.fieldValue;
         var8ECED27106AD5F69545F8A5CA74D01DD_1189291648.addTaint(taint);
         return var8ECED27106AD5F69545F8A5CA74D01DD_1189291648;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, null);
-        //return slot.defaulted ? defaultValue : slot.fieldValue;
+        
+        
+        
     }
 
     
@@ -258,9 +258,9 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         short varD4C7E28BA5A724D1379C6EE44DB8BF96_1933702200 = (slot.defaulted ? defaultValue : ((Short) slot.fieldValue).shortValue());
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1739578724 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1739578724;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, short.class);
-        //return slot.defaulted ? defaultValue : ((Short) slot.fieldValue).shortValue();
+        
+        
+        
     }
 
     
@@ -272,9 +272,9 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         boolean var42197F4542ADF97A086473B57E49CC07_1823904132 = (slot.defaulted ? defaultValue : ((Boolean) slot.fieldValue).booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_714850476 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_714850476;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, boolean.class);
-        //return slot.defaulted ? defaultValue : ((Boolean) slot.fieldValue).booleanValue();
+        
+        
+        
     }
 
     
@@ -285,10 +285,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, byte.class);
         slot.fieldValue = Byte.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, byte.class);
-        //slot.fieldValue = Byte.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -299,10 +299,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, char.class);
         slot.fieldValue = Character.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, char.class);
-        //slot.fieldValue = Character.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -313,10 +313,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, double.class);
         slot.fieldValue = Double.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, double.class);
-        //slot.fieldValue = Double.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -327,10 +327,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, float.class);
         slot.fieldValue = Float.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, float.class);
-        //slot.fieldValue = Float.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -341,10 +341,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, int.class);
         slot.fieldValue = Integer.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, int.class);
-        //slot.fieldValue = Integer.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -355,10 +355,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, long.class);
         slot.fieldValue = Long.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, long.class);
-        //slot.fieldValue = Long.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -370,18 +370,18 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
     if(value != null)        
         {
             valueClass = value.getClass();
-        } //End block
+        } 
         ObjectSlot slot = findMandatorySlot(name, valueClass);
         slot.fieldValue = value;
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //Class<?> valueClass = null;
-        //if (value != null) {
-            //valueClass = value.getClass();
-        //}
-        //ObjectSlot slot = findMandatorySlot(name, valueClass);
-        //slot.fieldValue = value;
-        //slot.defaulted = false;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -392,10 +392,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, short.class);
         slot.fieldValue = Short.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, short.class);
-        //slot.fieldValue = Short.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -406,10 +406,10 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
         ObjectSlot slot = findMandatorySlot(name, boolean.class);
         slot.fieldValue = Boolean.valueOf(value);
         slot.defaulted = false;
-        // ---------- Original Method ----------
-        //ObjectSlot slot = findMandatorySlot(name, boolean.class);
-        //slot.fieldValue = Boolean.valueOf(value);
-        //slot.defaulted = false;
+        
+        
+        
+        
     }
 
     
@@ -418,8 +418,8 @@ Object var8ECED27106AD5F69545F8A5CA74D01DD_1189291648 =         slot.defaulted ?
 ObjectSlot[] varBC44ACCD034244AA8201EA5D1A2C18F9_1171517405 =         slotsToSerialize;
         varBC44ACCD034244AA8201EA5D1A2C18F9_1171517405.addTaint(taint);
         return varBC44ACCD034244AA8201EA5D1A2C18F9_1171517405;
-        // ---------- Original Method ----------
-        //return slotsToSerialize;
+        
+        
     }
 
     
@@ -437,27 +437,29 @@ ObjectSlot[] varBC44ACCD034244AA8201EA5D1A2C18F9_1171517405 =         slotsToSer
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.880 -0400", hash_original_method = "57E475AF330CFB18924297ADFA41ECEA", hash_generated_method = "57E475AF330CFB18924297ADFA41ECEA")
         public ObjectSlot ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.881 -0400", hash_original_method = "59E78F3DAFAB25C124D589BA3544A531", hash_generated_method = "C864F4B42604A6CFEFA65A191273516D")
         public ObjectStreamField getField() {
 ObjectStreamField varFD00DDA829A3FEC584386A3762542DE0_1195644435 =             field;
             varFD00DDA829A3FEC584386A3762542DE0_1195644435.addTaint(taint);
             return varFD00DDA829A3FEC584386A3762542DE0_1195644435;
-            // ---------- Original Method ----------
-            //return field;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.884 -0400", hash_original_method = "31B3B47C28245F569D31AEBE619B4C79", hash_generated_method = "98C52048E067F76E4AAA4F7A4041F133")
         public Object getFieldValue() {
 Object var4E4D2A3682724C167ABDF0C5A29E0CEB_908907073 =             fieldValue;
             var4E4D2A3682724C167ABDF0C5A29E0CEB_908907073.addTaint(taint);
             return var4E4D2A3682724C167ABDF0C5A29E0CEB_908907073;
-            // ---------- Original Method ----------
-            //return fieldValue;
+            
+            
         }
 
         

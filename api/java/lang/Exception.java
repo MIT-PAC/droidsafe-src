@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class Exception extends Throwable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.716 -0400", hash_original_method = "D33746B9B653741A49B1BE35D2346C75", hash_generated_method = "D55E5C538C9FDD634751B5C812941F3B")
     public  Exception() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class Exception extends Throwable {
     public  Exception(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class Exception extends Throwable {
         super(detailMessage, throwable);
         addTaint(throwable.getTaint());
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class Exception extends Throwable {
     public  Exception(Throwable throwable) {
         super(throwable);
         addTaint(throwable.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

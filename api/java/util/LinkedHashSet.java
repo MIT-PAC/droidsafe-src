@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.834 -0400", hash_original_method = "FA64C9B63CE04BA03B3070651E56EFED", hash_generated_method = "B99E3A755713053C1BCF05A2186909D1")
     public  LinkedHashSet() {
         super(new LinkedHashMap<E, HashSet<E>>());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -19,7 +19,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
     public  LinkedHashSet(int capacity) {
         super(new LinkedHashMap<E, HashSet<E>>(capacity));
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
         super(new LinkedHashMap<E, HashSet<E>>(capacity, loadFactor));
         addTaint(loadFactor);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,11 +40,11 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
 for(E e : collection)
         {
             add(e);
-        } //End block
-        // ---------- Original Method ----------
-        //for (E e : collection) {
-            //add(e);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -56,8 +56,8 @@ for(E e : collection)
 HashMap<E, HashSet<E>> var0A396D3ACF850ADC853A7EF817D30CE6_426926098 =         new LinkedHashMap<E, HashSet<E>>(capacity, loadFactor);
         var0A396D3ACF850ADC853A7EF817D30CE6_426926098.addTaint(taint);
         return var0A396D3ACF850ADC853A7EF817D30CE6_426926098;
-        // ---------- Original Method ----------
-        //return new LinkedHashMap<E, HashSet<E>>(capacity, loadFactor);
+        
+        
     }
 
     

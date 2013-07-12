@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,18 +15,19 @@ public class AsymmetricKeyParameter implements CipherParameters {
     public  AsymmetricKeyParameter(
         boolean privateKey) {
         this.privateKey = privateKey;
-        // ---------- Original Method ----------
-        //this.privateKey = privateKey;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.548 -0400", hash_original_method = "47130025E2A64A0FEA07D9052329E298", hash_generated_method = "7FD3293EF92A02327B536857934A93BD")
     public boolean isPrivate() {
         boolean varBD0C8E3BD998A500B0984584A7245CA0_964930082 = (privateKey);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1344408496 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1344408496;
-        // ---------- Original Method ----------
-        //return privateKey;
+        
+        
     }
 
     

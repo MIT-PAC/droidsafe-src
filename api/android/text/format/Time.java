@@ -1,6 +1,6 @@
 package android.text.format;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,26 +53,26 @@ public class Time {
             NullPointerException varB04636ED2291824655749902E645CEC2_747650391 = new NullPointerException("timezone is null!");
             varB04636ED2291824655749902E645CEC2_747650391.addTaint(taint);
             throw varB04636ED2291824655749902E645CEC2_747650391;
-        } //End block
+        } 
         this.timezone = timezone;
         this.year = 1970;
         this.monthDay = 1;
         this.isDst = -1;
-        // ---------- Original Method ----------
-        //if (timezone == null) {
-            //throw new NullPointerException("timezone is null!");
-        //}
-        //this.timezone = timezone;
-        //this.year = 1970;
-        //this.monthDay = 1;
-        //this.isDst = -1;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.219 -0400", hash_original_method = "B143F86B302A5932C8EBD6FB2BD46478", hash_generated_method = "D523B0EECDBAE13FC752EA1B886457F7")
     public  Time() {
         this(TimeZone.getDefault().getID());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -80,11 +80,12 @@ public class Time {
     public  Time(Time other) {
         addTaint(other.getTaint());
         set(other);
-        // ---------- Original Method ----------
-        //set(other);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.220 -0400", hash_original_method = "7DE92E5F5A39A244E977EE497A88E369", hash_generated_method = "DD36E8062BAFD83B3A989897E004B994")
     public long normalize(boolean ignoreDst) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_823020943 = getTaintLong();
@@ -92,6 +93,7 @@ public class Time {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.220 -0400", hash_original_method = "13E8DE21AE4CB3AA83156EE3A5950ED3", hash_generated_method = "D76B3D1C69C48ED15F43AFBE3183BFB6")
     public void switchTimezone(String timezone) {
     }
@@ -121,15 +123,15 @@ switch(field){
                 int var7B8B965AD4BCA0E41AB51DE7B31363A1_2085876880 = (n);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015859074 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015859074;
-            } //End block
+            } 
             else
             {
                 int y = this.year;
                 int var92D76F9AFF1EB9612DE22FF87D8DE507_1881640474 = (((y % 4) == 0 && ((y % 100) != 0 || (y % 400) == 0)) ? 29 : 28);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909774585 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1909774585;
-            } //End block
-        } //End block
+            } 
+        } 
         case MONTH:
         int var6512BD43D9CAA6E02C990B0A82652DCA_1188305326 = (11);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376377288 = getTaintInt();
@@ -148,7 +150,7 @@ switch(field){
             int var620AD3366B54AD097DBDF6609CE2F415_1669071689 = (((y % 4) == 0 && ((y % 100) != 0 || (y % 400) == 0)) ? 365 : 364);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263164437 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_263164437;
-        } //End block
+        } 
         case WEEK_NUM:
         RuntimeException var64D2AB6C85A127F7533753006ED47016_1835302729 = new RuntimeException("WEEK_NUM not implemented");
         var64D2AB6C85A127F7533753006ED47016_1835302729.addTaint(taint);
@@ -158,8 +160,8 @@ switch(field){
         varAE34E2CB9ED135AD72B83A828FBD71D3_752444914.addTaint(taint);
         throw varAE34E2CB9ED135AD72B83A828FBD71D3_752444914;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -170,7 +172,7 @@ switch(field){
             NullPointerException varB04636ED2291824655749902E645CEC2_2088340885 = new NullPointerException("timezone is null!");
             varB04636ED2291824655749902E645CEC2_2088340885.addTaint(taint);
             throw varB04636ED2291824655749902E645CEC2_2088340885;
-        } //End block
+        } 
         this.timezone = timezone;
         this.allDay = false;
         this.second = 0;
@@ -183,22 +185,22 @@ switch(field){
         this.yearDay = 0;
         this.gmtoff = 0;
         this.isDst = -1;
-        // ---------- Original Method ----------
-        //if (timezone == null) {
-            //throw new NullPointerException("timezone is null!");
-        //}
-        //this.timezone = timezone;
-        //this.allDay = false;
-        //this.second = 0;
-        //this.minute = 0;
-        //this.hour = 0;
-        //this.monthDay = 0;
-        //this.month = 0;
-        //this.year = 0;
-        //this.weekDay = 0;
-        //this.yearDay = 0;
-        //this.gmtoff = 0;
-        //this.isDst = -1;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -294,13 +296,13 @@ switch(field){
                 sAm = r.getString(com.android.internal.R.string.am);
                 sPm = r.getString(com.android.internal.R.string.pm);
                 sLocale = locale;
-            } //End block
+            } 
 String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(format);
             varFBBEE5BC025677B8DDBAC7529127CCD6_601568264.addTaint(taint);
             return varFBBEE5BC025677B8DDBAC7529127CCD6_601568264;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -333,19 +335,20 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
             boolean varB326B5062B2F0E69046810717534CB09_1371250240 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1361262795 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1361262795;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_133078348 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80889498 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_80889498;
-        // ---------- Original Method ----------
-        //if (nativeParse(s)) {
-            //timezone = TIMEZONE_UTC;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.228 -0400", hash_original_method = "715F84C962A7921497F55D5349A2140A", hash_generated_method = "0F073D7C7BBDB41973E59EB579E657AE")
     private boolean nativeParse(String s) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1524651395 = getTaintBoolean();
@@ -362,19 +365,20 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
             boolean varB326B5062B2F0E69046810717534CB09_2020146914 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_269697294 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_269697294;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_993625659 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1740856979 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1740856979;
-        // ---------- Original Method ----------
-        //if (nativeParse3339(s)) {
-             //timezone = TIMEZONE_UTC;
-             //return true;
-         //}
-        //return false;
+        
+        
+             
+             
+         
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.229 -0400", hash_original_method = "57499E6D502331FE1EE9DA37E2D15CA3", hash_generated_method = "3F297A958E51800ED5EC5707DFCFA16F")
     private boolean nativeParse3339(String s) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_248134698 = getTaintBoolean();
@@ -387,11 +391,13 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.229 -0400", hash_original_method = "6CDA1CA0525F04C652EDF79AA26F0E90", hash_generated_method = "0DE05A8FA6CB506B4E2313C7C1218631")
     public void setToNow() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.229 -0400", hash_original_method = "C1956449864825DE1FCC969EAC519409", hash_generated_method = "8C7854B8EAB7DEC83EF4335426B3789D")
     public long toMillis(boolean ignoreDst) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_427134532 = getTaintLong();
@@ -399,6 +405,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.230 -0400", hash_original_method = "934B6518FEFEB3D5C2DEFA32BEB78382", hash_generated_method = "8657361F6180A2504388BAF20D08B3C7")
     public void set(long millis) {
     }
@@ -413,6 +420,7 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.232 -0400", hash_original_method = "F960E973DC6F4E791CEC3120624756A7", hash_generated_method = "F3630183AFFC264D42CFEAC437A98BBF")
     public void set(Time that) {
         this.timezone = that.timezone;
@@ -427,22 +435,23 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
         this.yearDay = that.yearDay;
         this.isDst = that.isDst;
         this.gmtoff = that.gmtoff;
-        // ---------- Original Method ----------
-        //this.timezone = that.timezone;
-        //this.allDay = that.allDay;
-        //this.second = that.second;
-        //this.minute = that.minute;
-        //this.hour = that.hour;
-        //this.monthDay = that.monthDay;
-        //this.month = that.month;
-        //this.year = that.year;
-        //this.weekDay = that.weekDay;
-        //this.yearDay = that.yearDay;
-        //this.isDst = that.isDst;
-        //this.gmtoff = that.gmtoff;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.234 -0400", hash_original_method = "667ED0F0E30647AFF648664194B11038", hash_generated_method = "92D1427CCBADBE4F26EBE19367B4E729")
     public void set(int second, int minute, int hour, int monthDay, int month, int year) {
         this.allDay = false;
@@ -456,21 +465,22 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
         this.yearDay = 0;
         this.isDst = -1;
         this.gmtoff = 0;
-        // ---------- Original Method ----------
-        //this.allDay = false;
-        //this.second = second;
-        //this.minute = minute;
-        //this.hour = hour;
-        //this.monthDay = monthDay;
-        //this.month = month;
-        //this.year = year;
-        //this.weekDay = 0;
-        //this.yearDay = 0;
-        //this.isDst = -1;
-        //this.gmtoff = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.235 -0400", hash_original_method = "C60C1B5EF923FFCA596CDB2EA96B61D3", hash_generated_method = "EAC3BE484C3CAD4661E56F149A905065")
     public void set(int monthDay, int month, int year) {
         this.allDay = true;
@@ -484,18 +494,18 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
         this.yearDay = 0;
         this.isDst = -1;
         this.gmtoff = 0;
-        // ---------- Original Method ----------
-        //this.allDay = true;
-        //this.second = 0;
-        //this.minute = 0;
-        //this.hour = 0;
-        //this.monthDay = monthDay;
-        //this.month = month;
-        //this.year = year;
-        //this.weekDay = 0;
-        //this.yearDay = 0;
-        //this.isDst = -1;
-        //this.gmtoff = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -505,8 +515,8 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
         boolean varE7670DDC13FB50D4AA4AB82B160451C3_781227769 = (Time.compare(this, that) < 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_687797780 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_687797780;
-        // ---------- Original Method ----------
-        //return Time.compare(this, that) < 0;
+        
+        
     }
 
     
@@ -516,8 +526,8 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
         boolean var1A189439B984736CC1CAF5EE9C0AFF87_460840376 = (Time.compare(this, that) > 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308842985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308842985;
-        // ---------- Original Method ----------
-        //return Time.compare(this, that) > 0;
+        
+        
     }
 
     
@@ -529,22 +539,22 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
             int var3E34ED4CD09E055671A45360BE8F78A1_1322852094 = (closestThursday / 7 + 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1348847713 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1348847713;
-        } //End block
+        } 
         Time temp = new Time(this);
         temp.monthDay += sThursdayOffset[weekDay];
         temp.normalize(true );
         int varD39F7527E54379C7115D7EE93D4ECA4E_852395093 = (temp.yearDay / 7 + 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_511493357 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_511493357;
-        // ---------- Original Method ----------
-        //int closestThursday = yearDay + sThursdayOffset[weekDay];
-        //if (closestThursday >= 0 && closestThursday <= 364) {
-            //return closestThursday / 7 + 1;
-        //}
-        //Time temp = new Time(this);
-        //temp.monthDay += sThursdayOffset[weekDay];
-        //temp.normalize(true );
-        //return temp.yearDay / 7 + 1;
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -556,14 +566,14 @@ String varFBBEE5BC025677B8DDBAC7529127CCD6_601568264 =             format1(forma
 String varB0AB335EC1CF7799F02E8716C842B170_1768051737 =             format(Y_M_D);
             varB0AB335EC1CF7799F02E8716C842B170_1768051737.addTaint(taint);
             return varB0AB335EC1CF7799F02E8716C842B170_1768051737;
-        } //End block
+        } 
         else
     if(TIMEZONE_UTC.equals(timezone))        
         {
 String varBBA18D66D6A75EA60F1B63055B2BB901_2020119006 =             format(Y_M_D_T_H_M_S_000_Z);
             varBBA18D66D6A75EA60F1B63055B2BB901_2020119006.addTaint(taint);
             return varBBA18D66D6A75EA60F1B63055B2BB901_2020119006;
-        } //End block
+        } 
         else
         {
             String base = format(Y_M_D_T_H_M_S_000);
@@ -574,20 +584,20 @@ String varBBA18D66D6A75EA60F1B63055B2BB901_2020119006 =             format(Y_M_D
 String varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461 =             String.format("%s%s%02d:%02d", base, sign, hours, minutes);
             varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461.addTaint(taint);
             return varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461;
-        } //End block
-        // ---------- Original Method ----------
-        //if (allDay) {
-            //return format(Y_M_D);
-        //} else if (TIMEZONE_UTC.equals(timezone)) {
-            //return format(Y_M_D_T_H_M_S_000_Z);
-        //} else {
-            //String base = format(Y_M_D_T_H_M_S_000);
-            //String sign = (gmtoff < 0) ? "-" : "+";
-            //int offset = (int)Math.abs(gmtoff);
-            //int minutes = (offset % 3600) / 60;
-            //int hours = offset / 3600;
-            //return String.format("%s%s%02d:%02d", base, sign, hours, minutes);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -597,7 +607,8 @@ String varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461 =             String.forma
     }
 
     
-        public static int getJulianDay(long millis, long gmtoff) {
+        @DSModeled(DSC.SAFE)
+    public static int getJulianDay(long millis, long gmtoff) {
         long offsetMillis = gmtoff * 1000;
         long julianDay = (millis + offsetMillis) / DateUtils.DAY_IN_MILLIS;
         return (int) julianDay + EPOCH_JULIAN_DAY;
@@ -619,21 +630,22 @@ String varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461 =             String.forma
         long var259A879E32720D127D38B39F2F1385B5_40736181 = (millis);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1448678533 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1448678533;
-        // ---------- Original Method ----------
-        //long millis = (julianDay - EPOCH_JULIAN_DAY) * DateUtils.DAY_IN_MILLIS;
-        //set(millis);
-        //int approximateDay = getJulianDay(millis, gmtoff);
-        //int diff = julianDay - approximateDay;
-        //monthDay += diff;
-        //hour = 0;
-        //minute = 0;
-        //second = 0;
-        //millis = normalize(true);
-        //return millis;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
-        public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfWeek) {
+        @DSModeled(DSC.SAFE)
+    public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfWeek) {
         int diff = THURSDAY - firstDayOfWeek;
         if (diff < 0) {
             diff += 7;
@@ -643,7 +655,8 @@ String varF1ABAA80440B3A2EE683E32AB62D2A3A_2051772461 =             String.forma
     }
 
     
-        public static int getJulianMondayFromWeeksSinceEpoch(int week) {
+        @DSModeled(DSC.SAFE)
+    public static int getJulianMondayFromWeeksSinceEpoch(int week) {
         return MONDAY_BEFORE_JULIAN_EPOCH + week * 7;
     }
 

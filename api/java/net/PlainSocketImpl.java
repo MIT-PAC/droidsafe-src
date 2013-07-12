@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,12 +48,12 @@ public class PlainSocketImpl extends SocketImpl {
     if(fd.valid())        
         {
             guard.open("close");
-        } //End block
-        // ---------- Original Method ----------
-        //this.fd = fd;
-        //if (fd.valid()) {
-            //guard.open("close");
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -61,15 +61,15 @@ public class PlainSocketImpl extends SocketImpl {
     public  PlainSocketImpl(Proxy proxy) {
         this(new FileDescriptor());
         this.proxy = proxy;
-        // ---------- Original Method ----------
-        //this.proxy = proxy;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.023 -0400", hash_original_method = "9AFAA74CF852E1C405941486398C4C8B", hash_generated_method = "8644C6045E743F187FD836913AA183B7")
     public  PlainSocketImpl() {
         this(new FileDescriptor());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -86,15 +86,15 @@ public class PlainSocketImpl extends SocketImpl {
     if(fd.valid())        
         {
             guard.open("close");
-        } //End block
-        // ---------- Original Method ----------
-        //this.fd = fd;
-        //this.localport = localport;
-        //this.address = addr;
-        //this.port = port;
-        //if (fd.valid()) {
-            //guard.open("close");
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -107,7 +107,7 @@ public class PlainSocketImpl extends SocketImpl {
             ((PlainSocketImpl) newImpl).socksBind();
             ((PlainSocketImpl) newImpl).socksAccept();
             return;
-        } //End block
+        } 
         try 
         {
             InetSocketAddress peerAddress = new InetSocketAddress();
@@ -115,7 +115,7 @@ public class PlainSocketImpl extends SocketImpl {
             newImpl.fd.setInt$(clientFd.getInt$());
             newImpl.address = peerAddress.getAddress();
             newImpl.port = peerAddress.getPort();
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
     if(errnoException.errno == EAGAIN || errnoException.errno == EWOULDBLOCK)            
@@ -123,15 +123,15 @@ public class PlainSocketImpl extends SocketImpl {
                 SocketTimeoutException var99C30906BCCBF74FFF0D5F285D252ACC_1310509628 = new SocketTimeoutException(errnoException);
                 var99C30906BCCBF74FFF0D5F285D252ACC_1310509628.addTaint(taint);
                 throw var99C30906BCCBF74FFF0D5F285D252ACC_1310509628;
-            } //End block
+            } 
             java.net.SocketException var01308AFBB38F93C29B87C84FA2A5ED65_382022912 = errnoException.rethrowAsSocketException();
             var01308AFBB38F93C29B87C84FA2A5ED65_382022912.addTaint(taint);
             throw var01308AFBB38F93C29B87C84FA2A5ED65_382022912;
-        } //End block
+        } 
         newImpl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(0));
         newImpl.localport = IoBridge.getSocketLocalPort(newImpl.fd);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -140,29 +140,31 @@ public class PlainSocketImpl extends SocketImpl {
         boolean var5E1E555BE0AAD4134390E5A70C27656D_185199497 = (proxy != null && proxy.type() == Proxy.Type.SOCKS);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1745777735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1745777735;
-        // ---------- Original Method ----------
-        //return proxy != null && proxy.type() == Proxy.Type.SOCKS;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.033 -0400", hash_original_method = "71A74E49E6970F91549D0885CC2DD805", hash_generated_method = "8263FCD9E99151BF2B954F0EF19B9268")
     public void initLocalPort(int localPort) {
         addTaint(localPort);
         this.localport = localPort;
-        // ---------- Original Method ----------
-        //this.localport = localPort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.046 -0400", hash_original_method = "2FB3C28FA9096CEDAB5697B9A14F4A6D", hash_generated_method = "3F7238155DA9FE60A021E36DC18A54EB")
     public void initRemoteAddressAndPort(InetAddress remoteAddress, int remotePort) {
         addTaint(remotePort);
         addTaint(remoteAddress.getTaint());
         this.address = remoteAddress;
         this.port = remotePort;
-        // ---------- Original Method ----------
-        //this.address = remoteAddress;
-        //this.port = remotePort;
+        
+        
+        
     }
 
     
@@ -173,14 +175,15 @@ public class PlainSocketImpl extends SocketImpl {
             SocketException var5AD72407DD9337ABED4666C49A30EC41_1605216540 = new SocketException("Socket is closed");
             var5AD72407DD9337ABED4666C49A30EC41_1605216540.addTaint(taint);
             throw var5AD72407DD9337ABED4666C49A30EC41_1605216540;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!fd.valid()) {
-            //throw new SocketException("Socket is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.047 -0400", hash_original_method = "4AE73BDFE66EC427EEC7327D1955F75B", hash_generated_method = "6C558FE1BFFE2481AB0BE76D538EBA44")
     @Override
     protected synchronized int available() throws IOException {
@@ -190,16 +193,16 @@ public class PlainSocketImpl extends SocketImpl {
             int varCFCD208495D565EF66E7DFF9F98764DA_98586691 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567526171 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567526171;
-        } //End block
+        } 
         int var16B823D9AF3F941AD9DE567252E43371_79900951 = (IoBridge.available(fd));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688244622 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1688244622;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //if (shutdownInput) {
-            //return 0;
-        //}
-        //return IoBridge.available(fd);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -213,19 +216,19 @@ public class PlainSocketImpl extends SocketImpl {
     if(port != 0)        
         {
             this.localport = port;
-        } //End block
+        } 
         else
         {
             this.localport = IoBridge.getSocketLocalPort(fd);
-        } //End block
-        // ---------- Original Method ----------
-        //IoBridge.bind(fd, address, port);
-        //this.address = address;
-        //if (port != 0) {
-            //this.localport = port;
-        //} else {
-            //this.localport = IoBridge.getSocketLocalPort(fd);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -234,9 +237,9 @@ public class PlainSocketImpl extends SocketImpl {
     protected synchronized void close() throws IOException {
         guard.close();
         IoBridge.closeSocket(fd);
-        // ---------- Original Method ----------
-        //guard.close();
-        //IoBridge.closeSocket(fd);
+        
+        
+        
     }
 
     
@@ -246,8 +249,8 @@ public class PlainSocketImpl extends SocketImpl {
         addTaint(aPort);
         addTaint(aHost.getTaint());
         connect(InetAddress.getByName(aHost), aPort);
-        // ---------- Original Method ----------
-        //connect(InetAddress.getByName(aHost), aPort);
+        
+        
     }
 
     
@@ -257,8 +260,8 @@ public class PlainSocketImpl extends SocketImpl {
         addTaint(aPort);
         addTaint(anAddr.getTaint());
         connect(anAddr, aPort, 0);
-        // ---------- Original Method ----------
-        //connect(anAddr, aPort, 0);
+        
+        
     }
 
     
@@ -271,22 +274,22 @@ public class PlainSocketImpl extends SocketImpl {
     if(streaming && usingSocks())        
         {
             socksConnect(anAddr, aPort, 0);
-        } //End block
+        } 
         else
         {
             IoBridge.connect(fd, normalAddr, aPort, timeout);
-        } //End block
+        } 
         super.address = normalAddr;
         super.port = aPort;
-        // ---------- Original Method ----------
-        //InetAddress normalAddr = anAddr.isAnyLocalAddress() ? InetAddress.getLocalHost() : anAddr;
-        //if (streaming && usingSocks()) {
-            //socksConnect(anAddr, aPort, 0);
-        //} else {
-            //IoBridge.connect(fd, normalAddr, aPort, timeout);
-        //}
-        //super.address = normalAddr;
-        //super.port = aPort;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -295,9 +298,9 @@ public class PlainSocketImpl extends SocketImpl {
     protected void create(boolean streaming) throws IOException {
         this.streaming = streaming;
         this.fd = IoBridge.socket(streaming);
-        // ---------- Original Method ----------
-        //this.streaming = streaming;
-        //this.fd = IoBridge.socket(streaming);
+        
+        
+        
     }
 
     
@@ -309,22 +312,22 @@ public class PlainSocketImpl extends SocketImpl {
     if(guard != null)            
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -335,9 +338,9 @@ public class PlainSocketImpl extends SocketImpl {
 InputStream varF6ECC47D11E65E1A2F927158501224EC_176697550 =         new PlainSocketInputStream(this);
         varF6ECC47D11E65E1A2F927158501224EC_176697550.addTaint(taint);
         return varF6ECC47D11E65E1A2F927158501224EC_176697550;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //return new PlainSocketInputStream(this);
+        
+        
+        
     }
 
     
@@ -348,8 +351,8 @@ InputStream varF6ECC47D11E65E1A2F927158501224EC_176697550 =         new PlainSoc
 Object var7559B8D6B7C6B53535C98372E0E1C884_1584172771 =         IoBridge.getSocketOption(fd, option);
         var7559B8D6B7C6B53535C98372E0E1C884_1584172771.addTaint(taint);
         return var7559B8D6B7C6B53535C98372E0E1C884_1584172771;
-        // ---------- Original Method ----------
-        //return IoBridge.getSocketOption(fd, option);
+        
+        
     }
 
     
@@ -360,9 +363,9 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_1584172771 =         IoBridge.getSock
 OutputStream var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810 =         new PlainSocketOutputStream(this);
         var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810.addTaint(taint);
         return var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //return new PlainSocketOutputStream(this);
+        
+        
+        
     }
 
     
@@ -373,26 +376,26 @@ OutputStream var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810 =         new PlainS
     if(usingSocks())        
         {
             return;
-        } //End block
+        } 
         try 
         {
             Libcore.os.listen(fd, backlog);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             java.net.SocketException var01308AFBB38F93C29B87C84FA2A5ED65_1085750277 = errnoException.rethrowAsSocketException();
             var01308AFBB38F93C29B87C84FA2A5ED65_1085750277.addTaint(taint);
             throw var01308AFBB38F93C29B87C84FA2A5ED65_1085750277;
-        } //End block
-        // ---------- Original Method ----------
-        //if (usingSocks()) {
-            //return;
-        //}
-        //try {
-            //Libcore.os.listen(fd, backlog);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -402,8 +405,8 @@ OutputStream var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810 =         new PlainS
         addTaint(value.getTaint());
         addTaint(option);
         IoBridge.setSocketOption(fd, option, value);
-        // ---------- Original Method ----------
-        //IoBridge.setSocketOption(fd, option, value);
+        
+        
     }
 
     
@@ -413,9 +416,9 @@ OutputStream var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810 =         new PlainS
         int var10BA24E4DBAD1B64CD977FB79B2C975B_259243907 = (addr.getPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451807140 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451807140;
-        // ---------- Original Method ----------
-        //InetSocketAddress addr = (InetSocketAddress) proxy.address();
-        //return addr.getPort();
+        
+        
+        
     }
 
     
@@ -427,18 +430,18 @@ OutputStream var8DAACDFE406FED89DEBC5D53A23E28BB_2049737810 =         new PlainS
     if(proxyName == null)        
         {
             proxyName = addr.getAddress().getHostAddress();
-        } //End block
+        } 
 InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress.getByName(proxyName);
         varCD1AB89BEFE6D06FD984B301B3372107_1001614986.addTaint(taint);
         return varCD1AB89BEFE6D06FD984B301B3372107_1001614986;
-        // ---------- Original Method ----------
-        //String proxyName;
-        //InetSocketAddress addr = (InetSocketAddress) proxy.address();
-        //proxyName = addr.getHostName();
-        //if (proxyName == null) {
-            //proxyName = addr.getAddress().getHostAddress();
-        //}
-        //return InetAddress.getByName(proxyName);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -450,25 +453,25 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
         try 
         {
             IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort(), timeout);
-        } //End block
+        } 
         catch (Exception e)
         {
             SocketException varD40A76CB202DEB44D9A98BD050F51D4F_1249755146 = new SocketException("SOCKS connection failed", e);
             varD40A76CB202DEB44D9A98BD050F51D4F_1249755146.addTaint(taint);
             throw varD40A76CB202DEB44D9A98BD050F51D4F_1249755146;
-        } //End block
+        } 
         socksRequestConnection(applicationServerAddress, applicationServerPort);
         lastConnectedAddress = applicationServerAddress;
         lastConnectedPort = applicationServerPort;
-        // ---------- Original Method ----------
-        //try {
-            //IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort(), timeout);
-        //} catch (Exception e) {
-            //throw new SocketException("SOCKS connection failed", e);
-        //}
-        //socksRequestConnection(applicationServerAddress, applicationServerPort);
-        //lastConnectedAddress = applicationServerAddress;
-        //lastConnectedPort = applicationServerPort;
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -485,14 +488,14 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
             IOException varD0F3DCFCA548295328776446FC2D93C6_941512557 = new IOException(reply.getErrorString(reply.getCommandOrResult()));
             varD0F3DCFCA548295328776446FC2D93C6_941512557.addTaint(taint);
             throw varD0F3DCFCA548295328776446FC2D93C6_941512557;
-        } //End block
-        // ---------- Original Method ----------
-        //socksSendRequest(Socks4Message.COMMAND_CONNECT,
-                //applicationServerAddress, applicationServerPort);
-        //Socks4Message reply = socksReadReply();
-        //if (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS) {
-            //throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-        //}
+        } 
+        
+        
+                
+        
+        
+            
+        
     }
 
     
@@ -504,12 +507,12 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
             IOException varD0F3DCFCA548295328776446FC2D93C6_523625455 = new IOException(reply.getErrorString(reply.getCommandOrResult()));
             varD0F3DCFCA548295328776446FC2D93C6_523625455.addTaint(taint);
             throw varD0F3DCFCA548295328776446FC2D93C6_523625455;
-        } //End block
-        // ---------- Original Method ----------
-        //Socks4Message reply = socksReadReply();
-        //if (reply.getCommandOrResult() != Socks4Message.RETURN_SUCCESS) {
-            //throw new IOException(reply.getErrorString(reply.getCommandOrResult()));
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -520,20 +523,20 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
         try 
         {
             Libcore.os.shutdown(fd, SHUT_RD);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             java.net.SocketException var01308AFBB38F93C29B87C84FA2A5ED65_2132926809 = errnoException.rethrowAsSocketException();
             var01308AFBB38F93C29B87C84FA2A5ED65_2132926809.addTaint(taint);
             throw var01308AFBB38F93C29B87C84FA2A5ED65_2132926809;
-        } //End block
-        // ---------- Original Method ----------
-        //shutdownInput = true;
-        //try {
-            //Libcore.os.shutdown(fd, SHUT_RD);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -543,40 +546,41 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
         try 
         {
             Libcore.os.shutdown(fd, SHUT_WR);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             java.net.SocketException var01308AFBB38F93C29B87C84FA2A5ED65_863592978 = errnoException.rethrowAsSocketException();
             var01308AFBB38F93C29B87C84FA2A5ED65_863592978.addTaint(taint);
             throw var01308AFBB38F93C29B87C84FA2A5ED65_863592978;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.shutdown(fd, SHUT_WR);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.082 -0400", hash_original_method = "D66101C95E8A449E156BD86059B4B4F6", hash_generated_method = "BC8DF018CB372B7AA89EDD0BC0C8D103")
     private void socksBind() throws IOException {
         try 
         {
             IoBridge.connect(fd, socksGetServerAddress(), socksGetServerPort());
-        } //End block
+        } 
         catch (Exception e)
         {
             IOException varE08B07D84BA635AF309AF25AC6FCB043_43104973 = new IOException("Unable to connect to SOCKS server", e);
             varE08B07D84BA635AF309AF25AC6FCB043_43104973.addTaint(taint);
             throw varE08B07D84BA635AF309AF25AC6FCB043_43104973;
-        } //End block
+        } 
     if(lastConnectedAddress == null)        
         {
             SocketException var44967CE51C78370F3B248C9252961803_2088615513 = new SocketException("Invalid SOCKS client");
             var44967CE51C78370F3B248C9252961803_2088615513.addTaint(taint);
             throw var44967CE51C78370F3B248C9252961803_2088615513;
-        } //End block
+        } 
         socksSendRequest(Socks4Message.COMMAND_BIND, lastConnectedAddress,
                 lastConnectedPort);
         Socks4Message reply = socksReadReply();
@@ -585,20 +589,20 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
             IOException varD0F3DCFCA548295328776446FC2D93C6_739989130 = new IOException(reply.getErrorString(reply.getCommandOrResult()));
             varD0F3DCFCA548295328776446FC2D93C6_739989130.addTaint(taint);
             throw varD0F3DCFCA548295328776446FC2D93C6_739989130;
-        } //End block
+        } 
     if(reply.getIP() == 0)        
         {
             address = socksGetServerAddress();
-        } //End block
+        } 
         else
         {
             byte[] replyBytes = new byte[4];
             Memory.pokeInt(replyBytes, 0, reply.getIP(), ByteOrder.BIG_ENDIAN);
             address = InetAddress.getByAddress(replyBytes);
-        } //End block
+        } 
         localport = reply.getPort();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -613,13 +617,13 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
         request.setIP(address.getAddress());
         request.setUserId("default");
         getOutputStream().write(request.getBytes(), 0, request.getLength());
-        // ---------- Original Method ----------
-        //Socks4Message request = new Socks4Message();
-        //request.setCommandOrResult(command);
-        //request.setPort(port);
-        //request.setIP(address.getAddress());
-        //request.setUserId("default");
-        //getOutputStream().write(request.getBytes(), 0, request.getLength());
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -635,33 +639,33 @@ InetAddress varCD1AB89BEFE6D06FD984B301B3372107_1001614986 =         InetAddress
     if(count == -1)            
             {
                 break;
-            } //End block
+            } 
             bytesRead += count;
-        } //End block
+        } 
     if(Socks4Message.REPLY_LENGTH != bytesRead)        
         {
             SocketException varF334A2E8FCC2C6A29EA357ED2943C2B7_794568158 = new SocketException("Malformed reply from SOCKS server");
             varF334A2E8FCC2C6A29EA357ED2943C2B7_794568158.addTaint(taint);
             throw varF334A2E8FCC2C6A29EA357ED2943C2B7_794568158;
-        } //End block
+        } 
 Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         var1BC29E376418A8DFBC75319DBDA8D7C9_483277454.addTaint(taint);
         return var1BC29E376418A8DFBC75319DBDA8D7C9_483277454;
-        // ---------- Original Method ----------
-        //Socks4Message reply = new Socks4Message();
-        //int bytesRead = 0;
-        //while (bytesRead < Socks4Message.REPLY_LENGTH) {
-            //int count = getInputStream().read(reply.getBytes(), bytesRead,
-                    //Socks4Message.REPLY_LENGTH - bytesRead);
-            //if (count == -1) {
-                //break;
-            //}
-            //bytesRead += count;
-        //}
-        //if (Socks4Message.REPLY_LENGTH != bytesRead) {
-            //throw new SocketException("Malformed reply from SOCKS server");
-        //}
-        //return reply;
+        
+        
+        
+        
+            
+                    
+            
+                
+            
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -672,20 +676,21 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         addTaint(remoteAddr.getTaint());
         InetSocketAddress inetAddr = (InetSocketAddress) remoteAddr;
         connect(inetAddr.getAddress(), inetAddr.getPort(), timeout);
-        // ---------- Original Method ----------
-        //InetSocketAddress inetAddr = (InetSocketAddress) remoteAddr;
-        //connect(inetAddr.getAddress(), inetAddr.getPort(), timeout);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.084 -0400", hash_original_method = "C84277CCCCD515C678DD8E297690CF63", hash_generated_method = "4A2A0BE2C658470CFEF747661637C5D1")
     @Override
     protected boolean supportsUrgentData() {
         boolean varB326B5062B2F0E69046810717534CB09_728997392 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1782196348 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1782196348;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -697,20 +702,20 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         {
             byte[] buffer = new byte[] { (byte) value };
             Libcore.os.sendto(fd, buffer, 0, 1, MSG_OOB, null, 0);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             java.net.SocketException var01308AFBB38F93C29B87C84FA2A5ED65_1744803363 = errnoException.rethrowAsSocketException();
             var01308AFBB38F93C29B87C84FA2A5ED65_1744803363.addTaint(taint);
             throw var01308AFBB38F93C29B87C84FA2A5ED65_1744803363;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //byte[] buffer = new byte[] { (byte) value };
-            //Libcore.os.sendto(fd, buffer, 0, 1, MSG_OOB, null, 0);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsSocketException();
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -724,44 +729,44 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
             int varCFCD208495D565EF66E7DFF9F98764DA_421498803 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828035134 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1828035134;
-        } //End block
+        } 
         Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
     if(shutdownInput)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_594697717 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318293884 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1318293884;
-        } //End block
+        } 
         int readCount = IoBridge.recvfrom(true, fd, buffer, offset, byteCount, 0, null, false);
     if(readCount == 0)        
         {
             SocketTimeoutException var496977C46FEABE2A04A82CBAB511C0BD_1042676292 = new SocketTimeoutException();
             var496977C46FEABE2A04A82CBAB511C0BD_1042676292.addTaint(taint);
             throw var496977C46FEABE2A04A82CBAB511C0BD_1042676292;
-        } //End block
+        } 
     if(readCount == -1)        
         {
             shutdownInput = true;
-        } //End block
+        } 
         int varADC9E8D761A52E26BEC5404508AFC000_973726824 = (readCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368509782 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368509782;
-        // ---------- Original Method ----------
-        //if (byteCount == 0) {
-            //return 0;
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //if (shutdownInput) {
-            //return -1;
-        //}
-        //int readCount = IoBridge.recvfrom(true, fd, buffer, offset, byteCount, 0, null, false);
-        //if (readCount == 0) {
-            //throw new SocketTimeoutException();
-        //}
-        //if (readCount == -1) {
-            //shutdownInput = true;
-        //}
-        //return readCount;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -779,23 +784,23 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
                 int bytesWritten = IoBridge.sendto(fd, buffer, offset, byteCount, 0, null, 0);
                 byteCount -= bytesWritten;
                 offset += bytesWritten;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             IoBridge.sendto(fd, buffer, offset, byteCount, 0, address, port);
-        } //End block
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //if (streaming) {
-            //while (byteCount > 0) {
-                //int bytesWritten = IoBridge.sendto(fd, buffer, offset, byteCount, 0, null, 0);
-                //byteCount -= bytesWritten;
-                //offset += bytesWritten;
-            //}
-        //} else {
-            //IoBridge.sendto(fd, buffer, offset, byteCount, 0, address, port);
-        //}
+        } 
+        
+        
+        
+            
+                
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -807,8 +812,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.097 -0400", hash_original_method = "9707F729DB9DE0F069F9B6F666CEAF41", hash_generated_method = "C543451A717B658BC3AAB7E48B419774")
         public  PlainSocketInputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
-            // ---------- Original Method ----------
-            //this.socketImpl = socketImpl;
+            
+            
         }
 
         
@@ -818,8 +823,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
             int var96FD30C8E950C9A87CE3D005CF9096A1_660243197 = (socketImpl.available());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_227390906 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_227390906;
-            // ---------- Original Method ----------
-            //return socketImpl.available();
+            
+            
         }
 
         
@@ -827,8 +832,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         @Override
         public void close() throws IOException {
             socketImpl.close();
-            // ---------- Original Method ----------
-            //socketImpl.close();
+            
+            
         }
 
         
@@ -838,8 +843,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
             int varC29A5AE95A30EE64395CAB97F32FA4B0_158102975 = (Streams.readSingleByte(this));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802846265 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802846265;
-            // ---------- Original Method ----------
-            //return Streams.readSingleByte(this);
+            
+            
         }
 
         
@@ -852,8 +857,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
             int var6C4FED5047B0C50095E2473B4CFEAE65_1302559490 = (socketImpl.read(buffer, offset, byteCount));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514790559 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514790559;
-            // ---------- Original Method ----------
-            //return socketImpl.read(buffer, offset, byteCount);
+            
+            
         }
 
         
@@ -869,8 +874,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.099 -0400", hash_original_method = "1A4D21BF9006CF014C027978C481D31A", hash_generated_method = "0BF9D04DB29AB8AC4588EA1E9EC7AFA4")
         public  PlainSocketOutputStream(PlainSocketImpl socketImpl) {
             this.socketImpl = socketImpl;
-            // ---------- Original Method ----------
-            //this.socketImpl = socketImpl;
+            
+            
         }
 
         
@@ -878,8 +883,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         @Override
         public void close() throws IOException {
             socketImpl.close();
-            // ---------- Original Method ----------
-            //socketImpl.close();
+            
+            
         }
 
         
@@ -888,8 +893,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
         public void write(int oneByte) throws IOException {
             addTaint(oneByte);
             Streams.writeSingleByte(this, oneByte);
-            // ---------- Original Method ----------
-            //Streams.writeSingleByte(this, oneByte);
+            
+            
         }
 
         
@@ -900,8 +905,8 @@ Socks4Message var1BC29E376418A8DFBC75319DBDA8D7C9_483277454 =         reply;
             addTaint(offset);
             addTaint(buffer[0]);
             socketImpl.write(buffer, offset, byteCount);
-            // ---------- Original Method ----------
-            //socketImpl.write(buffer, offset, byteCount);
+            
+            
         }
 
         

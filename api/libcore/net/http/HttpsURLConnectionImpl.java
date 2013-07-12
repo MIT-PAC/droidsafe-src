@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,8 +33,8 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
     protected  HttpsURLConnectionImpl(URL url, int port) {
         super(url);
         delegate = new HttpUrlConnectionDelegate(url, port);
-        // ---------- Original Method ----------
-        //delegate = new HttpUrlConnectionDelegate(url, port);
+        
+        
     }
 
     
@@ -42,8 +42,8 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
     protected  HttpsURLConnectionImpl(URL url, int port, Proxy proxy) {
         super(url);
         delegate = new HttpUrlConnectionDelegate(url, port, proxy);
-        // ---------- Original Method ----------
-        //delegate = new HttpUrlConnectionDelegate(url, port, proxy);
+        
+        
     }
 
     
@@ -54,11 +54,11 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
             IllegalStateException var15BD4ED1553200CD61F89C1384557187_341624129 = new IllegalStateException("Connection has not yet been established");
             var15BD4ED1553200CD61F89C1384557187_341624129.addTaint(taint);
             throw var15BD4ED1553200CD61F89C1384557187_341624129;
-        } //End block
-        // ---------- Original Method ----------
-        //if (delegate.getSSLSocket() == null) {
-            //throw new IllegalStateException("Connection has not yet been established");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -67,8 +67,8 @@ final class HttpsURLConnectionImpl extends HttpsURLConnection {
 HttpEngine var5CD64BD690D2577CE94E8102D15C6561_998359316 =         delegate.getHttpEngine();
         var5CD64BD690D2577CE94E8102D15C6561_998359316.addTaint(taint);
         return var5CD64BD690D2577CE94E8102D15C6561_998359316;
-        // ---------- Original Method ----------
-        //return delegate.getHttpEngine();
+        
+        
     }
 
     
@@ -81,18 +81,18 @@ HttpEngine var5CD64BD690D2577CE94E8102D15C6561_998359316 =         delegate.getH
 String varD170258215FF6D9267D56D2781A7DBDB_392595260 =             cacheResponse.getCipherSuite();
             varD170258215FF6D9267D56D2781A7DBDB_392595260.addTaint(taint);
             return varD170258215FF6D9267D56D2781A7DBDB_392595260;
-        } //End block
+        } 
         checkConnected();
 String var52FCE36BC7E272B55975F5AF507AD756_828844385 =         delegate.getSSLSocket().getSession().getCipherSuite();
         var52FCE36BC7E272B55975F5AF507AD756_828844385.addTaint(taint);
         return var52FCE36BC7E272B55975F5AF507AD756_828844385;
-        // ---------- Original Method ----------
-        //SecureCacheResponse cacheResponse = delegate.getCacheResponse();
-        //if (cacheResponse != null) {
-            //return cacheResponse.getCipherSuite();
-        //}
-        //checkConnected();
-        //return delegate.getSSLSocket().getSession().getCipherSuite();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -106,19 +106,19 @@ String var52FCE36BC7E272B55975F5AF507AD756_828844385 =         delegate.getSSLSo
 Certificate[] varBEB34A057EF0EE8AF2FA47A1BE5B462E_1812214850 =             result != null ? result.toArray(new Certificate[result.size()]) : null;
             varBEB34A057EF0EE8AF2FA47A1BE5B462E_1812214850.addTaint(taint);
             return varBEB34A057EF0EE8AF2FA47A1BE5B462E_1812214850;
-        } //End block
+        } 
         checkConnected();
 Certificate[] var9DD6B250543350D4F6E891FC013D3BEB_1341386002 =         delegate.getSSLSocket().getSession().getLocalCertificates();
         var9DD6B250543350D4F6E891FC013D3BEB_1341386002.addTaint(taint);
         return var9DD6B250543350D4F6E891FC013D3BEB_1341386002;
-        // ---------- Original Method ----------
-        //SecureCacheResponse cacheResponse = delegate.getCacheResponse();
-        //if (cacheResponse != null) {
-            //List<Certificate> result = cacheResponse.getLocalCertificateChain();
-            //return result != null ? result.toArray(new Certificate[result.size()]) : null;
-        //}
-        //checkConnected();
-        //return delegate.getSSLSocket().getSession().getLocalCertificates();
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -132,19 +132,19 @@ Certificate[] var9DD6B250543350D4F6E891FC013D3BEB_1341386002 =         delegate.
 Certificate[] varBEB34A057EF0EE8AF2FA47A1BE5B462E_2000703149 =             result != null ? result.toArray(new Certificate[result.size()]) : null;
             varBEB34A057EF0EE8AF2FA47A1BE5B462E_2000703149.addTaint(taint);
             return varBEB34A057EF0EE8AF2FA47A1BE5B462E_2000703149;
-        } //End block
+        } 
         checkConnected();
 Certificate[] varA1D7D0A6F1C91A08E144F0BCE43E239A_1662034844 =         delegate.getSSLSocket().getSession().getPeerCertificates();
         varA1D7D0A6F1C91A08E144F0BCE43E239A_1662034844.addTaint(taint);
         return varA1D7D0A6F1C91A08E144F0BCE43E239A_1662034844;
-        // ---------- Original Method ----------
-        //SecureCacheResponse cacheResponse = delegate.getCacheResponse();
-        //if (cacheResponse != null) {
-            //List<Certificate> result = cacheResponse.getServerCertificateChain();
-            //return result != null ? result.toArray(new Certificate[result.size()]) : null;
-        //}
-        //checkConnected();
-        //return delegate.getSSLSocket().getSession().getPeerCertificates();
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -157,18 +157,18 @@ Certificate[] varA1D7D0A6F1C91A08E144F0BCE43E239A_1662034844 =         delegate.
 Principal varE70C333A965EC3A0844C95B85B550A04_401409314 =             cacheResponse.getPeerPrincipal();
             varE70C333A965EC3A0844C95B85B550A04_401409314.addTaint(taint);
             return varE70C333A965EC3A0844C95B85B550A04_401409314;
-        } //End block
+        } 
         checkConnected();
 Principal varADD7E9248C8B4B98A4D11772C247866A_736005515 =         delegate.getSSLSocket().getSession().getPeerPrincipal();
         varADD7E9248C8B4B98A4D11772C247866A_736005515.addTaint(taint);
         return varADD7E9248C8B4B98A4D11772C247866A_736005515;
-        // ---------- Original Method ----------
-        //SecureCacheResponse cacheResponse = delegate.getCacheResponse();
-        //if (cacheResponse != null) {
-            //return cacheResponse.getPeerPrincipal();
-        //}
-        //checkConnected();
-        //return delegate.getSSLSocket().getSession().getPeerPrincipal();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -181,18 +181,18 @@ Principal varADD7E9248C8B4B98A4D11772C247866A_736005515 =         delegate.getSS
 Principal var8C9FE9111A2FA390D5E95699E7665D9E_449009394 =             cacheResponse.getLocalPrincipal();
             var8C9FE9111A2FA390D5E95699E7665D9E_449009394.addTaint(taint);
             return var8C9FE9111A2FA390D5E95699E7665D9E_449009394;
-        } //End block
+        } 
         checkConnected();
 Principal var9BBD49A1A800D7EACFCFD295CACCAB2E_224424667 =         delegate.getSSLSocket().getSession().getLocalPrincipal();
         var9BBD49A1A800D7EACFCFD295CACCAB2E_224424667.addTaint(taint);
         return var9BBD49A1A800D7EACFCFD295CACCAB2E_224424667;
-        // ---------- Original Method ----------
-        //SecureCacheResponse cacheResponse = delegate.getCacheResponse();
-        //if (cacheResponse != null) {
-            //return cacheResponse.getLocalPrincipal();
-        //}
-        //checkConnected();
-        //return delegate.getSSLSocket().getSession().getLocalPrincipal();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -200,8 +200,8 @@ Principal var9BBD49A1A800D7EACFCFD295CACCAB2E_224424667 =         delegate.getSS
     @Override
     public void disconnect() {
         delegate.disconnect();
-        // ---------- Original Method ----------
-        //delegate.disconnect();
+        
+        
     }
 
     
@@ -211,8 +211,8 @@ Principal var9BBD49A1A800D7EACFCFD295CACCAB2E_224424667 =         delegate.getSS
 InputStream var5AB11938BFB3E389F92E9DF02927F1E9_1468269869 =         delegate.getErrorStream();
         var5AB11938BFB3E389F92E9DF02927F1E9_1468269869.addTaint(taint);
         return var5AB11938BFB3E389F92E9DF02927F1E9_1468269869;
-        // ---------- Original Method ----------
-        //return delegate.getErrorStream();
+        
+        
     }
 
     
@@ -222,8 +222,8 @@ InputStream var5AB11938BFB3E389F92E9DF02927F1E9_1468269869 =         delegate.ge
 String var4B40D7919A015205E6BF3BD275D540D6_998969783 =         delegate.getRequestMethod();
         var4B40D7919A015205E6BF3BD275D540D6_998969783.addTaint(taint);
         return var4B40D7919A015205E6BF3BD275D540D6_998969783;
-        // ---------- Original Method ----------
-        //return delegate.getRequestMethod();
+        
+        
     }
 
     
@@ -233,8 +233,8 @@ String var4B40D7919A015205E6BF3BD275D540D6_998969783 =         delegate.getReque
         int var531F74661189AF5AFF20B5DF99C3C0B4_314072032 = (delegate.getResponseCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881074284 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_881074284;
-        // ---------- Original Method ----------
-        //return delegate.getResponseCode();
+        
+        
     }
 
     
@@ -244,8 +244,8 @@ String var4B40D7919A015205E6BF3BD275D540D6_998969783 =         delegate.getReque
 String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResponseMessage();
         varEC7678C2C582B4839D528E15495632E0_1764735947.addTaint(taint);
         return varEC7678C2C582B4839D528E15495632E0_1764735947;
-        // ---------- Original Method ----------
-        //return delegate.getResponseMessage();
+        
+        
     }
 
     
@@ -254,8 +254,8 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
     public void setRequestMethod(String method) throws ProtocolException {
         addTaint(method.getTaint());
         delegate.setRequestMethod(method);
-        // ---------- Original Method ----------
-        //delegate.setRequestMethod(method);
+        
+        
     }
 
     
@@ -265,8 +265,8 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
         boolean varCC52A8AE80AB6FF3ABDD1F5E6E00DC59_1647041903 = (delegate.usingProxy());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_523571816 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_523571816;
-        // ---------- Original Method ----------
-        //return delegate.usingProxy();
+        
+        
     }
 
     
@@ -276,8 +276,8 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
         boolean var80ECDB430EC8842E1416E2354ADCF1C7_1352543170 = (delegate.getInstanceFollowRedirects());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1253986821 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1253986821;
-        // ---------- Original Method ----------
-        //return delegate.getInstanceFollowRedirects();
+        
+        
     }
 
     
@@ -286,8 +286,8 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
     public void setInstanceFollowRedirects(boolean followRedirects) {
         addTaint(followRedirects);
         delegate.setInstanceFollowRedirects(followRedirects);
-        // ---------- Original Method ----------
-        //delegate.setInstanceFollowRedirects(followRedirects);
+        
+        
     }
 
     
@@ -296,9 +296,9 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
     public void connect() throws IOException {
         connected = true;
         delegate.connect();
-        // ---------- Original Method ----------
-        //connected = true;
-        //delegate.connect();
+        
+        
+        
     }
 
     
@@ -308,8 +308,8 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
         boolean var90527CE6B6B410FBA7CA923B07A1CED7_1613793408 = (delegate.getAllowUserInteraction());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649496526 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_649496526;
-        // ---------- Original Method ----------
-        //return delegate.getAllowUserInteraction();
+        
+        
     }
 
     
@@ -319,8 +319,8 @@ String varEC7678C2C582B4839D528E15495632E0_1764735947 =         delegate.getResp
 Object var0992CCA47F11BC3F186C1A663FDE84C9_1319537572 =         delegate.getContent();
         var0992CCA47F11BC3F186C1A663FDE84C9_1319537572.addTaint(taint);
         return var0992CCA47F11BC3F186C1A663FDE84C9_1319537572;
-        // ---------- Original Method ----------
-        //return delegate.getContent();
+        
+        
     }
 
     
@@ -332,8 +332,8 @@ Object var0992CCA47F11BC3F186C1A663FDE84C9_1319537572 =         delegate.getCont
 Object var160AB04DD32D12114A6D7364B391005D_1687423536 =         delegate.getContent(types);
         var160AB04DD32D12114A6D7364B391005D_1687423536.addTaint(taint);
         return var160AB04DD32D12114A6D7364B391005D_1687423536;
-        // ---------- Original Method ----------
-        //return delegate.getContent(types);
+        
+        
     }
 
     
@@ -343,8 +343,8 @@ Object var160AB04DD32D12114A6D7364B391005D_1687423536 =         delegate.getCont
 String var4D847C56D41E90F7625C8163629E6425_1595168914 =         delegate.getContentEncoding();
         var4D847C56D41E90F7625C8163629E6425_1595168914.addTaint(taint);
         return var4D847C56D41E90F7625C8163629E6425_1595168914;
-        // ---------- Original Method ----------
-        //return delegate.getContentEncoding();
+        
+        
     }
 
     
@@ -354,8 +354,8 @@ String var4D847C56D41E90F7625C8163629E6425_1595168914 =         delegate.getCont
         int var32E363B557C5100C9A92D76CE2537A6C_1531842734 = (delegate.getContentLength());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725731270 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725731270;
-        // ---------- Original Method ----------
-        //return delegate.getContentLength();
+        
+        
     }
 
     
@@ -365,8 +365,8 @@ String var4D847C56D41E90F7625C8163629E6425_1595168914 =         delegate.getCont
 String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getContentType();
         var9793E879B8A646DB233A9A2D2C3C2DCD_46893821.addTaint(taint);
         return var9793E879B8A646DB233A9A2D2C3C2DCD_46893821;
-        // ---------- Original Method ----------
-        //return delegate.getContentType();
+        
+        
     }
 
     
@@ -376,8 +376,8 @@ String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getConten
         long var5783C187D54DD7D1F02B1A7E44A80A9C_194853015 = (delegate.getDate());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1676696418 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1676696418;
-        // ---------- Original Method ----------
-        //return delegate.getDate();
+        
+        
     }
 
     
@@ -387,8 +387,8 @@ String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getConten
         boolean varFCAFADA83FDE4F1151E28AD5EB620CE5_1035447936 = (delegate.getDefaultUseCaches());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803379799 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_803379799;
-        // ---------- Original Method ----------
-        //return delegate.getDefaultUseCaches();
+        
+        
     }
 
     
@@ -398,8 +398,8 @@ String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getConten
         boolean varC64E8413CAD00A74B9A1A22BCB9473DE_1104428950 = (delegate.getDoInput());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837562005 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837562005;
-        // ---------- Original Method ----------
-        //return delegate.getDoInput();
+        
+        
     }
 
     
@@ -409,8 +409,8 @@ String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getConten
         boolean var36BA7361DCD3D8FFB46C88801AEE5F69_525540969 = (delegate.getDoOutput());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1238190087 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1238190087;
-        // ---------- Original Method ----------
-        //return delegate.getDoOutput();
+        
+        
     }
 
     
@@ -420,8 +420,8 @@ String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getConten
         long var258782E2CB76F187891942F0C2B4615F_767832812 = (delegate.getExpiration());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1738694321 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1738694321;
-        // ---------- Original Method ----------
-        //return delegate.getExpiration();
+        
+        
     }
 
     
@@ -432,8 +432,8 @@ String var9793E879B8A646DB233A9A2D2C3C2DCD_46893821 =         delegate.getConten
 String varF19BCDF155D022F8720610E5AEAC66E8_1548105574 =         delegate.getHeaderField(pos);
         varF19BCDF155D022F8720610E5AEAC66E8_1548105574.addTaint(taint);
         return varF19BCDF155D022F8720610E5AEAC66E8_1548105574;
-        // ---------- Original Method ----------
-        //return delegate.getHeaderField(pos);
+        
+        
     }
 
     
@@ -443,8 +443,8 @@ String varF19BCDF155D022F8720610E5AEAC66E8_1548105574 =         delegate.getHead
 Map<String, List<String>> var49173AD3D4E88D7DE53074EE6C4D3AB6_841852679 =         delegate.getHeaderFields();
         var49173AD3D4E88D7DE53074EE6C4D3AB6_841852679.addTaint(taint);
         return var49173AD3D4E88D7DE53074EE6C4D3AB6_841852679;
-        // ---------- Original Method ----------
-        //return delegate.getHeaderFields();
+        
+        
     }
 
     
@@ -454,8 +454,8 @@ Map<String, List<String>> var49173AD3D4E88D7DE53074EE6C4D3AB6_841852679 =       
 Map<String, List<String>> varA0D8910F76C36E1A3A9A27D8CEF0597C_1037115357 =         delegate.getRequestProperties();
         varA0D8910F76C36E1A3A9A27D8CEF0597C_1037115357.addTaint(taint);
         return varA0D8910F76C36E1A3A9A27D8CEF0597C_1037115357;
-        // ---------- Original Method ----------
-        //return delegate.getRequestProperties();
+        
+        
     }
 
     
@@ -465,8 +465,8 @@ Map<String, List<String>> varA0D8910F76C36E1A3A9A27D8CEF0597C_1037115357 =      
         addTaint(newValue.getTaint());
         addTaint(field.getTaint());
         delegate.addRequestProperty(field, newValue);
-        // ---------- Original Method ----------
-        //delegate.addRequestProperty(field, newValue);
+        
+        
     }
 
     
@@ -477,8 +477,8 @@ Map<String, List<String>> varA0D8910F76C36E1A3A9A27D8CEF0597C_1037115357 =      
 String var6EFB1FDEC2E277B17FC4A3A691801850_892083299 =         delegate.getHeaderField(key);
         var6EFB1FDEC2E277B17FC4A3A691801850_892083299.addTaint(taint);
         return var6EFB1FDEC2E277B17FC4A3A691801850_892083299;
-        // ---------- Original Method ----------
-        //return delegate.getHeaderField(key);
+        
+        
     }
 
     
@@ -490,8 +490,8 @@ String var6EFB1FDEC2E277B17FC4A3A691801850_892083299 =         delegate.getHeade
         long var9B3FC141DB375FFC8ADDAC9A707CA59C_902344171 = (delegate.getHeaderFieldDate(field, defaultValue));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1409729769 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1409729769;
-        // ---------- Original Method ----------
-        //return delegate.getHeaderFieldDate(field, defaultValue);
+        
+        
     }
 
     
@@ -503,8 +503,8 @@ String var6EFB1FDEC2E277B17FC4A3A691801850_892083299 =         delegate.getHeade
         int var3A74F19990997CCFF1E1FC856690ACF3_2124437353 = (delegate.getHeaderFieldInt(field, defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_189978857 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_189978857;
-        // ---------- Original Method ----------
-        //return delegate.getHeaderFieldInt(field, defaultValue);
+        
+        
     }
 
     
@@ -515,8 +515,8 @@ String var6EFB1FDEC2E277B17FC4A3A691801850_892083299 =         delegate.getHeade
 String varE2E936A2C1D394E0A178CF43FBC4AF39_535163294 =         delegate.getHeaderFieldKey(posn);
         varE2E936A2C1D394E0A178CF43FBC4AF39_535163294.addTaint(taint);
         return varE2E936A2C1D394E0A178CF43FBC4AF39_535163294;
-        // ---------- Original Method ----------
-        //return delegate.getHeaderFieldKey(posn);
+        
+        
     }
 
     
@@ -526,8 +526,8 @@ String varE2E936A2C1D394E0A178CF43FBC4AF39_535163294 =         delegate.getHeade
         long varCB50B494905E172FEEBE9EAEC7926627_1789681907 = (delegate.getIfModifiedSince());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_740573337 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_740573337;
-        // ---------- Original Method ----------
-        //return delegate.getIfModifiedSince();
+        
+        
     }
 
     
@@ -537,8 +537,8 @@ String varE2E936A2C1D394E0A178CF43FBC4AF39_535163294 =         delegate.getHeade
 InputStream varA6057298161142AA94562760706596B6_905877633 =         delegate.getInputStream();
         varA6057298161142AA94562760706596B6_905877633.addTaint(taint);
         return varA6057298161142AA94562760706596B6_905877633;
-        // ---------- Original Method ----------
-        //return delegate.getInputStream();
+        
+        
     }
 
     
@@ -548,8 +548,8 @@ InputStream varA6057298161142AA94562760706596B6_905877633 =         delegate.get
         long var747A7E792089C9DFB807A2FF78E9D6CC_657837917 = (delegate.getLastModified());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_452485923 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_452485923;
-        // ---------- Original Method ----------
-        //return delegate.getLastModified();
+        
+        
     }
 
     
@@ -559,8 +559,8 @@ InputStream varA6057298161142AA94562760706596B6_905877633 =         delegate.get
 OutputStream var26E4766CFD76703CF0EDA62B428D31E2_1828762798 =         delegate.getOutputStream();
         var26E4766CFD76703CF0EDA62B428D31E2_1828762798.addTaint(taint);
         return var26E4766CFD76703CF0EDA62B428D31E2_1828762798;
-        // ---------- Original Method ----------
-        //return delegate.getOutputStream();
+        
+        
     }
 
     
@@ -570,8 +570,8 @@ OutputStream var26E4766CFD76703CF0EDA62B428D31E2_1828762798 =         delegate.g
 Permission varC4E07256C0BCF81F626D018B0F5CAC90_557002505 =         delegate.getPermission();
         varC4E07256C0BCF81F626D018B0F5CAC90_557002505.addTaint(taint);
         return varC4E07256C0BCF81F626D018B0F5CAC90_557002505;
-        // ---------- Original Method ----------
-        //return delegate.getPermission();
+        
+        
     }
 
     
@@ -582,19 +582,20 @@ Permission varC4E07256C0BCF81F626D018B0F5CAC90_557002505 =         delegate.getP
 String varAC7E243492D4A6C3C9AB4C6997F244B1_1855955445 =         delegate.getRequestProperty(field);
         varAC7E243492D4A6C3C9AB4C6997F244B1_1855955445.addTaint(taint);
         return varAC7E243492D4A6C3C9AB4C6997F244B1_1855955445;
-        // ---------- Original Method ----------
-        //return delegate.getRequestProperty(field);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.531 -0400", hash_original_method = "F4484503A21727E01861772B7BDC0B42", hash_generated_method = "A199EA202475E295C163D42C08C63477")
     @Override
     public URL getURL() {
 URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
         var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698.addTaint(taint);
         return var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698;
-        // ---------- Original Method ----------
-        //return delegate.getURL();
+        
+        
     }
 
     
@@ -604,8 +605,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
         boolean varCC47F02C2E479DDEB8BA085BFD4C608F_640286984 = (delegate.getUseCaches());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_301822691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_301822691;
-        // ---------- Original Method ----------
-        //return delegate.getUseCaches();
+        
+        
     }
 
     
@@ -614,8 +615,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setAllowUserInteraction(boolean newValue) {
         addTaint(newValue);
         delegate.setAllowUserInteraction(newValue);
-        // ---------- Original Method ----------
-        //delegate.setAllowUserInteraction(newValue);
+        
+        
     }
 
     
@@ -624,8 +625,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setDefaultUseCaches(boolean newValue) {
         addTaint(newValue);
         delegate.setDefaultUseCaches(newValue);
-        // ---------- Original Method ----------
-        //delegate.setDefaultUseCaches(newValue);
+        
+        
     }
 
     
@@ -634,8 +635,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setDoInput(boolean newValue) {
         addTaint(newValue);
         delegate.setDoInput(newValue);
-        // ---------- Original Method ----------
-        //delegate.setDoInput(newValue);
+        
+        
     }
 
     
@@ -644,8 +645,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setDoOutput(boolean newValue) {
         addTaint(newValue);
         delegate.setDoOutput(newValue);
-        // ---------- Original Method ----------
-        //delegate.setDoOutput(newValue);
+        
+        
     }
 
     
@@ -654,8 +655,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setIfModifiedSince(long newValue) {
         addTaint(newValue);
         delegate.setIfModifiedSince(newValue);
-        // ---------- Original Method ----------
-        //delegate.setIfModifiedSince(newValue);
+        
+        
     }
 
     
@@ -665,8 +666,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
         addTaint(newValue.getTaint());
         addTaint(field.getTaint());
         delegate.setRequestProperty(field, newValue);
-        // ---------- Original Method ----------
-        //delegate.setRequestProperty(field, newValue);
+        
+        
     }
 
     
@@ -675,8 +676,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setUseCaches(boolean newValue) {
         addTaint(newValue);
         delegate.setUseCaches(newValue);
-        // ---------- Original Method ----------
-        //delegate.setUseCaches(newValue);
+        
+        
     }
 
     
@@ -685,8 +686,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setConnectTimeout(int timeout) {
         addTaint(timeout);
         delegate.setConnectTimeout(timeout);
-        // ---------- Original Method ----------
-        //delegate.setConnectTimeout(timeout);
+        
+        
     }
 
     
@@ -696,8 +697,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
         int var3B7820C4F8E3B01C6BC70059CAC3E436_202171948 = (delegate.getConnectTimeout());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966603231 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_966603231;
-        // ---------- Original Method ----------
-        //return delegate.getConnectTimeout();
+        
+        
     }
 
     
@@ -706,8 +707,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
     public void setReadTimeout(int timeout) {
         addTaint(timeout);
         delegate.setReadTimeout(timeout);
-        // ---------- Original Method ----------
-        //delegate.setReadTimeout(timeout);
+        
+        
     }
 
     
@@ -717,8 +718,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
         int varAEF03DF43E1FA12D30CFE1F6E089D09C_173161979 = (delegate.getReadTimeout());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860992924 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_860992924;
-        // ---------- Original Method ----------
-        //return delegate.getReadTimeout();
+        
+        
     }
 
     
@@ -728,8 +729,8 @@ URL var6884EDA0C600EABAFFD2E6B72828DBC6_1172326698 =         delegate.getURL();
 String varFB90DA94A5E41D35E9CAB1F945B07348_1343692988 =         delegate.toString();
         varFB90DA94A5E41D35E9CAB1F945B07348_1343692988.addTaint(taint);
         return varFB90DA94A5E41D35E9CAB1F945B07348_1343692988;
-        // ---------- Original Method ----------
-        //return delegate.toString();
+        
+        
     }
 
     
@@ -738,8 +739,8 @@ String varFB90DA94A5E41D35E9CAB1F945B07348_1343692988 =         delegate.toStrin
     public void setFixedLengthStreamingMode(int contentLength) {
         addTaint(contentLength);
         delegate.setFixedLengthStreamingMode(contentLength);
-        // ---------- Original Method ----------
-        //delegate.setFixedLengthStreamingMode(contentLength);
+        
+        
     }
 
     
@@ -748,8 +749,8 @@ String varFB90DA94A5E41D35E9CAB1F945B07348_1343692988 =         delegate.toStrin
     public void setChunkedStreamingMode(int chunkLength) {
         addTaint(chunkLength);
         delegate.setChunkedStreamingMode(chunkLength);
-        // ---------- Original Method ----------
-        //delegate.setChunkedStreamingMode(chunkLength);
+        
+        
     }
 
     
@@ -760,7 +761,7 @@ String varFB90DA94A5E41D35E9CAB1F945B07348_1343692988 =         delegate.toStrin
             super(url, port);
             addTaint(port);
             addTaint(url.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -770,7 +771,7 @@ String varFB90DA94A5E41D35E9CAB1F945B07348_1343692988 =         delegate.toStrin
             addTaint(proxy.getTaint());
             addTaint(port);
             addTaint(url.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -786,9 +787,9 @@ HttpEngine var4275551A0E87ACEAEFB678DB8BB37064_1604000275 =             new Http
                     HttpsURLConnectionImpl.this);
             var4275551A0E87ACEAEFB678DB8BB37064_1604000275.addTaint(taint);
             return var4275551A0E87ACEAEFB678DB8BB37064_1604000275;
-            // ---------- Original Method ----------
-            //return new HttpsEngine(this, method, requestHeaders, connection, requestBody,
-                    //HttpsURLConnectionImpl.this);
+            
+            
+                    
         }
 
         
@@ -798,21 +799,22 @@ HttpEngine var4275551A0E87ACEAEFB678DB8BB37064_1604000275 =             new Http
 SecureCacheResponse var871EF139AE570FACE37934F5F72D643E_343826486 =             engine != null ? (SecureCacheResponse) engine.getCacheResponse() : null;
             var871EF139AE570FACE37934F5F72D643E_343826486.addTaint(taint);
             return var871EF139AE570FACE37934F5F72D643E_343826486;
-            // ---------- Original Method ----------
-            //HttpsEngine engine = (HttpsEngine) httpEngine;
-            //return engine != null ? (SecureCacheResponse) engine.getCacheResponse() : null;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.538 -0400", hash_original_method = "F3639B01983CFF48B5D8296AB1C5BDBE", hash_generated_method = "57E0364BE812B29DBEF7BF8C70C76549")
         public SSLSocket getSSLSocket() {
             HttpsEngine engine = (HttpsEngine) httpEngine;
 SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_1034354983 =             engine != null ? engine.sslSocket : null;
             var61F4735CFEE1975FCF23B8A439E04FDA_1034354983.addTaint(taint);
             return var61F4735CFEE1975FCF23B8A439E04FDA_1034354983;
-            // ---------- Original Method ----------
-            //HttpsEngine engine = (HttpsEngine) httpEngine;
-            //return engine != null ? engine.sslSocket : null;
+            
+            
+            
         }
 
         
@@ -839,12 +841,13 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_1034354983 =             engine !=
             addTaint(policy.getTaint());
             this.sslSocket = connection != null ? connection.getSecureSocketIfConnected() : null;
             this.enclosing = enclosing;
-            // ---------- Original Method ----------
-            //this.sslSocket = connection != null ? connection.getSecureSocketIfConnected() : null;
-            //this.enclosing = enclosing;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.539 -0400", hash_original_method = "2764C3EBE7E55CBE19AD199214E9E45F", hash_generated_method = "1955C779F5B503BE888A4BF4EB52E6F7")
         @Override
         protected void connect() throws IOException {
@@ -852,7 +855,7 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_1034354983 =             engine !=
             try 
             {
                 connectionReused = makeSslConnection(true);
-            } //End block
+            } 
             catch (IOException e)
             {
     if(e instanceof SSLHandshakeException
@@ -860,29 +863,29 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_1034354983 =             engine !=
                 {
                     e.addTaint(taint);
                     throw e;
-                } //End block
+                } 
                 release(false);
                 connectionReused = makeSslConnection(false);
-            } //End block
+            } 
     if(!connectionReused)            
             {
                 sslSocket = connection.verifySecureSocketHostname(enclosing.getHostnameVerifier());
-            } //End block
-            // ---------- Original Method ----------
-            //boolean connectionReused;
-            //try {
-                //connectionReused = makeSslConnection(true);
-            //} catch (IOException e) {
-                //if (e instanceof SSLHandshakeException
-                        //&& e.getCause() instanceof CertificateException) {
-                    //throw e;
-                //}
-                //release(false);
-                //connectionReused = makeSslConnection(false);
-            //}
-            //if (!connectionReused) {
-                //sslSocket = connection.verifySecureSocketHostname(enclosing.getHostnameVerifier());
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+                        
+                    
+                
+                
+                
+            
+            
+                
+            
         }
 
         
@@ -895,32 +898,32 @@ SSLSocket var61F4735CFEE1975FCF23B8A439E04FDA_1034354983 =             engine !=
     if(connection.getAddress().getProxy() != null)                
                 {
                     makeTunnel(policy, connection, getRequestHeaders());
-                } //End block
-            } //End block
+                } 
+            } 
             sslSocket = connection.getSecureSocketIfConnected();
     if(sslSocket != null)            
             {
                 boolean varB326B5062B2F0E69046810717534CB09_1079796793 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1267635476 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1267635476;
-            } //End block
+            } 
             connection.setupSecureSocket(enclosing.getSSLSocketFactory(), tlsTolerant);
             boolean var68934A3E9455FA72420237EB05902327_1360179421 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2105158380 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2105158380;
-            // ---------- Original Method ----------
-            //if (connection == null) {
-                //connection = openSocketConnection();
-                //if (connection.getAddress().getProxy() != null) {
-                    //makeTunnel(policy, connection, getRequestHeaders());
-                //}
-            //}
-            //sslSocket = connection.getSecureSocketIfConnected();
-            //if (sslSocket != null) {
-                //return true;
-            //}
-            //connection.setupSecureSocket(enclosing.getSSLSocketFactory(), tlsTolerant);
-            //return false;
+            
+            
+                
+                
+                    
+                
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -948,24 +951,25 @@ switch(connect.getResponseCode()){
     if(credentialsFound)                
                 {
                     continue;
-                } //End block
+                } 
                 else
                 {
                     IOException varA7405ABC79D717A768C069FC31724F97_1757973715 = new IOException("Failed to authenticate with proxy");
                     varA7405ABC79D717A768C069FC31724F97_1757973715.addTaint(taint);
                     throw varA7405ABC79D717A768C069FC31724F97_1757973715;
-                } //End block
+                } 
                 default:
                 IOException var5E23AB435FF46F926F17D0788C01696D_1734589598 = new IOException("Unexpected response code for CONNECT: " + responseCode);
                 var5E23AB435FF46F926F17D0788C01696D_1734589598.addTaint(taint);
                 throw var5E23AB435FF46F926F17D0788C01696D_1734589598;
 }
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.542 -0400", hash_original_method = "E90F26103F02D3FE62A3059524C5B610", hash_generated_method = "99CCD059F07B9BAC0735CCDA4FE4DA3F")
         @Override
         protected boolean acceptCacheResponseType(CacheResponse cacheResponse) {
@@ -973,30 +977,32 @@ switch(connect.getResponseCode()){
             boolean var01C10E608C22923A812E7933E0DF2253_1623093345 = (cacheResponse instanceof SecureCacheResponse);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_125526430 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_125526430;
-            // ---------- Original Method ----------
-            //return cacheResponse instanceof SecureCacheResponse;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.542 -0400", hash_original_method = "7AEFB2847C4237E3ACCA6586A2D947A2", hash_generated_method = "1973C0806CF8B9C7C7D395ED8C7185F2")
         @Override
         protected boolean includeAuthorityInRequestLine() {
             boolean var68934A3E9455FA72420237EB05902327_788434944 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1592236221 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1592236221;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.542 -0400", hash_original_method = "F1E50F3C05FEF05D40BA1FEDA33CCDCF", hash_generated_method = "7160F375755752D6E2DF5AE49735031A")
         @Override
         protected HttpURLConnection getHttpConnectionToCache() {
 HttpURLConnection varBC9F2915706BB2F8D72691CF4F26214A_238247233 =             enclosing;
             varBC9F2915706BB2F8D72691CF4F26214A_238247233.addTaint(taint);
             return varBC9F2915706BB2F8D72691CF4F26214A_238247233;
-            // ---------- Original Method ----------
-            //return enclosing;
+            
+            
         }
 
         
@@ -1013,10 +1019,11 @@ HttpURLConnection varBC9F2915706BB2F8D72691CF4F26214A_238247233 =             en
             addTaint(connection.getTaint());
             addTaint(requestHeaders.getTaint());
             addTaint(policy.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.543 -0400", hash_original_method = "4E873E328DE258FE448018732F781F9A", hash_generated_method = "3A6BB6317E12EEE38A24F387046372AC")
         @Override
         protected RawHeaders getNetworkRequestHeaders() throws IOException {
@@ -1029,36 +1036,37 @@ HttpURLConnection varBC9F2915706BB2F8D72691CF4F26214A_238247233 =             en
     if(host == null)            
             {
                 host = getOriginAddress(url);
-            } //End block
+            } 
             result.set("Host", host);
             String userAgent = privateHeaders.getUserAgent();
     if(userAgent == null)            
             {
                 userAgent = getDefaultUserAgent();
-            } //End block
+            } 
             result.set("User-Agent", userAgent);
             String proxyAuthorization = privateHeaders.getProxyAuthorization();
     if(proxyAuthorization != null)            
             {
                 result.set("Proxy-Authorization", proxyAuthorization);
-            } //End block
+            } 
             result.set("Proxy-Connection", "Keep-Alive");
 RawHeaders varDC838461EE2FA0CA4C9BBB70A15456B0_513260938 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_513260938.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_513260938;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.544 -0400", hash_original_method = "8CAA920CAFADAC8866B230CA35502445", hash_generated_method = "4AFD102921D2F093FB8C72635C75E80A")
         @Override
         protected boolean requiresTunnel() {
             boolean varB326B5062B2F0E69046810717534CB09_712827012 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1074490696 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1074490696;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         

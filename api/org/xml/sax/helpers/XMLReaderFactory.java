@@ -1,6 +1,6 @@
 package org.xml.sax.helpers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ final public class XMLReaderFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.595 -0400", hash_original_method = "8D0EAA86B78920589D202D1252E83CCD", hash_generated_method = "B01B84B33B0F242545E564D5500CACD5")
     private  XMLReaderFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -59,7 +59,8 @@ final public class XMLReaderFactory {
     }
 
     
-        private static XMLReader loadClass(ClassLoader loader, String className) throws SAXException {
+        @DSModeled(DSC.BAN)
+    private static XMLReader loadClass(ClassLoader loader, String className) throws SAXException {
         try {
         return (XMLReader) NewInstance.newInstance (loader, className);
     } catch (ClassNotFoundException e1) {

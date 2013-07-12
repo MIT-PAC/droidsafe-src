@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,13 +42,13 @@ public class OpenSSLSignature extends Signature {
             NoSuchAlgorithmException var5405A112E617FE00103022CAE2AB0CA5_1138981501 = new NoSuchAlgorithmException(algorithm);
             var5405A112E617FE00103022CAE2AB0CA5_1138981501.addTaint(taint);
             throw var5405A112E617FE00103022CAE2AB0CA5_1138981501;
-        } //End block
+        } 
         this.evpAlgorithm = algorithm;
-        // ---------- Original Method ----------
-        //if ("RSA-MD2".equals(algorithm)) {
-            //throw new NoSuchAlgorithmException(algorithm);
-        //}
-        //this.evpAlgorithm = algorithm;
+        
+        
+            
+        
+        
     }
 
     
@@ -72,9 +72,9 @@ public class OpenSSLSignature extends Signature {
     protected void engineUpdate(byte input) {
         singleByte[0] = input;
         engineUpdate(singleByte, 0, 1);
-        // ---------- Original Method ----------
-        //singleByte[0] = input;
-        //engineUpdate(singleByte, 0, 1);
+        
+        
+        
     }
 
     
@@ -89,20 +89,21 @@ public class OpenSSLSignature extends Signature {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_45977078 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_45977078.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_45977078;
-        } //End block
+        } 
         else
         {
             NativeCrypto.EVP_VerifyUpdate(ctx, input, offset, len);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == SIGN) {
-            //throw new UnsupportedOperationException();
-        //} else {
-            //NativeCrypto.EVP_VerifyUpdate(ctx, input, offset, len);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.289 -0400", hash_original_method = "CB8A1B4C2EB685EAF12C2B9210E25AE9", hash_generated_method = "AEAC9944268717085CF2013D775F3E2B")
     @Override
     protected Object engineGetParameter(String param) throws InvalidParameterException {
@@ -110,8 +111,8 @@ public class OpenSSLSignature extends Signature {
 Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         var540C13E9E156B687226421B24F2DF178_576737532.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_576737532;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -122,11 +123,12 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1946369388 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1946369388.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1946369388;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.291 -0400", hash_original_method = "B5DEEBDD8940EADE5B18431959F129E2", hash_generated_method = "C3CD48B93F6632A40DE95CCE19C2C0DC")
     @Override
     protected void engineInitVerify(PublicKey publicKey) throws InvalidKeyException {
@@ -140,14 +142,14 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
                 dsa = NativeCrypto.EVP_PKEY_new_DSA(dsaParams.getP().toByteArray(),
                         dsaParams.getQ().toByteArray(), dsaParams.getG().toByteArray(),
                         dsaPublicKey.getY().toByteArray(), null);
-            } //End block
+            } 
             catch (Exception e)
             {
                 InvalidKeyException varF522521D9392C2AD613C7567C21EFAAE_879025956 = new InvalidKeyException(e);
                 varF522521D9392C2AD613C7567C21EFAAE_879025956.addTaint(taint);
                 throw varF522521D9392C2AD613C7567C21EFAAE_879025956;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(publicKey instanceof RSAPublicKey)        
         {
@@ -156,41 +158,42 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
                 RSAPublicKey rsaPublicKey = (RSAPublicKey)publicKey;
                 rsa = NativeCrypto.EVP_PKEY_new_RSA(rsaPublicKey.getModulus().toByteArray(),
                         rsaPublicKey.getPublicExponent().toByteArray(), null, null, null);
-            } //End block
+            } 
             catch (Exception e)
             {
                 InvalidKeyException varF522521D9392C2AD613C7567C21EFAAE_2134140905 = new InvalidKeyException(e);
                 varF522521D9392C2AD613C7567C21EFAAE_2134140905.addTaint(taint);
                 throw varF522521D9392C2AD613C7567C21EFAAE_2134140905;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             InvalidKeyException var5D3448A6F61CCF883A8AC30588C0D279_671116649 = new InvalidKeyException("Need DSA or RSA public key");
             var5D3448A6F61CCF883A8AC30588C0D279_671116649.addTaint(taint);
             throw var5D3448A6F61CCF883A8AC30588C0D279_671116649;
-        } //End block
+        } 
         try 
         {
             ctx = NativeCrypto.EVP_VerifyInit(evpAlgorithm);
-        } //End block
+        } 
         catch (Exception ex)
         {
             RuntimeException varF35D3C95F99DACEE8C542CF38D772C50_189419324 = new RuntimeException(ex);
             varF35D3C95F99DACEE8C542CF38D772C50_189419324.addTaint(taint);
             throw varF35D3C95F99DACEE8C542CF38D772C50_189419324;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.292 -0400", hash_original_method = "BB69CFAE2D7DAB40561C965B4584F359", hash_generated_method = "63674D7E8498AF443B36E38A5838B78A")
     @Override
     protected void engineSetParameter(String param, Object value) throws InvalidParameterException {
         addTaint(value.getTaint());
         addTaint(param.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -200,8 +203,8 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_259351713 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_259351713.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_259351713;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -215,31 +218,31 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
             SignatureException var4F29716846FADF369DEE71FC326C443A_1501989579 = new SignatureException("Need DSA or RSA public key");
             var4F29716846FADF369DEE71FC326C443A_1501989579.addTaint(taint);
             throw var4F29716846FADF369DEE71FC326C443A_1501989579;
-        } //End block
+        } 
         try 
         {
             int result = NativeCrypto.EVP_VerifyFinal(ctx, sigBytes, 0, sigBytes.length, handle);
             boolean var1296E614A250C5BB8625DCE0F7073032_959156376 = (result == 1);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689729147 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689729147;
-        } //End block
+        } 
         catch (Exception ex)
         {
             SignatureException var09F43B2FC38765F5CCE913464C558758_1935885769 = new SignatureException(ex);
             var09F43B2FC38765F5CCE913464C558758_1935885769.addTaint(taint);
             throw var09F43B2FC38765F5CCE913464C558758_1935885769;
-        } //End block
-        // ---------- Original Method ----------
-        //int handle = (rsa != 0) ? rsa : dsa;
-        //if (handle == 0) {
-            //throw new SignatureException("Need DSA or RSA public key");
-        //}
-        //try {
-            //int result = NativeCrypto.EVP_VerifyFinal(ctx, sigBytes, 0, sigBytes.length, handle);
-            //return result == 1;
-        //} catch (Exception ex) {
-            //throw new SignatureException(ex);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -251,34 +254,34 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
     if(dsa != 0)            
             {
                 NativeCrypto.EVP_PKEY_free(dsa);
-            } //End block
+            } 
     if(rsa != 0)            
             {
                 NativeCrypto.EVP_PKEY_free(rsa);
-            } //End block
+            } 
     if(ctx != 0)            
             {
                 NativeCrypto.EVP_MD_CTX_destroy(ctx);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (dsa != 0) {
-                //NativeCrypto.EVP_PKEY_free(dsa);
-            //}
-            //if (rsa != 0) {
-                //NativeCrypto.EVP_PKEY_free(rsa);
-            //}
-            //if (ctx != 0) {
-                //NativeCrypto.EVP_MD_CTX_destroy(ctx);
-            //}
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -287,7 +290,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.295 -0400", hash_original_method = "B1183C6C9886C7590F89656BAE25BECA", hash_generated_method = "DE94EFB383F6D56E1927946DBDFD1608")
         public  MD5RSA() throws NoSuchAlgorithmException {
             super("RSA-MD5");
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -300,7 +303,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.295 -0400", hash_original_method = "52FBE190C92F5C8F173769172401F04E", hash_generated_method = "D986FEE06588614C43E9DAF463CBE8A8")
         public  SHA1RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA1");
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -313,7 +316,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.295 -0400", hash_original_method = "E7BAD1A6B461EB173260E3EA071C4D98", hash_generated_method = "FACA5E3ED2133628B04490DE37518174")
         public  SHA256RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA256");
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -326,7 +329,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.296 -0400", hash_original_method = "9FE2D91A88929DCA7C5B738CF76745E4", hash_generated_method = "5FFB04A117079BFEC3D624C2ADA45CEF")
         public  SHA384RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA384");
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -339,7 +342,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.296 -0400", hash_original_method = "020897BEF8DEDF16062B317376B71FB5", hash_generated_method = "C6C7A91E8D9537A306EB69101DDC3A68")
         public  SHA512RSA() throws NoSuchAlgorithmException {
             super("RSA-SHA512");
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -352,7 +355,7 @@ Object var540C13E9E156B687226421B24F2DF178_576737532 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.297 -0400", hash_original_method = "E31D98400FA8DA28AFA04F7443B0CC39", hash_generated_method = "DCD379A979FD7A6DF1DFA89846B2D8E1")
         public  SHA1DSA() throws NoSuchAlgorithmException {
             super("DSA-SHA1");
-            // ---------- Original Method ----------
+            
         }
 
         

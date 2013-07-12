@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,18 +16,19 @@ public class DEROctetStringParser implements ASN1OctetStringParser {
       DEROctetStringParser(
         DefiniteLengthInputStream stream) {
         this.stream = stream;
-        // ---------- Original Method ----------
-        //this.stream = stream;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.143 -0400", hash_original_method = "18DABC7937263BD98D8856E466803052", hash_generated_method = "F9ABE140CB2FA6D2E049571179AE840A")
     public InputStream getOctetStream() {
 InputStream varA87CF74140B150613F4203E71875F9A7_1854216313 =         stream;
         varA87CF74140B150613F4203E71875F9A7_1854216313.addTaint(taint);
         return varA87CF74140B150613F4203E71875F9A7_1854216313;
-        // ---------- Original Method ----------
-        //return stream;
+        
+        
     }
 
     
@@ -36,8 +37,8 @@ InputStream varA87CF74140B150613F4203E71875F9A7_1854216313 =         stream;
 DERObject varBA3D40898413DBB6104C2FA267A66322_1063607166 =         new DEROctetString(stream.toByteArray());
         varBA3D40898413DBB6104C2FA267A66322_1063607166.addTaint(taint);
         return varBA3D40898413DBB6104C2FA267A66322_1063607166;
-        // ---------- Original Method ----------
-        //return new DEROctetString(stream.toByteArray());
+        
+        
     }
 
     
@@ -48,22 +49,22 @@ DERObject varBA3D40898413DBB6104C2FA267A66322_1063607166 =         new DEROctetS
 DERObject var7CA8C38BF885E63AD9395CA9CA98D912_1174139373 =             getLoadedObject();
             var7CA8C38BF885E63AD9395CA9CA98D912_1174139373.addTaint(taint);
             return var7CA8C38BF885E63AD9395CA9CA98D912_1174139373;
-        } //End block
+        } 
         catch (IOException e)
         {
             ASN1ParsingException varD0CC19A43964E4E112C5E76CFAB8A437_879219766 = new ASN1ParsingException("IOException converting stream to byte array: " + e.getMessage(), e);
             varD0CC19A43964E4E112C5E76CFAB8A437_879219766.addTaint(taint);
             throw varD0CC19A43964E4E112C5E76CFAB8A437_879219766;
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //return getLoadedObject();
-        //}
-        //catch (IOException e)
-        //{
-            //throw new ASN1ParsingException("IOException converting stream to byte array: " + e.getMessage(), e);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class InvalidClassException extends ObjectStreamException {
     public  InvalidClassException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,8 +23,8 @@ public class InvalidClassException extends ObjectStreamException {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
         this.classname = className;
-        // ---------- Original Method ----------
-        //this.classname = className;
+        
+        
     }
 
     
@@ -35,16 +35,16 @@ public class InvalidClassException extends ObjectStreamException {
     if(classname != null)        
         {
             msg = classname + "; " + msg;
-        } //End block
+        } 
 String varEDC5B72465A7F0BEE288689BCB1DD141_1256760047 =         msg;
         varEDC5B72465A7F0BEE288689BCB1DD141_1256760047.addTaint(taint);
         return varEDC5B72465A7F0BEE288689BCB1DD141_1256760047;
-        // ---------- Original Method ----------
-        //String msg = super.getMessage();
-        //if (classname != null) {
-            //msg = classname + "; " + msg;
-        //}
-        //return msg;
+        
+        
+        
+            
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,15 +18,15 @@ public class Proxy implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.174 -0400", hash_original_method = "1299DC7DDC1977A0E223548A22BEB1B2", hash_generated_method = "D647A7D612843DD58BA0B0DD89164A21")
     @SuppressWarnings("unused")
     private  Proxy() {
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:48.174 -0400", hash_original_method = "4536AE1A64E0852F0920CAD3D2F2C594", hash_generated_method = "698C4B548DC7670D8B6A3E54EBD2B093")
     protected  Proxy(InvocationHandler h) {
         this.h = h;
-        // ---------- Original Method ----------
-        //this.h = h;
+        
+        
     }
 
     

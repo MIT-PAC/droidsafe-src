@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public abstract class KeyStoreSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.084 -0400", hash_original_method = "0F44DABB4B3060793D573A941E7E27B4", hash_generated_method = "0F44DABB4B3060793D573A941E7E27B4")
     public KeyStoreSpi ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -81,8 +81,8 @@ public abstract class KeyStoreSpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1591888211 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1591888211.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1591888211;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -97,7 +97,7 @@ public abstract class KeyStoreSpi {
         {
             engineLoad(null, null);
             return;
-        } //End block
+        } 
         char[] pwd;
         KeyStore.ProtectionParameter pp = param.getProtectionParameter();
     if(pp instanceof KeyStore.PasswordProtection)        
@@ -107,14 +107,14 @@ public abstract class KeyStoreSpi {
                 pwd = ((KeyStore.PasswordProtection) pp).getPassword();
                 engineLoad(null, pwd);
                 return;
-            } //End block
+            } 
             catch (IllegalStateException e)
             {
                 IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_8650145 = new IllegalArgumentException(e);
                 varB5003C51895A632D49EB91E1ECEE1438_8650145.addTaint(taint);
                 throw varB5003C51895A632D49EB91E1ECEE1438_8650145;
-            } //End block
-        } //End block
+            } 
+        } 
     if(pp instanceof KeyStore.CallbackHandlerProtection)        
         {
             try 
@@ -122,20 +122,20 @@ public abstract class KeyStoreSpi {
                 pwd = getPasswordFromCallBack(pp);
                 engineLoad(null, pwd);
                 return;
-            } //End block
+            } 
             catch (UnrecoverableEntryException e)
             {
                 IllegalArgumentException varB5003C51895A632D49EB91E1ECEE1438_645431264 = new IllegalArgumentException(e);
                 varB5003C51895A632D49EB91E1ECEE1438_645431264.addTaint(taint);
                 throw varB5003C51895A632D49EB91E1ECEE1438_645431264;
-            } //End block
-        } //End block
+            } 
+        } 
         UnsupportedOperationException var512AC5F29E79BF38AAF79998E614D9BB_343526259 = new UnsupportedOperationException("protectionParameter is neither PasswordProtection "
                                                 + "nor CallbackHandlerProtection instance");
         var512AC5F29E79BF38AAF79998E614D9BB_343526259.addTaint(taint);
         throw var512AC5F29E79BF38AAF79998E614D9BB_343526259;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -150,14 +150,14 @@ public abstract class KeyStoreSpi {
 KeyStore.Entry var540C13E9E156B687226421B24F2DF178_539534961 =             null;
             var540C13E9E156B687226421B24F2DF178_539534961.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_539534961;
-        } //End block
+        } 
     if(engineIsCertificateEntry(alias))        
         {
 KeyStore.Entry varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1800130756 =             new KeyStore.TrustedCertificateEntry(
                     engineGetCertificate(alias));
             varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1800130756.addTaint(taint);
             return varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1800130756;
-        } //End block
+        } 
         char[] passW = null;
     if(protParam != null)        
         {
@@ -167,27 +167,27 @@ KeyStore.Entry varFA8BB8BF63DFDCDE2AC1F37FA493C5A6_1800130756 =             new 
                 {
                     passW = ((KeyStore.PasswordProtection) protParam)
                             .getPassword();
-                } //End block
+                } 
                 catch (IllegalStateException ee)
                 {
                     KeyStoreException var173E0EA18B216CA1F3470CACBC03B9C2_27610623 = new KeyStoreException("Password was destroyed", ee);
                     var173E0EA18B216CA1F3470CACBC03B9C2_27610623.addTaint(taint);
                     throw var173E0EA18B216CA1F3470CACBC03B9C2_27610623;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(protParam instanceof KeyStore.CallbackHandlerProtection)            
             {
                 passW = getPasswordFromCallBack(protParam);
-            } //End block
+            } 
             else
             {
                 UnrecoverableEntryException varBDCA280E2ADDBE63E73F1C1F739B22A2_486010408 = new UnrecoverableEntryException("ProtectionParameter object is not "
                                                       + "PasswordProtection: " + protParam);
                 varBDCA280E2ADDBE63E73F1C1F739B22A2_486010408.addTaint(taint);
                 throw varBDCA280E2ADDBE63E73F1C1F739B22A2_486010408;
-            } //End block
-        } //End block
+            } 
+        } 
     if(engineIsKeyEntry(alias))        
         {
             Key key = engineGetKey(alias, passW);
@@ -197,19 +197,19 @@ KeyStore.Entry varA29A3E037505354C38B79FE2CCF25E01_653931941 =                 n
                                                     engineGetCertificateChain(alias));
                 varA29A3E037505354C38B79FE2CCF25E01_653931941.addTaint(taint);
                 return varA29A3E037505354C38B79FE2CCF25E01_653931941;
-            } //End block
+            } 
     if(key instanceof SecretKey)            
             {
 KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 new KeyStore.SecretKeyEntry((SecretKey) key);
                 varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992.addTaint(taint);
                 return varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992;
-            } //End block
-        } //End block
+            } 
+        } 
         NoSuchAlgorithmException varF484C7331F04107001121C1ED67E4532_1432009089 = new NoSuchAlgorithmException("Unknown KeyStore.Entry object");
         varF484C7331F04107001121C1ED67E4532_1432009089.addTaint(taint);
         throw varF484C7331F04107001121C1ED67E4532_1432009089;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -224,31 +224,31 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 
             KeyStoreException varE92AAD21409D60072D72DD35DFD12641_1518373007 = new KeyStoreException("entry == null");
             varE92AAD21409D60072D72DD35DFD12641_1518373007.addTaint(taint);
             throw varE92AAD21409D60072D72DD35DFD12641_1518373007;
-        } //End block
+        } 
     if(engineContainsAlias(alias))        
         {
             engineDeleteEntry(alias);
-        } //End block
+        } 
     if(entry instanceof KeyStore.TrustedCertificateEntry)        
         {
             KeyStore.TrustedCertificateEntry trE = (KeyStore.TrustedCertificateEntry) entry;
             engineSetCertificateEntry(alias, trE.getTrustedCertificate());
             return;
-        } //End block
+        } 
         char[] passW = null;
     if(protParam instanceof KeyStore.PasswordProtection)        
         {
             try 
             {
                 passW = ((KeyStore.PasswordProtection) protParam).getPassword();
-            } //End block
+            } 
             catch (IllegalStateException ee)
             {
                 KeyStoreException var173E0EA18B216CA1F3470CACBC03B9C2_864029553 = new KeyStoreException("Password was destroyed", ee);
                 var173E0EA18B216CA1F3470CACBC03B9C2_864029553.addTaint(taint);
                 throw var173E0EA18B216CA1F3470CACBC03B9C2_864029553;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(protParam instanceof KeyStore.CallbackHandlerProtection)            
@@ -256,41 +256,41 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 
                 try 
                 {
                     passW = getPasswordFromCallBack(protParam);
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     KeyStoreException varC175B833FB13811057889966C2C78A66_1867449474 = new KeyStoreException(e);
                     varC175B833FB13811057889966C2C78A66_1867449474.addTaint(taint);
                     throw varC175B833FB13811057889966C2C78A66_1867449474;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 KeyStoreException var304020BB170CEDA770D5AB0AB4202E66_1127303124 = new KeyStoreException("protParam should be PasswordProtection or "
                                             + "CallbackHandlerProtection");
                 var304020BB170CEDA770D5AB0AB4202E66_1127303124.addTaint(taint);
                 throw var304020BB170CEDA770D5AB0AB4202E66_1127303124;
-            } //End block
-        } //End block
+            } 
+        } 
     if(entry instanceof KeyStore.PrivateKeyEntry)        
         {
             KeyStore.PrivateKeyEntry prE = (KeyStore.PrivateKeyEntry) entry;
             engineSetKeyEntry(alias, prE.getPrivateKey(), passW, prE
                     .getCertificateChain());
             return;
-        } //End block
+        } 
     if(entry instanceof KeyStore.SecretKeyEntry)        
         {
             KeyStore.SecretKeyEntry skE = (KeyStore.SecretKeyEntry) entry;
             engineSetKeyEntry(alias, skE.getSecretKey(), passW, null);
             return;
-        } //End block
+        } 
         KeyStoreException var21E6B874E04A2F6D10C5FD3CACF0E075_1138593107 = new KeyStoreException("Entry object is neither PrivateKeyObject nor SecretKeyEntry "
                                     + "nor TrustedCertificateEntry: " + entry);
         var21E6B874E04A2F6D10C5FD3CACF0E075_1138593107.addTaint(taint);
         throw var21E6B874E04A2F6D10C5FD3CACF0E075_1138593107;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -304,7 +304,7 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 
             boolean var68934A3E9455FA72420237EB05902327_286276151 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895805937 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895805937;
-        } //End block
+        } 
         try 
         {
     if(engineIsCertificateEntry(alias))            
@@ -314,7 +314,7 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 
                                 .forName("java.security.KeyStore$TrustedCertificateEntry")));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_872960870 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_872960870;
-            } //End block
+            } 
     if(engineIsKeyEntry(alias))            
             {
     if(entryClass.isAssignableFrom(Class
@@ -323,24 +323,24 @@ KeyStore.Entry varF6CA60BE43493BB9E1AF2A8B4D10A17E_1807190992 =                 
                     boolean varFD7A0BF7E224744E06A6F39A8EFAB35E_154297480 = (engineGetCertificate(alias) != null);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_796507603 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_796507603;
-                } //End block
+                } 
     if(entryClass.isAssignableFrom(Class
                         .forName("java.security.KeyStore$SecretKeyEntry")))                
                 {
                     boolean var00949CCCA50644B14627A52DB7FA0B55_2003617722 = (engineGetCertificate(alias) == null);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1788645689 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1788645689;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (ClassNotFoundException ignore)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1440107590 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1094394494 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1094394494;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

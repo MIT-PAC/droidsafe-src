@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,35 +17,38 @@ public class ThreadAuditor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.797 -0400", hash_original_method = "46343C8CADBF1D5ED7A34C5D2358E7DA", hash_generated_method = "46343C8CADBF1D5ED7A34C5D2358E7DA")
     public ThreadAuditor ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.798 -0400", hash_original_method = "E626588797C11F0AE30EE2336DDF5DDE", hash_generated_method = "1430901666801E75BBC7719A953460F5")
     public long getPingIntervalInMillisecs() {
         long varCBCED6551849E103E372D83857F211E1_479280851 = (pingIntervalInMillisecs);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2040185269 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2040185269;
-        // ---------- Original Method ----------
-        //return pingIntervalInMillisecs;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.798 -0400", hash_original_method = "7A7DF1118EDC7A81CF310DAEDEA2CA24", hash_generated_method = "4EE6AECCAFAC51D47EC18DF5AFAFA65C")
     public void setPingIntervalInMillisecs(long value) {
         pingIntervalInMillisecs = value;
-        // ---------- Original Method ----------
-        //pingIntervalInMillisecs = value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.798 -0400", hash_original_method = "3383EC0356978E6A8A0873AB5EB0F6B5", hash_generated_method = "BE518DEC7547C69763191097B3CB8240")
     public boolean isEnabled() {
         boolean var9DF94B84EDB5144CC140ACBCC7DF389E_557457304 = ((pingIntervalInMillisecs > 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1241447178 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1241447178;
-        // ---------- Original Method ----------
-        //return (pingIntervalInMillisecs > 0);
+        
+        
     }
 
     
@@ -55,16 +58,16 @@ public class ThreadAuditor {
     if(isEnabled())        
         {
             threadHandles.put(Thread.currentThread(), threadHandle);
-        } //End block
+        } 
 ThreadHandle var47A3C09AC8DC8AC9BE3EA5513CADAD05_2091508683 =         threadHandle;
         var47A3C09AC8DC8AC9BE3EA5513CADAD05_2091508683.addTaint(taint);
         return var47A3C09AC8DC8AC9BE3EA5513CADAD05_2091508683;
-        // ---------- Original Method ----------
-        //ThreadHandle threadHandle = new ThreadHandle(this);
-        //if (isEnabled()) {
-            //threadHandles.put(Thread.currentThread(), threadHandle);
-        //}
-        //return threadHandle;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -72,8 +75,8 @@ ThreadHandle var47A3C09AC8DC8AC9BE3EA5513CADAD05_2091508683 =         threadHand
     public synchronized void removeThread(Thread thread) {
         addTaint(thread.getTaint());
         threadHandles.remove(thread);
-        // ---------- Original Method ----------
-        //threadHandles.remove(thread);
+        
+        
     }
 
     
@@ -81,16 +84,16 @@ ThreadHandle var47A3C09AC8DC8AC9BE3EA5513CADAD05_2091508683 =         threadHand
     public synchronized void ping(ThreadHandle threadHandle) {
         addTaint(threadHandle.getTaint());
         threadHandle.setThreadActive(true);
-        // ---------- Original Method ----------
-        //threadHandle.setThreadActive(true);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.800 -0400", hash_original_method = "E964CDFC4A03877954EFAFA10E2DC29D", hash_generated_method = "F6A427298AA3312377E760135921E0C2")
     public synchronized void reset() {
         threadHandles.clear();
-        // ---------- Original Method ----------
-        //threadHandles.clear();
+        
+        
     }
 
     
@@ -108,16 +111,16 @@ ThreadHandle var47A3C09AC8DC8AC9BE3EA5513CADAD05_2091508683 =         threadHand
     if(auditReport == null)                
                 {
                     auditReport = "Thread Auditor Report:\n";
-                } //End block
+                } 
                 auditReport += "   Thread [" + thread.getName() + "] has failed to respond to an audit request.\n";
-            } //End block
+            } 
             threadHandle.setThreadActive(false);
-        } //End block
+        } 
 String var45515A2592231F3BCF49C3DB63F02A4B_1873409561 =         auditReport;
         var45515A2592231F3BCF49C3DB63F02A4B_1873409561.addTaint(taint);
         return var45515A2592231F3BCF49C3DB63F02A4B_1873409561;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -130,18 +133,18 @@ String var45515A2592231F3BCF49C3DB63F02A4B_1873409561 =         auditReport;
         {
             ThreadHandle threadHandle = (ThreadHandle)it.next();
             toString += "   " + threadHandle.toString() + "\n";
-        } //End block
+        } 
 String varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705 =         toString;
         varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705.addTaint(taint);
         return varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705;
-        // ---------- Original Method ----------
-        //String toString = "Thread Auditor - List of monitored threads:\n";
-        //Iterator<ThreadHandle> it = threadHandles.values().iterator();
-        //while ( it.hasNext()) {
-            //ThreadHandle threadHandle = (ThreadHandle)it.next();
-            //toString += "   " + threadHandle.toString() + "\n";
-        //}
-        //return toString;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -161,46 +164,49 @@ String varC9A0E46F6EAD14B0A7B52DADE46AB753_705824705 =         toString;
             isThreadActive = false;
             thread = Thread.currentThread();
             threadAuditor = aThreadAuditor;
-            // ---------- Original Method ----------
-            //isThreadActive = false;
-            //thread = Thread.currentThread();
-            //threadAuditor = aThreadAuditor;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.803 -0400", hash_original_method = "7C169FF6005EF7125A62D6FC1B2750B7", hash_generated_method = "846BF304E42A7582792D8E7C7F906EB3")
         public boolean isThreadActive() {
             boolean varC27D2AE338AEB5D3D641D7F9A5579631_2130226447 = (isThreadActive);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1381884590 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1381884590;
-            // ---------- Original Method ----------
-            //return isThreadActive;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.803 -0400", hash_original_method = "88A3AB81179102C8D04CED6A81B233E5", hash_generated_method = "F939265BD831E182F8951ADA8E09D004")
         protected void setThreadActive(boolean value) {
             isThreadActive = value;
-            // ---------- Original Method ----------
-            //isThreadActive = value;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.804 -0400", hash_original_method = "F8B0A54928E7ECAC7F4DBC7FBE8E98A4", hash_generated_method = "7588DA55A7936F641D6A5F3738377E27")
         public Thread getThread() {
 Thread var4E4577EDE13083D3065B1ECBBC20E477_1915925799 =             thread;
             var4E4577EDE13083D3065B1ECBBC20E477_1915925799.addTaint(taint);
             return var4E4577EDE13083D3065B1ECBBC20E477_1915925799;
-            // ---------- Original Method ----------
-            //return thread;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.804 -0400", hash_original_method = "6040EE7F290925ABE22D0B8E78C0C92D", hash_generated_method = "A73BBB325702DD928662037CB4D962EF")
         public void ping() {
             threadAuditor.ping(this);
-            // ---------- Original Method ----------
-            //threadAuditor.ping(this);
+            
+            
         }
 
         
@@ -209,8 +215,8 @@ Thread var4E4577EDE13083D3065B1ECBBC20E477_1915925799 =             thread;
             long varB3D5BC2A6F17C75D3047A7E8BDB8B6C4_792142176 = (threadAuditor.getPingIntervalInMillisecs());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_493749873 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_493749873;
-            // ---------- Original Method ----------
-            //return threadAuditor.getPingIntervalInMillisecs();
+            
+            
         }
 
         
@@ -222,11 +228,11 @@ Thread var4E4577EDE13083D3065B1ECBBC20E477_1915925799 =             thread;
 String var6C6056BC03A3D6D14AB3C12F1BAA8CBB_1222447457 =             toString.toString();
             var6C6056BC03A3D6D14AB3C12F1BAA8CBB_1222447457.addTaint(taint);
             return var6C6056BC03A3D6D14AB3C12F1BAA8CBB_1222447457;
-            // ---------- Original Method ----------
-            //StringBuffer toString = new StringBuffer()
-                    //.append("Thread Name: ").append(thread.getName())
-                    //.append(", Alive: ").append(thread.isAlive());
-            //return toString.toString();
+            
+            
+                    
+                    
+            
         }
 
         

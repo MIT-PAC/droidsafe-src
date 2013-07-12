@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class SSLException extends IOException {
     public  SSLException(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,8 +22,8 @@ public class SSLException extends IOException {
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
         super.initCause(cause);
-        // ---------- Original Method ----------
-        //super.initCause(cause);
+        
+        
     }
 
     
@@ -32,8 +32,8 @@ public class SSLException extends IOException {
         super(cause == null ? null : cause.toString());
         addTaint(cause.getTaint());
         super.initCause(cause);
-        // ---------- Original Method ----------
-        //super.initCause(cause);
+        
+        
     }
 
     

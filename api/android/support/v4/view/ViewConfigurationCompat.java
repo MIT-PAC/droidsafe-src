@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class ViewConfigurationCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.890 -0400", hash_original_method = "4E5705462ABC07218BC228DFC04D8AC2", hash_generated_method = "4E5705462ABC07218BC228DFC04D8AC2")
     public ViewConfigurationCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -25,7 +25,7 @@ public class ViewConfigurationCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.890 -0400", hash_original_method = "A69B2452C79DFBE1CA7B04111C2A43A4", hash_generated_method = "A69B2452C79DFBE1CA7B04111C2A43A4")
         public BaseViewConfigurationVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -36,8 +36,8 @@ public class ViewConfigurationCompat {
             int var33ADD0B58B6C6CBAD50BA8122F5803A3_709876008 = (config.getScaledTouchSlop());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1194270789 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1194270789;
-            // ---------- Original Method ----------
-            //return config.getScaledTouchSlop();
+            
+            
         }
 
         
@@ -50,7 +50,7 @@ public class ViewConfigurationCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.891 -0400", hash_original_method = "6DBEE8295DE3B0BBCD4D937DD1B1D583", hash_generated_method = "6DBEE8295DE3B0BBCD4D937DD1B1D583")
         public FroyoViewConfigurationVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -61,8 +61,8 @@ public class ViewConfigurationCompat {
             int var915F810AF7CE768570FF35D35C15EC72_1444690964 = (ViewConfigurationCompatFroyo.getScaledPagingTouchSlop(config));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548401437 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_548401437;
-            // ---------- Original Method ----------
-            //return ViewConfigurationCompatFroyo.getScaledPagingTouchSlop(config);
+            
+            
         }
 
         

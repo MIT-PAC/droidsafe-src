@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class ClosedByInterruptException extends AsynchronousCloseException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.441 -0400", hash_original_method = "A692AF131ADD19071A736357265D41EA", hash_generated_method = "A76F0B47676ABBB937718F78532CACD9")
     public  ClosedByInterruptException() {
-        // ---------- Original Method ----------
+        
     }
 
     

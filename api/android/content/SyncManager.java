@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -270,19 +270,19 @@ public class SyncManager implements OnAccountsUpdateListener {
         mSyncAdapters.setListener(new RegisteredServicesCacheListener<SyncAdapterType>() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.843 -0400", hash_original_method = "156EF77A103E5C10F6AA28A0B09EC843", hash_generated_method = "2800DF38A4BCE847DAA45DA847EA5B89")
         public void onServiceChanged(SyncAdapterType type, boolean removed) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(removed);
             addTaint(type.getTaint());
     if(!removed)            
             {
                 scheduleSync(null, type.authority, null, 0 ,
                             false );
-            } //End block
-            // ---------- Original Method ----------
-            //if (!removed) {
-                    //scheduleSync(null, type.authority, null, 0 ,
-                            //false );
-                //}
+            } 
+            
+            
+                    
+                            
+                
         }
 }, mSyncHandler);
         mSyncAlarmIntent = PendingIntent.getBroadcast(
@@ -293,7 +293,7 @@ public class SyncManager implements OnAccountsUpdateListener {
         {
             intentFilter = new IntentFilter(Intent.ACTION_BOOT_COMPLETED);
             context.registerReceiver(mBootCompletedReceiver, intentFilter);
-        } //End block
+        } 
         intentFilter = new IntentFilter(ConnectivityManager.ACTION_BACKGROUND_DATA_SETTING_CHANGED);
         context.registerReceiver(mBackgroundDataSettingChanged, intentFilter);
         intentFilter = new IntentFilter(Intent.ACTION_DEVICE_STORAGE_LOW);
@@ -308,11 +308,11 @@ public class SyncManager implements OnAccountsUpdateListener {
                 context.getSystemService(Context.NOTIFICATION_SERVICE);
             context.registerReceiver(new SyncAlarmIntentReceiver(),
                     new IntentFilter(ACTION_SYNC_ALARM));
-        } //End block
+        } 
         else
         {
             mNotificationMgr = null;
-        } //End block
+        } 
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         mHandleAlarmWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                 HANDLE_SYNC_ALARM_WAKE_LOCK);
@@ -324,11 +324,11 @@ public class SyncManager implements OnAccountsUpdateListener {
                 ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS, new ISyncStatusObserver.Stub() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.846 -0400", hash_original_method = "E2E5241731BE29D01E4993B391B00B92", hash_generated_method = "3E7A864B4EA619AD9FB664764750E699")
         public void onStatusChanged(int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(which);
             sendCheckAlarmsMessage();
-            // ---------- Original Method ----------
-            //sendCheckAlarmsMessage();
+            
+            
         }
 });
     if(!factoryTest)        
@@ -336,15 +336,16 @@ public class SyncManager implements OnAccountsUpdateListener {
             AccountManager.get(mContext).addOnAccountsUpdatedListener(SyncManager.this,
                 mSyncHandler, false );
             onAccountsUpdated(AccountManager.get(mContext).getAccounts());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.847 -0400", hash_original_method = "F68E26CE46C5E71DC7131B4E8982A697", hash_generated_method = "3BE28E22B10A123DA00E91024363E01C")
     public void onAccountsUpdated(Account[] accounts) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final boolean justBootedUp = mAccounts == INITIAL_ACCOUNTS_ARRAY;
         mAccounts = accounts;
 for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
@@ -354,35 +355,37 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
                 Log.d(TAG, "canceling sync since the account has been removed");
                 sendSyncFinishedOrCanceledMessage(currentSyncContext,
                         null );
-            } //End block
-        } //End block
+            } 
+        } 
         sendCheckAlarmsMessage();
     if(mBootCompleted)        
         {
             mSyncStorageEngine.doDatabaseCleanup(accounts);
-        } //End block
+        } 
     if(accounts.length > 0)        
         {
             boolean onlyThoseWithUnkownSyncableState = justBootedUp;
             scheduleSync(null, null, null, 0 , onlyThoseWithUnkownSyncableState);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.848 -0400", hash_original_method = "90A2C58DEF02026C184592212F85FF18", hash_generated_method = "464F87F0CEC8248AD4E0B7392FD9F2B9")
     private boolean readDataConnectionState() {
         NetworkInfo networkInfo = getConnectivityManager().getActiveNetworkInfo();
         boolean varD45DC317F0405F74E4F52AAD898D0500_1099528053 = ((networkInfo != null) && networkInfo.isConnected());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2043372168 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2043372168;
-        // ---------- Original Method ----------
-        //NetworkInfo networkInfo = getConnectivityManager().getActiveNetworkInfo();
-        //return (networkInfo != null) && networkInfo.isConnected();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.848 -0400", hash_original_method = "85835365DA8D3F37E74A4C98C5566C52", hash_generated_method = "39D4FA4AD89FE963D3A4ACF29C575868")
     private ConnectivityManager getConnectivityManager() {
         synchronized
@@ -391,19 +394,19 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
             {
                 mConnManagerDoNotUseDirectly = (ConnectivityManager)mContext.getSystemService(
                         Context.CONNECTIVITY_SERVICE);
-            } //End block
+            } 
 ConnectivityManager var5EB585CB0BDAFBBDEDEDA30BC8CAC69E_1308011096 =             mConnManagerDoNotUseDirectly;
             var5EB585CB0BDAFBBDEDEDA30BC8CAC69E_1308011096.addTaint(taint);
             return var5EB585CB0BDAFBBDEDEDA30BC8CAC69E_1308011096;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mConnManagerDoNotUseDirectly == null) {
-                //mConnManagerDoNotUseDirectly = (ConnectivityManager)mContext.getSystemService(
-                        //Context.CONNECTIVITY_SERVICE);
-            //}
-            //return mConnManagerDoNotUseDirectly;
-        //}
+        } 
+        
+        
+            
+                
+                        
+            
+            
+        
     }
 
     
@@ -419,41 +422,43 @@ ConnectivityManager var5EB585CB0BDAFBBDEDEDA30BC8CAC69E_1308011096 =            
                     + "minValue must be less than " + Integer.MAX_VALUE);
             var721595686CB59DC0D7C36F00D44C7956_1787715505.addTaint(taint);
             throw var721595686CB59DC0D7C36F00D44C7956_1787715505;
-        } //End block
+        } 
         long var3373876A1AE63094CA60E77EE1F693F2_1222851923 = (minValue + random.nextInt((int)spread));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1363238391 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1363238391;
-        // ---------- Original Method ----------
-        //Random random = new Random(SystemClock.elapsedRealtime());
-        //long spread = maxValue - minValue;
-        //if (spread > Integer.MAX_VALUE) {
-            //throw new IllegalArgumentException("the difference between the maxValue and the "
-                    //+ "minValue must be less than " + Integer.MAX_VALUE);
-        //}
-        //return minValue + random.nextInt((int)spread);
+        
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.849 -0400", hash_original_method = "BC7A6B22ABBE0EBF148B37C3B72645F0", hash_generated_method = "CF447C117E81C511134C813569093963")
     public SyncStorageEngine getSyncStorageEngine() {
 SyncStorageEngine var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408 =         mSyncStorageEngine;
         var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408.addTaint(taint);
         return var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408;
-        // ---------- Original Method ----------
-        //return mSyncStorageEngine;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.850 -0400", hash_original_method = "51F169FF6EC2BB253880B74521EEDA04", hash_generated_method = "8B30EAF493130ACE802AC42E75E800F4")
     private void ensureAlarmService() {
     if(mAlarmService == null)        
         {
             mAlarmService = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAlarmService == null) {
-            //mAlarmService = (AlarmManager)mContext.getSystemService(Context.ALARM_SERVICE);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -463,14 +468,14 @@ SyncStorageEngine var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408 =         mSync
         addTaint(account.getTaint());
     if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
-        } //End block
+        } 
         SyncAdapterType syncAdapterType = SyncAdapterType.newKey(authority, account.type);
         RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo = mSyncAdapters.getServiceInfo(syncAdapterType);
     if(syncAdapterInfo == null)        
         {
             mSyncStorageEngine.removeAuthority(account, authority);
             return;
-        } //End block
+        } 
         Intent intent = new Intent();
         intent.setAction("android.content.SyncAdapter");
         intent.setComponent(syncAdapterInfo.componentName);
@@ -479,9 +484,9 @@ SyncStorageEngine var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408 =         mSync
                 Context.BIND_AUTO_CREATE | Context.BIND_NOT_FOREGROUND
                 | Context.BIND_ALLOW_OOM_MANAGEMENT))        
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -502,12 +507,12 @@ SyncStorageEngine var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408 =         mSync
     if(expedited)        
         {
             delay = -1;
-        } //End block
+        } 
         Account[] accounts;
     if(requestedAccount != null)        
         {
             accounts = new Account[]{requestedAccount};
-        } //End block
+        } 
         else
         {
             accounts = mAccounts;
@@ -515,49 +520,49 @@ SyncStorageEngine var4722D7F414B2A192FA01BF2ECD4D9E81_1811505408 =         mSync
             {
     if(isLoggable)                
                 {
-                } //End block
+                } 
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         final boolean uploadOnly = extras.getBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, false);
         final boolean manualSync = extras.getBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, false);
     if(manualSync)        
         {
             extras.putBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, true);
             extras.putBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_SETTINGS, true);
-        } //End block
+        } 
         final boolean ignoreSettings = extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_SETTINGS, false);
         int source;
     if(uploadOnly)        
         {
             source = SyncStorageEngine.SOURCE_LOCAL;
-        } //End block
+        } 
         else
     if(manualSync)        
         {
             source = SyncStorageEngine.SOURCE_USER;
-        } //End block
+        } 
         else
     if(requestedAuthority == null)        
         {
             source = SyncStorageEngine.SOURCE_POLL;
-        } //End block
+        } 
         else
         {
             source = SyncStorageEngine.SOURCE_SERVER;
-        } //End block
+        } 
         final HashSet<String> syncableAuthorities = new HashSet<String>();
 for(RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapter : mSyncAdapters.getAllServices())
         {
             syncableAuthorities.add(syncAdapter.type.authority);
-        } //End block
+        } 
     if(requestedAuthority != null)        
         {
             final boolean hasSyncAdapter = syncableAuthorities.contains(requestedAuthority);
             syncableAuthorities.clear();
     if(hasSyncAdapter)            
             syncableAuthorities.add(requestedAuthority);
-        } //End block
+        } 
         final boolean masterSyncAutomatically = mSyncStorageEngine.getMasterSyncAutomatically();
 for(String authority : syncableAuthorities)
         {
@@ -567,28 +572,28 @@ for(Account account : accounts)
     if(isSyncable == 0)                
                 {
                     continue;
-                } //End block
+                } 
                 final RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo = mSyncAdapters.getServiceInfo(
                                 SyncAdapterType.newKey(authority, account.type));
     if(syncAdapterInfo == null)                
                 {
                     continue;
-                } //End block
+                } 
                 final boolean allowParallelSyncs = syncAdapterInfo.type.allowParallelSyncs();
                 final boolean isAlwaysSyncable = syncAdapterInfo.type.isAlwaysSyncable();
     if(isSyncable < 0 && isAlwaysSyncable)                
                 {
                     mSyncStorageEngine.setIsSyncable(account, authority, 1);
                     isSyncable = 1;
-                } //End block
+                } 
     if(onlyThoseWithUnkownSyncableState && isSyncable >= 0)                
                 {
                     continue;
-                } //End block
+                } 
     if(!syncAdapterInfo.type.supportsUploading() && uploadOnly)                
                 {
                     continue;
-                } //End block
+                } 
                 boolean syncAllowed = (isSyncable < 0)
                         || ignoreSettings
                         || (backgroundDataUsageAllowed && masterSyncAutomatically
@@ -599,9 +604,9 @@ for(Account account : accounts)
                     {
                         Log.d(TAG, "scheduleSync: sync of " + account + ", " + authority
                                 + " is not allowed, dropping request");
-                    } //End block
+                    } 
                     continue;
-                } //End block
+                } 
                 Pair<Long, Long> backoff = mSyncStorageEngine.getBackoff(account, authority);
                 long delayUntil = mSyncStorageEngine.getDelayUntilTime(account, authority);
                 final long backoffTime = backoff != null ? backoff.first : 0;
@@ -611,29 +616,30 @@ for(Account account : accounts)
                     newExtras.putBoolean(ContentResolver.SYNC_EXTRAS_INITIALIZE, true);
     if(isLoggable)                    
                     {
-                    } //End block
+                    } 
                     scheduleSyncOperation(
                             new SyncOperation(account, source, authority, newExtras, 0,
                                     backoffTime, delayUntil,
                                     allowParallelSyncs));
-                } //End block
+                } 
     if(!onlyThoseWithUnkownSyncableState)                
                 {
     if(isLoggable)                    
                     {
-                    } //End block
+                    } 
                     scheduleSyncOperation(
                             new SyncOperation(account, source, authority, extras, delay,
                                     backoffTime, delayUntil,
                                     allowParallelSyncs));
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.879 -0400", hash_original_method = "9A217D026FB5B08090F4BAFAA08C0DF7", hash_generated_method = "E3C0172BB0C4C5886EA1EA9C6DFA16F9")
     public void scheduleLocalSync(Account account, String authority) {
         addTaint(authority.getTaint());
@@ -642,14 +648,15 @@ for(Account account : accounts)
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         scheduleSync(account, authority, extras, LOCAL_SYNC_DELAY,
                 false );
-        // ---------- Original Method ----------
-        //final Bundle extras = new Bundle();
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
-        //scheduleSync(account, authority, extras, LOCAL_SYNC_DELAY,
-                //false );
+        
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.880 -0400", hash_original_method = "0A2ACD1B7EA84D8FDEC2211873578368", hash_generated_method = "B9246D33BDA5076AE3E28C978023FFAE")
     public SyncAdapterType[] getSyncAdapterTypes() {
         final Collection<RegisteredServicesCache.ServiceInfo<SyncAdapterType>> serviceInfos = mSyncAdapters.getAllServices();
@@ -659,42 +666,45 @@ for(RegisteredServicesCache.ServiceInfo<SyncAdapterType> serviceInfo : serviceIn
         {
             types[i] = serviceInfo.type;
             ++i;
-        } //End block
+        } 
 SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         var3594B614C10CC2B651EA0D169ACAF4A6_452387235.addTaint(taint);
         return var3594B614C10CC2B651EA0D169ACAF4A6_452387235;
-        // ---------- Original Method ----------
-        //final Collection<RegisteredServicesCache.ServiceInfo<SyncAdapterType>>
-                //serviceInfos =
-                //mSyncAdapters.getAllServices();
-        //SyncAdapterType[] types = new SyncAdapterType[serviceInfos.size()];
-        //int i = 0;
-        //for (RegisteredServicesCache.ServiceInfo<SyncAdapterType> serviceInfo : serviceInfos) {
-            //types[i] = serviceInfo.type;
-            //++i;
-        //}
-        //return types;
+        
+        
+                
+                
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.881 -0400", hash_original_method = "14A3D8C2E4B2E28E7EAE9416931B0D4D", hash_generated_method = "421AE6228B516F8E828963C4D8A348A5")
     private void sendSyncAlarmMessage() {
     if(Log.isLoggable(TAG, Log.VERBOSE)){ }        mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_SYNC_ALARM);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_SYNC_ALARM");
-        //mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_SYNC_ALARM);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.881 -0400", hash_original_method = "48CD41A4FC7AAC6DBD3D417BDFF3952E", hash_generated_method = "9DE8B96D20D0A200600C79537CD20B0A")
     private void sendCheckAlarmsMessage() {
     if(Log.isLoggable(TAG, Log.VERBOSE)){ }        mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_CHECK_ALARMS);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_CHECK_ALARMS");
-        //mSyncHandler.sendEmptyMessage(SyncHandler.MESSAGE_CHECK_ALARMS);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.882 -0400", hash_original_method = "A4D4C528BED9CEDB160AF5BFC279888F", hash_generated_method = "8387201C0FCFCFCB1305D94A72D834FC")
     private void sendSyncFinishedOrCanceledMessage(ActiveSyncContext syncContext,
             SyncResult syncResult) {
@@ -704,12 +714,12 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         msg.what = SyncHandler.MESSAGE_SYNC_FINISHED;
         msg.obj = new SyncHandlerMessagePayload(syncContext, syncResult);
         mSyncHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_SYNC_FINISHED");
-        //Message msg = mSyncHandler.obtainMessage();
-        //msg.what = SyncHandler.MESSAGE_SYNC_FINISHED;
-        //msg.obj = new SyncHandlerMessagePayload(syncContext, syncResult);
-        //mSyncHandler.sendMessage(msg);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -721,15 +731,16 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         msg.what = SyncHandler.MESSAGE_CANCEL;
         msg.obj = Pair.create(account, authority);
         mSyncHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "sending MESSAGE_CANCEL");
-        //Message msg = mSyncHandler.obtainMessage();
-        //msg.what = SyncHandler.MESSAGE_CANCEL;
-        //msg.obj = Pair.create(account, authority);
-        //mSyncHandler.sendMessage(msg);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.885 -0400", hash_original_method = "1BD5650AC2366081E95971C40228D13F", hash_generated_method = "15EE1A4F32579AFF196F9A5F30500C6A")
     private void clearBackoffSetting(SyncOperation op) {
         addTaint(op.getTaint());
@@ -738,16 +749,17 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         synchronized
 (mSyncQueue)        {
             mSyncQueue.onBackoffChanged(op.account, op.authority, 0);
-        } //End block
-        // ---------- Original Method ----------
-        //mSyncStorageEngine.setBackoff(op.account, op.authority,
-                //SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
-        //synchronized (mSyncQueue) {
-            //mSyncQueue.onBackoffChanged(op.account, op.authority, 0);
-        //}
+        } 
+        
+        
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.887 -0400", hash_original_method = "42DD92B3EE29EAC346CC626BA6B5C78C", hash_generated_method = "D9EC31DF165B1A90013220079985DC1A")
     private void increaseBackoffSetting(SyncOperation op) {
         addTaint(op.getTaint());
@@ -760,23 +772,23 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
             {
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
             newDelayInMs = previousSettings.second * 2;
-        } //End block
+        } 
     if(newDelayInMs <= 0)        
         {
             newDelayInMs = jitterize(INITIAL_SYNC_RETRY_TIME_IN_MS,
                     (long)(INITIAL_SYNC_RETRY_TIME_IN_MS * 1.1));
-        } //End block
+        } 
         long maxSyncRetryTimeInSeconds = Settings.Secure.getLong(mContext.getContentResolver(),
                 Settings.Secure.SYNC_MAX_RETRY_DELAY_IN_SECONDS,
                 DEFAULT_MAX_SYNC_RETRY_TIME_IN_SECONDS);
     if(newDelayInMs > maxSyncRetryTimeInSeconds * 1000)        
         {
             newDelayInMs = maxSyncRetryTimeInSeconds * 1000;
-        } //End block
+        } 
         final long backoff = now + newDelayInMs;
         mSyncStorageEngine.setBackoff(op.account, op.authority,
                 backoff, newDelayInMs);
@@ -785,9 +797,9 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         synchronized
 (mSyncQueue)        {
             mSyncQueue.onBackoffChanged(op.account, op.authority, backoff);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -801,29 +813,29 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
     if(delayUntil > absoluteNow)        
         {
             newDelayUntilTime = SystemClock.elapsedRealtime() + (delayUntil - absoluteNow);
-        } //End block
+        } 
         else
         {
             newDelayUntilTime = 0;
-        } //End block
+        } 
         mSyncStorageEngine.setDelayUntilTime(op.account, op.authority, newDelayUntilTime);
         synchronized
 (mSyncQueue)        {
             mSyncQueue.onDelayUntilTimeChanged(op.account, op.authority, newDelayUntilTime);
-        } //End block
-        // ---------- Original Method ----------
-        //final long delayUntil = delayUntilSeconds * 1000;
-        //final long absoluteNow = System.currentTimeMillis();
-        //long newDelayUntilTime;
-        //if (delayUntil > absoluteNow) {
-            //newDelayUntilTime = SystemClock.elapsedRealtime() + (delayUntil - absoluteNow);
-        //} else {
-            //newDelayUntilTime = 0;
-        //}
-        //mSyncStorageEngine.setDelayUntilTime(op.account, op.authority, newDelayUntilTime);
-        //synchronized (mSyncQueue) {
-            //mSyncQueue.onDelayUntilTimeChanged(op.account, op.authority, newDelayUntilTime);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -832,8 +844,8 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         addTaint(authority.getTaint());
         addTaint(account.getTaint());
         sendCancelSyncsMessage(account, authority);
-        // ---------- Original Method ----------
-        //sendCancelSyncsMessage(account, authority);
+        
+        
     }
 
     
@@ -844,36 +856,36 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         synchronized
 (mSyncQueue)        {
             queueChanged = mSyncQueue.add(syncOperation);
-        } //End block
+        } 
     if(queueChanged)        
         {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             sendCheckAlarmsMessage();
-        } //End block
+        } 
         else
         {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //boolean queueChanged;
-        //synchronized (mSyncQueue) {
-            //queueChanged = mSyncQueue.add(syncOperation);
-        //}
-        //if (queueChanged) {
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.v(TAG, "scheduleSyncOperation: enqueued " + syncOperation);
-            //}
-            //sendCheckAlarmsMessage();
-        //} else {
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.v(TAG, "scheduleSyncOperation: dropping duplicate sync operation "
-                        //+ syncOperation);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+            
+                
+                        
+            
+        
     }
 
     
@@ -884,18 +896,19 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
         synchronized
 (mSyncQueue)        {
             mSyncQueue.remove(account, authority);
-        } //End block
+        } 
         mSyncStorageEngine.setBackoff(account, authority,
                 SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
-        // ---------- Original Method ----------
-        //synchronized (mSyncQueue) {
-            //mSyncQueue.remove(account, authority);
-        //}
-        //mSyncStorageEngine.setBackoff(account, authority,
-                //SyncStorageEngine.NOT_IN_BACKOFF_MODE, SyncStorageEngine.NOT_IN_BACKOFF_MODE);
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.905 -0400", hash_original_method = "7F8B5486825DA8802A08F87FCECDEB6D", hash_generated_method = "DC0BC898D261E9AFD16190912C1E9A5F")
      void maybeRescheduleSync(SyncResult syncResult, SyncOperation operation) {
         addTaint(operation.getTaint());
@@ -904,17 +917,17 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
     if(isLoggable)        
         {
             Log.d(TAG, "encountered error(s) during the sync: " + syncResult + ", " + operation);
-        } //End block
+        } 
         operation = new SyncOperation(operation);
     if(operation.extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF, false))        
         {
             operation.extras.remove(ContentResolver.SYNC_EXTRAS_IGNORE_BACKOFF);
-        } //End block
+        } 
     if(operation.extras.getBoolean(ContentResolver.SYNC_EXTRAS_DO_NOT_RETRY, false))        
         {
             Log.d(TAG, "not retrying sync operation because SYNC_EXTRAS_DO_NOT_RETRY was specified "
                     + operation);
-        } //End block
+        } 
         else
     if(operation.extras.getBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, false)
                 && !syncResult.syncAlreadyInProgress)        
@@ -923,13 +936,13 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
             Log.d(TAG, "retrying sync operation as a two-way sync because an upload-only sync "
                     + "encountered an error: " + operation);
             scheduleSyncOperation(operation);
-        } //End block
+        } 
         else
     if(syncResult.tooManyRetries)        
         {
             Log.d(TAG, "not retrying sync operation because it retried too many times: "
                     + operation);
-        } //End block
+        } 
         else
     if(syncResult.madeSomeProgress())        
         {
@@ -937,9 +950,9 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
             {
                 Log.d(TAG, "retrying sync operation because even though it had an error "
                         + "it achieved some success");
-            } //End block
+            } 
             scheduleSyncOperation(operation);
-        } //End block
+        } 
         else
     if(syncResult.syncAlreadyInProgress)        
         {
@@ -947,12 +960,12 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
             {
                 Log.d(TAG, "retrying sync operation that failed because there was already a "
                         + "sync in progress: " + operation);
-            } //End block
+            } 
             scheduleSyncOperation(new SyncOperation(operation.account, operation.syncSource,
                     operation.authority, operation.extras,
                     DELAY_RETRY_SYNC_IN_PROGRESS_IN_SECONDS * 1000,
                     operation.backoff, operation.delayUntil, operation.allowParallelSyncs));
-        } //End block
+        } 
         else
     if(syncResult.hasSoftError())        
         {
@@ -960,16 +973,16 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
             {
                 Log.d(TAG, "retrying sync operation because it encountered a soft error: "
                         + operation);
-            } //End block
+            } 
             scheduleSyncOperation(operation);
-        } //End block
+        } 
         else
         {
             Log.d(TAG, "not retrying sync operation because the error is a hard error: "
                     + operation);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -984,25 +997,27 @@ SyncAdapterType[] var3594B614C10CC2B651EA0D169ACAF4A6_452387235 =         types;
 for(RegisteredServicesCache.ServiceInfo info : mSyncAdapters.getAllServices())
         {
             pw.println("  " + info);
-        } //End block
-        // ---------- Original Method ----------
-        //dumpSyncState(pw);
-        //dumpSyncHistory(pw);
-        //pw.println();
-        //pw.println("SyncAdapters:");
-        //for (RegisteredServicesCache.ServiceInfo info : mSyncAdapters.getAllServices()) {
-            //pw.println("  " + info);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
-        static String formatTime(long time) {
+        @DSModeled(DSC.BAN)
+    static String formatTime(long time) {
         Time tobj = new Time();
         tobj.set(time);
         return tobj.format("%Y-%m-%d %H:%M:%S");
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.915 -0400", hash_original_method = "A56698FB2481C281E3929C7135D64B8A", hash_generated_method = "51BF87661BEBA6975F937ED2303CE451")
     protected void dumpSyncState(PrintWriter pw) {
         addTaint(pw.getTaint());
@@ -1015,11 +1030,11 @@ for(RegisteredServicesCache.ServiceInfo info : mSyncAdapters.getAllServices())
     if(accounts != INITIAL_ACCOUNTS_ARRAY)        
         {
             pw.println(accounts.length);
-        } //End block
+        } 
         else
         {
             pw.println("not known yet");
-        } //End block
+        } 
         final long now = SystemClock.elapsedRealtime();
         pw.print("now: ");
         pw.print(now);
@@ -1040,11 +1055,11 @@ for(RegisteredServicesCache.ServiceInfo info : mSyncAdapters.getAllServices())
             pw.print(" (");
             pw.print(DateUtils.formatElapsedTime((mSyncHandler.mAlarmScheduleTime-now)/1000));
             pw.println(" (HH:MM:SS) from now)");
-        } //End block
+        } 
         else
         {
             pw.println("no alarm is scheduled (there had better not be any pending syncs)");
-        } //End block
+        } 
         pw.print("notification info: ");
         final StringBuilder sb = new StringBuilder();
         mSyncHandler.mSyncNotificationInfo.toString(sb);
@@ -1059,12 +1074,12 @@ for(SyncManager.ActiveSyncContext activeSyncContext : mActiveSyncContexts)
             pw.print(" - ");
             pw.print(activeSyncContext.mSyncOperation.dump(false));
             pw.println();
-        } //End block
+        } 
         synchronized
 (mSyncQueue)        {
             sb.setLength(0);
             mSyncQueue.dump(sb);
-        } //End block
+        } 
         pw.println();
         pw.print(sb.toString());
         pw.println();
@@ -1081,7 +1096,7 @@ for(RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterType : mSync
     if(!syncAdapterType.type.accountType.equals(account.type))                
                 {
                     continue;
-                } //End block
+                } 
                 SyncStorageEngine.AuthorityInfo settings = mSyncStorageEngine.getOrCreateAuthority(
                         account, syncAdapterType.type.authority);
                 SyncStatusInfo status = mSyncStorageEngine.getOrCreateSyncStatus(settings);
@@ -1097,17 +1112,17 @@ for(RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterType : mSync
                 {
                     pw.print(", delay for "
                             + ((settings.delayUntil - now) / 1000) + " sec");
-                } //End block
+                } 
     if(settings.backoffTime > now)                
                 {
                     pw.print(", backoff for "
                             + ((settings.backoffTime - now) / 1000) + " sec");
-                } //End block
+                } 
     if(settings.backoffDelay > 0)                
                 {
                     pw.print(", the backoff increment is " + settings.backoffDelay / 1000
                                 + " sec");
-                } //End block
+                } 
                 pw.println();
 for(int periodicIndex = 0;periodicIndex < settings.periodicSyncs.size();periodicIndex++)
                 {
@@ -1117,7 +1132,7 @@ for(int periodicIndex = 0;periodicIndex < settings.periodicSyncs.size();periodic
                     pw.println("      periodic period=" + info.second
                             + ", extras=" + info.first
                             + ", next=" + formatTime(nextPeriodicTime));
-                } //End block
+                } 
                 pw.print("      count: local=");
                 pw.print(status.numSourceLocal);
                 pw.print(" poll=");
@@ -1139,7 +1154,7 @@ for(int periodicIndex = 0;periodicIndex < settings.periodicSyncs.size();periodic
                     pw.print(SyncStorageEngine.SOURCES[status.lastSuccessSource]);
                     pw.print(" time=");
                     pw.println(formatTime(status.lastSuccessTime));
-                } //End block
+                } 
     if(status.lastFailureTime != 0)                
                 {
                     pw.print("      FAILURE: source=");
@@ -1153,14 +1168,15 @@ for(int periodicIndex = 0;periodicIndex < settings.periodicSyncs.size();periodic
                     pw.print("      message: ");
                     pw.println(
                             getLastFailureMessage(errCode) + " (" + errCode + ")");
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.921 -0400", hash_original_method = "C2F823D43F1684BB9B7871B7A13E4AFA", hash_generated_method = "F1415B9004E512585925086328F5ED32")
     private String getLastFailureMessage(int code) {
         addTaint(code);
@@ -1202,11 +1218,12 @@ String varE4030F39D22FF867D1E81773D1A12B97_1226921855 =         "unknown";
         varE4030F39D22FF867D1E81773D1A12B97_1226921855.addTaint(taint);
         return varE4030F39D22FF867D1E81773D1A12B97_1226921855;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.922 -0400", hash_original_method = "2E5C9A0C484B8BFAAD4FF120631D1FEC", hash_generated_method = "579ADC52AD628AB270EC3096CC4BFC1F")
     private void dumpTimeSec(PrintWriter pw, long time) {
         addTaint(time);
@@ -1215,11 +1232,11 @@ String varE4030F39D22FF867D1E81773D1A12B97_1226921855 =         "unknown";
         pw.print('.');
         pw.print((time/100)%10);
         pw.print('s');
-        // ---------- Original Method ----------
-        //pw.print(time/1000);
-        //pw.print('.');
-        //pw.print((time/100)%10);
-        //pw.print('s');
+        
+        
+        
+        
+        
     }
 
     
@@ -1235,7 +1252,7 @@ String varE4030F39D22FF867D1E81773D1A12B97_1226921855 =         "unknown";
             dumpTimeSec(pw, ds.successTime);
             pw.print(" avg=");
             dumpTimeSec(pw, ds.successTime/ds.successCount);
-        } //End block
+        } 
         pw.print(") Failure (");
         pw.print(ds.failureCount);
     if(ds.failureCount > 0)        
@@ -1244,36 +1261,38 @@ String varE4030F39D22FF867D1E81773D1A12B97_1226921855 =         "unknown";
             dumpTimeSec(pw, ds.failureTime);
             pw.print(" avg=");
             dumpTimeSec(pw, ds.failureTime/ds.failureCount);
-        } //End block
+        } 
         pw.println(")");
-        // ---------- Original Method ----------
-        //pw.print("Success (");
-        //pw.print(ds.successCount);
-        //if (ds.successCount > 0) {
-            //pw.print(" for "); dumpTimeSec(pw, ds.successTime);
-            //pw.print(" avg="); dumpTimeSec(pw, ds.successTime/ds.successCount);
-        //}
-        //pw.print(") Failure (");
-        //pw.print(ds.failureCount);
-        //if (ds.failureCount > 0) {
-            //pw.print(" for "); dumpTimeSec(pw, ds.failureTime);
-            //pw.print(" avg="); dumpTimeSec(pw, ds.failureTime/ds.failureCount);
-        //}
-        //pw.println(")");
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.927 -0400", hash_original_method = "47B1A67BEBB64EEFEE0789183294D0B7", hash_generated_method = "45F14E0F062232678BA18CD3B38A1511")
     protected void dumpSyncHistory(PrintWriter pw) {
         addTaint(pw.getTaint());
         dumpRecentHistory(pw);
         dumpDayStatistics(pw);
-        // ---------- Original Method ----------
-        //dumpRecentHistory(pw);
-        //dumpDayStatistics(pw);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.948 -0400", hash_original_method = "C137DBDBD7D2B9AF348453A35EDAB8EF", hash_generated_method = "286956AF157FBBD6AF3744BEE186311E")
     private void dumpRecentHistory(PrintWriter pw) {
         addTaint(pw.getTaint());
@@ -1295,22 +1314,22 @@ for(SyncStorageEngine.SyncHistoryItem item : items)
                 {
                     authorityName = authority.authority;
                     accountKey = authority.account.name + "/" + authority.account.type;
-                } //End block
+                } 
                 else
                 {
                     authorityName = "Unknown";
                     accountKey = "Unknown";
-                } //End block
+                } 
                 int length = authorityName.length();
     if(length > maxAuthority)                
                 {
                     maxAuthority = length;
-                } //End block
+                } 
                 length = accountKey.length();
     if(length > maxAccount)                
                 {
                     maxAccount = length;
-                } //End block
+                } 
                 final long elapsedTime = item.elapsedTime;
                 totalElapsedTime += elapsedTime;
                 totalTimes++;
@@ -1319,7 +1338,7 @@ for(SyncStorageEngine.SyncHistoryItem item : items)
                 {
                     authoritySyncStats = new AuthoritySyncStats(authorityName);
                     authorityMap.put(authorityName, authoritySyncStats);
-                } //End block
+                } 
                 authoritySyncStats.elapsedTime += elapsedTime;
                 authoritySyncStats.times++;
                 final Map<String, AccountSyncStats> accountMap = authoritySyncStats.accountMap;
@@ -1328,10 +1347,10 @@ for(SyncStorageEngine.SyncHistoryItem item : items)
                 {
                     accountSyncStats = new AccountSyncStats(accountKey);
                     accountMap.put(accountKey, accountSyncStats);
-                } //End block
+                } 
                 accountSyncStats.elapsedTime += elapsedTime;
                 accountSyncStats.times++;
-            } //End block
+            } 
             pw.println();
             pw.printf("Detailed Statistics (Recent history):  %d (# of times) %ds (sync time)\n",
                     totalTimes, totalElapsedTime / 1000);
@@ -1346,16 +1365,16 @@ for(SyncStorageEngine.SyncHistoryItem item : items)
     if(compare == 0)            
             {
                 compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-            } //End block
+            } 
             int var1F83AF4E41052F8EB52DEC322580A88D_1866611962 = (compare);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193544081 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193544081;
-            // ---------- Original Method ----------
-            //int compare = Integer.compare(rhs.times, lhs.times);
-            //if (compare == 0) {
-                        //compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-                    //}
-            //return compare;
+            
+            
+            
+                        
+                    
+            
         }
 });
             final int maxLength = Math.max(maxAuthority, maxAccount + 3);
@@ -1394,16 +1413,16 @@ for(AuthoritySyncStats authoritySyncStats : sortedAuthorities)
     if(compare == 0)            
             {
                 compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-            } //End block
+            } 
             int var1F83AF4E41052F8EB52DEC322580A88D_1982594376 = (compare);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2072911128 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2072911128;
-            // ---------- Original Method ----------
-            //int compare = Integer.compare(rhs.times, lhs.times);
-            //if (compare == 0) {
-                            //compare = Long.compare(rhs.elapsedTime, lhs.elapsedTime);
-                        //}
-            //return compare;
+            
+            
+            
+                            
+                        
+            
         }
 });
 for(AccountSyncStats stats : sortedAccounts)
@@ -1417,9 +1436,9 @@ for(AccountSyncStats stats : sortedAccounts)
                             times,
                             times * 100 / totalTimes);
                     pw.printf(accountFormat, stats.name, timesStr, timeStr);
-                } //End block
+                } 
                 pw.println(separator);
-            } //End block
+            } 
             pw.println();
             pw.println("Recent Sync History");
             final String format = "  %-" + maxAccount + "s  %s\n";
@@ -1434,12 +1453,12 @@ for(int i = 0;i < N;i++)
                 {
                     authorityName = authority.authority;
                     accountKey = authority.account.name + "/" + authority.account.type;
-                } //End block
+                } 
                 else
                 {
                     authorityName = "Unknown";
                     accountKey = "Unknown";
-                } //End block
+                } 
                 final long elapsedTime = item.elapsedTime;
                 final Time time = new Time();
                 final long eventTime = item.eventTime;
@@ -1450,26 +1469,26 @@ for(int i = 0;i < N;i++)
     if(lastEventTime == null)                
                 {
                     diffString = "";
-                } //End block
+                } 
                 else
                 {
                     final long diff = (lastEventTime - eventTime) / 1000;
     if(diff < 60)                    
                     {
                         diffString = String.valueOf(diff);
-                    } //End block
+                    } 
                     else
     if(diff < 3600)                    
                     {
                         diffString = String.format("%02d:%02d", diff / 60, diff % 60);
-                    } //End block
+                    } 
                     else
                     {
                         final long sec = diff % 3600;
                         diffString = String.format("%02d:%02d:%02d",
                                 diff / 3600, sec / 60, sec % 60);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 lastTimeMap.put(key, eventTime);
                 pw.printf("  #%-3d: %s %8s  %5.1fs  %8s",
                         i + 1,
@@ -1486,16 +1505,16 @@ for(int i = 0;i < N;i++)
                             item.event,
                             item.upstreamActivity,
                             item.downstreamActivity);
-                } //End block
+                } 
     if(item.mesg != null
                         && !SyncStorageEngine.MESG_SUCCESS.equals(item.mesg))                
                 {
                     pw.printf("    mesg=%s\n", item.mesg);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -1524,7 +1543,7 @@ for(i=1;i<=6 && i < dses.length;i++)
                 pw.print(delta);
                 pw.print(":  ");
                 dumpDayStatistic(pw, ds);
-            } //End block
+            } 
             int weekDay = today;
             while
 (i < dses.length)            
@@ -1539,7 +1558,7 @@ for(i=1;i<=6 && i < dses.length;i++)
                     {
                         i = dses.length;
                         break;
-                    } //End block
+                    } 
                     int delta = weekDay-ds.day;
     if(delta > 6)                    
                     break;
@@ -1547,26 +1566,27 @@ for(i=1;i<=6 && i < dses.length;i++)
     if(aggr == null)                    
                     {
                         aggr = new SyncStorageEngine.DayStats(weekDay);
-                    } //End block
+                    } 
                     aggr.successCount += ds.successCount;
                     aggr.successTime += ds.successTime;
                     aggr.failureCount += ds.failureCount;
                     aggr.failureTime += ds.failureTime;
-                } //End block
+                } 
     if(aggr != null)                
                 {
                     pw.print("  Week-");
                     pw.print((today-weekDay)/7);
                     pw.print(": ");
                     dumpDayStatistic(pw, aggr);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.960 -0400", hash_original_method = "3A4E555675ED758A699E30DB2B6A1D6C", hash_generated_method = "77453CF67046640225B44D91BA966030")
     private boolean isSyncStillActive(ActiveSyncContext activeSyncContext) {
         addTaint(activeSyncContext.getTaint());
@@ -1577,18 +1597,18 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
                 boolean varB326B5062B2F0E69046810717534CB09_370989735 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1637292078 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1637292078;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1106760204 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_795929143 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_795929143;
-        // ---------- Original Method ----------
-        //for (ActiveSyncContext sync : mActiveSyncContexts) {
-            //if (sync == activeSyncContext) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -1617,18 +1637,19 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
             mContext = context;
             mHandler = handler;
             mInitialized = false;
-            // ---------- Original Method ----------
-            //mAccount = account;
-            //mAuthority = authority;
-            //mContext = context;
-            //mHandler = handler;
-            //mInitialized = false;
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.967 -0400", hash_original_method = "9C4A98A4ADBC598450E25E4EB304536B", hash_generated_method = "C850AA3CF5BEF75EFC9FEA51E239ED7F")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(service.getTaint());
             addTaint(name.getTaint());
             try 
@@ -1638,15 +1659,15 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
                     mInitialized = true;
     if(Log.isLoggable(TAG, Log.VERBOSE))                    
                     {
-                    } //End block
+                    } 
                     ISyncAdapter.Stub.asInterface(service).initialize(mAccount, mAuthority);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (RemoteException e)
             {
                 Log.d(TAG, "error while initializing: " + mAccount + ", authority " + mAuthority,
                         e);
-            } //End block
+            } 
             finally 
             {
                 mHandler.postDelayed(new Runnable() {            
@@ -1656,34 +1677,35 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
                 {
                     mContext.unbindService(InitializerServiceConnection.this);
                     mContext = null;
-                } //End block
-                // ---------- Original Method ----------
-                //if (mContext != null) {
-                            //mContext.unbindService(InitializerServiceConnection.this);
-                            //mContext = null;
-                        //}
+                } 
+                
+                
+                            
+                            
+                        
             }
 }, INITIALIZATION_UNBIND_DELAY_MS);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.970 -0400", hash_original_method = "7C8777D718751E565C82B5C1458835CE", hash_generated_method = "DE67176115DB0BAF3F94220E9EA544CE")
         public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(name.getTaint());
     if(mContext != null)            
             {
                 mContext.unbindService(InitializerServiceConnection.this);
                 mContext = null;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mContext != null) {
-                //mContext.unbindService(InitializerServiceConnection.this);
-                //mContext = null;
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -1703,9 +1725,9 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
           SyncHandlerMessagePayload(ActiveSyncContext syncContext, SyncResult syncResult) {
             this.activeSyncContext = syncContext;
             this.syncResult = syncResult;
-            // ---------- Original Method ----------
-            //this.activeSyncContext = syncContext;
-            //this.syncResult = syncResult;
+            
+            
+            
         }
 
         
@@ -1718,20 +1740,21 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.973 -0400", hash_original_method = "8972A0265D0AE4113C769D505643787E", hash_generated_method = "8972A0265D0AE4113C769D505643787E")
         public SyncAlarmIntentReceiver ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.973 -0400", hash_original_method = "B17BCAD698B90432E3978D14A6575096", hash_generated_method = "4BA0CA1A22602AB78A2E00A105623DD4")
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(intent.getTaint());
             addTaint(context.getTaint());
             mHandleAlarmWakeLock.acquire();
             sendSyncAlarmMessage();
-            // ---------- Original Method ----------
-            //mHandleAlarmWakeLock.acquire();
-            //sendSyncAlarmMessage();
+            
+            
+            
         }
 
         
@@ -1785,34 +1808,36 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
                     mSyncOperation.account, mSyncOperation.authority);
             mSyncWakeLock.setWorkSource(new WorkSource(syncAdapterUid));
             mSyncWakeLock.acquire();
-            // ---------- Original Method ----------
-            //mSyncAdapterUid = syncAdapterUid;
-            //mSyncOperation = syncOperation;
-            //mHistoryRowId = historyRowId;
-            //mSyncAdapter = null;
-            //mStartTime = SystemClock.elapsedRealtime();
-            //mTimeoutStartTime = mStartTime;
-            //mSyncWakeLock = mSyncHandler.getSyncWakeLock(
-                    //mSyncOperation.account, mSyncOperation.authority);
-            //mSyncWakeLock.setWorkSource(new WorkSource(syncAdapterUid));
-            //mSyncWakeLock.acquire();
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.978 -0400", hash_original_method = "7456DA1EA096E82DD762DA299B1797D3", hash_generated_method = "540CBBFBA53CA8CE698C636F326A356D")
         public void sendHeartbeat() {
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.979 -0400", hash_original_method = "2741CA480AE203CDFD1BCCBB420C487D", hash_generated_method = "C36588C586056EB1D783D6F8D715E929")
         public void onFinished(SyncResult result) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(result.getTaint());
     if(Log.isLoggable(TAG, Log.VERBOSE)){ }            sendSyncFinishedOrCanceledMessage(this, result);
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) Log.v(TAG, "onFinished: " + this);
-            //sendSyncFinishedOrCanceledMessage(this, result);
+            
+            
+            
         }
 
         
@@ -1823,44 +1848,44 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
                     .append(", mTimeoutStartTime ").append(mTimeoutStartTime)
                     .append(", mHistoryRowId ").append(mHistoryRowId)
                     .append(", syncOperation ").append(mSyncOperation);
-            // ---------- Original Method ----------
-            //sb.append("startTime ").append(mStartTime)
-                    //.append(", mTimeoutStartTime ").append(mTimeoutStartTime)
-                    //.append(", mHistoryRowId ").append(mHistoryRowId)
-                    //.append(", syncOperation ").append(mSyncOperation);
+            
+            
+                    
+                    
+                    
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.982 -0400", hash_original_method = "CBDE36ABE821F23EF1CFAFB665E67134", hash_generated_method = "B79692FB3E8053894FEDF69947F9A161")
         public void onServiceConnected(ComponentName name, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(service.getTaint());
             addTaint(name.getTaint());
             Message msg = mSyncHandler.obtainMessage();
             msg.what = SyncHandler.MESSAGE_SERVICE_CONNECTED;
             msg.obj = new ServiceConnectionData(this, ISyncAdapter.Stub.asInterface(service));
             mSyncHandler.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Message msg = mSyncHandler.obtainMessage();
-            //msg.what = SyncHandler.MESSAGE_SERVICE_CONNECTED;
-            //msg.obj = new ServiceConnectionData(this, ISyncAdapter.Stub.asInterface(service));
-            //mSyncHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.983 -0400", hash_original_method = "E604348BDB0F3F95B7C0274B0D40964D", hash_generated_method = "7580A9A8179317B4FE0B5D46574C004C")
         public void onServiceDisconnected(ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(name.getTaint());
             Message msg = mSyncHandler.obtainMessage();
             msg.what = SyncHandler.MESSAGE_SERVICE_DISCONNECTED;
             msg.obj = new ServiceConnectionData(this, null);
             mSyncHandler.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Message msg = mSyncHandler.obtainMessage();
-            //msg.what = SyncHandler.MESSAGE_SERVICE_DISCONNECTED;
-            //msg.obj = new ServiceConnectionData(this, null);
-            //mSyncHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
@@ -1870,7 +1895,7 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
                 Log.d(TAG, "bindToSyncAdapter: " + info.componentName + ", connection " + this);
-            } //End block
+            } 
             Intent intent = new Intent();
             intent.setAction("android.content.SyncAdapter");
             intent.setComponent(info.componentName);
@@ -1885,12 +1910,12 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
     if(!bindResult)            
             {
                 mBound = false;
-            } //End block
+            } 
             boolean var34E89DB5A534F209D496EA7CBE185420_843437554 = (bindResult);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1057299252 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1057299252;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1899,24 +1924,24 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
                 Log.d(TAG, "unBindFromSyncAdapter: connection " + this);
-            } //End block
+            } 
     if(mBound)            
             {
                 mBound = false;
                 mContext.unbindService(this);
-            } //End block
+            } 
             mSyncWakeLock.release();
             mSyncWakeLock.setWorkSource(null);
-            // ---------- Original Method ----------
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.d(TAG, "unBindFromSyncAdapter: connection " + this);
-            //}
-            //if (mBound) {
-                //mBound = false;
-                //mContext.unbindService(this);
-            //}
-            //mSyncWakeLock.release();
-            //mSyncWakeLock.setWorkSource(null);
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
         }
 
         
@@ -1928,10 +1953,10 @@ for(ActiveSyncContext sync : mActiveSyncContexts)
 String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString();
             var2460B846747F8B22185AD8BE722266A5_925905062.addTaint(taint);
             return var2460B846747F8B22185AD8BE722266A5_925905062;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder();
-            //toString(sb);
-            //return sb.toString();
+            
+            
+            
+            
         }
 
         
@@ -1939,8 +1964,8 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
         @Override
         public void binderDied() {
             sendSyncFinishedOrCanceledMessage(this, null);
-            // ---------- Original Method ----------
-            //sendSyncFinishedOrCanceledMessage(this, null);
+            
+            
         }
 
         
@@ -1965,8 +1990,8 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.990 -0400", hash_original_method = "BA2AD08D9B4BF110732C8291C5F36CF8", hash_generated_method = "8FA9C8631A53370375CA7123AE4AF077")
         private  AuthoritySyncStats(String name) {
             this.name = name;
-            // ---------- Original Method ----------
-            //this.name = name;
+            
+            
         }
 
         
@@ -1988,8 +2013,8 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.992 -0400", hash_original_method = "1D94286E4C9E35DF248CEA39D6389F91", hash_generated_method = "F1AB1770EB048E4049FC1577D48B72D8")
         private  AccountSyncStats(String name) {
             this.name = name;
-            // ---------- Original Method ----------
-            //this.name = name;
+            
+            
         }
 
         
@@ -2011,7 +2036,7 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.994 -0400", hash_original_method = "5641FE5F8977FB94C61AEE76E9EBD2B2", hash_generated_method = "5641FE5F8977FB94C61AEE76E9EBD2B2")
         public SyncTimeTracker ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2024,22 +2049,22 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
     if(isSyncInProgress)            
             {
                 mWhenSyncStarted = now;
-            } //End block
+            } 
             else
             {
                 mTimeSpentSyncing += now - mWhenSyncStarted;
-            } //End block
+            } 
             mLastWasSyncing = isSyncInProgress;
-            // ---------- Original Method ----------
-            //final boolean isSyncInProgress = !mActiveSyncContexts.isEmpty();
-            //if (isSyncInProgress == mLastWasSyncing) return;
-            //final long now = SystemClock.elapsedRealtime();
-            //if (isSyncInProgress) {
-                //mWhenSyncStarted = now;
-            //} else {
-                //mTimeSpentSyncing += now - mWhenSyncStarted;
-            //}
-            //mLastWasSyncing = isSyncInProgress;
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -2055,10 +2080,10 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
             long var4D5C0CE1204AB61272060AABEE4A4DFF_214661025 = (mTimeSpentSyncing + (now - mWhenSyncStarted));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2069656246 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2069656246;
-            // ---------- Original Method ----------
-            //if (!mLastWasSyncing) return mTimeSpentSyncing;
-            //final long now = SystemClock.elapsedRealtime();
-            //return mTimeSpentSyncing + (now - mWhenSyncStarted);
+            
+            
+            
+            
         }
 
         
@@ -2078,9 +2103,9 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
           ServiceConnectionData(ActiveSyncContext activeSyncContext, ISyncAdapter syncAdapter) {
             this.activeSyncContext = activeSyncContext;
             this.syncAdapter = syncAdapter;
-            // ---------- Original Method ----------
-            //this.activeSyncContext = activeSyncContext;
-            //this.syncAdapter = syncAdapter;
+            
+            
+            
         }
 
         
@@ -2109,25 +2134,25 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
         public  SyncHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.004 -0400", hash_original_method = "A4C54FCCA01900F2BC7EC8A1E7F40380", hash_generated_method = "892BCA4CA52D79FA5ACC24C88B5BF220")
         public void onBootCompleted() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mBootCompleted = true;
             mSyncStorageEngine.doDatabaseCleanup(AccountManager.get(mContext).getAccounts());
     if(mReadyToRunLatch != null)            
             {
                 mReadyToRunLatch.countDown();
-            } //End block
-            // ---------- Original Method ----------
-            //mBootCompleted = true;
-            //mSyncStorageEngine.doDatabaseCleanup(AccountManager.get(mContext).getAccounts());
-            //if (mReadyToRunLatch != null) {
-                //mReadyToRunLatch.countDown();
-            //}
+            } 
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -2143,20 +2168,20 @@ String var2460B846747F8B22185AD8BE722266A5_925905062 =             sb.toString()
                 wakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, name);
                 wakeLock.setReferenceCounted(false);
                 mWakeLocks.put(wakeLockKey, wakeLock);
-            } //End block
+            } 
 PowerManager.WakeLock var8F15A8B728F6BF9E50EE9B41DDD67A81_412578093 =             wakeLock;
             var8F15A8B728F6BF9E50EE9B41DDD67A81_412578093.addTaint(taint);
             return var8F15A8B728F6BF9E50EE9B41DDD67A81_412578093;
-            // ---------- Original Method ----------
-            //final Pair<Account, String> wakeLockKey = Pair.create(account, authority);
-            //PowerManager.WakeLock wakeLock = mWakeLocks.get(wakeLockKey);
-            //if (wakeLock == null) {
-                //final String name = SYNC_WAKE_LOCK_PREFIX + "_" + authority + "_" + account;
-                //wakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, name);
-                //wakeLock.setReferenceCounted(false);
-                //mWakeLocks.put(wakeLockKey, wakeLock);
-            //}
-            //return wakeLock;
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -2173,29 +2198,30 @@ PowerManager.WakeLock var8F15A8B728F6BF9E50EE9B41DDD67A81_412578093 =           
                         latch.await();
                         mReadyToRunLatch = null;
                         return;
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     {
                         Thread.currentThread().interrupt();
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //CountDownLatch latch = mReadyToRunLatch;
-            //if (latch != null) {
-                //while (true) {
-                    //try {
-                        //latch.await();
-                        //mReadyToRunLatch = null;
-                        //return;
-                    //} catch (InterruptedException e) {
-                        //Thread.currentThread().interrupt();
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+            
+                
+                    
+                        
+                        
+                        
+                    
+                        
+                    
+                
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.010 -0400", hash_original_method = "AC98BBE28F5005D2D34EEDF919BF395C", hash_generated_method = "8340B6E3036932FA9B81E296C283CF83")
         public void handleMessage(Message msg) {
             addTaint(msg.getTaint());
@@ -2215,15 +2241,15 @@ switch(msg.what){
                     {
                         Log.d(TAG, "handleSyncHandlerMessage: MESSAGE_SERVICE_CANCEL: "
                                     + payload.first + ", " + payload.second);
-                    } //End block
+                    } 
                     cancelActiveSyncLocked(payload.first, payload.second);
                     nextPendingSyncTime = maybeStartNextSyncLocked();
                     break;
-                } //End block
+                } 
                 case SyncHandler.MESSAGE_SYNC_FINISHED:
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
                 SyncHandlerMessagePayload payload = (SyncHandlerMessagePayload)msg.obj;
     if(!isSyncStillActive(payload.activeSyncContext))                
                 {
@@ -2231,7 +2257,7 @@ switch(msg.what){
                                     + "sync is no longer active: "
                                     + payload.activeSyncContext);
                     break;
-                } //End block
+                } 
                 runSyncFinishedOrCanceledLocked(payload.syncResult, payload.activeSyncContext);
                 nextPendingSyncTime = maybeStartNextSyncLocked();
                 break;
@@ -2242,13 +2268,13 @@ switch(msg.what){
                     {
                         Log.d(TAG, "handleSyncHandlerMessage: MESSAGE_SERVICE_CONNECTED: "
                                     + msgData.activeSyncContext);
-                    } //End block
+                    } 
     if(isSyncStillActive(msgData.activeSyncContext))                    
                     {
                         runBoundToSyncAdapter(msgData.activeSyncContext, msgData.syncAdapter);
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
                 case SyncHandler.MESSAGE_SERVICE_DISCONNECTED:
                 {
                     final ActiveSyncContext currentSyncContext = ((ServiceConnectionData)msg.obj).activeSyncContext;
@@ -2256,7 +2282,7 @@ switch(msg.what){
                     {
                         Log.d(TAG, "handleSyncHandlerMessage: MESSAGE_SERVICE_DISCONNECTED: "
                                     + currentSyncContext);
-                    } //End block
+                    } 
     if(isSyncStillActive(currentSyncContext))                    
                     {
     if(currentSyncContext.mSyncAdapter != null)                        
@@ -2264,55 +2290,56 @@ switch(msg.what){
                             try 
                             {
                                 currentSyncContext.mSyncAdapter.cancelSync(currentSyncContext);
-                            } //End block
+                            } 
                             catch (RemoteException e)
                             {
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         SyncResult syncResult = new SyncResult();
                         syncResult.stats.numIoExceptions++;
                         runSyncFinishedOrCanceledLocked(syncResult, currentSyncContext);
                         nextPendingSyncTime = maybeStartNextSyncLocked();
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
                 case SyncHandler.MESSAGE_SYNC_ALARM:
                 {
                     boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
     if(isLoggable)                    
                     {
-                    } //End block
+                    } 
                     mAlarmScheduleTime = null;
                     try 
                     {
                         nextPendingSyncTime = maybeStartNextSyncLocked();
-                    } //End block
+                    } 
                     finally 
                     {
                         mHandleAlarmWakeLock.release();
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
                 case SyncHandler.MESSAGE_CHECK_ALARMS:
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
                 nextPendingSyncTime = maybeStartNextSyncLocked();
                 break;
 }
-            } //End block
+            } 
             finally 
             {
                 manageSyncNotificationLocked();
                 manageSyncAlarmLocked(earliestFuturePollTime, nextPendingSyncTime);
                 mSyncTimeTracker.update();
                 mSyncManagerWakeLock.release();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.012 -0400", hash_original_method = "5F18B995A8D5126079C876CBB8B37FF8", hash_generated_method = "75253C06ABF6D8783B1F66165EA740E8")
         private long scheduleReadyPeriodicSyncs() {
             final boolean backgroundDataUsageAllowed = getConnectivityManager().getBackgroundDataSetting();
@@ -2322,7 +2349,7 @@ switch(msg.what){
                 long var019D68894FAACD3AA4E1F874C2180DC4_1567361973 = (earliestFuturePollTime);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_279754348 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_279754348;
-            } //End block
+            } 
             final long nowAbsolute = System.currentTimeMillis();
             ArrayList<SyncStorageEngine.AuthorityInfo> infos = mSyncStorageEngine.getAuthorities();
 for(SyncStorageEngine.AuthorityInfo info : infos)
@@ -2330,15 +2357,15 @@ for(SyncStorageEngine.AuthorityInfo info : infos)
     if(!ArrayUtils.contains(mAccounts, info.account))                
                 {
                     continue;
-                } //End block
+                } 
     if(!mSyncStorageEngine.getSyncAutomatically(info.account, info.authority))                
                 {
                     continue;
-                } //End block
+                } 
     if(mSyncStorageEngine.getIsSyncable(info.account, info.authority) == 0)                
                 {
                     continue;
-                } //End block
+                } 
                 SyncStatusInfo status = mSyncStorageEngine.getOrCreateSyncStatus(info);
 for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
                 {
@@ -2356,7 +2383,7 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
     if(syncAdapterInfo == null)                        
                         {
                             continue;
-                        } //End block
+                        } 
                         scheduleSyncOperation(
                                 new SyncOperation(info.account, SyncStorageEngine.SOURCE_PERIODIC,
                                         info.authority, extras, 0 ,
@@ -2365,33 +2392,34 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
                                                 info.account, info.authority),
                                         syncAdapterInfo.type.allowParallelSyncs()));
                         status.setPeriodicSyncTime(i, nowAbsolute);
-                    } //End block
+                    } 
                     else
                     {
     if(nextPollTimeAbsolute < earliestFuturePollTime)                        
                         {
                             earliestFuturePollTime = nextPollTimeAbsolute;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
     if(earliestFuturePollTime == Long.MAX_VALUE)            
             {
                 long var85712C72209F40438E81734FCEEB0717_411189056 = (Long.MAX_VALUE);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1937274346 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1937274346;
-            } //End block
+            } 
             long var3990E5944773918E9B81E6A676387A49_1565053845 = (SystemClock.elapsedRealtime()
                     + ((earliestFuturePollTime < nowAbsolute)
                       ? 0
                       : (earliestFuturePollTime - nowAbsolute)));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1450317448 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1450317448;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.017 -0400", hash_original_method = "8B5418D48FBDFB608CDA80C6788E1356", hash_generated_method = "D73E9DD496093F392EDBA5E3A7D9FCFF")
         private long maybeStartNextSyncLocked() {
             final boolean isLoggable = Log.isLoggable(TAG, Log.VERBOSE);
@@ -2399,30 +2427,30 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
             {
     if(isLoggable)                
                 {
-                } //End block
+                } 
                 long var85712C72209F40438E81734FCEEB0717_1908007540 = (Long.MAX_VALUE);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1501886602 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1501886602;
-            } //End block
+            } 
     if(mStorageIsLow)            
             {
     if(isLoggable)                
                 {
-                } //End block
+                } 
                 long var85712C72209F40438E81734FCEEB0717_2102615153 = (Long.MAX_VALUE);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_948686342 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_948686342;
-            } //End block
+            } 
             Account[] accounts = mAccounts;
     if(accounts == INITIAL_ACCOUNTS_ARRAY)            
             {
     if(isLoggable)                
                 {
-                } //End block
+                } 
                 long var85712C72209F40438E81734FCEEB0717_254643008 = (Long.MAX_VALUE);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1044426604 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1044426604;
-            } //End block
+            } 
             final boolean backgroundDataUsageAllowed = getConnectivityManager().getBackgroundDataSetting();
             final boolean masterSyncAutomatically = mSyncStorageEngine.getMasterSyncAutomatically();
             final long now = SystemClock.elapsedRealtime();
@@ -2432,7 +2460,7 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
 (mSyncQueue)            {
     if(isLoggable)                
                 {
-                } //End block
+                } 
                 Iterator<SyncOperation> operationIterator = mSyncQueue.mOperationsMap.values().iterator();
                 while
 (operationIterator.hasNext())                
@@ -2443,22 +2471,22 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
                         operationIterator.remove();
                         mSyncStorageEngine.deleteFromPending(op.pendingOperation);
                         continue;
-                    } //End block
+                    } 
                     int syncableState = mSyncStorageEngine.getIsSyncable(op.account, op.authority);
     if(syncableState == 0)                    
                     {
                         operationIterator.remove();
                         mSyncStorageEngine.deleteFromPending(op.pendingOperation);
                         continue;
-                    } //End block
+                    } 
     if(op.effectiveRunTime > now)                    
                     {
     if(nextReadyToRunTime > op.effectiveRunTime)                        
                         {
                             nextReadyToRunTime = op.effectiveRunTime;
-                        } //End block
+                        } 
                         continue;
-                    } //End block
+                    } 
                     RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo;
                     syncAdapterInfo = mSyncAdapters.getServiceInfo(
                             SyncAdapterType.newKey(op.authority, op.account.type));
@@ -2468,11 +2496,11 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
                         final NetworkInfo networkInfo = getConnectivityManager()
                                 .getActiveNetworkInfoForUid(syncAdapterInfo.uid);
                         uidNetworkConnected = networkInfo != null && networkInfo.isConnected();
-                    } //End block
+                    } 
                     else
                     {
                         uidNetworkConnected = false;
-                    } //End block
+                    } 
     if(!op.extras.getBoolean(ContentResolver.SYNC_EXTRAS_IGNORE_SETTINGS, false)
                             && (syncableState > 0)
                             && (!masterSyncAutomatically
@@ -2484,10 +2512,10 @@ for(int i = 0, N = info.periodicSyncs.size();i < N;i++)
                         operationIterator.remove();
                         mSyncStorageEngine.deleteFromPending(op.pendingOperation);
                         continue;
-                    } //End block
+                    } 
                     operations.add(op);
-                } //End block
-            } //End block
+                } 
+            } 
     if(isLoggable){ }            Collections.sort(operations);
     if(isLoggable){ }for(int i = 0, N = operations.size();i < N;i++)
             {
@@ -2504,30 +2532,30 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
     if(activeOp.isInitialization())                    
                     {
                         numInit++;
-                    } //End block
+                    } 
                     else
                     {
                         numRegular++;
-                    } //End block
+                    } 
     if(activeOp.account.type.equals(candidate.account.type)
                             && activeOp.authority.equals(candidate.authority)
                             && (!activeOp.allowParallelSyncs
                                 || activeOp.account.name.equals(candidate.account.name)))                    
                     {
                         conflict = activeSyncContext;
-                    } //End block
+                    } 
                     else
                     {
     if(candidateIsInitialization == activeOp.isInitialization()
                                 && activeSyncContext.mStartTime + MAX_TIME_PER_SYNC < now)                        
                         {
                             longRunning = activeSyncContext;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
     if(isLoggable)                
                 {
-                } //End block
+                } 
     if(conflict != null)                
                 {
     if(candidateIsInitialization && !conflict.mSyncOperation.isInitialization()
@@ -2536,8 +2564,8 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
                         toReschedule = conflict;
     if(Log.isLoggable(TAG, Log.VERBOSE))                        
                         {
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(candidate.expedited && !conflict.mSyncOperation.expedited
                             && (candidateIsInitialization
@@ -2546,13 +2574,13 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
                         toReschedule = conflict;
     if(Log.isLoggable(TAG, Log.VERBOSE))                        
                         {
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         continue;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     final boolean roomAvailable = candidateIsInitialization
@@ -2560,7 +2588,7 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
                             : numRegular < MAX_SIMULTANEOUS_REGULAR_SYNCS;
     if(roomAvailable)                    
                     {
-                    } //End block
+                    } 
                     else
     if(longRunning != null
                             && (candidateIsInitialization
@@ -2569,32 +2597,33 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
                         toReschedule = longRunning;
     if(Log.isLoggable(TAG, Log.VERBOSE))                        
                         {
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         continue;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(toReschedule != null)                
                 {
                     runSyncFinishedOrCanceledLocked(null, toReschedule);
                     scheduleSyncOperation(toReschedule.mSyncOperation);
-                } //End block
+                } 
                 synchronized
 (mSyncQueue)                {
                     mSyncQueue.remove(candidate);
-                } //End block
+                } 
                 dispatchSyncOperation(candidate);
-            } //End block
+            } 
             long var42FE83D8484C0E21802DF28253B7746E_885021591 = (nextReadyToRunTime);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2096397635 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2096397635;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.022 -0400", hash_original_method = "40340E62514BC19DB7E9216642814F86", hash_generated_method = "F90ABC9288889CBC15484703E97C91B2")
         private boolean dispatchSyncOperation(SyncOperation op) {
             addTaint(op.getTaint());
@@ -2602,8 +2631,8 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
             {
 for(ActiveSyncContext syncContext : mActiveSyncContexts)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             SyncAdapterType syncAdapterType = SyncAdapterType.newKey(op.authority, op.account.type);
             RegisteredServicesCache.ServiceInfo<SyncAdapterType> syncAdapterInfo = mSyncAdapters.getServiceInfo(syncAdapterType);
     if(syncAdapterInfo == null)            
@@ -2614,25 +2643,25 @@ for(ActiveSyncContext syncContext : mActiveSyncContexts)
                 boolean var68934A3E9455FA72420237EB05902327_1967042390 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_121920138 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_121920138;
-            } //End block
+            } 
             ActiveSyncContext activeSyncContext = new ActiveSyncContext(op, insertStartSyncEvent(op), syncAdapterInfo.uid);
             activeSyncContext.mSyncInfo = mSyncStorageEngine.addActiveSync(activeSyncContext);
             mActiveSyncContexts.add(activeSyncContext);
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
     if(!activeSyncContext.bindToSyncAdapter(syncAdapterInfo))            
             {
                 closeActiveSyncContext(activeSyncContext);
                 boolean var68934A3E9455FA72420237EB05902327_1425621801 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1354497792 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1354497792;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_2040474435 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_345597579 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_345597579;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2649,23 +2678,24 @@ for(ActiveSyncContext syncContext : mActiveSyncContexts)
                 syncAdapter.asBinder().linkToDeath(activeSyncContext, 0);
                 syncAdapter.startSync(activeSyncContext, syncOperation.authority,
                         syncOperation.account, syncOperation.extras);
-            } //End block
+            } 
             catch (RemoteException remoteExc)
             {
                 Log.d(TAG, "maybeStartNextSync: caught a RemoteException, rescheduling", remoteExc);
                 closeActiveSyncContext(activeSyncContext);
                 increaseBackoffSetting(syncOperation);
                 scheduleSyncOperation(new SyncOperation(syncOperation));
-            } //End block
+            } 
             catch (RuntimeException exc)
             {
                 closeActiveSyncContext(activeSyncContext);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.025 -0400", hash_original_method = "7B28CEC882EFEBA05BFBBAFD319121EA", hash_generated_method = "4E353D2AA2F9E6C87A93A71D1E1AB750")
         private void cancelActiveSyncLocked(Account account, String authority) {
             addTaint(authority.getTaint());
@@ -2680,24 +2710,25 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
     if(!account.equals(activeSyncContext.mSyncOperation.account))                        
                         {
                             return;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(authority != null)                    
                     {
     if(!authority.equals(activeSyncContext.mSyncOperation.authority))                        
                         {
                             return;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     runSyncFinishedOrCanceledLocked(null ,
                             activeSyncContext);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.035 -0400", hash_original_method = "8D8637124BC010FEF841826099E3536E", hash_generated_method = "88C9DEACC2D068C2CE79D61B21A48FC9")
         private void runSyncFinishedOrCanceledLocked(SyncResult syncResult,
                 ActiveSyncContext activeSyncContext) {
@@ -2708,7 +2739,7 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
             {
                 activeSyncContext.mSyncAdapter.asBinder().unlinkToDeath(activeSyncContext, 0);
                 activeSyncContext.mIsLinkedToDeath = false;
-            } //End block
+            } 
             closeActiveSyncContext(activeSyncContext);
             final SyncOperation syncOperation = activeSyncContext.mSyncOperation;
             final long elapsedTime = SystemClock.elapsedRealtime() - activeSyncContext.mStartTime;
@@ -2719,68 +2750,68 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
             {
     if(isLoggable)                
                 {
-                } //End block
+                } 
     if(!syncResult.hasError())                
                 {
                     historyMessage = SyncStorageEngine.MESG_SUCCESS;
                     downstreamActivity = 0;
                     upstreamActivity = 0;
                     clearBackoffSetting(syncOperation);
-                } //End block
+                } 
                 else
                 {
                     Log.d(TAG, "failed sync operation " + syncOperation + ", " + syncResult);
     if(!syncResult.syncAlreadyInProgress)                    
                     {
                         increaseBackoffSetting(syncOperation);
-                    } //End block
+                    } 
                     maybeRescheduleSync(syncResult, syncOperation);
                     historyMessage = Integer.toString(syncResultToErrorNumber(syncResult));
                     downstreamActivity = 0;
                     upstreamActivity = 0;
-                } //End block
+                } 
                 setDelayUntilTime(syncOperation, syncResult.delayUntil);
-            } //End block
+            } 
             else
             {
     if(isLoggable)                
                 {
-                } //End block
+                } 
     if(activeSyncContext.mSyncAdapter != null)                
                 {
                     try 
                     {
                         activeSyncContext.mSyncAdapter.cancelSync(activeSyncContext);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
                 historyMessage = SyncStorageEngine.MESG_CANCELED;
                 downstreamActivity = 0;
                 upstreamActivity = 0;
-            } //End block
+            } 
             stopSyncEvent(activeSyncContext.mHistoryRowId, syncOperation, historyMessage,
                     upstreamActivity, downstreamActivity, elapsedTime);
     if(syncResult != null && syncResult.tooManyDeletions)            
             {
                 installHandleTooManyDeletesNotification(syncOperation.account,
                         syncOperation.authority, syncResult.stats.numDeletes);
-            } //End block
+            } 
             else
             {
                 mNotificationMgr.cancel(
                         syncOperation.account.hashCode() ^ syncOperation.authority.hashCode());
-            } //End block
+            } 
     if(syncResult != null && syncResult.fullSyncRequested)            
             {
                 scheduleSyncOperation(new SyncOperation(syncOperation.account,
                         syncOperation.syncSource, syncOperation.authority, new Bundle(), 0,
                         syncOperation.backoff, syncOperation.delayUntil,
                         syncOperation.allowParallelSyncs));
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -2790,10 +2821,10 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
             activeSyncContext.close();
             mActiveSyncContexts.remove(activeSyncContext);
             mSyncStorageEngine.removeActiveSync(activeSyncContext.mSyncInfo);
-            // ---------- Original Method ----------
-            //activeSyncContext.close();
-            //mActiveSyncContexts.remove(activeSyncContext);
-            //mSyncStorageEngine.removeActiveSync(activeSyncContext.mSyncInfo);
+            
+            
+            
+            
         }
 
         
@@ -2851,11 +2882,12 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
             IllegalStateException var6E803C17322F490BE50850547CF24484_632019113 = new IllegalStateException("we are not in an error state, " + syncResult);
             var6E803C17322F490BE50850547CF24484_632019113.addTaint(taint);
             throw var6E803C17322F490BE50850547CF24484_632019113;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.042 -0400", hash_original_method = "D7164ED4506DE94304BF76B0FBC03583", hash_generated_method = "DA29C4122ADB310FE8E3B7950981D617")
         private void manageSyncNotificationLocked() {
             boolean shouldCancel;
@@ -2865,18 +2897,18 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
                 mSyncNotificationInfo.startTime = null;
                 shouldCancel = mSyncNotificationInfo.isActive;
                 shouldInstall = false;
-            } //End block
+            } 
             else
             {
                 final long now = SystemClock.elapsedRealtime();
     if(mSyncNotificationInfo.startTime == null)                
                 {
                     mSyncNotificationInfo.startTime = now;
-                } //End block
+                } 
     if(mSyncNotificationInfo.isActive)                
                 {
                     shouldInstall = shouldCancel = false;
-                } //End block
+                } 
                 else
                 {
                     shouldCancel = false;
@@ -2884,7 +2916,7 @@ for(ActiveSyncContext activeSyncContext : activeSyncs)
     if(timeToShowNotification)                    
                     {
                         shouldInstall = true;
-                    } //End block
+                    } 
                     else
                     {
                         shouldInstall = false;
@@ -2896,28 +2928,29 @@ for(ActiveSyncContext activeSyncContext : mActiveSyncContexts)
                             {
                                 shouldInstall = true;
                                 break;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
     if(shouldCancel && !shouldInstall)            
             {
                 mNeedSyncActiveNotification = false;
                 sendSyncStateIntent();
                 mSyncNotificationInfo.isActive = false;
-            } //End block
+            } 
     if(shouldInstall)            
             {
                 mNeedSyncActiveNotification = true;
                 sendSyncStateIntent();
                 mSyncNotificationInfo.isActive = true;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.049 -0400", hash_original_method = "E1B88EC7C887370D571018E17194D40D", hash_generated_method = "5E60D19BCC30D3FEE02BC0E27A6F0E8D")
         private void manageSyncAlarmLocked(long nextPeriodicEventElapsedTime,
                 long nextPendingEventElapsedTime) {
@@ -2937,24 +2970,24 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
                 final long currentSyncTimeoutTime = currentSyncContext.mTimeoutStartTime + MAX_TIME_PER_SYNC;
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
     if(earliestTimeoutTime > currentSyncTimeoutTime)                
                 {
                     earliestTimeoutTime = currentSyncTimeoutTime;
-                } //End block
-            } //End block
+                } 
+            } 
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             long alarmTime = Math.min(notificationTime, earliestTimeoutTime);
             alarmTime = Math.min(alarmTime, nextPeriodicEventElapsedTime);
             alarmTime = Math.min(alarmTime, nextPendingEventElapsedTime);
@@ -2963,17 +2996,17 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
             {
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
                 alarmTime = now + SYNC_ALARM_TIMEOUT_MIN;
-            } //End block
+            } 
             else
     if(alarmTime > now + SYNC_ALARM_TIMEOUT_MAX)            
             {
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
                 alarmTime = now + SYNC_ALARM_TIMEOUT_MAX;
-            } //End block
+            } 
             boolean shouldSet = false;
             boolean shouldCancel = false;
             final boolean alarmIsActive = mAlarmScheduleTime != null;
@@ -2983,30 +3016,30 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
     if(!alarmIsActive || alarmTime < mAlarmScheduleTime)                
                 {
                     shouldSet = true;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 shouldCancel = alarmIsActive;
-            } //End block
+            } 
             ensureAlarmService();
     if(shouldSet)            
             {
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
+                } 
                 mAlarmScheduleTime = alarmTime;
                 mAlarmService.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, alarmTime,
                         mSyncAlarmIntent);
-            } //End block
+            } 
             else
     if(shouldCancel)            
             {
                 mAlarmScheduleTime = null;
                 mAlarmService.cancel(mSyncAlarmIntent);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -3017,15 +3050,16 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
             syncStateIntent.putExtra("active", mNeedSyncActiveNotification);
             syncStateIntent.putExtra("failing", false);
             mContext.sendBroadcast(syncStateIntent);
-            // ---------- Original Method ----------
-            //Intent syncStateIntent = new Intent(Intent.ACTION_SYNC_STATE_CHANGED);
-            //syncStateIntent.addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY_BEFORE_BOOT);
-            //syncStateIntent.putExtra("active", mNeedSyncActiveNotification);
-            //syncStateIntent.putExtra("failing", false);
-            //mContext.sendBroadcast(syncStateIntent);
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.052 -0400", hash_original_method = "87A468A0891FD210AAD2B0099F053FF2", hash_generated_method = "7D60212F949EAA9F44E5CA0369FBE39B")
         private void installHandleTooManyDeletesNotification(Account account, String authority,
                 long numDeletes) {
@@ -3039,7 +3073,7 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
     if(providerInfo == null)            
             {
                 return;
-            } //End block
+            } 
             CharSequence authorityName = providerInfo.loadLabel(mContext.getPackageManager());
             Intent clickIntent = new Intent(mContext, SyncActivityTooManyDeletes.class);
             clickIntent.putExtra("account", account);
@@ -3049,7 +3083,7 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
     if(!isActivityAvailable(clickIntent))            
             {
                 return;
-            } //End block
+            } 
             final PendingIntent pendingIntent = PendingIntent
                     .getActivity(mContext, 0, clickIntent, PendingIntent.FLAG_CANCEL_CURRENT);
             CharSequence tooManyDeletesDescFormat = mContext.getResources().getText(
@@ -3063,11 +3097,12 @@ for(ActiveSyncContext currentSyncContext : mActiveSyncContexts)
                     pendingIntent);
             notification.flags |= Notification.FLAG_ONGOING_EVENT;
             mNotificationMgr.notify(account.hashCode() ^ authority.hashCode(), notification);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.053 -0400", hash_original_method = "ABB616725C31652C20F8F96BBDEFC6AA", hash_generated_method = "EDD0F0BB3C2391EA44D248A3AE779E6B")
         private boolean isActivityAvailable(Intent intent) {
             addTaint(intent.getTaint());
@@ -3083,23 +3118,23 @@ for(int i = 0;i < listSize;i++)
                     boolean varB326B5062B2F0E69046810717534CB09_1911273566 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_506808481 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_506808481;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_1135042590 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_168508195 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_168508195;
-            // ---------- Original Method ----------
-            //PackageManager pm = mContext.getPackageManager();
-            //List<ResolveInfo> list = pm.queryIntentActivities(intent, 0);
-            //int listSize = list.size();
-            //for (int i = 0; i < listSize; i++) {
-                //ResolveInfo resolveInfo = list.get(i);
-                //if ((resolveInfo.activityInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM)
-                        //!= 0) {
-                    //return true;
-                //}
-            //}
-            //return false;
+            
+            
+            
+            
+            
+                
+                
+                        
+                    
+                
+            
+            
         }
 
         
@@ -3115,14 +3150,14 @@ for(int i = 0;i < listSize;i++)
                     syncOperation.account, syncOperation.authority, now, source));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1178304592 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1178304592;
-            // ---------- Original Method ----------
-            //final int source = syncOperation.syncSource;
-            //final long now = System.currentTimeMillis();
-            //EventLog.writeEvent(2720, syncOperation.authority,
-                                //SyncStorageEngine.EVENT_START, source,
-                                //syncOperation.account.name.hashCode());
-            //return mSyncStorageEngine.insertStartSyncEvent(
-                    //syncOperation.account, syncOperation.authority, now, source);
+            
+            
+            
+            
+                                
+                                
+            
+                    
         }
 
         
@@ -3140,12 +3175,12 @@ for(int i = 0;i < listSize;i++)
                                 syncOperation.account.name.hashCode());
             mSyncStorageEngine.stopSyncEvent(rowId, elapsedTime,
                     resultMessage, downstreamActivity, upstreamActivity);
-            // ---------- Original Method ----------
-            //EventLog.writeEvent(2720, syncOperation.authority,
-                                //SyncStorageEngine.EVENT_STOP, syncOperation.syncSource,
-                                //syncOperation.account.name.hashCode());
-            //mSyncStorageEngine.stopSyncEvent(rowId, elapsedTime,
-                    //resultMessage, downstreamActivity, upstreamActivity);
+            
+            
+                                
+                                
+            
+                    
         }
 
         
@@ -3160,7 +3195,7 @@ for(int i = 0;i < listSize;i++)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.056 -0400", hash_original_method = "4A2C88DB351F685B767C50ED28D568B0", hash_generated_method = "4A2C88DB351F685B767C50ED28D568B0")
             public SyncNotificationInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -3168,8 +3203,8 @@ for(int i = 0;i < listSize;i++)
             public void toString(StringBuilder sb) {
                 addTaint(sb.getTaint());
                 sb.append("isActive ").append(isActive).append(", startTime ").append(startTime);
-                // ---------- Original Method ----------
-                //sb.append("isActive ").append(isActive).append(", startTime ").append(startTime);
+                
+                
             }
 
             
@@ -3181,10 +3216,10 @@ for(int i = 0;i < listSize;i++)
 String var2460B846747F8B22185AD8BE722266A5_1234058476 =                 sb.toString();
                 var2460B846747F8B22185AD8BE722266A5_1234058476.addTaint(taint);
                 return var2460B846747F8B22185AD8BE722266A5_1234058476;
-                // ---------- Original Method ----------
-                //StringBuilder sb = new StringBuilder();
-                //toString(sb);
-                //return sb.toString();
+                
+                
+                
+                
             }
 
             

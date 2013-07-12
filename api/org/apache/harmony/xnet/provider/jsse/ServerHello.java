@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,18 +40,18 @@ public class ServerHello extends Message {
         this.compression_method = compression_method;
         this.server_version = server_version;
         length = 38 + session_id.length;
-        // ---------- Original Method ----------
-        //long gmt_unix_time = new java.util.Date().getTime() / 1000;
-        //sr.nextBytes(random);
-        //random[0] = (byte) ((gmt_unix_time & 0xFF000000) >>> 24);
-        //random[1] = (byte) ((gmt_unix_time & 0xFF0000) >>> 16);
-        //random[2] = (byte) ((gmt_unix_time & 0xFF00) >>> 8);
-        //random[3] = (byte) (gmt_unix_time & 0xFF);
-        //this.session_id = session_id;
-        //this.cipher_suite = cipher_suite;
-        //this.compression_method = compression_method;
-        //this.server_version = server_version;
-        //length = 38 + session_id.length;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -72,22 +72,22 @@ public class ServerHello extends Message {
     if(this.length != length)        
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ServerHello");
-        } //End block
-        // ---------- Original Method ----------
-        //server_version[0] = (byte) in.read();
-        //server_version[1] = (byte) in.read();
-        //Streams.readFully(in, random);
-        //int size = in.readUint8();
-        //session_id = new byte[size];
-        //in.read(session_id, 0, size);
-        //byte b0 = (byte) in.read();
-        //byte b1 = (byte) in.read();
-        //cipher_suite = CipherSuite.getByCode(b0, b1);
-        //compression_method = (byte) in.read();
-        //this.length = 38 + session_id.length;
-        //if (this.length != length) {
-            //fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect ServerHello");
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -102,35 +102,37 @@ public class ServerHello extends Message {
         out.write(cipher_suite.toBytes());
         out.write(compression_method);
         length = 38 + session_id.length;
-        // ---------- Original Method ----------
-        //out.write(server_version);
-        //out.write(random);
-        //out.writeUint8(session_id.length);
-        //out.write(session_id);
-        //out.write(cipher_suite.toBytes());
-        //out.write(compression_method);
-        //length = 38 + session_id.length;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.645 -0400", hash_original_method = "EDD7E5211887C4E217154E276BC2B61E", hash_generated_method = "D5453A3095DF16BEF3C018CD70C0BDB9")
     public byte[] getRandom() {
         byte[] var7DDF32E17A6AC5CE04A8ECBF782CA509_1421458005 = (random);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_946513302 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_946513302;
-        // ---------- Original Method ----------
-        //return random;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.646 -0400", hash_original_method = "51302607A7CDE0350AA8DCA604C2ADD7", hash_generated_method = "A7EA2C411869C418F2F9151D57940913")
     @Override
     public int getType() {
         int var26F32D915C10A52ED809F9ACC422323B_1780658385 = (Handshake.SERVER_HELLO);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40872859 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_40872859;
-        // ---------- Original Method ----------
-        //return Handshake.SERVER_HELLO;
+        
+        
     }
 
     

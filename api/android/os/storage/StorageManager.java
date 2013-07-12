@@ -1,6 +1,6 @@
 package android.os.storage;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,19 +43,19 @@ public class StorageManager {
     if(mMountService == null)        
         {
             return;
-        } //End block
+        } 
         mTgtLooper = tgtLooper;
         mBinderListener = new MountServiceBinderListener();
         mMountService.registerListener(mBinderListener);
-        // ---------- Original Method ----------
-        //mMountService = IMountService.Stub.asInterface(ServiceManager.getService("mount"));
-        //if (mMountService == null) {
-            //Log.e(TAG, "Unable to connect to mount service! - is it running yet?");
-            //return;
-        //}
-        //mTgtLooper = tgtLooper;
-        //mBinderListener = new MountServiceBinderListener();
-        //mMountService.registerListener(mBinderListener);
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -64,30 +64,30 @@ public class StorageManager {
         int varF17C7CA92AB3E11E07554CE3600EEE39_1811658886 = (mNextNonce.getAndIncrement());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1479355712 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1479355712;
-        // ---------- Original Method ----------
-        //return mNextNonce.getAndIncrement();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.107 -0400", hash_original_method = "99C6C81E5E38E1D6866033383A8A6E37", hash_generated_method = "A9DB10DE2A9C23118659BEBF39A888AB")
     public void registerListener(StorageEventListener listener) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(listener.getTaint());
     if(listener == null)        
         {
             return;
-        } //End block
+        } 
         synchronized
 (mListeners)        {
             mListeners.add(new ListenerDelegate(listener));
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return;
-        //}
-        //synchronized (mListeners) {
-            //mListeners.add(new ListenerDelegate(listener));
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -97,7 +97,7 @@ public class StorageManager {
     if(listener == null)        
         {
             return;
-        } //End block
+        } 
         synchronized
 (mListeners)        {
             final int size = mListeners.size();
@@ -108,23 +108,23 @@ for(int i=0;i<size;i++)
                 {
                     mListeners.remove(i);
                     break;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //return;
-        //}
-        //synchronized (mListeners) {
-            //final int size = mListeners.size();
-            //for (int i=0 ; i<size ; i++) {
-                //ListenerDelegate l = mListeners.get(i);
-                //if (l.getListener() == listener) {
-                    //mListeners.remove(i);
-                    //break;
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
     }
 
     
@@ -133,16 +133,16 @@ for(int i=0;i<size;i++)
         try 
         {
             mMountService.setUsbMassStorageEnabled(true);
-        } //End block
+        } 
         catch (Exception ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mMountService.setUsbMassStorageEnabled(true);
-        //} catch (Exception ex) {
-            //Log.e(TAG, "Failed to enable UMS", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -151,16 +151,16 @@ for(int i=0;i<size;i++)
         try 
         {
             mMountService.setUsbMassStorageEnabled(false);
-        } //End block
+        } 
         catch (Exception ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mMountService.setUsbMassStorageEnabled(false);
-        //} catch (Exception ex) {
-            //Log.e(TAG, "Failed to disable UMS", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -171,20 +171,20 @@ for(int i=0;i<size;i++)
             boolean varC125BD4E4540DF7BF627DAC332790CCC_112403441 = (mMountService.isUsbMassStorageConnected());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_55838936 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_55838936;
-        } //End block
+        } 
         catch (Exception ex)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_396618088 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831300711 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831300711;
-        // ---------- Original Method ----------
-        //try {
-            //return mMountService.isUsbMassStorageConnected();
-        //} catch (Exception ex) {
-            //Log.e(TAG, "Failed to get UMS connection state", ex);
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -195,20 +195,20 @@ for(int i=0;i<size;i++)
             boolean var996FFC1DB90C8C5CC1E0E677BC837271_474067020 = (mMountService.isUsbMassStorageEnabled());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2136333746 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2136333746;
-        } //End block
+        } 
         catch (RemoteException rex)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_703316938 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_272708001 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_272708001;
-        // ---------- Original Method ----------
-        //try {
-            //return mMountService.isUsbMassStorageEnabled();
-        //} catch (RemoteException rex) {
-            //Log.e(TAG, "Failed to get UMS enable state", rex);
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -222,13 +222,13 @@ for(int i=0;i<size;i++)
             IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_1569327412 = new IllegalArgumentException("filename cannot be null");
             varE5D084DE90EB64D0C8D7A6EE830EF430_1569327412.addTaint(taint);
             throw varE5D084DE90EB64D0C8D7A6EE830EF430_1569327412;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var17149778A254271D1845C418D4DDF7E3_131420078 = new IllegalArgumentException("listener cannot be null");
             var17149778A254271D1845C418D4DDF7E3_131420078.addTaint(taint);
             throw var17149778A254271D1845C418D4DDF7E3_131420078;
-        } //End block
+        } 
         try 
         {
             final int nonce = mObbActionListener.addListener(listener);
@@ -236,28 +236,28 @@ for(int i=0;i<size;i++)
             boolean varB326B5062B2F0E69046810717534CB09_203528201 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_755804582 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_755804582;
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1586802917 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1979778738 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1979778738;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener cannot be null");
-        //}
-        //try {
-            //final int nonce = mObbActionListener.addListener(listener);
-            //mMountService.mountObb(filename, key, mObbActionListener, nonce);
-            //return true;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to mount OBB", e);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -271,13 +271,13 @@ for(int i=0;i<size;i++)
             IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_2050923285 = new IllegalArgumentException("filename cannot be null");
             varE5D084DE90EB64D0C8D7A6EE830EF430_2050923285.addTaint(taint);
             throw varE5D084DE90EB64D0C8D7A6EE830EF430_2050923285;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var17149778A254271D1845C418D4DDF7E3_394576334 = new IllegalArgumentException("listener cannot be null");
             var17149778A254271D1845C418D4DDF7E3_394576334.addTaint(taint);
             throw var17149778A254271D1845C418D4DDF7E3_394576334;
-        } //End block
+        } 
         try 
         {
             final int nonce = mObbActionListener.addListener(listener);
@@ -285,28 +285,28 @@ for(int i=0;i<size;i++)
             boolean varB326B5062B2F0E69046810717534CB09_787347120 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_137978475 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_137978475;
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_360192328 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_812373006 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_812373006;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener cannot be null");
-        //}
-        //try {
-            //final int nonce = mObbActionListener.addListener(listener);
-            //mMountService.unmountObb(filename, force, mObbActionListener, nonce);
-            //return true;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to mount OBB", e);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -318,29 +318,29 @@ for(int i=0;i<size;i++)
             IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_1065631022 = new IllegalArgumentException("filename cannot be null");
             varE5D084DE90EB64D0C8D7A6EE830EF430_1065631022.addTaint(taint);
             throw varE5D084DE90EB64D0C8D7A6EE830EF430_1065631022;
-        } //End block
+        } 
         try 
         {
             boolean varFA4570C50619C718929E2DA7D33A31E5_1110205937 = (mMountService.isObbMounted(filename));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1888767321 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1888767321;
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1936231805 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_434615292 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_434615292;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //try {
-            //return mMountService.isObbMounted(filename);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to check if OBB is mounted", e);
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -352,29 +352,29 @@ for(int i=0;i<size;i++)
             IllegalArgumentException varE5D084DE90EB64D0C8D7A6EE830EF430_2085599069 = new IllegalArgumentException("filename cannot be null");
             varE5D084DE90EB64D0C8D7A6EE830EF430_2085599069.addTaint(taint);
             throw varE5D084DE90EB64D0C8D7A6EE830EF430_2085599069;
-        } //End block
+        } 
         try 
         {
 String var9435347AB9BFACE72FF856025DB5F289_244477365 =             mMountService.getMountedObbPath(filename);
             var9435347AB9BFACE72FF856025DB5F289_244477365.addTaint(taint);
             return var9435347AB9BFACE72FF856025DB5F289_244477365;
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_1720225895 =         null;
         var540C13E9E156B687226421B24F2DF178_1720225895.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1720225895;
-        // ---------- Original Method ----------
-        //if (filename == null) {
-            //throw new IllegalArgumentException("filename cannot be null");
-        //}
-        //try {
-            //return mMountService.getMountedObbPath(filename);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to find mounted path for OBB", e);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -386,20 +386,20 @@ String var540C13E9E156B687226421B24F2DF178_1720225895 =         null;
 String var56CD6C6B849E2ECC1076CBB7B5EF2887_1564754888 =             mMountService.getVolumeState(mountPoint);
             var56CD6C6B849E2ECC1076CBB7B5EF2887_1564754888.addTaint(taint);
             return var56CD6C6B849E2ECC1076CBB7B5EF2887_1564754888;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 String var540C13E9E156B687226421B24F2DF178_960152568 =             null;
             var540C13E9E156B687226421B24F2DF178_960152568.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_960152568;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mMountService.getVolumeState(mountPoint);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to get volume state", e);
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -419,31 +419,31 @@ StorageVolume[] varBFB4120FBFD8A09418DEA018C35F36DA_1171604300 =             new
 for(int i = 0;i < length;i++)
             {
                 result[i] = (StorageVolume)list[i];
-            } //End block
+            } 
 StorageVolume[] varDC838461EE2FA0CA4C9BBB70A15456B0_487500439 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_487500439.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_487500439;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 StorageVolume[] var540C13E9E156B687226421B24F2DF178_585240186 =             null;
             var540C13E9E156B687226421B24F2DF178_585240186.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_585240186;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Parcelable[] list = mMountService.getVolumeList();
-            //if (list == null) return new StorageVolume[0];
-            //int length = list.length;
-            //StorageVolume[] result = new StorageVolume[length];
-            //for (int i = 0; i < length; i++) {
-                //result[i] = (StorageVolume)list[i];
-            //}
-            //return result;
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Failed to get volume list", e);
-            //return null;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -461,19 +461,19 @@ String[] var540C13E9E156B687226421B24F2DF178_958927920 =         null;
 for(int i = 0;i < count;i++)
         {
             paths[i] = volumes[i].getPath();
-        } //End block
+        } 
 String[] var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1560258335 =         paths;
         var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1560258335.addTaint(taint);
         return var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1560258335;
-        // ---------- Original Method ----------
-        //StorageVolume[] volumes = getVolumeList();
-        //if (volumes == null) return null;
-        //int count = volumes.length;
-        //String[] paths = new String[count];
-        //for (int i = 0; i < count; i++) {
-            //paths[i] = volumes[i].getPath();
-        //}
-        //return paths;
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -482,30 +482,30 @@ String[] var8B4D6CF8BBF4DB57F1BB90F2C89984B1_1560258335 =         paths;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.114 -0400", hash_original_method = "2B96EE5216074DC94A336B5EA39CF13F", hash_generated_method = "2B96EE5216074DC94A336B5EA39CF13F")
         public MountServiceBinderListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.114 -0400", hash_original_method = "3247F72E228BC8CA6CB0EFFDE0587175", hash_generated_method = "A00097831F4AFE00836623180CBA9AF6")
         public void onUsbMassStorageConnectionChanged(boolean available) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(available);
             final int size = mListeners.size();
 for(int i = 0;i < size;i++)
             {
                 mListeners.get(i).sendShareAvailabilityChanged(available);
-            } //End block
-            // ---------- Original Method ----------
-            //final int size = mListeners.size();
-            //for (int i = 0; i < size; i++) {
-                //mListeners.get(i).sendShareAvailabilityChanged(available);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.114 -0400", hash_original_method = "3412F22C5256750E7F040A232BDF8730", hash_generated_method = "C18F1537470C818B09833135EFD30C5F")
         public void onStorageStateChanged(String path, String oldState, String newState) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(newState.getTaint());
             addTaint(oldState.getTaint());
             addTaint(path.getTaint());
@@ -513,12 +513,12 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
             {
                 mListeners.get(i).sendStorageStateChanged(path, oldState, newState);
-            } //End block
-            // ---------- Original Method ----------
-            //final int size = mListeners.size();
-            //for (int i = 0; i < size; i++) {
-                //mListeners.get(i).sendStorageStateChanged(path, oldState, newState);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -534,14 +534,14 @@ for(int i = 0;i < size;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.115 -0400", hash_original_method = "A19676FD811ED2BA9E2295E50F44897A", hash_generated_method = "A19676FD811ED2BA9E2295E50F44897A")
         public ObbActionListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.115 -0400", hash_original_method = "DBB9E3A59C6BF6EF37DBBFBCC6A9357E", hash_generated_method = "651D4E4A131CFAC8FAFA1CCE7A0D773B")
         @Override
         public void onObbResult(String filename, int nonce, int status) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(status);
             addTaint(nonce);
             addTaint(filename.getTaint());
@@ -552,23 +552,23 @@ for(int i = 0;i < size;i++)
     if(delegate != null)                
                 {
                     mListeners.remove(nonce);
-                } //End block
-            } //End block
+                } 
+            } 
     if(delegate != null)            
             {
                 delegate.sendObbStateChanged(filename, status);
-            } //End block
-            // ---------- Original Method ----------
-            //final ObbListenerDelegate delegate;
-            //synchronized (mListeners) {
-                //delegate = mListeners.get(nonce);
-                //if (delegate != null) {
-                    //mListeners.remove(nonce);
-                //}
-            //}
-            //if (delegate != null) {
-                //delegate.sendObbStateChanged(filename, status);
-            //}
+            } 
+            
+            
+            
+                
+                
+                    
+                
+            
+            
+                
+            
         }
 
         
@@ -579,16 +579,16 @@ for(int i = 0;i < size;i++)
             synchronized
 (mListeners)            {
                 mListeners.put(delegate.nonce, delegate);
-            } //End block
+            } 
             int varC67461545013B5F131CD98ABBB8A4FBA_1875228807 = (delegate.nonce);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_320885671 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_320885671;
-            // ---------- Original Method ----------
-            //final ObbListenerDelegate delegate = new ObbListenerDelegate(listener);
-            //synchronized (mListeners) {
-                //mListeners.put(delegate.nonce, delegate);
-            //}
-            //return delegate.nonce;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -620,32 +620,32 @@ for(int i = 0;i < size;i++)
     if(changeListener == null)                
                 {
                     return;
-                } //End block
+                } 
                 StorageEvent e = (StorageEvent) msg.obj;
     if(msg.what == StorageEvent.EVENT_OBB_STATE_CHANGED)                
                 {
                     ObbStateChangedStorageEvent ev = (ObbStateChangedStorageEvent) e;
                     changeListener.onObbStateChange(ev.path, ev.state);
-                } //End block
+                } 
                 else
                 {
-                } //End block
-                // ---------- Original Method ----------
-                //final OnObbStateChangeListener changeListener = getListener();
-                //if (changeListener == null) {
-                        //return;
-                    //}
-                //StorageEvent e = (StorageEvent) msg.obj;
-                //if (msg.what == StorageEvent.EVENT_OBB_STATE_CHANGED) {
-                        //ObbStateChangedStorageEvent ev = (ObbStateChangedStorageEvent) e;
-                        //changeListener.onObbStateChange(ev.path, ev.state);
-                    //} else {
-                        //Log.e(TAG, "Unsupported event " + msg.what);
-                    //}
+                } 
+                
+                
+                
+                        
+                    
+                
+                
+                        
+                        
+                    
+                        
+                    
             }
 };
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -656,15 +656,15 @@ for(int i = 0;i < size;i++)
 OnObbStateChangeListener var540C13E9E156B687226421B24F2DF178_1874801029 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1874801029.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1874801029;
-            } //End block
+            } 
 OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134 =             mObbEventListenerRef.get();
             varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134.addTaint(taint);
             return varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134;
-            // ---------- Original Method ----------
-            //if (mObbEventListenerRef == null) {
-                //return null;
-            //}
-            //return mObbEventListenerRef.get();
+            
+            
+                
+            
+            
         }
 
         
@@ -674,9 +674,9 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134 =       
             addTaint(path.getTaint());
             ObbStateChangedStorageEvent e = new ObbStateChangedStorageEvent(path, state);
             mHandler.sendMessage(e.getMessage());
-            // ---------- Original Method ----------
-            //ObbStateChangedStorageEvent e = new ObbStateChangedStorageEvent(path, state);
-            //mHandler.sendMessage(e.getMessage());
+            
+            
+            
         }
 
         
@@ -697,9 +697,9 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134 =       
             super(EVENT_OBB_STATE_CHANGED);
             this.path = path;
             this.state = state;
-            // ---------- Original Method ----------
-            //this.path = path;
-            //this.state = state;
+            
+            
+            
         }
 
         
@@ -717,20 +717,21 @@ OnObbStateChangeListener varCF4F6E9DEC208F220177AFF7A2E8BD7A_1922052134 =       
             mMessage = Message.obtain();
             mMessage.what = what;
             mMessage.obj = this;
-            // ---------- Original Method ----------
-            //mMessage = Message.obtain();
-            //mMessage.what = what;
-            //mMessage.obj = this;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.120 -0400", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "70938DD73F91D8E27DB834DFD9BB1350")
         public Message getMessage() {
 Message varF433E876D1576C042493660DEE33CDC1_446685186 =             mMessage;
             varF433E876D1576C042493660DEE33CDC1_446685186.addTaint(taint);
             return varF433E876D1576C042493660DEE33CDC1_446685186;
-            // ---------- Original Method ----------
-            //return mMessage;
+            
+            
         }
 
         
@@ -756,8 +757,8 @@ Message varF433E876D1576C042493660DEE33CDC1_446685186 =             mMessage;
         public  UmsConnectionChangedStorageEvent(boolean a) {
             super(EVENT_UMS_CONNECTION_CHANGED);
             available = a;
-            // ---------- Original Method ----------
-            //available = a;
+            
+            
         }
 
         
@@ -782,10 +783,10 @@ Message varF433E876D1576C042493660DEE33CDC1_446685186 =             mMessage;
             path = p;
             oldState = oldS;
             newState = newS;
-            // ---------- Original Method ----------
-            //path = p;
-            //oldState = oldS;
-            //newState = newS;
+            
+            
+            
+            
         }
 
         
@@ -814,41 +815,42 @@ Message varF433E876D1576C042493660DEE33CDC1_446685186 =             mMessage;
                 {
                     UmsConnectionChangedStorageEvent ev = (UmsConnectionChangedStorageEvent) e;
                     mStorageEventListener.onUsbMassStorageConnectionChanged(ev.available);
-                } //End block
+                } 
                 else
     if(msg.what == StorageEvent.EVENT_STORAGE_STATE_CHANGED)                
                 {
                     StorageStateChangedStorageEvent ev = (StorageStateChangedStorageEvent) e;
                     mStorageEventListener.onStorageStateChanged(ev.path, ev.oldState, ev.newState);
-                } //End block
+                } 
                 else
                 {
-                } //End block
-                // ---------- Original Method ----------
-                //StorageEvent e = (StorageEvent) msg.obj;
-                //if (msg.what == StorageEvent.EVENT_UMS_CONNECTION_CHANGED) {
-                        //UmsConnectionChangedStorageEvent ev = (UmsConnectionChangedStorageEvent) e;
-                        //mStorageEventListener.onUsbMassStorageConnectionChanged(ev.available);
-                    //} else if (msg.what == StorageEvent.EVENT_STORAGE_STATE_CHANGED) {
-                        //StorageStateChangedStorageEvent ev = (StorageStateChangedStorageEvent) e;
-                        //mStorageEventListener.onStorageStateChanged(ev.path, ev.oldState, ev.newState);
-                    //} else {
-                        //Log.e(TAG, "Unsupported event " + msg.what);
-                    //}
+                } 
+                
+                
+                
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                    
             }
 };
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.124 -0400", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "5BE7D11FD372CD7AA1CE8B138F43F5DD")
          StorageEventListener getListener() {
 StorageEventListener varE7702B5CA1C4D4B989CA9AA0E2DA9878_1664200 =             mStorageEventListener;
             varE7702B5CA1C4D4B989CA9AA0E2DA9878_1664200.addTaint(taint);
             return varE7702B5CA1C4D4B989CA9AA0E2DA9878_1664200;
-            // ---------- Original Method ----------
-            //return mStorageEventListener;
+            
+            
         }
 
         
@@ -857,9 +859,9 @@ StorageEventListener varE7702B5CA1C4D4B989CA9AA0E2DA9878_1664200 =             m
             addTaint(available);
             UmsConnectionChangedStorageEvent e = new UmsConnectionChangedStorageEvent(available);
             mHandler.sendMessage(e.getMessage());
-            // ---------- Original Method ----------
-            //UmsConnectionChangedStorageEvent e = new UmsConnectionChangedStorageEvent(available);
-            //mHandler.sendMessage(e.getMessage());
+            
+            
+            
         }
 
         
@@ -870,9 +872,9 @@ StorageEventListener varE7702B5CA1C4D4B989CA9AA0E2DA9878_1664200 =             m
             addTaint(path.getTaint());
             StorageStateChangedStorageEvent e = new StorageStateChangedStorageEvent(path, oldState, newState);
             mHandler.sendMessage(e.getMessage());
-            // ---------- Original Method ----------
-            //StorageStateChangedStorageEvent e = new StorageStateChangedStorageEvent(path, oldState, newState);
-            //mHandler.sendMessage(e.getMessage());
+            
+            
+            
         }
 
         

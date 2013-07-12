@@ -1,6 +1,6 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,22 +57,22 @@ public class ZipEntry implements ZipConstants, Cloneable {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_115381934 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_115381934.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_115381934;
-        } //End block
+        } 
     if(name.length() > 0xFFFF)        
         {
             IllegalArgumentException var1B12458CDCB97CFAA13FFC1631C55D96_918779394 = new IllegalArgumentException("Name too long: " + name.length());
             var1B12458CDCB97CFAA13FFC1631C55D96_918779394.addTaint(taint);
             throw var1B12458CDCB97CFAA13FFC1631C55D96_918779394;
-        } //End block
+        } 
         this.name = name;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException();
-        //}
-        //if (name.length() > 0xFFFF) {
-            //throw new IllegalArgumentException("Name too long: " + name.length());
-        //}
-        //this.name = name;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -89,18 +89,18 @@ public class ZipEntry implements ZipConstants, Cloneable {
         extra = ze.extra;
         nameLength = ze.nameLength;
         mLocalHeaderRelOffset = ze.mLocalHeaderRelOffset;
-        // ---------- Original Method ----------
-        //name = ze.name;
-        //comment = ze.comment;
-        //time = ze.time;
-        //size = ze.size;
-        //compressedSize = ze.compressedSize;
-        //crc = ze.crc;
-        //compressionMethod = ze.compressionMethod;
-        //modDate = ze.modDate;
-        //extra = ze.extra;
-        //nameLength = ze.nameLength;
-        //mLocalHeaderRelOffset = ze.mLocalHeaderRelOffset;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -116,7 +116,7 @@ public class ZipEntry implements ZipConstants, Cloneable {
             ZipException varE3B0680FE06DE8664F35975E79E65F68_1943192702 = new ZipException("Central Directory Entry not found");
             varE3B0680FE06DE8664F35975E79E65F68_1943192702.addTaint(taint);
             throw varE3B0680FE06DE8664F35975E79E65F68_1943192702;
-        } //End block
+        } 
         it.seek(10);
         compressionMethod = it.readShort();
         time = it.readShort();
@@ -137,84 +137,91 @@ public class ZipEntry implements ZipConstants, Cloneable {
             byte[] commentBytes = new byte[commentLength];
             Streams.readFully(in, commentBytes, 0, commentLength);
             comment = new String(commentBytes, 0, commentBytes.length, Charsets.UTF_8);
-        } //End block
+        } 
     if(extraLength > 0)        
         {
             extra = new byte[extraLength];
             Streams.readFully(in, extra, 0, extraLength);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.500 -0400", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "806ACB8A3AE7C8DD34329FBC63A3B213")
     public String getComment() {
 String var20FC6A677850B0D1A8135B6A0BB12A1F_96309560 =         comment;
         var20FC6A677850B0D1A8135B6A0BB12A1F_96309560.addTaint(taint);
         return var20FC6A677850B0D1A8135B6A0BB12A1F_96309560;
-        // ---------- Original Method ----------
-        //return comment;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.500 -0400", hash_original_method = "BD185E24018FAED136FF653216A88FC6", hash_generated_method = "8492FC75F1EF9A7365087156A4876128")
     public long getCompressedSize() {
         long varD21EEAE05759BB4CAE36118C403A0B35_998854437 = (compressedSize);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_322926801 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_322926801;
-        // ---------- Original Method ----------
-        //return compressedSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.501 -0400", hash_original_method = "9F9CC7112652CAA1DD447640E3933AED", hash_generated_method = "CCCCC10A2AD0F74059A16F3172A2E2D8")
     public long getCrc() {
         long varF5AD59C5401FEA3F2DF0703D958FDC97_1690599797 = (crc);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1190297021 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1190297021;
-        // ---------- Original Method ----------
-        //return crc;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.501 -0400", hash_original_method = "12884DA1C8E953155933C9EDA5E5913F", hash_generated_method = "95C3B7114FAE20FD7BEBDD468C2B301C")
     public byte[] getExtra() {
         byte[] varEA9F91B2CDA019730F2891BD12A7A4D6_5587349 = (extra);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_566153562 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_566153562;
-        // ---------- Original Method ----------
-        //return extra;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.501 -0400", hash_original_method = "5D6E0D5CF72121589416F8E200760163", hash_generated_method = "7E5023A436A2A2F7D3AF5AFBA45A40F8")
     public int getMethod() {
         int var2BB54D2AE49B8469137AD2B40B9E2AD5_1323218566 = (compressionMethod);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085865182 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085865182;
-        // ---------- Original Method ----------
-        //return compressionMethod;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.502 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "241516B08BE429CB8F2277BA4B4D3F5A")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_315868260.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_315868260;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.502 -0400", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "C1BD82D4BCC8F16C4D4D5AF968BA41A9")
     public long getSize() {
         long varF7BD60B75B29D79B660A2859395C1A24_1345465803 = (size);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_395249795 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_395249795;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -230,20 +237,20 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
             long varD897C319978CB89BC60FB82CFE66280C_2026757681 = (cal.getTime().getTime());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_2138091422 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_2138091422;
-        } //End block
+        } 
         long var6BB61E3B7BCE0931DA574D19D1D82C88_152551039 = (-1);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_60379074 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_60379074;
-        // ---------- Original Method ----------
-        //if (time != -1) {
-            //GregorianCalendar cal = new GregorianCalendar();
-            //cal.set(Calendar.MILLISECOND, 0);
-            //cal.set(1980 + ((modDate >> 9) & 0x7f), ((modDate >> 5) & 0xf) - 1,
-                    //modDate & 0x1f, (time >> 11) & 0x1f, (time >> 5) & 0x3f,
-                    //(time & 0x1f) << 1);
-            //return cal.getTime().getTime();
-        //}
-        //return -1;
+        
+        
+            
+            
+            
+                    
+                    
+            
+        
+        
     }
 
     
@@ -252,8 +259,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
         boolean var9305E4B280032E8A26470B4467C14FB0_1138035253 = (name.charAt(name.length() - 1) == '/');
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1866619041 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1866619041;
-        // ---------- Original Method ----------
-        //return name.charAt(name.length() - 1) == '/';
+        
+        
     }
 
     
@@ -262,27 +269,28 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     if(comment == null || comment.length() <= 0xFFFF)        
         {
             this.comment = comment;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_448754162 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_448754162.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_448754162;
-        } //End block
-        // ---------- Original Method ----------
-        //if (comment == null || comment.length() <= 0xFFFF) {
-            //this.comment = comment;
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.504 -0400", hash_original_method = "24AF7AE4A55FD751B6B8B8E36C8E6668", hash_generated_method = "334A47E452019AA69BE98A99FED4C96B")
     public void setCompressedSize(long value) {
         compressedSize = value;
-        // ---------- Original Method ----------
-        //compressedSize = value;
+        
+        
     }
 
     
@@ -291,19 +299,19 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     if(value >= 0 && value <= 0xFFFFFFFFL)        
         {
             crc = value;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var9F8F375A1948C3CD4C89D5F7D35CB942_1127175619 = new IllegalArgumentException("Bad CRC32: " + value);
             var9F8F375A1948C3CD4C89D5F7D35CB942_1127175619.addTaint(taint);
             throw var9F8F375A1948C3CD4C89D5F7D35CB942_1127175619;
-        } //End block
-        // ---------- Original Method ----------
-        //if (value >= 0 && value <= 0xFFFFFFFFL) {
-            //crc = value;
-        //} else {
-            //throw new IllegalArgumentException("Bad CRC32: " + value);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -312,19 +320,19 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     if(data == null || data.length <= 0xFFFF)        
         {
             extra = data;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_143178321 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_143178321.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_143178321;
-        } //End block
-        // ---------- Original Method ----------
-        //if (data == null || data.length <= 0xFFFF) {
-            //extra = data;
-        //} else {
-            //throw new IllegalArgumentException();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -335,13 +343,13 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
             IllegalArgumentException var22353D932D287A5A101ADFE7E5875133_2024545420 = new IllegalArgumentException("Bad method: " + value);
             var22353D932D287A5A101ADFE7E5875133_2024545420.addTaint(taint);
             throw var22353D932D287A5A101ADFE7E5875133_2024545420;
-        } //End block
+        } 
         compressionMethod = value;
-        // ---------- Original Method ----------
-        //if (value != STORED && value != DEFLATED) {
-            //throw new IllegalArgumentException("Bad method: " + value);
-        //}
-        //compressionMethod = value;
+        
+        
+            
+        
+        
     }
 
     
@@ -350,19 +358,19 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
     if(value >= 0 && value <= 0xFFFFFFFFL)        
         {
             size = value;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var97E3DE9695082C1213A16A44F9609B98_151446897 = new IllegalArgumentException("Bad size: " + value);
             var97E3DE9695082C1213A16A44F9609B98_151446897.addTaint(taint);
             throw var97E3DE9695082C1213A16A44F9609B98_151446897;
-        } //End block
-        // ---------- Original Method ----------
-        //if (value >= 0 && value <= 0xFFFFFFFFL) {
-            //size = value;
-        //} else {
-            //throw new IllegalArgumentException("Bad size: " + value);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -376,7 +384,7 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
         {
             modDate = 0x21;
             time = 0;
-        } //End block
+        } 
         else
         {
             modDate = cal.get(Calendar.DATE);
@@ -385,33 +393,34 @@ String varB017984728AC60AD1F0BF8734F33F15C_315868260 =         name;
             time = cal.get(Calendar.SECOND) >> 1;
             time = (cal.get(Calendar.MINUTE) << 5) | time;
             time = (cal.get(Calendar.HOUR_OF_DAY) << 11) | time;
-        } //End block
-        // ---------- Original Method ----------
-        //GregorianCalendar cal = new GregorianCalendar();
-        //cal.setTime(new Date(value));
-        //int year = cal.get(Calendar.YEAR);
-        //if (year < 1980) {
-            //modDate = 0x21;
-            //time = 0;
-        //} else {
-            //modDate = cal.get(Calendar.DATE);
-            //modDate = (cal.get(Calendar.MONTH) + 1 << 5) | modDate;
-            //modDate = ((cal.get(Calendar.YEAR) - 1980) << 9) | modDate;
-            //time = cal.get(Calendar.SECOND) >> 1;
-            //time = (cal.get(Calendar.MINUTE) << 5) | time;
-            //time = (cal.get(Calendar.HOUR_OF_DAY) << 11) | time;
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.508 -0400", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "12907E50BC21ED62ED5C083769267B20")
     @Override
     public String toString() {
 String varB017984728AC60AD1F0BF8734F33F15C_2119306801 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_2119306801.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_2119306801;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -425,21 +434,21 @@ String varB017984728AC60AD1F0BF8734F33F15C_2119306801 =         name;
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_2054788933 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_2054788933.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_2054788933;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1243063653 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_1243063653.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1243063653;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ZipEntry result = (ZipEntry) super.clone();
-            //result.extra = extra != null ? extra.clone() : null;
-            //return result;
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -449,8 +458,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_2054788933 =             result;
         int var5715838B66EDF423F24A871806972EB3_1474040234 = (name.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796256505 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1796256505;
-        // ---------- Original Method ----------
-        //return name.hashCode();
+        
+        
     }
 
     

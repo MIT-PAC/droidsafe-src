@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
       ShortBuffer(int capacity) {
         super(1, capacity, null);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,8 +43,8 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
         short[] var68B89E48382A0AA51B25AC59599E2EB0_729015653 = (protectedArray());
                 short[] var48EE7E2DDF8A83602BC526873BD0F875_38416558 = {getTaintShort()};
         return var48EE7E2DDF8A83602BC526873BD0F875_38416558;
-        // ---------- Original Method ----------
-        //return protectedArray();
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
         int var0B794CE56A38A9F3BFDD2D53E83BB109_624143128 = (protectedArrayOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25100743 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_25100743;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+        
+        
     }
 
     
@@ -83,31 +83,31 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
                 int var0D4D283E60262FF52C1A7D956005837E_774377950 = (thisByte < otherByte ? -1 : 1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838008401 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1838008401;
-            } //End block
+            } 
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
+        } 
         int var1DC167191FBC7DAD3BADAE830552C692_1444088563 = (remaining() - otherBuffer.remaining());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_510194558 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_510194558;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //short thisByte, otherByte;
-        //while (compareRemaining > 0) {
-            //thisByte = get(thisPos);
-            //otherByte = otherBuffer.get(otherPos);
-            //if (thisByte != otherByte) {
-                //return thisByte < otherByte ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        
+        
+                
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -123,14 +123,14 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
             boolean var68934A3E9455FA72420237EB05902327_1326144325 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_782459444 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_782459444;
-        } //End block
+        } 
         ShortBuffer otherBuffer = (ShortBuffer) other;
     if(remaining() != otherBuffer.remaining())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1236640409 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1354071254 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1354071254;
-        } //End block
+        } 
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
@@ -138,25 +138,25 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
 (equalSoFar && (myPosition < limit))        
         {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
+        } 
         boolean var4A97EF18B93B276118DD50585250A586_1620106581 = (equalSoFar);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308407049 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308407049;
-        // ---------- Original Method ----------
-        //if (!(other instanceof ShortBuffer)) {
-            //return false;
-        //}
-        //ShortBuffer otherBuffer = (ShortBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -169,8 +169,8 @@ public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuff
 ShortBuffer varAF8F268F60258FE30F192DE78F11CD4A_462922269 =         get(dst, 0, dst.length);
         varAF8F268F60258FE30F192DE78F11CD4A_462922269.addTaint(taint);
         return varAF8F268F60258FE30F192DE78F11CD4A_462922269;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+        
+        
     }
 
     
@@ -185,23 +185,23 @@ ShortBuffer varAF8F268F60258FE30F192DE78F11CD4A_462922269 =         get(dst, 0, 
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1126536207 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1126536207.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1126536207;
-        } //End block
+        } 
 for(int i = dstOffset;i < dstOffset + shortCount;++i)
         {
             dst[i] = get();
-        } //End block
+        } 
 ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1880025305 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1880025305.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1880025305;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, shortCount);
-        //if (shortCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + shortCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -213,8 +213,8 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1880025305 =         this;
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_861151065 = (protectedHasArray());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1614906131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1614906131;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+        
+        
     }
 
     
@@ -227,17 +227,17 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1880025305 =         this;
 (myPosition < limit)        
         {
             hash = hash + get(myPosition++);
-        } //End block
+        } 
         int var0800FC577294C34E0B28AD2839435945_1419344017 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799313909 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_799313909;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //while (myPosition < limit) {
-            //hash = hash + get(myPosition++);
-        //}
-        //return hash;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -265,8 +265,8 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1880025305 =         this;
 ShortBuffer var7D505613BED257805463C43ADCB4DBAD_1232597552 =         put(src, 0, src.length);
         var7D505613BED257805463C43ADCB4DBAD_1232597552.addTaint(taint);
         return var7D505613BED257805463C43ADCB4DBAD_1232597552;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+        
+        
     }
 
     
@@ -281,23 +281,23 @@ ShortBuffer var7D505613BED257805463C43ADCB4DBAD_1232597552 =         put(src, 0,
             BufferOverflowException var773478A23217201B18B531915D367F31_146710286 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_146710286.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_146710286;
-        } //End block
+        } 
 for(int i = srcOffset;i < srcOffset + shortCount;++i)
         {
             put(src[i]);
-        } //End block
+        } 
 ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1754260443 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1754260443.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1754260443;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, shortCount);
-        //if (shortCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + shortCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -309,30 +309,30 @@ ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1754260443 =         this;
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_983358075 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_983358075.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_983358075;
-        } //End block
+        } 
     if(src.remaining() > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_271668523 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_271668523.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_271668523;
-        } //End block
+        } 
         short[] contents = new short[src.remaining()];
         src.get(contents);
         put(contents);
 ShortBuffer var72A74007B2BE62B849F475C7BDA4658B_1387452466 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1387452466.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1387452466;
-        // ---------- Original Method ----------
-        //if (src == this) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (src.remaining() > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //short[] contents = new short[src.remaining()];
-        //src.get(contents);
-        //put(contents);
-        //return this;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     

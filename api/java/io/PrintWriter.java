@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public class PrintWriter extends Writer {
     public  PrintWriter(OutputStream out) {
         this(new OutputStreamWriter(out), false);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class PrintWriter extends Writer {
         this(new OutputStreamWriter(out), autoFlush);
         addTaint(autoFlush);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,7 +40,7 @@ public class PrintWriter extends Writer {
     public  PrintWriter(Writer wr) {
         this(wr, false);
         addTaint(wr.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,9 +49,9 @@ public class PrintWriter extends Writer {
         super(wr);
         this.autoFlush = autoFlush;
         out = wr;
-        // ---------- Original Method ----------
-        //this.autoFlush = autoFlush;
-        //out = wr;
+        
+        
+        
     }
 
     
@@ -59,7 +59,7 @@ public class PrintWriter extends Writer {
     public  PrintWriter(File file) throws FileNotFoundException {
         this(new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream(file))), false);
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -70,7 +70,7 @@ public class PrintWriter extends Writer {
                 false);
         addTaint(csn.getTaint());
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -79,7 +79,7 @@ public class PrintWriter extends Writer {
         this(new OutputStreamWriter(new BufferedOutputStream(new FileOutputStream(fileName))),
                 false);
         addTaint(fileName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -89,7 +89,7 @@ public class PrintWriter extends Writer {
                 false);
         addTaint(csn.getTaint());
         addTaint(fileName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -101,31 +101,32 @@ public class PrintWriter extends Writer {
             boolean var4B4C3D08948825F5FE6B51A1087D503E_509594511 = (ioError);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515609933 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515609933;
-        } //End block
+        } 
         flush();
         boolean var1AB2E4CBCC9F33350E940BF281B2CFD6_58464121 = (ioError || delegate.checkError());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_833729033 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_833729033;
-        // ---------- Original Method ----------
-        //Writer delegate = out;
-        //if (delegate == null) {
-            //return ioError;
-        //}
-        //flush();
-        //return ioError || delegate.checkError();
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.696 -0400", hash_original_method = "9EE080B9329CC6FAACC493ECC7141CFB", hash_generated_method = "142ACE148ABAB14D975495F03D509B72")
     protected void clearError() {
         synchronized
 (lock)        {
             ioError = false;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //ioError = false;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -139,25 +140,25 @@ public class PrintWriter extends Writer {
                 try 
                 {
                     out.close();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     setError();
-                } //End block
+                } 
                 out = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (out != null) {
-                //try {
-                    //out.close();
-                //} catch (IOException e) {
-                    //setError();
-                //}
-                //out = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+                
+            
+        
     }
 
     
@@ -171,29 +172,29 @@ public class PrintWriter extends Writer {
                 try 
                 {
                     out.flush();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     setError();
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 setError();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (out != null) {
-                //try {
-                    //out.flush();
-                //} catch (IOException e) {
-                    //setError();
-                //}
-            //} else {
-                //setError();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+                
+            
+        
     }
 
     
@@ -204,8 +205,8 @@ public class PrintWriter extends Writer {
 PrintWriter varAC550D889141827F9746A4BB1DA8EE48_661550189 =         format(Locale.getDefault(), format, args);
         varAC550D889141827F9746A4BB1DA8EE48_661550189.addTaint(taint);
         return varAC550D889141827F9746A4BB1DA8EE48_661550189;
-        // ---------- Original Method ----------
-        //return format(Locale.getDefault(), format, args);
+        
+        
     }
 
     
@@ -219,24 +220,24 @@ PrintWriter varAC550D889141827F9746A4BB1DA8EE48_661550189 =         format(Local
             NullPointerException var3D4C345142DA17934F9E5E26254068BE_1607784489 = new NullPointerException("format == null");
             var3D4C345142DA17934F9E5E26254068BE_1607784489.addTaint(taint);
             throw var3D4C345142DA17934F9E5E26254068BE_1607784489;
-        } //End block
+        } 
         new Formatter(this, l).format(format, args);
     if(autoFlush)        
         {
             flush();
-        } //End block
+        } 
 PrintWriter var72A74007B2BE62B849F475C7BDA4658B_2068351061 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2068351061.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2068351061;
-        // ---------- Original Method ----------
-        //if (format == null) {
-            //throw new NullPointerException("format == null");
-        //}
-        //new Formatter(this, l).format(format, args);
-        //if (autoFlush) {
-            //flush();
-        //}
-        //return this;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -247,8 +248,8 @@ PrintWriter var72A74007B2BE62B849F475C7BDA4658B_2068351061 =         this;
 PrintWriter var1C1A7E0ECC814A41656D8DF055D1B8DD_146151118 =         format(format, args);
         var1C1A7E0ECC814A41656D8DF055D1B8DD_146151118.addTaint(taint);
         return var1C1A7E0ECC814A41656D8DF055D1B8DD_146151118;
-        // ---------- Original Method ----------
-        //return format(format, args);
+        
+        
     }
 
     
@@ -260,8 +261,8 @@ PrintWriter var1C1A7E0ECC814A41656D8DF055D1B8DD_146151118 =         format(forma
 PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, format, args);
         varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469.addTaint(taint);
         return varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469;
-        // ---------- Original Method ----------
-        //return format(l, format, args);
+        
+        
     }
 
     
@@ -269,8 +270,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(char[] charArray) {
         addTaint(charArray[0]);
         print(new String(charArray, 0, charArray.length));
-        // ---------- Original Method ----------
-        //print(new String(charArray, 0, charArray.length));
+        
+        
     }
 
     
@@ -278,8 +279,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(char ch) {
         addTaint(ch);
         print(String.valueOf(ch));
-        // ---------- Original Method ----------
-        //print(String.valueOf(ch));
+        
+        
     }
 
     
@@ -287,8 +288,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(double dnum) {
         addTaint(dnum);
         print(String.valueOf(dnum));
-        // ---------- Original Method ----------
-        //print(String.valueOf(dnum));
+        
+        
     }
 
     
@@ -296,8 +297,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(float fnum) {
         addTaint(fnum);
         print(String.valueOf(fnum));
-        // ---------- Original Method ----------
-        //print(String.valueOf(fnum));
+        
+        
     }
 
     
@@ -305,8 +306,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(int inum) {
         addTaint(inum);
         print(String.valueOf(inum));
-        // ---------- Original Method ----------
-        //print(String.valueOf(inum));
+        
+        
     }
 
     
@@ -314,8 +315,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(long lnum) {
         addTaint(lnum);
         print(String.valueOf(lnum));
-        // ---------- Original Method ----------
-        //print(String.valueOf(lnum));
+        
+        
     }
 
     
@@ -323,8 +324,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(Object obj) {
         addTaint(obj.getTaint());
         print(String.valueOf(obj));
-        // ---------- Original Method ----------
-        //print(String.valueOf(obj));
+        
+        
     }
 
     
@@ -332,8 +333,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(String str) {
         addTaint(str.getTaint());
         write(str != null ? str : String.valueOf((Object) null));
-        // ---------- Original Method ----------
-        //write(str != null ? str : String.valueOf((Object) null));
+        
+        
     }
 
     
@@ -341,8 +342,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void print(boolean bool) {
         addTaint(bool);
         print(String.valueOf(bool));
-        // ---------- Original Method ----------
-        //print(String.valueOf(bool));
+        
+        
     }
 
     
@@ -354,15 +355,15 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     if(autoFlush)            
             {
                 flush();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //print(System.lineSeparator());
-            //if (autoFlush) {
-                //flush();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -370,8 +371,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(char[] chars) {
         addTaint(chars[0]);
         println(new String(chars, 0, chars.length));
-        // ---------- Original Method ----------
-        //println(new String(chars, 0, chars.length));
+        
+        
     }
 
     
@@ -379,8 +380,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(char c) {
         addTaint(c);
         println(String.valueOf(c));
-        // ---------- Original Method ----------
-        //println(String.valueOf(c));
+        
+        
     }
 
     
@@ -388,8 +389,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(double d) {
         addTaint(d);
         println(String.valueOf(d));
-        // ---------- Original Method ----------
-        //println(String.valueOf(d));
+        
+        
     }
 
     
@@ -397,8 +398,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(float f) {
         addTaint(f);
         println(String.valueOf(f));
-        // ---------- Original Method ----------
-        //println(String.valueOf(f));
+        
+        
     }
 
     
@@ -406,8 +407,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(int i) {
         addTaint(i);
         println(String.valueOf(i));
-        // ---------- Original Method ----------
-        //println(String.valueOf(i));
+        
+        
     }
 
     
@@ -415,8 +416,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(long l) {
         addTaint(l);
         println(String.valueOf(l));
-        // ---------- Original Method ----------
-        //println(String.valueOf(l));
+        
+        
     }
 
     
@@ -424,8 +425,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(Object obj) {
         addTaint(obj.getTaint());
         println(String.valueOf(obj));
-        // ---------- Original Method ----------
-        //println(String.valueOf(obj));
+        
+        
     }
 
     
@@ -436,12 +437,12 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
 (lock)        {
             print(str);
             println();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //print(str);
-            //println();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -449,21 +450,22 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void println(boolean b) {
         addTaint(b);
         println(String.valueOf(b));
-        // ---------- Original Method ----------
-        //println(String.valueOf(b));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.712 -0400", hash_original_method = "03F201CD8682A0C64485926BB6B35745", hash_generated_method = "E19F709760A48D2E58E1640EA92F744E")
     protected void setError() {
         synchronized
 (lock)        {
             ioError = true;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //ioError = true;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -472,8 +474,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void write(char[] buf) {
         addTaint(buf[0]);
         write(buf, 0, buf.length);
-        // ---------- Original Method ----------
-        //write(buf, 0, buf.length);
+        
+        
     }
 
     
@@ -484,8 +486,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
         addTaint(offset);
         addTaint(buf[0]);
         doWrite(buf, offset, count);
-        // ---------- Original Method ----------
-        //doWrite(buf, offset, count);
+        
+        
     }
 
     
@@ -494,8 +496,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void write(int oneChar) {
         addTaint(oneChar);
         doWrite(new char[] { (char) oneChar }, 0, 1);
-        // ---------- Original Method ----------
-        //doWrite(new char[] { (char) oneChar }, 0, 1);
+        
+        
     }
 
     
@@ -511,29 +513,29 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
                 try 
                 {
                     out.write(buf, offset, count);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     setError();
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 setError();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (out != null) {
-                //try {
-                    //out.write(buf, offset, count);
-                //} catch (IOException e) {
-                    //setError();
-                //}
-            //} else {
-                //setError();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+                
+            
+        
     }
 
     
@@ -542,8 +544,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
     public void write(String str) {
         addTaint(str.getTaint());
         write(str.toCharArray());
-        // ---------- Original Method ----------
-        //write(str.toCharArray());
+        
+        
     }
 
     
@@ -554,8 +556,8 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
         addTaint(offset);
         addTaint(str.getTaint());
         write(str.substring(offset, offset + count).toCharArray());
-        // ---------- Original Method ----------
-        //write(str.substring(offset, offset + count).toCharArray());
+        
+        
     }
 
     
@@ -567,9 +569,9 @@ PrintWriter varF1FD5ACC9778B4CFE10AE6C4FA9F1943_1958878469 =         format(l, f
 PrintWriter var72A74007B2BE62B849F475C7BDA4658B_30956472 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_30956472.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_30956472;
-        // ---------- Original Method ----------
-        //write(c);
-        //return this;
+        
+        
+        
     }
 
     
@@ -580,17 +582,17 @@ PrintWriter var72A74007B2BE62B849F475C7BDA4658B_30956472 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } //End block
+        } 
         append(csq, 0, csq.length());
 PrintWriter var72A74007B2BE62B849F475C7BDA4658B_258145174 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_258145174.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_258145174;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //append(csq, 0, csq.length());
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -603,19 +605,19 @@ PrintWriter var72A74007B2BE62B849F475C7BDA4658B_258145174 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } //End block
+        } 
         String output = csq.subSequence(start, end).toString();
         write(output, 0, output.length());
 PrintWriter var72A74007B2BE62B849F475C7BDA4658B_1278958138 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1278958138.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1278958138;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //String output = csq.subSequence(start, end).toString();
-        //write(output, 0, output.length());
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     

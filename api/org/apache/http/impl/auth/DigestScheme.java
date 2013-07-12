@@ -1,6 +1,6 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,8 +36,8 @@ public class DigestScheme extends RFC2617Scheme {
     public  DigestScheme() {
         super();
         this.complete = false;
-        // ---------- Original Method ----------
-        //this.complete = false;
+        
+        
     }
 
     
@@ -52,13 +52,13 @@ public class DigestScheme extends RFC2617Scheme {
             MalformedChallengeException varDB9F351E01FD944462FE759A7FD69175_1639124992 = new MalformedChallengeException("missing realm in challange");
             varDB9F351E01FD944462FE759A7FD69175_1639124992.addTaint(taint);
             throw varDB9F351E01FD944462FE759A7FD69175_1639124992;
-        } //End block
+        } 
     if(getParameter("nonce") == null)        
         {
             MalformedChallengeException var24548F8FCE1E51E0D86A4CB9908BB0FE_1239845257 = new MalformedChallengeException("missing nonce in challange");
             var24548F8FCE1E51E0D86A4CB9908BB0FE_1239845257.addTaint(taint);
             throw var24548F8FCE1E51E0D86A4CB9908BB0FE_1239845257;
-        } //End block
+        } 
         boolean unsupportedQop = false;
         String qop = getParameter("qop");
     if(qop != null)        
@@ -72,28 +72,28 @@ public class DigestScheme extends RFC2617Scheme {
                 {
                     qopVariant = QOP_AUTH;
                     break;
-                } //End block
+                } 
                 else
     if(variant.equals("auth-int"))                
                 {
                     qopVariant = QOP_AUTH_INT;
-                } //End block
+                } 
                 else
                 {
                     unsupportedQop = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(unsupportedQop && (qopVariant == QOP_MISSING))        
         {
             MalformedChallengeException varADA3461E891D272AFDF0F9DDF557BF82_1780735848 = new MalformedChallengeException("None of the qop methods is supported");
             varADA3461E891D272AFDF0F9DDF557BF82_1780735848.addTaint(taint);
             throw varADA3461E891D272AFDF0F9DDF557BF82_1780735848;
-        } //End block
+        } 
         this.cnonce = null;
         this.complete = true;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -105,40 +105,42 @@ public class DigestScheme extends RFC2617Scheme {
             boolean var68934A3E9455FA72420237EB05902327_154324537 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1528822346 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1528822346;
-        } //End block
+        } 
         else
         {
             boolean varF04431E2940FB2099EE63A9B8E626BFD_518759117 = (this.complete);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1746534680 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1746534680;
-        } //End block
-        // ---------- Original Method ----------
-        //String s = getParameter("stale");
-        //if ("true".equalsIgnoreCase(s)) {
-            //return false;
-        //} else {
-            //return this.complete;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.184 -0400", hash_original_method = "590EDC4C396D176AA70267B4181524CE", hash_generated_method = "0A465863E88B40D3D4A19C674C6B4860")
     public String getSchemeName() {
 String varFD1934E0BA3A06FC5A424DB3DDD067C8_1552358187 =         "digest";
         varFD1934E0BA3A06FC5A424DB3DDD067C8_1552358187.addTaint(taint);
         return varFD1934E0BA3A06FC5A424DB3DDD067C8_1552358187;
-        // ---------- Original Method ----------
-        //return "digest";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.184 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "AC3681F221FAF37F734225926C3E8448")
     public boolean isConnectionBased() {
         boolean var68934A3E9455FA72420237EB05902327_1823834352 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_518469722 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_518469722;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -147,8 +149,8 @@ String varFD1934E0BA3A06FC5A424DB3DDD067C8_1552358187 =         "digest";
         addTaint(value.getTaint());
         addTaint(name.getTaint());
         getParameters().put(name, value);
-        // ---------- Original Method ----------
-        //getParameters().put(name, value);
+        
+        
     }
 
     
@@ -157,15 +159,15 @@ String varFD1934E0BA3A06FC5A424DB3DDD067C8_1552358187 =         "digest";
     if(this.cnonce == null)        
         {
             this.cnonce = createCnonce();
-        } //End block
+        } 
 String var641122BA5A01547C98FD9B09A0C087EB_1704413980 =         this.cnonce;
         var641122BA5A01547C98FD9B09A0C087EB_1704413980.addTaint(taint);
         return var641122BA5A01547C98FD9B09A0C087EB_1704413980;
-        // ---------- Original Method ----------
-        //if (this.cnonce == null) {
-            //this.cnonce = createCnonce();
-        //}
-        //return this.cnonce;
+        
+        
+            
+        
+        
     }
 
     
@@ -180,13 +182,13 @@ String var641122BA5A01547C98FD9B09A0C087EB_1704413980 =         this.cnonce;
             IllegalArgumentException varD8A19DCE85FA03BB6CE5F603E7A4C74C_78472166 = new IllegalArgumentException("Credentials may not be null");
             varD8A19DCE85FA03BB6CE5F603E7A4C74C_78472166.addTaint(taint);
             throw varD8A19DCE85FA03BB6CE5F603E7A4C74C_78472166;
-        } //End block
+        } 
     if(request == null)        
         {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_474987197 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_474987197.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_474987197;
-        } //End block
+        } 
         getParameters().put("methodname", request.getRequestLine().getMethod());
         getParameters().put("uri", request.getRequestLine().getUri());
         String charset = getParameter("charset");
@@ -194,27 +196,27 @@ String var641122BA5A01547C98FD9B09A0C087EB_1704413980 =         this.cnonce;
         {
             charset = AuthParams.getCredentialCharset(request.getParams());
             getParameters().put("charset", charset);
-        } //End block
+        } 
         String digest = createDigest(credentials);
 Header varD9B43F6A543FACB6477B447D4483CEAE_2079070551 =         createDigestHeader(credentials, digest);
         varD9B43F6A543FACB6477B447D4483CEAE_2079070551.addTaint(taint);
         return varD9B43F6A543FACB6477B447D4483CEAE_2079070551;
-        // ---------- Original Method ----------
-        //if (credentials == null) {
-            //throw new IllegalArgumentException("Credentials may not be null");
-        //}
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //getParameters().put("methodname", request.getRequestLine().getMethod());
-        //getParameters().put("uri", request.getRequestLine().getUri());
-        //String charset = getParameter("charset");
-        //if (charset == null) {
-            //charset = AuthParams.getCredentialCharset(request.getParams());
-            //getParameters().put("charset", charset);
-        //}
-        //String digest = createDigest(credentials);
-        //return createDigestHeader(credentials, digest);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -243,35 +245,35 @@ Header varD9B43F6A543FACB6477B447D4483CEAE_2079070551 =         createDigestHead
             IllegalStateException var44C226DC35115FAC1DD8A0E2202552B7_187320871 = new IllegalStateException("URI may not be null");
             var44C226DC35115FAC1DD8A0E2202552B7_187320871.addTaint(taint);
             throw var44C226DC35115FAC1DD8A0E2202552B7_187320871;
-        } //End block
+        } 
     if(realm == null)        
         {
             IllegalStateException varA4256DB9F28612ADED7993BB41D5C1F8_847158084 = new IllegalStateException("Realm may not be null");
             varA4256DB9F28612ADED7993BB41D5C1F8_847158084.addTaint(taint);
             throw varA4256DB9F28612ADED7993BB41D5C1F8_847158084;
-        } //End block
+        } 
     if(nonce == null)        
         {
             IllegalStateException varD89F411325FFFE9DFCF6D29025748491_963202886 = new IllegalStateException("Nonce may not be null");
             varD89F411325FFFE9DFCF6D29025748491_963202886.addTaint(taint);
             throw varD89F411325FFFE9DFCF6D29025748491_963202886;
-        } //End block
+        } 
     if(algorithm == null)        
         {
             algorithm = "MD5";
-        } //End block
+        } 
         String charset = getParameter("charset");
     if(charset == null)        
         {
             charset = "ISO-8859-1";
-        } //End block
+        } 
     if(qopVariant == QOP_AUTH_INT)        
         {
             AuthenticationException var81C6CF9B2FE38D17B908C08BFD171A05_271693853 = new AuthenticationException(
                 "Unsupported qop in HTTP Digest authentication");
             var81C6CF9B2FE38D17B908C08BFD171A05_271693853.addTaint(taint);
             throw var81C6CF9B2FE38D17B908C08BFD171A05_271693853;
-        } //End block
+        } 
         MessageDigest md5Helper = createMessageDigest("MD5");
         String uname = credentials.getUserPrincipal().getName();
         String pwd = credentials.getPassword();
@@ -293,23 +295,23 @@ Header varD9B43F6A543FACB6477B447D4483CEAE_2079070551 =         createDigestHead
             tmp3.append(':');
             tmp3.append(cnonce);
             a1 = tmp3.toString();
-        } //End block
+        } 
         else
     if(!algorithm.equalsIgnoreCase("MD5"))        
         {
             AuthenticationException varD46EBEA2E5DEF60C27D825E06C7BA317_1982806485 = new AuthenticationException("Unhandled algorithm " + algorithm + " requested");
             varD46EBEA2E5DEF60C27D825E06C7BA317_1982806485.addTaint(taint);
             throw varD46EBEA2E5DEF60C27D825E06C7BA317_1982806485;
-        } //End block
+        } 
         String md5a1 = encode(md5Helper.digest(EncodingUtils.getBytes(a1, charset)));
         String a2 = null;
     if(qopVariant == QOP_AUTH_INT)        
         {
-        } //End block
+        } 
         else
         {
             a2 = method + ':' + uri;
-        } //End block
+        } 
         String md5a2 = encode(md5Helper.digest(EncodingUtils.getAsciiBytes(a2)));
         String serverDigestValue;
     if(qopVariant == QOP_MISSING)        
@@ -321,7 +323,7 @@ Header varD9B43F6A543FACB6477B447D4483CEAE_2079070551 =         createDigestHead
             tmp2.append(':');
             tmp2.append(md5a2);
             serverDigestValue = tmp2.toString();
-        } //End block
+        } 
         else
         {
             String qopOption = getQopVariantString();
@@ -340,13 +342,13 @@ Header varD9B43F6A543FACB6477B447D4483CEAE_2079070551 =         createDigestHead
             tmp2.append(':');
             tmp2.append(md5a2);
             serverDigestValue = tmp2.toString();
-        } //End block
+        } 
         String serverDigest = encode(md5Helper.digest(EncodingUtils.getAsciiBytes(serverDigestValue)));
 String var2EC6C72AFD08A9E52823FFE883A36622_63683011 =         serverDigest;
         var2EC6C72AFD08A9E52823FFE883A36622_63683011.addTaint(taint);
         return var2EC6C72AFD08A9E52823FFE883A36622_63683011;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -360,11 +362,11 @@ String var2EC6C72AFD08A9E52823FFE883A36622_63683011 =         serverDigest;
     if(isProxy())        
         {
             buffer.append(AUTH.PROXY_AUTH_RESP);
-        } //End block
+        } 
         else
         {
             buffer.append(AUTH.WWW_AUTH_RESP);
-        } //End block
+        } 
         buffer.append(": Digest ");
         String uri = getParameter("uri");
         String realm = getParameter("realm");
@@ -384,57 +386,58 @@ String var2EC6C72AFD08A9E52823FFE883A36622_63683011 =         serverDigest;
             params.add(new BasicNameValuePair("qop", getQopVariantString()));
             params.add(new BasicNameValuePair("nc", NC));
             params.add(new BasicNameValuePair("cnonce", getCnonce()));
-        } //End block
+        } 
     if(algorithm != null)        
         {
             params.add(new BasicNameValuePair("algorithm", algorithm));
-        } //End block
+        } 
     if(opaque != null)        
         {
             params.add(new BasicNameValuePair("opaque", opaque));
-        } //End block
+        } 
 for(int i = 0;i < params.size();i++)
         {
             BasicNameValuePair param = params.get(i);
     if(i > 0)            
             {
                 buffer.append(", ");
-            } //End block
+            } 
             boolean noQuotes = "nc".equals(param.getName()) ||
                                "qop".equals(param.getName());
             BasicHeaderValueFormatter.DEFAULT
                 .formatNameValuePair(buffer, param, !noQuotes);
-        } //End block
+        } 
 Header varA538F19AF489509DED0A3819B3004747_1089159761 =         new BufferedHeader(buffer);
         varA538F19AF489509DED0A3819B3004747_1089159761.addTaint(taint);
         return varA538F19AF489509DED0A3819B3004747_1089159761;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.193 -0400", hash_original_method = "4B7F5D1CEF78CAAD9B937EECFEA67886", hash_generated_method = "F8F4BD5FC23ED1D136C1BCC89979ABF7")
     private String getQopVariantString() {
         String qopOption;
     if(qopVariant == QOP_AUTH_INT)        
         {
             qopOption = "auth-int";
-        } //End block
+        } 
         else
         {
             qopOption = "auth";
-        } //End block
+        } 
 String varA9B2AEB85CC9079FF2659ECC6AA29225_1133105476 =         qopOption;
         varA9B2AEB85CC9079FF2659ECC6AA29225_1133105476.addTaint(taint);
         return varA9B2AEB85CC9079FF2659ECC6AA29225_1133105476;
-        // ---------- Original Method ----------
-        //String qopOption;
-        //if (qopVariant == QOP_AUTH_INT) {
-            //qopOption = "auth-int";   
-        //} else {
-            //qopOption = "auth";
-        //}
-        //return qopOption;
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     

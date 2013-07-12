@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,14 +20,14 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
     protected  PPreferredService(String name) {
         super(NAME);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.022 -0400", hash_original_method = "80DD74DB52B5BA3BF0297E04ECC509FE", hash_generated_method = "8906F3091D6728D0A2DF3027DBEFD55A")
     public  PPreferredService() {
         super(P_PREFERRED_SERVICE);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,30 +40,30 @@ public class PPreferredService extends SIPHeader implements PPreferredServiceHea
         {
             retval.append(ParameterNamesIms.SERVICE_ID_LABEL).append(".");
             retval.append(this.getSubserviceIdentifiers());
-        } //End block
+        } 
         else
     if(this.subAppIds!=null)        
         {
             retval.append(ParameterNamesIms.APPLICATION_ID_LABEL).append(".");
             retval.append(this.getApplicationIdentifiers());
-        } //End block
+        } 
 String var1B324365A764C077A55854483509F4AB_1546702187 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1546702187.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1546702187;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //retval.append(ParameterNamesIms.SERVICE_ID);
-        //if(this.subServiceIds!=null)
-            //{
-                //retval.append(ParameterNamesIms.SERVICE_ID_LABEL).append(".");
-            //retval.append(this.getSubserviceIdentifiers());
-            //}
-            //else if(this.subAppIds!=null)
-            //{
-                //retval.append(ParameterNamesIms.APPLICATION_ID_LABEL).append(".");
-                //retval.append(this.getApplicationIdentifiers());
-            //}
-        //return retval.toString();
+        
+        
+        
+        
+            
+                
+            
+            
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -73,8 +73,8 @@ String var1B324365A764C077A55854483509F4AB_1546702187 =         retval.toString(
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1968668122 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1968668122.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1968668122;
-        // ---------- Original Method ----------
-        //throw new ParseException(value,0);
+        
+        
     }
 
     
@@ -85,16 +85,16 @@ String var1B324365A764C077A55854483509F4AB_1546702187 =         retval.toString(
 String var7916812A23918EC204F845FC7221250B_1142861027 =             this.subAppIds.substring(1);
             var7916812A23918EC204F845FC7221250B_1142861027.addTaint(taint);
             return var7916812A23918EC204F845FC7221250B_1142861027;
-        } //End block
+        } 
 String var0F006A3A2B361F089D6C99C0B6CF0955_188389155 =         this.subAppIds;
         var0F006A3A2B361F089D6C99C0B6CF0955_188389155.addTaint(taint);
         return var0F006A3A2B361F089D6C99C0B6CF0955_188389155;
-        // ---------- Original Method ----------
-        //if(this.subAppIds.charAt(0)=='.')
-        //{
-            //return this.subAppIds.substring(1);
-        //}
-        //return this.subAppIds;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -105,32 +105,33 @@ String var0F006A3A2B361F089D6C99C0B6CF0955_188389155 =         this.subAppIds;
 String var90B5AED4D7D55758FDA74DDFBC627E72_623404191 =             this.subServiceIds.substring(1);
             var90B5AED4D7D55758FDA74DDFBC627E72_623404191.addTaint(taint);
             return var90B5AED4D7D55758FDA74DDFBC627E72_623404191;
-        } //End block
+        } 
 String varF0B426A6ADCB9A3BEC397536D0A15B1C_402281982 =         this.subServiceIds;
         varF0B426A6ADCB9A3BEC397536D0A15B1C_402281982.addTaint(taint);
         return varF0B426A6ADCB9A3BEC397536D0A15B1C_402281982;
-        // ---------- Original Method ----------
-        //if(this.subServiceIds.charAt(0)=='.')
-        //{
-            //return this.subServiceIds.substring(1);
-        //}
-        //return this.subServiceIds;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.024 -0400", hash_original_method = "0A65ED1D7958A8DC93D54B9D5172FB86", hash_generated_method = "813392CF39A94B938B1B3C7E12E815AD")
     public void setApplicationIdentifiers(String appids) {
         this.subAppIds = appids;
-        // ---------- Original Method ----------
-        //this.subAppIds = appids;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.025 -0400", hash_original_method = "86174BD2B9F1F7BE8C26F06288A88EF6", hash_generated_method = "B3E4B360308281668CC193B4B051E180")
     public void setSubserviceIdentifiers(String subservices) {
         this.subServiceIds = ".".concat(subservices);
-        // ---------- Original Method ----------
-        //this.subServiceIds = ".".concat(subservices);
+        
+        
     }
 
     
@@ -140,8 +141,8 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_402281982 =         this.subServiceId
         boolean varECBACA7859FEC45A936465DB764EE263_1823974809 = ((other instanceof PPreferredServiceHeader) && super.equals(other));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_978483400 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_978483400;
-        // ---------- Original Method ----------
-        //return (other instanceof PPreferredServiceHeader) && super.equals(other);
+        
+        
     }
 
     
@@ -151,9 +152,9 @@ String varF0B426A6ADCB9A3BEC397536D0A15B1C_402281982 =         this.subServiceId
 Object varF9E19AD6135C970F387F77C6F3DE4477_1331902949 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1331902949.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1331902949;
-        // ---------- Original Method ----------
-        //PPreferredService retval = (PPreferredService) super.clone();
-        //return retval;
+        
+        
+        
     }
 
     

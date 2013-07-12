@@ -1,6 +1,6 @@
 package java.sql;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,13 +31,13 @@ public class Timestamp extends Date {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_288187890 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_288187890.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_288187890;
-        } //End block
+        } 
         nanos = theNano;
-        // ---------- Original Method ----------
-        //if (theNano < 0 || theNano > 999999999) {
-            //throw new IllegalArgumentException();
-        //}
-        //nanos = theNano;
+        
+        
+            
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public class Timestamp extends Date {
         super(theTime);
         addTaint(theTime);
         setTimeImpl(theTime);
-        // ---------- Original Method ----------
-        //setTimeImpl(theTime);
+        
+        
     }
 
     
@@ -61,41 +61,41 @@ public class Timestamp extends Date {
             boolean varB326B5062B2F0E69046810717534CB09_1521823709 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_870909193 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_870909193;
-        } //End block
+        } 
         else
     if(thisTime < compareTime)        
         {
             boolean var68934A3E9455FA72420237EB05902327_172918293 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689854499 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_689854499;
-        } //End block
+        } 
         else
     if(this.getNanos() > theTimestamp.getNanos())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_993886813 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264116464 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_264116464;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_592730694 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1931780436 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1931780436;
-        } //End block
-        // ---------- Original Method ----------
-        //long thisTime = this.getTime();
-        //long compareTime = theTimestamp.getTime();
-        //if (thisTime > compareTime) {
-            //return true;
-        //}
-        //else if (thisTime < compareTime) {
-            //return false;
-        //}
-        //else if (this.getNanos() > theTimestamp.getNanos()) {
-            //return true;
-        //} else {
-            //return false;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -109,41 +109,41 @@ public class Timestamp extends Date {
             boolean varB326B5062B2F0E69046810717534CB09_959113413 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_679632439 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_679632439;
-        } //End block
+        } 
         else
     if(thisTime > compareTime)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1947414248 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_251317992 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_251317992;
-        } //End block
+        } 
         else
     if(this.getNanos() < theTimestamp.getNanos())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_2074780922 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_117609966 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_117609966;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1541572587 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1425804839 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1425804839;
-        } //End block
-        // ---------- Original Method ----------
-        //long thisTime = this.getTime();
-        //long compareTime = theTimestamp.getTime();
-        //if (thisTime < compareTime) {
-            //return true;
-        //}
-        //else if (thisTime > compareTime) {
-            //return false;
-        //}
-        //else if (this.getNanos() < theTimestamp.getNanos()) {
-            //return true;
-        //} else {
-            //return false;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -154,8 +154,8 @@ public class Timestamp extends Date {
         int varA7B650528C4FDA9DE26FC930D880E43B_1036571845 = (this.compareTo((Timestamp) theObject));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521348159 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521348159;
-        // ---------- Original Method ----------
-        //return this.compareTo((Timestamp) theObject);
+        
+        
     }
 
     
@@ -172,38 +172,38 @@ public class Timestamp extends Date {
                 int varC4CA4238A0B923820DCC509A6F75849B_1850513383 = (1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581083022 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_581083022;
-            } //End block
+            } 
             else
     if(thisNano == thatNano)            
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_1789235603 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484511304 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484511304;
-            } //End block
+            } 
             else
             {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_153028238 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744739991 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_744739991;
-            } //End block
-        } //End block
+            } 
+        } 
         int varB4A88417B3D0170D754C647C30B7216A_800368543 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160970402 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1160970402;
-        // ---------- Original Method ----------
-        //int result = super.compareTo(theTimestamp);
-        //if (result == 0) {
-            //int thisNano = this.getNanos();
-            //int thatNano = theTimestamp.getNanos();
-            //if (thisNano > thatNano) {
-                //return 1;
-            //} else if (thisNano == thatNano) {
-                //return 0;
-            //} else {
-                //return -1;
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+            
+                
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -216,15 +216,15 @@ public class Timestamp extends Date {
             boolean var7FF9EFB5886E232BC0F5ED29599DD02B_748082763 = (equals((Timestamp) theObject));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2119169555 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2119169555;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2010543566 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1491038823 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1491038823;
-        // ---------- Original Method ----------
-        //if (theObject instanceof Timestamp) {
-            //return equals((Timestamp) theObject);
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -236,27 +236,28 @@ public class Timestamp extends Date {
             boolean var68934A3E9455FA72420237EB05902327_1213306941 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065977486 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065977486;
-        } //End block
+        } 
         boolean var977037762EAFF8411442F8122B3582E8_955574290 = ((this.getTime() == theTimestamp.getTime())
                 && (this.getNanos() == theTimestamp.getNanos()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591352305 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_591352305;
-        // ---------- Original Method ----------
-        //if (theTimestamp == null) {
-            //return false;
-        //}
-        //return (this.getTime() == theTimestamp.getTime())
-                //&& (this.getNanos() == theTimestamp.getNanos());
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:59.108 -0400", hash_original_method = "B1AC9E2AEA3FCD014890A3BD86F2475F", hash_generated_method = "10C8F6508A4136D76EC3C0FC5E51A923")
     public int getNanos() {
         int varC86DC03A2B4847378E26EED64B8AE3ED_1559453710 = (nanos);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258174910 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258174910;
-        // ---------- Original Method ----------
-        //return nanos;
+        
+        
     }
 
     
@@ -268,10 +269,10 @@ public class Timestamp extends Date {
         long varE26C8DED340AE9B01E278D81BE18E9A2_1235174470 = (theTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1144722273 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1144722273;
-        // ---------- Original Method ----------
-        //long theTime = super.getTime();
-        //theTime = theTime + (nanos / 1000000);
-        //return theTime;
+        
+        
+        
+        
     }
 
     
@@ -282,13 +283,13 @@ public class Timestamp extends Date {
             IllegalArgumentException var7B0EF1CF5B4106FB746E6A999DFB2A76_1939340798 = new IllegalArgumentException("Value out of range");
             var7B0EF1CF5B4106FB746E6A999DFB2A76_1939340798.addTaint(taint);
             throw var7B0EF1CF5B4106FB746E6A999DFB2A76_1939340798;
-        } //End block
+        } 
         nanos = n;
-        // ---------- Original Method ----------
-        //if ((n < 0) || (n > 999999999)) {
-            //throw new IllegalArgumentException("Value out of range");
-        //}
-        //nanos = n;
+        
+        
+            
+        
+        
     }
 
     
@@ -297,8 +298,8 @@ public class Timestamp extends Date {
     public void setTime(long theTime) {
         addTaint(theTime);
         setTimeImpl(theTime);
-        // ---------- Original Method ----------
-        //setTimeImpl(theTime);
+        
+        
     }
 
     
@@ -311,18 +312,18 @@ public class Timestamp extends Date {
         {
             theTime = theTime - 1000;
             milliseconds = 1000 + milliseconds;
-        } //End block
+        } 
         super.setTime(theTime);
         setNanos(milliseconds * 1000000);
-        // ---------- Original Method ----------
-        //int milliseconds = (int) (theTime % 1000);
-        //theTime = theTime - milliseconds;
-        //if (milliseconds < 0) {
-            //theTime = theTime - 1000;
-            //milliseconds = 1000 + milliseconds;
-        //}
-        //super.setTime(theTime);
-        //setNanos(milliseconds * 1000000);
+        
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -346,7 +347,7 @@ public class Timestamp extends Date {
     if(nanos == 0)        
         {
             sb.append('0');
-        } //End block
+        } 
         else
         {
             format(nanos, 9, sb);
@@ -354,34 +355,34 @@ public class Timestamp extends Date {
 (sb.charAt(sb.length() - 1) == '0')            
             {
                 sb.setLength(sb.length() - 1);
-            } //End block
-        } //End block
+            } 
+        } 
 String var2460B846747F8B22185AD8BE722266A5_889933813 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_889933813.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_889933813;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(29);
-        //format((getYear() + 1900), 4, sb);
-        //sb.append('-');
-        //format((getMonth() + 1), 2, sb);
-        //sb.append('-');
-        //format(getDate(), 2, sb);
-        //sb.append(' ');
-        //format(getHours(), 2, sb);
-        //sb.append(':');
-        //format(getMinutes(), 2, sb);
-        //sb.append(':');
-        //format(getSeconds(), 2, sb);
-        //sb.append('.');
-        //if (nanos == 0) {
-            //sb.append('0');
-        //} else {
-            //format(nanos, 9, sb);
-            //while (sb.charAt(sb.length() - 1) == '0') {
-                //sb.setLength(sb.length() - 1);
-            //}
-        //}
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -394,14 +395,14 @@ String var2460B846747F8B22185AD8BE722266A5_889933813 =         sb.toString();
     if(digits - str.length() > 0)        
         {
             sb.append(PADDING.substring(0, digits - str.length()));
-        } //End block
+        } 
         sb.append(str);
-        // ---------- Original Method ----------
-        //String str = String.valueOf(date);
-        //if (digits - str.length() > 0) {
-            //sb.append(PADDING.substring(0, digits - str.length()));
-        //}
-        //sb.append(str);
+        
+        
+        
+            
+        
+        
     }
 
     

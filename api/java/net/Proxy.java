@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,15 +20,15 @@ public class Proxy {
             IllegalArgumentException varC693C0D94036BD60AD6E26795E42BD6A_1517318827 = new IllegalArgumentException("Illegal Proxy.Type or SocketAddress argument");
             varC693C0D94036BD60AD6E26795E42BD6A_1517318827.addTaint(taint);
             throw varC693C0D94036BD60AD6E26795E42BD6A_1517318827;
-        } //End block
+        } 
         this.type = type;
         address = sa;
-        // ---------- Original Method ----------
-        //if (type == Type.DIRECT || sa == null) {
-            //throw new IllegalArgumentException("Illegal Proxy.Type or SocketAddress argument");
-        //}
-        //this.type = type;
-        //address = sa;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -36,29 +36,31 @@ public class Proxy {
     private  Proxy() {
         type = Type.DIRECT;
         address = null;
-        // ---------- Original Method ----------
-        //type = Type.DIRECT;
-        //address = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.124 -0400", hash_original_method = "78A2D2ADD0266F75C3E71E2673988A41", hash_generated_method = "AB41055AA664DE42225454C7FBC6C287")
     public Proxy.Type type() {
 Proxy.Type varC5B9F25B4EEAD3E8E2C33F9429204397_554150066 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_554150066.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_554150066;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.124 -0400", hash_original_method = "9D457D33A5E2F2EF090CABC1273126C2", hash_generated_method = "E4DBB9D2383DA33EA178E577345FB3FA")
     public SocketAddress address() {
 SocketAddress var814577DDD37BAFB17E08CBEFDB411BAE_1258775609 =         address;
         var814577DDD37BAFB17E08CBEFDB411BAE_1258775609.addTaint(taint);
         return var814577DDD37BAFB17E08CBEFDB411BAE_1258775609;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
@@ -69,25 +71,25 @@ SocketAddress var814577DDD37BAFB17E08CBEFDB411BAE_1258775609 =         address;
     if(type != null)        
         {
             builder.append(type.toString());
-        } //End block
+        } 
         builder.append("@");
     if(type != Proxy.Type.DIRECT && address != null)        
         {
             builder.append(address.toString());
-        } //End block
+        } 
 String varF4CF030572656354ACFDF83FEE21D7A6_1417552500 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_1417552500.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_1417552500;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder();
-        //if (type != null) {
-            //builder.append(type.toString());
-        //}
-        //builder.append("@");
-        //if (type != Proxy.Type.DIRECT && address != null) {
-            //builder.append(address.toString());
-        //}
-        //return builder.toString();
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -100,26 +102,26 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1417552500 =         builder.toString
             boolean varB326B5062B2F0E69046810717534CB09_1338303090 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2106247437 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2106247437;
-        } //End block
+        } 
     if(!(obj instanceof Proxy))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1154858546 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1596712174 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1596712174;
-        } //End block
+        } 
         Proxy another = (Proxy) obj;
         boolean var936EFD08C12A47FB02C9277AA02F0328_1965443565 = ((type == another.type) && address.equals(another.address));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252664168 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_252664168;
-        // ---------- Original Method ----------
-        //if (this == obj) {
-            //return true;
-        //}
-        //if (!(obj instanceof Proxy)) {
-            //return false;
-        //}
-        //Proxy another = (Proxy) obj;
-        //return (type == another.type) && address.equals(another.address);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -131,17 +133,17 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1417552500 =         builder.toString
     if(address != null)        
         {
             ret += address.hashCode();
-        } //End block
+        } 
         int var2CB9DF9898E55FD0AD829DC202DDBD1C_330742641 = (ret);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213047285 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213047285;
-        // ---------- Original Method ----------
-        //int ret = 0;
-        //ret += type.hashCode();
-        //if (address != null) {
-            //ret += address.hashCode();
-        //}
-        //return ret;
+        
+        
+        
+        
+            
+        
+        
     }
 
     

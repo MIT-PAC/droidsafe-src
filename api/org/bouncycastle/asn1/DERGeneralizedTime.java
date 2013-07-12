@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,23 +23,23 @@ public class DERGeneralizedTime extends ASN1Object {
         try 
         {
             this.getDate();
-        } //End block
+        } 
         catch (ParseException e)
         {
             IllegalArgumentException var1CFFC49FF7908DF4E838225C96EC0E1A_1004173602 = new IllegalArgumentException("invalid date string: " + e.getMessage());
             var1CFFC49FF7908DF4E838225C96EC0E1A_1004173602.addTaint(taint);
             throw var1CFFC49FF7908DF4E838225C96EC0E1A_1004173602;
-        } //End block
-        // ---------- Original Method ----------
-        //this.time = time;
-        //try
-        //{
-            //this.getDate();
-        //}
-        //catch (ParseException e)
-        //{
-            //throw new IllegalArgumentException("invalid date string: " + e.getMessage());
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -49,10 +49,10 @@ public class DERGeneralizedTime extends ASN1Object {
         SimpleDateFormat dateF = new SimpleDateFormat("yyyyMMddHHmmss'Z'");
         dateF.setTimeZone(new SimpleTimeZone(0,"Z"));
         this.time = dateF.format(time);
-        // ---------- Original Method ----------
-        //SimpleDateFormat dateF = new SimpleDateFormat("yyyyMMddHHmmss'Z'");
-        //dateF.setTimeZone(new SimpleTimeZone(0,"Z"));
-        //this.time = dateF.format(time);
+        
+        
+        
+        
     }
 
     
@@ -64,15 +64,15 @@ public class DERGeneralizedTime extends ASN1Object {
 for(int i = 0;i != dateC.length;i++)
         {
             dateC[i] = (char)(bytes[i] & 0xff);
-        } //End block
+        } 
         this.time = new String(dateC);
-        // ---------- Original Method ----------
-        //char[]  dateC = new char[bytes.length];
-        //for (int i = 0; i != dateC.length; i++)
-        //{
-            //dateC[i] = (char)(bytes[i] & 0xff);
-        //}
-        //this.time = new String(dateC);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -101,13 +101,14 @@ for(int i = 0;i != dateC.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.056 -0400", hash_original_method = "FFD2475F957538109629A734D2087930", hash_generated_method = "A9A15B3E42A5A3F815E6D106C3D288C3")
     public String getTimeString() {
 String varA66D020F4BCAB26A12562312D8A04DED_125222305 =         time;
         varA66D020F4BCAB26A12562312D8A04DED_125222305.addTaint(taint);
         return varA66D020F4BCAB26A12562312D8A04DED_125222305;
-        // ---------- Original Method ----------
-        //return time;
+        
+        
     }
 
     
@@ -118,7 +119,7 @@ String varA66D020F4BCAB26A12562312D8A04DED_125222305 =         time;
 String varC6BCCFB76527D51C7DBD6D13D81074C3_1113401105 =             time.substring(0, time.length() - 1) + "GMT+00:00";
             varC6BCCFB76527D51C7DBD6D13D81074C3_1113401105.addTaint(taint);
             return varC6BCCFB76527D51C7DBD6D13D81074C3_1113401105;
-        } //End block
+        } 
         else
         {
             int signPos = time.length() - 5;
@@ -132,7 +133,7 @@ String var3D22A5EB1007801001C40A4BAE54B28C_1779177264 =                 time.sub
                     + time.substring(signPos + 3);
                 var3D22A5EB1007801001C40A4BAE54B28C_1779177264.addTaint(taint);
                 return var3D22A5EB1007801001C40A4BAE54B28C_1779177264;
-            } //End block
+            } 
             else
             {
                 signPos = time.length() - 3;
@@ -145,14 +146,14 @@ String var285F4ED6044387CBC8F35180E07CA9A7_1658840386 =                     time
                         + ":00";
                     var285F4ED6044387CBC8F35180E07CA9A7_1658840386.addTaint(taint);
                     return var285F4ED6044387CBC8F35180E07CA9A7_1658840386;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 String var764FB26AB938608CFF815DA1893107ED_807641062 =         time + calculateGMTOffset();
         var764FB26AB938608CFF815DA1893107ED_807641062.addTaint(taint);
         return var764FB26AB938608CFF815DA1893107ED_807641062;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -165,7 +166,7 @@ String var764FB26AB938608CFF815DA1893107ED_807641062 =         time + calculateG
         {
             sign = "-";
             offset = -offset;
-        } //End block
+        } 
         int hours = offset / (60 * 60 * 1000);
         int minutes = (offset - (hours * 60 * 60 * 1000)) / (60 * 1000);
         try 
@@ -173,36 +174,36 @@ String var764FB26AB938608CFF815DA1893107ED_807641062 =         time + calculateG
     if(timeZone.useDaylightTime() && timeZone.inDaylightTime(this.getDate()))            
             {
                 hours += sign.equals("+") ? 1 : -1;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ParseException e)
         {
-        } //End block
+        } 
 String var2C086C598863E0349F310FCA1BDEDBDA_1859223284 =         "GMT" + sign + convert(hours) + ":" + convert(minutes);
         var2C086C598863E0349F310FCA1BDEDBDA_1859223284.addTaint(taint);
         return var2C086C598863E0349F310FCA1BDEDBDA_1859223284;
-        // ---------- Original Method ----------
-        //String sign = "+";
-        //TimeZone timeZone = TimeZone.getDefault();
-        //int offset = timeZone.getRawOffset();
-        //if (offset < 0)
-        //{
-            //sign = "-";
-            //offset = -offset;
-        //}
-        //int hours = offset / (60 * 60 * 1000);
-        //int minutes = (offset - (hours * 60 * 60 * 1000)) / (60 * 1000);
-        //try
-        //{
-            //if (timeZone.useDaylightTime() && timeZone.inDaylightTime(this.getDate()))
-            //{
-                //hours += sign.equals("+") ? 1 : -1;
-            //}
-        //}
-        //catch (ParseException e)
-        //{
-        //}
-        //return "GMT" + sign + convert(hours) + ":" + convert(minutes);
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -214,16 +215,16 @@ String var2C086C598863E0349F310FCA1BDEDBDA_1859223284 =         "GMT" + sign + c
 String var7345ECA479F2762411480436225A22CB_42119343 =             "0" + time;
             var7345ECA479F2762411480436225A22CB_42119343.addTaint(taint);
             return var7345ECA479F2762411480436225A22CB_42119343;
-        } //End block
+        } 
 String var6A3BBCB0E6B7481E73D549A5BA968D95_271381250 =         Integer.toString(time);
         var6A3BBCB0E6B7481E73D549A5BA968D95_271381250.addTaint(taint);
         return var6A3BBCB0E6B7481E73D549A5BA968D95_271381250;
-        // ---------- Original Method ----------
-        //if (time < 10)
-        //{
-            //return "0" + time;
-        //}
-        //return Integer.toString(time);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -236,13 +237,13 @@ String var6A3BBCB0E6B7481E73D549A5BA968D95_271381250 =         Integer.toString(
     if(hasFractionalSeconds())            
             {
                 dateF = new SimpleDateFormat("yyyyMMddHHmmss.SSS'Z'");
-            } //End block
+            } 
             else
             {
                 dateF = new SimpleDateFormat("yyyyMMddHHmmss'Z'");
-            } //End block
+            } 
             dateF.setTimeZone(new SimpleTimeZone(0, "Z"));
-        } //End block
+        } 
         else
     if(time.indexOf('-') > 0 || time.indexOf('+') > 0)        
         {
@@ -250,25 +251,25 @@ String var6A3BBCB0E6B7481E73D549A5BA968D95_271381250 =         Integer.toString(
     if(hasFractionalSeconds())            
             {
                 dateF = new SimpleDateFormat("yyyyMMddHHmmss.SSSz");
-            } //End block
+            } 
             else
             {
                 dateF = new SimpleDateFormat("yyyyMMddHHmmssz");
-            } //End block
+            } 
             dateF.setTimeZone(new SimpleTimeZone(0, "Z"));
-        } //End block
+        } 
         else
         {
     if(hasFractionalSeconds())            
             {
                 dateF = new SimpleDateFormat("yyyyMMddHHmmss.SSS");
-            } //End block
+            } 
             else
             {
                 dateF = new SimpleDateFormat("yyyyMMddHHmmss");
-            } //End block
+            } 
             dateF.setTimeZone(new SimpleTimeZone(0, TimeZone.getDefault().getID()));
-        } //End block
+        } 
     if(hasFractionalSeconds())        
         {
             String frac = d.substring(14);
@@ -279,31 +280,31 @@ for(index = 1;index < frac.length();index++)
     if(!('0' <= ch && ch <= '9'))                
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
     if(index - 1 > 3)            
             {
                 frac = frac.substring(0, 4) + frac.substring(index);
                 d = d.substring(0, 14) + frac;
-            } //End block
+            } 
             else
     if(index - 1 == 1)            
             {
                 frac = frac.substring(0, index) + "00" + frac.substring(index);
                 d = d.substring(0, 14) + frac;
-            } //End block
+            } 
             else
     if(index - 1 == 2)            
             {
                 frac = frac.substring(0, index) + "0" + frac.substring(index);
                 d = d.substring(0, 14) + frac;
-            } //End block
-        } //End block
+            } 
+        } 
 Date varC894E815AA82318FD33F469B86EDD99E_622946845 =         dateF.parse(d);
         varC894E815AA82318FD33F469B86EDD99E_622946845.addTaint(taint);
         return varC894E815AA82318FD33F469B86EDD99E_622946845;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -312,8 +313,8 @@ Date varC894E815AA82318FD33F469B86EDD99E_622946845 =         dateF.parse(d);
         boolean varD5D5351CBD88B9A84FD689FA6E5C6AF1_577916158 = (time.indexOf('.') == 14);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_636692903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_636692903;
-        // ---------- Original Method ----------
-        //return time.indexOf('.') == 14;
+        
+        
     }
 
     
@@ -324,18 +325,18 @@ Date varC894E815AA82318FD33F469B86EDD99E_622946845 =         dateF.parse(d);
 for(int i = 0;i != cs.length;i++)
         {
             bs[i] = (byte)cs[i];
-        } //End block
+        } 
         byte[] var7C9DF801238ABE28CAE2675FD3166A1A_1164365856 = (bs);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1329905642 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1329905642;
-        // ---------- Original Method ----------
-        //char[]  cs = time.toCharArray();
-        //byte[]  bs = new byte[cs.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //bs[i] = (byte)cs[i];
-        //}
-        //return bs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -344,8 +345,8 @@ for(int i = 0;i != cs.length;i++)
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(GENERALIZED_TIME, this.getOctets());
-        // ---------- Original Method ----------
-        //out.writeEncoded(GENERALIZED_TIME, this.getOctets());
+        
+        
     }
 
     
@@ -358,16 +359,16 @@ for(int i = 0;i != cs.length;i++)
             boolean var68934A3E9455FA72420237EB05902327_986663603 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1446308647 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1446308647;
-        } //End block
+        } 
         boolean var30C675A1B918B9BBC4EE808A642E5232_716557265 = (time.equals(((DERGeneralizedTime)o).time));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_152137361 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_152137361;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERGeneralizedTime))
-        //{
-            //return false;
-        //}
-        //return time.equals(((DERGeneralizedTime)o).time);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -376,8 +377,8 @@ for(int i = 0;i != cs.length;i++)
         int varCE1F3110113ADDA600B9294B4A8B4BC4_927026413 = (time.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1185212119 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1185212119;
-        // ---------- Original Method ----------
-        //return time.hashCode();
+        
+        
     }
 
     

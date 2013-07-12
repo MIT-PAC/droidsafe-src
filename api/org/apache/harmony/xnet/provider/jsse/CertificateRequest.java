@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ public class CertificateRequest extends Message {
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR,
                     "CertificateRequest: array of certificate authority certificates is null");
-        } //End block
+        } 
         this.certificate_types = certificate_types;
         int totalPrincipalsLength = 0;
         certificate_authorities = new X500Principal[accepted.length];
@@ -41,23 +41,23 @@ for(int i = 0;i < accepted.length;i++)
             certificate_authorities[i] = accepted[i].getIssuerX500Principal();
             encoded_principals[i] = certificate_authorities[i].getEncoded();
             totalPrincipalsLength += encoded_principals[i].length + 2;
-        } //End block
+        } 
         length = 3 + certificate_types.length + totalPrincipalsLength;
-        // ---------- Original Method ----------
-        //if (accepted == null) {
-            //fatalAlert(AlertProtocol.INTERNAL_ERROR,
-                    //"CertificateRequest: array of certificate authority certificates is null");
-        //}
-        //this.certificate_types = certificate_types;
-        //int totalPrincipalsLength = 0;
-        //certificate_authorities = new X500Principal[accepted.length];
-        //encoded_principals = new byte[accepted.length][];
-        //for (int i = 0; i < accepted.length; i++) {
-            //certificate_authorities[i] = accepted[i].getIssuerX500Principal();
-            //encoded_principals[i] = certificate_authorities[i].getEncoded();
-            //totalPrincipalsLength += encoded_principals[i].length + 2;
-        //}
-        //length = 3 + certificate_types.length + totalPrincipalsLength;
+        
+        
+            
+                    
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -79,15 +79,15 @@ for(int i = 0;i < accepted.length;i++)
             principals.add(new X500Principal(in));
             totalPrincipalsLength += 2;
             totalPrincipalsLength += principalLength;
-        } //End block
+        } 
         certificate_authorities = principals.toArray(new X500Principal[principals.size()]);
         this.length = 3 + certificate_types.length + totalPrincipalsLength;
     if(this.length != length)        
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect CertificateRequest");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -99,43 +99,44 @@ for(int i = 0;i < accepted.length;i++)
 for(int i = 0;i < certificate_types.length;i++)
         {
             out.write(certificate_types[i]);
-        } //End block
+        } 
         int authoritiesLength = 0;
 for(int i = 0;i < certificate_authorities.length;i++)
         {
             authoritiesLength += encoded_principals[i].length +2;
-        } //End block
+        } 
         out.writeUint16(authoritiesLength);
 for(int i = 0;i < certificate_authorities.length;i++)
         {
             out.writeUint16(encoded_principals[i].length);
             out.write(encoded_principals[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //out.writeUint8(certificate_types.length);
-        //for (int i = 0; i < certificate_types.length; i++) {
-            //out.write(certificate_types[i]);
-        //}
-        //int authoritiesLength = 0;
-        //for (int i = 0; i < certificate_authorities.length; i++) {
-            //authoritiesLength += encoded_principals[i].length +2;
-        //}
-        //out.writeUint16(authoritiesLength);
-        //for (int i = 0; i < certificate_authorities.length; i++) {
-            //out.writeUint16(encoded_principals[i].length);
-            //out.write(encoded_principals[i]);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.868 -0400", hash_original_method = "B8B86D3685160AFFAE5E6FB9770B1A60", hash_generated_method = "9AC5532845A5DE09855C4D05A9EFA643")
     @Override
     public int getType() {
         int var48CC83B2C5275A6D72C60DF405E239BC_731057878 = (Handshake.CERTIFICATE_REQUEST);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359714689 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_359714689;
-        // ---------- Original Method ----------
-        //return Handshake.CERTIFICATE_REQUEST;
+        
+        
     }
 
     
@@ -151,26 +152,26 @@ for(int i = 0;i < types.length;i++)
                 {
                     fatalAlert(AlertProtocol.DECODE_ERROR,
                             "DECODE ERROR: incorrect CertificateRequest");
-                } //End block
+                } 
                 types[i] = type;
-            } //End block
-        } //End block
+            } 
+        } 
 String[] var3594B614C10CC2B651EA0D169ACAF4A6_2062630406 =         types;
         var3594B614C10CC2B651EA0D169ACAF4A6_2062630406.addTaint(taint);
         return var3594B614C10CC2B651EA0D169ACAF4A6_2062630406;
-        // ---------- Original Method ----------
-        //if (types == null) {
-            //types = new String[certificate_types.length];
-            //for (int i = 0; i < types.length; i++) {
-                //String type = CipherSuite.getClientKeyType(certificate_types[i]);
-                //if (type == null) {
-                    //fatalAlert(AlertProtocol.DECODE_ERROR,
-                            //"DECODE ERROR: incorrect CertificateRequest");
-                //}
-                //types[i] = type;
-            //}
-        //}
-        //return types;
+        
+        
+            
+            
+                
+                
+                    
+                            
+                
+                
+            
+        
+        
     }
 
     

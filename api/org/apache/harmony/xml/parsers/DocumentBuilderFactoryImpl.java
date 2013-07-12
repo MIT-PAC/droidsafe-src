@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.970 -0400", hash_original_method = "CAFBFE87DB9B664F26C15EE0CE72FE04", hash_generated_method = "CAFBFE87DB9B664F26C15EE0CE72FE04")
     public DocumentBuilderFactoryImpl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -24,8 +24,8 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
         IllegalArgumentException varBF6A5C454ED01F0F986515C3E9A9CEA3_707239918 = new IllegalArgumentException(name);
         varBF6A5C454ED01F0F986515C3E9A9CEA3_707239918.addTaint(taint);
         throw varBF6A5C454ED01F0F986515C3E9A9CEA3_707239918;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException(name);
+        
+        
     }
 
     
@@ -38,37 +38,37 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1244388239 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1244388239.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1244388239;
-        } //End block
+        } 
     if(NAMESPACES.equals(name))        
         {
             boolean varB94774236316EE50DC294BB6C9D2E16B_1184371343 = (isNamespaceAware());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_939941321 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_939941321;
-        } //End block
+        } 
         else
     if(VALIDATION.equals(name))        
         {
             boolean varFA288071F5211BA94CE228424C0EAD8B_1610418526 = (isValidating());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_157133921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_157133921;
-        } //End block
+        } 
         else
         {
             ParserConfigurationException var7A8A9BD806152DF4EA81815776F904CD_746885393 = new ParserConfigurationException(name);
             var7A8A9BD806152DF4EA81815776F904CD_746885393.addTaint(taint);
             throw var7A8A9BD806152DF4EA81815776F904CD_746885393;
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException();
-        //}
-        //if (NAMESPACES.equals(name)) {
-            //return isNamespaceAware();
-        //} else if (VALIDATION.equals(name)) {
-            //return isValidating();
-        //} else {
-            //throw new ParserConfigurationException(name);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -81,7 +81,7 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
                     "No validating DocumentBuilder implementation available");
             var634C2F9400942A1BE03A4C85C83F3B9D_1253866011.addTaint(taint);
             throw var634C2F9400942A1BE03A4C85C83F3B9D_1253866011;
-        } //End block
+        } 
         DocumentBuilderImpl builder = new DocumentBuilderImpl();
         builder.setCoalescing(isCoalescing());
         builder.setIgnoreComments(isIgnoringComments());
@@ -90,17 +90,17 @@ public class DocumentBuilderFactoryImpl extends DocumentBuilderFactory {
 DocumentBuilder varFD34A536430ED6812E338CBCF7B883AA_312149181 =         builder;
         varFD34A536430ED6812E338CBCF7B883AA_312149181.addTaint(taint);
         return varFD34A536430ED6812E338CBCF7B883AA_312149181;
-        // ---------- Original Method ----------
-        //if (isValidating()) {
-            //throw new ParserConfigurationException(
-                    //"No validating DocumentBuilder implementation available");
-        //}
-        //DocumentBuilderImpl builder = new DocumentBuilderImpl();
-        //builder.setCoalescing(isCoalescing());
-        //builder.setIgnoreComments(isIgnoringComments());
-        //builder.setIgnoreElementContentWhitespace(isIgnoringElementContentWhitespace());
-        //builder.setNamespaceAware(isNamespaceAware());
-        //return builder;
+        
+        
+            
+                    
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ DocumentBuilder varFD34A536430ED6812E338CBCF7B883AA_312149181 =         builder;
         IllegalArgumentException varBF6A5C454ED01F0F986515C3E9A9CEA3_1521687211 = new IllegalArgumentException(name);
         varBF6A5C454ED01F0F986515C3E9A9CEA3_1521687211.addTaint(taint);
         throw varBF6A5C454ED01F0F986515C3E9A9CEA3_1521687211;
-        // ---------- Original Method ----------
-        //throw new IllegalArgumentException(name);
+        
+        
     }
 
     
@@ -127,33 +127,33 @@ DocumentBuilder varFD34A536430ED6812E338CBCF7B883AA_312149181 =         builder;
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_230445387 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_230445387.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_230445387;
-        } //End block
+        } 
     if(NAMESPACES.equals(name))        
         {
             setNamespaceAware(value);
-        } //End block
+        } 
         else
     if(VALIDATION.equals(name))        
         {
             setValidating(value);
-        } //End block
+        } 
         else
         {
             ParserConfigurationException var7A8A9BD806152DF4EA81815776F904CD_264515239 = new ParserConfigurationException(name);
             var7A8A9BD806152DF4EA81815776F904CD_264515239.addTaint(taint);
             throw var7A8A9BD806152DF4EA81815776F904CD_264515239;
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException();
-        //}
-        //if (NAMESPACES.equals(name)) {
-            //setNamespaceAware(value);
-        //} else if (VALIDATION.equals(name)) {
-            //setValidating(value);
-        //} else {
-            //throw new ParserConfigurationException(name);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     

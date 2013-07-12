@@ -1,6 +1,6 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,20 +14,20 @@ public abstract class Observable<T> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.446 -0400", hash_original_method = "70464F2D6E4F3B59517C778B3B1A93D5", hash_generated_method = "70464F2D6E4F3B59517C778B3B1A93D5")
     public Observable ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.447 -0400", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "89E3CA374B0AF9EC62CFA359F9983E56")
     public void registerObserver(T observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(observer.getTaint());
     if(observer == null)        
         {
             IllegalArgumentException varD8549322C6300CBB2674A7924C5E257A_390775344 = new IllegalArgumentException("The observer is null.");
             varD8549322C6300CBB2674A7924C5E257A_390775344.addTaint(taint);
             throw varD8549322C6300CBB2674A7924C5E257A_390775344;
-        } //End block
+        } 
         synchronized
 (mObservers)        {
     if(mObservers.contains(observer))            
@@ -35,19 +35,19 @@ public abstract class Observable<T> {
                 IllegalStateException var4ED84C89C8DE99719769468B984ED60A_1841275576 = new IllegalStateException("Observer " + observer + " is already registered.");
                 var4ED84C89C8DE99719769468B984ED60A_1841275576.addTaint(taint);
                 throw var4ED84C89C8DE99719769468B984ED60A_1841275576;
-            } //End block
+            } 
             mObservers.add(observer);
-        } //End block
-        // ---------- Original Method ----------
-        //if (observer == null) {
-            //throw new IllegalArgumentException("The observer is null.");
-        //}
-        //synchronized(mObservers) {
-            //if (mObservers.contains(observer)) {
-                //throw new IllegalStateException("Observer " + observer + " is already registered.");
-            //}
-            //mObservers.add(observer);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -59,7 +59,7 @@ public abstract class Observable<T> {
             IllegalArgumentException varD8549322C6300CBB2674A7924C5E257A_700851573 = new IllegalArgumentException("The observer is null.");
             varD8549322C6300CBB2674A7924C5E257A_700851573.addTaint(taint);
             throw varD8549322C6300CBB2674A7924C5E257A_700851573;
-        } //End block
+        } 
         synchronized
 (mObservers)        {
             int index = mObservers.indexOf(observer);
@@ -68,20 +68,20 @@ public abstract class Observable<T> {
                 IllegalStateException varFA0CC1A3FD1B549CF302ACCE9A2F3D78_27777274 = new IllegalStateException("Observer " + observer + " was not registered.");
                 varFA0CC1A3FD1B549CF302ACCE9A2F3D78_27777274.addTaint(taint);
                 throw varFA0CC1A3FD1B549CF302ACCE9A2F3D78_27777274;
-            } //End block
+            } 
             mObservers.remove(index);
-        } //End block
-        // ---------- Original Method ----------
-        //if (observer == null) {
-            //throw new IllegalArgumentException("The observer is null.");
-        //}
-        //synchronized(mObservers) {
-            //int index = mObservers.indexOf(observer);
-            //if (index == -1) {
-                //throw new IllegalStateException("Observer " + observer + " was not registered.");
-            //}
-            //mObservers.remove(index);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -90,11 +90,11 @@ public abstract class Observable<T> {
         synchronized
 (mObservers)        {
             mObservers.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(mObservers) {
-            //mObservers.clear();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

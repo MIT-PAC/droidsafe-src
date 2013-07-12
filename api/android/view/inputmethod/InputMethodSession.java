@@ -1,6 +1,6 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;

@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,14 +37,14 @@ public class ImageDescriptor {
         highOffset = 0;
         lowOffset = 0;
         length = 0;
-        // ---------- Original Method ----------
-        //width = 0;
-        //height = 0;
-        //codingScheme = 0;
-        //imageId = 0;
-        //highOffset = 0;
-        //lowOffset = 0;
-        //length = 0;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

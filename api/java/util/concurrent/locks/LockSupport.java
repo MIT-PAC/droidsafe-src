@@ -1,6 +1,6 @@
 package java.util.concurrent.locks;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,22 +11,25 @@ public class LockSupport {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.915 -0400", hash_original_method = "1CF344A2CC5D467FE100F1B8497D1A42", hash_generated_method = "97F54F0429C724F0C1E459A848015358")
     private  LockSupport() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        private static void setBlocker(Thread t, Object arg) {
+        @DSModeled(DSC.SAFE)
+    private static void setBlocker(Thread t, Object arg) {
         unsafe.putObject(t, parkBlockerOffset, arg);
     }
 
     
-        public static void unpark(Thread thread) {
+        @DSModeled(DSC.SAFE)
+    public static void unpark(Thread thread) {
         if (thread != null)
             unsafe.unpark(thread);
     }
 
     
-        public static void park(Object blocker) {
+        @DSModeled(DSC.SAFE)
+    public static void park(Object blocker) {
         Thread t = Thread.currentThread();
         setBlocker(t, blocker);
         unsafe.park(false, 0L);
@@ -34,7 +37,8 @@ public class LockSupport {
     }
 
     
-        public static void parkNanos(Object blocker, long nanos) {
+        @DSModeled(DSC.SAFE)
+    public static void parkNanos(Object blocker, long nanos) {
         if (nanos > 0) {
             Thread t = Thread.currentThread();
             setBlocker(t, blocker);
@@ -44,7 +48,8 @@ public class LockSupport {
     }
 
     
-        public static void parkUntil(Object blocker, long deadline) {
+        @DSModeled(DSC.SAFE)
+    public static void parkUntil(Object blocker, long deadline) {
         Thread t = Thread.currentThread();
         setBlocker(t, blocker);
         unsafe.park(true, deadline);
@@ -52,23 +57,27 @@ public class LockSupport {
     }
 
     
-        public static Object getBlocker(Thread t) {
+        @DSModeled(DSC.SAFE)
+    public static Object getBlocker(Thread t) {
         return unsafe.getObjectVolatile(t, parkBlockerOffset);
     }
 
     
-        public static void park() {
+        @DSModeled(DSC.SAFE)
+    public static void park() {
         unsafe.park(false, 0L);
     }
 
     
-        public static void parkNanos(long nanos) {
+        @DSModeled(DSC.SAFE)
+    public static void parkNanos(long nanos) {
         if (nanos > 0)
             unsafe.park(false, nanos);
     }
 
     
-        public static void parkUntil(long deadline) {
+        @DSModeled(DSC.SAFE)
+    public static void parkUntil(long deadline) {
         unsafe.park(true, deadline);
     }
 

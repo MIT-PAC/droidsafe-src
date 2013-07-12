@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x501;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,32 +44,32 @@ public final class Name {
             IOException varAB47338E7FFFC7C5ED8E5096A46169C7_1835016314 = new IOException("Wrong content length");
             varAB47338E7FFFC7C5ED8E5096A46169C7_1835016314.addTaint(taint);
             throw varAB47338E7FFFC7C5ED8E5096A46169C7_1835016314;
-        } //End block
+        } 
         ASN1.decode(in);
         this.rdn = (List<List<AttributeTypeAndValue>>) in.content;
-        // ---------- Original Method ----------
-        //DerInputStream in = new DerInputStream(encoding);
-        //if (in.getEndOffset() != encoding.length) {
-            //throw new IOException("Wrong content length");
-        //}
-        //ASN1.decode(in);
-        //this.rdn = (List<List<AttributeTypeAndValue>>) in.content;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.638 -0400", hash_original_method = "C2DB210B9AE13E0849500530EB26AF9F", hash_generated_method = "99987687812445E7EE166CCEBCAFD37E")
     public  Name(String name) throws IOException {
         rdn = new DNParser(name).parse();
-        // ---------- Original Method ----------
-        //rdn = new DNParser(name).parse();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.639 -0400", hash_original_method = "31033A15DF0AC22272F2A1E0E5DFAD4C", hash_generated_method = "8232F001CAB6A6D20D5565435712EF88")
     private  Name(List<List<AttributeTypeAndValue>> rdn) {
         this.rdn = rdn;
-        // ---------- Original Method ----------
-        //this.rdn = rdn;
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ public final class Name {
 X500Principal varDAA92896EE3532444EC597CD40E21AB2_644625265 =         new X500Principal(getEncoded());
         varDAA92896EE3532444EC597CD40E21AB2_644625265.addTaint(taint);
         return varDAA92896EE3532444EC597CD40E21AB2_644625265;
-        // ---------- Original Method ----------
-        //return new X500Principal(getEncoded());
+        
+        
     }
 
     
@@ -90,77 +90,78 @@ X500Principal varDAA92896EE3532444EC597CD40E21AB2_644625265 =         new X500Pr
     if(rfc1779String == null)            
             {
                 rfc1779String = getName0(format);
-            } //End block
+            } 
 String var0D48121B66F6CAEBAAB97E281579A1E8_2083177109 =             rfc1779String;
             var0D48121B66F6CAEBAAB97E281579A1E8_2083177109.addTaint(taint);
             return var0D48121B66F6CAEBAAB97E281579A1E8_2083177109;
-        } //End block
+        } 
         else
     if(X500Principal.RFC2253.equals(format))        
         {
     if(rfc2253String == null)            
             {
                 rfc2253String = getName0(format);
-            } //End block
+            } 
 String var3829092DB096211EB6A6EAE848B76893_191853040 =             rfc2253String;
             var3829092DB096211EB6A6EAE848B76893_191853040.addTaint(taint);
             return var3829092DB096211EB6A6EAE848B76893_191853040;
-        } //End block
+        } 
         else
     if(X500Principal.CANONICAL.equals(format))        
         {
     if(canonicalString == null)            
             {
                 canonicalString = getName0(format);
-            } //End block
+            } 
 String varA736130F7261BDD046BD91E8F9411BA0_736292666 =             canonicalString;
             varA736130F7261BDD046BD91E8F9411BA0_736292666.addTaint(taint);
             return varA736130F7261BDD046BD91E8F9411BA0_736292666;
-        } //End block
+        } 
         else
     if(X500Principal.RFC1779.equalsIgnoreCase(format))        
         {
     if(rfc1779String == null)            
             {
                 rfc1779String = getName0(X500Principal.RFC1779);
-            } //End block
+            } 
 String var0D48121B66F6CAEBAAB97E281579A1E8_1171236406 =             rfc1779String;
             var0D48121B66F6CAEBAAB97E281579A1E8_1171236406.addTaint(taint);
             return var0D48121B66F6CAEBAAB97E281579A1E8_1171236406;
-        } //End block
+        } 
         else
     if(X500Principal.RFC2253.equalsIgnoreCase(format))        
         {
     if(rfc2253String == null)            
             {
                 rfc2253String = getName0(X500Principal.RFC2253);
-            } //End block
+            } 
 String var3829092DB096211EB6A6EAE848B76893_881489189 =             rfc2253String;
             var3829092DB096211EB6A6EAE848B76893_881489189.addTaint(taint);
             return var3829092DB096211EB6A6EAE848B76893_881489189;
-        } //End block
+        } 
         else
     if(X500Principal.CANONICAL.equalsIgnoreCase(format))        
         {
     if(canonicalString == null)            
             {
                 canonicalString = getName0(X500Principal.CANONICAL);
-            } //End block
+            } 
 String varA736130F7261BDD046BD91E8F9411BA0_1577613387 =             canonicalString;
             varA736130F7261BDD046BD91E8F9411BA0_1577613387.addTaint(taint);
             return varA736130F7261BDD046BD91E8F9411BA0_1577613387;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var18E1AB404773CEF862E70CD7C0D8BEDC_878880293 = new IllegalArgumentException("Illegal format: " + format);
             var18E1AB404773CEF862E70CD7C0D8BEDC_878880293.addTaint(taint);
             throw var18E1AB404773CEF862E70CD7C0D8BEDC_878880293;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.642 -0400", hash_original_method = "F650F61C4EF367763857B0C83C9384E7", hash_generated_method = "6485BB27FB06BBAA2AEDFE772A79687E")
     private String getName0(String format) {
         addTaint(format.getTaint());
@@ -172,7 +173,7 @@ for(int i = rdn.size() - 1;i >= 0;i--)
             {
                 atavList = new ArrayList<AttributeTypeAndValue>(atavList);
                 Collections.sort(atavList, new AttributeTypeAndValueComparator());
-            } //End block
+            } 
             Iterator<AttributeTypeAndValue> it = atavList.iterator();
             while
 (it.hasNext())            
@@ -184,32 +185,32 @@ for(int i = rdn.size() - 1;i >= 0;i--)
     if(X500Principal.RFC1779 == format)                    
                     {
                         name.append(" + ");
-                    } //End block
+                    } 
                     else
                     {
                         name.append('+');
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(i != 0)            
             {
                 name.append(',');
     if(format == X500Principal.RFC1779)                
                 {
                     name.append(' ');
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         String sName = name.toString();
     if(X500Principal.CANONICAL.equals(format))        
         {
             sName = sName.toLowerCase(Locale.US);
-        } //End block
+        } 
 String var6130110C1AB32206E1BE85A4D254C151_1135011187 =         sName;
         var6130110C1AB32206E1BE85A4D254C151_1135011187.addTaint(taint);
         return var6130110C1AB32206E1BE85A4D254C151_1135011187;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -218,15 +219,15 @@ String var6130110C1AB32206E1BE85A4D254C151_1135011187 =         sName;
     if(encoded == null)        
         {
             encoded = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var4B719ACEE4A1D5E30577F59E80D06205_1286295846 = (encoded);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1514350519 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1514350519;
-        // ---------- Original Method ----------
-        //if (encoded == null) {
-            //encoded = ASN1.encode(this);
-        //}
-        //return encoded;
+        
+        
+            
+        
+        
     }
 
     
@@ -246,12 +247,12 @@ String var6130110C1AB32206E1BE85A4D254C151_1135011187 =         sName;
             return ((Name) object).rdn;
         }
     };
-    // orphaned legacy method
+    
     public Collection getValues(Object object) {
             return ((Name) object).rdn;
         }
     
-    // orphaned legacy method
+    
     public Object getDecodedObject(BerInputStream in) {
             return new Name((List<List<AttributeTypeAndValue>>) in.content);
         }

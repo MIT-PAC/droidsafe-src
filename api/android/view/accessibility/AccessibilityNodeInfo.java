@@ -1,6 +1,6 @@
 package android.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -65,7 +65,7 @@ public class AccessibilityNodeInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.223 -0400", hash_original_method = "EB9F4328D2282B04E1BD31B0186E73D5", hash_generated_method = "176EFD0A62B716335FDF7CEAA647EEC5")
     private  AccessibilityNodeInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -74,20 +74,21 @@ public class AccessibilityNodeInfo implements Parcelable {
         enforceNotSealed();
         mAccessibilityViewId = source.getAccessibilityViewId();
         mAccessibilityWindowId = source.getAccessibilityWindowId();
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mAccessibilityViewId = source.getAccessibilityViewId();
-        //mAccessibilityWindowId = source.getAccessibilityWindowId();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.224 -0400", hash_original_method = "6C41AAD35FD64A253FB83D406AD6C88C", hash_generated_method = "00AB5507BBB009DA1B969C29F2131EBD")
     public int getWindowId() {
         int var4365E7DC00132D2F9694DBF9D3BF42BE_707599006 = (mAccessibilityWindowId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723551142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723551142;
-        // ---------- Original Method ----------
-        //return mAccessibilityWindowId;
+        
+        
     }
 
     
@@ -96,8 +97,8 @@ public class AccessibilityNodeInfo implements Parcelable {
         int var5D1E30E57B62486D8CA9962766CA491C_343704354 = (mChildAccessibilityIds.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065077142 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065077142;
-        // ---------- Original Method ----------
-        //return mChildAccessibilityIds.size();
+        
+        
     }
 
     
@@ -111,21 +112,21 @@ public class AccessibilityNodeInfo implements Parcelable {
 AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_330092476 =             null;
             var540C13E9E156B687226421B24F2DF178_330092476.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_330092476;
-        } //End block
+        } 
         AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
 AccessibilityNodeInfo varC92A35B1643EA8CF5301A4EFBCC684DC_546952771 =         client.findAccessibilityNodeInfoByAccessibilityId(mConnectionId,
                 mAccessibilityWindowId, childAccessibilityViewId);
         varC92A35B1643EA8CF5301A4EFBCC684DC_546952771.addTaint(taint);
         return varC92A35B1643EA8CF5301A4EFBCC684DC_546952771;
-        // ---------- Original Method ----------
-        //enforceSealed();
-        //final int childAccessibilityViewId = mChildAccessibilityIds.get(index);
-        //if (!canPerformRequestOverConnection(childAccessibilityViewId)) {
-            //return null;
-        //}
-        //AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
-        //return client.findAccessibilityNodeInfoByAccessibilityId(mConnectionId,
-                //mAccessibilityWindowId, childAccessibilityViewId);
+        
+        
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -136,21 +137,22 @@ AccessibilityNodeInfo varC92A35B1643EA8CF5301A4EFBCC684DC_546952771 =         cl
         final int childAccessibilityViewId = child.getAccessibilityViewId();
         final int index = mChildAccessibilityIds.size();
         mChildAccessibilityIds.put(index, childAccessibilityViewId);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //final int childAccessibilityViewId = child.getAccessibilityViewId();
-        //final int index = mChildAccessibilityIds.size();
-        //mChildAccessibilityIds.put(index, childAccessibilityViewId);
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.225 -0400", hash_original_method = "60E376BAD814E27A83B622ADA78DD695", hash_generated_method = "6612C756793CC59B500CB09120516F41")
     public int getActions() {
         int varC268D719F2F67098628D1A8EEBB72B48_798803174 = (mActions);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1991046153 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1991046153;
-        // ---------- Original Method ----------
-        //return mActions;
+        
+        
     }
 
     
@@ -158,9 +160,9 @@ AccessibilityNodeInfo varC92A35B1643EA8CF5301A4EFBCC684DC_546952771 =         cl
     public void addAction(int action) {
         enforceNotSealed();
         mActions |= action;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mActions |= action;
+        
+        
+        
     }
 
     
@@ -173,20 +175,20 @@ AccessibilityNodeInfo varC92A35B1643EA8CF5301A4EFBCC684DC_546952771 =         cl
             boolean var68934A3E9455FA72420237EB05902327_1804584095 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1536126289 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1536126289;
-        } //End block
+        } 
         AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
         boolean varF8C007BA421563050B5765A0A57C1C7B_137781269 = (client.performAccessibilityAction(mConnectionId, mAccessibilityWindowId,
                 mAccessibilityViewId, action));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1082254545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1082254545;
-        // ---------- Original Method ----------
-        //enforceSealed();
-        //if (!canPerformRequestOverConnection(mAccessibilityViewId)) {
-            //return false;
-        //}
-        //AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
-        //return client.performAccessibilityAction(mConnectionId, mAccessibilityWindowId,
-                //mAccessibilityViewId, action);
+        
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -199,20 +201,20 @@ AccessibilityNodeInfo varC92A35B1643EA8CF5301A4EFBCC684DC_546952771 =         cl
 List<AccessibilityNodeInfo> varB803AB532741AA7D5C2F301CCDDD25F2_1966435343 =             Collections.emptyList();
             varB803AB532741AA7D5C2F301CCDDD25F2_1966435343.addTaint(taint);
             return varB803AB532741AA7D5C2F301CCDDD25F2_1966435343;
-        } //End block
+        } 
         AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
 List<AccessibilityNodeInfo> var0BA4ADB9E06655681ABD80E4AD625760_2033824068 =         client.findAccessibilityNodeInfosByViewText(mConnectionId, text,
                 mAccessibilityWindowId, mAccessibilityViewId);
         var0BA4ADB9E06655681ABD80E4AD625760_2033824068.addTaint(taint);
         return var0BA4ADB9E06655681ABD80E4AD625760_2033824068;
-        // ---------- Original Method ----------
-        //enforceSealed();
-        //if (!canPerformRequestOverConnection(mAccessibilityViewId)) {
-            //return Collections.emptyList();
-        //}
-        //AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
-        //return client.findAccessibilityNodeInfosByViewText(mConnectionId, text,
-                //mAccessibilityWindowId, mAccessibilityViewId);
+        
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -224,20 +226,20 @@ List<AccessibilityNodeInfo> var0BA4ADB9E06655681ABD80E4AD625760_2033824068 =    
 AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_1274161678 =             null;
             var540C13E9E156B687226421B24F2DF178_1274161678.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1274161678;
-        } //End block
+        } 
         AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
 AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         client.findAccessibilityNodeInfoByAccessibilityId(mConnectionId,
                 mAccessibilityWindowId, mParentAccessibilityViewId);
         var4BAC5B2C9014A2530437B0CC89547791_1827911268.addTaint(taint);
         return var4BAC5B2C9014A2530437B0CC89547791_1827911268;
-        // ---------- Original Method ----------
-        //enforceSealed();
-        //if (!canPerformRequestOverConnection(mParentAccessibilityViewId)) {
-            //return null;
-        //}
-        //AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
-        //return client.findAccessibilityNodeInfoByAccessibilityId(mConnectionId,
-                //mAccessibilityWindowId, mParentAccessibilityViewId);
+        
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -245,9 +247,9 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setParent(View parent) {
         enforceNotSealed();
         mParentAccessibilityViewId = parent.getAccessibilityViewId();
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mParentAccessibilityViewId = parent.getAccessibilityViewId();
+        
+        
+        
     }
 
     
@@ -256,9 +258,9 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         addTaint(outBounds.getTaint());
         outBounds.set(mBoundsInParent.left, mBoundsInParent.top,
                 mBoundsInParent.right, mBoundsInParent.bottom);
-        // ---------- Original Method ----------
-        //outBounds.set(mBoundsInParent.left, mBoundsInParent.top,
-                //mBoundsInParent.right, mBoundsInParent.bottom);
+        
+        
+                
     }
 
     
@@ -267,9 +269,9 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         addTaint(bounds.getTaint());
         enforceNotSealed();
         mBoundsInParent.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mBoundsInParent.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
+        
+        
+        
     }
 
     
@@ -278,9 +280,9 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         addTaint(outBounds.getTaint());
         outBounds.set(mBoundsInScreen.left, mBoundsInScreen.top,
                 mBoundsInScreen.right, mBoundsInScreen.bottom);
-        // ---------- Original Method ----------
-        //outBounds.set(mBoundsInScreen.left, mBoundsInScreen.top,
-                //mBoundsInScreen.right, mBoundsInScreen.bottom);
+        
+        
+                
     }
 
     
@@ -289,9 +291,9 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         addTaint(bounds.getTaint());
         enforceNotSealed();
         mBoundsInScreen.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mBoundsInScreen.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
+        
+        
+        
     }
 
     
@@ -300,8 +302,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean varBC9E295E9CB1845D5EC7B0DF92A879CA_896493166 = (getBooleanProperty(PROPERTY_CHECKABLE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_467476676 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_467476676;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_CHECKABLE);
+        
+        
     }
 
     
@@ -309,8 +311,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setCheckable(boolean checkable) {
         addTaint(checkable);
         setBooleanProperty(PROPERTY_CHECKABLE, checkable);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_CHECKABLE, checkable);
+        
+        
     }
 
     
@@ -319,8 +321,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean var6A0CD5272E311D05E98BCF36FBF20ACD_1247663361 = (getBooleanProperty(PROPERTY_CHECKED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_831387795 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_831387795;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_CHECKED);
+        
+        
     }
 
     
@@ -328,8 +330,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setChecked(boolean checked) {
         addTaint(checked);
         setBooleanProperty(PROPERTY_CHECKED, checked);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_CHECKED, checked);
+        
+        
     }
 
     
@@ -338,8 +340,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean var67DF1ABBEF8C636E92D7C3AE3FF97500_1686848755 = (getBooleanProperty(PROPERTY_FOCUSABLE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1779956618 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1779956618;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_FOCUSABLE);
+        
+        
     }
 
     
@@ -347,8 +349,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setFocusable(boolean focusable) {
         addTaint(focusable);
         setBooleanProperty(PROPERTY_FOCUSABLE, focusable);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_FOCUSABLE, focusable);
+        
+        
     }
 
     
@@ -357,8 +359,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean var3366B664013F9495A9131B12E7D50B66_493097681 = (getBooleanProperty(PROPERTY_FOCUSED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_92356540 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_92356540;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_FOCUSED);
+        
+        
     }
 
     
@@ -366,8 +368,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setFocused(boolean focused) {
         addTaint(focused);
         setBooleanProperty(PROPERTY_FOCUSED, focused);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_FOCUSED, focused);
+        
+        
     }
 
     
@@ -376,8 +378,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean varDB3E340F3D04BA3CF77E3092256ED4F4_277068964 = (getBooleanProperty(PROPERTY_SELECTED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500832122 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1500832122;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_SELECTED);
+        
+        
     }
 
     
@@ -385,8 +387,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setSelected(boolean selected) {
         addTaint(selected);
         setBooleanProperty(PROPERTY_SELECTED, selected);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_SELECTED, selected);
+        
+        
     }
 
     
@@ -395,8 +397,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean var60255C3994BDBE0BF0261DAE666DA6C7_373625748 = (getBooleanProperty(PROPERTY_CLICKABLE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_546233503 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_546233503;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_CLICKABLE);
+        
+        
     }
 
     
@@ -404,8 +406,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setClickable(boolean clickable) {
         addTaint(clickable);
         setBooleanProperty(PROPERTY_CLICKABLE, clickable);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_CLICKABLE, clickable);
+        
+        
     }
 
     
@@ -414,8 +416,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean varD73C24CE6499A1AB3A4BC7051E354876_1506453290 = (getBooleanProperty(PROPERTY_LONG_CLICKABLE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1426847302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1426847302;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_LONG_CLICKABLE);
+        
+        
     }
 
     
@@ -423,8 +425,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setLongClickable(boolean longClickable) {
         addTaint(longClickable);
         setBooleanProperty(PROPERTY_LONG_CLICKABLE, longClickable);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_LONG_CLICKABLE, longClickable);
+        
+        
     }
 
     
@@ -433,8 +435,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean var6F818D4AF1185DC3F7931FBEF22B2D47_1502436004 = (getBooleanProperty(PROPERTY_ENABLED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_252098004 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_252098004;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_ENABLED);
+        
+        
     }
 
     
@@ -442,8 +444,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setEnabled(boolean enabled) {
         addTaint(enabled);
         setBooleanProperty(PROPERTY_ENABLED, enabled);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_ENABLED, enabled);
+        
+        
     }
 
     
@@ -452,8 +454,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean varC159D45C2E73AC687CB90727F00FD786_552391402 = (getBooleanProperty(PROPERTY_PASSWORD));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_295911910 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_295911910;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_PASSWORD);
+        
+        
     }
 
     
@@ -461,8 +463,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
     public void setPassword(boolean password) {
         addTaint(password);
         setBooleanProperty(PROPERTY_PASSWORD, password);
-        // ---------- Original Method ----------
-        //setBooleanProperty(PROPERTY_PASSWORD, password);
+        
+        
     }
 
     
@@ -471,8 +473,8 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         boolean varA6FFE50E93EDBB77B0E8F1D4016517C5_101884930 = (getBooleanProperty(PROPERTY_SCROLLABLE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_304838437 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_304838437;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_SCROLLABLE);
+        
+        
     }
 
     
@@ -481,19 +483,20 @@ AccessibilityNodeInfo var4BAC5B2C9014A2530437B0CC89547791_1827911268 =         c
         addTaint(scrollable);
         enforceNotSealed();
         setBooleanProperty(PROPERTY_SCROLLABLE, scrollable);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //setBooleanProperty(PROPERTY_SCROLLABLE, scrollable);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.236 -0400", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "BDE7F865570AC27E178B9519A0F75FA7")
     public CharSequence getPackageName() {
 CharSequence var5601F77C1E784C31FA233AB799182FA6_2100529234 =         mPackageName;
         var5601F77C1E784C31FA233AB799182FA6_2100529234.addTaint(taint);
         return var5601F77C1E784C31FA233AB799182FA6_2100529234;
-        // ---------- Original Method ----------
-        //return mPackageName;
+        
+        
     }
 
     
@@ -501,19 +504,20 @@ CharSequence var5601F77C1E784C31FA233AB799182FA6_2100529234 =         mPackageNa
     public void setPackageName(CharSequence packageName) {
         enforceNotSealed();
         mPackageName = packageName;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mPackageName = packageName;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.237 -0400", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "8EC7AFE1F4D246E7D73B5DB043354012")
     public CharSequence getClassName() {
 CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_1650103374 =         mClassName;
         varDD9C2143734A2F5CB66BF5CFBE75CE5F_1650103374.addTaint(taint);
         return varDD9C2143734A2F5CB66BF5CFBE75CE5F_1650103374;
-        // ---------- Original Method ----------
-        //return mClassName;
+        
+        
     }
 
     
@@ -521,19 +525,20 @@ CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_1650103374 =         mClassName
     public void setClassName(CharSequence className) {
         enforceNotSealed();
         mClassName = className;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mClassName = className;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.238 -0400", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "336B25CDB41ADDF7130E8AB3DFD6A56A")
     public CharSequence getText() {
 CharSequence var7F7ECB4B14362FFBA020956966B29A66_1720038575 =         mText;
         var7F7ECB4B14362FFBA020956966B29A66_1720038575.addTaint(taint);
         return var7F7ECB4B14362FFBA020956966B29A66_1720038575;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
@@ -541,19 +546,20 @@ CharSequence var7F7ECB4B14362FFBA020956966B29A66_1720038575 =         mText;
     public void setText(CharSequence text) {
         enforceNotSealed();
         mText = text;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mText = text;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.238 -0400", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "E82CB75E1509701F41B8BA79CFCDF464")
     public CharSequence getContentDescription() {
 CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDescription;
         varDF4802B31F5D315C6875E7B89F1B2E58_600849131.addTaint(taint);
         return varDF4802B31F5D315C6875E7B89F1B2E58_600849131;
-        // ---------- Original Method ----------
-        //return mContentDescription;
+        
+        
     }
 
     
@@ -561,20 +567,21 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
     public void setContentDescription(CharSequence contentDescription) {
         enforceNotSealed();
         mContentDescription = contentDescription;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mContentDescription = contentDescription;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.238 -0400", hash_original_method = "08ED9648E2048980BB715C0F95464D97", hash_generated_method = "F852FEC7FDBC0884A7DEEEDC2FEB7C1A")
     private boolean getBooleanProperty(int property) {
         addTaint(property);
         boolean varBDC6E0D6839B183B2AD4B3EE6D6FF06C_1234089150 = ((mBooleanProperties & property) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_52899118 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_52899118;
-        // ---------- Original Method ----------
-        //return (mBooleanProperties & property) != 0;
+        
+        
     }
 
     
@@ -585,18 +592,18 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
     if(value)        
         {
             mBooleanProperties |= property;
-        } //End block
+        } 
         else
         {
             mBooleanProperties &= ~property;
-        } //End block
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //if (value) {
-            //mBooleanProperties |= property;
-        //} else {
-            //mBooleanProperties &= ~property;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -604,37 +611,40 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
     public void setConnectionId(int connectionId) {
         enforceNotSealed();
         mConnectionId = connectionId;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mConnectionId = connectionId;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.241 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "100DEB31BE1DB33ACD35A1F6C2E094D9")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1322460443 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255295534 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255295534;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.241 -0400", hash_original_method = "7730BDD0DFF4FE8B243CA8BC305ED86E", hash_generated_method = "0D7B5E4D59CD0A6DD9DDC234474696D4")
     public void setSealed(boolean sealed) {
         mSealed = sealed;
-        // ---------- Original Method ----------
-        //mSealed = sealed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.241 -0400", hash_original_method = "AF3422E1C079F6B2A15130B45797502F", hash_generated_method = "E39BD19696860D73DADB0D72FF020133")
     public boolean isSealed() {
         boolean var61DB78BD493651DCACB5FB89D74B835B_1861216774 = (mSealed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2041059910 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2041059910;
-        // ---------- Original Method ----------
-        //return mSealed;
+        
+        
     }
 
     
@@ -646,12 +656,12 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
                     + "action on a not sealed instance.");
             var652F71AFD0D5CCAA2788B927EF140BB3_882546863.addTaint(taint);
             throw var652F71AFD0D5CCAA2788B927EF140BB3_882546863;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isSealed()) {
-            //throw new IllegalStateException("Cannot perform this "
-                    //+ "action on a not sealed instance.");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -663,12 +673,12 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
                     + "action on an sealed instance.");
             var6C39E2F044A2DBD4DB7485B565A80573_1053483646.addTaint(taint);
             throw var6C39E2F044A2DBD4DB7485B565A80573_1053483646;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isSealed()) {
-            //throw new IllegalStateException("Cannot perform this "
-                    //+ "action on an sealed instance.");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -708,7 +718,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
             IllegalStateException var5026995F17B50D98874CDB53EAB74C93_903554693 = new IllegalStateException("Info already recycled!");
             var5026995F17B50D98874CDB53EAB74C93_903554693.addTaint(taint);
             throw var5026995F17B50D98874CDB53EAB74C93_903554693;
-        } //End block
+        } 
         clear();
         synchronized
 (sPoolLock)        {
@@ -718,21 +728,21 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
                 sPool = this;
                 mIsInPool = true;
                 sPoolSize++;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsInPool) {
-            //throw new IllegalStateException("Info already recycled!");
-        //}
-        //clear();
-        //synchronized (sPoolLock) {
-            //if (sPoolSize <= MAX_POOL_SIZE) {
-                //mNext = sPool;
-                //sPool = this;
-                //mIsInPool = true;
-                //sPoolSize++;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -751,7 +761,7 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_600849131 =         mContentDes
 for(int i = 0;i < childIdsSize;i++)
         {
             parcel.writeInt(childIds.valueAt(i));
-        } //End block
+        } 
         parcel.writeInt(mBoundsInParent.top);
         parcel.writeInt(mBoundsInParent.bottom);
         parcel.writeInt(mBoundsInParent.left);
@@ -767,8 +777,8 @@ for(int i = 0;i < childIdsSize;i++)
         TextUtils.writeToParcel(mText, parcel, flags);
         TextUtils.writeToParcel(mContentDescription, parcel, flags);
         recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -788,21 +798,21 @@ for(int i = 0;i < childIdsSize;i++)
         mActions= other.mActions;
         mBooleanProperties = other.mBooleanProperties;
         mChildAccessibilityIds = other.mChildAccessibilityIds.clone();
-        // ---------- Original Method ----------
-        //mSealed = other.mSealed;
-        //mAccessibilityViewId = other.mAccessibilityViewId;
-        //mParentAccessibilityViewId = other.mParentAccessibilityViewId;
-        //mAccessibilityWindowId = other.mAccessibilityWindowId;
-        //mConnectionId = other.mConnectionId;
-        //mBoundsInParent.set(other.mBoundsInParent);
-        //mBoundsInScreen.set(other.mBoundsInScreen);
-        //mPackageName = other.mPackageName;
-        //mClassName = other.mClassName;
-        //mText = other.mText;
-        //mContentDescription = other.mContentDescription;
-        //mActions= other.mActions;
-        //mBooleanProperties = other.mBooleanProperties;
-        //mChildAccessibilityIds = other.mChildAccessibilityIds.clone();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -819,7 +829,7 @@ for(int i = 0;i < childrenSize;i++)
         {
             final int childId = parcel.readInt();
             childIds.put(i, childId);
-        } //End block
+        } 
         mBoundsInParent.top = parcel.readInt();
         mBoundsInParent.bottom = parcel.readInt();
         mBoundsInParent.left = parcel.readInt();
@@ -834,8 +844,8 @@ for(int i = 0;i < childrenSize;i++)
         mClassName = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         mText = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
         mContentDescription = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(parcel);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -855,21 +865,21 @@ for(int i = 0;i < childrenSize;i++)
         mText = null;
         mContentDescription = null;
         mActions = 0;
-        // ---------- Original Method ----------
-        //mSealed = false;
-        //mAccessibilityViewId = UNDEFINED;
-        //mParentAccessibilityViewId = UNDEFINED;
-        //mAccessibilityWindowId = UNDEFINED;
-        //mConnectionId = UNDEFINED;
-        //mChildAccessibilityIds.clear();
-        //mBoundsInParent.set(0, 0, 0, 0);
-        //mBoundsInScreen.set(0, 0, 0, 0);
-        //mBooleanProperties = 0;
-        //mPackageName = null;
-        //mClassName = null;
-        //mText = null;
-        //mContentDescription = null;
-        //mActions = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -889,6 +899,7 @@ for(int i = 0;i < childrenSize;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.252 -0400", hash_original_method = "554416B444549B4EB33FDEE3DD8518FA", hash_generated_method = "11767EAB40CD656C609270D4CAA35AEE")
     private boolean canPerformRequestOverConnection(int accessibilityViewId) {
         addTaint(accessibilityViewId);
@@ -896,9 +907,9 @@ for(int i = 0;i < childrenSize;i++)
                 && accessibilityViewId != UNDEFINED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1406529282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1406529282;
-        // ---------- Original Method ----------
-        //return (mConnectionId != UNDEFINED && mAccessibilityWindowId != UNDEFINED
-                //&& accessibilityViewId != UNDEFINED);
+        
+        
+                
     }
 
     
@@ -911,56 +922,57 @@ for(int i = 0;i < childrenSize;i++)
             boolean varB326B5062B2F0E69046810717534CB09_1645281488 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2103346182 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2103346182;
-        } //End block
+        } 
     if(object == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1016189152 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815603677 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815603677;
-        } //End block
+        } 
     if(getClass() != object.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1518504421 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73732886 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_73732886;
-        } //End block
+        } 
         AccessibilityNodeInfo other = (AccessibilityNodeInfo) object;
     if(mAccessibilityViewId != other.mAccessibilityViewId)        
         {
             boolean var68934A3E9455FA72420237EB05902327_552406160 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1621838483 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1621838483;
-        } //End block
+        } 
     if(mAccessibilityWindowId != other.mAccessibilityWindowId)        
         {
             boolean var68934A3E9455FA72420237EB05902327_749584458 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_328989906 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_328989906;
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1782178351 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_882992101 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_882992101;
-        // ---------- Original Method ----------
-        //if (this == object) {
-            //return true;
-        //}
-        //if (object == null) {
-            //return false;
-        //}
-        //if (getClass() != object.getClass()) {
-            //return false;
-        //}
-        //AccessibilityNodeInfo other = (AccessibilityNodeInfo) object;
-        //if (mAccessibilityViewId != other.mAccessibilityViewId) {
-            //return false;
-        //}
-        //if (mAccessibilityWindowId != other.mAccessibilityWindowId) {
-            //return false;
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.253 -0400", hash_original_method = "5729DB4BFFEF2935F7B53D1FC3170C4A", hash_generated_method = "2820665BB74C25BD84F5B400139974D7")
     @Override
     public int hashCode() {
@@ -971,12 +983,12 @@ for(int i = 0;i < childrenSize;i++)
         int varB4A88417B3D0170D754C647C30B7216A_2090619536 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829024381 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_829024381;
-        // ---------- Original Method ----------
-        //final int prime = 31;
-        //int result = 1;
-        //result = prime * result + mAccessibilityViewId;
-        //result = prime * result + mAccessibilityWindowId;
-        //return result;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -997,10 +1009,10 @@ for(int i = 0, count = childIds.size();i < count;i++)
     if(i < count - 1)                
                 {
                     builder.append(", ");
-                } //End block
-            } //End block
+                } 
+            } 
             builder.append("]");
-        } //End block
+        } 
         builder.append("; boundsInParent: " + mBoundsInParent);
         builder.append("; boundsInScreen: " + mBoundsInScreen);
         builder.append("; packageName: ").append(mPackageName);
@@ -1026,14 +1038,14 @@ for(int actionBits = mActions;actionBits != 0;)
     if(actionBits != 0)            
             {
                 builder.append(", ");
-            } //End block
-        } //End block
+            } 
+        } 
         builder.append("]");
 String varF4CF030572656354ACFDF83FEE21D7A6_967464876 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_967464876.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_967464876;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1111,14 +1123,14 @@ String varF4CF030572656354ACFDF83FEE21D7A6_967464876 =         builder.toString(
             return new AccessibilityNodeInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public AccessibilityNodeInfo createFromParcel(Parcel parcel) {
             AccessibilityNodeInfo info = AccessibilityNodeInfo.obtain();
             info.initFromParcel(parcel);
             return info;
         }
     
-    // orphaned legacy method
+    
     public AccessibilityNodeInfo[] newArray(int size) {
             return new AccessibilityNodeInfo[size];
         }

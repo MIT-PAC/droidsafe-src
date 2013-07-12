@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,11 +10,12 @@ public class DHParameters {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.285 -0400", hash_original_method = "808CB0297624A41B24EE6EECFB636C09", hash_generated_method = "808CB0297624A41B24EE6EECFB636C09")
     public DHParameters ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static byte[] getPrime() {
+        @DSModeled(DSC.SAFE)
+    public static byte[] getPrime() {
         return prime;
     }
 

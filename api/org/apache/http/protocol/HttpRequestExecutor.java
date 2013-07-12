@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class HttpRequestExecutor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.959 -0400", hash_original_method = "1B3D6EB0D2C9672C0490DD487A44B10E", hash_generated_method = "5C823C110E4C37030580A4ECF9EB10B9")
     public  HttpRequestExecutor() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,7 +35,7 @@ public class HttpRequestExecutor {
             boolean var68934A3E9455FA72420237EB05902327_213916256 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_479941320 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_479941320;
-        } //End block
+        } 
         int status = response.getStatusLine().getStatusCode();
         boolean varC715FE0F3FDA5C1A4EE77A8D9493A126_476092283 = (status >= HttpStatus.SC_OK 
             && status != HttpStatus.SC_NO_CONTENT 
@@ -43,15 +43,15 @@ public class HttpRequestExecutor {
             && status != HttpStatus.SC_RESET_CONTENT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1528773101 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1528773101;
-        // ---------- Original Method ----------
-        //if ("HEAD".equalsIgnoreCase(request.getRequestLine().getMethod())) {
-            //return false;
-        //}
-        //int status = response.getStatusLine().getStatusCode();
-        //return status >= HttpStatus.SC_OK 
-            //&& status != HttpStatus.SC_NO_CONTENT 
-            //&& status != HttpStatus.SC_NOT_MODIFIED
-            //&& status != HttpStatus.SC_RESET_CONTENT;
+        
+        
+            
+        
+        
+        
+            
+            
+            
     }
 
     
@@ -68,50 +68,50 @@ public class HttpRequestExecutor {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1331948594 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1331948594.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1331948594;
-        } //End block
+        } 
     if(conn == null)        
         {
             IllegalArgumentException var407669F9BB5BC8C81DD11AA5A9676948_2099854952 = new IllegalArgumentException("Client connection may not be null");
             var407669F9BB5BC8C81DD11AA5A9676948_2099854952.addTaint(taint);
             throw var407669F9BB5BC8C81DD11AA5A9676948_2099854952;
-        } //End block
+        } 
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_1018513390 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_1018513390.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_1018513390;
-        } //End block
+        } 
         try 
         {
             HttpResponse response = doSendRequest(request, conn, context);
     if(response == null)            
             {
                 response = doReceiveResponse(request, conn, context);
-            } //End block
+            } 
 HttpResponse var2A1114F4272D753FE23A36E3D68CD293_324423264 =             response;
             var2A1114F4272D753FE23A36E3D68CD293_324423264.addTaint(taint);
             return var2A1114F4272D753FE23A36E3D68CD293_324423264;
-        } //End block
+        } 
         catch (IOException ex)
         {
             conn.close();
             ex.addTaint(taint);
             throw ex;
-        } //End block
+        } 
         catch (HttpException ex)
         {
             conn.close();
             ex.addTaint(taint);
             throw ex;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
             conn.close();
             ex.addTaint(taint);
             throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -128,31 +128,31 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_324423264 =             respons
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_793090670 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_793090670.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_793090670;
-        } //End block
+        } 
     if(processor == null)        
         {
             IllegalArgumentException varBE6F981A621D2588DCBAFD6F186E1351_210955307 = new IllegalArgumentException("HTTP processor may not be null");
             varBE6F981A621D2588DCBAFD6F186E1351_210955307.addTaint(taint);
             throw varBE6F981A621D2588DCBAFD6F186E1351_210955307;
-        } //End block
+        } 
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_1323225480 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_1323225480.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_1323225480;
-        } //End block
+        } 
         processor.process(request, context);
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //if (processor == null) {
-            //throw new IllegalArgumentException("HTTP processor may not be null");
-        //}
-        //if (context == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //processor.process(request, context);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -169,19 +169,19 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_324423264 =             respons
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1110389084 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1110389084.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1110389084;
-        } //End block
+        } 
     if(conn == null)        
         {
             IllegalArgumentException var6CFBC789236DE9A132EF716CA5496FB9_18076173 = new IllegalArgumentException("HTTP connection may not be null");
             var6CFBC789236DE9A132EF716CA5496FB9_18076173.addTaint(taint);
             throw var6CFBC789236DE9A132EF716CA5496FB9_18076173;
-        } //End block
+        } 
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_1200873933 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_1200873933.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_1200873933;
-        } //End block
+        } 
         HttpResponse response = null;
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.FALSE);
         conn.sendRequestHeader(request);
@@ -201,7 +201,7 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_324423264 =             respons
     if(canResponseHaveBody(request, response))                    
                     {
                         conn.receiveResponseEntity(response);
-                    } //End block
+                    } 
                     int status = response.getStatusLine().getStatusCode();
     if(status < 200)                    
                     {
@@ -211,27 +211,27 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_324423264 =             respons
                                     "Unexpected response: " + response.getStatusLine());
                             var9A30284AC6B7E9D346B26DB16996B6F5_154422095.addTaint(taint);
                             throw var9A30284AC6B7E9D346B26DB16996B6F5_154422095;
-                        } //End block
+                        } 
                         response = null;
-                    } //End block
+                    } 
                     else
                     {
                         sendentity = false;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(sendentity)            
             {
                 conn.sendRequestEntity((HttpEntityEnclosingRequest) request);
-            } //End block
-        } //End block
+            } 
+        } 
         conn.flush();
         context.setAttribute(ExecutionContext.HTTP_REQ_SENT, Boolean.TRUE);
 HttpResponse var2A1114F4272D753FE23A36E3D68CD293_291393182 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_291393182.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_291393182;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -248,19 +248,19 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_291393182 =         response;
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1403011042 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1403011042.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1403011042;
-        } //End block
+        } 
     if(conn == null)        
         {
             IllegalArgumentException var6CFBC789236DE9A132EF716CA5496FB9_958292838 = new IllegalArgumentException("HTTP connection may not be null");
             var6CFBC789236DE9A132EF716CA5496FB9_958292838.addTaint(taint);
             throw var6CFBC789236DE9A132EF716CA5496FB9_958292838;
-        } //End block
+        } 
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_1810110659 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_1810110659.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_1810110659;
-        } //End block
+        } 
         HttpResponse response = null;
         int statuscode = 0;
         while
@@ -270,32 +270,32 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_291393182 =         response;
     if(canResponseHaveBody(request, response))            
             {
                 conn.receiveResponseEntity(response);
-            } //End block
+            } 
             statuscode = response.getStatusLine().getStatusCode();
-        } //End block
+        } 
 HttpResponse var2A1114F4272D753FE23A36E3D68CD293_557675637 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_557675637.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_557675637;
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //if (conn == null) {
-            //throw new IllegalArgumentException("HTTP connection may not be null");
-        //}
-        //if (context == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //HttpResponse response = null;
-        //int statuscode = 0;
-        //while (response == null || statuscode < HttpStatus.SC_OK) {
-            //response = conn.receiveResponseHeader();
-            //if (canResponseHaveBody(request, response)) {
-                //conn.receiveResponseEntity(response);
-            //}
-            //statuscode = response.getStatusLine().getStatusCode();
-        //}
-        //return response;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -312,31 +312,31 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_557675637 =         response;
             IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_905787015 = new IllegalArgumentException("HTTP response may not be null");
             var81F7C558D1B895656E1A076743F59C7C_905787015.addTaint(taint);
             throw var81F7C558D1B895656E1A076743F59C7C_905787015;
-        } //End block
+        } 
     if(processor == null)        
         {
             IllegalArgumentException varBE6F981A621D2588DCBAFD6F186E1351_1071349283 = new IllegalArgumentException("HTTP processor may not be null");
             varBE6F981A621D2588DCBAFD6F186E1351_1071349283.addTaint(taint);
             throw varBE6F981A621D2588DCBAFD6F186E1351_1071349283;
-        } //End block
+        } 
     if(context == null)        
         {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_1005973702 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_1005973702.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_1005973702;
-        } //End block
+        } 
         processor.process(response, context);
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //if (processor == null) {
-            //throw new IllegalArgumentException("HTTP processor may not be null");
-        //}
-        //if (context == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //processor.process(response, context);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package libcore.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public final class MutableInt {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.110 -0400", hash_original_method = "03C0B08CFD4223793C8EE7C700E72B55", hash_generated_method = "8EBFC592B8F5B331690B4A1E8337C15B")
     public  MutableInt(int value) {
         this.value = value;
-        // ---------- Original Method ----------
-        //this.value = value;
+        
+        
     }
 
     

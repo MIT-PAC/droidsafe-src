@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public final class DrmStore {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.302 -0400", hash_original_method = "794F8F649F74858E61C047D8FF367CC2", hash_generated_method = "794F8F649F74858E61C047D8FF367CC2")
     public DrmStore ()
     {
-        //Synthesized constructor
+        
     }
 
 

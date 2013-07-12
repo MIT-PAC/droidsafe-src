@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class SQLiteFullException extends SQLiteException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.001 -0400", hash_original_method = "AB54696EF7023A7C1C714A7730C547A0", hash_generated_method = "080B439DBF740C75A77C63660AAD0B4A")
     public  SQLiteFullException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class SQLiteFullException extends SQLiteException {
     public  SQLiteFullException(String error) {
         super(error);
         addTaint(error.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

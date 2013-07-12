@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,28 +15,30 @@ public class SmsRawData implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.488 -0400", hash_original_method = "786E0C6936F82B829DA5B3FF66BF9330", hash_generated_method = "9696AEC10121DADFC74AB9E5C21D1B54")
     public  SmsRawData(byte[] data) {
         this.data = data;
-        // ---------- Original Method ----------
-        //this.data = data;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.488 -0400", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "970249FE0BD5D08183E63DBEA76EBBB2")
     public byte[] getBytes() {
         byte[] var8D777F385D3DFEC8815D20F7496026DC_969919414 = (data);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_307369766 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_307369766;
-        // ---------- Original Method ----------
-        //return data;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.488 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FBB61E3719F42B443FAA1A61DB6FA837")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1867910204 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_556446062 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_556446062;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -46,9 +48,9 @@ public class SmsRawData implements Parcelable {
         addTaint(dest.getTaint());
         dest.writeInt(data.length);
         dest.writeByteArray(data);
-        // ---------- Original Method ----------
-        //dest.writeInt(data.length);
-        //dest.writeByteArray(data);
+        
+        
+        
     }
 
     
@@ -68,7 +70,7 @@ public class SmsRawData implements Parcelable {
             return new SmsRawData[size];
         }
     };
-    // orphaned legacy method
+    
     public SmsRawData createFromParcel(Parcel source) {
             int size;
             size = source.readInt();
@@ -77,7 +79,7 @@ public class SmsRawData implements Parcelable {
             return new SmsRawData(data);
         }
     
-    // orphaned legacy method
+    
     public SmsRawData[] newArray(int size) {
             return new SmsRawData[size];
         }

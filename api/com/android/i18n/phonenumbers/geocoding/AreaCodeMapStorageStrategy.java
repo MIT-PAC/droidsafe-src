@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers.geocoding;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,20 +20,21 @@ abstract class AreaCodeMapStorageStrategy {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.315 -0400", hash_original_method = "552FE922C6186E104B342E1C364AC348", hash_generated_method = "78F311E4855CBA2D4A156E20751234C3")
     public  AreaCodeMapStorageStrategy() {
-        // ---------- Original Method ----------
+        
     }
 
     
     public abstract boolean isFlyweight();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.316 -0400", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "2A5F3F9620821C974A06206D27132648")
     public int getNumOfEntries() {
         int var881EB9BA7A3B2170EFED470F473D8D5B_267675265 = (numOfEntries);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583812330 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_583812330;
-        // ---------- Original Method ----------
-        //return numOfEntries;
+        
+        
     }
 
     
@@ -42,8 +43,8 @@ abstract class AreaCodeMapStorageStrategy {
 TreeSet<Integer> var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022 =         possibleLengths;
         var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022.addTaint(taint);
         return var439F4A98FBDEDBC4D02BC8BC3F605BAF_2046447022;
-        // ---------- Original Method ----------
-        //return possibleLengths;
+        
+        
     }
 
     
@@ -73,20 +74,20 @@ for(int i = 0;i < numOfEntries;i++)
             output.append("|");
             output.append(getDescription(i));
             output.append("\n");
-        } //End block
+        } 
 String varEBF0387156E2D98F471F997058C674A5_191312654 =         output.toString();
         varEBF0387156E2D98F471F997058C674A5_191312654.addTaint(taint);
         return varEBF0387156E2D98F471F997058C674A5_191312654;
-        // ---------- Original Method ----------
-        //StringBuilder output = new StringBuilder();
-        //int numOfEntries = getNumOfEntries();
-        //for (int i = 0; i < numOfEntries; i++) {
-      //output.append(getPrefix(i));
-      //output.append("|");
-      //output.append(getDescription(i));
-      //output.append("\n");
-    //}
-        //return output.toString();
+        
+        
+        
+        
+      
+      
+      
+      
+    
+        
     }
 
     

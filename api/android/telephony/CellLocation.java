@@ -1,6 +1,6 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public abstract class CellLocation {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.598 -0400", hash_original_method = "18EEA113758CA529F35B4B776EC100D9", hash_generated_method = "18EEA113758CA529F35B4B776EC100D9")
     public CellLocation ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -34,7 +34,8 @@ public abstract class CellLocation {
     }
 
     
-        public static CellLocation newFromBundle(Bundle bundle) {
+        @DSModeled(DSC.SPEC)
+    public static CellLocation newFromBundle(Bundle bundle) {
         switch(TelephonyManager.getDefault().getCurrentPhoneType()) {
         case Phone.PHONE_TYPE_CDMA:
             return new CdmaCellLocation(bundle);

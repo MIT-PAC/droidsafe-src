@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public class MulticastSocket extends DatagramSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:54.162 -0400", hash_original_method = "E00E381299DD101E8388BF5692519367", hash_generated_method = "6344D883D7E184B34B1618995D02B96E")
     public  MulticastSocket() throws IOException {
         setReuseAddress(true);
-        // ---------- Original Method ----------
-        //setReuseAddress(true);
+        
+        
     }
 
     
@@ -26,8 +26,8 @@ public class MulticastSocket extends DatagramSocket {
         super(port);
         addTaint(port);
         setReuseAddress(true);
-        // ---------- Original Method ----------
-        //setReuseAddress(true);
+        
+        
     }
 
     
@@ -36,8 +36,8 @@ public class MulticastSocket extends DatagramSocket {
         super(localAddress);
         addTaint(localAddress.getTaint());
         setReuseAddress(true);
-        // ---------- Original Method ----------
-        //setReuseAddress(true);
+        
+        
     }
 
     
@@ -49,7 +49,7 @@ public class MulticastSocket extends DatagramSocket {
 InetAddress var78312240CDBFCCC3F04771B2D94D19B8_722393244 =             setAddress;
             var78312240CDBFCCC3F04771B2D94D19B8_722393244.addTaint(taint);
             return var78312240CDBFCCC3F04771B2D94D19B8_722393244;
-        } //End block
+        } 
         InetAddress ipvXaddress = (InetAddress) impl.getOption(SocketOptions.IP_MULTICAST_IF);
     if(ipvXaddress.isAnyLocalAddress())        
         {
@@ -68,16 +68,16 @@ InetAddress var78312240CDBFCCC3F04771B2D94D19B8_722393244 =             setAddre
 InetAddress var19A3FB9C42B757A160F40F7C37CFD501_387821691 =                             nextAddress;
                             var19A3FB9C42B757A160F40F7C37CFD501_387821691.addTaint(taint);
                             return var19A3FB9C42B757A160F40F7C37CFD501_387821691;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
 InetAddress var44E9082E21DD4D2A51E79570976A7A8A_156391240 =         ipvXaddress;
         var44E9082E21DD4D2A51E79570976A7A8A_156391240.addTaint(taint);
         return var44E9082E21DD4D2A51E79570976A7A8A_156391240;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -90,17 +90,17 @@ InetAddress var44E9082E21DD4D2A51E79570976A7A8A_156391240 =         ipvXaddress;
 NetworkInterface var43F84E7944CA9D14BF0E29EB3235E5CC_1569466648 =             NetworkInterface.getByIndex(index);
             var43F84E7944CA9D14BF0E29EB3235E5CC_1569466648.addTaint(taint);
             return var43F84E7944CA9D14BF0E29EB3235E5CC_1569466648;
-        } //End block
+        } 
 NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         NetworkInterface.forUnboundMulticastSocket();
         var92F39B46B4CB3D019A4178969874DAFE_547002017.addTaint(taint);
         return var92F39B46B4CB3D019A4178969874DAFE_547002017;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //int index = (Integer) impl.getOption(SocketOptions.IP_MULTICAST_IF2);
-        //if (index != 0) {
-            //return NetworkInterface.getByIndex(index);
-        //}
-        //return NetworkInterface.forUnboundMulticastSocket();
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -110,9 +110,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         int var5E24BF1313E653ABC196207ACB8FF45F_650255246 = (impl.getTimeToLive());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_941426666 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_941426666;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return impl.getTimeToLive();
+        
+        
+        
     }
 
     
@@ -123,9 +123,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         byte var8070E1377BA2A3A48480E94D750140F6_1702470078 = (impl.getTTL());
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_66864746 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_66864746;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return impl.getTTL();
+        
+        
+        
     }
 
     
@@ -134,9 +134,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         addTaint(groupAddr.getTaint());
         checkJoinOrLeave(groupAddr);
         impl.join(groupAddr);
-        // ---------- Original Method ----------
-        //checkJoinOrLeave(groupAddr);
-        //impl.join(groupAddr);
+        
+        
+        
     }
 
     
@@ -146,9 +146,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         addTaint(groupAddress.getTaint());
         checkJoinOrLeave(groupAddress, netInterface);
         impl.joinGroup(groupAddress, netInterface);
-        // ---------- Original Method ----------
-        //checkJoinOrLeave(groupAddress, netInterface);
-        //impl.joinGroup(groupAddress, netInterface);
+        
+        
+        
     }
 
     
@@ -157,9 +157,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         addTaint(groupAddr.getTaint());
         checkJoinOrLeave(groupAddr);
         impl.leave(groupAddr);
-        // ---------- Original Method ----------
-        //checkJoinOrLeave(groupAddr);
-        //impl.leave(groupAddr);
+        
+        
+        
     }
 
     
@@ -169,9 +169,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         addTaint(groupAddress.getTaint());
         checkJoinOrLeave(groupAddress, netInterface);
         impl.leaveGroup(groupAddress, netInterface);
-        // ---------- Original Method ----------
-        //checkJoinOrLeave(groupAddress, netInterface);
-        //impl.leaveGroup(groupAddress, netInterface);
+        
+        
+        
     }
 
     
@@ -185,35 +185,35 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             IllegalArgumentException varDC3E3FF3F6BD9A190E8FB79DD1215D2D_1413530506 = new IllegalArgumentException("groupAddress == null");
             varDC3E3FF3F6BD9A190E8FB79DD1215D2D_1413530506.addTaint(taint);
             throw varDC3E3FF3F6BD9A190E8FB79DD1215D2D_1413530506;
-        } //End block
+        } 
     if(netInterface != null && !netInterface.getInetAddresses().hasMoreElements())        
         {
             SocketException varA8BBC7DCE697829FBEEFA51A5B4E1C75_528875696 = new SocketException("No address associated with interface: " + netInterface);
             varA8BBC7DCE697829FBEEFA51A5B4E1C75_528875696.addTaint(taint);
             throw varA8BBC7DCE697829FBEEFA51A5B4E1C75_528875696;
-        } //End block
+        } 
     if(!(groupAddress instanceof InetSocketAddress))        
         {
             IllegalArgumentException var6D461ECCF3C3B184189A72A4B2D9802B_1738214289 = new IllegalArgumentException("Group address not an InetSocketAddress: " +
                     groupAddress.getClass());
             var6D461ECCF3C3B184189A72A4B2D9802B_1738214289.addTaint(taint);
             throw var6D461ECCF3C3B184189A72A4B2D9802B_1738214289;
-        } //End block
+        } 
         InetAddress groupAddr = ((InetSocketAddress) groupAddress).getAddress();
     if(groupAddr == null)        
         {
             SocketException var1833259C2AD0A59C8B12EC641B29806E_787571805 = new SocketException("Group address has no address: " + groupAddress);
             var1833259C2AD0A59C8B12EC641B29806E_787571805.addTaint(taint);
             throw var1833259C2AD0A59C8B12EC641B29806E_787571805;
-        } //End block
+        } 
     if(!groupAddr.isMulticastAddress())        
         {
             IOException var5140AC881883AC4428CD75EDC6B7198F_1315971027 = new IOException("Not a multicast group: " + groupAddr);
             var5140AC881883AC4428CD75EDC6B7198F_1315971027.addTaint(taint);
             throw var5140AC881883AC4428CD75EDC6B7198F_1315971027;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -226,12 +226,12 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             IOException var5140AC881883AC4428CD75EDC6B7198F_1898775810 = new IOException("Not a multicast group: " + groupAddr);
             var5140AC881883AC4428CD75EDC6B7198F_1898775810.addTaint(taint);
             throw var5140AC881883AC4428CD75EDC6B7198F_1898775810;
-        } //End block
-        // ---------- Original Method ----------
-        //checkOpen();
-        //if (!groupAddr.isMulticastAddress()) {
-            //throw new IOException("Not a multicast group: " + groupAddr);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -249,30 +249,30 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             {
                 setTimeToLive(ttl & 0xff);
                 impl.send(packet);
-            } //End block
+            } 
             finally 
             {
                 setTimeToLive(currTTL);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             impl.send(packet);
-        } //End block
-        // ---------- Original Method ----------
-        //checkOpen();
-        //InetAddress packAddr = packet.getAddress();
-        //int currTTL = getTimeToLive();
-        //if (packAddr.isMulticastAddress() && (byte) currTTL != ttl) {
-            //try {
-                //setTimeToLive(ttl & 0xff);
-                //impl.send(packet);
-            //} finally {
-                //setTimeToLive(currTTL);
-            //}
-        //} else {
-            //impl.send(packet);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+                
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -284,27 +284,27 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             NullPointerException var8D4EF061238524D9B0591C939EC42798_443246545 = new NullPointerException("address == null");
             var8D4EF061238524D9B0591C939EC42798_443246545.addTaint(taint);
             throw var8D4EF061238524D9B0591C939EC42798_443246545;
-        } //End block
+        } 
         NetworkInterface networkInterface = NetworkInterface.getByInetAddress(address);
     if(networkInterface == null)        
         {
             SocketException var4623A7A72254EA22A1EADFEBDAFE092F_399161680 = new SocketException("Address not associated with an interface: " + address);
             var4623A7A72254EA22A1EADFEBDAFE092F_399161680.addTaint(taint);
             throw var4623A7A72254EA22A1EADFEBDAFE092F_399161680;
-        } //End block
+        } 
         impl.setOption(SocketOptions.IP_MULTICAST_IF2, networkInterface.getIndex());
         this.setAddress = address;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //if (address == null) {
-            //throw new NullPointerException("address == null");
-        //}
-        //NetworkInterface networkInterface = NetworkInterface.getByInetAddress(address);
-        //if (networkInterface == null) {
-            //throw new SocketException("Address not associated with an interface: " + address);
-        //}
-        //impl.setOption(SocketOptions.IP_MULTICAST_IF2, networkInterface.getIndex());
-        //this.setAddress = address;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -317,16 +317,16 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             SocketException varF4BD2D007C3B75AA022B00A7D94E34E2_386088211 = new SocketException("networkInterface == null");
             varF4BD2D007C3B75AA022B00A7D94E34E2_386088211.addTaint(taint);
             throw varF4BD2D007C3B75AA022B00A7D94E34E2_386088211;
-        } //End block
+        } 
         impl.setOption(SocketOptions.IP_MULTICAST_IF2, networkInterface.getIndex());
         this.setAddress = null;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //if (networkInterface == null) {
-            //throw new SocketException("networkInterface == null");
-        //}
-        //impl.setOption(SocketOptions.IP_MULTICAST_IF2, networkInterface.getIndex());
-        //this.setAddress = null;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -339,14 +339,14 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             IllegalArgumentException varA3BFC4F4A2BC4F4B51A0E909CC51F700_721674848 = new IllegalArgumentException("TimeToLive out of bounds: " + ttl);
             varA3BFC4F4A2BC4F4B51A0E909CC51F700_721674848.addTaint(taint);
             throw varA3BFC4F4A2BC4F4B51A0E909CC51F700_721674848;
-        } //End block
+        } 
         impl.setTimeToLive(ttl);
-        // ---------- Original Method ----------
-        //checkOpen();
-        //if (ttl < 0 || ttl > 255) {
-            //throw new IllegalArgumentException("TimeToLive out of bounds: " + ttl);
-        //}
-        //impl.setTimeToLive(ttl);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -356,9 +356,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         addTaint(ttl);
         checkOpen();
         impl.setTTL(ttl);
-        // ---------- Original Method ----------
-        //checkOpen();
-        //impl.setTTL(ttl);
+        
+        
+        
     }
 
     
@@ -374,24 +374,24 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
             impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
             impl.bind(aPort, addr);
             isBound = true;
-        } //End block
+        } 
         catch (SocketException e)
         {
             close();
             e.addTaint(taint);
             throw e;
-        } //End block
-        // ---------- Original Method ----------
-        //impl = factory != null ? factory.createDatagramSocketImpl() : new PlainDatagramSocketImpl();
-        //impl.create();
-        //try {
-            //impl.setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
-            //impl.bind(aPort, addr);
-            //isBound = true;
-        //} catch (SocketException e) {
-            //close();
-            //throw e;
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -401,9 +401,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         boolean var4207F20481139554418AE371EDD1EBCE_2023812557 = (!((Boolean) impl.getOption(SocketOptions.IP_MULTICAST_LOOP)).booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_216016346 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_216016346;
-        // ---------- Original Method ----------
-        //checkOpen();
-        //return !((Boolean) impl.getOption(SocketOptions.IP_MULTICAST_LOOP)).booleanValue();
+        
+        
+        
     }
 
     
@@ -412,9 +412,9 @@ NetworkInterface var92F39B46B4CB3D019A4178969874DAFE_547002017 =         Network
         addTaint(disable);
         checkOpen();
         impl.setOption(SocketOptions.IP_MULTICAST_LOOP, Boolean.valueOf(!disable));
-        // ---------- Original Method ----------
-        //checkOpen();
-        //impl.setOption(SocketOptions.IP_MULTICAST_LOOP, Boolean.valueOf(!disable));
+        
+        
+        
     }
 
     

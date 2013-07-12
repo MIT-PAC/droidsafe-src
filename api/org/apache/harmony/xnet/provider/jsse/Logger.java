@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class Logger {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.493 -0400", hash_original_method = "E12CB5567684A77D5AAB00FDDBE756D7", hash_generated_method = "E12CB5567684A77D5AAB00FDDBE756D7")
     public Logger ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -38,8 +38,8 @@ public class Logger {
         public  Stream(String name) {
             super(System.err);
             prefix = name + "["+Thread.currentThread().getName()+"] ";
-            // ---------- Original Method ----------
-            //prefix = name + "["+Thread.currentThread().getName()+"] ";
+            
+            
         }
 
         
@@ -50,29 +50,31 @@ public class Logger {
 for(int i=0;i<indent;i++)
             {
                 super.print("  ");
-            } //End block
+            } 
             super.print(msg);
-            // ---------- Original Method ----------
-            //for (int i=0; i<indent; i++) {
-                //super.print("  ");
-            //}
-            //super.print(msg);
+            
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.494 -0400", hash_original_method = "330ED05F95D8039149C4EE202C44E32C", hash_generated_method = "47144670D508CFD561143F4799BC76AB")
         public void newIndent() {
             indent ++;
-            // ---------- Original Method ----------
-            //indent ++;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.495 -0400", hash_original_method = "85AD8C1F1AFBCA83430C30D8B2614DB0", hash_generated_method = "06F7FF18FCADBC918591EB35F5BEEA6F")
         public void endIndent() {
             indent --;
-            // ---------- Original Method ----------
-            //indent --;
+            
+            
         }
 
         
@@ -82,9 +84,9 @@ for(int i=0;i<indent;i++)
             addTaint(msg.getTaint());
             print(prefix);
             super.println(msg);
-            // ---------- Original Method ----------
-            //print(prefix);
-            //super.println(msg);
+            
+            
+            
         }
 
         
@@ -92,8 +94,8 @@ for(int i=0;i<indent;i++)
         public void print(byte[] data) {
             addTaint(data[0]);
             printAsHex(16, " ", "", data, 0, data.length);
-            // ---------- Original Method ----------
-            //printAsHex(16, " ", "", data, 0, data.length);
+            
+            
         }
 
         
@@ -103,8 +105,8 @@ for(int i=0;i<indent;i++)
             addTaint(offset);
             addTaint(data[0]);
             printAsHex(16, " ", "", data, offset, len);
-            // ---------- Original Method ----------
-            //printAsHex(16, " ", "", data, offset, len);
+            
+            
         }
 
         
@@ -115,8 +117,8 @@ for(int i=0;i<indent;i++)
             addTaint(prefix.getTaint());
             addTaint(perLine);
             printAsHex(perLine, prefix, delimiter, data, 0, data.length);
-            // ---------- Original Method ----------
-            //printAsHex(perLine, prefix, delimiter, data, 0, data.length);
+            
+            
         }
 
         
@@ -139,21 +141,21 @@ for(int i = 0;i < len;i++)
                 {
                     super.println(line.toString());
                     line = new StringBuilder();
-                } //End block
-            } //End block
+                } 
+            } 
             super.println(line.toString());
-            // ---------- Original Method ----------
-            //StringBuilder line = new StringBuilder();
-            //for (int i = 0; i < len; i++) {
-                //line.append(prefix);
-                //line.append(Byte.toHexString(data[i+offset], false));
-                //line.append(delimiter);
-                //if (((i+1)%perLine) == 0) {
-                    //super.println(line.toString());
-                    //line = new StringBuilder();
-                //}
-            //}
-            //super.println(line.toString());
+            
+            
+            
+                
+                
+                
+                
+                    
+                    
+                
+            
+            
         }
 
         

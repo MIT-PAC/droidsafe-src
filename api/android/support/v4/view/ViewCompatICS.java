@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ class ViewCompatICS {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.878 -0400", hash_original_method = "216CDC7D30D86F2C2CF6BA6EB77F522A", hash_generated_method = "216CDC7D30D86F2C2CF6BA6EB77F522A")
     public ViewCompatICS ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -34,19 +34,19 @@ class ViewCompatICS {
 
     
         public static void onPopulateAccessibilityEvent(View v, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         v.onPopulateAccessibilityEvent(event);
     }
 
     
         public static void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         v.onInitializeAccessibilityEvent(event);
     }
 
     
         public static void onInitializeAccessibilityNodeInfo(View v, Object info) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         v.onInitializeAccessibilityNodeInfo((AccessibilityNodeInfo) info);
     }
 

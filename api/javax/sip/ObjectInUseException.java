@@ -1,6 +1,6 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class ObjectInUseException extends SipException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.230 -0400", hash_original_method = "1506D26AE793C20A85DE50298F844249", hash_generated_method = "8E06DD88D90B8E6C242DDAF66DBF9939")
     public  ObjectInUseException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class ObjectInUseException extends SipException {
     public  ObjectInUseException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class ObjectInUseException extends SipException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,10 +32,10 @@ public class ProxyProperties implements Parcelable {
         mHost = host;
         mPort = port;
         setExclusionList(exclList);
-        // ---------- Original Method ----------
-        //mHost = host;
-        //mPort = port;
-        //setExclusionList(exclList);
+        
+        
+        
+        
     }
 
     
@@ -45,11 +45,11 @@ public class ProxyProperties implements Parcelable {
         mPort = port;
         mExclusionList = exclList;
         mParsedExclusionList = parsedExclList;
-        // ---------- Original Method ----------
-        //mHost = host;
-        //mPort = port;
-        //mExclusionList = exclList;
-        //mParsedExclusionList = parsedExclList;
+        
+        
+        
+        
+        
     }
 
     
@@ -61,14 +61,14 @@ public class ProxyProperties implements Parcelable {
             mPort = source.getPort();
             mExclusionList = source.getExclusionList();
             mParsedExclusionList = source.mParsedExclusionList;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //mHost = source.getHost();
-            //mPort = source.getPort();
-            //mExclusionList = source.getExclusionList();
-            //mParsedExclusionList = source.mParsedExclusionList;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -78,49 +78,52 @@ public class ProxyProperties implements Parcelable {
         try 
         {
             inetSocketAddress = new InetSocketAddress(mHost, mPort);
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
-        } //End block
+        } 
 InetSocketAddress var571036BB61B9E7FDBB9F3BBC66371C29_1530859938 =         inetSocketAddress;
         var571036BB61B9E7FDBB9F3BBC66371C29_1530859938.addTaint(taint);
         return var571036BB61B9E7FDBB9F3BBC66371C29_1530859938;
-        // ---------- Original Method ----------
-        //InetSocketAddress inetSocketAddress = null;
-        //try {
-            //inetSocketAddress = new InetSocketAddress(mHost, mPort);
-        //} catch (IllegalArgumentException e) { }
-        //return inetSocketAddress;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.373 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "BC4D799EE4CEB92E78240283234E8179")
     public String getHost() {
 String varE57614B151242FB69B92E61EEA287D33_838707180 =         mHost;
         varE57614B151242FB69B92E61EEA287D33_838707180.addTaint(taint);
         return varE57614B151242FB69B92E61EEA287D33_838707180;
-        // ---------- Original Method ----------
-        //return mHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.373 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "1E986B7D7BB2928248E10DF673F71177")
     public int getPort() {
         int var5EFA61C4FCA92CA992BE37C2BAF4D350_338061715 = (mPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466607022 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_466607022;
-        // ---------- Original Method ----------
-        //return mPort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.373 -0400", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "A1552935CECD79A101F70FDA011B2448")
     public String getExclusionList() {
 String varC0B04173BEBA2500AEBF48903299C3F4_2011288382 =         mExclusionList;
         varC0B04173BEBA2500AEBF48903299C3F4_2011288382.addTaint(taint);
         return varC0B04173BEBA2500AEBF48903299C3F4_2011288382;
-        // ---------- Original Method ----------
-        //return mExclusionList;
+        
+        
     }
 
     
@@ -130,7 +133,7 @@ String varC0B04173BEBA2500AEBF48903299C3F4_2011288382 =         mExclusionList;
     if(mExclusionList == null)        
         {
             mParsedExclusionList = new String[0];
-        } //End block
+        } 
         else
         {
             String splitExclusionList[] = exclusionList.toLowerCase().split(",");
@@ -142,22 +145,22 @@ for(int i = 0;i < splitExclusionList.length;i++)
                 s = s.substring(1);
                 mParsedExclusionList[i*2] = s;
                 mParsedExclusionList[(i*2)+1] = "." + s;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mExclusionList = exclusionList;
-        //if (mExclusionList == null) {
-            //mParsedExclusionList = new String[0];
-        //} else {
-            //String splitExclusionList[] = exclusionList.toLowerCase().split(",");
-            //mParsedExclusionList = new String[splitExclusionList.length * 2];
-            //for (int i = 0; i < splitExclusionList.length; i++) {
-                //String s = splitExclusionList[i].trim();
-                //if (s.startsWith(".")) s = s.substring(1);
-                //mParsedExclusionList[i*2] = s;
-                //mParsedExclusionList[(i*2)+1] = "." + s;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+            
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -187,24 +190,24 @@ for(int i = 0;i< mParsedExclusionList.length;i+=2)
                 boolean varB326B5062B2F0E69046810717534CB09_142709209 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_303202354 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_303202354;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2035683526 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1609480302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1609480302;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(url) || mParsedExclusionList == null ||
-                //mParsedExclusionList.length == 0) return false;
-        //Uri u = Uri.parse(url);
-        //String urlDomain = u.getHost();
-        //if (urlDomain == null) return false;
-        //for (int i = 0; i< mParsedExclusionList.length; i+=2) {
-            //if (urlDomain.equals(mParsedExclusionList[i]) ||
-                    //urlDomain.endsWith(mParsedExclusionList[i+1])) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+                
+        
+        
+        
+        
+            
+                    
+                
+            
+        
+        
     }
 
     
@@ -217,24 +220,24 @@ for(int i = 0;i< mParsedExclusionList.length;i+=2)
             {
                 InetSocketAddress inetSocketAddress = new InetSocketAddress(mHost, mPort);
                 proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, inetSocketAddress);
-            } //End block
+            } 
             catch (IllegalArgumentException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 java.net.Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1012379552 =         proxy;
         var60FC9F22F7E863EBFD33B2ADB8462743_1012379552.addTaint(taint);
         return var60FC9F22F7E863EBFD33B2ADB8462743_1012379552;
-        // ---------- Original Method ----------
-        //java.net.Proxy proxy = java.net.Proxy.NO_PROXY;
-        //if (mHost != null) {
-            //try {
-                //InetSocketAddress inetSocketAddress = new InetSocketAddress(mHost, mPort);
-                //proxy = new java.net.Proxy(java.net.Proxy.Type.HTTP, inetSocketAddress);
-            //} catch (IllegalArgumentException e) {
-            //}
-        //}
-        //return proxy;
+        
+        
+        
+            
+                
+                
+            
+            
+        
+        
     }
 
     
@@ -251,29 +254,29 @@ java.net.Proxy var60FC9F22F7E863EBFD33B2ADB8462743_1012379552 =         proxy;
     if(mExclusionList != null)            
             {
                 sb.append(" xl=").append(mExclusionList);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             sb.append("[ProxyProperties.mHost == null]");
-        } //End block
+        } 
 String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_219919739.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_219919739;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //if (mHost != null) {
-            //sb.append("[");
-            //sb.append(mHost);
-            //sb.append("] ");
-            //sb.append(Integer.toString(mPort));
-            //if (mExclusionList != null) {
-                    //sb.append(" xl=").append(mExclusionList);
-            //}
-        //} else {
-            //sb.append("[ProxyProperties.mHost == null]");
-        //}
-        //return sb.toString();
+        
+        
+        
+            
+            
+            
+            
+            
+                    
+            
+        
+            
+        
+        
     }
 
     
@@ -299,7 +302,7 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
             boolean var68934A3E9455FA72420237EB05902327_1475010929 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825033856 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825033856;
-        } //End block
+        } 
     if(mHost != null && p.mHost == null)        
         {
         boolean var68934A3E9455FA72420237EB05902327_1823147892 = (false);
@@ -321,27 +324,28 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
         boolean varB326B5062B2F0E69046810717534CB09_1439036682 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_950322050 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_950322050;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ProxyProperties)) return false;
-        //ProxyProperties p = (ProxyProperties)o;
-        //if (mExclusionList != null && !mExclusionList.equals(p.getExclusionList())) return false;
-        //if (mHost != null && p.getHost() != null && mHost.equals(p.getHost()) == false) {
-            //return false;
-        //}
-        //if (mHost != null && p.mHost == null) return false;
-        //if (mHost == null && p.mHost != null) return false;
-        //if (mPort != p.mPort) return false;
-        //return true;
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.378 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "43B73516BC68CA2675B0F61E9D1FFDF8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1860894371 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394813043 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394813043;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -353,10 +357,10 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
         + mPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256604459 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256604459;
-        // ---------- Original Method ----------
-        //return ((null == mHost) ? 0 : mHost.hashCode())
-        //+ ((null == mExclusionList) ? 0 : mExclusionList.hashCode())
-        //+ mPort;
+        
+        
+        
+        
     }
 
     
@@ -369,23 +373,23 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
             dest.writeByte((byte)1);
             dest.writeString(mHost);
             dest.writeInt(mPort);
-        } //End block
+        } 
         else
         {
             dest.writeByte((byte)0);
-        } //End block
+        } 
         dest.writeString(mExclusionList);
         dest.writeStringArray(mParsedExclusionList);
-        // ---------- Original Method ----------
-        //if (mHost != null) {
-            //dest.writeByte((byte)1);
-            //dest.writeString(mHost);
-            //dest.writeInt(mPort);
-        //} else {
-            //dest.writeByte((byte)0);
-        //}
-        //dest.writeString(mExclusionList);
-        //dest.writeStringArray(mParsedExclusionList);
+        
+        
+            
+            
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -411,7 +415,7 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
                 return new ProxyProperties[size];
             }
         };
-    // orphaned legacy method
+    
     public ProxyProperties createFromParcel(Parcel in) {
                 String host = null;
                 int port = 0;
@@ -426,7 +430,7 @@ String var2460B846747F8B22185AD8BE722266A5_219919739 =         sb.toString();
                 return proxyProperties;
             }
     
-    // orphaned legacy method
+    
     public ProxyProperties[] newArray(int size) {
                 return new ProxyProperties[size];
             }

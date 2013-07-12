@@ -1,6 +1,6 @@
 package org.apache.http.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public final class BasicHttpParams extends AbstractHttpParams implements Seriali
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.799 -0400", hash_original_method = "A376B34D8EF6688DA5CE35D3A9BF9679", hash_generated_method = "FBB171961C65791D0D41F7E11BB5ADB7")
     public  BasicHttpParams() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,16 +29,16 @@ public final class BasicHttpParams extends AbstractHttpParams implements Seriali
     if(this.parameters != null)        
         {
             param = this.parameters.get(name);
-        } //End block
+        } 
 Object varF81FB673F6C2DA8AAD87B981F743A4D2_515697680 =         param;
         varF81FB673F6C2DA8AAD87B981F743A4D2_515697680.addTaint(taint);
         return varF81FB673F6C2DA8AAD87B981F743A4D2_515697680;
-        // ---------- Original Method ----------
-        //Object param = null;
-        //if (this.parameters != null) {
-            //param = this.parameters.get(name);
-        //}
-        //return param;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -49,17 +49,17 @@ Object varF81FB673F6C2DA8AAD87B981F743A4D2_515697680 =         param;
     if(this.parameters == null)        
         {
             this.parameters = new HashMap();
-        } //End block
+        } 
         this.parameters.put(name, value);
 HttpParams var72A74007B2BE62B849F475C7BDA4658B_268681332 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_268681332.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_268681332;
-        // ---------- Original Method ----------
-        //if (this.parameters == null) {
-            //this.parameters = new HashMap();
-        //}
-        //this.parameters.put(name, value);
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -71,30 +71,30 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_268681332 =         this;
             boolean var68934A3E9455FA72420237EB05902327_1969283889 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_51961470 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_51961470;
-        } //End block
+        } 
     if(this.parameters.containsKey(name))        
         {
             this.parameters.remove(name);
             boolean varB326B5062B2F0E69046810717534CB09_32882984 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970568724 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_970568724;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_811514177 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_437839984 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_437839984;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.parameters == null) {
-            //return false;
-        //}
-        //if (this.parameters.containsKey(name)) {
-            //this.parameters.remove(name);
-            //return true;
-        //} else {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -105,11 +105,11 @@ HttpParams var72A74007B2BE62B849F475C7BDA4658B_268681332 =         this;
 for(int i = 0;i < names.length;i++)
         {
             setParameter(names[i], value);
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < names.length; i++) {
-            //setParameter(names[i], value);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -119,8 +119,8 @@ for(int i = 0;i < names.length;i++)
         boolean varAFC06D2E57DCF01DF92E426A4E2BF138_189632083 = (getParameter(name) != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551649710 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_551649710;
-        // ---------- Original Method ----------
-        //return getParameter(name) != null;
+        
+        
     }
 
     
@@ -130,16 +130,17 @@ for(int i = 0;i < names.length;i++)
         boolean var8831547921B7445B9C61719A1B464FC6_1848869005 = (this.parameters != null && this.parameters.get(name) != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495412544 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_495412544;
-        // ---------- Original Method ----------
-        //return this.parameters != null && this.parameters.get(name) != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.804 -0400", hash_original_method = "F2DDE632E78D7CF5EE18F245B99A4352", hash_generated_method = "031BD174CA8DBEE1FA499F246DE138F9")
     public void clear() {
         this.parameters = null;
-        // ---------- Original Method ----------
-        //this.parameters = null;
+        
+        
     }
 
     
@@ -150,10 +151,10 @@ for(int i = 0;i < names.length;i++)
 HttpParams var3DE52045BFD3C1BF3742F994ED6139AD_1053274812 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_1053274812.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_1053274812;
-        // ---------- Original Method ----------
-        //BasicHttpParams clone = new BasicHttpParams();
-        //copyParams(clone);
-        //return clone;
+        
+        
+        
+        
     }
 
     
@@ -164,10 +165,10 @@ HttpParams var3DE52045BFD3C1BF3742F994ED6139AD_1053274812 =         clone;
 Object var3DE52045BFD3C1BF3742F994ED6139AD_1544812668 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_1544812668.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_1544812668;
-        // ---------- Original Method ----------
-        //BasicHttpParams clone = (BasicHttpParams) super.clone();
-        //copyParams(clone);
-        //return clone;
+        
+        
+        
+        
     }
 
     
@@ -183,16 +184,16 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1544812668 =         clone;
             Map.Entry me = (Map.Entry) iter.next();
     if(me.getKey() instanceof String)            
             target.setParameter((String)me.getKey(), me.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.parameters == null)
-            //return;
-        //Iterator iter = parameters.entrySet().iterator();
-        //while (iter.hasNext()) {
-            //Map.Entry me = (Map.Entry) iter.next();
-            //if (me.getKey() instanceof String)
-                //target.setParameter((String)me.getKey(), me.getValue());
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+        
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class IccUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.812 -0400", hash_original_method = "7497E316CBF08BC6A4E1097E009E4B82", hash_generated_method = "7497E316CBF08BC6A4E1097E009E4B82")
     public IccUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -58,7 +58,8 @@ public class IccUtils {
     }
 
     
-        public static int gsmBcdByteToInt(byte b) {
+        @DSModeled(DSC.SAFE)
+    public static int gsmBcdByteToInt(byte b) {
         int ret = 0;
         if ((b & 0xf0) <= 0x90) {
             ret = (b >> 4) & 0xf;
@@ -70,7 +71,8 @@ public class IccUtils {
     }
 
     
-        public static int cdmaBcdByteToInt(byte b) {
+        @DSModeled(DSC.SAFE)
+    public static int cdmaBcdByteToInt(byte b) {
         int ret = 0;
         if ((b & 0xf0) <= 0x90) {
             ret = ((b >> 4) & 0xf) * 10;
@@ -242,7 +244,8 @@ public class IccUtils {
     }
 
     
-        private static int bitToRGB(int bit) {
+        @DSModeled(DSC.SAFE)
+    private static int bitToRGB(int bit) {
         if(bit == 1){
             return Color.WHITE;
         } else {
@@ -326,7 +329,8 @@ public class IccUtils {
     }
 
     
-        private static int[] getCLUT(byte[] rawData, int offset, int number) {
+        @DSModeled(DSC.SAFE)
+    private static int[] getCLUT(byte[] rawData, int offset, int number) {
         if (null == rawData) {
             return null;
         }

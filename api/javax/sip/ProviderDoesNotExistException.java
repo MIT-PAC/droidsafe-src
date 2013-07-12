@@ -1,6 +1,6 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class ProviderDoesNotExistException extends SipException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.242 -0400", hash_original_method = "EB91B1D62AAE7F3701C2A2F893EEC27E", hash_generated_method = "D61E8ACB3BD9A2FFBF8DFCCE5147FF4B")
     public  ProviderDoesNotExistException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class ProviderDoesNotExistException extends SipException {
     public  ProviderDoesNotExistException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class ProviderDoesNotExistException extends SipException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

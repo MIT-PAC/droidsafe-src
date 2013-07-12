@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class SyncStateContract {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.708 -0400", hash_original_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47", hash_generated_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47")
     public SyncStateContract ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -28,7 +28,7 @@ public class SyncStateContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.709 -0400", hash_original_method = "E59499DF9DD0978456F50DA5893CC8F6", hash_generated_method = "E59499DF9DD0978456F50DA5893CC8F6")
         public Constants ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -44,11 +44,12 @@ public class SyncStateContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.709 -0400", hash_original_method = "9749A8A424C5761B245394E68B42F39B", hash_generated_method = "9749A8A424C5761B245394E68B42F39B")
         public Helpers ()
         {
-            //Synthesized constructor
+            
         }
 
 
-                public static byte[] get(ContentProviderClient provider, Uri uri,
+                @DSModeled(DSC.SPEC)
+        public static byte[] get(ContentProviderClient provider, Uri uri,
                 Account account) throws RemoteException {
             Cursor c = provider.query(uri, DATA_PROJECTION, SELECT_BY_ACCOUNT,
                     new String[]{account.name, account.type}, null);
@@ -66,7 +67,8 @@ public class SyncStateContract {
         }
 
         
-                public static void set(ContentProviderClient provider, Uri uri,
+                @DSModeled(DSC.SPEC)
+        public static void set(ContentProviderClient provider, Uri uri,
                 Account account, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -76,7 +78,8 @@ public class SyncStateContract {
         }
 
         
-                public static Uri insert(ContentProviderClient provider, Uri uri,
+                @DSModeled(DSC.SPEC)
+        public static Uri insert(ContentProviderClient provider, Uri uri,
                 Account account, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -86,7 +89,8 @@ public class SyncStateContract {
         }
 
         
-                public static void update(ContentProviderClient provider, Uri uri, byte[] data) throws RemoteException {
+                @DSModeled(DSC.SPEC)
+        public static void update(ContentProviderClient provider, Uri uri, byte[] data) throws RemoteException {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
             provider.update(uri, values, null, null);
@@ -113,7 +117,8 @@ public class SyncStateContract {
         }
 
         
-                public static ContentProviderOperation newSetOperation(Uri uri,
+                @DSModeled(DSC.SPEC)
+        public static ContentProviderOperation newSetOperation(Uri uri,
                 Account account, byte[] data) {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
@@ -126,7 +131,8 @@ public class SyncStateContract {
         }
 
         
-                public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) {
+                @DSModeled(DSC.SPEC)
+        public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) {
             ContentValues values = new ContentValues();
             values.put(Columns.DATA, data);
             return ContentProviderOperation

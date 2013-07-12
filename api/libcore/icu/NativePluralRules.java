@@ -1,6 +1,6 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public final class NativePluralRules {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:25.426 -0400", hash_original_method = "AA726DD537B18CF5E6F027FB7C25435F", hash_generated_method = "CE58BB3507445ED0089597718F7F8DAB")
     private  NativePluralRules(int address) {
         this.address = address;
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
@@ -25,17 +25,17 @@ public final class NativePluralRules {
         try 
         {
             finalizeImpl(address);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //finalizeImpl(address);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -50,8 +50,8 @@ public final class NativePluralRules {
         int var34D9B36BFCEDCA890A4CCC5EFBCE4CEC_257525493 = (quantityForIntImpl(address, value));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_87997183 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_87997183;
-        // ---------- Original Method ----------
-        //return quantityForIntImpl(address, value);
+        
+        
     }
 
     

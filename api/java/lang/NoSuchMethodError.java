@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class NoSuchMethodError extends IncompatibleClassChangeError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.030 -0400", hash_original_method = "80EBD198F916FEE348D274437586B5BC", hash_generated_method = "47FDE86C35A2EDC474B42FD4951F4771")
     public  NoSuchMethodError() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class NoSuchMethodError extends IncompatibleClassChangeError {
     public  NoSuchMethodError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

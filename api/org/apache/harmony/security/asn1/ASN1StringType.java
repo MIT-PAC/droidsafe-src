@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class ASN1StringType extends ASN1Type {
     public  ASN1StringType(int tagNumber) {
         super(tagNumber);
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,8 +23,8 @@ public abstract class ASN1StringType extends ASN1Type {
         boolean var9A8EAB5521C15441F9869C70002988EF_379199909 = (this.id == identifier || this.constrId == identifier);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1383139625 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1383139625;
-        // ---------- Original Method ----------
-        //return this.id == identifier || this.constrId == identifier;
+        
+        
     }
 
     
@@ -37,16 +37,16 @@ public abstract class ASN1StringType extends ASN1Type {
 Object var540C13E9E156B687226421B24F2DF178_1058580428 =             null;
             var540C13E9E156B687226421B24F2DF178_1058580428.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1058580428;
-        } //End block
+        } 
 Object var6AD043AF0280111F31D0D60A6CD70863_444765436 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_444765436.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_444765436;
-        // ---------- Original Method ----------
-        //in.readString(this);
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -56,8 +56,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_444765436 =         getDecodedObject(
 Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.buffer, in.contentOffset, in.length, Charsets.ISO_8859_1);
         var83BCE5B133191D7D26A24E29D20910C3_1343261993.addTaint(taint);
         return var83BCE5B133191D7D26A24E29D20910C3_1343261993;
-        // ---------- Original Method ----------
-        //return new String(in.buffer, in.contentOffset, in.length, Charsets.ISO_8859_1);
+        
+        
     }
 
     
@@ -66,9 +66,9 @@ Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.bu
         addTaint(out.getTaint());
         out.encodeTag(id);
         encodeContent(out);
-        // ---------- Original Method ----------
-        //out.encodeTag(id);
-        //encodeContent(out);
+        
+        
+        
     }
 
     
@@ -76,8 +76,8 @@ Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.bu
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeString();
-        // ---------- Original Method ----------
-        //out.encodeString();
+        
+        
     }
 
     
@@ -87,10 +87,10 @@ Object var83BCE5B133191D7D26A24E29D20910C3_1343261993 =         new String(in.bu
         byte[] bytes = ((String) out.content).getBytes(Charsets.UTF_8);
         out.content = bytes;
         out.length = bytes.length;
-        // ---------- Original Method ----------
-        //byte[] bytes = ((String) out.content).getBytes(Charsets.UTF_8);
-        //out.content = bytes;
-        //out.length = bytes.length;
+        
+        
+        
+        
     }
 
     

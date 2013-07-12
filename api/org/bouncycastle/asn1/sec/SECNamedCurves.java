@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.sec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class SECNamedCurves {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.388 -0400", hash_original_method = "23A51E56E8942FF07ABE86D375C28B89", hash_generated_method = "23A51E56E8942FF07ABE86D375C28B89")
     public SECNamedCurves ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -60,7 +60,8 @@ public class SECNamedCurves {
     }
 
     
-        public static DERObjectIdentifier getOID(
+        @DSModeled(DSC.SPEC)
+    public static DERObjectIdentifier getOID(
         String name) {
         return (DERObjectIdentifier)objIds.get(Strings.toLowerCase(name));
     }

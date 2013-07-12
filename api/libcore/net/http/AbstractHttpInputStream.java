@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,18 +36,18 @@ abstract class AbstractHttpInputStream extends InputStream {
     if(cacheBody == null)        
         {
             cacheRequest = null;
-        } //End block
+        } 
         this.cacheBody = cacheBody;
         this.cacheRequest = cacheRequest;
-        // ---------- Original Method ----------
-        //this.in = in;
-        //this.httpEngine = httpEngine;
-        //OutputStream cacheBody = cacheRequest != null ? cacheRequest.getBody() : null;
-        //if (cacheBody == null) {
-            //cacheRequest = null;
-        //}
-        //this.cacheBody = cacheBody;
-        //this.cacheRequest = cacheRequest;
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ abstract class AbstractHttpInputStream extends InputStream {
         int varC29A5AE95A30EE64395CAB97F32FA4B0_1166048209 = (Streams.readSingleByte(this));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181314248 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_181314248;
-        // ---------- Original Method ----------
-        //return Streams.readSingleByte(this);
+        
+        
     }
 
     
@@ -69,11 +69,11 @@ abstract class AbstractHttpInputStream extends InputStream {
             IOException var8D1E5C4B5F667C4541A761B82D8E7D19_1666594235 = new IOException("stream closed");
             var8D1E5C4B5F667C4541A761B82D8E7D19_1666594235.addTaint(taint);
             throw var8D1E5C4B5F667C4541A761B82D8E7D19_1666594235;
-        } //End block
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("stream closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -85,11 +85,11 @@ abstract class AbstractHttpInputStream extends InputStream {
     if(cacheBody != null)        
         {
             cacheBody.write(buffer, offset, count);
-        } //End block
-        // ---------- Original Method ----------
-        //if (cacheBody != null) {
-            //cacheBody.write(buffer, offset, count);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -99,13 +99,13 @@ abstract class AbstractHttpInputStream extends InputStream {
     if(cacheRequest != null)        
         {
             cacheBody.close();
-        } //End block
+        } 
         httpEngine.release(reuseSocket);
-        // ---------- Original Method ----------
-        //if (cacheRequest != null) {
-            //cacheBody.close();
-        //}
-        //httpEngine.release(reuseSocket);
+        
+        
+            
+        
+        
     }
 
     
@@ -114,13 +114,13 @@ abstract class AbstractHttpInputStream extends InputStream {
     if(cacheRequest != null)        
         {
             cacheRequest.abort();
-        } //End block
+        } 
         httpEngine.release(false);
-        // ---------- Original Method ----------
-        //if (cacheRequest != null) {
-            //cacheRequest.abort();
-        //}
-        //httpEngine.release(false);
+        
+        
+            
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers.geocoding;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,17 +26,18 @@ public class AreaCodeMap implements Externalizable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.300 -0400", hash_original_method = "F2335FCA92B9F7475991523B74CDEDE4", hash_generated_method = "5AADB622CA81A6BC4039E9CFB4220F69")
     public  AreaCodeMap() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.300 -0400", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "67CF871815EF3E47FD72386505496553")
      AreaCodeMapStorageStrategy getAreaCodeMapStorage() {
 AreaCodeMapStorageStrategy var31ED7B04A16DD339604BD6A4FB648540_1920404784 =         areaCodeMapStorage;
         var31ED7B04A16DD339604BD6A4FB648540_1920404784.addTaint(taint);
         return var31ED7B04A16DD339604BD6A4FB648540_1920404784;
-        // ---------- Original Method ----------
-        //return areaCodeMapStorage;
+        
+        
     }
 
     
@@ -58,8 +59,8 @@ AreaCodeMapStorageStrategy var31ED7B04A16DD339604BD6A4FB648540_1920404784 =     
 AreaCodeMapStorageStrategy var5612085B6FCF2B9D00F0475758608512_1509582090 =         new DefaultMapStorage();
         var5612085B6FCF2B9D00F0475758608512_1509582090.addTaint(taint);
         return var5612085B6FCF2B9D00F0475758608512_1509582090;
-        // ---------- Original Method ----------
-        //return new DefaultMapStorage();
+        
+        
     }
 
     
@@ -68,8 +69,8 @@ AreaCodeMapStorageStrategy var5612085B6FCF2B9D00F0475758608512_1509582090 =     
 AreaCodeMapStorageStrategy var3D730F5F1921CF750D41B64D8DC60212_1750060108 =         new FlyweightMapStorage();
         var3D730F5F1921CF750D41B64D8DC60212_1750060108.addTaint(taint);
         return var3D730F5F1921CF750D41B64D8DC60212_1750060108;
-        // ---------- Original Method ----------
-        //return new FlyweightMapStorage();
+        
+        
     }
 
     
@@ -86,34 +87,34 @@ AreaCodeMapStorageStrategy var8A88CAC028C7AE1EFB478006CDA2705C_616635280 =      
           ? flyweightMapStorage : defaultMapStorage;
             var8A88CAC028C7AE1EFB478006CDA2705C_616635280.addTaint(taint);
             return var8A88CAC028C7AE1EFB478006CDA2705C_616635280;
-        } //End block
+        } 
         catch (IOException e)
         {
             LOGGER.severe(e.getMessage());
 AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_719382749 =             createFlyweightMapStorage();
             varC8954BB945BA997C91E808EDD6426356_719382749.addTaint(taint);
             return varC8954BB945BA997C91E808EDD6426356_719382749;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-      //AreaCodeMapStorageStrategy flyweightMapStorage = createFlyweightMapStorage();
-      //int sizeOfFlyweightMapStorage = getSizeOfAreaCodeMapStorage(flyweightMapStorage, areaCodeMap);
-      //AreaCodeMapStorageStrategy defaultMapStorage = createDefaultMapStorage();
-      //int sizeOfDefaultMapStorage = getSizeOfAreaCodeMapStorage(defaultMapStorage, areaCodeMap);
-      //return sizeOfFlyweightMapStorage < sizeOfDefaultMapStorage
-          //? flyweightMapStorage : defaultMapStorage;
-    //} catch (IOException e) {
-      //LOGGER.severe(e.getMessage());
-      //return createFlyweightMapStorage();
-    //}
+        } 
+        
+        
+      
+      
+      
+      
+      
+          
+    
+      
+      
+    
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:15.304 -0400", hash_original_method = "B49B377AC81241FFFF2815B40FB81171", hash_generated_method = "6E42B9FA49378DBD52B19E16C35801DE")
     public void readAreaCodeMap(SortedMap<Integer, String> sortedAreaCodeMap) {
         areaCodeMapStorage = getSmallerMapStorage(sortedAreaCodeMap);
-        // ---------- Original Method ----------
-        //areaCodeMapStorage = getSmallerMapStorage(sortedAreaCodeMap);
+        
+        
     }
 
     
@@ -124,20 +125,20 @@ AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_719382749 =      
     if(useFlyweightMapStorage)        
         {
             areaCodeMapStorage = new FlyweightMapStorage();
-        } //End block
+        } 
         else
         {
             areaCodeMapStorage = new DefaultMapStorage();
-        } //End block
+        } 
         areaCodeMapStorage.readExternal(objectInput);
-        // ---------- Original Method ----------
-        //boolean useFlyweightMapStorage = objectInput.readBoolean();
-        //if (useFlyweightMapStorage) {
-      //areaCodeMapStorage = new FlyweightMapStorage();
-    //} else {
-      //areaCodeMapStorage = new DefaultMapStorage();
-    //}
-        //areaCodeMapStorage.readExternal(objectInput);
+        
+        
+        
+      
+    
+      
+    
+        
     }
 
     
@@ -146,9 +147,9 @@ AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_719382749 =      
         addTaint(objectOutput.getTaint());
         objectOutput.writeBoolean(areaCodeMapStorage.isFlyweight());
         areaCodeMapStorage.writeExternal(objectOutput);
-        // ---------- Original Method ----------
-        //objectOutput.writeBoolean(areaCodeMapStorage.isFlyweight());
-        //areaCodeMapStorage.writeExternal(objectOutput);
+        
+        
+        
     }
 
     
@@ -161,7 +162,7 @@ AreaCodeMapStorageStrategy varC8954BB945BA997C91E808EDD6426356_719382749 =      
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1520986698 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1520986698.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1520986698;
-        } //End block
+        } 
         long phonePrefix = Long.parseLong(number.getCountryCode() + phoneUtil.getNationalSignificantNumber(number));
         int currentIndex = numOfEntries - 1;
         SortedSet<Integer> currentSetOfLengths = areaCodeMapStorage.getPossibleLengths();
@@ -173,28 +174,28 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1520986698 =             "";
     if(phonePrefixStr.length() > possibleLength)            
             {
                 phonePrefix = Long.parseLong(phonePrefixStr.substring(0, possibleLength));
-            } //End block
+            } 
             currentIndex = binarySearch(0, currentIndex, phonePrefix);
     if(currentIndex < 0)            
             {
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1630030139 =                 "";
                 var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1630030139.addTaint(taint);
                 return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1630030139;
-            } //End block
+            } 
             int currentPrefix = areaCodeMapStorage.getPrefix(currentIndex);
     if(phonePrefix == currentPrefix)            
             {
 String var7368BDB434CA6DBDBA93D885B81D7AAE_92685531 =                 areaCodeMapStorage.getDescription(currentIndex);
                 var7368BDB434CA6DBDBA93D885B81D7AAE_92685531.addTaint(taint);
                 return var7368BDB434CA6DBDBA93D885B81D7AAE_92685531;
-            } //End block
+            } 
             currentSetOfLengths = currentSetOfLengths.headSet(possibleLength);
-        } //End block
+        } 
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1128596879 =         "";
         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1128596879.addTaint(taint);
         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1128596879;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -214,36 +215,36 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1128596879 =         "";
                 int var43B5C9175984C071F30B873FDCE0A000_1447047723 = (current);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1504473328 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1504473328;
-            } //End block
+            } 
             else
     if(currentValue > value)            
             {
                 current--;
                 end = current;
-            } //End block
+            } 
             else
             {
                 start = current + 1;
-            } //End block
-        } //End block
+            } 
+        } 
         int var43B5C9175984C071F30B873FDCE0A000_1531633048 = (current);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246590573 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246590573;
-        // ---------- Original Method ----------
-        //int current = 0;
-        //while (start <= end) {
-      //current = (start + end) >>> 1;
-      //int currentValue = areaCodeMapStorage.getPrefix(current);
-      //if (currentValue == value) {
-        //return current;
-      //} else if (currentValue > value) {
-        //current--;
-        //end = current;
-      //} else {
-        //start = current + 1;
-      //}
-    //}
-        //return current;
+        
+        
+        
+      
+      
+      
+        
+      
+        
+        
+      
+        
+      
+    
+        
     }
 
     
@@ -253,8 +254,8 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1128596879 =         "";
 String var58B4A58B2055F11D369F061290364B41_1110648225 =         areaCodeMapStorage.toString();
         var58B4A58B2055F11D369F061290364B41_1110648225.addTaint(taint);
         return var58B4A58B2055F11D369F061290364B41_1110648225;
-        // ---------- Original Method ----------
-        //return areaCodeMapStorage.toString();
+        
+        
     }
 
     

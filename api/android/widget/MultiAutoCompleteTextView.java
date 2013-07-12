@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     public  MultiAutoCompleteTextView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
         this(context, attrs, com.android.internal.R.attr.autoCompleteTextViewStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,21 +41,23 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.329 -0400", hash_original_method = "BCA16A32890B669BA239C7F8E91B803C", hash_generated_method = "54CDFBC681C1E3EEE4A842CD88F26A03")
      void finishInit() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.329 -0400", hash_original_method = "0C1CB9531D2E188C8CD299E678A81235", hash_generated_method = "3641C7F0ADB77417CC960DAB0B499BB5")
     public void setTokenizer(Tokenizer t) {
         mTokenizer = t;
-        // ---------- Original Method ----------
-        //mTokenizer = t;
+        
+        
     }
 
     
@@ -69,7 +71,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
             int end = getSelectionEnd();
             int start = mTokenizer.findTokenStart(text, end);
             performFiltering(text, start, end, keyCode);
-        } //End block
+        } 
         else
         {
             dismissDropDown();
@@ -77,20 +79,20 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     if(f != null)            
             {
                 f.filter(null);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (enoughToFilter()) {
-            //int end = getSelectionEnd();
-            //int start = mTokenizer.findTokenStart(text, end);
-            //performFiltering(text, start, end, keyCode);
-        //} else {
-            //dismissDropDown();
-            //Filter f = getFilter();
-            //if (f != null) {
-                //f.filter(null);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -104,32 +106,32 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
             boolean var68934A3E9455FA72420237EB05902327_1909764414 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1822282536 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1822282536;
-        } //End block
+        } 
         int start = mTokenizer.findTokenStart(text, end);
     if(end - start >= getThreshold())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_50374584 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431386573 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_431386573;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_789618032 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1074759426 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1074759426;
-        } //End block
-        // ---------- Original Method ----------
-        //Editable text = getText();
-        //int end = getSelectionEnd();
-        //if (end < 0 || mTokenizer == null) {
-            //return false;
-        //}
-        //int start = mTokenizer.findTokenStart(text, end);
-        //if (end - start >= getThreshold()) {
-            //return true;
-        //} else {
-            //return false;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -140,7 +142,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     if(v == null || mTokenizer == null)        
         {
             return;
-        } //End block
+        } 
         Editable e = getText();
         int i = getText().length();
         while
@@ -152,34 +154,34 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
     if(TextUtils.isEmpty(sub))            
             {
                 e.replace(start, i, "");
-            } //End block
+            } 
             else
     if(!v.isValid(sub))            
             {
                 e.replace(start, i,
                           mTokenizer.terminateToken(v.fixText(sub)));
-            } //End block
+            } 
             i = start;
-        } //End block
-        // ---------- Original Method ----------
-        //Validator v = getValidator();
-        //if (v == null || mTokenizer == null) {
-            //return;
-        //}
-        //Editable e = getText();
-        //int i = getText().length();
-        //while (i > 0) {
-            //int start = mTokenizer.findTokenStart(e, i);
-            //int end = mTokenizer.findTokenEnd(e, start);
-            //CharSequence sub = e.subSequence(start, end);
-            //if (TextUtils.isEmpty(sub)) {
-                //e.replace(start, i, "");
-            //} else if (!v.isValid(sub)) {
-                //e.replace(start, i,
-                          //mTokenizer.terminateToken(v.fixText(sub)));
-            //}
-            //i = start;
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+                
+                          
+            
+            
+        
     }
 
     
@@ -191,8 +193,8 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
         addTaint(start);
         addTaint(text.getTaint());
         getFilter().filter(text.subSequence(start, end), this);
-        // ---------- Original Method ----------
-        //getFilter().filter(text.subSequence(start, end), this);
+        
+        
     }
 
     
@@ -207,14 +209,14 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
         String original = TextUtils.substring(editable, start, end);
         QwertyKeyListener.markAsReplaced(editable, start, end, original);
         editable.replace(start, end, mTokenizer.terminateToken(text));
-        // ---------- Original Method ----------
-        //clearComposingText();
-        //int end = getSelectionEnd();
-        //int start = mTokenizer.findTokenStart(getText(), end);
-        //Editable editable = getText();
-        //String original = TextUtils.substring(editable, start, end);
-        //QwertyKeyListener.markAsReplaced(editable, start, end, original);
-        //editable.replace(start, end, mTokenizer.terminateToken(text));
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -223,7 +225,7 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.333 -0400", hash_original_method = "F4BA1DCA501F72677108996A68C84C7B", hash_generated_method = "F4BA1DCA501F72677108996A68C84C7B")
         public CommaTokenizer ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -236,24 +238,24 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
 (i > 0 && text.charAt(i - 1) != ',')            
             {
                 i--;
-            } //End block
+            } 
             while
 (i < cursor && text.charAt(i) == ' ')            
             {
                 i++;
-            } //End block
+            } 
             int var865C0C0B4AB0E063E5CAA3387C1A8741_1518832319 = (i);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706306560 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_706306560;
-            // ---------- Original Method ----------
-            //int i = cursor;
-            //while (i > 0 && text.charAt(i - 1) != ',') {
-                //i--;
-            //}
-            //while (i < cursor && text.charAt(i) == ' ') {
-                //i++;
-            //}
-            //return i;
+            
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -271,26 +273,26 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
                     int var865C0C0B4AB0E063E5CAA3387C1A8741_680144650 = (i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921242205 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921242205;
-                } //End block
+                } 
                 else
                 {
                     i++;
-                } //End block
-            } //End block
+                } 
+            } 
             int varF5A8E923F8CD24B56B3BAB32358CC58A_1519573409 = (len);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194370649 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194370649;
-            // ---------- Original Method ----------
-            //int i = cursor;
-            //int len = text.length();
-            //while (i < len) {
-                //if (text.charAt(i) == ',') {
-                    //return i;
-                //} else {
-                    //i++;
-                //}
-            //}
-            //return len;
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+            
         }
 
         
@@ -302,13 +304,13 @@ public class MultiAutoCompleteTextView extends AutoCompleteTextView {
 (i > 0 && text.charAt(i - 1) == ' ')            
             {
                 i--;
-            } //End block
+            } 
     if(i > 0 && text.charAt(i - 1) == ',')            
             {
 CharSequence var79CC641C1148018540A26F7ADC424893_1912069239 =                 text;
                 var79CC641C1148018540A26F7ADC424893_1912069239.addTaint(taint);
                 return var79CC641C1148018540A26F7ADC424893_1912069239;
-            } //End block
+            } 
             else
             {
     if(text instanceof Spanned)                
@@ -319,31 +321,31 @@ CharSequence var79CC641C1148018540A26F7ADC424893_1912069239 =                 te
 CharSequence varA4DCFF844B7753D115259E5560FDE637_441723960 =                     sp;
                     varA4DCFF844B7753D115259E5560FDE637_441723960.addTaint(taint);
                     return varA4DCFF844B7753D115259E5560FDE637_441723960;
-                } //End block
+                } 
                 else
                 {
 CharSequence var5D7AD4DC0F1248601127BB40BD3AC89B_1116525334 =                     text + ", ";
                     var5D7AD4DC0F1248601127BB40BD3AC89B_1116525334.addTaint(taint);
                     return var5D7AD4DC0F1248601127BB40BD3AC89B_1116525334;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //int i = text.length();
-            //while (i > 0 && text.charAt(i - 1) == ' ') {
-                //i--;
-            //}
-            //if (i > 0 && text.charAt(i - 1) == ',') {
-                //return text;
-            //} else {
-                //if (text instanceof Spanned) {
-                    //SpannableString sp = new SpannableString(text + ", ");
-                    //TextUtils.copySpansFrom((Spanned) text, 0, text.length(),
-                                            //Object.class, sp, 0);
-                    //return sp;
-                //} else {
-                    //return text + ", ";
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+                
+            
+            
+                
+            
+                
+                    
+                    
+                                            
+                    
+                
+                    
+                
+            
         }
 
         

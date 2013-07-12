@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,7 +48,7 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.473 -0400", hash_original_method = "F039A73ADD81439EFEE4572A926905FF", hash_generated_method = "AE9E67C0D421B97975CBD6F5E7DAC5C3")
     public  ContentProvider() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -62,11 +62,11 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
         mReadPermission = readPermission;
         mWritePermission = writePermission;
         mPathPermissions = pathPermissions;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mReadPermission = readPermission;
-        //mWritePermission = writePermission;
-        //mPathPermissions = pathPermissions;
+        
+        
+        
+        
+        
     }
 
     
@@ -84,16 +84,16 @@ public abstract class ContentProvider implements ComponentCallbacks2 {
 Context var178E2AD52D6FBBB503F908168856B574_1423167284 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_1423167284.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_1423167284;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.475 -0400", hash_original_method = "C738A12EDF7704A3BEC0DFE17330C819", hash_generated_method = "5E4FF5E477D8E19F78CD67B08931B74B")
     protected final void setReadPermission(String permission) {
         mReadPermission = permission;
-        // ---------- Original Method ----------
-        //mReadPermission = permission;
+        
+        
     }
 
     
@@ -102,16 +102,16 @@ Context var178E2AD52D6FBBB503F908168856B574_1423167284 =         mContext;
 String varB7C8F391110CA2789E72296FC3D45BB5_136666160 =         mReadPermission;
         varB7C8F391110CA2789E72296FC3D45BB5_136666160.addTaint(taint);
         return varB7C8F391110CA2789E72296FC3D45BB5_136666160;
-        // ---------- Original Method ----------
-        //return mReadPermission;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.476 -0400", hash_original_method = "6A71B3652F16CF9160129E3EF306B0DC", hash_generated_method = "700C15F3C9EBC3D7B5D3FCF9D079867A")
     protected final void setWritePermission(String permission) {
         mWritePermission = permission;
-        // ---------- Original Method ----------
-        //mWritePermission = permission;
+        
+        
     }
 
     
@@ -120,16 +120,16 @@ String varB7C8F391110CA2789E72296FC3D45BB5_136666160 =         mReadPermission;
 String var59D1027D8312A72F6CBAE99932E8098B_107736929 =         mWritePermission;
         var59D1027D8312A72F6CBAE99932E8098B_107736929.addTaint(taint);
         return var59D1027D8312A72F6CBAE99932E8098B_107736929;
-        // ---------- Original Method ----------
-        //return mWritePermission;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.477 -0400", hash_original_method = "16570AF799E31BB65FFA9254DA0AB517", hash_generated_method = "1CF8FB57421D0861F87CB9D1F6E697A3")
     protected final void setPathPermissions(PathPermission[] permissions) {
         mPathPermissions = permissions;
-        // ---------- Original Method ----------
-        //mPathPermissions = permissions;
+        
+        
     }
 
     
@@ -138,34 +138,37 @@ String var59D1027D8312A72F6CBAE99932E8098B_107736929 =         mWritePermission;
 PathPermission[] var24E2D1568C411176949D95742C7A4275_180389765 =         mPathPermissions;
         var24E2D1568C411176949D95742C7A4275_180389765.addTaint(taint);
         return var24E2D1568C411176949D95742C7A4275_180389765;
-        // ---------- Original Method ----------
-        //return mPathPermissions;
+        
+        
     }
 
     
     public abstract boolean onCreate();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.479 -0400", hash_original_method = "8287235C28E9D1E310027A2DDEB95FCD", hash_generated_method = "BA7F1E69C22467D62A959775F321C0BA")
     public void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.480 -0400", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "39AEB8790734ECC8DC70BBAAEE0BAB0B")
     public void onLowMemory() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.480 -0400", hash_original_method = "3AE0D4ACEA3D5F3B779A378D5AB27A6A", hash_generated_method = "C1AFC91F30E138BA03233A690A40C0CC")
     public void onTrimMemory(int level) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(level);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -187,16 +190,16 @@ PathPermission[] var24E2D1568C411176949D95742C7A4275_180389765 =         mPathPe
 for(int i = 0;i < numValues;i++)
         {
             insert(uri, values[i]);
-        } //End block
+        } 
         int var66D01EB691C0B5789D1BA5D45CF56B07_523579417 = (numValues);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526561574 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1526561574;
-        // ---------- Original Method ----------
-        //int numValues = values.length;
-        //for (int i = 0; i < numValues; i++) {
-            //insert(uri, values[i]);
-        //}
-        //return numValues;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -207,6 +210,7 @@ for(int i = 0;i < numValues;i++)
             String[] selectionArgs);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.483 -0400", hash_original_method = "DCC5B23EAE3536B2EEFB8F5A1AA89B13", hash_generated_method = "BB60EACF0AB1FBBAAB5A9386D5852835")
     public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
         addTaint(mode.getTaint());
@@ -215,12 +219,13 @@ for(int i = 0;i < numValues;i++)
                 + uri);
         varD427DDF9A24345493FBC896AC82582D9_1181462380.addTaint(taint);
         throw varD427DDF9A24345493FBC896AC82582D9_1181462380;
-        // ---------- Original Method ----------
-        //throw new FileNotFoundException("No files supported by provider at "
-                //+ uri);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.483 -0400", hash_original_method = "58BEA9E66A4FD3FC19246F4A2CA5B928", hash_generated_method = "9138B1A6B04624DA9FD92852416358A4")
     public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
         addTaint(mode.getTaint());
@@ -229,9 +234,9 @@ for(int i = 0;i < numValues;i++)
 AssetFileDescriptor varA57245475EB9DCE6168AA22F54422F97_1247892756 =         fd != null ? new AssetFileDescriptor(fd, 0, -1) : null;
         varA57245475EB9DCE6168AA22F54422F97_1247892756.addTaint(taint);
         return varA57245475EB9DCE6168AA22F54422F97_1247892756;
-        // ---------- Original Method ----------
-        //ParcelFileDescriptor fd = openFile(uri, mode);
-        //return fd != null ? new AssetFileDescriptor(fd, 0, -1) : null;
+        
+        
+        
     }
 
     
@@ -247,17 +252,17 @@ AssetFileDescriptor varA57245475EB9DCE6168AA22F54422F97_1247892756 =         fd 
     if(c != null)            
             {
                 c.close();
-            } //End block
+            } 
     if(count == 0)            
             {
                 FileNotFoundException var803CF12C6BFA3F6E4495A8A2D15BF172_2138800751 = new FileNotFoundException("No entry for " + uri);
                 var803CF12C6BFA3F6E4495A8A2D15BF172_2138800751.addTaint(taint);
                 throw var803CF12C6BFA3F6E4495A8A2D15BF172_2138800751;
-            } //End block
+            } 
             FileNotFoundException varCCB1A3D8F9EB0D95AA719F589741DB21_1789569934 = new FileNotFoundException("Multiple items at " + uri);
             varCCB1A3D8F9EB0D95AA719F589741DB21_1789569934.addTaint(taint);
             throw varCCB1A3D8F9EB0D95AA719F589741DB21_1789569934;
-        } //End block
+        } 
         c.moveToFirst();
         int i = c.getColumnIndex("_data");
         String path = (i >= 0 ? c.getString(i) : null);
@@ -267,16 +272,17 @@ AssetFileDescriptor varA57245475EB9DCE6168AA22F54422F97_1247892756 =         fd 
             FileNotFoundException varBC179702CCC142CA58BA59421BCB8885_1148316754 = new FileNotFoundException("Column _data not found.");
             varBC179702CCC142CA58BA59421BCB8885_1148316754.addTaint(taint);
             throw varBC179702CCC142CA58BA59421BCB8885_1148316754;
-        } //End block
+        } 
         int modeBits = ContentResolver.modeToMode(uri, mode);
 ParcelFileDescriptor varBAB37DE04A5B7A40E055BD5EA30CAC7D_715317859 =         ParcelFileDescriptor.open(new File(path), modeBits);
         varBAB37DE04A5B7A40E055BD5EA30CAC7D_715317859.addTaint(taint);
         return varBAB37DE04A5B7A40E055BD5EA30CAC7D_715317859;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.485 -0400", hash_original_method = "BEF8B956D915C9CD914319D11D9F55DF", hash_generated_method = "6041F981ED1A08F8ED6A70A208E0EB54")
     public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
         addTaint(mimeTypeFilter.getTaint());
@@ -284,11 +290,12 @@ ParcelFileDescriptor varBAB37DE04A5B7A40E055BD5EA30CAC7D_715317859 =         Par
 String[] var540C13E9E156B687226421B24F2DF178_1609726229 =         null;
         var540C13E9E156B687226421B24F2DF178_1609726229.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1609726229;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.485 -0400", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "F27A6AE100B2D97D045387F2B6F41A1A")
     public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bundle opts) throws FileNotFoundException {
         addTaint(opts.getTaint());
@@ -299,26 +306,26 @@ String[] var540C13E9E156B687226421B24F2DF178_1609726229 =         null;
 AssetFileDescriptor varCFD1DF6ECCCC8237B83DC46BE40175A9_1298523683 =             openAssetFile(uri, "r");
             varCFD1DF6ECCCC8237B83DC46BE40175A9_1298523683.addTaint(taint);
             return varCFD1DF6ECCCC8237B83DC46BE40175A9_1298523683;
-        } //End block
+        } 
         String baseType = getType(uri);
     if(baseType != null && ClipDescription.compareMimeTypes(baseType, mimeTypeFilter))        
         {
 AssetFileDescriptor varCFD1DF6ECCCC8237B83DC46BE40175A9_1270015553 =             openAssetFile(uri, "r");
             varCFD1DF6ECCCC8237B83DC46BE40175A9_1270015553.addTaint(taint);
             return varCFD1DF6ECCCC8237B83DC46BE40175A9_1270015553;
-        } //End block
+        } 
         FileNotFoundException var9704B4F4149597D88475264DFB8FD1D7_1618741174 = new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
         var9704B4F4149597D88475264DFB8FD1D7_1618741174.addTaint(taint);
         throw var9704B4F4149597D88475264DFB8FD1D7_1618741174;
-        // ---------- Original Method ----------
-        //if ("*/*".equals(mimeTypeFilter)) {
-            //return openAssetFile(uri, "r");
-        //}
-        //String baseType = getType(uri);
-        //if (baseType != null && ClipDescription.compareMimeTypes(baseType, mimeTypeFilter)) {
-            //return openAssetFile(uri, "r");
-        //}
-        //throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -349,35 +356,37 @@ AssetFileDescriptor varCFD1DF6ECCCC8237B83DC46BE40175A9_1270015553 =            
 ParcelFileDescriptor var0A32740862433E6F4A2B631AD9C65F9E_207390444 =             fds[0];
             var0A32740862433E6F4A2B631AD9C65F9E_207390444.addTaint(taint);
             return var0A32740862433E6F4A2B631AD9C65F9E_207390444;
-        } //End block
+        } 
         catch (IOException e)
         {
             FileNotFoundException var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_631482816 = new FileNotFoundException("failure making pipe");
             var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_631482816.addTaint(taint);
             throw var9BBB3DDA0FD7526E4D3B8A7AF6DADB25_631482816;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.487 -0400", hash_original_method = "5727E4CF3A64759CEEBA62DE047537C3", hash_generated_method = "4D08BF1EB00335422B5EB180110E1297")
     protected boolean isTemporary() {
         boolean var68934A3E9455FA72420237EB05902327_1055443931 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_635911740 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_635911740;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.487 -0400", hash_original_method = "883A061900350051FBA62F6F6FD9E085", hash_generated_method = "B95B58BA423DEA58516FBB9436696F1D")
     public IContentProvider getIContentProvider() {
 IContentProvider varF2CB7A1EAFE712633AC71AFDD720A221_639581215 =         mTransport;
         varF2CB7A1EAFE712633AC71AFDD720A221_639581215.addTaint(taint);
         return varF2CB7A1EAFE712633AC71AFDD720A221_639581215;
-        // ---------- Original Method ----------
-        //return mTransport;
+        
+        
     }
 
     
@@ -394,22 +403,22 @@ IContentProvider varF2CB7A1EAFE712633AC71AFDD720A221_639581215 =         mTransp
                 setWritePermission(info.writePermission);
                 setPathPermissions(info.pathPermissions);
                 mExported = info.exported;
-            } //End block
+            } 
             ContentProvider.this.onCreate();
-        } //End block
-        // ---------- Original Method ----------
-        //AsyncTask.init();
-        //if (mContext == null) {
-            //mContext = context;
-            //mMyUid = Process.myUid();
-            //if (info != null) {
-                //setReadPermission(info.readPermission);
-                //setWritePermission(info.writePermission);
-                //setPathPermissions(info.pathPermissions);
-                //mExported = info.exported;
-            //}
-            //ContentProvider.this.onCreate();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+                
+                
+                
+            
+            
+        
     }
 
     
@@ -421,20 +430,21 @@ IContentProvider varF2CB7A1EAFE712633AC71AFDD720A221_639581215 =         mTransp
 for(int i = 0;i < numOperations;i++)
         {
             results[i] = operations.get(i).apply(this, results, i);
-        } //End block
+        } 
 ContentProviderResult[] var238ECCC9872FFCA0B3C3DB83598FF044_1541909471 =         results;
         var238ECCC9872FFCA0B3C3DB83598FF044_1541909471.addTaint(taint);
         return var238ECCC9872FFCA0B3C3DB83598FF044_1541909471;
-        // ---------- Original Method ----------
-        //final int numOperations = operations.size();
-        //final ContentProviderResult[] results = new ContentProviderResult[numOperations];
-        //for (int i = 0; i < numOperations; i++) {
-            //results[i] = operations.get(i).apply(this, results, i);
-        //}
-        //return results;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.490 -0400", hash_original_method = "FDEF25FCA992321C96D9ED3D525FD124", hash_generated_method = "00B9E306A083E8B59F99C1EDE86F0FA4")
     public Bundle call(String method, String arg, Bundle extras) {
         addTaint(extras.getTaint());
@@ -443,16 +453,16 @@ ContentProviderResult[] var238ECCC9872FFCA0B3C3DB83598FF044_1541909471 =        
 Bundle var540C13E9E156B687226421B24F2DF178_1681377404 =         null;
         var540C13E9E156B687226421B24F2DF178_1681377404.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1681377404;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.490 -0400", hash_original_method = "D03BEE67B09D4B1E8C6E9290C7758C5F", hash_generated_method = "B150A4E1DC19A0FA6E8508D3F3E8E47D")
     public void shutdown() {
-        // ---------- Original Method ----------
-        //Log.w(TAG, "implement ContentProvider shutdown() to make sure all database " +
-                //"connections are gracefully shutdown");
+        
+        
+                
     }
 
     
@@ -461,17 +471,18 @@ Bundle var540C13E9E156B687226421B24F2DF178_1681377404 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.490 -0400", hash_original_method = "E8AA98EC6BE3CDFD6C8382F7CC9C6C6F", hash_generated_method = "E8AA98EC6BE3CDFD6C8382F7CC9C6C6F")
         public Transport ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.491 -0400", hash_original_method = "D85CC82248E7B34649DA1C02380D9E2C", hash_generated_method = "60F7249A8D113A609890AF5C2E67BCAD")
          ContentProvider getContentProvider() {
 ContentProvider varC964AD0B3FDDC5F592DBC6B2E7A7AF92_1459021034 =             ContentProvider.this;
             varC964AD0B3FDDC5F592DBC6B2E7A7AF92_1459021034.addTaint(taint);
             return varC964AD0B3FDDC5F592DBC6B2E7A7AF92_1459021034;
-            // ---------- Original Method ----------
-            //return ContentProvider.this;
+            
+            
         }
 
         
@@ -481,11 +492,12 @@ ContentProvider varC964AD0B3FDDC5F592DBC6B2E7A7AF92_1459021034 =             Con
 String varED11270F9E13FAAC581C2CCBE7C2F48C_206486987 =             getContentProvider().getClass().getName();
             varED11270F9E13FAAC581C2CCBE7C2F48C_206486987.addTaint(taint);
             return varED11270F9E13FAAC581C2CCBE7C2F48C_206486987;
-            // ---------- Original Method ----------
-            //return getContentProvider().getClass().getName();
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.492 -0400", hash_original_method = "C07C2CC52F2EA8ADD199B18CF964D47B", hash_generated_method = "DAE200F7D0658B934406560AD7CCA122")
         public Cursor query(Uri uri, String[] projection,
                 String selection, String[] selectionArgs, String sortOrder) {
@@ -499,24 +511,26 @@ Cursor var5BED765E00858C646DF14C0893EB6B41_1494618190 =             ContentProvi
                     selectionArgs, sortOrder);
             var5BED765E00858C646DF14C0893EB6B41_1494618190.addTaint(taint);
             return var5BED765E00858C646DF14C0893EB6B41_1494618190;
-            // ---------- Original Method ----------
-            //enforceReadPermission(uri);
-            //return ContentProvider.this.query(uri, projection, selection,
-                    //selectionArgs, sortOrder);
+            
+            
+            
+                    
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.492 -0400", hash_original_method = "BE9D1875DBA635C7BA04B42A3E893DA2", hash_generated_method = "C1E23BACFAD26A7D9034DE38CAE0F4BA")
         public String getType(Uri uri) {
             addTaint(uri.getTaint());
 String var5B9B0993930B2F3B1729C74908362C2C_1079083253 =             ContentProvider.this.getType(uri);
             var5B9B0993930B2F3B1729C74908362C2C_1079083253.addTaint(taint);
             return var5B9B0993930B2F3B1729C74908362C2C_1079083253;
-            // ---------- Original Method ----------
-            //return ContentProvider.this.getType(uri);
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.493 -0400", hash_original_method = "2D883DF9190F17ADC9F3F05EDAD4CA9E", hash_generated_method = "746ABCE0F7D3FD5A6BA9B5FBA4731DDA")
         public Uri insert(Uri uri, ContentValues initialValues) {
             addTaint(initialValues.getTaint());
@@ -525,9 +539,9 @@ String var5B9B0993930B2F3B1729C74908362C2C_1079083253 =             ContentProvi
 Uri var8209C23EA48B1C7744571EB5BC75334C_301632948 =             ContentProvider.this.insert(uri, initialValues);
             var8209C23EA48B1C7744571EB5BC75334C_301632948.addTaint(taint);
             return var8209C23EA48B1C7744571EB5BC75334C_301632948;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.insert(uri, initialValues);
+            
+            
+            
         }
 
         
@@ -539,9 +553,9 @@ Uri var8209C23EA48B1C7744571EB5BC75334C_301632948 =             ContentProvider.
             int var74D767A98B755F12AF9D899F2667AC64_1800822313 = (ContentProvider.this.bulkInsert(uri, initialValues));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_879557891 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_879557891;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.bulkInsert(uri, initialValues);
+            
+            
+            
         }
 
         
@@ -553,28 +567,29 @@ for(ContentProviderOperation operation : operations)
     if(operation.isReadOperation())                
                 {
                     enforceReadPermission(operation.getUri());
-                } //End block
+                } 
     if(operation.isWriteOperation())                
                 {
                     enforceWritePermission(operation.getUri());
-                } //End block
-            } //End block
+                } 
+            } 
 ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =             ContentProvider.this.applyBatch(operations);
             var315BC8DBA4C3A0CFC21570E22B483988_1467323190.addTaint(taint);
             return var315BC8DBA4C3A0CFC21570E22B483988_1467323190;
-            // ---------- Original Method ----------
-            //for (ContentProviderOperation operation : operations) {
-                //if (operation.isReadOperation()) {
-                    //enforceReadPermission(operation.getUri());
-                //}
-                //if (operation.isWriteOperation()) {
-                    //enforceWritePermission(operation.getUri());
-                //}
-            //}
-            //return ContentProvider.this.applyBatch(operations);
+            
+            
+                
+                    
+                
+                
+                    
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.494 -0400", hash_original_method = "9F536F247E1CDAAB23A0513292709CB1", hash_generated_method = "28B621AEB31ED124585CF76E37BBD589")
         public int delete(Uri uri, String selection, String[] selectionArgs) {
             addTaint(selectionArgs[0].getTaint());
@@ -584,12 +599,13 @@ ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =        
             int var2F009A06449C223FD617D5D3F4FF4E6C_1662864541 = (ContentProvider.this.delete(uri, selection, selectionArgs));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582729262 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582729262;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.delete(uri, selection, selectionArgs);
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.495 -0400", hash_original_method = "A4C580D76A4BE435F05FDF3658D031E7", hash_generated_method = "31BEC81B34CA2AEFD75D794DE3D28811")
         public int update(Uri uri, ContentValues values, String selection,
                 String[] selectionArgs) {
@@ -601,12 +617,13 @@ ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =        
             int varECC72D9487713202C2D2D0C54119773F_960642380 = (ContentProvider.this.update(uri, values, selection, selectionArgs));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774904923 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1774904923;
-            // ---------- Original Method ----------
-            //enforceWritePermission(uri);
-            //return ContentProvider.this.update(uri, values, selection, selectionArgs);
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.495 -0400", hash_original_method = "A3B5DD3A6EF0BED7F3109E14959CA5EF", hash_generated_method = "BBBADA0D90E2D9F47A2E954F89A131C4")
         public ParcelFileDescriptor openFile(Uri uri, String mode) throws FileNotFoundException {
             addTaint(mode.getTaint());
@@ -618,13 +635,14 @@ ContentProviderResult[] var315BC8DBA4C3A0CFC21570E22B483988_1467323190 =        
 ParcelFileDescriptor var92B3985CCA3575439B2C1D8C87C145BD_2134652306 =             ContentProvider.this.openFile(uri, mode);
             var92B3985CCA3575439B2C1D8C87C145BD_2134652306.addTaint(taint);
             return var92B3985CCA3575439B2C1D8C87C145BD_2134652306;
-            // ---------- Original Method ----------
-            //if (mode != null && mode.startsWith("rw")) enforceWritePermission(uri);
-            //else enforceReadPermission(uri);
-            //return ContentProvider.this.openFile(uri, mode);
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.496 -0400", hash_original_method = "9FC3CF0D01502503E6A8E959789D91E0", hash_generated_method = "3A254281863B254E3F4B7A880CFCE773")
         public AssetFileDescriptor openAssetFile(Uri uri, String mode) throws FileNotFoundException {
             addTaint(mode.getTaint());
@@ -636,10 +654,10 @@ ParcelFileDescriptor var92B3985CCA3575439B2C1D8C87C145BD_2134652306 =           
 AssetFileDescriptor var55EAB6F02B22D2BCFE59AE1EC2B8FA58_703150342 =             ContentProvider.this.openAssetFile(uri, mode);
             var55EAB6F02B22D2BCFE59AE1EC2B8FA58_703150342.addTaint(taint);
             return var55EAB6F02B22D2BCFE59AE1EC2B8FA58_703150342;
-            // ---------- Original Method ----------
-            //if (mode != null && mode.startsWith("rw")) enforceWritePermission(uri);
-            //else enforceReadPermission(uri);
-            //return ContentProvider.this.openAssetFile(uri, mode);
+            
+            
+            
+            
         }
 
         
@@ -651,11 +669,12 @@ AssetFileDescriptor var55EAB6F02B22D2BCFE59AE1EC2B8FA58_703150342 =             
 Bundle varE50CAEED571D4508C1B829BFA060E554_1091371413 =             ContentProvider.this.call(method, arg, extras);
             varE50CAEED571D4508C1B829BFA060E554_1091371413.addTaint(taint);
             return varE50CAEED571D4508C1B829BFA060E554_1091371413;
-            // ---------- Original Method ----------
-            //return ContentProvider.this.call(method, arg, extras);
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.497 -0400", hash_original_method = "8E1F3128EE5808B485D05EE809576B99", hash_generated_method = "3F8D46B5209E15E5799D33FF7FA83081")
         @Override
         public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
@@ -664,11 +683,12 @@ Bundle varE50CAEED571D4508C1B829BFA060E554_1091371413 =             ContentProvi
 String[] var9C4CD0F20752BB51B9C837E84E409BD1_444445777 =             ContentProvider.this.getStreamTypes(uri, mimeTypeFilter);
             var9C4CD0F20752BB51B9C837E84E409BD1_444445777.addTaint(taint);
             return var9C4CD0F20752BB51B9C837E84E409BD1_444445777;
-            // ---------- Original Method ----------
-            //return ContentProvider.this.getStreamTypes(uri, mimeTypeFilter);
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.497 -0400", hash_original_method = "C18E75C38B25261EF8CFA8F7B83C6E2D", hash_generated_method = "833FEBCF74B5955E7324D58C2ECA42D9")
         @Override
         public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeType, Bundle opts) throws FileNotFoundException {
@@ -679,12 +699,13 @@ String[] var9C4CD0F20752BB51B9C837E84E409BD1_444445777 =             ContentProv
 AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             ContentProvider.this.openTypedAssetFile(uri, mimeType, opts);
             varD029E2BF2AD851D0E5EAF5BF04D93B06_723165.addTaint(taint);
             return varD029E2BF2AD851D0E5EAF5BF04D93B06_723165;
-            // ---------- Original Method ----------
-            //enforceReadPermission(uri);
-            //return ContentProvider.this.openTypedAssetFile(uri, mimeType, opts);
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.498 -0400", hash_original_method = "E57399204B1619B526E92C84388A407F", hash_generated_method = "79E1C2F56976B63B1B6CE84E8A09D9CC")
         private void enforceReadPermission(Uri uri) {
             addTaint(uri.getTaint());
@@ -692,7 +713,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
     if(uid == mMyUid)            
             {
                 return;
-            } //End block
+            } 
             final Context context = getContext();
             final String rperm = getReadPermission();
             final int pid = Binder.getCallingPid();
@@ -701,7 +722,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
                     == PackageManager.PERMISSION_GRANTED))            
             {
                 return;
-            } //End block
+            } 
             PathPermission[] pps = getPathPermissions();
     if(pps != null)            
             {
@@ -719,16 +740,16 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
                                 == PackageManager.PERMISSION_GRANTED)                        
                         {
                             return;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
     if(context.checkUriPermission(uri, pid, uid,
                     Intent.FLAG_GRANT_READ_URI_PERMISSION)
                     == PackageManager.PERMISSION_GRANTED)            
             {
                 return;
-            } //End block
+            } 
             String msg = "Permission Denial: reading "
                     + ContentProvider.this.getClass().getName()
                     + " uri " + uri + " from pid=" + Binder.getCallingPid()
@@ -737,11 +758,12 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
             SecurityException varC5EE93F1F5A2A36B7796B378C69384FB_1923521562 = new SecurityException(msg);
             varC5EE93F1F5A2A36B7796B378C69384FB_1923521562.addTaint(taint);
             throw varC5EE93F1F5A2A36B7796B378C69384FB_1923521562;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.499 -0400", hash_original_method = "329C06E4068EEDF4ECCAEC3BA5AB45CE", hash_generated_method = "AD3DA02C67883C05E3F2D0935019D647")
         private boolean hasWritePermission(Uri uri) {
             addTaint(uri.getTaint());
@@ -751,7 +773,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
                 boolean varB326B5062B2F0E69046810717534CB09_1894487441 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1728195790 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1728195790;
-            } //End block
+            } 
             final Context context = getContext();
             final String wperm = getWritePermission();
             final int pid = Binder.getCallingPid();
@@ -762,7 +784,7 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
                 boolean varB326B5062B2F0E69046810717534CB09_1507086741 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_136272208 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_136272208;
-            } //End block
+            } 
             PathPermission[] pps = getPathPermissions();
     if(pps != null)            
             {
@@ -782,10 +804,10 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
                             boolean varB326B5062B2F0E69046810717534CB09_6756232 = (true);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_151541587 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_151541587;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
     if(context.checkUriPermission(uri, pid, uid,
                     Intent.FLAG_GRANT_WRITE_URI_PERMISSION)
                     == PackageManager.PERMISSION_GRANTED)            
@@ -793,22 +815,23 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
                 boolean varB326B5062B2F0E69046810717534CB09_1387990339 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1297425958 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1297425958;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_148740190 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_494647650 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_494647650;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.500 -0400", hash_original_method = "7CEC600BB70206A61DA89C0C0D2014C1", hash_generated_method = "E1150802EE346EF34326C3D7649BF9CC")
         private void enforceWritePermission(Uri uri) {
             addTaint(uri.getTaint());
     if(hasWritePermission(uri))            
             {
                 return;
-            } //End block
+            } 
             String msg = "Permission Denial: writing "
                     + ContentProvider.this.getClass().getName()
                     + " uri " + uri + " from pid=" + Binder.getCallingPid()
@@ -817,16 +840,16 @@ AssetFileDescriptor varD029E2BF2AD851D0E5EAF5BF04D93B06_723165 =             Con
             SecurityException varC5EE93F1F5A2A36B7796B378C69384FB_1047048108 = new SecurityException(msg);
             varC5EE93F1F5A2A36B7796B378C69384FB_1047048108.addTaint(taint);
             throw varC5EE93F1F5A2A36B7796B378C69384FB_1047048108;
-            // ---------- Original Method ----------
-            //if (hasWritePermission(uri)) {
-                //return;
-            //}
-            //String msg = "Permission Denial: writing "
-                    //+ ContentProvider.this.getClass().getName()
-                    //+ " uri " + uri + " from pid=" + Binder.getCallingPid()
-                    //+ ", uid=" + Binder.getCallingUid()
-                    //+ " requires " + getWritePermission();
-            //throw new SecurityException(msg);
+            
+            
+                
+            
+            
+                    
+                    
+                    
+                    
+            
         }
 
         

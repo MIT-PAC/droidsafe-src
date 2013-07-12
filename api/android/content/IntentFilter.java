@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,9 +50,9 @@ public class IntentFilter implements Parcelable {
     public  IntentFilter() {
         mPriority = 0;
         mActions = new ArrayList<String>();
-        // ---------- Original Method ----------
-        //mPriority = 0;
-        //mActions = new ArrayList<String>();
+        
+        
+        
     }
 
     
@@ -62,10 +62,10 @@ public class IntentFilter implements Parcelable {
         mPriority = 0;
         mActions = new ArrayList<String>();
         addAction(action);
-        // ---------- Original Method ----------
-        //mPriority = 0;
-        //mActions = new ArrayList<String>();
-        //addAction(action);
+        
+        
+        
+        
     }
 
     
@@ -77,11 +77,11 @@ public class IntentFilter implements Parcelable {
         mActions = new ArrayList<String>();
         addAction(action);
         addDataType(dataType);
-        // ---------- Original Method ----------
-        //mPriority = 0;
-        //mActions = new ArrayList<String>();
-        //addAction(action);
-        //addDataType(dataType);
+        
+        
+        
+        
+        
     }
 
     
@@ -92,43 +92,43 @@ public class IntentFilter implements Parcelable {
     if(o.mCategories != null)        
         {
             mCategories = new ArrayList<String>(o.mCategories);
-        } //End block
+        } 
     if(o.mDataTypes != null)        
         {
             mDataTypes = new ArrayList<String>(o.mDataTypes);
-        } //End block
+        } 
     if(o.mDataSchemes != null)        
         {
             mDataSchemes = new ArrayList<String>(o.mDataSchemes);
-        } //End block
+        } 
     if(o.mDataAuthorities != null)        
         {
             mDataAuthorities = new ArrayList<AuthorityEntry>(o.mDataAuthorities);
-        } //End block
+        } 
     if(o.mDataPaths != null)        
         {
             mDataPaths = new ArrayList<PatternMatcher>(o.mDataPaths);
-        } //End block
+        } 
         mHasPartialTypes = o.mHasPartialTypes;
-        // ---------- Original Method ----------
-        //mPriority = o.mPriority;
-        //mActions = new ArrayList<String>(o.mActions);
-        //if (o.mCategories != null) {
-            //mCategories = new ArrayList<String>(o.mCategories);
-        //}
-        //if (o.mDataTypes != null) {
-            //mDataTypes = new ArrayList<String>(o.mDataTypes);
-        //}
-        //if (o.mDataSchemes != null) {
-            //mDataSchemes = new ArrayList<String>(o.mDataSchemes);
-        //}
-        //if (o.mDataAuthorities != null) {
-            //mDataAuthorities = new ArrayList<AuthorityEntry>(o.mDataAuthorities);
-        //}
-        //if (o.mDataPaths != null) {
-            //mDataPaths = new ArrayList<PatternMatcher>(o.mDataPaths);
-        //}
-        //mHasPartialTypes = o.mHasPartialTypes;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -140,17 +140,17 @@ public class IntentFilter implements Parcelable {
         {
             mCategories = new ArrayList<String>();
             source.readStringList(mCategories);
-        } //End block
+        } 
     if(source.readInt() != 0)        
         {
             mDataSchemes = new ArrayList<String>();
             source.readStringList(mDataSchemes);
-        } //End block
+        } 
     if(source.readInt() != 0)        
         {
             mDataTypes = new ArrayList<String>();
             source.readStringList(mDataTypes);
-        } //End block
+        } 
         int N = source.readInt();
     if(N > 0)        
         {
@@ -158,8 +158,8 @@ public class IntentFilter implements Parcelable {
 for(int i=0;i<N;i++)
             {
                 mDataAuthorities.add(new AuthorityEntry(source));
-            } //End block
-        } //End block
+            } 
+        } 
         N = source.readInt();
     if(N > 0)        
         {
@@ -167,12 +167,12 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 mDataPaths.add(new PatternMatcher(source));
-            } //End block
-        } //End block
+            } 
+        } 
         mPriority = source.readInt();
         mHasPartialTypes = source.readInt() > 0;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -244,8 +244,8 @@ for(int i=0;i<N;i++)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.088 -0400", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "839A047CDB79A7FD6A97DD19F37CB628")
     public final void setPriority(int priority) {
         mPriority = priority;
-        // ---------- Original Method ----------
-        //mPriority = priority;
+        
+        
     }
 
     
@@ -254,8 +254,8 @@ for(int i=0;i<N;i++)
         int var22FC7A378B4F7C5F90F70A47BE1E4FCD_356593593 = (mPriority);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1825290608 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1825290608;
-        // ---------- Original Method ----------
-        //return mPriority;
+        
+        
     }
 
     
@@ -265,11 +265,11 @@ for(int i=0;i<N;i++)
     if(!mActions.contains(action))        
         {
             mActions.add(action.intern());
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mActions.contains(action)) {
-            //mActions.add(action.intern());
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -278,8 +278,8 @@ for(int i=0;i<N;i++)
         int varF3EAFD377BEC9E11B182DEBEDFEF6633_1673469589 = (mActions.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795112998 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_795112998;
-        // ---------- Original Method ----------
-        //return mActions.size();
+        
+        
     }
 
     
@@ -289,8 +289,8 @@ for(int i=0;i<N;i++)
 String varDCAE7AC319C94BC62A244B841685A798_258537565 =         mActions.get(index);
         varDCAE7AC319C94BC62A244B841685A798_258537565.addTaint(taint);
         return varDCAE7AC319C94BC62A244B841685A798_258537565;
-        // ---------- Original Method ----------
-        //return mActions.get(index);
+        
+        
     }
 
     
@@ -300,8 +300,8 @@ String varDCAE7AC319C94BC62A244B841685A798_258537565 =         mActions.get(inde
         boolean var9D6780AADD73BF3B9EC49BF69D6BD735_1203280394 = (action != null && mActions.contains(action));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960267834 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_960267834;
-        // ---------- Original Method ----------
-        //return action != null && mActions.contains(action);
+        
+        
     }
 
     
@@ -311,8 +311,8 @@ String varDCAE7AC319C94BC62A244B841685A798_258537565 =         mActions.get(inde
         boolean varE3D87BFBF16DA04313BCE892CD29B894_865104176 = (hasAction(action));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1257060302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1257060302;
-        // ---------- Original Method ----------
-        //return hasAction(action);
+        
+        
     }
 
     
@@ -321,8 +321,8 @@ String varDCAE7AC319C94BC62A244B841685A798_258537565 =         mActions.get(inde
 Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_74525529 =         mActions != null ? mActions.iterator() : null;
         varDF53DA29D707FBB390D9465F9E1D140D_74525529.addTaint(taint);
         return varDF53DA29D707FBB390D9465F9E1D140D_74525529;
-        // ---------- Original Method ----------
-        //return mActions != null ? mActions.iterator() : null;
+        
+        
     }
 
     
@@ -341,40 +341,40 @@ Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_74525529 =         mActions
     if(!mDataTypes.contains(str))                
                 {
                     mDataTypes.add(str.intern());
-                } //End block
+                } 
                 mHasPartialTypes = true;
-            } //End block
+            } 
             else
             {
     if(!mDataTypes.contains(type))                
                 {
                     mDataTypes.add(type.intern());
-                } //End block
-            } //End block
+                } 
+            } 
             return;
-        } //End block
+        } 
         MalformedMimeTypeException varD77185C8A55F1543B335FA40F3445B64_253316371 = new MalformedMimeTypeException(type);
         varD77185C8A55F1543B335FA40F3445B64_253316371.addTaint(taint);
         throw varD77185C8A55F1543B335FA40F3445B64_253316371;
-        // ---------- Original Method ----------
-        //final int slashpos = type.indexOf('/');
-        //final int typelen = type.length();
-        //if (slashpos > 0 && typelen >= slashpos+2) {
-            //if (mDataTypes == null) mDataTypes = new ArrayList<String>();
-            //if (typelen == slashpos+2 && type.charAt(slashpos+1) == '*') {
-                //String str = type.substring(0, slashpos);
-                //if (!mDataTypes.contains(str)) {
-                    //mDataTypes.add(str.intern());
-                //}
-                //mHasPartialTypes = true;
-            //} else {
-                //if (!mDataTypes.contains(type)) {
-                    //mDataTypes.add(type.intern());
-                //}
-            //}
-            //return;
-        //}
-        //throw new MalformedMimeTypeException(type);
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -384,8 +384,8 @@ Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_74525529 =         mActions
         boolean var3895ACE75A6B167292EF5A2BC3EA1213_1661751161 = (mDataTypes != null && findMimeType(type));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1678352785 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1678352785;
-        // ---------- Original Method ----------
-        //return mDataTypes != null && findMimeType(type);
+        
+        
     }
 
     
@@ -394,8 +394,8 @@ Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_74525529 =         mActions
         int var56A8DF0D47CC084390E9F59876688229_352226070 = (mDataTypes != null ? mDataTypes.size() : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1431768625 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1431768625;
-        // ---------- Original Method ----------
-        //return mDataTypes != null ? mDataTypes.size() : 0;
+        
+        
     }
 
     
@@ -405,8 +405,8 @@ Iterator<String> varDF53DA29D707FBB390D9465F9E1D140D_74525529 =         mActions
 String var1DC252EE1E770B886A64950F7DFCD615_1602217136 =         mDataTypes.get(index);
         var1DC252EE1E770B886A64950F7DFCD615_1602217136.addTaint(taint);
         return var1DC252EE1E770B886A64950F7DFCD615_1602217136;
-        // ---------- Original Method ----------
-        //return mDataTypes.get(index);
+        
+        
     }
 
     
@@ -415,8 +415,8 @@ String var1DC252EE1E770B886A64950F7DFCD615_1602217136 =         mDataTypes.get(i
 Iterator<String> var96354E09389D28803D7828FF9EBA18A2_1305135550 =         mDataTypes != null ? mDataTypes.iterator() : null;
         var96354E09389D28803D7828FF9EBA18A2_1305135550.addTaint(taint);
         return var96354E09389D28803D7828FF9EBA18A2_1305135550;
-        // ---------- Original Method ----------
-        //return mDataTypes != null ? mDataTypes.iterator() : null;
+        
+        
     }
 
     
@@ -428,12 +428,12 @@ Iterator<String> var96354E09389D28803D7828FF9EBA18A2_1305135550 =         mDataT
     if(!mDataSchemes.contains(scheme))        
         {
             mDataSchemes.add(scheme.intern());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDataSchemes == null) mDataSchemes = new ArrayList<String>();
-        //if (!mDataSchemes.contains(scheme)) {
-            //mDataSchemes.add(scheme.intern());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -442,8 +442,8 @@ Iterator<String> var96354E09389D28803D7828FF9EBA18A2_1305135550 =         mDataT
         int varCAAFF0609ED93C8E3CA1A957452D8C2D_594817771 = (mDataSchemes != null ? mDataSchemes.size() : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1903965524 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1903965524;
-        // ---------- Original Method ----------
-        //return mDataSchemes != null ? mDataSchemes.size() : 0;
+        
+        
     }
 
     
@@ -453,8 +453,8 @@ Iterator<String> var96354E09389D28803D7828FF9EBA18A2_1305135550 =         mDataT
 String var5F20608E7C30703FEA01C3CDD2745DC8_694221204 =         mDataSchemes.get(index);
         var5F20608E7C30703FEA01C3CDD2745DC8_694221204.addTaint(taint);
         return var5F20608E7C30703FEA01C3CDD2745DC8_694221204;
-        // ---------- Original Method ----------
-        //return mDataSchemes.get(index);
+        
+        
     }
 
     
@@ -464,8 +464,8 @@ String var5F20608E7C30703FEA01C3CDD2745DC8_694221204 =         mDataSchemes.get(
         boolean var773939BB130784921FC83908D137768B_266265008 = (mDataSchemes != null && mDataSchemes.contains(scheme));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355545193 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355545193;
-        // ---------- Original Method ----------
-        //return mDataSchemes != null && mDataSchemes.contains(scheme);
+        
+        
     }
 
     
@@ -474,8 +474,8 @@ String var5F20608E7C30703FEA01C3CDD2745DC8_694221204 =         mDataSchemes.get(
 Iterator<String> varCBC2BE663D2FF6EB9BE185207497F024_1264783746 =         mDataSchemes != null ? mDataSchemes.iterator() : null;
         varCBC2BE663D2FF6EB9BE185207497F024_1264783746.addTaint(taint);
         return varCBC2BE663D2FF6EB9BE185207497F024_1264783746;
-        // ---------- Original Method ----------
-        //return mDataSchemes != null ? mDataSchemes.iterator() : null;
+        
+        
     }
 
     
@@ -489,11 +489,11 @@ Iterator<String> varCBC2BE663D2FF6EB9BE185207497F024_1264783746 =         mDataS
     if(port != null)        
         port = port.intern();
         mDataAuthorities.add(new AuthorityEntry(host.intern(), port));
-        // ---------- Original Method ----------
-        //if (mDataAuthorities == null) mDataAuthorities =
-                //new ArrayList<AuthorityEntry>();
-        //if (port != null) port = port.intern();
-        //mDataAuthorities.add(new AuthorityEntry(host.intern(), port));
+        
+        
+                
+        
+        
     }
 
     
@@ -502,8 +502,8 @@ Iterator<String> varCBC2BE663D2FF6EB9BE185207497F024_1264783746 =         mDataS
         int var83CBE5F32A7EE64A9294B09DC76B540E_952670779 = (mDataAuthorities != null ? mDataAuthorities.size() : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_10323765 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_10323765;
-        // ---------- Original Method ----------
-        //return mDataAuthorities != null ? mDataAuthorities.size() : 0;
+        
+        
     }
 
     
@@ -513,8 +513,8 @@ Iterator<String> varCBC2BE663D2FF6EB9BE185207497F024_1264783746 =         mDataS
 AuthorityEntry var076CFD4C7379FAFE5C8D80E40F849198_490541774 =         mDataAuthorities.get(index);
         var076CFD4C7379FAFE5C8D80E40F849198_490541774.addTaint(taint);
         return var076CFD4C7379FAFE5C8D80E40F849198_490541774;
-        // ---------- Original Method ----------
-        //return mDataAuthorities.get(index);
+        
+        
     }
 
     
@@ -524,8 +524,8 @@ AuthorityEntry var076CFD4C7379FAFE5C8D80E40F849198_490541774 =         mDataAuth
         boolean var6A4471DEEB7FEEB41B7FED2E898EAC0F_1419125354 = (matchDataAuthority(data) >= 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_764812761 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_764812761;
-        // ---------- Original Method ----------
-        //return matchDataAuthority(data) >= 0;
+        
+        
     }
 
     
@@ -534,8 +534,8 @@ AuthorityEntry var076CFD4C7379FAFE5C8D80E40F849198_490541774 =         mDataAuth
 Iterator<AuthorityEntry> varED18BAD1BD7A5FE27CC656E83062FEE5_474068015 =         mDataAuthorities != null ? mDataAuthorities.iterator() : null;
         varED18BAD1BD7A5FE27CC656E83062FEE5_474068015.addTaint(taint);
         return varED18BAD1BD7A5FE27CC656E83062FEE5_474068015;
-        // ---------- Original Method ----------
-        //return mDataAuthorities != null ? mDataAuthorities.iterator() : null;
+        
+        
     }
 
     
@@ -546,9 +546,9 @@ Iterator<AuthorityEntry> varED18BAD1BD7A5FE27CC656E83062FEE5_474068015 =        
     if(mDataPaths == null)        
         mDataPaths = new ArrayList<PatternMatcher>();
         mDataPaths.add(new PatternMatcher(path.intern(), type));
-        // ---------- Original Method ----------
-        //if (mDataPaths == null) mDataPaths = new ArrayList<PatternMatcher>();
-        //mDataPaths.add(new PatternMatcher(path.intern(), type));
+        
+        
+        
     }
 
     
@@ -557,8 +557,8 @@ Iterator<AuthorityEntry> varED18BAD1BD7A5FE27CC656E83062FEE5_474068015 =        
         int var7B3E4CC9BA5A681ECCD51DFCB43EA696_1222924161 = (mDataPaths != null ? mDataPaths.size() : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1392854124 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1392854124;
-        // ---------- Original Method ----------
-        //return mDataPaths != null ? mDataPaths.size() : 0;
+        
+        
     }
 
     
@@ -568,8 +568,8 @@ Iterator<AuthorityEntry> varED18BAD1BD7A5FE27CC656E83062FEE5_474068015 =        
 PatternMatcher varD20C4A93C9FDA178B6928DD8A0698977_1509328535 =         mDataPaths.get(index);
         varD20C4A93C9FDA178B6928DD8A0698977_1509328535.addTaint(taint);
         return varD20C4A93C9FDA178B6928DD8A0698977_1509328535;
-        // ---------- Original Method ----------
-        //return mDataPaths.get(index);
+        
+        
     }
 
     
@@ -581,7 +581,7 @@ PatternMatcher varD20C4A93C9FDA178B6928DD8A0698977_1509328535 =         mDataPat
             boolean var68934A3E9455FA72420237EB05902327_1040082811 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1122297995 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1122297995;
-        } //End block
+        } 
         final int numDataPaths = mDataPaths.size();
 for(int i = 0;i < numDataPaths;i++)
         {
@@ -591,23 +591,23 @@ for(int i = 0;i < numDataPaths;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1547927276 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_109155360 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_109155360;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1211399895 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144624396 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_144624396;
-        // ---------- Original Method ----------
-        //if (mDataPaths == null) {
-            //return false;
-        //}
-        //final int numDataPaths = mDataPaths.size();
-        //for (int i = 0; i < numDataPaths; i++) {
-            //final PatternMatcher pe = mDataPaths.get(i);
-            //if (pe.match(data)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -616,8 +616,8 @@ for(int i = 0;i < numDataPaths;i++)
 Iterator<PatternMatcher> varD3FE13F5E7C2A0579E6A6306CD71D764_276406554 =         mDataPaths != null ? mDataPaths.iterator() : null;
         varD3FE13F5E7C2A0579E6A6306CD71D764_276406554.addTaint(taint);
         return varD3FE13F5E7C2A0579E6A6306CD71D764_276406554;
-        // ---------- Original Method ----------
-        //return mDataPaths != null ? mDataPaths.iterator() : null;
+        
+        
     }
 
     
@@ -629,7 +629,7 @@ Iterator<PatternMatcher> varD3FE13F5E7C2A0579E6A6306CD71D764_276406554 =        
             int var6157FFE49CB0B5214FA490E963369DAC_992363685 = (NO_MATCH_DATA);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765912845 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765912845;
-        } //End block
+        } 
         final int numDataAuthorities = mDataAuthorities.size();
 for(int i = 0;i < numDataAuthorities;i++)
         {
@@ -640,24 +640,24 @@ for(int i = 0;i < numDataAuthorities;i++)
                 int varE3CC92C14A5E6DD1A7D94B6FF634D7FC_613992219 = (match);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_939412602 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_939412602;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6157FFE49CB0B5214FA490E963369DAC_1547049823 = (NO_MATCH_DATA);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905364444 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1905364444;
-        // ---------- Original Method ----------
-        //if (mDataAuthorities == null) {
-            //return NO_MATCH_DATA;
-        //}
-        //final int numDataAuthorities = mDataAuthorities.size();
-        //for (int i = 0; i < numDataAuthorities; i++) {
-            //final AuthorityEntry ae = mDataAuthorities.get(i);
-            //int match = ae.match(data);
-            //if (match >= 0) {
-                //return match;
-            //}
-        //}
-        //return NO_MATCH_DATA;
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -677,19 +677,19 @@ for(int i = 0;i < numDataAuthorities;i++)
                 ? (MATCH_CATEGORY_EMPTY+MATCH_ADJUSTMENT_NORMAL) : NO_MATCH_DATA));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260401835 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260401835;
-        } //End block
+        } 
     if(schemes != null)        
         {
     if(schemes.contains(scheme != null ? scheme : ""))            
             {
                 match = MATCH_CATEGORY_SCHEME;
-            } //End block
+            } 
             else
             {
                 int var6157FFE49CB0B5214FA490E963369DAC_2123169269 = (NO_MATCH_DATA);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117342878 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117342878;
-            } //End block
+            } 
     if(authorities != null)            
             {
                 int authMatch = matchDataAuthority(data);
@@ -698,27 +698,27 @@ for(int i = 0;i < numDataAuthorities;i++)
     if(paths == null)                    
                     {
                         match = authMatch;
-                    } //End block
+                    } 
                     else
     if(hasDataPath(data.getPath()))                    
                     {
                         match = MATCH_CATEGORY_PATH;
-                    } //End block
+                    } 
                     else
                     {
                         int var6157FFE49CB0B5214FA490E963369DAC_526165620 = (NO_MATCH_DATA);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348550301 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348550301;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     int var6157FFE49CB0B5214FA490E963369DAC_1684158465 = (NO_MATCH_DATA);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993474774 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1993474774;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
     if(scheme != null && !"".equals(scheme)
@@ -728,21 +728,21 @@ for(int i = 0;i < numDataAuthorities;i++)
                 int var6157FFE49CB0B5214FA490E963369DAC_179677907 = (NO_MATCH_DATA);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800148550 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800148550;
-            } //End block
-        } //End block
+            } 
+        } 
     if(types != null)        
         {
     if(findMimeType(type))            
             {
                 match = MATCH_CATEGORY_TYPE;
-            } //End block
+            } 
             else
             {
                 int varB33B171AA5B6B4E7180A1E82AFB1586E_801810235 = (NO_MATCH_TYPE);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208929688 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_208929688;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(type != null)            
@@ -750,13 +750,13 @@ for(int i = 0;i < numDataAuthorities;i++)
                 int varB33B171AA5B6B4E7180A1E82AFB1586E_948950698 = (NO_MATCH_TYPE);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191038071 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1191038071;
-            } //End block
-        } //End block
+            } 
+        } 
         int var2ABF444DA3C5561122CD56E4DDAD6D32_1754427852 = (match + MATCH_ADJUSTMENT_NORMAL);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773690905 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1773690905;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -768,12 +768,12 @@ for(int i = 0;i < numDataAuthorities;i++)
     if(!mCategories.contains(category))        
         {
             mCategories.add(category.intern());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCategories == null) mCategories = new ArrayList<String>();
-        //if (!mCategories.contains(category)) {
-            //mCategories.add(category.intern());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -782,8 +782,8 @@ for(int i = 0;i < numDataAuthorities;i++)
         int var73EE7D12BF483094EF03E36D4B5EC7CB_1733951524 = (mCategories != null ? mCategories.size() : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432499926 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1432499926;
-        // ---------- Original Method ----------
-        //return mCategories != null ? mCategories.size() : 0;
+        
+        
     }
 
     
@@ -793,8 +793,8 @@ for(int i = 0;i < numDataAuthorities;i++)
 String var5CFFBAE79CCBE33E2FF89927347E3947_1402845792 =         mCategories.get(index);
         var5CFFBAE79CCBE33E2FF89927347E3947_1402845792.addTaint(taint);
         return var5CFFBAE79CCBE33E2FF89927347E3947_1402845792;
-        // ---------- Original Method ----------
-        //return mCategories.get(index);
+        
+        
     }
 
     
@@ -804,8 +804,8 @@ String var5CFFBAE79CCBE33E2FF89927347E3947_1402845792 =         mCategories.get(
         boolean varEFA7F491986BF2EBD52565F05969A03E_1076801176 = (mCategories != null && mCategories.contains(category));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1949664492 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1949664492;
-        // ---------- Original Method ----------
-        //return mCategories != null && mCategories.contains(category);
+        
+        
     }
 
     
@@ -814,8 +814,8 @@ String var5CFFBAE79CCBE33E2FF89927347E3947_1402845792 =         mCategories.get(
 Iterator<String> varD9F5E65171F1E2E2FC1CBC221EB9DF4E_1618034059 =         mCategories != null ? mCategories.iterator() : null;
         varD9F5E65171F1E2E2FC1CBC221EB9DF4E_1618034059.addTaint(taint);
         return varD9F5E65171F1E2E2FC1CBC221EB9DF4E_1618034059;
-        // ---------- Original Method ----------
-        //return mCategories != null ? mCategories.iterator() : null;
+        
+        
     }
 
     
@@ -827,14 +827,14 @@ Iterator<String> varD9F5E65171F1E2E2FC1CBC221EB9DF4E_1618034059 =         mCateg
 String var540C13E9E156B687226421B24F2DF178_1325199233 =             null;
             var540C13E9E156B687226421B24F2DF178_1325199233.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1325199233;
-        } //End block
+        } 
         Iterator<String> it = categories.iterator();
     if(mCategories == null)        
         {
 String var70CE89BB39449072710912C7BDF8B7DD_1208997459 =             it.hasNext() ? it.next() : null;
             var70CE89BB39449072710912C7BDF8B7DD_1208997459.addTaint(taint);
             return var70CE89BB39449072710912C7BDF8B7DD_1208997459;
-        } //End block
+        } 
         while
 (it.hasNext())        
         {
@@ -844,26 +844,26 @@ String var70CE89BB39449072710912C7BDF8B7DD_1208997459 =             it.hasNext()
 String var59A5A7DECF343E07840ADE677ED1ABB7_1255605081 =                 category;
                 var59A5A7DECF343E07840ADE677ED1ABB7_1255605081.addTaint(taint);
                 return var59A5A7DECF343E07840ADE677ED1ABB7_1255605081;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1916255750 =         null;
         var540C13E9E156B687226421B24F2DF178_1916255750.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1916255750;
-        // ---------- Original Method ----------
-        //if (categories == null) {
-            //return null;
-        //}
-        //Iterator<String> it = categories.iterator();
-        //if (mCategories == null) {
-            //return it.hasNext() ? it.next() : null;
-        //}
-        //while (it.hasNext()) {
-            //final String category = it.next();
-            //if (!mCategories.contains(category)) {
-                //return category;
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -879,10 +879,10 @@ String var540C13E9E156B687226421B24F2DF178_1916255750 =         null;
                      intent.getData(), intent.getCategories(), logTag));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474653838 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474653838;
-        // ---------- Original Method ----------
-        //String type = resolve ? intent.resolveType(resolver) : intent.getType();
-        //return match(intent.getAction(), type, intent.getScheme(),
-                     //intent.getData(), intent.getCategories(), logTag);
+        
+        
+        
+                     
     }
 
     
@@ -900,7 +900,7 @@ String var540C13E9E156B687226421B24F2DF178_1916255750 =         null;
     if(false){ }            int varEABBAF31742AFB70C5E45F07A780551B_931682342 = (NO_MATCH_ACTION);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499150855 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1499150855;
-        } //End block
+        } 
         int dataMatch = matchData(type, scheme, data);
     if(dataMatch < 0)        
         {
@@ -908,37 +908,37 @@ String var540C13E9E156B687226421B24F2DF178_1916255750 =         null;
             {
     if(dataMatch == NO_MATCH_TYPE)                
                 {
-                } //End block
+                } 
     if(dataMatch == NO_MATCH_DATA)                
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             int var3C853C5E19A1AB03318118AEBF80FE86_408279091 = (dataMatch);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_954679641 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_954679641;
-        } //End block
+        } 
         String categoryMismatch = matchCategories(categories);
     if(categoryMismatch != null)        
         {
     if(false)            
             {
-            } //End block
+            } 
             int var161BDC10ADC5900DB207302E71455752_303010482 = (NO_MATCH_CATEGORY);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576679702 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_576679702;
-        } //End block
+        } 
     if(false)        
         {
     if(categories != null)            
             {
                 dataMatch -= mCategories.size() - categories.size();
-            } //End block
-        } //End block
+            } 
+        } 
         int var3C853C5E19A1AB03318118AEBF80FE86_248682763 = (dataMatch);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_362692458 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_362692458;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -951,14 +951,14 @@ for(int i=0;i<N;i++)
             serializer.startTag(null, ACTION_STR);
             serializer.attribute(null, NAME_STR, mActions.get(i));
             serializer.endTag(null, ACTION_STR);
-        } //End block
+        } 
         N = countCategories();
 for(int i=0;i<N;i++)
         {
             serializer.startTag(null, CAT_STR);
             serializer.attribute(null, NAME_STR, mCategories.get(i));
             serializer.endTag(null, CAT_STR);
-        } //End block
+        } 
         N = countDataTypes();
 for(int i=0;i<N;i++)
         {
@@ -968,14 +968,14 @@ for(int i=0;i<N;i++)
             type = type + "/*";
             serializer.attribute(null, NAME_STR, type);
             serializer.endTag(null, TYPE_STR);
-        } //End block
+        } 
         N = countDataSchemes();
 for(int i=0;i<N;i++)
         {
             serializer.startTag(null, SCHEME_STR);
             serializer.attribute(null, NAME_STR, mDataSchemes.get(i));
             serializer.endTag(null, SCHEME_STR);
-        } //End block
+        } 
         N = countDataAuthorities();
 for(int i=0;i<N;i++)
         {
@@ -985,9 +985,9 @@ for(int i=0;i<N;i++)
     if(ae.getPort() >= 0)            
             {
                 serializer.attribute(null, PORT_STR, Integer.toString(ae.getPort()));
-            } //End block
+            } 
             serializer.endTag(null, AUTH_STR);
-        } //End block
+        } 
         N = countDataPaths();
 for(int i=0;i<N;i++)
         {
@@ -1004,9 +1004,9 @@ switch(pe.getType()){
             serializer.attribute(null, SGLOB_STR, pe.getPath());
             break;
 }            serializer.endTag(null, PATH_STR);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1025,7 +1025,7 @@ switch(pe.getType()){
                     || type == XmlPullParser.TEXT)            
             {
                 continue;
-            } //End block
+            } 
             String tagName = parser.getName();
     if(tagName.equals(ACTION_STR))            
             {
@@ -1033,8 +1033,8 @@ switch(pe.getType()){
     if(name != null)                
                 {
                     addAction(name);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(tagName.equals(CAT_STR))            
             {
@@ -1042,8 +1042,8 @@ switch(pe.getType()){
     if(name != null)                
                 {
                     addCategory(name);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(tagName.equals(TYPE_STR))            
             {
@@ -1053,12 +1053,12 @@ switch(pe.getType()){
                     try 
                     {
                         addDataType(name);
-                    } //End block
+                    } 
                     catch (MalformedMimeTypeException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
     if(tagName.equals(SCHEME_STR))            
             {
@@ -1066,8 +1066,8 @@ switch(pe.getType()){
     if(name != null)                
                 {
                     addDataScheme(name);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(tagName.equals(AUTH_STR))            
             {
@@ -1076,8 +1076,8 @@ switch(pe.getType()){
     if(host != null)                
                 {
                     addDataAuthority(host, port);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(tagName.equals(PATH_STR))            
             {
@@ -1085,25 +1085,25 @@ switch(pe.getType()){
     if(path != null)                
                 {
                     addDataPath(path, PatternMatcher.PATTERN_LITERAL);
-                } //End block
+                } 
                 else
     if((path=parser.getAttributeValue(null, PREFIX_STR)) != null)                
                 {
                     addDataPath(path, PatternMatcher.PATTERN_PREFIX);
-                } //End block
+                } 
                 else
     if((path=parser.getAttributeValue(null, SGLOB_STR)) != null)                
                 {
                     addDataPath(path, PatternMatcher.PATTERN_SIMPLE_GLOB);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
-            } //End block
+            } 
             XmlUtils.skipCurrentTag(parser);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1124,8 +1124,8 @@ switch(pe.getType()){
                 sb.append(it.next());
                 sb.append("\"");
                 du.println(sb.toString());
-            } //End block
-        } //End block
+            } 
+        } 
     if(mCategories != null)        
         {
             Iterator<String> it = mCategories.iterator();
@@ -1138,8 +1138,8 @@ switch(pe.getType()){
                 sb.append(it.next());
                 sb.append("\"");
                 du.println(sb.toString());
-            } //End block
-        } //End block
+            } 
+        } 
     if(mDataSchemes != null)        
         {
             Iterator<String> it = mDataSchemes.iterator();
@@ -1152,8 +1152,8 @@ switch(pe.getType()){
                 sb.append(it.next());
                 sb.append("\"");
                 du.println(sb.toString());
-            } //End block
-        } //End block
+            } 
+        } 
     if(mDataAuthorities != null)        
         {
             Iterator<AuthorityEntry> it = mDataAuthorities.iterator();
@@ -1170,8 +1170,8 @@ switch(pe.getType()){
     if(ae.mWild)                
                 sb.append(" WILD");
                 du.println(sb.toString());
-            } //End block
-        } //End block
+            } 
+        } 
     if(mDataPaths != null)        
         {
             Iterator<PatternMatcher> it = mDataPaths.iterator();
@@ -1185,8 +1185,8 @@ switch(pe.getType()){
                 sb.append(pe);
                 sb.append("\"");
                 du.println(sb.toString());
-            } //End block
-        } //End block
+            } 
+        } 
     if(mDataTypes != null)        
         {
             Iterator<String> it = mDataTypes.iterator();
@@ -1199,8 +1199,8 @@ switch(pe.getType()){
                 sb.append(it.next());
                 sb.append("\"");
                 du.println(sb.toString());
-            } //End block
-        } //End block
+            } 
+        } 
     if(mPriority != 0 || mHasPartialTypes)        
         {
             sb.setLength(0);
@@ -1210,9 +1210,9 @@ switch(pe.getType()){
             sb.append(", mHasPartialTypes=");
             sb.append(mHasPartialTypes);
             du.println(sb.toString());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1221,8 +1221,8 @@ switch(pe.getType()){
         int varCFCD208495D565EF66E7DFF9F98764DA_1792577170 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254608099 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1254608099;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -1235,29 +1235,29 @@ switch(pe.getType()){
         {
             dest.writeInt(1);
             dest.writeStringList(mCategories);
-        } //End block
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
     if(mDataSchemes != null)        
         {
             dest.writeInt(1);
             dest.writeStringList(mDataSchemes);
-        } //End block
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
     if(mDataTypes != null)        
         {
             dest.writeInt(1);
             dest.writeStringList(mDataTypes);
-        } //End block
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
     if(mDataAuthorities != null)        
         {
             final int N = mDataAuthorities.size();
@@ -1265,12 +1265,12 @@ switch(pe.getType()){
 for(int i=0;i<N;i++)
             {
                 mDataAuthorities.get(i).writeToParcel(dest);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
     if(mDataPaths != null)        
         {
             final int N = mDataPaths.size();
@@ -1278,26 +1278,27 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 mDataPaths.get(i).writeToParcel(dest, 0);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
         dest.writeInt(mPriority);
         dest.writeInt(mHasPartialTypes ? 1 : 0);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.115 -0400", hash_original_method = "FBEEEBAC37A62143C058604C825166BE", hash_generated_method = "37763F38D0B3347287E987B37A2FFB49")
     public boolean debugCheck() {
         boolean varB326B5062B2F0E69046810717534CB09_1783803108 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1993340806 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1993340806;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -1310,26 +1311,26 @@ for(int i=0;i<N;i++)
             boolean var68934A3E9455FA72420237EB05902327_2015427931 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_24314859 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_24314859;
-        } //End block
+        } 
     if(t.contains(type))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_721551606 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1163869840 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1163869840;
-        } //End block
+        } 
         final int typeLength = type.length();
     if(typeLength == 3 && type.equals("*/*"))        
         {
             boolean var1D068B9D5C11C8999F460D870E71A719_99611206 = (!t.isEmpty());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638364377 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1638364377;
-        } //End block
+        } 
     if(mHasPartialTypes && t.contains("*"))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_140543992 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44716153 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_44716153;
-        } //End block
+        } 
         final int slashpos = type.indexOf('/');
     if(slashpos > 0)        
         {
@@ -1338,7 +1339,7 @@ for(int i=0;i<N;i++)
                 boolean varB326B5062B2F0E69046810717534CB09_1360849453 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1922129365 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1922129365;
-            } //End block
+            } 
     if(typeLength == slashpos+2 && type.charAt(slashpos+1) == '*')            
             {
                 final int numTypes = t.size();
@@ -1350,15 +1351,15 @@ for(int i = 0;i < numTypes;i++)
                         boolean varB326B5062B2F0E69046810717534CB09_834927341 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_795637880 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_795637880;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1776198844 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1454183919 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1454183919;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1366,7 +1367,7 @@ for(int i = 0;i < numTypes;i++)
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.118 -0400", hash_original_method = "8500983E91FE33F50F26D266A654E6C8", hash_generated_method = "76D07A54CDCC210EFF1FE4C037CB3505")
         public  MalformedMimeTypeException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1374,7 +1375,7 @@ for(int i = 0;i < numTypes;i++)
         public  MalformedMimeTypeException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1402,11 +1403,11 @@ for(int i = 0;i < numTypes;i++)
             mWild = host.length() > 0 && host.charAt(0) == '*';
             mHost = mWild ? host.substring(1).intern() : host;
             mPort = port != null ? Integer.parseInt(port) : -1;
-            // ---------- Original Method ----------
-            //mOrigHost = host;
-            //mWild = host.length() > 0 && host.charAt(0) == '*';
-            //mHost = mWild ? host.substring(1).intern() : host;
-            //mPort = port != null ? Integer.parseInt(port) : -1;
+            
+            
+            
+            
+            
         }
 
         
@@ -1416,11 +1417,11 @@ for(int i = 0;i < numTypes;i++)
             mHost = src.readString();
             mWild = src.readInt() != 0;
             mPort = src.readInt();
-            // ---------- Original Method ----------
-            //mOrigHost = src.readString();
-            //mHost = src.readString();
-            //mWild = src.readInt() != 0;
-            //mPort = src.readInt();
+            
+            
+            
+            
+            
         }
 
         
@@ -1431,34 +1432,37 @@ for(int i = 0;i < numTypes;i++)
             dest.writeString(mHost);
             dest.writeInt(mWild ? 1 : 0);
             dest.writeInt(mPort);
-            // ---------- Original Method ----------
-            //dest.writeString(mOrigHost);
-            //dest.writeString(mHost);
-            //dest.writeInt(mWild ? 1 : 0);
-            //dest.writeInt(mPort);
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.120 -0400", hash_original_method = "56B964ED44110D4A8630C57ED8411A1C", hash_generated_method = "31B39E28C728E9249D4168DF3B9E275A")
         public String getHost() {
 String var0F8BF6F5C2827A165225109D7A5D92E0_1371822304 =             mOrigHost;
             var0F8BF6F5C2827A165225109D7A5D92E0_1371822304.addTaint(taint);
             return var0F8BF6F5C2827A165225109D7A5D92E0_1371822304;
-            // ---------- Original Method ----------
-            //return mOrigHost;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.120 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "B5CF3BEF0B4C4AEC352B2A233DC84CEA")
         public int getPort() {
             int var5EFA61C4FCA92CA992BE37C2BAF4D350_1152268829 = (mPort);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145174083 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145174083;
-            // ---------- Original Method ----------
-            //return mPort;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.121 -0400", hash_original_method = "FC31CC7FA89B702CE4ED1283F0D70C24", hash_generated_method = "75B7DAA260AD8923A3124AD3BF128E62")
         public int match(Uri data) {
             addTaint(data.getTaint());
@@ -1468,7 +1472,7 @@ String var0F8BF6F5C2827A165225109D7A5D92E0_1371822304 =             mOrigHost;
                 int var6157FFE49CB0B5214FA490E963369DAC_1179347055 = (NO_MATCH_DATA);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1532812977 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1532812977;
-            } //End block
+            } 
     if(false){ }    if(mWild)            
             {
     if(host.length() < mHost.length())                
@@ -1476,15 +1480,15 @@ String var0F8BF6F5C2827A165225109D7A5D92E0_1371822304 =             mOrigHost;
                     int var6157FFE49CB0B5214FA490E963369DAC_304395970 = (NO_MATCH_DATA);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_585527603 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_585527603;
-                } //End block
+                } 
                 host = host.substring(host.length()-mHost.length());
-            } //End block
+            } 
     if(host.compareToIgnoreCase(mHost) != 0)            
             {
                 int var6157FFE49CB0B5214FA490E963369DAC_378846512 = (NO_MATCH_DATA);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900279588 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1900279588;
-            } //End block
+            } 
     if(mPort >= 0)            
             {
     if(mPort != data.getPort())                
@@ -1492,37 +1496,37 @@ String var0F8BF6F5C2827A165225109D7A5D92E0_1371822304 =             mOrigHost;
                     int var6157FFE49CB0B5214FA490E963369DAC_950813959 = (NO_MATCH_DATA);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887690864 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1887690864;
-                } //End block
+                } 
                 int varED0A19589EDB44860EAC512FA9866DC6_1486458948 = (MATCH_CATEGORY_PORT);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2136570566 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2136570566;
-            } //End block
+            } 
             int varD5279D4913C4CE938457DF24BEA90CD8_416995357 = (MATCH_CATEGORY_HOST);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484049178 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484049178;
-            // ---------- Original Method ----------
-            //String host = data.getHost();
-            //if (host == null) {
-                //return NO_MATCH_DATA;
-            //}
-            //if (false) Log.v("IntentFilter",
-                    //"Match host " + host + ": " + mHost);
-            //if (mWild) {
-                //if (host.length() < mHost.length()) {
-                    //return NO_MATCH_DATA;
-                //}
-                //host = host.substring(host.length()-mHost.length());
-            //}
-            //if (host.compareToIgnoreCase(mHost) != 0) {
-                //return NO_MATCH_DATA;
-            //}
-            //if (mPort >= 0) {
-                //if (mPort != data.getPort()) {
-                    //return NO_MATCH_DATA;
-                //}
-                //return MATCH_CATEGORY_PORT;
-            //}
-            //return MATCH_CATEGORY_HOST;
+            
+            
+            
+                
+            
+            
+                    
+            
+                
+                    
+                
+                
+            
+            
+                
+            
+            
+                
+                    
+                
+                
+            
+            
         }
 
         
@@ -1623,12 +1627,12 @@ String var0F8BF6F5C2827A165225109D7A5D92E0_1371822304 =             mOrigHost;
             return new IntentFilter[size];
         }
     };
-    // orphaned legacy method
+    
     public IntentFilter createFromParcel(Parcel source) {
             return new IntentFilter(source);
         }
     
-    // orphaned legacy method
+    
     public IntentFilter[] newArray(int size) {
             return new IntentFilter[size];
         }

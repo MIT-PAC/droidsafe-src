@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class MinSEParser extends ParametersParser {
     public  MinSEParser(String text) {
         super(text);
         addTaint(text.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,7 +24,7 @@ public class MinSEParser extends ParametersParser {
     protected  MinSEParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,52 +41,52 @@ public class MinSEParser extends ParametersParser {
             {
                 int delta = Integer.parseInt(nextId);
                 minse.setExpires(delta);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 java.text.ParseException var5FB99FE9B64E519E79EC6426B25925EC_196574685 = createParseException("bad integer format");
                 var5FB99FE9B64E519E79EC6426B25925EC_196574685.addTaint(taint);
                 throw var5FB99FE9B64E519E79EC6426B25925EC_196574685;
-            } //End block
+            } 
             catch (InvalidArgumentException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1541787794 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_1541787794.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_1541787794;
-            } //End block
+            } 
             this.lexer.SPorHT();
             super.parse(minse);
 SIPHeader varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371 =             minse;
             varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371.addTaint(taint);
             return varF3CC1D7F771FF7BA71AED1439CF6D47D_1671047371;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        //MinSE minse = new MinSE();
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.MINSE_TO);
-            //String nextId = lexer.getNextId();
-            //try {
-                //int delta = Integer.parseInt(nextId);
-                //minse.setExpires(delta);
-            //} catch (NumberFormatException ex) {
-                //throw createParseException("bad integer format");
-            //} catch (InvalidArgumentException ex) {
-                //throw createParseException(ex.getMessage());
-            //}
-            //this.lexer.SPorHT();
-            //super.parse(minse);
-            //return minse;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+            
+                
+                
+            
+                
+            
+                
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

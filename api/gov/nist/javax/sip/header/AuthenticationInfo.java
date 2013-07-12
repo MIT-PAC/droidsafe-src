@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,27 +13,29 @@ public final class AuthenticationInfo extends ParametersHeader implements javax.
     public  AuthenticationInfo() {
         super(NAME);
         parameters.setSeparator(COMMA);
-        // ---------- Original Method ----------
-        //parameters.setSeparator(COMMA);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.036 -0400", hash_original_method = "3780BAE96FA2BB1F0E2AD0AAFD0731BB", hash_generated_method = "6C15125D2E458388455620DCFE89F588")
     public void add(NameValue nv) {
         addTaint(nv.getTaint());
         parameters.set(nv);
-        // ---------- Original Method ----------
-        //parameters.set(nv);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.036 -0400", hash_original_method = "984A5DF7C514C121E76596CBE2C6D49B", hash_generated_method = "F375C46970179028867AB35BAFF5FCCD")
     protected String encodeBody() {
 String varEF6E14FE7C327BE363085D7A5020E89C_1618892631 =         parameters.encode();
         varEF6E14FE7C327BE363085D7A5020E89C_1618892631.addTaint(taint);
         return varEF6E14FE7C327BE363085D7A5020E89C_1618892631;
-        // ---------- Original Method ----------
-        //return parameters.encode();
+        
+        
     }
 
     
@@ -43,68 +45,74 @@ String varEF6E14FE7C327BE363085D7A5020E89C_1618892631 =         parameters.encod
 NameValue var08CE355D14F19014A56F4D6624A9A085_1870082615 =         parameters.getNameValue(name);
         var08CE355D14F19014A56F4D6624A9A085_1870082615.addTaint(taint);
         return var08CE355D14F19014A56F4D6624A9A085_1870082615;
-        // ---------- Original Method ----------
-        //return parameters.getNameValue(name);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.037 -0400", hash_original_method = "45703CBA192DB8FE97E8CE6B0DE011B6", hash_generated_method = "A4FB3F12C177980F735BFD97B04F2738")
     public String getAuthenticationInfo() {
 String varC32A0959BF3FBBB1F055BAFAA3BABC6F_862147021 =         this.encodeBody();
         varC32A0959BF3FBBB1F055BAFAA3BABC6F_862147021.addTaint(taint);
         return varC32A0959BF3FBBB1F055BAFAA3BABC6F_862147021;
-        // ---------- Original Method ----------
-        //return this.encodeBody();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.037 -0400", hash_original_method = "78E06BA6093F7AA3C4C2CE903F3FED26", hash_generated_method = "590857B8349C8C24CB9F36D87CDFDDB7")
     public String getCNonce() {
 String varE2DF18D400D8A553B066B8EBEE3E0E83_434024311 =         this.getParameter(ParameterNames.CNONCE);
         varE2DF18D400D8A553B066B8EBEE3E0E83_434024311.addTaint(taint);
         return varE2DF18D400D8A553B066B8EBEE3E0E83_434024311;
-        // ---------- Original Method ----------
-        //return this.getParameter(ParameterNames.CNONCE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.037 -0400", hash_original_method = "4856BE956C44217C60CB87D76847AFE4", hash_generated_method = "A3AF1C6A720BA295464328A67F5C6A3E")
     public String getNextNonce() {
 String var14D8949ABEF605C6C1D564C15EBB9107_1106299774 =         this.getParameter(ParameterNames.NEXT_NONCE);
         var14D8949ABEF605C6C1D564C15EBB9107_1106299774.addTaint(taint);
         return var14D8949ABEF605C6C1D564C15EBB9107_1106299774;
-        // ---------- Original Method ----------
-        //return this.getParameter(ParameterNames.NEXT_NONCE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.037 -0400", hash_original_method = "F46B5447262611FA3819A20578A12025", hash_generated_method = "71D6BD4855E956D2D787BFA8C12DC1AD")
     public int getNonceCount() {
         int var259FAEFC253EF28A06A03092946850BF_725147015 = (this.getParameterAsInt(ParameterNames.NONCE_COUNT));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061746133 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1061746133;
-        // ---------- Original Method ----------
-        //return this.getParameterAsInt(ParameterNames.NONCE_COUNT);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.046 -0400", hash_original_method = "2EA7D13FA74BC0F4D2935AE8D437DBD8", hash_generated_method = "6F0E2A6411E878D768B3A11390CE496B")
     public String getQop() {
 String varA8271BA7C314C4DDDC2F17394A48B535_89019432 =         this.getParameter(ParameterNames.QOP);
         varA8271BA7C314C4DDDC2F17394A48B535_89019432.addTaint(taint);
         return varA8271BA7C314C4DDDC2F17394A48B535_89019432;
-        // ---------- Original Method ----------
-        //return this.getParameter(ParameterNames.QOP);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.046 -0400", hash_original_method = "B75013AB6AA69C35681E13DE4A7E264C", hash_generated_method = "9A59706F0DAA7B8CE5F3CC1500D2B5DF")
     public String getResponse() {
 String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParameter(ParameterNames.RESPONSE_AUTH);
         var652AB4C7E1504C0D435CEB3C517BD439_1604967325.addTaint(taint);
         return var652AB4C7E1504C0D435CEB3C517BD439_1604967325;
-        // ---------- Original Method ----------
-        //return this.getParameter(ParameterNames.RESPONSE_AUTH);
+        
+        
     }
 
     
@@ -112,8 +120,8 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
     public void setCNonce(String cNonce) throws ParseException {
         addTaint(cNonce.getTaint());
         this.setParameter(ParameterNames.CNONCE, cNonce);
-        // ---------- Original Method ----------
-        //this.setParameter(ParameterNames.CNONCE, cNonce);
+        
+        
     }
 
     
@@ -121,8 +129,8 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
     public void setNextNonce(String nextNonce) throws ParseException {
         addTaint(nextNonce.getTaint());
         this.setParameter(ParameterNames.NEXT_NONCE, nextNonce);
-        // ---------- Original Method ----------
-        //this.setParameter(ParameterNames.NEXT_NONCE, nextNonce);
+        
+        
     }
 
     
@@ -139,13 +147,13 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
         String base = "00000000";
         nc = base.substring(0, 8 - nc.length()) + nc;
         this.setParameter(ParameterNames.NC, nc);
-        // ---------- Original Method ----------
-        //if (nonceCount < 0)
-            //throw new ParseException("bad value", 0);
-        //String nc = Integer.toHexString(nonceCount);
-        //String base = "00000000";
-        //nc = base.substring(0, 8 - nc.length()) + nc;
-        //this.setParameter(ParameterNames.NC, nc);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -153,8 +161,8 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
     public void setQop(String qop) throws ParseException {
         addTaint(qop.getTaint());
         this.setParameter(ParameterNames.QOP, qop);
-        // ---------- Original Method ----------
-        //this.setParameter(ParameterNames.QOP, qop);
+        
+        
     }
 
     
@@ -162,11 +170,12 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
     public void setResponse(String response) throws ParseException {
         addTaint(response.getTaint());
         this.setParameter(ParameterNames.RESPONSE_AUTH, response);
-        // ---------- Original Method ----------
-        //this.setParameter(ParameterNames.RESPONSE_AUTH, response);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.047 -0400", hash_original_method = "755E28BB77A48AFE56357BE82519C7C0", hash_generated_method = "67718F423454186BF3C2B152CD4D1FD7")
     public void setParameter(String name, String value) throws ParseException {
         addTaint(value.getTaint());
@@ -207,13 +216,13 @@ String var652AB4C7E1504C0D435CEB3C517BD439_1604967325 =         this.getParamete
                 throw varE60A0A92BA5CA1ED6CE0AA8D83CBF780_1898907362;
                 }
                 nv.setQuotedValue();
-            } //End block
+            } 
             super.setParameter(nv);
-        } //End block
+        } 
         else
         nv.setValueAsObject(value);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

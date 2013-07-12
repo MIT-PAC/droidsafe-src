@@ -1,6 +1,6 @@
 package dalvik.system.profiler;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -61,17 +61,18 @@ public final class SamplingProfiler {
         threadSampler.setDepth(depth);
         hprofData.setFlags(BinaryHprof.ControlSettings.CPU_SAMPLING.bitmask);
         hprofData.setDepth(depth);
-        // ---------- Original Method ----------
-        //this.depth = depth;
-        //this.threadSet = threadSet;
-        //this.threadSampler = findDefaultThreadSampler();
-        //threadSampler.setDepth(depth);
-        //hprofData.setFlags(BinaryHprof.ControlSettings.CPU_SAMPLING.bitmask);
-        //hprofData.setDepth(depth);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
-        private static ThreadSampler findDefaultThreadSampler() {
+        @DSModeled(DSC.BAN)
+    private static ThreadSampler findDefaultThreadSampler() {
         if ("Dalvik Core Library".equals(System.getProperty("java.specification.name"))) {
             String className = "dalvik.system.profiler.DalvikThreadSampler";
             try {
@@ -89,11 +90,13 @@ public final class SamplingProfiler {
     }
 
     
-        public static ThreadSet newThreadGroupTheadSet(ThreadGroup threadGroup) {
+        @DSModeled(DSC.BAN)
+    public static ThreadSet newThreadGroupTheadSet(ThreadGroup threadGroup) {
         return new ThreadGroupThreadSet(threadGroup);
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.031 -0400", hash_original_method = "27D03994E61C1E4974C7BBD91A5CED76", hash_generated_method = "89C08EEE429592B6AEB20F7B85DCB500")
     public void start(int interval) {
         addTaint(interval);
@@ -102,35 +105,36 @@ public final class SamplingProfiler {
             IllegalArgumentException var794F692BC1032CF0D8D616A6F96EC22C_1012261386 = new IllegalArgumentException("interval < 1");
             var794F692BC1032CF0D8D616A6F96EC22C_1012261386.addTaint(taint);
             throw var794F692BC1032CF0D8D616A6F96EC22C_1012261386;
-        } //End block
+        } 
     if(sampler != null)        
         {
             IllegalStateException var5ED3F8A5F822F4D84B55231116591162_1729487390 = new IllegalStateException("profiling already started");
             var5ED3F8A5F822F4D84B55231116591162_1729487390.addTaint(taint);
             throw var5ED3F8A5F822F4D84B55231116591162_1729487390;
-        } //End block
+        } 
         sampler = new Sampler();
         hprofData.setStartMillis(System.currentTimeMillis());
         timer.scheduleAtFixedRate(sampler, 0, interval);
-        // ---------- Original Method ----------
-        //if (interval < 1) {
-            //throw new IllegalArgumentException("interval < 1");
-        //}
-        //if (sampler != null) {
-            //throw new IllegalStateException("profiling already started");
-        //}
-        //sampler = new Sampler();
-        //hprofData.setStartMillis(System.currentTimeMillis());
-        //timer.scheduleAtFixedRate(sampler, 0, interval);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.032 -0400", hash_original_method = "67E3C9BA9A63DEAC75D61937C8B159A6", hash_generated_method = "F9E263991FB21D850EAF5C968D85AAAA")
     public void stop() {
     if(sampler == null)        
         {
             return;
-        } //End block
+        } 
         synchronized
 (sampler)        {
             sampler.stop = true;
@@ -140,40 +144,42 @@ public final class SamplingProfiler {
                 try 
                 {
                     sampler.wait();
-                } //End block
+                } 
                 catch (InterruptedException ignored)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         sampler = null;
-        // ---------- Original Method ----------
-        //if (sampler == null) {
-            //return;
-        //}
-        //synchronized(sampler) {
-            //sampler.stop = true;
-            //while (!sampler.stopped) {
-                //try {
-                    //sampler.wait();
-                //} catch (InterruptedException ignored) {
-                //}
-            //}
-        //}
-        //sampler = null;
+        
+        
+            
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.032 -0400", hash_original_method = "E9FD5B0933A1848F685AEBC164A37AF6", hash_generated_method = "62A5E416FD9EC25C2C2402805D8B0333")
     public void shutdown() {
         stop();
         timer.cancel();
-        // ---------- Original Method ----------
-        //stop();
-        //timer.cancel();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.033 -0400", hash_original_method = "ED23570BD9F6C6F13BA5A80428CD13EC", hash_generated_method = "2A6A537E5F2AFD9D8B7664DCCB2B18C2")
     public HprofData getHprofData() {
     if(sampler != null)        
@@ -181,15 +187,15 @@ public final class SamplingProfiler {
             IllegalStateException varFDCC8B667CCE424A2920AB5B7B905509_1118696501 = new IllegalStateException("cannot access hprof data while sampling");
             varFDCC8B667CCE424A2920AB5B7B905509_1118696501.addTaint(taint);
             throw varFDCC8B667CCE424A2920AB5B7B905509_1118696501;
-        } //End block
+        } 
 HprofData varED34D148516840494CB2AFCDA086D3AF_1096977522 =         hprofData;
         varED34D148516840494CB2AFCDA086D3AF_1096977522.addTaint(taint);
         return varED34D148516840494CB2AFCDA086D3AF_1096977522;
-        // ---------- Original Method ----------
-        //if (sampler != null) {
-            //throw new IllegalStateException("cannot access hprof data while sampling");
-        //}
-        //return hprofData;
+        
+        
+            
+        
+        
     }
 
     
@@ -205,23 +211,24 @@ HprofData varED34D148516840494CB2AFCDA086D3AF_1096977522 =         hprofData;
                 NullPointerException var258B69D0D4A2C1357E11EC34983461F7_1576147329 = new NullPointerException("threads == null");
                 var258B69D0D4A2C1357E11EC34983461F7_1576147329.addTaint(taint);
                 throw var258B69D0D4A2C1357E11EC34983461F7_1576147329;
-            } //End block
+            } 
             this.threads = threads;
-            // ---------- Original Method ----------
-            //if (threads == null) {
-                //throw new NullPointerException("threads == null");
-            //}
-            //this.threads = threads;
+            
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.034 -0400", hash_original_method = "5BD7766F6E0173FC433E1E7F289EB1BE", hash_generated_method = "935E2B3BB6CD57CE4AAD031D80B9FCEB")
         public Thread[] threads() {
 Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
             var67CF445A22B0B72AFF038F817DEEC61B_1386471828.addTaint(taint);
             return var67CF445A22B0B72AFF038F817DEEC61B_1386471828;
-            // ---------- Original Method ----------
-            //return threads;
+            
+            
         }
 
         
@@ -247,30 +254,32 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
                 NullPointerException varCDAFA6034E5A6DEDBED6DC7A39334ED6_1216262971 = new NullPointerException("threadGroup == null");
                 varCDAFA6034E5A6DEDBED6DC7A39334ED6_1216262971.addTaint(taint);
                 throw varCDAFA6034E5A6DEDBED6DC7A39334ED6_1216262971;
-            } //End block
+            } 
             this.threadGroup = threadGroup;
             resize();
-            // ---------- Original Method ----------
-            //if (threadGroup == null) {
-                //throw new NullPointerException("threadGroup == null");
-            //}
-            //this.threadGroup = threadGroup;
-            //resize();
+            
+            
+                
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.035 -0400", hash_original_method = "634F6B8483D3410BA8D4C537A5664EC3", hash_generated_method = "0ABB5E8BF62D0F7A316F1DDBBCEFC259")
         private void resize() {
             int count = threadGroup.activeCount();
             threads = new Thread[count*2];
             lastThread = 0;
-            // ---------- Original Method ----------
-            //int count = threadGroup.activeCount();
-            //threads = new Thread[count*2];
-            //lastThread = 0;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.036 -0400", hash_original_method = "32A384241C8D4460079A29E3C7BA2EEB", hash_generated_method = "85A7BF57753AC88D810AE58DE84CD2AF")
         public Thread[] threads() {
             int threadCount;
@@ -281,35 +290,35 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1386471828 =             threads;
     if(threadCount == threads.length)                
                 {
                     resize();
-                } //End block
+                } 
                 else
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
     if(threadCount < lastThread)            
             {
                 Arrays.fill(threads, threadCount, lastThread, null);
-            } //End block
+            } 
             lastThread = threadCount;
 Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1370469589 =             threads;
             var67CF445A22B0B72AFF038F817DEEC61B_1370469589.addTaint(taint);
             return var67CF445A22B0B72AFF038F817DEEC61B_1370469589;
-            // ---------- Original Method ----------
-            //int threadCount;
-            //while (true) {
-                //threadCount = threadGroup.enumerate(threads);
-                //if (threadCount == threads.length) {
-                    //resize();
-                //} else {
-                    //break;
-                //}
-            //}
-            //if (threadCount < lastThread) {
-                //Arrays.fill(threads, threadCount, lastThread, null);
-            //}
-            //lastThread = threadCount;
-            //return threads;
+            
+            
+            
+                
+                
+                    
+                
+                    
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -331,10 +340,11 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1370469589 =             threads;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.036 -0400", hash_original_method = "CE87D296BDEBBC5B0D30A5ECC13871DD", hash_generated_method = "CE87D296BDEBBC5B0D30A5ECC13871DD")
         public Sampler ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.037 -0400", hash_original_method = "3FC3FC48F91B564D9AD79AA9DB2F74C2", hash_generated_method = "C93F15E37D57A7DDDAB6892502AEC0BA")
         public void run() {
             synchronized
@@ -345,40 +355,41 @@ Thread[] var67CF445A22B0B72AFF038F817DEEC61B_1370469589 =             threads;
                     stopped = true;
                     notifyAll();
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
     if(timerThread == null)            
             {
                 timerThread = Thread.currentThread();
-            } //End block
+            } 
             Thread[] newThreads = threadSet.threads();
     if(!Arrays.equals(currentThreads, newThreads))            
             {
                 updateThreadHistory(currentThreads, newThreads);
                 currentThreads = newThreads.clone();
-            } //End block
+            } 
 for(Thread thread : currentThreads)
             {
     if(thread == null)                
                 {
                     break;
-                } //End block
+                } 
     if(thread == timerThread)                
                 {
                     continue;
-                } //End block
+                } 
                 StackTraceElement[] stackFrames = threadSampler.getStackTrace(thread);
     if(stackFrames == null)                
                 {
                     continue;
-                } //End block
+                } 
                 recordStackTrace(thread, stackFrames);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.038 -0400", hash_original_method = "F11BBDF4101A6D713104B5DB9760A085", hash_generated_method = "8F6DBA28B8FE39359C1C3D9DD5258F1A")
         private void recordStackTrace(Thread thread, StackTraceElement[] stackFrames) {
             addTaint(stackFrames[0].getTaint());
@@ -389,7 +400,7 @@ for(Thread thread : currentThreads)
                 IllegalArgumentException varB4CF2BD55112C1CED34A8923E8F43362_240231285 = new IllegalArgumentException("Unknown thread " + thread);
                 varB4CF2BD55112C1CED34A8923E8F43362_240231285.addTaint(taint);
                 throw varB4CF2BD55112C1CED34A8923E8F43362_240231285;
-            } //End block
+            } 
             mutableStackTrace.threadId = threadId;
             mutableStackTrace.stackFrames = stackFrames;
             int[] countCell = stackTraces.get(mutableStackTrace);
@@ -399,27 +410,28 @@ for(Thread thread : currentThreads)
                 StackTraceElement[] stackFramesCopy = stackFrames.clone();
                 HprofData.StackTrace stackTrace = new HprofData.StackTrace(nextStackTraceId++, threadId, stackFramesCopy);
                 hprofData.addStackTrace(stackTrace, countCell);
-            } //End block
+            } 
             countCell[0]++;
-            // ---------- Original Method ----------
-            //Integer threadId = threadIds.get(thread);
-            //if (threadId == null) {
-                //throw new IllegalArgumentException("Unknown thread " + thread);
-            //}
-            //mutableStackTrace.threadId = threadId;
-            //mutableStackTrace.stackFrames = stackFrames;
-            //int[] countCell = stackTraces.get(mutableStackTrace);
-            //if (countCell == null) {
-                //countCell = new int[1];
-                //StackTraceElement[] stackFramesCopy = stackFrames.clone();
-                //HprofData.StackTrace stackTrace
-                        //= new HprofData.StackTrace(nextStackTraceId++, threadId, stackFramesCopy);
-                //hprofData.addStackTrace(stackTrace, countCell);
-            //}
-            //countCell[0]++;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                        
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.039 -0400", hash_original_method = "B49A7EC3437DE14BA292DE44FA40B97A", hash_generated_method = "4D3C0F75BDB35EB440EF1B5D6B51AE7B")
         private void updateThreadHistory(Thread[] oldThreads, Thread[] newThreads) {
             addTaint(newThreads[0].getTaint());
@@ -435,30 +447,31 @@ for(Thread thread : added)
     if(thread == null)                
                 {
                     continue;
-                } //End block
+                } 
     if(thread == timerThread)                
                 {
                     continue;
-                } //End block
+                } 
                 addStartThread(thread);
-            } //End block
+            } 
 for(Thread thread : removed)
             {
     if(thread == null)                
                 {
                     continue;
-                } //End block
+                } 
     if(thread == timerThread)                
                 {
                     continue;
-                } //End block
+                } 
                 addEndThread(thread);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.040 -0400", hash_original_method = "D7E70BFB99D4B0D69C428CA3433E6D0D", hash_generated_method = "18D3EC400DDDCACC4A696B9FA5EFA1BA")
         private void addStartThread(Thread thread) {
             addTaint(thread.getTaint());
@@ -467,7 +480,7 @@ for(Thread thread : removed)
                 NullPointerException var8BA1A1DD61D992C72EF6A20FC49A560E_532962339 = new NullPointerException("thread == null");
                 var8BA1A1DD61D992C72EF6A20FC49A560E_532962339.addTaint(taint);
                 throw var8BA1A1DD61D992C72EF6A20FC49A560E_532962339;
-            } //End block
+            } 
             int threadId = nextThreadId++;
             Integer old = threadIds.put(thread, threadId);
     if(old != null)            
@@ -475,7 +488,7 @@ for(Thread thread : removed)
                 IllegalArgumentException varA8BFE586E288E5CBAD29016D9A621FB0_763804309 = new IllegalArgumentException("Thread already registered as " + old);
                 varA8BFE586E288E5CBAD29016D9A621FB0_763804309.addTaint(taint);
                 throw varA8BFE586E288E5CBAD29016D9A621FB0_763804309;
-            } //End block
+            } 
             String threadName = thread.getName();
             ThreadGroup group = thread.getThreadGroup();
             String groupName = group == null ? null : group.getName();
@@ -484,11 +497,12 @@ for(Thread thread : removed)
             HprofData.ThreadEvent event = HprofData.ThreadEvent.start(nextObjectId++, threadId,
                                                   threadName, groupName, parentGroupName);
             hprofData.addThreadEvent(event);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.041 -0400", hash_original_method = "631F90CADC4DC4D78F0863A31213AEA2", hash_generated_method = "5177424C0A265153A3AC2FF4C4886B6A")
         private void addEndThread(Thread thread) {
             addTaint(thread.getTaint());
@@ -497,26 +511,26 @@ for(Thread thread : removed)
                 NullPointerException var8BA1A1DD61D992C72EF6A20FC49A560E_14820023 = new NullPointerException("thread == null");
                 var8BA1A1DD61D992C72EF6A20FC49A560E_14820023.addTaint(taint);
                 throw var8BA1A1DD61D992C72EF6A20FC49A560E_14820023;
-            } //End block
+            } 
             Integer threadId = threadIds.remove(thread);
     if(threadId == null)            
             {
                 IllegalArgumentException varB4CF2BD55112C1CED34A8923E8F43362_501730967 = new IllegalArgumentException("Unknown thread " + thread);
                 varB4CF2BD55112C1CED34A8923E8F43362_501730967.addTaint(taint);
                 throw varB4CF2BD55112C1CED34A8923E8F43362_501730967;
-            } //End block
+            } 
             HprofData.ThreadEvent event = HprofData.ThreadEvent.end(threadId);
             hprofData.addThreadEvent(event);
-            // ---------- Original Method ----------
-            //if (thread == null) {
-                //throw new NullPointerException("thread == null");
-            //}
-            //Integer threadId = threadIds.remove(thread);
-            //if (threadId == null) {
-                //throw new IllegalArgumentException("Unknown thread " + thread);
-            //}
-            //HprofData.ThreadEvent event = HprofData.ThreadEvent.end(threadId);
-            //hprofData.addThreadEvent(event);
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
         }
 
         

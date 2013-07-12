@@ -1,6 +1,6 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -58,7 +58,7 @@ public class EditorInfo implements InputType, Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.217 -0400", hash_original_method = "B9ADFD40DF801C34FF4D54782A68254E", hash_generated_method = "B9ADFD40DF801C34FF4D54782A68254E")
     public EditorInfo ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -82,9 +82,9 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
                             | (inputType&TYPE_MASK_FLAGS);
             break;
 }
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -107,22 +107,22 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
                 + " fieldId=" + fieldId
                 + " fieldName=" + fieldName);
         pw.println(prefix + "extras=" + extras);
-        // ---------- Original Method ----------
-        //pw.println(prefix + "inputType=0x" + Integer.toHexString(inputType)
-                //+ " imeOptions=0x" + Integer.toHexString(imeOptions)
-                //+ " privateImeOptions=" + privateImeOptions);
-        //pw.println(prefix + "actionLabel=" + actionLabel
-                //+ " actionId=" + actionId);
-        //pw.println(prefix + "initialSelStart=" + initialSelStart
-                //+ " initialSelEnd=" + initialSelEnd
-                //+ " initialCapsMode=0x"
-                //+ Integer.toHexString(initialCapsMode));
-        //pw.println(prefix + "hintText=" + hintText
-                //+ " label=" + label);
-        //pw.println(prefix + "packageName=" + packageName
-                //+ " fieldId=" + fieldId
-                //+ " fieldName=" + fieldName);
-        //pw.println(prefix + "extras=" + extras);
+        
+        
+                
+                
+        
+                
+        
+                
+                
+                
+        
+                
+        
+                
+                
+        
     }
 
     
@@ -144,31 +144,32 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
         dest.writeInt(fieldId);
         dest.writeString(fieldName);
         dest.writeBundle(extras);
-        // ---------- Original Method ----------
-        //dest.writeInt(inputType);
-        //dest.writeInt(imeOptions);
-        //dest.writeString(privateImeOptions);
-        //TextUtils.writeToParcel(actionLabel, dest, flags);
-        //dest.writeInt(actionId);
-        //dest.writeInt(initialSelStart);
-        //dest.writeInt(initialSelEnd);
-        //dest.writeInt(initialCapsMode);
-        //TextUtils.writeToParcel(hintText, dest, flags);
-        //TextUtils.writeToParcel(label, dest, flags);
-        //dest.writeString(packageName);
-        //dest.writeInt(fieldId);
-        //dest.writeString(fieldName);
-        //dest.writeBundle(extras);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.219 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "FE4B29CE7F8C03B0D3C18F7D66E3A7AF")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1472675415 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319809975 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319809975;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -246,7 +247,7 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
             return new EditorInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public EditorInfo createFromParcel(Parcel source) {
             EditorInfo res = new EditorInfo();
             res.inputType = source.readInt();
@@ -266,7 +267,7 @@ switch(inputType&(TYPE_MASK_CLASS|TYPE_MASK_VARIATION)){
             return res;
         }
     
-    // orphaned legacy method
+    
     public EditorInfo[] newArray(int size) {
             return new EditorInfo[size];
         }

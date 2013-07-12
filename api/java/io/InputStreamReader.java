@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public class InputStreamReader extends Reader {
     public  InputStreamReader(InputStream in) {
         this(in, Charset.defaultCharset());
         addTaint(in.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,36 +44,36 @@ public class InputStreamReader extends Reader {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1506205537 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1506205537.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1506205537;
-        } //End block
+        } 
         this.in = in;
         try 
         {
             decoder = Charset.forName(enc).newDecoder().onMalformedInput(
                     CodingErrorAction.REPLACE).onUnmappableCharacter(
                     CodingErrorAction.REPLACE);
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             UnsupportedEncodingException varDA8FCC63ED22BFE7F42A166818154BA3_1244444747 = (UnsupportedEncodingException)
                     new UnsupportedEncodingException(enc).initCause(e);
             varDA8FCC63ED22BFE7F42A166818154BA3_1244444747.addTaint(taint);
             throw varDA8FCC63ED22BFE7F42A166818154BA3_1244444747;
-        } //End block
+        } 
         bytes.limit(0);
-        // ---------- Original Method ----------
-        //if (enc == null) {
-            //throw new NullPointerException();
-        //}
-        //this.in = in;
-        //try {
-            //decoder = Charset.forName(enc).newDecoder().onMalformedInput(
-                    //CodingErrorAction.REPLACE).onUnmappableCharacter(
-                    //CodingErrorAction.REPLACE);
-        //} catch (IllegalArgumentException e) {
-            //throw (UnsupportedEncodingException)
-                    //new UnsupportedEncodingException(enc).initCause(e);
-        //}
-        //bytes.limit(0);
+        
+        
+            
+        
+        
+        
+            
+                    
+                    
+        
+            
+                    
+        
+        
     }
 
     
@@ -84,11 +84,11 @@ public class InputStreamReader extends Reader {
         this.in = in;
         decoder = dec;
         bytes.limit(0);
-        // ---------- Original Method ----------
-        //dec.averageCharsPerByte();
-        //this.in = in;
-        //decoder = dec;
-        //bytes.limit(0);
+        
+        
+        
+        
+        
     }
 
     
@@ -100,12 +100,12 @@ public class InputStreamReader extends Reader {
                 CodingErrorAction.REPLACE).onUnmappableCharacter(
                 CodingErrorAction.REPLACE);
         bytes.limit(0);
-        // ---------- Original Method ----------
-        //this.in = in;
-        //decoder = charset.newDecoder().onMalformedInput(
-                //CodingErrorAction.REPLACE).onUnmappableCharacter(
-                //CodingErrorAction.REPLACE);
-        //bytes.limit(0);
+        
+        
+        
+                
+                
+        
     }
 
     
@@ -117,25 +117,25 @@ public class InputStreamReader extends Reader {
     if(decoder != null)            
             {
                 decoder.reset();
-            } //End block
+            } 
             decoder = null;
     if(in != null)            
             {
                 in.close();
                 in = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (decoder != null) {
-                //decoder.reset();
-            //}
-            //decoder = null;
-            //if (in != null) {
-                //in.close();
-                //in = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -146,15 +146,15 @@ public class InputStreamReader extends Reader {
 String var540C13E9E156B687226421B24F2DF178_484023316 =             null;
             var540C13E9E156B687226421B24F2DF178_484023316.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_484023316;
-        } //End block
+        } 
 String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharsetNames.get(decoder.charset());
         var0CAEB9C5EE04F06514583664597031A5_2090303622.addTaint(taint);
         return var0CAEB9C5EE04F06514583664597031A5_2090303622;
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return null;
-        //}
-        //return HistoricalCharsetNames.get(decoder.charset());
+        
+        
+            
+        
+        
     }
 
     
@@ -168,20 +168,20 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
                 IOException varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_107151171 = new IOException("InputStreamReader is closed");
                 varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_107151171.addTaint(taint);
                 throw varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_107151171;
-            } //End block
+            } 
             char[] buf = new char[1];
             int varA403D89C2CA6CC03C5AE994E3A0B4027_1784853438 = (read(buf, 0, 1) != -1 ? buf[0] : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_384688767 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_384688767;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (!isOpen()) {
-                //throw new IOException("InputStreamReader is closed");
-            //}
-            //char[] buf = new char[1];
-            //return read(buf, 0, 1) != -1 ? buf[0] : -1;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -198,14 +198,14 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
                 IOException varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_431289048 = new IOException("InputStreamReader is closed");
                 varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_431289048.addTaint(taint);
                 throw varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_431289048;
-            } //End block
+            } 
             Arrays.checkOffsetAndCount(buffer.length, offset, length);
     if(length == 0)            
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_223787281 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329707172 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_329707172;
-            } //End block
+            } 
             CharBuffer out = CharBuffer.wrap(buffer, offset, length);
             CoderResult result = CoderResult.UNDERFLOW;
             boolean needInput = !bytes.hasRemaining();
@@ -219,11 +219,11 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
     if(in.available() == 0 && out.position() > offset)                        
                         {
                             break;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     catch (IOException e)
                     {
-                    } //End block
+                    } 
                     int desiredByteCount = bytes.capacity() - bytes.limit();
                     int off = bytes.arrayOffset() + bytes.limit();
                     int actualByteCount = in.read(bytes.array(), off, desiredByteCount);
@@ -231,15 +231,15 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
                     {
                         endOfInput = true;
                         break;
-                    } //End block
+                    } 
                     else
     if(actualByteCount == 0)                    
                     {
                         break;
-                    } //End block
+                    } 
                     bytes.limit(bytes.limit() + actualByteCount);
                     needInput = false;
-                } //End block
+                } 
                 result = decoder.decode(bytes, out, false);
     if(result.isUnderflow())                
                 {
@@ -248,40 +248,41 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
                         bytes.compact();
                         bytes.limit(bytes.position());
                         bytes.position(0);
-                    } //End block
+                    } 
                     needInput = true;
-                } //End block
+                } 
                 else
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
     if(result == CoderResult.UNDERFLOW && endOfInput)            
             {
                 result = decoder.decode(bytes, out, true);
                 decoder.flush(out);
                 decoder.reset();
-            } //End block
+            } 
     if(result.isMalformed() || result.isUnmappable())            
             {
                 result.throwException();
-            } //End block
+            } 
             int var42025BE1D23AB7981C542C79B0CBFF55_174382358 = (out.position() - offset == 0 ? -1 : out.position() - offset);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223154977 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223154977;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.889 -0400", hash_original_method = "2814A675517787CC2FFF66E2663BBAA6", hash_generated_method = "306F146FAF6AE1EF393A1FAD21945A0A")
     private boolean isOpen() {
         boolean var0756A9CF6E7FC23D4EDE35D48E0E460B_1357918079 = (in != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1293596956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1293596956;
-        // ---------- Original Method ----------
-        //return in != null;
+        
+        
     }
 
     
@@ -295,31 +296,31 @@ String var0CAEB9C5EE04F06514583664597031A5_2090303622 =         HistoricalCharse
                 IOException varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1897297437 = new IOException("InputStreamReader is closed");
                 varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1897297437.addTaint(taint);
                 throw varC10ADDF6EFCFF82B0AD0EE2A95AAB1A9_1897297437;
-            } //End block
+            } 
             try 
             {
                 boolean var3B3558484A377AC5313F52A7F104C4B4_15142809 = (bytes.hasRemaining() || in.available() > 0);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_825457030 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_825457030;
-            } //End block
+            } 
             catch (IOException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_373444546 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776363306 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_776363306;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (in == null) {
-                //throw new IOException("InputStreamReader is closed");
-            //}
-            //try {
-                //return bytes.hasRemaining() || in.available() > 0;
-            //} catch (IOException e) {
-                //return false;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+                
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public final class ASN1Explicit extends ASN1Constructed {
         this(CLASS_CONTEXTSPECIFIC, tagNumber, type);
         addTaint(type.getTaint());
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,11 +26,12 @@ public final class ASN1Explicit extends ASN1Constructed {
         addTaint(tagNumber);
         addTaint(tagClass);
         this.type = type;
-        // ---------- Original Method ----------
-        //this.type = type;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.589 -0400", hash_original_method = "BF5194A9A90A1C345CA0C933EC20C89E", hash_generated_method = "BCAA1C3327D86DC612F57AB7AB96C8E3")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -41,7 +42,7 @@ public final class ASN1Explicit extends ASN1Constructed {
                     "but encountered tag " + Integer.toHexString(in.tag));
             var302D11138C35F46EB154744A76B3748E_1891086929.addTaint(taint);
             throw var302D11138C35F46EB154744A76B3748E_1891086929;
-        } //End block
+        } 
         in.next();
         in.content = type.decode(in);
     if(in.isVerify)        
@@ -49,22 +50,22 @@ public final class ASN1Explicit extends ASN1Constructed {
 Object var540C13E9E156B687226421B24F2DF178_2021558308 =             null;
             var540C13E9E156B687226421B24F2DF178_2021558308.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2021558308;
-        } //End block
+        } 
 Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_2074098184.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_2074098184;
-        // ---------- Original Method ----------
-        //if (constrId != in.tag) {
-            //throw new ASN1Exception("ASN.1 explicitly tagged type is expected at [" +
-                    //in.tagOffset + "]. Expected tag: " + Integer.toHexString(constrId) + ", " +
-                    //"but encountered tag " + Integer.toHexString(in.tag));
-        //}
-        //in.next();
-        //in.content = type.decode(in);
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+            
+                    
+                    
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -72,8 +73,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeExplicit(this);
-        // ---------- Original Method ----------
-        //out.encodeExplicit(this);
+        
+        
     }
 
     
@@ -81,8 +82,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.getExplicitLength(this);
-        // ---------- Original Method ----------
-        //out.getExplicitLength(this);
+        
+        
     }
 
     
@@ -92,8 +93,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_2074098184 =         getDecodedObject
 String var85EB69DE4D40021680FD60AD8F4CCC91_371082833 =         super.toString() + " for type " + type;
         var85EB69DE4D40021680FD60AD8F4CCC91_371082833.addTaint(taint);
         return var85EB69DE4D40021680FD60AD8F4CCC91_371082833;
-        // ---------- Original Method ----------
-        //return super.toString() + " for type " + type;
+        
+        
     }
 
     

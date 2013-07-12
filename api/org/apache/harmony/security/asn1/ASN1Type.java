@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public abstract class ASN1Type implements ASN1Constants {
     public  ASN1Type(int tagNumber) {
         this(CLASS_UNIVERSAL, tagNumber);
         addTaint(tagNumber);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,7 +30,7 @@ public abstract class ASN1Type implements ASN1Constants {
             IllegalArgumentException varB394477E1B9527F987AB61B6DAD092E1_1431102901 = new IllegalArgumentException("tagNumber < 0");
             varB394477E1B9527F987AB61B6DAD092E1_1431102901.addTaint(taint);
             throw varB394477E1B9527F987AB61B6DAD092E1_1431102901;
-        } //End block
+        } 
     if(tagClass != CLASS_UNIVERSAL && tagClass != CLASS_APPLICATION
                 && tagClass != CLASS_CONTEXTSPECIFIC
                 && tagClass != CLASS_PRIVATE)        
@@ -38,33 +38,33 @@ public abstract class ASN1Type implements ASN1Constants {
             IllegalArgumentException varAF3E0A278465527E0F55E46BF63A9C7D_1781343100 = new IllegalArgumentException("invalid tagClass");
             varAF3E0A278465527E0F55E46BF63A9C7D_1781343100.addTaint(taint);
             throw varAF3E0A278465527E0F55E46BF63A9C7D_1781343100;
-        } //End block
+        } 
     if(tagNumber < 31)        
         {
             this.id = tagClass + tagNumber;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var45E3A3112A7E3D708B0E2604EAD4FEE9_1270649037 = new IllegalArgumentException("tag long form not implemented");
             var45E3A3112A7E3D708B0E2604EAD4FEE9_1270649037.addTaint(taint);
             throw var45E3A3112A7E3D708B0E2604EAD4FEE9_1270649037;
-        } //End block
+        } 
         this.constrId = this.id + PC_CONSTRUCTED;
-        // ---------- Original Method ----------
-        //if (tagNumber < 0) {
-            //throw new IllegalArgumentException("tagNumber < 0");
-        //}
-        //if (tagClass != CLASS_UNIVERSAL && tagClass != CLASS_APPLICATION
-                //&& tagClass != CLASS_CONTEXTSPECIFIC
-                //&& tagClass != CLASS_PRIVATE) {
-            //throw new IllegalArgumentException("invalid tagClass");
-        //}
-        //if (tagNumber < 31) {
-            //this.id = tagClass + tagNumber;
-        //} else {
-            //throw new IllegalArgumentException("tag long form not implemented");
-        //}
-        //this.constrId = this.id + PC_CONSTRUCTED;
+        
+        
+            
+        
+        
+                
+                
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -74,8 +74,8 @@ public abstract class ASN1Type implements ASN1Constants {
 Object varA27427E0B663BE0893F37CE0F4386B67_909165490 =         decode(new DerInputStream(encoded));
         varA27427E0B663BE0893F37CE0F4386B67_909165490.addTaint(taint);
         return varA27427E0B663BE0893F37CE0F4386B67_909165490;
-        // ---------- Original Method ----------
-        //return decode(new DerInputStream(encoded));
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ Object varA27427E0B663BE0893F37CE0F4386B67_909165490 =         decode(new DerInp
 Object var7AC0DDE2E3F29BE738B0D32693D4008D_338888488 =         decode(new DerInputStream(encoded, offset, encodingLen));
         var7AC0DDE2E3F29BE738B0D32693D4008D_338888488.addTaint(taint);
         return var7AC0DDE2E3F29BE738B0D32693D4008D_338888488;
-        // ---------- Original Method ----------
-        //return decode(new DerInputStream(encoded, offset, encodingLen));
+        
+        
     }
 
     
@@ -98,8 +98,8 @@ Object var7AC0DDE2E3F29BE738B0D32693D4008D_338888488 =         decode(new DerInp
 Object var417CB3276EE229BF33C771F6ACA37265_1102470289 =         decode(new DerInputStream(in));
         var417CB3276EE229BF33C771F6ACA37265_1102470289.addTaint(taint);
         return var417CB3276EE229BF33C771F6ACA37265_1102470289;
-        // ---------- Original Method ----------
-        //return decode(new DerInputStream(in));
+        
+        
     }
 
     
@@ -109,10 +109,10 @@ Object var417CB3276EE229BF33C771F6ACA37265_1102470289 =         decode(new DerIn
         DerInputStream decoder = new DerInputStream(encoded);
         decoder.setVerify();
         decode(decoder);
-        // ---------- Original Method ----------
-        //DerInputStream decoder = new DerInputStream(encoded);
-        //decoder.setVerify();
-        //decode(decoder);
+        
+        
+        
+        
     }
 
     
@@ -122,10 +122,10 @@ Object var417CB3276EE229BF33C771F6ACA37265_1102470289 =         decode(new DerIn
         DerInputStream decoder = new DerInputStream(in);
         decoder.setVerify();
         decode(decoder);
-        // ---------- Original Method ----------
-        //DerInputStream decoder = new DerInputStream(in);
-        //decoder.setVerify();
-        //decode(decoder);
+        
+        
+        
+        
     }
 
     
@@ -136,9 +136,9 @@ Object var417CB3276EE229BF33C771F6ACA37265_1102470289 =         decode(new DerIn
         byte[] varE9B38D70B0F43548A3244899042B58E2_493215525 = (out.encoded);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_545251215 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_545251215;
-        // ---------- Original Method ----------
-        //DerOutputStream out = new DerOutputStream(this, object);
-        //return out.encoded;
+        
+        
+        
     }
 
     
@@ -148,14 +148,15 @@ Object var417CB3276EE229BF33C771F6ACA37265_1102470289 =         decode(new DerIn
     public abstract boolean checkTag(int identifier);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.722 -0400", hash_original_method = "C98349FCBC509D9B5E2186CE1C87C57F", hash_generated_method = "7AF82CF4C3F53F3B61CAA73663B20DD9")
     protected Object getDecodedObject(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
 Object var57556EEB4589CFB95311E6AAE5182292_2051022839 =         in.content;
         var57556EEB4589CFB95311E6AAE5182292_2051022839.addTaint(taint);
         return var57556EEB4589CFB95311E6AAE5182292_2051022839;
-        // ---------- Original Method ----------
-        //return in.content;
+        
+        
     }
 
     
@@ -168,6 +169,7 @@ Object var57556EEB4589CFB95311E6AAE5182292_2051022839 =         in.content;
     public abstract void setEncodingContent(BerOutputStream out);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.723 -0400", hash_original_method = "FA7F24CC02CDE7C91DB883C7C7C15F71", hash_generated_method = "2F73D63D0D92227C2F94C1357B4CA638")
     public int getEncodedLength(BerOutputStream out) {
         addTaint(out.getTaint());
@@ -179,23 +181,23 @@ Object var57556EEB4589CFB95311E6AAE5182292_2051022839 =         in.content;
 for(int cur = out.length >> 8;cur > 0;len++)
             {
                 cur = cur >> 8;
-            } //End block
-        } //End block
+            } 
+        } 
         len += out.length;
         int varF5A8E923F8CD24B56B3BAB32358CC58A_850290243 = (len);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719085611 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1719085611;
-        // ---------- Original Method ----------
-        //int len = 1;
-        //len++;
-        //if (out.length > 127) {
-            //len++;
-            //for (int cur = out.length >> 8; cur > 0; len++) {
-                //cur = cur >> 8;
-            //}
-        //}
-        //len += out.length;
-        //return len;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -205,8 +207,8 @@ for(int cur = out.length >> 8;cur > 0;len++)
 String var54A56088BA1CC5BAD6315483DACF2971_1197177353 =         getClass().getName() + "(tag: 0x" + Integer.toHexString(0xff & this.id) + ")";
         var54A56088BA1CC5BAD6315483DACF2971_1197177353.addTaint(taint);
         return var54A56088BA1CC5BAD6315483DACF2971_1197177353;
-        // ---------- Original Method ----------
-        //return getClass().getName() + "(tag: 0x" + Integer.toHexString(0xff & this.id) + ")";
+        
+        
     }
 
     

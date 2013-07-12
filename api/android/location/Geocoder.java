@@ -1,6 +1,6 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,17 +30,17 @@ public final class Geocoder {
             NullPointerException var3F3F6EF29B25D30496E9F54071267749_1807976631 = new NullPointerException("locale == null");
             var3F3F6EF29B25D30496E9F54071267749_1807976631.addTaint(taint);
             throw var3F3F6EF29B25D30496E9F54071267749_1807976631;
-        } //End block
+        } 
         mParams = new GeocoderParams(context, locale);
         IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
         mService = ILocationManager.Stub.asInterface(b);
-        // ---------- Original Method ----------
-        //if (locale == null) {
-            //throw new NullPointerException("locale == null");
-        //}
-        //mParams = new GeocoderParams(context, locale);
-        //IBinder b = ServiceManager.getService(Context.LOCATION_SERVICE);
-        //mService = ILocationManager.Stub.asInterface(b);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -48,7 +48,7 @@ public final class Geocoder {
     public  Geocoder(Context context) {
         this(context, Locale.getDefault());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -74,13 +74,13 @@ public final class Geocoder {
             IllegalArgumentException var5CDB5E8BE2780A449DF91F3598B8F033_1523449452 = new IllegalArgumentException("latitude == " + latitude);
             var5CDB5E8BE2780A449DF91F3598B8F033_1523449452.addTaint(taint);
             throw var5CDB5E8BE2780A449DF91F3598B8F033_1523449452;
-        } //End block
+        } 
     if(longitude < -180.0 || longitude > 180.0)        
         {
             IllegalArgumentException var7C246BAC6A5717BCB23B4212A47C4761_1553668954 = new IllegalArgumentException("longitude == " + longitude);
             var7C246BAC6A5717BCB23B4212A47C4761_1553668954.addTaint(taint);
             throw var7C246BAC6A5717BCB23B4212A47C4761_1553668954;
-        } //End block
+        } 
         try 
         {
             List<Address> results = new ArrayList<Address>();
@@ -91,40 +91,40 @@ public final class Geocoder {
                 IOException var8B943AA6A4D3283BFEECC199C0F539AA_534911420 = new IOException(ex);
                 var8B943AA6A4D3283BFEECC199C0F539AA_534911420.addTaint(taint);
                 throw var8B943AA6A4D3283BFEECC199C0F539AA_534911420;
-            } //End block
+            } 
             else
             {
 List<Address> var238ECCC9872FFCA0B3C3DB83598FF044_1339643945 =                 results;
                 var238ECCC9872FFCA0B3C3DB83598FF044_1339643945.addTaint(taint);
                 return var238ECCC9872FFCA0B3C3DB83598FF044_1339643945;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
 List<Address> var540C13E9E156B687226421B24F2DF178_646930000 =             null;
             var540C13E9E156B687226421B24F2DF178_646930000.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_646930000;
-        } //End block
-        // ---------- Original Method ----------
-        //if (latitude < -90.0 || latitude > 90.0) {
-            //throw new IllegalArgumentException("latitude == " + latitude);
-        //}
-        //if (longitude < -180.0 || longitude > 180.0) {
-            //throw new IllegalArgumentException("longitude == " + longitude);
-        //}
-        //try {
-            //List<Address> results = new ArrayList<Address>();
-            //String ex =  mService.getFromLocation(latitude, longitude, maxResults,
-                //mParams, results);
-            //if (ex != null) {
-                //throw new IOException(ex);
-            //} else {
-                //return results;
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "getFromLocation: got RemoteException", e);
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+                
+            
+        
+            
+            
+        
     }
 
     
@@ -137,7 +137,7 @@ List<Address> var540C13E9E156B687226421B24F2DF178_646930000 =             null;
             IllegalArgumentException var798B9480099C940248D3D5C9994F9EF0_1822470075 = new IllegalArgumentException("locationName == null");
             var798B9480099C940248D3D5C9994F9EF0_1822470075.addTaint(taint);
             throw var798B9480099C940248D3D5C9994F9EF0_1822470075;
-        } //End block
+        } 
         try 
         {
             List<Address> results = new ArrayList<Address>();
@@ -148,37 +148,37 @@ List<Address> var540C13E9E156B687226421B24F2DF178_646930000 =             null;
                 IOException var8B943AA6A4D3283BFEECC199C0F539AA_1874494245 = new IOException(ex);
                 var8B943AA6A4D3283BFEECC199C0F539AA_1874494245.addTaint(taint);
                 throw var8B943AA6A4D3283BFEECC199C0F539AA_1874494245;
-            } //End block
+            } 
             else
             {
 List<Address> var238ECCC9872FFCA0B3C3DB83598FF044_6251130 =                 results;
                 var238ECCC9872FFCA0B3C3DB83598FF044_6251130.addTaint(taint);
                 return var238ECCC9872FFCA0B3C3DB83598FF044_6251130;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
 List<Address> var540C13E9E156B687226421B24F2DF178_1064467752 =             null;
             var540C13E9E156B687226421B24F2DF178_1064467752.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1064467752;
-        } //End block
-        // ---------- Original Method ----------
-        //if (locationName == null) {
-            //throw new IllegalArgumentException("locationName == null");
-        //}
-        //try {
-            //List<Address> results = new ArrayList<Address>();
-            //String ex = mService.getFromLocationName(locationName,
-                //0, 0, 0, 0, maxResults, mParams, results);
-            //if (ex != null) {
-                //throw new IOException(ex);
-            //} else {
-                //return results;
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "getFromLocationName: got RemoteException", e);
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+                
+            
+        
+            
+            
+        
     }
 
     
@@ -197,35 +197,35 @@ List<Address> var540C13E9E156B687226421B24F2DF178_1064467752 =             null;
             IllegalArgumentException var798B9480099C940248D3D5C9994F9EF0_1082302215 = new IllegalArgumentException("locationName == null");
             var798B9480099C940248D3D5C9994F9EF0_1082302215.addTaint(taint);
             throw var798B9480099C940248D3D5C9994F9EF0_1082302215;
-        } //End block
+        } 
     if(lowerLeftLatitude < -90.0 || lowerLeftLatitude > 90.0)        
         {
             IllegalArgumentException varDC5BD51928E1A02BC95178BCDAB3A8A9_1941677360 = new IllegalArgumentException("lowerLeftLatitude == "
                 + lowerLeftLatitude);
             varDC5BD51928E1A02BC95178BCDAB3A8A9_1941677360.addTaint(taint);
             throw varDC5BD51928E1A02BC95178BCDAB3A8A9_1941677360;
-        } //End block
+        } 
     if(lowerLeftLongitude < -180.0 || lowerLeftLongitude > 180.0)        
         {
             IllegalArgumentException var53D4CADC41B8EE441D510B1810C29475_377335922 = new IllegalArgumentException("lowerLeftLongitude == "
                 + lowerLeftLongitude);
             var53D4CADC41B8EE441D510B1810C29475_377335922.addTaint(taint);
             throw var53D4CADC41B8EE441D510B1810C29475_377335922;
-        } //End block
+        } 
     if(upperRightLatitude < -90.0 || upperRightLatitude > 90.0)        
         {
             IllegalArgumentException varC4B8A31C00CEFDBFF48C811CEE2B644F_478270708 = new IllegalArgumentException("upperRightLatitude == "
                 + upperRightLatitude);
             varC4B8A31C00CEFDBFF48C811CEE2B644F_478270708.addTaint(taint);
             throw varC4B8A31C00CEFDBFF48C811CEE2B644F_478270708;
-        } //End block
+        } 
     if(upperRightLongitude < -180.0 || upperRightLongitude > 180.0)        
         {
             IllegalArgumentException var5FAB725CCE17B470073F2D50AE0545C8_599382342 = new IllegalArgumentException("upperRightLongitude == "
                 + upperRightLongitude);
             var5FAB725CCE17B470073F2D50AE0545C8_599382342.addTaint(taint);
             throw var5FAB725CCE17B470073F2D50AE0545C8_599382342;
-        } //End block
+        } 
         try 
         {
             ArrayList<Address> result = new ArrayList<Address>();
@@ -237,22 +237,22 @@ List<Address> var540C13E9E156B687226421B24F2DF178_1064467752 =             null;
                 IOException var8B943AA6A4D3283BFEECC199C0F539AA_523494421 = new IOException(ex);
                 var8B943AA6A4D3283BFEECC199C0F539AA_523494421.addTaint(taint);
                 throw var8B943AA6A4D3283BFEECC199C0F539AA_523494421;
-            } //End block
+            } 
             else
             {
 List<Address> varDC838461EE2FA0CA4C9BBB70A15456B0_1881112598 =                 result;
                 varDC838461EE2FA0CA4C9BBB70A15456B0_1881112598.addTaint(taint);
                 return varDC838461EE2FA0CA4C9BBB70A15456B0_1881112598;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
 List<Address> var540C13E9E156B687226421B24F2DF178_479824745 =             null;
             var540C13E9E156B687226421B24F2DF178_479824745.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_479824745;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

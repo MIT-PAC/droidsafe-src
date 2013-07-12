@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class DefaultRouter implements Router {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.408 -0400", hash_original_method = "1E8D5551C1C844D291A6EDC5BD70E069", hash_generated_method = "8B9D0899EFA10ABEE473358BCF33303F")
     private  DefaultRouter() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,7 +42,7 @@ public class DefaultRouter implements Router {
             {
                 this.defaultRoute = (Hop) this.sipStack.getAddressResolver()
                         .resolveAddress((Hop) (new HopImpl(defaultRoute)));
-            } //End block
+            } 
             catch (IllegalArgumentException ex)
             {
                 ((SIPTransactionStack) sipStack)
@@ -51,22 +51,22 @@ public class DefaultRouter implements Router {
                                 "Invalid default route specification - need host:port/transport");
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //this.sipStack = (SipStackImpl) sipStack;
-        //if (defaultRoute != null) {
-            //try {
-                //this.defaultRoute = (Hop) this.sipStack.getAddressResolver()
-                        //.resolveAddress((Hop) (new HopImpl(defaultRoute)));
-            //} catch (IllegalArgumentException ex) {
-                //((SIPTransactionStack) sipStack)
-                        //.getStackLogger()
-                        //.logError(
-                                //"Invalid default route specification - need host:port/transport");
-                //throw ex;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                        
+            
+                
+                        
+                        
+                                
+                
+            
+        
     }
 
     
@@ -80,7 +80,7 @@ public class DefaultRouter implements Router {
 Hop var7C3D9107A1BB6CCC233CC962C791CA18_735859892 =             defaultRoute;
             var7C3D9107A1BB6CCC233CC962C791CA18_735859892.addTaint(taint);
             return var7C3D9107A1BB6CCC233CC962C791CA18_735859892;
-        } //End block
+        } 
         javax.sip.address.URI requestURI = requestLine.getUri();
     if(requestURI == null)        
         {
@@ -102,7 +102,7 @@ Hop var7C3D9107A1BB6CCC233CC962C791CA18_735859892 =             defaultRoute;
     if(sipStack.isLoggingEnabled())                    
                     sipStack.getStackLogger()
                                 .logDebug("Route post processing fixed strict routing");
-                } //End block
+                } 
                 Hop hop = createHop(sipUri,request);
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger()
@@ -110,14 +110,14 @@ Hop var7C3D9107A1BB6CCC233CC962C791CA18_735859892 =             defaultRoute;
 Hop varCF598A87F121766CA237EE82036D5763_471176525 =                 hop;
                 varCF598A87F121766CA237EE82036D5763_471176525.addTaint(taint);
                 return varCF598A87F121766CA237EE82036D5763_471176525;
-            } //End block
+            } 
             else
             {
                 SipException varF581249094E58B797A880CDDFBC80E70_547484095 = new SipException("First Route not a SIP URI");
                 varF581249094E58B797A880CDDFBC80E70_547484095.addTaint(taint);
                 throw varF581249094E58B797A880CDDFBC80E70_547484095;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(requestURI.isSipURI()
                 && ((SipURI) requestURI).getMAddrParam() != null)        
@@ -130,7 +130,7 @@ Hop varCF598A87F121766CA237EE82036D5763_471176525 =                 hop;
 Hop varCF598A87F121766CA237EE82036D5763_1599305194 =             hop;
             varCF598A87F121766CA237EE82036D5763_1599305194.addTaint(taint);
             return varCF598A87F121766CA237EE82036D5763_1599305194;
-        } //End block
+        } 
         else
     if(defaultRoute != null)        
         {
@@ -141,7 +141,7 @@ Hop varCF598A87F121766CA237EE82036D5763_1599305194 =             hop;
 Hop var7C3D9107A1BB6CCC233CC962C791CA18_1244361738 =             defaultRoute;
             var7C3D9107A1BB6CCC233CC962C791CA18_1244361738.addTaint(taint);
             return var7C3D9107A1BB6CCC233CC962C791CA18_1244361738;
-        } //End block
+        } 
         else
     if(requestURI.isSipURI())        
         {
@@ -154,11 +154,11 @@ Hop var7C3D9107A1BB6CCC233CC962C791CA18_1244361738 =             defaultRoute;
             {
                 sipStack.getStackLogger()
                         .logDebug("returning null hop -- loop detected");
-            } //End block
+            } 
 Hop varCF598A87F121766CA237EE82036D5763_2069249668 =             hop;
             varCF598A87F121766CA237EE82036D5763_2069249668.addTaint(taint);
             return varCF598A87F121766CA237EE82036D5763_2069249668;
-        } //End block
+        } 
         else
         {
             InternalErrorHandler.handleException("Unexpected non-sip URI",
@@ -166,9 +166,9 @@ Hop varCF598A87F121766CA237EE82036D5763_2069249668 =             hop;
 Hop var540C13E9E156B687226421B24F2DF178_1321341416 =             null;
             var540C13E9E156B687226421B24F2DF178_1321341416.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1321341416;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -187,20 +187,20 @@ Hop var540C13E9E156B687226421B24F2DF178_1321341416 =             null;
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug("post: fixStrictRouting" + req);
-        } //End block
-        // ---------- Original Method ----------
-        //RouteList routes = req.getRouteHeaders();
-        //Route first = (Route) routes.getFirst();
-        //SipUri firstUri = (SipUri) first.getAddress().getURI();
-        //routes.removeFirst();
-        //AddressImpl addr = new AddressImpl();
-        //addr.setAddess(req.getRequestURI());
-        //Route route = new Route(addr);
-        //routes.add(route);
-        //req.setRequestURI(firstUri);
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("post: fixStrictRouting" + req);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -214,19 +214,19 @@ Hop var540C13E9E156B687226421B24F2DF178_1321341416 =             null;
         {
             ViaHeader via = (ViaHeader) request.getHeader(ViaHeader.NAME);
             transport = via.getTransport();
-        } //End block
+        } 
         int port;
     if(sipUri.getPort() != -1)        
         {
             port = sipUri.getPort();
-        } //End block
+        } 
         else
         {
     if(transport.equalsIgnoreCase(SIPConstants.TLS))            
             port = 5061;
             else
             port = 5060;
-        } //End block
+        } 
         String host = sipUri.getMAddrParam() != null ? sipUri.getMAddrParam()
                 : sipUri.getHost();
         AddressResolver addressResolver = this.sipStack.getAddressResolver();
@@ -234,18 +234,19 @@ Hop var65DBDE1B68EBAE1D8996367F5504793F_1122010583 =         addressResolver
                 .resolveAddress(new HopImpl(host, port, transport));
         var65DBDE1B68EBAE1D8996367F5504793F_1122010583.addTaint(taint);
         return var65DBDE1B68EBAE1D8996367F5504793F_1122010583;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.418 -0400", hash_original_method = "4C71B768C5A06ACD6891DA2692157012", hash_generated_method = "0DD18B7568666651288BE099106B1FC2")
     public javax.sip.address.Hop getOutboundProxy() {
 javax.sip.address.Hop varF8E8BFFE70D4C82F135420B297CB0572_695786099 =         this.defaultRoute;
         varF8E8BFFE70D4C82F135420B297CB0572_695786099.addTaint(taint);
         return varF8E8BFFE70D4C82F135420B297CB0572_695786099;
-        // ---------- Original Method ----------
-        //return this.defaultRoute;
+        
+        
     }
 
     
@@ -259,21 +260,21 @@ javax.sip.address.Hop varF8E8BFFE70D4C82F135420B297CB0572_695786099 =         th
 ListIterator var20F8225C0A6BB17E1A7F99EEDC8CFDB8_1623850426 =             llist.listIterator();
             var20F8225C0A6BB17E1A7F99EEDC8CFDB8_1623850426.addTaint(taint);
             return var20F8225C0A6BB17E1A7F99EEDC8CFDB8_1623850426;
-        } //End block
+        } 
         catch (SipException ex)
         {
 ListIterator var540C13E9E156B687226421B24F2DF178_1682092073 =             null;
             var540C13E9E156B687226421B24F2DF178_1682092073.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1682092073;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //LinkedList llist = new LinkedList();
-            //llist.add(this.getNextHop(request));
-            //return llist.listIterator();
-        //} catch (SipException ex) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     

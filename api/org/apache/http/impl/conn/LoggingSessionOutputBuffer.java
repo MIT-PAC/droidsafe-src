@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,9 +22,9 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
         super();
         this.out = out;
         this.wire = wire;
-        // ---------- Original Method ----------
-        //this.out = out;
-        //this.wire = wire;
+        
+        
+        
     }
 
     
@@ -37,12 +37,12 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     if(this.wire.enabled())        
         {
             this.wire.output(b, off, len);
-        } //End block
-        // ---------- Original Method ----------
-        //this.out.write(b,  off,  len);
-        //if (this.wire.enabled()) {
-            //this.wire.output(b, off, len);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -53,12 +53,12 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     if(this.wire.enabled())        
         {
             this.wire.output(b);
-        } //End block
-        // ---------- Original Method ----------
-        //this.out.write(b);
-        //if (this.wire.enabled()) {
-            //this.wire.output(b);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -69,20 +69,20 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     if(this.wire.enabled())        
         {
             this.wire.output(b);
-        } //End block
-        // ---------- Original Method ----------
-        //this.out.write(b);
-        //if (this.wire.enabled()) {
-            //this.wire.output(b);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.876 -0400", hash_original_method = "A5A452E28D931563D6707491621FFBE7", hash_generated_method = "659F5DF70DF5E6C77EDF97533C3E99AE")
     public void flush() throws IOException {
         this.out.flush();
-        // ---------- Original Method ----------
-        //this.out.flush();
+        
+        
     }
 
     
@@ -94,13 +94,13 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
         {
             String s = new String(buffer.buffer(), 0, buffer.length());
             this.wire.output(s + "[EOL]");
-        } //End block
-        // ---------- Original Method ----------
-        //this.out.writeLine(buffer);
-        //if (this.wire.enabled()) {
-            //String s = new String(buffer.buffer(), 0, buffer.length());
-            //this.wire.output(s + "[EOL]");
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -111,12 +111,12 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
     if(this.wire.enabled())        
         {
             this.wire.output(s + "[EOL]");
-        } //End block
-        // ---------- Original Method ----------
-        //this.out.writeLine(s);
-        //if (this.wire.enabled()) {
-            //this.wire.output(s + "[EOL]");
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -125,8 +125,8 @@ public class LoggingSessionOutputBuffer implements SessionOutputBuffer {
 HttpTransportMetrics var720CA9FBB3D3518FCE8644278DFC2DC3_554438409 =         this.out.getMetrics();
         var720CA9FBB3D3518FCE8644278DFC2DC3_554438409.addTaint(taint);
         return var720CA9FBB3D3518FCE8644278DFC2DC3_554438409;
-        // ---------- Original Method ----------
-        //return this.out.getMetrics();
+        
+        
     }
 
     

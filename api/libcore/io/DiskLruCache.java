@@ -1,6 +1,6 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -128,13 +128,13 @@ public final class DiskLruCache implements Closeable {
         this.journalFileTmp = new File(directory, JOURNAL_FILE_TMP);
         this.valueCount = valueCount;
         this.maxSize = maxSize;
-        // ---------- Original Method ----------
-        //this.directory = directory;
-        //this.appVersion = appVersion;
-        //this.journalFile = new File(directory, JOURNAL_FILE);
-        //this.journalFileTmp = new File(directory, JOURNAL_FILE_TMP);
-        //this.valueCount = valueCount;
-        //this.maxSize = maxSize;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -185,26 +185,26 @@ public final class DiskLruCache implements Closeable {
                         + magic + ", " + version + ", " + valueCountString + ", " + blank + "]");
                 varC35D68F5D6D27CE14683BFD393F15A76_661524999.addTaint(taint);
                 throw varC35D68F5D6D27CE14683BFD393F15A76_661524999;
-            } //End block
+            } 
             while
 (true)            
             {
                 try 
                 {
                     readJournalLine(Streams.readAsciiLine(in));
-                } //End block
+                } 
                 catch (EOFException endOfJournal)
                 {
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             IoUtils.closeQuietly(in);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -217,42 +217,42 @@ public final class DiskLruCache implements Closeable {
             IOException varC3F04662EE0ABADDB170B82F1DEA0AED_1364137354 = new IOException("unexpected journal line: " + line);
             varC3F04662EE0ABADDB170B82F1DEA0AED_1364137354.addTaint(taint);
             throw varC3F04662EE0ABADDB170B82F1DEA0AED_1364137354;
-        } //End block
+        } 
         String key = parts[1];
     if(parts[0].equals(REMOVE) && parts.length == 2)        
         {
             lruEntries.remove(key);
             return;
-        } //End block
+        } 
         Entry entry = lruEntries.get(key);
     if(entry == null)        
         {
             entry = new Entry(key);
             lruEntries.put(key, entry);
-        } //End block
+        } 
     if(parts[0].equals(CLEAN) && parts.length == 2 + valueCount)        
         {
             entry.readable = true;
             entry.currentEditor = null;
             entry.setLengths(Arrays.copyOfRange(parts, 2, parts.length));
-        } //End block
+        } 
         else
     if(parts[0].equals(DIRTY) && parts.length == 2)        
         {
             entry.currentEditor = new Editor(entry);
-        } //End block
+        } 
         else
     if(parts[0].equals(READ) && parts.length == 2)        
         {
-        } //End block
+        } 
         else
         {
             IOException varC3F04662EE0ABADDB170B82F1DEA0AED_1135135000 = new IOException("unexpected journal line: " + line);
             varC3F04662EE0ABADDB170B82F1DEA0AED_1135135000.addTaint(taint);
             throw varC3F04662EE0ABADDB170B82F1DEA0AED_1135135000;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -267,8 +267,8 @@ for(Iterator<Entry> i = lruEntries.values().iterator();i.hasNext();)
 for(int t = 0;t < valueCount;t++)
                 {
                     size += entry.lengths[t];
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 entry.currentEditor = null;
@@ -276,27 +276,27 @@ for(int t = 0;t < valueCount;t++)
                 {
                     deleteIfExists(entry.getCleanFile(t));
                     deleteIfExists(entry.getDirtyFile(t));
-                } //End block
+                } 
                 i.remove();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //deleteIfExists(journalFileTmp);
-        //for (Iterator<Entry> i = lruEntries.values().iterator(); i.hasNext(); ) {
-            //Entry entry = i.next();
-            //if (entry.currentEditor == null) {
-                //for (int t = 0; t < valueCount; t++) {
-                    //size += entry.lengths[t];
-                //}
-            //} else {
-                //entry.currentEditor = null;
-                //for (int t = 0; t < valueCount; t++) {
-                    //deleteIfExists(entry.getCleanFile(t));
-                    //deleteIfExists(entry.getDirtyFile(t));
-                //}
-                //i.remove();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                
+                    
+                    
+                
+                
+            
+        
     }
 
     
@@ -305,7 +305,7 @@ for(int t = 0;t < valueCount;t++)
     if(journalWriter != null)        
         {
             journalWriter.close();
-        } //End block
+        } 
         Writer writer = new BufferedWriter(new FileWriter(journalFileTmp));
         writer.write(MAGIC);
         writer.write("\n");
@@ -321,17 +321,17 @@ for(Entry entry : lruEntries.values())
     if(entry.currentEditor != null)            
             {
                 writer.write(DIRTY + ' ' + entry.key + '\n');
-            } //End block
+            } 
             else
             {
                 writer.write(CLEAN + ' ' + entry.key + entry.getLengths() + '\n');
-            } //End block
-        } //End block
+            } 
+        } 
         writer.close();
         journalFileTmp.renameTo(journalFile);
         journalWriter = new BufferedWriter(new FileWriter(journalFile, true));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -357,60 +357,60 @@ for(Entry entry : lruEntries.values())
 Snapshot var540C13E9E156B687226421B24F2DF178_2099076932 =             null;
             var540C13E9E156B687226421B24F2DF178_2099076932.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2099076932;
-        } //End block
+        } 
     if(!entry.readable)        
         {
 Snapshot var540C13E9E156B687226421B24F2DF178_311533475 =             null;
             var540C13E9E156B687226421B24F2DF178_311533475.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_311533475;
-        } //End block
+        } 
         InputStream[] ins = new InputStream[valueCount];
         try 
         {
 for(int i = 0;i < valueCount;i++)
             {
                 ins[i] = new FileInputStream(entry.getCleanFile(i));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (FileNotFoundException e)
         {
 Snapshot var540C13E9E156B687226421B24F2DF178_817458057 =             null;
             var540C13E9E156B687226421B24F2DF178_817458057.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_817458057;
-        } //End block
+        } 
         redundantOpCount++;
         journalWriter.append(READ + ' ' + key + '\n');
     if(journalRebuildRequired())        
         {
             executorService.submit(cleanupCallable);
-        } //End block
+        } 
 Snapshot var2E6A24A5A6783496DE3A5FF2F4E2D6B9_1114355775 =         new Snapshot(ins);
         var2E6A24A5A6783496DE3A5FF2F4E2D6B9_1114355775.addTaint(taint);
         return var2E6A24A5A6783496DE3A5FF2F4E2D6B9_1114355775;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //validateKey(key);
-        //Entry entry = lruEntries.get(key);
-        //if (entry == null) {
-            //return null;
-        //}
-        //if (!entry.readable) {
-            //return null;
-        //}
-        //InputStream[] ins = new InputStream[valueCount];
-        //try {
-            //for (int i = 0; i < valueCount; i++) {
-                //ins[i] = new FileInputStream(entry.getCleanFile(i));
-            //}
-        //} catch (FileNotFoundException e) {
-            //return null;
-        //}
-        //redundantOpCount++;
-        //journalWriter.append(READ + ' ' + key + '\n');
-        //if (journalRebuildRequired()) {
-            //executorService.submit(cleanupCallable);
-        //}
-        //return new Snapshot(ins);
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -424,14 +424,14 @@ Snapshot var2E6A24A5A6783496DE3A5FF2F4E2D6B9_1114355775 =         new Snapshot(i
         {
             entry = new Entry(key);
             lruEntries.put(key, entry);
-        } //End block
+        } 
         else
     if(entry.currentEditor != null)        
         {
 Editor var540C13E9E156B687226421B24F2DF178_1509719822 =             null;
             var540C13E9E156B687226421B24F2DF178_1509719822.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1509719822;
-        } //End block
+        } 
         Editor editor = new Editor(entry);
         entry.currentEditor = editor;
         journalWriter.write(DIRTY + ' ' + key + '\n');
@@ -439,51 +439,54 @@ Editor var540C13E9E156B687226421B24F2DF178_1509719822 =             null;
 Editor varED224B1BF4EAE660E8B6808A4D079108_1697270305 =         editor;
         varED224B1BF4EAE660E8B6808A4D079108_1697270305.addTaint(taint);
         return varED224B1BF4EAE660E8B6808A4D079108_1697270305;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //validateKey(key);
-        //Entry entry = lruEntries.get(key);
-        //if (entry == null) {
-            //entry = new Entry(key);
-            //lruEntries.put(key, entry);
-        //} else if (entry.currentEditor != null) {
-            //return null;
-        //}
-        //Editor editor = new Editor(entry);
-        //entry.currentEditor = editor;
-        //journalWriter.write(DIRTY + ' ' + key + '\n');
-        //journalWriter.flush();
-        //return editor;
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.488 -0400", hash_original_method = "0F452AFCA1F8F7ACF1A711B33CB47BDA", hash_generated_method = "A1A4584BBF9CB6C119624A39FA8A7379")
     public File getDirectory() {
 File varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378 =         directory;
         varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378.addTaint(taint);
         return varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378;
-        // ---------- Original Method ----------
-        //return directory;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.488 -0400", hash_original_method = "4A03A0F188DC0124026C9315925210D3", hash_generated_method = "4CF1DE5FFD969E140F15A4718D9BDBFE")
     public long maxSize() {
         long varB78E1120B12ABD7215D67324FE9476FF_990030433 = (maxSize);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1880789230 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1880789230;
-        // ---------- Original Method ----------
-        //return maxSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.488 -0400", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "2629D326656B2E81DF02B8AEB1AD56E3")
     public synchronized long size() {
         long varF7BD60B75B29D79B660A2859395C1A24_1025877627 = (size);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1926173696 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1926173696;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -497,7 +500,7 @@ File varC39D8F3C6A92AA6D50DA32871B590FE5_1869118378 =         directory;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_149214331 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_149214331.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_149214331;
-        } //End block
+        } 
     if(success && !entry.readable)        
         {
 for(int i = 0;i < valueCount;i++)
@@ -508,9 +511,9 @@ for(int i = 0;i < valueCount;i++)
                     IllegalStateException var4B857C66166436824D960C1259A1506D_2029661886 = new IllegalStateException("edit didn't create file " + i);
                     var4B857C66166436824D960C1259A1506D_2029661886.addTaint(taint);
                     throw var4B857C66166436824D960C1259A1506D_2029661886;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 for(int i = 0;i < valueCount;i++)
         {
             File dirty = entry.getDirtyFile(i);
@@ -524,31 +527,31 @@ for(int i = 0;i < valueCount;i++)
                     long newLength = clean.length();
                     entry.lengths[i] = newLength;
                     size = size - oldLength + newLength;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 deleteIfExists(dirty);
-            } //End block
-        } //End block
+            } 
+        } 
         redundantOpCount++;
         entry.currentEditor = null;
     if(entry.readable | success)        
         {
             entry.readable = true;
             journalWriter.write(CLEAN + ' ' + entry.key + entry.getLengths() + '\n');
-        } //End block
+        } 
         else
         {
             lruEntries.remove(entry.key);
             journalWriter.write(REMOVE + ' ' + entry.key + '\n');
-        } //End block
+        } 
     if(size > maxSize || journalRebuildRequired())        
         {
             executorService.submit(cleanupCallable);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -559,10 +562,10 @@ for(int i = 0;i < valueCount;i++)
                 && redundantOpCount >= lruEntries.size());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_611139408 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_611139408;
-        // ---------- Original Method ----------
-        //final int REDUNDANT_OP_COMPACT_THRESHOLD = 2000;
-        //return redundantOpCount >= REDUNDANT_OP_COMPACT_THRESHOLD
-                //&& redundantOpCount >= lruEntries.size();
+        
+        
+        
+                
     }
 
     
@@ -577,7 +580,7 @@ for(int i = 0;i < valueCount;i++)
             boolean var68934A3E9455FA72420237EB05902327_1077259640 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1843949266 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1843949266;
-        } //End block
+        } 
 for(int i = 0;i < valueCount;i++)
         {
             File file = entry.getCleanFile(i);
@@ -586,52 +589,53 @@ for(int i = 0;i < valueCount;i++)
                 IOException varC14CC3D34FCD5B2EBA65BAA3A90CE992_111297718 = new IOException("failed to delete " + file);
                 varC14CC3D34FCD5B2EBA65BAA3A90CE992_111297718.addTaint(taint);
                 throw varC14CC3D34FCD5B2EBA65BAA3A90CE992_111297718;
-            } //End block
+            } 
             size -= entry.lengths[i];
             entry.lengths[i] = 0;
-        } //End block
+        } 
         redundantOpCount++;
         journalWriter.append(REMOVE + ' ' + key + '\n');
         lruEntries.remove(key);
     if(journalRebuildRequired())        
         {
             executorService.submit(cleanupCallable);
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1498399890 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1749112275 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1749112275;
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //validateKey(key);
-        //Entry entry = lruEntries.get(key);
-        //if (entry == null || entry.currentEditor != null) {
-            //return false;
-        //}
-        //for (int i = 0; i < valueCount; i++) {
-            //File file = entry.getCleanFile(i);
-            //if (!file.delete()) {
-                //throw new IOException("failed to delete " + file);
-            //}
-            //size -= entry.lengths[i];
-            //entry.lengths[i] = 0;
-        //}
-        //redundantOpCount++;
-        //journalWriter.append(REMOVE + ' ' + key + '\n');
-        //lruEntries.remove(key);
-        //if (journalRebuildRequired()) {
-            //executorService.submit(cleanupCallable);
-        //}
-        //return true;
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.492 -0400", hash_original_method = "DD17EBB3E7F8098B41E8CF3D3DB045E0", hash_generated_method = "D752C1AE89BDB35B297F3344F3601B7E")
     public boolean isClosed() {
         boolean var3949878E9780388AD98891E1C4F733E8_1135482051 = (journalWriter == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1701086676 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1701086676;
-        // ---------- Original Method ----------
-        //return journalWriter == null;
+        
+        
     }
 
     
@@ -642,11 +646,11 @@ for(int i = 0;i < valueCount;i++)
             IllegalStateException var81363B0B86AC9F3301E01A021D394B25_1893293528 = new IllegalStateException("cache is closed");
             var81363B0B86AC9F3301E01A021D394B25_1893293528.addTaint(taint);
             throw var81363B0B86AC9F3301E01A021D394B25_1893293528;
-        } //End block
-        // ---------- Original Method ----------
-        //if (journalWriter == null) {
-            //throw new IllegalStateException("cache is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -655,10 +659,10 @@ for(int i = 0;i < valueCount;i++)
         checkNotClosed();
         trimToSize();
         journalWriter.flush();
-        // ---------- Original Method ----------
-        //checkNotClosed();
-        //trimToSize();
-        //journalWriter.flush();
+        
+        
+        
+        
     }
 
     
@@ -667,29 +671,29 @@ for(int i = 0;i < valueCount;i++)
     if(journalWriter == null)        
         {
             return;
-        } //End block
+        } 
 for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
         {
     if(entry.currentEditor != null)            
             {
                 entry.currentEditor.abort();
-            } //End block
-        } //End block
+            } 
+        } 
         trimToSize();
         journalWriter.close();
         journalWriter = null;
-        // ---------- Original Method ----------
-        //if (journalWriter == null) {
-            //return; 
-        //}
-        //for (Entry entry : new ArrayList<Entry>(lruEntries.values())) {
-            //if (entry.currentEditor != null) {
-                //entry.currentEditor.abort();
-            //}
-        //}
-        //trimToSize();
-        //journalWriter.close();
-        //journalWriter = null;
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
+        
+        
     }
 
     
@@ -700,12 +704,12 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
         {
             Map.Entry<String, Entry> toEvict = lruEntries.eldest();
             remove(toEvict.getKey());
-        } //End block
-        // ---------- Original Method ----------
-        //while (size > maxSize) {
-            //Map.Entry<String, Entry> toEvict = lruEntries.eldest();
-            //remove(toEvict.getKey());
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -713,9 +717,9 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
     public void delete() throws IOException {
         close();
         IoUtils.deleteContents(directory);
-        // ---------- Original Method ----------
-        //close();
-        //IoUtils.deleteContents(directory);
+        
+        
+        
     }
 
     
@@ -728,12 +732,12 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
                     "keys must not contain spaces or newlines: \"" + key + "\"");
             varC927715DFE1C8EC965D5482F3ED0DC97_263125423.addTaint(taint);
             throw varC927715DFE1C8EC965D5482F3ED0DC97_263125423;
-        } //End block
-        // ---------- Original Method ----------
-        //if (key.contains(" ") || key.contains("\n") || key.contains("\r")) {
-            //throw new IllegalArgumentException(
-                    //"keys must not contain spaces or newlines: \"" + key + "\"");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -750,19 +754,20 @@ for(Entry entry : new ArrayList<Entry>(lruEntries.values()))
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.497 -0400", hash_original_method = "4874F99779A0A237419F7A04515D002C", hash_generated_method = "6FEE8A1DE88E19521460185A59EEAE25")
         private  Snapshot(InputStream[] ins) {
             this.ins = ins;
-            // ---------- Original Method ----------
-            //this.ins = ins;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.497 -0400", hash_original_method = "1265F3570693D55B3F128D89D3B629D2", hash_generated_method = "C3C7E06795CEBCB72FAB9FE1FA415116")
         public InputStream getInputStream(int index) {
             addTaint(index);
 InputStream varC45F03A74031CF4889702A14392A5C83_933474141 =             ins[index];
             varC45F03A74031CF4889702A14392A5C83_933474141.addTaint(taint);
             return varC45F03A74031CF4889702A14392A5C83_933474141;
-            // ---------- Original Method ----------
-            //return ins[index];
+            
+            
         }
 
         
@@ -772,8 +777,8 @@ InputStream varC45F03A74031CF4889702A14392A5C83_933474141 =             ins[inde
 String varE654D4C5349C8662FD22088D3274B26B_981816150 =             inputStreamToString(getInputStream(index));
             varE654D4C5349C8662FD22088D3274B26B_981816150.addTaint(taint);
             return varE654D4C5349C8662FD22088D3274B26B_981816150;
-            // ---------- Original Method ----------
-            //return inputStreamToString(getInputStream(index));
+            
+            
         }
 
         
@@ -783,11 +788,11 @@ String varE654D4C5349C8662FD22088D3274B26B_981816150 =             inputStreamTo
 for(InputStream in : ins)
             {
                 IoUtils.closeQuietly(in);
-            } //End block
-            // ---------- Original Method ----------
-            //for (InputStream in : ins) {
-                //IoUtils.closeQuietly(in);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -806,8 +811,8 @@ for(InputStream in : ins)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.498 -0400", hash_original_method = "DB0A9ACC8813DA2FB44F6FFEC09E8772", hash_generated_method = "9D5F2E1BFEBBC34BED7AEE5B243CB69C")
         private  Editor(Entry entry) {
             this.entry = entry;
-            // ---------- Original Method ----------
-            //this.entry = entry;
+            
+            
         }
 
         
@@ -821,27 +826,27 @@ for(InputStream in : ins)
                     IllegalStateException varC311A989A119B96A6232C22ABFE87C25_456228644 = new IllegalStateException();
                     varC311A989A119B96A6232C22ABFE87C25_456228644.addTaint(taint);
                     throw varC311A989A119B96A6232C22ABFE87C25_456228644;
-                } //End block
+                } 
     if(!entry.readable)                
                 {
 InputStream var540C13E9E156B687226421B24F2DF178_356883110 =                     null;
                     var540C13E9E156B687226421B24F2DF178_356883110.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_356883110;
-                } //End block
+                } 
 InputStream var975B4CCB8B52229009977C881C3B9BC4_1441841740 =                 new FileInputStream(entry.getCleanFile(index));
                 var975B4CCB8B52229009977C881C3B9BC4_1441841740.addTaint(taint);
                 return var975B4CCB8B52229009977C881C3B9BC4_1441841740;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (DiskLruCache.this) {
-                //if (entry.currentEditor != this) {
-                    //throw new IllegalStateException();
-                //}
-                //if (!entry.readable) {
-                    //return null;
-                //}
-                //return new FileInputStream(entry.getCleanFile(index));
-            //}
+            } 
+            
+            
+                
+                    
+                
+                
+                    
+                
+                
+            
         }
 
         
@@ -852,9 +857,9 @@ InputStream var975B4CCB8B52229009977C881C3B9BC4_1441841740 =                 new
 String var47389769C317BA546AE73EC662DDC910_1586647055 =             in != null ? inputStreamToString(in) : null;
             var47389769C317BA546AE73EC662DDC910_1586647055.addTaint(taint);
             return var47389769C317BA546AE73EC662DDC910_1586647055;
-            // ---------- Original Method ----------
-            //InputStream in = newInputStream(index);
-            //return in != null ? inputStreamToString(in) : null;
+            
+            
+            
         }
 
         
@@ -868,18 +873,18 @@ String var47389769C317BA546AE73EC662DDC910_1586647055 =             in != null ?
                     IllegalStateException varC311A989A119B96A6232C22ABFE87C25_2073240932 = new IllegalStateException();
                     varC311A989A119B96A6232C22ABFE87C25_2073240932.addTaint(taint);
                     throw varC311A989A119B96A6232C22ABFE87C25_2073240932;
-                } //End block
+                } 
 OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new FaultHidingOutputStream(new FileOutputStream(entry.getDirtyFile(index)));
                 varFEF8625C9D868CFC33D7262DD51E8F60_825181200.addTaint(taint);
                 return varFEF8625C9D868CFC33D7262DD51E8F60_825181200;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (DiskLruCache.this) {
-                //if (entry.currentEditor != this) {
-                    //throw new IllegalStateException();
-                //}
-                //return new FaultHidingOutputStream(new FileOutputStream(entry.getDirtyFile(index)));
-            //}
+            } 
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -892,19 +897,19 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
             {
                 writer = new OutputStreamWriter(newOutputStream(index), Charsets.UTF_8);
                 writer.write(value);
-            } //End block
+            } 
             finally 
             {
                 IoUtils.closeQuietly(writer);
-            } //End block
-            // ---------- Original Method ----------
-            //Writer writer = null;
-            //try {
-                //writer = new OutputStreamWriter(newOutputStream(index), Charsets.UTF_8);
-                //writer.write(value);
-            //} finally {
-                //IoUtils.closeQuietly(writer);
-            //}
+            } 
+            
+            
+            
+                
+                
+            
+                
+            
         }
 
         
@@ -914,26 +919,26 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
             {
                 completeEdit(this, false);
                 remove(entry.key);
-            } //End block
+            } 
             else
             {
                 completeEdit(this, true);
-            } //End block
-            // ---------- Original Method ----------
-            //if (hasErrors) {
-                //completeEdit(this, false);
-                //remove(entry.key); 
-            //} else {
-                //completeEdit(this, true);
-            //}
+            } 
+            
+            
+                
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.501 -0400", hash_original_method = "805CDF65FA82242C2D4B7EB4CBDDF0ED", hash_generated_method = "18E9660C4426C8AA96D2D812955FA89C")
         public void abort() throws IOException {
             completeEdit(this, false);
-            // ---------- Original Method ----------
-            //completeEdit(this, false);
+            
+            
         }
 
         
@@ -943,7 +948,7 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
             private  FaultHidingOutputStream(OutputStream out) {
                 super(out);
                 addTaint(out.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -954,17 +959,17 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
                 try 
                 {
                     out.write(oneByte);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
-                // ---------- Original Method ----------
-                //try {
-                    //out.write(oneByte);
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -977,17 +982,17 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
                 try 
                 {
                     out.write(buffer, offset, length);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
-                // ---------- Original Method ----------
-                //try {
-                    //out.write(buffer, offset, length);
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -997,17 +1002,17 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
                 try 
                 {
                     out.close();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
-                // ---------- Original Method ----------
-                //try {
-                    //out.close();
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -1017,17 +1022,17 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
                 try 
                 {
                     out.flush();
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     hasErrors = true;
-                } //End block
-                // ---------- Original Method ----------
-                //try {
-                    //out.flush();
-                //} catch (IOException e) {
-                    //hasErrors = true;
-                //}
+                } 
+                
+                
+                    
+                
+                    
+                
             }
 
             
@@ -1057,9 +1062,9 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
         private  Entry(String key) {
             this.key = key;
             this.lengths = new long[valueCount];
-            // ---------- Original Method ----------
-            //this.key = key;
-            //this.lengths = new long[valueCount];
+            
+            
+            
         }
 
         
@@ -1069,16 +1074,16 @@ OutputStream varFEF8625C9D868CFC33D7262DD51E8F60_825181200 =                 new
 for(long size : lengths)
             {
                 result.append(' ').append(size);
-            } //End block
+            } 
 String varE65B3A02759122992CB82C0E651AD408_2099020213 =             result.toString();
             varE65B3A02759122992CB82C0E651AD408_2099020213.addTaint(taint);
             return varE65B3A02759122992CB82C0E651AD408_2099020213;
-            // ---------- Original Method ----------
-            //StringBuilder result = new StringBuilder();
-            //for (long size : lengths) {
-                //result.append(' ').append(size);
-            //}
-            //return result.toString();
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1089,31 +1094,31 @@ String varE65B3A02759122992CB82C0E651AD408_2099020213 =             result.toStr
                 java.io.IOException var4527E569A10E43BC1C82DF62A65C0C38_1822223098 = invalidLengths(strings);
                 var4527E569A10E43BC1C82DF62A65C0C38_1822223098.addTaint(taint);
                 throw var4527E569A10E43BC1C82DF62A65C0C38_1822223098;
-            } //End block
+            } 
             try 
             {
 for(int i = 0;i < strings.length;i++)
                 {
                     lengths[i] = Long.parseLong(strings[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (NumberFormatException e)
             {
                 java.io.IOException var4527E569A10E43BC1C82DF62A65C0C38_771641588 = invalidLengths(strings);
                 var4527E569A10E43BC1C82DF62A65C0C38_771641588.addTaint(taint);
                 throw var4527E569A10E43BC1C82DF62A65C0C38_771641588;
-            } //End block
-            // ---------- Original Method ----------
-            //if (strings.length != valueCount) {
-                //throw invalidLengths(strings);
-            //}
-            //try {
-                //for (int i = 0; i < strings.length; i++) {
-                    //lengths[i] = Long.parseLong(strings[i]);
-                //}
-            //} catch (NumberFormatException e) {
-                //throw invalidLengths(strings);
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+                    
+                
+            
+                
+            
         }
 
         
@@ -1123,8 +1128,8 @@ for(int i = 0;i < strings.length;i++)
             IOException varEAFD5D8215C36EB816E02163DD374B42_2024023784 = new IOException("unexpected journal line: " + Arrays.toString(strings));
             varEAFD5D8215C36EB816E02163DD374B42_2024023784.addTaint(taint);
             throw varEAFD5D8215C36EB816E02163DD374B42_2024023784;
-            // ---------- Original Method ----------
-            //throw new IOException("unexpected journal line: " + Arrays.toString(strings));
+            
+            
         }
 
         
@@ -1134,8 +1139,8 @@ for(int i = 0;i < strings.length;i++)
 File var8503B144813FCE392AB3D105B5D1F2B4_2147132346 =             new File(directory, key + "." + i);
             var8503B144813FCE392AB3D105B5D1F2B4_2147132346.addTaint(taint);
             return var8503B144813FCE392AB3D105B5D1F2B4_2147132346;
-            // ---------- Original Method ----------
-            //return new File(directory, key + "." + i);
+            
+            
         }
 
         
@@ -1145,8 +1150,8 @@ File var8503B144813FCE392AB3D105B5D1F2B4_2147132346 =             new File(direc
 File var4B7CD92DA74EBFDCC21EBA188ED9577D_683425763 =             new File(directory, key + "." + i + ".tmp");
             var4B7CD92DA74EBFDCC21EBA188ED9577D_683425763.addTaint(taint);
             return var4B7CD92DA74EBFDCC21EBA188ED9577D_683425763;
-            // ---------- Original Method ----------
-            //return new File(directory, key + "." + i + ".tmp");
+            
+            
         }
 
         

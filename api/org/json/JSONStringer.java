@@ -1,6 +1,6 @@
 package org.json;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public class JSONStringer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.651 -0400", hash_original_method = "98D853100F79BF96F83BA7B441C56113", hash_generated_method = "7D824AED16B4CDA872B4C17138D3CF3B")
     public  JSONStringer() {
         indent = null;
-        // ---------- Original Method ----------
-        //indent = null;
+        
+        
     }
 
     
@@ -33,10 +33,10 @@ public class JSONStringer {
         char[] indentChars = new char[indentSpaces];
         Arrays.fill(indentChars, ' ');
         indent = new String(indentChars);
-        // ---------- Original Method ----------
-        //char[] indentChars = new char[indentSpaces];
-        //Arrays.fill(indentChars, ' ');
-        //indent = new String(indentChars);
+        
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public class JSONStringer {
 JSONStringer varE2D913F27CEAD4EDD8195967C303C50D_1728447443 =         open(Scope.EMPTY_ARRAY, "[");
         varE2D913F27CEAD4EDD8195967C303C50D_1728447443.addTaint(taint);
         return varE2D913F27CEAD4EDD8195967C303C50D_1728447443;
-        // ---------- Original Method ----------
-        //return open(Scope.EMPTY_ARRAY, "[");
+        
+        
     }
 
     
@@ -55,8 +55,8 @@ JSONStringer varE2D913F27CEAD4EDD8195967C303C50D_1728447443 =         open(Scope
 JSONStringer var3421C3B880CB17BF1CEF0BB32AD70DA2_1746615021 =         close(Scope.EMPTY_ARRAY, Scope.NONEMPTY_ARRAY, "]");
         var3421C3B880CB17BF1CEF0BB32AD70DA2_1746615021.addTaint(taint);
         return var3421C3B880CB17BF1CEF0BB32AD70DA2_1746615021;
-        // ---------- Original Method ----------
-        //return close(Scope.EMPTY_ARRAY, Scope.NONEMPTY_ARRAY, "]");
+        
+        
     }
 
     
@@ -65,8 +65,8 @@ JSONStringer var3421C3B880CB17BF1CEF0BB32AD70DA2_1746615021 =         close(Scop
 JSONStringer var9F1003779294EC55D6DFAE23766A46CF_645727467 =         open(Scope.EMPTY_OBJECT, "{");
         var9F1003779294EC55D6DFAE23766A46CF_645727467.addTaint(taint);
         return var9F1003779294EC55D6DFAE23766A46CF_645727467;
-        // ---------- Original Method ----------
-        //return open(Scope.EMPTY_OBJECT, "{");
+        
+        
     }
 
     
@@ -75,8 +75,8 @@ JSONStringer var9F1003779294EC55D6DFAE23766A46CF_645727467 =         open(Scope.
 JSONStringer varAF20B7BEA60954198642AE0B7AD4210A_456955088 =         close(Scope.EMPTY_OBJECT, Scope.NONEMPTY_OBJECT, "}");
         varAF20B7BEA60954198642AE0B7AD4210A_456955088.addTaint(taint);
         return varAF20B7BEA60954198642AE0B7AD4210A_456955088;
-        // ---------- Original Method ----------
-        //return close(Scope.EMPTY_OBJECT, Scope.NONEMPTY_OBJECT, "}");
+        
+        
     }
 
     
@@ -89,21 +89,21 @@ JSONStringer varAF20B7BEA60954198642AE0B7AD4210A_456955088 =         close(Scope
             JSONException varFCBBADB5B22E04A09F670CF58362A693_1487225591 = new JSONException("Nesting problem: multiple top-level roots");
             varFCBBADB5B22E04A09F670CF58362A693_1487225591.addTaint(taint);
             throw varFCBBADB5B22E04A09F670CF58362A693_1487225591;
-        } //End block
+        } 
         beforeValue();
         stack.add(empty);
         out.append(openBracket);
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_910429557 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_910429557.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_910429557;
-        // ---------- Original Method ----------
-        //if (stack.isEmpty() && out.length() > 0) {
-            //throw new JSONException("Nesting problem: multiple top-level roots");
-        //}
-        //beforeValue();
-        //stack.add(empty);
-        //out.append(openBracket);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -118,27 +118,27 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_910429557 =         this;
             JSONException var2C2A6860B2733F98954DC21FFC98A831_1588374470 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_1588374470.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_1588374470;
-        } //End block
+        } 
         stack.remove(stack.size() - 1);
     if(context == nonempty)        
         {
             newline();
-        } //End block
+        } 
         out.append(closeBracket);
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_507132542 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_507132542.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_507132542;
-        // ---------- Original Method ----------
-        //Scope context = peek();
-        //if (context != nonempty && context != empty) {
-            //throw new JSONException("Nesting problem");
-        //}
-        //stack.remove(stack.size() - 1);
-        //if (context == nonempty) {
-            //newline();
-        //}
-        //out.append(closeBracket);
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -149,15 +149,15 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_507132542 =         this;
             JSONException var2C2A6860B2733F98954DC21FFC98A831_542728587 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_542728587.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_542728587;
-        } //End block
+        } 
 Scope var0C13C1874AA5E05BC89B862E007E5C49_1121510936 =         stack.get(stack.size() - 1);
         var0C13C1874AA5E05BC89B862E007E5C49_1121510936.addTaint(taint);
         return var0C13C1874AA5E05BC89B862E007E5C49_1121510936;
-        // ---------- Original Method ----------
-        //if (stack.isEmpty()) {
-            //throw new JSONException("Nesting problem");
-        //}
-        //return stack.get(stack.size() - 1);
+        
+        
+            
+        
+        
     }
 
     
@@ -165,8 +165,8 @@ Scope var0C13C1874AA5E05BC89B862E007E5C49_1121510936 =         stack.get(stack.s
     private void replaceTop(Scope topOfStack) {
         addTaint(topOfStack.getTaint());
         stack.set(stack.size() - 1, topOfStack);
-        // ---------- Original Method ----------
-        //stack.set(stack.size() - 1, topOfStack);
+        
+        
     }
 
     
@@ -178,14 +178,14 @@ Scope var0C13C1874AA5E05BC89B862E007E5C49_1121510936 =         stack.get(stack.s
             JSONException var2C2A6860B2733F98954DC21FFC98A831_230646967 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_230646967.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_230646967;
-        } //End block
+        } 
     if(value instanceof JSONArray)        
         {
             ((JSONArray) value).writeTo(this);
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_929280646 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_929280646.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_929280646;
-        } //End block
+        } 
         else
     if(value instanceof JSONObject)        
         {
@@ -193,48 +193,48 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_929280646 =             this;
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_307862511 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_307862511.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_307862511;
-        } //End block
+        } 
         beforeValue();
     if(value == null
                 || value instanceof Boolean
                 || value == JSONObject.NULL)        
         {
             out.append(value);
-        } //End block
+        } 
         else
     if(value instanceof Number)        
         {
             out.append(JSONObject.numberToString((Number) value));
-        } //End block
+        } 
         else
         {
             string(value.toString());
-        } //End block
+        } 
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1444231346 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1444231346.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1444231346;
-        // ---------- Original Method ----------
-        //if (stack.isEmpty()) {
-            //throw new JSONException("Nesting problem");
-        //}
-        //if (value instanceof JSONArray) {
-            //((JSONArray) value).writeTo(this);
-            //return this;
-        //} else if (value instanceof JSONObject) {
-            //((JSONObject) value).writeTo(this);
-            //return this;
-        //}
-        //beforeValue();
-        //if (value == null
-                //|| value instanceof Boolean
-                //|| value == JSONObject.NULL) {
-            //out.append(value);
-        //} else if (value instanceof Number) {
-            //out.append(JSONObject.numberToString((Number) value));
-        //} else {
-            //string(value.toString());
-        //}
-        //return this;
+        
+        
+            
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
+                
+                
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -246,19 +246,19 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1444231346 =         this;
             JSONException var2C2A6860B2733F98954DC21FFC98A831_1208127635 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_1208127635.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_1208127635;
-        } //End block
+        } 
         beforeValue();
         out.append(value);
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_216265259 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_216265259.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_216265259;
-        // ---------- Original Method ----------
-        //if (stack.isEmpty()) {
-            //throw new JSONException("Nesting problem");
-        //}
-        //beforeValue();
-        //out.append(value);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -270,19 +270,19 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_216265259 =         this;
             JSONException var2C2A6860B2733F98954DC21FFC98A831_145892620 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_145892620.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_145892620;
-        } //End block
+        } 
         beforeValue();
         out.append(JSONObject.numberToString(value));
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1950361704 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1950361704.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1950361704;
-        // ---------- Original Method ----------
-        //if (stack.isEmpty()) {
-            //throw new JSONException("Nesting problem");
-        //}
-        //beforeValue();
-        //out.append(JSONObject.numberToString(value));
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -294,19 +294,19 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1950361704 =         this;
             JSONException var2C2A6860B2733F98954DC21FFC98A831_1907708979 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_1907708979.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_1907708979;
-        } //End block
+        } 
         beforeValue();
         out.append(value);
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_660084128 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_660084128.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_660084128;
-        // ---------- Original Method ----------
-        //if (stack.isEmpty()) {
-            //throw new JSONException("Nesting problem");
-        //}
-        //beforeValue();
-        //out.append(value);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -342,17 +342,17 @@ switch(c){
     if(c <= 0x1F)            
             {
                 out.append(String.format("\\u%04x", (int) c));
-            } //End block
+            } 
             else
             {
                 out.append(c);
-            } //End block
+            } 
             break;
 }
-        } //End block
+        } 
         out.append("\"");
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -361,20 +361,20 @@ switch(c){
     if(indent == null)        
         {
             return;
-        } //End block
+        } 
         out.append("\n");
 for(int i = 0;i < stack.size();i++)
         {
             out.append(indent);
-        } //End block
-        // ---------- Original Method ----------
-        //if (indent == null) {
-            //return;
-        //}
-        //out.append("\n");
-        //for (int i = 0; i < stack.size(); i++) {
-            //out.append(indent);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -386,19 +386,19 @@ for(int i = 0;i < stack.size();i++)
             JSONException var9A1D8F2D16FCC2E33BC2C66F205FA660_40734977 = new JSONException("Names must be non-null");
             var9A1D8F2D16FCC2E33BC2C66F205FA660_40734977.addTaint(taint);
             throw var9A1D8F2D16FCC2E33BC2C66F205FA660_40734977;
-        } //End block
+        } 
         beforeKey();
         string(name);
 JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1482511179 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1482511179.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1482511179;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new JSONException("Names must be non-null");
-        //}
-        //beforeKey();
-        //string(name);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -408,25 +408,25 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1482511179 =         this;
     if(context == Scope.NONEMPTY_OBJECT)        
         {
             out.append(',');
-        } //End block
+        } 
         else
     if(context != Scope.EMPTY_OBJECT)        
         {
             JSONException var2C2A6860B2733F98954DC21FFC98A831_1195598113 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_1195598113.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_1195598113;
-        } //End block
+        } 
         newline();
         replaceTop(Scope.DANGLING_KEY);
-        // ---------- Original Method ----------
-        //Scope context = peek();
-        //if (context == Scope.NONEMPTY_OBJECT) { 
-            //out.append(',');
-        //} else if (context != Scope.EMPTY_OBJECT) { 
-            //throw new JSONException("Nesting problem");
-        //}
-        //newline();
-        //replaceTop(Scope.DANGLING_KEY);
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -435,49 +435,49 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1482511179 =         this;
     if(stack.isEmpty())        
         {
             return;
-        } //End block
+        } 
         Scope context = peek();
     if(context == Scope.EMPTY_ARRAY)        
         {
             replaceTop(Scope.NONEMPTY_ARRAY);
             newline();
-        } //End block
+        } 
         else
     if(context == Scope.NONEMPTY_ARRAY)        
         {
             out.append(',');
             newline();
-        } //End block
+        } 
         else
     if(context == Scope.DANGLING_KEY)        
         {
             out.append(indent == null ? ":" : ": ");
             replaceTop(Scope.NONEMPTY_OBJECT);
-        } //End block
+        } 
         else
     if(context != Scope.NULL)        
         {
             JSONException var2C2A6860B2733F98954DC21FFC98A831_1986798338 = new JSONException("Nesting problem");
             var2C2A6860B2733F98954DC21FFC98A831_1986798338.addTaint(taint);
             throw var2C2A6860B2733F98954DC21FFC98A831_1986798338;
-        } //End block
-        // ---------- Original Method ----------
-        //if (stack.isEmpty()) {
-            //return;
-        //}
-        //Scope context = peek();
-        //if (context == Scope.EMPTY_ARRAY) { 
-            //replaceTop(Scope.NONEMPTY_ARRAY);
-            //newline();
-        //} else if (context == Scope.NONEMPTY_ARRAY) { 
-            //out.append(',');
-            //newline();
-        //} else if (context == Scope.DANGLING_KEY) { 
-            //out.append(indent == null ? ":" : ": ");
-            //replaceTop(Scope.NONEMPTY_OBJECT);
-        //} else if (context != Scope.NULL) {
-            //throw new JSONException("Nesting problem");
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -487,8 +487,8 @@ JSONStringer var72A74007B2BE62B849F475C7BDA4658B_1482511179 =         this;
 String varEF63D206C061F9C8D806233235C41E35_1496240015 =         out.length() == 0 ? null : out.toString();
         varEF63D206C061F9C8D806233235C41E35_1496240015.addTaint(taint);
         return varEF63D206C061F9C8D806233235C41E35_1496240015;
-        // ---------- Original Method ----------
-        //return out.length() == 0 ? null : out.toString();
+        
+        
     }
 
     

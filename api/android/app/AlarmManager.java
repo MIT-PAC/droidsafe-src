@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class AlarmManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:59.901 -0400", hash_original_method = "777E43DCC11684FA65853DF87647331C", hash_generated_method = "C807E43424CB7C729C805FCAFCCB79C4")
       AlarmManager(IAlarmManager service) {
         mService = service;
-        // ---------- Original Method ----------
-        //mService = service;
+        
+        
     }
 
     
@@ -30,15 +30,15 @@ public class AlarmManager {
         try 
         {
             mService.set(type, triggerAtTime, operation);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.set(type, triggerAtTime, operation);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -52,15 +52,15 @@ public class AlarmManager {
         try 
         {
             mService.setRepeating(type, triggerAtTime, interval, operation);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setRepeating(type, triggerAtTime, interval, operation);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -74,15 +74,15 @@ public class AlarmManager {
         try 
         {
             mService.setInexactRepeating(type, triggerAtTime, interval, operation);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setInexactRepeating(type, triggerAtTime, interval, operation);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -92,15 +92,15 @@ public class AlarmManager {
         try 
         {
             mService.remove(operation);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.remove(operation);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -110,15 +110,15 @@ public class AlarmManager {
         try 
         {
             mService.setTime(millis);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setTime(millis);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -128,15 +128,15 @@ public class AlarmManager {
         try 
         {
             mService.setTimeZone(timeZone);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setTimeZone(timeZone);
-        //} catch (RemoteException ex) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     

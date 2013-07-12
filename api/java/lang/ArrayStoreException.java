@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class ArrayStoreException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.461 -0400", hash_original_method = "B57005FA913ED8B5B6C3BCF68E82D1FE", hash_generated_method = "C1E2F4C0361A9FF254ED68AA3FADAD3A")
     public  ArrayStoreException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class ArrayStoreException extends RuntimeException {
     public  ArrayStoreException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

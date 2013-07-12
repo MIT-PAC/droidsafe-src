@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,9 +24,9 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
         addTaint(url.getTaint());
         hostnameVerifier = defaultHostnameVerifier;
         sslSocketFactory = defaultSSLSocketFactory;
-        // ---------- Original Method ----------
-        //hostnameVerifier = defaultHostnameVerifier;
-        //sslSocketFactory = defaultSSLSocketFactory;
+        
+        
+        
     }
 
     
@@ -38,7 +38,8 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
-        public static HostnameVerifier getDefaultHostnameVerifier() {
+        @DSModeled(DSC.SAFE)
+    public static HostnameVerifier getDefaultHostnameVerifier() {
         return defaultHostnameVerifier;
     }
 
@@ -51,7 +52,8 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
     }
 
     
-        public static SSLSocketFactory getDefaultSSLSocketFactory() {
+        @DSModeled(DSC.SAFE)
+    public static SSLSocketFactory getDefaultSSLSocketFactory() {
         return defaultSSLSocketFactory;
     }
 
@@ -73,16 +75,16 @@ public abstract class HttpsURLConnection extends HttpURLConnection {
             SSLPeerUnverifiedException varD3195D7F54F11045BC8391D91CCFE912_32335119 = new SSLPeerUnverifiedException("No server's end-entity certificate");
             varD3195D7F54F11045BC8391D91CCFE912_32335119.addTaint(taint);
             throw varD3195D7F54F11045BC8391D91CCFE912_32335119;
-        } //End block
+        } 
 Principal var9CF5ED47C051D95405EF759AB6EBE375_2098885524 =         ((X509Certificate) certs[0]).getSubjectX500Principal();
         var9CF5ED47C051D95405EF759AB6EBE375_2098885524.addTaint(taint);
         return var9CF5ED47C051D95405EF759AB6EBE375_2098885524;
-        // ---------- Original Method ----------
-        //Certificate[] certs = getServerCertificates();
-        //if (certs == null || certs.length == 0 || (!(certs[0] instanceof X509Certificate))) {
-            //throw new SSLPeerUnverifiedException("No server's end-entity certificate");
-        //}
-        //return ((X509Certificate) certs[0]).getSubjectX500Principal();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -94,16 +96,16 @@ Principal var9CF5ED47C051D95405EF759AB6EBE375_2098885524 =         ((X509Certifi
 Principal var540C13E9E156B687226421B24F2DF178_1709199498 =             null;
             var540C13E9E156B687226421B24F2DF178_1709199498.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1709199498;
-        } //End block
+        } 
 Principal var9CF5ED47C051D95405EF759AB6EBE375_1359374409 =         ((X509Certificate) certs[0]).getSubjectX500Principal();
         var9CF5ED47C051D95405EF759AB6EBE375_1359374409.addTaint(taint);
         return var9CF5ED47C051D95405EF759AB6EBE375_1359374409;
-        // ---------- Original Method ----------
-        //Certificate[] certs = getLocalCertificates();
-        //if (certs == null || certs.length == 0 || (!(certs[0] instanceof X509Certificate))) {
-            //return null;
-        //}
-        //return ((X509Certificate) certs[0]).getSubjectX500Principal();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -114,23 +116,24 @@ Principal var9CF5ED47C051D95405EF759AB6EBE375_1359374409 =         ((X509Certifi
             IllegalArgumentException varB2B1BB748022FB44C905B3AD1B84212E_405118117 = new IllegalArgumentException("HostnameVerifier is null");
             varB2B1BB748022FB44C905B3AD1B84212E_405118117.addTaint(taint);
             throw varB2B1BB748022FB44C905B3AD1B84212E_405118117;
-        } //End block
+        } 
         hostnameVerifier = v;
-        // ---------- Original Method ----------
-        //if (v == null) {
-            //throw new IllegalArgumentException("HostnameVerifier is null");
-        //}
-        //hostnameVerifier = v;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.786 -0400", hash_original_method = "ECCA6A5C3EF4993C1CFD64A0404A993B", hash_generated_method = "777BC6091A75C87F7325FB35A3A9F88C")
     public HostnameVerifier getHostnameVerifier() {
 HostnameVerifier var9306CAE4DB3D2F94D65947C804026160_700840714 =         hostnameVerifier;
         var9306CAE4DB3D2F94D65947C804026160_700840714.addTaint(taint);
         return var9306CAE4DB3D2F94D65947C804026160_700840714;
-        // ---------- Original Method ----------
-        //return hostnameVerifier;
+        
+        
     }
 
     
@@ -141,23 +144,24 @@ HostnameVerifier var9306CAE4DB3D2F94D65947C804026160_700840714 =         hostnam
             IllegalArgumentException varE71C9EEA9830D2C5E1284881E071F435_809948363 = new IllegalArgumentException("SSLSocketFactory is null");
             varE71C9EEA9830D2C5E1284881E071F435_809948363.addTaint(taint);
             throw varE71C9EEA9830D2C5E1284881E071F435_809948363;
-        } //End block
+        } 
         sslSocketFactory = sf;
-        // ---------- Original Method ----------
-        //if (sf == null) {
-            //throw new IllegalArgumentException("SSLSocketFactory is null");
-        //}
-        //sslSocketFactory = sf;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.787 -0400", hash_original_method = "9F872E117F4FD1E88D0B5BA15C4E96B2", hash_generated_method = "3AEE1079478014C9722553C6952CD92E")
     public SSLSocketFactory getSSLSocketFactory() {
 SSLSocketFactory varFD641254E64F4CA7544D2CDD90C74007_326297233 =         sslSocketFactory;
         varFD641254E64F4CA7544D2CDD90C74007_326297233.addTaint(taint);
         return varFD641254E64F4CA7544D2CDD90C74007_326297233;
-        // ---------- Original Method ----------
-        //return sslSocketFactory;
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,10 +24,10 @@ public final class NativeBreakIterator implements Cloneable {
         this.address = address;
         this.type = type;
         this.charIter = new StringCharacterIterator("");
-        // ---------- Original Method ----------
-        //this.address = address;
-        //this.type = type;
-        //this.charIter = new StringCharacterIterator("");
+        
+        
+        
+        
     }
 
     
@@ -40,14 +40,15 @@ public final class NativeBreakIterator implements Cloneable {
 Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_1402636367.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_1402636367;
-        // ---------- Original Method ----------
-        //int cloneAddr = cloneImpl(this.address);
-        //NativeBreakIterator clone = new NativeBreakIterator(cloneAddr, this.type);
-        //clone.charIter = this.charIter;
-        //return clone;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.688 -0400", hash_original_method = "C0D37969DD3FDF8DABA3E38E17F8673F", hash_generated_method = "9E5BC56A343973D7145B36D8FB265E2F")
     @Override
     public boolean equals(Object object) {
@@ -57,37 +58,38 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
             boolean varB326B5062B2F0E69046810717534CB09_1307894472 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_9162011 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_9162011;
-        } //End block
+        } 
     if(!(object instanceof NativeBreakIterator))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1783353768 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81005644 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_81005644;
-        } //End block
+        } 
         NativeBreakIterator rhs = (NativeBreakIterator) object;
         boolean var37E8B39BA54D73CFF1F7A0DAE6792D6D_476112683 = (type == rhs.type && charIter.equals(rhs.charIter));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1659586039 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1659586039;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (!(object instanceof NativeBreakIterator)) {
-            //return false;
-        //}
-        //NativeBreakIterator rhs = (NativeBreakIterator) object;
-        //return type == rhs.type && charIter.equals(rhs.charIter);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:24.688 -0400", hash_original_method = "F98DCBD8FE8A6074B159B4049EE2DA7B", hash_generated_method = "5532DC669F1A2C4108622672F374E05D")
     @Override
     public int hashCode() {
         int varA1D0C6E83F027327D8461063F4AC58A6_1683419581 = (42);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749123749 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749123749;
-        // ---------- Original Method ----------
-        //return 42;
+        
+        
     }
 
     
@@ -97,17 +99,17 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
         try 
         {
             closeBreakIteratorImpl(this.address);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //closeBreakIteratorImpl(this.address);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -116,8 +118,8 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
         int var918887072051471D15DCE9865E176C01_593997244 = (currentImpl(this.address));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912547511 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1912547511;
-        // ---------- Original Method ----------
-        //return currentImpl(this.address);
+        
+        
     }
 
     
@@ -126,8 +128,8 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
         int var2B7B35FE78989FE062EE33A3B222E26C_1698411972 = (firstImpl(this.address));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246411016 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1246411016;
-        // ---------- Original Method ----------
-        //return firstImpl(this.address);
+        
+        
     }
 
     
@@ -137,8 +139,8 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
         int varCFC14FC5A7DCCE330CE97C10978BBD6B_1135589422 = (followingImpl(this.address, offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482790434 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_482790434;
-        // ---------- Original Method ----------
-        //return followingImpl(this.address, offset);
+        
+        
     }
 
     
@@ -149,10 +151,10 @@ Object var3DE52045BFD3C1BF3742F994ED6139AD_1402636367 =         clone;
 CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.charIter;
         var1C13B7121FF8DBF33774D26964F8457C_1616152278.addTaint(taint);
         return var1C13B7121FF8DBF33774D26964F8457C_1616152278;
-        // ---------- Original Method ----------
-        //int newLoc = currentImpl(this.address);
-        //this.charIter.setIndex(newLoc);
-        //return this.charIter;
+        
+        
+        
+        
     }
 
     
@@ -161,8 +163,8 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
         int varF61548759BDDE99A63FE59E0BE1519B9_374113000 = (lastImpl(this.address));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2946383 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2946383;
-        // ---------- Original Method ----------
-        //return lastImpl(this.address);
+        
+        
     }
 
     
@@ -172,8 +174,8 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
         int var17D3555F444C6B069FD374E00F7DC161_1274980287 = (nextImpl(this.address, n));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047186549 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047186549;
-        // ---------- Original Method ----------
-        //return nextImpl(this.address, n);
+        
+        
     }
 
     
@@ -182,8 +184,8 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
         int varC6EC4558C17C1F79E2A9D21289D5AE12_1591418425 = (nextImpl(this.address, 1));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1129955816 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1129955816;
-        // ---------- Original Method ----------
-        //return nextImpl(this.address, 1);
+        
+        
     }
 
     
@@ -192,8 +194,8 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
         int var875938D14B97DC4FE8028C1873FCE670_2114293977 = (previousImpl(this.address));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258062192 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258062192;
-        // ---------- Original Method ----------
-        //return previousImpl(this.address);
+        
+        
     }
 
     
@@ -204,14 +206,14 @@ CharacterIterator var1C13B7121FF8DBF33774D26964F8457C_1616152278 =         this.
 for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
         {
             sb.append(c);
-        } //End block
+        } 
         setText(sb.toString(), newText);
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //for (char c = newText.first(); c != CharacterIterator.DONE; c = newText.next()) {
-            //sb.append(c);
-        //}
-        //setText(sb.toString(), newText);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -219,8 +221,8 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
     public void setText(String newText) {
         addTaint(newText.getTaint());
         setText(newText, new StringCharacterIterator(newText));
-        // ---------- Original Method ----------
-        //setText(newText, new StringCharacterIterator(newText));
+        
+        
     }
 
     
@@ -229,9 +231,9 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
         addTaint(s.getTaint());
         this.charIter = it;
         setTextImpl(this.address, s);
-        // ---------- Original Method ----------
-        //this.charIter = it;
-        //setTextImpl(this.address, s);
+        
+        
+        
     }
 
     
@@ -241,8 +243,8 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
         boolean varEC21282E4FB03F5E2BA12A3CEF56C619_1615543701 = (isBoundaryImpl(this.address, offset));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2146822282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2146822282;
-        // ---------- Original Method ----------
-        //return isBoundaryImpl(this.address, offset);
+        
+        
     }
 
     
@@ -252,8 +254,8 @@ for(char c = newText.first();c != CharacterIterator.DONE;c = newText.next())
         int var46156B2A4D7AE5DC695E355219ABB0B9_1601521087 = (precedingImpl(this.address, offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004645627 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1004645627;
-        // ---------- Original Method ----------
-        //return precedingImpl(this.address, offset);
+        
+        
     }
 
     

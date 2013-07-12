@@ -1,6 +1,6 @@
 package android.support.v4.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,30 +48,30 @@ switch(msg.what){
             default:
             super.handleMessage(msg);
 }
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                    //case MSG_EXEC_PENDING_BROADCASTS:
-                        //executePendingBroadcasts();
-                        //break;
-                    //default:
-                        //super.handleMessage(msg);
-                //}
+            
+            
+                    
+                        
+                        
+                    
+                        
+                
         }
 };
-        // ---------- Original Method ----------
-        //mAppContext = context;
-        //mHandler = new Handler(context.getMainLooper()) {
-            //@Override
-            //public void handleMessage(Message msg) {
-                //switch (msg.what) {
-                    //case MSG_EXEC_PENDING_BROADCASTS:
-                        //executePendingBroadcasts();
-                        //break;
-                    //default:
-                        //super.handleMessage(msg);
-                //}
-            //}
-        //};
+        
+        
+        
+            
+            
+                
+                    
+                        
+                        
+                    
+                        
+                
+            
+        
     }
 
     
@@ -87,7 +87,7 @@ switch(msg.what){
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.386 -0400", hash_original_method = "D32BC0D25E86F605EE68EB4056334640", hash_generated_method = "DEB5CCDAF9907A914B6D32E8A8C076EB")
     public void registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
         synchronized
@@ -98,7 +98,7 @@ switch(msg.what){
             {
                 filters = new ArrayList<IntentFilter>(1);
                 mReceivers.put(receiver, filters);
-            } //End block
+            } 
             filters.add(filter);
 for(int i=0;i<filter.countActions();i++)
             {
@@ -108,29 +108,29 @@ for(int i=0;i<filter.countActions();i++)
                 {
                     entries = new ArrayList<ReceiverRecord>(1);
                     mActions.put(action, entries);
-                } //End block
+                } 
                 entries.add(entry);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mReceivers) {
-            //ReceiverRecord entry = new ReceiverRecord(filter, receiver);
-            //ArrayList<IntentFilter> filters = mReceivers.get(receiver);
-            //if (filters == null) {
-                //filters = new ArrayList<IntentFilter>(1);
-                //mReceivers.put(receiver, filters);
-            //}
-            //filters.add(filter);
-            //for (int i=0; i<filter.countActions(); i++) {
-                //String action = filter.getAction(i);
-                //ArrayList<ReceiverRecord> entries = mActions.get(action);
-                //if (entries == null) {
-                    //entries = new ArrayList<ReceiverRecord>(1);
-                    //mActions.put(action, entries);
-                //}
-                //entries.add(entry);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                
+            
+            
+            
+                
+                
+                
+                    
+                    
+                
+                
+            
+        
     }
 
     
@@ -143,7 +143,7 @@ for(int i=0;i<filter.countActions();i++)
     if(filters == null)            
             {
                 return;
-            } //End block
+            } 
 for(int i=0;i<filters.size();i++)
             {
                 IntentFilter filter = filters.get(i);
@@ -159,21 +159,22 @@ for(int k=0;k<receivers.size();k++)
                             {
                                 receivers.remove(k);
                                 k--;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
     if(receivers.size() <= 0)                        
                         {
                             mActions.remove(action);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                        } 
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.389 -0400", hash_original_method = "D242868C7C53E8784BBDECD4F038DC32", hash_generated_method = "DCF0CB77673D84CAFC1CB6F7E4F53420")
     public boolean sendBroadcast(Intent intent) {
         addTaint(intent.getTaint());
@@ -198,9 +199,9 @@ for(int i=0;i<entries.size();i++)
                     {
     if(debug)                        
                         {
-                        } //End block
+                        } 
                         continue;
-                    } //End block
+                    } 
                     int match = receiver.filter.match(action, type, scheme, data,
                             categories, "LocalBroadcastManager");
     if(match >= 0)                    
@@ -208,10 +209,10 @@ for(int i=0;i<entries.size();i++)
     if(debug){ }    if(receivers == null)                        
                         {
                             receivers = new ArrayList<ReceiverRecord>();
-                        } //End block
+                        } 
                         receivers.add(receiver);
                         receiver.broadcasting = true;
-                    } //End block
+                    } 
                     else
                     {
     if(debug)                        
@@ -234,45 +235,46 @@ switch(match){
                             reason = "unknown reason";
                             break;
 }
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
     if(receivers != null)                
                 {
 for(int i=0;i<receivers.size();i++)
                     {
                         receivers.get(i).broadcasting = false;
-                    } //End block
+                    } 
                     mPendingBroadcasts.add(new BroadcastRecord(intent, receivers));
     if(!mHandler.hasMessages(MSG_EXEC_PENDING_BROADCASTS))                    
                     {
                         mHandler.sendEmptyMessage(MSG_EXEC_PENDING_BROADCASTS);
-                    } //End block
+                    } 
                     boolean varB326B5062B2F0E69046810717534CB09_1926434320 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815866192 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815866192;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1319629013 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1950384751 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1950384751;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.390 -0400", hash_original_method = "6A77C49D1FDA5F97149304A23CA19549", hash_generated_method = "06A55254D0C8834ABD9179F35C96405C")
     public void sendBroadcastSync(Intent intent) {
         addTaint(intent.getTaint());
     if(sendBroadcast(intent))        
         {
             executePendingBroadcasts();
-        } //End block
-        // ---------- Original Method ----------
-        //if (sendBroadcast(intent)) {
-            //executePendingBroadcasts();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -288,39 +290,39 @@ for(int i=0;i<receivers.size();i++)
     if(N <= 0)                
                 {
                     return;
-                } //End block
+                } 
                 brs = new BroadcastRecord[N];
                 mPendingBroadcasts.toArray(brs);
                 mPendingBroadcasts.clear();
-            } //End block
+            } 
 for(int i=0;i<brs.length;i++)
             {
                 BroadcastRecord br = brs[i];
 for(int j=0;j<br.receivers.size();j++)
                 {
                     br.receivers.get(j).receiver.onReceive(mAppContext, br.intent);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //while (true) {
-            //BroadcastRecord[] brs = null;
-            //synchronized (mReceivers) {
-                //final int N = mPendingBroadcasts.size();
-                //if (N <= 0) {
-                    //return;
-                //}
-                //brs = new BroadcastRecord[N];
-                //mPendingBroadcasts.toArray(brs);
-                //mPendingBroadcasts.clear();
-            //}
-            //for (int i=0; i<brs.length; i++) {
-                //BroadcastRecord br = brs[i];
-                //for (int j=0; j<br.receivers.size(); j++) {
-                    //br.receivers.get(j).receiver.onReceive(mAppContext, br.intent);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+                
+                
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -339,9 +341,9 @@ for(int j=0;j<br.receivers.size();j++)
           ReceiverRecord(IntentFilter _filter, BroadcastReceiver _receiver) {
             filter = _filter;
             receiver = _receiver;
-            // ---------- Original Method ----------
-            //filter = _filter;
-            //receiver = _receiver;
+            
+            
+            
         }
 
         
@@ -357,14 +359,14 @@ for(int j=0;j<br.receivers.size();j++)
 String varF4CF030572656354ACFDF83FEE21D7A6_1861549571 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_1861549571.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_1861549571;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder(128);
-            //builder.append("Receiver{");
-            //builder.append(receiver);
-            //builder.append(" filter=");
-            //builder.append(filter);
-            //builder.append("}");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -384,9 +386,9 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1861549571 =             builder.toSt
           BroadcastRecord(Intent _intent, ArrayList<ReceiverRecord> _receivers) {
             intent = _intent;
             receivers = _receivers;
-            // ---------- Original Method ----------
-            //intent = _intent;
-            //receivers = _receivers;
+            
+            
+            
         }
 
         

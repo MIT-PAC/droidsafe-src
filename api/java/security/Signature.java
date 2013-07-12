@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,8 +26,8 @@ public abstract class Signature extends SignatureSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.524 -0400", hash_original_method = "007DE01FB6A8AC35B06025EDE803711E", hash_generated_method = "64FBEE7041AF14FFB5E58DA4CDF89A1A")
     protected  Signature(String algorithm) {
         this.algorithm = algorithm;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
+        
+        
     }
 
     
@@ -92,8 +92,8 @@ public abstract class Signature extends SignatureSpi {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2076467430 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_2076467430.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_2076467430;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -102,8 +102,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2076467430 =         provider;
 String var44A46B4003FC81ACB0223385BA1FA818_736534951 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_736534951.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_736534951;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -112,9 +112,9 @@ String var44A46B4003FC81ACB0223385BA1FA818_736534951 =         algorithm;
         addTaint(publicKey.getTaint());
         engineInitVerify(publicKey);
         state = VERIFY;
-        // ---------- Original Method ----------
-        //engineInitVerify(publicKey);
-        //state = VERIFY;
+        
+        
+        
     }
 
     
@@ -133,8 +133,8 @@ for(Iterator i = ce.iterator();i.hasNext();)
                     {
                         critical = true;
                         break;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(critical)                
                 {
                     boolean[] keyUsage = ((X509Certificate) certificate)
@@ -144,14 +144,14 @@ for(Iterator i = ce.iterator();i.hasNext();)
                         InvalidKeyException var3C6FA66A427D89D7B509F5F9D450448C_1231622909 = new InvalidKeyException("The public key in the certificate cannot be used for digital signature purposes");
                         var3C6FA66A427D89D7B509F5F9D450448C_1231622909.addTaint(taint);
                         throw var3C6FA66A427D89D7B509F5F9D450448C_1231622909;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         engineInitVerify(certificate.getPublicKey());
         state = VERIFY;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -160,9 +160,9 @@ for(Iterator i = ce.iterator();i.hasNext();)
         addTaint(privateKey.getTaint());
         engineInitSign(privateKey);
         state = SIGN;
-        // ---------- Original Method ----------
-        //engineInitSign(privateKey);
-        //state = SIGN;
+        
+        
+        
     }
 
     
@@ -172,9 +172,9 @@ for(Iterator i = ce.iterator();i.hasNext();)
         addTaint(privateKey.getTaint());
         engineInitSign(privateKey, random);
         state = SIGN;
-        // ---------- Original Method ----------
-        //engineInitSign(privateKey, random);
-        //state = SIGN;
+        
+        
+        
     }
 
     
@@ -185,15 +185,15 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_1813998116 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_1813998116.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_1813998116;
-        } //End block
+        } 
         byte[] var2C28DE2A22EF8329373C917F693CF6C7_639282278 = (engineSign());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_923244293 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_923244293;
-        // ---------- Original Method ----------
-        //if (state != SIGN) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineSign();
+        
+        
+            
+        
+        
     }
 
     
@@ -208,25 +208,25 @@ for(Iterator i = ce.iterator();i.hasNext();)
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_299508453 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_299508453.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_299508453;
-        } //End block
+        } 
     if(state != SIGN)        
         {
             SignatureException var125661CE8E1441B5F396C624407C3274_968153170 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_968153170.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_968153170;
-        } //End block
+        } 
         int var763D82640E86A4C5F7903F8DDFF5815F_386814637 = (engineSign(outbuf, offset, len));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080163519 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080163519;
-        // ---------- Original Method ----------
-        //if (outbuf == null || offset < 0 || len < 0 ||
-                //offset + len > outbuf.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (state != SIGN) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineSign(outbuf, offset, len);
+        
+        
+                
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -238,15 +238,15 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_181715034 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_181715034.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_181715034;
-        } //End block
+        } 
         boolean varB6F9D942D920F26A694FF0FC6AC65A47_1286123114 = (engineVerify(signature));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_413248057 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_413248057;
-        // ---------- Original Method ----------
-        //if (state != VERIFY) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //return engineVerify(signature);
+        
+        
+            
+        
+        
     }
 
     
@@ -260,26 +260,26 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_784144335 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_784144335.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_784144335;
-        } //End block
+        } 
     if(signature == null || offset < 0 || length < 0 ||
                 offset + length > signature.length)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_811334886 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_811334886.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_811334886;
-        } //End block
+        } 
         boolean varBAB0C0AC7EE46744B853605AEBD2E2DC_1710081127 = (engineVerify(signature, offset, length));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1686024229 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1686024229;
-        // ---------- Original Method ----------
-        //if (state != VERIFY) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //if (signature == null || offset < 0 || length < 0 ||
-                //offset + length > signature.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //return engineVerify(signature, offset, length);
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -291,13 +291,13 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_887861950 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_887861950.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_887861950;
-        } //End block
+        } 
         engineUpdate(b);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(b);
+        
+        
+            
+        
+        
     }
 
     
@@ -309,13 +309,13 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_666815676 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_666815676.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_666815676;
-        } //End block
+        } 
         engineUpdate(data, 0, data.length);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(data, 0, data.length);
+        
+        
+            
+        
+        
     }
 
     
@@ -329,24 +329,24 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_1693573190 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_1693573190.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_1693573190;
-        } //End block
+        } 
     if(data == null || off < 0 || len < 0 ||
                 off + len > data.length)        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_22695818 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_22695818.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_22695818;
-        } //End block
+        } 
         engineUpdate(data, off, len);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //if (data == null || off < 0 || len < 0 ||
-                //off + len > data.length) {
-            //throw new IllegalArgumentException();
-        //}
-        //engineUpdate(data, off, len);
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -358,13 +358,13 @@ for(Iterator i = ce.iterator();i.hasNext();)
             SignatureException var125661CE8E1441B5F396C624407C3274_1820704398 = new SignatureException("Signature object is not initialized properly");
             var125661CE8E1441B5F396C624407C3274_1820704398.addTaint(taint);
             throw var125661CE8E1441B5F396C624407C3274_1820704398;
-        } //End block
+        } 
         engineUpdate(data);
-        // ---------- Original Method ----------
-        //if (state == UNINITIALIZED) {
-            //throw new SignatureException("Signature object is not initialized properly");
-        //}
-        //engineUpdate(data);
+        
+        
+            
+        
+        
     }
 
     
@@ -374,11 +374,12 @@ for(Iterator i = ce.iterator();i.hasNext();)
 String var77ECA046F6C5DB9243992DFD1F17C516_1861157972 =         "SIGNATURE " + algorithm + " state: " + stateToString(state);
         var77ECA046F6C5DB9243992DFD1F17C516_1861157972.addTaint(taint);
         return var77ECA046F6C5DB9243992DFD1F17C516_1861157972;
-        // ---------- Original Method ----------
-        //return "SIGNATURE " + algorithm + " state: " + stateToString(state);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.534 -0400", hash_original_method = "C1A460A3B710FBA1ED28C52AC5BBE911", hash_generated_method = "6730DFC0D1EE8F9155FE43A74B806F14")
     private String stateToString(int state) {
         addTaint(state);
@@ -400,17 +401,17 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1927252943 =         "";
         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1927252943.addTaint(taint);
         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1927252943;
 }
-        // ---------- Original Method ----------
-        //switch (state) {
-        //case UNINITIALIZED:
-            //return "UNINITIALIZED";
-        //case SIGN:
-            //return "SIGN";
-        //case VERIFY:
-            //return "VERIFY";
-        //default:
-            //return "";
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -420,8 +421,8 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1927252943 =         "";
         addTaint(value.getTaint());
         addTaint(param.getTaint());
         engineSetParameter(param, value);
-        // ---------- Original Method ----------
-        //engineSetParameter(param, value);
+        
+        
     }
 
     
@@ -429,8 +430,8 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1927252943 =         "";
     public final void setParameter(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
         engineSetParameter(params);
-        // ---------- Original Method ----------
-        //engineSetParameter(params);
+        
+        
     }
 
     
@@ -439,8 +440,8 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1927252943 =         "";
 AlgorithmParameters var143868FBE13878C430B11AC612630761_17378298 =         engineGetParameters();
         var143868FBE13878C430B11AC612630761_17378298.addTaint(taint);
         return var143868FBE13878C430B11AC612630761_17378298;
-        // ---------- Original Method ----------
-        //return engineGetParameters();
+        
+        
     }
 
     
@@ -451,8 +452,8 @@ AlgorithmParameters var143868FBE13878C430B11AC612630761_17378298 =         engin
 Object var940C682D170C73A367318C1A4CB6F451_1327808745 =         engineGetParameter(param);
         var940C682D170C73A367318C1A4CB6F451_1327808745.addTaint(taint);
         return var940C682D170C73A367318C1A4CB6F451_1327808745;
-        // ---------- Original Method ----------
-        //return engineGetParameter(param);
+        
+        
     }
 
     
@@ -464,15 +465,15 @@ Object var940C682D170C73A367318C1A4CB6F451_1327808745 =         engineGetParamet
 Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_1620603630.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_1620603630;
-        } //End block
+        } 
         CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_200848143 = new CloneNotSupportedException();
         var1615C718FF05C0D800F9FFF876AD8603_200848143.addTaint(taint);
         throw var1615C718FF05C0D800F9FFF876AD8603_200848143;
-        // ---------- Original Method ----------
-        //if (this instanceof Cloneable) {
-            //return super.clone();
-        //}
-        //throw new CloneNotSupportedException();
+        
+        
+            
+        
+        
     }
 
     
@@ -489,9 +490,9 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
             addTaint(provider.getTaint());
             super.provider = provider;
             spiImpl = signatureSpi;
-            // ---------- Original Method ----------
-            //super.provider = provider;
-            //spiImpl = signatureSpi;
+            
+            
+            
         }
 
         
@@ -501,8 +502,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
             byte[] varFDB3A8246D1A33F9AE44AE591143B543_1680847352 = (spiImpl.engineSign());
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2008355762 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_2008355762;
-            // ---------- Original Method ----------
-            //return spiImpl.engineSign();
+            
+            
         }
 
         
@@ -511,8 +512,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
         protected void engineUpdate(byte arg0) throws SignatureException {
             addTaint(arg0);
             spiImpl.engineUpdate(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineUpdate(arg0);
+            
+            
         }
 
         
@@ -523,8 +524,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
             boolean var0B72A81BE2B4644062350C16BC8CB81B_1674596099 = (spiImpl.engineVerify(arg0));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879727342 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879727342;
-            // ---------- Original Method ----------
-            //return spiImpl.engineVerify(arg0);
+            
+            
         }
 
         
@@ -535,8 +536,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
             addTaint(arg1);
             addTaint(arg0[0]);
             spiImpl.engineUpdate(arg0, arg1, arg2);
-            // ---------- Original Method ----------
-            //spiImpl.engineUpdate(arg0, arg1, arg2);
+            
+            
         }
 
         
@@ -545,8 +546,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
         protected void engineInitSign(PrivateKey arg0) throws InvalidKeyException {
             addTaint(arg0.getTaint());
             spiImpl.engineInitSign(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineInitSign(arg0);
+            
+            
         }
 
         
@@ -555,8 +556,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
         protected void engineInitVerify(PublicKey arg0) throws InvalidKeyException {
             addTaint(arg0.getTaint());
             spiImpl.engineInitVerify(arg0);
-            // ---------- Original Method ----------
-            //spiImpl.engineInitVerify(arg0);
+            
+            
         }
 
         
@@ -567,8 +568,8 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1620603630 =             super.clone(
 Object varCE32E83F946A002A5075AB939035A337_1101216157 =             spiImpl.engineGetParameter(arg0);
             varCE32E83F946A002A5075AB939035A337_1101216157.addTaint(taint);
             return varCE32E83F946A002A5075AB939035A337_1101216157;
-            // ---------- Original Method ----------
-            //return spiImpl.engineGetParameter(arg0);
+            
+            
         }
 
         
@@ -578,8 +579,8 @@ Object varCE32E83F946A002A5075AB939035A337_1101216157 =             spiImpl.engi
             addTaint(arg1.getTaint());
             addTaint(arg0.getTaint());
             spiImpl.engineSetParameter(arg0, arg1);
-            // ---------- Original Method ----------
-            //spiImpl.engineSetParameter(arg0, arg1);
+            
+            
         }
 
         
@@ -592,16 +593,16 @@ Object varCE32E83F946A002A5075AB939035A337_1101216157 =             spiImpl.engi
 Object var6B61508400A6F12DA4F46A73D534C975_61794226 =                 new SignatureImpl(spi, getProvider(), getAlgorithm());
                 var6B61508400A6F12DA4F46A73D534C975_61794226.addTaint(taint);
                 return var6B61508400A6F12DA4F46A73D534C975_61794226;
-            } //End block
+            } 
             CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_1739023251 = new CloneNotSupportedException();
             var1615C718FF05C0D800F9FFF876AD8603_1739023251.addTaint(taint);
             throw var1615C718FF05C0D800F9FFF876AD8603_1739023251;
-            // ---------- Original Method ----------
-            //if (spiImpl instanceof Cloneable) {
-                //SignatureSpi spi = (SignatureSpi) spiImpl.clone();
-                //return new SignatureImpl(spi, getProvider(), getAlgorithm());
-            //}
-            //throw new CloneNotSupportedException();
+            
+            
+                
+                
+            
+            
         }
 
         

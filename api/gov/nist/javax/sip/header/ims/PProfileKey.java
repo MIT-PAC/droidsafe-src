@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class PProfileKey extends AddressParametersHeader implements PProfileKeyH
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.038 -0400", hash_original_method = "62A39FCB1E97FABE3CE56B88DF28D500", hash_generated_method = "6CF76ED268EA92EBF0466748DD23DF23")
     public  PProfileKey( ) {
         super(P_PROFILE_KEY);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,8 +23,8 @@ public class PProfileKey extends AddressParametersHeader implements PProfileKeyH
         super(NAME);
         addTaint(address.getTaint());
         this.address = address;
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
@@ -35,29 +35,29 @@ public class PProfileKey extends AddressParametersHeader implements PProfileKeyH
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(LESS_THAN);
-        } //End block
+        } 
         retval.append(address.encode());
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(GREATER_THAN);
-        } //End block
+        } 
     if(!parameters.isEmpty())        
         retval.append(SEMICOLON + this.parameters.encode());
 String var1B324365A764C077A55854483509F4AB_1441635906 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1441635906.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1441635906;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //retval.append(LESS_THAN);
-        //}
-        //retval.append(address.encode());
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //retval.append(GREATER_THAN);
-        //}
-        //if (!parameters.isEmpty())
-            //retval.append(SEMICOLON + this.parameters.encode());
-        //return retval.toString();
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -67,8 +67,8 @@ String var1B324365A764C077A55854483509F4AB_1441635906 =         retval.toString(
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1011016062 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1011016062.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1011016062;
-        // ---------- Original Method ----------
-        //throw new ParseException(value,0);
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ String var1B324365A764C077A55854483509F4AB_1441635906 =         retval.toString(
         boolean var25F1D0958FB5ED2500C373724BBA1A92_931193135 = ((other instanceof PProfileKey) && super.equals(other));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864519018 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_864519018;
-        // ---------- Original Method ----------
-        //return (other instanceof PProfileKey) && super.equals(other);
+        
+        
     }
 
     
@@ -89,9 +89,9 @@ String var1B324365A764C077A55854483509F4AB_1441635906 =         retval.toString(
 Object varF9E19AD6135C970F387F77C6F3DE4477_966995393 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_966995393.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_966995393;
-        // ---------- Original Method ----------
-        //PProfileKey retval = (PProfileKey) super.clone();
-        //return retval;
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ final class BluetoothInputStream extends InputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.263 -0400", hash_original_method = "A759A55FDB7858A5B7FBD6EFC5F7FCA1", hash_generated_method = "51DD95F90510A057FC33A562FC393929")
       BluetoothInputStream(BluetoothSocket s) {
         mSocket = s;
-        // ---------- Original Method ----------
-        //mSocket = s;
+        
+        
     }
 
     
@@ -25,16 +25,16 @@ final class BluetoothInputStream extends InputStream {
         int varEDE8435F226749B7C408708AD6C4DD12_1214087003 = (mSocket.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_245373333 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_245373333;
-        // ---------- Original Method ----------
-        //return mSocket.available();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.264 -0400", hash_original_method = "1323B57D07CB6385C2F8CE9373488A22", hash_generated_method = "FD4CC8D718C262BFF2A44C717A5A00BB")
     public void close() throws IOException {
         mSocket.close();
-        // ---------- Original Method ----------
-        //mSocket.close();
+        
+        
     }
 
     
@@ -47,21 +47,21 @@ final class BluetoothInputStream extends InputStream {
             int var55D3865AACD24064F6ACF0F89CB68FB7_577273680 = ((int)b[0] & 0xff);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_811674514 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_811674514;
-        } //End block
+        } 
         else
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_247214084 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050841504 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1050841504;
-        } //End block
-        // ---------- Original Method ----------
-        //byte b[] = new byte[1];
-        //int ret = mSocket.read(b, 0, 1);
-        //if (ret == 1) {
-            //return (int)b[0] & 0xff;
-        //} else {
-            //return -1;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -75,24 +75,24 @@ final class BluetoothInputStream extends InputStream {
             NullPointerException varFDA6DA8786FB3EDEDA1C4BF2D933D93D_1064589878 = new NullPointerException("byte array is null");
             varFDA6DA8786FB3EDEDA1C4BF2D933D93D_1064589878.addTaint(taint);
             throw varFDA6DA8786FB3EDEDA1C4BF2D933D93D_1064589878;
-        } //End block
+        } 
     if((offset | length) < 0 || length > b.length - offset)        
         {
             ArrayIndexOutOfBoundsException varF956884CC32113133701D15839A01732_2044820716 = new ArrayIndexOutOfBoundsException("invalid offset or length");
             varF956884CC32113133701D15839A01732_2044820716.addTaint(taint);
             throw varF956884CC32113133701D15839A01732_2044820716;
-        } //End block
+        } 
         int varC95072A2E1DBA960320350DBD9DB4A02_100848113 = (mSocket.read(b, offset, length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_522694974 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_522694974;
-        // ---------- Original Method ----------
-        //if (b == null) {
-            //throw new NullPointerException("byte array is null");
-        //}
-        //if ((offset | length) < 0 || length > b.length - offset) {
-            //throw new ArrayIndexOutOfBoundsException("invalid offset or length");
-        //}
-        //return mSocket.read(b, offset, length);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

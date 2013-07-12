@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,8 +14,8 @@ public class HeaderParser extends Parser {
     protected  HeaderParser(String header) {
         addTaint(header.getTaint());
         this.lexer = new Lexer("command_keywordLexer", header);
-        // ---------- Original Method ----------
-        //this.lexer = new Lexer("command_keywordLexer", header);
+        
+        
     }
 
     
@@ -24,12 +24,13 @@ public class HeaderParser extends Parser {
         addTaint(lexer.getTaint());
         this.lexer = lexer;
         this.lexer.selectLexer("command_keywordLexer");
-        // ---------- Original Method ----------
-        //this.lexer = lexer;
-        //this.lexer.selectLexer("command_keywordLexer");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.585 -0400", hash_original_method = "3252974D26894AAD7C4FB2AFA441C9B3", hash_generated_method = "BFB57450E82F940C83DAB3CF45DD608C")
     protected int wkday() throws ParseException {
         dbg_enter("wkday");
@@ -91,16 +92,17 @@ public class HeaderParser extends Parser {
             varC641FDD74E6E9FC26E59A7186CE82DF5_1718109556.addTaint(taint);
             throw varC641FDD74E6E9FC26E59A7186CE82DF5_1718109556;
             }
-        } //End block
+        } 
         finally 
         {
             dbg_leave("wkday");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.639 -0400", hash_original_method = "C8449F66AC8DB5DC1EE33D138B3717DE", hash_generated_method = "033E2E448A76A27CD67C6C8EA1A458DE")
     protected Calendar date() throws ParseException {
         try 
@@ -120,62 +122,62 @@ public class HeaderParser extends Parser {
     if(month.equals("jan"))            
             {
                 retval.set(Calendar.MONTH, Calendar.JANUARY);
-            } //End block
+            } 
             else
     if(month.equals("feb"))            
             {
                 retval.set(Calendar.MONTH, Calendar.FEBRUARY);
-            } //End block
+            } 
             else
     if(month.equals("mar"))            
             {
                 retval.set(Calendar.MONTH, Calendar.MARCH);
-            } //End block
+            } 
             else
     if(month.equals("apr"))            
             {
                 retval.set(Calendar.MONTH, Calendar.APRIL);
-            } //End block
+            } 
             else
     if(month.equals("may"))            
             {
                 retval.set(Calendar.MONTH, Calendar.MAY);
-            } //End block
+            } 
             else
     if(month.equals("jun"))            
             {
                 retval.set(Calendar.MONTH, Calendar.JUNE);
-            } //End block
+            } 
             else
     if(month.equals("jul"))            
             {
                 retval.set(Calendar.MONTH, Calendar.JULY);
-            } //End block
+            } 
             else
     if(month.equals("aug"))            
             {
                 retval.set(Calendar.MONTH, Calendar.AUGUST);
-            } //End block
+            } 
             else
     if(month.equals("sep"))            
             {
                 retval.set(Calendar.MONTH, Calendar.SEPTEMBER);
-            } //End block
+            } 
             else
     if(month.equals("oct"))            
             {
                 retval.set(Calendar.MONTH, Calendar.OCTOBER);
-            } //End block
+            } 
             else
     if(month.equals("nov"))            
             {
                 retval.set(Calendar.MONTH, Calendar.NOVEMBER);
-            } //End block
+            } 
             else
     if(month.equals("dec"))            
             {
                 retval.set(Calendar.MONTH, Calendar.DECEMBER);
-            } //End block
+            } 
             lexer.match(' ');
             String s2 = lexer.number();
             int yr = Integer.parseInt(s2);
@@ -183,18 +185,19 @@ public class HeaderParser extends Parser {
 Calendar varF9E19AD6135C970F387F77C6F3DE4477_1008686575 =             retval;
             varF9E19AD6135C970F387F77C6F3DE4477_1008686575.addTaint(taint);
             return varF9E19AD6135C970F387F77C6F3DE4477_1008686575;
-        } //End block
+        } 
         catch (Exception ex)
         {
             java.text.ParseException var175DA175F84F59D992CB0979F0854B9D_337999672 = createParseException("bad date field");
             var175DA175F84F59D992CB0979F0854B9D_337999672.addTaint(taint);
             throw var175DA175F84F59D992CB0979F0854B9D_337999672;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.664 -0400", hash_original_method = "A339A3BD9B311A61AF23D5CD23AA066A", hash_generated_method = "75B09702DAB483FDEDA041C19469FEE2")
     protected void time(Calendar calendar) throws ParseException {
         addTaint(calendar.getTaint());
@@ -211,29 +214,29 @@ Calendar varF9E19AD6135C970F387F77C6F3DE4477_1008686575 =             retval;
             s = lexer.number();
             int sec = Integer.parseInt(s);
             calendar.set(Calendar.SECOND, sec);
-        } //End block
+        } 
         catch (Exception ex)
         {
             java.text.ParseException varFFA5BEB846477E615E8CC3D0DE513D2A_1617531805 = createParseException("error processing time ");
             varFFA5BEB846477E615E8CC3D0DE513D2A_1617531805.addTaint(taint);
             throw varFFA5BEB846477E615E8CC3D0DE513D2A_1617531805;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //String s = lexer.number();
-            //int hour = Integer.parseInt(s);
-            //calendar.set(Calendar.HOUR_OF_DAY, hour);
-            //lexer.match(':');
-            //s = lexer.number();
-            //int min = Integer.parseInt(s);
-            //calendar.set(Calendar.MINUTE, min);
-            //lexer.match(':');
-            //s = lexer.number();
-            //int sec = Integer.parseInt(s);
-            //calendar.set(Calendar.SECOND, sec);
-        //} catch (Exception ex) {
-            //throw createParseException("error processing time ");
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -247,16 +250,17 @@ Calendar varF9E19AD6135C970F387F77C6F3DE4477_1008686575 =             retval;
 SIPHeader varF9E19AD6135C970F387F77C6F3DE4477_519838563 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_519838563.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_519838563;
-        // ---------- Original Method ----------
-        //String name = lexer.getNextToken(':');
-        //lexer.consume(1);
-        //String body = lexer.getLine().trim();
-        //ExtensionHeaderImpl retval = new ExtensionHeaderImpl(name);
-        //retval.setValue(body);
-        //return retval;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.665 -0400", hash_original_method = "E611EE61C75972DE5AB5B484EC7DE89C", hash_generated_method = "729814072190F6B773BDA8F6ADC3A39F")
     protected void headerName(int tok) throws ParseException {
         addTaint(tok);
@@ -264,11 +268,11 @@ SIPHeader varF9E19AD6135C970F387F77C6F3DE4477_519838563 =         retval;
         this.lexer.SPorHT();
         this.lexer.match(':');
         this.lexer.SPorHT();
-        // ---------- Original Method ----------
-        //this.lexer.match(tok);
-        //this.lexer.SPorHT();
-        //this.lexer.match(':');
-        //this.lexer.SPorHT();
+        
+        
+        
+        
+        
     }
 
     

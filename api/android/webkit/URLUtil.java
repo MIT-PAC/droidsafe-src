@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,11 +17,12 @@ public final class URLUtil {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.305 -0400", hash_original_method = "581EF9FF4A1E1085E3970232802A3705", hash_generated_method = "581EF9FF4A1E1085E3970232802A3705")
     public URLUtil ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static String guessUrl(String inUrl) {
+        @DSModeled(DSC.SPEC)
+    public static String guessUrl(String inUrl) {
         String retVal = inUrl;
         WebAddress webAddress;
         if (DebugFlags.URL_UTIL) Log.v(LOGTAG, "guessURL before queueRequest: " + inUrl);
@@ -69,7 +70,8 @@ public final class URLUtil {
     }
 
     
-        public static byte[] decode(byte[] url) throws IllegalArgumentException {
+        @DSModeled(DSC.SPEC)
+    public static byte[] decode(byte[] url) throws IllegalArgumentException {
         if (url.length == 0) {
             return new byte[0];
         }
@@ -94,7 +96,8 @@ public final class URLUtil {
     }
 
     
-        static boolean verifyURLEncoding(String url) {
+        @DSModeled(DSC.SPEC)
+    static boolean verifyURLEncoding(String url) {
         int count = url.length();
         if (count == 0) {
             return false;
@@ -130,12 +133,14 @@ public final class URLUtil {
     }
 
     
-        public static boolean isResourceUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isResourceUrl(String url) {
         return (null != url) && url.startsWith(RESOURCE_BASE);
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SPEC)
+    @Deprecated
     public static boolean isCookielessProxyUrl(String url) {
         return (null != url) && url.startsWith(PROXY_BASE);
     }
@@ -148,36 +153,42 @@ public final class URLUtil {
     }
 
     
-        public static boolean isAboutUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isAboutUrl(String url) {
         return (null != url) && url.startsWith("about:");
     }
 
     
-        public static boolean isDataUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isDataUrl(String url) {
         return (null != url) && url.startsWith("data:");
     }
 
     
-        public static boolean isJavaScriptUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isJavaScriptUrl(String url) {
         return (null != url) && url.startsWith("javascript:");
     }
 
     
-        public static boolean isHttpUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isHttpUrl(String url) {
         return (null != url) &&
                (url.length() > 6) &&
                url.substring(0, 7).equalsIgnoreCase("http://");
     }
 
     
-        public static boolean isHttpsUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isHttpsUrl(String url) {
         return (null != url) &&
                (url.length() > 7) &&
                url.substring(0, 8).equalsIgnoreCase("https://");
     }
 
     
-        public static boolean isNetworkUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isNetworkUrl(String url) {
         if (url == null || url.length() == 0) {
             return false;
         }
@@ -185,7 +196,8 @@ public final class URLUtil {
     }
 
     
-        public static boolean isContentUrl(String url) {
+        @DSModeled(DSC.SPEC)
+    public static boolean isContentUrl(String url) {
         return (null != url) && url.startsWith("content:");
     }
 
@@ -287,7 +299,8 @@ public final class URLUtil {
     }
 
     
-        static String parseContentDisposition(String contentDisposition) {
+        @DSModeled(DSC.SPEC)
+    static String parseContentDisposition(String contentDisposition) {
         try {
             Matcher m = CONTENT_DISPOSITION_PATTERN.matcher(contentDisposition);
             if (m.find()) {

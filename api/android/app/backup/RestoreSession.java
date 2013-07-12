@@ -1,6 +1,6 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,9 +29,9 @@ public class RestoreSession {
       RestoreSession(Context context, IRestoreSession binder) {
         mContext = context;
         mBinder = binder;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mBinder = binder;
+        
+        
+        
     }
 
     
@@ -43,23 +43,23 @@ public class RestoreSession {
         try 
         {
             err = mBinder.getAvailableRestoreSets(obsWrapper);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to get available sets");
-        } //End block
+        } 
         int var56BD7107802EBE56C6918992F0608EC6_535276464 = (err);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496622414 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_496622414;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //RestoreObserverWrapper obsWrapper = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.getAvailableRestoreSets(obsWrapper);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to get available sets");
-        //}
-        //return err;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -73,32 +73,32 @@ public class RestoreSession {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_286166874 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_688138533 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_688138533;
-        } //End block
+        } 
         mObserver = new RestoreObserverWrapper(mContext, observer);
         try 
         {
             err = mBinder.restoreAll(token, mObserver);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to restore");
-        } //End block
+        } 
         int var56BD7107802EBE56C6918992F0608EC6_143123587 = (err);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_880501706 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_880501706;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //if (mObserver != null) {
-            //Log.d(TAG, "restoreAll() called during active restore");
-            //return -1;
-        //}
-        //mObserver = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.restoreAll(token, mObserver);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to restore");
-        //}
-        //return err;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -113,32 +113,32 @@ public class RestoreSession {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_756281613 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457769816 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457769816;
-        } //End block
+        } 
         mObserver = new RestoreObserverWrapper(mContext, observer);
         try 
         {
             err = mBinder.restoreSome(token, mObserver, packages);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to restore packages");
-        } //End block
+        } 
         int var56BD7107802EBE56C6918992F0608EC6_675203357 = (err);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772416433 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772416433;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //if (mObserver != null) {
-            //Log.d(TAG, "restoreAll() called during active restore");
-            //return -1;
-        //}
-        //mObserver = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.restoreSome(token, mObserver, packages);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to restore packages");
-        //}
-        //return err;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -152,32 +152,32 @@ public class RestoreSession {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_454933847 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730551357 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730551357;
-        } //End block
+        } 
         mObserver = new RestoreObserverWrapper(mContext, observer);
         try 
         {
             err = mBinder.restorePackage(packageName, mObserver);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to restore package");
-        } //End block
+        } 
         int var56BD7107802EBE56C6918992F0608EC6_648552164 = (err);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661395600 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_661395600;
-        // ---------- Original Method ----------
-        //int err = -1;
-        //if (mObserver != null) {
-            //Log.d(TAG, "restorePackage() called during active restore");
-            //return -1;
-        //}
-        //mObserver = new RestoreObserverWrapper(mContext, observer);
-        //try {
-            //err = mBinder.restorePackage(packageName, mObserver);
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to restore package");
-        //}
-        //return err;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -186,23 +186,23 @@ public class RestoreSession {
         try 
         {
             mBinder.endRestoreSession();
-        } //End block
+        } 
         catch (RemoteException e)
         {
             Log.d(TAG, "Can't contact server to get available sets");
-        } //End block
+        } 
         finally 
         {
             mBinder = null;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mBinder.endRestoreSession();
-        //} catch (RemoteException e) {
-            //Log.d(TAG, "Can't contact server to get available sets");
-        //} finally {
-            //mBinder = null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -235,72 +235,76 @@ switch(msg.what){
                 mAppObserver.restoreSetsAvailable((RestoreSet[])msg.obj);
                 break;
 }
-                // ---------- Original Method ----------
-                //switch (msg.what) {
-                    //case MSG_RESTORE_STARTING:
-                        //mAppObserver.restoreStarting(msg.arg1);
-                        //break;
-                    //case MSG_UPDATE:
-                        //mAppObserver.onUpdate(msg.arg1, (String)msg.obj);
-                        //break;
-                    //case MSG_RESTORE_FINISHED:
-                        //mAppObserver.restoreFinished(msg.arg1);
-                        //break;
-                    //case MSG_RESTORE_SETS_AVAILABLE:
-                        //mAppObserver.restoreSetsAvailable((RestoreSet[])msg.obj);
-                        //break;
-                    //}
+                
+                
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                        
+                        
+                    
             }
 };
             mAppObserver = appObserver;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.406 -0400", hash_original_method = "856BC446A8E3590AAA97D30784AFC7AF", hash_generated_method = "A74DD86EEB964679872C2579E3BF5CCE")
         public void restoreSetsAvailable(RestoreSet[] result) {
             addTaint(result[0].getTaint());
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_SETS_AVAILABLE, result));
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_RESTORE_SETS_AVAILABLE, result));
+            
+            
+                    
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.406 -0400", hash_original_method = "09B9DD73C3E4A1439A279C7C4D1CFC03", hash_generated_method = "2F50BAFD1BE78E86C546D0C5DFA814CB")
         public void restoreStarting(int numPackages) {
             addTaint(numPackages);
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_STARTING, numPackages, 0));
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_RESTORE_STARTING, numPackages, 0));
+            
+            
+                    
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.407 -0400", hash_original_method = "4CFF49A8B007F8B448F2967D6A75009D", hash_generated_method = "31766C357506570A5FADBB1195FA94D3")
         public void onUpdate(int nowBeingRestored, String currentPackage) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(currentPackage.getTaint());
             addTaint(nowBeingRestored);
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_UPDATE, nowBeingRestored, 0, currentPackage));
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_UPDATE, nowBeingRestored, 0, currentPackage));
+            
+            
+                    
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.407 -0400", hash_original_method = "9021095FD560CADBADD83E17671DA995", hash_generated_method = "CA417BC5B0D06FEA4D8A0973BA34390A")
         public void restoreFinished(int error) {
             addTaint(error);
             mHandler.sendMessage(
                     mHandler.obtainMessage(MSG_RESTORE_FINISHED, error, 0));
-            // ---------- Original Method ----------
-            //mHandler.sendMessage(
-                    //mHandler.obtainMessage(MSG_RESTORE_FINISHED, error, 0));
+            
+            
+                    
         }
 
         

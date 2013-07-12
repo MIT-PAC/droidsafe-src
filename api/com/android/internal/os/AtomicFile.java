@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,22 +24,24 @@ public class AtomicFile {
     public  AtomicFile(File baseName) {
         mBaseName = baseName;
         mBackupName = new File(baseName.getPath() + ".bak");
-        // ---------- Original Method ----------
-        //mBaseName = baseName;
-        //mBackupName = new File(baseName.getPath() + ".bak");
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.886 -0400", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "96ED4E1FBCB51B1E78F8ED474CE7869A")
     public File getBaseFile() {
 File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871 =         mBaseName;
         var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871.addTaint(taint);
         return var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871;
-        // ---------- Original Method ----------
-        //return mBaseName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.887 -0400", hash_original_method = "3A4012A9534B3FE136043C6A101CE434", hash_generated_method = "71486F296209CFE8634803B0AF86746D")
     public FileOutputStream startWrite() throws IOException {
     if(mBaseName.exists())        
@@ -48,18 +50,18 @@ File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871 =         mBaseName;
             {
     if(!mBaseName.renameTo(mBackupName))                
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 mBaseName.delete();
-            } //End block
-        } //End block
+            } 
+        } 
         FileOutputStream str = null;
         try 
         {
             str = new FileOutputStream(mBaseName);
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             File parent = mBaseName.getParentFile();
@@ -68,7 +70,7 @@ File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871 =         mBaseName;
                 IOException var93E80C5AEA7236343C539F8482239D40_770411921 = new IOException("Couldn't create directory " + mBaseName);
                 var93E80C5AEA7236343C539F8482239D40_770411921.addTaint(taint);
                 throw var93E80C5AEA7236343C539F8482239D40_770411921;
-            } //End block
+            } 
             FileUtils.setPermissions(
                 parent.getPath(),
                 FileUtils.S_IRWXU|FileUtils.S_IRWXG|FileUtils.S_IXOTH,
@@ -76,19 +78,19 @@ File var3159B9DA1820FE9B195E6E0FE8FEB2CB_1766173871 =         mBaseName;
             try 
             {
                 str = new FileOutputStream(mBaseName);
-            } //End block
+            } 
             catch (FileNotFoundException e2)
             {
                 IOException var66986A0D2FFF21E9D34211DD32CEA621_2065422849 = new IOException("Couldn't create " + mBaseName);
                 var66986A0D2FFF21E9D34211DD32CEA621_2065422849.addTaint(taint);
                 throw var66986A0D2FFF21E9D34211DD32CEA621_2065422849;
-            } //End block
-        } //End block
+            } 
+        } 
 FileOutputStream var061B89662D09DE43FE2A2D88636258A2_1950314063 =         str;
         var061B89662D09DE43FE2A2D88636258A2_1950314063.addTaint(taint);
         return var061B89662D09DE43FE2A2D88636258A2_1950314063;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -102,21 +104,21 @@ FileOutputStream var061B89662D09DE43FE2A2D88636258A2_1950314063 =         str;
             {
                 str.close();
                 mBackupName.delete();
-            } //End block
+            } 
             catch (IOException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (str != null) {
-            //FileUtils.sync(str);
-            //try {
-                //str.close();
-                //mBackupName.delete();
-            //} catch (IOException e) {
-                //Log.w("AtomicFile", "finishWrite: Got exception:", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -131,22 +133,22 @@ FileOutputStream var061B89662D09DE43FE2A2D88636258A2_1950314063 =         str;
                 str.close();
                 mBaseName.delete();
                 mBackupName.renameTo(mBaseName);
-            } //End block
+            } 
             catch (IOException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (str != null) {
-            //FileUtils.sync(str);
-            //try {
-                //str.close();
-                //mBaseName.delete();
-                //mBackupName.renameTo(mBaseName);
-            //} catch (IOException e) {
-                //Log.w("AtomicFile", "failWrite: Got exception:", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -157,19 +159,19 @@ FileOutputStream var061B89662D09DE43FE2A2D88636258A2_1950314063 =         str;
 FileOutputStream var9DC698F848EB30D5DB0E737C03EA529F_989104571 =             new FileOutputStream(mBaseName, true);
             var9DC698F848EB30D5DB0E737C03EA529F_989104571.addTaint(taint);
             return var9DC698F848EB30D5DB0E737C03EA529F_989104571;
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             IOException var0AB19DAFC7C56311DB5577169867305B_440368685 = new IOException("Couldn't append " + mBaseName);
             var0AB19DAFC7C56311DB5577169867305B_440368685.addTaint(taint);
             throw var0AB19DAFC7C56311DB5577169867305B_440368685;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return new FileOutputStream(mBaseName, true);
-        //} catch (FileNotFoundException e) {
-            //throw new IOException("Couldn't append " + mBaseName);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -180,25 +182,25 @@ FileOutputStream var9DC698F848EB30D5DB0E737C03EA529F_989104571 =             new
             FileOutputStream fos = new FileOutputStream(mBaseName);
             FileUtils.sync(fos);
             fos.close();
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             IOException var0AB19DAFC7C56311DB5577169867305B_2116074740 = new IOException("Couldn't append " + mBaseName);
             var0AB19DAFC7C56311DB5577169867305B_2116074740.addTaint(taint);
             throw var0AB19DAFC7C56311DB5577169867305B_2116074740;
-        } //End block
+        } 
         catch (IOException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //FileOutputStream fos = new FileOutputStream(mBaseName);
-            //FileUtils.sync(fos);
-            //fos.close();
-        //} catch (FileNotFoundException e) {
-            //throw new IOException("Couldn't append " + mBaseName);
-        //} catch (IOException e) {
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -208,16 +210,16 @@ FileOutputStream var9DC698F848EB30D5DB0E737C03EA529F_989104571 =             new
         {
             mBaseName.delete();
             mBackupName.renameTo(mBaseName);
-        } //End block
+        } 
 FileInputStream var59D1E0F00673AB4D53EFD779A964E7E0_1660242543 =         new FileInputStream(mBaseName);
         var59D1E0F00673AB4D53EFD779A964E7E0_1660242543.addTaint(taint);
         return var59D1E0F00673AB4D53EFD779A964E7E0_1660242543;
-        // ---------- Original Method ----------
-        //if (mBackupName.exists()) {
-            //mBaseName.delete();
-            //mBackupName.renameTo(mBaseName);
-        //}
-        //return new FileInputStream(mBaseName);
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -238,7 +240,7 @@ FileInputStream var59D1E0F00673AB4D53EFD779A964E7E0_1660242543 =         new Fil
                     byte[] var8D777F385D3DFEC8815D20F7496026DC_35336702 = (data);
                                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1269048871 = {getTaintByte()};
                     return var2F9C81BC6E497382285CD6B7A7E33DE1_1269048871;
-                } //End block
+                } 
                 pos += amt;
                 avail = stream.available();
     if(avail > data.length-pos)                
@@ -246,35 +248,35 @@ FileInputStream var59D1E0F00673AB4D53EFD779A964E7E0_1660242543 =         new Fil
                     byte[] newData = new byte[pos+avail];
                     System.arraycopy(data, 0, newData, 0, pos);
                     data = newData;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             stream.close();
-        } //End block
-        // ---------- Original Method ----------
-        //FileInputStream stream = openRead();
-        //try {
-            //int pos = 0;
-            //int avail = stream.available();
-            //byte[] data = new byte[avail];
-            //while (true) {
-                //int amt = stream.read(data, pos, data.length-pos);
-                //if (amt <= 0) {
-                    //return data;
-                //}
-                //pos += amt;
-                //avail = stream.available();
-                //if (avail > data.length-pos) {
-                    //byte[] newData = new byte[pos+avail];
-                    //System.arraycopy(data, 0, newData, 0, pos);
-                    //data = newData;
-                //}
-            //}
-        //} finally {
-            //stream.close();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                
+                
+                    
+                    
+                    
+                
+            
+        
+            
+        
     }
 
     

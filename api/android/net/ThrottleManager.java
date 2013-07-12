@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class ThrottleManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.487 -0400", hash_original_method = "A34F832700CA864903AE32FE53CD267E", hash_generated_method = "3F4BC6E2219D8CDC47CEDF2CEA3212F6")
     @SuppressWarnings({"UnusedDeclaration"})
     private  ThrottleManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,14 +29,14 @@ public class ThrottleManager {
                 "ThrottleManager() cannot be constructed with null service");
             varE23043D91EBD904FCFFC9118BB5AE827_15557761.addTaint(taint);
             throw varE23043D91EBD904FCFFC9118BB5AE827_15557761;
-        } //End block
+        } 
         mService = service;
-        // ---------- Original Method ----------
-        //if (service == null) {
-            //throw new IllegalArgumentException(
-                //"ThrottleManager() cannot be constructed with null service");
-        //}
-        //mService = service;
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -48,19 +48,19 @@ public class ThrottleManager {
             long var85A0DCA92FF226DB0736DF7D9B8E2D5E_344683384 = (mService.getResetTime(iface));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_513493985 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_513493985;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             long var6BB61E3B7BCE0931DA574D19D1D82C88_1229497053 = (-1);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1999594300 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1999594300;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getResetTime(iface);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -72,19 +72,19 @@ public class ThrottleManager {
             long var9CFA7BF2BE0EDEA09F6EEAE7F87E2344_907287982 = (mService.getPeriodStartTime(iface));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_262728980 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_262728980;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             long var6BB61E3B7BCE0931DA574D19D1D82C88_1590209136 = (-1);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1227837240 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1227837240;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getPeriodStartTime(iface);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -99,19 +99,19 @@ public class ThrottleManager {
             long varCE8B0BFAAFE3039AF58C1CE59D5E1AD4_1239500409 = (mService.getByteCount(iface, direction, period, ago));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1341291519 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1341291519;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             long var6BB61E3B7BCE0931DA574D19D1D82C88_841219226 = (-1);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_786053527 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_786053527;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getByteCount(iface, direction, period, ago);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -124,19 +124,19 @@ public class ThrottleManager {
             long var1FC8A02CBE85C503650F222A730DBB6E_1422572851 = (mService.getCliffThreshold(iface, cliff));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_969505375 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_969505375;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             long var6BB61E3B7BCE0931DA574D19D1D82C88_2089330140 = (-1);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1023614063 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1023614063;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getCliffThreshold(iface, cliff);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -149,19 +149,19 @@ public class ThrottleManager {
             int varA8C2FB3FEE7084B2F9CE86DE6BD45AE7_176874075 = (mService.getCliffLevel(iface, cliff));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1554725491 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1554725491;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1800872031 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756955354 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756955354;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getCliffLevel(iface, cliff);
-        //} catch (RemoteException e) {
-            //return -1;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -172,19 +172,19 @@ public class ThrottleManager {
 String varED1817BFB721597A8484A0DA62292CDF_549146575 =             mService.getHelpUri();
             varED1817BFB721597A8484A0DA62292CDF_549146575.addTaint(taint);
             return varED1817BFB721597A8484A0DA62292CDF_549146575;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 String var540C13E9E156B687226421B24F2DF178_16785077 =             null;
             var540C13E9E156B687226421B24F2DF178_16785077.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_16785077;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getHelpUri();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

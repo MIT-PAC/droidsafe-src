@@ -1,6 +1,6 @@
 package java.beans;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,18 +17,19 @@ public class PropertyChangeListenerProxy extends EventListenerProxy implements P
         super(listener);
         addTaint(listener.getTaint());
         this.propertyName = propertyName;
-        // ---------- Original Method ----------
-        //this.propertyName = propertyName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:46.669 -0400", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "F7AA94D4443A9B45822A90B6167CA6BB")
     public String getPropertyName() {
 String var3D632F0E4FFF94E691F92D3669CF1392_1917840490 =         propertyName;
         var3D632F0E4FFF94E691F92D3669CF1392_1917840490.addTaint(taint);
         return var3D632F0E4FFF94E691F92D3669CF1392_1917840490;
-        // ---------- Original Method ----------
-        //return propertyName;
+        
+        
     }
 
     
@@ -37,9 +38,9 @@ String var3D632F0E4FFF94E691F92D3669CF1392_1917840490 =         propertyName;
         addTaint(event.getTaint());
         PropertyChangeListener listener = (PropertyChangeListener) getListener();
         listener.propertyChange(event);
-        // ---------- Original Method ----------
-        //PropertyChangeListener listener = (PropertyChangeListener) getListener();
-        //listener.propertyChange(event);
+        
+        
+        
     }
 
     

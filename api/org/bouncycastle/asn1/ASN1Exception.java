@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class ASN1Exception extends IOException {
       ASN1Exception(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,18 +24,19 @@ public class ASN1Exception extends IOException {
         super(message);
         addTaint(message.getTaint());
         this.cause = cause;
-        // ---------- Original Method ----------
-        //this.cause = cause;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.544 -0400", hash_original_method = "CDBDBC1C44563A9D34649A0018341F0E", hash_generated_method = "0E9E1238D97A76C5E65928B66A3FD78D")
     public Throwable getCause() {
 Throwable var3C8F3313F49435961542E8707E527956_661790072 =         cause;
         var3C8F3313F49435961542E8707E527956_661790072.addTaint(taint);
         return var3C8F3313F49435961542E8707E527956_661790072;
-        // ---------- Original Method ----------
-        //return cause;
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class BatteryManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.850 -0400", hash_original_method = "46CB3C3298CDC989655A7D5A93769408", hash_generated_method = "46CB3C3298CDC989655A7D5A93769408")
     public BatteryManager ()
     {
-        //Synthesized constructor
+        
     }
 
 

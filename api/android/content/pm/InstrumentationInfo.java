@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,7 +35,7 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.840 -0400", hash_original_method = "34F974A68EBB10BE10D867312E044FDF", hash_generated_method = "9D87916FE1B410C75B139D4D86872585")
     public  InstrumentationInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,14 +49,14 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
         nativeLibraryDir = orig.nativeLibraryDir;
         handleProfiling = orig.handleProfiling;
         functionalTest = orig.functionalTest;
-        // ---------- Original Method ----------
-        //targetPackage = orig.targetPackage;
-        //sourceDir = orig.sourceDir;
-        //publicSourceDir = orig.publicSourceDir;
-        //dataDir = orig.dataDir;
-        //nativeLibraryDir = orig.nativeLibraryDir;
-        //handleProfiling = orig.handleProfiling;
-        //functionalTest = orig.functionalTest;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -70,14 +70,14 @@ public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
         nativeLibraryDir = source.readString();
         handleProfiling = source.readInt() != 0;
         functionalTest = source.readInt() != 0;
-        // ---------- Original Method ----------
-        //targetPackage = source.readString();
-        //sourceDir = source.readString();
-        //publicSourceDir = source.readString();
-        //dataDir = source.readString();
-        //nativeLibraryDir = source.readString();
-        //handleProfiling = source.readInt() != 0;
-        //functionalTest = source.readInt() != 0;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -88,20 +88,21 @@ String var2ACCEFA985DAEFA3B14D26B03FD6229E_811366428 =         "InstrumentationI
             + " " + packageName + "}";
         var2ACCEFA985DAEFA3B14D26B03FD6229E_811366428.addTaint(taint);
         return var2ACCEFA985DAEFA3B14D26B03FD6229E_811366428;
-        // ---------- Original Method ----------
-        //return "InstrumentationInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + packageName + "}";
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.845 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2D1AE547C1C5B9E30FFDD8A932E6E0F5")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2060364389 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138731170 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138731170;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -117,15 +118,15 @@ String var2ACCEFA985DAEFA3B14D26B03FD6229E_811366428 =         "InstrumentationI
         dest.writeString(nativeLibraryDir);
         dest.writeInt((handleProfiling == false) ? 0 : 1);
         dest.writeInt((functionalTest == false) ? 0 : 1);
-        // ---------- Original Method ----------
-        //super.writeToParcel(dest, parcelableFlags);
-        //dest.writeString(targetPackage);
-        //dest.writeString(sourceDir);
-        //dest.writeString(publicSourceDir);
-        //dest.writeString(dataDir);
-        //dest.writeString(nativeLibraryDir);
-        //dest.writeInt((handleProfiling == false) ? 0 : 1);
-        //dest.writeInt((functionalTest == false) ? 0 : 1);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -140,12 +141,12 @@ String var2ACCEFA985DAEFA3B14D26B03FD6229E_811366428 =         "InstrumentationI
             return new InstrumentationInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public InstrumentationInfo createFromParcel(Parcel source) {
             return new InstrumentationInfo(source);
         }
     
-    // orphaned legacy method
+    
     public InstrumentationInfo[] newArray(int size) {
             return new InstrumentationInfo[size];
         }

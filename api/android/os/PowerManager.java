@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class PowerManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.338 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     private  PowerManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,9 +24,9 @@ public class PowerManager {
     public  PowerManager(IPowerManager service, Handler handler) {
         mService = service;
         mHandler = handler;
-        // ---------- Original Method ----------
-        //mService = service;
-        //mHandler = handler;
+        
+        
+        
     }
 
     
@@ -39,15 +39,15 @@ public class PowerManager {
             NullPointerException var3013041DE9CCD17410AB8D25ADEA0167_1228854455 = new NullPointerException("tag is null in PowerManager.newWakeLock");
             var3013041DE9CCD17410AB8D25ADEA0167_1228854455.addTaint(taint);
             throw var3013041DE9CCD17410AB8D25ADEA0167_1228854455;
-        } //End block
+        } 
 WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(flags, tag);
         var4089891081BA08D4F8E416D6853507C4_2097408929.addTaint(taint);
         return var4089891081BA08D4F8E416D6853507C4_2097408929;
-        // ---------- Original Method ----------
-        //if (tag == null) {
-            //throw new NullPointerException("tag is null in PowerManager.newWakeLock");
-        //}
-        //return new WakeLock(flags, tag);
+        
+        
+            
+        
+        
     }
 
     
@@ -58,15 +58,15 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(f
         try 
         {
             mService.userActivity(when, noChangeLights);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.userActivity(when, noChangeLights);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -76,15 +76,15 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(f
         try 
         {
             mService.goToSleep(time);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.goToSleep(time);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -94,15 +94,15 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(f
         try 
         {
             mService.setBacklightBrightness(brightness);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setBacklightBrightness(brightness);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -113,19 +113,19 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(f
             int var8E1F0C77F4A230485BA874DB229DEF8F_1952475016 = (mService.getSupportedWakeLockFlags());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586745226 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1586745226;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_611509412 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394893308 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394893308;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getSupportedWakeLockFlags();
-        //} catch (RemoteException e) {
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -136,19 +136,19 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(f
             boolean var93CFF79B5D2555DE3023FF73E15B99C9_1975760911 = (mService.isScreenOn());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394864732 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394864732;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_2014095862 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1596150031 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1596150031;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.isScreenOn();
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -158,15 +158,15 @@ WakeLock var4089891081BA08D4F8E416D6853507C4_2097408929 =         new WakeLock(f
         try 
         {
             mService.reboot(reason);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.reboot(reason);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
     }
 
     
@@ -221,28 +221,29 @@ switch(flags & LOCK_MASK){
 }            mFlags = flags;
             mTag = tag;
             mToken = new Binder();
-            // ---------- Original Method ----------
-            //switch (flags & LOCK_MASK) {
-            //case PARTIAL_WAKE_LOCK:
-            //case SCREEN_DIM_WAKE_LOCK:
-            //case SCREEN_BRIGHT_WAKE_LOCK:
-            //case FULL_WAKE_LOCK:
-            //case PROXIMITY_SCREEN_OFF_WAKE_LOCK:
-                //break;
-            //default:
-                //throw new IllegalArgumentException();
-            //}
-            //mFlags = flags;
-            //mTag = tag;
-            //mToken = new Binder();
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.346 -0400", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "494115ABA2B3754EECDF64EBFE873031")
         public void setReferenceCounted(boolean value) {
             mRefCounted = value;
-            // ---------- Original Method ----------
-            //mRefCounted = value;
+            
+            
         }
 
         
@@ -251,11 +252,11 @@ switch(flags & LOCK_MASK){
             synchronized
 (mToken)            {
                 acquireLocked();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //acquireLocked();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -266,12 +267,12 @@ switch(flags & LOCK_MASK){
 (mToken)            {
                 acquireLocked();
                 mHandler.postDelayed(mReleaser, timeout);
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //acquireLocked();
-                //mHandler.postDelayed(mReleaser, timeout);
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -283,29 +284,29 @@ switch(flags & LOCK_MASK){
                 try 
                 {
                     mService.acquireWakeLock(mFlags, mToken, mTag, mWorkSource);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
+                } 
                 mHeld = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mRefCounted || mCount++ == 0) {
-                //mHandler.removeCallbacks(mReleaser);
-                //try {
-                    //mService.acquireWakeLock(mFlags, mToken, mTag, mWorkSource);
-                //} catch (RemoteException e) {
-                //}
-                //mHeld = true;
-            //}
+            } 
+            
+            
+                
+                
+                    
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.348 -0400", hash_original_method = "4304724C92023C406072B166ABF56DE4", hash_generated_method = "06536F16FDC471761CBE2359AB1C490E")
         public void release() {
             release(0);
-            // ---------- Original Method ----------
-            //release(0);
+            
+            
         }
 
         
@@ -320,36 +321,37 @@ switch(flags & LOCK_MASK){
                     try 
                     {
                         mService.releaseWakeLock(mToken, flags);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
+                    } 
                     mHeld = false;
-                } //End block
+                } 
     if(mCount < 0)                
                 {
                     RuntimeException var6CD397036E3CD1212596AC723083AF88_471695881 = new RuntimeException("WakeLock under-locked " + mTag);
                     var6CD397036E3CD1212596AC723083AF88_471695881.addTaint(taint);
                     throw var6CD397036E3CD1212596AC723083AF88_471695881;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //if (!mRefCounted || --mCount == 0) {
-                    //mHandler.removeCallbacks(mReleaser);
-                    //try {
-                        //mService.releaseWakeLock(mToken, flags);
-                    //} catch (RemoteException e) {
-                    //}
-                    //mHeld = false;
-                //}
-                //if (mCount < 0) {
-                    //throw new RuntimeException("WakeLock under-locked " + mTag);
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                        
+                    
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.349 -0400", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "A658EF33AA31FBD622DA3A9971D1F46C")
         public boolean isHeld() {
             synchronized
@@ -357,11 +359,11 @@ switch(flags & LOCK_MASK){
                 boolean varAD25B113814807D236AFB0F5095B0005_1515215473 = (mHeld);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_374713280 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_374713280;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //return mHeld;
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -372,39 +374,39 @@ switch(flags & LOCK_MASK){
     if(ws != null && ws.size() == 0)                
                 {
                     ws = null;
-                } //End block
+                } 
                 boolean changed = true;
     if(ws == null)                
                 {
                     mWorkSource = null;
-                } //End block
+                } 
                 else
     if(mWorkSource == null)                
                 {
                     changed = mWorkSource != null;
                     mWorkSource = new WorkSource(ws);
-                } //End block
+                } 
                 else
                 {
                     changed = mWorkSource.diff(ws);
     if(changed)                    
                     {
                         mWorkSource.set(ws);
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(changed && mHeld)                
                 {
                     try 
                     {
                         mService.updateWakeLockWorkSource(mToken, mWorkSource);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -417,13 +419,13 @@ String var46AB0C184AE74F49DBA6A39856AEEE67_492162133 =                 "WakeLock
                     + " held=" + mHeld + ", refCount=" + mCount + "}";
                 var46AB0C184AE74F49DBA6A39856AEEE67_492162133.addTaint(taint);
                 return var46AB0C184AE74F49DBA6A39856AEEE67_492162133;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //return "WakeLock{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " held=" + mHeld + ", refCount=" + mCount + "}";
-            //}
+            } 
+            
+            
+                
+                    
+                    
+            
         }
 
         
@@ -438,22 +440,22 @@ String var46AB0C184AE74F49DBA6A39856AEEE67_492162133 =                 "WakeLock
                     try 
                     {
                         mService.releaseWakeLock(mToken, 0);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mToken) {
-                //if (mHeld) {
-                    //Log.wtf(TAG, "WakeLock finalized while still held: " + mTag);
-                    //try {
-                        //mService.releaseWakeLock(mToken, 0);
-                    //} catch (RemoteException e) {
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                        
+                    
+                    
+                
+            
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.http.impl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -54,9 +54,9 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
         super();
         this.entityserializer = createEntitySerializer();
         this.entitydeserializer = createEntityDeserializer();
-        // ---------- Original Method ----------
-        //this.entityserializer = createEntitySerializer();
-        //this.entitydeserializer = createEntityDeserializer();
+        
+        
+        
     }
 
     
@@ -68,8 +68,8 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
 EntityDeserializer varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651 =         new EntityDeserializer(new LaxContentLengthStrategy());
         varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651.addTaint(taint);
         return varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651;
-        // ---------- Original Method ----------
-        //return new EntityDeserializer(new LaxContentLengthStrategy());
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ EntityDeserializer varD8277C9FB64D708D6AAEC33B5D57A8C1_266519651 =         new E
 EntitySerializer var73E805B24B914F947FB8A61049CA1B74_876298595 =         new EntitySerializer(new StrictContentLengthStrategy());
         var73E805B24B914F947FB8A61049CA1B74_876298595.addTaint(taint);
         return var73E805B24B914F947FB8A61049CA1B74_876298595;
-        // ---------- Original Method ----------
-        //return new EntitySerializer(new StrictContentLengthStrategy());
+        
+        
     }
 
     
@@ -88,8 +88,8 @@ EntitySerializer var73E805B24B914F947FB8A61049CA1B74_876298595 =         new Ent
 HttpResponseFactory varBC11667D6421859A3157C95B024F6BD9_993574027 =         new DefaultHttpResponseFactory();
         varBC11667D6421859A3157C95B024F6BD9_993574027.addTaint(taint);
         return varBC11667D6421859A3157C95B024F6BD9_993574027;
-        // ---------- Original Method ----------
-        //return new DefaultHttpResponseFactory();
+        
+        
     }
 
     
@@ -104,8 +104,8 @@ HttpResponseFactory varBC11667D6421859A3157C95B024F6BD9_993574027 =         new 
 HttpMessageParser varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939 =         new HttpResponseParser(buffer, null, responseFactory, params);
         varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939.addTaint(taint);
         return varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939;
-        // ---------- Original Method ----------
-        //return new HttpResponseParser(buffer, null, responseFactory, params);
+        
+        
     }
 
     
@@ -118,8 +118,8 @@ HttpMessageParser varB490B2FFBF849B1B42A29CDAF85ABF94_1305803939 =         new H
 HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new HttpRequestWriter(buffer, null, params);
         var04F23D93A84A9612B54CC0F1D40D1AB2_938552430.addTaint(taint);
         return var04F23D93A84A9612B54CC0F1D40D1AB2_938552430;
-        // ---------- Original Method ----------
-        //return new HttpRequestWriter(buffer, null, params);
+        
+        
     }
 
     
@@ -133,13 +133,13 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
             IllegalArgumentException var09E8CD37474729E64903391667436F8D_1193771496 = new IllegalArgumentException("Input session buffer may not be null");
             var09E8CD37474729E64903391667436F8D_1193771496.addTaint(taint);
             throw var09E8CD37474729E64903391667436F8D_1193771496;
-        } //End block
+        } 
     if(outbuffer == null)        
         {
             IllegalArgumentException varB4FD2758188C99A80EE7A5FBD554B10A_1760803103 = new IllegalArgumentException("Output session buffer may not be null");
             varB4FD2758188C99A80EE7A5FBD554B10A_1760803103.addTaint(taint);
             throw varB4FD2758188C99A80EE7A5FBD554B10A_1760803103;
-        } //End block
+        } 
         this.inbuffer = inbuffer;
         this.outbuffer = outbuffer;
         this.responseParser = createResponseParser(
@@ -151,24 +151,24 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
         this.metrics = new HttpConnectionMetricsImpl(
                 inbuffer.getMetrics(),
                 outbuffer.getMetrics());
-        // ---------- Original Method ----------
-        //if (inbuffer == null) {
-            //throw new IllegalArgumentException("Input session buffer may not be null");
-        //}
-        //if (outbuffer == null) {
-            //throw new IllegalArgumentException("Output session buffer may not be null");
-        //}
-        //this.inbuffer = inbuffer;
-        //this.outbuffer = outbuffer;
-        //this.responseParser = createResponseParser(
-                //inbuffer, 
-                //createHttpResponseFactory(), 
-                //params);
-        //this.requestWriter = createRequestWriter(
-                //outbuffer, params);
-        //this.metrics = new HttpConnectionMetricsImpl(
-                //inbuffer.getMetrics(),
-                //outbuffer.getMetrics());
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+                
+                
+                
+        
+                
+        
+                
+                
     }
 
     
@@ -179,9 +179,9 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
         boolean varE7A1AA20D93B96AA0ABFF4C7890ED8BA_19823413 = (this.inbuffer.isDataAvailable(timeout));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1524698610 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1524698610;
-        // ---------- Original Method ----------
-        //assertOpen();
-        //return this.inbuffer.isDataAvailable(timeout);
+        
+        
+        
     }
 
     
@@ -193,17 +193,17 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1039025705 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1039025705.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1039025705;
-        } //End block
+        } 
         assertOpen();
         this.requestWriter.write(request);
         this.metrics.incrementRequestCount();
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //assertOpen();
-        //this.requestWriter.write(request);
-        //this.metrics.incrementRequestCount();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -215,36 +215,36 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_974569537 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_974569537.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_974569537;
-        } //End block
+        } 
         assertOpen();
     if(request.getEntity() == null)        
         {
             return;
-        } //End block
+        } 
         this.entityserializer.serialize(
                 this.outbuffer,
                 request,
                 request.getEntity());
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //assertOpen();
-        //if (request.getEntity() == null) {
-            //return;
-        //}
-        //this.entityserializer.serialize(
-                //this.outbuffer,
-                //request,
-                //request.getEntity());
+        
+        
+            
+        
+        
+        
+            
+        
+        
+                
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.996 -0400", hash_original_method = "DE0B8B580EE6D4219521C9A2503EB8AB", hash_generated_method = "4D1A2508A821B55E0B18D024D4D93DA1")
     protected void doFlush() throws IOException {
         this.outbuffer.flush();
-        // ---------- Original Method ----------
-        //this.outbuffer.flush();
+        
+        
     }
 
     
@@ -252,9 +252,9 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     public void flush() throws IOException {
         assertOpen();
         doFlush();
-        // ---------- Original Method ----------
-        //assertOpen();
-        //doFlush();
+        
+        
+        
     }
 
     
@@ -265,17 +265,17 @@ HttpMessageWriter var04F23D93A84A9612B54CC0F1D40D1AB2_938552430 =         new Ht
     if(response.getStatusLine().getStatusCode() >= 200)        
         {
             this.metrics.incrementResponseCount();
-        } //End block
+        } 
 HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
         var2A1114F4272D753FE23A36E3D68CD293_1234810780.addTaint(taint);
         return var2A1114F4272D753FE23A36E3D68CD293_1234810780;
-        // ---------- Original Method ----------
-        //assertOpen();
-        //HttpResponse response = (HttpResponse) this.responseParser.parse();
-        //if (response.getStatusLine().getStatusCode() >= 200) {
-            //this.metrics.incrementResponseCount();
-        //}
-        //return response;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -287,17 +287,17 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
             IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_1307326503 = new IllegalArgumentException("HTTP response may not be null");
             var81F7C558D1B895656E1A076743F59C7C_1307326503.addTaint(taint);
             throw var81F7C558D1B895656E1A076743F59C7C_1307326503;
-        } //End block
+        } 
         assertOpen();
         HttpEntity entity = this.entitydeserializer.deserialize(this.inbuffer, response);
         response.setEntity(entity);
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //assertOpen();
-        //HttpEntity entity = this.entitydeserializer.deserialize(this.inbuffer, response);
-        //response.setEntity(entity);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -308,7 +308,7 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
             boolean varB326B5062B2F0E69046810717534CB09_1732567260 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023915455 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023915455;
-        } //End block
+        } 
         try 
         {
     if(inbuffer instanceof SocketInputBuffer)            
@@ -316,41 +316,42 @@ HttpResponse var2A1114F4272D753FE23A36E3D68CD293_1234810780 =         response;
                 boolean var70981A13FF8F12123AAC043584711ABC_465114182 = (((SocketInputBuffer) inbuffer).isStale());
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_19660021 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_19660021;
-            } //End block
+            } 
             this.inbuffer.isDataAvailable(1);
             boolean var68934A3E9455FA72420237EB05902327_1128760513 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1406786014 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1406786014;
-        } //End block
+        } 
         catch (IOException ex)
         {
             boolean varB326B5062B2F0E69046810717534CB09_2093733089 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_468958800 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_468958800;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //return true;
-        //}
-        //try {
-            //if (inbuffer instanceof SocketInputBuffer) {
-                //return ((SocketInputBuffer) inbuffer).isStale();
-            //}
-            //this.inbuffer.isDataAvailable(1);
-            //return false;
-        //} catch (IOException ex) {
-            //return true;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.997 -0400", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "1ABEBB2A7F6D24E4E333693B5E878426")
     public HttpConnectionMetrics getMetrics() {
 HttpConnectionMetrics varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256 =         this.metrics;
         varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256.addTaint(taint);
         return varFC1AE2E8C2526EA66FBB8E6B024A2CB6_1205790256;
-        // ---------- Original Method ----------
-        //return this.metrics;
+        
+        
     }
 
     

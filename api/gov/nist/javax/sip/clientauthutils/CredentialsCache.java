@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.clientauthutils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ class CredentialsCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.528 -0400", hash_original_method = "27F7597F884C45C17FD9F63A315334B1", hash_generated_method = "A4870380C2579D8A506F75F9CC2B9DB5")
       CredentialsCache(Timer timer) {
         this.timer = timer;
-        // ---------- Original Method ----------
-        //this.timer = timer;
+        
+        
     }
 
     
@@ -51,7 +51,7 @@ class CredentialsCache {
         {
             authHeaders = new LinkedList<AuthorizationHeader>();
             authorizationHeaders.put(callId, authHeaders);
-        } //End block
+        } 
         else
         {
             String realm = authorization.getRealm();
@@ -61,15 +61,15 @@ for(ListIterator<AuthorizationHeader> li = authHeaders.listIterator();li.hasNext
     if(realm.equals(authHeader.getRealm()))                
                 {
                     li.remove();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         authHeaders.add(authorization);
         TimeoutTask timeoutTask = new TimeoutTask( callId,user);
     if(cacheTime != -1)        
         this.timer.schedule(timeoutTask, cacheTime*1000);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -86,10 +86,10 @@ for(ListIterator<AuthorizationHeader> li = authHeaders.listIterator();li.hasNext
 Collection<AuthorizationHeader> varCC9B97112287D995B85611F9FD824364_1199836506 =         this.authorizationHeaders.get(callid);
         varCC9B97112287D995B85611F9FD824364_1199836506.addTaint(taint);
         return varCC9B97112287D995B85611F9FD824364_1199836506;
-        // ---------- Original Method ----------
-        //if (callid == null)
-            //throw new NullPointerException("Null arg!");
-        //return this.authorizationHeaders.get(callid);
+        
+        
+            
+        
     }
 
     
@@ -97,8 +97,8 @@ Collection<AuthorizationHeader> varCC9B97112287D995B85611F9FD824364_1199836506 =
     public void removeAuthenticationHeader(String callId) {
         addTaint(callId.getTaint());
         this.authorizationHeaders.remove(callId);
-        // ---------- Original Method ----------
-        //this.authorizationHeaders.remove(callId);
+        
+        
     }
 
     
@@ -114,9 +114,9 @@ Collection<AuthorizationHeader> varCC9B97112287D995B85611F9FD824364_1199836506 =
         public  TimeoutTask(String userName, String proxyDomain) {
             this.callId = proxyDomain;
             this.userName = userName;
-            // ---------- Original Method ----------
-            //this.callId = proxyDomain;
-            //this.userName = userName;
+            
+            
+            
         }
 
         
@@ -124,8 +124,8 @@ Collection<AuthorizationHeader> varCC9B97112287D995B85611F9FD824364_1199836506 =
         @Override
         public void run() {
             authorizationHeaders.remove(callId);
-            // ---------- Original Method ----------
-            //authorizationHeaders.remove(callId);
+            
+            
         }
 
         

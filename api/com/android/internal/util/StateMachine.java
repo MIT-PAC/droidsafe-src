@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,11 +30,11 @@ public class StateMachine {
         mSmThread.start();
         Looper looper = mSmThread.getLooper();
         initStateMachine(name, looper);
-        // ---------- Original Method ----------
-        //mSmThread = new HandlerThread(name);
-        //mSmThread.start();
-        //Looper looper = mSmThread.getLooper();
-        //initStateMachine(name, looper);
+        
+        
+        
+        
+        
     }
 
     
@@ -43,8 +43,8 @@ public class StateMachine {
         addTaint(looper.getTaint());
         addTaint(name.getTaint());
         initStateMachine(name, looper);
-        // ---------- Original Method ----------
-        //initStateMachine(name, looper);
+        
+        
     }
 
     
@@ -52,9 +52,9 @@ public class StateMachine {
     private void initStateMachine(String name, Looper looper) {
         mName = name;
         mSmHandler = new SmHandler(looper, this);
-        // ---------- Original Method ----------
-        //mName = name;
-        //mSmHandler = new SmHandler(looper, this);
+        
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ public class StateMachine {
         addTaint(parent.getTaint());
         addTaint(state.getTaint());
         mSmHandler.addState(state, parent);
-        // ---------- Original Method ----------
-        //mSmHandler.addState(state, parent);
+        
+        
     }
 
     
@@ -73,8 +73,8 @@ public class StateMachine {
 Message var6DE0409BA77556124F05E6E0BC457F8E_180180948 =         mSmHandler.getCurrentMessage();
         var6DE0409BA77556124F05E6E0BC457F8E_180180948.addTaint(taint);
         return var6DE0409BA77556124F05E6E0BC457F8E_180180948;
-        // ---------- Original Method ----------
-        //return mSmHandler.getCurrentMessage();
+        
+        
     }
 
     
@@ -83,8 +83,8 @@ Message var6DE0409BA77556124F05E6E0BC457F8E_180180948 =         mSmHandler.getCu
 IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurrentState();
         var87CBDBACE722DFE921BE617500791021_59867699.addTaint(taint);
         return var87CBDBACE722DFE921BE617500791021_59867699;
-        // ---------- Original Method ----------
-        //return mSmHandler.getCurrentState();
+        
+        
     }
 
     
@@ -92,8 +92,8 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     protected final void addState(State state) {
         addTaint(state.getTaint());
         mSmHandler.addState(state, null);
-        // ---------- Original Method ----------
-        //mSmHandler.addState(state, null);
+        
+        
     }
 
     
@@ -101,8 +101,8 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     protected final void setInitialState(State initialState) {
         addTaint(initialState.getTaint());
         mSmHandler.setInitialState(initialState);
-        // ---------- Original Method ----------
-        //mSmHandler.setInitialState(initialState);
+        
+        
     }
 
     
@@ -110,16 +110,16 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     protected final void transitionTo(IState destState) {
         addTaint(destState.getTaint());
         mSmHandler.transitionTo(destState);
-        // ---------- Original Method ----------
-        //mSmHandler.transitionTo(destState);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.859 -0400", hash_original_method = "42225DFCDD57D6590F4D09D0862811E2", hash_generated_method = "3678DC5016DC80DE1E1F3AFEA8AEDDF7")
     protected final void transitionToHaltingState() {
         mSmHandler.transitionTo(mSmHandler.mHaltingState);
-        // ---------- Original Method ----------
-        //mSmHandler.transitionTo(mSmHandler.mHaltingState);
+        
+        
     }
 
     
@@ -127,8 +127,8 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     protected final void deferMessage(Message msg) {
         addTaint(msg.getTaint());
         mSmHandler.deferMessage(msg);
-        // ---------- Original Method ----------
-        //mSmHandler.deferMessage(msg);
+        
+        
     }
 
     
@@ -136,27 +136,30 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
     protected void unhandledMessage(Message msg) {
         addTaint(msg.getTaint());
     if(mSmHandler.mDbg){ }
-        // ---------- Original Method ----------
-        //if (mSmHandler.mDbg) Log.e(TAG, mName + " - unhandledMessage: msg.what=" + msg.what);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.860 -0400", hash_original_method = "056AA616A824F08818D1B78343E1C249", hash_generated_method = "426AFD9B07DC3D2547D5ACCC0F320026")
     protected void haltedProcessMessage(Message msg) {
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.860 -0400", hash_original_method = "4C387498336ED4C08F04A3A81289F626", hash_generated_method = "EA73277B96710E0F4513520F578025C0")
     protected void halting() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.860 -0400", hash_original_method = "B35375ECAB57B816953617EBE5B4DD2F", hash_generated_method = "5DFECD953D2CD9C7B3894A937D26E233")
     protected void quitting() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -165,8 +168,8 @@ IState var87CBDBACE722DFE921BE617500791021_59867699 =         mSmHandler.getCurr
 String varDBF15A5FB8102A5C28D5046A0E92E443_1444076153 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_1444076153.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_1444076153;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
@@ -174,8 +177,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1444076153 =         mName;
     public final void setProcessedMessagesSize(int maxSize) {
         addTaint(maxSize);
         mSmHandler.setProcessedMessagesSize(maxSize);
-        // ---------- Original Method ----------
-        //mSmHandler.setProcessedMessagesSize(maxSize);
+        
+        
     }
 
     
@@ -184,8 +187,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1444076153 =         mName;
         int var8BCCDD9953FBD41F6D8FC231FB6F5038_578196633 = (mSmHandler.getProcessedMessagesSize());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463555863 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_463555863;
-        // ---------- Original Method ----------
-        //return mSmHandler.getProcessedMessagesSize();
+        
+        
     }
 
     
@@ -194,8 +197,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1444076153 =         mName;
         int varF1FA28E3C322E743A3DBEB8A452115DD_1379239096 = (mSmHandler.getProcessedMessagesCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_700392778 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_700392778;
-        // ---------- Original Method ----------
-        //return mSmHandler.getProcessedMessagesCount();
+        
+        
     }
 
     
@@ -205,8 +208,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_1444076153 =         mName;
 ProcessedMessageInfo var44CDF072D7CE0466224321FD71491D60_2041961990 =         mSmHandler.getProcessedMessageInfo(index);
         var44CDF072D7CE0466224321FD71491D60_2041961990.addTaint(taint);
         return var44CDF072D7CE0466224321FD71491D60_2041961990;
-        // ---------- Original Method ----------
-        //return mSmHandler.getProcessedMessageInfo(index);
+        
+        
     }
 
     
@@ -215,8 +218,8 @@ ProcessedMessageInfo var44CDF072D7CE0466224321FD71491D60_2041961990 =         mS
 Handler varC9ABC94E33FEDFB77929294DE04E290E_327646278 =         mSmHandler;
         varC9ABC94E33FEDFB77929294DE04E290E_327646278.addTaint(taint);
         return varC9ABC94E33FEDFB77929294DE04E290E_327646278;
-        // ---------- Original Method ----------
-        //return mSmHandler;
+        
+        
     }
 
     
@@ -231,9 +234,9 @@ Message var540C13E9E156B687226421B24F2DF178_1201974451 =         null;
 Message var06A7E3174649C438755C134323CA92B3_1961550308 =         Message.obtain(mSmHandler);
         var06A7E3174649C438755C134323CA92B3_1961550308.addTaint(taint);
         return var06A7E3174649C438755C134323CA92B3_1961550308;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler);
+        
+        
+        
     }
 
     
@@ -249,9 +252,9 @@ Message var540C13E9E156B687226421B24F2DF178_386005528 =         null;
 Message var16CEED01D33295D016A33FC638A9783D_2058412318 =         Message.obtain(mSmHandler, what);
         var16CEED01D33295D016A33FC638A9783D_2058412318.addTaint(taint);
         return var16CEED01D33295D016A33FC638A9783D_2058412318;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what);
+        
+        
+        
     }
 
     
@@ -268,9 +271,9 @@ Message var540C13E9E156B687226421B24F2DF178_450957415 =         null;
 Message var37FBEECD1E8C45EE1E4DD5DF909ECA9B_324119310 =         Message.obtain(mSmHandler, what, obj);
         var37FBEECD1E8C45EE1E4DD5DF909ECA9B_324119310.addTaint(taint);
         return var37FBEECD1E8C45EE1E4DD5DF909ECA9B_324119310;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what, obj);
+        
+        
+        
     }
 
     
@@ -288,9 +291,9 @@ Message var540C13E9E156B687226421B24F2DF178_1518096250 =         null;
 Message varE707DD3749BB2B73281F7251B469E1CB_351064877 =         Message.obtain(mSmHandler, what, arg1, arg2);
         varE707DD3749BB2B73281F7251B469E1CB_351064877.addTaint(taint);
         return varE707DD3749BB2B73281F7251B469E1CB_351064877;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what, arg1, arg2);
+        
+        
+        
     }
 
     
@@ -309,9 +312,9 @@ Message var540C13E9E156B687226421B24F2DF178_2110845790 =         null;
 Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(mSmHandler, what, arg1, arg2, obj);
         var380DE8A7980E1DC17463DA27538AA69B_178099595.addTaint(taint);
         return var380DE8A7980E1DC17463DA27538AA69B_178099595;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return null;
-        //return Message.obtain(mSmHandler, what, arg1, arg2, obj);
+        
+        
+        
     }
 
     
@@ -321,9 +324,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.sendMessage(obtainMessage(what));
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessage(obtainMessage(what));
+        
+        
+        
     }
 
     
@@ -334,9 +337,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.sendMessage(obtainMessage(what,obj));
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessage(obtainMessage(what,obj));
+        
+        
+        
     }
 
     
@@ -346,9 +349,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessage(msg);
+        
+        
+        
     }
 
     
@@ -359,9 +362,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.sendMessageDelayed(obtainMessage(what), delayMillis);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessageDelayed(obtainMessage(what), delayMillis);
+        
+        
+        
     }
 
     
@@ -373,9 +376,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.sendMessageDelayed(obtainMessage(what, obj), delayMillis);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessageDelayed(obtainMessage(what, obj), delayMillis);
+        
+        
+        
     }
 
     
@@ -386,9 +389,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.sendMessageDelayed(msg, delayMillis);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.sendMessageDelayed(msg, delayMillis);
+        
+        
+        
     }
 
     
@@ -397,8 +400,8 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
         addTaint(obj.getTaint());
         addTaint(what);
         mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what, obj));
-        // ---------- Original Method ----------
-        //mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what, obj));
+        
+        
     }
 
     
@@ -406,8 +409,8 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     protected final void sendMessageAtFrontOfQueue(int what) {
         addTaint(what);
         mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what));
-        // ---------- Original Method ----------
-        //mSmHandler.sendMessageAtFrontOfQueue(obtainMessage(what));
+        
+        
     }
 
     
@@ -415,8 +418,8 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     protected final void sendMessageAtFrontOfQueue(Message msg) {
         addTaint(msg.getTaint());
         mSmHandler.sendMessageAtFrontOfQueue(msg);
-        // ---------- Original Method ----------
-        //mSmHandler.sendMessageAtFrontOfQueue(msg);
+        
+        
     }
 
     
@@ -424,8 +427,8 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     protected final void removeMessages(int what) {
         addTaint(what);
         mSmHandler.removeMessages(what);
-        // ---------- Original Method ----------
-        //mSmHandler.removeMessages(what);
+        
+        
     }
 
     
@@ -434,9 +437,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.quit();
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.quit();
+        
+        
+        
     }
 
     
@@ -446,8 +449,8 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
         boolean var1C7A2292FAB5CF4349EF5084A8BC9A89_805475507 = (mSmHandler.isQuit(msg));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_272587517 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_272587517;
-        // ---------- Original Method ----------
-        //return mSmHandler.isQuit(msg);
+        
+        
     }
 
     
@@ -462,9 +465,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
         boolean varCB2AF79DB8338DE4E75BDCC6E63D8D8F_1069899330 = (mSmHandler.isDbg());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1682111847 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1682111847;
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return false;
-        //return mSmHandler.isDbg();
+        
+        
+        
     }
 
     
@@ -474,9 +477,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.setDbg(dbg);
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.setDbg(dbg);
+        
+        
+        
     }
 
     
@@ -485,9 +488,9 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
     if(mSmHandler == null)        
         return;
         mSmHandler.completeConstruction();
-        // ---------- Original Method ----------
-        //if (mSmHandler == null) return;
-        //mSmHandler.completeConstruction();
+        
+        
+        
     }
 
     
@@ -508,50 +511,54 @@ Message var380DE8A7980E1DC17463DA27538AA69B_178099595 =         Message.obtain(m
             addTaint(state.getTaint());
             addTaint(message.getTaint());
             update(message, state, orgState);
-            // ---------- Original Method ----------
-            //update(message, state, orgState);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.870 -0400", hash_original_method = "AE92957E52CD2ECF48167D0FF23A4162", hash_generated_method = "A47569B5D257EE43083BE43CD751A5F9")
         public void update(Message message, State state, State orgState) {
             this.what = message.what;
             this.state = state;
             this.orgState = orgState;
-            // ---------- Original Method ----------
-            //this.what = message.what;
-            //this.state = state;
-            //this.orgState = orgState;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.871 -0400", hash_original_method = "4AA8DBE0617D26A2E34EC5BDBA364E43", hash_generated_method = "1047ECBE2C5527322512F8D9D6A013D2")
         public int getWhat() {
             int var4A2028ECEAC5E1F4D252EA13C71ECEC6_299442039 = (what);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166144692 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_166144692;
-            // ---------- Original Method ----------
-            //return what;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.871 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "0E1A36266A07C90DE713152CD960F2EA")
         public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_1798438730 =             state;
             var37C56C9D63C623261861C16DCFB73F6D_1798438730.addTaint(taint);
             return var37C56C9D63C623261861C16DCFB73F6D_1798438730;
-            // ---------- Original Method ----------
-            //return state;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.871 -0400", hash_original_method = "6453845FB279EEE2A3A97B4923853CA9", hash_generated_method = "6A22A00A31E058581FF0B7435FD28D4E")
         public State getOriginalState() {
 State var5D1739645EB8BD1974676CD7C05290CF_1840041913 =             orgState;
             var5D1739645EB8BD1974676CD7C05290CF_1840041913.addTaint(taint);
             return var5D1739645EB8BD1974676CD7C05290CF_1840041913;
-            // ---------- Original Method ----------
-            //return orgState;
+            
+            
         }
 
         
@@ -568,15 +575,15 @@ State var5D1739645EB8BD1974676CD7C05290CF_1840041913 =             orgState;
 String var2460B846747F8B22185AD8BE722266A5_2060391017 =             sb.toString();
             var2460B846747F8B22185AD8BE722266A5_2060391017.addTaint(taint);
             return var2460B846747F8B22185AD8BE722266A5_2060391017;
-            // ---------- Original Method ----------
-            //StringBuilder sb = new StringBuilder();
-            //sb.append("what=");
-            //sb.append(what);
-            //sb.append(" state=");
-            //sb.append(cn(state));
-            //sb.append(" orgState=");
-            //sb.append(cn(orgState));
-            //return sb.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -588,7 +595,7 @@ String var2460B846747F8B22185AD8BE722266A5_2060391017 =             sb.toString(
 String var1D801F10795A50869C3F1F514D9B9BF5_2105671272 =                 "null";
                 var1D801F10795A50869C3F1F514D9B9BF5_2105671272.addTaint(taint);
                 return var1D801F10795A50869C3F1F514D9B9BF5_2105671272;
-            } //End block
+            } 
             else
             {
                 String name = n.getClass().getName();
@@ -596,15 +603,15 @@ String var1D801F10795A50869C3F1F514D9B9BF5_2105671272 =                 "null";
 String varD7C421C03C1A323F8F634419CD6A2301_1069625565 =                 name.substring(lastDollar + 1);
                 varD7C421C03C1A323F8F634419CD6A2301_1069625565.addTaint(taint);
                 return varD7C421C03C1A323F8F634419CD6A2301_1069625565;
-            } //End block
-            // ---------- Original Method ----------
-            //if (n == null) {
-                //return "null";
-            //} else {
-                //String name = n.getClass().getName();
-                //int lastDollar = name.lastIndexOf('$');
-                //return name.substring(lastDollar + 1);
-            //}
+            } 
+            
+            
+                
+            
+                
+                
+                
+            
         }
 
         
@@ -628,7 +635,7 @@ String varD7C421C03C1A323F8F634419CD6A2301_1069625565 =                 name.sub
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.874 -0400", hash_original_method = "8C2E4982B56D335A57BD25CE5A99A95E", hash_generated_method = "7FF397A4DBE391D9CE0F14D5D355725E")
           ProcessedMessages() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -637,10 +644,10 @@ String varD7C421C03C1A323F8F634419CD6A2301_1069625565 =                 name.sub
             mMaxSize = maxSize;
             mCount = 0;
             mMessages.clear();
-            // ---------- Original Method ----------
-            //mMaxSize = maxSize;
-            //mCount = 0;
-            //mMessages.clear();
+            
+            
+            
+            
         }
 
         
@@ -649,26 +656,27 @@ String varD7C421C03C1A323F8F634419CD6A2301_1069625565 =                 name.sub
             int var039B4D0A1D5620B03C083FD928F25731_1765611950 = (mMessages.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736159537 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_736159537;
-            // ---------- Original Method ----------
-            //return mMessages.size();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.875 -0400", hash_original_method = "173278F07A9E3F76B246C31AF2BEE799", hash_generated_method = "D011FE3E8063D7AC1A90A6C867584480")
          int count() {
             int var4A5FC91463CC1EF00D3AA26340B946C6_1817329110 = (mCount);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_704014650 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_704014650;
-            // ---------- Original Method ----------
-            //return mCount;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.875 -0400", hash_original_method = "7C55F1E05538CA172591209F0EED6056", hash_generated_method = "CFD4D7A4E005D0B113E95B968C008CBA")
          void cleanup() {
             mMessages.clear();
-            // ---------- Original Method ----------
-            //mMessages.clear();
+            
+            
         }
 
         
@@ -679,29 +687,29 @@ String varD7C421C03C1A323F8F634419CD6A2301_1069625565 =                 name.sub
     if(nextIndex >= mMaxSize)            
             {
                 nextIndex -= mMaxSize;
-            } //End block
+            } 
     if(nextIndex >= size())            
             {
 ProcessedMessageInfo var540C13E9E156B687226421B24F2DF178_514373412 =                 null;
                 var540C13E9E156B687226421B24F2DF178_514373412.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_514373412;
-            } //End block
+            } 
             else
             {
 ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =                 mMessages.get(nextIndex);
                 var072772DCE9C04049724EC1E86EAAC882_1064094912.addTaint(taint);
                 return var072772DCE9C04049724EC1E86EAAC882_1064094912;
-            } //End block
-            // ---------- Original Method ----------
-            //int nextIndex = mOldestIndex + index;
-            //if (nextIndex >= mMaxSize) {
-                //nextIndex -= mMaxSize;
-            //}
-            //if (nextIndex >= size()) {
-                //return null;
-            //} else {
-                //return mMessages.get(nextIndex);
-            //}
+            } 
+            
+            
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -714,7 +722,7 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
     if(mMessages.size() < mMaxSize)            
             {
                 mMessages.add(new ProcessedMessageInfo(message, state, orgState));
-            } //End block
+            } 
             else
             {
                 ProcessedMessageInfo pmi = mMessages.get(mOldestIndex);
@@ -722,21 +730,21 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
     if(mOldestIndex >= mMaxSize)                
                 {
                     mOldestIndex = 0;
-                } //End block
+                } 
                 pmi.update(message, state, orgState);
-            } //End block
-            // ---------- Original Method ----------
-            //mCount += 1;
-            //if (mMessages.size() < mMaxSize) {
-                //mMessages.add(new ProcessedMessageInfo(message, state, orgState));
-            //} else {
-                //ProcessedMessageInfo pmi = mMessages.get(mOldestIndex);
-                //mOldestIndex += 1;
-                //if (mOldestIndex >= mMaxSize) {
-                    //mOldestIndex = 0;
-                //}
-                //pmi.update(message, state, orgState);
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+                
+                
+                    
+                
+                
+            
         }
 
         
@@ -801,10 +809,10 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
             mSm = sm;
             addState(mHaltingState, null);
             addState(mQuittingState, null);
-            // ---------- Original Method ----------
-            //mSm = sm;
-            //addState(mHaltingState, null);
-            //addState(mQuittingState, null);
+            
+            
+            
+            
         }
 
         
@@ -817,21 +825,21 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
     if(!mIsConstructionCompleted)            
             {
                 return;
-            } //End block
+            } 
             processMsg(msg);
             performTransitions();
     if(mDbg)            
             Log.d(TAG, "handleMessage: X");
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "handleMessage: E msg.what=" + msg.what);
-            //mMsg = msg;
-            //if (!mIsConstructionCompleted) {
-                //Log.e(TAG, "The start method not called, ignore msg: " + msg);
-                //return;
-            //}
-            //processMsg(msg);
-            //performTransitions();
-            //if (mDbg) Log.d(TAG, "handleMessage: X");
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
         }
 
         
@@ -850,21 +858,21 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
                 int stateStackEnteringIndex = moveTempStateStackToStateStack();
                 invokeEnterMethods(stateStackEnteringIndex);
                 moveDeferredMessageAtFrontOfQueue();
-            } //End block
+            } 
     if(destState != null)            
             {
     if(destState == mQuittingState)                
                 {
                     cleanupAfterQuitting();
-                } //End block
+                } 
                 else
     if(destState == mHaltingState)                
                 {
                     mSm.halting();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -875,7 +883,7 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
             {
                 getLooper().quit();
                 mSm.mSmThread = null;
-            } //End block
+            } 
             mSm.mSmHandler = null;
             mSm = null;
             mMsg = null;
@@ -886,22 +894,22 @@ ProcessedMessageInfo var072772DCE9C04049724EC1E86EAAC882_1064094912 =           
             mInitialState = null;
             mDestState = null;
             mDeferredMessages.clear();
-            // ---------- Original Method ----------
-            //mSm.quitting();
-            //if (mSm.mSmThread != null) {
-                //getLooper().quit();
-                //mSm.mSmThread = null;
-            //}
-            //mSm.mSmHandler = null;
-            //mSm = null;
-            //mMsg = null;
-            //mProcessedMessages.cleanup();
-            //mStateStack = null;
-            //mTempStateStack = null;
-            //mStateInfo.clear();
-            //mInitialState = null;
-            //mDestState = null;
-            //mDeferredMessages.clear();
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -916,12 +924,12 @@ for(StateInfo si : mStateInfo.values())
 for(StateInfo i = si;i != null;depth++)
                 {
                     i = i.parentStateInfo;
-                } //End block
+                } 
     if(maxDepth < depth)                
                 {
                     maxDepth = depth;
-                } //End block
-            } //End block
+                } 
+            } 
     if(mDbg)            
             Log.d(TAG, "completeConstruction: maxDepth=" + maxDepth);
             mStateStack = new StateInfo[maxDepth];
@@ -933,8 +941,8 @@ for(StateInfo i = si;i != null;depth++)
             performTransitions();
     if(mDbg)            
             Log.d(TAG, "completeConstruction: X");
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -945,7 +953,7 @@ for(StateInfo i = si;i != null;depth++)
     if(mDbg)            
             {
                 Log.d(TAG, "processMsg: " + curStateInfo.state.getName());
-            } //End block
+            } 
             while
 (!curStateInfo.state.processMessage(msg))            
             {
@@ -956,25 +964,25 @@ for(StateInfo i = si;i != null;depth++)
     if(isQuit(msg))                    
                     {
                         transitionTo(mQuittingState);
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
     if(mDbg)                
                 {
                     Log.d(TAG, "processMsg: " + curStateInfo.state.getName());
-                } //End block
-            } //End block
+                } 
+            } 
     if(curStateInfo != null)            
             {
                 State orgState = mStateStack[mStateStackTopIndex].state;
                 mProcessedMessages.add(msg, curStateInfo.state, orgState);
-            } //End block
+            } 
             else
             {
                 mProcessedMessages.add(msg, null, null);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -991,16 +999,16 @@ for(StateInfo i = si;i != null;depth++)
                 curState.exit();
                 mStateStack[mStateStackTopIndex].active = false;
                 mStateStackTopIndex -= 1;
-            } //End block
-            // ---------- Original Method ----------
-            //while ((mStateStackTopIndex >= 0) &&
-                    //(mStateStack[mStateStackTopIndex] != commonStateInfo)) {
-                //State curState = mStateStack[mStateStackTopIndex].state;
-                //if (mDbg) Log.d(TAG, "invokeExitMethods: " + curState.getName());
-                //curState.exit();
-                //mStateStack[mStateStackTopIndex].active = false;
-                //mStateStackTopIndex -= 1;
-            //}
+            } 
+            
+            
+                    
+                
+                
+                
+                
+                
+            
         }
 
         
@@ -1013,13 +1021,13 @@ for(int i = stateStackEnteringIndex;i <= mStateStackTopIndex;i++)
                 Log.d(TAG, "invokeEnterMethods: " + mStateStack[i].state.getName());
                 mStateStack[i].state.enter();
                 mStateStack[i].active = true;
-            } //End block
-            // ---------- Original Method ----------
-            //for (int i = stateStackEnteringIndex; i <= mStateStackTopIndex; i++) {
-                //if (mDbg) Log.d(TAG, "invokeEnterMethods: " + mStateStack[i].state.getName());
-                //mStateStack[i].state.enter();
-                //mStateStack[i].active = true;
-            //}
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -1031,15 +1039,15 @@ for(int i = mDeferredMessages.size() - 1;i >= 0;i--)
     if(mDbg)                
                 Log.d(TAG, "moveDeferredMessageAtFrontOfQueue; what=" + curMsg.what);
                 sendMessageAtFrontOfQueue(curMsg);
-            } //End block
+            } 
             mDeferredMessages.clear();
-            // ---------- Original Method ----------
-            //for (int i = mDeferredMessages.size() - 1; i >= 0; i-- ) {
-                //Message curMsg = mDeferredMessages.get(i);
-                //if (mDbg) Log.d(TAG, "moveDeferredMessageAtFrontOfQueue; what=" + curMsg.what);
-                //sendMessageAtFrontOfQueue(curMsg);
-            //}
-            //mDeferredMessages.clear();
+            
+            
+                
+                
+                
+            
+            
         }
 
         
@@ -1056,34 +1064,34 @@ for(int i = mDeferredMessages.size() - 1;i >= 0;i--)
                 mStateStack[j] = mTempStateStack[i];
                 j += 1;
                 i -= 1;
-            } //End block
+            } 
             mStateStackTopIndex = j - 1;
     if(mDbg)            
             {
                 Log.d(TAG, "moveTempStackToStateStack: X mStateStackTop="
                       + mStateStackTopIndex + ",startingIndex=" + startingIndex
                       + ",Top=" + mStateStack[mStateStackTopIndex].state.getName());
-            } //End block
+            } 
             int var89B480734F8AB26B90977B94ABABE047_1469609822 = (startingIndex);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080631494 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2080631494;
-            // ---------- Original Method ----------
-            //int startingIndex = mStateStackTopIndex + 1;
-            //int i = mTempStateStackCount - 1;
-            //int j = startingIndex;
-            //while (i >= 0) {
-                //if (mDbg) Log.d(TAG, "moveTempStackToStateStack: i=" + i + ",j=" + j);
-                //mStateStack[j] = mTempStateStack[i];
-                //j += 1;
-                //i -= 1;
-            //}
-            //mStateStackTopIndex = j - 1;
-            //if (mDbg) {
-                //Log.d(TAG, "moveTempStackToStateStack: X mStateStackTop="
-                      //+ mStateStackTopIndex + ",startingIndex=" + startingIndex
-                      //+ ",Top=" + mStateStack[mStateStackTopIndex].state.getName());
-            //}
-            //return startingIndex;
+            
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
+            
+                
+                      
+                      
+            
+            
         }
 
         
@@ -1096,28 +1104,28 @@ for(int i = mDeferredMessages.size() - 1;i >= 0;i--)
                 {
                     mTempStateStack[mTempStateStackCount++] = curStateInfo;
                     curStateInfo = curStateInfo.parentStateInfo;
-                } //End block
+                } 
 } while ((curStateInfo != null) && !curStateInfo.active);
     if(mDbg)            
             {
                 Log.d(TAG, "setupTempStateStackWithStatesToEnter: X mTempStateStackCount="
                       + mTempStateStackCount + ",curStateInfo: " + curStateInfo);
-            } //End block
+            } 
 StateInfo varF9D24DCC789A52B9C9D285EA13580196_476129136 =             curStateInfo;
             varF9D24DCC789A52B9C9D285EA13580196_476129136.addTaint(taint);
             return varF9D24DCC789A52B9C9D285EA13580196_476129136;
-            // ---------- Original Method ----------
-            //mTempStateStackCount = 0;
-            //StateInfo curStateInfo = mStateInfo.get(destState);
-            //do {
-                //mTempStateStack[mTempStateStackCount++] = curStateInfo;
-                //curStateInfo = curStateInfo.parentStateInfo;
-            //} while ((curStateInfo != null) && !curStateInfo.active);
-            //if (mDbg) {
-                //Log.d(TAG, "setupTempStateStackWithStatesToEnter: X mTempStateStackCount="
-                      //+ mTempStateStackCount + ",curStateInfo: " + curStateInfo);
-            //}
-            //return curStateInfo;
+            
+            
+            
+            
+                
+                
+            
+            
+                
+                      
+            
+            
         }
 
         
@@ -1127,27 +1135,27 @@ StateInfo varF9D24DCC789A52B9C9D285EA13580196_476129136 =             curStateIn
             {
                 Log.d(TAG, "setupInitialStateStack: E mInitialState="
                     + mInitialState.getName());
-            } //End block
+            } 
             StateInfo curStateInfo = mStateInfo.get(mInitialState);
 for(mTempStateStackCount = 0;curStateInfo != null;mTempStateStackCount++)
             {
                 mTempStateStack[mTempStateStackCount] = curStateInfo;
                 curStateInfo = curStateInfo.parentStateInfo;
-            } //End block
+            } 
             mStateStackTopIndex = -1;
             moveTempStateStackToStateStack();
-            // ---------- Original Method ----------
-            //if (mDbg) {
-                //Log.d(TAG, "setupInitialStateStack: E mInitialState="
-                    //+ mInitialState.getName());
-            //}
-            //StateInfo curStateInfo = mStateInfo.get(mInitialState);
-            //for (mTempStateStackCount = 0; curStateInfo != null; mTempStateStackCount++) {
-                //mTempStateStack[mTempStateStackCount] = curStateInfo;
-                //curStateInfo = curStateInfo.parentStateInfo;
-            //}
-            //mStateStackTopIndex = -1;
-            //moveTempStateStackToStateStack();
+            
+            
+                
+                    
+            
+            
+            
+                
+                
+            
+            
+            
         }
 
         
@@ -1156,8 +1164,8 @@ for(mTempStateStackCount = 0;curStateInfo != null;mTempStateStackCount++)
 Message var16D531DD5AE27AEEC0FC02A6E57F1F79_2115402433 =             mMsg;
             var16D531DD5AE27AEEC0FC02A6E57F1F79_2115402433.addTaint(taint);
             return var16D531DD5AE27AEEC0FC02A6E57F1F79_2115402433;
-            // ---------- Original Method ----------
-            //return mMsg;
+            
+            
         }
 
         
@@ -1166,8 +1174,8 @@ Message var16D531DD5AE27AEEC0FC02A6E57F1F79_2115402433 =             mMsg;
 IState var8C274D350550CFAE87368DDD6F6EB59C_1605864763 =             mStateStack[mStateStackTopIndex].state;
             var8C274D350550CFAE87368DDD6F6EB59C_1605864763.addTaint(taint);
             return var8C274D350550CFAE87368DDD6F6EB59C_1605864763;
-            // ---------- Original Method ----------
-            //return mStateStack[mStateStackTopIndex].state;
+            
+            
         }
 
         
@@ -1179,7 +1187,7 @@ IState var8C274D350550CFAE87368DDD6F6EB59C_1605864763 =             mStateStack[
             {
                 Log.d(TAG, "addStateInternal: E state=" + state.getName()
                         + ",parent=" + ((parent == null) ? "" : parent.getName()));
-            } //End block
+            } 
             StateInfo parentStateInfo = null;
     if(parent != null)            
             {
@@ -1187,21 +1195,21 @@ IState var8C274D350550CFAE87368DDD6F6EB59C_1605864763 =             mStateStack[
     if(parentStateInfo == null)                
                 {
                     parentStateInfo = addState(parent, null);
-                } //End block
-            } //End block
+                } 
+            } 
             StateInfo stateInfo = mStateInfo.get(state);
     if(stateInfo == null)            
             {
                 stateInfo = new StateInfo();
                 mStateInfo.put(state, stateInfo);
-            } //End block
+            } 
     if((stateInfo.parentStateInfo != null) &&
                     (stateInfo.parentStateInfo != parentStateInfo))            
             {
                 RuntimeException var1CABAB0B836FD33F4D03408BA113F0A7_2005878476 = new RuntimeException("state already added");
                 var1CABAB0B836FD33F4D03408BA113F0A7_2005878476.addTaint(taint);
                 throw var1CABAB0B836FD33F4D03408BA113F0A7_2005878476;
-            } //End block
+            } 
             stateInfo.state = state;
             stateInfo.parentStateInfo = parentStateInfo;
             stateInfo.active = false;
@@ -1210,8 +1218,8 @@ IState var8C274D350550CFAE87368DDD6F6EB59C_1605864763 =             mStateStack[
 StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             varED7F07AFDD82F6543D2737963BD5E70F_648918498.addTaint(taint);
             return varED7F07AFDD82F6543D2737963BD5E70F_648918498;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1220,9 +1228,9 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
     if(mDbg)            
             Log.d(TAG, "setInitialState: initialState" + initialState.getName());
             mInitialState = initialState;
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "setInitialState: initialState" + initialState.getName());
-            //mInitialState = initialState;
+            
+            
+            
         }
 
         
@@ -1231,9 +1239,9 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             mDestState = (State) destState;
     if(mDbg)            
             Log.d(TAG, "StateMachine.transitionTo EX destState" + mDestState.getName());
-            // ---------- Original Method ----------
-            //mDestState = (State) destState;
-            //if (mDbg) Log.d(TAG, "StateMachine.transitionTo EX destState" + mDestState.getName());
+            
+            
+            
         }
 
         
@@ -1245,11 +1253,11 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             Message newMsg = obtainMessage();
             newMsg.copyFrom(msg);
             mDeferredMessages.add(newMsg);
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "deferMessage: msg=" + msg.what);
-            //Message newMsg = obtainMessage();
-            //newMsg.copyFrom(msg);
-            //mDeferredMessages.add(newMsg);
+            
+            
+            
+            
+            
         }
 
         
@@ -1258,9 +1266,9 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
     if(mDbg)            
             Log.d(TAG, "quit:");
             sendMessage(obtainMessage(SM_QUIT_CMD, mQuitObj));
-            // ---------- Original Method ----------
-            //if (mDbg) Log.d(TAG, "quit:");
-            //sendMessage(obtainMessage(SM_QUIT_CMD, mQuitObj));
+            
+            
+            
         }
 
         
@@ -1270,8 +1278,8 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             boolean varC2CAF77CD88F5CF1CF9DF0E5860594BA_541714891 = ((msg.what == SM_QUIT_CMD) && (msg.obj == mQuitObj));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1856570496 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1856570496;
-            // ---------- Original Method ----------
-            //return (msg.what == SM_QUIT_CMD) && (msg.obj == mQuitObj);
+            
+            
         }
 
         
@@ -1280,16 +1288,16 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             boolean var44ACAC101472BE8FC80671CD461C5D61_1131294731 = (mDbg);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1626859858 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1626859858;
-            // ---------- Original Method ----------
-            //return mDbg;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.888 -0400", hash_original_method = "2FBE0CE6F45608217065DCE46294BFD1", hash_generated_method = "BA70DD150B20B15D1FA853B35448103D")
         private final void setDbg(boolean dbg) {
             mDbg = dbg;
-            // ---------- Original Method ----------
-            //mDbg = dbg;
+            
+            
         }
 
         
@@ -1297,8 +1305,8 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
         private final void setProcessedMessagesSize(int maxSize) {
             addTaint(maxSize);
             mProcessedMessages.setSize(maxSize);
-            // ---------- Original Method ----------
-            //mProcessedMessages.setSize(maxSize);
+            
+            
         }
 
         
@@ -1307,8 +1315,8 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             int varCEB86E61170E1C9D4ABBC0D63D171917_725819449 = (mProcessedMessages.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2116610544 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2116610544;
-            // ---------- Original Method ----------
-            //return mProcessedMessages.size();
+            
+            
         }
 
         
@@ -1317,8 +1325,8 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
             int var627416CD9801515D97ACFAAB1D0F5F10_1108097157 = (mProcessedMessages.count());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509988779 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1509988779;
-            // ---------- Original Method ----------
-            //return mProcessedMessages.count();
+            
+            
         }
 
         
@@ -1328,8 +1336,8 @@ StateInfo varED7F07AFDD82F6543D2737963BD5E70F_648918498 =             stateInfo;
 ProcessedMessageInfo var6B272BD4F7E73A4D9CDD2556381DC146_43487030 =             mProcessedMessages.get(index);
             var6B272BD4F7E73A4D9CDD2556381DC146_43487030.addTaint(taint);
             return var6B272BD4F7E73A4D9CDD2556381DC146_43487030;
-            // ---------- Original Method ----------
-            //return mProcessedMessages.get(index);
+            
+            
         }
 
         
@@ -1347,7 +1355,7 @@ ProcessedMessageInfo var6B272BD4F7E73A4D9CDD2556381DC146_43487030 =             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.889 -0400", hash_original_method = "87ADFE3F226D3DC74DE0940453A6AE41", hash_generated_method = "87ADFE3F226D3DC74DE0940453A6AE41")
             public StateInfo ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -1359,10 +1367,10 @@ String varF3AE67A4E259FEAC858FD24410EF34B4_1848812144 =                 "state="
                                         "null" : parentStateInfo.state.getName());
                 varF3AE67A4E259FEAC858FD24410EF34B4_1848812144.addTaint(taint);
                 return varF3AE67A4E259FEAC858FD24410EF34B4_1848812144;
-                // ---------- Original Method ----------
-                //return "state=" + state.getName() + ",active=" + active
-                        //+ ",parent=" + ((parentStateInfo == null) ?
-                                        //"null" : parentStateInfo.state.getName());
+                
+                
+                        
+                                        
             }
 
             
@@ -1375,7 +1383,7 @@ String varF3AE67A4E259FEAC858FD24410EF34B4_1848812144 =                 "state="
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.889 -0400", hash_original_method = "F9537758E4D6CCA48E760EA40D22DF18", hash_generated_method = "F9537758E4D6CCA48E760EA40D22DF18")
             public HaltingState ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -1387,9 +1395,9 @@ String varF3AE67A4E259FEAC858FD24410EF34B4_1848812144 =                 "state="
                 boolean varB326B5062B2F0E69046810717534CB09_1745069989 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685336663 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_685336663;
-                // ---------- Original Method ----------
-                //mSm.haltedProcessMessage(msg);
-                //return true;
+                
+                
+                
             }
 
             
@@ -1402,10 +1410,11 @@ String varF3AE67A4E259FEAC858FD24410EF34B4_1848812144 =                 "state="
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.889 -0400", hash_original_method = "769C07BAAE1E710E9D1020720F6EA4CE", hash_generated_method = "769C07BAAE1E710E9D1020720F6EA4CE")
             public QuittingState ()
             {
-                //Synthesized constructor
+                
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.889 -0400", hash_original_method = "5D2BC087464A61E35A06899EEE03AD06", hash_generated_method = "F2FD022A8F390B987ADEDFFF2F418ACB")
             @Override
             public boolean processMessage(Message msg) {
@@ -1413,8 +1422,8 @@ String varF3AE67A4E259FEAC858FD24410EF34B4_1848812144 =                 "state="
                 boolean var0B9AB98DCA1A5B86ADDE2EAF09C95AEA_1683261177 = (NOT_HANDLED);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1691167187 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1691167187;
-                // ---------- Original Method ----------
-                //return NOT_HANDLED;
+                
+                
             }
 
             

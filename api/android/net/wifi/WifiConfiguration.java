@@ -1,6 +1,6 @@
 package android.net.wifi;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -113,31 +113,31 @@ for(int i = 0;i < wepKeys.length;i++)
 for(EnterpriseField field : enterpriseFields)
         {
             field.setValue(null);
-        } //End block
+        } 
         ipAssignment = IpAssignment.UNASSIGNED;
         proxySettings = ProxySettings.UNASSIGNED;
         linkProperties = new LinkProperties();
-        // ---------- Original Method ----------
-        //networkId = INVALID_NETWORK_ID;
-        //SSID = null;
-        //BSSID = null;
-        //priority = 0;
-        //hiddenSSID = false;
-        //disableReason = DISABLED_UNKNOWN_REASON;
-        //allowedKeyManagement = new BitSet();
-        //allowedProtocols = new BitSet();
-        //allowedAuthAlgorithms = new BitSet();
-        //allowedPairwiseCiphers = new BitSet();
-        //allowedGroupCiphers = new BitSet();
-        //wepKeys = new String[4];
-        //for (int i = 0; i < wepKeys.length; i++)
-            //wepKeys[i] = null;
-        //for (EnterpriseField field : enterpriseFields) {
-            //field.setValue(null);
-        //}
-        //ipAssignment = IpAssignment.UNASSIGNED;
-        //proxySettings = ProxySettings.UNASSIGNED;
-        //linkProperties = new LinkProperties();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -165,13 +165,13 @@ for(int i = 0;i < wepKeys.length;i++)
 for(int i = 0;i < source.enterpriseFields.length;i++)
             {
                 enterpriseFields[i].setValue(source.enterpriseFields[i].value());
-            } //End block
+            } 
             ipAssignment = source.ipAssignment;
             proxySettings = source.proxySettings;
             linkProperties = new LinkProperties(source.linkProperties);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -182,12 +182,12 @@ for(int i = 0;i < source.enterpriseFields.length;i++)
     if(this.status == WifiConfiguration.Status.CURRENT)        
         {
             sbuf.append("* ");
-        } //End block
+        } 
         else
     if(this.status == WifiConfiguration.Status.DISABLED)        
         {
             sbuf.append("- DSBLE: ").append(this.disableReason).append(" ");
-        } //End block
+        } 
         sbuf.append("ID: ").append(this.networkId).append(" SSID: ").append(this.SSID).
                 append(" BSSID: ").append(this.BSSID).append(" PRIO: ").append(this.priority).
                 append('\n');
@@ -200,13 +200,13 @@ for(int k = 0;k < this.allowedKeyManagement.size();k++)
     if(k < KeyMgmt.strings.length)                
                 {
                     sbuf.append(KeyMgmt.strings[k]);
-                } //End block
+                } 
                 else
                 {
                     sbuf.append("??");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         sbuf.append(" Protocols:");
 for(int p = 0;p < this.allowedProtocols.size();p++)
         {
@@ -216,13 +216,13 @@ for(int p = 0;p < this.allowedProtocols.size();p++)
     if(p < Protocol.strings.length)                
                 {
                     sbuf.append(Protocol.strings[p]);
-                } //End block
+                } 
                 else
                 {
                     sbuf.append("??");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append(" AuthAlgorithms:");
 for(int a = 0;a < this.allowedAuthAlgorithms.size();a++)
@@ -233,13 +233,13 @@ for(int a = 0;a < this.allowedAuthAlgorithms.size();a++)
     if(a < AuthAlgorithm.strings.length)                
                 {
                     sbuf.append(AuthAlgorithm.strings[a]);
-                } //End block
+                } 
                 else
                 {
                     sbuf.append("??");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append(" PairwiseCiphers:");
 for(int pc = 0;pc < this.allowedPairwiseCiphers.size();pc++)
@@ -250,13 +250,13 @@ for(int pc = 0;pc < this.allowedPairwiseCiphers.size();pc++)
     if(pc < PairwiseCipher.strings.length)                
                 {
                     sbuf.append(PairwiseCipher.strings[pc]);
-                } //End block
+                } 
                 else
                 {
                     sbuf.append("??");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         sbuf.append('\n');
         sbuf.append(" GroupCiphers:");
 for(int gc = 0;gc < this.allowedGroupCiphers.size();gc++)
@@ -267,25 +267,25 @@ for(int gc = 0;gc < this.allowedGroupCiphers.size();gc++)
     if(gc < GroupCipher.strings.length)                
                 {
                     sbuf.append(GroupCipher.strings[gc]);
-                } //End block
+                } 
                 else
                 {
                     sbuf.append("??");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         sbuf.append('\n').append(" PSK: ");
     if(this.preSharedKey != null)        
         {
             sbuf.append('*');
-        } //End block
+        } 
 for(EnterpriseField field : enterpriseFields)
         {
             sbuf.append('\n').append(" " + field.varName() + ": ");
             String value = field.value();
     if(value != null)            
             sbuf.append(value);
-        } //End block
+        } 
         sbuf.append('\n');
         sbuf.append("IP assignment: " + ipAssignment.toString());
         sbuf.append("\n");
@@ -296,8 +296,8 @@ for(EnterpriseField field : enterpriseFields)
 String var69222FFA45D1268AEE1923C5558B0BD5_1672313368 =         sbuf.toString();
         var69222FFA45D1268AEE1923C5558B0BD5_1672313368.addTaint(taint);
         return var69222FFA45D1268AEE1923C5558B0BD5_1672313368;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -325,52 +325,53 @@ String var69222FFA45D1268AEE1923C5558B0BD5_1672313368 =         sbuf.toString();
             int var0FCBC2BC4EA0A7BD12D738E0CD302719_1465613419 = (KeyMgmt.WPA_PSK);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1390802309 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1390802309;
-        } //End block
+        } 
         else
     if(allowedKeyManagement.get(KeyMgmt.WPA2_PSK))        
         {
             int varF9CBF8139662CAD7B4EB206418DE77D1_332995789 = (KeyMgmt.WPA2_PSK);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2125719996 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2125719996;
-        } //End block
+        } 
         else
     if(allowedKeyManagement.get(KeyMgmt.WPA_EAP))        
         {
             int var2D34AB68C108758198684ED0F780659F_392385845 = (KeyMgmt.WPA_EAP);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657060426 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_657060426;
-        } //End block
+        } 
         else
     if(allowedKeyManagement.get(KeyMgmt.IEEE8021X))        
         {
             int varC375F7ABD12E1AF90B3CCCB84AD13499_1674457240 = (KeyMgmt.IEEE8021X);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2001252709 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2001252709;
-        } //End block
+        } 
         int varF1820F3956FE24C963DD1B07397D572A_876473001 = (KeyMgmt.NONE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996673128 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1996673128;
-        // ---------- Original Method ----------
-        //if (allowedKeyManagement.get(KeyMgmt.WPA_PSK)) {
-            //return KeyMgmt.WPA_PSK;
-        //} else if (allowedKeyManagement.get(KeyMgmt.WPA2_PSK)) {
-            //return KeyMgmt.WPA2_PSK;
-        //} else if (allowedKeyManagement.get(KeyMgmt.WPA_EAP)) {
-            //return KeyMgmt.WPA_EAP;
-        //} else if (allowedKeyManagement.get(KeyMgmt.IEEE8021X)) {
-            //return KeyMgmt.IEEE8021X;
-        //}
-        //return KeyMgmt.NONE;
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.889 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DFABEEE0BC305F02453E5DEFB1880DCE")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2035370345 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1032217031 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1032217031;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -397,12 +398,12 @@ for(String wepKey : wepKeys)
 for(EnterpriseField field : enterpriseFields)
         {
             dest.writeString(field.value());
-        } //End block
+        } 
         dest.writeString(ipAssignment.name());
         dest.writeString(proxySettings.name());
         dest.writeParcelable(linkProperties, flags);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -418,37 +419,40 @@ for(EnterpriseField field : enterpriseFields)
         private  EnterpriseField(String varName) {
             this.varName = varName;
             this.value = null;
-            // ---------- Original Method ----------
-            //this.varName = varName;
-            //this.value = null;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.892 -0400", hash_original_method = "54A096BDAB783365763903A518BE6C1A", hash_generated_method = "811C079A212601355D5034023F0D4C0B")
         public void setValue(String value) {
             this.value = value;
-            // ---------- Original Method ----------
-            //this.value = value;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.892 -0400", hash_original_method = "1FBB233886BBDFBC3AF13BD83F42443E", hash_generated_method = "3724C64029E02F02B03FD901D36A0ED2")
         public String varName() {
 String var01CEF6CAB564B83EC5A19C54824001C0_393241636 =             varName;
             var01CEF6CAB564B83EC5A19C54824001C0_393241636.addTaint(taint);
             return var01CEF6CAB564B83EC5A19C54824001C0_393241636;
-            // ---------- Original Method ----------
-            //return varName;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.893 -0400", hash_original_method = "75F20E3AB28F2448BFFE64E6D18AFDB6", hash_generated_method = "D26B6B6FE57307C67CEEEEA87393AF21")
         public String value() {
 String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
             varAF280DA2BC37D8BE783D8499160168DE_1241483474.addTaint(taint);
             return varAF280DA2BC37D8BE783D8499160168DE_1241483474;
-            // ---------- Original Method ----------
-            //return value;
+            
+            
         }
 
         
@@ -460,7 +464,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.893 -0400", hash_original_method = "3C24C7AE0F0A09BE18E455DF08BF91AE", hash_generated_method = "84233618D069A8DDF728C3B1AD79C9CD")
         private  KeyMgmt() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -494,7 +498,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.894 -0400", hash_original_method = "FEC0085CF7FD0AE9B8536A4264422A72", hash_generated_method = "BDFBDD91E12BC6AB0AC098F24E528B8C")
         private  Protocol() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -518,7 +522,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.895 -0400", hash_original_method = "02B498F2C9B084569031A4C2852FE733", hash_generated_method = "0DC3E2E4C06E7A517A353243CDD6C6F7")
         private  AuthAlgorithm() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -545,7 +549,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.896 -0400", hash_original_method = "D49801CF041AD620DA06D49E02E3EE50", hash_generated_method = "80B019872D8101A5104B248737E04786")
         private  PairwiseCipher() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -572,7 +576,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.897 -0400", hash_original_method = "A10BFAF56809802940D7EFFA4240EAB0", hash_generated_method = "65BD6B7E2641A28A143BE5DB0E9B6215")
         private  GroupCipher() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -602,7 +606,7 @@ String varAF280DA2BC37D8BE783D8499160168DE_1241483474 =             value;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.898 -0400", hash_original_method = "FE406DC4CFD00C0AE0BFBAA724FB9F50", hash_generated_method = "7E294D2CADE3312347600003F64067B6")
         private  Status() {
-            // ---------- Original Method ----------
+            
         }
 
         

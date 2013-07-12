@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class ASN1Enumerated extends DEREnumerated {
       ASN1Enumerated(byte[] bytes) {
         super(bytes);
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class ASN1Enumerated extends DEREnumerated {
     public  ASN1Enumerated(BigInteger value) {
         super(value);
         addTaint(value.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class ASN1Enumerated extends DEREnumerated {
     public  ASN1Enumerated(int value) {
         super(value);
         addTaint(value);
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class TrafficStats {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.504 -0400", hash_original_method = "0A5769A7A7853AFB0195EA94063CCE5B", hash_generated_method = "0A5769A7A7853AFB0195EA94063CCE5B")
     public TrafficStats ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -50,12 +50,14 @@ public class TrafficStats {
     }
 
     
-        public static void tagSocket(Socket socket) throws SocketException {
+        @DSModeled(DSC.SPEC)
+    public static void tagSocket(Socket socket) throws SocketException {
         SocketTagger.get().tag(socket);
     }
 
     
-        public static void untagSocket(Socket socket) throws SocketException {
+        @DSModeled(DSC.SPEC)
+    public static void untagSocket(Socket socket) throws SocketException {
         SocketTagger.get().untag(socket);
     }
 

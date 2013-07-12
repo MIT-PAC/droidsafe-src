@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,35 +24,37 @@ public class BasicHeader implements Header, Cloneable {
             IllegalArgumentException var3C43595648C24A9FD2A1B7AF0D642045_33273333 = new IllegalArgumentException("Name may not be null");
             var3C43595648C24A9FD2A1B7AF0D642045_33273333.addTaint(taint);
             throw var3C43595648C24A9FD2A1B7AF0D642045_33273333;
-        } //End block
+        } 
         this.name = name;
         this.value = value;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Name may not be null");
-        //}
-        //this.name = name;
-        //this.value = value;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.292 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "C63B9344E7A2A0D13B47D86A0A5778A2")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_1995769392 =         this.name;
         varDC708CD29829AA84C3F2D9B68CF84B0D_1995769392.addTaint(taint);
         return varDC708CD29829AA84C3F2D9B68CF84B0D_1995769392;
-        // ---------- Original Method ----------
-        //return this.name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.293 -0400", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "39BC0351337F4E1697288DF15B89A89D")
     public String getValue() {
 String varD64EF4B55BF21CB8765EC6BE5560B5B8_699538575 =         this.value;
         varD64EF4B55BF21CB8765EC6BE5560B5B8_699538575.addTaint(taint);
         return varD64EF4B55BF21CB8765EC6BE5560B5B8_699538575;
-        // ---------- Original Method ----------
-        //return this.value;
+        
+        
     }
 
     
@@ -61,8 +63,8 @@ String varD64EF4B55BF21CB8765EC6BE5560B5B8_699538575 =         this.value;
 String var3240027F019094032D6E79F8261F1C67_1085096651 =         BasicLineFormatter.DEFAULT.formatHeader(null, this).toString();
         var3240027F019094032D6E79F8261F1C67_1085096651.addTaint(taint);
         return var3240027F019094032D6E79F8261F1C67_1085096651;
-        // ---------- Original Method ----------
-        //return BasicLineFormatter.DEFAULT.formatHeader(null, this).toString();
+        
+        
     }
 
     
@@ -73,19 +75,19 @@ String var3240027F019094032D6E79F8261F1C67_1085096651 =         BasicLineFormatt
 HeaderElement[] var8E9BB83D47D4791E94E3C45066284CBD_594505654 =             BasicHeaderValueParser.parseElements(this.value, null);
             var8E9BB83D47D4791E94E3C45066284CBD_594505654.addTaint(taint);
             return var8E9BB83D47D4791E94E3C45066284CBD_594505654;
-        } //End block
+        } 
         else
         {
 HeaderElement[] var500E91C31ED37DF8B17C895D7E8D1295_2097140452 =             new HeaderElement[] {};
             var500E91C31ED37DF8B17C895D7E8D1295_2097140452.addTaint(taint);
             return var500E91C31ED37DF8B17C895D7E8D1295_2097140452;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.value != null) {
-            //return BasicHeaderValueParser.parseElements(this.value, null);
-        //} else {
-            //return new HeaderElement[] {}; 
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -94,8 +96,8 @@ HeaderElement[] var500E91C31ED37DF8B17C895D7E8D1295_2097140452 =             new
 Object var46F3A0D86742C1D6E099C2B166941A33_203666803 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_203666803.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_203666803;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

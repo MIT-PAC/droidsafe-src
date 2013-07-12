@@ -1,6 +1,6 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,20 +12,20 @@ public class MergeCursor extends AbstractCursor {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.422 -0400", hash_original_method = "F00E20B7880C90825F84FA73002A8738", hash_generated_method = "E84AFD080C6F2A7124E647128DDF036E")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mPos = -1;
-            // ---------- Original Method ----------
-            //mPos = -1;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.422 -0400", hash_original_method = "4CD83AD480AFA6CEDD96BF4385EF1A22", hash_generated_method = "567541AA29BE5959C655A66397E71654")
         @Override
         public void onInvalidated() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mPos = -1;
-            // ---------- Original Method ----------
-            //mPos = -1;
+            
+            
         }
 
         
@@ -46,14 +46,14 @@ for(int i = 0;i < mCursors.length;i++)
     if(mCursors[i] == null)            
             continue;
             mCursors[i].registerDataSetObserver(mObserver);
-        } //End block
-        // ---------- Original Method ----------
-        //mCursors = cursors;
-        //mCursor = cursors[0];
-        //for (int i = 0; i < mCursors.length; i++) {
-            //if (mCursors[i] == null) continue;
-            //mCursors[i].registerDataSetObserver(mObserver);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -67,27 +67,27 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 count += mCursors[i].getCount();
-            } //End block
-        } //End block
+            } 
+        } 
         int varE2942A04780E223B215EB8B663CF5353_1722288860 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1616701116 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1616701116;
-        // ---------- Original Method ----------
-        //int count = 0;
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] != null) {
-                //count += mCursors[i].getCount();
-            //}
-        //}
-        //return count;
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.427 -0400", hash_original_method = "2E36F9108221D554FB6CCFC9204351EF", hash_generated_method = "0B0E4A1FC140ECBC3D66C7309CA0907A")
     @Override
     public boolean onMove(int oldPosition, int newPosition) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newPosition);
         addTaint(oldPosition);
         mCursor = null;
@@ -98,43 +98,43 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)            
             {
                 continue;
-            } //End block
+            } 
     if(newPosition < (cursorStartPos + mCursors[i].getCount()))            
             {
                 mCursor = mCursors[i];
                 break;
-            } //End block
+            } 
             cursorStartPos += mCursors[i].getCount();
-        } //End block
+        } 
     if(mCursor != null)        
         {
             boolean ret = mCursor.moveToPosition(newPosition - cursorStartPos);
             boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_601165544 = (ret);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1188148412 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1188148412;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_528990106 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_145053051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_145053051;
-        // ---------- Original Method ----------
-        //mCursor = null;
-        //int cursorStartPos = 0;
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length; i++) {
-            //if (mCursors[i] == null) {
-                //continue;
-            //}
-            //if (newPosition < (cursorStartPos + mCursors[i].getCount())) {
-                //mCursor = mCursors[i];
-                //break;
-            //}
-            //cursorStartPos += mCursors[i].getCount();
-        //}
-        //if (mCursor != null) {
-            //boolean ret = mCursor.moveToPosition(newPosition - cursorStartPos);
-            //return ret;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+            
+                
+            
+            
+                
+                
+            
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -145,8 +145,8 @@ for(int i = 0;i < length;i++)
 String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getString(column);
         varBF070AA93B429966B971F1DEC6945F8B_1824370407.addTaint(taint);
         return varBF070AA93B429966B971F1DEC6945F8B_1824370407;
-        // ---------- Original Method ----------
-        //return mCursor.getString(column);
+        
+        
     }
 
     
@@ -157,8 +157,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         short varCF39ED121EBE45D3D2DC5918BE5E01F5_1423809036 = (mCursor.getShort(column));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_985892849 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_985892849;
-        // ---------- Original Method ----------
-        //return mCursor.getShort(column);
+        
+        
     }
 
     
@@ -169,8 +169,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         int var2E07EF4470929EC8B6F136BFA91B860A_1347054733 = (mCursor.getInt(column));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053803859 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2053803859;
-        // ---------- Original Method ----------
-        //return mCursor.getInt(column);
+        
+        
     }
 
     
@@ -181,8 +181,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         long var771B739BF5A02FA05A73BCB0054D98D5_586122448 = (mCursor.getLong(column));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1448024190 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1448024190;
-        // ---------- Original Method ----------
-        //return mCursor.getLong(column);
+        
+        
     }
 
     
@@ -193,8 +193,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         float var848ACA0CA9C00651ACC23CAEA64B6535_236889281 = (mCursor.getFloat(column));
                 float var546ADE640B6EDFBC8A086EF31347E768_1760394032 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1760394032;
-        // ---------- Original Method ----------
-        //return mCursor.getFloat(column);
+        
+        
     }
 
     
@@ -205,8 +205,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         double var3ECDC303791021B0ABF6510DCFD995F2_105732140 = (mCursor.getDouble(column));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1819380685 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1819380685;
-        // ---------- Original Method ----------
-        //return mCursor.getDouble(column);
+        
+        
     }
 
     
@@ -217,8 +217,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         int var309B5A67BFA317E363B4314879AC9AD4_344912889 = (mCursor.getType(column));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732630639 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732630639;
-        // ---------- Original Method ----------
-        //return mCursor.getType(column);
+        
+        
     }
 
     
@@ -229,8 +229,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         boolean var1088A1081C6173A5FD1F3233B0A3611C_1922101171 = (mCursor.isNull(column));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1486546030 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1486546030;
-        // ---------- Original Method ----------
-        //return mCursor.isNull(column);
+        
+        
     }
 
     
@@ -241,8 +241,8 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
         byte[] var0E5AB00079F8E51D240AB21E2A09AC74_1724581772 = (mCursor.getBlob(column));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_837452486 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_837452486;
-        // ---------- Original Method ----------
-        //return mCursor.getBlob(column);
+        
+        
     }
 
     
@@ -254,19 +254,19 @@ String varBF070AA93B429966B971F1DEC6945F8B_1824370407 =         mCursor.getStrin
 String[] varF8FF07705E74C2344D2EF0339BC7BE26_1457238483 =             mCursor.getColumnNames();
             varF8FF07705E74C2344D2EF0339BC7BE26_1457238483.addTaint(taint);
             return varF8FF07705E74C2344D2EF0339BC7BE26_1457238483;
-        } //End block
+        } 
         else
         {
 String[] var93992EED3A5738F23A3CAF5AB8E5B9F1_1315335848 =             new String[0];
             var93992EED3A5738F23A3CAF5AB8E5B9F1_1315335848.addTaint(taint);
             return var93992EED3A5738F23A3CAF5AB8E5B9F1_1315335848;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCursor != null) {
-            //return mCursor.getColumnNames();
-        //} else {
-            //return new String[0];
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -279,17 +279,17 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].deactivate();
-            } //End block
-        } //End block
+            } 
+        } 
         super.deactivate();
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] != null) {
-                //mCursors[i].deactivate();
-            //}
-        //}
-        //super.deactivate();
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -302,22 +302,22 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)            
             continue;
             mCursors[i].close();
-        } //End block
+        } 
         super.close();
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] == null) continue;
-            //mCursors[i].close();
-        //}
-        //super.close();
+        
+        
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.433 -0400", hash_original_method = "9B33826E9FF931F2B698CFF4E2E845A6", hash_generated_method = "9D1BFE7F548FAD5B4E9849E2C78560CF")
     @Override
     public void registerContentObserver(ContentObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(observer.getTaint());
         int length = mCursors.length;
 for(int i = 0;i < length;i++)
@@ -325,15 +325,15 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].registerContentObserver(observer);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] != null) {
-                //mCursors[i].registerContentObserver(observer);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -347,22 +347,22 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].unregisterContentObserver(observer);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] != null) {
-                //mCursors[i].unregisterContentObserver(observer);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.434 -0400", hash_original_method = "3D4B0E24965017562B726DF84968F4EF", hash_generated_method = "C7510007050BE162AA6B2F6945600829")
     @Override
     public void registerDataSetObserver(DataSetObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(observer.getTaint());
         int length = mCursors.length;
 for(int i = 0;i < length;i++)
@@ -370,15 +370,15 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].registerDataSetObserver(observer);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] != null) {
-                //mCursors[i].registerDataSetObserver(observer);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -392,15 +392,15 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] != null)            
             {
                 mCursors[i].unregisterDataSetObserver(observer);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] != null) {
-                //mCursors[i].unregisterDataSetObserver(observer);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -413,28 +413,28 @@ for(int i = 0;i < length;i++)
     if(mCursors[i] == null)            
             {
                 continue;
-            } //End block
+            } 
     if(mCursors[i].requery() == false)            
             {
                 boolean var68934A3E9455FA72420237EB05902327_193097185 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_582850174 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_582850174;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1685359463 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_270572426 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_270572426;
-        // ---------- Original Method ----------
-        //int length = mCursors.length;
-        //for (int i = 0 ; i < length ; i++) {
-            //if (mCursors[i] == null) {
-                //continue;
-            //}
-            //if (mCursors[i].requery() == false) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     

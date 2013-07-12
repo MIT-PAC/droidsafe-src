@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -67,8 +67,8 @@ switch(getCmdType()){
         mCallSettings.callMsg = ((CallSetupParams) cmdParams).callMsg;
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -93,26 +93,26 @@ switch(getCmdType()){
         mCallSettings.callMsg = in.readParcelable(null);
         break;
 }
-        // ---------- Original Method ----------
-        //mCmdDet = in.readParcelable(null);
-        //mTextMsg = in.readParcelable(null);
-        //mMenu = in.readParcelable(null);
-        //mInput = in.readParcelable(null);
-        //switch (getCmdType()) {
-        //case LAUNCH_BROWSER:
-            //mBrowserSettings = new BrowserSettings();
-            //mBrowserSettings.url = in.readString();
-            //mBrowserSettings.mode = LaunchBrowserMode.values()[in.readInt()];
-            //break;
-        //case PLAY_TONE:
-            //mToneSettings = in.readParcelable(null);
-            //break;
-        //case SET_UP_CALL:
-            //mCallSettings = new CallSettings();
-            //mCallSettings.confirmMsg = in.readParcelable(null);
-            //mCallSettings.callMsg = in.readParcelable(null);
-            //break;
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -137,34 +137,35 @@ switch(getCmdType()){
         dest.writeParcelable(mCallSettings.callMsg, 0);
         break;
 }
-        // ---------- Original Method ----------
-        //dest.writeParcelable(mCmdDet, 0);
-        //dest.writeParcelable(mTextMsg, 0);
-        //dest.writeParcelable(mMenu, 0);
-        //dest.writeParcelable(mInput, 0);
-        //switch(getCmdType()) {
-        //case LAUNCH_BROWSER:
-            //dest.writeString(mBrowserSettings.url);
-            //dest.writeInt(mBrowserSettings.mode.ordinal());
-            //break;
-        //case PLAY_TONE:
-            //dest.writeParcelable(mToneSettings, 0);
-            //break;
-        //case SET_UP_CALL:
-            //dest.writeParcelable(mCallSettings.confirmMsg, 0);
-            //dest.writeParcelable(mCallSettings.callMsg, 0);
-            //break;
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+            
+            
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.733 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3CBC270B0468CBF28EA33276FBB40EE8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1586098707 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771358723 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771358723;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -173,68 +174,74 @@ switch(getCmdType()){
 AppInterface.CommandType varA683FB7A9A13DB88A682BED484FDB4AC_2099977219 =         AppInterface.CommandType.fromInt(mCmdDet.typeOfCommand);
         varA683FB7A9A13DB88A682BED484FDB4AC_2099977219.addTaint(taint);
         return varA683FB7A9A13DB88A682BED484FDB4AC_2099977219;
-        // ---------- Original Method ----------
-        //return AppInterface.CommandType.fromInt(mCmdDet.typeOfCommand);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.733 -0400", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "868E5C0106368A29D5BA61CDF4ABD5F5")
     public Menu getMenu() {
 Menu var10D851031FD6BA7C53B0186C7F1D9213_1140021716 =         mMenu;
         var10D851031FD6BA7C53B0186C7F1D9213_1140021716.addTaint(taint);
         return var10D851031FD6BA7C53B0186C7F1D9213_1140021716;
-        // ---------- Original Method ----------
-        //return mMenu;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.733 -0400", hash_original_method = "C85A9B2343174A665E1C349326B79E38", hash_generated_method = "0C22DBC6400EBD9159736A15846ADA42")
     public Input geInput() {
 Input var5EBB3E30E30E9FC3A51B2E7E91DCB5FE_400443564 =         mInput;
         var5EBB3E30E30E9FC3A51B2E7E91DCB5FE_400443564.addTaint(taint);
         return var5EBB3E30E30E9FC3A51B2E7E91DCB5FE_400443564;
-        // ---------- Original Method ----------
-        //return mInput;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.734 -0400", hash_original_method = "036B73CC89055059C138E5824D02BCAD", hash_generated_method = "D665E89C1883EBE55A5C67C89D56D7EA")
     public TextMessage geTextMessage() {
 TextMessage var91B4A201CA718B216069C33DDA2396AF_1277975001 =         mTextMsg;
         var91B4A201CA718B216069C33DDA2396AF_1277975001.addTaint(taint);
         return var91B4A201CA718B216069C33DDA2396AF_1277975001;
-        // ---------- Original Method ----------
-        //return mTextMsg;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.734 -0400", hash_original_method = "C25A9BA40FBC0B8B0A069261C5A04294", hash_generated_method = "81B3C3EDC0133D9A9C1A28E923618AD2")
     public BrowserSettings getBrowserSettings() {
 BrowserSettings var2B8CF6D94FAAFA8D1F008DBC148D5DB9_1377565042 =         mBrowserSettings;
         var2B8CF6D94FAAFA8D1F008DBC148D5DB9_1377565042.addTaint(taint);
         return var2B8CF6D94FAAFA8D1F008DBC148D5DB9_1377565042;
-        // ---------- Original Method ----------
-        //return mBrowserSettings;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.734 -0400", hash_original_method = "7E3240C4BE07A52ADC96DFEAA4674C6F", hash_generated_method = "26EDE40432441115FF1CA96A1D41688C")
     public ToneSettings getToneSettings() {
 ToneSettings varE0D8F704D90D63C32C75F848926DB3CF_454140980 =         mToneSettings;
         varE0D8F704D90D63C32C75F848926DB3CF_454140980.addTaint(taint);
         return varE0D8F704D90D63C32C75F848926DB3CF_454140980;
-        // ---------- Original Method ----------
-        //return mToneSettings;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.734 -0400", hash_original_method = "7782D77E1F5CCB427C450A93C0BFB1C1", hash_generated_method = "49977913DA7F41E1738D1360171F84FF")
     public CallSettings getCallSettings() {
 CallSettings var8E0FC694A78A0D1D49799D2C92B59218_1050822326 =         mCallSettings;
         var8E0FC694A78A0D1D49799D2C92B59218_1050822326.addTaint(taint);
         return var8E0FC694A78A0D1D49799D2C92B59218_1050822326;
-        // ---------- Original Method ----------
-        //return mCallSettings;
+        
+        
     }
 
     
@@ -249,7 +256,7 @@ CallSettings var8E0FC694A78A0D1D49799D2C92B59218_1050822326 =         mCallSetti
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.734 -0400", hash_original_method = "290DD86DB6C194D95C4634D36677ECAA", hash_generated_method = "290DD86DB6C194D95C4634D36677ECAA")
         public BrowserSettings ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -268,7 +275,7 @@ CallSettings var8E0FC694A78A0D1D49799D2C92B59218_1050822326 =         mCallSetti
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.735 -0400", hash_original_method = "28C9A5C9E4697FF118CEC7F372F0E1C6", hash_generated_method = "28C9A5C9E4697FF118CEC7F372F0E1C6")
         public CallSettings ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -287,12 +294,12 @@ CallSettings var8E0FC694A78A0D1D49799D2C92B59218_1050822326 =         mCallSetti
             return new CatCmdMessage[size];
         }
     };
-    // orphaned legacy method
+    
     public CatCmdMessage createFromParcel(Parcel in) {
             return new CatCmdMessage(in);
         }
     
-    // orphaned legacy method
+    
     public CatCmdMessage[] newArray(int size) {
             return new CatCmdMessage[size];
         }

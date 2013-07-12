@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ public class PipedInputStream extends InputStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:48.652 -0400", hash_original_method = "EAE18C87236155EAE738625B0EE95D6C", hash_generated_method = "D3E67D51FFBABB34996E2D70DC239248")
     public  PipedInputStream() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,8 +39,8 @@ public class PipedInputStream extends InputStream {
     public  PipedInputStream(PipedOutputStream out) throws IOException {
         addTaint(out.getTaint());
         connect(out);
-        // ---------- Original Method ----------
-        //connect(out);
+        
+        
     }
 
     
@@ -51,13 +51,13 @@ public class PipedInputStream extends InputStream {
             IllegalArgumentException var14B56B7417000A6322DBDC3AD243C74B_1400326867 = new IllegalArgumentException("pipe size " + pipeSize + " too small");
             var14B56B7417000A6322DBDC3AD243C74B_1400326867.addTaint(taint);
             throw var14B56B7417000A6322DBDC3AD243C74B_1400326867;
-        } //End block
+        } 
         buffer = new byte[pipeSize];
-        // ---------- Original Method ----------
-        //if (pipeSize <= 0) {
-            //throw new IllegalArgumentException("pipe size " + pipeSize + " too small");
-        //}
-        //buffer = new byte[pipeSize];
+        
+        
+            
+        
+        
     }
 
     
@@ -67,11 +67,12 @@ public class PipedInputStream extends InputStream {
         addTaint(pipeSize);
         addTaint(out.getTaint());
         connect(out);
-        // ---------- Original Method ----------
-        //connect(out);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:48.654 -0400", hash_original_method = "2A98E1CFDF4B9A3EC436EF3BA87395EB", hash_generated_method = "606915EA53D8FD28327ECD18B404736E")
     @Override
     public synchronized int available() throws IOException {
@@ -80,15 +81,15 @@ public class PipedInputStream extends InputStream {
             int varCFCD208495D565EF66E7DFF9F98764DA_1377293592 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_540101478 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_540101478;
-        } //End block
+        } 
         int var66A5CA4646F3D9C506DDD7A718627107_270426255 = (in <= out ? buffer.length - out + in : in - out);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164861830 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164861830;
-        // ---------- Original Method ----------
-        //if (buffer == null || in == -1) {
-            //return 0;
-        //}
-        //return in <= out ? buffer.length - out + in : in - out;
+        
+        
+            
+        
+        
     }
 
     
@@ -97,9 +98,9 @@ public class PipedInputStream extends InputStream {
     public synchronized void close() throws IOException {
         buffer = null;
         notifyAll();
-        // ---------- Original Method ----------
-        //buffer = null;
-        //notifyAll();
+        
+        
+        
     }
 
     
@@ -107,8 +108,8 @@ public class PipedInputStream extends InputStream {
     public void connect(PipedOutputStream src) throws IOException {
         addTaint(src.getTaint());
         src.connect(this);
-        // ---------- Original Method ----------
-        //src.connect(this);
+        
+        
     }
 
     
@@ -119,20 +120,20 @@ public class PipedInputStream extends InputStream {
             IOException var59E3110525112AD12A0795267BCC8DC7_415434966 = new IOException("Pipe already connected");
             var59E3110525112AD12A0795267BCC8DC7_415434966.addTaint(taint);
             throw var59E3110525112AD12A0795267BCC8DC7_415434966;
-        } //End block
+        } 
     if(buffer == null)        
         {
             buffer = new byte[PipedInputStream.PIPE_SIZE];
-        } //End block
+        } 
         isConnected = true;
-        // ---------- Original Method ----------
-        //if (isConnected) {
-            //throw new IOException("Pipe already connected");
-        //}
-        //if (buffer == null) { 
-            //buffer = new byte[PipedInputStream.PIPE_SIZE];
-        //}
-        //isConnected = true;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -144,13 +145,13 @@ public class PipedInputStream extends InputStream {
             IOException var5ACBC0578C8271E4B1FBA9054656F0A9_1478145753 = new IOException("Not connected");
             var5ACBC0578C8271E4B1FBA9054656F0A9_1478145753.addTaint(taint);
             throw var5ACBC0578C8271E4B1FBA9054656F0A9_1478145753;
-        } //End block
+        } 
     if(buffer == null)        
         {
             IOException var49FC1A6C11DB0A4BE9BF7960D4D933DF_663359581 = new IOException("InputStream is closed");
             var49FC1A6C11DB0A4BE9BF7960D4D933DF_663359581.addTaint(taint);
             throw var49FC1A6C11DB0A4BE9BF7960D4D933DF_663359581;
-        } //End block
+        } 
         lastReader = Thread.currentThread();
         try 
         {
@@ -163,39 +164,39 @@ public class PipedInputStream extends InputStream {
                     int var6BB61E3B7BCE0931DA574D19D1D82C88_517877587 = (-1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1216145272 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1216145272;
-                } //End block
+                } 
     if((attempts-- <= 0) && lastWriter != null && !lastWriter.isAlive())                
                 {
                     IOException var21F067B593CB8DB6DCADD1F25439FAC6_1170778773 = new IOException("Pipe broken");
                     var21F067B593CB8DB6DCADD1F25439FAC6_1170778773.addTaint(taint);
                     throw var21F067B593CB8DB6DCADD1F25439FAC6_1170778773;
-                } //End block
+                } 
                 notifyAll();
                 wait(1000);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (InterruptedException e)
         {
             InterruptedIOException var46B941F497A45BD71FFF5B2BE2F4FCEC_1919735692 = new InterruptedIOException();
             var46B941F497A45BD71FFF5B2BE2F4FCEC_1919735692.addTaint(taint);
             throw var46B941F497A45BD71FFF5B2BE2F4FCEC_1919735692;
-        } //End block
+        } 
         int result = buffer[out++] & 0xff;
     if(out == buffer.length)        
         {
             out = 0;
-        } //End block
+        } 
     if(out == in)        
         {
             in = -1;
             out = 0;
-        } //End block
+        } 
         notifyAll();
         int varB4A88417B3D0170D754C647C30B7216A_1749092994 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_246369260 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_246369260;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -211,19 +212,19 @@ public class PipedInputStream extends InputStream {
             int varCFCD208495D565EF66E7DFF9F98764DA_237277559 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761830088 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1761830088;
-        } //End block
+        } 
     if(!isConnected)        
         {
             IOException var5ACBC0578C8271E4B1FBA9054656F0A9_1292981630 = new IOException("Not connected");
             var5ACBC0578C8271E4B1FBA9054656F0A9_1292981630.addTaint(taint);
             throw var5ACBC0578C8271E4B1FBA9054656F0A9_1292981630;
-        } //End block
+        } 
     if(buffer == null)        
         {
             IOException var49FC1A6C11DB0A4BE9BF7960D4D933DF_1778308528 = new IOException("InputStream is closed");
             var49FC1A6C11DB0A4BE9BF7960D4D933DF_1778308528.addTaint(taint);
             throw var49FC1A6C11DB0A4BE9BF7960D4D933DF_1778308528;
-        } //End block
+        } 
         lastReader = Thread.currentThread();
         try 
         {
@@ -236,23 +237,23 @@ public class PipedInputStream extends InputStream {
                     int var6BB61E3B7BCE0931DA574D19D1D82C88_1609719260 = (-1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666229936 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1666229936;
-                } //End block
+                } 
     if((attempts-- <= 0) && lastWriter != null && !lastWriter.isAlive())                
                 {
                     IOException var21F067B593CB8DB6DCADD1F25439FAC6_306388319 = new IOException("Pipe broken");
                     var21F067B593CB8DB6DCADD1F25439FAC6_306388319.addTaint(taint);
                     throw var21F067B593CB8DB6DCADD1F25439FAC6_306388319;
-                } //End block
+                } 
                 notifyAll();
                 wait(1000);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (InterruptedException e)
         {
             InterruptedIOException var46B941F497A45BD71FFF5B2BE2F4FCEC_1131216492 = new InterruptedIOException();
             var46B941F497A45BD71FFF5B2BE2F4FCEC_1131216492.addTaint(taint);
             throw var46B941F497A45BD71FFF5B2BE2F4FCEC_1131216492;
-        } //End block
+        } 
         int totalCopied = 0;
     if(out >= in)        
         {
@@ -263,14 +264,14 @@ public class PipedInputStream extends InputStream {
     if(out == buffer.length)            
             {
                 out = 0;
-            } //End block
+            } 
     if(out == in)            
             {
                 in = -1;
                 out = 0;
-            } //End block
+            } 
             totalCopied += length;
-        } //End block
+        } 
     if(totalCopied < byteCount && in != -1)        
         {
             int leftInBuffer = in - out;
@@ -282,15 +283,15 @@ public class PipedInputStream extends InputStream {
             {
                 in = -1;
                 out = 0;
-            } //End block
+            } 
             totalCopied += length;
-        } //End block
+        } 
         notifyAll();
         int varB401FFFD57D1F4ACC4CA5F4F04A9D9A7_558361326 = (totalCopied);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_230959769 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_230959769;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -301,7 +302,7 @@ public class PipedInputStream extends InputStream {
             IOException var1000524CAB3836FE6B4154A68C06F70C_156778534 = new IOException("Pipe is closed");
             var1000524CAB3836FE6B4154A68C06F70C_156778534.addTaint(taint);
             throw var1000524CAB3836FE6B4154A68C06F70C_156778534;
-        } //End block
+        } 
         lastWriter = Thread.currentThread();
         try 
         {
@@ -313,60 +314,60 @@ public class PipedInputStream extends InputStream {
                     IOException var21F067B593CB8DB6DCADD1F25439FAC6_1892310897 = new IOException("Pipe broken");
                     var21F067B593CB8DB6DCADD1F25439FAC6_1892310897.addTaint(taint);
                     throw var21F067B593CB8DB6DCADD1F25439FAC6_1892310897;
-                } //End block
+                } 
                 notifyAll();
                 wait(1000);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (InterruptedException e)
         {
             InterruptedIOException var46B941F497A45BD71FFF5B2BE2F4FCEC_1087009261 = new InterruptedIOException();
             var46B941F497A45BD71FFF5B2BE2F4FCEC_1087009261.addTaint(taint);
             throw var46B941F497A45BD71FFF5B2BE2F4FCEC_1087009261;
-        } //End block
+        } 
     if(buffer == null)        
         {
             IOException var1000524CAB3836FE6B4154A68C06F70C_6446499 = new IOException("Pipe is closed");
             var1000524CAB3836FE6B4154A68C06F70C_6446499.addTaint(taint);
             throw var1000524CAB3836FE6B4154A68C06F70C_6446499;
-        } //End block
+        } 
     if(in == -1)        
         {
             in = 0;
-        } //End block
+        } 
         buffer[in++] = (byte) oneByte;
     if(in == buffer.length)        
         {
             in = 0;
-        } //End block
+        } 
         notifyAll();
-        // ---------- Original Method ----------
-        //if (buffer == null || isClosed) {
-            //throw new IOException("Pipe is closed");
-        //}
-        //lastWriter = Thread.currentThread();
-        //try {
-            //while (buffer != null && out == in) {
-                //if (lastReader != null && !lastReader.isAlive()) {
-                    //throw new IOException("Pipe broken");
-                //}
-                //notifyAll();
-                //wait(1000);
-            //}
-        //} catch (InterruptedException e) {
-            //throw new InterruptedIOException();
-        //}
-        //if (buffer == null) {
-            //throw new IOException("Pipe is closed");
-        //}
-        //if (in == -1) {
-            //in = 0;
-        //}
-        //buffer[in++] = (byte) oneByte;
-        //if (in == buffer.length) {
-            //in = 0;
-        //}
-        //notifyAll();
+        
+        
+            
+        
+        
+        
+            
+                
+                    
+                
+                
+                
+            
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -374,9 +375,9 @@ public class PipedInputStream extends InputStream {
     synchronized void done() {
         isClosed = true;
         notifyAll();
-        // ---------- Original Method ----------
-        //isClosed = true;
-        //notifyAll();
+        
+        
+        
     }
 
     

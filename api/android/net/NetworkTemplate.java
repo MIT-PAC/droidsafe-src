@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,9 +31,9 @@ public class NetworkTemplate implements Parcelable {
     public  NetworkTemplate(int matchRule, String subscriberId) {
         this.mMatchRule = matchRule;
         this.mSubscriberId = subscriberId;
-        // ---------- Original Method ----------
-        //this.mMatchRule = matchRule;
-        //this.mSubscriberId = subscriberId;
+        
+        
+        
     }
 
     
@@ -41,9 +41,9 @@ public class NetworkTemplate implements Parcelable {
     private  NetworkTemplate(Parcel in) {
         mMatchRule = in.readInt();
         mSubscriberId = in.readString();
-        // ---------- Original Method ----------
-        //mMatchRule = in.readInt();
-        //mSubscriberId = in.readString();
+        
+        
+        
     }
 
     
@@ -78,19 +78,20 @@ public class NetworkTemplate implements Parcelable {
         addTaint(dest.getTaint());
         dest.writeInt(mMatchRule);
         dest.writeString(mSubscriberId);
-        // ---------- Original Method ----------
-        //dest.writeInt(mMatchRule);
-        //dest.writeString(mSubscriberId);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.250 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4AB8BC44CD569361098FD13833960DFA")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_102665453 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593651353 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593651353;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -102,10 +103,10 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337 =         "NetworkTemplate:
                 + scrubSubscriberId;
         var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337.addTaint(taint);
         return var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337;
-        // ---------- Original Method ----------
-        //final String scrubSubscriberId = scrubSubscriberId(mSubscriberId);
-        //return "NetworkTemplate: matchRule=" + getMatchRuleName(mMatchRule) + ", subscriberId="
-                //+ scrubSubscriberId;
+        
+        
+        
+                
     }
 
     
@@ -115,8 +116,8 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337 =         "NetworkTemplate:
         int var72B3AA903BB16B9EE6C65F9464B56C62_1198940432 = (Objects.hashCode(mMatchRule, mSubscriberId));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074495633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2074495633;
-        // ---------- Original Method ----------
-        //return Objects.hashCode(mMatchRule, mSubscriberId);
+        
+        
     }
 
     
@@ -131,37 +132,39 @@ String var0E2445C90F2AA1F9B41E1C80D9B6FAF4_401013337 =         "NetworkTemplate:
                     && Objects.equal(mSubscriberId, other.mSubscriberId));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_257308816 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_257308816;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1039657182 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1329318015 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1329318015;
-        // ---------- Original Method ----------
-        //if (obj instanceof NetworkTemplate) {
-            //final NetworkTemplate other = (NetworkTemplate) obj;
-            //return mMatchRule == other.mMatchRule
-                    //&& Objects.equal(mSubscriberId, other.mSubscriberId);
-        //}
-        //return false;
+        
+        
+            
+            
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.251 -0400", hash_original_method = "F3B6429C6B29080B6AB6244CD6E2C6C6", hash_generated_method = "BACAFD3023DCF4534C3C4D2F37936AB1")
     public int getMatchRule() {
         int var2532E26E563B8CCB0666E9168F784D0B_1192018864 = (mMatchRule);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100997261 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100997261;
-        // ---------- Original Method ----------
-        //return mMatchRule;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.251 -0400", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "BD698BFF5F93314AA90551AB4C8DFCAD")
     public String getSubscriberId() {
 String varD221C4376DC09E8E422076D12DB9853B_113189750 =         mSubscriberId;
         varD221C4376DC09E8E422076D12DB9853B_113189750.addTaint(taint);
         return varD221C4376DC09E8E422076D12DB9853B_113189750;
-        // ---------- Original Method ----------
-        //return mSubscriberId;
+        
+        
     }
 
     
@@ -194,21 +197,21 @@ switch(mMatchRule){
         varF3A68B27E2471C47B13F74F8DD0D3C5D_503418931.addTaint(taint);
         throw varF3A68B27E2471C47B13F74F8DD0D3C5D_503418931;
 }
-        // ---------- Original Method ----------
-        //switch (mMatchRule) {
-            //case MATCH_MOBILE_ALL:
-                //return matchesMobile(ident);
-            //case MATCH_MOBILE_3G_LOWER:
-                //return matchesMobile3gLower(ident);
-            //case MATCH_MOBILE_4G:
-                //return matchesMobile4g(ident);
-            //case MATCH_WIFI:
-                //return matchesWifi(ident);
-            //case MATCH_ETHERNET:
-                //return matchesEthernet(ident);
-            //default:
-                //throw new IllegalArgumentException("unknown network template");
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -220,21 +223,21 @@ switch(mMatchRule){
             boolean varB326B5062B2F0E69046810717534CB09_339743327 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1899445477 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1899445477;
-        } //End block
+        } 
         else
         {
             boolean varF17EE3108088E49AFAD2EFED58BDDCB8_614212292 = ((contains(DATA_USAGE_NETWORK_TYPES, ident.mType)
                     && Objects.equal(mSubscriberId, ident.mSubscriberId)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_525011883 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_525011883;
-        } //End block
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIMAX) {
-            //return true;
-        //} else {
-            //return (contains(DATA_USAGE_NETWORK_TYPES, ident.mType)
-                    //&& Objects.equal(mSubscriberId, ident.mSubscriberId));
-        //}
+        } 
+        
+        
+            
+        
+            
+                    
+        
     }
 
     
@@ -246,7 +249,7 @@ switch(mMatchRule){
             boolean var68934A3E9455FA72420237EB05902327_1219146043 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1827310631 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1827310631;
-        } //End block
+        } 
         else
     if(matchesMobile(ident))        
         {
@@ -258,22 +261,22 @@ switch(getNetworkClass(ident.mSubType)){
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_962641840 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_962641840;
 }
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1977785324 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1711812462 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1711812462;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIMAX) {
-            //return false;
-        //} else if (matchesMobile(ident)) {
-            //switch (getNetworkClass(ident.mSubType)) {
-                //case NETWORK_CLASS_UNKNOWN:
-                //case NETWORK_CLASS_2_G:
-                //case NETWORK_CLASS_3_G:
-                    //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+            
+                
+                
+                
+                    
+            
+        
+        
     }
 
     
@@ -285,7 +288,7 @@ switch(getNetworkClass(ident.mSubType)){
             boolean varB326B5062B2F0E69046810717534CB09_1190794829 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_742511845 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_742511845;
-        } //End block
+        } 
         else
     if(matchesMobile(ident))        
         {
@@ -295,23 +298,24 @@ switch(getNetworkClass(ident.mSubType)){
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_728558463 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_728558463;
 }
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1681360897 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1995989000 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1995989000;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIMAX) {
-            //return true;
-        //} else if (matchesMobile(ident)) {
-            //switch (getNetworkClass(ident.mSubType)) {
-                //case NETWORK_CLASS_4_G:
-                    //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+            
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.254 -0400", hash_original_method = "FC1062696978183943559E1C2F0FCB30", hash_generated_method = "3CFE1D5318A65187F0238823E9E94F52")
     private boolean matchesWifi(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -320,18 +324,19 @@ switch(getNetworkClass(ident.mSubType)){
             boolean varB326B5062B2F0E69046810717534CB09_718466528 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1708839778 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1708839778;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2077626417 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2011705598 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2011705598;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_WIFI) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.254 -0400", hash_original_method = "A66E0F5FCADB4F7B6C8822100B46777D", hash_generated_method = "8817743E74CE44FBF10A833532324784")
     private boolean matchesEthernet(NetworkIdentity ident) {
         addTaint(ident.getTaint());
@@ -340,19 +345,20 @@ switch(getNetworkClass(ident.mSubType)){
             boolean varB326B5062B2F0E69046810717534CB09_1165804846 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1241952729 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1241952729;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1897931767 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_849975984 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_849975984;
-        // ---------- Original Method ----------
-        //if (ident.mType == TYPE_ETHERNET) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
-        private static String getMatchRuleName(int matchRule) {
+        @DSModeled(DSC.SAFE)
+    private static String getMatchRuleName(int matchRule) {
         switch (matchRule) {
             case MATCH_MOBILE_3G_LOWER:
                 return "MOBILE_3G_LOWER";
@@ -404,12 +410,12 @@ switch(getNetworkClass(ident.mSubType)){
             return new NetworkTemplate[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkTemplate createFromParcel(Parcel in) {
             return new NetworkTemplate(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkTemplate[] newArray(int size) {
             return new NetworkTemplate[size];
         }

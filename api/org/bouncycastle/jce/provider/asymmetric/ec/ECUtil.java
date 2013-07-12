@@ -1,6 +1,6 @@
 package org.bouncycastle.jce.provider.asymmetric.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class ECUtil {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.686 -0400", hash_original_method = "752F644B3C790719452D11E8D47EF025", hash_generated_method = "752F644B3C790719452D11E8D47EF025")
     public ECUtil ()
     {
-        //Synthesized constructor
+        
     }
 
 

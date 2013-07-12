@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ class AndroidBidi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.665 -0400", hash_original_method = "67801A817F22277FC821400294E4A632", hash_generated_method = "67801A817F22277FC821400294E4A632")
     public AndroidBidi ()
     {
-        //Synthesized constructor
+        
     }
 
 

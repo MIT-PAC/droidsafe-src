@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -75,14 +75,15 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
         addTaint(dispatcher.getTaint());
         addTaint(phone.getTaint());
         mDispatcher = dispatcher;
-        // ---------- Original Method ----------
-        //mDispatcher = dispatcher;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.151 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -91,19 +92,19 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
         try 
         {
             super.finalize();
-        } //End block
+        } 
         catch (Throwable throwable)
         {
-        } //End block
+        } 
     if(DBG)        
         Log.d(LOG_TAG, "RuimSmsInterfaceManager finalized");
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} catch (Throwable throwable) {
-            //Log.e(LOG_TAG, "Error while finalizing:", throwable);
-        //}
-        //if(DBG) Log.d(LOG_TAG, "RuimSmsInterfaceManager finalized");
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -124,27 +125,27 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
     if(status == STATUS_ON_ICC_FREE)            
             {
                 mPhone.mCM.deleteSmsOnRuim(index, response);
-            } //End block
+            } 
             else
             {
                 byte[] record = makeSmsRecordData(status, pdu);
                 mPhone.getIccFileHandler().updateEFLinearFixed(
                         IccConstants.EF_SMS, index, record, null, response);
-            } //End block
+            } 
             try 
             {
                 mLock.wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
                 log("interrupted while trying to update by index");
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var51D04CAF6B674687BDD02BD17453D38D_490167800 = (mSuccess);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_191913571 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_191913571;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -166,31 +167,31 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
             try 
             {
                 mLock.wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
                 log("interrupted while trying to update by index");
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var51D04CAF6B674687BDD02BD17453D38D_312577712 = (mSuccess);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1868897437 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1868897437;
-        // ---------- Original Method ----------
-        //if (DBG) log("copyMessageToIccEf: status=" + status + " ==> " +
-                //"pdu=("+ Arrays.toString(pdu) + ")");
-        //enforceReceiveAndSend("Copying message to RUIM");
-        //synchronized(mLock) {
-            //mSuccess = false;
-            //Message response = mHandler.obtainMessage(EVENT_UPDATE_DONE);
-            //mPhone.mCM.writeSmsToRuim(status, IccUtils.bytesToHexString(pdu),
-                    //response);
-            //try {
-                //mLock.wait();
-            //} catch (InterruptedException e) {
-                //log("interrupted while trying to update by index");
-            //}
-        //}
-        //return mSuccess;
+        
+        
+                
+        
+        
+            
+            
+            
+                    
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -209,31 +210,31 @@ public class RuimSmsInterfaceManager extends IccSmsInterfaceManager {
             try 
             {
                 mLock.wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
                 log("interrupted while trying to load from the RUIM");
-            } //End block
-        } //End block
+            } 
+        } 
 List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_331242065 =         mSms;
         var7BF1E9CBCC2022F70728CF07D46D244B_331242065.addTaint(taint);
         return var7BF1E9CBCC2022F70728CF07D46D244B_331242065;
-        // ---------- Original Method ----------
-        //if (DBG) log("getAllMessagesFromEF");
-        //Context context = mPhone.getContext();
-        //context.enforceCallingPermission(
-                //"android.permission.RECEIVE_SMS",
-                //"Reading messages from RUIM");
-        //synchronized(mLock) {
-            //Message response = mHandler.obtainMessage(EVENT_LOAD_DONE);
-            //mPhone.getIccFileHandler().loadEFLinearFixedAll(IccConstants.EF_SMS, response);
-            //try {
-                //mLock.wait();
-            //} catch (InterruptedException e) {
-                //log("interrupted while trying to load from the RUIM");
-            //}
-        //}
-        //return mSms;
+        
+        
+        
+        
+                
+                
+        
+            
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -243,9 +244,9 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_331242065 =         mSms;
         boolean var68934A3E9455FA72420237EB05902327_1993821181 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_946120223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_946120223;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        
+        
+        
     }
 
     
@@ -255,9 +256,9 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_331242065 =         mSms;
         boolean var68934A3E9455FA72420237EB05902327_1048824734 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1094341567 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1094341567;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        
+        
+        
     }
 
     
@@ -268,9 +269,9 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_331242065 =         mSms;
         boolean var68934A3E9455FA72420237EB05902327_866294355 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1768950900 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1768950900;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        
+        
+        
     }
 
     
@@ -281,9 +282,9 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_331242065 =         mSms;
         boolean var68934A3E9455FA72420237EB05902327_654596213 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1278090839 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1278090839;
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "Error! Not implemented for CDMA.");
-        //return false;
+        
+        
+        
     }
 
     
@@ -291,8 +292,8 @@ List<SmsRawData> var7BF1E9CBCC2022F70728CF07D46D244B_331242065 =         mSms;
     protected void log(String msg) {
         addTaint(msg.getTaint());
         Log.d(LOG_TAG, "[RuimSmsInterfaceManager] " + msg);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[RuimSmsInterfaceManager] " + msg);
+        
+        
     }
 
     

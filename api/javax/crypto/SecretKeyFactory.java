@@ -1,6 +1,6 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,10 +30,10 @@ public class SecretKeyFactory {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = keyFacSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = keyFacSpi;
+        
+        
+        
+        
     }
 
     
@@ -42,8 +42,8 @@ public class SecretKeyFactory {
 String var44A46B4003FC81ACB0223385BA1FA818_570839155 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_570839155.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_570839155;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_570839155 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_737224965 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_737224965.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_737224965;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -99,8 +99,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_737224965 =         provider;
 SecretKey var3861BB99F9AC266732858E78F76FFBEA_1163962985 =         spiImpl.engineGenerateSecret(keySpec);
         var3861BB99F9AC266732858E78F76FFBEA_1163962985.addTaint(taint);
         return var3861BB99F9AC266732858E78F76FFBEA_1163962985;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateSecret(keySpec);
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ SecretKey var3861BB99F9AC266732858E78F76FFBEA_1163962985 =         spiImpl.engin
 KeySpec var8F4D81791C8180D9CBCF44423DBEC0F6_180357779 =         spiImpl.engineGetKeySpec(key, keySpec);
         var8F4D81791C8180D9CBCF44423DBEC0F6_180357779.addTaint(taint);
         return var8F4D81791C8180D9CBCF44423DBEC0F6_180357779;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetKeySpec(key, keySpec);
+        
+        
     }
 
     
@@ -123,8 +123,8 @@ KeySpec var8F4D81791C8180D9CBCF44423DBEC0F6_180357779 =         spiImpl.engineGe
 SecretKey var5A62A18468446B86D5F9E15687E1B90C_1428507850 =         spiImpl.engineTranslateKey(key);
         var5A62A18468446B86D5F9E15687E1B90C_1428507850.addTaint(taint);
         return var5A62A18468446B86D5F9E15687E1B90C_1428507850;
-        // ---------- Original Method ----------
-        //return spiImpl.engineTranslateKey(key);
+        
+        
     }
 
     

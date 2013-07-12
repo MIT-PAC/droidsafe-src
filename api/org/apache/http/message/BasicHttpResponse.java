@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,17 +35,17 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
             IllegalArgumentException var4709414B32B1770E2C45CBE97DD5D9E5_379965820 = new IllegalArgumentException("Status line may not be null.");
             var4709414B32B1770E2C45CBE97DD5D9E5_379965820.addTaint(taint);
             throw var4709414B32B1770E2C45CBE97DD5D9E5_379965820;
-        } //End block
+        } 
         this.statusline    = statusline;
         this.reasonCatalog = catalog;
         this.locale        = (locale != null) ? locale : Locale.getDefault();
-        // ---------- Original Method ----------
-        //if (statusline == null) {
-            //throw new IllegalArgumentException("Status line may not be null.");
-        //}
-        //this.statusline    = statusline;
-        //this.reasonCatalog = catalog;
-        //this.locale        = (locale != null) ? locale : Locale.getDefault();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -53,7 +53,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
     public  BasicHttpResponse(final StatusLine statusline) {
         this(statusline, null, null);
         addTaint(statusline.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -65,7 +65,7 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
         addTaint(reason.getTaint());
         addTaint(code);
         addTaint(ver.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -74,38 +74,41 @@ public class BasicHttpResponse extends AbstractHttpMessage implements HttpRespon
 ProtocolVersion varD90C043793F7774DAF136F85478656A2_985352847 =         this.statusline.getProtocolVersion();
         varD90C043793F7774DAF136F85478656A2_985352847.addTaint(taint);
         return varD90C043793F7774DAF136F85478656A2_985352847;
-        // ---------- Original Method ----------
-        //return this.statusline.getProtocolVersion();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.516 -0400", hash_original_method = "17E71ED31D66483D3BDF78C743004CA2", hash_generated_method = "4D04E6944D786F5CBA3D9E887827F280")
     public StatusLine getStatusLine() {
 StatusLine var3F6855B8C489EBE58B05E134AAAD021B_1429796868 =         this.statusline;
         var3F6855B8C489EBE58B05E134AAAD021B_1429796868.addTaint(taint);
         return var3F6855B8C489EBE58B05E134AAAD021B_1429796868;
-        // ---------- Original Method ----------
-        //return this.statusline;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.516 -0400", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "6578CA6DA869DE4160ADFA7CD217DE86")
     public HttpEntity getEntity() {
 HttpEntity varB0390008473457B24431D383C02B7BE2_737418682 =         this.entity;
         varB0390008473457B24431D383C02B7BE2_737418682.addTaint(taint);
         return varB0390008473457B24431D383C02B7BE2_737418682;
-        // ---------- Original Method ----------
-        //return this.entity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.516 -0400", hash_original_method = "733D9DF7D9A8D6EAEA176BCCAA80EA96", hash_generated_method = "E261EBA653635DD0617243C084742701")
     public Locale getLocale() {
 Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;
         var07CBB3424B1C5A44A7FC0518D56FE503_563862303.addTaint(taint);
         return var07CBB3424B1C5A44A7FC0518D56FE503_563862303;
-        // ---------- Original Method ----------
-        //return this.locale;
+        
+        
     }
 
     
@@ -116,21 +119,21 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;
             IllegalArgumentException var1636A5AFF6F53BF0101E09315281948D_864088791 = new IllegalArgumentException("Status line may not be null");
             var1636A5AFF6F53BF0101E09315281948D_864088791.addTaint(taint);
             throw var1636A5AFF6F53BF0101E09315281948D_864088791;
-        } //End block
+        } 
         this.statusline = statusline;
-        // ---------- Original Method ----------
-        //if (statusline == null) {
-            //throw new IllegalArgumentException("Status line may not be null");
-        //}
-        //this.statusline = statusline;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.517 -0400", hash_original_method = "1BC8215859DBDD8C612AAF8D25EAF759", hash_generated_method = "536DAFF9BA693838F6F90920759EF12D")
     public void setStatusLine(final ProtocolVersion ver, final int code) {
         this.statusline = new BasicStatusLine(ver, code, getReason(code));
-        // ---------- Original Method ----------
-        //this.statusline = new BasicStatusLine(ver, code, getReason(code));
+        
+        
     }
 
     
@@ -138,8 +141,8 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;
     public void setStatusLine(final ProtocolVersion ver, final int code,
                               final String reason) {
         this.statusline = new BasicStatusLine(ver, code, reason);
-        // ---------- Original Method ----------
-        //this.statusline = new BasicStatusLine(ver, code, reason);
+        
+        
     }
 
     
@@ -147,9 +150,9 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;
     public void setStatusCode(int code) {
         ProtocolVersion ver = this.statusline.getProtocolVersion();
         this.statusline = new BasicStatusLine(ver, code, getReason(code));
-        // ---------- Original Method ----------
-        //ProtocolVersion ver = this.statusline.getProtocolVersion();
-        //this.statusline = new BasicStatusLine(ver, code, getReason(code));
+        
+        
+        
     }
 
     
@@ -161,27 +164,27 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;
             IllegalArgumentException var9E32F7C57C8E470485D53529D69B0D89_422556152 = new IllegalArgumentException("Line break in reason phrase.");
             var9E32F7C57C8E470485D53529D69B0D89_422556152.addTaint(taint);
             throw var9E32F7C57C8E470485D53529D69B0D89_422556152;
-        } //End block
+        } 
         this.statusline = new BasicStatusLine(this.statusline.getProtocolVersion(),
                                               this.statusline.getStatusCode(),
                                               reason);
-        // ---------- Original Method ----------
-        //if ((reason != null) && ((reason.indexOf('\n') >= 0) ||
-                                 //(reason.indexOf('\r') >= 0))
-            //) {
-            //throw new IllegalArgumentException("Line break in reason phrase.");
-        //}
-        //this.statusline = new BasicStatusLine(this.statusline.getProtocolVersion(),
-                                              //this.statusline.getStatusCode(),
-                                              //reason);
+        
+        
+                                 
+            
+            
+        
+        
+                                              
+                                              
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.519 -0400", hash_original_method = "ACC3C31B4104E926438E24B159B6E3A2", hash_generated_method = "FB3E9570D6065D0B91C8CE936F48D4CA")
     public void setEntity(final HttpEntity entity) {
         this.entity = entity;
-        // ---------- Original Method ----------
-        //this.entity = entity;
+        
+        
     }
 
     
@@ -192,19 +195,19 @@ Locale var07CBB3424B1C5A44A7FC0518D56FE503_563862303 =         this.locale;
             IllegalArgumentException var375D7E0D2547FD54B345F11E55227B22_535419204 = new IllegalArgumentException("Locale may not be null.");
             var375D7E0D2547FD54B345F11E55227B22_535419204.addTaint(taint);
             throw var375D7E0D2547FD54B345F11E55227B22_535419204;
-        } //End block
+        } 
         this.locale = loc;
         final int code = this.statusline.getStatusCode();
         this.statusline = new BasicStatusLine
             (this.statusline.getProtocolVersion(), code, getReason(code));
-        // ---------- Original Method ----------
-        //if (loc == null) {
-            //throw new IllegalArgumentException("Locale may not be null.");
-        //}
-        //this.locale = loc;
-        //final int code = this.statusline.getStatusCode();
-        //this.statusline = new BasicStatusLine
-            //(this.statusline.getProtocolVersion(), code, getReason(code));
+        
+        
+            
+        
+        
+        
+        
+            
     }
 
     
@@ -215,9 +218,9 @@ String var60644D7B8CCB006F15086BB6E0A0C18A_1675435821 =         (this.reasonCata
             null : this.reasonCatalog.getReason(code, this.locale);
         var60644D7B8CCB006F15086BB6E0A0C18A_1675435821.addTaint(taint);
         return var60644D7B8CCB006F15086BB6E0A0C18A_1675435821;
-        // ---------- Original Method ----------
-        //return (this.reasonCatalog == null) ?
-            //null : this.reasonCatalog.getReason(code, this.locale);
+        
+        
+            
     }
 
     

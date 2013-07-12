@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public class LazyDERSequence extends DERSequence {
       LazyDERSequence(
         byte[] encoded) throws IOException {
         this.encoded = encoded;
-        // ---------- Original Method ----------
-        //this.encoded = encoded;
+        
+        
     }
 
     
@@ -34,15 +34,15 @@ public class LazyDERSequence extends DERSequence {
 (en.hasMoreElements())        
         {
             addObject((DEREncodable)en.nextElement());
-        } //End block
+        } 
         parsed = true;
-        // ---------- Original Method ----------
-        //Enumeration en = new LazyDERConstructionEnumeration(encoded);
-        //while (en.hasMoreElements())
-        //{
-            //addObject((DEREncodable)en.nextElement());
-        //}
-        //parsed = true;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -52,16 +52,16 @@ public class LazyDERSequence extends DERSequence {
     if(!parsed)        
         {
             parse();
-        } //End block
+        } 
 DEREncodable varC3804AE80A9D974831C6A8C893D1AF39_718516268 =         super.getObjectAt(index);
         varC3804AE80A9D974831C6A8C893D1AF39_718516268.addTaint(taint);
         return varC3804AE80A9D974831C6A8C893D1AF39_718516268;
-        // ---------- Original Method ----------
-        //if (!parsed)
-        //{
-            //parse();
-        //}
-        //return super.getObjectAt(index);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -72,16 +72,16 @@ DEREncodable varC3804AE80A9D974831C6A8C893D1AF39_718516268 =         super.getOb
 Enumeration var0946A8F7E50977A659B8833DB09708BE_948065940 =             super.getObjects();
             var0946A8F7E50977A659B8833DB09708BE_948065940.addTaint(taint);
             return var0946A8F7E50977A659B8833DB09708BE_948065940;
-        } //End block
+        } 
 Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_805907160 =         new LazyDERConstructionEnumeration(encoded);
         var8EEBD713CC6C39B1C08E644169D4EB15_805907160.addTaint(taint);
         return var8EEBD713CC6C39B1C08E644169D4EB15_805907160;
-        // ---------- Original Method ----------
-        //if (parsed)
-        //{
-            //return super.getObjects();
-        //}
-        //return new LazyDERConstructionEnumeration(encoded);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -96,23 +96,23 @@ Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_805907160 =         new LazyDERC
             {
                 en.nextElement();
                 size++;
-            } //End block
-        } //End block
+            } 
+        } 
         int varF7BD60B75B29D79B660A2859395C1A24_79420447 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580330409 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580330409;
-        // ---------- Original Method ----------
-        //if (size < 0)
-        //{
-            //Enumeration en = new LazyDERConstructionEnumeration(encoded);
-            //size = 0;
-            //while (en.hasMoreElements())
-            //{
-                //en.nextElement();
-                //size++;
-            //}
-        //}
-        //return size;
+        
+        
+        
+            
+            
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -121,8 +121,8 @@ Enumeration var8EEBD713CC6C39B1C08E644169D4EB15_805907160 =         new LazyDERC
         DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(SEQUENCE | CONSTRUCTED, encoded);
-        // ---------- Original Method ----------
-        //out.writeEncoded(SEQUENCE | CONSTRUCTED, encoded);
+        
+        
     }
 
     

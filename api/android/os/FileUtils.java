@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class FileUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.300 -0400", hash_original_method = "68A158D183F246B86320864EE65BA192", hash_generated_method = "68A158D183F246B86320864EE65BA192")
     public FileUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -242,7 +242,7 @@ public class FileUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.304 -0400", hash_original_method = "CFD6FBC969A1D085C457A3FA7AFEA0D4", hash_generated_method = "CFD6FBC969A1D085C457A3FA7AFEA0D4")
         public FileStatus ()
         {
-            //Synthesized constructor
+            
         }
 
 

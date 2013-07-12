@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,8 +22,8 @@ public class ATResponseParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.586 -0400", hash_original_method = "2DC067EE65EE5AEB61F14CBD640EED38", hash_generated_method = "90B4D99E6FA66562090E2203837F21D3")
     public  ATResponseParser(String line) {
         this.line = line;
-        // ---------- Original Method ----------
-        //this.line = line;
+        
+        
     }
 
     
@@ -35,7 +35,7 @@ public class ATResponseParser {
             ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_68784970 = new ATParseEx();
             varDF8D702F817CA60573E382BA3DEC9A9D_68784970.addTaint(taint);
             throw varDF8D702F817CA60573E382BA3DEC9A9D_68784970;
-        } //End block
+        } 
         char c = line.charAt(tokStart);
     if(c == '0')        
         {
@@ -52,15 +52,15 @@ public class ATResponseParser {
         ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_2041851468 = new ATParseEx();
         varDF8D702F817CA60573E382BA3DEC9A9D_2041851468.addTaint(taint);
         throw varDF8D702F817CA60573E382BA3DEC9A9D_2041851468;
-        // ---------- Original Method ----------
-        //nextTok();
-        //if (tokEnd - tokStart > 1) {
-            //throw new ATParseEx();
-        //}
-        //char c = line.charAt(tokStart);
-        //if (c == '0') return false;
-        //if (c ==  '1') return true;
-        //throw new ATParseEx();
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -76,63 +76,66 @@ for(int i = tokStart;i < tokEnd;i++)
                 ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_1757287678 = new ATParseEx();
                 varDF8D702F817CA60573E382BA3DEC9A9D_1757287678.addTaint(taint);
                 throw varDF8D702F817CA60573E382BA3DEC9A9D_1757287678;
-            } //End block
+            } 
             ret *= 10;
             ret += c - '0';
-        } //End block
+        } 
         int var2CB9DF9898E55FD0AD829DC202DDBD1C_1346821617 = (ret);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_422459293 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_422459293;
-        // ---------- Original Method ----------
-        //int ret = 0;
-        //nextTok();
-        //for (int i = tokStart ; i < tokEnd ; i++) {
-            //char c = line.charAt(i);
-            //if (c < '0' || c > '9') {
-                //throw new ATParseEx();
-            //}
-            //ret *= 10;
-            //ret += c - '0';
-        //}
-        //return ret;
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.588 -0400", hash_original_method = "098AF12FD324D863E13EA52B5E17698D", hash_generated_method = "02B2FBC8A9CAE09DCE9BE46DA708D21E")
     public String nextString() {
         nextTok();
 String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(tokStart, tokEnd);
         varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287.addTaint(taint);
         return varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287;
-        // ---------- Original Method ----------
-        //nextTok();
-        //return line.substring(tokStart, tokEnd);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.588 -0400", hash_original_method = "10F6658C8E801D9A6B4832727F713C99", hash_generated_method = "BF454D1A2BD88AA7E30A2E995FEAD251")
     public boolean hasMore() {
         boolean var6025777476581CB9A5AD5A10C75E617E_111544812 = (next < line.length());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_309806341 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_309806341;
-        // ---------- Original Method ----------
-        //return next < line.length();
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.590 -0400", hash_original_method = "0441D3F31DB45A49823AD290225E4F8E", hash_generated_method = "D416AF255BD54634A3BD954560D5CA8F")
     private void nextTok() {
         int len = line.length();
     if(next == 0)        
         {
             skipPrefix();
-        } //End block
+        } 
     if(next >= len)        
         {
             ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_1117089403 = new ATParseEx();
             varDF8D702F817CA60573E382BA3DEC9A9D_1117089403.addTaint(taint);
             throw varDF8D702F817CA60573E382BA3DEC9A9D_1117089403;
-        } //End block
+        } 
         try 
         {
             char c = line.charAt(next++);
@@ -145,28 +148,28 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
                     ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_1018804998 = new ATParseEx();
                     varDF8D702F817CA60573E382BA3DEC9A9D_1018804998.addTaint(taint);
                     throw varDF8D702F817CA60573E382BA3DEC9A9D_1018804998;
-                } //End block
+                } 
                 c = line.charAt(next++);
                 tokStart = next - 1;
                 while
 (c != '"' && next < len)                
                 {
                     c = line.charAt(next++);
-                } //End block
+                } 
     if(c != '"')                
                 {
                     ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_1049280105 = new ATParseEx();
                     varDF8D702F817CA60573E382BA3DEC9A9D_1049280105.addTaint(taint);
                     throw varDF8D702F817CA60573E382BA3DEC9A9D_1049280105;
-                } //End block
+                } 
                 tokEnd = next - 1;
     if(next < len && line.charAt(next++) != ',')                
                 {
                     ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_399603558 = new ATParseEx();
                     varDF8D702F817CA60573E382BA3DEC9A9D_399603558.addTaint(taint);
                     throw varDF8D702F817CA60573E382BA3DEC9A9D_399603558;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 tokStart = next - 1;
@@ -177,23 +180,23 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
     if(!Character.isWhitespace(c))                    
                     {
                         tokEnd = next;
-                    } //End block
+                    } 
     if(next == len)                    
                     {
                         break;
-                    } //End block
+                    } 
                     c = line.charAt(next++);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (StringIndexOutOfBoundsException ex)
         {
             ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_2078781059 = new ATParseEx();
             varDF8D702F817CA60573E382BA3DEC9A9D_2078781059.addTaint(taint);
             throw varDF8D702F817CA60573E382BA3DEC9A9D_2078781059;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -206,29 +209,30 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
 (next < len && Character.isWhitespace(c))        
         {
             c = line.charAt(next++);
-        } //End block
+        } 
     if(Character.isWhitespace(c))        
         {
             ATParseEx varDF8D702F817CA60573E382BA3DEC9A9D_595820322 = new ATParseEx();
             varDF8D702F817CA60573E382BA3DEC9A9D_595820322.addTaint(taint);
             throw varDF8D702F817CA60573E382BA3DEC9A9D_595820322;
-        } //End block
+        } 
         char var4A8A08F09D37B73795649038408B5F33_2053476765 = (c);
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1208812236 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1208812236;
-        // ---------- Original Method ----------
-        //int len;
-        //len = line.length();
-        //while (next < len && Character.isWhitespace(c)) {
-            //c = line.charAt(next++);
-        //}
-        //if (Character.isWhitespace(c)) {
-            //throw new ATParseEx();
-        //}
-        //return c;
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.592 -0400", hash_original_method = "1D94A267F6B395134932A5B3B0C0A195", hash_generated_method = "080063B67FE2ECAEE5448CFFF06D0FD3")
     private void skipPrefix() {
         next = 0;
@@ -240,21 +244,21 @@ String varA4C6ED80D7BD7C6313759B77A024A3A2_1788779287 =         line.substring(t
     if(c == ':')            
             {
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         ATParseEx varC5AFE13D63FF09DE11E7747293E3B8D8_797890138 = new ATParseEx("missing prefix");
         varC5AFE13D63FF09DE11E7747293E3B8D8_797890138.addTaint(taint);
         throw varC5AFE13D63FF09DE11E7747293E3B8D8_797890138;
-        // ---------- Original Method ----------
-        //next = 0;
-        //int s = line.length();
-        //while (next < s){
-            //char c = line.charAt(next++);
-            //if (c == ':') {
-                //return;
-            //}
-        //}
-        //throw new ATParseEx("missing prefix");
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     

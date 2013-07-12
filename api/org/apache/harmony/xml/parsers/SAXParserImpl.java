@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,11 +33,11 @@ final class SAXParserImpl extends SAXParser {
                 ? Collections.<String, Boolean>emptyMap()
                 : new HashMap<String, Boolean>(initialFeatures);
         resetInternal();
-        // ---------- Original Method ----------
-        //this.initialFeatures = initialFeatures.isEmpty()
-                //? Collections.<String, Boolean>emptyMap()
-                //: new HashMap<String, Boolean>(initialFeatures);
-        //resetInternal();
+        
+        
+                
+                
+        
     }
 
     
@@ -47,12 +47,12 @@ final class SAXParserImpl extends SAXParser {
 for(Map.Entry<String,Boolean> entry : initialFeatures.entrySet())
         {
             reader.setFeature(entry.getKey(), entry.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //reader = new ExpatReader();
-        //for (Map.Entry<String,Boolean> entry : initialFeatures.entrySet()) {
-            //reader.setFeature(entry.getKey(), entry.getValue());
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -62,27 +62,27 @@ for(Map.Entry<String,Boolean> entry : initialFeatures.entrySet())
         try 
         {
             resetInternal();
-        } //End block
+        } 
         catch (SAXNotRecognizedException e)
         {
             AssertionError varA81442E36297E737EB908877E58260E8_458112871 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_458112871.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_458112871;
-        } //End block
+        } 
         catch (SAXNotSupportedException e)
         {
             AssertionError varA81442E36297E737EB908877E58260E8_2034929913 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_2034929913.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_2034929913;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //resetInternal();
-        //} catch (SAXNotRecognizedException e) {
-            //throw new AssertionError();
-        //} catch (SAXNotSupportedException e) {
-            //throw new AssertionError();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -92,15 +92,15 @@ for(Map.Entry<String,Boolean> entry : initialFeatures.entrySet())
     if(parser == null)        
         {
             parser = new XMLReaderAdapter(reader);
-        } //End block
+        } 
 Parser var6C454504E3B46BB170EB6C8961D23597_1432183897 =         parser;
         var6C454504E3B46BB170EB6C8961D23597_1432183897.addTaint(taint);
         return var6C454504E3B46BB170EB6C8961D23597_1432183897;
-        // ---------- Original Method ----------
-        //if (parser == null) {
-            //parser = new XMLReaderAdapter(reader);
-        //}
-        //return parser;
+        
+        
+            
+        
+        
     }
 
     
@@ -112,19 +112,20 @@ Parser var6C454504E3B46BB170EB6C8961D23597_1432183897 =         parser;
 Object var5BBB273B259F736B50FEB008BF3FDB91_1267632004 =         reader.getProperty(name);
         var5BBB273B259F736B50FEB008BF3FDB91_1267632004.addTaint(taint);
         return var5BBB273B259F736B50FEB008BF3FDB91_1267632004;
-        // ---------- Original Method ----------
-        //return reader.getProperty(name);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.707 -0400", hash_original_method = "2EF684CE098290C07222DD88BA41AEFB", hash_generated_method = "487FCC13C313CA92C516C2959EED2F00")
     @Override
     public XMLReader getXMLReader() {
 XMLReader var681AFDDDB48FD166DFCBFA04C65E6269_801799135 =         reader;
         var681AFDDDB48FD166DFCBFA04C65E6269_801799135.addTaint(taint);
         return var681AFDDDB48FD166DFCBFA04C65E6269_801799135;
-        // ---------- Original Method ----------
-        //return reader;
+        
+        
     }
 
     
@@ -136,30 +137,31 @@ XMLReader var681AFDDDB48FD166DFCBFA04C65E6269_801799135 =         reader;
             boolean varAAF6B023277518C6238E2264EF86C519_710803449 = (reader.getFeature("http://xml.org/sax/features/namespaces"));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495955312 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_495955312;
-        } //End block
+        } 
         catch (SAXException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_743505451 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_7562940 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_7562940;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return reader.getFeature("http://xml.org/sax/features/namespaces");
-        //} catch (SAXException ex) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.708 -0400", hash_original_method = "BC62268279A4D4DB4B44A495D4290EBF", hash_generated_method = "264EDAC666532EF9F6F95FF45A51097E")
     @Override
     public boolean isValidating() {
         boolean var68934A3E9455FA72420237EB05902327_509776094 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1272334793 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1272334793;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -169,8 +171,8 @@ XMLReader var681AFDDDB48FD166DFCBFA04C65E6269_801799135 =         reader;
         addTaint(value.getTaint());
         addTaint(name.getTaint());
         reader.setProperty(name, value);
-        // ---------- Original Method ----------
-        //reader.setProperty(name, value);
+        
+        
     }
 
     

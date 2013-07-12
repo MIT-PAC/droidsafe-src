@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -75,7 +75,7 @@ public class ListFragment extends Fragment {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.725 -0400", hash_original_method = "EF57861318B397409B17ABF77AE47B37", hash_generated_method = "D5B2EF6298161BB1BE7DCF257A07817C")
     public  ListFragment() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -83,7 +83,7 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         addTaint(container.getTaint());
         addTaint(inflater.getTaint());
@@ -91,54 +91,55 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
                 container, false);
         var1B87B9722589983B280E6A80193F3C07_1193759031.addTaint(taint);
         return var1B87B9722589983B280E6A80193F3C07_1193759031;
-        // ---------- Original Method ----------
-        //return inflater.inflate(com.android.internal.R.layout.list_content,
-                //container, false);
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.725 -0400", hash_original_method = "3AF156F2799514C47B044D45A77C4F43", hash_generated_method = "2BCE58E31FB785C574D5AEC6E88F358A")
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         addTaint(view.getTaint());
         super.onViewCreated(view, savedInstanceState);
         ensureList();
-        // ---------- Original Method ----------
-        //super.onViewCreated(view, savedInstanceState);
-        //ensureList();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.725 -0400", hash_original_method = "4AE67C9B14400A0313E10E10FEB59F4C", hash_generated_method = "350457CE5B7B3348E789915760B51908")
     @Override
     public void onDestroyView() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mHandler.removeCallbacks(mRequestFocus);
         mList = null;
         mListShown = false;
         mEmptyView = mProgressContainer = mListContainer = null;
         mStandardEmptyView = null;
         super.onDestroyView();
-        // ---------- Original Method ----------
-        //mHandler.removeCallbacks(mRequestFocus);
-        //mList = null;
-        //mListShown = false;
-        //mEmptyView = mProgressContainer = mListContainer = null;
-        //mStandardEmptyView = null;
-        //super.onDestroyView();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.726 -0400", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "88BEAA79114E29F33BC32B86B2051CD9")
     public void onListItemClick(ListView l, View v, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(id);
         addTaint(position);
         addTaint(v.getTaint());
         addTaint(l.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -152,17 +153,17 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
     if(!mListShown && !hadAdapter)            
             {
                 setListShown(true, getView().getWindowToken() != null);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //boolean hadAdapter = mAdapter != null;
-        //mAdapter = adapter;
-        //if (mList != null) {
-            //mList.setAdapter(adapter);
-            //if (!mListShown && !hadAdapter) {
-                //setListShown(true, getView().getWindowToken() != null);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -171,9 +172,9 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
         addTaint(position);
         ensureList();
         mList.setSelection(position);
-        // ---------- Original Method ----------
-        //ensureList();
-        //mList.setSelection(position);
+        
+        
+        
     }
 
     
@@ -183,9 +184,9 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
         int varB3259E78107540D8D68BCBB3E503CBA4_1231416530 = (mList.getSelectedItemPosition());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055640769 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2055640769;
-        // ---------- Original Method ----------
-        //ensureList();
-        //return mList.getSelectedItemPosition();
+        
+        
+        
     }
 
     
@@ -195,9 +196,9 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
         long var9B989EB69692C97E4AB8970CCD694C25_1913681698 = (mList.getSelectedItemId());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_291489060 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_291489060;
-        // ---------- Original Method ----------
-        //ensureList();
-        //return mList.getSelectedItemId();
+        
+        
+        
     }
 
     
@@ -207,9 +208,9 @@ View var1B87B9722589983B280E6A80193F3C07_1193759031 =         inflater.inflate(c
 ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
         var344AE622895130273F3D062543816FEE_1308925.addTaint(taint);
         return var344AE622895130273F3D062543816FEE_1308925;
-        // ---------- Original Method ----------
-        //ensureList();
-        //return mList;
+        
+        
+        
     }
 
     
@@ -221,23 +222,23 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
             IllegalStateException varD4103A519630FF4520E774F631D45BAC_1382480700 = new IllegalStateException("Can't be used with a custom content view");
             varD4103A519630FF4520E774F631D45BAC_1382480700.addTaint(taint);
             throw varD4103A519630FF4520E774F631D45BAC_1382480700;
-        } //End block
+        } 
         mStandardEmptyView.setText(text);
     if(mEmptyText == null)        
         {
             mList.setEmptyView(mStandardEmptyView);
-        } //End block
+        } 
         mEmptyText = text;
-        // ---------- Original Method ----------
-        //ensureList();
-        //if (mStandardEmptyView == null) {
-            //throw new IllegalStateException("Can't be used with a custom content view");
-        //}
-        //mStandardEmptyView.setText(text);
-        //if (mEmptyText == null) {
-            //mList.setEmptyView(mStandardEmptyView);
-        //}
-        //mEmptyText = text;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -245,8 +246,8 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
     public void setListShown(boolean shown) {
         addTaint(shown);
         setListShown(shown, true);
-        // ---------- Original Method ----------
-        //setListShown(shown, true);
+        
+        
     }
 
     
@@ -254,8 +255,8 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
     public void setListShownNoAnimation(boolean shown) {
         addTaint(shown);
         setListShown(shown, false);
-        // ---------- Original Method ----------
-        //setListShown(shown, false);
+        
+        
     }
 
     
@@ -268,11 +269,11 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
             IllegalStateException varD4103A519630FF4520E774F631D45BAC_1228636403 = new IllegalStateException("Can't be used with a custom content view");
             varD4103A519630FF4520E774F631D45BAC_1228636403.addTaint(taint);
             throw varD4103A519630FF4520E774F631D45BAC_1228636403;
-        } //End block
+        } 
     if(mListShown == shown)        
         {
             return;
-        } //End block
+        } 
         mListShown = shown;
     if(shown)        
         {
@@ -282,15 +283,15 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
                         getActivity(), android.R.anim.fade_out));
                 mListContainer.startAnimation(AnimationUtils.loadAnimation(
                         getActivity(), android.R.anim.fade_in));
-            } //End block
+            } 
             else
             {
                 mProgressContainer.clearAnimation();
                 mListContainer.clearAnimation();
-            } //End block
+            } 
             mProgressContainer.setVisibility(View.GONE);
             mListContainer.setVisibility(View.VISIBLE);
-        } //End block
+        } 
         else
         {
     if(animate)            
@@ -299,27 +300,28 @@ ListView var344AE622895130273F3D062543816FEE_1308925 =         mList;
                         getActivity(), android.R.anim.fade_in));
                 mListContainer.startAnimation(AnimationUtils.loadAnimation(
                         getActivity(), android.R.anim.fade_out));
-            } //End block
+            } 
             else
             {
                 mProgressContainer.clearAnimation();
                 mListContainer.clearAnimation();
-            } //End block
+            } 
             mProgressContainer.setVisibility(View.VISIBLE);
             mListContainer.setVisibility(View.GONE);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:03.729 -0400", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "5BCEA0270FA449E23A1F7FEE5B0F47A7")
     public ListAdapter getListAdapter() {
 ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;
         varD72668EDE5E63ADF9340F3D8A19FD205_451481418.addTaint(taint);
         return varD72668EDE5E63ADF9340F3D8A19FD205_451481418;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
@@ -328,18 +330,18 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;
     if(mList != null)        
         {
             return;
-        } //End block
+        } 
         View root = getView();
     if(root == null)        
         {
             IllegalStateException var052948DC6923A855D5D68E1310933CAB_1649119201 = new IllegalStateException("Content view not yet created");
             var052948DC6923A855D5D68E1310933CAB_1649119201.addTaint(taint);
             throw var052948DC6923A855D5D68E1310933CAB_1649119201;
-        } //End block
+        } 
     if(root instanceof ListView)        
         {
             mList = (ListView)root;
-        } //End block
+        } 
         else
         {
             mStandardEmptyView = (TextView)root.findViewById(
@@ -347,11 +349,11 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;
     if(mStandardEmptyView == null)            
             {
                 mEmptyView = root.findViewById(android.R.id.empty);
-            } //End block
+            } 
             else
             {
                 mStandardEmptyView.setVisibility(View.GONE);
-            } //End block
+            } 
             mProgressContainer = root.findViewById(com.android.internal.R.id.progressContainer);
             mListContainer = root.findViewById(com.android.internal.R.id.listContainer);
             View rawListView = root.findViewById(android.R.id.list);
@@ -362,7 +364,7 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;
                         + "that is not a ListView class");
                 var21587997F544C4FA9C985E7B90148739_1452708923.addTaint(taint);
                 throw var21587997F544C4FA9C985E7B90148739_1452708923;
-            } //End block
+            } 
             mList = (ListView)rawListView;
     if(mList == null)            
             {
@@ -371,18 +373,18 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;
                         "'android.R.id.list'");
                 var814898E2A75124B230F991BD301E888E_976496225.addTaint(taint);
                 throw var814898E2A75124B230F991BD301E888E_976496225;
-            } //End block
+            } 
     if(mEmptyView != null)            
             {
                 mList.setEmptyView(mEmptyView);
-            } //End block
+            } 
             else
     if(mEmptyText != null)            
             {
                 mStandardEmptyView.setText(mEmptyText);
                 mList.setEmptyView(mStandardEmptyView);
-            } //End block
-        } //End block
+            } 
+        } 
         mListShown = true;
         mList.setOnItemClickListener(mOnClickListener);
     if(mAdapter != null)        
@@ -390,17 +392,17 @@ ListAdapter varD72668EDE5E63ADF9340F3D8A19FD205_451481418 =         mAdapter;
             ListAdapter adapter = mAdapter;
             mAdapter = null;
             setListAdapter(adapter);
-        } //End block
+        } 
         else
         {
     if(mProgressContainer != null)            
             {
                 setListShown(false, false);
-            } //End block
-        } //End block
+            } 
+        } 
         mHandler.post(mRequestFocus);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

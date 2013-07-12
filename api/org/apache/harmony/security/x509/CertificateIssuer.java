@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public final class CertificateIssuer extends ExtensionValue {
     public  CertificateIssuer(byte[] encoding) {
         super(encoding);
         addTaint(encoding[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,15 +29,15 @@ public final class CertificateIssuer extends ExtensionValue {
     if(issuer == null)        
         {
             issuer = (X500Principal) ASN1.decode(getEncoded());
-        } //End block
+        } 
 X500Principal var8EF52627413B91AB97DB59853805E979_358083913 =         issuer;
         var8EF52627413B91AB97DB59853805E979_358083913.addTaint(taint);
         return var8EF52627413B91AB97DB59853805E979_358083913;
-        // ---------- Original Method ----------
-        //if (issuer == null) {
-            //issuer = (X500Principal) ASN1.decode(getEncoded());
-        //}
-        //return issuer;
+        
+        
+            
+        
+        
     }
 
     
@@ -52,25 +52,25 @@ X500Principal var8EF52627413B91AB97DB59853805E979_358083913 =         issuer;
             try 
             {
                 issuer = getIssuer();
-            } //End block
+            } 
             catch (IOException e)
             {
                 sb.append("Unparseable (incorrect!) extension value:\n");
                 super.dumpValue(sb);
-            } //End block
-        } //End block
+            } 
+        } 
         sb.append(issuer).append('\n');
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("Certificate Issuer: ");
-        //if (issuer == null) {
-            //try {
-                //issuer = getIssuer();
-            //} catch (IOException e) {
-                //sb.append("Unparseable (incorrect!) extension value:\n");
-                //super.dumpValue(sb);
-            //}
-        //}
-        //sb.append(issuer).append('\n');
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,7 +34,7 @@ public class DhcpInfo implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.939 -0400", hash_original_method = "C1DF7E5F229CB04932AB2C91464EDDF1", hash_generated_method = "529F08EF9721051414135D71EEC80E9A")
     public  DhcpInfo() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,20 +49,21 @@ public class DhcpInfo implements Parcelable {
             dns2 = source.dns2;
             serverAddress = source.serverAddress;
             leaseDuration = source.leaseDuration;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //ipAddress = source.ipAddress;
-            //gateway = source.gateway;
-            //netmask = source.netmask;
-            //dns1 = source.dns1;
-            //dns2 = source.dns2;
-            //serverAddress = source.serverAddress;
-            //leaseDuration = source.leaseDuration;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.941 -0400", hash_original_method = "8D7B8EC19D16628B2975B72E53B9E8C8", hash_generated_method = "2582B8D02C98D808037F87B0200235AC")
     public String toString() {
         StringBuffer str = new StringBuffer();
@@ -82,40 +83,43 @@ public class DhcpInfo implements Parcelable {
 String var24D7484D779E22452A6C5FBC9AEC25FA_1550173688 =         str.toString();
         var24D7484D779E22452A6C5FBC9AEC25FA_1550173688.addTaint(taint);
         return var24D7484D779E22452A6C5FBC9AEC25FA_1550173688;
-        // ---------- Original Method ----------
-        //StringBuffer str = new StringBuffer();
-        //str.append("ipaddr ");
-        //putAddress(str, ipAddress);
-        //str.append(" gateway ");
-        //putAddress(str, gateway);
-        //str.append(" netmask ");
-        //putAddress(str, netmask);
-        //str.append(" dns1 ");
-        //putAddress(str, dns1);
-        //str.append(" dns2 ");
-        //putAddress(str, dns2);
-        //str.append(" DHCP server ");
-        //putAddress(str, serverAddress);
-        //str.append(" lease ").append(leaseDuration).append(" seconds");
-        //return str.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
-        private static void putAddress(StringBuffer buf, int addr) {
+        @DSModeled(DSC.SPEC)
+    private static void putAddress(StringBuffer buf, int addr) {
         buf.append(NetworkUtils.intToInetAddress(addr).getHostAddress());
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.942 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C2063F9433F12A30344D078BB6A693F8")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2135172774 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1123486739 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1123486739;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.942 -0400", hash_original_method = "EAB5EBBB3C53B9EB39B520A9586CC73F", hash_generated_method = "F87B62B9FC8B7BB277B51C26D6B492CB")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -127,14 +131,14 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1550173688 =         str.toString();
         dest.writeInt(dns2);
         dest.writeInt(serverAddress);
         dest.writeInt(leaseDuration);
-        // ---------- Original Method ----------
-        //dest.writeInt(ipAddress);
-        //dest.writeInt(gateway);
-        //dest.writeInt(netmask);
-        //dest.writeInt(dns1);
-        //dest.writeInt(dns2);
-        //dest.writeInt(serverAddress);
-        //dest.writeInt(leaseDuration);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -158,7 +162,7 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1550173688 =         str.toString();
                 return new DhcpInfo[size];
             }
         };
-    // orphaned legacy method
+    
     public DhcpInfo createFromParcel(Parcel in) {
                 DhcpInfo info = new DhcpInfo();
                 info.ipAddress = in.readInt();
@@ -171,7 +175,7 @@ String var24D7484D779E22452A6C5FBC9AEC25FA_1550173688 =         str.toString();
                 return info;
             }
     
-    // orphaned legacy method
+    
     public DhcpInfo[] newArray(int size) {
                 return new DhcpInfo[size];
             }

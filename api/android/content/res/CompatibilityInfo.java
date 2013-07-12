@@ -1,6 +1,6 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,37 +47,37 @@ public class CompatibilityInfo implements Parcelable {
     if(required == 0)            
             {
                 required = appInfo.largestWidthLimitDp;
-            } //End block
+            } 
             int compat = appInfo.compatibleWidthLimitDp != 0
                     ? appInfo.compatibleWidthLimitDp : required;
     if(compat < required)            
             {
                 compat = required;
-            } //End block
+            } 
             int largest = appInfo.largestWidthLimitDp;
     if(required > DEFAULT_NORMAL_SHORT_DIMENSION)            
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             else
     if(largest != 0 && sw > largest)            
             {
                 compatFlags |= NEEDS_SCREEN_COMPAT | ALWAYS_NEEDS_COMPAT;
-            } //End block
+            } 
             else
     if(compat >= sw)            
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             else
     if(forceCompat)            
             {
                 compatFlags |= NEEDS_SCREEN_COMPAT;
-            } //End block
+            } 
             applicationDensity = DisplayMetrics.DENSITY_DEVICE;
             applicationScale = 1.0f;
             applicationInvertedScale = 1.0f;
-        } //End block
+        } 
         else
         {
             final int EXPANDABLE = 2;
@@ -92,70 +92,70 @@ public class CompatibilityInfo implements Parcelable {
     if(!forceCompat)                
                 {
                     sizeInfo |= XLARGE_SCREENS | EXPANDABLE;
-                } //End block
-            } //End block
+                } 
+            } 
     if((appInfo.flags & ApplicationInfo.FLAG_SUPPORTS_XLARGE_SCREENS) != 0)            
             {
                 anyResizeable = true;
     if(!forceCompat)                
                 {
                     sizeInfo |= XLARGE_SCREENS | EXPANDABLE;
-                } //End block
-            } //End block
+                } 
+            } 
     if((appInfo.flags & ApplicationInfo.FLAG_RESIZEABLE_FOR_SCREENS) != 0)            
             {
                 anyResizeable = true;
                 sizeInfo |= EXPANDABLE;
-            } //End block
+            } 
     if(forceCompat)            
             {
                 sizeInfo &= ~EXPANDABLE;
-            } //End block
+            } 
             compatFlags |= NEEDS_SCREEN_COMPAT;
 switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
             case Configuration.SCREENLAYOUT_SIZE_XLARGE:
     if((sizeInfo&XLARGE_SCREENS) != 0)            
             {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
-            } //End block
+            } 
     if((appInfo.flags & ApplicationInfo.FLAG_SUPPORTS_XLARGE_SCREENS) != 0)            
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             break;
             case Configuration.SCREENLAYOUT_SIZE_LARGE:
     if((sizeInfo&LARGE_SCREENS) != 0)            
             {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
-            } //End block
+            } 
     if((appInfo.flags & ApplicationInfo.FLAG_SUPPORTS_LARGE_SCREENS) != 0)            
             {
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
             break;
 }    if((screenLayout&Configuration.SCREENLAYOUT_COMPAT_NEEDED) != 0)            
             {
     if((sizeInfo&EXPANDABLE) != 0)                
                 {
                     compatFlags &= ~NEEDS_SCREEN_COMPAT;
-                } //End block
+                } 
                 else
     if(!anyResizeable)                
                 {
                     compatFlags |= ALWAYS_NEEDS_COMPAT;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 compatFlags &= ~NEEDS_SCREEN_COMPAT;
                 compatFlags |= NEVER_NEEDS_COMPAT;
-            } //End block
+            } 
     if((appInfo.flags & ApplicationInfo.FLAG_SUPPORTS_SCREEN_DENSITIES) != 0)            
             {
                 applicationDensity = DisplayMetrics.DENSITY_DEVICE;
                 applicationScale = 1.0f;
                 applicationInvertedScale = 1.0f;
-            } //End block
+            } 
             else
             {
                 applicationDensity = DisplayMetrics.DENSITY_DEFAULT;
@@ -163,11 +163,11 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
                         / (float) DisplayMetrics.DENSITY_DEFAULT;
                 applicationInvertedScale = 1.0f / applicationScale;
                 compatFlags |= SCALING_REQUIRED;
-            } //End block
-        } //End block
+            } 
+        } 
         mCompatibilityFlags = compatFlags;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -178,11 +178,11 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
         applicationDensity = dens;
         applicationScale = scale;
         applicationInvertedScale = invertedScale;
-        // ---------- Original Method ----------
-        //mCompatibilityFlags = compFlags;
-        //applicationDensity = dens;
-        //applicationScale = scale;
-        //applicationInvertedScale = invertedScale;
+        
+        
+        
+        
+        
     }
 
     
@@ -191,7 +191,7 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
         this(NEVER_NEEDS_COMPAT, DisplayMetrics.DENSITY_DEVICE,
                 1.0f,
                 1.0f);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -201,51 +201,55 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
         applicationDensity = source.readInt();
         applicationScale = source.readFloat();
         applicationInvertedScale = source.readFloat();
-        // ---------- Original Method ----------
-        //mCompatibilityFlags = source.readInt();
-        //applicationDensity = source.readInt();
-        //applicationScale = source.readFloat();
-        //applicationInvertedScale = source.readFloat();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.793 -0400", hash_original_method = "E2D07E7BFECA2D29A0CD39AB3E4AD2F4", hash_generated_method = "4F8869D4207959C051FFDFBFDE7C40F2")
     public boolean isScalingRequired() {
         boolean var6A6CD585B1B2D73D861457664A9CD0F9_946998082 = ((mCompatibilityFlags&SCALING_REQUIRED) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_343477613 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_343477613;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&SCALING_REQUIRED) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.794 -0400", hash_original_method = "AEF0832D3207872CC75E4AC6D7849C73", hash_generated_method = "699A428208A92D76531E5769199446E4")
     public boolean supportsScreen() {
         boolean var84D503005FB9552E72FBBDCB72F1ED29_894140101 = ((mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677464644 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677464644;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&NEEDS_SCREEN_COMPAT) == 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.794 -0400", hash_original_method = "BD11775B1F66D2736A032A6A37E2552F", hash_generated_method = "253CC92DC1B019CF66AE64CEFB98F290")
     public boolean neverSupportsScreen() {
         boolean var379E94ED74A64A75DEBC993E9380509C_256796047 = ((mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1472414358 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1472414358;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&ALWAYS_NEEDS_COMPAT) != 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.794 -0400", hash_original_method = "CFA6F9CFCD9588B682D5F07DFF385684", hash_generated_method = "2F61B535B187EADAF6B58980E8DEC423")
     public boolean alwaysSupportsScreen() {
         boolean var7620E96D5792B82515FAB327536E265B_1428729780 = ((mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1797950118 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1797950118;
-        // ---------- Original Method ----------
-        //return (mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0;
+        
+        
     }
 
     
@@ -254,8 +258,8 @@ switch(screenLayout&Configuration.SCREENLAYOUT_SIZE_MASK){
 Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequired() ? new Translator() : null;
         var6A5072CB73297FFF4B7B0652833EAB52_838460548.addTaint(taint);
         return var6A5072CB73297FFF4B7B0652833EAB52_838460548;
-        // ---------- Original Method ----------
-        //return isScalingRequired() ? new Translator() : null;
+        
+        
     }
 
     
@@ -265,12 +269,12 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
     if(!supportsScreen())        
         {
             CompatibilityInfo.computeCompatibleScaling(inoutDm, inoutDm);
-        } //End block
+        } 
         else
         {
             inoutDm.widthPixels = inoutDm.noncompatWidthPixels;
             inoutDm.heightPixels = inoutDm.noncompatHeightPixels;
-        } //End block
+        } 
     if(isScalingRequired())        
         {
             float invertedRatio = applicationInvertedScale;
@@ -281,9 +285,9 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
             inoutDm.ydpi = inoutDm.noncompatYdpi * invertedRatio;
             inoutDm.widthPixels = (int) (inoutDm.widthPixels * invertedRatio + 0.5f);
             inoutDm.heightPixels = (int) (inoutDm.heightPixels * invertedRatio + 0.5f);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -298,20 +302,21 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
             inoutConfig.screenWidthDp = inoutConfig.compatScreenWidthDp;
             inoutConfig.screenHeightDp = inoutConfig.compatScreenHeightDp;
             inoutConfig.smallestScreenWidthDp = inoutConfig.compatSmallestScreenWidthDp;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!supportsScreen()) {
-            //inoutConfig.screenLayout =
-                    //(inoutConfig.screenLayout&~Configuration.SCREENLAYOUT_SIZE_MASK)
-                    //| Configuration.SCREENLAYOUT_SIZE_NORMAL;
-            //inoutConfig.screenWidthDp = inoutConfig.compatScreenWidthDp;
-            //inoutConfig.screenHeightDp = inoutConfig.compatScreenHeightDp;
-            //inoutConfig.smallestScreenWidthDp = inoutConfig.compatSmallestScreenWidthDp;
-        //}
+        } 
+        
+        
+            
+                    
+                    
+            
+            
+            
+        
     }
 
     
-        public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
+        @DSModeled(DSC.SAFE)
+    public static float computeCompatibleScaling(DisplayMetrics dm, DisplayMetrics outDm) {
         final int width = dm.noncompatWidthPixels;
         final int height = dm.noncompatHeightPixels;
         int shortSize, longSize;
@@ -350,6 +355,7 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.799 -0400", hash_original_method = "CD2E846E95D6DD1EBA23C219F15E8AAF", hash_generated_method = "0B2C60EFA0393443CDF9AEDB07C3B3D8")
     @Override
     public boolean equals(Object o) {
@@ -384,24 +390,24 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
             boolean varB326B5062B2F0E69046810717534CB09_927951284 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1531869742 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1531869742;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_953825539 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023274417 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023274417;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //CompatibilityInfo oc = (CompatibilityInfo)o;
-            //if (mCompatibilityFlags != oc.mCompatibilityFlags) return false;
-            //if (applicationDensity != oc.applicationDensity) return false;
-            //if (applicationScale != oc.applicationScale) return false;
-            //if (applicationInvertedScale != oc.applicationInvertedScale) return false;
-            //return true;
-        //} catch (ClassCastException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -417,44 +423,44 @@ Translator var6A5072CB73297FFF4B7B0652833EAB52_838460548 =         isScalingRequ
             sb.append(" ");
             sb.append(applicationScale);
             sb.append("x");
-        } //End block
+        } 
     if(!supportsScreen())        
         {
             sb.append(" resizing");
-        } //End block
+        } 
     if(neverSupportsScreen())        
         {
             sb.append(" never-compat");
-        } //End block
+        } 
     if(alwaysSupportsScreen())        
         {
             sb.append(" always-compat");
-        } //End block
+        } 
         sb.append("}");
 String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_2086563765.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_2086563765;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("{");
-        //sb.append(applicationDensity);
-        //sb.append("dpi");
-        //if (isScalingRequired()) {
-            //sb.append(" ");
-            //sb.append(applicationScale);
-            //sb.append("x");
-        //}
-        //if (!supportsScreen()) {
-            //sb.append(" resizing");
-        //}
-        //if (neverSupportsScreen()) {
-            //sb.append(" never-compat");
-        //}
-        //if (alwaysSupportsScreen()) {
-            //sb.append(" always-compat");
-        //}
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -469,24 +475,25 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         int varB4A88417B3D0170D754C647C30B7216A_1883595980 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_592007225 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_592007225;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + mCompatibilityFlags;
-        //result = 31 * result + applicationDensity;
-        //result = 31 * result + Float.floatToIntBits(applicationScale);
-        //result = 31 * result + Float.floatToIntBits(applicationInvertedScale);
-        //return result;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.801 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "3A1A01F946281ECFBB8F2C16B1986985")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1783599208 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061243781 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061243781;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -499,11 +506,11 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         dest.writeInt(applicationDensity);
         dest.writeFloat(applicationScale);
         dest.writeFloat(applicationInvertedScale);
-        // ---------- Original Method ----------
-        //dest.writeInt(mCompatibilityFlags);
-        //dest.writeInt(applicationDensity);
-        //dest.writeFloat(applicationScale);
-        //dest.writeFloat(applicationInvertedScale);
+        
+        
+        
+        
+        
     }
 
     
@@ -528,9 +535,9 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
           Translator(float applicationScale, float applicationInvertedScale) {
             this.applicationScale = applicationScale;
             this.applicationInvertedScale = applicationInvertedScale;
-            // ---------- Original Method ----------
-            //this.applicationScale = applicationScale;
-            //this.applicationInvertedScale = applicationInvertedScale;
+            
+            
+            
         }
 
         
@@ -538,7 +545,7 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
           Translator() {
             this(CompatibilityInfo.this.applicationScale,
                     CompatibilityInfo.this.applicationInvertedScale);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -546,8 +553,8 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateRectInScreenToAppWinFrame(Rect rect) {
             addTaint(rect.getTaint());
             rect.scale(applicationInvertedScale);
-            // ---------- Original Method ----------
-            //rect.scale(applicationInvertedScale);
+            
+            
         }
 
         
@@ -555,8 +562,8 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateRegionInWindowToScreen(Region transparentRegion) {
             addTaint(transparentRegion.getTaint());
             transparentRegion.scale(applicationScale);
-            // ---------- Original Method ----------
-            //transparentRegion.scale(applicationScale);
+            
+            
         }
 
         
@@ -567,14 +574,14 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
             {
                 final float tinyOffset = 2.0f / (3 * 255);
                 canvas.translate(tinyOffset, tinyOffset);
-            } //End block
+            } 
             canvas.scale(applicationScale, applicationScale);
-            // ---------- Original Method ----------
-            //if (applicationScale == 1.5f) {
-                //final float tinyOffset = 2.0f / (3 * 255);
-                //canvas.translate(tinyOffset, tinyOffset);
-            //}
-            //canvas.scale(applicationScale, applicationScale);
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -582,8 +589,8 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateEventInScreenToAppWindow(MotionEvent event) {
             addTaint(event.getTaint());
             event.scale(applicationInvertedScale);
-            // ---------- Original Method ----------
-            //event.scale(applicationInvertedScale);
+            
+            
         }
 
         
@@ -591,8 +598,8 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateWindowLayout(WindowManager.LayoutParams params) {
             addTaint(params.getTaint());
             params.scale(applicationScale);
-            // ---------- Original Method ----------
-            //params.scale(applicationScale);
+            
+            
         }
 
         
@@ -600,8 +607,8 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateRectInAppWindowToScreen(Rect rect) {
             addTaint(rect.getTaint());
             rect.scale(applicationScale);
-            // ---------- Original Method ----------
-            //rect.scale(applicationScale);
+            
+            
         }
 
         
@@ -609,11 +616,12 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateRectInScreenToAppWindow(Rect rect) {
             addTaint(rect.getTaint());
             rect.scale(applicationInvertedScale);
-            // ---------- Original Method ----------
-            //rect.scale(applicationInvertedScale);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.807 -0400", hash_original_method = "9DE177160064B2A1F8C9D8228C599CDD", hash_generated_method = "E9ECA9325CF050EB116910023DF44307")
         public void translatePointInScreenToAppWindow(PointF point) {
             addTaint(point.getTaint());
@@ -622,13 +630,13 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
             {
                 point.x *= scale;
                 point.y *= scale;
-            } //End block
-            // ---------- Original Method ----------
-            //final float scale = applicationInvertedScale;
-            //if (scale != 1.0f) {
-                //point.x *= scale;
-                //point.y *= scale;
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -636,8 +644,8 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
         public void translateLayoutParamsInAppWindowToScreen(LayoutParams params) {
             addTaint(params.getTaint());
             params.scale(applicationScale);
-            // ---------- Original Method ----------
-            //params.scale(applicationScale);
+            
+            
         }
 
         
@@ -651,11 +659,11 @@ String var2460B846747F8B22185AD8BE722266A5_2086563765 =         sb.toString();
 Rect var50789666040DE8BECD26ECF524635EAB_1911610644 =             mContentInsetsBuffer;
             var50789666040DE8BECD26ECF524635EAB_1911610644.addTaint(taint);
             return var50789666040DE8BECD26ECF524635EAB_1911610644;
-            // ---------- Original Method ----------
-            //if (mContentInsetsBuffer == null) mContentInsetsBuffer = new Rect();
-            //mContentInsetsBuffer.set(contentInsets);
-            //translateRectInAppWindowToScreen(mContentInsetsBuffer);
-            //return mContentInsetsBuffer;
+            
+            
+            
+            
+            
         }
 
         
@@ -669,11 +677,11 @@ Rect var50789666040DE8BECD26ECF524635EAB_1911610644 =             mContentInsets
 Rect var3CCF2CBB078D5E5EE27DEDCF2052BAE5_1038583557 =             mVisibleInsetsBuffer;
             var3CCF2CBB078D5E5EE27DEDCF2052BAE5_1038583557.addTaint(taint);
             return var3CCF2CBB078D5E5EE27DEDCF2052BAE5_1038583557;
-            // ---------- Original Method ----------
-            //if (mVisibleInsetsBuffer == null) mVisibleInsetsBuffer = new Rect();
-            //mVisibleInsetsBuffer.set(visibleInsets);
-            //translateRectInAppWindowToScreen(mVisibleInsetsBuffer);
-            //return mVisibleInsetsBuffer;
+            
+            
+            
+            
+            
         }
 
         
@@ -687,11 +695,11 @@ Rect var3CCF2CBB078D5E5EE27DEDCF2052BAE5_1038583557 =             mVisibleInsets
 Region var897F85AD4AAD10E23518A1C6E002613F_1178623099 =             mTouchableAreaBuffer;
             var897F85AD4AAD10E23518A1C6E002613F_1178623099.addTaint(taint);
             return var897F85AD4AAD10E23518A1C6E002613F_1178623099;
-            // ---------- Original Method ----------
-            //if (mTouchableAreaBuffer == null) mTouchableAreaBuffer = new Region();
-            //mTouchableAreaBuffer.set(touchableArea);
-            //mTouchableAreaBuffer.scale(applicationScale);
-            //return mTouchableAreaBuffer;
+            
+            
+            
+            
+            
         }
 
         
@@ -733,12 +741,12 @@ Region var897F85AD4AAD10E23518A1C6E002613F_1178623099 =             mTouchableAr
             return new CompatibilityInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public CompatibilityInfo createFromParcel(Parcel source) {
             return new CompatibilityInfo(source);
         }
     
-    // orphaned legacy method
+    
     public CompatibilityInfo[] newArray(int size) {
             return new CompatibilityInfo[size];
         }

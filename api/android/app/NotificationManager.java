@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,8 +21,8 @@ public class NotificationManager {
       NotificationManager(Context context, Handler handler) {
         addTaint(handler.getTaint());
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -41,8 +41,8 @@ public class NotificationManager {
         addTaint(notification.getTaint());
         addTaint(id);
         notify(null, id, notification);
-        // ---------- Original Method ----------
-        //notify(null, id, notification);
+        
+        
     }
 
     
@@ -59,23 +59,23 @@ public class NotificationManager {
             service.enqueueNotificationWithTag(pkg, tag, id, notification, idOut);
     if(id != idOut[0])            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //int[] idOut = new int[1];
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //if (localLOGV) Log.v(TAG, pkg + ": notify(" + id + ", " + notification + ")");
-        //try {
-            //service.enqueueNotificationWithTag(pkg, tag, id, notification, idOut);
-            //if (id != idOut[0]) {
-                //Log.w(TAG, "notify: id corrupted: sent " + id + ", got back " + idOut[0]);
-            //}
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -83,8 +83,8 @@ public class NotificationManager {
     public void cancel(int id) {
         addTaint(id);
         cancel(null, id);
-        // ---------- Original Method ----------
-        //cancel(null, id);
+        
+        
     }
 
     
@@ -97,18 +97,18 @@ public class NotificationManager {
     if(localLOGV){ }        try 
         {
             service.cancelNotificationWithTag(pkg, tag, id);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //if (localLOGV) Log.v(TAG, pkg + ": cancel(" + id + ")");
-        //try {
-            //service.cancelNotificationWithTag(pkg, tag, id);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -119,18 +119,18 @@ public class NotificationManager {
     if(localLOGV){ }        try 
         {
             service.cancelAllNotifications(pkg);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //if (localLOGV) Log.v(TAG, pkg + ": cancelAll()");
-        //try {
-            //service.cancelAllNotifications(pkg);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

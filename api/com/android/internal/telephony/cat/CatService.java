@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ class RilMessage {
       RilMessage(int msgId, String rawData) {
         mId = msgId;
         mData = rawData;
-        // ---------- Original Method ----------
-        //mId = msgId;
-        //mData = rawData;
+        
+        
+        
     }
 
     
@@ -45,10 +45,10 @@ class RilMessage {
         this.mId = other.mId;
         this.mData = other.mData;
         this.mResCode = other.mResCode;
-        // ---------- Original Method ----------
-        //this.mId = other.mId;
-        //this.mData = other.mData;
-        //this.mResCode = other.mResCode;
+        
+        
+        
+        
     }
 
     
@@ -83,7 +83,7 @@ public class CatService extends Handler implements AppInterface {
                     "Service: Input parameters must not be null");
             varE5BFDF29CF32A69787B5642658897041_1939254094.addTaint(taint);
             throw varE5BFDF29CF32A69787B5642658897041_1939254094;
-        } //End block
+        } 
         mCmdIf = ci;
         mContext = context;
         mMsgDecoder = RilMessageDecoder.getInstance(this, fh);
@@ -97,8 +97,8 @@ public class CatService extends Handler implements AppInterface {
         mCmdIf.registerForNVReady(this, MSG_ID_SIM_READY, null);
         mIccRecords.registerForRecordsLoaded(this, MSG_ID_ICC_RECORDS_LOADED, null);
         CatLog.d(this, "Is running");
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -110,21 +110,21 @@ public class CatService extends Handler implements AppInterface {
         mCmdIf.unSetOnCatEvent(this);
         mCmdIf.unSetOnCatCallSetUp(this);
         this.removeCallbacksAndMessages(null);
-        // ---------- Original Method ----------
-        //mIccRecords.unregisterForRecordsLoaded(this);
-        //mCmdIf.unSetOnCatSessionEnd(this);
-        //mCmdIf.unSetOnCatProactiveCmd(this);
-        //mCmdIf.unSetOnCatEvent(this);
-        //mCmdIf.unSetOnCatCallSetUp(this);
-        //this.removeCallbacksAndMessages(null);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.860 -0400", hash_original_method = "0386F7586104C91B22CE4150238AFD39", hash_generated_method = "963AC07ED7DE6AEA46B3068BB242386B")
     protected void finalize() {
         CatLog.d(this, "Service finalized");
-        // ---------- Original Method ----------
-        //CatLog.d(this, "Service finalized");
+        
+        
     }
 
     
@@ -134,7 +134,7 @@ public class CatService extends Handler implements AppInterface {
     if(rilMsg == null)        
         {
             return;
-        } //End block
+        } 
         CommandParams cmdParams = null;
 switch(rilMsg.mId){
         case MSG_ID_EVENT_NOTIFY:
@@ -144,40 +144,40 @@ switch(rilMsg.mId){
     if(cmdParams != null)            
             {
                 handleProactiveCommand(cmdParams);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case MSG_ID_PROACTIVE_COMMAND:
         try 
         {
             cmdParams = (CommandParams) rilMsg.mData;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             CatLog.d(this, "Fail to parse proactive command");
             sendTerminalResponse(mCurrntCmd.mCmdDet, ResultCode.CMD_DATA_NOT_UNDERSTOOD,
                                      false, 0x00, null);
             break;
-        } //End block
+        } 
     if(cmdParams != null)        
         {
     if(rilMsg.mResCode == ResultCode.OK)            
             {
                 handleProactiveCommand(cmdParams);
-            } //End block
+            } 
             else
             {
                 sendTerminalResponse(cmdParams.cmdDet, rilMsg.mResCode,
                             false, 0, null);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case MSG_ID_REFRESH:
         cmdParams = (CommandParams) rilMsg.mData;
     if(cmdParams != null)        
         {
             handleProactiveCommand(cmdParams);
-        } //End block
+        } 
         break;
         case MSG_ID_SESSION_END:
         handleSessionEnd();
@@ -185,8 +185,8 @@ switch(rilMsg.mId){
         case MSG_ID_CALL_SETUP:
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -201,18 +201,18 @@ switch(cmdParams.getCommandType()){
     if(removeMenu(cmdMsg.getMenu()))        
         {
             mMenuCmd = null;
-        } //End block
+        } 
         else
         {
             mMenuCmd = cmdMsg;
-        } //End block
+        } 
         sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
         break;
         case DISPLAY_TEXT:
     if(!cmdMsg.geTextMessage().responseNeeded)        
         {
             sendTerminalResponse(cmdParams.cmdDet, ResultCode.OK, false, 0, null);
-        } //End block
+        } 
         break;
         case REFRESH:
         cmdParams.cmdDet.typeOfCommand = CommandType.SET_UP_IDLE_MODE_TEXT.value();
@@ -240,7 +240,7 @@ switch(cmdParams.cmdDet.commandQualifier){
         {
             message = mContext.getText(com.android.internal.R.string.launchBrowserDefault);
             ((LaunchBrowserParams) cmdParams).confirmMsg.text = message.toString();
-        } //End block
+        } 
         break;
         case SELECT_ITEM:
         case GET_INPUT:
@@ -255,7 +255,7 @@ switch(cmdParams.cmdDet.commandQualifier){
         {
             message = mContext.getText(com.android.internal.R.string.sending);
             ((DisplayTextParams)cmdParams).textMsg.text = message.toString();
-        } //End block
+        } 
         break;
         case PLAY_TONE:
         break;
@@ -265,7 +265,7 @@ switch(cmdParams.cmdDet.commandQualifier){
         {
             message = mContext.getText(com.android.internal.R.string.SetupCallDefault);
             ((CallSetupParams) cmdParams).confirmMsg.text = message.toString();
-        } //End block
+        } 
         break;
         default:
         CatLog.d(this, "Unsupported command");
@@ -274,8 +274,8 @@ switch(cmdParams.cmdDet.commandQualifier){
         Intent intent = new Intent(AppInterface.CAT_CMD_ACTION);
         intent.putExtra("STK CMD", cmdMsg);
         mContext.sendBroadcast(intent);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -285,11 +285,11 @@ switch(cmdParams.cmdDet.commandQualifier){
         mCurrntCmd = mMenuCmd;
         Intent intent = new Intent(AppInterface.CAT_SESSION_END_ACTION);
         mContext.sendBroadcast(intent);
-        // ---------- Original Method ----------
-        //CatLog.d(this, "SESSION END");
-        //mCurrntCmd = mMenuCmd;
-        //Intent intent = new Intent(AppInterface.CAT_SESSION_END_ACTION);
-        //mContext.sendBroadcast(intent);
+        
+        
+        
+        
+        
     }
 
     
@@ -305,18 +305,18 @@ switch(cmdParams.cmdDet.commandQualifier){
     if(cmdDet == null)        
         {
             return;
-        } //End block
+        } 
         ByteArrayOutputStream buf = new ByteArrayOutputStream();
         Input cmdInput = null;
     if(mCurrntCmd != null)        
         {
             cmdInput = mCurrntCmd.geInput();
-        } //End block
+        } 
         int tag = ComprehensionTlvTag.COMMAND_DETAILS.value();
     if(cmdDet.compRequired)        
         {
             tag |= 0x80;
-        } //End block
+        } 
         buf.write(tag);
         buf.write(0x03);
         buf.write(cmdDet.commandNumber);
@@ -335,24 +335,24 @@ switch(cmdParams.cmdDet.commandQualifier){
     if(includeAdditionalInfo)        
         {
             buf.write(additionalInfo);
-        } //End block
+        } 
     if(resp != null)        
         {
             resp.format(buf);
-        } //End block
+        } 
         else
         {
             encodeOptionalTags(cmdDet, resultCode, cmdInput, buf);
-        } //End block
+        } 
         byte[] rawData = buf.toByteArray();
         String hexString = IccUtils.bytesToHexString(rawData);
     if(false)        
         {
             CatLog.d(this, "TERMINAL RESPONSE: " + hexString);
-        } //End block
+        } 
         mCmdIf.sendTerminalResponse(hexString, null);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -372,26 +372,26 @@ switch(cmdType){
                         (cmdInput != null) && (cmdInput.duration != null))            
             {
                 getInKeyResponse(buf, cmdInput);
-            } //End block
+            } 
             break;
             case PROVIDE_LOCAL_INFORMATION:
     if((cmdDet.commandQualifier == CommandParamsFactory.LANGUAGE_SETTING) &&
                         (resultCode.value() == ResultCode.OK.value()))            
             {
                 getPliResponse(buf);
-            } //End block
+            } 
             break;
             default:
             CatLog.d(this, "encodeOptionalTags() Unsupported Cmd:" + cmdDet.typeOfCommand);
             break;
 }
-        } //End block
+        } 
         else
         {
             CatLog.d(this, "encodeOptionalTags() bad Cmd:" + cmdDet.typeOfCommand);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -404,12 +404,12 @@ switch(cmdType){
         buf.write(0x02);
         buf.write(cmdInput.duration.timeUnit.SECOND.value());
         buf.write(cmdInput.duration.timeInterval);
-        // ---------- Original Method ----------
-        //int tag = ComprehensionTlvTag.DURATION.value();
-        //buf.write(tag);
-        //buf.write(0x02);
-        //buf.write(cmdInput.duration.timeUnit.SECOND.value());
-        //buf.write(cmdInput.duration.timeInterval);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -423,15 +423,15 @@ switch(cmdType){
             buf.write(tag);
             ResponseData.writeLength(buf, lang.length());
             buf.write(lang.getBytes(), 0, lang.length());
-        } //End block
-        // ---------- Original Method ----------
-        //String lang = SystemProperties.get("persist.sys.language");
-        //if (lang != null) {
-            //int tag = ComprehensionTlvTag.LANGUAGE.value();
-            //buf.write(tag);
-            //ResponseData.writeLength(buf, lang.length());
-            //buf.write(lang.getBytes(), 0, lang.length());
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -457,14 +457,14 @@ switch(cmdType){
             tag = ComprehensionTlvTag.HELP_REQUEST.value();
             buf.write(tag);
             buf.write(0x00);
-        } //End block
+        } 
         byte[] rawData = buf.toByteArray();
         int len = rawData.length - 2;
         rawData[1] = (byte) len;
         String hexString = IccUtils.bytesToHexString(rawData);
         mCmdIf.sendEnvelope(hexString, null);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -494,37 +494,37 @@ switch(cmdType){
 for(byte b : additionalInfo)
             {
                 buf.write(b);
-            } //End block
-        } //End block
+            } 
+        } 
         byte[] rawData = buf.toByteArray();
         int len = rawData.length - 2;
         rawData[1] = (byte) len;
         String hexString = IccUtils.bytesToHexString(rawData);
         mCmdIf.sendEnvelope(hexString, null);
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream buf = new ByteArrayOutputStream();
-        //int tag = BerTlv.BER_EVENT_DOWNLOAD_TAG;
-        //buf.write(tag);
-        //buf.write(0x00);
-        //tag = 0x80 | ComprehensionTlvTag.EVENT_LIST.value();
-        //buf.write(tag);
-        //buf.write(0x01);
-        //buf.write(event);
-        //tag = 0x80 | ComprehensionTlvTag.DEVICE_IDENTITIES.value();
-        //buf.write(tag);
-        //buf.write(0x02);
-        //buf.write(sourceId);
-        //buf.write(destinationId);
-        //if (additionalInfo != null) {
-            //for (byte b : additionalInfo) {
-                //buf.write(b);
-            //}
-        //}
-        //byte[] rawData = buf.toByteArray();
-        //int len = rawData.length - 2;
-        //rawData[1] = (byte) len;
-        //String hexString = IccUtils.bytesToHexString(rawData);
-        //mCmdIf.sendEnvelope(hexString, null);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -577,13 +577,13 @@ switch(msg.what){
                 try 
                 {
                     data = (String) ar.result;
-                } //End block
+                } 
                 catch (ClassCastException e)
                 {
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mMsgDecoder.sendStartDecodingMessageParams(new RilMessage(msg.what, data));
         break;
         case MSG_ID_CALL_SETUP:
@@ -606,27 +606,27 @@ switch(msg.what){
         var237232D4106A05513B104307D2653F26_1277750089.addTaint(taint);
         throw var237232D4106A05513B104307D2653F26_1277750089;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.876 -0400", hash_original_method = "8251947338311BFA45C2A2344891C68B", hash_generated_method = "FEF280C7D6B73F7372BA9209B32A4535")
     public synchronized void onCmdResponse(CatResponseMessage resMsg) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(resMsg.getTaint());
     if(resMsg == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = this.obtainMessage(MSG_ID_RESPONSE, resMsg);
         msg.sendToTarget();
-        // ---------- Original Method ----------
-        //if (resMsg == null) {
-            //return;
-        //}
-        //Message msg = this.obtainMessage(MSG_ID_RESPONSE, resMsg);
-        //msg.sendToTarget();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -638,15 +638,15 @@ switch(msg.what){
             boolean var8BAE03F4E18768DC22204DF7C4C47CD9_948230212 = ((resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879487757 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879487757;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_437477856 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573113171 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573113171;
-        // ---------- Original Method ----------
-        //if (mCurrntCmd != null) {
-            //return (resMsg.cmdDet.compareTo(mCurrntCmd.mCmdDet));
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -660,38 +660,39 @@ switch(msg.what){
                 boolean varB326B5062B2F0E69046810717534CB09_706583486 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1445472563 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1445472563;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (NullPointerException e)
         {
             CatLog.d(this, "Unable to get Menu's items size");
             boolean varB326B5062B2F0E69046810717534CB09_2028951531 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_429119781 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_429119781;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_413261001 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_384464409 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_384464409;
-        // ---------- Original Method ----------
-        //try {
-            //if (menu.items.size() == 1 && menu.items.get(0) == null) {
-                //return true;
-            //}
-        //} catch (NullPointerException e) {
-            //CatLog.d(this, "Unable to get Menu's items size");
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.879 -0400", hash_original_method = "48D7C107F944AA3B8D2770DC9FDB0ED7", hash_generated_method = "4C6EB676C6950072E961904D96746D64")
     private void handleCmdResponse(CatResponseMessage resMsg) {
         addTaint(resMsg.getTaint());
     if(!validateResponse(resMsg))        
         {
             return;
-        } //End block
+        } 
         ResponseData resp = null;
         boolean helpRequired = false;
         CommandDetails cmdDet = resMsg.getCmdDetails();
@@ -725,13 +726,13 @@ switch(AppInterface.CommandType.fromInt(cmdDet.typeOfCommand)){
             {
                 resp = new GetInkeyInputResponseData(resMsg.usersInput,
                                 input.ucs2, input.packed);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             resp = new GetInkeyInputResponseData(
                             resMsg.usersYesNoSelection);
-        } //End block
+        } 
         break;
         case DISPLAY_TEXT:
         case LAUNCH_BROWSER:
@@ -750,8 +751,8 @@ switch(AppInterface.CommandType.fromInt(cmdDet.typeOfCommand)){
         return;
 }        sendTerminalResponse(cmdDet, resMsg.resCode, false, 0, resp);
         mCurrntCmd = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

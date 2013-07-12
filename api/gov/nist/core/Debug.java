@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,29 +10,33 @@ public class Debug {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.051 -0400", hash_original_method = "D5DA96BAC7993F1698C6F83B8D04956A", hash_generated_method = "D5DA96BAC7993F1698C6F83B8D04956A")
     public Debug ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static void setStackLogger(StackLogger stackLogger) {
+        @DSModeled(DSC.SAFE)
+    public static void setStackLogger(StackLogger stackLogger) {
         Debug.stackLogger = stackLogger;
     }
 
     
-        public static void println(String s) {
+        @DSModeled(DSC.SAFE)
+    public static void println(String s) {
         if ((parserDebug || debug )&& stackLogger != null )
             stackLogger.logDebug(s + "\n");
     }
 
     
-        public static void printStackTrace(Exception ex) {
+        @DSModeled(DSC.SAFE)
+    public static void printStackTrace(Exception ex) {
         if ((parserDebug || debug ) && stackLogger != null) {
             stackLogger.logError("Stack Trace",ex);
         }
     }
 
     
-        public static void logError(String message, Exception ex) {
+        @DSModeled(DSC.SAFE)
+    public static void logError(String message, Exception ex) {
         if ((parserDebug || debug) &&  stackLogger != null ) {
           stackLogger.logError(message,ex);
       }

@@ -1,6 +1,6 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,13 +32,13 @@ public class BackupDataInput {
             RuntimeException varD18F42038ED5A65B5B920440D9607511_856613915 = new RuntimeException("Native initialization failed with fd=" + fd);
             varD18F42038ED5A65B5B920440D9607511_856613915.addTaint(taint);
             throw varD18F42038ED5A65B5B920440D9607511_856613915;
-        } //End block
-        // ---------- Original Method ----------
-        //if (fd == null) throw new NullPointerException();
-        //mBackupReader = ctor(fd);
-        //if (mBackupReader == 0) {
-            //throw new RuntimeException("Native initialization failed with fd=" + fd);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -47,17 +47,17 @@ public class BackupDataInput {
         try 
         {
             dtor(mBackupReader);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //dtor(mBackupReader);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -70,7 +70,7 @@ public class BackupDataInput {
             boolean varB326B5062B2F0E69046810717534CB09_208951059 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1824261911 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1824261911;
-        } //End block
+        } 
         else
     if(result > 0)        
         {
@@ -78,26 +78,26 @@ public class BackupDataInput {
             boolean var68934A3E9455FA72420237EB05902327_2030997945 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_610182845 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_610182845;
-        } //End block
+        } 
         else
         {
             mHeaderReady = false;
             IOException varEF8C45D465522B94FE6864037F607949_506135458 = new IOException("failed: 0x" + Integer.toHexString(result));
             varEF8C45D465522B94FE6864037F607949_506135458.addTaint(taint);
             throw varEF8C45D465522B94FE6864037F607949_506135458;
-        } //End block
-        // ---------- Original Method ----------
-        //int result = readNextHeader_native(mBackupReader, mHeader);
-        //if (result == 0) {
-            //mHeaderReady = true;
-            //return true;
-        //} else if (result > 0) {
-            //mHeaderReady = false;
-            //return false;
-        //} else {
-            //mHeaderReady = false;
-            //throw new IOException("failed: 0x" + Integer.toHexString(result));
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -108,19 +108,19 @@ public class BackupDataInput {
 String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
             var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874.addTaint(taint);
             return var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874;
-        } //End block
+        } 
         else
         {
             IllegalStateException var565AD1780E8DBC8AE274D5EDF5E05522_351924227 = new IllegalStateException("Entity header not read");
             var565AD1780E8DBC8AE274D5EDF5E05522_351924227.addTaint(taint);
             throw var565AD1780E8DBC8AE274D5EDF5E05522_351924227;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHeaderReady) {
-            //return mHeader.key;
-        //} else {
-            //throw new IllegalStateException("Entity header not read");
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -131,19 +131,19 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
             int var1E877F12175A2050E63883FA90C1385F_2008730435 = (mHeader.dataSize);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143049 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143049;
-        } //End block
+        } 
         else
         {
             IllegalStateException var565AD1780E8DBC8AE274D5EDF5E05522_948973217 = new IllegalStateException("Entity header not read");
             var565AD1780E8DBC8AE274D5EDF5E05522_948973217.addTaint(taint);
             throw var565AD1780E8DBC8AE274D5EDF5E05522_948973217;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHeaderReady) {
-            //return mHeader.dataSize;
-        //} else {
-            //throw new IllegalStateException("Entity header not read");
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -160,31 +160,31 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
                 int varB4A88417B3D0170D754C647C30B7216A_1650690574 = (result);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1990029182 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1990029182;
-            } //End block
+            } 
             else
             {
                 IOException var4138A9E13F8C9D20923834ABCA8008BB_528964713 = new IOException("result=0x" + Integer.toHexString(result));
                 var4138A9E13F8C9D20923834ABCA8008BB_528964713.addTaint(taint);
                 throw var4138A9E13F8C9D20923834ABCA8008BB_528964713;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             IllegalStateException var565AD1780E8DBC8AE274D5EDF5E05522_1785896338 = new IllegalStateException("Entity header not read");
             var565AD1780E8DBC8AE274D5EDF5E05522_1785896338.addTaint(taint);
             throw var565AD1780E8DBC8AE274D5EDF5E05522_1785896338;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHeaderReady) {
-            //int result = readEntityData_native(mBackupReader, data, offset, size);
-            //if (result >= 0) {
-                //return result;
-            //} else {
-                //throw new IOException("result=0x" + Integer.toHexString(result));
-            //}
-        //} else {
-            //throw new IllegalStateException("Entity header not read");
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -193,19 +193,19 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     if(mHeaderReady)        
         {
             skipEntityData_native(mBackupReader);
-        } //End block
+        } 
         else
         {
             IllegalStateException var565AD1780E8DBC8AE274D5EDF5E05522_1671940639 = new IllegalStateException("Entity header not read");
             var565AD1780E8DBC8AE274D5EDF5E05522_1671940639.addTaint(taint);
             throw var565AD1780E8DBC8AE274D5EDF5E05522_1671940639;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHeaderReady) {
-            //skipEntityData_native(mBackupReader);
-        //} else {
-            //throw new IllegalStateException("Entity header not read");
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -220,6 +220,7 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.028 -0400", hash_original_method = "067EEAAC3A307CF566E8560CEDE5923E", hash_generated_method = "7FAA0D6B4979D5127CCA581E4ABD2DEA")
     private int readNextHeader_native(int mBackupReader, EntityHeader entity) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882591691 = getTaintInt();
@@ -227,6 +228,7 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.028 -0400", hash_original_method = "F563013799B99B7F96D96C08DD61A38F", hash_generated_method = "295B5FE9AF82232248446C6915D21ABB")
     private int readEntityData_native(int mBackupReader, byte[] data, int offset, int size) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1633556903 = getTaintInt();
@@ -234,6 +236,7 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.028 -0400", hash_original_method = "13C96EB578BECC22D2FF8487AD4702B6", hash_generated_method = "DC9889478C9DA5CED58E3DAA1656E317")
     private int skipEntityData_native(int mBackupReader) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351843561 = getTaintInt();
@@ -252,7 +255,7 @@ String var689A9ED7E3C9EEACCA83AE7E64B8CA73_1654067874 =             mHeader.key;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.029 -0400", hash_original_method = "0CA45CB3FD81751EFF77E1E1D96ACA74", hash_generated_method = "0CA45CB3FD81751EFF77E1E1D96ACA74")
         public EntityHeader ()
         {
-            //Synthesized constructor
+            
         }
 
 

@@ -1,6 +1,6 @@
 package android.net.wifi.p2p;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class WifiP2pGroup implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.211 -0400", hash_original_method = "BC18BEC489FA7E8F37CA54A3CD540A78", hash_generated_method = "D3978A9837D03D7B11DDE06D4B93706F")
     public  WifiP2pGroup() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,7 +46,7 @@ public class WifiP2pGroup implements Parcelable {
             IllegalArgumentException varC6004F11587813439225B94CE376D336_2080057058 = new IllegalArgumentException("Malformed supplicant event");
             varC6004F11587813439225B94CE376D336_2080057058.addTaint(taint);
             throw varC6004F11587813439225B94CE376D336_2080057058;
-        } //End block
+        } 
     if(tokens[0].startsWith("P2P-GROUP"))        
         {
             mInterface = tokens[1];
@@ -60,18 +60,18 @@ for(String token : tokens)
                 {
                     mNetworkName = nameValue[1];
                     continue;
-                } //End block
+                } 
     if(nameValue[0].equals("passphrase"))                
                 {
                     mPassphrase = nameValue[1];
                     continue;
-                } //End block
+                } 
     if(nameValue[0].equals("go_dev_addr"))                
                 {
                     mOwner = new WifiP2pDevice(nameValue[1]);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
     if(tokens[0].equals("P2P-INVITATION-RECEIVED"))        
         {
@@ -84,17 +84,17 @@ for(String token : tokens)
                 {
                     mOwner = new WifiP2pDevice(nameValue[1]);
                     continue;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             IllegalArgumentException varC6004F11587813439225B94CE376D336_334699740 = new IllegalArgumentException("Malformed supplicant event");
             varC6004F11587813439225B94CE376D336_334699740.addTaint(taint);
             throw varC6004F11587813439225B94CE376D336_334699740;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -109,70 +109,76 @@ for(WifiP2pDevice d : source.getClientList())
             mClients.add(d);
             mPassphrase = source.getPassphrase();
             mInterface = source.getInterface();
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //mNetworkName = source.getNetworkName();
-            //mOwner = new WifiP2pDevice(source.getOwner());
-            //mIsGroupOwner = source.mIsGroupOwner;
-            //for (WifiP2pDevice d : source.getClientList()) mClients.add(d);
-            //mPassphrase = source.getPassphrase();
-            //mInterface = source.getInterface();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.214 -0400", hash_original_method = "1F3206015C0D7A4CBD5E705EF1C23A0F", hash_generated_method = "C3736BDA5E3513723EA1A7ADFF8A9E4A")
     public void setNetworkName(String networkName) {
         mNetworkName = networkName;
-        // ---------- Original Method ----------
-        //mNetworkName = networkName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.214 -0400", hash_original_method = "32FF89F2A0087E1C62BF10B34EF6D932", hash_generated_method = "D8B43A74F64EA78DB4AEAAC8FFCF8BD5")
     public String getNetworkName() {
 String var2F764F1A91F74BAB946C9D90AE9ACD40_727600789 =         mNetworkName;
         var2F764F1A91F74BAB946C9D90AE9ACD40_727600789.addTaint(taint);
         return var2F764F1A91F74BAB946C9D90AE9ACD40_727600789;
-        // ---------- Original Method ----------
-        //return mNetworkName;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.215 -0400", hash_original_method = "389E55BA9756949E35517D77609F8AC0", hash_generated_method = "1F4E78E48BC1D398DE58B81C55D3C45B")
     public void setIsGroupOwner(boolean isGo) {
         mIsGroupOwner = isGo;
-        // ---------- Original Method ----------
-        //mIsGroupOwner = isGo;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.215 -0400", hash_original_method = "9599D1040188F59722C5FA5110991675", hash_generated_method = "0A100F92C113B2A4BBC13DC92142B46D")
     public boolean isGroupOwner() {
         boolean var8424A546848958BC2DFBB7635B0F0F1B_1419640123 = (mIsGroupOwner);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1418267857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1418267857;
-        // ---------- Original Method ----------
-        //return mIsGroupOwner;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.215 -0400", hash_original_method = "3B8BEB5DE992C10464B29BB370E6A4AC", hash_generated_method = "D589400B616270F7EEBE396EDAAC71B7")
     public void setOwner(WifiP2pDevice device) {
         mOwner = device;
-        // ---------- Original Method ----------
-        //mOwner = device;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.216 -0400", hash_original_method = "64A8053D0F0646F5E4AC8BED59B588ED", hash_generated_method = "7C874F5E7C47F09624489EDD463D603C")
     public WifiP2pDevice getOwner() {
 WifiP2pDevice var5F2C684ADE383867ABA7E337213B9967_1903258619 =         mOwner;
         var5F2C684ADE383867ABA7E337213B9967_1903258619.addTaint(taint);
         return var5F2C684ADE383867ABA7E337213B9967_1903258619;
-        // ---------- Original Method ----------
-        //return mOwner;
+        
+        
     }
 
     
@@ -180,8 +186,8 @@ WifiP2pDevice var5F2C684ADE383867ABA7E337213B9967_1903258619 =         mOwner;
     public void addClient(String address) {
         addTaint(address.getTaint());
         addClient(new WifiP2pDevice(address));
-        // ---------- Original Method ----------
-        //addClient(new WifiP2pDevice(address));
+        
+        
     }
 
     
@@ -192,13 +198,13 @@ for(WifiP2pDevice client : mClients)
         {
     if(client.equals(device))            
             return;
-        } //End block
+        } 
         mClients.add(device);
-        // ---------- Original Method ----------
-        //for (WifiP2pDevice client : mClients) {
-            //if (client.equals(device)) return;
-        //}
-        //mClients.add(device);
+        
+        
+            
+        
+        
     }
 
     
@@ -208,8 +214,8 @@ for(WifiP2pDevice client : mClients)
         boolean var35B7908A8CEE536DD01D425552F433EF_1165416862 = (mClients.remove(new WifiP2pDevice(address)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_917105439 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_917105439;
-        // ---------- Original Method ----------
-        //return mClients.remove(new WifiP2pDevice(address));
+        
+        
     }
 
     
@@ -219,8 +225,8 @@ for(WifiP2pDevice client : mClients)
         boolean var77877C36C9C4C18E9BE871F33F0372B8_152644900 = (mClients.remove(device));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_128760631 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_128760631;
-        // ---------- Original Method ----------
-        //return mClients.remove(device);
+        
+        
     }
 
     
@@ -229,8 +235,8 @@ for(WifiP2pDevice client : mClients)
         boolean var37652FDED570C923755D3B11FF970CB3_597619763 = (mClients.size() == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2031304531 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2031304531;
-        // ---------- Original Method ----------
-        //return mClients.size() == 0;
+        
+        
     }
 
     
@@ -239,44 +245,48 @@ for(WifiP2pDevice client : mClients)
 Collection<WifiP2pDevice> var56B5579FD7C84BFA68420B5AB0D4DCB4_107851619 =         Collections.unmodifiableCollection(mClients);
         var56B5579FD7C84BFA68420B5AB0D4DCB4_107851619.addTaint(taint);
         return var56B5579FD7C84BFA68420B5AB0D4DCB4_107851619;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(mClients);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.218 -0400", hash_original_method = "073EE8049BAF41A715DB20DDA5E00101", hash_generated_method = "319504402F46E1BA7BFF5B169057CFCB")
     public void setPassphrase(String passphrase) {
         mPassphrase = passphrase;
-        // ---------- Original Method ----------
-        //mPassphrase = passphrase;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.218 -0400", hash_original_method = "5EB5F9BABC374AD0DE2453D35DFCC36C", hash_generated_method = "1D788204BEECC3B1305937598DA4F9C3")
     public String getPassphrase() {
 String var3390FE1B04D641DF96A7A3765B8B4D50_55747085 =         mPassphrase;
         var3390FE1B04D641DF96A7A3765B8B4D50_55747085.addTaint(taint);
         return var3390FE1B04D641DF96A7A3765B8B4D50_55747085;
-        // ---------- Original Method ----------
-        //return mPassphrase;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.218 -0400", hash_original_method = "1BDFB331CB7F44520C6251E3C44B9A62", hash_generated_method = "29AC9DD1457A812822B9744217D2FCE6")
     public void setInterface(String intf) {
         mInterface = intf;
-        // ---------- Original Method ----------
-        //mInterface = intf;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.219 -0400", hash_original_method = "3F43528BD183AE40A353AE75903024B0", hash_generated_method = "19D6E8ABABAE1B70B242ED18EAFB6CE0")
     public String getInterface() {
 String var690AAF4620A1A50EE3302D08CABA94B2_194907995 =         mInterface;
         var690AAF4620A1A50EE3302D08CABA94B2_194907995.addTaint(taint);
         return var690AAF4620A1A50EE3302D08CABA94B2_194907995;
-        // ---------- Original Method ----------
-        //return mInterface;
+        
+        
     }
 
     
@@ -289,31 +299,32 @@ String var690AAF4620A1A50EE3302D08CABA94B2_194907995 =         mInterface;
 for(WifiP2pDevice client : mClients)
         {
             sbuf.append("\n Client: ").append(client);
-        } //End block
+        } 
         sbuf.append("\n interface: ").append(mInterface);
 String var69222FFA45D1268AEE1923C5558B0BD5_136615428 =         sbuf.toString();
         var69222FFA45D1268AEE1923C5558B0BD5_136615428.addTaint(taint);
         return var69222FFA45D1268AEE1923C5558B0BD5_136615428;
-        // ---------- Original Method ----------
-        //StringBuffer sbuf = new StringBuffer();
-        //sbuf.append("network: ").append(mNetworkName);
-        //sbuf.append("\n isGO: ").append(mIsGroupOwner);
-        //sbuf.append("\n GO: ").append(mOwner);
-        //for (WifiP2pDevice client : mClients) {
-            //sbuf.append("\n Client: ").append(client);
-        //}
-        //sbuf.append("\n interface: ").append(mInterface);
-        //return sbuf.toString();
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.219 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BC6920D707AD1CC8B363AB05086CE07C")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_28371149 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051230939 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051230939;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -328,19 +339,19 @@ String var69222FFA45D1268AEE1923C5558B0BD5_136615428 =         sbuf.toString();
 for(WifiP2pDevice client : mClients)
         {
             dest.writeParcelable(client, flags);
-        } //End block
+        } 
         dest.writeString(mPassphrase);
         dest.writeString(mInterface);
-        // ---------- Original Method ----------
-        //dest.writeString(mNetworkName);
-        //dest.writeParcelable(mOwner, flags);
-        //dest.writeByte(mIsGroupOwner ? (byte) 1: (byte) 0);
-        //dest.writeInt(mClients.size());
-        //for (WifiP2pDevice client : mClients) {
-            //dest.writeParcelable(client, flags);
-        //}
-        //dest.writeString(mPassphrase);
-        //dest.writeString(mInterface);
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -366,7 +377,7 @@ for(WifiP2pDevice client : mClients)
                 return new WifiP2pGroup[size];
             }
         };
-    // orphaned legacy method
+    
     public WifiP2pGroup createFromParcel(Parcel in) {
                 WifiP2pGroup group = new WifiP2pGroup();
                 group.setNetworkName(in.readString());
@@ -381,7 +392,7 @@ for(WifiP2pDevice client : mClients)
                 return group;
             }
     
-    // orphaned legacy method
+    
     public WifiP2pGroup[] newArray(int size) {
                 return new WifiP2pGroup[size];
             }

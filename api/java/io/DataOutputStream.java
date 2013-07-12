@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     public  DataOutputStream(OutputStream out) {
         super(out);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,8 +29,8 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     @Override
     public void flush() throws IOException {
         super.flush();
-        // ---------- Original Method ----------
-        //super.flush();
+        
+        
     }
 
     
@@ -39,15 +39,15 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     if(written < 0)        
         {
             written = Integer.MAX_VALUE;
-        } //End block
+        } 
         int var9CC26FA09CE37BC95AFE01BC718836D1_411453709 = (written);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368784974 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1368784974;
-        // ---------- Original Method ----------
-        //if (written < 0) {
-            //written = Integer.MAX_VALUE;
-        //}
-        //return written;
+        
+        
+            
+        
+        
     }
 
     
@@ -61,15 +61,15 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
             NullPointerException varD1F0B530B211C354FD4DD40207900970_47657961 = new NullPointerException("buffer == null");
             varD1F0B530B211C354FD4DD40207900970_47657961.addTaint(taint);
             throw varD1F0B530B211C354FD4DD40207900970_47657961;
-        } //End block
+        } 
         out.write(buffer, offset, count);
         written += count;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new NullPointerException("buffer == null");
-        //}
-        //out.write(buffer, offset, count);
-        //written += count;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -79,9 +79,9 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         addTaint(oneByte);
         out.write(oneByte);
         written++;
-        // ---------- Original Method ----------
-        //out.write(oneByte);
-        //written++;
+        
+        
+        
     }
 
     
@@ -90,9 +90,9 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         addTaint(val);
         out.write(val ? 1 : 0);
         written++;
-        // ---------- Original Method ----------
-        //out.write(val ? 1 : 0);
-        //written++;
+        
+        
+        
     }
 
     
@@ -101,9 +101,9 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
         addTaint(val);
         out.write(val);
         written++;
-        // ---------- Original Method ----------
-        //out.write(val);
-        //written++;
+        
+        
+        
     }
 
     
@@ -113,24 +113,24 @@ public class DataOutputStream extends FilterOutputStream implements DataOutput {
     if(str.length() == 0)        
         {
             return;
-        } //End block
+        } 
         byte[] bytes = new byte[str.length()];
 for(int index = 0;index < str.length();index++)
         {
             bytes[index] = (byte) str.charAt(index);
-        } //End block
+        } 
         out.write(bytes);
         written += bytes.length;
-        // ---------- Original Method ----------
-        //if (str.length() == 0) {
-            //return;
-        //}
-        //byte[] bytes = new byte[str.length()];
-        //for (int index = 0; index < str.length(); index++) {
-            //bytes[index] = (byte) str.charAt(index);
-        //}
-        //out.write(bytes);
-        //written += bytes.length;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -138,8 +138,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeChar(int val) throws IOException {
         addTaint(val);
         writeShort(val);
-        // ---------- Original Method ----------
-        //writeShort(val);
+        
+        
     }
 
     
@@ -149,10 +149,10 @@ for(int index = 0;index < str.length();index++)
         byte[] bytes = str.getBytes("UTF-16BE");
         out.write(bytes);
         written += bytes.length;
-        // ---------- Original Method ----------
-        //byte[] bytes = str.getBytes("UTF-16BE");
-        //out.write(bytes);
-        //written += bytes.length;
+        
+        
+        
+        
     }
 
     
@@ -160,8 +160,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeDouble(double val) throws IOException {
         addTaint(val);
         writeLong(Double.doubleToLongBits(val));
-        // ---------- Original Method ----------
-        //writeLong(Double.doubleToLongBits(val));
+        
+        
     }
 
     
@@ -169,8 +169,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeFloat(float val) throws IOException {
         addTaint(val);
         writeInt(Float.floatToIntBits(val));
-        // ---------- Original Method ----------
-        //writeInt(Float.floatToIntBits(val));
+        
+        
     }
 
     
@@ -180,10 +180,10 @@ for(int index = 0;index < str.length();index++)
         Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         out.write(scratch, 0, SizeOf.INT);
         written += SizeOf.INT;
-        // ---------- Original Method ----------
-        //Memory.pokeInt(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.INT);
-        //written += SizeOf.INT;
+        
+        
+        
+        
     }
 
     
@@ -193,10 +193,10 @@ for(int index = 0;index < str.length();index++)
         Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
         out.write(scratch, 0, SizeOf.LONG);
         written += SizeOf.LONG;
-        // ---------- Original Method ----------
-        //Memory.pokeLong(scratch, 0, val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.LONG);
-        //written += SizeOf.LONG;
+        
+        
+        
+        
     }
 
     
@@ -206,10 +206,10 @@ for(int index = 0;index < str.length();index++)
         Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
         out.write(scratch, 0, SizeOf.SHORT);
         written += SizeOf.SHORT;
-        // ---------- Original Method ----------
-        //Memory.pokeShort(scratch, 0, (short) val, ByteOrder.BIG_ENDIAN);
-        //out.write(scratch, 0, SizeOf.SHORT);
-        //written += SizeOf.SHORT;
+        
+        
+        
+        
     }
 
     
@@ -217,8 +217,8 @@ for(int index = 0;index < str.length();index++)
     public final void writeUTF(String str) throws IOException {
         addTaint(str.getTaint());
         write(ModifiedUtf8.encode(str));
-        // ---------- Original Method ----------
-        //write(ModifiedUtf8.encode(str));
+        
+        
     }
 
     

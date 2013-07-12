@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -58,7 +58,7 @@ public class SingleClientConnManager implements ClientConnectionManager {
                 ("Scheme registry must not be null.");
             var9D0DCFA9FB8D2370B81F25E8E10E412A_2079539134.addTaint(taint);
             throw var9D0DCFA9FB8D2370B81F25E8E10E412A_2079539134;
-        } //End block
+        } 
         this.schemeRegistry  = schreg;
         this.connOperator    = createConnectionOperator(schreg);
         this.uniquePoolEntry = new PoolEntry();
@@ -66,18 +66,18 @@ public class SingleClientConnManager implements ClientConnectionManager {
         this.lastReleaseTime = -1L;
         this.alwaysShutDown  = false;
         this.isShutDown      = false;
-        // ---------- Original Method ----------
-        //if (schreg == null) {
-            //throw new IllegalArgumentException
-                //("Scheme registry must not be null.");
-        //}
-        //this.schemeRegistry  = schreg;
-        //this.connOperator    = createConnectionOperator(schreg);
-        //this.uniquePoolEntry = new PoolEntry();
-        //this.managedConn     = null;
-        //this.lastReleaseTime = -1L;
-        //this.alwaysShutDown  = false;
-        //this.isShutDown      = false;
+        
+        
+            
+                
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -86,19 +86,20 @@ public class SingleClientConnManager implements ClientConnectionManager {
     protected void finalize() throws Throwable {
         shutdown();
         super.finalize();
-        // ---------- Original Method ----------
-        //shutdown();
-        //super.finalize();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.933 -0400", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "9BC3CCC03612AFDD26B05328E5F0A85E")
     public SchemeRegistry getSchemeRegistry() {
 SchemeRegistry var88A9F5243E7E93089AA8FDF949007087_1321465197 =         this.schemeRegistry;
         var88A9F5243E7E93089AA8FDF949007087_1321465197.addTaint(taint);
         return var88A9F5243E7E93089AA8FDF949007087_1321465197;
-        // ---------- Original Method ----------
-        //return this.schemeRegistry;
+        
+        
     }
 
     
@@ -108,8 +109,8 @@ SchemeRegistry var88A9F5243E7E93089AA8FDF949007087_1321465197 =         this.sch
 ClientConnectionOperator var5302AB2ADD1B4945976DC003AFE0BD75_1597866684 =         new DefaultClientConnectionOperator(schreg);
         var5302AB2ADD1B4945976DC003AFE0BD75_1597866684.addTaint(taint);
         return var5302AB2ADD1B4945976DC003AFE0BD75_1597866684;
-        // ---------- Original Method ----------
-        //return new DefaultClientConnectionOperator(schreg);
+        
+        
     }
 
     
@@ -121,9 +122,9 @@ ClientConnectionOperator var5302AB2ADD1B4945976DC003AFE0BD75_1597866684 =       
         varB0F9022553288C2CA311ECE4145AB186_1261148342.addTaint(taint);
         throw varB0F9022553288C2CA311ECE4145AB186_1261148342;
         }
-        // ---------- Original Method ----------
-        //if (this.isShutDown)
-            //throw new IllegalStateException("Manager is shut down.");
+        
+        
+            
     }
 
     
@@ -136,7 +137,7 @@ ClientConnectionOperator var5302AB2ADD1B4945976DC003AFE0BD75_1597866684 =       
 ClientConnectionRequest var0563123A8DD7E35E063A27BF427D175E_899086301 =         new ClientConnectionRequest() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.935 -0400", hash_original_method = "59B8F54C56EBECF9DD50C78DE5B52C0B", hash_generated_method = "9DC48F8D0136273714585B8035E22ED8")
         public void abortRequest() {
-            // ---------- Original Method ----------
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.935 -0400", hash_original_method = "F7F3F9BF4CE416F8572A5E185A1E7C99", hash_generated_method = "039AB218D3BA6E6E08DF0D879115423C")
         public ManagedClientConnection getConnection(
@@ -147,23 +148,23 @@ ManagedClientConnection var3E69174ACEA1CF1786ED4F87EE0B3E2A_1357446811 =        
                         route, state);
             var3E69174ACEA1CF1786ED4F87EE0B3E2A_1357446811.addTaint(taint);
             return var3E69174ACEA1CF1786ED4F87EE0B3E2A_1357446811;
-            // ---------- Original Method ----------
-            //return SingleClientConnManager.this.getConnection(
-                        //route, state);
+            
+            
+                        
         }
 };
         var0563123A8DD7E35E063A27BF427D175E_899086301.addTaint(taint);
         return var0563123A8DD7E35E063A27BF427D175E_899086301;
-        // ---------- Original Method ----------
-        //return new ClientConnectionRequest() {
-            //public void abortRequest() {
-            //}
-            //public ManagedClientConnection getConnection(
-                    //long timeout, TimeUnit tunit) {
-                //return SingleClientConnManager.this.getConnection(
-                        //route, state);
-            //}
-        //};
+        
+        
+            
+            
+            
+                    
+                
+                        
+            
+        
     }
 
     
@@ -175,12 +176,12 @@ ManagedClientConnection var3E69174ACEA1CF1786ED4F87EE0B3E2A_1357446811 =        
             IllegalArgumentException var807ED97BD06382A664709EF49C1C9EA3_398276751 = new IllegalArgumentException("Route may not be null.");
             var807ED97BD06382A664709EF49C1C9EA3_398276751.addTaint(taint);
             throw var807ED97BD06382A664709EF49C1C9EA3_398276751;
-        } //End block
+        } 
         assertStillUp();
     if(log.isDebugEnabled())        
         {
             log.debug("Get connection for route " + route);
-        } //End block
+        } 
     if(managedConn != null)        
         revokeConnection();
         boolean recreate = false;
@@ -191,23 +192,23 @@ ManagedClientConnection var3E69174ACEA1CF1786ED4F87EE0B3E2A_1357446811 =        
             RouteTracker tracker = uniquePoolEntry.tracker;
             shutdown = (tracker == null || 
                         !tracker.toRoute().equals(route));
-        } //End block
+        } 
         else
         {
             recreate = true;
-        } //End block
+        } 
     if(shutdown)        
         {
             recreate = true;
             try 
             {
                 uniquePoolEntry.shutdown();
-            } //End block
+            } 
             catch (IOException iox)
             {
                 log.debug("Problem shutting down connection.", iox);
-            } //End block
-        } //End block
+            } 
+        } 
     if(recreate)        
         uniquePoolEntry = new PoolEntry();
         try 
@@ -216,18 +217,18 @@ ManagedClientConnection var3E69174ACEA1CF1786ED4F87EE0B3E2A_1357446811 =        
     if(socket != null)            
             {
                 SocketTagger.get().tag(socket);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException iox)
         {
             log.debug("Problem tagging socket.", iox);
-        } //End block
+        } 
         managedConn = new ConnAdapter(uniquePoolEntry, route);
 ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =         managedConn;
         varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378.addTaint(taint);
         return varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -242,11 +243,11 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
                  "connection not obtained from this manager.");
             var5C20061853D03D1DF306BE40FC8B88CE_1413847174.addTaint(taint);
             throw var5C20061853D03D1DF306BE40FC8B88CE_1413847174;
-        } //End block
+        } 
     if(log.isDebugEnabled())        
         {
             log.debug("Releasing connection " + conn);
-        } //End block
+        } 
         ConnAdapter sca = (ConnAdapter) conn;
     if(sca.poolEntry == null)        
         return;
@@ -257,14 +258,14 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
                 ("Connection not obtained from this manager.");
             varBB73D5117B54E30F8478997E19A744E0_144868776.addTaint(taint);
             throw varBB73D5117B54E30F8478997E19A744E0_144868776;
-        } //End block
+        } 
         try 
         {
             final Socket socket = uniquePoolEntry.connection.getSocket();
     if(socket != null)            
             {
                 SocketTagger.get().untag(socket);
-            } //End block
+            } 
     if(sca.isOpen() && (this.alwaysShutDown ||
                                  !sca.isMarkedReusable()))            
             {
@@ -272,16 +273,16 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
                 {
                     log.debug
                         ("Released connection open but not reusable.");
-                } //End block
+                } 
                 sca.shutdown();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException iox)
         {
     if(log.isDebugEnabled())            
             log.debug("Exception shutting down released connection.",
                           iox);
-        } //End block
+        } 
         finally 
         {
             sca.detach();
@@ -291,9 +292,9 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
             connectionExpiresTime = timeUnit.toMillis(validDuration) + lastReleaseTime;
             else
             connectionExpiresTime = Long.MAX_VALUE;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -302,11 +303,11 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
     if(System.currentTimeMillis() >= connectionExpiresTime)        
         {
             closeIdleConnections(0, TimeUnit.MILLISECONDS);
-        } //End block
-        // ---------- Original Method ----------
-        //if(System.currentTimeMillis() >= connectionExpiresTime) {
-            //closeIdleConnections(0, TimeUnit.MILLISECONDS);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -320,7 +321,7 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
             IllegalArgumentException var1E3A26647533CD72883EC80C4F4E6594_529429298 = new IllegalArgumentException("Time unit must not be null.");
             var1E3A26647533CD72883EC80C4F4E6594_529429298.addTaint(taint);
             throw var1E3A26647533CD72883EC80C4F4E6594_529429298;
-        } //End block
+        } 
     if((managedConn == null) && uniquePoolEntry.connection.isOpen())        
         {
             final long cutoff = System.currentTimeMillis() - tunit.toMillis(idletime);
@@ -329,29 +330,29 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
                 try 
                 {
                     uniquePoolEntry.close();
-                } //End block
+                } 
                 catch (IOException iox)
                 {
                     log.debug("Problem closing idle connection.", iox);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //assertStillUp();
-        //if (tunit == null) {
-            //throw new IllegalArgumentException("Time unit must not be null.");
-        //}
-        //if ((managedConn == null) && uniquePoolEntry.connection.isOpen()) {
-            //final long cutoff =
-                //System.currentTimeMillis() - tunit.toMillis(idletime);
-            //if (lastReleaseTime <= cutoff) {
-                //try {
-                    //uniquePoolEntry.close();
-                //} catch (IOException iox) {
-                    //log.debug("Problem closing idle connection.", iox);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+                
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
@@ -364,27 +365,27 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
         {
     if(uniquePoolEntry != null)            
             uniquePoolEntry.shutdown();
-        } //End block
+        } 
         catch (IOException iox)
         {
             log.debug("Problem while shutting down manager.", iox);
-        } //End block
+        } 
         finally 
         {
             uniquePoolEntry = null;
-        } //End block
-        // ---------- Original Method ----------
-        //this.isShutDown = true;
-        //if (managedConn != null)
-            //managedConn.detach();
-        //try {
-            //if (uniquePoolEntry != null) 
-                //uniquePoolEntry.shutdown();
-        //} catch (IOException iox) {
-            //log.debug("Problem while shutting down manager.", iox);
-        //} finally {
-            //uniquePoolEntry = null;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+                
+        
+            
+        
+            
+        
     }
 
     
@@ -397,21 +398,21 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
         try 
         {
             uniquePoolEntry.shutdown();
-        } //End block
+        } 
         catch (IOException iox)
         {
             log.debug("Problem while shutting down connection.", iox);
-        } //End block
-        // ---------- Original Method ----------
-        //if (managedConn == null)
-            //return;
-        //log.warn(MISUSE_MESSAGE);
-        //managedConn.detach();
-        //try {
-            //uniquePoolEntry.shutdown();
-        //} catch (IOException iox) {
-            //log.debug("Problem while shutting down connection.", iox);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -420,7 +421,7 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.941 -0400", hash_original_method = "631D63FD16AE3FEAB1552B743E29445B", hash_generated_method = "0E4235DC66A001DF5C14070AD2C3F949")
         protected  PoolEntry() {
             super(SingleClientConnManager.this.connOperator, null);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -429,10 +430,10 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
             shutdownEntry();
     if(connection.isOpen())            
             connection.close();
-            // ---------- Original Method ----------
-            //shutdownEntry();
-            //if (connection.isOpen())
-                //connection.close();
+            
+            
+            
+                
         }
 
         
@@ -441,10 +442,10 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
             shutdownEntry();
     if(connection.isOpen())            
             connection.shutdown();
-            // ---------- Original Method ----------
-            //shutdownEntry();
-            //if (connection.isOpen())
-                //connection.shutdown();
+            
+            
+            
+                
         }
 
         
@@ -461,9 +462,9 @@ ManagedClientConnection varCEBBA00AC725936F4BAAED64D1A16A9F_1597852378 =        
             addTaint(entry.getTaint());
             markReusable();
             entry.route = route;
-            // ---------- Original Method ----------
-            //markReusable();
-            //entry.route = route;
+            
+            
+            
         }
 
         

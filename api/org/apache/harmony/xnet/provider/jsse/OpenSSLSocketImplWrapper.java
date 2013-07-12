@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,13 +28,13 @@ public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
             SocketException var3EEAB102670EF01EF4AB15A481BD6DE7_1263204349 = new SocketException("Socket is not connected.");
             var3EEAB102670EF01EF4AB15A481BD6DE7_1263204349.addTaint(taint);
             throw var3EEAB102670EF01EF4AB15A481BD6DE7_1263204349;
-        } //End block
+        } 
         this.socket = socket;
-        // ---------- Original Method ----------
-        //if (!socket.isConnected()) {
-            //throw new SocketException("Socket is not connected.");
-        //}
-        //this.socket = socket;
+        
+        
+            
+        
+        
     }
 
     
@@ -46,8 +46,8 @@ public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
         IOException var24F53EE647420CC7D8443F7A9913471F_457004404 = new IOException("Underlying socket is already connected.");
         var24F53EE647420CC7D8443F7A9913471F_457004404.addTaint(taint);
         throw var24F53EE647420CC7D8443F7A9913471F_457004404;
-        // ---------- Original Method ----------
-        //throw new IOException("Underlying socket is already connected.");
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
         IOException var24F53EE647420CC7D8443F7A9913471F_467417926 = new IOException("Underlying socket is already connected.");
         var24F53EE647420CC7D8443F7A9913471F_467417926.addTaint(taint);
         throw var24F53EE647420CC7D8443F7A9913471F_467417926;
-        // ---------- Original Method ----------
-        //throw new IOException("Underlying socket is already connected.");
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
         IOException var24F53EE647420CC7D8443F7A9913471F_1010338723 = new IOException("Underlying socket is already connected.");
         var24F53EE647420CC7D8443F7A9913471F_1010338723.addTaint(taint);
         throw var24F53EE647420CC7D8443F7A9913471F_1010338723;
-        // ---------- Original Method ----------
-        //throw new IOException("Underlying socket is already connected.");
+        
+        
     }
 
     
@@ -81,8 +81,8 @@ public class OpenSSLSocketImplWrapper extends OpenSSLSocketImpl {
 SocketAddress var4967962CF7D2DE2821745DC37AD1C991_813959940 =         socket.getRemoteSocketAddress();
         var4967962CF7D2DE2821745DC37AD1C991_813959940.addTaint(taint);
         return var4967962CF7D2DE2821745DC37AD1C991_813959940;
-        // ---------- Original Method ----------
-        //return socket.getRemoteSocketAddress();
+        
+        
     }
 
     
@@ -92,8 +92,8 @@ SocketAddress var4967962CF7D2DE2821745DC37AD1C991_813959940 =         socket.get
 SocketAddress var1C6F9B0AD89BA50278597144BF3BD232_2088881773 =         socket.getLocalSocketAddress();
         var1C6F9B0AD89BA50278597144BF3BD232_2088881773.addTaint(taint);
         return var1C6F9B0AD89BA50278597144BF3BD232_2088881773;
-        // ---------- Original Method ----------
-        //return socket.getLocalSocketAddress();
+        
+        
     }
 
     
@@ -103,8 +103,8 @@ SocketAddress var1C6F9B0AD89BA50278597144BF3BD232_2088881773 =         socket.ge
 InetAddress var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230 =         socket.getLocalAddress();
         var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230.addTaint(taint);
         return var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230;
-        // ---------- Original Method ----------
-        //return socket.getLocalAddress();
+        
+        
     }
 
     
@@ -114,8 +114,8 @@ InetAddress var0C541A2DEB3DFBAE24BA22015AE99BEB_9602230 =         socket.getLoca
 InetAddress varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743 =         socket.getInetAddress();
         varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743.addTaint(taint);
         return varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743;
-        // ---------- Original Method ----------
-        //return socket.getInetAddress();
+        
+        
     }
 
     
@@ -125,8 +125,8 @@ InetAddress varE20C5CD772B1ECBEFE0A81A1658EEE73_1061618743 =         socket.getI
 String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over " + socket.toString();
         var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524.addTaint(taint);
         return var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524;
-        // ---------- Original Method ----------
-        //return "SSL socket over " + socket.toString();
+        
+        
     }
 
     
@@ -136,8 +136,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         addTaint(linger);
         addTaint(on);
         socket.setSoLinger(on, linger);
-        // ---------- Original Method ----------
-        //socket.setSoLinger(on, linger);
+        
+        
     }
 
     
@@ -146,8 +146,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
     public void setTcpNoDelay(boolean on) throws SocketException {
         addTaint(on);
         socket.setTcpNoDelay(on);
-        // ---------- Original Method ----------
-        //socket.setTcpNoDelay(on);
+        
+        
     }
 
     
@@ -156,8 +156,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
     public void setReuseAddress(boolean on) throws SocketException {
         addTaint(on);
         socket.setReuseAddress(on);
-        // ---------- Original Method ----------
-        //socket.setReuseAddress(on);
+        
+        
     }
 
     
@@ -166,8 +166,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
     public void setKeepAlive(boolean on) throws SocketException {
         addTaint(on);
         socket.setKeepAlive(on);
-        // ---------- Original Method ----------
-        //socket.setKeepAlive(on);
+        
+        
     }
 
     
@@ -176,8 +176,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
     public void setTrafficClass(int tos) throws SocketException {
         addTaint(tos);
         socket.setTrafficClass(tos);
-        // ---------- Original Method ----------
-        //socket.setTrafficClass(tos);
+        
+        
     }
 
     
@@ -187,9 +187,9 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         addTaint(to);
         socket.setSoTimeout(to);
         super.setSoTimeout(to);
-        // ---------- Original Method ----------
-        //socket.setSoTimeout(to);
-        //super.setSoTimeout(to);
+        
+        
+        
     }
 
     
@@ -198,8 +198,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
     public void setSendBufferSize(int size) throws SocketException {
         addTaint(size);
         socket.setSendBufferSize(size);
-        // ---------- Original Method ----------
-        //socket.setSendBufferSize(size);
+        
+        
     }
 
     
@@ -208,8 +208,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
     public void setReceiveBufferSize(int size) throws SocketException {
         addTaint(size);
         socket.setReceiveBufferSize(size);
-        // ---------- Original Method ----------
-        //socket.setReceiveBufferSize(size);
+        
+        
     }
 
     
@@ -219,8 +219,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean var4CCD8A7A38B4B8671074501B5E3633E5_1789239161 = (socket.getTcpNoDelay());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1643884586 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1643884586;
-        // ---------- Original Method ----------
-        //return socket.getTcpNoDelay();
+        
+        
     }
 
     
@@ -230,8 +230,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean var4628784E228E345E2813D697BFE9B746_993263603 = (socket.getReuseAddress());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948517576 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948517576;
-        // ---------- Original Method ----------
-        //return socket.getReuseAddress();
+        
+        
     }
 
     
@@ -241,8 +241,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean varFAD80CD1DB86370B01FE9D97B3E4556E_623323325 = (socket.getOOBInline());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1012435635 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1012435635;
-        // ---------- Original Method ----------
-        //return socket.getOOBInline();
+        
+        
     }
 
     
@@ -252,8 +252,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean varCBF15E1118CC98EA3B97F686AC0AEDCD_1985522042 = (socket.getKeepAlive());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1533949615 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1533949615;
-        // ---------- Original Method ----------
-        //return socket.getKeepAlive();
+        
+        
     }
 
     
@@ -263,8 +263,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int var06B3347FBAB106089124EBB7BAF9C06F_842980291 = (socket.getTrafficClass());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790999401 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1790999401;
-        // ---------- Original Method ----------
-        //return socket.getTrafficClass();
+        
+        
     }
 
     
@@ -274,8 +274,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int var622378DB66A07CAD9A3E86701B2908C7_510430027 = (socket.getSoTimeout());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1768662815 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1768662815;
-        // ---------- Original Method ----------
-        //return socket.getSoTimeout();
+        
+        
     }
 
     
@@ -285,8 +285,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int var00FB217742FB71801328DCE9ECB4FC74_479765663 = (socket.getSoLinger());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1076488662 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1076488662;
-        // ---------- Original Method ----------
-        //return socket.getSoLinger();
+        
+        
     }
 
     
@@ -296,8 +296,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int var90E7C21E941E280114A988C4C8C224B1_954564305 = (socket.getSendBufferSize());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491575113 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491575113;
-        // ---------- Original Method ----------
-        //return socket.getSendBufferSize();
+        
+        
     }
 
     
@@ -307,8 +307,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int var0FBD33505F1A0A9CC9CCE32A5178860B_605762222 = (socket.getReceiveBufferSize());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1686261616 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1686261616;
-        // ---------- Original Method ----------
-        //return socket.getReceiveBufferSize();
+        
+        
     }
 
     
@@ -318,8 +318,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean varBDC305DC6896529D4FC79DADA94ACA4B_1807054344 = (socket.isConnected());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1500362863 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1500362863;
-        // ---------- Original Method ----------
-        //return socket.isConnected();
+        
+        
     }
 
     
@@ -329,8 +329,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean var05DB3DDF0F9762784C2AF19041EA8306_448417471 = (socket.isClosed());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176035560 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_176035560;
-        // ---------- Original Method ----------
-        //return socket.isClosed();
+        
+        
     }
 
     
@@ -340,8 +340,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean var8D17B714197D609719CB8C755D53C4C5_1117417420 = (socket.isBound());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1638378432 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1638378432;
-        // ---------- Original Method ----------
-        //return socket.isBound();
+        
+        
     }
 
     
@@ -351,8 +351,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean var49B4B35B06522D374383DC955CD08600_1306583936 = (socket.isOutputShutdown());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70657871 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_70657871;
-        // ---------- Original Method ----------
-        //return socket.isOutputShutdown();
+        
+        
     }
 
     
@@ -362,8 +362,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         boolean varCA8892D09142B36BCA5D1C2D7F92E8DE_708493685 = (socket.isInputShutdown());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243418770 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243418770;
-        // ---------- Original Method ----------
-        //return socket.isInputShutdown();
+        
+        
     }
 
     
@@ -373,8 +373,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int varFDC7ECE1B4D3FEEF411FEEC959819873_1106993903 = (socket.getPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235702232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_235702232;
-        // ---------- Original Method ----------
-        //return socket.getPort();
+        
+        
     }
 
     
@@ -384,8 +384,8 @@ String var21AB22A25A1A739FCD6F0BB333FF92AB_1935369524 =         "SSL socket over
         int var7FA5C72484BCE6A4744A98294631163F_528148077 = (socket.getLocalPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843016087 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_843016087;
-        // ---------- Original Method ----------
-        //return socket.getLocalPort();
+        
+        
     }
 
     

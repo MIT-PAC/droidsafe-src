@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class FeatureInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.226 -0400", hash_original_method = "41B0CF3D831DF05554CAE06DC339C2C3", hash_generated_method = "28CCD5FE48E24B28094FDFB6399BB826")
     public  FeatureInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,10 +30,10 @@ public class FeatureInfo implements Parcelable {
         name = orig.name;
         reqGlEsVersion = orig.reqGlEsVersion;
         flags = orig.flags;
-        // ---------- Original Method ----------
-        //name = orig.name;
-        //reqGlEsVersion = orig.reqGlEsVersion;
-        //flags = orig.flags;
+        
+        
+        
+        
     }
 
     
@@ -42,10 +42,10 @@ public class FeatureInfo implements Parcelable {
         name = source.readString();
         reqGlEsVersion = source.readInt();
         flags = source.readInt();
-        // ---------- Original Method ----------
-        //name = source.readString();
-        //reqGlEsVersion = source.readInt();
-        //flags = source.readInt();
+        
+        
+        
+        
     }
 
     
@@ -58,7 +58,7 @@ String var1ABE0A01753EF3AF1977E10E80411927_1519987217 =             "FeatureInfo
                     + " " + name + " fl=0x" + Integer.toHexString(flags) + "}";
             var1ABE0A01753EF3AF1977E10E80411927_1519987217.addTaint(taint);
             return var1ABE0A01753EF3AF1977E10E80411927_1519987217;
-        } //End block
+        } 
         else
         {
 String var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397 =             "FeatureInfo{"
@@ -67,28 +67,29 @@ String var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397 =             "FeatureInfo{"
                     + " fl=0x" + Integer.toHexString(flags) + "}";
             var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397.addTaint(taint);
             return var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397;
-        } //End block
-        // ---------- Original Method ----------
-        //if (name != null) {
-            //return "FeatureInfo{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " " + name + " fl=0x" + Integer.toHexString(flags) + "}";
-        //} else {
-            //return "FeatureInfo{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " glEsVers=" + getGlEsVersion()
-                    //+ " fl=0x" + Integer.toHexString(flags) + "}";
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+            
+                    
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.230 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "1F73C037D8A088F82DE8765FB3C21419")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1011705154 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_335084964 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_335084964;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -99,10 +100,10 @@ String var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397 =             "FeatureInfo{"
         dest.writeString(name);
         dest.writeInt(reqGlEsVersion);
         dest.writeInt(flags);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeInt(reqGlEsVersion);
-        //dest.writeInt(flags);
+        
+        
+        
+        
     }
 
     
@@ -113,10 +114,10 @@ String var33136C0B98D667EDEA5CF1AE6E0FF7BF_79951397 =             "FeatureInfo{"
 String var53423E0996054EE339CEF146F3A9158D_586493880 =         String.valueOf(major)+"."+String.valueOf(minor);
         var53423E0996054EE339CEF146F3A9158D_586493880.addTaint(taint);
         return var53423E0996054EE339CEF146F3A9158D_586493880;
-        // ---------- Original Method ----------
-        //int major = ((reqGlEsVersion & 0xffff0000) >> 16);
-        //int minor = reqGlEsVersion & 0x0000ffff;
-        //return String.valueOf(major)+"."+String.valueOf(minor);
+        
+        
+        
+        
     }
 
     
@@ -137,12 +138,12 @@ String var53423E0996054EE339CEF146F3A9158D_586493880 =         String.valueOf(ma
             return new FeatureInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public FeatureInfo createFromParcel(Parcel source) {
             return new FeatureInfo(source);
         }
     
-    // orphaned legacy method
+    
     public FeatureInfo[] newArray(int size) {
             return new FeatureInfo[size];
         }

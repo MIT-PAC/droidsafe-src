@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,15 +16,15 @@ public class PCalledPartyID extends gov.nist.javax.sip.header.AddressParametersH
         super(NAME);
         addTaint(address.getTaint());
         this.address = address;
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.944 -0400", hash_original_method = "D34D544F1730F850E33368222A05354C", hash_generated_method = "49A3F9AF22422791AFB5269749C297FA")
     public  PCalledPartyID() {
         super(CALLED_PARTY_ID);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,29 +34,29 @@ public class PCalledPartyID extends gov.nist.javax.sip.header.AddressParametersH
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(LESS_THAN);
-        } //End block
+        } 
         retval.append(address.encode());
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(GREATER_THAN);
-        } //End block
+        } 
     if(!parameters.isEmpty())        
         retval.append(SEMICOLON + this.parameters.encode());
 String var1B324365A764C077A55854483509F4AB_1902984818 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1902984818.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1902984818;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //retval.append(LESS_THAN);
-        //}
-        //retval.append(address.encode());
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //retval.append(GREATER_THAN);
-        //}
-        //if (!parameters.isEmpty())
-            //retval.append(SEMICOLON + this.parameters.encode());
-        //return retval.toString();
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -66,8 +66,8 @@ String var1B324365A764C077A55854483509F4AB_1902984818 =         retval.toString(
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_805490611 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_805490611.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_805490611;
-        // ---------- Original Method ----------
-        //throw new ParseException(value,0);
+        
+        
     }
 
     

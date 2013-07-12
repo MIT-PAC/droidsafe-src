@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -77,8 +77,8 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.189 -0400", hash_original_method = "124623F0922D5D71F912D224AEC5FA85", hash_generated_method = "ACAF350C98F97636B8BC13996275E1E2")
     protected  ObjectInputStream() throws IOException {
         this.subclassOverridingImplementation = true;
-        // ---------- Original Method ----------
-        //this.subclassOverridingImplementation = true;
+        
+        
     }
 
     
@@ -94,17 +94,17 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         primitiveData = this.input;
         readStreamHeader();
         primitiveData = emptyStream;
-        // ---------- Original Method ----------
-        //this.input = (input instanceof DataInputStream)
-                //? (DataInputStream) input : new DataInputStream(input);
-        //primitiveTypes = new DataInputStream(this);
-        //enableResolve = false;
-        //this.subclassOverridingImplementation = false;
-        //resetState();
-        //nestedLevels = 0;
-        //primitiveData = this.input;
-        //readStreamHeader();
-        //primitiveData = emptyStream;
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -115,9 +115,9 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
         int var41A4F3BC0C0791EEB464592BA2FDF983_60376685 = (primitiveData.available());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749311172 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749311172;
-        // ---------- Original Method ----------
-        //checkReadPrimitiveTypes();
-        //return primitiveData.available();
+        
+        
+        
     }
 
     
@@ -126,19 +126,19 @@ public class ObjectInputStream extends InputStream implements ObjectInput, Objec
     if(primitiveData == input || primitiveData.available() > 0)        
         {
             return;
-        } //End block
+        } 
         do {
             {
                 int next = 0;
     if(hasPushbackTC)                
                 {
                     hasPushbackTC = false;
-                } //End block
+                } 
                 else
                 {
                     next = input.read();
                     pushbackTC = (byte) next;
-                } //End block
+                } 
 switch(pushbackTC){
                 case TC_BLOCKDATA:
                 primitiveData = new ByteArrayInputStream(readBlockData());
@@ -153,13 +153,13 @@ switch(pushbackTC){
     if(next != -1)                
                 {
                     pushbackTC();
-                } //End block
+                } 
                 return;
 }
-            } //End block
+            } 
 } while (true);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -167,8 +167,8 @@ switch(pushbackTC){
     @Override
     public void close() throws IOException {
         input.close();
-        // ---------- Original Method ----------
-        //input.close();
+        
+        
     }
 
     
@@ -178,22 +178,23 @@ switch(pushbackTC){
     if(currentObject != null || !mustResolve)        
         {
             readFieldValues(currentObject, currentClass);
-        } //End block
+        } 
         else
         {
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_1647840646 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_1647840646.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_1647840646;
-        } //End block
-        // ---------- Original Method ----------
-        //if (currentObject != null || !mustResolve) {
-            //readFieldValues(currentObject, currentClass);
-        //} else {
-            //throw new NotActiveException();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.199 -0400", hash_original_method = "970A975ADDA1CD42A4A6880D40629922", hash_generated_method = "92C9F579BCFAD2F150DB382D4482E6E9")
     protected boolean enableResolveObject(boolean enable) {
         boolean originalValue = enableResolve;
@@ -201,20 +202,21 @@ switch(pushbackTC){
         boolean var48A7AAFD2093A2CFD7C2A6E0C39C3B3C_977180267 = (originalValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1143036858 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1143036858;
-        // ---------- Original Method ----------
-        //boolean originalValue = enableResolve;
-        //enableResolve = enable;
-        //return originalValue;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.204 -0400", hash_original_method = "BEEE4D4B01DB5401D5A386ECF8653C53", hash_generated_method = "E0CB1BA0F4F485CD378C13FC5973E6A7")
     private int nextHandle() {
         int varFF113B7ACD957FCEBD61C4FF9210CB16_1925809842 = (nextHandle++);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691212053 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_691212053;
-        // ---------- Original Method ----------
-        //return nextHandle++;
+        
+        
     }
 
     
@@ -223,29 +225,30 @@ switch(pushbackTC){
     if(hasPushbackTC)        
         {
             hasPushbackTC = false;
-        } //End block
+        } 
         else
         {
             pushbackTC = input.readByte();
-        } //End block
+        } 
         byte varE07029C787F995347976B5426FA51D79_840000467 = (pushbackTC);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_721192384 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_721192384;
-        // ---------- Original Method ----------
-        //if (hasPushbackTC) {
-            //hasPushbackTC = false; 
-        //} else {
-            //pushbackTC = input.readByte();
-        //}
-        //return pushbackTC;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.211 -0400", hash_original_method = "056AB6ECFECE1087CD6299233C3046CF", hash_generated_method = "1AA917BD8C0785A0A281D56B178CD348")
     private void pushbackTC() {
         hasPushbackTC = true;
-        // ---------- Original Method ----------
-        //hasPushbackTC = true;
+        
+        
     }
 
     
@@ -256,9 +259,9 @@ switch(pushbackTC){
         int varD04DFE2746884E9CD8527C180BCA3864_2109835694 = (primitiveData.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_90477937 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_90477937;
-        // ---------- Original Method ----------
-        //checkReadPrimitiveTypes();
-        //return primitiveData.read();
+        
+        
+        
     }
 
     
@@ -274,18 +277,18 @@ switch(pushbackTC){
             int varCFCD208495D565EF66E7DFF9F98764DA_1540121192 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_910855171 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_910855171;
-        } //End block
+        } 
         checkReadPrimitiveTypes();
         int var794DFA0474D62B0CDAB50D94A5957122_108075844 = (primitiveData.read(buffer, offset, length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616755615 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_616755615;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        //if (length == 0) {
-            //return 0;
-        //}
-        //checkReadPrimitiveTypes();
-        //return primitiveData.read(buffer, offset, length);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -296,10 +299,10 @@ switch(pushbackTC){
         byte[] varB4A88417B3D0170D754C647C30B7216A_508885052 = (result);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_396566963 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_396566963;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[input.readByte() & 0xff];
-        //input.readFully(result);
-        //return result;
+        
+        
+        
+        
     }
 
     
@@ -310,10 +313,10 @@ switch(pushbackTC){
         byte[] varB4A88417B3D0170D754C647C30B7216A_1123106970 = (result);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_424507247 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_424507247;
-        // ---------- Original Method ----------
-        //byte[] result = new byte[input.readInt()];
-        //input.readFully(result);
-        //return result;
+        
+        
+        
+        
     }
 
     
@@ -322,8 +325,8 @@ switch(pushbackTC){
         boolean varF35D2E687280B7E8B6B9F81EE2DFA149_276906839 = (primitiveTypes.readBoolean());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_315525230 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_315525230;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readBoolean();
+        
+        
     }
 
     
@@ -332,8 +335,8 @@ switch(pushbackTC){
         byte var67C1EA294D5E8AAFD4909D340B2DB1E4_35052278 = (primitiveTypes.readByte());
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_56624810 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_56624810;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readByte();
+        
+        
     }
 
     
@@ -342,8 +345,8 @@ switch(pushbackTC){
         char var1A38B429BDAAAC24B2A6F0D286767462_1864781179 = (primitiveTypes.readChar());
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1939575428 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1939575428;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readChar();
+        
+        
     }
 
     
@@ -359,22 +362,22 @@ switch(pushbackTC){
                 {
                     mustResolve = resolve;
                     return;
-                } //End block
+                } 
                 readContent(tc);
-            } //End block
+            } 
 } while (true);
-        // ---------- Original Method ----------
-        //primitiveData = emptyStream;
-        //boolean resolve = mustResolve;
-        //mustResolve = false;
-        //do {
-            //byte tc = nextTC();
-            //if (tc == TC_ENDBLOCKDATA) {
-                //mustResolve = resolve;
-                //return; 
-            //}
-            //readContent(tc);
-        //} while (true);
+        
+        
+        
+        
+        
+            
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -408,25 +411,25 @@ ObjectStreamClass var540C13E9E156B687226421B24F2DF178_1026716682 =         null;
         varA1F85B50BF8446E6D14D510BCDD729EB_1737253487.addTaint(taint);
         throw varA1F85B50BF8446E6D14D510BCDD729EB_1737253487;
 }
-        // ---------- Original Method ----------
-        //byte tc = nextTC();
-        //switch (tc) {
-            //case TC_CLASSDESC:
-                //return readNewClassDesc(false);
-            //case TC_PROXYCLASSDESC:
-                //Class<?> proxyClass = readNewProxyClassDesc();
-                //ObjectStreamClass streamClass = ObjectStreamClass.lookup(proxyClass);
-                //streamClass.setLoadFields(ObjectStreamClass.NO_FIELDS);
-                //registerObjectRead(streamClass, nextHandle(), false);
-                //checkedSetSuperClassDesc(streamClass, readClassDesc());
-                //return streamClass;
-            //case TC_REFERENCE:
-                //return (ObjectStreamClass) readCyclicReference();
-            //case TC_NULL:
-                //return null;
-            //default:
-                //throw corruptStream(tc);
-        //}
+        
+        
+        
+            
+                
+            
+                
+                
+                
+                
+                
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -436,8 +439,8 @@ ObjectStreamClass var540C13E9E156B687226421B24F2DF178_1026716682 =         null;
         StreamCorruptedException var0471ACC505E72FE25CC45B1924A74A13_746702887 = new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
         var0471ACC505E72FE25CC45B1924A74A13_746702887.addTaint(taint);
         throw var0471ACC505E72FE25CC45B1924A74A13_746702887;
-        // ---------- Original Method ----------
-        //throw new StreamCorruptedException("Wrong format: " + Integer.toHexString(tc & 0xff));
+        
+        
     }
 
     
@@ -501,8 +504,8 @@ Object var540C13E9E156B687226421B24F2DF178_708464855 =         null;
         varA1F85B50BF8446E6D14D510BCDD729EB_1357880957.addTaint(taint);
         throw varA1F85B50BF8446E6D14D510BCDD729EB_1357880957;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -516,7 +519,7 @@ Object var540C13E9E156B687226421B24F2DF178_708464855 =         null;
             e.length = primitiveData.available();
             e.addTaint(taint);
             throw e;
-        } //End block
+        } 
         do {
             {
                 byte tc = nextTC();
@@ -556,7 +559,7 @@ Object var567126F916CFF7C51C75D14E86B2324F_2061838413 =                 readEnum
                     InvalidObjectException varB03B1E7AB6C2FC12286EAFC18E1E860F_77725556 = new InvalidObjectException("Unshared read of back reference");
                     varB03B1E7AB6C2FC12286EAFC18E1E860F_77725556.addTaint(taint);
                     throw varB03B1E7AB6C2FC12286EAFC18E1E860F_77725556;
-                } //End block
+                } 
 Object var0BF3707675556B4FE0EF8CB26EC6C54B_1835626800 =                 readCyclicReference();
                 var0BF3707675556B4FE0EF8CB26EC6C54B_1835626800.addTaint(taint);
                 return var0BF3707675556B4FE0EF8CB26EC6C54B_1835626800;
@@ -583,10 +586,10 @@ Object var540C13E9E156B687226421B24F2DF178_561796559 =                 null;
                 varA1F85B50BF8446E6D14D510BCDD729EB_156407358.addTaint(taint);
                 throw varA1F85B50BF8446E6D14D510BCDD729EB_156407358;
 }
-            } //End block
+            } 
 } while (true);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -595,8 +598,8 @@ Object var540C13E9E156B687226421B24F2DF178_561796559 =                 null;
 Object varB1538074715E5E5A847ABEB7ED0A3C23_804825988 =         registeredObjectRead(readNewHandle());
         varB1538074715E5E5A847ABEB7ED0A3C23_804825988.addTaint(taint);
         return varB1538074715E5E5A847ABEB7ED0A3C23_804825988;
-        // ---------- Original Method ----------
-        //return registeredObjectRead(readNewHandle());
+        
+        
     }
 
     
@@ -605,8 +608,8 @@ Object varB1538074715E5E5A847ABEB7ED0A3C23_804825988 =         registeredObjectR
         double var13DB878FE5FD515296AAFEC61E2A5FB3_1635667629 = (primitiveTypes.readDouble());
                 double varE8CD7DA078A86726031AD64F35F5A6C0_1431587460 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_1431587460;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readDouble();
+        
+        
     }
 
     
@@ -619,11 +622,11 @@ Object varB1538074715E5E5A847ABEB7ED0A3C23_804825988 =         registeredObjectR
 Exception varA75BAC093E1427C564E637F02D38B691_1906199989 =         exc;
         varA75BAC093E1427C564E637F02D38B691_1906199989.addTaint(taint);
         return varA75BAC093E1427C564E637F02D38B691_1906199989;
-        // ---------- Original Method ----------
-        //resetSeenObjects();
-        //Exception exc = (Exception) readObject();
-        //resetSeenObjects();
-        //return exc;
+        
+        
+        
+        
+        
     }
 
     
@@ -642,7 +645,7 @@ for(short i = 0;i < numFields;i++)
     if(isPrimType)            
             {
                 classSig = String.valueOf(typecode);
-            } //End block
+            } 
             else
             {
                 boolean old = enableResolve;
@@ -650,18 +653,18 @@ for(short i = 0;i < numFields;i++)
                 {
                     enableResolve = false;
                     classSig = (String) readObject();
-                } //End block
+                } 
                 finally 
                 {
                     enableResolve = old;
-                } //End block
-            } //End block
+                } 
+            } 
             classSig = formatClassSig(classSig);
             ObjectStreamField f = new ObjectStreamField(classSig, fieldName);
             fields[i] = f;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -692,19 +695,19 @@ for(short i = 0;i < numFields;i++)
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_21513739 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_21513739.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_21513739;
-        } //End block
+        } 
         EmulatedFieldsForLoading result = new EmulatedFieldsForLoading(currentClass);
         readFieldValues(result);
 GetField varDC838461EE2FA0CA4C9BBB70A15456B0_1865133947 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1865133947.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1865133947;
-        // ---------- Original Method ----------
-        //if (currentObject == null) {
-            //throw new NotActiveException();
-        //}
-        //EmulatedFieldsForLoading result = new EmulatedFieldsForLoading(currentClass);
-        //readFieldValues(result);
-        //return result;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -719,58 +722,58 @@ for(ObjectSlot element : slots)
     if(type == int.class)            
             {
                 element.fieldValue = input.readInt();
-            } //End block
+            } 
             else
     if(type == byte.class)            
             {
                 element.fieldValue = input.readByte();
-            } //End block
+            } 
             else
     if(type == char.class)            
             {
                 element.fieldValue = input.readChar();
-            } //End block
+            } 
             else
     if(type == short.class)            
             {
                 element.fieldValue = input.readShort();
-            } //End block
+            } 
             else
     if(type == boolean.class)            
             {
                 element.fieldValue = input.readBoolean();
-            } //End block
+            } 
             else
     if(type == long.class)            
             {
                 element.fieldValue = input.readLong();
-            } //End block
+            } 
             else
     if(type == float.class)            
             {
                 element.fieldValue = input.readFloat();
-            } //End block
+            } 
             else
     if(type == double.class)            
             {
                 element.fieldValue = input.readDouble();
-            } //End block
+            } 
             else
             {
                 try 
                 {
                     element.fieldValue = readObject();
-                } //End block
+                } 
                 catch (ClassNotFoundException cnf)
                 {
                     InvalidClassException varBA9D7153552A6E4211042728FA0F0503_806024067 = new InvalidClassException(cnf.toString());
                     varBA9D7153552A6E4211042728FA0F0503_806024067.addTaint(taint);
                     throw varBA9D7153552A6E4211042728FA0F0503_806024067;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -786,7 +789,7 @@ for(ObjectSlot element : slots)
             ClassNotFoundException var3ED5BA2CAAB610C07192C5A85172915A_1646554731 = new ClassNotFoundException(classDesc.getName());
             var3ED5BA2CAAB610C07192C5A85172915A_1646554731.addTaint(taint);
             throw var3ED5BA2CAAB610C07192C5A85172915A_1646554731;
-        } //End block
+        } 
 for(ObjectStreamField fieldDesc : fields)
         {
             Field field = classDesc.getReflectionField(fieldDesc);
@@ -799,8 +802,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setByte(obj, b);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == char.class)                
                 {
@@ -808,8 +811,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setChar(obj, c);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == double.class)                
                 {
@@ -817,8 +820,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setDouble(obj, d);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == float.class)                
                 {
@@ -826,8 +829,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setFloat(obj, f);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == int.class)                
                 {
@@ -835,8 +838,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setInt(obj, i);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == long.class)                
                 {
@@ -844,8 +847,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setLong(obj, j);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == short.class)                
                 {
@@ -853,8 +856,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setShort(obj, s);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(type == boolean.class)                
                 {
@@ -862,8 +865,8 @@ for(ObjectStreamField fieldDesc : fields)
     if(field != null)                    
                     {
                         field.setBoolean(obj, z);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     Object toSet = fieldDesc.isUnshared() ? readUnshared() : readObject();
@@ -878,26 +881,26 @@ for(ObjectStreamField fieldDesc : fields)
                             ClassCastException var8709C55D8E8D81887E10913DE8AB2867_51361393 = new ClassCastException(classDesc.getName() + "." + fieldName + " - " + fieldType + " not compatible with " + valueType);
                             var8709C55D8E8D81887E10913DE8AB2867_51361393.addTaint(taint);
                             throw var8709C55D8E8D81887E10913DE8AB2867_51361393;
-                        } //End block
+                        } 
     if(field != null)                        
                         {
                             field.set(obj, toSet);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             catch (IllegalAccessException iae)
             {
                 AssertionError varB7184EDFD8CA9CD0B66958C2AD057E9E_759271722 = new AssertionError(iae);
                 varB7184EDFD8CA9CD0B66958C2AD057E9E_759271722.addTaint(taint);
                 throw varB7184EDFD8CA9CD0B66958C2AD057E9E_759271722;
-            } //End block
+            } 
             catch (NoSuchFieldError ignored)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -906,8 +909,8 @@ for(ObjectStreamField fieldDesc : fields)
         float var23384172A845DD5A2C5BBE3AD6F05EED_869561621 = (primitiveTypes.readFloat());
                 float var546ADE640B6EDFBC8A086EF31347E768_45753717 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_45753717;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readFloat();
+        
+        
     }
 
     
@@ -915,8 +918,8 @@ for(ObjectStreamField fieldDesc : fields)
     public void readFully(byte[] dst) throws IOException {
         addTaint(dst[0]);
         primitiveTypes.readFully(dst);
-        // ---------- Original Method ----------
-        //primitiveTypes.readFully(dst);
+        
+        
     }
 
     
@@ -926,8 +929,8 @@ for(ObjectStreamField fieldDesc : fields)
         addTaint(offset);
         addTaint(dst[0]);
         primitiveTypes.readFully(dst, offset, byteCount);
-        // ---------- Original Method ----------
-        //primitiveTypes.readFully(dst, offset, byteCount);
+        
+        
     }
 
     
@@ -940,22 +943,22 @@ for(ObjectStreamField fieldDesc : fields)
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_2054963057 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_2054963057.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_2054963057;
-        } //End block
+        } 
         List<ObjectStreamClass> streamClassList = classDesc.getHierarchy();
     if(object == null)        
         {
 for(ObjectStreamClass objectStreamClass : streamClassList)
             {
                 readObjectForClass(null, objectStreamClass);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             List<Class<?>> superclasses = cachedSuperclasses.get(object.getClass());
     if(superclasses == null)            
             {
                 superclasses = cacheSuperclassesFor(object.getClass());
-            } //End block
+            } 
             int lastIndex = 0;
 for(int i = 0, end = superclasses.size();i < end;++i)
             {
@@ -965,19 +968,19 @@ for(int i = 0, end = superclasses.size();i < end;++i)
                 {
                     readObjectNoData(object, superclass,
                             ObjectStreamClass.lookupStreamClass(superclass));
-                } //End block
+                } 
                 else
                 {
 for(int j = lastIndex;j <= index;j++)
                     {
                         readObjectForClass(object, streamClassList.get(j));
-                    } //End block
+                    } 
                     lastIndex = index + 1;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -993,25 +996,25 @@ for(int j = lastIndex;j <= index;j++)
     if(testClass != null)            
             {
                 result.add(0, nextClass);
-            } //End block
+            } 
             nextClass = testClass;
-        } //End block
+        } 
         cachedSuperclasses.put(c, result);
 List<Class<?>> varDC838461EE2FA0CA4C9BBB70A15456B0_2078379459 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_2078379459.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_2078379459;
-        // ---------- Original Method ----------
-        //ArrayList<Class<?>> result = new ArrayList<Class<?>>();
-        //Class<?> nextClass = c;
-        //while (nextClass != null) {
-            //Class<?> testClass = nextClass.getSuperclass();
-            //if (testClass != null) {
-                //result.add(0, nextClass);
-            //}
-            //nextClass = testClass;
-        //}
-        //cachedSuperclasses.put(c, result);
-        //return result;
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -1031,8 +1034,8 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
                     int var865C0C0B4AB0E063E5CAA3387C1A8741_2046936068 = (i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657564248 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657564248;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(cl.getName().equals(forName))                
@@ -1040,27 +1043,27 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
                     int var865C0C0B4AB0E063E5CAA3387C1A8741_1301525389 = (i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948791884 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948791884;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1527044594 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806234401 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806234401;
-        // ---------- Original Method ----------
-        //for (int i = lastIndex, end = classList.size(); i < end; i++) {
-            //ObjectStreamClass objCl = classList.get(i);
-            //String forName = objCl.forClass().getName();
-            //if (objCl.getName().equals(forName)) {
-                //if (cl.getName().equals(objCl.getName())) {
-                    //return i;
-                //}
-            //} else {
-                //if (cl.getName().equals(forName)) {
-                    //return i;
-                //}
-            //}
-        //}
-        //return -1;
+        
+        
+            
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -1072,14 +1075,14 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
     if(!classDesc.isSerializable())        
         {
             return;
-        } //End block
+        } 
     if(classDesc.hasMethodReadObjectNoData())        
         {
             final Method readMethod = classDesc.getMethodReadObjectNoData();
             try 
             {
                 readMethod.invoke(object);
-            } //End block
+            } 
             catch (InvocationTargetException e)
             {
                 Throwable ex = e.getTargetException();
@@ -1088,45 +1091,45 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
                     RuntimeException varF0C2DBE52270DD4B45A7073A4B8A4F8C_1031342186 = (RuntimeException) ex;
                     varF0C2DBE52270DD4B45A7073A4B8A4F8C_1031342186.addTaint(taint);
                     throw varF0C2DBE52270DD4B45A7073A4B8A4F8C_1031342186;
-                } //End block
+                } 
                 else
     if(ex instanceof Error)                
                 {
                     Error var5088E1E74327DBB15F7148041BB4E6E0_766730621 = (Error) ex;
                     var5088E1E74327DBB15F7148041BB4E6E0_766730621.addTaint(taint);
                     throw var5088E1E74327DBB15F7148041BB4E6E0_766730621;
-                } //End block
+                } 
                 ObjectStreamException varF05FB6CDAAC97D6EABE45A43B6059660_1006002097 = (ObjectStreamException) ex;
                 varF05FB6CDAAC97D6EABE45A43B6059660_1006002097.addTaint(taint);
                 throw varF05FB6CDAAC97D6EABE45A43B6059660_1006002097;
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 RuntimeException var7731B7FAF9DB516E410EE38D728795B2_1653937618 = new RuntimeException(e.toString());
                 var7731B7FAF9DB516E410EE38D728795B2_1653937618.addTaint(taint);
                 throw var7731B7FAF9DB516E410EE38D728795B2_1653937618;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!classDesc.isSerializable()) {
-            //return;
-        //}
-        //if (classDesc.hasMethodReadObjectNoData()){
-            //final Method readMethod = classDesc.getMethodReadObjectNoData();
-            //try {
-                //readMethod.invoke(object);
-            //} catch (InvocationTargetException e) {
-                //Throwable ex = e.getTargetException();
-                //if (ex instanceof RuntimeException) {
-                    //throw (RuntimeException) ex;
-                //} else if (ex instanceof Error) {
-                    //throw (Error) ex;
-                //}
-                //throw (ObjectStreamException) ex;
-            //} catch (IllegalAccessException e) {
-                //throw new RuntimeException(e.toString());
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+                
+                    
+                
+                    
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -1140,11 +1143,11 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
     if(targetClass == null || !mustResolve)        
         {
             readMethod = null;
-        } //End block
+        } 
         else
         {
             readMethod = classDesc.getMethodReadObject();
-        } //End block
+        } 
         try 
         {
     if(readMethod != null)            
@@ -1153,7 +1156,7 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
                 try 
                 {
                     readMethod.invoke(object, this);
-                } //End block
+                } 
                 catch (InvocationTargetException e)
                 {
                     Throwable ex = e.getTargetException();
@@ -1162,48 +1165,48 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
                         ClassNotFoundException var474CB282B0D1099512876AF1EC1931B2_262931031 = (ClassNotFoundException) ex;
                         var474CB282B0D1099512876AF1EC1931B2_262931031.addTaint(taint);
                         throw var474CB282B0D1099512876AF1EC1931B2_262931031;
-                    } //End block
+                    } 
                     else
     if(ex instanceof RuntimeException)                    
                     {
                         RuntimeException varF0C2DBE52270DD4B45A7073A4B8A4F8C_640557982 = (RuntimeException) ex;
                         varF0C2DBE52270DD4B45A7073A4B8A4F8C_640557982.addTaint(taint);
                         throw varF0C2DBE52270DD4B45A7073A4B8A4F8C_640557982;
-                    } //End block
+                    } 
                     else
     if(ex instanceof Error)                    
                     {
                         Error var5088E1E74327DBB15F7148041BB4E6E0_562910986 = (Error) ex;
                         var5088E1E74327DBB15F7148041BB4E6E0_562910986.addTaint(taint);
                         throw var5088E1E74327DBB15F7148041BB4E6E0_562910986;
-                    } //End block
+                    } 
                     IOException var3F32687BA78654886C8AE6DEBD282711_1198018839 = (IOException) ex;
                     var3F32687BA78654886C8AE6DEBD282711_1198018839.addTaint(taint);
                     throw var3F32687BA78654886C8AE6DEBD282711_1198018839;
-                } //End block
+                } 
                 catch (IllegalAccessException e)
                 {
                     RuntimeException var7731B7FAF9DB516E410EE38D728795B2_150956235 = new RuntimeException(e.toString());
                     var7731B7FAF9DB516E410EE38D728795B2_150956235.addTaint(taint);
                     throw var7731B7FAF9DB516E410EE38D728795B2_150956235;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 defaultReadObject();
-            } //End block
+            } 
     if(hadWriteMethod)            
             {
                 discardData();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             currentObject = null;
             currentClass = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1212,8 +1215,8 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
         int varB2A6B1B74BD03F0DD15140B729D58103_786786271 = (primitiveTypes.readInt());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875303502 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_875303502;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readInt();
+        
+        
     }
 
     
@@ -1223,8 +1226,8 @@ for(int i = lastIndex, end = classList.size();i < end;i++)
 String varAB96D771FB7A20F126379CBD285B2198_493911637 =         primitiveTypes.readLine();
         varAB96D771FB7A20F126379CBD285B2198_493911637.addTaint(taint);
         return varAB96D771FB7A20F126379CBD285B2198_493911637;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readLine();
+        
+        
     }
 
     
@@ -1233,8 +1236,8 @@ String varAB96D771FB7A20F126379CBD285B2198_493911637 =         primitiveTypes.re
         long var717B0A39DD043419AB5C092C0E238E2A_746868560 = (primitiveTypes.readLong());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_653312992 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_653312992;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readLong();
+        
+        
     }
 
     
@@ -1248,7 +1251,7 @@ String varAB96D771FB7A20F126379CBD285B2198_493911637 =         primitiveTypes.re
             java.io.InvalidClassException varF0B669FE625FDCD2C0B7AFC2BF75622C_281866769 = missingClassDescriptor();
             varF0B669FE625FDCD2C0B7AFC2BF75622C_281866769.addTaint(taint);
             throw varF0B669FE625FDCD2C0B7AFC2BF75622C_281866769;
-        } //End block
+        } 
         int newHandle = nextHandle();
         int size = input.readInt();
         Class<?> arrayClass = classDesc.forClass();
@@ -1263,14 +1266,14 @@ String varAB96D771FB7A20F126379CBD285B2198_493911637 =         primitiveTypes.re
 for(int i = 0;i < size;i++)
                 {
                     intArray[i] = input.readInt();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == byte.class)            
             {
                 byte[] byteArray = (byte[]) result;
                 input.readFully(byteArray, 0, size);
-            } //End block
+            } 
             else
     if(componentType == char.class)            
             {
@@ -1278,8 +1281,8 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
                 {
                     charArray[i] = input.readChar();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == short.class)            
             {
@@ -1287,8 +1290,8 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
                 {
                     shortArray[i] = input.readShort();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == boolean.class)            
             {
@@ -1296,8 +1299,8 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
                 {
                     booleanArray[i] = input.readBoolean();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == long.class)            
             {
@@ -1305,8 +1308,8 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
                 {
                     longArray[i] = input.readLong();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == float.class)            
             {
@@ -1314,8 +1317,8 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
                 {
                     floatArray[i] = input.readFloat();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == double.class)            
             {
@@ -1323,33 +1326,33 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
                 {
                     doubleArray[i] = input.readDouble();
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 ClassNotFoundException var2957F23825B6E9F97EDD184390727BF1_22304748 = new ClassNotFoundException("Wrong base type in " + classDesc.getName());
                 var2957F23825B6E9F97EDD184390727BF1_22304748.addTaint(taint);
                 throw var2957F23825B6E9F97EDD184390727BF1_22304748;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             Object[] objectArray = (Object[]) result;
 for(int i = 0;i < size;i++)
             {
                 objectArray[i] = readObject();
-            } //End block
-        } //End block
+            } 
+        } 
     if(enableResolve)        
         {
             result = resolveObject(result);
             registerObjectRead(result, newHandle, false);
-        } //End block
+        } 
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1971706564 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1971706564.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1971706564;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1362,25 +1365,25 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1971706564 =         result;
             InvalidClassException varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029 = missingClassDescriptor();
             varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029.addTaint(taint);
             throw varF0B669FE625FDCD2C0B7AFC2BF75622C_339873029;
-        } //End block
+        } 
         Class<?> localClass = classDesc.forClass();
     if(localClass != null)        
         {
             registerObjectRead(localClass, nextHandle(), unshared);
-        } //End block
+        } 
 Class<?> var0C65C20E72071ADD9DC54213330F27FA_1943451547 =         localClass;
         var0C65C20E72071ADD9DC54213330F27FA_1943451547.addTaint(taint);
         return var0C65C20E72071ADD9DC54213330F27FA_1943451547;
-        // ---------- Original Method ----------
-        //ObjectStreamClass classDesc = readClassDesc();
-        //if (classDesc == null) {
-            //throw missingClassDescriptor();
-        //}
-        //Class<?> localClass = classDesc.forClass();
-        //if (localClass != null) {
-            //registerObjectRead(localClass, nextHandle(), unshared);
-        //}
-        //return localClass;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1406,18 +1409,18 @@ ObjectStreamClass var540C13E9E156B687226421B24F2DF178_1585832258 =         null;
         varA1F85B50BF8446E6D14D510BCDD729EB_808957013.addTaint(taint);
         throw varA1F85B50BF8446E6D14D510BCDD729EB_808957013;
 }
-        // ---------- Original Method ----------
-        //byte tc = nextTC();
-        //switch (tc) {
-            //case TC_CLASSDESC:
-                //return readEnumDescInternal();
-            //case TC_REFERENCE:
-                //return (ObjectStreamClass) readCyclicReference();
-            //case TC_NULL:
-                //return null;
-            //default:
-                //throw corruptStream(tc);
-        //}
+        
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -1441,21 +1444,21 @@ ObjectStreamClass var540C13E9E156B687226421B24F2DF178_1585832258 =         null;
                     "Incompatible class (SUID): " + superClass + " but expected " + superClass);
             varD7E851C67BA27BF8BF633C6ABC13EF43_714955555.addTaint(taint);
             throw varD7E851C67BA27BF8BF633C6ABC13EF43_714955555;
-        } //End block
+        } 
         byte tc = nextTC();
     if(tc == TC_ENDBLOCKDATA)        
         {
             superClass.setSuperclass(readClassDesc());
-        } //End block
+        } 
         else
         {
             pushbackTC();
-        } //End block
+        } 
 ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1377500344 =         classDesc;
         var3497C6F192F17384DEAA3543897C005A_1377500344.addTaint(taint);
         return var3497C6F192F17384DEAA3543897C005A_1377500344;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1476,7 +1479,7 @@ switch(tc){
             InvalidObjectException varB03B1E7AB6C2FC12286EAFC18E1E860F_437281712 = new InvalidObjectException("Unshared read of back reference");
             varB03B1E7AB6C2FC12286EAFC18E1E860F_437281712.addTaint(taint);
             throw varB03B1E7AB6C2FC12286EAFC18E1E860F_437281712;
-        } //End block
+        } 
         name = (String) readCyclicReference();
         break;
         case TC_STRING:
@@ -1491,28 +1494,28 @@ switch(tc){
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_614979210 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_614979210.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_614979210;
-        // ---------- Original Method ----------
-        //ObjectStreamClass classDesc = readEnumDesc();
-        //int newHandle = nextHandle();
-        //String name;
-        //byte tc = nextTC();
-        //switch (tc) {
-            //case TC_REFERENCE:
-                //if (unshared) {
-                    //readNewHandle();
-                    //throw new InvalidObjectException("Unshared read of back reference");
-                //}
-                //name = (String) readCyclicReference();
-                //break;
-            //case TC_STRING:
-                //name = (String) readNewString(unshared);
-                //break;
-            //default:
-                //throw corruptStream(tc);
-        //}
-        //Enum<?> result = Enum.valueOf((Class) classDesc.forClass(), name);
-        //registerObjectRead(result, newHandle, unshared);
-        //return result;
+        
+        
+        
+        
+        
+        
+            
+                
+                    
+                    
+                
+                
+                
+            
+                
+                
+            
+                
+        
+        
+        
+        
     }
 
     
@@ -1530,15 +1533,15 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_614979210 =         result;
         {
             newClassDesc.setClass(resolveClass(newClassDesc));
             verifyAndInit(newClassDesc);
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         {
     if(mustResolve)            
             {
                 e.addTaint(taint);
                 throw e;
-            } //End block
-        } //End block
+            } 
+        } 
         ObjectStreamField[] fields = newClassDesc.getLoadFields();
         fields = (fields == null) ? ObjectStreamClass.NO_FIELDS : fields;
         ClassLoader loader = newClassDesc.forClass() == null ? callerClassLoader
@@ -1546,14 +1549,14 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_614979210 =         result;
 for(ObjectStreamField element : fields)
         {
             element.resolve(loader);
-        } //End block
+        } 
         discardData();
         checkedSetSuperClassDesc(newClassDesc, readClassDesc());
 ObjectStreamClass var9298ABC4754D010280EDCD1628E45333_1469953491 =         newClassDesc;
         var9298ABC4754D010280EDCD1628E45333_1469953491.addTaint(taint);
         return var9298ABC4754D010280EDCD1628E45333_1469953491;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1565,21 +1568,21 @@ ObjectStreamClass var9298ABC4754D010280EDCD1628E45333_1469953491 =         newCl
 for(int i = 0;i < count;i++)
         {
             interfaceNames[i] = input.readUTF();
-        } //End block
+        } 
         Class<?> proxy = resolveProxyClass(interfaceNames);
         discardData();
 Class<?> var60FC9F22F7E863EBFD33B2ADB8462743_170030233 =         proxy;
         var60FC9F22F7E863EBFD33B2ADB8462743_170030233.addTaint(taint);
         return var60FC9F22F7E863EBFD33B2ADB8462743_170030233;
-        // ---------- Original Method ----------
-        //int count = input.readInt();
-        //String[] interfaceNames = new String[count];
-        //for (int i = 0; i < count; i++) {
-            //interfaceNames[i] = input.readUTF();
-        //}
-        //Class<?> proxy = resolveProxyClass(interfaceNames);
-        //discardData();
-        //return proxy;
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1592,34 +1595,34 @@ Class<?> var60FC9F22F7E863EBFD33B2ADB8462743_170030233 =         proxy;
             IOException var7AF2F174A0D0CD24060446F4A5468977_145550178 = new IOException("The stream is corrupted");
             var7AF2F174A0D0CD24060446F4A5468977_145550178.addTaint(taint);
             throw var7AF2F174A0D0CD24060446F4A5468977_145550178;
-        } //End block
+        } 
         newClassDesc.setName(name);
         newClassDesc.setSerialVersionUID(input.readLong());
         newClassDesc.setFlags(input.readByte());
     if(descriptorHandle == -1)        
         {
             descriptorHandle = nextHandle();
-        } //End block
+        } 
         registerObjectRead(newClassDesc, descriptorHandle, false);
         readFieldDescriptors(newClassDesc);
 ObjectStreamClass var9298ABC4754D010280EDCD1628E45333_1635727730 =         newClassDesc;
         var9298ABC4754D010280EDCD1628E45333_1635727730.addTaint(taint);
         return var9298ABC4754D010280EDCD1628E45333_1635727730;
-        // ---------- Original Method ----------
-        //ObjectStreamClass newClassDesc = new ObjectStreamClass();
-        //String name = input.readUTF();
-        //if (name.length() == 0) {
-            //throw new IOException("The stream is corrupted");
-        //}
-        //newClassDesc.setName(name);
-        //newClassDesc.setSerialVersionUID(input.readLong());
-        //newClassDesc.setFlags(input.readByte());
-        //if (descriptorHandle == -1) {
-            //descriptorHandle = nextHandle();
-        //}
-        //registerObjectRead(newClassDesc, descriptorHandle, false);
-        //readFieldDescriptors(newClassDesc);
-        //return newClassDesc;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1631,30 +1634,30 @@ ObjectStreamClass var9298ABC4754D010280EDCD1628E45333_1635727730 =         newCl
 for(int i = 0;i < interfaceNames.length;i++)
         {
             interfaces[i] = Class.forName(interfaceNames[i], false, loader);
-        } //End block
+        } 
         try 
         {
 Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getProxyClass(loader, interfaces);
             var1585BFE2B902F61A3216AC5F3A95D704_170736041.addTaint(taint);
             return var1585BFE2B902F61A3216AC5F3A95D704_170736041;
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             ClassNotFoundException var2D2F079A9C09E5E985932CCAFE8C1A20_326399434 = new ClassNotFoundException(e.toString(), e);
             var2D2F079A9C09E5E985932CCAFE8C1A20_326399434.addTaint(taint);
             throw var2D2F079A9C09E5E985932CCAFE8C1A20_326399434;
-        } //End block
-        // ---------- Original Method ----------
-        //ClassLoader loader = ClassLoader.getSystemClassLoader();
-        //Class<?>[] interfaces = new Class<?>[interfaceNames.length];
-        //for (int i = 0; i < interfaceNames.length; i++) {
-            //interfaces[i] = Class.forName(interfaceNames[i], false, loader);
-        //}
-        //try {
-            //return Proxy.getProxyClass(loader, interfaces);
-        //} catch (IllegalArgumentException e) {
-            //throw new ClassNotFoundException(e.toString(), e);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1663,8 +1666,8 @@ Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getPr
         int var45B24B25F8387CAC67C3944D89F2BC52_491516509 = (input.readInt());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2029939649 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2029939649;
-        // ---------- Original Method ----------
-        //return input.readInt();
+        
+        
     }
 
     
@@ -1677,7 +1680,7 @@ Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getPr
             java.io.InvalidClassException varF0B669FE625FDCD2C0B7AFC2BF75622C_1776064398 = missingClassDescriptor();
             varF0B669FE625FDCD2C0B7AFC2BF75622C_1776064398.addTaint(taint);
             throw varF0B669FE625FDCD2C0B7AFC2BF75622C_1776064398;
-        } //End block
+        } 
         int newHandle = nextHandle();
         Class<?> objectClass = classDesc.forClass();
         Object result = null;
@@ -1687,11 +1690,11 @@ Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getPr
             result = classDesc.newInstance(objectClass);
             registerObjectRead(result, newHandle, unshared);
             registeredResult = result;
-        } //End block
+        } 
         else
         {
             result = null;
-        } //End block
+        } 
         try 
         {
             currentObject = result;
@@ -1703,31 +1706,31 @@ Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getPr
     if(!blockData)                
                 {
                     primitiveData = input;
-                } //End block
+                } 
     if(mustResolve)                
                 {
                     Externalizable extern = (Externalizable) result;
                     extern.readExternal(this);
-                } //End block
+                } 
     if(blockData)                
                 {
                     discardData();
-                } //End block
+                } 
                 else
                 {
                     primitiveData = emptyStream;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 readHierarchy(result, classDesc);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             currentObject = null;
             currentClass = null;
-        } //End block
+        } 
     if(objectClass != null)        
         {
     if(classDesc.hasMethodReadResolve())            
@@ -1736,10 +1739,10 @@ Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getPr
                 try 
                 {
                     result = methodReadResolve.invoke(result, (Object[]) null);
-                } //End block
+                } 
                 catch (IllegalAccessException ignored)
                 {
-                } //End block
+                } 
                 catch (InvocationTargetException ite)
                 {
                     Throwable target = ite.getTargetException();
@@ -1748,36 +1751,36 @@ Class<?> var1585BFE2B902F61A3216AC5F3A95D704_170736041 =             Proxy.getPr
                         ObjectStreamException var7968BE7E0F10658162994A62439F18E4_1603558968 = (ObjectStreamException) target;
                         var7968BE7E0F10658162994A62439F18E4_1603558968.addTaint(taint);
                         throw var7968BE7E0F10658162994A62439F18E4_1603558968;
-                    } //End block
+                    } 
                     else
     if(target instanceof Error)                    
                     {
                         Error var157858306DB5AEA134A18315E8F156FF_324977222 = (Error) target;
                         var157858306DB5AEA134A18315E8F156FF_324977222.addTaint(taint);
                         throw var157858306DB5AEA134A18315E8F156FF_324977222;
-                    } //End block
+                    } 
                     else
                     {
                         RuntimeException varB680FC198DAE9443D5ED144016D19687_63925393 = (RuntimeException) target;
                         varB680FC198DAE9443D5ED144016D19687_63925393.addTaint(taint);
                         throw varB680FC198DAE9443D5ED144016D19687_63925393;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(result != null && enableResolve)        
         {
             result = resolveObject(result);
-        } //End block
+        } 
     if(registeredResult != result)        
         {
             registerObjectRead(result, newHandle, unshared);
-        } //End block
+        } 
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1605449150 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1605449150.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1605449150;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1786,8 +1789,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1605449150 =         result;
         InvalidClassException var16AEF1A56FF02F021CBAE9B5E423406F_237992908 = new InvalidClassException("Read null attempting to read class descriptor for object");
         var16AEF1A56FF02F021CBAE9B5E423406F_237992908.addTaint(taint);
         throw var16AEF1A56FF02F021CBAE9B5E423406F_237992908;
-        // ---------- Original Method ----------
-        //throw new InvalidClassException("Read null attempting to read class descriptor for object");
+        
+        
     }
 
     
@@ -1798,18 +1801,18 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1605449150 =         result;
     if(enableResolve)        
         {
             result = resolveObject(result);
-        } //End block
+        } 
         registerObjectRead(result, nextHandle(), unshared);
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1598160950 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1598160950.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1598160950;
-        // ---------- Original Method ----------
-        //Object result = input.readUTF();
-        //if (enableResolve) {
-            //result = resolveObject(result);
-        //}
-        //registerObjectRead(result, nextHandle(), unshared);
-        //return result;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1821,19 +1824,19 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1598160950 =         result;
     if(enableResolve)        
         {
             result = resolveObject(result);
-        } //End block
+        } 
         registerObjectRead(result, nextHandle(), unshared);
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1285582647 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1285582647.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1285582647;
-        // ---------- Original Method ----------
-        //long length = input.readLong();
-        //Object result = input.decodeUTF((int) length);
-        //if (enableResolve) {
-            //result = resolveObject(result);
-        //}
-        //registerObjectRead(result, nextHandle(), unshared);
-        //return result;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1843,8 +1846,8 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1285582647 =         result;
 Object varDE3D5D991D2299B852D7A4547F832BEB_1160337992 =         readObject(false);
         varDE3D5D991D2299B852D7A4547F832BEB_1160337992.addTaint(taint);
         return varDE3D5D991D2299B852D7A4547F832BEB_1160337992;
-        // ---------- Original Method ----------
-        //return readObject(false);
+        
+        
     }
 
     
@@ -1853,8 +1856,8 @@ Object varDE3D5D991D2299B852D7A4547F832BEB_1160337992 =         readObject(false
 Object var3EEAD4513E01D30FA2721A4D9868715E_51013203 =         readObject(true);
         var3EEAD4513E01D30FA2721A4D9868715E_51013203.addTaint(taint);
         return var3EEAD4513E01D30FA2721A4D9868715E_51013203;
-        // ---------- Original Method ----------
-        //return readObject(true);
+        
+        
     }
 
     
@@ -1866,33 +1869,33 @@ Object var3EEAD4513E01D30FA2721A4D9868715E_51013203 =         readObject(true);
     if(restoreInput)        
         {
             primitiveData = emptyStream;
-        } //End block
+        } 
     if(subclassOverridingImplementation && !unshared)        
         {
 Object varC632220F2A11923B21DDE438738503BF_1633249301 =             readObjectOverride();
             varC632220F2A11923B21DDE438738503BF_1633249301.addTaint(taint);
             return varC632220F2A11923B21DDE438738503BF_1633249301;
-        } //End block
+        } 
         Object result;
         try 
         {
     if(++nestedLevels == 1)            
             {
                 callerClassLoader = getClosestUserClassLoader();
-            } //End block
+            } 
             result = readNonPrimitiveContent(unshared);
     if(restoreInput)            
             {
                 primitiveData = input;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
     if(--nestedLevels == 0)            
             {
                 callerClassLoader = null;
-            } //End block
-        } //End block
+            } 
+        } 
     if(nestedLevels == 0 && validations != null)        
         {
             try 
@@ -1900,22 +1903,23 @@ Object varC632220F2A11923B21DDE438738503BF_1633249301 =             readObjectOv
 for(InputValidationDesc element : validations)
                 {
                     element.validator.validateObject();
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 validations = null;
-            } //End block
-        } //End block
+            } 
+        } 
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_993904 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_993904.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_993904;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        private static ClassLoader getClosestUserClassLoader() {
+        @DSModeled(DSC.BAN)
+    private static ClassLoader getClosestUserClassLoader() {
         Class<?>[] stackClasses = VMStack.getClasses(-1);
         for (Class<?> stackClass : stackClasses) {
             ClassLoader loader = stackClass.getClassLoader();
@@ -1936,15 +1940,15 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_993904 =         result;
 Object var540C13E9E156B687226421B24F2DF178_1720163364 =             null;
             var540C13E9E156B687226421B24F2DF178_1720163364.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1720163364;
-        } //End block
+        } 
         IOException var1508E3FDF27FD56D4E1051DB16DE1816_1845282129 = new IOException();
         var1508E3FDF27FD56D4E1051DB16DE1816_1845282129.addTaint(taint);
         throw var1508E3FDF27FD56D4E1051DB16DE1816_1845282129;
-        // ---------- Original Method ----------
-        //if (input == null) {
-            //return null;
-        //}
-        //throw new IOException();
+        
+        
+            
+        
+        
     }
 
     
@@ -1953,8 +1957,8 @@ Object var540C13E9E156B687226421B24F2DF178_1720163364 =             null;
         short varD72B35297BEA6797ABBE906C16AED5CF_911417936 = (primitiveTypes.readShort());
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1313241388 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1313241388;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readShort();
+        
+        
     }
 
     
@@ -1965,16 +1969,16 @@ Object var540C13E9E156B687226421B24F2DF178_1720163364 =             null;
                 && input.readShort() == STREAM_VERSION)        
         {
             return;
-        } //End block
+        } 
         StreamCorruptedException varF5F96E25EF189AC41EAEE81D0E0B6F98_436315210 = new StreamCorruptedException();
         varF5F96E25EF189AC41EAEE81D0E0B6F98_436315210.addTaint(taint);
         throw varF5F96E25EF189AC41EAEE81D0E0B6F98_436315210;
-        // ---------- Original Method ----------
-        //if (input.readShort() == STREAM_MAGIC
-                //&& input.readShort() == STREAM_VERSION) {
-            //return;
-        //}
-        //throw new StreamCorruptedException();
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -1983,8 +1987,8 @@ Object var540C13E9E156B687226421B24F2DF178_1720163364 =             null;
         int varE8E02E272FCA8E719DC246906D578BBA_1387198514 = (primitiveTypes.readUnsignedByte());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071136877 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2071136877;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readUnsignedByte();
+        
+        
     }
 
     
@@ -1993,8 +1997,8 @@ Object var540C13E9E156B687226421B24F2DF178_1720163364 =             null;
         int varC84B1E38C1B4325F10B497EE61484BA2_1665646222 = (primitiveTypes.readUnsignedShort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_248693408 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_248693408;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readUnsignedShort();
+        
+        
     }
 
     
@@ -2003,8 +2007,8 @@ Object var540C13E9E156B687226421B24F2DF178_1720163364 =             null;
 String var515CD0E98173FF2E73E38B6282E10FCE_276373847 =         primitiveTypes.readUTF();
         var515CD0E98173FF2E73E38B6282E10FCE_276373847.addTaint(taint);
         return var515CD0E98173FF2E73E38B6282E10FCE_276373847;
-        // ---------- Original Method ----------
-        //return primitiveTypes.readUTF();
+        
+        
     }
 
     
@@ -2017,16 +2021,16 @@ String var515CD0E98173FF2E73E38B6282E10FCE_276373847 =         primitiveTypes.re
             InvalidObjectException var13587A8E5C284E5D92F27437313A6A97_120372134 = new InvalidObjectException("Cannot read back reference to unshared object");
             var13587A8E5C284E5D92F27437313A6A97_120372134.addTaint(taint);
             throw var13587A8E5C284E5D92F27437313A6A97_120372134;
-        } //End block
+        } 
 Object varB5053E025797B3BF768F5C37934C244D_1460660275 =         res;
         varB5053E025797B3BF768F5C37934C244D_1460660275.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_1460660275;
-        // ---------- Original Method ----------
-        //Object res = objectsRead.get(handle - ObjectStreamConstants.baseWireHandle);
-        //if (res == UNSHARED_OBJ) {
-            //throw new InvalidObjectException("Cannot read back reference to unshared object");
-        //}
-        //return res;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -2038,7 +2042,7 @@ Object varB5053E025797B3BF768F5C37934C244D_1460660275 =         res;
     if(unshared)        
         {
             obj = UNSHARED_OBJ;
-        } //End block
+        } 
         int index = handle - ObjectStreamConstants.baseWireHandle;
         int size = objectsRead.size();
         while
@@ -2046,37 +2050,37 @@ Object varB5053E025797B3BF768F5C37934C244D_1460660275 =         res;
         {
             objectsRead.add(null);
             ++size;
-        } //End block
+        } 
     if(index == size)        
         {
             objectsRead.add(obj);
-        } //End block
+        } 
         else
         {
             objectsRead.set(index, obj);
-        } //End block
-        // ---------- Original Method ----------
-        //if (unshared) {
-            //obj = UNSHARED_OBJ;
-        //}
-        //int index = handle - ObjectStreamConstants.baseWireHandle;
-        //int size = objectsRead.size();
-        //while (index > size) {
-            //objectsRead.add(null);
-            //++size;
-        //}
-        //if (index == size) {
-            //objectsRead.add(obj);
-        //} else {
-            //objectsRead.set(index, obj);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.686 -0400", hash_original_method = "3EFB39BBE791BF6ED902F9D8BC5F60E3", hash_generated_method = "FD9F0C113B1F48C9A3AEA7A4138ACDF1")
     public synchronized void registerValidation(ObjectInputValidation object,
             int priority) throws NotActiveException, InvalidObjectException {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(priority);
         addTaint(object.getTaint());
         Object instanceBeingRead = this.currentObject;
@@ -2085,13 +2089,13 @@ Object varB5053E025797B3BF768F5C37934C244D_1460660275 =         res;
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_1943585977 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_1943585977.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_1943585977;
-        } //End block
+        } 
     if(object == null)        
         {
             InvalidObjectException var62544DC45AC18E0A4AD21936CBBDE9CA_644016707 = new InvalidObjectException("Callback object cannot be null");
             var62544DC45AC18E0A4AD21936CBBDE9CA_644016707.addTaint(taint);
             throw var62544DC45AC18E0A4AD21936CBBDE9CA_644016707;
-        } //End block
+        } 
         InputValidationDesc desc = new InputValidationDesc();
         desc.validator = object;
         desc.priority = priority;
@@ -2099,7 +2103,7 @@ Object varB5053E025797B3BF768F5C37934C244D_1460660275 =         res;
         {
             validations = new InputValidationDesc[1];
             validations[0] = desc;
-        } //End block
+        } 
         else
         {
             int i = 0;
@@ -2109,8 +2113,8 @@ for(;i < validations.length;i++)
     if(priority >= validation.priority)                
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             InputValidationDesc[] oldValidations = validations;
             int currentSize = oldValidations.length;
             validations = new InputValidationDesc[currentSize + 1];
@@ -2118,9 +2122,9 @@ for(;i < validations.length;i++)
             System.arraycopy(oldValidations, i, validations, i + 1, currentSize
                     - i);
             validations[i] = desc;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2129,10 +2133,10 @@ for(;i < validations.length;i++)
         objectsRead = new ArrayList<Object>();
         nextHandle = baseWireHandle;
         primitiveData = emptyStream;
-        // ---------- Original Method ----------
-        //objectsRead = new ArrayList<Object>();
-        //nextHandle = baseWireHandle;
-        //primitiveData = emptyStream;
+        
+        
+        
+        
     }
 
     
@@ -2141,10 +2145,10 @@ for(;i < validations.length;i++)
         resetSeenObjects();
         hasPushbackTC = false;
         pushbackTC = 0;
-        // ---------- Original Method ----------
-        //resetSeenObjects();
-        //hasPushbackTC = false;
-        //pushbackTC = 0;
+        
+        
+        
+        
     }
 
     
@@ -2159,32 +2163,33 @@ for(;i < validations.length;i++)
     if(cls == null)            
             {
                 cls = Class.forName(className, true, callerClassLoader);
-            } //End block
-        } //End block
+            } 
+        } 
 Class<?> var51801364268DFB5B1361AB761C7278F7_1266242235 =         cls;
         var51801364268DFB5B1361AB761C7278F7_1266242235.addTaint(taint);
         return var51801364268DFB5B1361AB761C7278F7_1266242235;
-        // ---------- Original Method ----------
-        //Class<?> cls = osClass.forClass();
-        //if (cls == null) {
-            //String className = osClass.getName();
-            //cls = PRIMITIVE_CLASSES.get(className);
-            //if (cls == null) {
-                //cls = Class.forName(className, true, callerClassLoader);
-            //}
-        //}
-        //return cls;
+        
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.693 -0400", hash_original_method = "8BE1D9D2C1A8227AC3DEAA12C63F6442", hash_generated_method = "E2DCBACF2FF8DD3F8B28365E4304CBE5")
     protected Object resolveObject(Object object) throws IOException {
         addTaint(object.getTaint());
 Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
         var6F3B27511D98F0E852A24482F031265F_1605954093.addTaint(taint);
         return var6F3B27511D98F0E852A24482F031265F_1605954093;
-        // ---------- Original Method ----------
-        //return object;
+        
+        
     }
 
     
@@ -2196,7 +2201,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1290241081 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1290241081.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1290241081;
-        } //End block
+        } 
         int offset = 0;
         while
 (offset < length)        
@@ -2208,26 +2213,26 @@ Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
                 int var7A86C157EE9713C34FBD7A1EE40F0C5A_1108169386 = (offset);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1931020028 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1931020028;
-            } //End block
+            } 
             offset += (int) skipped;
-        } //End block
+        } 
         int var2FA47F7C65FEC19CC163B195725E3844_186938342 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_334003363 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_334003363;
-        // ---------- Original Method ----------
-        //if (input == null) {
-            //throw new NullPointerException();
-        //}
-        //int offset = 0;
-        //while (offset < length) {
-            //checkReadPrimitiveTypes();
-            //long skipped = primitiveData.skip(length - offset);
-            //if (skipped == 0) {
-                //return offset;
-            //}
-            //offset += (int) skipped;
-        //}
-        //return length;
+        
+        
+            
+        
+        
+        
+            
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -2245,7 +2250,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
                             " but expected " + localStreamClass);
             var0EDFE5275719243EF3AEA6E8E1A53E31_46725115.addTaint(taint);
             throw var0EDFE5275719243EF3AEA6E8E1A53E31_46725115;
-        } //End block
+        } 
         String loadedClassBaseName = getBaseName(loadedStreamClass.getName());
         String localClassBaseName = getBaseName(localStreamClass.getName());
     if(!loadedClassBaseName.equals(localClassBaseName))        
@@ -2255,10 +2260,10 @@ Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
                             loadedClassBaseName, localClassBaseName));
             var88E1F7CF7D103E08A757AC94DAB05723_2102555451.addTaint(taint);
             throw var88E1F7CF7D103E08A757AC94DAB05723_2102555451;
-        } //End block
+        } 
         loadedStreamClass.initPrivateFields(localStreamClass);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2291,7 +2296,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.700 -0400", hash_original_method = "9B1F2C1B15D11C4CFF789483FB2B6658", hash_generated_method = "9B1F2C1B15D11C4CFF789483FB2B6658")
         public InputValidationDesc ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2304,7 +2309,7 @@ Object var6F3B27511D98F0E852A24482F031265F_1605954093 =         object;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.701 -0400", hash_original_method = "3E66EA4913058A142DD3D4DCDDDF2758", hash_generated_method = "3E66EA4913058A142DD3D4DCDDDF2758")
         public GetField ()
         {
-            //Synthesized constructor
+            
         }
 
 

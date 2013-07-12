@@ -1,6 +1,6 @@
 package libcore.net.url;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,9 +49,9 @@ public class JarURLConnectionImpl extends JarURLConnection {
         addTaint(url.getTaint());
         jarFileURL = getJarFileURL();
         jarFileURLConnection = jarFileURL.openConnection();
-        // ---------- Original Method ----------
-        //jarFileURL = getJarFileURL();
-        //jarFileURLConnection = jarFileURL.openConnection();
+        
+        
+        
     }
 
     
@@ -63,13 +63,13 @@ public class JarURLConnectionImpl extends JarURLConnection {
             findJarFile();
             findJarEntry();
             connected = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!connected) {
-            //findJarFile(); 
-            //findJarEntry(); 
-            //connected = true;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -80,9 +80,9 @@ public class JarURLConnectionImpl extends JarURLConnection {
 JarFile var8E1F414344626BA4FB59E50115387315_29871230 =         jarFile;
         var8E1F414344626BA4FB59E50115387315_29871230.addTaint(taint);
         return var8E1F414344626BA4FB59E50115387315_29871230;
-        // ---------- Original Method ----------
-        //connect();
-        //return jarFile;
+        
+        
+        
     }
 
     
@@ -94,7 +94,7 @@ JarFile var8E1F414344626BA4FB59E50115387315_29871230 =         jarFile;
             synchronized
 (jarCache)            {
                 jarFile = jarCache.get(jarFileURL);
-            } //End block
+            } 
     if(jarFile == null)            
             {
                 jar = openJarFile();
@@ -105,48 +105,48 @@ JarFile var8E1F414344626BA4FB59E50115387315_29871230 =         jarFile;
                     {
                         jarCache.put(jarFileURL, jar);
                         jarFile = jar;
-                    } //End block
+                    } 
                     else
                     {
                         jar.close();
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         else
         {
             jarFile = openJarFile();
-        } //End block
+        } 
     if(jarFile == null)        
         {
             IOException var1508E3FDF27FD56D4E1051DB16DE1816_648587071 = new IOException();
             var1508E3FDF27FD56D4E1051DB16DE1816_648587071.addTaint(taint);
             throw var1508E3FDF27FD56D4E1051DB16DE1816_648587071;
-        } //End block
-        // ---------- Original Method ----------
-        //JarFile jar = null;
-        //if (getUseCaches()) {
-            //synchronized (jarCache) {
-                //jarFile = jarCache.get(jarFileURL);
-            //}
-            //if (jarFile == null) {
-                //jar = openJarFile();
-                //synchronized (jarCache) {
-                    //jarFile = jarCache.get(jarFileURL);
-                    //if (jarFile == null) {
-                        //jarCache.put(jarFileURL, jar);
-                        //jarFile = jar;
-                    //} else {
-                        //jar.close();
-                    //}
-                //}
-            //}
-        //} else {
-            //jarFile = openJarFile();
-        //}
-        //if (jarFile == null) {
-            //throw new IOException();
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+                
+                    
+                    
+                        
+                        
+                    
+                        
+                    
+                
+            
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -158,7 +158,7 @@ JarFile var8E1F414344626BA4FB59E50115387315_29871230 =         jarFile;
 JarFile var60CBEDF93F3F084D3E758164F022ECD0_1687605231 =             new JarFile(new File(decodedFile), true, ZipFile.OPEN_READ);
             var60CBEDF93F3F084D3E758164F022ECD0_1687605231.addTaint(taint);
             return var60CBEDF93F3F084D3E758164F022ECD0_1687605231;
-        } //End block
+        } 
         else
         {
             final InputStream is = jarFileURL.openConnection().getInputStream();
@@ -177,18 +177,18 @@ JarFile var60CBEDF93F3F084D3E758164F022ECD0_1687605231 =             new JarFile
 ((nbytes = is.read(buf)) > -1)                    
                     {
                         fos.write(buf, 0, nbytes);
-                    } //End block
+                    } 
                     fos.close();
 JarFile varD5C2CCA69C95AF526785A0BF2E1F0B8E_513481036 =                     new JarFile(tempJar, true, ZipFile.OPEN_READ | ZipFile.OPEN_DELETE);
                     varD5C2CCA69C95AF526785A0BF2E1F0B8E_513481036.addTaint(taint);
                     return varD5C2CCA69C95AF526785A0BF2E1F0B8E_513481036;
-                } //End block
+                } 
                 catch (IOException e)
                 {
 JarFile var540C13E9E156B687226421B24F2DF178_1263012796 =                     null;
                     var540C13E9E156B687226421B24F2DF178_1263012796.addTaint(taint);
                     return var540C13E9E156B687226421B24F2DF178_1263012796;
-                } //End block
+                } 
                 finally 
                 {
     if(fos != null)                    
@@ -196,26 +196,26 @@ JarFile var540C13E9E156B687226421B24F2DF178_1263012796 =                     nul
                         try 
                         {
                             fos.close();
-                        } //End block
+                        } 
                         catch (IOException ex)
                         {
 JarFile var540C13E9E156B687226421B24F2DF178_1750089779 =                             null;
                             var540C13E9E156B687226421B24F2DF178_1750089779.addTaint(taint);
                             return var540C13E9E156B687226421B24F2DF178_1750089779;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
     if(is != null)                
                 {
                     is.close();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -226,9 +226,9 @@ JarFile var540C13E9E156B687226421B24F2DF178_1750089779 =                        
 JarEntry varAD3A77394289B6D52417AADF8827369A_2088525847 =         jarEntry;
         varAD3A77394289B6D52417AADF8827369A_2088525847.addTaint(taint);
         return varAD3A77394289B6D52417AADF8827369A_2088525847;
-        // ---------- Original Method ----------
-        //connect();
-        //return jarEntry;
+        
+        
+        
     }
 
     
@@ -237,22 +237,22 @@ JarEntry varAD3A77394289B6D52417AADF8827369A_2088525847 =         jarEntry;
     if(getEntryName() == null)        
         {
             return;
-        } //End block
+        } 
         jarEntry = jarFile.getJarEntry(getEntryName());
     if(jarEntry == null)        
         {
             FileNotFoundException varE9EBD5111E02D6931B6EC88CCE7B02C4_1660847189 = new FileNotFoundException(getEntryName());
             varE9EBD5111E02D6931B6EC88CCE7B02C4_1660847189.addTaint(taint);
             throw varE9EBD5111E02D6931B6EC88CCE7B02C4_1660847189;
-        } //End block
-        // ---------- Original Method ----------
-        //if (getEntryName() == null) {
-            //return;
-        //}
-        //jarEntry = jarFile.getJarEntry(getEntryName());
-        //if (jarEntry == null) {
-            //throw new FileNotFoundException(getEntryName());
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -264,37 +264,37 @@ JarEntry varAD3A77394289B6D52417AADF8827369A_2088525847 =         jarEntry;
             IllegalStateException var8C57BC4CCCB8C46C370EC2051897113D_1302553019 = new IllegalStateException("JarURLConnection InputStream has been closed");
             var8C57BC4CCCB8C46C370EC2051897113D_1302553019.addTaint(taint);
             throw var8C57BC4CCCB8C46C370EC2051897113D_1302553019;
-        } //End block
+        } 
         connect();
     if(jarInput != null)        
         {
 InputStream varAA75B6884B588FE6E78A9C056B314C4E_103042297 =             jarInput;
             varAA75B6884B588FE6E78A9C056B314C4E_103042297.addTaint(taint);
             return varAA75B6884B588FE6E78A9C056B314C4E_103042297;
-        } //End block
+        } 
     if(jarEntry == null)        
         {
             IOException varC4D3A291675ADD4532ED1A1E739EEEBF_829539736 = new IOException("Jar entry not specified");
             varC4D3A291675ADD4532ED1A1E739EEEBF_829539736.addTaint(taint);
             throw varC4D3A291675ADD4532ED1A1E739EEEBF_829539736;
-        } //End block
+        } 
 InputStream var633EF97C7E21EA794417A3B390707D41_308561363 =         jarInput = new JarURLConnectionInputStream(jarFile
                 .getInputStream(jarEntry), jarFile);
         var633EF97C7E21EA794417A3B390707D41_308561363.addTaint(taint);
         return var633EF97C7E21EA794417A3B390707D41_308561363;
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IllegalStateException("JarURLConnection InputStream has been closed");
-        //}
-        //connect();
-        //if (jarInput != null) {
-            //return jarInput;
-        //}
-        //if (jarEntry == null) {
-            //throw new IOException("Jar entry not specified");
-        //}
-        //return jarInput = new JarURLConnectionInputStream(jarFile
-                //.getInputStream(jarEntry), jarFile);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -306,50 +306,50 @@ InputStream var633EF97C7E21EA794417A3B390707D41_308561363 =         jarInput = n
 String varD3FF7AB088AF6C94102389F4B8998E56_1581118200 =             "x-java/jar";
             varD3FF7AB088AF6C94102389F4B8998E56_1581118200.addTaint(taint);
             return varD3FF7AB088AF6C94102389F4B8998E56_1581118200;
-        } //End block
+        } 
         String cType = null;
         String entryName = getEntryName();
     if(entryName != null)        
         {
             cType = guessContentTypeFromName(entryName);
-        } //End block
+        } 
         else
         {
             try 
             {
                 connect();
                 cType = jarFileURLConnection.getContentType();
-            } //End block
+            } 
             catch (IOException ioe)
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(cType == null)        
         {
             cType = "content/unknown";
-        } //End block
+        } 
 String var09A62FBC65BE187AFF76DDFD23EE82F2_970328015 =         cType;
         var09A62FBC65BE187AFF76DDFD23EE82F2_970328015.addTaint(taint);
         return var09A62FBC65BE187AFF76DDFD23EE82F2_970328015;
-        // ---------- Original Method ----------
-        //if (url.getFile().endsWith("!/")) {
-            //return "x-java/jar";
-        //}
-        //String cType = null;
-        //String entryName = getEntryName();
-        //if (entryName != null) {
-            //cType = guessContentTypeFromName(entryName);
-        //} else {
-            //try {
-                //connect();
-                //cType = jarFileURLConnection.getContentType();
-            //} catch (IOException ioe) {
-            //}
-        //}
-        //if (cType == null) {
-            //cType = "content/unknown";
-        //}
-        //return cType;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+                
+                
+            
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -364,27 +364,27 @@ String var09A62FBC65BE187AFF76DDFD23EE82F2_970328015 =         cType;
                 int var8BA33FEA49B7A860D11101013AE858F6_674756799 = (jarFileURLConnection.getContentLength());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1901549221 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1901549221;
-            } //End block
+            } 
             int var856AFBFC5554D4B0FB3082D671166F0B_890995557 = ((int) getJarEntry().getSize());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128520481 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128520481;
-        } //End block
+        } 
         catch (IOException e)
         {
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1689467679 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_673618057 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_673618057;
-        // ---------- Original Method ----------
-        //try {
-            //connect();
-            //if (jarEntry == null) {
-                //return jarFileURLConnection.getContentLength();
-            //}
-            //return (int) getJarEntry().getSize();
-        //} catch (IOException e) {
-        //}
-        //return -1;
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -397,16 +397,16 @@ String var09A62FBC65BE187AFF76DDFD23EE82F2_970328015 =         cType;
 Object var8E1F414344626BA4FB59E50115387315_1205529063 =             jarFile;
             var8E1F414344626BA4FB59E50115387315_1205529063.addTaint(taint);
             return var8E1F414344626BA4FB59E50115387315_1205529063;
-        } //End block
+        } 
 Object varB48A5BF7E69A931886E4CE799B44A3F6_826471593 =         super.getContent();
         varB48A5BF7E69A931886E4CE799B44A3F6_826471593.addTaint(taint);
         return varB48A5BF7E69A931886E4CE799B44A3F6_826471593;
-        // ---------- Original Method ----------
-        //connect();
-        //if (jarEntry == null) {
-            //return jarFile;
-        //}
-        //return super.getContent();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -416,8 +416,8 @@ Object varB48A5BF7E69A931886E4CE799B44A3F6_826471593 =         super.getContent(
 Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLConnection.getPermission();
         var07D66FDEC9384D2F09F1D7451056F3DA_262799781.addTaint(taint);
         return var07D66FDEC9384D2F09F1D7451056F3DA_262799781;
-        // ---------- Original Method ----------
-        //return jarFileURLConnection.getPermission();
+        
+        
     }
 
     
@@ -427,8 +427,8 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLCon
         boolean var55EFAAC5B6D81843C363E6B7A62F01CA_1049523385 = (jarFileURLConnection.getUseCaches());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_925738580 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_925738580;
-        // ---------- Original Method ----------
-        //return jarFileURLConnection.getUseCaches();
+        
+        
     }
 
     
@@ -437,8 +437,8 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLCon
     public void setUseCaches(boolean usecaches) {
         addTaint(usecaches);
         jarFileURLConnection.setUseCaches(usecaches);
-        // ---------- Original Method ----------
-        //jarFileURLConnection.setUseCaches(usecaches);
+        
+        
     }
 
     
@@ -448,8 +448,8 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLCon
         boolean var056150D29F12DE292B68008CAFA7BCC7_1205514794 = (jarFileURLConnection.getDefaultUseCaches());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927382446 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_927382446;
-        // ---------- Original Method ----------
-        //return jarFileURLConnection.getDefaultUseCaches();
+        
+        
     }
 
     
@@ -458,8 +458,8 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLCon
     public void setDefaultUseCaches(boolean defaultusecaches) {
         addTaint(defaultusecaches);
         jarFileURLConnection.setDefaultUseCaches(defaultusecaches);
-        // ---------- Original Method ----------
-        //jarFileURLConnection.setDefaultUseCaches(defaultusecaches);
+        
+        
     }
 
     
@@ -490,8 +490,8 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLCon
             super(in);
             addTaint(in.getTaint());
             jarFile = file;
-            // ---------- Original Method ----------
-            //jarFile = file;
+            
+            
         }
 
         
@@ -503,13 +503,13 @@ Permission var07D66FDEC9384D2F09F1D7451056F3DA_262799781 =         jarFileURLCon
             {
                 closed = true;
                 jarFile.close();
-            } //End block
-            // ---------- Original Method ----------
-            //super.close();
-            //if (!getUseCaches()) {
-                //closed = true;
-                //jarFile.close();
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         

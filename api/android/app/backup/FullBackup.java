@@ -1,6 +1,6 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class FullBackup {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.170 -0400", hash_original_method = "E56D2C5902E2E32DC49936A701F181C3", hash_generated_method = "E56D2C5902E2E32DC49936A701F181C3")
     public FullBackup ()
     {
-        //Synthesized constructor
+        
     }
 
 

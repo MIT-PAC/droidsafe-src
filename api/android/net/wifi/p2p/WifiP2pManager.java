@@ -1,6 +1,6 @@
 package android.net.wifi.p2p;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,8 +31,8 @@ public class WifiP2pManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.275 -0400", hash_original_method = "E626A45256220AE3F4AF9F0577D669AE", hash_generated_method = "AE4DAB67531AE0D3DD7CB41C112DC312")
     public  WifiP2pManager(IWifiP2pManager service) {
         mService = service;
-        // ---------- Original Method ----------
-        //mService = service;
+        
+        
     }
 
     
@@ -55,23 +55,23 @@ Channel var540C13E9E156B687226421B24F2DF178_718135326 =         null;
 Channel var807FB10045EE51C06BDB74744A6714DF_426978514 =             c;
             var807FB10045EE51C06BDB74744A6714DF_426978514.addTaint(taint);
             return var807FB10045EE51C06BDB74744A6714DF_426978514;
-        } //End block
+        } 
         else
         {
 Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
             var540C13E9E156B687226421B24F2DF178_1295668650.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1295668650;
-        } //End block
-        // ---------- Original Method ----------
-        //Messenger messenger = getMessenger();
-        //if (messenger == null) return null;
-        //Channel c = new Channel(srcLooper, listener);
-        //if (c.mAsyncChannel.connectSync(srcContext, c.mHandler, messenger)
-                //== AsyncChannel.STATUS_SUCCESSFUL) {
-            //return c;
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+        
+                
+            
+        
+            
+        
     }
 
     
@@ -81,9 +81,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(ENABLE_P2P);
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(ENABLE_P2P);
+        
+        
+        
     }
 
     
@@ -93,9 +93,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(DISABLE_P2P);
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(DISABLE_P2P);
+        
+        
+        
     }
 
     
@@ -106,9 +106,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(DISCOVER_PEERS, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(DISCOVER_PEERS, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -120,9 +120,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(CONNECT, 0, c.putListener(listener), config);
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(CONNECT, 0, c.putListener(listener), config);
+        
+        
+        
     }
 
     
@@ -133,9 +133,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(CANCEL_CONNECT, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(CANCEL_CONNECT, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -146,9 +146,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(CREATE_GROUP, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(CREATE_GROUP, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -159,9 +159,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(REMOVE_GROUP, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REMOVE_GROUP, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -172,9 +172,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(REQUEST_PEERS, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REQUEST_PEERS, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -185,9 +185,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(REQUEST_CONNECTION_INFO, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REQUEST_CONNECTION_INFO, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -198,9 +198,9 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
     if(c == null)        
         return;
         c.mAsyncChannel.sendMessage(REQUEST_GROUP_INFO, 0, c.putListener(listener));
-        // ---------- Original Method ----------
-        //if (c == null) return;
-        //c.mAsyncChannel.sendMessage(REQUEST_GROUP_INFO, 0, c.putListener(listener));
+        
+        
+        
     }
 
     
@@ -211,19 +211,19 @@ Channel var540C13E9E156B687226421B24F2DF178_1295668650 =             null;
 Messenger varF7929FC05940900E4513D8262C8E2654_534198949 =             mService.getMessenger();
             varF7929FC05940900E4513D8262C8E2654_534198949.addTaint(taint);
             return varF7929FC05940900E4513D8262C8E2654_534198949;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 Messenger var540C13E9E156B687226421B24F2DF178_612358164 =             null;
             var540C13E9E156B687226421B24F2DF178_612358164.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_612358164;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getMessenger();
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -252,10 +252,10 @@ Messenger var540C13E9E156B687226421B24F2DF178_612358164 =             null;
             mAsyncChannel = new AsyncChannel();
             mHandler = new P2pHandler(looper);
             mChannelListener = l;
-            // ---------- Original Method ----------
-            //mAsyncChannel = new AsyncChannel();
-            //mHandler = new P2pHandler(looper);
-            //mChannelListener = l;
+            
+            
+            
+            
         }
 
         
@@ -273,18 +273,18 @@ Messenger var540C13E9E156B687226421B24F2DF178_612358164 =             null;
 (mListenerMapLock)            {
                 key = mListenerKey++;
                 mListenerMap.put(key, listener);
-            } //End block
+            } 
             int var3C6E0B8A9C15224A8228B9A98CA1531D_1221445849 = (key);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541294833 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1541294833;
-            // ---------- Original Method ----------
-            //if (listener == null) return 0;
-            //int key;
-            //synchronized (mListenerMapLock) {
-                //key = mListenerKey++;
-                //mListenerMap.put(key, listener);
-            //}
-            //return key;
+            
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -296,11 +296,11 @@ Messenger var540C13E9E156B687226421B24F2DF178_612358164 =             null;
 Object var8740242799EDB310E0F28BFFD65D0831_1804573747 =                 mListenerMap.remove(key);
                 var8740242799EDB310E0F28BFFD65D0831_1804573747.addTaint(taint);
                 return var8740242799EDB310E0F28BFFD65D0831_1804573747;
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mListenerMapLock) {
-                //return mListenerMap.remove(key);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -310,7 +310,7 @@ Object var8740242799EDB310E0F28BFFD65D0831_1804573747 =                 mListene
               P2pHandler(Looper looper) {
                 super(looper);
                 addTaint(looper.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -325,7 +325,7 @@ switch(message.what){
                 {
                     mChannelListener.onChannelDisconnected();
                     mChannelListener = null;
-                } //End block
+                } 
                 break;
                 case WifiP2pManager.DISCOVER_PEERS_FAILED:
                 case WifiP2pManager.CONNECT_FAILED:
@@ -335,7 +335,7 @@ switch(message.what){
     if(listener != null)                
                 {
                     ((ActionListener) listener).onFailure(message.arg1);
-                } //End block
+                } 
                 break;
                 case WifiP2pManager.DISCOVER_PEERS_SUCCEEDED:
                 case WifiP2pManager.CONNECT_SUCCEEDED:
@@ -345,35 +345,35 @@ switch(message.what){
     if(listener != null)                
                 {
                     ((ActionListener) listener).onSuccess();
-                } //End block
+                } 
                 break;
                 case WifiP2pManager.RESPONSE_PEERS:
                 WifiP2pDeviceList peers = (WifiP2pDeviceList) message.obj;
     if(listener != null)                
                 {
                     ((PeerListListener) listener).onPeersAvailable(peers);
-                } //End block
+                } 
                 break;
                 case WifiP2pManager.RESPONSE_CONNECTION_INFO:
                 WifiP2pInfo wifiP2pInfo = (WifiP2pInfo) message.obj;
     if(listener != null)                
                 {
                     ((ConnectionInfoListener) listener).onConnectionInfoAvailable(wifiP2pInfo);
-                } //End block
+                } 
                 break;
                 case WifiP2pManager.RESPONSE_GROUP_INFO:
                 WifiP2pGroup group = (WifiP2pGroup) message.obj;
     if(listener != null)                
                 {
                     ((GroupInfoListener) listener).onGroupInfoAvailable(group);
-                } //End block
+                } 
                 break;
                 default:
                 Log.d(TAG, "Ignored " + message);
                 break;
 }
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             

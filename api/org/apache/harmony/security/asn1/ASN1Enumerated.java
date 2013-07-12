@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,11 +12,12 @@ public final class ASN1Enumerated extends ASN1Primitive {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.563 -0400", hash_original_method = "AA03F41F75612EB5366E32BDDDAEA1AC", hash_generated_method = "11C6DEF098A19B58952BF9C0E3E54B4B")
     public  ASN1Enumerated() {
         super(TAG_ENUM);
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static ASN1Enumerated getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1Enumerated getInstance() {
         return ASN1;
     }
 
@@ -30,16 +31,16 @@ public final class ASN1Enumerated extends ASN1Primitive {
 Object var540C13E9E156B687226421B24F2DF178_1770551726 =             null;
             var540C13E9E156B687226421B24F2DF178_1770551726.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1770551726;
-        } //End block
+        } 
 Object var6AD043AF0280111F31D0D60A6CD70863_1178104153 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1178104153.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1178104153;
-        // ---------- Original Method ----------
-        //in.readEnumerated();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -49,8 +50,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1178104153 =         getDecodedObject
 Object var799D9F18AD20BC40A384FA5E7CC005DE_2076221912 =         Arrays.copyOfRange(in.buffer, in.contentOffset, in.contentOffset + in.length);
         var799D9F18AD20BC40A384FA5E7CC005DE_2076221912.addTaint(taint);
         return var799D9F18AD20BC40A384FA5E7CC005DE_2076221912;
-        // ---------- Original Method ----------
-        //return Arrays.copyOfRange(in.buffer, in.contentOffset, in.contentOffset + in.length);
+        
+        
     }
 
     
@@ -58,17 +59,18 @@ Object var799D9F18AD20BC40A384FA5E7CC005DE_2076221912 =         Arrays.copyOfRan
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeInteger();
-        // ---------- Original Method ----------
-        //out.encodeInteger();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.569 -0400", hash_original_method = "9FE1E04620BBFE07A0C8F71EADD10582", hash_generated_method = "CF6C0D89125D265A070FAEF45137B38D")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.length = ((byte[]) out.content).length;
-        // ---------- Original Method ----------
-        //out.length = ((byte[]) out.content).length;
+        
+        
     }
 
     

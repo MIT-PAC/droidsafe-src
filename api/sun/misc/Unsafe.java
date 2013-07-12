@@ -1,6 +1,6 @@
 package sun.misc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class Unsafe {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.179 -0400", hash_original_method = "50D30E2F10A8434CB2B5A99A7DA391C8", hash_generated_method = "9AEC98E2560FBA06F6783E528E234F06")
     private  Unsafe() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,16 +34,16 @@ public final class Unsafe {
                     "valid for instance fields only");
             var9647A65078523FC9A06312AFCF421504_303715825.addTaint(taint);
             throw var9647A65078523FC9A06312AFCF421504_303715825;
-        } //End block
+        } 
         long var45155EBB460CF1A21C43208975B41A88_1937978599 = (objectFieldOffset0(field));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1705333896 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1705333896;
-        // ---------- Original Method ----------
-        //if (Modifier.isStatic(field.getModifiers())) {
-            //throw new IllegalArgumentException(
-                    //"valid for instance fields only");
-        //}
-        //return objectFieldOffset0(field);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -63,16 +63,16 @@ public final class Unsafe {
                     "valid for array classes only");
             var278D5518DEF9BA52DD0FD9A2E1081376_1133080243.addTaint(taint);
             throw var278D5518DEF9BA52DD0FD9A2E1081376_1133080243;
-        } //End block
+        } 
         int var7C5976EF3F0F633CB85C258B287BA249_1210809856 = (arrayBaseOffset0(clazz));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1551865008 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1551865008;
-        // ---------- Original Method ----------
-        //if (! clazz.isArray()) {
-            //throw new IllegalArgumentException(
-                    //"valid for array classes only");
-        //}
-        //return arrayBaseOffset0(clazz);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -92,16 +92,16 @@ public final class Unsafe {
                     "valid for array classes only");
             var278D5518DEF9BA52DD0FD9A2E1081376_1549054430.addTaint(taint);
             throw var278D5518DEF9BA52DD0FD9A2E1081376_1549054430;
-        } //End block
+        } 
         int var5EE94361AC68F81834EA41B3943D5754_101739419 = (arrayIndexScale0(clazz));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555242951 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_555242951;
-        // ---------- Original Method ----------
-        //if (! clazz.isArray()) {
-            //throw new IllegalArgumentException(
-                    //"valid for array classes only");
-        //}
-        //return arrayIndexScale0(clazz);
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -112,6 +112,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.184 -0400", hash_original_method = "21E4F9CF99012374BBDA74248C46C8FD", hash_generated_method = "861E8D81E32552449BACBD1DC2DC5566")
     public boolean compareAndSwapInt(Object obj, long offset,
             int expectedValue, int newValue) {
@@ -120,6 +121,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.184 -0400", hash_original_method = "B07F728E6C3379FC842B1FF2090A16B1", hash_generated_method = "21B1DB3192A6B8B9EBF277CB675C6446")
     public boolean compareAndSwapLong(Object obj, long offset,
             long expectedValue, long newValue) {
@@ -128,6 +130,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "65A652B3AC9F111924C01101653C4D66", hash_generated_method = "0084339C9CBA8216BF037DA4548353C8")
     public boolean compareAndSwapObject(Object obj, long offset,
             Object expectedValue, Object newValue) {
@@ -136,6 +139,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "8D5B44DDE927FC459CE77FA18575E830", hash_generated_method = "1000B02C32D87B63B15CF5D8C20991F0")
     public int getIntVolatile(Object obj, long offset) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848537927 = getTaintInt();
@@ -143,11 +147,13 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "2D478903B4854FFA78FE99D55B867EDA", hash_generated_method = "5A5E24E1D36AF1AB6E4BBDC6B10717DF")
     public void putIntVolatile(Object obj, long offset, int newValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.185 -0400", hash_original_method = "5D356F9FCB64558B37245C6E5D455D6F", hash_generated_method = "52E79CA71CA7F8BCC377F19D85187A6E")
     public long getLongVolatile(Object obj, long offset) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1391947139 = getTaintLong();
@@ -155,6 +161,7 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.186 -0400", hash_original_method = "5AB3D5DDF9043F3DC91C224AABAA6528", hash_generated_method = "F779406BA272DE63DFCD9F9456703DC2")
     public void putLongVolatile(Object obj, long offset, long newValue) {
     }
@@ -170,12 +177,14 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.186 -0400", hash_original_method = "F4C73687B1C91E2A955A746EFDA19758", hash_generated_method = "5A0B5DBAE41FE072547CFB28260C499A")
     public void putObjectVolatile(Object obj, long offset,
             Object newValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.186 -0400", hash_original_method = "F04350E1B41BC327004009309A9820C4", hash_generated_method = "059C89F9D982B114A635430C993C11BE")
     public int getInt(Object obj, long offset) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1627444349 = getTaintInt();
@@ -183,16 +192,19 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.187 -0400", hash_original_method = "CE446F803EECC7090C6DE85B5F9727FB", hash_generated_method = "D6A2F62C2C1BEFFAF33584D8AF4A96C3")
     public void putInt(Object obj, long offset, int newValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.187 -0400", hash_original_method = "0F4EEADE82300C8A6D47BB66B25081FB", hash_generated_method = "1206522AD3C7C4CB5DC01B9D266A77C9")
     public void putOrderedInt(Object obj, long offset, int newValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.203 -0400", hash_original_method = "A62D16CF4622F3468767ED41FD0C48D8", hash_generated_method = "20A4150E675E42C8C6318F77CE964FE7")
     public long getLong(Object obj, long offset) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1987256066 = getTaintLong();
@@ -200,11 +212,13 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.203 -0400", hash_original_method = "031A6C224714E986F8A4D8A9D45D73DD", hash_generated_method = "AD33BF0F17190F26448FE3ED4C4CF324")
     public void putLong(Object obj, long offset, long newValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.204 -0400", hash_original_method = "30A8F8DBA968E18C841B02CD11CE8C50", hash_generated_method = "91EABAB09EB9D3ADBE0B5D1A6698F365")
     public void putOrderedLong(Object obj, long offset, long newValue) {
     }
@@ -220,11 +234,13 @@ public final class Unsafe {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.204 -0400", hash_original_method = "C5B0C5B313647A39681E22F983DB9828", hash_generated_method = "0A515CB915F09C93D4FF711A1C549C7D")
     public void putObject(Object obj, long offset, Object newValue) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.205 -0400", hash_original_method = "330A73F0EAD671011DED9E5367E246F7", hash_generated_method = "2BB6AD037CDF25725E1A0D170E7F2C39")
     public void putOrderedObject(Object obj, long offset,
             Object newValue) {
@@ -238,17 +254,17 @@ public final class Unsafe {
     if(absolute)        
         {
             Thread.currentThread().parkUntil(time);
-        } //End block
+        } 
         else
         {
             Thread.currentThread().parkFor(time);
-        } //End block
-        // ---------- Original Method ----------
-        //if (absolute) {
-            //Thread.currentThread().parkUntil(time);
-        //} else {
-            //Thread.currentThread().parkFor(time);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -258,19 +274,19 @@ public final class Unsafe {
     if(obj instanceof Thread)        
         {
             ((Thread) obj).unpark();
-        } //End block
+        } 
         else
         {
             IllegalArgumentException varDADAC6841369B4979C3407B75F50C492_883352435 = new IllegalArgumentException("valid for Threads only");
             varDADAC6841369B4979C3407B75F50C492_883352435.addTaint(taint);
             throw varDADAC6841369B4979C3407B75F50C492_883352435;
-        } //End block
-        // ---------- Original Method ----------
-        //if (obj instanceof Thread) {
-            //((Thread) obj).unpark();
-        //} else {
-            //throw new IllegalArgumentException("valid for Threads only");
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

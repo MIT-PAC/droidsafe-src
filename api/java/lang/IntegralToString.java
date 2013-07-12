@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public final class IntegralToString {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:45.007 -0400", hash_original_method = "DF20FC0B1F395B5ECC5581BA0BD3AC0B", hash_generated_method = "724F18F022450896EB503A5FBBDA6BC7")
     private  IntegralToString() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -205,7 +205,8 @@ public final class IntegralToString {
     }
 
     
-        private static int intIntoCharArray(char[] buf, int cursor, int n) {
+        @DSModeled(DSC.SAFE)
+    private static int intIntoCharArray(char[] buf, int cursor, int n) {
         while ((n & 0xffff0000) != 0) {
             int q = (int) ((0x51EB851FL * (n >>> 2)) >>> 35);
             int r = n - 100*q;

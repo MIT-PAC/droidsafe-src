@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public final class BluetoothUuid {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.436 -0400", hash_original_method = "FFEFA3BC7BFF4E84DBF24098C0B3A717", hash_generated_method = "FFEFA3BC7BFF4E84DBF24098C0B3A717")
     public BluetoothUuid ()
     {
-        //Synthesized constructor
+        
     }
 
 

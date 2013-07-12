@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class BrowserContract {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.938 -0400", hash_original_method = "826484E4F7C2520B20953309D7672DA9", hash_generated_method = "826484E4F7C2520B20953309D7672DA9")
     public BrowserContract ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -30,7 +30,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.938 -0400", hash_original_method = "FBBD23C5251F402AEB9A227B34F9A614", hash_generated_method = "BEC06E194004959088D683347529A16B")
         private  ChromeSyncColumns() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -60,7 +60,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.939 -0400", hash_original_method = "AE207FC542F592796C7137A1F40A9FC2", hash_generated_method = "9D9D5ADD5386AE15B67A1E746F9B5A2D")
         private  Bookmarks() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -121,7 +121,7 @@ public class BrowserContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.942 -0400", hash_original_method = "E861E18FAAD07B872BEA69DAA31ED960", hash_generated_method = "E861E18FAAD07B872BEA69DAA31ED960")
         public Accounts ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -146,7 +146,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.942 -0400", hash_original_method = "9A3C530B0BF357B0539558761B1AC70C", hash_generated_method = "AC080925E41FF1CF6AA63820F2EC55A2")
         private  History() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -167,7 +167,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.943 -0400", hash_original_method = "7529334193E0AAE11CAF3EB6D8429B6D", hash_generated_method = "9C96E7D9170F02C650F71A1C65F54A71")
         private  Searches() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -197,7 +197,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.944 -0400", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "7C56DAB1CC85D73593C30D4266013E44")
         private  SyncState() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -237,7 +237,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.945 -0400", hash_original_method = "7ABD1F4BB750369FFBE0EAAD80629925", hash_generated_method = "64BCC625F43DCAD7D91867C70D1FE6C2")
         private  Images() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -255,7 +255,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.946 -0400", hash_original_method = "A486C536CC2BBF7E5EE5092C736031C8", hash_generated_method = "D09B023203FD1ACF44197D146AB0F998")
         private  Combined() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -273,7 +273,7 @@ public class BrowserContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.946 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "2C16D3C86A761A9DF5E58231442F813C")
         private  Settings() {
-            // ---------- Original Method ----------
+            
         }
 
         

@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ class GLES20DisplayList extends DisplayList {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.972 -0400", hash_original_method = "AE604D63277D457D456549CB93FF76C1", hash_generated_method = "AE604D63277D457D456549CB93FF76C1")
     public GLES20DisplayList ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -35,15 +35,15 @@ class GLES20DisplayList extends DisplayList {
             IllegalStateException var06213F52B8ACA3D2AEADB12DC5DE2AD4_811767725 = new IllegalStateException("The display list is not valid.");
             var06213F52B8ACA3D2AEADB12DC5DE2AD4_811767725.addTaint(taint);
             throw var06213F52B8ACA3D2AEADB12DC5DE2AD4_811767725;
-        } //End block
+        } 
         int varDBB802A0B6A30849748EBD456BC6D92D_667640923 = (mFinalizer.mNativeDisplayList);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471240859 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471240859;
-        // ---------- Original Method ----------
-        //if (!mValid || mFinalizer == null) {
-            //throw new IllegalStateException("The display list is not valid.");
-        //}
-        //return mFinalizer.mNativeDisplayList;
+        
+        
+            
+        
+        
     }
 
     
@@ -55,21 +55,21 @@ class GLES20DisplayList extends DisplayList {
             IllegalStateException varE1235A2E7A59005DC28786550630B7BD_1549295213 = new IllegalStateException("Recording has already started");
             varE1235A2E7A59005DC28786550630B7BD_1549295213.addTaint(taint);
             throw varE1235A2E7A59005DC28786550630B7BD_1549295213;
-        } //End block
+        } 
         mValid = false;
         mCanvas = GLES20RecordingCanvas.obtain(this);
         mCanvas.start();
 HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
         var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752.addTaint(taint);
         return var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752;
-        // ---------- Original Method ----------
-        //if (mCanvas != null) {
-            //throw new IllegalStateException("Recording has already started");
-        //}
-        //mValid = false;
-        //mCanvas = GLES20RecordingCanvas.obtain(this);
-        //mCanvas.start();
-        //return mCanvas;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -80,25 +80,26 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
         {
             mCanvas.recycle();
             mCanvas = null;
-        } //End block
+        } 
         mValid = false;
-        // ---------- Original Method ----------
-        //if (mCanvas != null) {
-            //mCanvas.recycle();
-            //mCanvas = null;
-        //}
-        //mValid = false;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.974 -0400", hash_original_method = "3D6474677C8929AA6741081CA86616E2", hash_generated_method = "C3A5BD67E95404BFBF8AA35F264E0438")
     @Override
      boolean isValid() {
         boolean varAB06C0B5FE02AF09E4F911D76AAEE4B2_1665200837 = (mValid);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1221967848 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1221967848;
-        // ---------- Original Method ----------
-        //return mValid;
+        
+        
     }
 
     
@@ -110,26 +111,26 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
     if(mFinalizer != null)            
             {
                 mCanvas.end(mFinalizer.mNativeDisplayList);
-            } //End block
+            } 
             else
             {
                 mFinalizer = new DisplayListFinalizer(mCanvas.end(0));
-            } //End block
+            } 
             mCanvas.recycle();
             mCanvas = null;
             mValid = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCanvas != null) {
-            //if (mFinalizer != null) {
-                //mCanvas.end(mFinalizer.mNativeDisplayList);
-            //} else {
-                //mFinalizer = new DisplayListFinalizer(mCanvas.end(0));
-            //}
-            //mCanvas.recycle();
-            //mCanvas = null;
-            //mValid = true;
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -145,9 +146,9 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
         int varEE53FC709F4FAB92B6A4D13DAC062304_389604388 = (GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800030626 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1800030626;
-        // ---------- Original Method ----------
-        //if (mFinalizer == null) return 0;
-        //return GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList);
+        
+        
+        
     }
 
     
@@ -159,8 +160,8 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.976 -0400", hash_original_method = "0B1B093880262044EED2D5421EB7C8E9", hash_generated_method = "DAAE4ADD86F9B0F97F318309228FD8AA")
         public  DisplayListFinalizer(int nativeDisplayList) {
             mNativeDisplayList = nativeDisplayList;
-            // ---------- Original Method ----------
-            //mNativeDisplayList = nativeDisplayList;
+            
+            
         }
 
         
@@ -170,17 +171,17 @@ HardwareCanvas var3AB98B3CCAF89A85C04BAFF3A3FCA5C1_2002352752 =         mCanvas;
             try 
             {
                 GLES20Canvas.destroyDisplayList(mNativeDisplayList);
-            } //End block
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //GLES20Canvas.destroyDisplayList(mNativeDisplayList);
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         

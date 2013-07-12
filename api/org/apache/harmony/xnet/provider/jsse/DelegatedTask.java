@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ public class DelegatedTask implements Runnable {
     public  DelegatedTask(Runnable action, HandshakeProtocol handshaker) {
         this.action = action;
         this.handshaker = handshaker;
-        // ---------- Original Method ----------
-        //this.action = action;
-        //this.handshaker = handshaker;
+        
+        
+        
     }
 
     
@@ -30,20 +30,20 @@ public class DelegatedTask implements Runnable {
             try 
             {
                 action.run();
-            } //End block
+            } 
             catch (RuntimeException e)
             {
                 handshaker.delegatedTaskErr = e;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (handshaker) {
-            //try {
-                //action.run();
-            //} catch (RuntimeException e) {
-                //handshaker.delegatedTaskErr = e;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     

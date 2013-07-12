@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public abstract class SSLEngine {
     protected  SSLEngine() {
         peerHost = null;
         peerPort = -1;
-        // ---------- Original Method ----------
-        //peerHost = null;
-        //peerPort = -1;
+        
+        
+        
     }
 
     
@@ -28,29 +28,31 @@ public abstract class SSLEngine {
     protected  SSLEngine(String host, int port) {
         this.peerHost = host;
         this.peerPort = port;
-        // ---------- Original Method ----------
-        //this.peerHost = host;
-        //this.peerPort = port;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.676 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "884EE51D0491A08921E7C06365218CB8")
     public String getPeerHost() {
 String varFEF815055C97D4B621404BF729E85DA2_1000186825 =         peerHost;
         varFEF815055C97D4B621404BF729E85DA2_1000186825.addTaint(taint);
         return varFEF815055C97D4B621404BF729E85DA2_1000186825;
-        // ---------- Original Method ----------
-        //return peerHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.677 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "DE0D05E64654CEEC33718C25AC6BE8A1")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1813309264 = (peerPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927822323 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_927822323;
-        // ---------- Original Method ----------
-        //return peerPort;
+        
+        
     }
 
     
@@ -137,8 +139,8 @@ String varFEF815055C97D4B621404BF729E85DA2_1000186825 =         peerHost;
 SSLEngineResult varDD78561FBD283269B6DD42AF139A709B_600761060 =         unwrap(src, new ByteBuffer[] { dst }, 0, 1);
         varDD78561FBD283269B6DD42AF139A709B_600761060.addTaint(taint);
         return varDD78561FBD283269B6DD42AF139A709B_600761060;
-        // ---------- Original Method ----------
-        //return unwrap(src, new ByteBuffer[] { dst }, 0, 1);
+        
+        
     }
 
     
@@ -151,15 +153,15 @@ SSLEngineResult varDD78561FBD283269B6DD42AF139A709B_600761060 =         unwrap(s
             IllegalArgumentException var9A48F68B6ACA4F10390F24793213AE1A_1747482611 = new IllegalArgumentException("Byte buffer array dsts is null");
             var9A48F68B6ACA4F10390F24793213AE1A_1747482611.addTaint(taint);
             throw var9A48F68B6ACA4F10390F24793213AE1A_1747482611;
-        } //End block
+        } 
 SSLEngineResult varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236 =         unwrap(src, dsts, 0, dsts.length);
         varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236.addTaint(taint);
         return varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236;
-        // ---------- Original Method ----------
-        //if (dsts == null) {
-            //throw new IllegalArgumentException("Byte buffer array dsts is null");
-        //}
-        //return unwrap(src, dsts, 0, dsts.length);
+        
+        
+            
+        
+        
     }
 
     
@@ -172,15 +174,15 @@ SSLEngineResult varF59CCEEF71B0ADC2DE10A862EA422DCB_504315236 =         unwrap(s
             IllegalArgumentException var433488ACC9F76CFE26370F760861C10E_1121361782 = new IllegalArgumentException("Byte buffer array srcs is null");
             var433488ACC9F76CFE26370F760861C10E_1121361782.addTaint(taint);
             throw var433488ACC9F76CFE26370F760861C10E_1121361782;
-        } //End block
+        } 
 SSLEngineResult varF785702831660251D276B1204D3A4B36_1104319821 =         wrap(srcs, 0, srcs.length, dst);
         varF785702831660251D276B1204D3A4B36_1104319821.addTaint(taint);
         return varF785702831660251D276B1204D3A4B36_1104319821;
-        // ---------- Original Method ----------
-        //if (srcs == null) {
-            //throw new IllegalArgumentException("Byte buffer array srcs is null");
-        //}
-        //return wrap(srcs, 0, srcs.length, dst);
+        
+        
+            
+        
+        
     }
 
     
@@ -191,8 +193,8 @@ SSLEngineResult varF785702831660251D276B1204D3A4B36_1104319821 =         wrap(sr
 SSLEngineResult var8990D21D724771169EEA983129118039_1664139085 =         wrap(new ByteBuffer[] { src }, 0, 1, dst);
         var8990D21D724771169EEA983129118039_1664139085.addTaint(taint);
         return var8990D21D724771169EEA983129118039_1664139085;
-        // ---------- Original Method ----------
-        //return wrap(new ByteBuffer[] { src }, 0, 1, dst);
+        
+        
     }
 
     
@@ -206,13 +208,13 @@ SSLEngineResult var8990D21D724771169EEA983129118039_1664139085 =         wrap(ne
 SSLParameters var74E4690D9F2A026504928C017944E149_619189555 =         p;
         var74E4690D9F2A026504928C017944E149_619189555.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_619189555;
-        // ---------- Original Method ----------
-        //SSLParameters p = new SSLParameters();
-        //p.setCipherSuites(getEnabledCipherSuites());
-        //p.setProtocols(getEnabledProtocols());
-        //p.setNeedClientAuth(getNeedClientAuth());
-        //p.setWantClientAuth(getWantClientAuth());
-        //return p;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -223,41 +225,41 @@ SSLParameters var74E4690D9F2A026504928C017944E149_619189555 =         p;
     if(cipherSuites != null)        
         {
             setEnabledCipherSuites(cipherSuites);
-        } //End block
+        } 
         String[] protocols = p.getProtocols();
     if(protocols != null)        
         {
             setEnabledProtocols(protocols);
-        } //End block
+        } 
     if(p.getNeedClientAuth())        
         {
             setNeedClientAuth(true);
-        } //End block
+        } 
         else
     if(p.getWantClientAuth())        
         {
             setWantClientAuth(true);
-        } //End block
+        } 
         else
         {
             setWantClientAuth(false);
-        } //End block
-        // ---------- Original Method ----------
-        //String[] cipherSuites = p.getCipherSuites();
-        //if (cipherSuites != null) {
-            //setEnabledCipherSuites(cipherSuites);
-        //}
-        //String[] protocols = p.getProtocols();
-        //if (protocols != null) {
-            //setEnabledProtocols(protocols);
-        //}
-        //if (p.getNeedClientAuth()) {
-            //setNeedClientAuth(true);
-        //} else if (p.getWantClientAuth()) {
-            //setWantClientAuth(true);
-        //} else {
-            //setWantClientAuth(false);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     

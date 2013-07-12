@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,15 +25,16 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
     public  PhoneSubInfo(Phone phone) {
         mPhone = phone;
         mContext = phone.getContext();
-        // ---------- Original Method ----------
-        //mPhone = phone;
-        //mContext = phone.getContext();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.349 -0400", hash_original_method = "090E1F04EFD80CF69ADD306ED1D79AE5", hash_generated_method = "614D737B8CBDA53A99A22331B445C19D")
     public void dispose() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,18 +43,18 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
         try 
         {
             super.finalize();
-        } //End block
+        } 
         catch (Throwable throwable)
         {
-        } //End block
+        } 
         Log.d(LOG_TAG, "PhoneSubInfo finalized");
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} catch (Throwable throwable) {
-            //Log.e(LOG_TAG, "Error while finalizing:", throwable);
-        //}
-        //Log.d(LOG_TAG, "PhoneSubInfo finalized");
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -63,9 +64,9 @@ public class PhoneSubInfo extends IPhoneSubInfo.Stub {
 String varFA71673B90CF0A8C48C17D503AAD8DD9_1407743651 =         mPhone.getDeviceId();
         varFA71673B90CF0A8C48C17D503AAD8DD9_1407743651.addTaint(taint);
         return varFA71673B90CF0A8C48C17D503AAD8DD9_1407743651;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getDeviceId();
+        
+        
+        
     }
 
     
@@ -75,9 +76,9 @@ String varFA71673B90CF0A8C48C17D503AAD8DD9_1407743651 =         mPhone.getDevice
 String var435A9281E17FA260B168A9BA3B7DC04A_1337747816 =         mPhone.getDeviceSvn();
         var435A9281E17FA260B168A9BA3B7DC04A_1337747816.addTaint(taint);
         return var435A9281E17FA260B168A9BA3B7DC04A_1337747816;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getDeviceSvn();
+        
+        
+        
     }
 
     
@@ -87,9 +88,9 @@ String var435A9281E17FA260B168A9BA3B7DC04A_1337747816 =         mPhone.getDevice
 String var72C25F22D2FBA989AA76F4EC603E0F84_164195638 =         mPhone.getSubscriberId();
         var72C25F22D2FBA989AA76F4EC603E0F84_164195638.addTaint(taint);
         return var72C25F22D2FBA989AA76F4EC603E0F84_164195638;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getSubscriberId();
+        
+        
+        
     }
 
     
@@ -99,9 +100,9 @@ String var72C25F22D2FBA989AA76F4EC603E0F84_164195638 =         mPhone.getSubscri
 String var882C1614C4BAC433AE1941907CD6ABCB_241254078 =         mPhone.getIccSerialNumber();
         var882C1614C4BAC433AE1941907CD6ABCB_241254078.addTaint(taint);
         return var882C1614C4BAC433AE1941907CD6ABCB_241254078;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getIccSerialNumber();
+        
+        
+        
     }
 
     
@@ -111,9 +112,9 @@ String var882C1614C4BAC433AE1941907CD6ABCB_241254078 =         mPhone.getIccSeri
 String varF99B99AB0238EB21CB7B88C63CBC8EB5_1999545267 =         mPhone.getLine1Number();
         varF99B99AB0238EB21CB7B88C63CBC8EB5_1999545267.addTaint(taint);
         return varF99B99AB0238EB21CB7B88C63CBC8EB5_1999545267;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getLine1Number();
+        
+        
+        
     }
 
     
@@ -123,9 +124,9 @@ String varF99B99AB0238EB21CB7B88C63CBC8EB5_1999545267 =         mPhone.getLine1N
 String var915B399E36AD2DC723DDBF2E1EC534D5_1754237388 =         (String) mPhone.getLine1AlphaTag();
         var915B399E36AD2DC723DDBF2E1EC534D5_1754237388.addTaint(taint);
         return var915B399E36AD2DC723DDBF2E1EC534D5_1754237388;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return (String) mPhone.getLine1AlphaTag();
+        
+        
+        
     }
 
     
@@ -135,9 +136,9 @@ String var915B399E36AD2DC723DDBF2E1EC534D5_1754237388 =         (String) mPhone.
 String varD1D6F5168E76CE1592036B4FE9F8DF9C_1317787277 =         mPhone.getMsisdn();
         varD1D6F5168E76CE1592036B4FE9F8DF9C_1317787277.addTaint(taint);
         return varD1D6F5168E76CE1592036B4FE9F8DF9C_1317787277;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return mPhone.getMsisdn();
+        
+        
+        
     }
 
     
@@ -149,11 +150,11 @@ String varD1D6F5168E76CE1592036B4FE9F8DF9C_1317787277 =         mPhone.getMsisdn
 String var63E80DF571E08DAA47BEFBF0BD0EEBAD_318555510 =         number;
         var63E80DF571E08DAA47BEFBF0BD0EEBAD_318555510.addTaint(taint);
         return var63E80DF571E08DAA47BEFBF0BD0EEBAD_318555510;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //String number = PhoneNumberUtils.extractNetworkPortion(mPhone.getVoiceMailNumber());
-        //Log.d(LOG_TAG, "VM: PhoneSubInfo.getVoiceMailNUmber: ");
-        //return number;
+        
+        
+        
+        
+        
     }
 
     
@@ -166,12 +167,12 @@ String var63E80DF571E08DAA47BEFBF0BD0EEBAD_318555510 =         number;
 String var63E80DF571E08DAA47BEFBF0BD0EEBAD_1669743266 =         number;
         var63E80DF571E08DAA47BEFBF0BD0EEBAD_1669743266.addTaint(taint);
         return var63E80DF571E08DAA47BEFBF0BD0EEBAD_1669743266;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(CALL_PRIVILEGED,
-                //"Requires CALL_PRIVILEGED");
-        //String number = mPhone.getVoiceMailNumber();
-        //Log.d(LOG_TAG, "VM: PhoneSubInfo.getCompleteVoiceMailNUmber: ");
-        //return number;
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -181,9 +182,9 @@ String var63E80DF571E08DAA47BEFBF0BD0EEBAD_1669743266 =         number;
 String var62E5FB36C0AD7152B2051159B22D2B9A_1718507155 =         (String) mPhone.getVoiceMailAlphaTag();
         var62E5FB36C0AD7152B2051159B22D2B9A_1718507155.addTaint(taint);
         return var62E5FB36C0AD7152B2051159B22D2B9A_1718507155;
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PHONE_STATE, "Requires READ_PHONE_STATE");
-        //return (String) mPhone.getVoiceMailAlphaTag();
+        
+        
+        
     }
 
     
@@ -197,22 +198,22 @@ String var62E5FB36C0AD7152B2051159B22D2B9A_1718507155 =         (String) mPhone.
 String varE77C8481BB3712B45420EDC3130B1A13_1066936725 =             isim.getIsimImpi();
             varE77C8481BB3712B45420EDC3130B1A13_1066936725.addTaint(taint);
             return varE77C8481BB3712B45420EDC3130B1A13_1066936725;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_1260551262 =             null;
             var540C13E9E156B687226421B24F2DF178_1260551262.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1260551262;
-        } //End block
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
-                //"Requires READ_PRIVILEGED_PHONE_STATE");
-        //IsimRecords isim = mPhone.getIsimRecords();
-        //if (isim != null) {
-            //return isim.getIsimImpi();
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+                
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -226,22 +227,22 @@ String var540C13E9E156B687226421B24F2DF178_1260551262 =             null;
 String var49A36196CE44942401AFC488FA3CAA1A_512173005 =             isim.getIsimDomain();
             var49A36196CE44942401AFC488FA3CAA1A_512173005.addTaint(taint);
             return var49A36196CE44942401AFC488FA3CAA1A_512173005;
-        } //End block
+        } 
         else
         {
 String var540C13E9E156B687226421B24F2DF178_1776478155 =             null;
             var540C13E9E156B687226421B24F2DF178_1776478155.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1776478155;
-        } //End block
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
-                //"Requires READ_PRIVILEGED_PHONE_STATE");
-        //IsimRecords isim = mPhone.getIsimRecords();
-        //if (isim != null) {
-            //return isim.getIsimDomain();
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+                
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -255,22 +256,22 @@ String var540C13E9E156B687226421B24F2DF178_1776478155 =             null;
 String[] var85323B51C5BCEDC923817A0AE9C20F2D_79975643 =             isim.getIsimImpu();
             var85323B51C5BCEDC923817A0AE9C20F2D_79975643.addTaint(taint);
             return var85323B51C5BCEDC923817A0AE9C20F2D_79975643;
-        } //End block
+        } 
         else
         {
 String[] var540C13E9E156B687226421B24F2DF178_929115939 =             null;
             var540C13E9E156B687226421B24F2DF178_929115939.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_929115939;
-        } //End block
-        // ---------- Original Method ----------
-        //mContext.enforceCallingOrSelfPermission(READ_PRIVILEGED_PHONE_STATE,
-                //"Requires READ_PRIVILEGED_PHONE_STATE");
-        //IsimRecords isim = mPhone.getIsimRecords();
-        //if (isim != null) {
-            //return isim.getIsimImpu();
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+                
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -286,21 +287,21 @@ String[] var540C13E9E156B687226421B24F2DF178_929115939 =             null;
                     + Binder.getCallingPid()
                     + ", uid=" + Binder.getCallingUid());
             return;
-        } //End block
+        } 
         pw.println("Phone Subscriber Info:");
         pw.println("  Phone Type = " + mPhone.getPhoneName());
         pw.println("  Device ID = " + mPhone.getDeviceId());
-        // ---------- Original Method ----------
-        //if (mContext.checkCallingOrSelfPermission(android.Manifest.permission.DUMP)
-                //!= PackageManager.PERMISSION_GRANTED) {
-            //pw.println("Permission Denial: can't dump PhoneSubInfo from from pid="
-                    //+ Binder.getCallingPid()
-                    //+ ", uid=" + Binder.getCallingUid());
-            //return;
-        //}
-        //pw.println("Phone Subscriber Info:");
-        //pw.println("  Phone Type = " + mPhone.getPhoneName());
-        //pw.println("  Device ID = " + mPhone.getDeviceId());
+        
+        
+                
+            
+                    
+                    
+            
+        
+        
+        
+        
     }
 
     

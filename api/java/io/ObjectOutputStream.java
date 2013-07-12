@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -61,8 +61,8 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.845 -0400", hash_original_method = "EA89A37EA944EE797F4A4E71C06BB807", hash_generated_method = "1DD7286A5E2A9A1C12E3BB1E02964B00")
     protected  ObjectOutputStream() throws IOException {
         this.subclassOverridingImplementation = true;
-        // ---------- Original Method ----------
-        //this.subclassOverridingImplementation = true;
+        
+        
     }
 
     
@@ -78,31 +78,31 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         primitiveTypes = this.output;
         writeStreamHeader();
         primitiveTypes = null;
-        // ---------- Original Method ----------
-        //this.output = (output instanceof DataOutputStream) ? (DataOutputStream) output
-                //: new DataOutputStream(output);
-        //this.enableReplace = false;
-        //this.protocolVersion = PROTOCOL_VERSION_2;
-        //this.subclassOverridingImplementation = false;
-        //resetState();
-        //this.nestedException = new StreamCorruptedException();
-        //primitiveTypes = this.output;
-        //writeStreamHeader();
-        //primitiveTypes = null;
+        
+        
+                
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.850 -0400", hash_original_method = "2EE844E85177CE8B8519EE788449061C", hash_generated_method = "1E11D11D51E0154BB7749FEDA5280BAF")
     protected void annotateClass(Class<?> aClass) throws IOException {
         addTaint(aClass.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.851 -0400", hash_original_method = "6D36FCC856EE4705ED65F6105201ADD2", hash_generated_method = "A5E98127E91E49198B235D1BD1806995")
     protected void annotateProxyClass(Class<?> aClass) throws IOException {
         addTaint(aClass.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -112,12 +112,12 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         {
             primitiveTypesBuffer = new ByteArrayOutputStream(128);
             primitiveTypes = new DataOutputStream(primitiveTypesBuffer);
-        } //End block
-        // ---------- Original Method ----------
-        //if (primitiveTypes == null) {
-            //primitiveTypesBuffer = new ByteArrayOutputStream(128);
-            //primitiveTypes = new DataOutputStream(primitiveTypesBuffer);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -126,17 +126,17 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     public void close() throws IOException {
         flush();
         output.close();
-        // ---------- Original Method ----------
-        //flush();
-        //output.close();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.859 -0400", hash_original_method = "75FABBE0CA8F03B34490087B8F17BDC1", hash_generated_method = "70B8FCB927EA2A43EC259740055018B9")
     private void computePutField() {
         currentPutField = new EmulatedFieldsForDumping(this, currentClass);
-        // ---------- Original Method ----------
-        //currentPutField = new EmulatedFieldsForDumping(this, currentClass);
+        
+        
     }
 
     
@@ -147,13 +147,13 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_1994743657 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_1994743657.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_1994743657;
-        } //End block
+        } 
         writeFieldValues(currentObject, currentClass);
-        // ---------- Original Method ----------
-        //if (currentObject == null) {
-            //throw new NotActiveException();
-        //}
-        //writeFieldValues(currentObject, currentClass);
+        
+        
+            
+        
+        
     }
 
     
@@ -162,7 +162,7 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     if(primitiveTypes == null || primitiveTypesBuffer == null)        
         {
             return;
-        } //End block
+        } 
         int offset = 0;
         byte[] written = primitiveTypesBuffer.toByteArray();
         while
@@ -174,38 +174,38 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
             {
                 output.writeByte(TC_BLOCKDATA);
                 output.writeByte((byte) toWrite);
-            } //End block
+            } 
             else
             {
                 output.writeByte(TC_BLOCKDATALONG);
                 output.writeInt(toWrite);
-            } //End block
+            } 
             output.write(written, offset, toWrite);
             offset += toWrite;
-        } //End block
+        } 
         primitiveTypes = null;
         primitiveTypesBuffer = null;
-        // ---------- Original Method ----------
-        //if (primitiveTypes == null || primitiveTypesBuffer == null) {
-            //return;
-        //}
-        //int offset = 0;
-        //byte[] written = primitiveTypesBuffer.toByteArray();
-        //while (offset < written.length) {
-            //int toWrite = written.length - offset > 1024 ? 1024
-                    //: written.length - offset;
-            //if (toWrite < 256) {
-                //output.writeByte(TC_BLOCKDATA);
-                //output.writeByte((byte) toWrite);
-            //} else {
-                //output.writeByte(TC_BLOCKDATALONG);
-                //output.writeInt(toWrite);
-            //}
-            //output.write(written, offset, toWrite);
-            //offset += toWrite;
-        //}
-        //primitiveTypes = null;
-        //primitiveTypesBuffer = null;
+        
+        
+            
+        
+        
+        
+        
+            
+                    
+            
+                
+                
+            
+                
+                
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -219,20 +219,21 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
             int varE1260894F59EEAE98C8440899DE4DF8D_1465882731 = (handle);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427866402 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_427866402;
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1661666619 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_492011039 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_492011039;
-        // ---------- Original Method ----------
-        //int handle = objectsWritten.get(obj);
-        //if (handle != -1) {
-            //writeCyclicReference(handle);
-            //return handle;
-        //}
-        //return -1;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.870 -0400", hash_original_method = "7186A696463687F53D4FA37D2BB9631D", hash_generated_method = "643676CE5AECCD7272A83D6D1F2AD22B")
     protected boolean enableReplaceObject(boolean enable) {
         boolean originalValue = enableReplace;
@@ -240,10 +241,10 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
         boolean var48A7AAFD2093A2CFD7C2A6E0C39C3B3C_149365406 = (originalValue);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_796041145 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_796041145;
-        // ---------- Original Method ----------
-        //boolean originalValue = enableReplace;
-        //enableReplace = enable;
-        //return originalValue;
+        
+        
+        
+        
     }
 
     
@@ -252,9 +253,9 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     public void flush() throws IOException {
         drain();
         output.flush();
-        // ---------- Original Method ----------
-        //drain();
-        //output.flush();
+        
+        
+        
     }
 
     
@@ -264,13 +265,14 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.874 -0400", hash_original_method = "3E8C44E06770B18C136965DDB10C163B", hash_generated_method = "AFA6002F8EE09711235EBD5D45868EEB")
     private int nextHandle() {
         int var57D4F29AF80AE42B0D9EED2C0C55E152_64021215 = (currentHandle++);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066915425 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1066915425;
-        // ---------- Original Method ----------
-        //return currentHandle++;
+        
+        
     }
 
     
@@ -281,22 +283,22 @@ public class ObjectOutputStream extends OutputStream implements ObjectOutput, Ob
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_1654313560 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_1654313560.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_1654313560;
-        } //End block
+        } 
     if(currentPutField == null)        
         {
             computePutField();
-        } //End block
+        } 
 PutField var86DE5DDDFAC8CCFE25956F12D10EF898_1260619719 =         currentPutField;
         var86DE5DDDFAC8CCFE25956F12D10EF898_1260619719.addTaint(taint);
         return var86DE5DDDFAC8CCFE25956F12D10EF898_1260619719;
-        // ---------- Original Method ----------
-        //if (currentObject == null) {
-            //throw new NotActiveException();
-        //}
-        //if (currentPutField == null) {
-            //computePutField();
-        //}
-        //return currentPutField;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -308,10 +310,10 @@ PutField var86DE5DDDFAC8CCFE25956F12D10EF898_1260619719 =         currentPutFiel
         int varE1260894F59EEAE98C8440899DE4DF8D_271594333 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198562746 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198562746;
-        // ---------- Original Method ----------
-        //int handle = nextHandle();
-        //objectsWritten.put(obj, handle);
-        //return handle;
+        
+        
+        
+        
     }
 
     
@@ -322,28 +324,29 @@ PutField var86DE5DDDFAC8CCFE25956F12D10EF898_1260619719 =         currentPutFiel
     if(previousHandle != -1)        
         {
             objectsWritten.put(obj, previousHandle);
-        } //End block
+        } 
         else
         {
             objectsWritten.remove(obj);
-        } //End block
-        // ---------- Original Method ----------
-        //if (previousHandle != -1) {
-            //objectsWritten.put(obj, previousHandle);
-        //} else {
-            //objectsWritten.remove(obj);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.879 -0400", hash_original_method = "C1DF94E02684AF79BBD267850463E92A", hash_generated_method = "BC9FEA89902E124D296C21920DBFDA44")
     protected Object replaceObject(Object object) throws IOException {
         addTaint(object.getTaint());
 Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         var6F3B27511D98F0E852A24482F031265F_559577574.addTaint(taint);
         return var6F3B27511D98F0E852A24482F031265F_559577574;
-        // ---------- Original Method ----------
-        //return object;
+        
+        
     }
 
     
@@ -352,10 +355,10 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         drain();
         output.writeByte(TC_RESET);
         resetState();
-        // ---------- Original Method ----------
-        //drain();
-        //output.writeByte(TC_RESET);
-        //resetState();
+        
+        
+        
+        
     }
 
     
@@ -363,9 +366,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
     private void resetSeenObjects() {
         objectsWritten = new SerializationHandleMap();
         currentHandle = baseWireHandle;
-        // ---------- Original Method ----------
-        //objectsWritten = new SerializationHandleMap();
-        //currentHandle = baseWireHandle;
+        
+        
+        
     }
 
     
@@ -373,9 +376,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
     private void resetState() {
         resetSeenObjects();
         nestedLevels = 0;
-        // ---------- Original Method ----------
-        //resetSeenObjects();
-        //nestedLevels = 0;
+        
+        
+        
     }
 
     
@@ -386,24 +389,24 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
             IllegalStateException var7765E315ADDC37C4D0C8D1926655B5BC_1724054095 = new IllegalStateException("Cannot set protocol version when stream in use");
             var7765E315ADDC37C4D0C8D1926655B5BC_1724054095.addTaint(taint);
             throw var7765E315ADDC37C4D0C8D1926655B5BC_1724054095;
-        } //End block
+        } 
     if(version != ObjectStreamConstants.PROTOCOL_VERSION_1
                 && version != ObjectStreamConstants.PROTOCOL_VERSION_2)        
         {
             IllegalArgumentException var2C2330824CE6FC7D74FD680FF519F2ED_751716283 = new IllegalArgumentException("Unknown protocol: " + version);
             var2C2330824CE6FC7D74FD680FF519F2ED_751716283.addTaint(taint);
             throw var2C2330824CE6FC7D74FD680FF519F2ED_751716283;
-        } //End block
+        } 
         protocolVersion = version;
-        // ---------- Original Method ----------
-        //if (!objectsWritten.isEmpty()) {
-            //throw new IllegalStateException("Cannot set protocol version when stream in use");
-        //}
-        //if (version != ObjectStreamConstants.PROTOCOL_VERSION_1
-                //&& version != ObjectStreamConstants.PROTOCOL_VERSION_2) {
-            //throw new IllegalArgumentException("Unknown protocol: " + version);
-        //}
-        //protocolVersion = version;
+        
+        
+            
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -415,9 +418,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(buffer[0]);
         checkWritePrimitiveTypes();
         primitiveTypes.write(buffer, offset, length);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.write(buffer, offset, length);
+        
+        
+        
     }
 
     
@@ -427,9 +430,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.write(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.write(value);
+        
+        
+        
     }
 
     
@@ -438,9 +441,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeBoolean(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeBoolean(value);
+        
+        
+        
     }
 
     
@@ -449,9 +452,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeByte(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeByte(value);
+        
+        
+        
     }
 
     
@@ -460,9 +463,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(value.getTaint());
         checkWritePrimitiveTypes();
         primitiveTypes.writeBytes(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeBytes(value);
+        
+        
+        
     }
 
     
@@ -471,9 +474,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeChar(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeChar(value);
+        
+        
+        
     }
 
     
@@ -482,9 +485,9 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
         addTaint(value.getTaint());
         checkWritePrimitiveTypes();
         primitiveTypes.writeChars(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeChars(value);
+        
+        
+        
     }
 
     
@@ -498,12 +501,12 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1752797578 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1340560341 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1340560341;
-        } //End block
+        } 
         int handle = -1;
     if(!unshared)        
         {
             handle = dumpCycle(classDesc);
-        } //End block
+        } 
     if(handle == -1)        
         {
             Class<?> classToWrite = classDesc.forClass();
@@ -511,7 +514,7 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
     if(unshared)            
             {
                 previousHandle = objectsWritten.get(classDesc);
-            } //End block
+            } 
             handle = registerObjectWritten(classDesc);
     if(classDesc.isProxy())            
             {
@@ -521,29 +524,29 @@ Object var6F3B27511D98F0E852A24482F031265F_559577574 =         object;
 for(int i = 0;i < interfaces.length;i++)
                 {
                     output.writeUTF(interfaces[i].getName());
-                } //End block
+                } 
                 annotateProxyClass(classToWrite);
                 output.writeByte(TC_ENDBLOCKDATA);
                 writeClassDesc(proxyClassDesc, false);
     if(unshared)                
                 {
                     removeUnsharedReference(classDesc, previousHandle);
-                } //End block
+                } 
                 int varE1260894F59EEAE98C8440899DE4DF8D_2123000495 = (handle);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92345808 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_92345808;
-            } //End block
+            } 
             output.writeByte(TC_CLASSDESC);
     if(protocolVersion == PROTOCOL_VERSION_1)            
             {
                 writeNewClassDesc(classDesc);
-            } //End block
+            } 
             else
             {
                 primitiveTypes = output;
                 writeClassDescriptor(classDesc);
                 primitiveTypes = null;
-            } //End block
+            } 
             annotateClass(classToWrite);
             drain();
             output.writeByte(TC_ENDBLOCKDATA);
@@ -551,13 +554,13 @@ for(int i = 0;i < interfaces.length;i++)
     if(unshared)            
             {
                 removeUnsharedReference(classDesc, previousHandle);
-            } //End block
-        } //End block
+            } 
+        } 
         int varE1260894F59EEAE98C8440899DE4DF8D_1760781254 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232976067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_232976067;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -566,9 +569,9 @@ for(int i = 0;i < interfaces.length;i++)
         addTaint(handle);
         output.writeByte(TC_REFERENCE);
         output.writeInt(handle);
-        // ---------- Original Method ----------
-        //output.writeByte(TC_REFERENCE);
-        //output.writeInt(handle);
+        
+        
+        
     }
 
     
@@ -577,9 +580,9 @@ for(int i = 0;i < interfaces.length;i++)
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeDouble(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeDouble(value);
+        
+        
+        
     }
 
     
@@ -594,7 +597,7 @@ for(int i = 0;i < interfaces.length;i++)
         {
             fields = classDesc.fields();
             fieldCount = fields.length;
-        } //End block
+        } 
         output.writeShort(fieldCount);
 for(int i = 0;i < fieldCount;i++)
         {
@@ -603,24 +606,24 @@ for(int i = 0;i < fieldCount;i++)
     if(!wasPrimitive)            
             {
                 writeObject(f.getTypeString());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Class<?> loadedClass = classDesc.forClass();
-        //ObjectStreamField[] fields = null;
-        //int fieldCount = 0;
-        //if (!externalizable && loadedClass != ObjectStreamClass.STRINGCLASS) {
-            //fields = classDesc.fields();
-            //fieldCount = fields.length;
-        //}
-        //output.writeShort(fieldCount);
-        //for (int i = 0; i < fieldCount; i++) {
-            //ObjectStreamField f = fields[i];
-            //boolean wasPrimitive = f.writeField(output);
-            //if (!wasPrimitive) {
-                //writeObject(f.getTypeString());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -631,13 +634,13 @@ for(int i = 0;i < fieldCount;i++)
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_1302848665 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_1302848665.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_1302848665;
-        } //End block
+        } 
         writeFieldValues(currentPutField);
-        // ---------- Original Method ----------
-        //if (currentPutField == null) {
-            //throw new NotActiveException();
-        //}
-        //writeFieldValues(currentPutField);
+        
+        
+            
+        
+        
     }
 
     
@@ -652,49 +655,49 @@ for(EmulatedFields.ObjectSlot slot : accessibleSimulatedFields.slots())
     if(type == int.class)            
             {
                 output.writeInt(fieldValue != null ? ((Integer) fieldValue).intValue() : 0);
-            } //End block
+            } 
             else
     if(type == byte.class)            
             {
                 output.writeByte(fieldValue != null ? ((Byte) fieldValue).byteValue() : 0);
-            } //End block
+            } 
             else
     if(type == char.class)            
             {
                 output.writeChar(fieldValue != null ? ((Character) fieldValue).charValue() : 0);
-            } //End block
+            } 
             else
     if(type == short.class)            
             {
                 output.writeShort(fieldValue != null ? ((Short) fieldValue).shortValue() : 0);
-            } //End block
+            } 
             else
     if(type == boolean.class)            
             {
                 output.writeBoolean(fieldValue != null ? ((Boolean) fieldValue).booleanValue() : false);
-            } //End block
+            } 
             else
     if(type == long.class)            
             {
                 output.writeLong(fieldValue != null ? ((Long) fieldValue).longValue() : 0);
-            } //End block
+            } 
             else
     if(type == float.class)            
             {
                 output.writeFloat(fieldValue != null ? ((Float) fieldValue).floatValue() : 0);
-            } //End block
+            } 
             else
     if(type == double.class)            
             {
                 output.writeDouble(fieldValue != null ? ((Double) fieldValue).doubleValue() : 0);
-            } //End block
+            } 
             else
             {
                 writeObject(fieldValue);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -713,74 +716,74 @@ for(ObjectStreamField fieldDesc : classDesc.fields())
                     InvalidClassException var959A4CD6DB4B9D4C61265A5D57384767_1493088685 = new InvalidClassException(classDesc.getName() + " doesn't have a field " + fieldDesc.getName() + " of type " + type);
                     var959A4CD6DB4B9D4C61265A5D57384767_1493088685.addTaint(taint);
                     throw var959A4CD6DB4B9D4C61265A5D57384767_1493088685;
-                } //End block
+                } 
     if(type == byte.class)                
                 {
                     output.writeByte(field.getByte(obj));
-                } //End block
+                } 
                 else
     if(type == char.class)                
                 {
                     output.writeChar(field.getChar(obj));
-                } //End block
+                } 
                 else
     if(type == double.class)                
                 {
                     output.writeDouble(field.getDouble(obj));
-                } //End block
+                } 
                 else
     if(type == float.class)                
                 {
                     output.writeFloat(field.getFloat(obj));
-                } //End block
+                } 
                 else
     if(type == int.class)                
                 {
                     output.writeInt(field.getInt(obj));
-                } //End block
+                } 
                 else
     if(type == long.class)                
                 {
                     output.writeLong(field.getLong(obj));
-                } //End block
+                } 
                 else
     if(type == short.class)                
                 {
                     output.writeShort(field.getShort(obj));
-                } //End block
+                } 
                 else
     if(type == boolean.class)                
                 {
                     output.writeBoolean(field.getBoolean(obj));
-                } //End block
+                } 
                 else
                 {
                     Object objField = field.get(obj);
     if(fieldDesc.isUnshared())                    
                     {
                         writeUnshared(objField);
-                    } //End block
+                    } 
                     else
                     {
                         writeObject(objField);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (IllegalAccessException iae)
             {
                 AssertionError varB7184EDFD8CA9CD0B66958C2AD057E9E_1933977729 = new AssertionError(iae);
                 varB7184EDFD8CA9CD0B66958C2AD057E9E_1933977729.addTaint(taint);
                 throw varB7184EDFD8CA9CD0B66958C2AD057E9E_1933977729;
-            } //End block
+            } 
             catch (NoSuchFieldError nsf)
             {
                 InvalidClassException var6031130457F46DBF90EF9BC7665E3732_2080295223 = new InvalidClassException(classDesc.getName());
                 var6031130457F46DBF90EF9BC7665E3732_2080295223.addTaint(taint);
                 throw var6031130457F46DBF90EF9BC7665E3732_2080295223;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -789,9 +792,9 @@ for(ObjectStreamField fieldDesc : classDesc.fields())
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeFloat(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeFloat(value);
+        
+        
+        
     }
 
     
@@ -803,7 +806,7 @@ for(ObjectStreamField fieldDesc : classDesc.fields())
             NotActiveException varFD1AAF3605EC866A6A8BBEC842DA8C8A_2145440552 = new NotActiveException();
             varFD1AAF3605EC866A6A8BBEC842DA8C8A_2145440552.addTaint(taint);
             throw varFD1AAF3605EC866A6A8BBEC842DA8C8A_2145440552;
-        } //End block
+        } 
         List<ObjectStreamClass> hierarchy = classDesc.getHierarchy();
 for(int i = 0, end = hierarchy.size();i < end;++i)
         {
@@ -820,7 +823,7 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
                     {
                         method.invoke(object, new Object[] { this });
                         executed = true;
-                    } //End block
+                    } 
                     catch (InvocationTargetException e)
                     {
                         Throwable ex = e.getTargetException();
@@ -829,44 +832,44 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
                             RuntimeException varF0C2DBE52270DD4B45A7073A4B8A4F8C_159443912 = (RuntimeException) ex;
                             varF0C2DBE52270DD4B45A7073A4B8A4F8C_159443912.addTaint(taint);
                             throw varF0C2DBE52270DD4B45A7073A4B8A4F8C_159443912;
-                        } //End block
+                        } 
                         else
     if(ex instanceof Error)                        
                         {
                             Error var5088E1E74327DBB15F7148041BB4E6E0_595441051 = (Error) ex;
                             var5088E1E74327DBB15F7148041BB4E6E0_595441051.addTaint(taint);
                             throw var5088E1E74327DBB15F7148041BB4E6E0_595441051;
-                        } //End block
+                        } 
                         IOException var3F32687BA78654886C8AE6DEBD282711_1714376184 = (IOException) ex;
                         var3F32687BA78654886C8AE6DEBD282711_1714376184.addTaint(taint);
                         throw var3F32687BA78654886C8AE6DEBD282711_1714376184;
-                    } //End block
+                    } 
                     catch (IllegalAccessException e)
                     {
                         RuntimeException var7731B7FAF9DB516E410EE38D728795B2_967611527 = new RuntimeException(e.toString());
                         var7731B7FAF9DB516E410EE38D728795B2_967611527.addTaint(taint);
                         throw var7731B7FAF9DB516E410EE38D728795B2_967611527;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(executed)                
                 {
                     drain();
                     output.writeByte(TC_ENDBLOCKDATA);
-                } //End block
+                } 
                 else
                 {
                     defaultWriteObject();
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 currentObject = null;
                 currentClass = null;
                 currentPutField = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -875,9 +878,9 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeInt(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeInt(value);
+        
+        
+        
     }
 
     
@@ -886,9 +889,9 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeLong(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeLong(value);
+        
+        
+        
     }
 
     
@@ -906,7 +909,7 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
     if(!unshared)        
         {
             objectsWritten.put(array, handle);
-        } //End block
+        } 
     if(componentType.isPrimitive())        
         {
     if(componentType == int.class)            
@@ -916,15 +919,15 @@ for(int i = 0, end = hierarchy.size();i < end;++i)
 for(int i = 0;i < intArray.length;i++)
                 {
                     output.writeInt(intArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == byte.class)            
             {
                 byte[] byteArray = (byte[]) array;
                 output.writeInt(byteArray.length);
                 output.write(byteArray, 0, byteArray.length);
-            } //End block
+            } 
             else
     if(componentType == char.class)            
             {
@@ -933,8 +936,8 @@ for(int i = 0;i < intArray.length;i++)
 for(int i = 0;i < charArray.length;i++)
                 {
                     output.writeChar(charArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == short.class)            
             {
@@ -943,8 +946,8 @@ for(int i = 0;i < charArray.length;i++)
 for(int i = 0;i < shortArray.length;i++)
                 {
                     output.writeShort(shortArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == boolean.class)            
             {
@@ -953,8 +956,8 @@ for(int i = 0;i < shortArray.length;i++)
 for(int i = 0;i < booleanArray.length;i++)
                 {
                     output.writeBoolean(booleanArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == long.class)            
             {
@@ -963,8 +966,8 @@ for(int i = 0;i < booleanArray.length;i++)
 for(int i = 0;i < longArray.length;i++)
                 {
                     output.writeLong(longArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == float.class)            
             {
@@ -973,8 +976,8 @@ for(int i = 0;i < longArray.length;i++)
 for(int i = 0;i < floatArray.length;i++)
                 {
                     output.writeFloat(floatArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(componentType == double.class)            
             {
@@ -983,15 +986,15 @@ for(int i = 0;i < floatArray.length;i++)
 for(int i = 0;i < doubleArray.length;i++)
                 {
                     output.writeDouble(doubleArray[i]);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 InvalidClassException var31A50C63276484733643EAF66E9F6D21_385199868 = new InvalidClassException("Wrong base type in " + arrayClass.getName());
                 var31A50C63276484733643EAF66E9F6D21_385199868.addTaint(taint);
                 throw var31A50C63276484733643EAF66E9F6D21_385199868;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             Object[] objectArray = (Object[]) array;
@@ -999,13 +1002,13 @@ for(int i = 0;i < doubleArray.length;i++)
 for(int i = 0;i < objectArray.length;i++)
             {
                 writeObject(objectArray[i]);
-            } //End block
-        } //End block
+            } 
+        } 
         int varE1260894F59EEAE98C8440899DE4DF8D_264305765 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1273091887 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1273091887;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1018,32 +1021,32 @@ for(int i = 0;i < objectArray.length;i++)
     if(clDesc.isEnum())        
         {
             writeEnumDesc(object, clDesc, unshared);
-        } //End block
+        } 
         else
         {
             writeClassDesc(clDesc, unshared);
-        } //End block
+        } 
         int handle = nextHandle();
     if(!unshared)        
         {
             objectsWritten.put(object, handle);
-        } //End block
+        } 
         int varE1260894F59EEAE98C8440899DE4DF8D_1290285217 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128052802 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_128052802;
-        // ---------- Original Method ----------
-        //output.writeByte(TC_CLASS);
-        //ObjectStreamClass clDesc = ObjectStreamClass.lookupStreamClass(object);
-        //if (clDesc.isEnum()) {
-            //writeEnumDesc(object, clDesc, unshared);
-        //} else {
-            //writeClassDesc(clDesc, unshared);
-        //}
-        //int handle = nextHandle();
-        //if (!unshared) {
-            //objectsWritten.put(object, handle);
-        //}
-        //return handle;
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1059,39 +1062,39 @@ for(int i = 0;i < objectArray.length;i++)
     if(protocolVersion == PROTOCOL_VERSION_1)            
             {
                 flags &= NOT_SC_BLOCK_DATA;
-            } //End block
+            } 
             else
             {
                 flags |= SC_BLOCK_DATA;
-            } //End block
-        } //End block
+            } 
+        } 
         output.writeByte(flags);
     if((SC_ENUM | SC_SERIALIZABLE) != classDesc.getFlags())        
         {
             writeFieldDescriptors(classDesc, externalizable);
-        } //End block
+        } 
         else
         {
             output.writeShort(0);
-        } //End block
-        // ---------- Original Method ----------
-        //output.writeUTF(classDesc.getName());
-        //output.writeLong(classDesc.getSerialVersionUID());
-        //byte flags = classDesc.getFlags();
-        //boolean externalizable = classDesc.isExternalizable();
-        //if (externalizable) {
-            //if (protocolVersion == PROTOCOL_VERSION_1) {
-                //flags &= NOT_SC_BLOCK_DATA;
-            //} else {
-                //flags |= SC_BLOCK_DATA;
-            //}
-        //}
-        //output.writeByte(flags);
-        //if ((SC_ENUM | SC_SERIALIZABLE) != classDesc.getFlags()) {
-            //writeFieldDescriptors(classDesc, externalizable);
-        //} else {
-            //output.writeShort(0);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1099,8 +1102,8 @@ for(int i = 0;i < objectArray.length;i++)
     protected void writeClassDescriptor(ObjectStreamClass classDesc) throws IOException {
         addTaint(classDesc.getTaint());
         writeNewClassDesc(classDesc);
-        // ---------- Original Method ----------
-        //writeNewClassDesc(classDesc);
+        
+        
     }
 
     
@@ -1111,11 +1114,11 @@ for(int i = 0;i < objectArray.length;i++)
         resetSeenObjects();
         writeObjectInternal(ex, false, false, false);
         resetSeenObjects();
-        // ---------- Original Method ----------
-        //output.writeByte(TC_EXCEPTION);
-        //resetSeenObjects();
-        //writeObjectInternal(ex, false, false, false);
-        //resetSeenObjects();
+        
+        
+        
+        
+        
     }
 
     
@@ -1133,14 +1136,14 @@ for(int i = 0;i < objectArray.length;i++)
             NotSerializableException var7C81718231C8BB08A8EA8FE49949E64F_183666550 = new NotSerializableException(theClass.getName());
             var7C81718231C8BB08A8EA8FE49949E64F_183666550.addTaint(taint);
             throw var7C81718231C8BB08A8EA8FE49949E64F_183666550;
-        } //End block
+        } 
         output.writeByte(TC_OBJECT);
         writeClassDesc(clDesc, false);
         int previousHandle = -1;
     if(unshared)        
         {
             previousHandle = objectsWritten.get(object);
-        } //End block
+        } 
         int handle = registerObjectWritten(object);
         currentObject = object;
         currentClass = clDesc;
@@ -1152,38 +1155,38 @@ for(int i = 0;i < objectArray.length;i++)
     if(noBlockData)                
                 {
                     primitiveTypes = output;
-                } //End block
+                } 
                 ((Externalizable) object).writeExternal(this);
     if(noBlockData)                
                 {
                     primitiveTypes = null;
-                } //End block
+                } 
                 else
                 {
                     drain();
                     output.writeByte(TC_ENDBLOCKDATA);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 writeHierarchy(object, currentClass);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
     if(unshared)            
             {
                 removeUnsharedReference(object, previousHandle);
-            } //End block
+            } 
             currentObject = null;
             currentClass = null;
             currentPutField = originalCurrentPutField;
-        } //End block
+        } 
         int varE1260894F59EEAE98C8440899DE4DF8D_1032454662 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125654487 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_125654487;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1200,34 +1203,34 @@ for(int i = 0;i < objectArray.length;i++)
             buffer[offset++] = TC_STRING;
             Memory.pokeShort(buffer, offset, (short) count, ByteOrder.BIG_ENDIAN);
             offset += SizeOf.SHORT;
-        } //End block
+        } 
         else
         {
             buffer = new byte[1 + SizeOf.LONG + (int) count];
             buffer[offset++] = TC_LONGSTRING;
             Memory.pokeLong(buffer, offset, count, ByteOrder.BIG_ENDIAN);
             offset += SizeOf.LONG;
-        } //End block
+        } 
         ModifiedUtf8.encode(buffer, offset, object);
         output.write(buffer, 0, buffer.length);
         int handle = nextHandle();
     if(!unshared)        
         {
             objectsWritten.put(object, handle);
-        } //End block
+        } 
         int varE1260894F59EEAE98C8440899DE4DF8D_537384289 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1823775291 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1823775291;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:41.979 -0400", hash_original_method = "631D52D34CFE4ABBA41E943E2B7FB044", hash_generated_method = "0225D06056772581205A957FAFF48550")
     private void writeNull() throws IOException {
         output.writeByte(TC_NULL);
-        // ---------- Original Method ----------
-        //output.writeByte(TC_NULL);
+        
+        
     }
 
     
@@ -1235,8 +1238,8 @@ for(int i = 0;i < objectArray.length;i++)
     public final void writeObject(Object object) throws IOException {
         addTaint(object.getTaint());
         writeObject(object, false);
-        // ---------- Original Method ----------
-        //writeObject(object, false);
+        
+        
     }
 
     
@@ -1244,8 +1247,8 @@ for(int i = 0;i < objectArray.length;i++)
     public void writeUnshared(Object object) throws IOException {
         addTaint(object.getTaint());
         writeObject(object, true);
-        // ---------- Original Method ----------
-        //writeObject(object, true);
+        
+        
     }
 
     
@@ -1257,12 +1260,12 @@ for(int i = 0;i < objectArray.length;i++)
     if(setOutput)        
         {
             primitiveTypes = null;
-        } //End block
+        } 
     if(subclassOverridingImplementation && !unshared)        
         {
             writeObjectOverride(object);
             return;
-        } //End block
+        } 
         try 
         {
             drain();
@@ -1270,8 +1273,8 @@ for(int i = 0;i < objectArray.length;i++)
     if(setOutput)            
             {
                 primitiveTypes = output;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException ioEx1)
         {
     if(nestedLevels == 0 && ioEx1 != nestedException)            
@@ -1279,19 +1282,19 @@ for(int i = 0;i < objectArray.length;i++)
                 try 
                 {
                     writeNewException(ioEx1);
-                } //End block
+                } 
                 catch (IOException ioEx2)
                 {
                     nestedException.fillInStackTrace();
                     nestedException.addTaint(taint);
                     throw nestedException;
-                } //End block
-            } //End block
+                } 
+            } 
             ioEx1.addTaint(taint);
             throw ioEx1;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1309,7 +1312,7 @@ for(int i = 0;i < objectArray.length;i++)
             int var6BB61E3B7BCE0931DA574D19D1D82C88_690073679 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1793463651 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1793463651;
-        } //End block
+        } 
         int handle = -1;
     if(!unshared)        
         {
@@ -1319,8 +1322,8 @@ for(int i = 0;i < objectArray.length;i++)
                 int varE1260894F59EEAE98C8440899DE4DF8D_132317558 = (handle);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216807971 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_216807971;
-            } //End block
-        } //End block
+            } 
+        } 
         Class<?> objClass = object.getClass();
         ObjectStreamClass clDesc = ObjectStreamClass.lookupStreamClass(objClass);
         nestedLevels++;
@@ -1333,14 +1336,14 @@ for(int i = 0;i < objectArray.length;i++)
                     int var4DDDD2A9D839C023FF5D7863CEC16017_1314096266 = (writeNewClass((Class<?>) object, unshared));
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_821206908 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_821206908;
-                } //End block
+                } 
     if(objClass == ObjectStreamClass.OBJECTSTREAMCLASSCLASS)                
                 {
                     int varFB47DAE28E69ABC0CD3D17E0B162FB25_3224214 = (writeClassDesc((ObjectStreamClass) object, unshared));
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182698359 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182698359;
-                } //End block
-            } //End block
+                } 
+            } 
     if(clDesc.isSerializable() && computeClassBasedReplacement)            
             {
     if(clDesc.hasMethodWriteReplace())                
@@ -1350,11 +1353,11 @@ for(int i = 0;i < objectArray.length;i++)
                     try 
                     {
                         replObj = methodWriteReplace.invoke(object, (Object[]) null);
-                    } //End block
+                    } 
                     catch (IllegalAccessException iae)
                     {
                         replObj = object;
-                    } //End block
+                    } 
                     catch (InvocationTargetException ite)
                     {
                         Throwable target = ite.getTargetException();
@@ -1363,21 +1366,21 @@ for(int i = 0;i < objectArray.length;i++)
                             ObjectStreamException var7968BE7E0F10658162994A62439F18E4_859324710 = (ObjectStreamException) target;
                             var7968BE7E0F10658162994A62439F18E4_859324710.addTaint(taint);
                             throw var7968BE7E0F10658162994A62439F18E4_859324710;
-                        } //End block
+                        } 
                         else
     if(target instanceof Error)                        
                         {
                             Error var157858306DB5AEA134A18315E8F156FF_1003940849 = (Error) target;
                             var157858306DB5AEA134A18315E8F156FF_1003940849.addTaint(taint);
                             throw var157858306DB5AEA134A18315E8F156FF_1003940849;
-                        } //End block
+                        } 
                         else
                         {
                             RuntimeException varB680FC198DAE9443D5ED144016D19687_1926482377 = (RuntimeException) target;
                             varB680FC198DAE9443D5ED144016D19687_1926482377.addTaint(taint);
                             throw varB680FC198DAE9443D5ED144016D19687_1926482377;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(replObj != object)                    
                     {
                         int replacementHandle = writeObjectInternal(replObj, false, false,
@@ -1385,13 +1388,13 @@ for(int i = 0;i < objectArray.length;i++)
     if(replacementHandle != -1)                        
                         {
                             objectsWritten.put(object, replacementHandle);
-                        } //End block
+                        } 
                         int var92E2DDBCA159ED83C83F92EBEC895F66_262571935 = (replacementHandle);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13620113 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_13620113;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(enableReplace && computeStreamReplacement)            
             {
                 Object streamReplacement = replaceObject(object);
@@ -1402,53 +1405,53 @@ for(int i = 0;i < objectArray.length;i++)
     if(replacementHandle != -1)                    
                     {
                         objectsWritten.put(object, replacementHandle);
-                    } //End block
+                    } 
                     int var92E2DDBCA159ED83C83F92EBEC895F66_1711722276 = (replacementHandle);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1454271920 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1454271920;
-                } //End block
-            } //End block
+                } 
+            } 
     if(objClass == ObjectStreamClass.CLASSCLASS)            
             {
                 int var4DDDD2A9D839C023FF5D7863CEC16017_582082851 = (writeNewClass((Class<?>) object, unshared));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651385561 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1651385561;
-            } //End block
+            } 
     if(objClass == ObjectStreamClass.OBJECTSTREAMCLASSCLASS)            
             {
                 int varFB47DAE28E69ABC0CD3D17E0B162FB25_1634945414 = (writeClassDesc((ObjectStreamClass) object, unshared));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_53814906 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_53814906;
-            } //End block
+            } 
     if(objClass == ObjectStreamClass.STRINGCLASS)            
             {
                 int var7817154C4162151E286AFFAE200EC8DC_1913111453 = (writeNewString((String) object, unshared));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283423060 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1283423060;
-            } //End block
+            } 
     if(objClass.isArray())            
             {
                 int varE50077A30B088EB72E473B4A7FC00436_2089869167 = (writeNewArray(object, objClass, clDesc, objClass
                         .getComponentType(), unshared));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238287256 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1238287256;
-            } //End block
+            } 
     if(object instanceof Enum)            
             {
                 int var9CF8D76DED57E85003BF1A8A08613F7A_900673991 = (writeNewEnum(object, objClass, unshared));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948628372 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_948628372;
-            } //End block
+            } 
             int varA30A25D20B7BEAF6A7017491C020256A_665068222 = (writeNewObject(object, objClass, clDesc, unshared));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817547532 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_817547532;
-        } //End block
+        } 
         finally 
         {
             nestedLevels--;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1462,12 +1465,12 @@ for(int i = 0;i < objectArray.length;i++)
     if(unshared)        
         {
             previousHandle = objectsWritten.get(classDesc);
-        } //End block
+        } 
         int handle = -1;
     if(!unshared)        
         {
             handle = dumpCycle(classDesc);
-        } //End block
+        } 
     if(handle == -1)        
         {
             Class<?> classToWrite = classDesc.forClass();
@@ -1476,13 +1479,13 @@ for(int i = 0;i < objectArray.length;i++)
     if(protocolVersion == PROTOCOL_VERSION_1)            
             {
                 writeNewClassDesc(classDesc);
-            } //End block
+            } 
             else
             {
                 primitiveTypes = output;
                 writeClassDescriptor(classDesc);
                 primitiveTypes = null;
-            } //End block
+            } 
             annotateClass(classToWrite);
             drain();
             output.writeByte(TC_ENDBLOCKDATA);
@@ -1491,21 +1494,21 @@ for(int i = 0;i < objectArray.length;i++)
             {
                 superClassDesc.setFlags((byte) (SC_SERIALIZABLE | SC_ENUM));
                 writeEnumDesc(superClassDesc.forClass(), superClassDesc, unshared);
-            } //End block
+            } 
             else
             {
                 output.writeByte(TC_NULL);
-            } //End block
+            } 
     if(unshared)            
             {
                 removeUnsharedReference(classDesc, previousHandle);
-            } //End block
-        } //End block
+            } 
+        } 
 ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         classDesc;
         var3497C6F192F17384DEAA3543897C005A_1072830890.addTaint(taint);
         return var3497C6F192F17384DEAA3543897C005A_1072830890;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1521,14 +1524,14 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
 (theClass != null && !theClass.isEnum())        
         {
             theClass = theClass.getSuperclass();
-        } //End block
+        } 
         ObjectStreamClass classDesc = ObjectStreamClass.lookup(theClass);
         writeEnumDesc(theClass, classDesc, unshared);
         int previousHandle = -1;
     if(unshared)        
         {
             previousHandle = objectsWritten.get(object);
-        } //End block
+        } 
         int handle = registerObjectWritten(object);
         ObjectStreamField[] fields = classDesc.getSuperclass().fields();
     if(fields != null && fields.length > 1)        
@@ -1539,7 +1542,7 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
                 NoSuchFieldError var82A9A823976A9F4E5F2C2C27BF246445_2117978103 = new NoSuchFieldError();
                 var82A9A823976A9F4E5F2C2C27BF246445_2117978103.addTaint(taint);
                 throw var82A9A823976A9F4E5F2C2C27BF246445_2117978103;
-            } //End block
+            } 
             try 
             {
                 String str = (String) field.get(object);
@@ -1547,29 +1550,29 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
     if(!unshared)                
                 {
                     strHandle = dumpCycle(str);
-                } //End block
+                } 
     if(strHandle == -1)                
                 {
                     writeNewString(str, unshared);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IllegalAccessException iae)
             {
                 AssertionError varB7184EDFD8CA9CD0B66958C2AD057E9E_404083029 = new AssertionError(iae);
                 varB7184EDFD8CA9CD0B66958C2AD057E9E_404083029.addTaint(taint);
                 throw varB7184EDFD8CA9CD0B66958C2AD057E9E_404083029;
-            } //End block
-        } //End block
+            } 
+        } 
     if(unshared)        
         {
             removeUnsharedReference(object, previousHandle);
-        } //End block
+        } 
         currentPutField = originalCurrentPutField;
         int varE1260894F59EEAE98C8440899DE4DF8D_927509408 = (handle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64316274 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_64316274;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1581,11 +1584,11 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
             IOException var1508E3FDF27FD56D4E1051DB16DE1816_571884235 = new IOException();
             var1508E3FDF27FD56D4E1051DB16DE1816_571884235.addTaint(taint);
             throw var1508E3FDF27FD56D4E1051DB16DE1816_571884235;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!subclassOverridingImplementation) {
-            //throw new IOException();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1594,9 +1597,9 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
         addTaint(value);
         checkWritePrimitiveTypes();
         primitiveTypes.writeShort(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeShort(value);
+        
+        
+        
     }
 
     
@@ -1604,9 +1607,9 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
     protected void writeStreamHeader() throws IOException {
         output.writeShort(STREAM_MAGIC);
         output.writeShort(STREAM_VERSION);
-        // ---------- Original Method ----------
-        //output.writeShort(STREAM_MAGIC);
-        //output.writeShort(STREAM_VERSION);
+        
+        
+        
     }
 
     
@@ -1615,9 +1618,9 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
         addTaint(value.getTaint());
         checkWritePrimitiveTypes();
         primitiveTypes.writeUTF(value);
-        // ---------- Original Method ----------
-        //checkWritePrimitiveTypes();
-        //primitiveTypes.writeUTF(value);
+        
+        
+        
     }
 
     
@@ -1626,7 +1629,7 @@ ObjectStreamClass var3497C6F192F17384DEAA3543897C005A_1072830890 =         class
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.021 -0400", hash_original_method = "132782D29A7095A05BCF82A07EC6676D", hash_generated_method = "132782D29A7095A05BCF82A07EC6676D")
         public PutField ()
         {
-            //Synthesized constructor
+            
         }
 
 

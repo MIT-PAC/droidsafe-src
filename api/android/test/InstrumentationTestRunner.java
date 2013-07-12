@@ -1,6 +1,6 @@
 package android.test;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -75,14 +75,14 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.065 -0400", hash_original_method = "4F1BA42F3F5EBFB30B61E510F40B73D6", hash_generated_method = "4F1BA42F3F5EBFB30B61E510F40B73D6")
     public InstrumentationTestRunner ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.067 -0400", hash_original_method = "6DFE69C7BEAD4ACC310BC8D2DE157051", hash_generated_method = "E4410CD32F8592ACBCDDD4BE8990003E")
     @Override
     public void onCreate(Bundle arguments) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onCreate(arguments);
         mArguments = arguments;
         String[] apkPaths = {getTargetContext().getPackageCodePath(), getContext().getPackageCodePath()};
@@ -113,48 +113,48 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
                 Object delay = arguments.get(ARGUMENT_DELAY_MSEC);
     if(delay != null)                
                 mDelayMsec = Integer.parseInt(delay.toString());
-            } //End block
+            } 
             catch (NumberFormatException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         TestSuiteBuilder testSuiteBuilder = new TestSuiteBuilder(getClass().getName(),
                 getTargetContext().getClassLoader());
     if(testSizePredicate != null)        
         {
             testSuiteBuilder.addRequirements(testSizePredicate);
-        } //End block
+        } 
     if(testAnnotationPredicate != null)        
         {
             testSuiteBuilder.addRequirements(testAnnotationPredicate);
-        } //End block
+        } 
     if(testNotAnnotationPredicate != null)        
         {
             testSuiteBuilder.addRequirements(testNotAnnotationPredicate);
-        } //End block
+        } 
     if(testClassesArg == null)        
         {
     if(mPackageOfTests != null)            
             {
                 testSuiteBuilder.includePackages(mPackageOfTests);
-            } //End block
+            } 
             else
             {
                 TestSuite testSuite = getTestSuite();
     if(testSuite != null)                
                 {
                     testSuiteBuilder.addTestSuite(testSuite);
-                } //End block
+                } 
                 else
                 {
                     testSuiteBuilder.includePackages("");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             parseTestClasses(testClassesArg, testSuiteBuilder);
-        } //End block
+        } 
         testSuiteBuilder.addRequirements(getBuilderRequirements());
         mTestRunner = getAndroidTestRunner();
         mTestRunner.setContext(getTargetContext());
@@ -165,27 +165,28 @@ public class InstrumentationTestRunner extends Instrumentation implements TestSu
     if(mSuiteAssignmentMode)        
         {
             mTestRunner.addTestListener(new SuiteAssignmentPrinter());
-        } //End block
+        } 
         else
         {
             WatcherResultPrinter resultPrinter = new WatcherResultPrinter(mTestCount);
             mTestRunner.addTestListener(new TestPrinter("TestRunner", false));
             mTestRunner.addTestListener(resultPrinter);
             mTestRunner.setPerformanceResultsWriter(resultPrinter);
-        } //End block
+        } 
         start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.068 -0400", hash_original_method = "10E6FBEC332CFAAD363071CF1888C5BE", hash_generated_method = "062ABB3A4856B556E974EB422D914831")
     public Bundle getBundle() {
 Bundle varA1A5383052F874A8109F2B0284C0CCF1_2125713037 =         mArguments;
         varA1A5383052F874A8109F2B0284C0CCF1_2125713037.addTaint(taint);
         return varA1A5383052F874A8109F2B0284C0CCF1_2125713037;
-        // ---------- Original Method ----------
-        //return mArguments;
+        
+        
     }
 
     
@@ -194,8 +195,8 @@ Bundle varA1A5383052F874A8109F2B0284C0CCF1_2125713037 =         mArguments;
 List<Predicate<TestMethod>> varB89B9AE74F274E07C099737006AD3C9F_821710440 =         new ArrayList<Predicate<TestMethod>>();
         varB89B9AE74F274E07C099737006AD3C9F_821710440.addTaint(taint);
         return varB89B9AE74F274E07C099737006AD3C9F_821710440;
-        // ---------- Original Method ----------
-        //return new ArrayList<Predicate<TestMethod>>();
+        
+        
     }
 
     
@@ -207,12 +208,12 @@ List<Predicate<TestMethod>> varB89B9AE74F274E07C099737006AD3C9F_821710440 =     
 for(String testClass : testClasses)
         {
             parseTestClass(testClass, testSuiteBuilder);
-        } //End block
-        // ---------- Original Method ----------
-        //String[] testClasses = testClassArg.split(",");
-        //for (String testClass : testClasses) {
-            //parseTestClass(testClass, testSuiteBuilder);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -226,16 +227,16 @@ for(String testClass : testClasses)
         {
             testMethodName = testClassName.substring(methodSeparatorIndex + 1);
             testClassName = testClassName.substring(0, methodSeparatorIndex);
-        } //End block
+        } 
         testSuiteBuilder.addTestClassByName(testClassName, testMethodName, getTargetContext());
-        // ---------- Original Method ----------
-        //int methodSeparatorIndex = testClassName.indexOf('#');
-        //String testMethodName = null;
-        //if (methodSeparatorIndex > 0) {
-            //testMethodName = testClassName.substring(methodSeparatorIndex + 1);
-            //testClassName = testClassName.substring(0, methodSeparatorIndex);
-        //}
-        //testSuiteBuilder.addTestClassByName(testClassName, testMethodName, getTargetContext());
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -244,8 +245,8 @@ for(String testClass : testClasses)
 AndroidTestRunner var6DED4B728E5CF2C8C96F16BF715A4A14_311912347 =         new AndroidTestRunner();
         var6DED4B728E5CF2C8C96F16BF715A4A14_311912347.addTaint(taint);
         return var6DED4B728E5CF2C8C96F16BF715A4A14_311912347;
-        // ---------- Original Method ----------
-        //return new AndroidTestRunner();
+        
+        
     }
 
     
@@ -257,9 +258,9 @@ AndroidTestRunner var6DED4B728E5CF2C8C96F16BF715A4A14_311912347 =         new An
         boolean var12C8161A76217C24A65B3158A9660316_606861070 = (tagString != null && Boolean.parseBoolean(tagString));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_552647159 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_552647159;
-        // ---------- Original Method ----------
-        //String tagString = arguments.getString(tag);
-        //return tagString != null && Boolean.parseBoolean(tagString);
+        
+        
+        
     }
 
     
@@ -271,37 +272,37 @@ AndroidTestRunner var6DED4B728E5CF2C8C96F16BF715A4A14_311912347 =         new An
 Predicate<TestMethod> varE0E1D4210503E46CD449DCD4EB6C9FC6_1406359360 =             TestPredicates.SELECT_SMALL;
             varE0E1D4210503E46CD449DCD4EB6C9FC6_1406359360.addTaint(taint);
             return varE0E1D4210503E46CD449DCD4EB6C9FC6_1406359360;
-        } //End block
+        } 
         else
     if(MEDIUM_SUITE.equals(sizeArg))        
         {
 Predicate<TestMethod> varE61B19BA65D0577F79AB0C2F12D95025_423988881 =             TestPredicates.SELECT_MEDIUM;
             varE61B19BA65D0577F79AB0C2F12D95025_423988881.addTaint(taint);
             return varE61B19BA65D0577F79AB0C2F12D95025_423988881;
-        } //End block
+        } 
         else
     if(LARGE_SUITE.equals(sizeArg))        
         {
 Predicate<TestMethod> varEB1CF173AA2514015C318D7BDAAAC8A2_412664828 =             TestPredicates.SELECT_LARGE;
             varEB1CF173AA2514015C318D7BDAAAC8A2_412664828.addTaint(taint);
             return varEB1CF173AA2514015C318D7BDAAAC8A2_412664828;
-        } //End block
+        } 
         else
         {
 Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_1032491184 =             null;
             var540C13E9E156B687226421B24F2DF178_1032491184.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1032491184;
-        } //End block
-        // ---------- Original Method ----------
-        //if (SMALL_SUITE.equals(sizeArg)) {
-            //return TestPredicates.SELECT_SMALL;
-        //} else if (MEDIUM_SUITE.equals(sizeArg)) {
-            //return TestPredicates.SELECT_MEDIUM;
-        //} else if (LARGE_SUITE.equals(sizeArg)) {
-            //return TestPredicates.SELECT_LARGE;
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -314,16 +315,16 @@ Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_1032491184 =          
 Predicate<TestMethod> var652FC47B86EAF5D41957119FBE60A366_38662391 =             new HasAnnotation(annotationClass);
             var652FC47B86EAF5D41957119FBE60A366_38662391.addTaint(taint);
             return var652FC47B86EAF5D41957119FBE60A366_38662391;
-        } //End block
+        } 
 Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_526698136 =         null;
         var540C13E9E156B687226421B24F2DF178_526698136.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_526698136;
-        // ---------- Original Method ----------
-        //Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
-        //if (annotationClass != null) {
-            //return new HasAnnotation(annotationClass);
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -336,16 +337,16 @@ Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_526698136 =         nu
 Predicate<TestMethod> varF224C75240B780821E5011903BA420E4_439946221 =             Predicates.not(new HasAnnotation(annotationClass));
             varF224C75240B780821E5011903BA420E4_439946221.addTaint(taint);
             return varF224C75240B780821E5011903BA420E4_439946221;
-        } //End block
+        } 
 Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_1884422516 =         null;
         var540C13E9E156B687226421B24F2DF178_1884422516.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1884422516;
-        // ---------- Original Method ----------
-        //Class<? extends Annotation> annotationClass = getAnnotationClass(annotationClassName);
-        //if (annotationClass != null) {
-             //return Predicates.not(new HasAnnotation(annotationClass));
-         //}
-        //return null;
+        
+        
+        
+             
+         
+        
     }
 
     
@@ -357,7 +358,7 @@ Predicate<TestMethod> var540C13E9E156B687226421B24F2DF178_1884422516 =         n
 Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1540172411 =             null;
             var540C13E9E156B687226421B24F2DF178_1540172411.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1540172411;
-        } //End block
+        } 
         try 
         {
             Class<?> annotationClass = Class.forName(annotationClassName);
@@ -366,62 +367,62 @@ Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1540172411 =    
 Class<? extends Annotation> varA2F119939EC2C10CB58C692AEA560A23_325985277 =                 (Class<? extends Annotation>)annotationClass;
                 varA2F119939EC2C10CB58C692AEA560A23_325985277.addTaint(taint);
                 return varA2F119939EC2C10CB58C692AEA560A23_325985277;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ClassNotFoundException e)
         {
-        } //End block
+        } 
 Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1451980693 =         null;
         var540C13E9E156B687226421B24F2DF178_1451980693.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1451980693;
-        // ---------- Original Method ----------
-        //if (annotationClassName == null) {
-            //return null;
-        //}
-        //try {
-           //Class<?> annotationClass = Class.forName(annotationClassName);
-           //if (annotationClass.isAnnotation()) {
-               //return (Class<? extends Annotation>)annotationClass;
-           //} else {
-               //Log.e(LOG_TAG, String.format("Provided annotation value %s is not an Annotation",
-                       //annotationClassName));
-           //}
-        //} catch (ClassNotFoundException e) {
-            //Log.e(LOG_TAG, String.format("Could not find class for specified annotation %s",
-                    //annotationClassName));
-        //}
-        //return null;
+        
+        
+            
+        
+        
+           
+           
+               
+           
+               
+                       
+           
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.076 -0400", hash_original_method = "3F6FAB1D23BC515BB2AF6438AF3536A0", hash_generated_method = "56EE5DBA76486B456591DFDA39E7C473")
      void prepareLooper() {
         Looper.prepare();
-        // ---------- Original Method ----------
-        //Looper.prepare();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.077 -0400", hash_original_method = "13B14429707EB691EB642DFE530B7FBA", hash_generated_method = "2383BFCD59E2DD8C0529D81C8F6F4A37")
     @Override
     public void onStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         prepareLooper();
     if(mJustCount)        
         {
             mResults.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
             mResults.putInt(REPORT_KEY_NUM_TOTAL, mTestCount);
             finish(Activity.RESULT_OK, mResults);
-        } //End block
+        } 
         else
         {
     if(mDebug)            
             {
                 Debug.waitForDebugger();
-            } //End block
+            } 
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             PrintStream writer = new PrintStream(byteArrayOutputStream);
             try 
@@ -432,13 +433,13 @@ Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1451980693 =    
                 mTestRunner.runTest();
                 long runTime = System.currentTimeMillis() - startTime;
                 resultPrinter.print(mTestRunner.getTestResult(), runTime);
-            } //End block
+            } 
             catch (Throwable t)
             {
                 writer.println(String.format("Test run aborted due to unexpected exception: %s",
                                 t.getMessage()));
                 t.printStackTrace(writer);
-            } //End block
+            } 
             finally 
             {
                 mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
@@ -448,13 +449,13 @@ Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1451980693 =    
     if(mCoverage)                
                 {
                     generateCoverageReport();
-                } //End block
+                } 
                 writer.close();
                 finish(Activity.RESULT_OK, mResults);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -463,28 +464,30 @@ Class<? extends Annotation> var540C13E9E156B687226421B24F2DF178_1451980693 =    
 TestSuite varA2793CB316857DCB08182DC971BBC9D6_914908042 =         getAllTests();
         varA2793CB316857DCB08182DC971BBC9D6_914908042.addTaint(taint);
         return varA2793CB316857DCB08182DC971BBC9D6_914908042;
-        // ---------- Original Method ----------
-        //return getAllTests();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.077 -0400", hash_original_method = "BB818280151C8C17876053BFAB976A70", hash_generated_method = "B72B6CC93038B239B7FF80A8A3F6AE06")
     public TestSuite getAllTests() {
 TestSuite var540C13E9E156B687226421B24F2DF178_64147358 =         null;
         var540C13E9E156B687226421B24F2DF178_64147358.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_64147358;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.077 -0400", hash_original_method = "9B48FC3FBC8B24E9AD86091F7F4B768A", hash_generated_method = "633D4C96089A302DEBF2F56C067A4DCA")
     public ClassLoader getLoader() {
 ClassLoader var540C13E9E156B687226421B24F2DF178_1604668360 =         null;
         var540C13E9E156B687226421B24F2DF178_1604668360.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1604668360;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -504,33 +507,33 @@ ClassLoader var540C13E9E156B687226421B24F2DF178_1604668360 =         null;
             mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                 String.format("%s\nGenerated code coverage data to %s", currentStream,
                 coverageFilePath));
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         {
             reportEmmaError("Is emma jar on classpath?", e);
-        } //End block
+        } 
         catch (SecurityException e)
         {
             reportEmmaError(e);
-        } //End block
+        } 
         catch (NoSuchMethodException e)
         {
             reportEmmaError(e);
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
             reportEmmaError(e);
-        } //End block
+        } 
         catch (IllegalAccessException e)
         {
             reportEmmaError(e);
-        } //End block
+        } 
         catch (InvocationTargetException e)
         {
             reportEmmaError(e);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -542,20 +545,20 @@ String varEC5DD3BBABE6F7B2F1198ADC694BDBD0_418704463 =             getTargetCont
                    DEFAULT_COVERAGE_FILE_NAME;
             varEC5DD3BBABE6F7B2F1198ADC694BDBD0_418704463.addTaint(taint);
             return varEC5DD3BBABE6F7B2F1198ADC694BDBD0_418704463;
-        } //End block
+        } 
         else
         {
 String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFilePath;
             var9869AA735EFB2F08232388567A171773_509620477.addTaint(taint);
             return var9869AA735EFB2F08232388567A171773_509620477;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCoverageFilePath == null) {
-            //return getTargetContext().getFilesDir().getAbsolutePath() + File.separator +
-                   //DEFAULT_COVERAGE_FILE_NAME;
-        //} else {
-            //return mCoverageFilePath;
-        //}
+        } 
+        
+        
+            
+                   
+        
+            
+        
     }
 
     
@@ -563,8 +566,8 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
     private void reportEmmaError(Exception e) {
         addTaint(e.getTaint());
         reportEmmaError("", e);
-        // ---------- Original Method ----------
-        //reportEmmaError("", e);
+        
+        
     }
 
     
@@ -574,10 +577,10 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
         addTaint(hint.getTaint());
         String msg = "Failed to generate emma coverage. " + hint;
         mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "\nError: " + msg);
-        // ---------- Original Method ----------
-        //String msg = "Failed to generate emma coverage. " + hint;
-        //Log.e(LOG_TAG, msg, e);
-        //mResults.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "\nError: " + msg);
+        
+        
+        
+        
     }
 
     
@@ -587,7 +590,7 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
         public  StringResultPrinter(PrintStream writer) {
             super(writer);
             addTaint(writer.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -597,9 +600,9 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             addTaint(result.getTaint());
             printHeader(runTime);
             printFooter(result);
-            // ---------- Original Method ----------
-            //printHeader(runTime);
-            //printFooter(result);
+            
+            
+            
         }
 
         
@@ -623,7 +626,7 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.080 -0400", hash_original_method = "7306BE02962886D6C53070D35D513D17", hash_generated_method = "C486C7E9A0E6C1AF5474A05D0F461BFF")
         public  SuiteAssignmentPrinter() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -632,29 +635,31 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             addTaint(test.getTaint());
             mTimingValid = true;
             mStartTime = System.currentTimeMillis();
-            // ---------- Original Method ----------
-            //mTimingValid = true;
-            //mStartTime = System.currentTimeMillis();
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.081 -0400", hash_original_method = "345E3DE2999C1B6FA0060A48165FC0F3", hash_generated_method = "76C966886074A965651AC5A8F68EE3FF")
         public void addError(Test test, Throwable t) {
             addTaint(t.getTaint());
             addTaint(test.getTaint());
             mTimingValid = false;
-            // ---------- Original Method ----------
-            //mTimingValid = false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.081 -0400", hash_original_method = "F3D48E32FED097901DB6EC97B8BA5D91", hash_generated_method = "B5285F49DABC43D08CC3D83B8937371B")
         public void addFailure(Test test, AssertionFailedError t) {
             addTaint(t.getTaint());
             addTaint(test.getTaint());
             mTimingValid = false;
-            // ---------- Original Method ----------
-            //mTimingValid = false;
+            
+            
         }
 
         
@@ -669,7 +674,7 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             {
                 assignmentSuite = "NA";
                 runTime = -1;
-            } //End block
+            } 
             else
             {
                 runTime = mEndTime - mStartTime;
@@ -677,17 +682,17 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
                         && !InstrumentationTestCase.class.isAssignableFrom(test.getClass()))                
                 {
                     assignmentSuite = SMALL_SUITE;
-                } //End block
+                } 
                 else
     if(runTime < MEDIUM_SUITE_MAX_RUNTIME)                
                 {
                     assignmentSuite = MEDIUM_SUITE;
-                } //End block
+                } 
                 else
                 {
                     assignmentSuite = LARGE_SUITE;
-                } //End block
-            } //End block
+                } 
+            } 
             mStartTime = -1;
             mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                     test.getClass().getName() + "#" + ((TestCase) test).getName()
@@ -696,8 +701,8 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             mTestResult.putFloat(REPORT_KEY_RUN_TIME, runTime);
             mTestResult.putString(REPORT_KEY_SUITE_ASSIGNMENT, assignmentSuite);
             sendStatus(0, mTestResult);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -737,10 +742,10 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             mResultTemplate = new Bundle();
             mResultTemplate.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
             mResultTemplate.putInt(REPORT_KEY_NUM_TOTAL, numTests);
-            // ---------- Original Method ----------
-            //mResultTemplate = new Bundle();
-            //mResultTemplate.putString(Instrumentation.REPORT_KEY_IDENTIFIER, REPORT_VALUE_ID);
-            //mResultTemplate.putInt(REPORT_KEY_NUM_TOTAL, numTests);
+            
+            
+            
+            
         }
 
         
@@ -757,11 +762,11 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
                 mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                         String.format("\n%s:", testClass));
                 mTestClass = testClass;
-            } //End block
+            } 
             else
             {
                 mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, "");
-            } //End block
+            } 
             Method testMethod = null;
             try 
             {
@@ -771,22 +776,22 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
                     int numIterations = testMethod.getAnnotation(
                         RepetitiveTest.class).numIterations();
                     mTestResult.putInt(REPORT_KEY_NUM_ITERATIONS, numIterations);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (NoSuchMethodException e)
             {
-            } //End block
+            } 
             try 
             {
     if(mTestNum == 1)                
                 Thread.sleep(mDelayMsec);
-            } //End block
+            } 
             catch (InterruptedException e)
             {
                 IllegalStateException var9CE996783689A44496E32DC249802075_1236044797 = new IllegalStateException(e);
                 var9CE996783689A44496E32DC249802075_1236044797.addTaint(taint);
                 throw var9CE996783689A44496E32DC249802075_1236044797;
-            } //End block
+            } 
             sendStatus(REPORT_VALUE_RESULT_START, mTestResult);
             mTestResultCode = 0;
             mIsTimedTest = false;
@@ -798,29 +803,29 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
                     mIsTimedTest = true;
                     mIncludeDetailedStats = testMethod.getAnnotation(
                             TimedTest.class).includeDetailedStats();
-                } //End block
+                } 
                 else
     if(test.getClass().isAnnotationPresent(TimedTest.class))                
                 {
                     mIsTimedTest = true;
                     mIncludeDetailedStats = test.getClass().getAnnotation(
                             TimedTest.class).includeDetailedStats();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (SecurityException e)
             {
-            } //End block
+            } 
     if(mIsTimedTest && mIncludeDetailedStats)            
             {
                 mPerfCollector.beginSnapshot("");
-            } //End block
+            } 
             else
     if(mIsTimedTest)            
             {
                 mPerfCollector.startTiming("");
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -833,12 +838,12 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                 String.format("\nError in %s:\n%s",
                     ((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
-            // ---------- Original Method ----------
-            //mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
-            //mTestResultCode = REPORT_VALUE_RESULT_ERROR;
-            //mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                //String.format("\nError in %s:\n%s",
-                    //((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
+            
+            
+            
+            
+                
+                    
         }
 
         
@@ -851,12 +856,12 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
             mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
                 String.format("\nFailure in %s:\n%s",
                     ((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
-            // ---------- Original Method ----------
-            //mTestResult.putString(REPORT_KEY_STACK, BaseTestRunner.getFilteredTrace(t));
-            //mTestResultCode = REPORT_VALUE_RESULT_FAILURE;
-            //mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT,
-                //String.format("\nFailure in %s:\n%s",
-                    //((TestCase)test).getName(), BaseTestRunner.getFilteredTrace(t)));
+            
+            
+            
+            
+                
+                    
         }
 
         
@@ -866,49 +871,50 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
     if(mIsTimedTest && mIncludeDetailedStats)            
             {
                 mTestResult.putAll(mPerfCollector.endSnapshot());
-            } //End block
+            } 
             else
     if(mIsTimedTest)            
             {
                 writeStopTiming(mPerfCollector.stopTiming(""));
-            } //End block
+            } 
     if(mTestResultCode == 0)            
             {
                 mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, ".");
-            } //End block
+            } 
             sendStatus(mTestResultCode, mTestResult);
             try 
             {
                 Thread.sleep(mDelayMsec);
-            } //End block
+            } 
             catch (InterruptedException e)
             {
                 IllegalStateException var9CE996783689A44496E32DC249802075_1279704197 = new IllegalStateException(e);
                 var9CE996783689A44496E32DC249802075_1279704197.addTaint(taint);
                 throw var9CE996783689A44496E32DC249802075_1279704197;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mIsTimedTest && mIncludeDetailedStats) {
-                //mTestResult.putAll(mPerfCollector.endSnapshot());
-            //} else if (mIsTimedTest) {
-                //writeStopTiming(mPerfCollector.stopTiming(""));
-            //}
-            //if (mTestResultCode == 0) {
-                //mTestResult.putString(Instrumentation.REPORT_KEY_STREAMRESULT, ".");
-            //}
-            //sendStatus(mTestResultCode, mTestResult);
-            //try { 
-                //Thread.sleep(mDelayMsec);
-            //} catch (InterruptedException e) {
-                //throw new IllegalStateException(e);
-            //}
+            } 
+            
+            
+                
+            
+                
+            
+            
+                
+            
+            
+            
+                
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.088 -0400", hash_original_method = "7E55B7BB14105B0B262F66875CE13D8A", hash_generated_method = "745BB27702083882F3AAEFD7555CB2D4")
         public void writeBeginSnapshot(String label) {
             addTaint(label.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -916,15 +922,16 @@ String var9869AA735EFB2F08232388567A171773_509620477 =             mCoverageFile
         public void writeEndSnapshot(Bundle results) {
             addTaint(results.getTaint());
             mResults.putAll(results);
-            // ---------- Original Method ----------
-            //mResults.putAll(results);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.088 -0400", hash_original_method = "FCAABB153F24A8EFE140AE7259EB6B2D", hash_generated_method = "0DE1640F8BE992C82FE9ECB858F484AE")
         public void writeStartTiming(String label) {
             addTaint(label.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -943,21 +950,21 @@ for(Parcelable p : results.getParcelableArrayList(PerformanceCollector.METRIC_KE
                 mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_EXECUTION_TIME,
                         iteration.getLong(PerformanceCollector.METRIC_KEY_EXECUTION_TIME));
                 i++;
-            } //End block
-            // ---------- Original Method ----------
-            //int i = 0;
-            //for (Parcelable p :
-                    //results.getParcelableArrayList(PerformanceCollector.METRIC_KEY_ITERATIONS)) {
-                //Bundle iteration = (Bundle)p;
-                //String index = "iteration" + i + ".";
-                //mTestResult.putString(index + PerformanceCollector.METRIC_KEY_LABEL,
-                        //iteration.getString(PerformanceCollector.METRIC_KEY_LABEL));
-                //mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_CPU_TIME,
-                        //iteration.getLong(PerformanceCollector.METRIC_KEY_CPU_TIME));
-                //mTestResult.putLong(index + PerformanceCollector.METRIC_KEY_EXECUTION_TIME,
-                        //iteration.getLong(PerformanceCollector.METRIC_KEY_EXECUTION_TIME));
-                //i++;
-            //}
+            } 
+            
+            
+            
+                    
+                
+                
+                
+                        
+                
+                        
+                
+                        
+                
+            
         }
 
         
@@ -966,8 +973,8 @@ for(Parcelable p : results.getParcelableArrayList(PerformanceCollector.METRIC_KE
             addTaint(value);
             addTaint(label.getTaint());
             mTestResult.putLong(label, value);
-            // ---------- Original Method ----------
-            //mTestResult.putLong(label, value);
+            
+            
         }
 
         
@@ -976,8 +983,8 @@ for(Parcelable p : results.getParcelableArrayList(PerformanceCollector.METRIC_KE
             addTaint(value);
             addTaint(label.getTaint());
             mTestResult.putFloat(label, value);
-            // ---------- Original Method ----------
-            //mTestResult.putFloat(label, value);
+            
+            
         }
 
         
@@ -986,8 +993,8 @@ for(Parcelable p : results.getParcelableArrayList(PerformanceCollector.METRIC_KE
             addTaint(value.getTaint());
             addTaint(label.getTaint());
             mTestResult.putString(label, value);
-            // ---------- Original Method ----------
-            //mTestResult.putString(label, value);
+            
+            
         }
 
         

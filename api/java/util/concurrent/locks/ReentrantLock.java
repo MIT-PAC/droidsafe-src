@@ -1,6 +1,6 @@
 package java.util.concurrent.locks;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,45 +16,49 @@ public class ReentrantLock implements Lock, java.io.Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.937 -0400", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "D575B8316542FC333CB3BC5C812414AD")
     public  ReentrantLock() {
         sync = new NonfairSync();
-        // ---------- Original Method ----------
-        //sync = new NonfairSync();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.937 -0400", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "A41781E53E248156CFB216376FFDC140")
     public  ReentrantLock(boolean fair) {
         sync = fair ? new FairSync() : new NonfairSync();
-        // ---------- Original Method ----------
-        //sync = fair ? new FairSync() : new NonfairSync();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.937 -0400", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "F69D427B4A2E72BA43563F8DEC741F82")
     public void lock() {
         sync.lock();
-        // ---------- Original Method ----------
-        //sync.lock();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "5966BE77DAE264B5F21646B0E7A08FC1", hash_generated_method = "CFF689BB53A067D7B9EB5F12CA3F00CC")
     public void lockInterruptibly() throws InterruptedException {
         sync.acquireInterruptibly(1);
-        // ---------- Original Method ----------
-        //sync.acquireInterruptibly(1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "9B7882D242270D7813AEE17389132741", hash_generated_method = "8A53927C4D3AFD3BEC42BA0686BF8CBB")
     public boolean tryLock() {
         boolean var140F1A0621DD0BDEC215647F86BCA4E3_41565368 = (sync.nonfairTryAcquire(1));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1439355928 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1439355928;
-        // ---------- Original Method ----------
-        //return sync.nonfairTryAcquire(1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "6EF7D2E282F143C52CC20B0DBAA61A21", hash_generated_method = "A2339DACCE4819EB9D8DE999D13B80E4")
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -62,56 +66,61 @@ public class ReentrantLock implements Lock, java.io.Serializable {
         boolean var88EC251ECA0C3BEFD0353CA05AF51286_1082351056 = (sync.tryAcquireNanos(1, unit.toNanos(timeout)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1147718649 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1147718649;
-        // ---------- Original Method ----------
-        //return sync.tryAcquireNanos(1, unit.toNanos(timeout));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "87142E80D82254348B0CA43367BBC9B7")
     public void unlock() {
         sync.release(1);
-        // ---------- Original Method ----------
-        //sync.release(1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.938 -0400", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "F5D569EBECBD4EC9A5F5FF6E605AA1FF")
     public Condition newCondition() {
 Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondition();
         var95736666DAD2F48CD56FC0B47EEE8141_2145947043.addTaint(taint);
         return var95736666DAD2F48CD56FC0B47EEE8141_2145947043;
-        // ---------- Original Method ----------
-        //return sync.newCondition();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "49C1080CD2F34E54D065E7F7411C1A36")
     public int getHoldCount() {
         int var033BBA9FBC78AAE10A48F197A19D4736_1793241613 = (sync.getHoldCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804028590 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_804028590;
-        // ---------- Original Method ----------
-        //return sync.getHoldCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "53A74F7432D74C33316852C3E739832B", hash_generated_method = "A6DA77649687890E86B9A9C2430AB7B1")
     public boolean isHeldByCurrentThread() {
         boolean var67B4017CD59F5DDCE7498E8483F9CFB0_522369742 = (sync.isHeldExclusively());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1721438178 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1721438178;
-        // ---------- Original Method ----------
-        //return sync.isHeldExclusively();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "B8A2470400F707CBBF058BF4DA6F8D15", hash_generated_method = "14699BE99FCFE398FCA550A5B901F191")
     public boolean isLocked() {
         boolean var45109197DB21CBB6F15ECEF830DA6904_506141976 = (sync.isLocked());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_390297270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_390297270;
-        // ---------- Original Method ----------
-        //return sync.isLocked();
+        
+        
     }
 
     
@@ -120,18 +129,19 @@ Condition var95736666DAD2F48CD56FC0B47EEE8141_2145947043 =         sync.newCondi
         boolean var025994C1DF49233538C6DF8BADB9C6C8_1907908729 = (sync instanceof FairSync);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_480847302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_480847302;
-        // ---------- Original Method ----------
-        //return sync instanceof FairSync;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.939 -0400", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "69CEB7CFAC383EE5794F9CF958258F1A")
     protected Thread getOwner() {
 Thread var86C22E9219AA4C3398E9F9B969B294CC_1034654486 =         sync.getOwner();
         var86C22E9219AA4C3398E9F9B969B294CC_1034654486.addTaint(taint);
         return var86C22E9219AA4C3398E9F9B969B294CC_1034654486;
-        // ---------- Original Method ----------
-        //return sync.getOwner();
+        
+        
     }
 
     
@@ -140,8 +150,8 @@ Thread var86C22E9219AA4C3398E9F9B969B294CC_1034654486 =         sync.getOwner();
         boolean var2967874652C8008E25540A916154E044_1679702226 = (sync.hasQueuedThreads());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1239337803 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1239337803;
-        // ---------- Original Method ----------
-        //return sync.hasQueuedThreads();
+        
+        
     }
 
     
@@ -151,8 +161,8 @@ Thread var86C22E9219AA4C3398E9F9B969B294CC_1034654486 =         sync.getOwner();
         boolean var9BB5C27E049EB33FD7FBCB6CC83C36FE_176092107 = (sync.isQueued(thread));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2029396265 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2029396265;
-        // ---------- Original Method ----------
-        //return sync.isQueued(thread);
+        
+        
     }
 
     
@@ -161,8 +171,8 @@ Thread var86C22E9219AA4C3398E9F9B969B294CC_1034654486 =         sync.getOwner();
         int var5D329306F1180332B8FF4C47065D325F_661085973 = (sync.getQueueLength());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36556707 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_36556707;
-        // ---------- Original Method ----------
-        //return sync.getQueueLength();
+        
+        
     }
 
     
@@ -171,11 +181,12 @@ Thread var86C22E9219AA4C3398E9F9B969B294CC_1034654486 =         sync.getOwner();
 Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653 =         sync.getQueuedThreads();
         var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653.addTaint(taint);
         return var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653;
-        // ---------- Original Method ----------
-        //return sync.getQueuedThreads();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.940 -0400", hash_original_method = "BF91F0F13FB6E88A38744502E21F1F2D", hash_generated_method = "71AF9424BB70C09FD0C6D8E95E903A6B")
     public boolean hasWaiters(Condition condition) {
         addTaint(condition.getTaint());
@@ -194,15 +205,16 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653 =         sync
         boolean var23C1F5BEB670AD3A3B37230CF45D76AD_830765391 = (sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1862554680 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1862554680;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //if (!(condition instanceof AbstractQueuedSynchronizer.ConditionObject))
-            //throw new IllegalArgumentException("not owner");
-        //return sync.hasWaiters((AbstractQueuedSynchronizer.ConditionObject)condition);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.941 -0400", hash_original_method = "D4277B3B6ED39F705D915D3806A5548A", hash_generated_method = "2E633C6396020ABE3FD9EB6C09A29488")
     public int getWaitQueueLength(Condition condition) {
         addTaint(condition.getTaint());
@@ -221,12 +233,12 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653 =         sync
         int varD6C0E0468A7445023DCDBF050BDCAFA0_1058076128 = (sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436563548 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436563548;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //if (!(condition instanceof AbstractQueuedSynchronizer.ConditionObject))
-            //throw new IllegalArgumentException("not owner");
-        //return sync.getWaitQueueLength((AbstractQueuedSynchronizer.ConditionObject)condition);
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -248,15 +260,16 @@ Collection<Thread> var0FD62A6A977BE381AD6B1EE70126B5BB_2068745653 =         sync
 Collection<Thread> var2F6B35A4A5F0D194270D94D1FD44EBD7_1701860147 =         sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
         var2F6B35A4A5F0D194270D94D1FD44EBD7_1701860147.addTaint(taint);
         return var2F6B35A4A5F0D194270D94D1FD44EBD7_1701860147;
-        // ---------- Original Method ----------
-        //if (condition == null)
-            //throw new NullPointerException();
-        //if (!(condition instanceof AbstractQueuedSynchronizer.ConditionObject))
-            //throw new IllegalArgumentException("not owner");
-        //return sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.941 -0400", hash_original_method = "E0C199518E39715763AFB28F76F97305", hash_generated_method = "74AA1892173EA0A3F8E3E9CF7BA5DC97")
     public String toString() {
         Thread o = sync.getOwner();
@@ -265,11 +278,11 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
                                    "[Locked by thread " + o.getName() + "]");
         var712A538455E0066CABFC7E39FF5F51C3_1308303269.addTaint(taint);
         return var712A538455E0066CABFC7E39FF5F51C3_1308303269;
-        // ---------- Original Method ----------
-        //Thread o = sync.getOwner();
-        //return super.toString() + ((o == null) ?
-                                   //"[Unlocked]" :
-                                   //"[Locked by thread " + o.getName() + "]");
+        
+        
+        
+                                   
+                                   
     }
 
     
@@ -278,7 +291,7 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.941 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
         public Sync ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -298,8 +311,8 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
                     boolean varB326B5062B2F0E69046810717534CB09_305823535 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2141777037 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2141777037;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(current == getExclusiveOwnerThread())            
             {
@@ -314,27 +327,27 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
                 boolean varB326B5062B2F0E69046810717534CB09_155025022 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1851155380 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1851155380;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_739164560 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1747728746 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1747728746;
-            // ---------- Original Method ----------
-            //final Thread current = Thread.currentThread();
-            //int c = getState();
-            //if (c == 0) {
-                //if (compareAndSetState(0, acquires)) {
-                    //setExclusiveOwnerThread(current);
-                    //return true;
-                //}
-            //}
-            //else if (current == getExclusiveOwnerThread()) {
-                //int nextc = c + acquires;
-                //if (nextc < 0) 
-                    //throw new Error("Maximum lock count exceeded");
-                //setState(nextc);
-                //return true;
-            //}
-            //return false;
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
         }
 
         
@@ -353,22 +366,22 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
             {
                 free = true;
                 setExclusiveOwnerThread(null);
-            } //End block
+            } 
             setState(c);
             boolean varAA2D6E4F578EB0CFABA23BEEF76C2194_22719434 = (free);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1838720021 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1838720021;
-            // ---------- Original Method ----------
-            //int c = getState() - releases;
-            //if (Thread.currentThread() != getExclusiveOwnerThread())
-                //throw new IllegalMonitorStateException();
-            //boolean free = false;
-            //if (c == 0) {
-                //free = true;
-                //setExclusiveOwnerThread(null);
-            //}
-            //setState(c);
-            //return free;
+            
+            
+            
+                
+            
+            
+                
+                
+            
+            
+            
         }
 
         
@@ -377,8 +390,8 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
             boolean var209567A654B1FCE1B2039A97387DA4E2_1372021002 = (getExclusiveOwnerThread() == Thread.currentThread());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_966912789 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_966912789;
-            // ---------- Original Method ----------
-            //return getExclusiveOwnerThread() == Thread.currentThread();
+            
+            
         }
 
         
@@ -387,8 +400,8 @@ String var712A538455E0066CABFC7E39FF5F51C3_1308303269 =         super.toString()
 ConditionObject var01D80487DA347E7B28ACEC08E954FD99_1215239581 =             new ConditionObject();
             var01D80487DA347E7B28ACEC08E954FD99_1215239581.addTaint(taint);
             return var01D80487DA347E7B28ACEC08E954FD99_1215239581;
-            // ---------- Original Method ----------
-            //return new ConditionObject();
+            
+            
         }
 
         
@@ -397,8 +410,8 @@ ConditionObject var01D80487DA347E7B28ACEC08E954FD99_1215239581 =             new
 Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() == 0 ? null : getExclusiveOwnerThread();
             var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584.addTaint(taint);
             return var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584;
-            // ---------- Original Method ----------
-            //return getState() == 0 ? null : getExclusiveOwnerThread();
+            
+            
         }
 
         
@@ -407,8 +420,8 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
             int varE76C236C61E378D6714ED86325FF558D_1817600078 = (isHeldExclusively() ? getState() : 0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095988610 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1095988610;
-            // ---------- Original Method ----------
-            //return isHeldExclusively() ? getState() : 0;
+            
+            
         }
 
         
@@ -417,8 +430,8 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
             boolean var2A32036BD18B2706112116E63B6B14FE_312060090 = (getState() != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1031158916 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1031158916;
-            // ---------- Original Method ----------
-            //return getState() != 0;
+            
+            
         }
 
         
@@ -427,9 +440,9 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
             addTaint(s.getTaint());
             s.defaultReadObject();
             setState(0);
-            // ---------- Original Method ----------
-            //s.defaultReadObject();
-            //setState(0);
+            
+            
+            
         }
 
         
@@ -445,7 +458,7 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.946 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -455,11 +468,11 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
             setExclusiveOwnerThread(Thread.currentThread());
             else
             acquire(1);
-            // ---------- Original Method ----------
-            //if (compareAndSetState(0, 1))
-                //setExclusiveOwnerThread(Thread.currentThread());
-            //else
-                //acquire(1);
+            
+            
+                
+            
+                
         }
 
         
@@ -469,8 +482,8 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
             boolean varF3133CF2A6709F1FDC477885EF5D5576_1930937080 = (nonfairTryAcquire(acquires));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1654115704 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1654115704;
-            // ---------- Original Method ----------
-            //return nonfairTryAcquire(acquires);
+            
+            
         }
 
         
@@ -486,15 +499,15 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.947 -0400", hash_original_method = "76BFFA90730B34917875BAE48AE8B396", hash_generated_method = "76BFFA90730B34917875BAE48AE8B396")
         public FairSync ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.947 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "EA04A5A8DEC9D6FD4587640A48DF018E")
         final void lock() {
             acquire(1);
-            // ---------- Original Method ----------
-            //acquire(1);
+            
+            
         }
 
         
@@ -512,8 +525,8 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
                     boolean varB326B5062B2F0E69046810717534CB09_1540313701 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308827868 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308827868;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(current == getExclusiveOwnerThread())            
             {
@@ -528,28 +541,28 @@ Thread var9A18AC0B80ECEE9576AADF73FC28AEC2_741187584 =             getState() ==
                 boolean varB326B5062B2F0E69046810717534CB09_698720956 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_538476088 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_538476088;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_184519251 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355065427 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355065427;
-            // ---------- Original Method ----------
-            //final Thread current = Thread.currentThread();
-            //int c = getState();
-            //if (c == 0) {
-                //if (!hasQueuedPredecessors() &&
-                    //compareAndSetState(0, acquires)) {
-                    //setExclusiveOwnerThread(current);
-                    //return true;
-                //}
-            //}
-            //else if (current == getExclusiveOwnerThread()) {
-                //int nextc = c + acquires;
-                //if (nextc < 0)
-                    //throw new Error("Maximum lock count exceeded");
-                //setState(nextc);
-                //return true;
-            //}
-            //return false;
+            
+            
+            
+            
+                
+                    
+                    
+                    
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+            
         }
 
         

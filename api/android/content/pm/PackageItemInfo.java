@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,7 +38,7 @@ public class PackageItemInfo {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.941 -0400", hash_original_method = "0DA45D98B1805BAB6DB37663419819EF", hash_generated_method = "A53952B9C896D4AF9B209F1D87FED0D1")
     public  PackageItemInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,16 +55,16 @@ public class PackageItemInfo {
         icon = orig.icon;
         logo = orig.logo;
         metaData = orig.metaData;
-        // ---------- Original Method ----------
-        //name = orig.name;
-        //if (name != null) name = name.trim();
-        //packageName = orig.packageName;
-        //labelRes = orig.labelRes;
-        //nonLocalizedLabel = orig.nonLocalizedLabel;
-        //if (nonLocalizedLabel != null) nonLocalizedLabel = nonLocalizedLabel.toString().trim();
-        //icon = orig.icon;
-        //logo = orig.logo;
-        //metaData = orig.metaData;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -78,15 +78,15 @@ public class PackageItemInfo {
         icon = source.readInt();
         logo = source.readInt();
         metaData = source.readBundle();
-        // ---------- Original Method ----------
-        //name = source.readString();
-        //packageName = source.readString();
-        //labelRes = source.readInt();
-        //nonLocalizedLabel
-                //= TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(source);
-        //icon = source.readInt();
-        //logo = source.readInt();
-        //metaData = source.readBundle();
+        
+        
+        
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -98,7 +98,7 @@ public class PackageItemInfo {
 CharSequence varBE906C9C8D8F58EFBFC8C81E44574921_868821947 =             nonLocalizedLabel;
             varBE906C9C8D8F58EFBFC8C81E44574921_868821947.addTaint(taint);
             return varBE906C9C8D8F58EFBFC8C81E44574921_868821947;
-        } //End block
+        } 
     if(labelRes != 0)        
         {
             CharSequence label = pm.getText(packageName, labelRes, getApplicationInfo());
@@ -107,31 +107,31 @@ CharSequence varBE906C9C8D8F58EFBFC8C81E44574921_868821947 =             nonLoca
 CharSequence var6A0C0BC3872CAFE02E69329DEB10F42C_1072960002 =                 label.toString().trim();
                 var6A0C0BC3872CAFE02E69329DEB10F42C_1072960002.addTaint(taint);
                 return var6A0C0BC3872CAFE02E69329DEB10F42C_1072960002;
-            } //End block
-        } //End block
+            } 
+        } 
     if(name != null)        
         {
 CharSequence varB017984728AC60AD1F0BF8734F33F15C_692819487 =             name;
             varB017984728AC60AD1F0BF8734F33F15C_692819487.addTaint(taint);
             return varB017984728AC60AD1F0BF8734F33F15C_692819487;
-        } //End block
+        } 
 CharSequence varC56556E908F763F1A1F55590F97A185E_871605516 =         packageName;
         varC56556E908F763F1A1F55590F97A185E_871605516.addTaint(taint);
         return varC56556E908F763F1A1F55590F97A185E_871605516;
-        // ---------- Original Method ----------
-        //if (nonLocalizedLabel != null) {
-            //return nonLocalizedLabel;
-        //}
-        //if (labelRes != 0) {
-            //CharSequence label = pm.getText(packageName, labelRes, getApplicationInfo());
-            //if (label != null) {
-                //return label.toString().trim();
-            //}
-        //}
-        //if (name != null) {
-            //return name;
-        //}
-        //return packageName;
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -146,19 +146,19 @@ CharSequence varC56556E908F763F1A1F55590F97A185E_871605516 =         packageName
 Drawable varDA2FE1A9D9D8285A7F4D54668C2E4AE3_433746410 =                 dr;
                 varDA2FE1A9D9D8285A7F4D54668C2E4AE3_433746410.addTaint(taint);
                 return varDA2FE1A9D9D8285A7F4D54668C2E4AE3_433746410;
-            } //End block
-        } //End block
+            } 
+        } 
 Drawable varB77E3BDD223F0ECAD6D8B57AE6CCEB66_464544153 =         loadDefaultIcon(pm);
         varB77E3BDD223F0ECAD6D8B57AE6CCEB66_464544153.addTaint(taint);
         return varB77E3BDD223F0ECAD6D8B57AE6CCEB66_464544153;
-        // ---------- Original Method ----------
-        //if (icon != 0) {
-            //Drawable dr = pm.getDrawable(packageName, icon, getApplicationInfo());
-            //if (dr != null) {
-                //return dr;
-            //}
-        //}
-        //return loadDefaultIcon(pm);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -168,8 +168,8 @@ Drawable varB77E3BDD223F0ECAD6D8B57AE6CCEB66_464544153 =         loadDefaultIcon
 Drawable varAD0C68E9FDEBCDCC559AABA877077272_1427337178 =         pm.getDefaultActivityIcon();
         varAD0C68E9FDEBCDCC559AABA877077272_1427337178.addTaint(taint);
         return varAD0C68E9FDEBCDCC559AABA877077272_1427337178;
-        // ---------- Original Method ----------
-        //return pm.getDefaultActivityIcon();
+        
+        
     }
 
     
@@ -184,30 +184,31 @@ Drawable varAD0C68E9FDEBCDCC559AABA877077272_1427337178 =         pm.getDefaultA
 Drawable varBE245B24E7ED509FDFAAA6CD39E35D89_869547922 =                 d;
                 varBE245B24E7ED509FDFAAA6CD39E35D89_869547922.addTaint(taint);
                 return varBE245B24E7ED509FDFAAA6CD39E35D89_869547922;
-            } //End block
-        } //End block
+            } 
+        } 
 Drawable var3716CCA1FFFC9EFA2CF03E314A8A1A27_1197341990 =         loadDefaultLogo(pm);
         var3716CCA1FFFC9EFA2CF03E314A8A1A27_1197341990.addTaint(taint);
         return var3716CCA1FFFC9EFA2CF03E314A8A1A27_1197341990;
-        // ---------- Original Method ----------
-        //if (logo != 0) {
-            //Drawable d = pm.getDrawable(packageName, logo, getApplicationInfo());
-            //if (d != null) {
-                //return d;
-            //}
-        //}
-        //return loadDefaultLogo(pm);
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.947 -0400", hash_original_method = "790329C099FCB9AD7C46A077CBE50219", hash_generated_method = "276CF94D51998AAB4B3C1CBF0C46E70C")
     protected Drawable loadDefaultLogo(PackageManager pm) {
         addTaint(pm.getTaint());
 Drawable var540C13E9E156B687226421B24F2DF178_1993438376 =         null;
         var540C13E9E156B687226421B24F2DF178_1993438376.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1993438376;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -223,19 +224,19 @@ Drawable var540C13E9E156B687226421B24F2DF178_1993438376 =         null;
 XmlResourceParser var2E55A1CF770686CBBF2A21A4D0335E15_2077592847 =                 pm.getXml(packageName, resid, getApplicationInfo());
                 var2E55A1CF770686CBBF2A21A4D0335E15_2077592847.addTaint(taint);
                 return var2E55A1CF770686CBBF2A21A4D0335E15_2077592847;
-            } //End block
-        } //End block
+            } 
+        } 
 XmlResourceParser var540C13E9E156B687226421B24F2DF178_622014301 =         null;
         var540C13E9E156B687226421B24F2DF178_622014301.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_622014301;
-        // ---------- Original Method ----------
-        //if (metaData != null) {
-            //int resid = metaData.getInt(name);
-            //if (resid != 0) {
-                //return pm.getXml(packageName, resid, getApplicationInfo());
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -246,32 +247,33 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_622014301 =         null;
     if(name != null)        
         {
             pw.println(prefix + "name=" + name);
-        } //End block
+        } 
         pw.println(prefix + "packageName=" + packageName);
     if(labelRes != 0 || nonLocalizedLabel != null || icon != 0)        
         {
             pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
                     + " nonLocalizedLabel=" + nonLocalizedLabel
                     + " icon=0x" + Integer.toHexString(icon));
-        } //End block
-        // ---------- Original Method ----------
-        //if (name != null) {
-            //pw.println(prefix + "name=" + name);
-        //}
-        //pw.println(prefix + "packageName=" + packageName);
-        //if (labelRes != 0 || nonLocalizedLabel != null || icon != 0) {
-            //pw.println(prefix + "labelRes=0x" + Integer.toHexString(labelRes)
-                    //+ " nonLocalizedLabel=" + nonLocalizedLabel
-                    //+ " icon=0x" + Integer.toHexString(icon));
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+                    
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.948 -0400", hash_original_method = "B7061250601C1EA92C43E5184BBC6241", hash_generated_method = "E7500C2A6335C8EBED547E7514F82CE5")
     protected void dumpBack(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
         addTaint(pw.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -286,24 +288,25 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_622014301 =         null;
         dest.writeInt(icon);
         dest.writeInt(logo);
         dest.writeBundle(metaData);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeString(packageName);
-        //dest.writeInt(labelRes);
-        //TextUtils.writeToParcel(nonLocalizedLabel, dest, parcelableFlags);
-        //dest.writeInt(icon);
-        //dest.writeInt(logo);
-        //dest.writeBundle(metaData);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.949 -0400", hash_original_method = "3C095FBE28E1D0A5D79820831D5573F9", hash_generated_method = "129C70B3B4306A08A82613C958C0B220")
     protected ApplicationInfo getApplicationInfo() {
 ApplicationInfo var540C13E9E156B687226421B24F2DF178_1312455592 =         null;
         var540C13E9E156B687226421B24F2DF178_1312455592.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1312455592;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -318,8 +321,8 @@ ApplicationInfo var540C13E9E156B687226421B24F2DF178_1312455592 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.949 -0400", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "00B9637435B2DF20319BD9D174F2475F")
         public  DisplayNameComparator(PackageManager pm) {
             mPM = pm;
-            // ---------- Original Method ----------
-            //mPM = pm;
+            
+            
         }
 
         
@@ -336,12 +339,12 @@ ApplicationInfo var540C13E9E156B687226421B24F2DF178_1312455592 =         null;
             int var7A8EA953ABC7951DF47FDA1BDAC98D15_117444797 = (sCollator.compare(sa.toString(), sb.toString()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562016525 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1562016525;
-            // ---------- Original Method ----------
-            //CharSequence  sa = aa.loadLabel(mPM);
-            //if (sa == null) sa = aa.name;
-            //CharSequence  sb = ab.loadLabel(mPM);
-            //if (sb == null) sb = ab.name;
-            //return sCollator.compare(sa.toString(), sb.toString());
+            
+            
+            
+            
+            
+            
         }
 
         

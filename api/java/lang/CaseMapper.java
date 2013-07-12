@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ class CaseMapper {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.013 -0400", hash_original_method = "8FD2C0B10363E6DF4E4A890BB3EDCD79", hash_generated_method = "D0D9B1F1B12C1017900AA1743826FCC0")
     private  CaseMapper() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -64,7 +64,8 @@ class CaseMapper {
     }
 
     
-        private static int upperIndex(int ch) {
+        @DSModeled(DSC.SAFE)
+    private static int upperIndex(int ch) {
         int index = -1;
         if (ch >= 0xdf) {
             if (ch <= 0x587) {

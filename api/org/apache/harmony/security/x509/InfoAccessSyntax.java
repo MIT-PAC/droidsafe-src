@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,41 +24,44 @@ public final class InfoAccessSyntax extends ExtensionValue {
             IOException var8BFBE5BE2F846B70A77DF509D27293C3_2099575038 = new IOException("AccessDescriptions list is null or empty");
             var8BFBE5BE2F846B70A77DF509D27293C3_2099575038.addTaint(taint);
             throw var8BFBE5BE2F846B70A77DF509D27293C3_2099575038;
-        } //End block
+        } 
         this.accessDescriptions = accessDescriptions;
         this.encoding = encoding;
-        // ---------- Original Method ----------
-        //if (accessDescriptions == null || accessDescriptions.isEmpty()) {
-            //throw new IOException("AccessDescriptions list is null or empty");
-        //}
-        //this.accessDescriptions = accessDescriptions;
-        //this.encoding = encoding;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.108 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "4EF27CF4F5C72E4CFA9D2A1262266485")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1764299641 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1667190108 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1667190108;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
-        public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static InfoAccessSyntax decode(byte[] encoding) throws IOException {
         return ((InfoAccessSyntax) ASN1.decode(encoding));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.108 -0400", hash_original_method = "CB86A2DBB1FE1A1292A1258597C50E5F", hash_generated_method = "0B9E3F6BEED6AD2DC19A9A4C91970B63")
     @Override
     public String toString() {
@@ -70,26 +73,27 @@ for(Object accessDescription : accessDescriptions)
             {
                 res.append('\n');
                 res.append(accessDescription);
-            } //End block
-        } //End block
+            } 
+        } 
         res.append("\n---- InfoAccessSyntax END\n");
 String varEC7EB75EF3C7FA633C54FC66A0358174_377830177 =         res.toString();
         varEC7EB75EF3C7FA633C54FC66A0358174_377830177.addTaint(taint);
         return varEC7EB75EF3C7FA633C54FC66A0358174_377830177;
-        // ---------- Original Method ----------
-        //StringBuilder res = new StringBuilder();
-        //res.append("\n---- InfoAccessSyntax:");
-        //if (accessDescriptions != null) {
-            //for (Object accessDescription : accessDescriptions) {
-                //res.append('\n');
-                //res.append(accessDescription);
-            //}
-        //}
-        //res.append("\n---- InfoAccessSyntax END\n");
-        //return res.toString();
+        
+        
+        
+        
+            
+                
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.109 -0400", hash_original_method = "781E3C6C6D65C7307F0C093EFF5048AD", hash_generated_method = "C1FFA07B3D8EE88D7BBFDD4921489C51")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -99,23 +103,23 @@ String varEC7EB75EF3C7FA633C54FC66A0358174_377830177 =         res.toString();
     if(accessDescriptions == null || accessDescriptions.isEmpty())        
         {
             sb.append("NULL\n");
-        } //End block
+        } 
         else
         {
 for(Object accessDescription : accessDescriptions)
             {
                 sb.append(accessDescription.toString());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("AccessDescriptions:\n");
-        //if (accessDescriptions == null || accessDescriptions.isEmpty()) {
-            //sb.append("NULL\n");
-        //} else {
-            //for (Object accessDescription : accessDescriptions) {
-                //sb.append(accessDescription.toString());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+            
+                
+            
+        
     }
 
     

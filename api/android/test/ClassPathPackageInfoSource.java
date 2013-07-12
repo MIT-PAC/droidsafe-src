@@ -1,6 +1,6 @@
 package android.test;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,8 +29,8 @@ public class ClassPathPackageInfoSource {
 ClassPathPackageInfo varBA00A6319552DBD246ACAD32EC974A7E_2039982539 =             createPackageInfo(pkgName);
             varBA00A6319552DBD246ACAD32EC974A7E_2039982539.addTaint(taint);
             return varBA00A6319552DBD246ACAD32EC974A7E_2039982539;
-            // ---------- Original Method ----------
-            //return createPackageInfo(pkgName);
+            
+            
         }
 
         
@@ -48,12 +48,13 @@ ClassPathPackageInfo varBA00A6319552DBD246ACAD32EC974A7E_2039982539 =           
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.922 -0400", hash_original_method = "5ED3C641A9C0B2F78FCA551972DB4070", hash_generated_method = "0F78D94EE956F24FEB5E237D1FEF66F4")
       ClassPathPackageInfoSource() {
         classPath = getClassPath();
-        // ---------- Original Method ----------
-        //classPath = getClassPath();
+        
+        
     }
 
     
-        public static void setApkPaths(String[] apkPaths) {
+        @DSModeled(DSC.SAFE)
+    public static void setApkPaths(String[] apkPaths) {
         ClassPathPackageInfoSource.apkPaths = apkPaths;
     }
 
@@ -64,8 +65,8 @@ ClassPathPackageInfo varBA00A6319552DBD246ACAD32EC974A7E_2039982539 =           
 ClassPathPackageInfo var999A519CF27E9DF61AC55F1537EAA8F8_1467713945 =         cache.get(pkgName);
         var999A519CF27E9DF61AC55F1537EAA8F8_1467713945.addTaint(taint);
         return var999A519CF27E9DF61AC55F1537EAA8F8_1467713945;
-        // ---------- Original Method ----------
-        //return cache.get(pkgName);
+        
+        
     }
 
     
@@ -81,22 +82,22 @@ for(String className : classNames)
     if(className.endsWith(".R") || className.endsWith(".Manifest"))            
             {
                 continue;
-            } //End block
+            } 
             try 
             {
                 topLevelClasses.add(Class.forName(className, false,
                         (classLoader != null) ? classLoader : CLASS_LOADER));
-            } //End block
+            } 
             catch (ClassNotFoundException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 ClassPathPackageInfo var401CB2EAF9C0C6CEC18A24A21E312BEC_362904609 =         new ClassPathPackageInfo(this, packageName, subpackageNames,
                 topLevelClasses);
         var401CB2EAF9C0C6CEC18A24A21E312BEC_362904609.addTaint(taint);
         return var401CB2EAF9C0C6CEC18A24A21E312BEC_362904609;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -118,27 +119,27 @@ for(String entryName : classPath)
     if(entryName.endsWith(".apk"))                    
                     {
                         findClassesInApk(entryName, packageName, classNames, subpackageNames);
-                    } //End block
+                    } 
                     else
                     {
 for(String apkPath : apkPaths)
                         {
                             File file = new File(apkPath);
                             scanForApkFiles(file, packageName, classNames, subpackageNames);
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 catch (IOException e)
                 {
                     AssertionError var8BAAF0487644E6BADFA04E3D9E011EF9_1399756924 = new AssertionError("Can't read classpath entry " +
                             entryName + ": " + e.getMessage());
                     var8BAAF0487644E6BADFA04E3D9E011EF9_1399756924.addTaint(taint);
                     throw var8BAAF0487644E6BADFA04E3D9E011EF9_1399756924;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -152,7 +153,7 @@ for(String apkPath : apkPaths)
     if(source.getPath().endsWith(".apk"))        
         {
             findClassesInApk(source.getPath(), packageName, classNames, subpackageNames);
-        } //End block
+        } 
         else
         {
             File[] files = source.listFiles();
@@ -161,20 +162,20 @@ for(String apkPath : apkPaths)
 for(File file : files)
                 {
                     scanForApkFiles(file, packageName, classNames, subpackageNames);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (source.getPath().endsWith(".apk")) {
-            //findClassesInApk(source.getPath(), packageName, classNames, subpackageNames);
-        //} else {
-            //File[] files = source.listFiles();
-            //if (files != null) {
-                //for (File file : files) {
-                    //scanForApkFiles(file, packageName, classNames, subpackageNames);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -196,26 +197,26 @@ for(File f : directory.listFiles())
     if(name.endsWith(CLASS_EXTENSION) && isToplevelClass(name))                
                 {
                     classNames.add(packagePrefix + getClassName(name));
-                } //End block
+                } 
                 else
     if(f.isDirectory())                
                 {
                     subpackageNames.add(packagePrefix + name);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //File directory = new File(classDir, pathPrefix);
-        //if (directory.exists()) {
-            //for (File f : directory.listFiles()) {
-                //String name = f.getName();
-                //if (name.endsWith(CLASS_EXTENSION) && isToplevelClass(name)) {
-                    //classNames.add(packagePrefix + getClassName(name));
-                //} else if (f.isDirectory()) {
-                    //subpackageNames.add(packagePrefix + name);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
@@ -230,7 +231,7 @@ for(File f : directory.listFiles())
     if(!entryNames.contains(pathPrefix))        
         {
             return;
-        } //End block
+        } 
         int prefixLength = pathPrefix.length();
 for(String entryName : entryNames)
         {
@@ -243,17 +244,17 @@ for(String entryName : entryNames)
                     {
                         String p = entryName.substring(0, index).replace('/', '.');
                         subpackageNames.add(p);
-                    } //End block
+                    } 
                     else
     if(isToplevelClass(entryName))                    
                     {
                         classNames.add(getClassName(entryName).replace('/', '.'));
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -280,33 +281,33 @@ for(String entryName : entryNames)
     if(lastPackageSeparator > 0)                    
                     {
                         subPackageName = className.substring(0, lastPackageSeparator);
-                    } //End block
+                    } 
     if(subPackageName.length() > packageName.length())                    
                     {
                         subpackageNames.add(subPackageName);
-                    } //End block
+                    } 
                     else
     if(isToplevelClass(className))                    
                     {
                         classNames.add(className);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         catch (IOException e)
         {
     if(false)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
     if(dexFile != null)            
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -332,17 +333,17 @@ for(String entryName : entryNames)
                             String packageName = entryName.substring(0, lastIndex + 1);
                             entryNames.add(packageName);
                             lastIndex = entryName.lastIndexOf('/', lastIndex - 1);
-                        } //End block
+                        } 
 } while (lastIndex > 0);
-                } //End block
-            } //End block
+                } 
+            } 
             jarFiles.put(jarFile, entryNames);
-        } //End block
+        } 
 Set<String> var765F5FFF692F7D7E6B8C4D556FF7DF0A_626530695 =         entryNames;
         var765F5FFF692F7D7E6B8C4D556FF7DF0A_626530695.addTaint(taint);
         return var765F5FFF692F7D7E6B8C4D556FF7DF0A_626530695;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -364,11 +365,12 @@ Set<String> var765F5FFF692F7D7E6B8C4D556FF7DF0A_626530695 =         entryNames;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.929 -0400", hash_original_method = "EF51D9ADCA3E8F522FB005D173D913A5", hash_generated_method = "278C4AA58E3CC699090BB3856901B327")
     public void setClassLoader(ClassLoader classLoader) {
         this.classLoader = classLoader;
-        // ---------- Original Method ----------
-        //this.classLoader = classLoader;
+        
+        
     }
 
     

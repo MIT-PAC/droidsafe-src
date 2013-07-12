@@ -1,6 +1,6 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,27 +50,27 @@ public class AnimationSet extends Animation {
     if(a.hasValue(com.android.internal.R.styleable.AnimationSet_duration))            
             {
                 mFlags |= PROPERTY_DURATION_MASK;
-            } //End block
+            } 
     if(a.hasValue(com.android.internal.R.styleable.AnimationSet_fillBefore))            
             {
                 mFlags |= PROPERTY_FILL_BEFORE_MASK;
-            } //End block
+            } 
     if(a.hasValue(com.android.internal.R.styleable.AnimationSet_fillAfter))            
             {
                 mFlags |= PROPERTY_FILL_AFTER_MASK;
-            } //End block
+            } 
     if(a.hasValue(com.android.internal.R.styleable.AnimationSet_repeatMode))            
             {
                 mFlags |= PROPERTY_REPEAT_MODE_MASK;
-            } //End block
+            } 
     if(a.hasValue(com.android.internal.R.styleable.AnimationSet_startOffset))            
             {
                 mFlags |= PROPERTY_START_OFFSET_MASK;
-            } //End block
-        } //End block
+            } 
+        } 
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -79,9 +79,9 @@ public class AnimationSet extends Animation {
         addTaint(shareInterpolator);
         setFlag(PROPERTY_SHARE_INTERPOLATOR_MASK, shareInterpolator);
         init();
-        // ---------- Original Method ----------
-        //setFlag(PROPERTY_SHARE_INTERPOLATOR_MASK, shareInterpolator);
-        //init();
+        
+        
+        
     }
 
     
@@ -96,48 +96,50 @@ public class AnimationSet extends Animation {
 for(int i = 0;i < count;i++)
         {
             animation.mAnimations.add(animations.get(i).clone());
-        } //End block
+        } 
 AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
         var1D3E9F798E82851E6201AD690FEA4543_1826289463.addTaint(taint);
         return var1D3E9F798E82851E6201AD690FEA4543_1826289463;
-        // ---------- Original Method ----------
-        //final AnimationSet animation = (AnimationSet) super.clone();
-        //animation.mTempTransformation = new Transformation();
-        //animation.mAnimations = new ArrayList<Animation>();
-        //final int count = mAnimations.size();
-        //final ArrayList<Animation> animations = mAnimations;
-        //for (int i = 0; i < count; i++) {
-            //animation.mAnimations.add(animations.get(i).clone());
-        //}
-        //return animation;
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.627 -0400", hash_original_method = "100CC04F928443BDDD1350B26299D2DB", hash_generated_method = "8A7BB69AA36E9A4190E2455BA21998A6")
     private void setFlag(int mask, boolean value) {
         addTaint(value);
     if(value)        
         {
             mFlags |= mask;
-        } //End block
+        } 
         else
         {
             mFlags &= ~mask;
-        } //End block
-        // ---------- Original Method ----------
-        //if (value) {
-            //mFlags |= mask;
-        //} else {
-            //mFlags &= ~mask;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.628 -0400", hash_original_method = "96CA9C56EEADA219CA715399206CF9BC", hash_generated_method = "C0944DDBBB8FF4378AF642CA83ECA72A")
     private void init() {
         mStartTime = 0;
-        // ---------- Original Method ----------
-        //mStartTime = 0;
+        
+        
     }
 
     
@@ -147,9 +149,9 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
         addTaint(fillAfter);
         mFlags |= PROPERTY_FILL_AFTER_MASK;
         super.setFillAfter(fillAfter);
-        // ---------- Original Method ----------
-        //mFlags |= PROPERTY_FILL_AFTER_MASK;
-        //super.setFillAfter(fillAfter);
+        
+        
+        
     }
 
     
@@ -159,9 +161,9 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
         addTaint(fillBefore);
         mFlags |= PROPERTY_FILL_BEFORE_MASK;
         super.setFillBefore(fillBefore);
-        // ---------- Original Method ----------
-        //mFlags |= PROPERTY_FILL_BEFORE_MASK;
-        //super.setFillBefore(fillBefore);
+        
+        
+        
     }
 
     
@@ -171,9 +173,9 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
         addTaint(repeatMode);
         mFlags |= PROPERTY_REPEAT_MODE_MASK;
         super.setRepeatMode(repeatMode);
-        // ---------- Original Method ----------
-        //mFlags |= PROPERTY_REPEAT_MODE_MASK;
-        //super.setRepeatMode(repeatMode);
+        
+        
+        
     }
 
     
@@ -183,9 +185,9 @@ AnimationSet var1D3E9F798E82851E6201AD690FEA4543_1826289463 =         animation;
         addTaint(startOffset);
         mFlags |= PROPERTY_START_OFFSET_MASK;
         super.setStartOffset(startOffset);
-        // ---------- Original Method ----------
-        //mFlags |= PROPERTY_START_OFFSET_MASK;
-        //super.setStartOffset(startOffset);
+        
+        
+        
     }
 
     
@@ -203,25 +205,25 @@ for(int i = 0;i < count;i++)
                 {
                     mHasAlpha = true;
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var888EF7A5D7544FB5951B99C74B40D228_38926534 = (mHasAlpha);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_879787775 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_879787775;
-        // ---------- Original Method ----------
-        //if (mDirty) {
-            //mDirty = mHasAlpha = false;
-            //final int count = mAnimations.size();
-            //final ArrayList<Animation> animations = mAnimations;
-            //for (int i = 0; i < count; i++) {
-                //if (animations.get(i).hasAlpha()) {
-                    //mHasAlpha = true;
-                    //break;
-                //}
-            //}
-        //}
-        //return mHasAlpha;
+        
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -232,10 +234,10 @@ for(int i = 0;i < count;i++)
         mFlags |= PROPERTY_DURATION_MASK;
         super.setDuration(durationMillis);
         mLastEnd = mStartOffset + mDuration;
-        // ---------- Original Method ----------
-        //mFlags |= PROPERTY_DURATION_MASK;
-        //super.setDuration(durationMillis);
-        //mLastEnd = mStartOffset + mDuration;
+        
+        
+        
+        
     }
 
     
@@ -246,32 +248,32 @@ for(int i = 0;i < count;i++)
     if(noMatrix && a.willChangeTransformationMatrix())        
         {
             mFlags |= PROPERTY_MORPH_MATRIX_MASK;
-        } //End block
+        } 
         boolean changeBounds = (mFlags & PROPERTY_CHANGE_BOUNDS_MASK) == 0;
     if(changeBounds && a.willChangeTransformationMatrix())        
         {
             mFlags |= PROPERTY_CHANGE_BOUNDS_MASK;
-        } //End block
+        } 
     if((mFlags & PROPERTY_DURATION_MASK) == PROPERTY_DURATION_MASK)        
         {
             mLastEnd = mStartOffset + mDuration;
-        } //End block
+        } 
         else
         {
     if(mAnimations.size() == 1)            
             {
                 mDuration = a.getStartOffset() + a.getDuration();
                 mLastEnd = mStartOffset + mDuration;
-            } //End block
+            } 
             else
             {
                 mLastEnd = Math.max(mLastEnd, a.getStartOffset() + a.getDuration());
                 mDuration = mLastEnd - mStartOffset;
-            } //End block
-        } //End block
+            } 
+        } 
         mDirty = true;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -286,15 +288,15 @@ for(int i = 0;i < count;i++)
         {
             Animation a = animations.get(i);
             a.setStartTime(startTimeMillis);
-        } //End block
-        // ---------- Original Method ----------
-        //super.setStartTime(startTimeMillis);
-        //final int count = mAnimations.size();
-        //final ArrayList<Animation> animations = mAnimations;
-        //for (int i = 0; i < count; i++) {
-            //Animation a = animations.get(i);
-            //a.setStartTime(startTimeMillis);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -308,19 +310,19 @@ for(int i = 0;i < count;i++)
         {
             Animation a = animations.get(i);
             startTime = Math.min(startTime, a.getStartTime());
-        } //End block
+        } 
         long var5B2A579F62087D17D79CE59F3DE5F6D1_1989928351 = (startTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_148481034 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_148481034;
-        // ---------- Original Method ----------
-        //long startTime = Long.MAX_VALUE;
-        //final int count = mAnimations.size();
-        //final ArrayList<Animation> animations = mAnimations;
-        //for (int i = 0; i < count; i++) {
-            //Animation a = animations.get(i);
-            //startTime = Math.min(startTime, a.getStartTime());
-        //}
-        //return startTime;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -334,14 +336,14 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             animations.get(i).restrictDuration(durationMillis);
-        } //End block
-        // ---------- Original Method ----------
-        //super.restrictDuration(durationMillis);
-        //final ArrayList<Animation> animations = mAnimations;
-        //int count = animations.size();
-        //for (int i = 0; i < count; i++) {
-            //animations.get(i).restrictDuration(durationMillis);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -355,30 +357,30 @@ for(int i = 0;i < count;i++)
     if(durationSet)        
         {
             duration = mDuration;
-        } //End block
+        } 
         else
         {
 for(int i = 0;i < count;i++)
             {
                 duration = Math.max(duration, animations.get(i).getDuration());
-            } //End block
-        } //End block
+            } 
+        } 
         long varB85EC314BF443B797EF8A66B3B03F8A4_745473894 = (duration);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1494210147 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1494210147;
-        // ---------- Original Method ----------
-        //final ArrayList<Animation> animations = mAnimations;
-        //final int count = animations.size();
-        //long duration = 0;
-        //boolean durationSet = (mFlags & PROPERTY_DURATION_MASK) == PROPERTY_DURATION_MASK;
-        //if (durationSet) {
-            //duration = mDuration;
-        //} else {
-            //for (int i = 0; i < count; i++) {
-                //duration = Math.max(duration, animations.get(i).getDuration());
-            //}
-        //}
-        //return duration;
+        
+        
+        
+        
+        
+        
+            
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -392,19 +394,19 @@ for(int i = count - 1;i >= 0;--i)
             final long d = animations.get(i).computeDurationHint();
     if(d > duration)            
             duration = d;
-        } //End block
+        } 
         long varB85EC314BF443B797EF8A66B3B03F8A4_628278844 = (duration);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_57833316 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_57833316;
-        // ---------- Original Method ----------
-        //long duration = 0;
-        //final int count = mAnimations.size();
-        //final ArrayList<Animation> animations = mAnimations;
-        //for (int i = count - 1; i >= 0; --i) {
-            //final long d = animations.get(i).computeDurationHint();
-            //if (d > duration) duration = d;
-        //}
-        //return duration;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -431,10 +433,10 @@ for(int i = count - 1;i >= 0;--i)
                 a.applyTransformation(interpolator != null ? interpolator.getInterpolation(0.0f)
                         : 0.0f, temp);
                 previousTransformation.compose(temp);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -458,28 +460,28 @@ for(int i = count - 1;i >= 0;--i)
             t.compose(temp);
             started = started || a.hasStarted();
             ended = a.hasEnded() && ended;
-        } //End block
+        } 
     if(started && !mStarted)        
         {
     if(mListener != null)            
             {
                 mListener.onAnimationStart(this);
-            } //End block
+            } 
             mStarted = true;
-        } //End block
+        } 
     if(ended != mEnded)        
         {
     if(mListener != null)            
             {
                 mListener.onAnimationEnd(this);
-            } //End block
+            } 
             mEnded = ended;
-        } //End block
+        } 
         boolean varADDEC426932E71323700AFA1911F8F1C_959139987 = (more);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_168073557 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_168073557;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -492,13 +494,13 @@ for(int i = count - 1;i >= 0;--i)
 for(int i = 0;i < count;i++)
         {
             animations.get(i).scaleCurrentDuration(scale);
-        } //End block
-        // ---------- Original Method ----------
-        //final ArrayList<Animation> animations = mAnimations;
-        //int count = animations.size();
-        //for (int i = 0; i < count; i++) {
-            //animations.get(i).scaleCurrentDuration(scale);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -521,7 +523,7 @@ for(int i = 0;i < count;i++)
     if(shareInterpolator)        
         {
             ensureInterpolator();
-        } //End block
+        } 
         final ArrayList<Animation> children = mAnimations;
         final int count = children.size();
         final long duration = mDuration;
@@ -536,46 +538,46 @@ for(int i = 0;i < count;i++)
     if(storedOffsets == null || storedOffsets.length != count)            
             {
                 storedOffsets = mStoredOffsets = new long[count];
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(storedOffsets != null)        
         {
             storedOffsets = mStoredOffsets = null;
-        } //End block
+        } 
 for(int i = 0;i < count;i++)
         {
             Animation a = children.get(i);
     if(durationSet)            
             {
                 a.setDuration(duration);
-            } //End block
+            } 
     if(fillAfterSet)            
             {
                 a.setFillAfter(fillAfter);
-            } //End block
+            } 
     if(fillBeforeSet)            
             {
                 a.setFillBefore(fillBefore);
-            } //End block
+            } 
     if(repeatModeSet)            
             {
                 a.setRepeatMode(repeatMode);
-            } //End block
+            } 
     if(shareInterpolator)            
             {
                 a.setInterpolator(interpolator);
-            } //End block
+            } 
     if(startOffsetSet)            
             {
                 long offset = a.getStartOffset();
                 a.setStartOffset(offset + startOffset);
                 storedOffsets[i] = offset;
-            } //End block
+            } 
             a.initialize(width, height, parentWidth, parentHeight);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -584,9 +586,9 @@ for(int i = 0;i < count;i++)
     public void reset() {
         super.reset();
         restoreChildrenStartOffset();
-        // ---------- Original Method ----------
-        //super.reset();
-        //restoreChildrenStartOffset();
+        
+        
+        
     }
 
     
@@ -600,15 +602,15 @@ for(int i = 0;i < count;i++)
 for(int i = 0;i < count;i++)
         {
             children.get(i).setStartOffset(offsets[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //final long[] offsets = mStoredOffsets;
-        //if (offsets == null) return;
-        //final ArrayList<Animation> children = mAnimations;
-        //final int count = children.size();
-        //for (int i = 0; i < count; i++) {
-            //children.get(i).setStartOffset(offsets[i]);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -617,30 +619,32 @@ for(int i = 0;i < count;i++)
 List<Animation> var2FFA33FE67F05C81C7BA6EEA1AA0C608_771909556 =         mAnimations;
         var2FFA33FE67F05C81C7BA6EEA1AA0C608_771909556.addTaint(taint);
         return var2FFA33FE67F05C81C7BA6EEA1AA0C608_771909556;
-        // ---------- Original Method ----------
-        //return mAnimations;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.642 -0400", hash_original_method = "007230E9C632DD7C25BB9E67DB11C3C3", hash_generated_method = "B00E61762EF85D0E9342D61036DC52EE")
     @Override
     public boolean willChangeTransformationMatrix() {
         boolean var934B00EF70C12F127FB18ABED6AB2DA8_287449491 = ((mFlags & PROPERTY_MORPH_MATRIX_MASK) == PROPERTY_MORPH_MATRIX_MASK);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_992659086 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_992659086;
-        // ---------- Original Method ----------
-        //return (mFlags & PROPERTY_MORPH_MATRIX_MASK) == PROPERTY_MORPH_MATRIX_MASK;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.642 -0400", hash_original_method = "A538326162AE4CED46022318A3520B17", hash_generated_method = "1408C24DFA4D9988B8C57BE6DB6ACA4F")
     @Override
     public boolean willChangeBounds() {
         boolean varB94FE9EB32C4BC954D47A7E69FC4F151_35690479 = ((mFlags & PROPERTY_CHANGE_BOUNDS_MASK) == PROPERTY_CHANGE_BOUNDS_MASK);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_128688281 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_128688281;
-        // ---------- Original Method ----------
-        //return (mFlags & PROPERTY_CHANGE_BOUNDS_MASK) == PROPERTY_CHANGE_BOUNDS_MASK;
+        
+        
     }
 
     

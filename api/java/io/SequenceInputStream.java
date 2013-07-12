@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,19 +24,19 @@ public class SequenceInputStream extends InputStream {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1625151410 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1625151410.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1625151410;
-        } //End block
+        } 
         Vector<InputStream> inVector = new Vector<InputStream>(1);
         inVector.addElement(s2);
         e = inVector.elements();
         in = s1;
-        // ---------- Original Method ----------
-        //if (s1 == null) {
-            //throw new NullPointerException();
-        //}
-        //Vector<InputStream> inVector = new Vector<InputStream>(1);
-        //inVector.addElement(s2);
-        //e = inVector.elements();
-        //in = s1;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -51,16 +51,16 @@ public class SequenceInputStream extends InputStream {
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_960806365 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_960806365.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_960806365;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //this.e = e;
-        //if (e.hasMoreElements()) {
-            //in = e.nextElement();
-            //if (in == null) {
-                //throw new NullPointerException();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -72,15 +72,15 @@ public class SequenceInputStream extends InputStream {
             int var443A4CD22A314221356D4EA83AFE1E61_1022427586 = (in.available());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_171986611 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_171986611;
-        } //End block
+        } 
         int varCFCD208495D565EF66E7DFF9F98764DA_1167787380 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210004351 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1210004351;
-        // ---------- Original Method ----------
-        //if (e != null && in != null) {
-            //return in.available();
-        //}
-        //return 0;
+        
+        
+            
+        
+        
     }
 
     
@@ -91,13 +91,13 @@ public class SequenceInputStream extends InputStream {
 (in != null)        
         {
             nextStream();
-        } //End block
+        } 
         e = null;
-        // ---------- Original Method ----------
-        //while (in != null) {
-            //nextStream();
-        //}
-        //e = null;
+        
+        
+            
+        
+        
     }
 
     
@@ -106,7 +106,7 @@ public class SequenceInputStream extends InputStream {
     if(in != null)        
         {
             in.close();
-        } //End block
+        } 
     if(e.hasMoreElements())        
         {
             in = e.nextElement();
@@ -115,24 +115,24 @@ public class SequenceInputStream extends InputStream {
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1737663066 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_1737663066.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_1737663066;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             in = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (in != null) {
-            //in.close();
-        //}
-        //if (e.hasMoreElements()) {
-            //in = e.nextElement();
-            //if (in == null) {
-                //throw new NullPointerException();
-            //}
-        //} else {
-            //in = null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -148,21 +148,21 @@ public class SequenceInputStream extends InputStream {
                 int varB4A88417B3D0170D754C647C30B7216A_1053741861 = (result);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714198702 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1714198702;
-            } //End block
+            } 
             nextStream();
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_715763770 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103124616 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1103124616;
-        // ---------- Original Method ----------
-        //while (in != null) {
-            //int result = in.read();
-            //if (result >= 0) {
-                //return result;
-            //}
-            //nextStream();
-        //}
-        //return -1;
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -177,7 +177,7 @@ public class SequenceInputStream extends InputStream {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_118748114 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943969314 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1943969314;
-        } //End block
+        } 
         Arrays.checkOffsetAndCount(buffer.length, offset, count);
         while
 (in != null)        
@@ -188,25 +188,25 @@ public class SequenceInputStream extends InputStream {
                 int varB4A88417B3D0170D754C647C30B7216A_1023144275 = (result);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_862972097 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_862972097;
-            } //End block
+            } 
             nextStream();
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_2056328797 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1498703944 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1498703944;
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //return -1;
-        //}
-        //Arrays.checkOffsetAndCount(buffer.length, offset, count);
-        //while (in != null) {
-            //int result = in.read(buffer, offset, count);
-            //if (result >= 0) {
-                //return result;
-            //}
-            //nextStream();
-        //}
-        //return -1;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     

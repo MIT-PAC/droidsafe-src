@@ -1,6 +1,6 @@
 package javax.xml.parsers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public abstract class SAXParserFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.941 -0400", hash_original_method = "5B4969E70C1A248827CF399EDBDC2A24", hash_generated_method = "75917AE4861FBF4B1ABCA31AADA8B4D1")
     protected  SAXParserFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,8 @@ public abstract class SAXParserFactory {
     }
 
     
-        public static SAXParserFactory newInstance(String factoryClassName,
+        @DSModeled(DSC.BAN)
+    public static SAXParserFactory newInstance(String factoryClassName,
             ClassLoader classLoader) {
         if (factoryClassName == null) {
             throw new FactoryConfigurationError("factoryClassName == null");
@@ -56,39 +57,43 @@ public abstract class SAXParserFactory {
         throws ParserConfigurationException, SAXException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.942 -0400", hash_original_method = "6A0A7EFC1E675DD90B546C7A4C9B47EE", hash_generated_method = "98A9EE2B3964663F64D1613FA6F20ABE")
     public void setNamespaceAware(boolean awareness) {
         this.namespaceAware = awareness;
-        // ---------- Original Method ----------
-        //this.namespaceAware = awareness;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.942 -0400", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "599F2B5B61FB8B7D3C2CD0C1E871774F")
     public void setValidating(boolean validating) {
         this.validating = validating;
-        // ---------- Original Method ----------
-        //this.validating = validating;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.943 -0400", hash_original_method = "550ADB90AA897C85DDC99A20E85473AF", hash_generated_method = "1738F29D8B029AC082EC7D0813C317CA")
     public boolean isNamespaceAware() {
         boolean varCEC00E48144CD3C5B0000055F3D7FF26_1074989591 = (namespaceAware);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_852717888 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_852717888;
-        // ---------- Original Method ----------
-        //return namespaceAware;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.943 -0400", hash_original_method = "758653C6211E875508A2CE7C0CB7DC93", hash_generated_method = "13DBD16EEA4214BE5C4B7C889D509DE4")
     public boolean isValidating() {
         boolean varD77932958A49E1F50F11C2D742FE1493_1172906898 = (validating);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1990416437 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1990416437;
-        // ---------- Original Method ----------
-        //return validating;
+        
+        
     }
 
     
@@ -113,14 +118,14 @@ public abstract class SAXParserFactory {
             );
         varE9742D55AB47AEF31209978AAE994BE9_122893165.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_122893165;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -136,14 +141,14 @@ public abstract class SAXParserFactory {
             );
         varE9742D55AB47AEF31209978AAE994BE9_1600531177.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_1600531177;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -159,14 +164,14 @@ public abstract class SAXParserFactory {
             );
         varE9742D55AB47AEF31209978AAE994BE9_1817128589.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_1817128589;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     
@@ -181,14 +186,14 @@ public abstract class SAXParserFactory {
             );
         varE9742D55AB47AEF31209978AAE994BE9_125822094.addTaint(taint);
         throw varE9742D55AB47AEF31209978AAE994BE9_125822094;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException(
-            //"This parser does not support specification \""
-            //+ this.getClass().getPackage().getSpecificationTitle()
-            //+ "\" version \""
-            //+ this.getClass().getPackage().getSpecificationVersion()
-            //+ "\""
-            //);
+        
+        
+            
+            
+            
+            
+            
+            
     }
 
     

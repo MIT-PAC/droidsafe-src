@@ -1,6 +1,6 @@
 package org.apache.http.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class ClientProtocolException extends IOException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.116 -0400", hash_original_method = "3260DCF079E7C772EA6A90502130DC83", hash_generated_method = "FCE7E5BB85943B23D2128F2BCBDDA47B")
     public  ClientProtocolException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -19,7 +19,7 @@ public class ClientProtocolException extends IOException {
     public  ClientProtocolException(String s) {
         super(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,8 +27,8 @@ public class ClientProtocolException extends IOException {
     public  ClientProtocolException(Throwable cause) {
         addTaint(cause.getTaint());
         initCause(cause);
-        // ---------- Original Method ----------
-        //initCause(cause);
+        
+        
     }
 
     
@@ -38,8 +38,8 @@ public class ClientProtocolException extends IOException {
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
         initCause(cause);
-        // ---------- Original Method ----------
-        //initCause(cause);
+        
+        
     }
 
     

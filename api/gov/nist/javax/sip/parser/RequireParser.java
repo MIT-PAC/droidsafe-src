@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class RequireParser extends HeaderParser {
     public  RequireParser(String require) {
         super(require);
         addTaint(require.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class RequireParser extends HeaderParser {
     protected  RequireParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,19 +55,19 @@ public class RequireParser extends HeaderParser {
                     r.setOptionTag(token.getTokenValue());
                     this.lexer.SPorHT();
                     requireList.add(r);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("RequireParser.parse");
-        } //End block
+        } 
 SIPHeader varD3F029985BC4C44D5532864C73A6BF99_800773700 =         requireList;
         varD3F029985BC4C44D5532864C73A6BF99_800773700.addTaint(taint);
         return varD3F029985BC4C44D5532864C73A6BF99_800773700;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

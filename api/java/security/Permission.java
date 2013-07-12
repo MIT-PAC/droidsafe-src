@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public abstract class Permission implements Guard, Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.136 -0400", hash_original_method = "A3ABD4D844A912132701BDB49CC172D4", hash_generated_method = "60BBD61DE20E08273982FAC06D418A9B")
     public  Permission(String name) {
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,15 +20,16 @@ public abstract class Permission implements Guard, Serializable {
 String var540C13E9E156B687226421B24F2DF178_1049872263 =         null;
         var540C13E9E156B687226421B24F2DF178_1049872263.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1049872263;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.137 -0400", hash_original_method = "C84962AC42FE97CD37014EB04A226348", hash_generated_method = "7B46358E0B69DA0AB94C3564AB046E79")
     public void checkGuard(Object obj) throws SecurityException {
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,8 +38,8 @@ String var540C13E9E156B687226421B24F2DF178_1049872263 =         null;
 PermissionCollection varE4C8908E3F49EE48D2B78391A77CE8EC_597181795 =         new AllPermissionCollection();
         varE4C8908E3F49EE48D2B78391A77CE8EC_597181795.addTaint(taint);
         return varE4C8908E3F49EE48D2B78391A77CE8EC_597181795;
-        // ---------- Original Method ----------
-        //return new AllPermissionCollection();
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,19 +40,19 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
                     (sCursorWindowSize / 1024) + " kb failed. " + printStats());
             var9F3A43773F1FDEA127DCC735B98E13D1_1653458277.addTaint(taint);
             throw var9F3A43773F1FDEA127DCC735B98E13D1_1653458277;
-        } //End block
+        } 
         mCloseGuard.open("close");
         recordNewWindow(Binder.getCallingPid(), mWindowPtr);
-        // ---------- Original Method ----------
-        //mStartPos = 0;
-        //mName = name;
-        //mWindowPtr = nativeCreate(name, sCursorWindowSize);
-        //if (mWindowPtr == 0) {
-            //throw new CursorWindowAllocationException("Cursor window allocation of " +
-                    //(sCursorWindowSize / 1024) + " kb failed. " + printStats());
-        //}
-        //mCloseGuard.open("close");
-        //recordNewWindow(Binder.getCallingPid(), mWindowPtr);
+        
+        
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -61,7 +61,7 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     public  CursorWindow(boolean localWindow) {
         this((String)null);
         addTaint(localWindow);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -75,18 +75,18 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
                     + "created from binder.");
             varCFAE9E34368B5907724045AC19C45F58_97979132.addTaint(taint);
             throw varCFAE9E34368B5907724045AC19C45F58_97979132;
-        } //End block
+        } 
         mName = nativeGetName(mWindowPtr);
         mCloseGuard.open("close");
-        // ---------- Original Method ----------
-        //mStartPos = source.readInt();
-        //mWindowPtr = nativeCreateFromParcel(source);
-        //if (mWindowPtr == 0) {
-            //throw new CursorWindowAllocationException("Cursor window could not be "
-                    //+ "created from binder.");
-        //}
-        //mName = nativeGetName(mWindowPtr);
-        //mCloseGuard.open("close");
+        
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -227,22 +227,22 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     if(mCloseGuard != null)            
             {
                 mCloseGuard.warnIfOpen();
-            } //End block
+            } 
             dispose();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (mCloseGuard != null) {
-                //mCloseGuard.warnIfOpen();
-            //}
-            //dispose();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -251,40 +251,41 @@ public class CursorWindow extends SQLiteClosable implements Parcelable {
     if(mCloseGuard != null)        
         {
             mCloseGuard.close();
-        } //End block
+        } 
     if(mWindowPtr != 0)        
         {
             recordClosingOfWindow(mWindowPtr);
             nativeDispose(mWindowPtr);
             mWindowPtr = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCloseGuard != null) {
-            //mCloseGuard.close();
-        //}
-        //if (mWindowPtr != 0) {
-            //recordClosingOfWindow(mWindowPtr);
-            //nativeDispose(mWindowPtr);
-            //mWindowPtr = 0;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.153 -0400", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "1017747B3DD425566EC6FF588AC3E42C")
     public String getName() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_911961869.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_911961869;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.154 -0400", hash_original_method = "6B12CEFAA1DE3FB86CA989F7EF7D159A", hash_generated_method = "138BAE56F7E233D621D61B747D55599C")
     public void close() {
         releaseReference();
-        // ---------- Original Method ----------
-        //releaseReference();
+        
+        
     }
 
     
@@ -295,37 +296,39 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         {
             mStartPos = 0;
             nativeClear(mWindowPtr);
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //mStartPos = 0;
-            //nativeClear(mWindowPtr);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.155 -0400", hash_original_method = "E83B1D6D3C97BD3B3A2AA134F51457E7", hash_generated_method = "BB57CD42F8ED3EDEE79EC7C187ADC667")
     public int getStartPosition() {
         int var4770B54049ADFE51BD91A1F9D13B56D1_825639039 = (mStartPos);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067775876 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1067775876;
-        // ---------- Original Method ----------
-        //return mStartPos;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.155 -0400", hash_original_method = "A3D22CBF25891D62569B204C4A11C84D", hash_generated_method = "494AFECC1CA5EB1938A9EB7987E5F3E4")
     public void setStartPosition(int pos) {
         mStartPos = pos;
-        // ---------- Original Method ----------
-        //mStartPos = pos;
+        
+        
     }
 
     
@@ -337,18 +340,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
             int varECCCA87025DAF7CA96BA5CFCF53434E4_517294303 = (nativeGetNumRows(mWindowPtr));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986273888 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986273888;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeGetNumRows(mWindowPtr);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -361,18 +364,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
             boolean var32D4895C0E5D1BA8692A534544D13625_1942869858 = (nativeSetNumColumns(mWindowPtr, columnNum));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_115669210 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_115669210;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeSetNumColumns(mWindowPtr, columnNum);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -384,18 +387,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
             boolean var66288317AE79A865CFA73B4BAD2CCC53_124893164 = (nativeAllocRow(mWindowPtr));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1402550428 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1402550428;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeAllocRow(mWindowPtr);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -405,18 +408,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         try 
         {
             nativeFreeLastRow(mWindowPtr);
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //nativeFreeLastRow(mWindowPtr);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -428,8 +431,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         boolean varD9E577A16DD92A666B091378B37A8947_1845258682 = (getType(row, column) == Cursor.FIELD_TYPE_NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1255562780 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1255562780;
-        // ---------- Original Method ----------
-        //return getType(row, column) == Cursor.FIELD_TYPE_NULL;
+        
+        
     }
 
     
@@ -442,9 +445,9 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         boolean varAC6860B478F79D5CC19963B77A38387D_1059413100 = (type == Cursor.FIELD_TYPE_BLOB || type == Cursor.FIELD_TYPE_NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2003063243 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2003063243;
-        // ---------- Original Method ----------
-        //int type = getType(row, column);
-        //return type == Cursor.FIELD_TYPE_BLOB || type == Cursor.FIELD_TYPE_NULL;
+        
+        
+        
     }
 
     
@@ -456,8 +459,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         boolean varFC1415BBD761192486068FE788910809_281682591 = (getType(row, column) == Cursor.FIELD_TYPE_INTEGER);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024544103 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024544103;
-        // ---------- Original Method ----------
-        //return getType(row, column) == Cursor.FIELD_TYPE_INTEGER;
+        
+        
     }
 
     
@@ -469,8 +472,8 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         boolean varFC4BA1D26B8B81B405D2CD6089ADAE34_1730883451 = (getType(row, column) == Cursor.FIELD_TYPE_FLOAT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1724437088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1724437088;
-        // ---------- Original Method ----------
-        //return getType(row, column) == Cursor.FIELD_TYPE_FLOAT;
+        
+        
     }
 
     
@@ -483,9 +486,9 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
         boolean var5523DB8D784D42EE7EDA5F9F7F6DA34B_1071739681 = (type == Cursor.FIELD_TYPE_STRING || type == Cursor.FIELD_TYPE_NULL);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_128584832 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_128584832;
-        // ---------- Original Method ----------
-        //int type = getType(row, column);
-        //return type == Cursor.FIELD_TYPE_STRING || type == Cursor.FIELD_TYPE_NULL;
+        
+        
+        
     }
 
     
@@ -499,18 +502,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
             int var51F8F671E60B09C02F4B22CF9527E4DD_149567092 = (nativeGetType(mWindowPtr, row - mStartPos, column));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_54593489 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_54593489;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeGetType(mWindowPtr, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -524,18 +527,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
             byte[] varB4D4264AAFAD1B56BC567BF536895595_574937485 = (nativeGetBlob(mWindowPtr, row - mStartPos, column));
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1973069831 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1973069831;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeGetBlob(mWindowPtr, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -549,18 +552,18 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_911961869 =         mName;
 String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetString(mWindowPtr, row - mStartPos, column);
             var4AA4DA86C222170F791223A95D3AFE2E_925422375.addTaint(taint);
             return var4AA4DA86C222170F791223A95D3AFE2E_925422375;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeGetString(mWindowPtr, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -574,26 +577,26 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             IllegalArgumentException var5AC2B0CABEFCBDA1206A5F559E6EECE5_1409715101 = new IllegalArgumentException("CharArrayBuffer should not be null");
             var5AC2B0CABEFCBDA1206A5F559E6EECE5_1409715101.addTaint(taint);
             throw var5AC2B0CABEFCBDA1206A5F559E6EECE5_1409715101;
-        } //End block
+        } 
         acquireReference();
         try 
         {
             nativeCopyStringToBuffer(mWindowPtr, row - mStartPos, column, buffer);
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("CharArrayBuffer should not be null");
-        //}
-        //acquireReference();
-        //try {
-            //nativeCopyStringToBuffer(mWindowPtr, row - mStartPos, column, buffer);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -607,18 +610,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             long varA7B49C3DCEF3B19E8E18DB79BF1DDD02_1906514876 = (nativeGetLong(mWindowPtr, row - mStartPos, column));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1036688917 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1036688917;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeGetLong(mWindowPtr, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -632,18 +635,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             double varC3438CE738FED57E283C7769EF26B2B0_1439091147 = (nativeGetDouble(mWindowPtr, row - mStartPos, column));
                         double varE8CD7DA078A86726031AD64F35F5A6C0_2091322453 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_2091322453;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativeGetDouble(mWindowPtr, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -654,8 +657,8 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
         short varDD4B7D998BD5EE95A3B18ACF7E07F711_1254292618 = ((short) getLong(row, column));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_1715404064 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_1715404064;
-        // ---------- Original Method ----------
-        //return (short) getLong(row, column);
+        
+        
     }
 
     
@@ -666,8 +669,8 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
         int var570BF59F4ECF79754240FA49F2D9942C_1267145069 = ((int) getLong(row, column));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_77275371 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_77275371;
-        // ---------- Original Method ----------
-        //return (int) getLong(row, column);
+        
+        
     }
 
     
@@ -678,8 +681,8 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
         float varCE108B6AE2FBC10AAC0BC5EFB0DFD8B3_1650666336 = ((float) getDouble(row, column));
                 float var546ADE640B6EDFBC8A086EF31347E768_92050288 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_92050288;
-        // ---------- Original Method ----------
-        //return (float) getDouble(row, column);
+        
+        
     }
 
     
@@ -694,18 +697,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             boolean var281493367E51644F927F5A4E4CE5C662_121417501 = (nativePutBlob(mWindowPtr, value, row - mStartPos, column));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1841538854 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1841538854;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativePutBlob(mWindowPtr, value, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -720,18 +723,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             boolean var993B1768A8DBD25360BBC4FA02587341_50786697 = (nativePutString(mWindowPtr, value, row - mStartPos, column));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_799763634 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_799763634;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativePutString(mWindowPtr, value, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -746,18 +749,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             boolean var626D37D337F333A657284CF674CFB1D4_1308761324 = (nativePutLong(mWindowPtr, value, row - mStartPos, column));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1244992308 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1244992308;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativePutLong(mWindowPtr, value, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -772,18 +775,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             boolean varDD6F700A323109807DA26C250DA583B7_1317111907 = (nativePutDouble(mWindowPtr, value, row - mStartPos, column));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1345868817 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1345868817;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativePutDouble(mWindowPtr, value, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -797,18 +800,18 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             boolean varC7A6517D8EAB40C53ADC69104226C91A_723118954 = (nativePutNull(mWindowPtr, row - mStartPos, column));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1417291644 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1417291644;
-        } //End block
+        } 
         finally 
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //acquireReference();
-        //try {
-            //return nativePutNull(mWindowPtr, row - mStartPos, column);
-        //} finally {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -817,13 +820,14 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.168 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BA562CDCE9C6D94D1559AE20C0D33BA0")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_589340360 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864606687 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1864606687;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -836,23 +840,23 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
     if((flags & Parcelable.PARCELABLE_WRITE_RETURN_VALUE) != 0)        
         {
             releaseReference();
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeInt(mStartPos);
-        //nativeWriteToParcel(mWindowPtr, dest);
-        //if ((flags & Parcelable.PARCELABLE_WRITE_RETURN_VALUE) != 0) {
-            //releaseReference();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.169 -0400", hash_original_method = "9F0DD3DD42B1176D3BFC90E1CC869BD8", hash_generated_method = "FA9613911A2A6B53687A115BA4086A12")
     @Override
     protected void onAllReferencesReleased() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         dispose();
-        // ---------- Original Method ----------
-        //dispose();
+        
+        
     }
 
     
@@ -865,15 +869,15 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
             sWindowToPidMap.put(window, pid);
     if(Log.isLoggable(STATS_TAG, Log.VERBOSE))            
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sWindowToPidMap) {
-            //sWindowToPidMap.put(window, pid);
-            //if (Log.isLoggable(STATS_TAG, Log.VERBOSE)) {
-                //Log.i(STATS_TAG, "Created a new Cursor. " + printStats());
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -885,16 +889,16 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
     if(sWindowToPidMap.size() == 0)            
             {
                 return;
-            } //End block
+            } 
             sWindowToPidMap.delete(window);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sWindowToPidMap) {
-            //if (sWindowToPidMap.size() == 0) {
-                //return;
-            //}
-            //sWindowToPidMap.delete(window);
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -912,14 +916,14 @@ String var4AA4DA86C222170F791223A95D3AFE2E_925422375 =             nativeGetStri
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_51537888 =                 "";
                 var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_51537888.addTaint(taint);
                 return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_51537888;
-            } //End block
+            } 
 for(int indx = 0;indx < size;indx++)
             {
                 int pid = sWindowToPidMap.valueAt(indx);
                 int value = pidCounts.get(pid);
                 pidCounts.put(pid, ++value);
-            } //End block
-        } //End block
+            } 
+        } 
         int numPids = pidCounts.size();
 for(int i = 0;i < numPids;i++)
         {
@@ -928,21 +932,21 @@ for(int i = 0;i < numPids;i++)
     if(pid == myPid)            
             {
                 buff.append("this proc=");
-            } //End block
+            } 
             else
             {
                 buff.append("pid " + pid + "=");
-            } //End block
+            } 
             int num = pidCounts.get(pid);
             buff.append(num + ")");
             total += num;
-        } //End block
+        } 
         String s = (buff.length() > 980) ? buff.substring(0, 980) : buff.toString();
 String varD669198966AE1D11824B74353EFDF302_1918044678 =         "# Open Cursors=" + total + s;
         varD669198966AE1D11824B74353EFDF302_1918044678.addTaint(taint);
         return varD669198966AE1D11824B74353EFDF302_1918044678;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -952,8 +956,8 @@ String varD669198966AE1D11824B74353EFDF302_1918044678 =         "# Open Cursors=
 String var3E9B70506FB423FE6C7A32E2D683FA47_1578629003 =         getName() + " {" + Integer.toHexString(mWindowPtr) + "}";
         var3E9B70506FB423FE6C7A32E2D683FA47_1578629003.addTaint(taint);
         return var3E9B70506FB423FE6C7A32E2D683FA47_1578629003;
-        // ---------- Original Method ----------
-        //return getName() + " {" + Integer.toHexString(mWindowPtr) + "}";
+        
+        
     }
 
     
@@ -979,12 +983,12 @@ String var3E9B70506FB423FE6C7A32E2D683FA47_1578629003 =         getName() + " {"
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.171 -0400", hash_original_field = "E92F2862489B24AFB0331EE5C78DA3B9", hash_generated_field = "E194A8535700746837F74D9B692D7DA6")
 
     private static final SparseIntArray sWindowToPidMap = new SparseIntArray();
-    // orphaned legacy method
+    
     public CursorWindow createFromParcel(Parcel source) {
             return new CursorWindow(source);
         }
     
-    // orphaned legacy method
+    
     public CursorWindow[] newArray(int size) {
             return new CursorWindow[size];
         }

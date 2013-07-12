@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -120,8 +120,8 @@ public class SyncStorageEngine extends Handler {
         writeStatusLocked();
         writePendingOperationsLocked();
         writeStatisticsLocked();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -156,26 +156,26 @@ public class SyncStorageEngine extends Handler {
             synchronized
 (mAuthorities)            {
                 writeStatusLocked();
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(msg.what == MSG_WRITE_STATISTICS)        
         {
             synchronized
 (mAuthorities)            {
                 writeStatisticsLocked();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (msg.what == MSG_WRITE_STATUS) {
-            //synchronized (mAuthorities) {
-                //writeStatusLocked();
-            //}
-        //} else if (msg.what == MSG_WRITE_STATISTICS) {
-            //synchronized (mAuthorities) {
-                //writeStatisticsLocked();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+        
+            
+                
+            
+        
     }
 
     
@@ -186,11 +186,11 @@ public class SyncStorageEngine extends Handler {
         synchronized
 (mAuthorities)        {
             mChangeListeners.register(callback, mask);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //mChangeListeners.register(callback, mask);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -200,11 +200,11 @@ public class SyncStorageEngine extends Handler {
         synchronized
 (mAuthorities)        {
             mChangeListeners.unregister(callback);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //mChangeListeners.unregister(callback);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -223,18 +223,18 @@ public class SyncStorageEngine extends Handler {
     if((which & mask.intValue()) == 0)                
                 {
                     continue;
-                } //End block
+                } 
     if(reports == null)                
                 {
                     reports = new ArrayList<ISyncStatusObserver>(i);
-                } //End block
+                } 
                 reports.add(mChangeListeners.getBroadcastItem(i));
-            } //End block
+            } 
             mChangeListeners.finishBroadcast();
-        } //End block
+        } 
     if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
-        } //End block
+        } 
     if(reports != null)        
         {
             int i = reports.size();
@@ -245,14 +245,14 @@ public class SyncStorageEngine extends Handler {
                 try 
                 {
                     reports.get(i).onStatusChanged(which);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -269,7 +269,7 @@ public class SyncStorageEngine extends Handler {
                 boolean var07CF0B243709FD85835D0A1EEDCB01EF_330478020 = (authority != null && authority.enabled);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1339940070 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1339940070;
-            } //End block
+            } 
             int i = mAuthorities.size();
             while
 (i > 0)            
@@ -282,30 +282,30 @@ public class SyncStorageEngine extends Handler {
                     boolean varB326B5062B2F0E69046810717534CB09_1617860390 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_410341923 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_410341923;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_514710911 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432849858 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432849858;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //if (account != null) {
-                //AuthorityInfo authority = getAuthorityLocked(account, providerName,
-                        //"getSyncAutomatically");
-                //return authority != null && authority.enabled;
-            //}
-            //int i = mAuthorities.size();
-            //while (i > 0) {
-                //i--;
-                //AuthorityInfo authority = mAuthorities.valueAt(i);
-                //if (authority.authority.equals(providerName)
-                        //&& authority.enabled) {
-                    //return true;
-                //}
-            //}
-            //return false;
-        //}
+        } 
+        
+        
+            
+                
+                        
+                
+            
+            
+            
+                
+                
+                
+                        
+                    
+                
+            
+            
+        
     }
 
     
@@ -323,31 +323,31 @@ public class SyncStorageEngine extends Handler {
             {
                 Log.d(TAG, "setSyncAutomatically: already set to " + sync + ", doing nothing");
                 return;
-            } //End block
+            } 
             authority.enabled = sync;
             writeAccountInfoLocked();
-        } //End block
+        } 
     if(sync)        
         {
             ContentResolver.requestSync(account, providerName, new Bundle());
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        // ---------- Original Method ----------
-        //Log.d(TAG, "setSyncAutomatically: " +  ", provider " + providerName
-                //+ " -> " + sync);
-        //synchronized (mAuthorities) {
-            //AuthorityInfo authority = getOrCreateAuthorityLocked(account, providerName, -1, false);
-            //if (authority.enabled == sync) {
-                //Log.d(TAG, "setSyncAutomatically: already set to " + sync + ", doing nothing");
-                //return;
-            //}
-            //authority.enabled = sync;
-            //writeAccountInfoLocked();
-        //}
-        //if (sync) {
-            //ContentResolver.requestSync(account, providerName, new Bundle());
-        //}
-        //reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
+        
+        
+                
+        
+            
+            
+                
+                
+            
+            
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -366,11 +366,11 @@ public class SyncStorageEngine extends Handler {
                     int var6BB61E3B7BCE0931DA574D19D1D82C88_321951283 = (-1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1517593705 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1517593705;
-                } //End block
+                } 
                 int var3F65FA62367C097CE3F1D04624DF972A_439972557 = (authority.syncable);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248220770 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248220770;
-            } //End block
+            } 
             int i = mAuthorities.size();
             while
 (i > 0)            
@@ -382,32 +382,32 @@ public class SyncStorageEngine extends Handler {
                     int var3F65FA62367C097CE3F1D04624DF972A_1393602041 = (authority.syncable);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_961516237 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_961516237;
-                } //End block
-            } //End block
+                } 
+            } 
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1900095826 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37469011 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_37469011;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //if (account != null) {
-                //AuthorityInfo authority = getAuthorityLocked(account, providerName,
-                        //"getIsSyncable");
-                //if (authority == null) {
-                    //return -1;
-                //}
-                //return authority.syncable;
-            //}
-            //int i = mAuthorities.size();
-            //while (i > 0) {
-                //i--;
-                //AuthorityInfo authority = mAuthorities.valueAt(i);
-                //if (authority.authority.equals(providerName)) {
-                    //return authority.syncable;
-                //}
-            //}
-            //return -1;
-        //}
+        } 
+        
+        
+            
+                
+                        
+                
+                    
+                
+                
+            
+            
+            
+                
+                
+                
+                    
+                
+            
+            
+        
     }
 
     
@@ -419,12 +419,12 @@ public class SyncStorageEngine extends Handler {
     if(syncable > 1)        
         {
             syncable = 1;
-        } //End block
+        } 
         else
     if(syncable < -1)        
         {
             syncable = -1;
-        } //End block
+        } 
         Log.d(TAG, "setIsSyncable: " + account + ", provider " + providerName + " -> " + syncable);
         synchronized
 (mAuthorities)        {
@@ -433,17 +433,17 @@ public class SyncStorageEngine extends Handler {
             {
                 Log.d(TAG, "setIsSyncable: already set to " + syncable + ", doing nothing");
                 return;
-            } //End block
+            } 
             authority.syncable = syncable;
             writeAccountInfoLocked();
-        } //End block
+        } 
     if(syncable > 0)        
         {
             ContentResolver.requestSync(account, providerName, new Bundle());
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -459,19 +459,19 @@ public class SyncStorageEngine extends Handler {
 Pair<Long, Long> var540C13E9E156B687226421B24F2DF178_1062457914 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1062457914.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1062457914;
-            } //End block
+            } 
 Pair<Long, Long> var81AABFB7829C88CA23765C85C1608D34_1226501880 =             Pair.create(authority.backoffTime, authority.backoffDelay);
             var81AABFB7829C88CA23765C85C1608D34_1226501880.addTaint(taint);
             return var81AABFB7829C88CA23765C85C1608D34_1226501880;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //AuthorityInfo authority = getAuthorityLocked(account, providerName, "getBackoff");
-            //if (authority == null || authority.backoffTime < 0) {
-                //return null;
-            //}
-            //return Pair.create(authority.backoffTime, authority.backoffDelay);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -484,7 +484,7 @@ Pair<Long, Long> var81AABFB7829C88CA23765C85C1608D34_1226501880 =             Pa
         addTaint(account.getTaint());
     if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
-        } //End block
+        } 
         boolean changed = false;
         synchronized
 (mAuthorities)        {
@@ -499,35 +499,35 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     if(providerName != null && !providerName.equals(authorityInfo.authority))                        
                         {
                             continue;
-                        } //End block
+                        } 
     if(authorityInfo.backoffTime != nextSyncTime
                                 || authorityInfo.backoffDelay != nextDelay)                        
                         {
                             authorityInfo.backoffTime = nextSyncTime;
                             authorityInfo.backoffDelay = nextDelay;
                             changed = true;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             else
             {
                 AuthorityInfo authority = getOrCreateAuthorityLocked(account, providerName, -1 , true);
     if(authority.backoffTime == nextSyncTime && authority.backoffDelay == nextDelay)                
                 {
                     return;
-                } //End block
+                } 
                 authority.backoffTime = nextSyncTime;
                 authority.backoffDelay = nextDelay;
                 changed = true;
-            } //End block
-        } //End block
+            } 
+        } 
     if(changed)        
         {
             reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -546,21 +546,21 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
                     {
     if(Log.isLoggable(TAG, Log.VERBOSE))                        
                         {
-                        } //End block
+                        } 
                         authorityInfo.backoffTime = NOT_IN_BACKOFF_MODE;
                         authorityInfo.backoffDelay = NOT_IN_BACKOFF_MODE;
                         syncQueue.onBackoffChanged(accountInfo.account, authorityInfo.authority, 0);
                         changed = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(changed)        
         {
             reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -571,7 +571,7 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
         addTaint(account.getTaint());
     if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
-        } //End block
+        } 
         synchronized
 (mAuthorities)        {
             AuthorityInfo authority = getOrCreateAuthorityLocked(
@@ -579,24 +579,24 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     if(authority.delayUntil == delayUntil)            
             {
                 return;
-            } //End block
+            } 
             authority.delayUntil = delayUntil;
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        // ---------- Original Method ----------
-        //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-            //Log.v(TAG, "setDelayUntil: " + account + ", provider " + providerName
-                    //+ " -> delayUntil " + delayUntil);
-        //}
-        //synchronized (mAuthorities) {
-            //AuthorityInfo authority = getOrCreateAuthorityLocked(
-                    //account, providerName, -1 , true);
-            //if (authority.delayUntil == delayUntil) {
-                //return;
-            //}
-            //authority.delayUntil = delayUntil;
-        //}
-        //reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
+        
+        
+            
+                    
+        
+        
+            
+                    
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -612,22 +612,23 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
                 long varCFCD208495D565EF66E7DFF9F98764DA_1894392693 = (0);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_690296701 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_690296701;
-            } //End block
+            } 
             long varC9E36F34542776C95626C30CAB1A4A2F_226047464 = (authority.delayUntil);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1141437544 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1141437544;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //AuthorityInfo authority = getAuthorityLocked(account, providerName, "getDelayUntil");
-            //if (authority == null) {
-                //return 0;
-            //}
-            //return authority.delayUntil;
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.829 -0400", hash_original_method = "DA5487F77FC92CA93809E84A1EE05946", hash_generated_method = "EFE61AA99799A2004065324FA177EC07")
     private void updateOrRemovePeriodicSync(Account account, String providerName, Bundle extras,
             long period, boolean add) {
@@ -639,14 +640,14 @@ for(AuthorityInfo authorityInfo : accountInfo.authorities.values())
     if(period <= 0)        
         {
             period = 0;
-        } //End block
+        } 
     if(extras == null)        
         {
             extras = new Bundle();
-        } //End block
+        } 
     if(Log.isLoggable(TAG, Log.VERBOSE))        
         {
-        } //End block
+        } 
         synchronized
 (mAuthorities)        {
             try 
@@ -664,19 +665,19 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
     if(syncInfo.second == period)                            
                             {
                                 return;
-                            } //End block
+                            } 
                             authority.periodicSyncs.set(i, Pair.create(extras, period));
                             alreadyPresent = true;
                             break;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(!alreadyPresent)                    
                     {
                         authority.periodicSyncs.add(Pair.create(extras, period));
                         SyncStatusInfo status = getOrCreateSyncStatusLocked(authority.ident);
                         status.setPeriodicSyncTime(authority.periodicSyncs.size() - 1, 0);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     SyncStatusInfo status = mSyncStatus.get(authority.ident);
@@ -694,28 +695,28 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
     if(status != null)                            
                             {
                                 status.removePeriodicSyncTime(i);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
                         {
                             i++;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(!changed)                    
                     {
                         return;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             finally 
             {
                 writeAccountInfoLocked();
                 writeStatusLocked();
-            } //End block
-        } //End block
+            } 
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -727,8 +728,8 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
         addTaint(providerName.getTaint());
         addTaint(account.getTaint());
         updateOrRemovePeriodicSync(account, providerName, extras, pollFrequency, true );
-        // ---------- Original Method ----------
-        //updateOrRemovePeriodicSync(account, providerName, extras, pollFrequency, true );
+        
+        
     }
 
     
@@ -739,9 +740,9 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
         addTaint(account.getTaint());
         updateOrRemovePeriodicSync(account, providerName, extras, 0 ,
                 false );
-        // ---------- Original Method ----------
-        //updateOrRemovePeriodicSync(account, providerName, extras, 0 ,
-                //false );
+        
+        
+                
     }
 
     
@@ -758,23 +759,23 @@ for(int i = 0, N = authority.periodicSyncs.size();i < N;i++)
 for(Pair<Bundle, Long> item : authority.periodicSyncs)
                 {
                     syncs.add(new PeriodicSync(account, providerName, item.first, item.second));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_569452902 =         syncs;
         var05D370037654F0E0BD3414B0C5C352FF_569452902.addTaint(taint);
         return var05D370037654F0E0BD3414B0C5C352FF_569452902;
-        // ---------- Original Method ----------
-        //ArrayList<PeriodicSync> syncs = new ArrayList<PeriodicSync>();
-        //synchronized (mAuthorities) {
-            //AuthorityInfo authority = getAuthorityLocked(account, providerName, "getPeriodicSyncs");
-            //if (authority != null) {
-                //for (Pair<Bundle, Long> item : authority.periodicSyncs) {
-                    //syncs.add(new PeriodicSync(account, providerName, item.first, item.second));
-                //}
-            //}
-        //}
-        //return syncs;
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -785,32 +786,33 @@ List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_569452902 =         syncs
     if(mMasterSyncAutomatically == flag)            
             {
                 return;
-            } //End block
+            } 
             mMasterSyncAutomatically = flag;
             writeAccountInfoLocked();
-        } //End block
+        } 
     if(flag)        
         {
             ContentResolver.requestSync(null, null, new Bundle());
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
         mContext.sendBroadcast(SYNC_CONNECTION_SETTING_CHANGED_INTENT);
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //if (mMasterSyncAutomatically == flag) {
-                //return;
-            //}
-            //mMasterSyncAutomatically = flag;
-            //writeAccountInfoLocked();
-        //}
-        //if (flag) {
-            //ContentResolver.requestSync(null, null, new Bundle());
-        //}
-        //reportChange(ContentResolver.SYNC_OBSERVER_TYPE_SETTINGS);
-        //mContext.sendBroadcast(SYNC_CONNECTION_SETTING_CHANGED_INTENT);
+        
+        
+            
+                
+            
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.832 -0400", hash_original_method = "6DBCD9157A2DF54805879831F88D4B77", hash_generated_method = "41AFAEA68D763C1A8C23F38BA7AA8FD6")
     public boolean getMasterSyncAutomatically() {
         synchronized
@@ -818,11 +820,11 @@ List<PeriodicSync> var05D370037654F0E0BD3414B0C5C352FF_569452902 =         syncs
             boolean varA84C78D71D9229E12FED4EAC93495260_423816300 = (mMasterSyncAutomatically);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_77030869 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_77030869;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return mMasterSyncAutomatically;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -837,13 +839,13 @@ AuthorityInfo var6AC3C52FCAEF4011F7C800AC6EF24E9E_1111535350 =             getOr
                     true );
             var6AC3C52FCAEF4011F7C800AC6EF24E9E_1111535350.addTaint(taint);
             return var6AC3C52FCAEF4011F7C800AC6EF24E9E_1111535350;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return getOrCreateAuthorityLocked(account, authority,
-                    //-1 ,
-                    //true );
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
     }
 
     
@@ -854,11 +856,11 @@ AuthorityInfo var6AC3C52FCAEF4011F7C800AC6EF24E9E_1111535350 =             getOr
         synchronized
 (mAuthorities)        {
             removeAuthorityLocked(account, authority, true );
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //removeAuthorityLocked(account, authority, true );
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -870,11 +872,11 @@ AuthorityInfo var6AC3C52FCAEF4011F7C800AC6EF24E9E_1111535350 =             getOr
 AuthorityInfo varF9481FD836E751268DF2A1BF46E4186D_1856676441 =             mAuthorities.get(authorityId);
             varF9481FD836E751268DF2A1BF46E4186D_1856676441.addTaint(taint);
             return varF9481FD836E751268DF2A1BF46E4186D_1856676441;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return mAuthorities.get(authorityId);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -893,23 +895,23 @@ for(SyncInfo syncInfo : mCurrentSyncs)
                     boolean varB326B5062B2F0E69046810717534CB09_1718502066 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_665146058 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_665146058;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1890717604 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_409021010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_409021010;
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //for (SyncInfo syncInfo : mCurrentSyncs) {
-                //AuthorityInfo ainfo = getAuthority(syncInfo.authorityId);
-                //if (ainfo != null && ainfo.account.equals(account)
-                        //&& ainfo.authority.equals(authority)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+                
+                        
+                    
+                
+            
+        
+        
     }
 
     
@@ -920,7 +922,7 @@ for(SyncInfo syncInfo : mCurrentSyncs)
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             AuthorityInfo authority = getOrCreateAuthorityLocked(op.account,
                     op.authority,
                     -1 ,
@@ -930,20 +932,20 @@ for(SyncInfo syncInfo : mCurrentSyncs)
 PendingOperation var540C13E9E156B687226421B24F2DF178_435777836 =                 null;
                 var540C13E9E156B687226421B24F2DF178_435777836.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_435777836;
-            } //End block
+            } 
             op = new PendingOperation(op);
             op.authorityId = authority.ident;
             mPendingOperations.add(op);
             appendPendingOperationLocked(op);
             SyncStatusInfo status = getOrCreateSyncStatusLocked(authority.ident);
             status.pending = true;
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_PENDING);
 PendingOperation var85CF662FCFA548E032A48B39B921372E_1750361327 =         op;
         var85CF662FCFA548E032A48B39B921372E_1750361327.addTaint(taint);
         return var85CF662FCFA548E032A48B39B921372E_1750361327;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -955,7 +957,7 @@ PendingOperation var85CF662FCFA548E032A48B39B921372E_1750361327 =         op;
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
     if(mPendingOperations.remove(op))            
             {
     if(mPendingOperations.size() == 0
@@ -963,11 +965,11 @@ PendingOperation var85CF662FCFA548E032A48B39B921372E_1750361327 =         op;
                 {
                     writePendingOperationsLocked();
                     mNumPendingFinished = 0;
-                } //End block
+                } 
                 else
                 {
                     mNumPendingFinished++;
-                } //End block
+                } 
                 AuthorityInfo authority = getAuthorityLocked(op.account, op.authority,
                         "deleteFromPending");
     if(authority != null)                
@@ -982,23 +984,23 @@ for(int i=0;i<N;i++)
                         {
                             morePending = true;
                             break;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(!morePending)                    
                     {
     if(Log.isLoggable(TAG, Log.VERBOSE)){ }                        SyncStatusInfo status = getOrCreateSyncStatusLocked(authority.ident);
                         status.pending = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 res = true;
-            } //End block
-        } //End block
+            } 
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_PENDING);
         boolean var9B207167E5381C47682C6B4F58A623FB_568996669 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627682594 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_627682594;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1009,36 +1011,36 @@ for(int i=0;i<N;i++)
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             num = mPendingOperations.size();
             mPendingOperations.clear();
             final int N = mSyncStatus.size();
 for(int i=0;i<N;i++)
             {
                 mSyncStatus.valueAt(i).pending = false;
-            } //End block
+            } 
             writePendingOperationsLocked();
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_PENDING);
         int var0FC3CFBC27E91EA60A787DE13DAE3E3C_739712232 = (num);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457617509 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1457617509;
-        // ---------- Original Method ----------
-        //int num;
-        //synchronized (mAuthorities) {
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.v(TAG, "clearPending");
-            //}
-            //num = mPendingOperations.size();
-            //mPendingOperations.clear();
-            //final int N = mSyncStatus.size();
-            //for (int i=0; i<N; i++) {
-                //mSyncStatus.valueAt(i).pending = false;
-            //}
-            //writePendingOperationsLocked();
-        //}
-        //reportChange(ContentResolver.SYNC_OBSERVER_TYPE_PENDING);
-        //return num;
+        
+        
+        
+            
+                
+            
+            
+            
+            
+            
+                
+            
+            
+        
+        
+        
     }
 
     
@@ -1049,11 +1051,11 @@ for(int i=0;i<N;i++)
 ArrayList<PendingOperation> varCE48EACD2EA0CB59C3F5D218B3C13801_331825039 =             new ArrayList<PendingOperation>(mPendingOperations);
             varCE48EACD2EA0CB59C3F5D218B3C13801_331825039.addTaint(taint);
             return varCE48EACD2EA0CB59C3F5D218B3C13801_331825039;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return new ArrayList<PendingOperation>(mPendingOperations);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1064,11 +1066,11 @@ ArrayList<PendingOperation> varCE48EACD2EA0CB59C3F5D218B3C13801_331825039 =     
             int var4086A8879090E1B21F883C89EB817BB5_1697205428 = (mPendingOperations.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172828406 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1172828406;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return mPendingOperations.size();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1087,14 +1089,14 @@ ArrayList<PendingOperation> varCE48EACD2EA0CB59C3F5D218B3C13801_331825039 =     
                 {
     if(Log.isLoggable(TAG, Log.VERBOSE))                    
                     {
-                    } //End block
+                    } 
 for(AuthorityInfo auth : acc.authorities.values())
                     {
                         removing.put(auth.ident, auth);
-                    } //End block
+                    } 
                     accIt.remove();
-                } //End block
-            } //End block
+                } 
+            } 
             int i = removing.size();
     if(i > 0)            
             {
@@ -1112,8 +1114,8 @@ for(AuthorityInfo auth : acc.authorities.values())
     if(mSyncStatus.keyAt(j) == ident)                        
                         {
                             mSyncStatus.remove(mSyncStatus.keyAt(j));
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     j = mSyncHistory.size();
                     while
 (j > 0)                    
@@ -1122,17 +1124,17 @@ for(AuthorityInfo auth : acc.authorities.values())
     if(mSyncHistory.get(j).authorityId == ident)                        
                         {
                             mSyncHistory.remove(j);
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 writeAccountInfoLocked();
                 writeStatusLocked();
                 writePendingOperationsLocked();
                 writeStatisticsLocked();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1144,7 +1146,7 @@ for(AuthorityInfo auth : acc.authorities.values())
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             AuthorityInfo authority = getOrCreateAuthorityLocked(
                     activeSyncContext.mSyncOperation.account,
                     activeSyncContext.mSyncOperation.authority,
@@ -1154,13 +1156,13 @@ for(AuthorityInfo auth : acc.authorities.values())
                     authority.account, authority.authority,
                     activeSyncContext.mStartTime);
             mCurrentSyncs.add(syncInfo);
-        } //End block
+        } 
         reportActiveChange();
 SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
         var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399.addTaint(taint);
         return var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1171,27 +1173,27 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             mCurrentSyncs.remove(syncInfo);
-        } //End block
+        } 
         reportActiveChange();
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                //Log.v(TAG, "removeActiveSync: account="
-                        //+ syncInfo.account + " auth=" + syncInfo.authority);
-            //}
-            //mCurrentSyncs.remove(syncInfo);
-        //}
-        //reportActiveChange();
+        
+        
+            
+                
+                        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.843 -0400", hash_original_method = "5624025FD66E34CEC2F994FDB502F76B", hash_generated_method = "4CF4CD5E23AE17353DE22949D91BFDC6")
     public void reportActiveChange() {
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_ACTIVE);
-        // ---------- Original Method ----------
-        //reportChange(ContentResolver.SYNC_OBSERVER_TYPE_ACTIVE);
+        
+        
     }
 
     
@@ -1207,7 +1209,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             AuthorityInfo authority = getAuthorityLocked(accountName, authorityName,
                     "insertStartSyncEvent");
     if(authority == null)            
@@ -1215,7 +1217,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
                 long var6BB61E3B7BCE0931DA574D19D1D82C88_1546724888 = (-1);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1369064981 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1369064981;
-            } //End block
+            } 
             SyncHistoryItem item = new SyncHistoryItem();
             item.authorityId = authority.ident;
             item.historyId = mNextHistoryId++;
@@ -1229,16 +1231,16 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
 (mSyncHistory.size() > MAX_HISTORY)            
             {
                 mSyncHistory.remove(mSyncHistory.size()-1);
-            } //End block
+            } 
             id = item.historyId;
     if(Log.isLoggable(TAG, Log.VERBOSE)){ }
-        } //End block
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_STATUS);
         long varB80BB7740288FDA1F201890375A60C8F_1571538650 = (id);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1448821410 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1448821410;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1273,7 +1275,7 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
 (mAuthorities)        {
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             SyncHistoryItem item = null;
             int i = mSyncHistory.size();
             while
@@ -1284,13 +1286,13 @@ SyncInfo var8178E3AEFCD8B7A2FBAA2724D00107FA_1437548399 =         syncInfo;
     if(item.historyId == historyId)                
                 {
                     break;
-                } //End block
+                } 
                 item = null;
-            } //End block
+            } 
     if(item == null)            
             {
                 return;
-            } //End block
+            } 
             item.elapsedTime = elapsedTime;
             item.event = EVENT_STOP;
             item.mesg = resultMessage;
@@ -1320,18 +1322,18 @@ switch(item.source){
     if(mDayStats[0] == null)            
             {
                 mDayStats[0] = new DayStats(day);
-            } //End block
+            } 
             else
     if(day != mDayStats[0].day)            
             {
                 System.arraycopy(mDayStats, 0, mDayStats, 1, mDayStats.length-1);
                 mDayStats[0] = new DayStats(day);
                 writeStatisticsNow = true;
-            } //End block
+            } 
             else
     if(mDayStats[0] == null)            
             {
-            } //End block
+            } 
             final DayStats ds = mDayStats[0];
             final long lastSyncTime = (item.eventTime + elapsedTime);
             boolean writeStatusNow = false;
@@ -1340,7 +1342,7 @@ switch(item.source){
     if(status.lastSuccessTime == 0 || status.lastFailureTime != 0)                
                 {
                     writeStatusNow = true;
-                } //End block
+                } 
                 status.lastSuccessTime = lastSyncTime;
                 status.lastSuccessSource = item.source;
                 status.lastFailureTime = 0;
@@ -1349,48 +1351,48 @@ switch(item.source){
                 status.initialFailureTime = 0;
                 ds.successCount++;
                 ds.successTime += elapsedTime;
-            } //End block
+            } 
             else
     if(!MESG_CANCELED.equals(resultMessage))            
             {
     if(status.lastFailureTime == 0)                
                 {
                     writeStatusNow = true;
-                } //End block
+                } 
                 status.lastFailureTime = lastSyncTime;
                 status.lastFailureSource = item.source;
                 status.lastFailureMesg = resultMessage;
     if(status.initialFailureTime == 0)                
                 {
                     status.initialFailureTime = lastSyncTime;
-                } //End block
+                } 
                 ds.failureCount++;
                 ds.failureTime += elapsedTime;
-            } //End block
+            } 
     if(writeStatusNow)            
             {
                 writeStatusLocked();
-            } //End block
+            } 
             else
     if(!hasMessages(MSG_WRITE_STATUS))            
             {
                 sendMessageDelayed(obtainMessage(MSG_WRITE_STATUS),
                         WRITE_STATUS_DELAY);
-            } //End block
+            } 
     if(writeStatisticsNow)            
             {
                 writeStatisticsLocked();
-            } //End block
+            } 
             else
     if(!hasMessages(MSG_WRITE_STATISTICS))            
             {
                 sendMessageDelayed(obtainMessage(MSG_WRITE_STATISTICS),
                         WRITE_STATISTICS_DELAY);
-            } //End block
-        } //End block
+            } 
+        } 
         reportChange(ContentResolver.SYNC_OBSERVER_TYPE_STATUS);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1401,11 +1403,11 @@ switch(item.source){
 List<SyncInfo> var98D9832D6E7726FBA7C65251F12F5321_1134166696 =             new ArrayList<SyncInfo>(mCurrentSyncs);
             var98D9832D6E7726FBA7C65251F12F5321_1134166696.addTaint(taint);
             return var98D9832D6E7726FBA7C65251F12F5321_1134166696;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return new ArrayList<SyncInfo>(mCurrentSyncs);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1418,20 +1420,20 @@ List<SyncInfo> var98D9832D6E7726FBA7C65251F12F5321_1134166696 =             new 
 for(int i=0;i<N;i++)
             {
                 ops.add(mSyncStatus.valueAt(i));
-            } //End block
+            } 
 ArrayList<SyncStatusInfo> var730D3CE922A7317E5C5959581BA7A4E3_347595562 =             ops;
             var730D3CE922A7317E5C5959581BA7A4E3_347595562.addTaint(taint);
             return var730D3CE922A7317E5C5959581BA7A4E3_347595562;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //final int N = mSyncStatus.size();
-            //ArrayList<SyncStatusInfo> ops = new ArrayList<SyncStatusInfo>(N);
-            //for (int i=0; i<N; i++) {
-                //ops.add(mSyncStatus.valueAt(i));
-            //}
-            //return ops;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -1444,20 +1446,20 @@ ArrayList<SyncStatusInfo> var730D3CE922A7317E5C5959581BA7A4E3_347595562 =       
 for(int i=0;i<N;i++)
             {
                 infos.add(mAuthorities.valueAt(i));
-            } //End block
+            } 
 ArrayList<AuthorityInfo> var856335B33F20D10100490622F4E3620B_1270975077 =             infos;
             var856335B33F20D10100490622F4E3620B_1270975077.addTaint(taint);
             return var856335B33F20D10100490622F4E3620B_1270975077;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //final int N = mAuthorities.size();
-            //ArrayList<AuthorityInfo> infos = new ArrayList<AuthorityInfo>(N);
-            //for (int i=0; i<N; i++) {
-                //infos.add(mAuthorities.valueAt(i));
-            //}
-            //return infos;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -1470,7 +1472,7 @@ ArrayList<AuthorityInfo> var856335B33F20D10100490622F4E3620B_1270975077 =       
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_826658041 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_826658041.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_826658041;
-        } //End block
+        } 
         synchronized
 (mAuthorities)        {
             final int N = mSyncStatus.size();
@@ -1484,28 +1486,28 @@ for(int i=0;i<N;i++)
 SyncStatusInfo var75E9B120741256879E03910410DF2A75_40469887 =                     cur;
                     var75E9B120741256879E03910410DF2A75_40469887.addTaint(taint);
                     return var75E9B120741256879E03910410DF2A75_40469887;
-                } //End block
-            } //End block
+                } 
+            } 
 SyncStatusInfo var540C13E9E156B687226421B24F2DF178_1577666631 =             null;
             var540C13E9E156B687226421B24F2DF178_1577666631.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1577666631;
-        } //End block
-        // ---------- Original Method ----------
-        //if (account == null || authority == null) {
-          //throw new IllegalArgumentException();
-        //}
-        //synchronized (mAuthorities) {
-            //final int N = mSyncStatus.size();
-            //for (int i=0; i<N; i++) {
-                //SyncStatusInfo cur = mSyncStatus.valueAt(i);
-                //AuthorityInfo ainfo = mAuthorities.get(cur.authorityId);
-                //if (ainfo != null && ainfo.authority.equals(authority) &&
-                    //account.equals(ainfo.account)) {
-                  //return cur;
-                //}
-            //}
-            //return null;
-        //}
+        } 
+        
+        
+          
+        
+        
+            
+            
+                
+                
+                
+                    
+                  
+                
+            
+            
+        
     }
 
     
@@ -1523,40 +1525,40 @@ for(int i=0;i<N;i++)
     if(ainfo == null)                
                 {
                     continue;
-                } //End block
+                } 
     if(account != null && !ainfo.account.equals(account))                
                 {
                     continue;
-                } //End block
+                } 
     if(ainfo.authority.equals(authority) && cur.pending)                
                 {
                     boolean varB326B5062B2F0E69046810717534CB09_262634159 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_78063583 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_78063583;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_893829902 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1909266525 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1909266525;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //final int N = mSyncStatus.size();
-            //for (int i=0; i<N; i++) {
-                //SyncStatusInfo cur = mSyncStatus.valueAt(i);
-                //AuthorityInfo ainfo = mAuthorities.get(cur.authorityId);
-                //if (ainfo == null) {
-                    //continue;
-                //}
-                //if (account != null && !ainfo.account.equals(account)) {
-                    //continue;
-                //}
-                //if (ainfo.authority.equals(authority) && cur.pending) {
-                    //return true;
-                //}
-            //}
-            //return false;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            
+            
+        
     }
 
     
@@ -1569,20 +1571,20 @@ for(int i=0;i<N;i++)
 for(int i=0;i<N;i++)
             {
                 items.add(mSyncHistory.get(i));
-            } //End block
+            } 
 ArrayList<SyncHistoryItem> varDD8CA3856F2D10CFF8B78751200A576D_865272109 =             items;
             varDD8CA3856F2D10CFF8B78751200A576D_865272109.addTaint(taint);
             return varDD8CA3856F2D10CFF8B78751200A576D_865272109;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //final int N = mSyncHistory.size();
-            //ArrayList<SyncHistoryItem> items = new ArrayList<SyncHistoryItem>(N);
-            //for (int i=0; i<N; i++) {
-                //items.add(mSyncHistory.get(i));
-            //}
-            //return items;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -1595,13 +1597,13 @@ ArrayList<SyncHistoryItem> varDD8CA3856F2D10CFF8B78751200A576D_865272109 =      
 DayStats[] var326AB3082797E11390DC7F191D96A430_1366036538 =             ds;
             var326AB3082797E11390DC7F191D96A430_1366036538.addTaint(taint);
             return var326AB3082797E11390DC7F191D96A430_1366036538;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //DayStats[] ds = new DayStats[mDayStats.length];
-            //System.arraycopy(mDayStats, 0, ds, 0, ds.length);
-            //return ds;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1614,7 +1616,7 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_1366036538 =             ds;
                 long varCFCD208495D565EF66E7DFF9F98764DA_85158469 = (0);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1706239775 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1706239775;
-            } //End block
+            } 
             long oldest = 0;
             int i = mSyncStatus.size();
             while
@@ -1628,32 +1630,32 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_1366036538 =             ds;
     if(oldest == 0 || stats.initialFailureTime < oldest)                    
                     {
                         oldest = stats.initialFailureTime;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             long varF14B514E6CA0A666CCBF8B7EC839DFB9_1098675603 = (oldest);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1374265524 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1374265524;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //if (!mMasterSyncAutomatically) {
-                //return 0;
-            //}
-            //long oldest = 0;
-            //int i = mSyncStatus.size();
-            //while (i > 0) {
-                //i--;
-                //SyncStatusInfo stats = mSyncStatus.valueAt(i);
-                //AuthorityInfo authority = mAuthorities.get(stats.authorityId);
-                //if (authority != null && authority.enabled) {
-                    //if (oldest == 0 || stats.initialFailureTime < oldest) {
-                        //oldest = stats.initialFailureTime;
-                    //}
-                //}
-            //}
-            //return oldest;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+                
+                
+                
+                
+                    
+                        
+                    
+                
+            
+            
+        
     }
 
     
@@ -1667,20 +1669,20 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_1366036538 =             ds;
             mCal.clear();
             mCal.set(Calendar.YEAR, mYear);
             mYearInDays = (int)(mCal.getTimeInMillis()/86400000);
-        } //End block
+        } 
         int var8A768CFB2359892DD7633C574D0789D3_1176110298 = (dayOfYear + mYearInDays);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345317363 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1345317363;
-        // ---------- Original Method ----------
-        //mCal.setTimeInMillis(System.currentTimeMillis());
-        //final int dayOfYear = mCal.get(Calendar.DAY_OF_YEAR);
-        //if (mYear != mCal.get(Calendar.YEAR)) {
-            //mYear = mCal.get(Calendar.YEAR);
-            //mCal.clear();
-            //mCal.set(Calendar.YEAR, mYear);
-            //mYearInDays = (int)(mCal.getTimeInMillis()/86400000);
-        //}
-        //return dayOfYear + mYearInDays;
+        
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1697,12 +1699,12 @@ DayStats[] var326AB3082797E11390DC7F191D96A430_1366036538 =             ds;
             {
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
-            } //End block
+                } 
+            } 
 AuthorityInfo var540C13E9E156B687226421B24F2DF178_55063084 =             null;
             var540C13E9E156B687226421B24F2DF178_55063084.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_55063084;
-        } //End block
+        } 
         AuthorityInfo authority = account.authorities.get(authorityName);
     if(authority == null)        
         {
@@ -1710,35 +1712,35 @@ AuthorityInfo var540C13E9E156B687226421B24F2DF178_55063084 =             null;
             {
     if(Log.isLoggable(TAG, Log.VERBOSE))                
                 {
-                } //End block
-            } //End block
+                } 
+            } 
 AuthorityInfo var540C13E9E156B687226421B24F2DF178_20396923 =             null;
             var540C13E9E156B687226421B24F2DF178_20396923.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_20396923;
-        } //End block
+        } 
 AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_1041158291 =         authority;
         var9A4A00E403B4898E9807F68E9EBE5A8B_1041158291.addTaint(taint);
         return var9A4A00E403B4898E9807F68E9EBE5A8B_1041158291;
-        // ---------- Original Method ----------
-        //AccountInfo account = mAccounts.get(accountName);
-        //if (account == null) {
-            //if (tag != null) {
-                //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                    //Log.v(TAG, tag + ": unknown account " + accountName);
-                //}
-            //}
-            //return null;
-        //}
-        //AuthorityInfo authority = account.authorities.get(authorityName);
-        //if (authority == null) {
-            //if (tag != null) {
-                //if (Log.isLoggable(TAG, Log.VERBOSE)) {
-                    //Log.v(TAG, tag + ": unknown authority " + authorityName);
-                //}
-            //}
-            //return null;
-        //}
-        //return authority;
+        
+        
+        
+            
+                
+                    
+                
+            
+            
+        
+        
+        
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -1754,7 +1756,7 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_1041158291 =         authority
         {
             account = new AccountInfo(accountName);
             mAccounts.put(accountName, account);
-        } //End block
+        } 
         AuthorityInfo authority = account.authorities.get(authorityName);
     if(authority == null)        
         {
@@ -1763,23 +1765,23 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_1041158291 =         authority
                 ident = mNextAuthorityId;
                 mNextAuthorityId++;
                 doWrite = true;
-            } //End block
+            } 
     if(Log.isLoggable(TAG, Log.VERBOSE))            
             {
-            } //End block
+            } 
             authority = new AuthorityInfo(accountName, authorityName, ident);
             account.authorities.put(authorityName, authority);
             mAuthorities.put(ident, authority);
     if(doWrite)            
             {
                 writeAccountInfoLocked();
-            } //End block
-        } //End block
+            } 
+        } 
 AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_754549770 =         authority;
         var9A4A00E403B4898E9807F68E9EBE5A8B_754549770.addTaint(taint);
         return var9A4A00E403B4898E9807F68E9EBE5A8B_754549770;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1798,20 +1800,20 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_754549770 =         authority;
     if(doWrite)                
                 {
                     writeAccountInfoLocked();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //AccountInfo accountInfo = mAccounts.get(account);
-        //if (accountInfo != null) {
-            //final AuthorityInfo authorityInfo = accountInfo.authorities.remove(authorityName);
-            //if (authorityInfo != null) {
-                //mAuthorities.remove(authorityInfo.ident);
-                //if (doWrite) {
-                    //writeAccountInfoLocked();
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -1823,11 +1825,11 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_754549770 =         authority;
 SyncStatusInfo varDAD8554A159528D7292177B77B4E7D71_269210088 =             getOrCreateSyncStatusLocked(authority.ident);
             varDAD8554A159528D7292177B77B4E7D71_269210088.addTaint(taint);
             return varDAD8554A159528D7292177B77B4E7D71_269210088;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //return getOrCreateSyncStatusLocked(authority.ident);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1839,17 +1841,17 @@ SyncStatusInfo varDAD8554A159528D7292177B77B4E7D71_269210088 =             getOr
         {
             status = new SyncStatusInfo(authorityId);
             mSyncStatus.put(authorityId, status);
-        } //End block
+        } 
 SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
         var62D3D5D442782C1992154E821A40FA75_18394594.addTaint(taint);
         return var62D3D5D442782C1992154E821A40FA75_18394594;
-        // ---------- Original Method ----------
-        //SyncStatusInfo status = mSyncStatus.get(authorityId);
-        //if (status == null) {
-            //status = new SyncStatusInfo(authorityId);
-            //mSyncStatus.put(authorityId, status);
-        //}
-        //return status;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1860,18 +1862,18 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
     if(mNumPendingFinished > 0)            
             {
                 writePendingOperationsLocked();
-            } //End block
+            } 
             writeStatusLocked();
             writeStatisticsLocked();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //if (mNumPendingFinished > 0) {
-                //writePendingOperationsLocked();
-            //}
-            //writeStatusLocked();
-            //writeStatisticsLocked();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -1893,24 +1895,24 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
             writeStatusLocked();
             writePendingOperationsLocked();
             writeStatisticsLocked();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mAuthorities) {
-            //mAuthorities.clear();
-            //mAccounts.clear();
-            //mPendingOperations.clear();
-            //mSyncStatus.clear();
-            //mSyncHistory.clear();
-            //readAccountInfoLocked();
-            //readStatusLocked();
-            //readPendingOperationsLocked();
-            //readStatisticsLocked();
-            //readAndDeleteLegacyAccountInfoLocked();
-            //writeAccountInfoLocked();
-            //writeStatusLocked();
-            //writePendingOperationsLocked();
-            //writeStatisticsLocked();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1928,7 +1930,7 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
 (eventType != XmlPullParser.START_TAG)            
             {
                 eventType = parser.next();
-            } //End block
+            } 
             String tagName = parser.getName();
     if("accounts".equals(tagName))            
             {
@@ -1939,20 +1941,20 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
                 try 
                 {
                     version = (versionString == null) ? 0 : Integer.parseInt(versionString);
-                } //End block
+                } 
                 catch (NumberFormatException e)
                 {
                     version = 0;
-                } //End block
+                } 
                 String nextIdString = parser.getAttributeValue(null, "nextAuthorityId");
                 try 
                 {
                     int id = (nextIdString == null) ? 0 : Integer.parseInt(nextIdString);
                     mNextAuthorityId = Math.max(mNextAuthorityId, id);
-                } //End block
+                } 
                 catch (NumberFormatException e)
                 {
-                } //End block
+                } 
                 mMasterSyncAutomatically = listen == null || Boolean.parseBoolean(listen);
                 eventType = parser.next();
                 AuthorityInfo authority = null;
@@ -1971,39 +1973,39 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
     if(authority.ident > highestAuthorityId)                                    
                                     {
                                         highestAuthorityId = authority.ident;
-                                    } //End block
-                                } //End block
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             else
     if(parser.getDepth() == 3)                            
                             {
     if("periodicSync".equals(tagName) && authority != null)                                
                                 {
                                     periodicSync = parsePeriodicSync(parser, authority);
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             else
     if(parser.getDepth() == 4 && periodicSync != null)                            
                             {
     if("extra".equals(tagName))                                
                                 {
                                     parseExtra(parser, periodicSync);
-                                } //End block
-                            } //End block
-                        } //End block
+                                } 
+                            } 
+                        } 
                         eventType = parser.next();
-                    } //End block
+                    } 
 } while (eventType != XmlPullParser.END_DOCUMENT);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (XmlPullParserException e)
         {
             return;
-        } //End block
+        } 
         catch (java.io.IOException e)
         {
     if(fis == null){ }            return;
-        } //End block
+        } 
         finally 
         {
             mNextAuthorityId = Math.max(highestAuthorityId + 1, mNextAuthorityId);
@@ -2012,18 +2014,19 @@ SyncStatusInfo var62D3D5D442782C1992154E821A40FA75_18394594 =         status;
                 try 
                 {
                     fis.close();
-                } //End block
+                } 
                 catch (java.io.IOException e1)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         maybeMigrateSettingsForRenamedAuthorities();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.878 -0400", hash_original_method = "1F0CD4338AAE9E719690DF5E0BB493ED", hash_generated_method = "508E8C836A734818A12B33BB1339D9BE")
     private boolean maybeMigrateSettingsForRenamedAuthorities() {
         boolean writeNeeded = false;
@@ -2036,35 +2039,36 @@ for(int i=0;i<N;i++)
     if(newAuthorityName == null)            
             {
                 continue;
-            } //End block
+            } 
             authoritiesToRemove.add(authority);
     if(!authority.enabled)            
             {
                 continue;
-            } //End block
+            } 
     if(getAuthorityLocked(authority.account, newAuthorityName, "cleanup") != null)            
             {
                 continue;
-            } //End block
+            } 
             AuthorityInfo newAuthority = getOrCreateAuthorityLocked(authority.account,
                     newAuthorityName, -1 , false );
             newAuthority.enabled = true;
             writeNeeded = true;
-        } //End block
+        } 
 for(AuthorityInfo authorityInfo : authoritiesToRemove)
         {
             removeAuthorityLocked(authorityInfo.account, authorityInfo.authority,
                     false );
             writeNeeded = true;
-        } //End block
+        } 
         boolean var3A7D6A5A8328B84FDE74EE614F30B047_837991309 = (writeNeeded);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_585774494 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_585774494;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.880 -0400", hash_original_method = "39CA1CD415012CC0A4B70AAED3727A93", hash_generated_method = "4E92A5516D294B81A5C09FF61CE4CD55")
     private AuthorityInfo parseAuthority(XmlPullParser parser, int version) {
         addTaint(version);
@@ -2075,13 +2079,13 @@ for(AuthorityInfo authorityInfo : authoritiesToRemove)
         {
             id = Integer.parseInt(parser.getAttributeValue(
                     null, "id"));
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
-        } //End block
+        } 
         catch (NullPointerException e)
         {
-        } //End block
+        } 
     if(id >= 0)        
         {
             String authorityName = parser.getAttributeValue(null, "authority");
@@ -2093,7 +2097,7 @@ for(AuthorityInfo authorityInfo : authoritiesToRemove)
             {
                 accountType = "com.google";
                 syncable = "unknown";
-            } //End block
+            } 
             authority = mAuthorities.get(id);
     if(DEBUG_FILE){ }    if(authority == null)            
             {
@@ -2102,30 +2106,30 @@ for(AuthorityInfo authorityInfo : authoritiesToRemove)
     if(version > 0)                
                 {
                     authority.periodicSyncs.clear();
-                } //End block
-            } //End block
+                } 
+            } 
     if(authority != null)            
             {
                 authority.enabled = enabled == null || Boolean.parseBoolean(enabled);
     if("unknown".equals(syncable))                
                 {
                     authority.syncable = -1;
-                } //End block
+                } 
                 else
                 {
                     authority.syncable =
                             (syncable == null || Boolean.parseBoolean(syncable)) ? 1 : 0;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
 AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_889274554 =         authority;
         var9A4A00E403B4898E9807F68E9EBE5A8B_889274554.addTaint(taint);
         return var9A4A00E403B4898E9807F68E9EBE5A8B_889274554;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2139,40 +2143,40 @@ AuthorityInfo var9A4A00E403B4898E9807F68E9EBE5A8B_889274554 =         authority;
         try 
         {
             period = Long.parseLong(periodValue);
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
 Pair<Bundle, Long> var540C13E9E156B687226421B24F2DF178_2121208006 =             null;
             var540C13E9E156B687226421B24F2DF178_2121208006.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2121208006;
-        } //End block
+        } 
         catch (NullPointerException e)
         {
 Pair<Bundle, Long> var540C13E9E156B687226421B24F2DF178_1422029441 =             null;
             var540C13E9E156B687226421B24F2DF178_1422029441.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1422029441;
-        } //End block
+        } 
         final Pair<Bundle, Long> periodicSync = Pair.create(extras, period);
         authority.periodicSyncs.add(periodicSync);
 Pair<Bundle, Long> var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_103591896 =         periodicSync;
         var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_103591896.addTaint(taint);
         return var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_103591896;
-        // ---------- Original Method ----------
-        //Bundle extras = new Bundle();
-        //String periodValue = parser.getAttributeValue(null, "period");
-        //final long period;
-        //try {
-            //period = Long.parseLong(periodValue);
-        //} catch (NumberFormatException e) {
-            //Log.e(TAG, "error parsing the period of a periodic sync", e);
-            //return null;
-        //} catch (NullPointerException e) {
-            //Log.e(TAG, "the period of a periodic sync is null", e);
-            //return null;
-        //}
-        //final Pair<Bundle, Long> periodicSync = Pair.create(extras, period);
-        //authority.periodicSyncs.add(periodicSync);
-        //return periodicSync;
+        
+        
+        
+        
+        
+            
+        
+            
+            
+        
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -2190,46 +2194,46 @@ Pair<Bundle, Long> var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_103591896 =         perio
     if("long".equals(type))            
             {
                 extras.putLong(name, Long.parseLong(value1));
-            } //End block
+            } 
             else
     if("integer".equals(type))            
             {
                 extras.putInt(name, Integer.parseInt(value1));
-            } //End block
+            } 
             else
     if("double".equals(type))            
             {
                 extras.putDouble(name, Double.parseDouble(value1));
-            } //End block
+            } 
             else
     if("float".equals(type))            
             {
                 extras.putFloat(name, Float.parseFloat(value1));
-            } //End block
+            } 
             else
     if("boolean".equals(type))            
             {
                 extras.putBoolean(name, Boolean.parseBoolean(value1));
-            } //End block
+            } 
             else
     if("string".equals(type))            
             {
                 extras.putString(name, value1);
-            } //End block
+            } 
             else
     if("account".equals(type))            
             {
                 extras.putParcelable(name, new Account(value1, value2));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (NumberFormatException e)
         {
-        } //End block
+        } 
         catch (NullPointerException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2249,7 +2253,7 @@ Pair<Bundle, Long> var4CB73F5A6FFDC0C3E371E5FE2FDE4D31_103591896 =         perio
     if(!mMasterSyncAutomatically)            
             {
                 out.attribute(null, "listen-for-tickles", "false");
-            } //End block
+            } 
             final int N = mAuthorities.size();
 for(int i=0;i<N;i++)
             {
@@ -2263,11 +2267,11 @@ for(int i=0;i<N;i++)
     if(authority.syncable < 0)                
                 {
                     out.attribute(null, "syncable", "unknown");
-                } //End block
+                } 
                 else
                 {
                     out.attribute(null, "syncable", Boolean.toString(authority.syncable != 0));
-                } //End block
+                } 
 for(Pair<Bundle, Long> periodicSync : authority.periodicSyncs)
                 {
                     out.startTag(null, "periodicSync");
@@ -2282,63 +2286,63 @@ for(String key : extras.keySet())
                         {
                             out.attribute(null, "type", "long");
                             out.attribute(null, "value1", value.toString());
-                        } //End block
+                        } 
                         else
     if(value instanceof Integer)                        
                         {
                             out.attribute(null, "type", "integer");
                             out.attribute(null, "value1", value.toString());
-                        } //End block
+                        } 
                         else
     if(value instanceof Boolean)                        
                         {
                             out.attribute(null, "type", "boolean");
                             out.attribute(null, "value1", value.toString());
-                        } //End block
+                        } 
                         else
     if(value instanceof Float)                        
                         {
                             out.attribute(null, "type", "float");
                             out.attribute(null, "value1", value.toString());
-                        } //End block
+                        } 
                         else
     if(value instanceof Double)                        
                         {
                             out.attribute(null, "type", "double");
                             out.attribute(null, "value1", value.toString());
-                        } //End block
+                        } 
                         else
     if(value instanceof String)                        
                         {
                             out.attribute(null, "type", "string");
                             out.attribute(null, "value1", value.toString());
-                        } //End block
+                        } 
                         else
     if(value instanceof Account)                        
                         {
                             out.attribute(null, "type", "account");
                             out.attribute(null, "value1", ((Account)value).name);
                             out.attribute(null, "value2", ((Account)value).type);
-                        } //End block
+                        } 
                         out.endTag(null, "extra");
-                    } //End block
+                    } 
                     out.endTag(null, "periodicSync");
-                } //End block
+                } 
                 out.endTag(null, "authority");
-            } //End block
+            } 
             out.endTag(null, "accounts");
             out.endDocument();
             mAccountInfoFile.finishWrite(fos);
-        } //End block
+        } 
         catch (java.io.IOException e1)
         {
     if(fos != null)            
             {
                 mAccountInfoFile.failWrite(fos);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -2358,17 +2362,17 @@ for(String key : extras.keySet())
     if(!file.exists())        
         {
             return;
-        } //End block
+        } 
         String path = file.getPath();
         SQLiteDatabase db = null;
         try 
         {
             db = SQLiteDatabase.openDatabase(path, null,
                     SQLiteDatabase.OPEN_READONLY);
-        } //End block
+        } 
         catch (SQLiteException e)
         {
-        } //End block
+        } 
     if(db != null)        
         {
             final boolean hasType = db.getVersion() >= 11;
@@ -2380,7 +2384,7 @@ for(String key : extras.keySet())
     if(hasType)            
             {
                 map.put("account_type", "stats.account_type as account_type");
-            } //End block
+            } 
             map.put("authority", "stats.authority as authority");
             map.put("totalElapsedTime", "totalElapsedTime");
             map.put("numSyncs", "numSyncs");
@@ -2406,7 +2410,7 @@ for(String key : extras.keySet())
     if(accountType == null)                
                 {
                     accountType = "com.google";
-                } //End block
+                } 
                 String authorityName = c.getString(c.getColumnIndex("authority"));
                 AuthorityInfo authority = this.getOrCreateAuthorityLocked(
                         new Account(accountName, accountType),
@@ -2425,13 +2429,13 @@ for(String key : extras.keySet())
                         {
                             found = true;
                             break;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(!found)                    
                     {
                         st = new SyncStatusInfo(authority.ident);
                         mSyncStatus.put(authority.ident, st);
-                    } //End block
+                    } 
                     st.totalElapsedTime = getLongColumn(c, "totalElapsedTime");
                     st.numSyncs = getIntColumn(c, "numSyncs");
                     st.numSourceLocal = getIntColumn(c, "numSourceLocal");
@@ -2445,8 +2449,8 @@ for(String key : extras.keySet())
                     st.lastFailureTime = getLongColumn(c, "lastFailureTime");
                     st.lastFailureMesg = c.getString(c.getColumnIndex("lastFailureMesg"));
                     st.pending = getIntColumn(c, "pending") != 0;
-                } //End block
-            } //End block
+                } 
+            } 
             c.close();
             qb = new SQLiteQueryBuilder();
             qb.setTables("settings");
@@ -2461,7 +2465,7 @@ for(String key : extras.keySet())
     if(name.equals("listen_for_tickles"))                
                 {
                     setMasterSyncAutomatically(value == null || Boolean.parseBoolean(value));
-                } //End block
+                } 
                 else
     if(name.startsWith("sync_provider_"))                
                 {
@@ -2477,16 +2481,16 @@ for(String key : extras.keySet())
                         {
                             authority.enabled = value == null || Boolean.parseBoolean(value);
                             authority.syncable = 1;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             c.close();
             db.close();
             (new File(path)).delete();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2509,19 +2513,19 @@ for(String key : extras.keySet())
                     {
                         status.pending = false;
     if(DEBUG_FILE){ }                        mSyncStatus.put(status.authorityId, status);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (java.io.IOException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2539,21 +2543,21 @@ for(int i=0;i<N;i++)
                 SyncStatusInfo status = mSyncStatus.valueAt(i);
                 out.writeInt(STATUS_FILE_ITEM);
                 status.writeToParcel(out, 0);
-            } //End block
+            } 
             out.writeInt(STATUS_FILE_END);
             fos.write(out.marshall());
             out.recycle();
             mStatusFile.finishWrite(fos);
-        } //End block
+        } 
         catch (java.io.IOException e1)
         {
     if(fos != null)            
             {
                 mStatusFile.failWrite(fos);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -2573,7 +2577,7 @@ for(int i=0;i<N;i++)
     if(version != PENDING_OPERATION_VERSION && version != 1)                
                 {
                     break;
-                } //End block
+                } 
                 int authorityId = in.readInt();
                 int syncSource = in.readInt();
                 byte[] flatExtras = in.createByteArray();
@@ -2581,11 +2585,11 @@ for(int i=0;i<N;i++)
     if(version == PENDING_OPERATION_VERSION)                
                 {
                     expedited = in.readInt() != 0;
-                } //End block
+                } 
                 else
                 {
                     expedited = false;
-                } //End block
+                } 
                 AuthorityInfo authority = mAuthorities.get(authorityId);
     if(authority != null)                
                 {
@@ -2593,25 +2597,25 @@ for(int i=0;i<N;i++)
     if(flatExtras != null)                    
                     {
                         extras = unflattenBundle(flatExtras);
-                    } //End block
+                    } 
                     else
                     {
                         extras = new Bundle();
-                    } //End block
+                    } 
                     PendingOperation op = new PendingOperation(
                             authority.account, syncSource,
                             authority.authority, extras, expedited);
                     op.authorityId = authorityId;
                     op.flatExtras = flatExtras;
     if(DEBUG_FILE){ }                    mPendingOperations.add(op);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (java.io.IOException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2625,18 +2629,18 @@ for(int i=0;i<N;i++)
     if(op.flatExtras == null && op.extras != null)        
         {
             op.flatExtras = flattenBundle(op.extras);
-        } //End block
+        } 
         out.writeByteArray(op.flatExtras);
         out.writeInt(op.expedited ? 1 : 0);
-        // ---------- Original Method ----------
-        //out.writeInt(PENDING_OPERATION_VERSION);
-        //out.writeInt(op.authorityId);
-        //out.writeInt(op.syncSource);
-        //if (op.flatExtras == null && op.extras != null) {
-            //op.flatExtras = flattenBundle(op.extras);
-        //}
-        //out.writeByteArray(op.flatExtras);
-        //out.writeInt(op.expedited ? 1 : 0);
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -2650,27 +2654,27 @@ for(int i=0;i<N;i++)
             {
     if(DEBUG_FILE){ }                mPendingFile.truncate();
                 return;
-            } //End block
+            } 
     if(DEBUG_FILE){ }            fos = mPendingFile.startWrite();
             Parcel out = Parcel.obtain();
 for(int i=0;i<N;i++)
             {
                 PendingOperation op = mPendingOperations.get(i);
                 writePendingOperationLocked(op, out);
-            } //End block
+            } 
             fos.write(out.marshall());
             out.recycle();
             mPendingFile.finishWrite(fos);
-        } //End block
+        } 
         catch (java.io.IOException e1)
         {
     if(fos != null)            
             {
                 mPendingFile.failWrite(fos);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -2681,55 +2685,55 @@ for(int i=0;i<N;i++)
         try 
         {
             fos = mPendingFile.openAppend();
-        } //End block
+        } 
         catch (java.io.IOException e)
         {
     if(DEBUG_FILE){ }            writePendingOperationsLocked();
             return;
-        } //End block
+        } 
         try 
         {
             Parcel out = Parcel.obtain();
             writePendingOperationLocked(op, out);
             fos.write(out.marshall());
             out.recycle();
-        } //End block
+        } 
         catch (java.io.IOException e1)
         {
-        } //End block
+        } 
         finally 
         {
             try 
             {
                 fos.close();
-            } //End block
+            } 
             catch (java.io.IOException e2)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG_FILE) Log.v(TAG, "Appending to " + mPendingFile.getBaseFile());
-        //FileOutputStream fos = null;
-        //try {
-            //fos = mPendingFile.openAppend();
-        //} catch (java.io.IOException e) {
-            //if (DEBUG_FILE) Log.v(TAG, "Failed append; writing full file");
-            //writePendingOperationsLocked();
-            //return;
-        //}
-        //try {
-            //Parcel out = Parcel.obtain();
-            //writePendingOperationLocked(op, out);
-            //fos.write(out.marshall());
-            //out.recycle();
-        //} catch (java.io.IOException e1) {
-            //Log.w(TAG, "Error writing pending operations", e1);
-        //} finally {
-            //try {
-                //fos.close();
-            //} catch (java.io.IOException e2) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+            
+            
+            
+        
+        
+            
+            
+            
+            
+        
+            
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -2782,7 +2786,7 @@ for(int i=0;i<N;i++)
     if(token == STATISTICS_FILE_ITEM_OLD)                    
                     {
                         day = day - 2009 + 14245;
-                    } //End block
+                    } 
                     DayStats ds = new DayStats(day);
                     ds.successCount = in.readInt();
                     ds.successTime = in.readLong();
@@ -2792,19 +2796,19 @@ for(int i=0;i<N;i++)
                     {
                         mDayStats[index] = ds;
                         index++;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (java.io.IOException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2823,28 +2827,28 @@ for(int i=0;i<N;i++)
     if(ds == null)                
                 {
                     break;
-                } //End block
+                } 
                 out.writeInt(STATISTICS_FILE_ITEM);
                 out.writeInt(ds.day);
                 out.writeInt(ds.successCount);
                 out.writeLong(ds.successTime);
                 out.writeInt(ds.failureCount);
                 out.writeLong(ds.failureTime);
-            } //End block
+            } 
             out.writeInt(STATISTICS_FILE_END);
             fos.write(out.marshall());
             out.recycle();
             mStatisticsFile.finishWrite(fos);
-        } //End block
+        } 
         catch (java.io.IOException e1)
         {
     if(fos != null)            
             {
                 mStatisticsFile.failWrite(fos);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -2880,13 +2884,13 @@ for(int i=0;i<N;i++)
             this.extras = extras != null ? new Bundle(extras) : extras;
             this.expedited = expedited;
             this.authorityId = -1;
-            // ---------- Original Method ----------
-            //this.account = account;
-            //this.syncSource = source;
-            //this.authority = authority;
-            //this.extras = extras != null ? new Bundle(extras) : extras;
-            //this.expedited = expedited;
-            //this.authorityId = -1;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -2898,13 +2902,13 @@ for(int i=0;i<N;i++)
             this.extras = other.extras;
             this.authorityId = other.authorityId;
             this.expedited = other.expedited;
-            // ---------- Original Method ----------
-            //this.account = other.account;
-            //this.syncSource = other.syncSource;
-            //this.authority = other.authority;
-            //this.extras = other.extras;
-            //this.authorityId = other.authorityId;
-            //this.expedited = other.expedited;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -2923,8 +2927,8 @@ for(int i=0;i<N;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.913 -0400", hash_original_method = "0A42050331BE326DBD226E8BF4C55827", hash_generated_method = "B735F73451A3ACA4DAAEEE69356C87D1")
           AccountInfo(Account account) {
             this.account = account;
-            // ---------- Original Method ----------
-            //this.account = account;
+            
+            
         }
 
         
@@ -2972,16 +2976,16 @@ for(int i=0;i<N;i++)
             backoffDelay = -1;
             periodicSyncs = new ArrayList<Pair<Bundle, Long>>();
             periodicSyncs.add(Pair.create(new Bundle(), DEFAULT_POLL_FREQUENCY_SECONDS));
-            // ---------- Original Method ----------
-            //this.account = account;
-            //this.authority = authority;
-            //this.ident = ident;
-            //enabled = SYNC_ENABLED_DEFAULT;
-            //syncable = -1;
-            //backoffTime = -1;
-            //backoffDelay = -1;
-            //periodicSyncs = new ArrayList<Pair<Bundle, Long>>();
-            //periodicSyncs.add(Pair.create(new Bundle(), DEFAULT_POLL_FREQUENCY_SECONDS));
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -3021,7 +3025,7 @@ for(int i=0;i<N;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.918 -0400", hash_original_method = "2A1719F3DDEE538E4071CFCF49D97D66", hash_generated_method = "2A1719F3DDEE538E4071CFCF49D97D66")
         public SyncHistoryItem ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -3049,8 +3053,8 @@ for(int i=0;i<N;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.919 -0400", hash_original_method = "59D9CE47C9B58BC0ECFC5F57173A8EB8", hash_generated_method = "1997158732D9C97E768763E2795DF4D3")
         public  DayStats(int day) {
             this.day = day;
-            // ---------- Original Method ----------
-            //this.day = day;
+            
+            
         }
 
         

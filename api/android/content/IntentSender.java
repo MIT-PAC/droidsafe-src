@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,19 +25,20 @@ public class IntentSender implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.145 -0400", hash_original_method = "BB3BE3704C38C3CFAEE93A10A1B40CE3", hash_generated_method = "2663241EBD81A494CAEAE58B33F2DC66")
     public  IntentSender(IIntentSender target) {
         mTarget = target;
-        // ---------- Original Method ----------
-        //mTarget = target;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.145 -0400", hash_original_method = "34B28E745C82742C6DB129EED6A7ACD1", hash_generated_method = "14968660335B1B1B82B8A923154417D9")
     public  IntentSender(IBinder target) {
         mTarget = IIntentSender.Stub.asInterface(target);
-        // ---------- Original Method ----------
-        //mTarget = IIntentSender.Stub.asInterface(target);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.145 -0400", hash_original_method = "D1640EC79CDF4472CD1CED043D9B375E", hash_generated_method = "8E2EA0208115788DCDA81893B480133E")
     public void sendIntent(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler) throws SendIntentException {
@@ -47,11 +48,12 @@ public class IntentSender implements Parcelable {
         addTaint(code);
         addTaint(context.getTaint());
         sendIntent(context, code, intent, onFinished, handler, null);
-        // ---------- Original Method ----------
-        //sendIntent(context, code, intent, onFinished, handler, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.146 -0400", hash_original_method = "5984C2C3625490063272E3C39EF4CC1F", hash_generated_method = "97CB3BA7D0670978C5A210D7007134B4")
     public void sendIntent(Context context, int code, Intent intent,
             OnFinished onFinished, Handler handler, String requiredPermission) throws SendIntentException {
@@ -76,30 +78,30 @@ public class IntentSender implements Parcelable {
                 SendIntentException var47738BD7CC9B6F6E46954421DCBA63CA_344633182 = new SendIntentException();
                 var47738BD7CC9B6F6E46954421DCBA63CA_344633182.addTaint(taint);
                 throw var47738BD7CC9B6F6E46954421DCBA63CA_344633182;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             SendIntentException var47738BD7CC9B6F6E46954421DCBA63CA_92813811 = new SendIntentException();
             var47738BD7CC9B6F6E46954421DCBA63CA_92813811.addTaint(taint);
             throw var47738BD7CC9B6F6E46954421DCBA63CA_92813811;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //String resolvedType = intent != null ?
-                    //intent.resolveTypeIfNeeded(context.getContentResolver())
-                    //: null;
-            //int res = mTarget.send(code, intent, resolvedType,
-                    //onFinished != null
-                            //? new FinishedDispatcher(this, onFinished, handler)
-                            //: null,
-                    //requiredPermission);
-            //if (res < 0) {
-                //throw new SendIntentException();
-            //}
-        //} catch (RemoteException e) {
-            //throw new SendIntentException();
-        //}
+        } 
+        
+        
+            
+                    
+                    
+            
+                    
+                            
+                            
+                    
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -111,20 +113,20 @@ String var76B90BADD59476CF2DB16FEF7C56445A_772813003 =             ActivityManag
                 .getPackageForIntentSender(mTarget);
             var76B90BADD59476CF2DB16FEF7C56445A_772813003.addTaint(taint);
             return var76B90BADD59476CF2DB16FEF7C56445A_772813003;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 String var540C13E9E156B687226421B24F2DF178_1510934108 =             null;
             var540C13E9E156B687226421B24F2DF178_1510934108.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1510934108;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return ActivityManagerNative.getDefault()
-                //.getPackageForIntentSender(mTarget);
-        //} catch (RemoteException e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+                
+        
+            
+        
     }
 
     
@@ -138,16 +140,16 @@ String var540C13E9E156B687226421B24F2DF178_1510934108 =             null;
                     .mTarget.asBinder()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_213675343 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_213675343;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_816128106 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1474214006 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1474214006;
-        // ---------- Original Method ----------
-        //if (otherObj instanceof IntentSender) {
-            //return mTarget.asBinder().equals(((IntentSender)otherObj)
-                    //.mTarget.asBinder());
-        //}
-        //return false;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -157,8 +159,8 @@ String var540C13E9E156B687226421B24F2DF178_1510934108 =             null;
         int var015DBE14D40CCC902461F5EB4537F2D8_523191464 = (mTarget.asBinder().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069264133 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1069264133;
-        // ---------- Original Method ----------
-        //return mTarget.asBinder().hashCode();
+        
+        
     }
 
     
@@ -174,24 +176,25 @@ String var540C13E9E156B687226421B24F2DF178_1510934108 =             null;
 String var2460B846747F8B22185AD8BE722266A5_2141059968 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_2141059968.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_2141059968;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(128);
-        //sb.append("IntentSender{");
-        //sb.append(Integer.toHexString(System.identityHashCode(this)));
-        //sb.append(": ");
-        //sb.append(mTarget != null ? mTarget.asBinder() : null);
-        //sb.append('}');
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.147 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C27B7FC70EC53A1A2BBB7C3810AFD085")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_538672899 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145388109 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_145388109;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -200,8 +203,8 @@ String var2460B846747F8B22185AD8BE722266A5_2141059968 =         sb.toString();
         addTaint(flags);
         addTaint(out.getTaint());
         out.writeStrongBinder(mTarget.asBinder());
-        // ---------- Original Method ----------
-        //out.writeStrongBinder(mTarget.asBinder());
+        
+        
     }
 
     
@@ -218,13 +221,14 @@ String var2460B846747F8B22185AD8BE722266A5_2141059968 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.148 -0400", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "E2EE4B23C941CF1CF7C16A2287683A2A")
     public IIntentSender getTarget() {
 IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
         var1FC339B2A7C7BA226929CA8B7CC3A063_970409688.addTaint(taint);
         return var1FC339B2A7C7BA226929CA8B7CC3A063_970409688;
-        // ---------- Original Method ----------
-        //return mTarget;
+        
+        
     }
 
     
@@ -232,7 +236,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.148 -0400", hash_original_method = "3CCB3E3C6E6C65C0BEBBCAEF78CD6FBE", hash_generated_method = "CB8141C05BC43408A5593044AF4551A8")
         public  SendIntentException() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -240,7 +244,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
         public  SendIntentException(String name) {
             super(name);
             addTaint(name.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -248,7 +252,7 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
         public  SendIntentException(Exception cause) {
             super(cause);
             addTaint(cause.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -284,13 +288,14 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
             mIntentSender = pi;
             mWho = who;
             mHandler = handler;
-            // ---------- Original Method ----------
-            //mIntentSender = pi;
-            //mWho = who;
-            //mHandler = handler;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.151 -0400", hash_original_method = "B0E285A2D8AA1A0003201E2D8F6F7169", hash_generated_method = "E6DB147736FD6A8CF56D8AA16E4190C8")
         public void performReceive(Intent intent, int resultCode,
                 String data, Bundle extras, boolean serialized, boolean sticky) {
@@ -303,21 +308,21 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
     if(mHandler == null)            
             {
                 run();
-            } //End block
+            } 
             else
             {
                 mHandler.post(this);
-            } //End block
-            // ---------- Original Method ----------
-            //mIntent = intent;
-            //mResultCode = resultCode;
-            //mResultData = data;
-            //mResultExtras = extras;
-            //if (mHandler == null) {
-                //run();
-            //} else {
-                //mHandler.post(this);
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -325,9 +330,9 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
         public void run() {
             mWho.onSendFinished(mIntentSender, mIntent, mResultCode,
                     mResultData, mResultExtras);
-            // ---------- Original Method ----------
-            //mWho.onSendFinished(mIntentSender, mIntent, mResultCode,
-                    //mResultData, mResultExtras);
+            
+            
+                    
         }
 
         
@@ -354,13 +359,13 @@ IIntentSender var1FC339B2A7C7BA226929CA8B7CC3A063_970409688 =         mTarget;
             return new IntentSender[size];
         }
     };
-    // orphaned legacy method
+    
     public IntentSender createFromParcel(Parcel in) {
             IBinder target = in.readStrongBinder();
             return target != null ? new IntentSender(target) : null;
         }
     
-    // orphaned legacy method
+    
     public IntentSender[] newArray(int size) {
             return new IntentSender[size];
         }

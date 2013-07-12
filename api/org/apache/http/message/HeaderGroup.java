@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,16 +19,16 @@ public class HeaderGroup implements Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.739 -0400", hash_original_method = "04659297943FDC7530B5F805B712786E", hash_generated_method = "EF8745843E1EC462E93115E80BE27206")
     public  HeaderGroup() {
         this.headers = new ArrayList(16);
-        // ---------- Original Method ----------
-        //this.headers = new ArrayList(16);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.739 -0400", hash_original_method = "DD1F10463F473A3E036D58A6099CEA6B", hash_generated_method = "9DDCABDB7D36845CE4D14BEAEAFE75FD")
     public void clear() {
         headers.clear();
-        // ---------- Original Method ----------
-        //headers.clear();
+        
+        
     }
 
     
@@ -38,13 +38,13 @@ public class HeaderGroup implements Cloneable {
     if(header == null)        
         {
             return;
-        } //End block
+        } 
         headers.add(header);
-        // ---------- Original Method ----------
-        //if (header == null) {
-            //return;
-        //}
-        //headers.add(header);
+        
+        
+            
+        
+        
     }
 
     
@@ -54,13 +54,13 @@ public class HeaderGroup implements Cloneable {
     if(header == null)        
         {
             return;
-        } //End block
+        } 
         headers.remove(header);
-        // ---------- Original Method ----------
-        //if (header == null) {
-            //return;
-        //}
-        //headers.remove(header);
+        
+        
+            
+        
+        
     }
 
     
@@ -70,7 +70,7 @@ public class HeaderGroup implements Cloneable {
     if(header == null)        
         {
             return;
-        } //End block
+        } 
 for(int i = 0;i < this.headers.size();i++)
         {
             Header current = (Header) this.headers.get(i);
@@ -78,21 +78,21 @@ for(int i = 0;i < this.headers.size();i++)
             {
                 this.headers.set(i, header);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         this.headers.add(header);
-        // ---------- Original Method ----------
-        //if (header == null) {
-            //return;
-        //}
-        //for (int i = 0; i < this.headers.size(); i++) {
-            //Header current = (Header) this.headers.get(i);
-            //if (current.getName().equalsIgnoreCase(header.getName())) {
-                //this.headers.set(i, header);
-                //return;
-            //}
-        //}
-        //this.headers.add(header);
+        
+        
+            
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -103,19 +103,19 @@ for(int i = 0;i < this.headers.size();i++)
     if(headers == null)        
         {
             return;
-        } //End block
+        } 
 for(int i = 0;i < headers.length;i++)
         {
             this.headers.add(headers[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //clear();
-        //if (headers == null) {
-            //return;
-        //}
-        //for (int i = 0; i < headers.length; i++) {
-            //this.headers.add(headers[i]);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -128,14 +128,14 @@ for(int i = 0;i < headers.length;i++)
 Header var540C13E9E156B687226421B24F2DF178_597285079 =             null;
             var540C13E9E156B687226421B24F2DF178_597285079.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_597285079;
-        } //End block
+        } 
         else
     if(headers.length == 1)        
         {
 Header var622D39B107FBA981AB2B306E352C2392_373571504 =             headers[0];
             var622D39B107FBA981AB2B306E352C2392_373571504.addTaint(taint);
             return var622D39B107FBA981AB2B306E352C2392_373571504;
-        } //End block
+        } 
         else
         {
             CharArrayBuffer valueBuffer = new CharArrayBuffer(128);
@@ -144,26 +144,26 @@ for(int i = 1;i < headers.length;i++)
             {
                 valueBuffer.append(", ");
                 valueBuffer.append(headers[i].getValue());
-            } //End block
+            } 
 Header var9D89503D2589DD41795CD030E6EE24C1_1450821440 =             new BasicHeader(name.toLowerCase(Locale.ENGLISH), valueBuffer.toString());
             var9D89503D2589DD41795CD030E6EE24C1_1450821440.addTaint(taint);
             return var9D89503D2589DD41795CD030E6EE24C1_1450821440;
-        } //End block
-        // ---------- Original Method ----------
-        //Header[] headers = getHeaders(name);
-        //if (headers.length == 0) {
-            //return null;   
-        //} else if (headers.length == 1) {
-            //return headers[0];
-        //} else {
-            //CharArrayBuffer valueBuffer = new CharArrayBuffer(128);
-            //valueBuffer.append(headers[0].getValue());
-            //for (int i = 1; i < headers.length; i++) {
-                //valueBuffer.append(", ");
-                //valueBuffer.append(headers[i].getValue());
-            //}
-            //return new BasicHeader(name.toLowerCase(Locale.ENGLISH), valueBuffer.toString());
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+            
+            
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -177,20 +177,20 @@ for(int i = 0;i < headers.size();i++)
     if(header.getName().equalsIgnoreCase(name))            
             {
                 headersFound.add(header);
-            } //End block
-        } //End block
+            } 
+        } 
 Header[] var01B2D19A9EC93F41FCE14F3ECF13509B_454531393 =         (Header[]) headersFound.toArray(new Header[headersFound.size()]);
         var01B2D19A9EC93F41FCE14F3ECF13509B_454531393.addTaint(taint);
         return var01B2D19A9EC93F41FCE14F3ECF13509B_454531393;
-        // ---------- Original Method ----------
-        //ArrayList headersFound = new ArrayList();
-        //for (int i = 0; i < headers.size(); i++) {
-            //Header header = (Header) headers.get(i);
-            //if (header.getName().equalsIgnoreCase(name)) {
-                //headersFound.add(header);
-            //}
-        //}
-        //return (Header[]) headersFound.toArray(new Header[headersFound.size()]);
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -205,19 +205,19 @@ for(int i = 0;i < headers.size();i++)
 Header var108E3DF16511A75B853B5BA5497143AD_2071179419 =                 header;
                 var108E3DF16511A75B853B5BA5497143AD_2071179419.addTaint(taint);
                 return var108E3DF16511A75B853B5BA5497143AD_2071179419;
-            } //End block
-        } //End block
+            } 
+        } 
 Header var540C13E9E156B687226421B24F2DF178_9925462 =         null;
         var540C13E9E156B687226421B24F2DF178_9925462.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_9925462;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < headers.size(); i++) {
-            //Header header = (Header) headers.get(i);
-            //if (header.getName().equalsIgnoreCase(name)) {
-                //return header;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -232,19 +232,19 @@ for(int i = headers.size() - 1;i >= 0;i--)
 Header var108E3DF16511A75B853B5BA5497143AD_1070907535 =                 header;
                 var108E3DF16511A75B853B5BA5497143AD_1070907535.addTaint(taint);
                 return var108E3DF16511A75B853B5BA5497143AD_1070907535;
-            } //End block
-        } //End block
+            } 
+        } 
 Header var540C13E9E156B687226421B24F2DF178_823312534 =         null;
         var540C13E9E156B687226421B24F2DF178_823312534.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_823312534;
-        // ---------- Original Method ----------
-        //for (int i = headers.size() - 1; i >= 0; i--) {
-            //Header header = (Header) headers.get(i);
-            //if (header.getName().equalsIgnoreCase(name)) {
-                //return header;
-            //}            
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -253,8 +253,8 @@ Header var540C13E9E156B687226421B24F2DF178_823312534 =         null;
 Header[] var31F9662A3F18835AF66E4DC1AE1B3E24_156864744 =         (Header[]) headers.toArray(new Header[headers.size()]);
         var31F9662A3F18835AF66E4DC1AE1B3E24_156864744.addTaint(taint);
         return var31F9662A3F18835AF66E4DC1AE1B3E24_156864744;
-        // ---------- Original Method ----------
-        //return (Header[]) headers.toArray(new Header[headers.size()]);
+        
+        
     }
 
     
@@ -269,19 +269,19 @@ for(int i = 0;i < headers.size();i++)
                 boolean varB326B5062B2F0E69046810717534CB09_317329047 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1222483500 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1222483500;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_848176866 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1134179167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1134179167;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < headers.size(); i++) {
-            //Header header = (Header) headers.get(i);
-            //if (header.getName().equalsIgnoreCase(name)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -290,8 +290,8 @@ for(int i = 0;i < headers.size();i++)
 HeaderIterator var78733DC078B20A3D11B9F03D1F78A2FB_747055776 =         new BasicListHeaderIterator(this.headers, null);
         var78733DC078B20A3D11B9F03D1F78A2FB_747055776.addTaint(taint);
         return var78733DC078B20A3D11B9F03D1F78A2FB_747055776;
-        // ---------- Original Method ----------
-        //return new BasicListHeaderIterator(this.headers, null);
+        
+        
     }
 
     
@@ -301,8 +301,8 @@ HeaderIterator var78733DC078B20A3D11B9F03D1F78A2FB_747055776 =         new Basic
 HeaderIterator var246929CBF15E031415C5465B8F5BE4B4_523111504 =         new BasicListHeaderIterator(this.headers, name);
         var246929CBF15E031415C5465B8F5BE4B4_523111504.addTaint(taint);
         return var246929CBF15E031415C5465B8F5BE4B4_523111504;
-        // ---------- Original Method ----------
-        //return new BasicListHeaderIterator(this.headers, name);
+        
+        
     }
 
     
@@ -313,10 +313,10 @@ HeaderIterator var246929CBF15E031415C5465B8F5BE4B4_523111504 =         new Basic
 HeaderGroup var3DE52045BFD3C1BF3742F994ED6139AD_755254107 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_755254107.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_755254107;
-        // ---------- Original Method ----------
-        //HeaderGroup clone = new HeaderGroup();
-        //clone.headers.addAll(this.headers);
-        //return clone;
+        
+        
+        
+        
     }
 
     
@@ -327,10 +327,10 @@ HeaderGroup var3DE52045BFD3C1BF3742F994ED6139AD_755254107 =         clone;
 Object var3DE52045BFD3C1BF3742F994ED6139AD_774754164 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_774754164.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_774754164;
-        // ---------- Original Method ----------
-        //HeaderGroup clone = (HeaderGroup) super.clone();
-        //clone.headers = new ArrayList(this.headers);
-        //return clone;
+        
+        
+        
+        
     }
 
     

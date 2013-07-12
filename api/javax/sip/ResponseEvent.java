@@ -1,6 +1,6 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,40 +26,43 @@ public class ResponseEvent extends EventObject {
         mDialog = dialog;
         mResponse = response;
         mClientTransaction = clientTransaction;
-        // ---------- Original Method ----------
-        //mDialog = dialog;
-        //mResponse = response;
-        //mClientTransaction = clientTransaction;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.257 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "216A2242D00827E1A92E6D1BB5F18F62")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_947580637 =         mDialog;
         var91E8306796CF70F787962B1CE02ED969_947580637.addTaint(taint);
         return var91E8306796CF70F787962B1CE02ED969_947580637;
-        // ---------- Original Method ----------
-        //return mDialog;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.257 -0400", hash_original_method = "00292A90D159CA5BE7BB594CFFCF61C9", hash_generated_method = "1D6878AB83C4294FCA81A68003F21FFD")
     public Response getResponse() {
 Response var9877D6D2C0C7E462961573FA67FD4378_32358360 =         mResponse;
         var9877D6D2C0C7E462961573FA67FD4378_32358360.addTaint(taint);
         return var9877D6D2C0C7E462961573FA67FD4378_32358360;
-        // ---------- Original Method ----------
-        //return mResponse;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.257 -0400", hash_original_method = "00896F7299BD9459656811B60B06B2C6", hash_generated_method = "17941F3C85598DAAFA87AC7942C22136")
     public ClientTransaction getClientTransaction() {
 ClientTransaction var587920336DC1FA6D7B04509C85CB0821_2001995870 =         mClientTransaction;
         var587920336DC1FA6D7B04509C85CB0821_2001995870.addTaint(taint);
         return var587920336DC1FA6D7B04509C85CB0821_2001995870;
-        // ---------- Original Method ----------
-        //return mClientTransaction;
+        
+        
     }
 
     

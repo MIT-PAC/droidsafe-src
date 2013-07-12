@@ -1,6 +1,6 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ class RuleBasedBreakIterator extends BreakIterator {
       RuleBasedBreakIterator(NativeBreakIterator iterator) {
         super(iterator);
         addTaint(iterator.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,8 +22,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         int varB3E6BDA0FA71F18BC558DA082AF1E2AE_370318426 = (wrapped.current());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164831272 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164831272;
-        // ---------- Original Method ----------
-        //return wrapped.current();
+        
+        
     }
 
     
@@ -33,8 +33,8 @@ class RuleBasedBreakIterator extends BreakIterator {
         int varF9A7B801088F0D36D9C9F6010C2BD145_1033052548 = (wrapped.first());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726592809 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1726592809;
-        // ---------- Original Method ----------
-        //return wrapped.first();
+        
+        
     }
 
     
@@ -46,9 +46,9 @@ class RuleBasedBreakIterator extends BreakIterator {
         int varC869B4931B398ED66E4CC1DB2B1A3657_1222889316 = (wrapped.following(offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102890259 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102890259;
-        // ---------- Original Method ----------
-        //validateOffset(offset);
-        //return wrapped.following(offset);
+        
+        
+        
     }
 
     
@@ -62,13 +62,13 @@ class RuleBasedBreakIterator extends BreakIterator {
             IllegalArgumentException varA85EF382D290CB247A238DE6CCA227E0_1031904406 = new IllegalArgumentException(message);
             varA85EF382D290CB247A238DE6CCA227E0_1031904406.addTaint(taint);
             throw varA85EF382D290CB247A238DE6CCA227E0_1031904406;
-        } //End block
-        // ---------- Original Method ----------
-        //CharacterIterator it = wrapped.getText();
-        //if (offset < it.getBeginIndex() || offset > it.getEndIndex()) {
-            //String message = "Valid range is [" + it.getBeginIndex() + " " + it.getEndIndex() + "]";
-            //throw new IllegalArgumentException(message);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -78,8 +78,8 @@ class RuleBasedBreakIterator extends BreakIterator {
 CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped.getText();
         var4C8771EB387BD04E1F70B3FD4201C9FD_12018364.addTaint(taint);
         return var4C8771EB387BD04E1F70B3FD4201C9FD_12018364;
-        // ---------- Original Method ----------
-        //return wrapped.getText();
+        
+        
     }
 
     
@@ -89,8 +89,8 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         int varBEC91D8F70CAF0CFA42A9DA5580AF895_1535805120 = (wrapped.last());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924803510 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1924803510;
-        // ---------- Original Method ----------
-        //return wrapped.last();
+        
+        
     }
 
     
@@ -100,8 +100,8 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         int varF415221327193ABE7EE0E0BD62F415E0_799074464 = (wrapped.next());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38022286 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38022286;
-        // ---------- Original Method ----------
-        //return wrapped.next();
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         int var56685713150863609D09BAEA0D39F539_1314320949 = (wrapped.next(n));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483621587 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1483621587;
-        // ---------- Original Method ----------
-        //return wrapped.next(n);
+        
+        
     }
 
     
@@ -123,8 +123,8 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         int varA4C94957F1AA8DB58351E465D23F2197_1036628345 = (wrapped.previous());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145480144 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145480144;
-        // ---------- Original Method ----------
-        //return wrapped.previous();
+        
+        
     }
 
     
@@ -134,9 +134,9 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         addTaint(newText.getTaint());
         newText.current();
         wrapped.setText(newText);
-        // ---------- Original Method ----------
-        //newText.current();
-        //wrapped.setText(newText);
+        
+        
+        
     }
 
     
@@ -148,9 +148,9 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         boolean var555B9C99F84B19502BCD77FE9A14CBFB_403093329 = (wrapped.isBoundary(offset));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647355427 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647355427;
-        // ---------- Original Method ----------
-        //validateOffset(offset);
-        //return wrapped.isBoundary(offset);
+        
+        
+        
     }
 
     
@@ -162,9 +162,9 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
         int var22FB19483F51E7C2262EC946C0BBAC14_1973913485 = (wrapped.preceding(offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_866339190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_866339190;
-        // ---------- Original Method ----------
-        //validateOffset(offset);
-        //return wrapped.preceding(offset);
+        
+        
+        
     }
 
     
@@ -177,15 +177,15 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
             boolean var68934A3E9455FA72420237EB05902327_1933963499 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1166931444 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1166931444;
-        } //End block
+        } 
         boolean var6354424D7AD16BEB11E78AAF8C66ECB6_426345553 = (wrapped.equals(((RuleBasedBreakIterator) o).wrapped));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435547620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_435547620;
-        // ---------- Original Method ----------
-        //if (!(o instanceof RuleBasedBreakIterator)) {
-            //return false;
-        //}
-        //return wrapped.equals(((RuleBasedBreakIterator) o).wrapped);
+        
+        
+            
+        
+        
     }
 
     
@@ -195,8 +195,8 @@ CharacterIterator var4C8771EB387BD04E1F70B3FD4201C9FD_12018364 =         wrapped
 String var84C865F6B41C94911694573E55C4F857_1211264416 =         wrapped.toString();
         var84C865F6B41C94911694573E55C4F857_1211264416.addTaint(taint);
         return var84C865F6B41C94911694573E55C4F857_1211264416;
-        // ---------- Original Method ----------
-        //return wrapped.toString();
+        
+        
     }
 
     
@@ -206,8 +206,8 @@ String var84C865F6B41C94911694573E55C4F857_1211264416 =         wrapped.toString
         int varE7735E0DE93B960AAE60F0B41495460B_446156617 = (wrapped.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1202657483 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1202657483;
-        // ---------- Original Method ----------
-        //return wrapped.hashCode();
+        
+        
     }
 
     
@@ -219,10 +219,10 @@ String var84C865F6B41C94911694573E55C4F857_1211264416 =         wrapped.toString
 Object var7733EC69B7B77450072710EF7316B904_638297735 =         cloned;
         var7733EC69B7B77450072710EF7316B904_638297735.addTaint(taint);
         return var7733EC69B7B77450072710EF7316B904_638297735;
-        // ---------- Original Method ----------
-        //RuleBasedBreakIterator cloned = (RuleBasedBreakIterator) super.clone();
-        //cloned.wrapped = (NativeBreakIterator) wrapped.clone();
-        //return cloned;
+        
+        
+        
+        
     }
 
     

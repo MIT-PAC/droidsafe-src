@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,11 +32,11 @@ public class RFC2109Spec extends CookieSpecBase {
     if(datepatterns != null)        
         {
             this.datepatterns = datepatterns.clone();
-        } //End block
+        } 
         else
         {
             this.datepatterns = DATE_PATTERNS;
-        } //End block
+        } 
         this.oneHeader = oneHeader;
         registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2109VersionHandler());
         registerAttribHandler(ClientCookie.PATH_ATTR, new BasicPathHandler());
@@ -46,28 +46,28 @@ public class RFC2109Spec extends CookieSpecBase {
         registerAttribHandler(ClientCookie.COMMENT_ATTR, new BasicCommentHandler());
         registerAttribHandler(ClientCookie.EXPIRES_ATTR, new BasicExpiresHandler(
                 this.datepatterns));
-        // ---------- Original Method ----------
-        //if (datepatterns != null) {
-            //this.datepatterns = datepatterns.clone();
-        //} else {
-            //this.datepatterns = DATE_PATTERNS;
-        //}
-        //this.oneHeader = oneHeader;
-        //registerAttribHandler(ClientCookie.VERSION_ATTR, new RFC2109VersionHandler());
-        //registerAttribHandler(ClientCookie.PATH_ATTR, new BasicPathHandler());
-        //registerAttribHandler(ClientCookie.DOMAIN_ATTR, new RFC2109DomainHandler());
-        //registerAttribHandler(ClientCookie.MAX_AGE_ATTR, new BasicMaxAgeHandler());
-        //registerAttribHandler(ClientCookie.SECURE_ATTR, new BasicSecureHandler());
-        //registerAttribHandler(ClientCookie.COMMENT_ATTR, new BasicCommentHandler());
-        //registerAttribHandler(ClientCookie.EXPIRES_ATTR, new BasicExpiresHandler(
-                //this.datepatterns));
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.788 -0400", hash_original_method = "2854FB63A9A4FFE7625656D05E6D284B", hash_generated_method = "704B85C0725CE4A0C7BEC650B2E2F3CA")
     public  RFC2109Spec() {
         this(null, false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -80,26 +80,26 @@ public class RFC2109Spec extends CookieSpecBase {
             IllegalArgumentException var655E57DE77F969F763516260E292795B_714418736 = new IllegalArgumentException("Header may not be null");
             var655E57DE77F969F763516260E292795B_714418736.addTaint(taint);
             throw var655E57DE77F969F763516260E292795B_714418736;
-        } //End block
+        } 
     if(origin == null)        
         {
             IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_912317674 = new IllegalArgumentException("Cookie origin may not be null");
             var4264914F0057BA70A0B3E6621821A095_912317674.addTaint(taint);
             throw var4264914F0057BA70A0B3E6621821A095_912317674;
-        } //End block
+        } 
         HeaderElement[] elems = header.getElements();
 List<Cookie> var244203BCE4724537DC84FE61D4419CE6_1423257693 =         parse(elems, origin);
         var244203BCE4724537DC84FE61D4419CE6_1423257693.addTaint(taint);
         return var244203BCE4724537DC84FE61D4419CE6_1423257693;
-        // ---------- Original Method ----------
-        //if (header == null) {
-            //throw new IllegalArgumentException("Header may not be null");
-        //}
-        //if (origin == null) {
-            //throw new IllegalArgumentException("Cookie origin may not be null");
-        //}
-        //HeaderElement[] elems = header.getElements();
-        //return parse(elems, origin);
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -113,33 +113,33 @@ List<Cookie> var244203BCE4724537DC84FE61D4419CE6_1423257693 =         parse(elem
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_575304840 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_575304840.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_575304840;
-        } //End block
+        } 
         String name = cookie.getName();
     if(name.indexOf(' ') != -1)        
         {
             MalformedCookieException varA077DEAC3DA0DB270BE2280A8BDE44CD_721664038 = new MalformedCookieException("Cookie name may not contain blanks");
             varA077DEAC3DA0DB270BE2280A8BDE44CD_721664038.addTaint(taint);
             throw varA077DEAC3DA0DB270BE2280A8BDE44CD_721664038;
-        } //End block
+        } 
     if(name.startsWith("$"))        
         {
             MalformedCookieException var73044899A76FC44930121E2E2EE9F5ED_585932969 = new MalformedCookieException("Cookie name may not start with $");
             var73044899A76FC44930121E2E2EE9F5ED_585932969.addTaint(taint);
             throw var73044899A76FC44930121E2E2EE9F5ED_585932969;
-        } //End block
+        } 
         super.validate(cookie, origin);
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //String name = cookie.getName();
-        //if (name.indexOf(' ') != -1) {
-            //throw new MalformedCookieException("Cookie name may not contain blanks");
-        //}
-        //if (name.startsWith("$")) {
-            //throw new MalformedCookieException("Cookie name may not start with $");
-        //}
-        //super.validate(cookie, origin);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -151,46 +151,46 @@ List<Cookie> var244203BCE4724537DC84FE61D4419CE6_1423257693 =         parse(elem
             IllegalArgumentException varF8FD3AA86899D4A0D763F37D49D2DC0B_106015017 = new IllegalArgumentException("List of cookies may not be null");
             varF8FD3AA86899D4A0D763F37D49D2DC0B_106015017.addTaint(taint);
             throw varF8FD3AA86899D4A0D763F37D49D2DC0B_106015017;
-        } //End block
+        } 
     if(cookies.isEmpty())        
         {
             IllegalArgumentException varA9E78185ACB38B15D24741774F0DBD8F_1199547872 = new IllegalArgumentException("List of cookies may not be empty");
             varA9E78185ACB38B15D24741774F0DBD8F_1199547872.addTaint(taint);
             throw varA9E78185ACB38B15D24741774F0DBD8F_1199547872;
-        } //End block
+        } 
     if(cookies.size() > 1)        
         {
             cookies = new ArrayList<Cookie>(cookies);
             Collections.sort(cookies, PATH_COMPARATOR);
-        } //End block
+        } 
     if(this.oneHeader)        
         {
 List<Header> var0270C332E4B4942F44FC01D14E1998FA_405171596 =             doFormatOneHeader(cookies);
             var0270C332E4B4942F44FC01D14E1998FA_405171596.addTaint(taint);
             return var0270C332E4B4942F44FC01D14E1998FA_405171596;
-        } //End block
+        } 
         else
         {
 List<Header> var59734256327096CDB0D6F953D783862E_392616167 =             doFormatManyHeaders(cookies);
             var59734256327096CDB0D6F953D783862E_392616167.addTaint(taint);
             return var59734256327096CDB0D6F953D783862E_392616167;
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookies == null) {
-            //throw new IllegalArgumentException("List of cookies may not be null");
-        //}
-        //if (cookies.isEmpty()) {
-            //throw new IllegalArgumentException("List of cookies may not be empty");
-        //}
-        //if (cookies.size() > 1) {
-            //cookies = new ArrayList<Cookie>(cookies);
-            //Collections.sort(cookies, PATH_COMPARATOR);
-        //}
-        //if (this.oneHeader) {
-            //return doFormatOneHeader(cookies);
-        //} else {
-            //return doFormatManyHeaders(cookies);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -203,8 +203,8 @@ for(Cookie cookie : cookies)
     if(cookie.getVersion() < version)            
             {
                 version = cookie.getVersion();
-            } //End block
-        } //End block
+            } 
+        } 
         CharArrayBuffer buffer = new CharArrayBuffer(40 * cookies.size());
         buffer.append(SM.COOKIE);
         buffer.append(": ");
@@ -215,32 +215,32 @@ for(Cookie cooky : cookies)
             buffer.append("; ");
             Cookie cookie = cooky;
             formatCookieAsVer(buffer, cookie, version);
-        } //End block
+        } 
         List<Header> headers = new ArrayList<Header>(1);
         headers.add(new BufferedHeader(buffer));
 List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_1776160974 =         headers;
         var6937E37BAD8D53F9D49A0E32C69A3A2C_1776160974.addTaint(taint);
         return var6937E37BAD8D53F9D49A0E32C69A3A2C_1776160974;
-        // ---------- Original Method ----------
-        //int version = Integer.MAX_VALUE;
-        //for (Cookie cookie : cookies) {
-            //if (cookie.getVersion() < version) {
-                //version = cookie.getVersion();
-            //}
-        //}
-        //CharArrayBuffer buffer = new CharArrayBuffer(40 * cookies.size());
-        //buffer.append(SM.COOKIE);
-        //buffer.append(": ");
-        //buffer.append("$Version=");
-        //buffer.append(Integer.toString(version));
-        //for (Cookie cooky : cookies) {
-            //buffer.append("; ");
-            //Cookie cookie = cooky;
-            //formatCookieAsVer(buffer, cookie, version);
-        //}
-        //List<Header> headers = new ArrayList<Header>(1);
-        //headers.add(new BufferedHeader(buffer));
-        //return headers;
+        
+        
+        
+            
+                
+            
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -258,23 +258,23 @@ for(Cookie cookie : cookies)
             buffer.append("; ");
             formatCookieAsVer(buffer, cookie, version);
             headers.add(new BufferedHeader(buffer));
-        } //End block
+        } 
 List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_1422161940 =         headers;
         var6937E37BAD8D53F9D49A0E32C69A3A2C_1422161940.addTaint(taint);
         return var6937E37BAD8D53F9D49A0E32C69A3A2C_1422161940;
-        // ---------- Original Method ----------
-        //List<Header> headers = new ArrayList<Header>(cookies.size());
-        //for (Cookie cookie : cookies) {
-            //int version = cookie.getVersion();
-            //CharArrayBuffer buffer = new CharArrayBuffer(40);
-            //buffer.append("Cookie: ");
-            //buffer.append("$Version=");
-            //buffer.append(Integer.toString(version));
-            //buffer.append("; ");
-            //formatCookieAsVer(buffer, cookie, version);
-            //headers.add(new BufferedHeader(buffer));
-        //}
-        //return headers;
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -294,24 +294,24 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_1422161940 =         headers;
                 buffer.append('\"');
                 buffer.append(value);
                 buffer.append('\"');
-            } //End block
+            } 
             else
             {
                 buffer.append(value);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //buffer.append(name);
-        //buffer.append("=");
-        //if (value != null) {
-            //if (version > 0) {
-                //buffer.append('\"');
-                //buffer.append(value);
-                //buffer.append('\"');
-            //} else {
-                //buffer.append(value);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+                
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -329,8 +329,8 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_1422161940 =         headers;
             {
                 buffer.append("; ");
                 formatParamAsVer(buffer, "$Path", cookie.getPath(), version);
-            } //End block
-        } //End block
+            } 
+        } 
     if(cookie.getDomain() != null)        
         {
     if(cookie instanceof ClientCookie 
@@ -338,44 +338,46 @@ List<Header> var6937E37BAD8D53F9D49A0E32C69A3A2C_1422161940 =         headers;
             {
                 buffer.append("; ");
                 formatParamAsVer(buffer, "$Domain", cookie.getDomain(), version);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //formatParamAsVer(buffer, cookie.getName(), cookie.getValue(), version);
-        //if (cookie.getPath() != null) {
-            //if (cookie instanceof ClientCookie 
-                    //&& ((ClientCookie) cookie).containsAttribute(ClientCookie.PATH_ATTR)) {
-                //buffer.append("; ");
-                //formatParamAsVer(buffer, "$Path", cookie.getPath(), version);
-            //}
-        //}
-        //if (cookie.getDomain() != null) {
-            //if (cookie instanceof ClientCookie 
-                    //&& ((ClientCookie) cookie).containsAttribute(ClientCookie.DOMAIN_ATTR)) {
-                //buffer.append("; ");
-                //formatParamAsVer(buffer, "$Domain", cookie.getDomain(), version);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                    
+                
+                
+            
+        
+        
+            
+                    
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.793 -0400", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "E061362386933014D87EEAB9AF603A00")
     public int getVersion() {
         int varC4CA4238A0B923820DCC509A6F75849B_1050040717 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1285359784 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1285359784;
-        // ---------- Original Method ----------
-        //return 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.793 -0400", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "6930FCECFAE01EF64C6AB171340A288E")
     public Header getVersionHeader() {
 Header var540C13E9E156B687226421B24F2DF178_164624287 =         null;
         var540C13E9E156B687226421B24F2DF178_164624287.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_164624287;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

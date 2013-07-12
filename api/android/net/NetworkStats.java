@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -63,18 +63,18 @@ public class NetworkStats implements Parcelable {
         this.txBytes = new long[initialSize];
         this.txPackets = new long[initialSize];
         this.operations = new long[initialSize];
-        // ---------- Original Method ----------
-        //this.elapsedRealtime = elapsedRealtime;
-        //this.size = 0;
-        //this.iface = new String[initialSize];
-        //this.uid = new int[initialSize];
-        //this.set = new int[initialSize];
-        //this.tag = new int[initialSize];
-        //this.rxBytes = new long[initialSize];
-        //this.rxPackets = new long[initialSize];
-        //this.txBytes = new long[initialSize];
-        //this.txPackets = new long[initialSize];
-        //this.operations = new long[initialSize];
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -91,18 +91,18 @@ public class NetworkStats implements Parcelable {
         txBytes = parcel.createLongArray();
         txPackets = parcel.createLongArray();
         operations = parcel.createLongArray();
-        // ---------- Original Method ----------
-        //elapsedRealtime = parcel.readLong();
-        //size = parcel.readInt();
-        //iface = parcel.createStringArray();
-        //uid = parcel.createIntArray();
-        //set = parcel.createIntArray();
-        //tag = parcel.createIntArray();
-        //rxBytes = parcel.createLongArray();
-        //rxPackets = parcel.createLongArray();
-        //txBytes = parcel.createLongArray();
-        //txPackets = parcel.createLongArray();
-        //operations = parcel.createLongArray();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -121,18 +121,18 @@ public class NetworkStats implements Parcelable {
         dest.writeLongArray(txBytes);
         dest.writeLongArray(txPackets);
         dest.writeLongArray(operations);
-        // ---------- Original Method ----------
-        //dest.writeLong(elapsedRealtime);
-        //dest.writeInt(size);
-        //dest.writeStringArray(iface);
-        //dest.writeIntArray(uid);
-        //dest.writeIntArray(set);
-        //dest.writeIntArray(tag);
-        //dest.writeLongArray(rxBytes);
-        //dest.writeLongArray(rxPackets);
-        //dest.writeLongArray(txBytes);
-        //dest.writeLongArray(txPackets);
-        //dest.writeLongArray(operations);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -145,18 +145,18 @@ for(int i = 0;i < size;i++)
         {
             entry = getValues(i, entry);
             clone.addValues(entry);
-        } //End block
+        } 
 NetworkStats var3DE52045BFD3C1BF3742F994ED6139AD_1131839105 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_1131839105.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_1131839105;
-        // ---------- Original Method ----------
-        //final NetworkStats clone = new NetworkStats(elapsedRealtime, size);
-        //NetworkStats.Entry entry = null;
-        //for (int i = 0; i < size; i++) {
-            //entry = getValues(i, entry);
-            //clone.addValues(entry);
-        //}
-        //return clone;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -172,9 +172,9 @@ NetworkStats var86716A891B4A6F25225A31F54112BF7D_888896967 =         addValues(
                 iface, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, rxPackets, txBytes, txPackets, 0L);
         var86716A891B4A6F25225A31F54112BF7D_888896967.addTaint(taint);
         return var86716A891B4A6F25225A31F54112BF7D_888896967;
-        // ---------- Original Method ----------
-        //return addValues(
-                //iface, UID_ALL, SET_DEFAULT, TAG_NONE, rxBytes, rxPackets, txBytes, txPackets, 0L);
+        
+        
+                
     }
 
     
@@ -194,9 +194,9 @@ NetworkStats var662C1D98BE745A1EE251224845A23CE8_694638907 =         addValues(n
                 iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
         var662C1D98BE745A1EE251224845A23CE8_694638907.addTaint(taint);
         return var662C1D98BE745A1EE251224845A23CE8_694638907;
-        // ---------- Original Method ----------
-        //return addValues(new Entry(
-                //iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
+        
+        
+                
     }
 
     
@@ -214,7 +214,7 @@ NetworkStats var662C1D98BE745A1EE251224845A23CE8_694638907 =         addValues(n
             txBytes = Arrays.copyOf(txBytes, newLength);
             txPackets = Arrays.copyOf(txPackets, newLength);
             operations = Arrays.copyOf(operations, newLength);
-        } //End block
+        } 
         iface[size] = entry.iface;
         uid[size] = entry.uid;
         set[size] = entry.set;
@@ -228,8 +228,8 @@ NetworkStats var662C1D98BE745A1EE251224845A23CE8_694638907 =         addValues(n
 NetworkStats var72A74007B2BE62B849F475C7BDA4658B_1075861094 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1075861094.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1075861094;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -249,28 +249,29 @@ NetworkStats var72A74007B2BE62B849F475C7BDA4658B_1075861094 =         this;
 Entry varF26DBE38545460D6F6AE1D948FF53869_1475191791 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_1475191791.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_1475191791;
-        // ---------- Original Method ----------
-        //final Entry entry = recycle != null ? recycle : new Entry();
-        //entry.iface = iface[i];
-        //entry.uid = uid[i];
-        //entry.set = set[i];
-        //entry.tag = tag[i];
-        //entry.rxBytes = rxBytes[i];
-        //entry.rxPackets = rxPackets[i];
-        //entry.txBytes = txBytes[i];
-        //entry.txPackets = txPackets[i];
-        //entry.operations = operations[i];
-        //return entry;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.022 -0400", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "4A3448193A9B66EDE6066762709038F7")
     public long getElapsedRealtime() {
         long var90F9860F2ACD6C63E4929F387936CB9F_717273817 = (elapsedRealtime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1531900050 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1531900050;
-        // ---------- Original Method ----------
-        //return elapsedRealtime;
+        
+        
     }
 
     
@@ -279,28 +280,30 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_1475191791 =         entry;
         long varCB1FD886D9702AB53E7C279360FCB78B_1853083898 = (SystemClock.elapsedRealtime() - elapsedRealtime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_764193691 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_764193691;
-        // ---------- Original Method ----------
-        //return SystemClock.elapsedRealtime() - elapsedRealtime;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.022 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "A32E5F1817783ECFDEF47A6C49C6B615")
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_59223002 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2069146550 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2069146550;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.023 -0400", hash_original_method = "2B99B673BBD8E75B3053CAA25E99CAA5", hash_generated_method = "E1C670952EC6781CECB8A039FB9B0BC4")
     public int internalSize() {
         int var1D14402A536292FB0E5BFD7749295FCE_1498153163 = (iface.length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763385849 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1763385849;
-        // ---------- Original Method ----------
-        //return iface.length;
+        
+        
     }
 
     
@@ -320,9 +323,9 @@ NetworkStats var18E15851772FB364BFC5DC07AEFDA62C_668821606 =         combineValu
                 iface, uid, SET_DEFAULT, tag, rxBytes, rxPackets, txBytes, txPackets, operations);
         var18E15851772FB364BFC5DC07AEFDA62C_668821606.addTaint(taint);
         return var18E15851772FB364BFC5DC07AEFDA62C_668821606;
-        // ---------- Original Method ----------
-        //return combineValues(
-                //iface, uid, SET_DEFAULT, tag, rxBytes, rxPackets, txBytes, txPackets, operations);
+        
+        
+                
     }
 
     
@@ -342,9 +345,9 @@ NetworkStats var533B44CC114A8A103B52DBF2DBB164D7_1093765283 =         combineVal
                 iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
         var533B44CC114A8A103B52DBF2DBB164D7_1093765283.addTaint(taint);
         return var533B44CC114A8A103B52DBF2DBB164D7_1093765283;
-        // ---------- Original Method ----------
-        //return combineValues(new Entry(
-                //iface, uid, set, tag, rxBytes, rxPackets, txBytes, txPackets, operations));
+        
+        
+                
     }
 
     
@@ -354,7 +357,7 @@ NetworkStats var533B44CC114A8A103B52DBF2DBB164D7_1093765283 =         combineVal
     if(i == -1)        
         {
             addValues(entry);
-        } //End block
+        } 
         else
         {
             rxBytes[i] += entry.rxBytes;
@@ -362,22 +365,22 @@ NetworkStats var533B44CC114A8A103B52DBF2DBB164D7_1093765283 =         combineVal
             txBytes[i] += entry.txBytes;
             txPackets[i] += entry.txPackets;
             operations[i] += entry.operations;
-        } //End block
+        } 
 NetworkStats var72A74007B2BE62B849F475C7BDA4658B_320939140 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_320939140.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_320939140;
-        // ---------- Original Method ----------
-        //final int i = findIndex(entry.iface, entry.uid, entry.set, entry.tag);
-        //if (i == -1) {
-            //addValues(entry);
-        //} else {
-            //rxBytes[i] += entry.rxBytes;
-            //rxPackets[i] += entry.rxPackets;
-            //txBytes[i] += entry.txBytes;
-            //txPackets[i] += entry.txPackets;
-            //operations[i] += entry.operations;
-        //}
-        //return this;
+        
+        
+        
+            
+        
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -389,13 +392,13 @@ for(int i = 0;i < another.size;i++)
         {
             entry = another.getValues(i, entry);
             combineValues(entry);
-        } //End block
-        // ---------- Original Method ----------
-        //NetworkStats.Entry entry = null;
-        //for (int i = 0; i < another.size; i++) {
-            //entry = another.getValues(i, entry);
-            //combineValues(entry);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -413,19 +416,19 @@ for(int i = 0;i < size;i++)
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_1733808927 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554714640 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_554714640;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_280374769 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154997149 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154997149;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < size; i++) {
-            //if (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
-                    //&& Objects.equal(iface, this.iface[i])) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+                    
+                
+            
+        
+        
     }
 
     
@@ -443,37 +446,37 @@ for(int offset = 0;offset < size;offset++)
     if(offset % 2 == 0)            
             {
                 i = (hintIndex + halfOffset) % size;
-            } //End block
+            } 
             else
             {
                 i = (size + hintIndex - halfOffset - 1) % size;
-            } //End block
+            } 
     if(uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
                     && Objects.equal(iface, this.iface[i]))            
             {
                 int var865C0C0B4AB0E063E5CAA3387C1A8741_693749697 = (i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11179259 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11179259;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1601680183 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352815861 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1352815861;
-        // ---------- Original Method ----------
-        //for (int offset = 0; offset < size; offset++) {
-            //final int halfOffset = offset / 2;
-            //final int i;
-            //if (offset % 2 == 0) {
-                //i = (hintIndex + halfOffset) % size;
-            //} else {
-                //i = (size + hintIndex - halfOffset - 1) % size;
-            //}
-            //if (uid == this.uid[i] && set == this.set[i] && tag == this.tag[i]
-                    //&& Objects.equal(iface, this.iface[i])) {
-                //return i;
-            //}
-        //}
-        //return -1;
+        
+        
+            
+            
+            
+                
+            
+                
+            
+            
+                    
+                
+            
+        
+        
     }
 
     
@@ -485,21 +488,21 @@ for(int i = 0;i < size;i++)
     if(j == -1)            
             {
                 operations[i] = 0;
-            } //End block
+            } 
             else
             {
                 operations[i] = stats.operations[j];
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < size; i++) {
-            //final int j = stats.findIndex(IFACE_ALL, uid[i], set[i], tag[i]);
-            //if (j == -1) {
-                //operations[i] = 0;
-            //} else {
-                //operations[i] = stats.operations[j];
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -511,19 +514,19 @@ for(String iface : this.iface)
     if(iface != IFACE_ALL)            
             {
                 ifaces.add(iface);
-            } //End block
-        } //End block
+            } 
+        } 
 String[] var484DB913905DBB36FE22333D6D2ECB57_605130437 =         ifaces.toArray(new String[ifaces.size()]);
         var484DB913905DBB36FE22333D6D2ECB57_605130437.addTaint(taint);
         return var484DB913905DBB36FE22333D6D2ECB57_605130437;
-        // ---------- Original Method ----------
-        //final HashSet<String> ifaces = new HashSet<String>();
-        //for (String iface : this.iface) {
-            //if (iface != IFACE_ALL) {
-                //ifaces.add(iface);
-            //}
-        //}
-        //return ifaces.toArray(new String[ifaces.size()]);
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -533,27 +536,27 @@ String[] var484DB913905DBB36FE22333D6D2ECB57_605130437 =         ifaces.toArray(
 for(int uid : this.uid)
         {
             uids.put(uid, true);
-        } //End block
+        } 
         final int size = uids.size();
         final int[] result = new int[size];
 for(int i = 0;i < size;i++)
         {
             result[i] = uids.keyAt(i);
-        } //End block
+        } 
         int[] varB4A88417B3D0170D754C647C30B7216A_1716095087 = (result);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1617742847 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1617742847;
-        // ---------- Original Method ----------
-        //final SparseBooleanArray uids = new SparseBooleanArray();
-        //for (int uid : this.uid) {
-            //uids.put(uid, true);
-        //}
-        //final int size = uids.size();
-        //final int[] result = new int[size];
-        //for (int i = 0; i < size; i++) {
-            //result[i] = uids.keyAt(i);
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -563,9 +566,9 @@ for(int i = 0;i < size;i++)
         long var5F00EEE8FA7A451FA9CFD5EB43AD8755_1424194154 = (entry.rxBytes + entry.txBytes);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1106639210 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1106639210;
-        // ---------- Original Method ----------
-        //final Entry entry = getTotal(null);
-        //return entry.rxBytes + entry.txBytes;
+        
+        
+        
     }
 
     
@@ -575,8 +578,8 @@ for(int i = 0;i < size;i++)
 Entry var493E61FE716DA417C48A4E79249E8995_254661920 =         getTotal(recycle, null, UID_ALL);
         var493E61FE716DA417C48A4E79249E8995_254661920.addTaint(taint);
         return var493E61FE716DA417C48A4E79249E8995_254661920;
-        // ---------- Original Method ----------
-        //return getTotal(recycle, null, UID_ALL);
+        
+        
     }
 
     
@@ -587,8 +590,8 @@ Entry var493E61FE716DA417C48A4E79249E8995_254661920 =         getTotal(recycle, 
 Entry varD401B5235C2DDA22F88678CB02EE769D_517660912 =         getTotal(recycle, null, limitUid);
         varD401B5235C2DDA22F88678CB02EE769D_517660912.addTaint(taint);
         return varD401B5235C2DDA22F88678CB02EE769D_517660912;
-        // ---------- Original Method ----------
-        //return getTotal(recycle, null, limitUid);
+        
+        
     }
 
     
@@ -599,8 +602,8 @@ Entry varD401B5235C2DDA22F88678CB02EE769D_517660912 =         getTotal(recycle, 
 Entry varDBE85A58A348CABDD8A8D13467B29A3C_1313839589 =         getTotal(recycle, limitIface, UID_ALL);
         varDBE85A58A348CABDD8A8D13467B29A3C_1313839589.addTaint(taint);
         return varDBE85A58A348CABDD8A8D13467B29A3C_1313839589;
-        // ---------- Original Method ----------
-        //return getTotal(recycle, limitIface, UID_ALL);
+        
+        
     }
 
     
@@ -631,13 +634,13 @@ for(int i = 0;i < size;i++)
                 entry.txBytes += txBytes[i];
                 entry.txPackets += txPackets[i];
                 entry.operations += operations[i];
-            } //End block
-        } //End block
+            } 
+        } 
 Entry varF26DBE38545460D6F6AE1D948FF53869_455021003 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_455021003.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_455021003;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -647,8 +650,8 @@ Entry varF26DBE38545460D6F6AE1D948FF53869_455021003 =         entry;
 NetworkStats var0C2F4E324A8788B9E3A075272F2B5127_280792256 =         subtract(value, false);
         var0C2F4E324A8788B9E3A075272F2B5127_280792256.addTaint(taint);
         return var0C2F4E324A8788B9E3A075272F2B5127_280792256;
-        // ---------- Original Method ----------
-        //return subtract(value, false);
+        
+        
     }
 
     
@@ -661,7 +664,7 @@ NetworkStats var0C2F4E324A8788B9E3A075272F2B5127_280792256 =         subtract(va
             NonMonotonicException varD5AC2DE5227BC8E2D6AEAB31174541EB_441009014 = new NonMonotonicException(this, value);
             varD5AC2DE5227BC8E2D6AEAB31174541EB_441009014.addTaint(taint);
             throw varD5AC2DE5227BC8E2D6AEAB31174541EB_441009014;
-        } //End block
+        } 
         final Entry entry = new Entry();
         final NetworkStats result = new NetworkStats(deltaRealtime, size);
 for(int i = 0;i < size;i++)
@@ -678,7 +681,7 @@ for(int i = 0;i < size;i++)
                 entry.txBytes = txBytes[i];
                 entry.txPackets = txPackets[i];
                 entry.operations = operations[i];
-            } //End block
+            } 
             else
             {
                 entry.rxBytes = rxBytes[i] - value.rxBytes[j];
@@ -696,22 +699,22 @@ for(int i = 0;i < size;i++)
                         entry.txBytes = Math.max(entry.txBytes, 0);
                         entry.txPackets = Math.max(entry.txPackets, 0);
                         entry.operations = Math.max(entry.operations, 0);
-                    } //End block
+                    } 
                     else
                     {
                         NonMonotonicException var5309FB994A6EB96BD7E067C5C85ECF05_1796134250 = new NonMonotonicException(this, i, value, j);
                         var5309FB994A6EB96BD7E067C5C85ECF05_1796134250.addTaint(taint);
                         throw var5309FB994A6EB96BD7E067C5C85ECF05_1796134250;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             result.addValues(entry);
-        } //End block
+        } 
 NetworkStats varDC838461EE2FA0CA4C9BBB70A15456B0_326173025 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_326173025.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_326173025;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -733,27 +736,27 @@ for(int i = 0;i < size;i++)
             entry.txBytes = txBytes[i];
             entry.txPackets = txPackets[i];
             stats.combineValues(entry);
-        } //End block
+        } 
 NetworkStats var6199C0EAA905687345ED5A344094841F_1757776218 =         stats;
         var6199C0EAA905687345ED5A344094841F_1757776218.addTaint(taint);
         return var6199C0EAA905687345ED5A344094841F_1757776218;
-        // ---------- Original Method ----------
-        //final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
-        //final Entry entry = new Entry();
-        //entry.uid = UID_ALL;
-        //entry.set = SET_ALL;
-        //entry.tag = TAG_NONE;
-        //entry.operations = 0L;
-        //for (int i = 0; i < size; i++) {
-            //if (tag[i] != TAG_NONE) continue;
-            //entry.iface = iface[i];
-            //entry.rxBytes = rxBytes[i];
-            //entry.rxPackets = rxPackets[i];
-            //entry.txBytes = txBytes[i];
-            //entry.txPackets = txPackets[i];
-            //stats.combineValues(entry);
-        //}
-        //return stats;
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -775,27 +778,27 @@ for(int i = 0;i < size;i++)
             entry.txPackets = txPackets[i];
             entry.operations = operations[i];
             stats.combineValues(entry);
-        } //End block
+        } 
 NetworkStats var6199C0EAA905687345ED5A344094841F_1249972828 =         stats;
         var6199C0EAA905687345ED5A344094841F_1249972828.addTaint(taint);
         return var6199C0EAA905687345ED5A344094841F_1249972828;
-        // ---------- Original Method ----------
-        //final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
-        //final Entry entry = new Entry();
-        //entry.iface = IFACE_ALL;
-        //entry.set = SET_ALL;
-        //entry.tag = TAG_NONE;
-        //for (int i = 0; i < size; i++) {
-            //if (tag[i] != TAG_NONE) continue;
-            //entry.uid = uid[i];
-            //entry.rxBytes = rxBytes[i];
-            //entry.rxPackets = rxPackets[i];
-            //entry.txBytes = txBytes[i];
-            //entry.txPackets = txPackets[i];
-            //entry.operations = operations[i];
-            //stats.combineValues(entry);
-        //}
-        //return stats;
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -810,21 +813,21 @@ for(int i = 0;i < size;i++)
     if(entry.uid != uid)            
             {
                 stats.addValues(entry);
-            } //End block
-        } //End block
+            } 
+        } 
 NetworkStats var6199C0EAA905687345ED5A344094841F_161169833 =         stats;
         var6199C0EAA905687345ED5A344094841F_161169833.addTaint(taint);
         return var6199C0EAA905687345ED5A344094841F_161169833;
-        // ---------- Original Method ----------
-        //final NetworkStats stats = new NetworkStats(elapsedRealtime, 10);
-        //Entry entry = new Entry();
-        //for (int i = 0; i < size; i++) {
-            //entry = getValues(i, entry);
-            //if (entry.uid != uid) {
-                //stats.addValues(entry);
-            //}
-        //}
-        //return stats;
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -859,28 +862,29 @@ for(int i = 0;i < size;i++)
             pw.print(txPackets[i]);
             pw.print(" operations=");
             pw.println(operations[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //pw.print(prefix);
-        //pw.print("NetworkStats: elapsedRealtime=");
-        //pw.println(elapsedRealtime);
-        //for (int i = 0; i < size; i++) {
-            //pw.print(prefix);
-            //pw.print("  ["); pw.print(i); pw.print("]");
-            //pw.print(" iface="); pw.print(iface[i]);
-            //pw.print(" uid="); pw.print(uid[i]);
-            //pw.print(" set="); pw.print(setToString(set[i]));
-            //pw.print(" tag="); pw.print(tagToString(tag[i]));
-            //pw.print(" rxBytes="); pw.print(rxBytes[i]);
-            //pw.print(" rxPackets="); pw.print(rxPackets[i]);
-            //pw.print(" txBytes="); pw.print(txBytes[i]);
-            //pw.print(" txPackets="); pw.print(txPackets[i]);
-            //pw.print(" operations="); pw.println(operations[i]);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
-        public static String setToString(int set) {
+        @DSModeled(DSC.SAFE)
+    public static String setToString(int set) {
         switch (set) {
             case SET_ALL:
                 return "ALL";
@@ -907,20 +911,21 @@ for(int i = 0;i < size;i++)
 String varEF986DCEFABA18330D92CD8C42EF636E_724773760 =         writer.toString();
         varEF986DCEFABA18330D92CD8C42EF636E_724773760.addTaint(taint);
         return varEF986DCEFABA18330D92CD8C42EF636E_724773760;
-        // ---------- Original Method ----------
-        //final CharArrayWriter writer = new CharArrayWriter();
-        //dump("", new PrintWriter(writer));
-        //return writer.toString();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.050 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D8C5B9116D310B762891758459BCC9F4")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_469844400 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836111118 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_836111118;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -956,7 +961,7 @@ String varEF986DCEFABA18330D92CD8C42EF636E_724773760 =         writer.toString()
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.051 -0400", hash_original_method = "CF147DC846E9FA9CFBACF54E998579AF", hash_generated_method = "F7D90DFA18CB5A7447228376F168D3F6")
         public  Entry() {
             this(IFACE_ALL, UID_ALL, SET_DEFAULT, TAG_NONE, 0L, 0L, 0L, 0L, 0L);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -969,7 +974,7 @@ String varEF986DCEFABA18330D92CD8C42EF636E_724773760 =         writer.toString()
             addTaint(txBytes);
             addTaint(rxPackets);
             addTaint(rxBytes);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -985,16 +990,16 @@ String varEF986DCEFABA18330D92CD8C42EF636E_724773760 =         writer.toString()
             this.txBytes = txBytes;
             this.txPackets = txPackets;
             this.operations = operations;
-            // ---------- Original Method ----------
-            //this.iface = iface;
-            //this.uid = uid;
-            //this.set = set;
-            //this.tag = tag;
-            //this.rxBytes = rxBytes;
-            //this.rxPackets = rxPackets;
-            //this.txBytes = txBytes;
-            //this.txPackets = txPackets;
-            //this.operations = operations;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1014,18 +1019,18 @@ String varEF986DCEFABA18330D92CD8C42EF636E_724773760 =         writer.toString()
 String varF4CF030572656354ACFDF83FEE21D7A6_831315938 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_831315938.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_831315938;
-            // ---------- Original Method ----------
-            //final StringBuilder builder = new StringBuilder();
-            //builder.append("iface=").append(iface);
-            //builder.append(" uid=").append(uid);
-            //builder.append(" set=").append(setToString(set));
-            //builder.append(" tag=").append(tagToString(tag));
-            //builder.append(" rxBytes=").append(rxBytes);
-            //builder.append(" rxPackets=").append(rxPackets);
-            //builder.append(" txBytes=").append(txBytes);
-            //builder.append(" txPackets=").append(txPackets);
-            //builder.append(" operations=").append(operations);
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1052,7 +1057,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_831315938 =             builder.toStr
             this(left, -1, right, -1);
             addTaint(right.getTaint());
             addTaint(left.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1063,11 +1068,11 @@ String varF4CF030572656354ACFDF83FEE21D7A6_831315938 =             builder.toStr
             this.right = checkNotNull(right, "missing right");
             this.leftIndex = leftIndex;
             this.rightIndex = rightIndex;
-            // ---------- Original Method ----------
-            //this.left = checkNotNull(left, "missing left");
-            //this.right = checkNotNull(right, "missing right");
-            //this.leftIndex = leftIndex;
-            //this.rightIndex = rightIndex;
+            
+            
+            
+            
+            
         }
 
         
@@ -1107,12 +1112,12 @@ String varF4CF030572656354ACFDF83FEE21D7A6_831315938 =             builder.toStr
             return new NetworkStats[size];
         }
     };
-    // orphaned legacy method
+    
     public NetworkStats createFromParcel(Parcel in) {
             return new NetworkStats(in);
         }
     
-    // orphaned legacy method
+    
     public NetworkStats[] newArray(int size) {
             return new NetworkStats[size];
         }

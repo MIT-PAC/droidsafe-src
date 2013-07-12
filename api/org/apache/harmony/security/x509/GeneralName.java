@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,7 +47,7 @@ public final class GeneralName {
             IOException var9499341E0BC616F82C026F1F8830C343_900045919 = new IOException("name == null");
             var9499341E0BC616F82C026F1F8830C343_900045919.addTaint(taint);
             throw var9499341E0BC616F82C026F1F8830C343_900045919;
-        } //End block
+        } 
         this.tag = tag;
 switch(tag){
         case OTHER_NAME :
@@ -81,8 +81,8 @@ switch(tag){
         var9500064D91EE0B18E4163E38C1CA4B9D_1466984286.addTaint(taint);
         throw var9500064D91EE0B18E4163E38C1CA4B9D_1466984286;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -90,9 +90,9 @@ switch(tag){
     public  GeneralName(OtherName name) {
         this.tag = OTHER_NAME;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = OTHER_NAME;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -100,9 +100,9 @@ switch(tag){
     public  GeneralName(ORAddress name) {
         this.tag = X400_ADDR;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = X400_ADDR;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -110,9 +110,9 @@ switch(tag){
     public  GeneralName(Name name) {
         this.tag = DIR_NAME;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = DIR_NAME;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -120,9 +120,9 @@ switch(tag){
     public  GeneralName(EDIPartyName name) {
         this.tag = EDIP_NAME;
         this.name = name;
-        // ---------- Original Method ----------
-        //this.tag = EDIP_NAME;
-        //this.name = name;
+        
+        
+        
     }
 
     
@@ -134,18 +134,18 @@ switch(tag){
             IllegalArgumentException var10C540728B922F61CA91D1CCD54071B4_1298622340 = new IllegalArgumentException("name.length invalid");
             var10C540728B922F61CA91D1CCD54071B4_1298622340.addTaint(taint);
             throw var10C540728B922F61CA91D1CCD54071B4_1298622340;
-        } //End block
+        } 
         this.tag = IP_ADDR;
         this.name = new byte[name.length];
         System.arraycopy(name, 0, this.name, 0, name.length);
-        // ---------- Original Method ----------
-        //int length = name.length;
-        //if (length != 4 && length != 8 && length != 16 && length != 32) {
-            //throw new IllegalArgumentException("name.length invalid");
-        //}
-        //this.tag = IP_ADDR;
-        //this.name = new byte[name.length];
-        //System.arraycopy(name, 0, this.name, 0, name.length);
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -156,48 +156,50 @@ switch(tag){
             NullPointerException varA117BA528B11F7D1AC96CABFD5286E5C_397419313 = new NullPointerException("name == null");
             varA117BA528B11F7D1AC96CABFD5286E5C_397419313.addTaint(taint);
             throw varA117BA528B11F7D1AC96CABFD5286E5C_397419313;
-        } //End block
+        } 
     if((tag < 0) || (tag > 8))        
         {
             IOException var103ABEB597C79D1DC6C34F3B986CC20A_928683192 = new IOException("GeneralName: unknown tag: " + tag);
             var103ABEB597C79D1DC6C34F3B986CC20A_928683192.addTaint(taint);
             throw var103ABEB597C79D1DC6C34F3B986CC20A_928683192;
-        } //End block
+        } 
         this.tag = tag;
         this.name_encoding = new byte[name.length];
         System.arraycopy(name, 0, this.name_encoding, 0, name.length);
         this.name = nameASN1[tag].decode(this.name_encoding);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new NullPointerException("name == null");
-        //}
-        //if ((tag < 0) || (tag > 8)) {
-            //throw new IOException("GeneralName: unknown tag: " + tag);
-        //}
-        //this.tag = tag;
-        //this.name_encoding = new byte[name.length];
-        //System.arraycopy(name, 0, this.name_encoding, 0, name.length);
-        //this.name = nameASN1[tag].decode(this.name_encoding);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "749703D76C1808D33D4CAAFA8A986840", hash_generated_method = "8892C63C5B1B65343D6DC553876C5562")
     public int getTag() {
         int varE4D23E841D8E8804190027BCE3180FA5_1323410910 = (tag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1902417792 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1902417792;
-        // ---------- Original Method ----------
-        //return tag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "20B60556BB46EC823C9319E49D0425A2", hash_generated_method = "D55A0377CC2295B559ED7C8861B6EB9A")
     public Object getName() {
 Object varB017984728AC60AD1F0BF8734F33F15C_907179227 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_907179227.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_907179227;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -209,14 +211,14 @@ Object varB017984728AC60AD1F0BF8734F33F15C_907179227 =         name;
             boolean var68934A3E9455FA72420237EB05902327_1395383678 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1755513374 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1755513374;
-        } //End block
+        } 
         GeneralName gname = (GeneralName) other;
     if(this.tag != gname.tag)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1064476187 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1671486581 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1671486581;
-        } //End block
+        } 
 switch(tag){
         case RFC822_NAME:
         case DNS_NAME:
@@ -244,11 +246,12 @@ switch(tag){
 }        boolean var68934A3E9455FA72420237EB05902327_930716897 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1416182736 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1416182736;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.074 -0400", hash_original_method = "A1EE40CF64275F91ADFBB9AA6974DBAD", hash_generated_method = "5D7FF459D226E6E4E391DB451BD0FD79")
     public int hashCode() {
 switch(tag){
@@ -272,22 +275,22 @@ switch(tag){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2120778314 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2120778314;
 }
-        // ---------- Original Method ----------
-        //switch (tag) {
-        //case RFC822_NAME:
-        //case DNS_NAME:
-        //case UR_ID:
-        //case REG_ID:
-        //case IP_ADDR:
-            //return name.hashCode();
-        //case DIR_NAME:
-        //case X400_ADDR:
-        //case OTHER_NAME:
-        //case EDIP_NAME:
-            //return Arrays.hashCode(getEncoded());
-        //default:
-            //return super.hashCode();
-        //}
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -299,7 +302,7 @@ switch(tag){
             boolean var68934A3E9455FA72420237EB05902327_1420952052 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_22161815 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_22161815;
-        } //End block
+        } 
 switch(this.tag){
         case RFC822_NAME:
         boolean varE4DB60F2C2AB68B7EAE66E464520BE15_2126536616 = (((String) gname.getName()).toLowerCase(Locale.US)
@@ -314,13 +317,13 @@ switch(this.tag){
             boolean varB326B5062B2F0E69046810717534CB09_1532951694 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1933481824 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1933481824;
-        } //End block
+        } 
         else
         {
             boolean var68DC9E03119C19CACF04D1711506F838_701958253 = (_dns.toLowerCase(Locale.US).endsWith("." + dns.toLowerCase(Locale.US)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1804915939 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1804915939;
-        } //End block
+        } 
         case UR_ID:
         String uri = (String) name;
         int begin = uri.indexOf("://")+3;
@@ -339,13 +342,13 @@ switch(this.tag){
             boolean var67C9167F240BBF5C137E9CE1795161E3_228949417 = (_host.toLowerCase(Locale.US).endsWith(host.toLowerCase(Locale.US)));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090375849 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090375849;
-        } //End block
+        } 
         else
         {
             boolean var78E4AA002A3CCF4DF18C13ADA9D082E7_1641680636 = (host.equalsIgnoreCase(_host));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_337667753 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_337667753;
-        } //End block
+        } 
         case IP_ADDR:
         byte[] address = (byte[]) name;
         byte[] _address = (byte[]) gname.getName();
@@ -356,7 +359,7 @@ switch(this.tag){
             boolean var6E430C72E819BD2996CDCDC7E5F07116_1265381015 = (Arrays.equals(address, _address));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2083131077 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2083131077;
-        } //End block
+        } 
         else
     if(length == 2*_length)        
         {
@@ -370,18 +373,18 @@ for(int i = 0;i < _address.length;i++)
                     boolean var68934A3E9455FA72420237EB05902327_1012231670 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_384548761 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_384548761;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1342246159 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1652090671 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1652090671;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_310859518 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1516324747 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1516324747;
-        } //End block
+        } 
         case DIR_NAME:
         case X400_ADDR:
         case OTHER_NAME:
@@ -394,8 +397,8 @@ for(int i = 0;i < _address.length;i++)
 }        boolean varB326B5062B2F0E69046810717534CB09_739710612 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1916740518 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1916740518;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -431,11 +434,12 @@ switch(tag){
 }List<Object> varC03C174393C635249B793C3DB15AB950_1633570063 =         Collections.unmodifiableList(result);
         varC03C174393C635249B793C3DB15AB950_1633570063.addTaint(taint);
         return varC03C174393C635249B793C3DB15AB950_1633570063;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.076 -0400", hash_original_method = "4137EA74AADFAF54538362634CBBCA7A", hash_generated_method = "97DA93F1E95E132A0DD1C5A6EB48BC5A")
     public String toString() {
         String result = "";
@@ -475,42 +479,44 @@ switch(tag){
 }String varDC838461EE2FA0CA4C9BBB70A15456B0_486548483 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_486548483.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_486548483;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.076 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "697EC910F9D4CAF8B2D56152E9B29EB8")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1713288793 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2086539205 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2086539205;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.077 -0400", hash_original_method = "37C9CC72170749FE2E2B5C9DA460C3BB", hash_generated_method = "B96E010B503377F8DEA049AA1FE4B64A")
     public byte[] getEncodedName() {
     if(name_encoding == null)        
         {
             name_encoding = nameASN1[tag].encode(name);
-        } //End block
+        } 
         byte[] varB044FB6FD80FBC2A60F506E8E61FE96C_1364312259 = (name_encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1505679674 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1505679674;
-        // ---------- Original Method ----------
-        //if (name_encoding == null) {
-            //name_encoding = nameASN1[tag].encode(name);
-        //}
-        //return name_encoding;
+        
+        
+            
+        
+        
     }
 
     
@@ -545,7 +551,8 @@ switch(tag){
     }
 
     
-        public static void checkURI(String uri) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static void checkURI(String uri) throws IOException {
         try {
             URI ur = new URI(uri);
             if (ur.getScheme() == null || ur.getRawSchemeSpecificPart().isEmpty()) {
@@ -596,7 +603,8 @@ switch(tag){
     }
 
     
-        public static byte[] ipStrToBytes(String ip) throws IOException {
+        @DSModeled(DSC.SAFE)
+    public static byte[] ipStrToBytes(String ip) throws IOException {
         if (!InetAddress.isNumeric(ip)) {
             throw new IOException("Not an IP address: " + ip);
         }
@@ -604,7 +612,8 @@ switch(tag){
     }
 
     
-        public static String ipBytesToStr(byte[] ip) {
+        @DSModeled(DSC.SAFE)
+    public static String ipBytesToStr(byte[] ip) {
         try {
             return InetAddress.getByAddress(null, ip).getHostAddress();
         } catch (UnknownHostException e) {
@@ -716,12 +725,12 @@ switch(tag){
             return result;
         }
     };
-    // orphaned legacy method
+    
     public int getIndex(java.lang.Object object) {
             return  ((GeneralName) object).tag;
         }
     
-    // orphaned legacy method
+    
     public Object getObjectToEncode(Object value) {
             return ((GeneralName) value).name;
         }

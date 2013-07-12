@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ public class RadioGroup extends LinearLayout {
         addTaint(context.getTaint());
         setOrientation(VERTICAL);
         init();
-        // ---------- Original Method ----------
-        //setOrientation(VERTICAL);
-        //init();
+        
+        
+        
     }
 
     
@@ -51,22 +51,22 @@ public class RadioGroup extends LinearLayout {
     if(value != View.NO_ID)        
         {
             mCheckedId = value;
-        } //End block
+        } 
         final int index = attributes.getInt(com.android.internal.R.styleable.RadioGroup_orientation, VERTICAL);
         setOrientation(index);
         attributes.recycle();
         init();
-        // ---------- Original Method ----------
-        //TypedArray attributes = context.obtainStyledAttributes(
-                //attrs, com.android.internal.R.styleable.RadioGroup, com.android.internal.R.attr.radioButtonStyle, 0);
-        //int value = attributes.getResourceId(R.styleable.RadioGroup_checkedButton, View.NO_ID);
-        //if (value != View.NO_ID) {
-            //mCheckedId = value;
-        //}
-        //final int index = attributes.getInt(com.android.internal.R.styleable.RadioGroup_orientation, VERTICAL);
-        //setOrientation(index);
-        //attributes.recycle();
-        //init();
+        
+        
+                
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -75,10 +75,10 @@ public class RadioGroup extends LinearLayout {
         mChildOnCheckedChangeListener = new CheckedStateTracker();
         mPassThroughListener = new PassThroughHierarchyChangeListener();
         super.setOnHierarchyChangeListener(mPassThroughListener);
-        // ---------- Original Method ----------
-        //mChildOnCheckedChangeListener = new CheckedStateTracker();
-        //mPassThroughListener = new PassThroughHierarchyChangeListener();
-        //super.setOnHierarchyChangeListener(mPassThroughListener);
+        
+        
+        
+        
     }
 
     
@@ -86,15 +86,15 @@ public class RadioGroup extends LinearLayout {
     @Override
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
         mPassThroughListener.mOnHierarchyChangeListener = listener;
-        // ---------- Original Method ----------
-        //mPassThroughListener.mOnHierarchyChangeListener = listener;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.164 -0400", hash_original_method = "DD6500FC505DB421A3CAF1F1EB2A0C5C", hash_generated_method = "DBF8F24808C572F56A4F32B014BEF670")
     @Override
     protected void onFinishInflate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onFinishInflate();
     if(mCheckedId != -1)        
         {
@@ -102,15 +102,15 @@ public class RadioGroup extends LinearLayout {
             setCheckedStateForView(mCheckedId, true);
             mProtectFromCheckedChange = false;
             setCheckedId(mCheckedId);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onFinishInflate();
-        //if (mCheckedId != -1) {
-            //mProtectFromCheckedChange = true;
-            //setCheckedStateForView(mCheckedId, true);
-            //mProtectFromCheckedChange = false;
-            //setCheckedId(mCheckedId);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -129,25 +129,25 @@ public class RadioGroup extends LinearLayout {
     if(mCheckedId != -1)                
                 {
                     setCheckedStateForView(mCheckedId, false);
-                } //End block
+                } 
                 mProtectFromCheckedChange = false;
                 setCheckedId(button.getId());
-            } //End block
-        } //End block
+            } 
+        } 
         super.addView(child, index, params);
-        // ---------- Original Method ----------
-        //if (child instanceof RadioButton) {
-            //final RadioButton button = (RadioButton) child;
-            //if (button.isChecked()) {
-                //mProtectFromCheckedChange = true;
-                //if (mCheckedId != -1) {
-                    //setCheckedStateForView(mCheckedId, false);
-                //}
-                //mProtectFromCheckedChange = false;
-                //setCheckedId(button.getId());
-            //}
-        //}
-        //super.addView(child, index, params);
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -157,27 +157,27 @@ public class RadioGroup extends LinearLayout {
     if(id != -1 && (id == mCheckedId))        
         {
             return;
-        } //End block
+        } 
     if(mCheckedId != -1)        
         {
             setCheckedStateForView(mCheckedId, false);
-        } //End block
+        } 
     if(id != -1)        
         {
             setCheckedStateForView(id, true);
-        } //End block
+        } 
         setCheckedId(id);
-        // ---------- Original Method ----------
-        //if (id != -1 && (id == mCheckedId)) {
-            //return;
-        //}
-        //if (mCheckedId != -1) {
-            //setCheckedStateForView(mCheckedId, false);
-        //}
-        //if (id != -1) {
-            //setCheckedStateForView(id, true);
-        //}
-        //setCheckedId(id);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -187,12 +187,12 @@ public class RadioGroup extends LinearLayout {
     if(mOnCheckedChangeListener != null)        
         {
             mOnCheckedChangeListener.onCheckedChanged(this, mCheckedId);
-        } //End block
-        // ---------- Original Method ----------
-        //mCheckedId = id;
-        //if (mOnCheckedChangeListener != null) {
-            //mOnCheckedChangeListener.onCheckedChanged(this, mCheckedId);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -204,38 +204,40 @@ public class RadioGroup extends LinearLayout {
     if(checkedView != null && checkedView instanceof RadioButton)        
         {
             ((RadioButton) checkedView).setChecked(checked);
-        } //End block
-        // ---------- Original Method ----------
-        //View checkedView = findViewById(viewId);
-        //if (checkedView != null && checkedView instanceof RadioButton) {
-            //((RadioButton) checkedView).setChecked(checked);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "4E7CCBBB1B50F6FD1945ECEEEDBB325B")
     public int getCheckedRadioButtonId() {
         int var1628F13DF17E9E9D9F9B263B8D9EDD6C_764768180 = (mCheckedId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660943281 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_660943281;
-        // ---------- Original Method ----------
-        //return mCheckedId;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "E28523184AF4023EBEA953058E4D04A2", hash_generated_method = "D8007F290A68FFDEA50A5A5C241BC5A3")
     public void clearCheck() {
         check(-1);
-        // ---------- Original Method ----------
-        //check(-1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "C2FB0C98D5222F68A09A56AA82371FFE", hash_generated_method = "E7A52B8D01F324B4A1B6AA133FD3E1C1")
     public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
         mOnCheckedChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnCheckedChangeListener = listener;
+        
+        
     }
 
     
@@ -246,11 +248,12 @@ public class RadioGroup extends LinearLayout {
 LayoutParams var2B042AB9A3A848AB14156E90F264A184_1394145876 =         new RadioGroup.LayoutParams(getContext(), attrs);
         var2B042AB9A3A848AB14156E90F264A184_1394145876.addTaint(taint);
         return var2B042AB9A3A848AB14156E90F264A184_1394145876;
-        // ---------- Original Method ----------
-        //return new RadioGroup.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.168 -0400", hash_original_method = "B6F650811616014198C7164725061E28", hash_generated_method = "694C4212BDCCF369FC09D39DA131287D")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -258,8 +261,8 @@ LayoutParams var2B042AB9A3A848AB14156E90F264A184_1394145876 =         new RadioG
         boolean var820C2E66152EA2081C50BE1DBC60B484_1983527581 = (p instanceof RadioGroup.LayoutParams);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2115726777 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2115726777;
-        // ---------- Original Method ----------
-        //return p instanceof RadioGroup.LayoutParams;
+        
+        
     }
 
     
@@ -269,8 +272,8 @@ LayoutParams var2B042AB9A3A848AB14156E90F264A184_1394145876 =         new RadioG
 LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =         new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250.addTaint(taint);
         return var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        
+        
     }
 
     
@@ -281,7 +284,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
             super(c, attrs);
             addTaint(attrs.getTaint());
             addTaint(c.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -290,7 +293,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
             super(w, h);
             addTaint(h);
             addTaint(w);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -300,7 +303,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
             addTaint(initWeight);
             addTaint(h);
             addTaint(w);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -308,7 +311,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
         public  LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
             addTaint(p.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -316,7 +319,7 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
         public  LayoutParams(MarginLayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -330,30 +333,30 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
     if(a.hasValue(widthAttr))            
             {
                 width = a.getLayoutDimension(widthAttr, "layout_width");
-            } //End block
+            } 
             else
             {
                 width = WRAP_CONTENT;
-            } //End block
+            } 
     if(a.hasValue(heightAttr))            
             {
                 height = a.getLayoutDimension(heightAttr, "layout_height");
-            } //End block
+            } 
             else
             {
                 height = WRAP_CONTENT;
-            } //End block
-            // ---------- Original Method ----------
-            //if (a.hasValue(widthAttr)) {
-                //width = a.getLayoutDimension(widthAttr, "layout_width");
-            //} else {
-                //width = WRAP_CONTENT;
-            //}
-            //if (a.hasValue(heightAttr)) {
-                //height = a.getLayoutDimension(heightAttr, "layout_height");
-            //} else {
-                //height = WRAP_CONTENT;
-            //}
+            } 
+            
+            
+                
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -366,38 +369,38 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.171 -0400", hash_original_method = "E2AC7F511959AF87F19610FB00EDC800", hash_generated_method = "E2AC7F511959AF87F19610FB00EDC800")
         public CheckedStateTracker ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.171 -0400", hash_original_method = "E56141A548162EED06032B62A97D492B", hash_generated_method = "CCBD7BC0FCE5FA51DEF368DFD17DD2F2")
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(isChecked);
             addTaint(buttonView.getTaint());
     if(mProtectFromCheckedChange)            
             {
                 return;
-            } //End block
+            } 
             mProtectFromCheckedChange = true;
     if(mCheckedId != -1)            
             {
                 setCheckedStateForView(mCheckedId, false);
-            } //End block
+            } 
             mProtectFromCheckedChange = false;
             int id = buttonView.getId();
             setCheckedId(id);
-            // ---------- Original Method ----------
-            //if (mProtectFromCheckedChange) {
-                //return;
-            //}
-            //mProtectFromCheckedChange = true;
-            //if (mCheckedId != -1) {
-                //setCheckedStateForView(mCheckedId, false);
-            //}
-            //mProtectFromCheckedChange = false;
-            //int id = buttonView.getId();
-            //setCheckedId(id);
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -413,13 +416,13 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.172 -0400", hash_original_method = "0DD100C097C91E6D30F06426909CA640", hash_generated_method = "0DD100C097C91E6D30F06426909CA640")
         public PassThroughHierarchyChangeListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.172 -0400", hash_original_method = "9AE0BCF025F178DCB126CF7F54B6A426", hash_generated_method = "61BAB28359F7BBE5C1A863CDBFFF5D03")
         public void onChildViewAdded(View parent, View child) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(child.getTaint());
             addTaint(parent.getTaint());
     if(parent == RadioGroup.this && child instanceof RadioButton)            
@@ -429,50 +432,50 @@ LinearLayout.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2053469250 =      
                 {
                     id = child.hashCode();
                     child.setId(id);
-                } //End block
+                } 
                 ((RadioButton) child).setOnCheckedChangeWidgetListener(
                         mChildOnCheckedChangeListener);
-            } //End block
+            } 
     if(mOnHierarchyChangeListener != null)            
             {
                 mOnHierarchyChangeListener.onChildViewAdded(parent, child);
-            } //End block
-            // ---------- Original Method ----------
-            //if (parent == RadioGroup.this && child instanceof RadioButton) {
-                //int id = child.getId();
-                //if (id == View.NO_ID) {
-                    //id = child.hashCode();
-                    //child.setId(id);
-                //}
-                //((RadioButton) child).setOnCheckedChangeWidgetListener(
-                        //mChildOnCheckedChangeListener);
-            //}
-            //if (mOnHierarchyChangeListener != null) {
-                //mOnHierarchyChangeListener.onChildViewAdded(parent, child);
-            //}
+            } 
+            
+            
+                
+                
+                    
+                    
+                
+                
+                        
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.172 -0400", hash_original_method = "14A14DEA096CEDEB26071DA272A91074", hash_generated_method = "F34FCFF6D75202C41CA842071553CB8D")
         public void onChildViewRemoved(View parent, View child) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(child.getTaint());
             addTaint(parent.getTaint());
     if(parent == RadioGroup.this && child instanceof RadioButton)            
             {
                 ((RadioButton) child).setOnCheckedChangeWidgetListener(null);
-            } //End block
+            } 
     if(mOnHierarchyChangeListener != null)            
             {
                 mOnHierarchyChangeListener.onChildViewRemoved(parent, child);
-            } //End block
-            // ---------- Original Method ----------
-            //if (parent == RadioGroup.this && child instanceof RadioButton) {
-                //((RadioButton) child).setOnCheckedChangeWidgetListener(null);
-            //}
-            //if (mOnHierarchyChangeListener != null) {
-                //mOnHierarchyChangeListener.onChildViewRemoved(parent, child);
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+            
         }
 
         

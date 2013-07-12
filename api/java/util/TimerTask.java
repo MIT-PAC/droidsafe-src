@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,10 +27,11 @@ public abstract class TimerTask implements Runnable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "77D10C16E519E63639DFE51A512851F6")
     protected  TimerTask() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "61DD03075FF1927377D7CEC2AE97ED1A", hash_generated_method = "2AFF3D5046FCAE960C8C46DAD299DB87")
      long getWhen() {
         synchronized
@@ -38,27 +39,29 @@ public abstract class TimerTask implements Runnable {
             long varDF491A4DE50739FA9CFFDBD4E3F4B4BB_832989907 = (when);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1735712240 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1735712240;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return when;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "AE139E2AB369CB1B1C48D00C62C96DCB", hash_generated_method = "A9573B48ADB09ADFE8DADC78CC51F376")
      void setScheduledTime(long time) {
         synchronized
 (lock)        {
             scheduledTime = time;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //scheduledTime = time;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "0BC3D740AEEAEAE472C572E03A1906A5", hash_generated_method = "EFCAA4942CD8B52F1390536D44FDA5B1")
      boolean isScheduled() {
         synchronized
@@ -66,14 +69,15 @@ public abstract class TimerTask implements Runnable {
             boolean varA2AB6FCA069AF5ADD6E13BE35BFFC2DD_122397547 = (when > 0 || scheduledTime > 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1441393306 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1441393306;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return when > 0 || scheduledTime > 0;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.936 -0400", hash_original_method = "1700D6DAFB7BC2815E6FE0B3C1768102", hash_generated_method = "BD0461B6CCF2DDF9A67DA5F21C81FD89")
     public boolean cancel() {
         synchronized
@@ -83,16 +87,17 @@ public abstract class TimerTask implements Runnable {
             boolean varC621FE5823F5FB29797383D294DB8EC2_900994701 = (willRun);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_351401634 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_351401634;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //boolean willRun = !cancelled && when > 0;
-            //cancelled = true;
-            //return willRun;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:13.937 -0400", hash_original_method = "BAEF9B11043548CD5E25A5F175F23300", hash_generated_method = "54B5C10B813ECBF9F70042BD4FDAEC7C")
     public long scheduledExecutionTime() {
         synchronized
@@ -100,11 +105,11 @@ public abstract class TimerTask implements Runnable {
             long varD2DDA425E4864CAC7B1D489588F99ABC_1211630301 = (scheduledTime);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_486927416 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_486927416;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //return scheduledTime;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

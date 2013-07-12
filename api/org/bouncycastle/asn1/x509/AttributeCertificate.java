@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,10 +30,10 @@ public class AttributeCertificate extends ASN1Encodable {
         this.acinfo = acinfo;
         this.signatureAlgorithm = signatureAlgorithm;
         this.signatureValue = signatureValue;
-        // ---------- Original Method ----------
-        //this.acinfo = acinfo;
-        //this.signatureAlgorithm = signatureAlgorithm;
-        //this.signatureValue = signatureValue;
+        
+        
+        
+        
     }
 
     
@@ -46,23 +46,24 @@ public class AttributeCertificate extends ASN1Encodable {
                     + seq.size());
             varA2072CF614C7B8C7696DD5A02DBCCE9C_678102236.addTaint(taint);
             throw varA2072CF614C7B8C7696DD5A02DBCCE9C_678102236;
-        } //End block
+        } 
         this.acinfo = AttributeCertificateInfo.getInstance(seq.getObjectAt(0));
         this.signatureAlgorithm = AlgorithmIdentifier.getInstance(seq.getObjectAt(1));
         this.signatureValue = DERBitString.getInstance(seq.getObjectAt(2));
-        // ---------- Original Method ----------
-        //if (seq.size() != 3)
-        //{
-            //throw new IllegalArgumentException("Bad sequence size: "
-                    //+ seq.size());
-        //}
-        //this.acinfo = AttributeCertificateInfo.getInstance(seq.getObjectAt(0));
-        //this.signatureAlgorithm = AlgorithmIdentifier.getInstance(seq.getObjectAt(1));
-        //this.signatureValue = DERBitString.getInstance(seq.getObjectAt(2));
+        
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
-        public static AttributeCertificate getInstance(Object obj) {
+        @DSModeled(DSC.SPEC)
+    public static AttributeCertificate getInstance(Object obj) {
         if (obj instanceof AttributeCertificate)
         {
             return (AttributeCertificate)obj;
@@ -75,33 +76,36 @@ public class AttributeCertificate extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.955 -0400", hash_original_method = "B550BE2A3120BC2739AC35C67600D16E", hash_generated_method = "B42FBCB5A8F110AD59D4DEF4A8C9B551")
     public AttributeCertificateInfo getAcinfo() {
 AttributeCertificateInfo varB8168BAF3CCFEADFD88512FAEFB35EEA_2091208534 =         acinfo;
         varB8168BAF3CCFEADFD88512FAEFB35EEA_2091208534.addTaint(taint);
         return varB8168BAF3CCFEADFD88512FAEFB35EEA_2091208534;
-        // ---------- Original Method ----------
-        //return acinfo;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.955 -0400", hash_original_method = "7848C69970B1A1FD0A4AF2994EC6E56B", hash_generated_method = "BB071D201301566AAD4FCBA38DFDCFE0")
     public AlgorithmIdentifier getSignatureAlgorithm() {
 AlgorithmIdentifier varFDDD2CEACD087E92485B2CF6A2712FDB_1154836378 =         signatureAlgorithm;
         varFDDD2CEACD087E92485B2CF6A2712FDB_1154836378.addTaint(taint);
         return varFDDD2CEACD087E92485B2CF6A2712FDB_1154836378;
-        // ---------- Original Method ----------
-        //return signatureAlgorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.956 -0400", hash_original_method = "C8410B5B4D26900579B7A994FFDFFA14", hash_generated_method = "B136C10908B6CD550F763697EA8C55A2")
     public DERBitString getSignatureValue() {
 DERBitString var31AD78CB3EB86CD4C82203E47E0AA933_1906962579 =         signatureValue;
         var31AD78CB3EB86CD4C82203E47E0AA933_1906962579.addTaint(taint);
         return var31AD78CB3EB86CD4C82203E47E0AA933_1906962579;
-        // ---------- Original Method ----------
-        //return signatureValue;
+        
+        
     }
 
     
@@ -114,12 +118,12 @@ DERBitString var31AD78CB3EB86CD4C82203E47E0AA933_1906962579 =         signatureV
 DERObject var0B338F106E3279986C87B595B0F4A439_912519055 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_912519055.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_912519055;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(acinfo);
-        //v.add(signatureAlgorithm);
-        //v.add(signatureValue);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
+        
     }
 
     

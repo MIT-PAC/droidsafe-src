@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,26 +16,27 @@ public class ColorFilter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.082 -0400", hash_original_method = "046AE4C958596245478875223EE4194E", hash_generated_method = "046AE4C958596245478875223EE4194E")
     public ColorFilter ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.083 -0400", hash_original_method = "4AD2A6CCCDD358BAD652AE03056C36C3", hash_generated_method = "705C0CD94FF3798AD8571A1588FCA6C7")
     protected void finalize() throws Throwable {
         try 
         {
             super.finalize();
-        } //End block
+        } 
         finally 
         {
             finalizer(native_instance, nativeColorFilter);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //super.finalize();
-        //} finally {
-            //finalizer(native_instance, nativeColorFilter);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

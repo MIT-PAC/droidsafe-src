@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,7 +40,7 @@ public class ViewFlipper extends ViewAnimator {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.102 -0400", hash_original_method = "42FB9B1799748BE0453D66D785C793D7", hash_generated_method = "7CF62093314DB968F107DD7907FD4417")
         @Override
         public void onReceive(Context context, Intent intent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(intent.getTaint());
             addTaint(context.getTaint());
             final String action = intent.getAction();
@@ -48,22 +48,22 @@ public class ViewFlipper extends ViewAnimator {
             {
                 mUserPresent = false;
                 updateRunning();
-            } //End block
+            } 
             else
     if(Intent.ACTION_USER_PRESENT.equals(action))            
             {
                 mUserPresent = true;
                 updateRunning(false);
-            } //End block
-            // ---------- Original Method ----------
-            //final String action = intent.getAction();
-            //if (Intent.ACTION_SCREEN_OFF.equals(action)) {
-                //mUserPresent = false;
-                //updateRunning();
-            //} else if (Intent.ACTION_USER_PRESENT.equals(action)) {
-                //mUserPresent = true;
-                //updateRunning(false);
-            //}
+            } 
+            
+            
+            
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -85,16 +85,16 @@ public class ViewFlipper extends ViewAnimator {
                     showNext();
                     msg = obtainMessage(FLIP_MSG);
                     sendMessageDelayed(msg, mFlipInterval);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (msg.what == FLIP_MSG) {
-                //if (mRunning) {
-                    //showNext();
-                    //msg = obtainMessage(FLIP_MSG);
-                    //sendMessageDelayed(msg, mFlipInterval);
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -104,7 +104,7 @@ public class ViewFlipper extends ViewAnimator {
     public  ViewFlipper(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -120,21 +120,21 @@ public class ViewFlipper extends ViewAnimator {
         mAutoStart = a.getBoolean(
                 com.android.internal.R.styleable.ViewFlipper_autoStart, false);
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.ViewFlipper);
-        //mFlipInterval = a.getInt(
-                //com.android.internal.R.styleable.ViewFlipper_flipInterval, DEFAULT_INTERVAL);
-        //mAutoStart = a.getBoolean(
-                //com.android.internal.R.styleable.ViewFlipper_autoStart, false);
-        //a.recycle();
+        
+        
+                
+        
+                
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.104 -0400", hash_original_method = "3C103BE4B999027DCB77DEB70D76599C", hash_generated_method = "56ACD26DC3FECE8BECD1A84A8FD6652E")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         final IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -143,55 +143,56 @@ public class ViewFlipper extends ViewAnimator {
     if(mAutoStart)        
         {
             startFlipping();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //final IntentFilter filter = new IntentFilter();
-        //filter.addAction(Intent.ACTION_SCREEN_OFF);
-        //filter.addAction(Intent.ACTION_USER_PRESENT);
-        //getContext().registerReceiver(mReceiver, filter);
-        //if (mAutoStart) {
-            //startFlipping();
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.105 -0400", hash_original_method = "5655570C437E83231F73A4B16A590D9C", hash_generated_method = "1626FB59EA0EC65657B41C811C1E9B62")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         mVisible = false;
         getContext().unregisterReceiver(mReceiver);
         updateRunning();
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //mVisible = false;
-        //getContext().unregisterReceiver(mReceiver);
-        //updateRunning();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.105 -0400", hash_original_method = "B937BC0D8F057FC72AF74494BA3F6E3F", hash_generated_method = "B204E105A37E32714A21261055CC4D32")
     @Override
     protected void onWindowVisibilityChanged(int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onWindowVisibilityChanged(visibility);
         mVisible = visibility == VISIBLE;
         updateRunning(false);
-        // ---------- Original Method ----------
-        //super.onWindowVisibilityChanged(visibility);
-        //mVisible = visibility == VISIBLE;
-        //updateRunning(false);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.106 -0400", hash_original_method = "FE23BFE06BF9BB8E822638D81DB338AA", hash_generated_method = "188583DA2B863DCE0CA05C073A880E59")
     @android.view.RemotableViewMethod
     public void setFlipInterval(int milliseconds) {
         mFlipInterval = milliseconds;
-        // ---------- Original Method ----------
-        //mFlipInterval = milliseconds;
+        
+        
     }
 
     
@@ -199,9 +200,9 @@ public class ViewFlipper extends ViewAnimator {
     public void startFlipping() {
         mStarted = true;
         updateRunning();
-        // ---------- Original Method ----------
-        //mStarted = true;
-        //updateRunning();
+        
+        
+        
     }
 
     
@@ -209,17 +210,17 @@ public class ViewFlipper extends ViewAnimator {
     public void stopFlipping() {
         mStarted = false;
         updateRunning();
-        // ---------- Original Method ----------
-        //mStarted = false;
-        //updateRunning();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.106 -0400", hash_original_method = "01EB120A60E7A5C93ADD152BE225A9A1", hash_generated_method = "95DAE41B7EF1D4EE1E159B09B77728E8")
     private void updateRunning() {
         updateRunning(true);
-        // ---------- Original Method ----------
-        //updateRunning(true);
+        
+        
     }
 
     
@@ -234,62 +235,65 @@ public class ViewFlipper extends ViewAnimator {
                 showOnly(mWhichChild, flipNow);
                 Message msg = mHandler.obtainMessage(FLIP_MSG);
                 mHandler.sendMessageDelayed(msg, mFlipInterval);
-            } //End block
+            } 
             else
             {
                 mHandler.removeMessages(FLIP_MSG);
-            } //End block
+            } 
             mRunning = running;
-        } //End block
+        } 
     if(LOGD)        
         {
             Log.d(TAG, "updateRunning() mVisible=" + mVisible + ", mStarted=" + mStarted
                     + ", mUserPresent=" + mUserPresent + ", mRunning=" + mRunning);
-        } //End block
-        // ---------- Original Method ----------
-        //boolean running = mVisible && mStarted && mUserPresent;
-        //if (running != mRunning) {
-            //if (running) {
-                //showOnly(mWhichChild, flipNow);
-                //Message msg = mHandler.obtainMessage(FLIP_MSG);
-                //mHandler.sendMessageDelayed(msg, mFlipInterval);
-            //} else {
-                //mHandler.removeMessages(FLIP_MSG);
-            //}
-            //mRunning = running;
-        //}
-        //if (LOGD) {
-            //Log.d(TAG, "updateRunning() mVisible=" + mVisible + ", mStarted=" + mStarted
-                    //+ ", mUserPresent=" + mUserPresent + ", mRunning=" + mRunning);
-        //}
+        } 
+        
+        
+        
+            
+                
+                
+                
+            
+                
+            
+            
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.107 -0400", hash_original_method = "DA5270F6FAC446A7F1E0A4F7A45712B2", hash_generated_method = "F251C9EC03A0D1EC8A7DD2B46043FA2D")
     public boolean isFlipping() {
         boolean var7103AE9E2C0D3B676C4EDC763D39DFCF_1857064561 = (mStarted);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942567119 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942567119;
-        // ---------- Original Method ----------
-        //return mStarted;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.108 -0400", hash_original_method = "718522AE4DB02C55EF285DE2125FBBC5", hash_generated_method = "08DBE650A810C02E22CB6F0FC46C6DBE")
     public void setAutoStart(boolean autoStart) {
         mAutoStart = autoStart;
-        // ---------- Original Method ----------
-        //mAutoStart = autoStart;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.108 -0400", hash_original_method = "0E315A42E6B247C6D130CCD7ADAB21A6", hash_generated_method = "44592060E426572EF13160542E620BE4")
     public boolean isAutoStart() {
         boolean varDCC34F800E29708C501869F2DC7EB795_1246783056 = (mAutoStart);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_851296697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_851296697;
-        // ---------- Original Method ----------
-        //return mAutoStart;
+        
+        
     }
 
     

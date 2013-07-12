@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,19 +27,19 @@ public abstract class FileLock {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_232510318 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_232510318.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_232510318;
-        } //End block
+        } 
         this.channel = channel;
         this.position = position;
         this.size = size;
         this.shared = shared;
-        // ---------- Original Method ----------
-        //if (position < 0 || size < 0 || position + size < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //this.channel = channel;
-        //this.position = position;
-        //this.size = size;
-        //this.shared = shared;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ public abstract class FileLock {
 FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_404954840 =         channel;
         var99BA3483FD74E36EACD435CEE6BD5D6F_404954840.addTaint(taint);
         return var99BA3483FD74E36EACD435CEE6BD5D6F_404954840;
-        // ---------- Original Method ----------
-        //return channel;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_404954840 =         channel;
         long var4757FE07FD492A8BE0EA6A760D683D6E_1374543241 = (position);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1732518068 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1732518068;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     
@@ -68,8 +68,8 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_404954840 =         channel;
         long varF7BD60B75B29D79B660A2859395C1A24_1598604602 = (size);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1999840446 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1999840446;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -78,8 +78,8 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_404954840 =         channel;
         boolean var9E81E7B963C71363E2FB3EEFCFECFC0E_2057608661 = (shared);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1403967802 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1403967802;
-        // ---------- Original Method ----------
-        //return shared;
+        
+        
     }
 
     
@@ -94,17 +94,17 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_404954840 =         channel;
             boolean var68934A3E9455FA72420237EB05902327_949228314 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_230282461 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_230282461;
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_652289934 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107103699 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107103699;
-        // ---------- Original Method ----------
-        //final long end = position + size - 1;
-        //final long newEnd = start + length - 1;
-        //if (end < start || position > newEnd) {
-            //return false;
-        //}
-        //return true;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -120,8 +120,8 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_404954840 =         channel;
 String var8E19B0E47F27C9581CD7CF22D53F3239_1478177746 =         "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
         var8E19B0E47F27C9581CD7CF22D53F3239_1478177746.addTaint(taint);
         return var8E19B0E47F27C9581CD7CF22D53F3239_1478177746;
-        // ---------- Original Method ----------
-        //return "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
+        
+        
     }
 
     

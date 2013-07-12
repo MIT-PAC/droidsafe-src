@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,19 +18,20 @@ public class OIDTokenizer {
         String oid) {
         this.oid = oid;
         this.index = 0;
-        // ---------- Original Method ----------
-        //this.oid = oid;
-        //this.index = 0;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.326 -0400", hash_original_method = "F35D489C40702BC97B5927032D797DB7", hash_generated_method = "5EED90B8F208836C509F5032B3784883")
     public boolean hasMoreTokens() {
         boolean varE5F4E98AA57F17F27119AAE61ABF5CD9_881369438 = ((index != -1));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_238815462 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_238815462;
-        // ---------- Original Method ----------
-        //return (index != -1);
+        
+        
     }
 
     
@@ -41,7 +42,7 @@ public class OIDTokenizer {
 String var540C13E9E156B687226421B24F2DF178_137325307 =             null;
             var540C13E9E156B687226421B24F2DF178_137325307.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_137325307;
-        } //End block
+        } 
         String token;
         int end = oid.indexOf('.', index);
     if(end == -1)        
@@ -51,28 +52,28 @@ String var540C13E9E156B687226421B24F2DF178_137325307 =             null;
 String var84AE1F94A3CF2A5D8DE4571F3693A75E_462492374 =             token;
             var84AE1F94A3CF2A5D8DE4571F3693A75E_462492374.addTaint(taint);
             return var84AE1F94A3CF2A5D8DE4571F3693A75E_462492374;
-        } //End block
+        } 
         token = oid.substring(index, end);
         index = end + 1;
 String var84AE1F94A3CF2A5D8DE4571F3693A75E_594807983 =         token;
         var84AE1F94A3CF2A5D8DE4571F3693A75E_594807983.addTaint(taint);
         return var84AE1F94A3CF2A5D8DE4571F3693A75E_594807983;
-        // ---------- Original Method ----------
-        //if (index == -1)
-        //{
-            //return null;
-        //}
-        //String  token;
-        //int     end = oid.indexOf('.', index);
-        //if (end == -1)
-        //{
-            //token = oid.substring(index);
-            //index = -1;
-            //return token;
-        //}
-        //token = oid.substring(index, end);
-        //index = end + 1;
-        //return token;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class TransportNotSupportedException extends SipException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.333 -0400", hash_original_method = "A9536702FA2FD929BCAA03BE02DE378D", hash_generated_method = "E158EFA88D439F44ECE432CEE5044D3E")
     public  TransportNotSupportedException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class TransportNotSupportedException extends SipException {
     public  TransportNotSupportedException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class TransportNotSupportedException extends SipException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

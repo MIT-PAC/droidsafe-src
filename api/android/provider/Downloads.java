@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class Downloads {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.273 -0400", hash_original_method = "9B4A677720B6322F28A15E895C99B092", hash_generated_method = "BCFC969F167E5171E2BDC38F7DDB8203")
     private  Downloads() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,42 +20,49 @@ public final class Downloads {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.275 -0400", hash_original_method = "BBF0D9B1CF16C5FC7549DABF49EBEFE0", hash_generated_method = "3F538DB11C86ADB27843AD5963111DF7")
         private  Impl() {
-            // ---------- Original Method ----------
+            
         }
 
         
-                public static boolean isStatusInformational(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusInformational(int status) {
             return (status >= 100 && status < 200);
         }
 
         
-                public static boolean isStatusSuccess(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusSuccess(int status) {
             return (status >= 200 && status < 300);
         }
 
         
-                public static boolean isStatusError(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusError(int status) {
             return (status >= 400 && status < 600);
         }
 
         
-                public static boolean isStatusClientError(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusClientError(int status) {
             return (status >= 400 && status < 500);
         }
 
         
-                public static boolean isStatusServerError(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusServerError(int status) {
             return (status >= 500 && status < 600);
         }
 
         
-                public static boolean isNotificationToBeDisplayed(int visibility) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isNotificationToBeDisplayed(int visibility) {
             return visibility == DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED ||
                     visibility == DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_ONLY_COMPLETION;
         }
 
         
-                public static boolean isStatusCompleted(int status) {
+                @DSModeled(DSC.SAFE)
+        public static boolean isStatusCompleted(int status) {
             return (status >= 200 && status < 300) || (status >= 400 && status < 600);
         }
 
@@ -65,7 +72,7 @@ public final class Downloads {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.276 -0400", hash_original_method = "B06C81148D4BC4223C2D3A656DC9543B", hash_generated_method = "B06C81148D4BC4223C2D3A656DC9543B")
             public RequestHeaders ()
             {
-                //Synthesized constructor
+                
             }
 
 

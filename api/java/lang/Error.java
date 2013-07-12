@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class Error extends Throwable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.710 -0400", hash_original_method = "7D5BF5C7538ED3BFC2F69913B33169E2", hash_generated_method = "E209531049EACBDCA8E9D86003B7419F")
     public  Error() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class Error extends Throwable {
     public  Error(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class Error extends Throwable {
         super(detailMessage, throwable);
         addTaint(throwable.getTaint());
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class Error extends Throwable {
     public  Error(Throwable throwable) {
         super(throwable);
         addTaint(throwable.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

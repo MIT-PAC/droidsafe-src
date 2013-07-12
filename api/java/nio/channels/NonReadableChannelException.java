@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class NonReadableChannelException extends IllegalStateException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.629 -0400", hash_original_method = "153970A198E73B0BD66C506FE023CFB7", hash_generated_method = "E4035C6B6FFEB2FA84B0CB017097EAE9")
     public  NonReadableChannelException() {
-        // ---------- Original Method ----------
+        
     }
 
     

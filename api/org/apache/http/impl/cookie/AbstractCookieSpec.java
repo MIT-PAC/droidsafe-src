@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,15 +19,15 @@ public abstract class AbstractCookieSpec implements CookieSpec {
     public  AbstractCookieSpec() {
         super();
         this.attribHandlerMap = new HashMap<String, CookieAttributeHandler>(10);
-        // ---------- Original Method ----------
-        //this.attribHandlerMap = new HashMap<String, CookieAttributeHandler>(10);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.206 -0400", hash_original_method = "9190789BDD8DB6BFF150C07D3746174E", hash_generated_method = "B40031AD9E591D23DA381AC54E960013")
     public void registerAttribHandler(
             final String name, final CookieAttributeHandler handler) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(handler.getTaint());
         addTaint(name.getTaint());
     if(name == null)        
@@ -35,22 +35,22 @@ public abstract class AbstractCookieSpec implements CookieSpec {
             IllegalArgumentException varA390B70006C1E514A593DE2D1F4678FE_1753277672 = new IllegalArgumentException("Attribute name may not be null");
             varA390B70006C1E514A593DE2D1F4678FE_1753277672.addTaint(taint);
             throw varA390B70006C1E514A593DE2D1F4678FE_1753277672;
-        } //End block
+        } 
     if(handler == null)        
         {
             IllegalArgumentException var3E1C6FBDD5FF4F5B7F0BD01CC53EE29B_1974665883 = new IllegalArgumentException("Attribute handler may not be null");
             var3E1C6FBDD5FF4F5B7F0BD01CC53EE29B_1974665883.addTaint(taint);
             throw var3E1C6FBDD5FF4F5B7F0BD01CC53EE29B_1974665883;
-        } //End block
+        } 
         this.attribHandlerMap.put(name, handler);
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("Attribute name may not be null");
-        //}
-        //if (handler == null) {
-            //throw new IllegalArgumentException("Attribute handler may not be null");
-        //}
-        //this.attribHandlerMap.put(name, handler);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ public abstract class AbstractCookieSpec implements CookieSpec {
 CookieAttributeHandler var7CB6F905BCF04D6249C4063CC6DBE304_415983569 =         this.attribHandlerMap.get(name);
         var7CB6F905BCF04D6249C4063CC6DBE304_415983569.addTaint(taint);
         return var7CB6F905BCF04D6249C4063CC6DBE304_415983569;
-        // ---------- Original Method ----------
-        //return this.attribHandlerMap.get(name);
+        
+        
     }
 
     
@@ -75,21 +75,21 @@ CookieAttributeHandler var7CB6F905BCF04D6249C4063CC6DBE304_415983569 =         t
                                             name + " attribute.");
             var10744B93194C74D7CF3940968F159D2D_1137728493.addTaint(taint);
             throw var10744B93194C74D7CF3940968F159D2D_1137728493;
-        } //End block
+        } 
         else
         {
 CookieAttributeHandler var3E73215C2EA435E7F052AAB7C8597D27_1378687607 =             handler;
             var3E73215C2EA435E7F052AAB7C8597D27_1378687607.addTaint(taint);
             return var3E73215C2EA435E7F052AAB7C8597D27_1378687607;
-        } //End block
-        // ---------- Original Method ----------
-        //CookieAttributeHandler handler = findAttribHandler(name);
-        //if (handler == null) {
-            //throw new IllegalStateException("Handler not registered for " +
-                                            //name + " attribute.");
-        //} else {
-            //return handler;
-        //}
+        } 
+        
+        
+        
+            
+                                            
+        
+            
+        
     }
 
     
@@ -98,8 +98,8 @@ CookieAttributeHandler var3E73215C2EA435E7F052AAB7C8597D27_1378687607 =         
 Collection<CookieAttributeHandler> var4186A4F29AAD2C613AF1424EC7B20E08_1357204114 =         this.attribHandlerMap.values();
         var4186A4F29AAD2C613AF1424EC7B20E08_1357204114.addTaint(taint);
         return var4186A4F29AAD2C613AF1424EC7B20E08_1357204114;
-        // ---------- Original Method ----------
-        //return this.attribHandlerMap.values();
+        
+        
     }
 
     

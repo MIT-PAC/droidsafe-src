@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,17 +43,17 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_721857634 = new IllegalArgumentException("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_721857634.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_721857634;
-        } //End block
+        } 
         this.schemeRegistry = schreg;
         this.connOperator   = createConnectionOperator(schreg);
         this.connectionPool = createConnectionPool(params);
-        // ---------- Original Method ----------
-        //if (params == null) {
-            //throw new IllegalArgumentException("HTTP parameters may not be null");
-        //}
-        //this.schemeRegistry = schreg;
-        //this.connOperator   = createConnectionOperator(schreg);
-        //this.connectionPool = createConnectionPool(params);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -62,9 +62,9 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     protected void finalize() throws Throwable {
         shutdown();
         super.finalize();
-        // ---------- Original Method ----------
-        //shutdown();
-        //super.finalize();
+        
+        
+        
     }
 
     
@@ -76,17 +76,17 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
     if(conngc)        
         {
             acp.enableConnectionGC();
-        } //End block
+        } 
 AbstractConnPool varE953D28529A29D0923F05A1180B1C595_1912163811 =         acp;
         varE953D28529A29D0923F05A1180B1C595_1912163811.addTaint(taint);
         return varE953D28529A29D0923F05A1180B1C595_1912163811;
-        // ---------- Original Method ----------
-        //AbstractConnPool acp = new ConnPoolByRoute(connOperator, params);
-        //boolean conngc = true;
-        //if (conngc) {
-            //acp.enableConnectionGC();
-        //}
-        //return acp;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -96,18 +96,19 @@ AbstractConnPool varE953D28529A29D0923F05A1180B1C595_1912163811 =         acp;
 ClientConnectionOperator var5302AB2ADD1B4945976DC003AFE0BD75_1374227233 =         new DefaultClientConnectionOperator(schreg);
         var5302AB2ADD1B4945976DC003AFE0BD75_1374227233.addTaint(taint);
         return var5302AB2ADD1B4945976DC003AFE0BD75_1374227233;
-        // ---------- Original Method ----------
-        //return new DefaultClientConnectionOperator(schreg);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.169 -0400", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "663F38AEA7317FF7841935355BA0554E")
     public SchemeRegistry getSchemeRegistry() {
 SchemeRegistry var88A9F5243E7E93089AA8FDF949007087_937005648 =         this.schemeRegistry;
         var88A9F5243E7E93089AA8FDF949007087_937005648.addTaint(taint);
         return var88A9F5243E7E93089AA8FDF949007087_937005648;
-        // ---------- Original Method ----------
-        //return this.schemeRegistry;
+        
+        
     }
 
     
@@ -123,8 +124,8 @@ ClientConnectionRequest var770B2D70BC29F87D7B2C9D785AEF83CC_1359834413 =        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.169 -0400", hash_original_method = "F05670E2223BB88FEEE004D958D804B8", hash_generated_method = "C6881EAE8DDE9E7198AF00DA9B39007F")
         public void abortRequest() {
             poolRequest.abortRequest();
-            // ---------- Original Method ----------
-            //poolRequest.abortRequest();
+            
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.170 -0400", hash_original_method = "6069BCC0A12724F289E46465DF3930EB", hash_generated_method = "91051601A4A4AEF2428F3E11D184C8AC")
         public ManagedClientConnection getConnection(
@@ -137,12 +138,12 @@ ClientConnectionRequest var770B2D70BC29F87D7B2C9D785AEF83CC_1359834413 =        
                 IllegalArgumentException var807ED97BD06382A664709EF49C1C9EA3_1660183659 = new IllegalArgumentException("Route may not be null.");
                 var807ED97BD06382A664709EF49C1C9EA3_1660183659.addTaint(taint);
                 throw var807ED97BD06382A664709EF49C1C9EA3_1660183659;
-            } //End block
+            } 
     if(log.isDebugEnabled())            
             {
                 log.debug("ThreadSafeClientConnManager.getConnection: "
                         + route + ", timeout = " + timeout);
-            } //End block
+            } 
             BasicPoolEntry entry = poolRequest.getPoolEntry(timeout, tunit);
             try 
             {
@@ -150,23 +151,23 @@ ClientConnectionRequest var770B2D70BC29F87D7B2C9D785AEF83CC_1359834413 =        
     if(socket != null)                
                 {
                     SocketTagger.get().tag(socket);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException iox)
             {
                 log.debug("Problem tagging socket.", iox);
-            } //End block
+            } 
 ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =             new BasicPooledConnAdapter(ThreadSafeClientConnManager.this, entry);
             var050DB10D94FB3DCE7E05105A39B0D859_1469194523.addTaint(taint);
             return var050DB10D94FB3DCE7E05105A39B0D859_1469194523;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 };
         var770B2D70BC29F87D7B2C9D785AEF83CC_1359834413.addTaint(taint);
         return var770B2D70BC29F87D7B2C9D785AEF83CC_1359834413;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -182,7 +183,7 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
                  "connection not obtained from this manager.");
             var5C20061853D03D1DF306BE40FC8B88CE_2072981088.addTaint(taint);
             throw var5C20061853D03D1DF306BE40FC8B88CE_2072981088;
-        } //End block
+        } 
         BasicPooledConnAdapter hca = (BasicPooledConnAdapter) conn;
     if((hca.getPoolEntry() != null) && (hca.getManager() != this))        
         {
@@ -190,7 +191,7 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
                 ("Connection not obtained from this manager.");
             varBB73D5117B54E30F8478997E19A744E0_865061827.addTaint(taint);
             throw varBB73D5117B54E30F8478997E19A744E0_865061827;
-        } //End block
+        } 
         try 
         {
             final BasicPoolEntry entry = (BasicPoolEntry) hca.getPoolEntry();
@@ -198,23 +199,23 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
     if(socket != null)            
             {
                 SocketTagger.get().untag(socket);
-            } //End block
+            } 
     if(hca.isOpen() && !hca.isMarkedReusable())            
             {
     if(log.isDebugEnabled())                
                 {
                     log.debug
                         ("Released connection open but not marked reusable.");
-                } //End block
+                } 
                 hca.shutdown();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException iox)
         {
     if(log.isDebugEnabled())            
             log.debug("Exception shutting down released connection.",
                           iox);
-        } //End block
+        } 
         finally 
         {
             BasicPoolEntry entry = (BasicPoolEntry) hca.getPoolEntry();
@@ -223,18 +224,18 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
     if(entry != null)            
             {
                 connectionPool.freeEntry(entry, reusable, validDuration, timeUnit);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.171 -0400", hash_original_method = "5B798EEC995C1D56865AC1580F955080", hash_generated_method = "42E2BBAB2AF21073775665B77EF166D8")
     public void shutdown() {
         connectionPool.shutdown();
-        // ---------- Original Method ----------
-        //connectionPool.shutdown();
+        
+        
     }
 
     
@@ -245,12 +246,13 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
                 route));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981789563 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1981789563;
-        // ---------- Original Method ----------
-        //return ((ConnPoolByRoute)connectionPool).getConnectionsInPool(
-                //route);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.172 -0400", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "F8DA8F615D1B7CDB1E2EA9BC5DCA8E85")
     public int getConnectionsInPool() {
         synchronized
@@ -258,11 +260,11 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
             int var038F1DAABF4682F3C2515CE7A20EDA08_1040964192 = (connectionPool.numConnections);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747848300 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747848300;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (connectionPool) {
-            //return connectionPool.numConnections; 
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -272,9 +274,9 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
         addTaint(idleTimeout);
         connectionPool.closeIdleConnections(idleTimeout, tunit);
         connectionPool.deleteClosedConnections();
-        // ---------- Original Method ----------
-        //connectionPool.closeIdleConnections(idleTimeout, tunit);
-        //connectionPool.deleteClosedConnections();
+        
+        
+        
     }
 
     
@@ -282,9 +284,9 @@ ManagedClientConnection var050DB10D94FB3DCE7E05105A39B0D859_1469194523 =        
     public void closeExpiredConnections() {
         connectionPool.closeExpiredConnections();
         connectionPool.deleteClosedConnections();
-        // ---------- Original Method ----------
-        //connectionPool.closeExpiredConnections();
-        //connectionPool.deleteClosedConnections();
+        
+        
+        
     }
 
     

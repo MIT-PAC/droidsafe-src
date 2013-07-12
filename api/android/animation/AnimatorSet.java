@@ -1,6 +1,6 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,7 +47,7 @@ public final class AnimatorSet extends Animator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.008 -0400", hash_original_method = "A9DDD8ED58932E64D4F5BE029FA05ABF", hash_generated_method = "A9DDD8ED58932E64D4F5BE029FA05ABF")
     public AnimatorSet ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -61,16 +61,16 @@ public final class AnimatorSet extends Animator {
 for(int i = 1;i < items.length;++i)
             {
                 builder.with(items[i]);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (items != null) {
-            //mNeedsSort = true;
-            //Builder builder = play(items[0]);
-            //for (int i = 1; i < items.length; ++i) {
-                //builder.with(items[i]);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -86,25 +86,25 @@ for(Animator anim : items)
     if(builder == null)                
                 {
                     builder = play(anim);
-                } //End block
+                } 
                 else
                 {
                     builder.with(anim);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (items != null && items.size() > 0) {
-            //mNeedsSort = true;
-            //Builder builder = null;
-            //for (Animator anim : items) {
-                //if (builder == null) {
-                    //builder = play(anim);
-                //} else {
-                    //builder.with(anim);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
@@ -117,26 +117,26 @@ for(Animator anim : items)
     if(items.length == 1)            
             {
                 play(items[0]);
-            } //End block
+            } 
             else
             {
 for(int i = 0;i < items.length - 1;++i)
                 {
                     play(items[i]).before(items[i+1]);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (items != null) {
-            //mNeedsSort = true;
-            //if (items.length == 1) {
-                //play(items[0]);
-            //} else {
-                //for (int i = 0; i < items.length - 1; ++i) {
-                    //play(items[i]).before(items[i+1]);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -149,26 +149,26 @@ for(int i = 0;i < items.length - 1;++i)
     if(items.size() == 1)            
             {
                 play(items.get(0));
-            } //End block
+            } 
             else
             {
 for(int i = 0;i < items.size() - 1;++i)
                 {
                     play(items.get(i)).before(items.get(i+1));
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (items != null && items.size() > 0) {
-            //mNeedsSort = true;
-            //if (items.size() == 1) {
-                //play(items.get(0));
-            //} else {
-                //for (int i = 0; i < items.size() - 1; ++i) {
-                    //play(items.get(i)).before(items.get(i+1));
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -178,16 +178,16 @@ for(int i = 0;i < items.size() - 1;++i)
 for(Node node : mNodes)
         {
             childList.add(node.animation);
-        } //End block
+        } 
 ArrayList<Animator> varDADFE646C33414C4DBF274E94AA88940_438241585 =         childList;
         varDADFE646C33414C4DBF274E94AA88940_438241585.addTaint(taint);
         return varDADFE646C33414C4DBF274E94AA88940_438241585;
-        // ---------- Original Method ----------
-        //ArrayList<Animator> childList = new ArrayList<Animator>();
-        //for (Node node : mNodes) {
-            //childList.add(node.animation);
-        //}
-        //return childList;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -201,22 +201,22 @@ for(Node node : mNodes)
     if(animation instanceof AnimatorSet)            
             {
                 ((AnimatorSet)animation).setTarget(target);
-            } //End block
+            } 
             else
     if(animation instanceof ObjectAnimator)            
             {
                 ((ObjectAnimator)animation).setTarget(target);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (Node node : mNodes) {
-            //Animator animation = node.animation;
-            //if (animation instanceof AnimatorSet) {
-                //((AnimatorSet)animation).setTarget(target);
-            //} else if (animation instanceof ObjectAnimator) {
-                //((ObjectAnimator)animation).setTarget(target);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -227,11 +227,11 @@ for(Node node : mNodes)
 for(Node node : mNodes)
         {
             node.animation.setInterpolator(interpolator);
-        } //End block
-        // ---------- Original Method ----------
-        //for (Node node : mNodes) {
-            //node.animation.setInterpolator(interpolator);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -244,16 +244,16 @@ for(Node node : mNodes)
 Builder varD0B2F73A29CA6700BDF09D023EBE15EE_1276977567 =             new Builder(anim);
             varD0B2F73A29CA6700BDF09D023EBE15EE_1276977567.addTaint(taint);
             return varD0B2F73A29CA6700BDF09D023EBE15EE_1276977567;
-        } //End block
+        } 
 Builder var540C13E9E156B687226421B24F2DF178_625931760 =         null;
         var540C13E9E156B687226421B24F2DF178_625931760.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_625931760;
-        // ---------- Original Method ----------
-        //if (anim != null) {
-            //mNeedsSort = true;
-            //return new Builder(anim);
-        //}
-        //return null;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -271,31 +271,31 @@ Builder var540C13E9E156B687226421B24F2DF178_625931760 =         null;
 for(AnimatorListener listener : tmpListeners)
                 {
                     listener.onAnimationCancel(this);
-                } //End block
-            } //End block
+                } 
+            } 
     if(mDelayAnim != null && mDelayAnim.isRunning())            
             {
                 mDelayAnim.cancel();
-            } //End block
+            } 
             else
     if(mSortedNodes.size() > 0)            
             {
 for(Node node : mSortedNodes)
                 {
                     node.animation.cancel();
-                } //End block
-            } //End block
+                } 
+            } 
     if(tmpListeners != null)            
             {
 for(AnimatorListener listener : tmpListeners)
                 {
                     listener.onAnimationEnd(this);
-                } //End block
-            } //End block
+                } 
+            } 
             mStarted = false;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -313,33 +313,33 @@ for(Node node : mSortedNodes)
     if(mSetListener == null)                    
                     {
                         mSetListener = new AnimatorSetListener(this);
-                    } //End block
+                    } 
                     node.animation.addListener(mSetListener);
-                } //End block
-            } //End block
+                } 
+            } 
     if(mDelayAnim != null)            
             {
                 mDelayAnim.cancel();
-            } //End block
+            } 
     if(mSortedNodes.size() > 0)            
             {
 for(Node node : mSortedNodes)
                 {
                     node.animation.end();
-                } //End block
-            } //End block
+                } 
+            } 
     if(mListeners != null)            
             {
                 ArrayList<AnimatorListener> tmpListeners = (ArrayList<AnimatorListener>) mListeners.clone();
 for(AnimatorListener listener : tmpListeners)
                 {
                     listener.onAnimationEnd(this);
-                } //End block
-            } //End block
+                } 
+            } 
             mStarted = false;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -353,60 +353,64 @@ for(Node node : mNodes)
                 boolean varB326B5062B2F0E69046810717534CB09_1530599220 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1055308700 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1055308700;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1765909906 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1682508455 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1682508455;
-        // ---------- Original Method ----------
-        //for (Node node : mNodes) {
-            //if (node.animation.isRunning()) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.053 -0400", hash_original_method = "4FF549E03853BC8FE3FDFAEBF99B8097", hash_generated_method = "AA7ED5172229C6AA5EC857166A175240")
     @Override
     public boolean isStarted() {
         boolean var7103AE9E2C0D3B676C4EDC763D39DFCF_581676989 = (mStarted);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1505545887 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1505545887;
-        // ---------- Original Method ----------
-        //return mStarted;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.056 -0400", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "3A96AFFC521A3E8568DA624DF6CD662A")
     @Override
     public long getStartDelay() {
         long varD6348B0CF9AA194EA8CCE71E8A2B9F80_542656976 = (mStartDelay);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1177364048 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1177364048;
-        // ---------- Original Method ----------
-        //return mStartDelay;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.062 -0400", hash_original_method = "9B89801AA661B38F8303A0C7891B0195", hash_generated_method = "DFD3698D1A235894B218DEC62F508D58")
     @Override
     public void setStartDelay(long startDelay) {
         mStartDelay = startDelay;
-        // ---------- Original Method ----------
-        //mStartDelay = startDelay;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.065 -0400", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "EDA2552770A5CEF948232498DA83D069")
     @Override
     public long getDuration() {
         long var25395741BFE51A7D136A5C7109AAD2D8_1428430986 = (mDuration);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1436758819 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1436758819;
-        // ---------- Original Method ----------
-        //return mDuration;
+        
+        
     }
 
     
@@ -418,24 +422,24 @@ for(Node node : mNodes)
             IllegalArgumentException var5300C05DBA8F30F8F7BB04CD2031A57C_346708913 = new IllegalArgumentException("duration must be a value of zero or greater");
             var5300C05DBA8F30F8F7BB04CD2031A57C_346708913.addTaint(taint);
             throw var5300C05DBA8F30F8F7BB04CD2031A57C_346708913;
-        } //End block
+        } 
 for(Node node : mNodes)
         {
             node.animation.setDuration(duration);
-        } //End block
+        } 
         mDuration = duration;
 AnimatorSet var72A74007B2BE62B849F475C7BDA4658B_2015923374 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_2015923374.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_2015923374;
-        // ---------- Original Method ----------
-        //if (duration < 0) {
-            //throw new IllegalArgumentException("duration must be a value of zero or greater");
-        //}
-        //for (Node node : mNodes) {
-            //node.animation.setDuration(duration);
-        //}
-        //mDuration = duration;
-        //return this;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -445,11 +449,11 @@ AnimatorSet var72A74007B2BE62B849F475C7BDA4658B_2015923374 =         this;
 for(Node node : mNodes)
         {
             node.animation.setupStartValues();
-        } //End block
-        // ---------- Original Method ----------
-        //for (Node node : mNodes) {
-            //node.animation.setupStartValues();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -459,11 +463,11 @@ for(Node node : mNodes)
 for(Node node : mNodes)
         {
             node.animation.setupEndValues();
-        } //End block
-        // ---------- Original Method ----------
-        //for (Node node : mNodes) {
-            //node.animation.setupEndValues();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -489,10 +493,10 @@ for(AnimatorListener listener : clonedListeners)
                             listener instanceof AnimatorSetListener)                    
                     {
                         node.animation.removeListener(listener);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         final ArrayList<Node> nodesToStart = new ArrayList<Node>();
 for(int i = 0;i < numSortedNodes;++i)
         {
@@ -500,11 +504,11 @@ for(int i = 0;i < numSortedNodes;++i)
     if(mSetListener == null)            
             {
                 mSetListener = new AnimatorSetListener(this);
-            } //End block
+            } 
     if(node.dependencies == null || node.dependencies.size() == 0)            
             {
                 nodesToStart.add(node);
-            } //End block
+            } 
             else
             {
                 int numDependencies = node.dependencies.size();
@@ -513,19 +517,19 @@ for(int j = 0;j < numDependencies;++j)
                     Dependency dependency = node.dependencies.get(j);
                     dependency.node.animation.addListener(
                             new DependencyListener(this, node, dependency.rule));
-                } //End block
+                } 
                 node.tmpDependencies = (ArrayList<Dependency>) node.dependencies.clone();
-            } //End block
+            } 
             node.animation.addListener(mSetListener);
-        } //End block
+        } 
     if(mStartDelay <= 0)        
         {
 for(Node node : nodesToStart)
             {
                 node.animation.start();
                 mPlayingSet.add(node.animation);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mDelayAnim = ValueAnimator.ofFloat(0f, 1f);
@@ -534,15 +538,15 @@ for(Node node : nodesToStart)
         boolean canceled = false;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.097 -0400", hash_original_method = "BE87F1813CBA8EA740D5C2234F834512", hash_generated_method = "EA8E6D839DDAAE296AD06F3B683EC7FB")
         public void onAnimationCancel(Animator anim) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(anim.getTaint());
             canceled = true;
-            // ---------- Original Method ----------
-            //canceled = true;
+            
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.098 -0400", hash_original_method = "445AE985C63B218AFF9EAABB75FAC581", hash_generated_method = "3F1FC494E71441DC5827B8EAC06D3923")
         public void onAnimationEnd(Animator anim) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(anim.getTaint());
     if(!canceled)            
             {
@@ -552,21 +556,21 @@ for(int i = 0;i < numNodes;++i)
                     Node node = nodesToStart.get(i);
                     node.animation.start();
                     mPlayingSet.add(node.animation);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (!canceled) {
-                        //int numNodes = nodesToStart.size();
-                        //for (int i = 0; i < numNodes; ++i) {
-                            //Node node = nodesToStart.get(i);
-                            //node.animation.start();
-                            //mPlayingSet.add(node.animation);
-                        //}
-                    //}
+                } 
+            } 
+            
+            
+                        
+                        
+                            
+                            
+                            
+                        
+                    
         }
 });
             mDelayAnim.start();
-        } //End block
+        } 
     if(mListeners != null)        
         {
             ArrayList<AnimatorListener> tmpListeners = (ArrayList<AnimatorListener>) mListeners.clone();
@@ -574,8 +578,8 @@ for(int i = 0;i < numNodes;++i)
 for(int i = 0;i < numListeners;++i)
             {
                 tmpListeners.get(i).onAnimationStart(this);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mNodes.size() == 0 && mStartDelay == 0)        
         {
             mStarted = false;
@@ -586,11 +590,11 @@ for(int i = 0;i < numListeners;++i)
 for(int i = 0;i < numListeners;++i)
                 {
                     tmpListeners.get(i).onAnimationEnd(this);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -627,19 +631,19 @@ for(AnimatorListener listener : cloneListeners)
     if(listenersToRemove == null)                        
                         {
                             listenersToRemove = new ArrayList<AnimatorListener>();
-                        } //End block
+                        } 
                         listenersToRemove.add(listener);
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(listenersToRemove != null)                
                 {
 for(AnimatorListener listener : listenersToRemove)
                     {
                         cloneListeners.remove(listener);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
 for(Node node : mNodes)
         {
             Node nodeClone = nodeCloneMap.get(node);
@@ -651,14 +655,14 @@ for(Dependency dependency : node.dependencies)
                     Dependency cloneDependency = new Dependency(clonedDependencyNode,
                             dependency.rule);
                     nodeClone.addDependency(cloneDependency);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 AnimatorSet var6E2178F33F884BED37C5DEBCD18F9A96_1759729129 =         anim;
         var6E2178F33F884BED37C5DEBCD18F9A96_1759729129.addTaint(taint);
         return var6E2178F33F884BED37C5DEBCD18F9A96_1759729129;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -675,8 +679,8 @@ for(int i = 0;i < numNodes;++i)
     if(node.dependencies == null || node.dependencies.size() == 0)                
                 {
                     roots.add(node);
-                } //End block
-            } //End block
+                } 
+            } 
             ArrayList<Node> tmpRoots = new ArrayList<Node>();
             while
 (roots.size() > 0)            
@@ -696,14 +700,14 @@ for(int j = 0;j < numDependents;++j)
     if(node.nodeDependencies.size() == 0)                            
                             {
                                 tmpRoots.add(node);
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 roots.clear();
                 roots.addAll(tmpRoots);
                 tmpRoots.clear();
-            } //End block
+            } 
             mNeedsSort = false;
     if(mSortedNodes.size() != mNodes.size())            
             {
@@ -711,8 +715,8 @@ for(int j = 0;j < numDependents;++j)
                         + " in AnimatorSet");
                 var262329B5D3EB6C270EBEF48A24CB8EF9_1238578539.addTaint(taint);
                 throw var262329B5D3EB6C270EBEF48A24CB8EF9_1238578539;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             int numNodes = mNodes.size();
@@ -728,18 +732,18 @@ for(int j = 0;j < numDependencies;++j)
     if(node.nodeDependencies == null)                        
                         {
                             node.nodeDependencies = new ArrayList<Node>();
-                        } //End block
+                        } 
     if(!node.nodeDependencies.contains(dependency.node))                        
                         {
                             node.nodeDependencies.add(dependency.node);
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 node.done = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -759,56 +763,58 @@ for(int j = 0;j < numDependencies;++j)
             this.mAnimatorSet = animatorSet;
             this.mNode = node;
             this.mRule = rule;
-            // ---------- Original Method ----------
-            //this.mAnimatorSet = animatorSet;
-            //this.mNode = node;
-            //this.mRule = rule;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.129 -0400", hash_original_method = "16FF962612CA0CC38B4765F38064800C", hash_generated_method = "C2873E3A5F96230B9841E1221FD8122E")
         public void onAnimationCancel(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.132 -0400", hash_original_method = "E0F66F3A2F7DEFA05E43170D7FDC6E81", hash_generated_method = "0DD90CFF71BA1F067EEB5B3B01665D39")
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mRule == Dependency.AFTER)            
             {
                 startIfReady(animation);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mRule == Dependency.AFTER) {
-                //startIfReady(animation);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.138 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "2CC49AF6623F4CFFEDAE2EE5FA4412D5")
         public void onAnimationRepeat(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.142 -0400", hash_original_method = "C319AA8CE810AC3271C178BB34DF8E30", hash_generated_method = "5113DE5D5EBE4848556F7CCA7A0815C5")
         public void onAnimationStart(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mRule == Dependency.WITH)            
             {
                 startIfReady(animation);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mRule == Dependency.WITH) {
-                //startIfReady(animation);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -818,7 +824,7 @@ for(int j = 0;j < numDependencies;++j)
     if(mAnimatorSet.mTerminated)            
             {
                 return;
-            } //End block
+            } 
             Dependency dependencyToRemove = null;
             int numDependencies = mNode.tmpDependencies.size();
 for(int i = 0;i < numDependencies;++i)
@@ -830,16 +836,16 @@ for(int i = 0;i < numDependencies;++i)
                     dependencyToRemove = dependency;
                     dependencyAnimation.removeListener(this);
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             mNode.tmpDependencies.remove(dependencyToRemove);
     if(mNode.tmpDependencies.size() == 0)            
             {
                 mNode.animation.start();
                 mAnimatorSet.mPlayingSet.add(mNode.animation);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -855,14 +861,14 @@ for(int i = 0;i < numDependencies;++i)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.149 -0400", hash_original_method = "F7A8B618CE707AD8B38E15DFED3CE3FB", hash_generated_method = "5149E3B3F385A46C24F32667B339D036")
           AnimatorSetListener(AnimatorSet animatorSet) {
             mAnimatorSet = animatorSet;
-            // ---------- Original Method ----------
-            //mAnimatorSet = animatorSet;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.150 -0400", hash_original_method = "BE6E1E1BF0ACB2CE5581D6C3A3287656", hash_generated_method = "DFAD45D548A2BD004BF93B85F83DA755")
         public void onAnimationCancel(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(!mTerminated)            
             {
@@ -874,28 +880,28 @@ for(int i = 0;i < numDependencies;++i)
 for(int i = 0;i < numListeners;++i)
                         {
                             mListeners.get(i).onAnimationCancel(mAnimatorSet);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mTerminated) {
-                //if (mPlayingSet.size() == 0) {
-                    //if (mListeners != null) {
-                        //int numListeners = mListeners.size();
-                        //for (int i = 0; i < numListeners; ++i) {
-                            //mListeners.get(i).onAnimationCancel(mAnimatorSet);
-                        //}
-                    //}
-                //}
-            //}
+                        } 
+                    } 
+                } 
+            } 
+            
+            
+                
+                    
+                        
+                        
+                            
+                        
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.154 -0400", hash_original_method = "18180E214611C82656F1013B7F322C73", hash_generated_method = "C06CE48BB5BB01F584E3BBFE004D298A")
         @SuppressWarnings("unchecked")
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
             animation.removeListener(this);
             mPlayingSet.remove(animation);
@@ -912,8 +918,8 @@ for(int i = 0;i < numSortedNodes;++i)
                     {
                         allDone = false;
                         break;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(allDone)                
                 {
     if(mListeners != null)                    
@@ -923,29 +929,31 @@ for(int i = 0;i < numSortedNodes;++i)
 for(int i = 0;i < numListeners;++i)
                         {
                             tmpListeners.get(i).onAnimationEnd(mAnimatorSet);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mAnimatorSet.mStarted = false;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.156 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "2CC49AF6623F4CFFEDAE2EE5FA4412D5")
         public void onAnimationRepeat(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.158 -0400", hash_original_method = "B990D1A680B01C8A5486D22741D7E96B", hash_generated_method = "4F1E500BA39728FB7A49E02540A0C5AA")
         public void onAnimationStart(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -965,9 +973,9 @@ for(int i = 0;i < numListeners;++i)
         public  Dependency(Node node, int rule) {
             this.node = node;
             this.rule = rule;
-            // ---------- Original Method ----------
-            //this.node = node;
-            //this.rule = rule;
+            
+            
+            
         }
 
         
@@ -1004,8 +1012,8 @@ for(int i = 0;i < numListeners;++i)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.177 -0400", hash_original_method = "003188EC42D875435178AF0E478B9BB9", hash_generated_method = "C7E970336EB0D2C23CBE821EB59549EA")
         public  Node(Animator animation) {
             this.animation = animation;
-            // ---------- Original Method ----------
-            //this.animation = animation;
+            
+            
         }
 
         
@@ -1016,32 +1024,32 @@ for(int i = 0;i < numListeners;++i)
             {
                 dependencies = new ArrayList<Dependency>();
                 nodeDependencies = new ArrayList<Node>();
-            } //End block
+            } 
             dependencies.add(dependency);
     if(!nodeDependencies.contains(dependency.node))            
             {
                 nodeDependencies.add(dependency.node);
-            } //End block
+            } 
             Node dependencyNode = dependency.node;
     if(dependencyNode.nodeDependents == null)            
             {
                 dependencyNode.nodeDependents = new ArrayList<Node>();
-            } //End block
+            } 
             dependencyNode.nodeDependents.add(this);
-            // ---------- Original Method ----------
-            //if (dependencies == null) {
-                //dependencies = new ArrayList<Dependency>();
-                //nodeDependencies = new ArrayList<Node>();
-            //}
-            //dependencies.add(dependency);
-            //if (!nodeDependencies.contains(dependency.node)) {
-                //nodeDependencies.add(dependency.node);
-            //}
-            //Node dependencyNode = dependency.node;
-            //if (dependencyNode.nodeDependents == null) {
-                //dependencyNode.nodeDependents = new ArrayList<Node>();
-            //}
-            //dependencyNode.nodeDependents.add(this);
+            
+            
+                
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1055,21 +1063,21 @@ for(int i = 0;i < numListeners;++i)
 Node var1924C94B76524D1C3D7310EA17B0EF94_1365417166 =                 node;
                 var1924C94B76524D1C3D7310EA17B0EF94_1365417166.addTaint(taint);
                 return var1924C94B76524D1C3D7310EA17B0EF94_1365417166;
-            } //End block
+            } 
             catch (CloneNotSupportedException e)
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_2067619309 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_2067619309.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_2067619309;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //Node node = (Node) super.clone();
-                //node.animation = (Animator) animation.clone();
-                //return node;
-            //} catch (CloneNotSupportedException e) {
-               //throw new AssertionError();
-            //}
+            } 
+            
+            
+                
+                
+                
+            
+               
+            
         }
 
         
@@ -1090,14 +1098,14 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1365417166 =                 node;
                 mCurrentNode = new Node(anim);
                 mNodeMap.put(anim, mCurrentNode);
                 mNodes.add(mCurrentNode);
-            } //End block
-            // ---------- Original Method ----------
-            //mCurrentNode = mNodeMap.get(anim);
-            //if (mCurrentNode == null) {
-                //mCurrentNode = new Node(anim);
-                //mNodeMap.put(anim, mCurrentNode);
-                //mNodes.add(mCurrentNode);
-            //}
+            } 
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -1110,22 +1118,22 @@ Node var1924C94B76524D1C3D7310EA17B0EF94_1365417166 =                 node;
                 node = new Node(anim);
                 mNodeMap.put(anim, node);
                 mNodes.add(node);
-            } //End block
+            } 
             Dependency dependency = new Dependency(mCurrentNode, Dependency.WITH);
             node.addDependency(dependency);
 Builder var72A74007B2BE62B849F475C7BDA4658B_369905869 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_369905869.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_369905869;
-            // ---------- Original Method ----------
-            //Node node = mNodeMap.get(anim);
-            //if (node == null) {
-                //node = new Node(anim);
-                //mNodeMap.put(anim, node);
-                //mNodes.add(node);
-            //}
-            //Dependency dependency = new Dependency(mCurrentNode, Dependency.WITH);
-            //node.addDependency(dependency);
-            //return this;
+            
+            
+            
+                
+                
+                
+            
+            
+            
+            
         }
 
         
@@ -1138,22 +1146,22 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_369905869 =             this;
                 node = new Node(anim);
                 mNodeMap.put(anim, node);
                 mNodes.add(node);
-            } //End block
+            } 
             Dependency dependency = new Dependency(mCurrentNode, Dependency.AFTER);
             node.addDependency(dependency);
 Builder var72A74007B2BE62B849F475C7BDA4658B_1236901208 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1236901208.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1236901208;
-            // ---------- Original Method ----------
-            //Node node = mNodeMap.get(anim);
-            //if (node == null) {
-                //node = new Node(anim);
-                //mNodeMap.put(anim, node);
-                //mNodes.add(node);
-            //}
-            //Dependency dependency = new Dependency(mCurrentNode, Dependency.AFTER);
-            //node.addDependency(dependency);
-            //return this;
+            
+            
+            
+                
+                
+                
+            
+            
+            
+            
         }
 
         
@@ -1166,22 +1174,22 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1236901208 =             this;
                 node = new Node(anim);
                 mNodeMap.put(anim, node);
                 mNodes.add(node);
-            } //End block
+            } 
             Dependency dependency = new Dependency(node, Dependency.AFTER);
             mCurrentNode.addDependency(dependency);
 Builder var72A74007B2BE62B849F475C7BDA4658B_175612213 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_175612213.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_175612213;
-            // ---------- Original Method ----------
-            //Node node = mNodeMap.get(anim);
-            //if (node == null) {
-                //node = new Node(anim);
-                //mNodeMap.put(anim, node);
-                //mNodes.add(node);
-            //}
-            //Dependency dependency = new Dependency(node, Dependency.AFTER);
-            //mCurrentNode.addDependency(dependency);
-            //return this;
+            
+            
+            
+                
+                
+                
+            
+            
+            
+            
         }
 
         
@@ -1194,11 +1202,11 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_175612213 =             this;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1810381298 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1810381298.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1810381298;
-            // ---------- Original Method ----------
-            //ValueAnimator anim = ValueAnimator.ofFloat(0f, 1f);
-            //anim.setDuration(delay);
-            //after(anim);
-            //return this;
+            
+            
+            
+            
+            
         }
 
         

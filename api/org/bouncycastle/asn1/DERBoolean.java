@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public class DERBoolean extends ASN1Object {
     protected  DERBoolean(
         boolean     value) {
         this.value = (value) ? (byte)0xff : (byte)0;
-        // ---------- Original Method ----------
-        //this.value = (value) ? (byte)0xff : (byte)0;
+        
+        
     }
 
     
@@ -30,13 +30,15 @@ public class DERBoolean extends ASN1Object {
     }
 
     
-        public static DERBoolean getInstance(
+        @DSModeled(DSC.SAFE)
+    public static DERBoolean getInstance(
         boolean  value) {
         return (value ? TRUE : FALSE);
     }
 
     
-        public static DERBoolean getInstance(
+        @DSModeled(DSC.SAFE)
+    public static DERBoolean getInstance(
         byte[] octets) {
         return (octets[0] != 0) ? TRUE : FALSE;
     }
@@ -57,13 +59,14 @@ public class DERBoolean extends ASN1Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.933 -0400", hash_original_method = "CAF36277BE2299D4A97B34E514847231", hash_generated_method = "A4FF6E5CBF9343D4B02AF44EBC3B30A6")
     public boolean isTrue() {
         boolean var4661EA07E82336BE9B2AECA9A764B18E_125028910 = ((value != 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584362352 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1584362352;
-        // ---------- Original Method ----------
-        //return (value != 0);
+        
+        
     }
 
     
@@ -74,13 +77,14 @@ public class DERBoolean extends ASN1Object {
         byte[] bytes = new byte[1];
         bytes[0] = value;
         out.writeEncoded(BOOLEAN, bytes);
-        // ---------- Original Method ----------
-        //byte[]  bytes = new byte[1];
-        //bytes[0] = value;
-        //out.writeEncoded(BOOLEAN, bytes);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.942 -0400", hash_original_method = "7025372BC5443A52FED5B1B11C72A34D", hash_generated_method = "8484472E9AE9B04FE2945E6EEB4944A5")
     protected boolean asn1Equals(
         DERObject  o) {
@@ -90,36 +94,38 @@ public class DERBoolean extends ASN1Object {
             boolean var68934A3E9455FA72420237EB05902327_557939159 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1732857600 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1732857600;
-        } //End block
+        } 
         boolean var046E5C2E5199CE2B37C484B6DC4530E0_1829006475 = ((value == ((DERBoolean)o).value));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_918256149 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_918256149;
-        // ---------- Original Method ----------
-        //if ((o == null) || !(o instanceof DERBoolean))
-        //{
-            //return false;
-        //}
-        //return (value == ((DERBoolean)o).value);
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.943 -0400", hash_original_method = "961F210287166DF05D8915D632129E75", hash_generated_method = "973546ECB6481D7B1C6A4C2C38A14420")
     public int hashCode() {
         int var2063C1608D6E0BAF80249C42E2BE5804_1426732188 = (value);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1493689228 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1493689228;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.944 -0400", hash_original_method = "9F6A9420185E5E125B8A61B3882EDFBB", hash_generated_method = "DD9302D3246BD844F67C510F07029EC2")
     public String toString() {
 String var304B31753549FEAA0EC0E7EC343CD6BE_1774561757 =         (value != 0) ? "TRUE" : "FALSE";
         var304B31753549FEAA0EC0E7EC343CD6BE_1774561757.addTaint(taint);
         return var304B31753549FEAA0EC0E7EC343CD6BE_1774561757;
-        // ---------- Original Method ----------
-        //return (value != 0) ? "TRUE" : "FALSE";
+        
+        
     }
 
     

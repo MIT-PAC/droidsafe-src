@@ -1,6 +1,6 @@
 package org.apache.harmony.xml.dom;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,7 +52,7 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.566 -0400", hash_original_method = "4D153F5051BE9FB53ACB86332ED9FE59", hash_generated_method = "4D153F5051BE9FB53ACB86332ED9FE59")
     public DOMConfigurationImpl ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -64,9 +64,9 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
         boolean varDE4955B5C276D9630638EBE81C6CA37F_1911151106 = (parameter != null && parameter.canSet(this, value));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_915259357 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_915259357;
-        // ---------- Original Method ----------
-        //Parameter parameter = PARAMETERS.get(name);
-        //return parameter != null && parameter.canSet(this, value);
+        
+        
+        
     }
 
     
@@ -80,39 +80,39 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             DOMException var71A5B61A6431DEE25EBCC9F1E15A0B58_417814983 = new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
             var71A5B61A6431DEE25EBCC9F1E15A0B58_417814983.addTaint(taint);
             throw var71A5B61A6431DEE25EBCC9F1E15A0B58_417814983;
-        } //End block
+        } 
         try 
         {
             parameter.set(this, value);
-        } //End block
+        } 
         catch (NullPointerException e)
         {
             DOMException var87913FEAB2C3B3E4890327D059A6541A_501778659 = new DOMException(DOMException.TYPE_MISMATCH_ERR,
                     "Null not allowed for " + name);
             var87913FEAB2C3B3E4890327D059A6541A_501778659.addTaint(taint);
             throw var87913FEAB2C3B3E4890327D059A6541A_501778659;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             DOMException var157E6D93D819AC8FD03817E8D9FE5267_2107730106 = new DOMException(DOMException.TYPE_MISMATCH_ERR,
                     "Invalid type for " + name + ": " + value.getClass());
             var157E6D93D819AC8FD03817E8D9FE5267_2107730106.addTaint(taint);
             throw var157E6D93D819AC8FD03817E8D9FE5267_2107730106;
-        } //End block
-        // ---------- Original Method ----------
-        //Parameter parameter = PARAMETERS.get(name);
-        //if (parameter == null) {
-            //throw new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
-        //}
-        //try {
-            //parameter.set(this, value);
-        //} catch (NullPointerException e) {
-            //throw new DOMException(DOMException.TYPE_MISMATCH_ERR,
-                    //"Null not allowed for " + name);
-        //} catch (ClassCastException e) {
-            //throw new DOMException(DOMException.TYPE_MISMATCH_ERR,
-                    //"Invalid type for " + name + ": " + value.getClass());
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
+            
+                    
+        
+            
+                    
+        
     }
 
     
@@ -125,16 +125,16 @@ public final class DOMConfigurationImpl implements DOMConfiguration {
             DOMException var71A5B61A6431DEE25EBCC9F1E15A0B58_890079401 = new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
             var71A5B61A6431DEE25EBCC9F1E15A0B58_890079401.addTaint(taint);
             throw var71A5B61A6431DEE25EBCC9F1E15A0B58_890079401;
-        } //End block
+        } 
 Object var0EAAC7645F5587606C0588245A4E7970_1817879637 =         parameter.get(this);
         var0EAAC7645F5587606C0588245A4E7970_1817879637.addTaint(taint);
         return var0EAAC7645F5587606C0588245A4E7970_1817879637;
-        // ---------- Original Method ----------
-        //Parameter parameter = PARAMETERS.get(name);
-        //if (parameter == null) {
-            //throw new DOMException(DOMException.NOT_FOUND_ERR, "No such parameter: " + name);
-        //}
-        //return parameter.get(this);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -148,16 +148,16 @@ DOMStringList var9B6CCEF068B7E2A79BF34F3884E2DB87_2037869808 =         new DOMSt
 String var8B86B58A1D201135241D02A154815742_475016507 =             index < result.length ? result[index] : null;
             var8B86B58A1D201135241D02A154815742_475016507.addTaint(taint);
             return var8B86B58A1D201135241D02A154815742_475016507;
-            // ---------- Original Method ----------
-            //return index < result.length ? result[index] : null;
+            
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.568 -0400", hash_original_method = "06707F305D31A2CABCFF2283107B42B1", hash_generated_method = "CB28CAB666A9ECDF65687D4016633B36")
         public int getLength() {
             int var2D39DD8114D4D52B4FCCCB213F36F556_1479946418 = (result.length);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571999109 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_571999109;
-            // ---------- Original Method ----------
-            //return result.length;
+            
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.568 -0400", hash_original_method = "03E28D9EA8E8F482AC5FF26FBE062BE8", hash_generated_method = "651516FCC231C0668ABBBC14DAE13011")
         public boolean contains(String str) {
@@ -165,25 +165,25 @@ String var8B86B58A1D201135241D02A154815742_475016507 =             index < resul
             boolean var8B4CD14A4E0AD8013C6701A735233C4B_879488271 = (PARAMETERS.containsKey(str));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_548437160 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_548437160;
-            // ---------- Original Method ----------
-            //return PARAMETERS.containsKey(str);
+            
+            
         }
 };
         var9B6CCEF068B7E2A79BF34F3884E2DB87_2037869808.addTaint(taint);
         return var9B6CCEF068B7E2A79BF34F3884E2DB87_2037869808;
-        // ---------- Original Method ----------
-        //final String[] result = PARAMETERS.keySet().toArray(new String[PARAMETERS.size()]);
-        //return new DOMStringList() {
-            //public String item(int index) {
-                //return index < result.length ? result[index] : null;
-            //}
-            //public int getLength() {
-                //return result.length;
-            //}
-            //public boolean contains(String str) {
-                //return PARAMETERS.containsKey(str); 
-            //}
-        //};
+        
+        
+        
+            
+                
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -201,15 +201,15 @@ switch(node.getNodeType()){
                 {
                     cdata.split();
                     report(DOMError.SEVERITY_WARNING, "cdata-sections-splitted");
-                } //End block
+                } 
                 else
                 {
                     report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-                } //End block
-            } //End block
+                } 
+            } 
             checkTextValidity(cdata.buffer);
             break;
-        } //End block
+        } 
         node = cdata.replaceWithText();
         case Node.TEXT_NODE:
         TextImpl text = (TextImpl) node;
@@ -217,7 +217,7 @@ switch(node.getNodeType()){
     if(text != null)        
         {
             checkTextValidity(text.buffer);
-        } //End block
+        } 
         break;
         case Node.COMMENT_NODE:
         CommentImpl comment = (CommentImpl) node;
@@ -225,11 +225,11 @@ switch(node.getNodeType()){
         {
             comment.getParentNode().removeChild(comment);
             break;
-        } //End block
+        } 
     if(comment.containsDashDash())        
         {
             report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-        } //End block
+        } 
         checkTextValidity(comment.buffer);
         break;
         case Node.PROCESSING_INSTRUCTION_NODE:
@@ -244,7 +244,7 @@ switch(node.getNodeType()){
 for(int i = 0;i < attributes.getLength();i++)
         {
             normalize(attributes.item(i));
-        } //End block
+        } 
         case Node.DOCUMENT_NODE:
         case Node.DOCUMENT_FRAGMENT_NODE:
         Node next;
@@ -252,7 +252,7 @@ for(Node child = node.getFirstChild();child != null;child = next)
         {
             next = child.getNextSibling();
             normalize(child);
-        } //End block
+        } 
         break;
         case Node.NOTATION_NODE:
         case Node.DOCUMENT_TYPE_NODE:
@@ -265,8 +265,8 @@ for(Node child = node.getFirstChild();child != null;child = next)
         var96E7F93A47E198E550B071124DD8FDC7_27381325.addTaint(taint);
         throw var96E7F93A47E198E550B071124DD8FDC7_27381325;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -276,11 +276,11 @@ for(Node child = node.getFirstChild();child != null;child = next)
     if(wellFormed && !isValid(s))        
         {
             report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-        } //End block
-        // ---------- Original Method ----------
-        //if (wellFormed && !isValid(s)) {
-            //report(DOMError.SEVERITY_ERROR, "wf-invalid-character");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -298,22 +298,22 @@ for(int i = 0;i < text.length();i++)
                 boolean var68934A3E9455FA72420237EB05902327_722033567 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355473367 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355473367;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1483021576 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1406281736 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1406281736;
-        // ---------- Original Method ----------
-        //for (int i = 0; i < text.length(); i++) {
-            //char c = text.charAt(i);
-            //boolean valid = c == 0x9 || c == 0xA || c == 0xD
-                    //|| (c >= 0x20 && c <= 0xd7ff)
-                    //|| (c >= 0xe000 && c <= 0xfffd);
-            //if (!valid) {
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+            
+            
+                    
+                    
+            
+                
+            
+        
+        
     }
 
     
@@ -324,11 +324,11 @@ for(int i = 0;i < text.length();i++)
     if(errorHandler != null)        
         {
             errorHandler.handleError(new DOMErrorImpl(severity, type));
-        } //End block
-        // ---------- Original Method ----------
-        //if (errorHandler != null) {
-            //errorHandler.handleError(new DOMErrorImpl(severity, type));
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -340,19 +340,20 @@ for(int i = 0;i < text.length();i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.572 -0400", hash_original_method = "4AEE734B1EFD8A5D4A3557C383752F00", hash_generated_method = "A506FC59BBF6CC43F79B603F40D6503D")
           FixedParameter(Object onlyValue) {
             this.onlyValue = onlyValue;
-            // ---------- Original Method ----------
-            //this.onlyValue = onlyValue;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.572 -0400", hash_original_method = "580583282F0D57EA1D5F8BCC7DFB7226", hash_generated_method = "123291D451A9C2BAB60954D94F929010")
         public Object get(DOMConfigurationImpl config) {
             addTaint(config.getTaint());
 Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
             varFC3D10A8FDF8879F7F22227809F81A9D_851641338.addTaint(taint);
             return varFC3D10A8FDF8879F7F22227809F81A9D_851641338;
-            // ---------- Original Method ----------
-            //return onlyValue;
+            
+            
         }
 
         
@@ -366,12 +367,12 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
                         "Unsupported value: " + value);
                 varEE672A4BB0A998CAE86879AB2B2C08BF_82868007.addTaint(taint);
                 throw varEE672A4BB0A998CAE86879AB2B2C08BF_82868007;
-            } //End block
-            // ---------- Original Method ----------
-            //if (!onlyValue.equals(value)) {
-                //throw new DOMException(DOMException.NOT_SUPPORTED_ERR,
-                        //"Unsupported value: " + value);
-            //}
+            } 
+            
+            
+                
+                        
+            
         }
 
         
@@ -382,8 +383,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
             boolean var1E53FF2769031082D7B7C29B8058DF0B_1816476320 = (onlyValue.equals(value));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1953045332 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1953045332;
-            // ---------- Original Method ----------
-            //return onlyValue.equals(value);
+            
+            
         }
 
         
@@ -396,10 +397,11 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.573 -0400", hash_original_method = "51C6AD17F5451D33F04DE00B4C815245", hash_generated_method = "51C6AD17F5451D33F04DE00B4C815245")
         public BooleanParameter ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.573 -0400", hash_original_method = "BF6F151915BB667F3BD2F9A011756FE4", hash_generated_method = "7A29732A253211BD808DB685CCF1B48A")
         public boolean canSet(DOMConfigurationImpl config, Object value) {
             addTaint(value.getTaint());
@@ -407,8 +409,8 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
             boolean var97D11A7D49548BFFEEBC999A9A8C4E66_1555165522 = (value instanceof Boolean);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_874531476 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_874531476;
-            // ---------- Original Method ----------
-            //return value instanceof Boolean;
+            
+            
         }
 
         
@@ -556,22 +558,22 @@ Object varFC3D10A8FDF8879F7F22227809F81A9D_851641338 =             onlyValue;
         });
     }
     
-    // orphaned legacy method
+    
     public void set(DOMConfigurationImpl config, Object value) {
                 config.wellFormed = (Boolean) value;
             }
     
-    // orphaned legacy method
+    
     public Object get(DOMConfigurationImpl config) {
                 return config.wellFormed;
             }
     
-    // orphaned legacy method
+    
     public boolean contains(String str) {
                 return PARAMETERS.containsKey(str); 
             }
     
-    // orphaned legacy method
+    
     public boolean canSet(DOMConfigurationImpl config, Object value) {
                 return value == null || value instanceof String;
             }

@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class OpenSSLContextImpl extends SSLContextImpl {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.552 -0400", hash_original_method = "AC85303C5261AE8C561C9D0D813887D0", hash_generated_method = "BA56A83C11C4D548CDA5AAC3BEDBB357")
     public  OpenSSLContextImpl() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class OpenSSLContextImpl extends SSLContextImpl {
     protected  OpenSSLContextImpl(DefaultSSLContextImpl dummy) throws GeneralSecurityException, IOException {
         super(dummy);
         addTaint(dummy.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,15 +33,15 @@ public class OpenSSLContextImpl extends SSLContextImpl {
             IllegalStateException varC8351C8104E6525114445B68BAB6733B_245219106 = new IllegalStateException("SSLContext is not initialized.");
             varC8351C8104E6525114445B68BAB6733B_245219106.addTaint(taint);
             throw varC8351C8104E6525114445B68BAB6733B_245219106;
-        } //End block
+        } 
 SSLSocketFactory var82CD0BF44F938BA1AC3328FDCC51399C_1760615109 =         new OpenSSLSocketFactoryImpl(sslParameters);
         var82CD0BF44F938BA1AC3328FDCC51399C_1760615109.addTaint(taint);
         return var82CD0BF44F938BA1AC3328FDCC51399C_1760615109;
-        // ---------- Original Method ----------
-        //if (sslParameters == null) {
-            //throw new IllegalStateException("SSLContext is not initialized.");
-        //}
-        //return new OpenSSLSocketFactoryImpl(sslParameters);
+        
+        
+            
+        
+        
     }
 
     
@@ -53,15 +53,15 @@ SSLSocketFactory var82CD0BF44F938BA1AC3328FDCC51399C_1760615109 =         new Op
             IllegalStateException varC8351C8104E6525114445B68BAB6733B_591409693 = new IllegalStateException("SSLContext is not initialized.");
             varC8351C8104E6525114445B68BAB6733B_591409693.addTaint(taint);
             throw varC8351C8104E6525114445B68BAB6733B_591409693;
-        } //End block
+        } 
 SSLServerSocketFactory var8E47A225B0DEAB7C85AF9EA976791C8D_1778167178 =         new OpenSSLServerSocketFactoryImpl(sslParameters);
         var8E47A225B0DEAB7C85AF9EA976791C8D_1778167178.addTaint(taint);
         return var8E47A225B0DEAB7C85AF9EA976791C8D_1778167178;
-        // ---------- Original Method ----------
-        //if (sslParameters == null) {
-            //throw new IllegalStateException("SSLContext is not initialized.");
-        //}
-        //return new OpenSSLServerSocketFactoryImpl(sslParameters);
+        
+        
+            
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public final class ObjectAnimator extends ValueAnimator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.938 -0400", hash_original_method = "C409E7B2E0E9411E53B94F67FBBD17CB", hash_generated_method = "3F67C7C40A1D89645B17D105E342199D")
     public  ObjectAnimator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,9 +31,9 @@ public final class ObjectAnimator extends ValueAnimator {
         addTaint(propertyName.getTaint());
         mTarget = target;
         setPropertyName(propertyName);
-        // ---------- Original Method ----------
-        //mTarget = target;
-        //setPropertyName(propertyName);
+        
+        
+        
     }
 
     
@@ -42,9 +42,9 @@ public final class ObjectAnimator extends ValueAnimator {
         addTaint(property.getTaint());
         mTarget = target;
         setProperty(property);
-        // ---------- Original Method ----------
-        //mTarget = target;
-        //setProperty(property);
+        
+        
+        
     }
 
     
@@ -57,19 +57,19 @@ public final class ObjectAnimator extends ValueAnimator {
             valuesHolder.setPropertyName(propertyName);
             mValuesMap.remove(oldName);
             mValuesMap.put(propertyName, valuesHolder);
-        } //End block
+        } 
         mPropertyName = propertyName;
         mInitialized = false;
-        // ---------- Original Method ----------
-        //if (mValues != null) {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //String oldName = valuesHolder.getPropertyName();
-            //valuesHolder.setPropertyName(propertyName);
-            //mValuesMap.remove(oldName);
-            //mValuesMap.put(propertyName, valuesHolder);
-        //}
-        //mPropertyName = propertyName;
-        //mInitialized = false;
+        
+        
+            
+            
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -82,36 +82,37 @@ public final class ObjectAnimator extends ValueAnimator {
             valuesHolder.setProperty(property);
             mValuesMap.remove(oldName);
             mValuesMap.put(mPropertyName, valuesHolder);
-        } //End block
+        } 
     if(mProperty != null)        
         {
             mPropertyName = property.getName();
-        } //End block
+        } 
         mProperty = property;
         mInitialized = false;
-        // ---------- Original Method ----------
-        //if (mValues != null) {
-            //PropertyValuesHolder valuesHolder = mValues[0];
-            //String oldName = valuesHolder.getPropertyName();
-            //valuesHolder.setProperty(property);
-            //mValuesMap.remove(oldName);
-            //mValuesMap.put(mPropertyName, valuesHolder);
-        //}
-        //if (mProperty != null) {
-            //mPropertyName = property.getName();
-        //}
-        //mProperty = property;
-        //mInitialized = false;
+        
+        
+            
+            
+            
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.948 -0400", hash_original_method = "53B20749B4CEAC5C134A85897865D0FE", hash_generated_method = "389B7E0BCD83456AA72BE6EB66EA5352")
     public String getPropertyName() {
 String varA94EBE08267F8B14AA5B485C2D24900F_759312971 =         mPropertyName;
         varA94EBE08267F8B14AA5B485C2D24900F_759312971.addTaint(taint);
         return varA94EBE08267F8B14AA5B485C2D24900F_759312971;
-        // ---------- Original Method ----------
-        //return mPropertyName;
+        
+        
     }
 
     
@@ -180,26 +181,26 @@ String varA94EBE08267F8B14AA5B485C2D24900F_759312971 =         mPropertyName;
     if(mProperty != null)            
             {
                 setValues(PropertyValuesHolder.ofInt(mProperty, values));
-            } //End block
+            } 
             else
             {
                 setValues(PropertyValuesHolder.ofInt(mPropertyName, values));
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             super.setIntValues(values);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mValues == null || mValues.length == 0) {
-            //if (mProperty != null) {
-                //setValues(PropertyValuesHolder.ofInt(mProperty, values));
-            //} else {
-                //setValues(PropertyValuesHolder.ofInt(mPropertyName, values));
-            //}
-        //} else {
-            //super.setIntValues(values);
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -212,26 +213,26 @@ String varA94EBE08267F8B14AA5B485C2D24900F_759312971 =         mPropertyName;
     if(mProperty != null)            
             {
                 setValues(PropertyValuesHolder.ofFloat(mProperty, values));
-            } //End block
+            } 
             else
             {
                 setValues(PropertyValuesHolder.ofFloat(mPropertyName, values));
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             super.setFloatValues(values);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mValues == null || mValues.length == 0) {
-            //if (mProperty != null) {
-                //setValues(PropertyValuesHolder.ofFloat(mProperty, values));
-            //} else {
-                //setValues(PropertyValuesHolder.ofFloat(mPropertyName, values));
-            //}
-        //} else {
-            //super.setFloatValues(values);
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -244,26 +245,26 @@ String varA94EBE08267F8B14AA5B485C2D24900F_759312971 =         mPropertyName;
     if(mProperty != null)            
             {
                 setValues(PropertyValuesHolder.ofObject(mProperty, (TypeEvaluator)null, values));
-            } //End block
+            } 
             else
             {
                 setValues(PropertyValuesHolder.ofObject(mPropertyName, (TypeEvaluator)null, values));
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             super.setObjectValues(values);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mValues == null || mValues.length == 0) {
-            //if (mProperty != null) {
-                //setValues(PropertyValuesHolder.ofObject(mProperty, (TypeEvaluator)null, values));
-            //} else {
-                //setValues(PropertyValuesHolder.ofObject(mPropertyName, (TypeEvaluator)null, values));
-            //}
-        //} else {
-            //super.setObjectValues(values);
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -280,21 +281,21 @@ for(int i = 0;i < mValues.length;++i)
                 Log.d("ObjectAnimator", "   Values[" + i + "]: " +
                     pvh.getPropertyName() + ", " + keyframes.get(0).getValue() + ", " +
                     keyframes.get(pvh.mKeyframeSet.mNumKeyframes - 1).getValue());
-            } //End block
-        } //End block
+            } 
+        } 
         super.start();
-        // ---------- Original Method ----------
-        //if (DBG) {
-            //Log.d("ObjectAnimator", "Anim target, duration: " + mTarget + ", " + getDuration());
-            //for (int i = 0; i < mValues.length; ++i) {
-                //PropertyValuesHolder pvh = mValues[i];
-                //ArrayList<Keyframe> keyframes = pvh.mKeyframeSet.mKeyframes;
-                //Log.d("ObjectAnimator", "   Values[" + i + "]: " +
-                    //pvh.getPropertyName() + ", " + keyframes.get(0).getValue() + ", " +
-                    //keyframes.get(pvh.mKeyframeSet.mNumKeyframes - 1).getValue());
-            //}
-        //}
-        //super.start();
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+            
+        
+        
     }
 
     
@@ -307,17 +308,17 @@ for(int i = 0;i < mValues.length;++i)
 for(int i = 0;i < numValues;++i)
             {
                 mValues[i].setupSetterAndGetter(mTarget);
-            } //End block
+            } 
             super.initAnimation();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInitialized) {
-            //int numValues = mValues.length;
-            //for (int i = 0; i < numValues; ++i) {
-                //mValues[i].setupSetterAndGetter(mTarget);
-            //}
-            //super.initAnimation();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -329,19 +330,20 @@ for(int i = 0;i < numValues;++i)
 ObjectAnimator var72A74007B2BE62B849F475C7BDA4658B_278617228 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_278617228.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_278617228;
-        // ---------- Original Method ----------
-        //super.setDuration(duration);
-        //return this;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:34.004 -0400", hash_original_method = "AF1F3CF2C666AC410BA38EDE7AFA44BA", hash_generated_method = "3355C1B10B1B086F9616DF4970CB92C2")
     public Object getTarget() {
 Object var1FC339B2A7C7BA226929CA8B7CC3A063_2081998238 =         mTarget;
         var1FC339B2A7C7BA226929CA8B7CC3A063_2081998238.addTaint(taint);
         return var1FC339B2A7C7BA226929CA8B7CC3A063_2081998238;
-        // ---------- Original Method ----------
-        //return mTarget;
+        
+        
     }
 
     
@@ -355,18 +357,18 @@ Object var1FC339B2A7C7BA226929CA8B7CC3A063_2081998238 =         mTarget;
     if(oldTarget != null && target != null && oldTarget.getClass() == target.getClass())            
             {
                 return;
-            } //End block
+            } 
             mInitialized = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTarget != target) {
-            //final Object oldTarget = mTarget;
-            //mTarget = target;
-            //if (oldTarget != null && target != null && oldTarget.getClass() == target.getClass()) {
-                //return;
-            //}
-            //mInitialized = false;
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -378,13 +380,13 @@ Object var1FC339B2A7C7BA226929CA8B7CC3A063_2081998238 =         mTarget;
 for(int i = 0;i < numValues;++i)
         {
             mValues[i].setupStartValue(mTarget);
-        } //End block
-        // ---------- Original Method ----------
-        //initAnimation();
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].setupStartValue(mTarget);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -396,13 +398,13 @@ for(int i = 0;i < numValues;++i)
 for(int i = 0;i < numValues;++i)
         {
             mValues[i].setupEndValue(mTarget);
-        } //End block
-        // ---------- Original Method ----------
-        //initAnimation();
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].setupEndValue(mTarget);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -415,13 +417,13 @@ for(int i = 0;i < numValues;++i)
 for(int i = 0;i < numValues;++i)
         {
             mValues[i].setAnimatedValue(mTarget);
-        } //End block
-        // ---------- Original Method ----------
-        //super.animateValue(fraction);
-        //int numValues = mValues.length;
-        //for (int i = 0; i < numValues; ++i) {
-            //mValues[i].setAnimatedValue(mTarget);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -432,9 +434,9 @@ for(int i = 0;i < numValues;++i)
 ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_1734813386 =         anim;
         var6E2178F33F884BED37C5DEBCD18F9A96_1734813386.addTaint(taint);
         return var6E2178F33F884BED37C5DEBCD18F9A96_1734813386;
-        // ---------- Original Method ----------
-        //final ObjectAnimator anim = (ObjectAnimator) super.clone();
-        //return anim;
+        
+        
+        
     }
 
     
@@ -448,20 +450,20 @@ ObjectAnimator var6E2178F33F884BED37C5DEBCD18F9A96_1734813386 =         anim;
 for(int i = 0;i < mValues.length;++i)
             {
                 returnVal += "\n    " + mValues[i].toString();
-            } //End block
-        } //End block
+            } 
+        } 
 String var74D8482D05AF02514EABC315066E6806_172906539 =         returnVal;
         var74D8482D05AF02514EABC315066E6806_172906539.addTaint(taint);
         return var74D8482D05AF02514EABC315066E6806_172906539;
-        // ---------- Original Method ----------
-        //String returnVal = "ObjectAnimator@" + Integer.toHexString(hashCode()) + ", target " +
-            //mTarget;
-        //if (mValues != null) {
-            //for (int i = 0; i < mValues.length; ++i) {
-                //returnVal += "\n    " + mValues[i].toString();
-            //}
-        //}
-        //return returnVal;
+        
+        
+            
+        
+            
+                
+            
+        
+        
     }
 
     

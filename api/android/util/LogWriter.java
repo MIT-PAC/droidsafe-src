@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,10 +25,10 @@ public class LogWriter extends Writer {
         mPriority = priority;
         mTag = tag;
         mBuffer = Log.LOG_ID_MAIN;
-        // ---------- Original Method ----------
-        //mPriority = priority;
-        //mTag = tag;
-        //mBuffer = Log.LOG_ID_MAIN;
+        
+        
+        
+        
     }
 
     
@@ -37,31 +37,34 @@ public class LogWriter extends Writer {
         mPriority = priority;
         mTag = tag;
         mBuffer = buffer;
-        // ---------- Original Method ----------
-        //mPriority = priority;
-        //mTag = tag;
-        //mBuffer = buffer;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.962 -0400", hash_original_method = "651C3299C6098C5206251D3395E7F56C", hash_generated_method = "D08D7FDC7D86BF10CFE149353B975CA7")
     @Override
     public void close() {
         flushBuilder();
-        // ---------- Original Method ----------
-        //flushBuilder();
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.963 -0400", hash_original_method = "4397D4B6CC585AD9A2FABC1DB1031654", hash_generated_method = "97F56083B0C8ACED57AE8237C5E7EFB5")
     @Override
     public void flush() {
         flushBuilder();
-        // ---------- Original Method ----------
-        //flushBuilder();
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.963 -0400", hash_original_method = "87C8CDE1CE20D2763C465BB465CBAFDD", hash_generated_method = "9BDF1371A8F52A0B4DB9441B7A707252")
     @Override
     public void write(char[] buf, int offset, int count) {
@@ -74,22 +77,22 @@ for(int i = 0;i < count;i++)
     if(c == '\n')            
             {
                 flushBuilder();
-            } //End block
+            } 
             else
             {
                 mBuilder.append(c);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for(int i = 0; i < count; i++) {
-            //char c = buf[offset + i];
-            //if ( c == '\n') {
-                //flushBuilder();
-            //}
-            //else {
-                //mBuilder.append(c);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -99,12 +102,12 @@ for(int i = 0;i < count;i++)
         {
             Log.println_native(mBuffer, mPriority, mTag, mBuilder.toString());
             mBuilder.delete(0, mBuilder.length());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBuilder.length() > 0) {
-            //Log.println_native(mBuffer, mPriority, mTag, mBuilder.toString());
-            //mBuilder.delete(0, mBuilder.length());
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     

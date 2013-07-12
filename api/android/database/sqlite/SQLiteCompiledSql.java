@@ -1,6 +1,6 @@
 package android.database.sqlite;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,25 +36,25 @@ class SQLiteCompiledSql {
     if(StrictMode.vmSqliteObjectLeaksEnabled())        
         {
             mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
-        } //End block
+        } 
         else
         {
             mStackTrace = null;
-        } //End block
+        } 
         nHandle = db.mNativeHandle;
         native_compile(sql);
-        // ---------- Original Method ----------
-        //db.verifyDbIsOpen();
-        //db.verifyLockOwner();
-        //mDatabase = db;
-        //mSqlStmt = sql;
-        //if (StrictMode.vmSqliteObjectLeaksEnabled()) {
-            //mStackTrace = new DatabaseObjectNotClosedException().fillInStackTrace();
-        //} else {
-            //mStackTrace = null;
-        //}
-        //nHandle = db.mNativeHandle;
-        //native_compile(sql);
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -64,15 +64,16 @@ class SQLiteCompiledSql {
         {
             mDatabase.finalizeStatementLater(nStatement);
             nStatement = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (nStatement != 0) {
-            //mDatabase.finalizeStatementLater(nStatement);
-            //nStatement = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.557 -0400", hash_original_method = "C3D2A814A65F76D9CB9F5D4B410FE699", hash_generated_method = "D15AF8C9A9605618C4F8E11768EBBB4F")
     synchronized boolean acquire() {
     if(mInUse)        
@@ -80,25 +81,26 @@ class SQLiteCompiledSql {
             boolean var68934A3E9455FA72420237EB05902327_1341422326 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1401471680 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1401471680;
-        } //End block
+        } 
         mInUse = true;
         boolean varB326B5062B2F0E69046810717534CB09_668278396 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_62533041 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_62533041;
-        // ---------- Original Method ----------
-        //if (mInUse) {
-            //return false;
-        //}
-        //mInUse = true;
-        //return true;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.558 -0400", hash_original_method = "3B98FAB5CC48492CB208B835B8A64CFB", hash_generated_method = "1D65CE2608C808F3D02CFA088AEF5382")
     synchronized void release() {
         mInUse = false;
-        // ---------- Original Method ----------
-        //mInUse = false;
+        
+        
     }
 
     
@@ -107,11 +109,11 @@ class SQLiteCompiledSql {
     if(!mInUse)        
         {
             releaseSqlStatement();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInUse) {
-            //releaseSqlStatement();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -125,7 +127,7 @@ class SQLiteCompiledSql {
     if(mDatabase.isInQueueOfStatementsToBeFinalized(nStatement))            
             {
                 return;
-            } //End block
+            } 
     if(mInUse && mStackTrace != null)            
             {
                 int len = mSqlStmt.length();
@@ -134,31 +136,31 @@ class SQLiteCompiledSql {
                     "that you explicitly call close() on your cursor: " +
                     mSqlStmt.substring(0, (len > 1000) ? 1000 : len),
                     mStackTrace);
-            } //End block
+            } 
             releaseSqlStatement();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (nStatement == 0) return;
-            //if (mDatabase.isInQueueOfStatementsToBeFinalized(nStatement)) {
-                //return;
-            //}
-            //if (mInUse && mStackTrace != null) {
-                //int len = mSqlStmt.length();
-                //StrictMode.onSqliteObjectLeaked(
-                    //"Releasing statement in a finalizer. Please ensure " +
-                    //"that you explicitly call close() on your cursor: " +
-                    //mSqlStmt.substring(0, (len > 1000) ? 1000 : len),
-                    //mStackTrace);
-            //}
-            //releaseSqlStatement();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+            
+            
+        
+            
+        
     }
 
     
@@ -182,23 +184,23 @@ class SQLiteCompiledSql {
 String varA8F8BFF7B1F2F52B225C2C2411606CA3_1071102851 =             buff.toString();
             varA8F8BFF7B1F2F52B225C2C2411606CA3_1071102851.addTaint(taint);
             return varA8F8BFF7B1F2F52B225C2C2411606CA3_1071102851;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(this) {
-            //StringBuilder buff = new StringBuilder();
-            //buff.append(" nStatement=");
-            //buff.append(nStatement);
-            //buff.append(", mInUse=");
-            //buff.append(mInUse);
-            //buff.append(", db=");
-            //buff.append(mDatabase.getPath());
-            //buff.append(", db_connectionNum=");
-            //buff.append(mDatabase.mConnectionNum);
-            //buff.append(", sql=");
-            //int len = mSqlStmt.length();
-            //buff.append(mSqlStmt.substring(0, (len > 100) ? 100 : len));
-            //return buff.toString();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     

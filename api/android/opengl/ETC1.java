@@ -1,6 +1,6 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,50 +11,59 @@ public class ETC1 {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:30.155 -0400", hash_original_method = "A91C782DE4E2E5AE629C67E54AACAB60", hash_generated_method = "A91C782DE4E2E5AE629C67E54AACAB60")
     public ETC1 ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     public static void encodeBlock(Buffer in, int validPixelMask, Buffer out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void decodeBlock(Buffer in, Buffer out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getEncodedDataSize(int width, int height) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668332068 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1668332068;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void encodeImage(Buffer in, int width, int height,
             int pixelSize, int stride, Buffer out) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void decodeImage(Buffer in, Buffer out,
             int width, int height, int pixelSize, int stride) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static void formatHeader(Buffer header, int width, int height) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static boolean isValid(Buffer header) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getWidth(Buffer header) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895;
     }
 
     
+    @DSModeled(DSC.SAFE)
     public static int getHeight(Buffer header) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593;

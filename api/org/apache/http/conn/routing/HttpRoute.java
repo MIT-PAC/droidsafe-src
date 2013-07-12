@@ -1,6 +1,6 @@
 package org.apache.http.conn.routing;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,14 +38,14 @@ public final class HttpRoute implements RouteInfo, Cloneable {
                 ("Target host may not be null.");
             var0834355F17AB1D6D8F9C33D9EE9B8ED6_437040874.addTaint(taint);
             throw var0834355F17AB1D6D8F9C33D9EE9B8ED6_437040874;
-        } //End block
+        } 
     if((tunnelled == TunnelType.TUNNELLED) && (proxies == null))        
         {
             IllegalArgumentException var5FBFFDC61457ABEB821EDECA5DBAA216_440266806 = new IllegalArgumentException
                 ("Proxy required if tunnelled.");
             var5FBFFDC61457ABEB821EDECA5DBAA216_440266806.addTaint(taint);
             throw var5FBFFDC61457ABEB821EDECA5DBAA216_440266806;
-        } //End block
+        } 
     if(tunnelled == null)        
         tunnelled = TunnelType.PLAIN;
     if(layered == null)        
@@ -56,25 +56,25 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         this.secure       = secure;
         this.tunnelled    = tunnelled;
         this.layered      = layered;
-        // ---------- Original Method ----------
-        //if (target == null) {
-            //throw new IllegalArgumentException
-                //("Target host may not be null.");
-        //}
-        //if ((tunnelled == TunnelType.TUNNELLED) && (proxies == null)) {
-            //throw new IllegalArgumentException
-                //("Proxy required if tunnelled.");
-        //}
-        //if (tunnelled == null)
-            //tunnelled = TunnelType.PLAIN;
-        //if (layered == null)
-            //layered = LayerType.PLAIN;
-        //this.targetHost   = target;
-        //this.localAddress = local;
-        //this.proxyChain   = proxies;
-        //this.secure       = secure;
-        //this.tunnelled    = tunnelled;
-        //this.layered      = layered;
+        
+        
+            
+                
+        
+        
+            
+                
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -88,7 +88,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         addTaint(proxies[0].getTaint());
         addTaint(local.getTaint());
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -102,7 +102,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         addTaint(proxy.getTaint());
         addTaint(local.getTaint());
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -112,7 +112,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
         addTaint(secure);
         addTaint(local.getTaint());
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -120,7 +120,7 @@ public final class HttpRoute implements RouteInfo, Cloneable {
     public  HttpRoute(HttpHost target) {
         this(null, target, null, false, TunnelType.PLAIN, LayerType.PLAIN);
         addTaint(target.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -140,16 +140,17 @@ public final class HttpRoute implements RouteInfo, Cloneable {
                 ("Proxy host may not be null.");
             var0CD84C903ADF2DDB413B21B5128ACE60_2146136117.addTaint(taint);
             throw var0CD84C903ADF2DDB413B21B5128ACE60_2146136117;
-        } //End block
-        // ---------- Original Method ----------
-        //if (proxy == null) {
-            //throw new IllegalArgumentException
-                //("Proxy host may not be null.");
-        //}
+        } 
+        
+        
+            
+                
+        
     }
 
     
-        private static HttpHost[] toChain(HttpHost proxy) {
+        @DSModeled(DSC.SAFE)
+    private static HttpHost[] toChain(HttpHost proxy) {
         if (proxy == null)
             return null;
         return new HttpHost[]{ proxy };
@@ -175,8 +176,8 @@ public final class HttpRoute implements RouteInfo, Cloneable {
 HttpHost var67C71439C5981484698447EE93E1A003_380642974 =         this.targetHost;
         var67C71439C5981484698447EE93E1A003_380642974.addTaint(taint);
         return var67C71439C5981484698447EE93E1A003_380642974;
-        // ---------- Original Method ----------
-        //return this.targetHost;
+        
+        
     }
 
     
@@ -185,8 +186,8 @@ HttpHost var67C71439C5981484698447EE93E1A003_380642974 =         this.targetHost
 InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_642404393 =         this.localAddress;
         varD252CCE80C2F3B9DE81EE46EA65F5895_642404393.addTaint(taint);
         return varD252CCE80C2F3B9DE81EE46EA65F5895_642404393;
-        // ---------- Original Method ----------
-        //return this.localAddress;
+        
+        
     }
 
     
@@ -195,8 +196,8 @@ InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_642404393 =         this.localAd
         int var7CFF713CFFC25845EFE8BFC10A30B95A_317159818 = ((proxyChain == null) ? 1 : (proxyChain.length+1));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93068648 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93068648;
-        // ---------- Original Method ----------
-        //return (proxyChain == null) ? 1 : (proxyChain.length+1);
+        
+        
     }
 
     
@@ -227,21 +228,21 @@ InetAddress varD252CCE80C2F3B9DE81EE46EA65F5895_642404393 =         this.localAd
 HttpHost varDC838461EE2FA0CA4C9BBB70A15456B0_121973951 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_121973951.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_121973951;
-        // ---------- Original Method ----------
-        //if (hop < 0)
-            //throw new IllegalArgumentException
-                //("Hop index must not be negative: " + hop);
-        //final int hopcount = getHopCount();
-        //if (hop >= hopcount)
-            //throw new IllegalArgumentException
-                //("Hop index " + hop +
-                 //" exceeds route length " + hopcount);
-        //HttpHost result = null;
-        //if (hop < hopcount-1)
-            //result = this.proxyChain[hop];
-        //else
-            //result = this.targetHost;
-        //return result;
+        
+        
+            
+                
+        
+        
+            
+                
+                 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -250,8 +251,8 @@ HttpHost varDC838461EE2FA0CA4C9BBB70A15456B0_121973951 =         result;
 HttpHost varF8CC471EE86A19D0A727D1FC9C328686_2006702640 =         (this.proxyChain == null) ? null : this.proxyChain[0];
         varF8CC471EE86A19D0A727D1FC9C328686_2006702640.addTaint(taint);
         return varF8CC471EE86A19D0A727D1FC9C328686_2006702640;
-        // ---------- Original Method ----------
-        //return (this.proxyChain == null) ? null : this.proxyChain[0];
+        
+        
     }
 
     
@@ -260,8 +261,8 @@ HttpHost varF8CC471EE86A19D0A727D1FC9C328686_2006702640 =         (this.proxyCha
 TunnelType var2217FBB31A61A2BC06264383F23E2C7F_633097238 =         this.tunnelled;
         var2217FBB31A61A2BC06264383F23E2C7F_633097238.addTaint(taint);
         return var2217FBB31A61A2BC06264383F23E2C7F_633097238;
-        // ---------- Original Method ----------
-        //return this.tunnelled;
+        
+        
     }
 
     
@@ -270,8 +271,8 @@ TunnelType var2217FBB31A61A2BC06264383F23E2C7F_633097238 =         this.tunnelle
         boolean var6E17A163EAADFAAEEF827D05D550510F_1169438785 = ((this.tunnelled == TunnelType.TUNNELLED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1106029138 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1106029138;
-        // ---------- Original Method ----------
-        //return (this.tunnelled == TunnelType.TUNNELLED);
+        
+        
     }
 
     
@@ -280,8 +281,8 @@ TunnelType var2217FBB31A61A2BC06264383F23E2C7F_633097238 =         this.tunnelle
 LayerType var0B365440B9E6602F90569354BDD2D5AF_2134920322 =         this.layered;
         var0B365440B9E6602F90569354BDD2D5AF_2134920322.addTaint(taint);
         return var0B365440B9E6602F90569354BDD2D5AF_2134920322;
-        // ---------- Original Method ----------
-        //return this.layered;
+        
+        
     }
 
     
@@ -290,8 +291,8 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_2134920322 =         this.layered;
         boolean var78483962D1129A47EBB9F287858CE500_658974782 = ((this.layered == LayerType.LAYERED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_67497820 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_67497820;
-        // ---------- Original Method ----------
-        //return (this.layered == LayerType.LAYERED);
+        
+        
     }
 
     
@@ -300,8 +301,8 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_2134920322 =         this.layered;
         boolean var1A6CF3022022F86E5EAF7A933D51276A_513231294 = (this.secure);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_223582773 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_223582773;
-        // ---------- Original Method ----------
-        //return this.secure;
+        
+        
     }
 
     
@@ -340,12 +341,12 @@ LayerType var0B365440B9E6602F90569354BDD2D5AF_2134920322 =         this.layered;
         {
 for(int i=0;equal && (i<this.proxyChain.length);i++)
             equal = this.proxyChain[i].equals(that.proxyChain[i]);
-        } //End block
+        } 
         boolean var465289687A70DB7AA7217CC240C29F0F_349646026 = (equal);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1146137836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1146137836;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -360,7 +361,7 @@ for(int i=0;equal && (i<this.proxyChain.length);i++)
             hc ^= proxyChain.length;
 for(HttpHost aProxyChain : proxyChain)
             hc ^= aProxyChain.hashCode();
-        } //End block
+        } 
     if(this.secure)        
         hc ^= 0x11111111;
         hc ^= this.tunnelled.hashCode();
@@ -368,19 +369,19 @@ for(HttpHost aProxyChain : proxyChain)
         int var6320C1115D5BC2B6CA615B96BE050884_157170807 = (hc);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_74639124 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_74639124;
-        // ---------- Original Method ----------
-        //int hc = this.targetHost.hashCode();
-        //if (this.localAddress != null)
-            //hc ^= localAddress.hashCode();
-        //if (this.proxyChain != null) {
-            //hc ^= proxyChain.length;
-            //for (HttpHost aProxyChain : proxyChain) hc ^= aProxyChain.hashCode();
-        //}
-        //if (this.secure)
-            //hc ^= 0x11111111;
-        //hc ^= this.tunnelled.hashCode();
-        //hc ^= this.layered.hashCode();
-        //return hc;
+        
+        
+        
+            
+        
+            
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -393,7 +394,7 @@ for(HttpHost aProxyChain : proxyChain)
         {
             cab.append(this.localAddress);
             cab.append("->");
-        } //End block
+        } 
         cab.append('{');
     if(this.tunnelled == TunnelType.TUNNELLED)        
         cab.append('t');
@@ -408,37 +409,37 @@ for(HttpHost aProxyChain : this.proxyChain)
             {
                 cab.append(aProxyChain);
                 cab.append("->");
-            } //End block
-        } //End block
+            } 
+        } 
         cab.append(this.targetHost);
         cab.append(']');
 String var5D73975C9EFF81CD9FF6232386AC7C22_1446896898 =         cab.toString();
         var5D73975C9EFF81CD9FF6232386AC7C22_1446896898.addTaint(taint);
         return var5D73975C9EFF81CD9FF6232386AC7C22_1446896898;
-        // ---------- Original Method ----------
-        //StringBuilder cab = new StringBuilder(50 + getHopCount()*30);
-        //cab.append("HttpRoute[");
-        //if (this.localAddress != null) {
-            //cab.append(this.localAddress);
-            //cab.append("->");
-        //}
-        //cab.append('{');
-        //if (this.tunnelled == TunnelType.TUNNELLED)
-            //cab.append('t');
-        //if (this.layered == LayerType.LAYERED)
-            //cab.append('l');
-        //if (this.secure)
-            //cab.append('s');
-        //cab.append("}->");
-        //if (this.proxyChain != null) {
-            //for (HttpHost aProxyChain : this.proxyChain) {
-                //cab.append(aProxyChain);
-                //cab.append("->");
-            //}
-        //}
-        //cab.append(this.targetHost);
-        //cab.append(']');
-        //return cab.toString();
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+            
+                
+                
+            
+        
+        
+        
+        
     }
 
     
@@ -448,8 +449,8 @@ String var5D73975C9EFF81CD9FF6232386AC7C22_1446896898 =         cab.toString();
 Object var46F3A0D86742C1D6E099C2B166941A33_70672661 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_70672661.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_70672661;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

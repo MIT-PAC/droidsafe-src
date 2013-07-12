@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,24 +30,24 @@ public class RefQueueWorker implements Runnable {
             IllegalArgumentException var92597C0BB4D3D87F2ECE27274D53EE76_1427631010 = new IllegalArgumentException("Queue must not be null.");
             var92597C0BB4D3D87F2ECE27274D53EE76_1427631010.addTaint(taint);
             throw var92597C0BB4D3D87F2ECE27274D53EE76_1427631010;
-        } //End block
+        } 
     if(handler == null)        
         {
             IllegalArgumentException varBECFD90EE60267CC6E41D35E31D56037_173385978 = new IllegalArgumentException("Handler must not be null.");
             varBECFD90EE60267CC6E41D35E31D56037_173385978.addTaint(taint);
             throw varBECFD90EE60267CC6E41D35E31D56037_173385978;
-        } //End block
+        } 
         refQueue   = queue;
         refHandler = handler;
-        // ---------- Original Method ----------
-        //if (queue == null) {
-            //throw new IllegalArgumentException("Queue must not be null.");
-        //}
-        //if (handler == null) {
-            //throw new IllegalArgumentException("Handler must not be null.");
-        //}
-        //refQueue   = queue;
-        //refHandler = handler;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -56,7 +56,7 @@ public class RefQueueWorker implements Runnable {
     if(this.workerThread == null)        
         {
             this.workerThread = Thread.currentThread();
-        } //End block
+        } 
         while
 (this.workerThread == Thread.currentThread())        
         {
@@ -64,29 +64,29 @@ public class RefQueueWorker implements Runnable {
             {
                 Reference<?> ref = refQueue.remove();
                 refHandler.handleReference(ref);
-            } //End block
+            } 
             catch (InterruptedException e)
             {
     if(log.isDebugEnabled())                
                 {
                     log.debug(this.toString() + " interrupted", e);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.workerThread == null) {
-            //this.workerThread = Thread.currentThread();
-        //}
-        //while (this.workerThread == Thread.currentThread()) {
-            //try {
-                //Reference<?> ref = refQueue.remove();
-                //refHandler.handleReference(ref);
-            //} catch (InterruptedException e) {
-                //if (log.isDebugEnabled()) {
-                    //log.debug(this.toString() + " interrupted", e);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+                
+                
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -97,13 +97,13 @@ public class RefQueueWorker implements Runnable {
         {
             this.workerThread = null;
             wt.interrupt();
-        } //End block
-        // ---------- Original Method ----------
-        //Thread wt = this.workerThread;
-        //if (wt != null) {
-            //this.workerThread = null; 
-            //wt.interrupt();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -113,8 +113,8 @@ public class RefQueueWorker implements Runnable {
 String varF97D1EB4E7BB2414B750B467C6942FFE_33960723 =         "RefQueueWorker::" + this.workerThread;
         varF97D1EB4E7BB2414B750B467C6942FFE_33960723.addTaint(taint);
         return varF97D1EB4E7BB2414B750B467C6942FFE_33960723;
-        // ---------- Original Method ----------
-        //return "RefQueueWorker::" + this.workerThread;
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,14 +49,15 @@ public abstract class ContentResolver {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.846 -0400", hash_original_method = "8EB5ACCD206353DB8493F8AB9F861C85", hash_generated_method = "934BE422B780F73056F691B084F33D1F")
     public  ContentResolver(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
     protected abstract IContentProvider acquireProvider(Context c, String name);
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.847 -0400", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "9006F49CC9F8C34999AD7F3FB04E7E22")
     protected IContentProvider acquireExistingProvider(Context c, String name) {
         addTaint(name.getTaint());
@@ -64,8 +65,8 @@ public abstract class ContentResolver {
 IContentProvider var766C186C84316C5769DE0C3CF08965F1_1548898768 =         acquireProvider(c, name);
         var766C186C84316C5769DE0C3CF08965F1_1548898768.addTaint(taint);
         return var766C186C84316C5769DE0C3CF08965F1_1548898768;
-        // ---------- Original Method ----------
-        //return acquireProvider(c, name);
+        
+        
     }
 
     
@@ -83,54 +84,55 @@ IContentProvider var766C186C84316C5769DE0C3CF08965F1_1548898768 =         acquir
 String var1A84D08190718109CB2BC27E1A4C03C0_670984369 =                 provider.getType(url);
                 var1A84D08190718109CB2BC27E1A4C03C0_670984369.addTaint(taint);
                 return var1A84D08190718109CB2BC27E1A4C03C0_670984369;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 String var540C13E9E156B687226421B24F2DF178_449269101 =                 null;
                 var540C13E9E156B687226421B24F2DF178_449269101.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_449269101;
-            } //End block
+            } 
             catch (java.lang.Exception e)
             {
 String var540C13E9E156B687226421B24F2DF178_518001615 =                 null;
                 var540C13E9E156B687226421B24F2DF178_518001615.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_518001615;
-            } //End block
+            } 
             finally 
             {
                 releaseProvider(provider);
-            } //End block
-        } //End block
+            } 
+        } 
     if(!SCHEME_CONTENT.equals(url.getScheme()))        
         {
 String var540C13E9E156B687226421B24F2DF178_880378616 =             null;
             var540C13E9E156B687226421B24F2DF178_880378616.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_880378616;
-        } //End block
+        } 
         try 
         {
             String type = ActivityManagerNative.getDefault().getProviderMimeType(url);
 String varC5B9F25B4EEAD3E8E2C33F9429204397_2016645452 =             type;
             varC5B9F25B4EEAD3E8E2C33F9429204397_2016645452.addTaint(taint);
             return varC5B9F25B4EEAD3E8E2C33F9429204397_2016645452;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 String var540C13E9E156B687226421B24F2DF178_1521751072 =             null;
             var540C13E9E156B687226421B24F2DF178_1521751072.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1521751072;
-        } //End block
+        } 
         catch (java.lang.Exception e)
         {
 String var540C13E9E156B687226421B24F2DF178_1904687567 =             null;
             var540C13E9E156B687226421B24F2DF178_1904687567.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1904687567;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.849 -0400", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "5DC0510205DB50DDE0DC03F6D5F1916D")
     public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
         addTaint(mimeTypeFilter.getTaint());
@@ -141,35 +143,35 @@ String var540C13E9E156B687226421B24F2DF178_1904687567 =             null;
 String[] var540C13E9E156B687226421B24F2DF178_825834727 =             null;
             var540C13E9E156B687226421B24F2DF178_825834727.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_825834727;
-        } //End block
+        } 
         try 
         {
 String[] varC36AEBB87CA75D0818120C3B784E0B4F_1585674643 =             provider.getStreamTypes(url, mimeTypeFilter);
             varC36AEBB87CA75D0818120C3B784E0B4F_1585674643.addTaint(taint);
             return varC36AEBB87CA75D0818120C3B784E0B4F_1585674643;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 String[] var540C13E9E156B687226421B24F2DF178_1101413273 =             null;
             var540C13E9E156B687226421B24F2DF178_1101413273.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1101413273;
-        } //End block
+        } 
         finally 
         {
             releaseProvider(provider);
-        } //End block
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(url);
-        //if (provider == null) {
-            //return null;
-        //}
-        //try {
-            //return provider.getStreamTypes(url, mimeTypeFilter);
-        //} catch (RemoteException e) {
-            //return null;
-        //} finally {
-            //releaseProvider(provider);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -187,7 +189,7 @@ String[] var540C13E9E156B687226421B24F2DF178_1101413273 =             null;
 Cursor var540C13E9E156B687226421B24F2DF178_1089684887 =             null;
             var540C13E9E156B687226421B24F2DF178_1089684887.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1089684887;
-        } //End block
+        } 
         try 
         {
             long startTime = SystemClock.uptimeMillis();
@@ -198,29 +200,29 @@ Cursor var540C13E9E156B687226421B24F2DF178_1089684887 =             null;
 Cursor var540C13E9E156B687226421B24F2DF178_1219835390 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1219835390.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1219835390;
-            } //End block
+            } 
             qCursor.getCount();
             long durationMillis = SystemClock.uptimeMillis() - startTime;
             maybeLogQueryToEventLog(durationMillis, uri, projection, selection, sortOrder);
 Cursor var06283D7CE457C57870987986E88F1A19_1245449146 =             new CursorWrapperInner(qCursor, provider);
             var06283D7CE457C57870987986E88F1A19_1245449146.addTaint(taint);
             return var06283D7CE457C57870987986E88F1A19_1245449146;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             releaseProvider(provider);
 Cursor var540C13E9E156B687226421B24F2DF178_693241744 =             null;
             var540C13E9E156B687226421B24F2DF178_693241744.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_693241744;
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             releaseProvider(provider);
             e.addTaint(taint);
             throw e;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -237,21 +239,21 @@ Cursor var540C13E9E156B687226421B24F2DF178_693241744 =             null;
 InputStream varA87CF74140B150613F4203E71875F9A7_923825011 =                 stream;
                 varA87CF74140B150613F4203E71875F9A7_923825011.addTaint(taint);
                 return varA87CF74140B150613F4203E71875F9A7_923825011;
-            } //End block
+            } 
             catch (Resources.NotFoundException ex)
             {
                 FileNotFoundException varE8810E522D8B98FEF67E48EC052E3409_482340621 = new FileNotFoundException("Resource does not exist: " + uri);
                 varE8810E522D8B98FEF67E48EC052E3409_482340621.addTaint(taint);
                 throw varE8810E522D8B98FEF67E48EC052E3409_482340621;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(SCHEME_FILE.equals(scheme))        
         {
 InputStream varFC75AD1534DBFE0E739C82AC8780E884_806182662 =             new FileInputStream(uri.getPath());
             varFC75AD1534DBFE0E739C82AC8780E884_806182662.addTaint(taint);
             return varFC75AD1534DBFE0E739C82AC8780E884_806182662;
-        } //End block
+        } 
         else
         {
             AssetFileDescriptor fd = openAssetFileDescriptor(uri, "r");
@@ -260,16 +262,16 @@ InputStream varFC75AD1534DBFE0E739C82AC8780E884_806182662 =             new File
 InputStream varBE141D4F2C9E7C9CF6C0202CDAF666BA_1713045059 =                 fd != null ? fd.createInputStream() : null;
                 varBE141D4F2C9E7C9CF6C0202CDAF666BA_1713045059.addTaint(taint);
                 return varBE141D4F2C9E7C9CF6C0202CDAF666BA_1713045059;
-            } //End block
+            } 
             catch (IOException e)
             {
                 FileNotFoundException varE14CDFD965413CCD1DE03C3CE3B3937E_848864377 = new FileNotFoundException("Unable to create stream");
                 varE14CDFD965413CCD1DE03C3CE3B3937E_848864377.addTaint(taint);
                 throw varE14CDFD965413CCD1DE03C3CE3B3937E_848864377;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -279,8 +281,8 @@ InputStream varBE141D4F2C9E7C9CF6C0202CDAF666BA_1713045059 =                 fd 
 OutputStream varDAF18F351C752F1D03791D667017D5CB_1163845722 =         openOutputStream(uri, "w");
         varDAF18F351C752F1D03791D667017D5CB_1163845722.addTaint(taint);
         return varDAF18F351C752F1D03791D667017D5CB_1163845722;
-        // ---------- Original Method ----------
-        //return openOutputStream(uri, "w");
+        
+        
     }
 
     
@@ -294,20 +296,20 @@ OutputStream varDAF18F351C752F1D03791D667017D5CB_1163845722 =         openOutput
 OutputStream var9660A12712EE20E561E7EB86CAE36FCA_1008677926 =             fd != null ? fd.createOutputStream() : null;
             var9660A12712EE20E561E7EB86CAE36FCA_1008677926.addTaint(taint);
             return var9660A12712EE20E561E7EB86CAE36FCA_1008677926;
-        } //End block
+        } 
         catch (IOException e)
         {
             FileNotFoundException varE14CDFD965413CCD1DE03C3CE3B3937E_2123501041 = new FileNotFoundException("Unable to create stream");
             varE14CDFD965413CCD1DE03C3CE3B3937E_2123501041.addTaint(taint);
             throw varE14CDFD965413CCD1DE03C3CE3B3937E_2123501041;
-        } //End block
-        // ---------- Original Method ----------
-        //AssetFileDescriptor fd = openAssetFileDescriptor(uri, mode);
-        //try {
-            //return fd != null ? fd.createOutputStream() : null;
-        //} catch (IOException e) {
-            //throw new FileNotFoundException("Unable to create stream");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -322,36 +324,36 @@ OutputStream var9660A12712EE20E561E7EB86CAE36FCA_1008677926 =             fd != 
 ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_19150224 =             null;
             var540C13E9E156B687226421B24F2DF178_19150224.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_19150224;
-        } //End block
+        } 
     if(afd.getDeclaredLength() < 0)        
         {
 ParcelFileDescriptor varA9AB8B7D15238800765F4158408BCDB4_606542588 =             afd.getParcelFileDescriptor();
             varA9AB8B7D15238800765F4158408BCDB4_606542588.addTaint(taint);
             return varA9AB8B7D15238800765F4158408BCDB4_606542588;
-        } //End block
+        } 
         try 
         {
             afd.close();
-        } //End block
+        } 
         catch (IOException e)
         {
-        } //End block
+        } 
         FileNotFoundException varCF2804E98D5BC3EED85EC79FB2F91971_754813410 = new FileNotFoundException("Not a whole file");
         varCF2804E98D5BC3EED85EC79FB2F91971_754813410.addTaint(taint);
         throw varCF2804E98D5BC3EED85EC79FB2F91971_754813410;
-        // ---------- Original Method ----------
-        //AssetFileDescriptor afd = openAssetFileDescriptor(uri, mode);
-        //if (afd == null) {
-            //return null;
-        //}
-        //if (afd.getDeclaredLength() < 0) {
-            //return afd.getParcelFileDescriptor();
-        //}
-        //try {
-            //afd.close();
-        //} catch (IOException e) {
-        //}
-        //throw new FileNotFoundException("Not a whole file");
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -368,21 +370,21 @@ ParcelFileDescriptor varA9AB8B7D15238800765F4158408BCDB4_606542588 =            
                 FileNotFoundException var3E6E4698F2D2B39AC43F6148E6AB4CF6_2110425046 = new FileNotFoundException("Can't write resources: " + uri);
                 var3E6E4698F2D2B39AC43F6148E6AB4CF6_2110425046.addTaint(taint);
                 throw var3E6E4698F2D2B39AC43F6148E6AB4CF6_2110425046;
-            } //End block
+            } 
             OpenResourceIdResult r = getResourceId(uri);
             try 
             {
 AssetFileDescriptor varF3583D388A196F6D98A374DDC1AD0113_1373486718 =                 r.r.openRawResourceFd(r.id);
                 varF3583D388A196F6D98A374DDC1AD0113_1373486718.addTaint(taint);
                 return varF3583D388A196F6D98A374DDC1AD0113_1373486718;
-            } //End block
+            } 
             catch (Resources.NotFoundException ex)
             {
                 FileNotFoundException varE8810E522D8B98FEF67E48EC052E3409_953885800 = new FileNotFoundException("Resource does not exist: " + uri);
                 varE8810E522D8B98FEF67E48EC052E3409_953885800.addTaint(taint);
                 throw varE8810E522D8B98FEF67E48EC052E3409_953885800;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(SCHEME_FILE.equals(scheme))        
         {
@@ -391,7 +393,7 @@ AssetFileDescriptor varF3583D388A196F6D98A374DDC1AD0113_1373486718 =            
 AssetFileDescriptor var6BD93397E5DAF0DF17CE1C003D2FCAB6_846507032 =             new AssetFileDescriptor(pfd, 0, -1);
             var6BD93397E5DAF0DF17CE1C003D2FCAB6_846507032.addTaint(taint);
             return var6BD93397E5DAF0DF17CE1C003D2FCAB6_846507032;
-        } //End block
+        } 
         else
         {
     if("r".equals(mode))            
@@ -399,7 +401,7 @@ AssetFileDescriptor var6BD93397E5DAF0DF17CE1C003D2FCAB6_846507032 =             
 AssetFileDescriptor var728978861F4263FCBEBDB0546FBED7DF_321288291 =                 openTypedAssetFileDescriptor(uri, "*/*", null);
                 var728978861F4263FCBEBDB0546FBED7DF_321288291.addTaint(taint);
                 return var728978861F4263FCBEBDB0546FBED7DF_321288291;
-            } //End block
+            } 
             else
             {
                 IContentProvider provider = acquireProvider(uri);
@@ -408,7 +410,7 @@ AssetFileDescriptor var728978861F4263FCBEBDB0546FBED7DF_321288291 =             
                     FileNotFoundException var40E2EE088A44F180C90D99DA40A11B6C_459740697 = new FileNotFoundException("No content provider: " + uri);
                     var40E2EE088A44F180C90D99DA40A11B6C_459740697.addTaint(taint);
                     throw var40E2EE088A44F180C90D99DA40A11B6C_459740697;
-                } //End block
+                } 
                 try 
                 {
                     AssetFileDescriptor fd = provider.openAssetFile(uri, mode);
@@ -417,7 +419,7 @@ AssetFileDescriptor var728978861F4263FCBEBDB0546FBED7DF_321288291 =             
 AssetFileDescriptor var540C13E9E156B687226421B24F2DF178_2040428357 =                         null;
                         var540C13E9E156B687226421B24F2DF178_2040428357.addTaint(taint);
                         return var540C13E9E156B687226421B24F2DF178_2040428357;
-                    } //End block
+                    } 
                     ParcelFileDescriptor pfd = new ParcelFileDescriptorInner(
                             fd.getParcelFileDescriptor(), provider);
                     provider = null;
@@ -425,29 +427,29 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_607713455 =             
                             fd.getDeclaredLength());
                     varC3C12411A882751F292369C906132F8B_607713455.addTaint(taint);
                     return varC3C12411A882751F292369C906132F8B_607713455;
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
                     FileNotFoundException varDBFDFCAA6D96C908D7FB1870DDC805CA_2125285302 = new FileNotFoundException("Dead content provider: " + uri);
                     varDBFDFCAA6D96C908D7FB1870DDC805CA_2125285302.addTaint(taint);
                     throw varDBFDFCAA6D96C908D7FB1870DDC805CA_2125285302;
-                } //End block
+                } 
                 catch (FileNotFoundException e)
                 {
                     e.addTaint(taint);
                     throw e;
-                } //End block
+                } 
                 finally 
                 {
     if(provider != null)                    
                     {
                         releaseProvider(provider);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -463,7 +465,7 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_607713455 =             
             FileNotFoundException var40E2EE088A44F180C90D99DA40A11B6C_681199134 = new FileNotFoundException("No content provider: " + uri);
             var40E2EE088A44F180C90D99DA40A11B6C_681199134.addTaint(taint);
             throw var40E2EE088A44F180C90D99DA40A11B6C_681199134;
-        } //End block
+        } 
         try 
         {
             AssetFileDescriptor fd = provider.openTypedAssetFile(uri, mimeType, opts);
@@ -472,7 +474,7 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_607713455 =             
 AssetFileDescriptor var540C13E9E156B687226421B24F2DF178_17210999 =                 null;
                 var540C13E9E156B687226421B24F2DF178_17210999.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_17210999;
-            } //End block
+            } 
             ParcelFileDescriptor pfd = new ParcelFileDescriptorInner(
                     fd.getParcelFileDescriptor(), provider);
             provider = null;
@@ -480,30 +482,31 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_1132828530 =            
                     fd.getDeclaredLength());
             varC3C12411A882751F292369C906132F8B_1132828530.addTaint(taint);
             return varC3C12411A882751F292369C906132F8B_1132828530;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             FileNotFoundException varDBFDFCAA6D96C908D7FB1870DDC805CA_634066464 = new FileNotFoundException("Dead content provider: " + uri);
             varDBFDFCAA6D96C908D7FB1870DDC805CA_634066464.addTaint(taint);
             throw varDBFDFCAA6D96C908D7FB1870DDC805CA_634066464;
-        } //End block
+        } 
         catch (FileNotFoundException e)
         {
             e.addTaint(taint);
             throw e;
-        } //End block
+        } 
         finally 
         {
     if(provider != null)            
             {
                 releaseProvider(provider);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.858 -0400", hash_original_method = "39DD117C1A4502740FE90592CCDD92D2", hash_generated_method = "7BE96DEBF0253B94A83A99ED1B50F977")
     public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException {
         addTaint(uri.getTaint());
@@ -514,27 +517,27 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_1132828530 =            
             FileNotFoundException var0ACC1320D5E87EB8AD60C20862242804_962653630 = new FileNotFoundException("No authority: " + uri);
             var0ACC1320D5E87EB8AD60C20862242804_962653630.addTaint(taint);
             throw var0ACC1320D5E87EB8AD60C20862242804_962653630;
-        } //End block
+        } 
         else
         {
             try 
             {
                 r = mContext.getPackageManager().getResourcesForApplication(authority);
-            } //End block
+            } 
             catch (NameNotFoundException ex)
             {
                 FileNotFoundException var9514FE02F5A5CA391BAA8E45C47116A7_1651240867 = new FileNotFoundException("No package found for authority: " + uri);
                 var9514FE02F5A5CA391BAA8E45C47116A7_1651240867.addTaint(taint);
                 throw var9514FE02F5A5CA391BAA8E45C47116A7_1651240867;
-            } //End block
-        } //End block
+            } 
+        } 
         List<String> path = uri.getPathSegments();
     if(path == null)        
         {
             FileNotFoundException varC69DFEC10B02FEAA78D67A2A187A7F19_1113164631 = new FileNotFoundException("No path: " + uri);
             varC69DFEC10B02FEAA78D67A2A187A7F19_1113164631.addTaint(taint);
             throw varC69DFEC10B02FEAA78D67A2A187A7F19_1113164631;
-        } //End block
+        } 
         int len = path.size();
         int id;
     if(len == 1)        
@@ -542,43 +545,44 @@ AssetFileDescriptor varC3C12411A882751F292369C906132F8B_1132828530 =            
             try 
             {
                 id = Integer.parseInt(path.get(0));
-            } //End block
+            } 
             catch (NumberFormatException e)
             {
                 FileNotFoundException varC22B934DA93E3FEDAA7C59017512810F_1273237365 = new FileNotFoundException("Single path segment is not a resource ID: " + uri);
                 varC22B934DA93E3FEDAA7C59017512810F_1273237365.addTaint(taint);
                 throw varC22B934DA93E3FEDAA7C59017512810F_1273237365;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(len == 2)        
         {
             id = r.getIdentifier(path.get(1), path.get(0), authority);
-        } //End block
+        } 
         else
         {
             FileNotFoundException var5535C43DBB8176F250E03E36B76F22BA_67147442 = new FileNotFoundException("More than two path segments: " + uri);
             var5535C43DBB8176F250E03E36B76F22BA_67147442.addTaint(taint);
             throw var5535C43DBB8176F250E03E36B76F22BA_67147442;
-        } //End block
+        } 
     if(id == 0)        
         {
             FileNotFoundException var62897123492917248A6A32EE2FAC55C4_1578834877 = new FileNotFoundException("No resource found for: " + uri);
             var62897123492917248A6A32EE2FAC55C4_1578834877.addTaint(taint);
             throw var62897123492917248A6A32EE2FAC55C4_1578834877;
-        } //End block
+        } 
         OpenResourceIdResult res = new OpenResourceIdResult();
         res.r = r;
         res.id = id;
 OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_743616632 =         res;
         varB5053E025797B3BF768F5C37934C244D_743616632.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_743616632;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
+        @DSModeled(DSC.SPEC)
+    static public int modeToMode(Uri uri, String mode) throws FileNotFoundException {
         int modeBits;
         if ("r".equals(mode)) {
             modeBits = ParcelFileDescriptor.MODE_READ_ONLY;
@@ -615,7 +619,7 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_743616632 =         res
             IllegalArgumentException varB20D676800D86334D5891F76F3E10503_1979170862 = new IllegalArgumentException("Unknown URL " + url);
             varB20D676800D86334D5891F76F3E10503_1979170862.addTaint(taint);
             throw varB20D676800D86334D5891F76F3E10503_1979170862;
-        } //End block
+        } 
         try 
         {
             long startTime = SystemClock.uptimeMillis();
@@ -625,33 +629,33 @@ OpenResourceIdResult varB5053E025797B3BF768F5C37934C244D_743616632 =         res
 Uri var9668A06783A9113EEB45F2F771B856FB_1578758522 =             createdRow;
             var9668A06783A9113EEB45F2F771B856FB_1578758522.addTaint(taint);
             return var9668A06783A9113EEB45F2F771B856FB_1578758522;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 Uri var540C13E9E156B687226421B24F2DF178_1832718049 =             null;
             var540C13E9E156B687226421B24F2DF178_1832718049.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1832718049;
-        } //End block
+        } 
         finally 
         {
             releaseProvider(provider);
-        } //End block
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(url);
-        //if (provider == null) {
-            //throw new IllegalArgumentException("Unknown URL " + url);
-        //}
-        //try {
-            //long startTime = SystemClock.uptimeMillis();
-            //Uri createdRow = provider.insert(url, values);
-            //long durationMillis = SystemClock.uptimeMillis() - startTime;
-            //maybeLogUpdateToEventLog(durationMillis, url, "insert", null );
-            //return createdRow;
-        //} catch (RemoteException e) {
-            //return null;
-        //} finally {
-            //releaseProvider(provider);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -666,27 +670,27 @@ Uri var540C13E9E156B687226421B24F2DF178_1832718049 =             null;
             IllegalArgumentException var00F727789A0A7DE88397D2B2A17A4577_671435610 = new IllegalArgumentException("Unknown authority " + authority);
             var00F727789A0A7DE88397D2B2A17A4577_671435610.addTaint(taint);
             throw var00F727789A0A7DE88397D2B2A17A4577_671435610;
-        } //End block
+        } 
         try 
         {
 ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =             provider.applyBatch(operations);
             var7BE4D9098231AED0DF2F567E54B89316_1830177843.addTaint(taint);
             return var7BE4D9098231AED0DF2F567E54B89316_1830177843;
-        } //End block
+        } 
         finally 
         {
             provider.release();
-        } //End block
-        // ---------- Original Method ----------
-        //ContentProviderClient provider = acquireContentProviderClient(authority);
-        //if (provider == null) {
-            //throw new IllegalArgumentException("Unknown authority " + authority);
-        //}
-        //try {
-            //return provider.applyBatch(operations);
-        //} finally {
-            //provider.release();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -700,7 +704,7 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             IllegalArgumentException varB20D676800D86334D5891F76F3E10503_1919276014 = new IllegalArgumentException("Unknown URL " + url);
             varB20D676800D86334D5891F76F3E10503_1919276014.addTaint(taint);
             throw varB20D676800D86334D5891F76F3E10503_1919276014;
-        } //End block
+        } 
         try 
         {
             long startTime = SystemClock.uptimeMillis();
@@ -710,33 +714,33 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             int var4C909CBC1D72D91EDE3440CE60EF064F_171354250 = (rowsCreated);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1058548434 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1058548434;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1400072122 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593050646 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593050646;
-        } //End block
+        } 
         finally 
         {
             releaseProvider(provider);
-        } //End block
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(url);
-        //if (provider == null) {
-            //throw new IllegalArgumentException("Unknown URL " + url);
-        //}
-        //try {
-            //long startTime = SystemClock.uptimeMillis();
-            //int rowsCreated = provider.bulkInsert(url, values);
-            //long durationMillis = SystemClock.uptimeMillis() - startTime;
-            //maybeLogUpdateToEventLog(durationMillis, url, "bulkinsert", null );
-            //return rowsCreated;
-        //} catch (RemoteException e) {
-            //return 0;
-        //} finally {
-            //releaseProvider(provider);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -751,7 +755,7 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             IllegalArgumentException varB20D676800D86334D5891F76F3E10503_935567557 = new IllegalArgumentException("Unknown URL " + url);
             varB20D676800D86334D5891F76F3E10503_935567557.addTaint(taint);
             throw varB20D676800D86334D5891F76F3E10503_935567557;
-        } //End block
+        } 
         try 
         {
             long startTime = SystemClock.uptimeMillis();
@@ -761,33 +765,33 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             int var9FA48E40266055B7DB16BBDBD5D3D301_668304250 = (rowsDeleted);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302074008 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_302074008;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_2109874494 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19876905 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_19876905;
-        } //End block
+        } 
         finally 
         {
             releaseProvider(provider);
-        } //End block
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(url);
-        //if (provider == null) {
-            //throw new IllegalArgumentException("Unknown URL " + url);
-        //}
-        //try {
-            //long startTime = SystemClock.uptimeMillis();
-            //int rowsDeleted = provider.delete(url, where, selectionArgs);
-            //long durationMillis = SystemClock.uptimeMillis() - startTime;
-            //maybeLogUpdateToEventLog(durationMillis, url, "delete", where);
-            //return rowsDeleted;
-        //} catch (RemoteException e) {
-            //return -1;
-        //} finally {
-            //releaseProvider(provider);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -804,7 +808,7 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             IllegalArgumentException var777AC27F236FED626942221893EC6521_1345923831 = new IllegalArgumentException("Unknown URI " + uri);
             var777AC27F236FED626942221893EC6521_1345923831.addTaint(taint);
             throw var777AC27F236FED626942221893EC6521_1345923831;
-        } //End block
+        } 
         try 
         {
             long startTime = SystemClock.uptimeMillis();
@@ -814,33 +818,33 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             int var83251BA8F1A3D90F0CA5ADFF60F0D3C0_1370738085 = (rowsUpdated);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427111373 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1427111373;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1529194522 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_395004784 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_395004784;
-        } //End block
+        } 
         finally 
         {
             releaseProvider(provider);
-        } //End block
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(uri);
-        //if (provider == null) {
-            //throw new IllegalArgumentException("Unknown URI " + uri);
-        //}
-        //try {
-            //long startTime = SystemClock.uptimeMillis();
-            //int rowsUpdated = provider.update(uri, values, where, selectionArgs);
-            //long durationMillis = SystemClock.uptimeMillis() - startTime;
-            //maybeLogUpdateToEventLog(durationMillis, uri, "update", where);
-            //return rowsUpdated;
-        //} catch (RemoteException e) {
-            //return -1;
-        //} finally {
-            //releaseProvider(provider);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -855,54 +859,54 @@ ContentProviderResult[] var7BE4D9098231AED0DF2F567E54B89316_1830177843 =        
             NullPointerException var1D3C31C9903C19A5E960BD20D3C05D23_91560179 = new NullPointerException("uri == null");
             var1D3C31C9903C19A5E960BD20D3C05D23_91560179.addTaint(taint);
             throw var1D3C31C9903C19A5E960BD20D3C05D23_91560179;
-        } //End block
+        } 
     if(method == null)        
         {
             NullPointerException var94DAF527A0B47AA6ECA3C5A76418A86A_624817079 = new NullPointerException("method == null");
             var94DAF527A0B47AA6ECA3C5A76418A86A_624817079.addTaint(taint);
             throw var94DAF527A0B47AA6ECA3C5A76418A86A_624817079;
-        } //End block
+        } 
         IContentProvider provider = acquireProvider(uri);
     if(provider == null)        
         {
             IllegalArgumentException var777AC27F236FED626942221893EC6521_228748972 = new IllegalArgumentException("Unknown URI " + uri);
             var777AC27F236FED626942221893EC6521_228748972.addTaint(taint);
             throw var777AC27F236FED626942221893EC6521_228748972;
-        } //End block
+        } 
         try 
         {
 Bundle var5782F784778F2F0CFC89129DC58C9724_856374543 =             provider.call(method, arg, extras);
             var5782F784778F2F0CFC89129DC58C9724_856374543.addTaint(taint);
             return var5782F784778F2F0CFC89129DC58C9724_856374543;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 Bundle var540C13E9E156B687226421B24F2DF178_1615983515 =             null;
             var540C13E9E156B687226421B24F2DF178_1615983515.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1615983515;
-        } //End block
+        } 
         finally 
         {
             releaseProvider(provider);
-        } //End block
-        // ---------- Original Method ----------
-        //if (uri == null) {
-            //throw new NullPointerException("uri == null");
-        //}
-        //if (method == null) {
-            //throw new NullPointerException("method == null");
-        //}
-        //IContentProvider provider = acquireProvider(uri);
-        //if (provider == null) {
-            //throw new IllegalArgumentException("Unknown URI " + uri);
-        //}
-        //try {
-            //return provider.call(method, arg, extras);
-        //} catch (RemoteException e) {
-            //return null;
-        //} finally {
-            //releaseProvider(provider);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -914,26 +918,26 @@ Bundle var540C13E9E156B687226421B24F2DF178_1615983515 =             null;
 IContentProvider var540C13E9E156B687226421B24F2DF178_1276571115 =             null;
             var540C13E9E156B687226421B24F2DF178_1276571115.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1276571115;
-        } //End block
+        } 
         String auth = uri.getAuthority();
     if(auth != null)        
         {
 IContentProvider var4780BBFCDBD9BFF14B667AD7D8AB9F81_1173108498 =             acquireProvider(mContext, uri.getAuthority());
             var4780BBFCDBD9BFF14B667AD7D8AB9F81_1173108498.addTaint(taint);
             return var4780BBFCDBD9BFF14B667AD7D8AB9F81_1173108498;
-        } //End block
+        } 
 IContentProvider var540C13E9E156B687226421B24F2DF178_868430379 =         null;
         var540C13E9E156B687226421B24F2DF178_868430379.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_868430379;
-        // ---------- Original Method ----------
-        //if (!SCHEME_CONTENT.equals(uri.getScheme())) {
-            //return null;
-        //}
-        //String auth = uri.getAuthority();
-        //if (auth != null) {
-            //return acquireProvider(mContext, uri.getAuthority());
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -945,26 +949,26 @@ IContentProvider var540C13E9E156B687226421B24F2DF178_868430379 =         null;
 IContentProvider var540C13E9E156B687226421B24F2DF178_738956029 =             null;
             var540C13E9E156B687226421B24F2DF178_738956029.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_738956029;
-        } //End block
+        } 
         String auth = uri.getAuthority();
     if(auth != null)        
         {
 IContentProvider var35C8142F5E07DC5EB04C3A6752979CAB_1683741530 =             acquireExistingProvider(mContext, uri.getAuthority());
             var35C8142F5E07DC5EB04C3A6752979CAB_1683741530.addTaint(taint);
             return var35C8142F5E07DC5EB04C3A6752979CAB_1683741530;
-        } //End block
+        } 
 IContentProvider var540C13E9E156B687226421B24F2DF178_1071231178 =         null;
         var540C13E9E156B687226421B24F2DF178_1071231178.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1071231178;
-        // ---------- Original Method ----------
-        //if (!SCHEME_CONTENT.equals(uri.getScheme())) {
-            //return null;
-        //}
-        //String auth = uri.getAuthority();
-        //if (auth != null) {
-            //return acquireExistingProvider(mContext, uri.getAuthority());
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -976,15 +980,15 @@ IContentProvider var540C13E9E156B687226421B24F2DF178_1071231178 =         null;
 IContentProvider var540C13E9E156B687226421B24F2DF178_1303159298 =             null;
             var540C13E9E156B687226421B24F2DF178_1303159298.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1303159298;
-        } //End block
+        } 
 IContentProvider varAF2FF65A41417D63A0BC223C355F9263_1632168650 =         acquireProvider(mContext, name);
         varAF2FF65A41417D63A0BC223C355F9263_1632168650.addTaint(taint);
         return varAF2FF65A41417D63A0BC223C355F9263_1632168650;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //return null;
-        //}
-        //return acquireProvider(mContext, name);
+        
+        
+            
+        
+        
     }
 
     
@@ -997,16 +1001,16 @@ IContentProvider varAF2FF65A41417D63A0BC223C355F9263_1632168650 =         acquir
 ContentProviderClient var01598678913D3029A3BDD994E3BED651_86422891 =             new ContentProviderClient(this, provider);
             var01598678913D3029A3BDD994E3BED651_86422891.addTaint(taint);
             return var01598678913D3029A3BDD994E3BED651_86422891;
-        } //End block
+        } 
 ContentProviderClient var540C13E9E156B687226421B24F2DF178_739252854 =         null;
         var540C13E9E156B687226421B24F2DF178_739252854.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_739252854;
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(uri);
-        //if (provider != null) {
-            //return new ContentProviderClient(this, provider);
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1019,23 +1023,23 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_739252854 =         nu
 ContentProviderClient var01598678913D3029A3BDD994E3BED651_500566107 =             new ContentProviderClient(this, provider);
             var01598678913D3029A3BDD994E3BED651_500566107.addTaint(taint);
             return var01598678913D3029A3BDD994E3BED651_500566107;
-        } //End block
+        } 
 ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         null;
         var540C13E9E156B687226421B24F2DF178_1382752123.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1382752123;
-        // ---------- Original Method ----------
-        //IContentProvider provider = acquireProvider(name);
-        //if (provider != null) {
-            //return new ContentProviderClient(this, provider);
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.876 -0400", hash_original_method = "7AFED95A5C5E44717133ED415B77A63B", hash_generated_method = "9DE77D376ACF62E5953DA806A02FAC8A")
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(observer.getTaint());
         addTaint(notifyForDescendents);
         addTaint(uri.getTaint());
@@ -1043,16 +1047,16 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
         {
             getContentService().registerContentObserver(uri, notifyForDescendents,
                     observer.getContentObserver());
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //getContentService().registerContentObserver(uri, notifyForDescendents,
-                    //observer.getContentObserver());
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -1066,33 +1070,35 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
             {
                 getContentService().unregisterContentObserver(
                         contentObserver);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //IContentObserver contentObserver = observer.releaseContentObserver();
-            //if (contentObserver != null) {
-                //getContentService().unregisterContentObserver(
-                        //contentObserver);
-            //}
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+            
+                
+                        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.876 -0400", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "841332F3B587E937B98F5F76F4A75E19")
     public void notifyChange(Uri uri, ContentObserver observer) {
         addTaint(observer.getTaint());
         addTaint(uri.getTaint());
         notifyChange(uri, observer, true );
-        // ---------- Original Method ----------
-        //notifyChange(uri, observer, true );
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.877 -0400", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "4834D3929F315BCA26B25893BA189E3F")
     public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {
         addTaint(syncToNetwork);
@@ -1103,20 +1109,21 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
             getContentService().notifyChange(
                     uri, observer == null ? null : observer.getContentObserver(),
                     observer != null && observer.deliverSelfNotifications(), syncToNetwork);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //getContentService().notifyChange(
-                    //uri, observer == null ? null : observer.getContentObserver(),
-                    //observer != null && observer.deliverSelfNotifications(), syncToNetwork);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.877 -0400", hash_original_method = "2D6405030D787F1D91AFA94E2D425989", hash_generated_method = "8FD49EB480C67F13739811857A7B4F54")
     @Deprecated
     public void startSync(Uri uri, Bundle extras) {
@@ -1129,20 +1136,20 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     if(!TextUtils.isEmpty(accountName))            
             {
                 account = new Account(accountName, "com.google");
-            } //End block
+            } 
             extras.remove(SYNC_EXTRAS_ACCOUNT);
-        } //End block
+        } 
         requestSync(account, uri != null ? uri.getAuthority() : null, extras);
-        // ---------- Original Method ----------
-        //Account account = null;
-        //if (extras != null) {
-            //String accountName = extras.getString(SYNC_EXTRAS_ACCOUNT);
-            //if (!TextUtils.isEmpty(accountName)) {
-                //account = new Account(accountName, "com.google");
-            //}
-            //extras.remove(SYNC_EXTRAS_ACCOUNT);
-        //}
-        //requestSync(account, uri != null ? uri.getAuthority() : null, extras);
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -1155,7 +1162,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static void validateSyncExtrasBundle(Bundle extras) {
+        @DSModeled(DSC.SPEC)
+    public static void validateSyncExtrasBundle(Bundle extras) {
         try {
             for (String key : extras.keySet()) {
                 Object value = extras.get(key);
@@ -1178,17 +1186,19 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.877 -0400", hash_original_method = "B4949CE6FC68B3756629FF654EA4F622", hash_generated_method = "98293DACBF37DC3FB629FF105B0B9357")
     @Deprecated
     public void cancelSync(Uri uri) {
         addTaint(uri.getTaint());
         cancelSync(null , uri != null ? uri.getAuthority() : null);
-        // ---------- Original Method ----------
-        //cancelSync(null , uri != null ? uri.getAuthority() : null);
+        
+        
     }
 
     
-        public static void cancelSync(Account account, String authority) {
+        @DSModeled(DSC.SPEC)
+    public static void cancelSync(Account account, String authority) {
         try {
             getContentService().cancelSync(account, authority);
         } catch (RemoteException e) {
@@ -1196,7 +1206,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static SyncAdapterType[] getSyncAdapterTypes() {
+        @DSModeled(DSC.SPEC)
+    public static SyncAdapterType[] getSyncAdapterTypes() {
         try {
             return getContentService().getSyncAdapterTypes();
         } catch (RemoteException e) {
@@ -1278,7 +1289,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static int getIsSyncable(Account account, String authority) {
+        @DSModeled(DSC.SPEC)
+    public static int getIsSyncable(Account account, String authority) {
         try {
             return getContentService().getIsSyncable(account, authority);
         } catch (RemoteException e) {
@@ -1335,7 +1347,8 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
-        public static List<SyncInfo> getCurrentSyncs() {
+        @DSModeled(DSC.SPEC)
+    public static List<SyncInfo> getCurrentSyncs() {
         try {
             return getContentService().getCurrentSyncs();
         } catch (RemoteException e) {
@@ -1391,6 +1404,7 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.884 -0400", hash_original_method = "5964C3B3CD446EC6DF12ED3CA7F7D861", hash_generated_method = "C659274096F9AC7272B2DBC099B49078")
     private int samplePercentForDuration(long durationMillis) {
         addTaint(durationMillis);
@@ -1399,18 +1413,19 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
             int varF899139DF5E1059396431415E770C6DD_1693107741 = (100);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711667177 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_711667177;
-        } //End block
+        } 
         int var5B4DF0029359ED92E7958806B4562BD7_1912167389 = ((int) (100 * durationMillis / SLOW_THRESHOLD_MILLIS) + 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2127661893 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2127661893;
-        // ---------- Original Method ----------
-        //if (durationMillis >= SLOW_THRESHOLD_MILLIS) {
-            //return 100;
-        //}
-        //return (int) (100 * durationMillis / SLOW_THRESHOLD_MILLIS) + 1;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.885 -0400", hash_original_method = "339BAFB8AA6EDB4FDC193A187E8B0067", hash_generated_method = "9BD6BF415ED84B3DEA2AD9DAD6E0E3D7")
     private void maybeLogQueryToEventLog(long durationMillis,
                                          Uri uri, String[] projection,
@@ -1428,9 +1443,9 @@ ContentProviderClient var540C13E9E156B687226421B24F2DF178_1382752123 =         n
     if(mRandom.nextInt(100) >= samplePercent)                
                 {
                     return;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         StringBuilder projectionBuffer = new StringBuilder(100);
     if(projection != null)        
         {
@@ -1439,8 +1454,8 @@ for(int i = 0;i < projection.length;++i)
     if(i != 0)                
                 projectionBuffer.append('/');
                 projectionBuffer.append(projection[i]);
-            } //End block
-        } //End block
+            } 
+        } 
         String blockingPackage = AppGlobals.getInitialPackage();
         EventLog.writeEvent(
             EventLogTags.CONTENT_QUERY_SAMPLE,
@@ -1451,11 +1466,12 @@ for(int i = 0;i < projection.length;++i)
             durationMillis,
             blockingPackage != null ? blockingPackage : "",
             samplePercent);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.885 -0400", hash_original_method = "8C4CA0C0E96B47F9D6365343066B43C9", hash_generated_method = "3C5109E1FC653AE1DDDF530D6B2D1689")
     private void maybeLogUpdateToEventLog(
         long durationMillis, Uri uri, String operation, String selection) {
@@ -1471,9 +1487,9 @@ for(int i = 0;i < projection.length;++i)
     if(mRandom.nextInt(100) >= samplePercent)                
                 {
                     return;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         String blockingPackage = AppGlobals.getInitialPackage();
         EventLog.writeEvent(
             EventLogTags.CONTENT_UPDATE_SAMPLE,
@@ -1483,28 +1499,29 @@ for(int i = 0;i < projection.length;++i)
             durationMillis,
             blockingPackage != null ? blockingPackage : "",
             samplePercent);
-        // ---------- Original Method ----------
-        //int samplePercent = samplePercentForDuration(durationMillis);
-        //if (samplePercent < 100) {
-            //synchronized (mRandom) {
-                //if (mRandom.nextInt(100) >= samplePercent) {
-                    //return;
-                //}
-            //}
-        //}
-        //String blockingPackage = AppGlobals.getInitialPackage();
-        //EventLog.writeEvent(
-            //EventLogTags.CONTENT_UPDATE_SAMPLE,
-            //uri.toString(),
-            //operation,
-            //selection != null ? selection : "",
-            //durationMillis,
-            //blockingPackage != null ? blockingPackage : "",
-            //samplePercent);
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
     }
 
     
-        public static IContentService getContentService() {
+        @DSModeled(DSC.SPEC)
+    public static IContentService getContentService() {
         if (sContentService != null) {
             return sContentService;
         }
@@ -1527,7 +1544,7 @@ for(int i = 0;i < projection.length;++i)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.886 -0400", hash_original_method = "EC7BB03A160C6C88DBB9DFBF62B48748", hash_generated_method = "EC7BB03A160C6C88DBB9DFBF62B48748")
         public OpenResourceIdResult ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1552,12 +1569,13 @@ for(int i = 0;i < projection.length;++i)
             addTaint(cursor.getTaint());
             mContentProvider = icp;
             mCloseGuard.open("close");
-            // ---------- Original Method ----------
-            //mContentProvider = icp;
-            //mCloseGuard.open("close");
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.886 -0400", hash_original_method = "CB76115716387DD39854EA1927F29C52", hash_generated_method = "461D5BB19C18033D953C4676F5B1721B")
         @Override
         public void close() {
@@ -1567,14 +1585,14 @@ for(int i = 0;i < projection.length;++i)
     if(mCloseGuard != null)            
             {
                 mCloseGuard.close();
-            } //End block
-            // ---------- Original Method ----------
-            //super.close();
-            //ContentResolver.this.releaseProvider(mContentProvider);
-            //mProviderReleased = true;
-            //if (mCloseGuard != null) {
-                //mCloseGuard.close();
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -1586,28 +1604,28 @@ for(int i = 0;i < projection.length;++i)
     if(mCloseGuard != null)                
                 {
                     mCloseGuard.warnIfOpen();
-                } //End block
+                } 
     if(!mProviderReleased && mContentProvider != null)                
                 {
                     ContentResolver.this.releaseProvider(mContentProvider);
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //if (mCloseGuard != null) {
-                    //mCloseGuard.warnIfOpen();
-                //}
-                //if (!mProviderReleased && mContentProvider != null) {
-                    //Log.w(TAG, "Cursor finalized without prior close()");
-                    //ContentResolver.this.releaseProvider(mContentProvider);
-                //}
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+                    
+                
+                
+                    
+                    
+                
+            
+                
+            
         }
 
         
@@ -1631,11 +1649,12 @@ for(int i = 0;i < projection.length;++i)
             super(pfd);
             addTaint(pfd.getTaint());
             mContentProvider = icp;
-            // ---------- Original Method ----------
-            //mContentProvider = icp;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.887 -0400", hash_original_method = "88C4FC226DB7C9E08A0225C4D4C037C0", hash_generated_method = "2931B14EB0C4E940924437ADC26E5475")
         @Override
         public void close() throws IOException {
@@ -1644,27 +1663,28 @@ for(int i = 0;i < projection.length;++i)
                 super.close();
                 ContentResolver.this.releaseProvider(mContentProvider);
                 mReleaseProviderFlag = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if(!mReleaseProviderFlag) {
-                //super.close();
-                //ContentResolver.this.releaseProvider(mContentProvider);
-                //mReleaseProviderFlag = true;
-            //}
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.888 -0400", hash_original_method = "E5C83F24E1B33F16225B47651FBE1E16", hash_generated_method = "BB9D5FCD4BE1CF73267E1BB6EFE05F92")
         @Override
         protected void finalize() throws Throwable {
     if(!mReleaseProviderFlag)            
             {
                 close();
-            } //End block
-            // ---------- Original Method ----------
-            //if (!mReleaseProviderFlag) {
-                //close();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         

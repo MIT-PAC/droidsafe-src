@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public final class FileDescriptor {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.459 -0400", hash_original_method = "8A46F9D63ACB608022037D6ACF8ADC11", hash_generated_method = "85C5A980A68C0ECABEB30B9F109CBB75")
     public  FileDescriptor() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,32 +24,33 @@ public final class FileDescriptor {
         try 
         {
             Libcore.os.fsync(this);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             SyncFailedException sfe = new SyncFailedException(errnoException.getMessage());
             sfe.initCause(errnoException);
             sfe.addTaint(taint);
             throw sfe;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.fsync(this);
-        //} catch (ErrnoException errnoException) {
-            //SyncFailedException sfe = new SyncFailedException(errnoException.getMessage());
-            //sfe.initCause(errnoException);
-            //throw sfe;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.461 -0400", hash_original_method = "1AD9601B3D5C4D14896E5C48E725B899", hash_generated_method = "2B352881A7A401F7074D9B93A73E9CA5")
     public boolean valid() {
         boolean var0BAE74BB13337C9C944836840E955185_126260119 = (descriptor != -1);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1073186473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1073186473;
-        // ---------- Original Method ----------
-        //return descriptor != -1;
+        
+        
     }
 
     
@@ -58,16 +59,16 @@ public final class FileDescriptor {
         int varDA3F6396C032B006442940855C25DFD8_1850449883 = (descriptor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_134121193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_134121193;
-        // ---------- Original Method ----------
-        //return descriptor;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.465 -0400", hash_original_method = "AED03175AA9315DC6552DD5B6FFA10D4", hash_generated_method = "9CD3F8ACD13BA5BC1DEAE478056B0187")
     public final void setInt$(int fd) {
         this.descriptor = fd;
-        // ---------- Original Method ----------
-        //this.descriptor = fd;
+        
+        
     }
 
     
@@ -77,8 +78,8 @@ public final class FileDescriptor {
 String var8713B91960E758C158A8CA2A1C6D8555_377958073 =         "FileDescriptor[" + descriptor + "]";
         var8713B91960E758C158A8CA2A1C6D8555_377958073.addTaint(taint);
         return var8713B91960E758C158A8CA2A1C6D8555_377958073;
-        // ---------- Original Method ----------
-        //return "FileDescriptor[" + descriptor + "]";
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,9 +15,9 @@ public class StringWriter extends Writer {
     public  StringWriter() {
         buf = new StringBuffer(16);
         lock = buf;
-        // ---------- Original Method ----------
-        //buf = new StringBuffer(16);
-        //lock = buf;
+        
+        
+        
     }
 
     
@@ -28,39 +28,42 @@ public class StringWriter extends Writer {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_2117245723 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_2117245723.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_2117245723;
-        } //End block
+        } 
         buf = new StringBuffer(initialSize);
         lock = buf;
-        // ---------- Original Method ----------
-        //if (initialSize < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //buf = new StringBuffer(initialSize);
-        //lock = buf;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.052 -0400", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "6B4749673D8A7A62B822BE7109DA1BE7")
     @Override
     public void close() throws IOException {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.052 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.053 -0400", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "33C3B6E7FC71C2FF9C23A25E1A8D55C0")
     public StringBuffer getBuffer() {
 StringBuffer var0D8E466677B8F245666E1A4B1E0924E6_262121077 =         buf;
         var0D8E466677B8F245666E1A4B1E0924E6_262121077.addTaint(taint);
         return var0D8E466677B8F245666E1A4B1E0924E6_262121077;
-        // ---------- Original Method ----------
-        //return buf;
+        
+        
     }
 
     
@@ -70,8 +73,8 @@ StringBuffer var0D8E466677B8F245666E1A4B1E0924E6_262121077 =         buf;
 String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1584033799.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1584033799;
-        // ---------- Original Method ----------
-        //return buf.toString();
+        
+        
     }
 
     
@@ -85,14 +88,14 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     if(count == 0)        
         {
             return;
-        } //End block
+        } 
         buf.append(chars, offset, count);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(chars.length, offset, count);
-        //if (count == 0) {
-            //return;
-        //}
-        //buf.append(chars, offset, count);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -101,8 +104,8 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     public void write(int oneChar) {
         addTaint(oneChar);
         buf.append((char) oneChar);
-        // ---------- Original Method ----------
-        //buf.append((char) oneChar);
+        
+        
     }
 
     
@@ -111,8 +114,8 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
     public void write(String str) {
         addTaint(str.getTaint());
         buf.append(str);
-        // ---------- Original Method ----------
-        //buf.append(str);
+        
+        
     }
 
     
@@ -124,9 +127,9 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
         addTaint(str.getTaint());
         String sub = str.substring(offset, offset + count);
         buf.append(sub);
-        // ---------- Original Method ----------
-        //String sub = str.substring(offset, offset + count);
-        //buf.append(sub);
+        
+        
+        
     }
 
     
@@ -138,9 +141,9 @@ String var4FC680801218E6372BC708D6FA44AE60_1584033799 =         buf.toString();
 StringWriter var72A74007B2BE62B849F475C7BDA4658B_330838756 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_330838756.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_330838756;
-        // ---------- Original Method ----------
-        //write(c);
-        //return this;
+        
+        
+        
     }
 
     
@@ -151,17 +154,17 @@ StringWriter var72A74007B2BE62B849F475C7BDA4658B_330838756 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } //End block
+        } 
         write(csq.toString());
 StringWriter var72A74007B2BE62B849F475C7BDA4658B_1128835944 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1128835944.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1128835944;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //write(csq.toString());
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -174,19 +177,19 @@ StringWriter var72A74007B2BE62B849F475C7BDA4658B_1128835944 =         this;
     if(csq == null)        
         {
             csq = "null";
-        } //End block
+        } 
         String output = csq.subSequence(start, end).toString();
         write(output, 0, output.length());
 StringWriter var72A74007B2BE62B849F475C7BDA4658B_280057551 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_280057551.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_280057551;
-        // ---------- Original Method ----------
-        //if (csq == null) {
-            //csq = "null";
-        //}
-        //String output = csq.subSequence(start, end).toString();
-        //write(output, 0, output.length());
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     

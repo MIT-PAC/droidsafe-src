@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class RAckParser extends HeaderParser {
     public  RAckParser(String rack) {
         super(rack);
         addTaint(rack.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class RAckParser extends HeaderParser {
     protected  RAckParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,26 +47,26 @@ public class RAckParser extends HeaderParser {
                 this.lexer.match(TokenTypes.ID);
                 Token token = lexer.getNextToken();
                 rack.setMethod(token.getTokenValue());
-            } //End block
+            } 
             catch (InvalidArgumentException ex)
             {
                 java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_164644043 = createParseException(ex.getMessage());
                 varB8C80F72F95BF6A850D07F4EC5726C09_164644043.addTaint(taint);
                 throw varB8C80F72F95BF6A850D07F4EC5726C09_164644043;
-            } //End block
+            } 
             this.lexer.SPorHT();
             this.lexer.match('\n');
 SIPHeader var55285630369F90A1D1B24F624C06D15F_487214637 =             rack;
             var55285630369F90A1D1B24F624C06D15F_487214637.addTaint(taint);
             return var55285630369F90A1D1B24F624C06D15F_487214637;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("RAckParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

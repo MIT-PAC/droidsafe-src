@@ -1,6 +1,6 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,16 +16,16 @@ public class AnticipateInterpolator implements Interpolator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.728 -0400", hash_original_method = "7C2506D70A86643AB33B7796EA331F9D", hash_generated_method = "761E0AC6C5BE23250969F07445914E84")
     public  AnticipateInterpolator() {
         mTension = 2.0f;
-        // ---------- Original Method ----------
-        //mTension = 2.0f;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.728 -0400", hash_original_method = "9BAE6E66C77EF37188591BAA368F1B92", hash_generated_method = "41BB8ADF848B4D75A305C8076C5221D1")
     public  AnticipateInterpolator(float tension) {
         mTension = tension;
-        // ---------- Original Method ----------
-        //mTension = tension;
+        
+        
     }
 
     
@@ -38,23 +38,24 @@ public class AnticipateInterpolator implements Interpolator {
         mTension =
                 a.getFloat(com.android.internal.R.styleable.AnticipateInterpolator_tension, 2.0f);
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.AnticipateInterpolator);
-        //mTension =
-                //a.getFloat(com.android.internal.R.styleable.AnticipateInterpolator_tension, 2.0f);
-        //a.recycle();
+        
+        
+                
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.729 -0400", hash_original_method = "708C87963D95E01AE56D23D7408FFDE5", hash_generated_method = "8E029E600F004A3223585306FE244862")
     public float getInterpolation(float t) {
         addTaint(t);
         float var6BD61A0C8E974A43B4F77DB44E0C2B3B_1288734190 = (t * t * ((mTension + 1) * t - mTension));
                 float var546ADE640B6EDFBC8A086EF31347E768_27784230 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_27784230;
-        // ---------- Original Method ----------
-        //return t * t * ((mTension + 1) * t - mTension);
+        
+        
     }
 
     

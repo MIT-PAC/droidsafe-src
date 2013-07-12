@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,9 +38,9 @@ public final class Bundle implements Parcelable, Cloneable {
     public  Bundle() {
         mMap = new HashMap<String, Object>();
         mClassLoader = getClass().getClassLoader();
-        // ---------- Original Method ----------
-        //mMap = new HashMap<String, Object>();
-        //mClassLoader = getClass().getClassLoader();
+        
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ public final class Bundle implements Parcelable, Cloneable {
       Bundle(Parcel parcelledData) {
         addTaint(parcelledData.getTaint());
         readFromParcel(parcelledData);
-        // ---------- Original Method ----------
-        //readFromParcel(parcelledData);
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public final class Bundle implements Parcelable, Cloneable {
         addTaint(length);
         addTaint(parcelledData.getTaint());
         readFromParcelInner(parcelledData, length);
-        // ---------- Original Method ----------
-        //readFromParcelInner(parcelledData, length);
+        
+        
     }
 
     
@@ -67,9 +67,9 @@ public final class Bundle implements Parcelable, Cloneable {
     public  Bundle(ClassLoader loader) {
         mMap = new HashMap<String, Object>();
         mClassLoader = loader;
-        // ---------- Original Method ----------
-        //mMap = new HashMap<String, Object>();
-        //mClassLoader = loader;
+        
+        
+        
     }
 
     
@@ -77,9 +77,9 @@ public final class Bundle implements Parcelable, Cloneable {
     public  Bundle(int capacity) {
         mMap = new HashMap<String, Object>(capacity);
         mClassLoader = getClass().getClassLoader();
-        // ---------- Original Method ----------
-        //mMap = new HashMap<String, Object>(capacity);
-        //mClassLoader = getClass().getClassLoader();
+        
+        
+        
     }
 
     
@@ -90,38 +90,38 @@ public final class Bundle implements Parcelable, Cloneable {
             mParcelledData = Parcel.obtain();
             mParcelledData.appendFrom(b.mParcelledData, 0, b.mParcelledData.dataSize());
             mParcelledData.setDataPosition(0);
-        } //End block
+        } 
         else
         {
             mParcelledData = null;
-        } //End block
+        } 
     if(b.mMap != null)        
         {
             mMap = new HashMap<String, Object>(b.mMap);
-        } //End block
+        } 
         else
         {
             mMap = null;
-        } //End block
+        } 
         mHasFds = b.mHasFds;
         mFdsKnown = b.mFdsKnown;
         mClassLoader = b.mClassLoader;
-        // ---------- Original Method ----------
-        //if (b.mParcelledData != null) {
-            //mParcelledData = Parcel.obtain();
-            //mParcelledData.appendFrom(b.mParcelledData, 0, b.mParcelledData.dataSize());
-            //mParcelledData.setDataPosition(0);
-        //} else {
-            //mParcelledData = null;
-        //}
-        //if (b.mMap != null) {
-            //mMap = new HashMap<String, Object>(b.mMap);
-        //} else {
-            //mMap = null;
-        //}
-        //mHasFds = b.mHasFds;
-        //mFdsKnown = b.mFdsKnown;
-        //mClassLoader = b.mClassLoader;
+        
+        
+            
+            
+            
+        
+            
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -138,64 +138,67 @@ public final class Bundle implements Parcelable, Cloneable {
         int size = mMap.size();
     if(size > 1)        
         {
-        } //End block
+        } 
     if(size == 0)        
         {
 String var540C13E9E156B687226421B24F2DF178_169341946 =             null;
             var540C13E9E156B687226421B24F2DF178_169341946.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_169341946;
-        } //End block
+        } 
         Object o = mMap.values().iterator().next();
         try 
         {
 String var05F8BA7898C830EEFB724B7656469F9E_1262482023 =             (String) o;
             var05F8BA7898C830EEFB724B7656469F9E_1262482023.addTaint(taint);
             return var05F8BA7898C830EEFB724B7656469F9E_1262482023;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning("getPairValue()", o, "String", e);
 String var540C13E9E156B687226421B24F2DF178_390403113 =             null;
             var540C13E9E156B687226421B24F2DF178_390403113.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_390403113;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //int size = mMap.size();
-        //if (size > 1) {
-            //Log.w(LOG_TAG, "getPairValue() used on Bundle with multiple pairs.");
-        //}
-        //if (size == 0) {
-            //return null;
-        //}
-        //Object o = mMap.values().iterator().next();
-        //try {
-            //return (String) o;
-        //} catch (ClassCastException e) {
-            //typeWarning("getPairValue()", o, "String", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.009 -0400", hash_original_method = "98C9A117007F79899B5BBD029ABFD6B8", hash_generated_method = "1DFA79725EDD590714D0602080EA4C5B")
     public void setClassLoader(ClassLoader loader) {
         mClassLoader = loader;
-        // ---------- Original Method ----------
-        //mClassLoader = loader;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.009 -0400", hash_original_method = "DF35DB07DA97BBA7096331B39E871560", hash_generated_method = "7F51CEA2DE6AA039F78E64D53CF48ADC")
     public ClassLoader getClassLoader() {
 ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoader;
         var03260047576FFCA5A37C413ABA8D1CD1_2064653161.addTaint(taint);
         return var03260047576FFCA5A37C413ABA8D1CD1_2064653161;
-        // ---------- Original Method ----------
-        //return mClassLoader;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.010 -0400", hash_original_method = "3A854A40DC72470BF5CA49CF20D41873", hash_generated_method = "FB4D11113E614632BC1E78610B9FB3EE")
     public boolean setAllowFds(boolean allowFds) {
         boolean orig = mAllowFds;
@@ -203,10 +206,10 @@ ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoade
         boolean var025F253325B46929CD34F2A7C3C55E7C_2137318664 = (orig);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1232651754 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1232651754;
-        // ---------- Original Method ----------
-        //boolean orig = mAllowFds;
-        //mAllowFds = allowFds;
-        //return orig;
+        
+        
+        
+        
     }
 
     
@@ -216,8 +219,8 @@ ClassLoader var03260047576FFCA5A37C413ABA8D1CD1_2064653161 =         mClassLoade
 Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
         var4CCA019CFB07D192DF8D7237E7F0B00E_351829002.addTaint(taint);
         return var4CCA019CFB07D192DF8D7237E7F0B00E_351829002;
-        // ---------- Original Method ----------
-        //return new Bundle(this);
+        
+        
     }
 
     
@@ -226,33 +229,33 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
     if(mParcelledData == null)        
         {
             return;
-        } //End block
+        } 
         int N = mParcelledData.readInt();
     if(N < 0)        
         {
             return;
-        } //End block
+        } 
     if(mMap == null)        
         {
             mMap = new HashMap<String, Object>();
-        } //End block
+        } 
         mParcelledData.readMapInternal(mMap, N, mClassLoader);
         mParcelledData.recycle();
         mParcelledData = null;
-        // ---------- Original Method ----------
-        //if (mParcelledData == null) {
-            //return;
-        //}
-        //int N = mParcelledData.readInt();
-        //if (N < 0) {
-            //return;
-        //}
-        //if (mMap == null) {
-            //mMap = new HashMap<String, Object>();
-        //}
-        //mParcelledData.readMapInternal(mMap, N, mClassLoader);
-        //mParcelledData.recycle();
-        //mParcelledData = null;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -262,9 +265,9 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
         int varAAAF4724B0913947E2ED6094A113A891_1887860280 = (mMap.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946616274 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1946616274;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.size();
+        
+        
+        
     }
 
     
@@ -274,9 +277,9 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
         boolean varCEA0A99A912E069D03233564B3C4197B_199366284 = (mMap.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_474601146 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_474601146;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.isEmpty();
+        
+        
+        
     }
 
     
@@ -286,11 +289,11 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
         mMap.clear();
         mHasFds = false;
         mFdsKnown = true;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.clear();
-        //mHasFds = false;
-        //mFdsKnown = true;
+        
+        
+        
+        
+        
     }
 
     
@@ -301,9 +304,9 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
         boolean var5BEEF4E2131DD3C69603DDE982CF106F_603138930 = (mMap.containsKey(key));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_339897582 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_339897582;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.containsKey(key);
+        
+        
+        
     }
 
     
@@ -314,9 +317,9 @@ Object var4CCA019CFB07D192DF8D7237E7F0B00E_351829002 =         new Bundle(this);
 Object var854B7A61C03CF753466A11AD5A6F683C_332597297 =         mMap.get(key);
         var854B7A61C03CF753466A11AD5A6F683C_332597297.addTaint(taint);
         return var854B7A61C03CF753466A11AD5A6F683C_332597297;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.get(key);
+        
+        
+        
     }
 
     
@@ -325,9 +328,9 @@ Object var854B7A61C03CF753466A11AD5A6F683C_332597297 =         mMap.get(key);
         addTaint(key.getTaint());
         unparcel();
         mMap.remove(key);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.remove(key);
+        
+        
+        
     }
 
     
@@ -338,12 +341,12 @@ Object var854B7A61C03CF753466A11AD5A6F683C_332597297 =         mMap.get(key);
         mMap.putAll(map.mMap);
         mHasFds |= map.mHasFds;
         mFdsKnown = mFdsKnown && map.mFdsKnown;
-        // ---------- Original Method ----------
-        //unparcel();
-        //map.unparcel();
-        //mMap.putAll(map.mMap);
-        //mHasFds |= map.mHasFds;
-        //mFdsKnown = mFdsKnown && map.mFdsKnown;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -353,12 +356,13 @@ Object var854B7A61C03CF753466A11AD5A6F683C_332597297 =         mMap.get(key);
 Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_361472375 =         mMap.keySet();
         var7A82B7B57B6F40AC93309FDE8103AFB9_361472375.addTaint(taint);
         return var7A82B7B57B6F40AC93309FDE8103AFB9_361472375;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return mMap.keySet();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.015 -0400", hash_original_method = "4B0480B2866CB29DA37F7AEC68A5E217", hash_generated_method = "2E87EDA5C6DC49EE74A2E42629CEA4F5")
     public boolean hasFileDescriptors() {
     if(!mFdsKnown)        
@@ -369,8 +373,8 @@ Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_361472375 =         mMap.keySet(
     if(mParcelledData.hasFileDescriptors())                
                 {
                     fdFound = true;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 Iterator<Map.Entry<String, Object>> iter = mMap.entrySet().iterator();
@@ -385,8 +389,8 @@ Set<String> var7A82B7B57B6F40AC93309FDE8103AFB9_361472375 =         mMap.keySet(
                         {
                             fdFound = true;
                             break;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(obj instanceof Parcelable[])                    
                     {
@@ -398,9 +402,9 @@ for(int n = array.length - 1;n >= 0;n--)
                             {
                                 fdFound = true;
                                 break;
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     else
     if(obj instanceof SparseArray)                    
                     {
@@ -412,9 +416,9 @@ for(int n = array.size() - 1;n >= 0;n--)
                             {
                                 fdFound = true;
                                 break;
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     else
     if(obj instanceof ArrayList)                    
                     {
@@ -430,20 +434,20 @@ for(int n = array.size() - 1;n >= 0;n--)
                                 {
                                     fdFound = true;
                                     break;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                                } 
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             mHasFds = fdFound;
             mFdsKnown = true;
-        } //End block
+        } 
         boolean var2250F3E2C27D5FBDB1DA94D9DB9ED089_2032618593 = (mHasFds);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1842715545 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1842715545;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -453,9 +457,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -465,9 +469,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -477,9 +481,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -489,9 +493,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -501,9 +505,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -513,9 +517,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -525,9 +529,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -537,9 +541,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -549,9 +553,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -561,9 +565,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -574,10 +578,10 @@ for(int n = array.size() - 1;n >= 0;n--)
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
+        
+        
+        
+        
     }
 
     
@@ -588,10 +592,10 @@ for(int n = array.size() - 1;n >= 0;n--)
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
+        
+        
+        
+        
     }
 
     
@@ -603,10 +607,10 @@ for(int n = array.size() - 1;n >= 0;n--)
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
+        
+        
+        
+        
     }
 
     
@@ -618,10 +622,10 @@ for(int n = array.size() - 1;n >= 0;n--)
         unparcel();
         mMap.put(key, value);
         mFdsKnown = false;
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
-        //mFdsKnown = false;
+        
+        
+        
+        
     }
 
     
@@ -631,9 +635,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -643,9 +647,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -655,9 +659,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -667,9 +671,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -679,9 +683,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -691,9 +695,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -703,9 +707,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -715,9 +719,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -727,9 +731,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -739,9 +743,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -751,9 +755,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -763,9 +767,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -775,9 +779,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -787,9 +791,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -799,9 +803,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -812,9 +816,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(key.getTaint());
         unparcel();
         mMap.put(key, value);
-        // ---------- Original Method ----------
-        //unparcel();
-        //mMap.put(key, value);
+        
+        
+        
     }
 
     
@@ -825,9 +829,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         boolean var28350F5318FFB4968F4B0B8FBE8208DE_1231671814 = (getBoolean(key, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1854291635 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1854291635;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getBoolean(key, false);
+        
+        
+        
     }
 
     
@@ -849,19 +853,19 @@ for(int n = array.size() - 1;n >= 0;n--)
         sb.append(".  The default value ");
         sb.append(defaultValue);
         sb.append(" was returned.");
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder();
-        //sb.append("Key ");
-        //sb.append(key);
-        //sb.append(" expected ");
-        //sb.append(className);
-        //sb.append(" but value was a ");
-        //sb.append(value.getClass().getName());
-        //sb.append(".  The default value ");
-        //sb.append(defaultValue);
-        //sb.append(" was returned.");
-        //Log.w(LOG_TAG, sb.toString());
-        //Log.w(LOG_TAG, "Attempt to cast generated internal exception:", e);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -873,8 +877,8 @@ for(int n = array.size() - 1;n >= 0;n--)
         addTaint(value.getTaint());
         addTaint(key.getTaint());
         typeWarning(key, value, className, "<null>", e);
-        // ---------- Original Method ----------
-        //typeWarning(key, value, className, "<null>", e);
+        
+        
     }
 
     
@@ -889,32 +893,32 @@ for(int n = array.size() - 1;n >= 0;n--)
             boolean var16830A58E1E33A4163524366BA7B701B_40776357 = (defaultValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_842285332 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_842285332;
-        } //End block
+        } 
         try 
         {
             boolean varC0A59981B6A9A74E185A6995D9EB5B72_513373595 = ((Boolean) o);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1613165869 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1613165869;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Boolean", defaultValue, e);
             boolean var16830A58E1E33A4163524366BA7B701B_1189017570 = (defaultValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1452249641 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1452249641;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Boolean) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Boolean", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -925,9 +929,9 @@ for(int n = array.size() - 1;n >= 0;n--)
         byte var5B0A48E0E31913CC901DB451A84568F5_1449543668 = (getByte(key, (byte) 0));
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_657705624 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_657705624;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getByte(key, (byte) 0);
+        
+        
+        
     }
 
     
@@ -942,32 +946,32 @@ for(int n = array.size() - 1;n >= 0;n--)
 Byte var6042003835E71BD302E1524BA5D2EC10_1478728693 =             defaultValue;
             var6042003835E71BD302E1524BA5D2EC10_1478728693.addTaint(taint);
             return var6042003835E71BD302E1524BA5D2EC10_1478728693;
-        } //End block
+        } 
         try 
         {
 Byte varC54AA9AB5858E046700E70C354EEF0AA_601033090 =             (Byte) o;
             varC54AA9AB5858E046700E70C354EEF0AA_601033090.addTaint(taint);
             return varC54AA9AB5858E046700E70C354EEF0AA_601033090;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Byte", defaultValue, e);
 Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             var6042003835E71BD302E1524BA5D2EC10_443864096.addTaint(taint);
             return var6042003835E71BD302E1524BA5D2EC10_443864096;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Byte) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Byte", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -978,9 +982,9 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
         char var73806458D5069BFA70A3B5BD5CCA2A2F_326701486 = (getChar(key, (char) 0));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_745197767 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_745197767;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getChar(key, (char) 0);
+        
+        
+        
     }
 
     
@@ -995,32 +999,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             char var16830A58E1E33A4163524366BA7B701B_1404808391 = (defaultValue);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_1046572733 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1046572733;
-        } //End block
+        } 
         try 
         {
             char var37564EA23825AA037265BAD3230BA4E6_1547141180 = ((Character) o);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_130034165 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_130034165;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Character", defaultValue, e);
             char var16830A58E1E33A4163524366BA7B701B_331840767 = (defaultValue);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_1462481335 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1462481335;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Character) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Character", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1031,9 +1035,9 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
         short varF65C145A4B6788A86B59A1D71FA2611A_1250386293 = (getShort(key, (short) 0));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_158201548 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_158201548;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getShort(key, (short) 0);
+        
+        
+        
     }
 
     
@@ -1048,32 +1052,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             short var16830A58E1E33A4163524366BA7B701B_1708555534 = (defaultValue);
                         short var4F09DAA9D95BCB166A302407A0E0BABE_441023457 = getTaintShort();
             return var4F09DAA9D95BCB166A302407A0E0BABE_441023457;
-        } //End block
+        } 
         try 
         {
             short var1E09BB19CC3789BCDC69F4BC5428A6ED_9898555 = ((Short) o);
                         short var4F09DAA9D95BCB166A302407A0E0BABE_648024550 = getTaintShort();
             return var4F09DAA9D95BCB166A302407A0E0BABE_648024550;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Short", defaultValue, e);
             short var16830A58E1E33A4163524366BA7B701B_1970095148 = (defaultValue);
                         short var4F09DAA9D95BCB166A302407A0E0BABE_849362214 = getTaintShort();
             return var4F09DAA9D95BCB166A302407A0E0BABE_849362214;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Short) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Short", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1084,9 +1088,9 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
         int var320E08F6784C27152A618018E9775889_754231660 = (getInt(key, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422479194 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1422479194;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getInt(key, 0);
+        
+        
+        
     }
 
     
@@ -1101,32 +1105,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             int var16830A58E1E33A4163524366BA7B701B_1399452580 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1419652583 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1419652583;
-        } //End block
+        } 
         try 
         {
             int var26AB24744252AEB94A58D664AB3E9D05_1415841150 = ((Integer) o);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_903549753 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_903549753;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Integer", defaultValue, e);
             int var16830A58E1E33A4163524366BA7B701B_1855143804 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112829866 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1112829866;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Integer) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Integer", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1137,9 +1141,9 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
         long var0FDBB13DE0DC3D40CB711364CF60C85E_1553884022 = (getLong(key, 0L));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_498635451 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_498635451;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getLong(key, 0L);
+        
+        
+        
     }
 
     
@@ -1154,32 +1158,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             long var16830A58E1E33A4163524366BA7B701B_785564223 = (defaultValue);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_652595814 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_652595814;
-        } //End block
+        } 
         try 
         {
             long varB5E7A03E9D897C58684C61698AA7DC1A_716406460 = ((Long) o);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_809060480 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_809060480;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Long", defaultValue, e);
             long var16830A58E1E33A4163524366BA7B701B_1903055898 = (defaultValue);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1011503225 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1011503225;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Long) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Long", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1190,9 +1194,9 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
         float varBF23D61A5DA1AFA2DE55AB53E87ED61D_1721428198 = (getFloat(key, 0.0f));
                 float var546ADE640B6EDFBC8A086EF31347E768_1250827947 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1250827947;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getFloat(key, 0.0f);
+        
+        
+        
     }
 
     
@@ -1207,32 +1211,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             float var16830A58E1E33A4163524366BA7B701B_364388166 = (defaultValue);
                         float var546ADE640B6EDFBC8A086EF31347E768_825074930 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_825074930;
-        } //End block
+        } 
         try 
         {
             float var8331AB1421C1C7163CDC80514402CB41_1224187893 = ((Float) o);
                         float var546ADE640B6EDFBC8A086EF31347E768_1648401807 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1648401807;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Float", defaultValue, e);
             float var16830A58E1E33A4163524366BA7B701B_1130413569 = (defaultValue);
                         float var546ADE640B6EDFBC8A086EF31347E768_217414725 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_217414725;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Float) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Float", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1243,9 +1247,9 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
         double var0199B64F0100C891378130CE2B2D301A_723358458 = (getDouble(key, 0.0));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_323141321 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_323141321;
-        // ---------- Original Method ----------
-        //unparcel();
-        //return getDouble(key, 0.0);
+        
+        
+        
     }
 
     
@@ -1260,32 +1264,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
             double var16830A58E1E33A4163524366BA7B701B_441658909 = (defaultValue);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1507081629 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1507081629;
-        } //End block
+        } 
         try 
         {
             double var4A68A9E2AB417E2A6A41A28F465C1612_137261577 = ((Double) o);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_2020969191 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_2020969191;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Double", defaultValue, e);
             double var16830A58E1E33A4163524366BA7B701B_1707989209 = (defaultValue);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_1410454319 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_1410454319;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (Double) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Double", defaultValue, e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1299,32 +1303,32 @@ Byte var6042003835E71BD302E1524BA5D2EC10_443864096 =             defaultValue;
 String var540C13E9E156B687226421B24F2DF178_489473938 =             null;
             var540C13E9E156B687226421B24F2DF178_489473938.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_489473938;
-        } //End block
+        } 
         try 
         {
 String var05F8BA7898C830EEFB724B7656469F9E_1743216635 =             (String) o;
             var05F8BA7898C830EEFB724B7656469F9E_1743216635.addTaint(taint);
             return var05F8BA7898C830EEFB724B7656469F9E_1743216635;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "String", e);
 String var540C13E9E156B687226421B24F2DF178_1123711738 =             null;
             var540C13E9E156B687226421B24F2DF178_1123711738.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1123711738;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (String) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "String", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1339,32 +1343,32 @@ String var540C13E9E156B687226421B24F2DF178_1123711738 =             null;
 String var6042003835E71BD302E1524BA5D2EC10_830889366 =             defaultValue;
             var6042003835E71BD302E1524BA5D2EC10_830889366.addTaint(taint);
             return var6042003835E71BD302E1524BA5D2EC10_830889366;
-        } //End block
+        } 
         try 
         {
 String var05F8BA7898C830EEFB724B7656469F9E_1976470052 =             (String) o;
             var05F8BA7898C830EEFB724B7656469F9E_1976470052.addTaint(taint);
             return var05F8BA7898C830EEFB724B7656469F9E_1976470052;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "String", e);
 String var6042003835E71BD302E1524BA5D2EC10_854540756 =             defaultValue;
             var6042003835E71BD302E1524BA5D2EC10_854540756.addTaint(taint);
             return var6042003835E71BD302E1524BA5D2EC10_854540756;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (String) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "String", e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1378,32 +1382,32 @@ String var6042003835E71BD302E1524BA5D2EC10_854540756 =             defaultValue;
 CharSequence var540C13E9E156B687226421B24F2DF178_829456570 =             null;
             var540C13E9E156B687226421B24F2DF178_829456570.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_829456570;
-        } //End block
+        } 
         try 
         {
 CharSequence var222AA52E30E95872ADF5687FA74CE561_1814715437 =             (CharSequence) o;
             var222AA52E30E95872ADF5687FA74CE561_1814715437.addTaint(taint);
             return var222AA52E30E95872ADF5687FA74CE561_1814715437;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "CharSequence", e);
 CharSequence var540C13E9E156B687226421B24F2DF178_254931142 =             null;
             var540C13E9E156B687226421B24F2DF178_254931142.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_254931142;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (CharSequence) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "CharSequence", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1418,32 +1422,32 @@ CharSequence var540C13E9E156B687226421B24F2DF178_254931142 =             null;
 CharSequence var6042003835E71BD302E1524BA5D2EC10_1773409942 =             defaultValue;
             var6042003835E71BD302E1524BA5D2EC10_1773409942.addTaint(taint);
             return var6042003835E71BD302E1524BA5D2EC10_1773409942;
-        } //End block
+        } 
         try 
         {
 CharSequence var222AA52E30E95872ADF5687FA74CE561_1988421081 =             (CharSequence) o;
             var222AA52E30E95872ADF5687FA74CE561_1988421081.addTaint(taint);
             return var222AA52E30E95872ADF5687FA74CE561_1988421081;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "CharSequence", e);
 CharSequence var6042003835E71BD302E1524BA5D2EC10_568919058 =             defaultValue;
             var6042003835E71BD302E1524BA5D2EC10_568919058.addTaint(taint);
             return var6042003835E71BD302E1524BA5D2EC10_568919058;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return defaultValue;
-        //}
-        //try {
-            //return (CharSequence) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "CharSequence", e);
-            //return defaultValue;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1457,32 +1461,32 @@ CharSequence var6042003835E71BD302E1524BA5D2EC10_568919058 =             default
 Bundle var540C13E9E156B687226421B24F2DF178_609929864 =             null;
             var540C13E9E156B687226421B24F2DF178_609929864.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_609929864;
-        } //End block
+        } 
         try 
         {
 Bundle var45D34033B5203615BB9EF66A070A8AAD_243664719 =             (Bundle) o;
             var45D34033B5203615BB9EF66A070A8AAD_243664719.addTaint(taint);
             return var45D34033B5203615BB9EF66A070A8AAD_243664719;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Bundle", e);
 Bundle var540C13E9E156B687226421B24F2DF178_1644520589 =             null;
             var540C13E9E156B687226421B24F2DF178_1644520589.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1644520589;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (Bundle) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Bundle", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1496,32 +1500,32 @@ Bundle var540C13E9E156B687226421B24F2DF178_1644520589 =             null;
 T var540C13E9E156B687226421B24F2DF178_1346153340 =             null;
             var540C13E9E156B687226421B24F2DF178_1346153340.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1346153340;
-        } //End block
+        } 
         try 
         {
 T varDD72649790B0E769482C6AFD3C9BD666_1620837411 =             (T) o;
             varDD72649790B0E769482C6AFD3C9BD666_1620837411.addTaint(taint);
             return varDD72649790B0E769482C6AFD3C9BD666_1620837411;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Parcelable", e);
 T var540C13E9E156B687226421B24F2DF178_743087198 =             null;
             var540C13E9E156B687226421B24F2DF178_743087198.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_743087198;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (T) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Parcelable", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1535,32 +1539,32 @@ T var540C13E9E156B687226421B24F2DF178_743087198 =             null;
 Parcelable[] var540C13E9E156B687226421B24F2DF178_1893913915 =             null;
             var540C13E9E156B687226421B24F2DF178_1893913915.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1893913915;
-        } //End block
+        } 
         try 
         {
 Parcelable[] var0A41EE4FAE6003B4C09B9A204979D444_978796082 =             (Parcelable[]) o;
             var0A41EE4FAE6003B4C09B9A204979D444_978796082.addTaint(taint);
             return var0A41EE4FAE6003B4C09B9A204979D444_978796082;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Parcelable[]", e);
 Parcelable[] var540C13E9E156B687226421B24F2DF178_1763881517 =             null;
             var540C13E9E156B687226421B24F2DF178_1763881517.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1763881517;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (Parcelable[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Parcelable[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1574,32 +1578,32 @@ Parcelable[] var540C13E9E156B687226421B24F2DF178_1763881517 =             null;
 ArrayList<T> var540C13E9E156B687226421B24F2DF178_1331936274 =             null;
             var540C13E9E156B687226421B24F2DF178_1331936274.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1331936274;
-        } //End block
+        } 
         try 
         {
 ArrayList<T> var8C4736B669D2FF87EF2D545A6CBB1081_1390373537 =             (ArrayList<T>) o;
             var8C4736B669D2FF87EF2D545A6CBB1081_1390373537.addTaint(taint);
             return var8C4736B669D2FF87EF2D545A6CBB1081_1390373537;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "ArrayList", e);
 ArrayList<T> var540C13E9E156B687226421B24F2DF178_1679513307 =             null;
             var540C13E9E156B687226421B24F2DF178_1679513307.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1679513307;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<T>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1613,32 +1617,32 @@ ArrayList<T> var540C13E9E156B687226421B24F2DF178_1679513307 =             null;
 SparseArray<T> var540C13E9E156B687226421B24F2DF178_551138713 =             null;
             var540C13E9E156B687226421B24F2DF178_551138713.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_551138713;
-        } //End block
+        } 
         try 
         {
 SparseArray<T> varDF1763F4CB2B8A56FADAF6645F7D7547_1169518481 =             (SparseArray<T>) o;
             varDF1763F4CB2B8A56FADAF6645F7D7547_1169518481.addTaint(taint);
             return varDF1763F4CB2B8A56FADAF6645F7D7547_1169518481;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "SparseArray", e);
 SparseArray<T> var540C13E9E156B687226421B24F2DF178_1090190139 =             null;
             var540C13E9E156B687226421B24F2DF178_1090190139.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1090190139;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (SparseArray<T>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "SparseArray", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1652,32 +1656,32 @@ SparseArray<T> var540C13E9E156B687226421B24F2DF178_1090190139 =             null
 Serializable var540C13E9E156B687226421B24F2DF178_2021904160 =             null;
             var540C13E9E156B687226421B24F2DF178_2021904160.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2021904160;
-        } //End block
+        } 
         try 
         {
 Serializable var7B8912D0D65C721E62169791E036D2E4_394353720 =             (Serializable) o;
             var7B8912D0D65C721E62169791E036D2E4_394353720.addTaint(taint);
             return var7B8912D0D65C721E62169791E036D2E4_394353720;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "Serializable", e);
 Serializable var540C13E9E156B687226421B24F2DF178_699887110 =             null;
             var540C13E9E156B687226421B24F2DF178_699887110.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_699887110;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (Serializable) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "Serializable", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1691,32 +1695,32 @@ Serializable var540C13E9E156B687226421B24F2DF178_699887110 =             null;
 ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1825982113 =             null;
             var540C13E9E156B687226421B24F2DF178_1825982113.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1825982113;
-        } //End block
+        } 
         try 
         {
 ArrayList<Integer> varB8F385EFF336E304845C55B19DEFED99_1131465778 =             (ArrayList<Integer>) o;
             varB8F385EFF336E304845C55B19DEFED99_1131465778.addTaint(taint);
             return varB8F385EFF336E304845C55B19DEFED99_1131465778;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "ArrayList<Integer>", e);
 ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1791718544 =             null;
             var540C13E9E156B687226421B24F2DF178_1791718544.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1791718544;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<Integer>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList<Integer>", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1730,32 +1734,32 @@ ArrayList<Integer> var540C13E9E156B687226421B24F2DF178_1791718544 =             
 ArrayList<String> var540C13E9E156B687226421B24F2DF178_675728846 =             null;
             var540C13E9E156B687226421B24F2DF178_675728846.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_675728846;
-        } //End block
+        } 
         try 
         {
 ArrayList<String> var6CB978612A32DB65E9747B2CE440DBD9_2060723573 =             (ArrayList<String>) o;
             var6CB978612A32DB65E9747B2CE440DBD9_2060723573.addTaint(taint);
             return var6CB978612A32DB65E9747B2CE440DBD9_2060723573;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "ArrayList<String>", e);
 ArrayList<String> var540C13E9E156B687226421B24F2DF178_1017664559 =             null;
             var540C13E9E156B687226421B24F2DF178_1017664559.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1017664559;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<String>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList<String>", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1769,32 +1773,32 @@ ArrayList<String> var540C13E9E156B687226421B24F2DF178_1017664559 =             n
 ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_926495907 =             null;
             var540C13E9E156B687226421B24F2DF178_926495907.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_926495907;
-        } //End block
+        } 
         try 
         {
 ArrayList<CharSequence> var1B0D8FC24E767E0352471E3AC3D561A2_636390539 =             (ArrayList<CharSequence>) o;
             var1B0D8FC24E767E0352471E3AC3D561A2_636390539.addTaint(taint);
             return var1B0D8FC24E767E0352471E3AC3D561A2_636390539;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "ArrayList<CharSequence>", e);
 ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =             null;
             var540C13E9E156B687226421B24F2DF178_869929318.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_869929318;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (ArrayList<CharSequence>) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "ArrayList<CharSequence>", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1808,32 +1812,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             boolean[] var37A6259CC0C1DAE299A7866489DFF0BD_8504792 = (null);
                         boolean[] var503EB2F420079C4024483971CE5EDEA8_276094497 = {getTaintBoolean()};
             return var503EB2F420079C4024483971CE5EDEA8_276094497;
-        } //End block
+        } 
         try 
         {
             boolean[] varE2BA3674FD9266CFB01DBFA76FCA616D_14924953 = ((boolean[]) o);
                         boolean[] var503EB2F420079C4024483971CE5EDEA8_1722693493 = {getTaintBoolean()};
             return var503EB2F420079C4024483971CE5EDEA8_1722693493;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "byte[]", e);
             boolean[] var37A6259CC0C1DAE299A7866489DFF0BD_94976942 = (null);
                         boolean[] var503EB2F420079C4024483971CE5EDEA8_2086868436 = {getTaintBoolean()};
             return var503EB2F420079C4024483971CE5EDEA8_2086868436;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (boolean[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "byte[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1847,32 +1851,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_198405782 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1003339148 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1003339148;
-        } //End block
+        } 
         try 
         {
             byte[] var9FE822C0B0667ABCB28F8576DB481C08_2133610272 = ((byte[]) o);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2029824499 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_2029824499;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "byte[]", e);
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_1284005412 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1796186578 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1796186578;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (byte[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "byte[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1886,32 +1890,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             short[] var37A6259CC0C1DAE299A7866489DFF0BD_949286425 = (null);
                         short[] var48EE7E2DDF8A83602BC526873BD0F875_36290117 = {getTaintShort()};
             return var48EE7E2DDF8A83602BC526873BD0F875_36290117;
-        } //End block
+        } 
         try 
         {
             short[] var12B9A95732292904819C1404E2CBA6AB_1992619807 = ((short[]) o);
                         short[] var48EE7E2DDF8A83602BC526873BD0F875_1542301315 = {getTaintShort()};
             return var48EE7E2DDF8A83602BC526873BD0F875_1542301315;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "short[]", e);
             short[] var37A6259CC0C1DAE299A7866489DFF0BD_805521727 = (null);
                         short[] var48EE7E2DDF8A83602BC526873BD0F875_625567426 = {getTaintShort()};
             return var48EE7E2DDF8A83602BC526873BD0F875_625567426;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (short[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "short[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1925,32 +1929,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             char[] var37A6259CC0C1DAE299A7866489DFF0BD_1139643295 = (null);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_1933178420 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_1933178420;
-        } //End block
+        } 
         try 
         {
             char[] var84081F0F01B25F1ACF8564E92E3D7FB9_318450718 = ((char[]) o);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_907978363 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_907978363;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "char[]", e);
             char[] var37A6259CC0C1DAE299A7866489DFF0BD_1505496670 = (null);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_478820315 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_478820315;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (char[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "char[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1964,32 +1968,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             int[] var37A6259CC0C1DAE299A7866489DFF0BD_716505481 = (null);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_15098609 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_15098609;
-        } //End block
+        } 
         try 
         {
             int[] var1C8435EA995977647E605AA4DB8D057D_1232292953 = ((int[]) o);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_201493031 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_201493031;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "int[]", e);
             int[] var37A6259CC0C1DAE299A7866489DFF0BD_375524190 = (null);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_150024877 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_150024877;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (int[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "int[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2003,32 +2007,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             long[] var37A6259CC0C1DAE299A7866489DFF0BD_2053714164 = (null);
                         long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1738025496 = {getTaintLong()};
             return var3908C7C3AF5171CEE1F112DAE77A5C4D_1738025496;
-        } //End block
+        } 
         try 
         {
             long[] var324FBE7B770A1FB7F944234CDD8D8302_1273656847 = ((long[]) o);
                         long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_1522685485 = {getTaintLong()};
             return var3908C7C3AF5171CEE1F112DAE77A5C4D_1522685485;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "long[]", e);
             long[] var37A6259CC0C1DAE299A7866489DFF0BD_66978856 = (null);
                         long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_150990867 = {getTaintLong()};
             return var3908C7C3AF5171CEE1F112DAE77A5C4D_150990867;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (long[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "long[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2042,32 +2046,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             float[] var37A6259CC0C1DAE299A7866489DFF0BD_145076060 = (null);
                         float[] varB2C245003BAB9224CFB496218F7DAFE0_959540104 = {getTaintFloat()};
             return varB2C245003BAB9224CFB496218F7DAFE0_959540104;
-        } //End block
+        } 
         try 
         {
             float[] varB6BC16331AA469D6884123613ABE79E7_964115496 = ((float[]) o);
                         float[] varB2C245003BAB9224CFB496218F7DAFE0_1276993177 = {getTaintFloat()};
             return varB2C245003BAB9224CFB496218F7DAFE0_1276993177;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "float[]", e);
             float[] var37A6259CC0C1DAE299A7866489DFF0BD_1581291425 = (null);
                         float[] varB2C245003BAB9224CFB496218F7DAFE0_481409716 = {getTaintFloat()};
             return varB2C245003BAB9224CFB496218F7DAFE0_481409716;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (float[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "float[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2081,32 +2085,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
             double[] var37A6259CC0C1DAE299A7866489DFF0BD_1383634774 = (null);
                         double[] var74D44D7D9EE6FE6C3433D694F869E521_409931576 = {getTaintDouble()};
             return var74D44D7D9EE6FE6C3433D694F869E521_409931576;
-        } //End block
+        } 
         try 
         {
             double[] var799D16D1B5D5DF2402D4DA39D4423C0D_1287943835 = ((double[]) o);
                         double[] var74D44D7D9EE6FE6C3433D694F869E521_533079414 = {getTaintDouble()};
             return var74D44D7D9EE6FE6C3433D694F869E521_533079414;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "double[]", e);
             double[] var37A6259CC0C1DAE299A7866489DFF0BD_728973595 = (null);
                         double[] var74D44D7D9EE6FE6C3433D694F869E521_1231002922 = {getTaintDouble()};
             return var74D44D7D9EE6FE6C3433D694F869E521_1231002922;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (double[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "double[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2120,32 +2124,32 @@ ArrayList<CharSequence> var540C13E9E156B687226421B24F2DF178_869929318 =         
 String[] var540C13E9E156B687226421B24F2DF178_1283806527 =             null;
             var540C13E9E156B687226421B24F2DF178_1283806527.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1283806527;
-        } //End block
+        } 
         try 
         {
 String[] var16C153FE5E6565C51E3D998C42B91976_298315060 =             (String[]) o;
             var16C153FE5E6565C51E3D998C42B91976_298315060.addTaint(taint);
             return var16C153FE5E6565C51E3D998C42B91976_298315060;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "String[]", e);
 String[] var540C13E9E156B687226421B24F2DF178_205519313 =             null;
             var540C13E9E156B687226421B24F2DF178_205519313.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_205519313;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (String[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "String[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2159,32 +2163,32 @@ String[] var540C13E9E156B687226421B24F2DF178_205519313 =             null;
 CharSequence[] var540C13E9E156B687226421B24F2DF178_1385873679 =             null;
             var540C13E9E156B687226421B24F2DF178_1385873679.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1385873679;
-        } //End block
+        } 
         try 
         {
 CharSequence[] varE0F35EE7132543529B2EBACAA10305AF_94707931 =             (CharSequence[]) o;
             varE0F35EE7132543529B2EBACAA10305AF_94707931.addTaint(taint);
             return varE0F35EE7132543529B2EBACAA10305AF_94707931;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "CharSequence[]", e);
 CharSequence[] var540C13E9E156B687226421B24F2DF178_1294956282 =             null;
             var540C13E9E156B687226421B24F2DF178_1294956282.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1294956282;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (CharSequence[]) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "CharSequence[]", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2199,32 +2203,32 @@ CharSequence[] var540C13E9E156B687226421B24F2DF178_1294956282 =             null
 IBinder var540C13E9E156B687226421B24F2DF178_511520537 =             null;
             var540C13E9E156B687226421B24F2DF178_511520537.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_511520537;
-        } //End block
+        } 
         try 
         {
 IBinder varF1CBEA30581462C8D282C5AF2BF1C748_51395476 =             (IBinder) o;
             varF1CBEA30581462C8D282C5AF2BF1C748_51395476.addTaint(taint);
             return varF1CBEA30581462C8D282C5AF2BF1C748_51395476;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             typeWarning(key, o, "IBinder", e);
 IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
             var540C13E9E156B687226421B24F2DF178_1786709062.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1786709062;
-        } //End block
-        // ---------- Original Method ----------
-        //unparcel();
-        //Object o = mMap.get(key);
-        //if (o == null) {
-            //return null;
-        //}
-        //try {
-            //return (IBinder) o;
-        //} catch (ClassCastException e) {
-            //typeWarning(key, o, "IBinder", e);
-            //return null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -2234,16 +2238,16 @@ IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
     if(hasFileDescriptors())        
         {
             mask |= Parcelable.CONTENTS_FILE_DESCRIPTOR;
-        } //End block
+        } 
         int varF2CE11EBF110993621BEDD8E747D7B1B_1042570824 = (mask);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279200476 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1279200476;
-        // ---------- Original Method ----------
-        //int mask = 0;
-        //if (hasFileDescriptors()) {
-            //mask |= Parcelable.CONTENTS_FILE_DESCRIPTOR;
-        //}
-        //return mask;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -2260,7 +2264,7 @@ IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
                 parcel.writeInt(length);
                 parcel.writeInt(0x4C444E42);
                 parcel.appendFrom(mParcelledData, 0, length);
-            } //End block
+            } 
             else
             {
                 parcel.writeInt(-1);
@@ -2272,14 +2276,14 @@ IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
                 int length = newPos - oldPos;
                 parcel.writeInt(length);
                 parcel.setDataPosition(newPos);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             parcel.restoreAllowFds(oldAllowFds);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2292,14 +2296,14 @@ IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
             RuntimeException var84B5513F50EA60D710D121E42982F402_1121168155 = new RuntimeException("Bad length in parcel: " + length);
             var84B5513F50EA60D710D121E42982F402_1121168155.addTaint(taint);
             throw var84B5513F50EA60D710D121E42982F402_1121168155;
-        } //End block
+        } 
         readFromParcelInner(parcel, length);
-        // ---------- Original Method ----------
-        //int length = parcel.readInt();
-        //if (length < 0) {
-            //throw new RuntimeException("Bad length in parcel: " + length);
-        //}
-        //readFromParcelInner(parcel, length);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -2311,7 +2315,7 @@ IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
     if(magic != 0x4C444E42)        
         {
             String st = Log.getStackTraceString(new RuntimeException());
-        } //End block
+        } 
         int offset = parcel.dataPosition();
         parcel.setDataPosition(offset + length);
         Parcel p = Parcel.obtain();
@@ -2321,22 +2325,22 @@ IBinder var540C13E9E156B687226421B24F2DF178_1786709062 =             null;
         mParcelledData = p;
         mHasFds = p.hasFileDescriptors();
         mFdsKnown = true;
-        // ---------- Original Method ----------
-        //int magic = parcel.readInt();
-        //if (magic != 0x4C444E42) {
-            //String st = Log.getStackTraceString(new RuntimeException());
-            //Log.e("Bundle", "readBundle: bad magic number");
-            //Log.e("Bundle", "readBundle: trace = " + st);
-        //}
-        //int offset = parcel.dataPosition();
-        //parcel.setDataPosition(offset + length);
-        //Parcel p = Parcel.obtain();
-        //p.setDataPosition(0);
-        //p.appendFrom(parcel, offset, length);
-        //p.setDataPosition(0);
-        //mParcelledData = p;
-        //mHasFds = p.hasFileDescriptors();
-        //mFdsKnown = true;
+        
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2349,16 +2353,16 @@ String varFF08288414AE5DAA590BBD75B1F9D1A6_823030535 =             "Bundle[mParc
                     mParcelledData.dataSize() + "]";
             varFF08288414AE5DAA590BBD75B1F9D1A6_823030535.addTaint(taint);
             return varFF08288414AE5DAA590BBD75B1F9D1A6_823030535;
-        } //End block
+        } 
 String var7912B2DCBC9E314551464676F1365845_110144721 =         "Bundle[" + mMap.toString() + "]";
         var7912B2DCBC9E314551464676F1365845_110144721.addTaint(taint);
         return var7912B2DCBC9E314551464676F1365845_110144721;
-        // ---------- Original Method ----------
-        //if (mParcelledData != null) {
-            //return "Bundle[mParcelledData.dataSize=" +
-                    //mParcelledData.dataSize() + "]";
-        //}
-        //return "Bundle[" + mMap.toString() + "]";
+        
+        
+            
+                    
+        
+        
     }
 
     

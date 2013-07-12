@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,20 +31,20 @@ public class BasicListHeaderIterator implements HeaderIterator {
                 ("Header list must not be null.");
             var8177D2CEEC505E66B0DABCC7442B2697_824763586.addTaint(taint);
             throw var8177D2CEEC505E66B0DABCC7442B2697_824763586;
-        } //End block
+        } 
         this.allHeaders = headers;
         this.headerName = name;
         this.currentIndex = findNext(-1);
         this.lastIndex = -1;
-        // ---------- Original Method ----------
-        //if (headers == null) {
-            //throw new IllegalArgumentException
-                //("Header list must not be null.");
-        //}
-        //this.allHeaders = headers;
-        //this.headerName = name;
-        //this.currentIndex = findNext(-1);
-        //this.lastIndex = -1;
+        
+        
+            
+                
+        
+        
+        
+        
+        
     }
 
     
@@ -64,20 +64,20 @@ public class BasicListHeaderIterator implements HeaderIterator {
         {
             from++;
             found = filterHeader(from);
-        } //End block
+        } 
         int var30BEC673AA85928644B576FD1EBDB4A9_82202695 = (found ? from : -1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390871006 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390871006;
-        // ---------- Original Method ----------
-        //if (from < -1)
-            //return -1;
-        //final int to = this.allHeaders.size()-1;
-        //boolean found = false;
-        //while (!found && (from < to)) {
-            //from++;
-            //found = filterHeader(from);
-        //}
-        //return found ? from : -1;
+        
+        
+            
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -94,21 +94,22 @@ public class BasicListHeaderIterator implements HeaderIterator {
         boolean varC3CEF156F878834D86C1A7D55EFC4992_1768957158 = (this.headerName.equalsIgnoreCase(name));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687046063 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687046063;
-        // ---------- Original Method ----------
-        //if (this.headerName == null)
-            //return true;
-        //final String name = ((Header)this.allHeaders.get(index)).getName();
-        //return this.headerName.equalsIgnoreCase(name);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.622 -0400", hash_original_method = "A999EE5BCD06DCC7730AAD5F8A866DB2", hash_generated_method = "E35466C495373485AC79026CB6991763")
     public boolean hasNext() {
         boolean varC26A12D4E7C3FDC78864370D6EEB75E9_778900379 = ((this.currentIndex >= 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_238496663 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_238496663;
-        // ---------- Original Method ----------
-        //return (this.currentIndex >= 0);
+        
+        
     }
 
     
@@ -120,20 +121,20 @@ public class BasicListHeaderIterator implements HeaderIterator {
             NoSuchElementException var987AB9BC96C39424DAD4C83B35F26CD8_1958285965 = new NoSuchElementException("Iteration already finished.");
             var987AB9BC96C39424DAD4C83B35F26CD8_1958285965.addTaint(taint);
             throw var987AB9BC96C39424DAD4C83B35F26CD8_1958285965;
-        } //End block
+        } 
         this.lastIndex    = current;
         this.currentIndex = findNext(current);
 Header varBA8BA1200FF1A61953A763AB5ECE3DC8_1656148613 =         (Header) this.allHeaders.get(current);
         varBA8BA1200FF1A61953A763AB5ECE3DC8_1656148613.addTaint(taint);
         return varBA8BA1200FF1A61953A763AB5ECE3DC8_1656148613;
-        // ---------- Original Method ----------
-        //final int current = this.currentIndex;
-        //if (current < 0) {
-            //throw new NoSuchElementException("Iteration already finished.");
-        //}
-        //this.lastIndex    = current;
-        //this.currentIndex = findNext(current);
-        //return (Header) this.allHeaders.get(current);
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -142,8 +143,8 @@ Header varBA8BA1200FF1A61953A763AB5ECE3DC8_1656148613 =         (Header) this.al
 Object var1A3FA08BBA40440D4CB2F4072E1F7431_851457953 =         nextHeader();
         var1A3FA08BBA40440D4CB2F4072E1F7431_851457953.addTaint(taint);
         return var1A3FA08BBA40440D4CB2F4072E1F7431_851457953;
-        // ---------- Original Method ----------
-        //return nextHeader();
+        
+        
     }
 
     
@@ -154,17 +155,17 @@ Object var1A3FA08BBA40440D4CB2F4072E1F7431_851457953 =         nextHeader();
             IllegalStateException var9A02E18FF65F2C2C5BF52EDED7AAB687_213123845 = new IllegalStateException("No header to remove.");
             var9A02E18FF65F2C2C5BF52EDED7AAB687_213123845.addTaint(taint);
             throw var9A02E18FF65F2C2C5BF52EDED7AAB687_213123845;
-        } //End block
+        } 
         this.allHeaders.remove(this.lastIndex);
         this.lastIndex = -1;
         this.currentIndex--;
-        // ---------- Original Method ----------
-        //if (this.lastIndex < 0) {
-            //throw new IllegalStateException("No header to remove.");
-        //}
-        //this.allHeaders.remove(this.lastIndex);
-        //this.lastIndex = -1;
-        //this.currentIndex--;
+        
+        
+            
+        
+        
+        
+        
     }
 
     

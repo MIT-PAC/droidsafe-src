@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,11 +14,12 @@ public final class ASN1UTCTime extends ASN1Time {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.737 -0400", hash_original_method = "26950815C4CFBBF28A3CFECAD840C50B", hash_generated_method = "EF7C489E04E77EFC692BF121C27E795F")
     public  ASN1UTCTime() {
         super(TAG_UTCTIME);
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static ASN1UTCTime getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static ASN1UTCTime getInstance() {
         return ASN1;
     }
 
@@ -33,16 +34,16 @@ public final class ASN1UTCTime extends ASN1Time {
 Object var540C13E9E156B687226421B24F2DF178_1806436905 =             null;
             var540C13E9E156B687226421B24F2DF178_1806436905.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1806436905;
-        } //End block
+        } 
 Object var6AD043AF0280111F31D0D60A6CD70863_1695614670 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1695614670.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1695614670;
-        // ---------- Original Method ----------
-        //in.readUTCTime();
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -51,8 +52,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1695614670 =         getDecodedObject
     public void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeUTCTime();
-        // ---------- Original Method ----------
-        //out.encodeUTCTime();
+        
+        
     }
 
     
@@ -64,11 +65,11 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1695614670 =         getDecodedObject
         sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
         out.content = sdf.format(out.content).getBytes(Charsets.UTF_8);
         out.length = ((byte[]) out.content).length;
-        // ---------- Original Method ----------
-        //SimpleDateFormat sdf = new SimpleDateFormat(UTC_PATTERN);
-        //sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-        //out.content = sdf.format(out.content).getBytes(Charsets.UTF_8);
-        //out.length = ((byte[]) out.content).length;
+        
+        
+        
+        
+        
     }
 
     

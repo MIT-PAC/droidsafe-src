@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,7 +25,7 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.886 -0400", hash_original_method = "9C379E6850D70F22993610B85EB51FC7", hash_generated_method = "9C379E6850D70F22993610B85EB51FC7")
     public BasicHttpProcessor ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -35,20 +35,20 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     if(itcp == null)        
         {
             return;
-        } //End block
+        } 
     if(this.requestInterceptors == null)        
         {
             this.requestInterceptors = new ArrayList();
-        } //End block
+        } 
         this.requestInterceptors.add(itcp);
-        // ---------- Original Method ----------
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.requestInterceptors == null) {
-            //this.requestInterceptors = new ArrayList();
-        //}
-        //this.requestInterceptors.add(itcp);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -62,11 +62,11 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
             IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_454962772 = new IndexOutOfBoundsException(String.valueOf(index));
             varDC2A30BE720FF28962244F217E60E3D1_454962772.addTaint(taint);
             throw varDC2A30BE720FF28962244F217E60E3D1_454962772;
-        } //End block
+        } 
     if(itcp == null)        
         {
             return;
-        } //End block
+        } 
     if(this.requestInterceptors == null)        
         {
     if(index > 0)            
@@ -74,24 +74,24 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                 IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_600448331 = new IndexOutOfBoundsException(String.valueOf(index));
                 varDC2A30BE720FF28962244F217E60E3D1_600448331.addTaint(taint);
                 throw varDC2A30BE720FF28962244F217E60E3D1_600448331;
-            } //End block
+            } 
             this.requestInterceptors = new ArrayList();
-        } //End block
+        } 
         this.requestInterceptors.add(index, itcp);
-        // ---------- Original Method ----------
-        //if (index < 0) {
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
-        //}
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.requestInterceptors == null) {
-            //if (index > 0) {
-                //throw new IndexOutOfBoundsException(String.valueOf(index));
-            //}
-            //this.requestInterceptors = new ArrayList();
-        //}
-        //this.requestInterceptors.add(index, itcp);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -105,11 +105,11 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
             IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_610622439 = new IndexOutOfBoundsException(String.valueOf(index));
             varDC2A30BE720FF28962244F217E60E3D1_610622439.addTaint(taint);
             throw varDC2A30BE720FF28962244F217E60E3D1_610622439;
-        } //End block
+        } 
     if(itcp == null)        
         {
             return;
-        } //End block
+        } 
     if(this.responseInterceptors == null)        
         {
     if(index > 0)            
@@ -117,24 +117,24 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
                 IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_1783723724 = new IndexOutOfBoundsException(String.valueOf(index));
                 varDC2A30BE720FF28962244F217E60E3D1_1783723724.addTaint(taint);
                 throw varDC2A30BE720FF28962244F217E60E3D1_1783723724;
-            } //End block
+            } 
             this.responseInterceptors = new ArrayList();
-        } //End block
+        } 
         this.responseInterceptors.add(index, itcp);
-        // ---------- Original Method ----------
-        //if (index < 0) {
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
-        //}
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.responseInterceptors == null) {
-            //if (index > 0) {
-                //throw new IndexOutOfBoundsException(String.valueOf(index));
-            //}
-            //this.responseInterceptors = new ArrayList();
-        //}
-        //this.responseInterceptors.add(index, itcp);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -144,26 +144,26 @@ public final class BasicHttpProcessor implements HttpProcessor, HttpRequestInter
     if(this.requestInterceptors == null)        
         {
             return;
-        } //End block
+        } 
 for(Iterator it = this.requestInterceptors.iterator();it.hasNext();)
         {
             Object request = it.next();
     if(request.getClass().equals(clazz))            
             {
                 it.remove();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.requestInterceptors == null) {
-            //return;
-        //}
-        //for (Iterator it = this.requestInterceptors.iterator();
-             //it.hasNext(); ) {
-            //Object request = it.next();
-            //if (request.getClass().equals(clazz)) {
-                //it.remove();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+             
+            
+            
+                
+            
+        
     }
 
     
@@ -173,26 +173,26 @@ for(Iterator it = this.requestInterceptors.iterator();it.hasNext();)
     if(this.responseInterceptors == null)        
         {
             return;
-        } //End block
+        } 
 for(Iterator it = this.responseInterceptors.iterator();it.hasNext();)
         {
             Object request = it.next();
     if(request.getClass().equals(clazz))            
             {
                 it.remove();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.responseInterceptors == null) {
-            //return;
-        //}
-        //for (Iterator it = this.responseInterceptors.iterator();
-             //it.hasNext(); ) {
-            //Object request = it.next();
-            //if (request.getClass().equals(clazz)) {
-                //it.remove();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+             
+            
+            
+                
+            
+        
     }
 
     
@@ -200,8 +200,8 @@ for(Iterator it = this.responseInterceptors.iterator();it.hasNext();)
     public final void addInterceptor(final HttpRequestInterceptor interceptor) {
         addTaint(interceptor.getTaint());
         addRequestInterceptor(interceptor);
-        // ---------- Original Method ----------
-        //addRequestInterceptor(interceptor);
+        
+        
     }
 
     
@@ -211,8 +211,8 @@ for(Iterator it = this.responseInterceptors.iterator();it.hasNext();)
         addTaint(index);
         addTaint(interceptor.getTaint());
         addRequestInterceptor(interceptor, index);
-        // ---------- Original Method ----------
-        //addRequestInterceptor(interceptor, index);
+        
+        
     }
 
     
@@ -222,9 +222,9 @@ for(Iterator it = this.responseInterceptors.iterator();it.hasNext();)
             0 : this.requestInterceptors.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117894955 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1117894955;
-        // ---------- Original Method ----------
-        //return (this.requestInterceptors == null) ?
-            //0 : this.requestInterceptors.size();
+        
+        
+            
     }
 
     
@@ -241,19 +241,20 @@ HttpRequestInterceptor var540C13E9E156B687226421B24F2DF178_2045964215 =         
 HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_525323052 =         (HttpRequestInterceptor) this.requestInterceptors.get(index);
         var39DF5014B1B8FB8C6EC2BA775A357664_525323052.addTaint(taint);
         return var39DF5014B1B8FB8C6EC2BA775A357664_525323052;
-        // ---------- Original Method ----------
-        //if ((this.requestInterceptors == null) ||
-                //(index < 0) || (index >= this.requestInterceptors.size()))
-            //return null;
-        //return (HttpRequestInterceptor) this.requestInterceptors.get(index);
+        
+        
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.890 -0400", hash_original_method = "145E2FEDCA1A32FEC7370D21776649A2", hash_generated_method = "2DD9E24066548ACA81CF15355B844800")
     public void clearRequestInterceptors() {
         this.requestInterceptors = null;
-        // ---------- Original Method ----------
-        //this.requestInterceptors = null;
+        
+        
     }
 
     
@@ -263,20 +264,20 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_525323052 =         (
     if(itcp == null)        
         {
             return;
-        } //End block
+        } 
     if(this.responseInterceptors == null)        
         {
             this.responseInterceptors = new ArrayList();
-        } //End block
+        } 
         this.responseInterceptors.add(itcp);
-        // ---------- Original Method ----------
-        //if (itcp == null) {
-            //return;
-        //}
-        //if (this.responseInterceptors == null) {
-            //this.responseInterceptors = new ArrayList();
-        //}
-        //this.responseInterceptors.add(itcp);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -284,8 +285,8 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_525323052 =         (
     public final void addInterceptor(final HttpResponseInterceptor interceptor) {
         addTaint(interceptor.getTaint());
         addResponseInterceptor(interceptor);
-        // ---------- Original Method ----------
-        //addResponseInterceptor(interceptor);
+        
+        
     }
 
     
@@ -295,8 +296,8 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_525323052 =         (
         addTaint(index);
         addTaint(interceptor.getTaint());
         addResponseInterceptor(interceptor, index);
-        // ---------- Original Method ----------
-        //addResponseInterceptor(interceptor, index);
+        
+        
     }
 
     
@@ -306,9 +307,9 @@ HttpRequestInterceptor var39DF5014B1B8FB8C6EC2BA775A357664_525323052 =         (
             0 : this.responseInterceptors.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1614277712 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1614277712;
-        // ---------- Original Method ----------
-        //return (this.responseInterceptors == null) ?
-            //0 : this.responseInterceptors.size();
+        
+        
+            
     }
 
     
@@ -325,19 +326,20 @@ HttpResponseInterceptor var540C13E9E156B687226421B24F2DF178_1759215261 =        
 HttpResponseInterceptor var32D940C10DC357DD7965B943C7C1E197_1084239370 =         (HttpResponseInterceptor) this.responseInterceptors.get(index);
         var32D940C10DC357DD7965B943C7C1E197_1084239370.addTaint(taint);
         return var32D940C10DC357DD7965B943C7C1E197_1084239370;
-        // ---------- Original Method ----------
-        //if ((this.responseInterceptors == null) ||
-                //(index < 0) || (index >= this.responseInterceptors.size()))
-            //return null;
-        //return (HttpResponseInterceptor) this.responseInterceptors.get(index);
+        
+        
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.893 -0400", hash_original_method = "312DB737544A7054D89F25FB9ECC2521", hash_generated_method = "9D3E135536DF2EF44F610851B9BC1333")
     public void clearResponseInterceptors() {
         this.responseInterceptors = null;
-        // ---------- Original Method ----------
-        //this.responseInterceptors = null;
+        
+        
     }
 
     
@@ -349,46 +351,46 @@ HttpResponseInterceptor var32D940C10DC357DD7965B943C7C1E197_1084239370 =        
             IllegalArgumentException varD88BA4B6DC7EDECCAAA4CA1A2FE96DEC_971407428 = new IllegalArgumentException("List must not be null.");
             varD88BA4B6DC7EDECCAAA4CA1A2FE96DEC_971407428.addTaint(taint);
             throw varD88BA4B6DC7EDECCAAA4CA1A2FE96DEC_971407428;
-        } //End block
+        } 
     if(this.requestInterceptors != null)        
         {
             this.requestInterceptors.clear();
-        } //End block
+        } 
     if(this.responseInterceptors != null)        
         {
             this.responseInterceptors.clear();
-        } //End block
+        } 
 for(int i = 0;i < list.size();i++)
         {
             Object obj = list.get(i);
     if(obj instanceof HttpRequestInterceptor)            
             {
                 addInterceptor((HttpRequestInterceptor)obj);
-            } //End block
+            } 
     if(obj instanceof HttpResponseInterceptor)            
             {
                 addInterceptor((HttpResponseInterceptor)obj);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (list == null) {
-            //throw new IllegalArgumentException("List must not be null.");
-        //}
-        //if (this.requestInterceptors != null) {
-            //this.requestInterceptors.clear();
-        //}
-        //if (this.responseInterceptors != null) {
-            //this.responseInterceptors.clear();
-        //}
-        //for (int i = 0; i < list.size(); i++) {
-            //Object obj = list.get(i);
-            //if (obj instanceof HttpRequestInterceptor) {
-                //addInterceptor((HttpRequestInterceptor)obj);
-            //}
-            //if (obj instanceof HttpResponseInterceptor) {
-                //addInterceptor((HttpResponseInterceptor)obj);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -396,9 +398,9 @@ for(int i = 0;i < list.size();i++)
     public void clearInterceptors() {
         clearRequestInterceptors();
         clearResponseInterceptors();
-        // ---------- Original Method ----------
-        //clearRequestInterceptors();
-        //clearResponseInterceptors();
+        
+        
+        
     }
 
     
@@ -414,16 +416,16 @@ for(int i = 0;i < this.requestInterceptors.size();i++)
             {
                 HttpRequestInterceptor interceptor = (HttpRequestInterceptor) this.requestInterceptors.get(i);
                 interceptor.process(request, context);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.requestInterceptors != null) {
-            //for (int i = 0; i < this.requestInterceptors.size(); i++) {
-                //HttpRequestInterceptor interceptor =
-                    //(HttpRequestInterceptor) this.requestInterceptors.get(i);
-                //interceptor.process(request, context);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -439,16 +441,16 @@ for(int i = 0;i < this.responseInterceptors.size();i++)
             {
                 HttpResponseInterceptor interceptor = (HttpResponseInterceptor) this.responseInterceptors.get(i);
                 interceptor.process(response, context);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.responseInterceptors != null) {
-            //for (int i = 0; i < this.responseInterceptors.size(); i++) {
-                //HttpResponseInterceptor interceptor =
-                    //(HttpResponseInterceptor) this.responseInterceptors.get(i);
-                //interceptor.process(response, context);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -458,21 +460,21 @@ for(int i = 0;i < this.responseInterceptors.size();i++)
         {
             target.requestInterceptors =
                 new ArrayList(this.requestInterceptors);
-        } //End block
+        } 
     if(this.responseInterceptors != null)        
         {
             target.responseInterceptors =
                 new ArrayList(this.responseInterceptors);
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.requestInterceptors != null) {
-            //target.requestInterceptors =
-                //new ArrayList(this.requestInterceptors);
-        //}
-        //if (this.responseInterceptors != null) {
-            //target.responseInterceptors =
-                //new ArrayList(this.responseInterceptors);
-        //}
+        } 
+        
+        
+            
+                
+        
+        
+            
+                
+        
     }
 
     
@@ -483,10 +485,10 @@ for(int i = 0;i < this.responseInterceptors.size();i++)
 BasicHttpProcessor var3DE52045BFD3C1BF3742F994ED6139AD_609239767 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_609239767.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_609239767;
-        // ---------- Original Method ----------
-        //BasicHttpProcessor clone = new BasicHttpProcessor();
-        //copyInterceptors(clone);
-        //return clone;
+        
+        
+        
+        
     }
 
     
@@ -497,10 +499,10 @@ BasicHttpProcessor var3DE52045BFD3C1BF3742F994ED6139AD_609239767 =         clone
 Object var3DE52045BFD3C1BF3742F994ED6139AD_330046681 =         clone;
         var3DE52045BFD3C1BF3742F994ED6139AD_330046681.addTaint(taint);
         return var3DE52045BFD3C1BF3742F994ED6139AD_330046681;
-        // ---------- Original Method ----------
-        //BasicHttpProcessor clone = (BasicHttpProcessor) super.clone();
-        //copyInterceptors(clone);
-        //return clone;
+        
+        
+        
+        
     }
 
     

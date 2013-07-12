@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class ThreadLocal<T> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.664 -0400", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "A892989B2AACDC92217F9E3C26407114")
     public  ThreadLocal() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,28 +36,28 @@ public class ThreadLocal<T> {
 T var9970D4A3573A4344C3E661AA6C50079B_289437563 =                 (T) table[index + 1];
                 var9970D4A3573A4344C3E661AA6C50079B_289437563.addTaint(taint);
                 return var9970D4A3573A4344C3E661AA6C50079B_289437563;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             values = initializeValues(currentThread);
-        } //End block
+        } 
 T var118A24DDA3996835C16B7CD567861DDA_1122844572 =         (T) values.getAfterMiss(this);
         var118A24DDA3996835C16B7CD567861DDA_1122844572.addTaint(taint);
         return var118A24DDA3996835C16B7CD567861DDA_1122844572;
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values != null) {
-            //Object[] table = values.table;
-            //int index = hash & values.mask;
-            //if (this.reference == table[index]) {
-                //return (T) table[index + 1];
-            //}
-        //} else {
-            //values = initializeValues(currentThread);
-        //}
-        //return (T) values.getAfterMiss(this);
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -66,8 +66,8 @@ T var118A24DDA3996835C16B7CD567861DDA_1122844572 =         (T) values.getAfterMi
 T var540C13E9E156B687226421B24F2DF178_1311516327 =         null;
         var540C13E9E156B687226421B24F2DF178_1311516327.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1311516327;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -79,15 +79,15 @@ T var540C13E9E156B687226421B24F2DF178_1311516327 =         null;
     if(values == null)        
         {
             values = initializeValues(currentThread);
-        } //End block
+        } 
         values.put(this, value);
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values == null) {
-            //values = initializeValues(currentThread);
-        //}
-        //values.put(this, value);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -98,13 +98,13 @@ T var540C13E9E156B687226421B24F2DF178_1311516327 =         null;
     if(values != null)        
         {
             values.remove(this);
-        } //End block
-        // ---------- Original Method ----------
-        //Thread currentThread = Thread.currentThread();
-        //Values values = values(currentThread);
-        //if (values != null) {
-            //values.remove(this);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -114,19 +114,20 @@ T var540C13E9E156B687226421B24F2DF178_1311516327 =         null;
 Values varDD5B551295F7C93CAA721FF5B869F41E_1083977766 =         current.localValues = new Values();
         varDD5B551295F7C93CAA721FF5B869F41E_1083977766.addTaint(taint);
         return varDD5B551295F7C93CAA721FF5B869F41E_1083977766;
-        // ---------- Original Method ----------
-        //return current.localValues = new Values();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.668 -0400", hash_original_method = "303C743BABF91BBE1D2B949725040AC0", hash_generated_method = "D1B0DE6AE51275C55C2A61AD74262247")
      Values values(Thread current) {
         addTaint(current.getTaint());
 Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1428651195 =         current.localValues;
         var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1428651195.addTaint(taint);
         return var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1428651195;
-        // ---------- Original Method ----------
-        //return current.localValues;
+        
+        
     }
 
     
@@ -155,10 +156,10 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1428651195 =         current.localVal
             initializeTable(INITIAL_SIZE);
             this.size = 0;
             this.tombstones = 0;
-            // ---------- Original Method ----------
-            //initializeTable(INITIAL_SIZE);
-            //this.size = 0;
-            //this.tombstones = 0;
+            
+            
+            
+            
         }
 
         
@@ -171,14 +172,14 @@ Values var1FEE96EDD34FFCA0D4CE1EAE7413BA9A_1428651195 =         current.localVal
             this.maximumLoad = fromParent.maximumLoad;
             this.clean = fromParent.clean;
             inheritValues(fromParent);
-            // ---------- Original Method ----------
-            //this.table = fromParent.table.clone();
-            //this.mask = fromParent.mask;
-            //this.size = fromParent.size;
-            //this.tombstones = fromParent.tombstones;
-            //this.maximumLoad = fromParent.maximumLoad;
-            //this.clean = fromParent.clean;
-            //inheritValues(fromParent);
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -192,13 +193,13 @@ for(int i = table.length - 2;i >= 0;i -= 2)
     if(k == null || k == TOMBSTONE)                
                 {
                     continue;
-                } //End block
+                } 
                 Reference<InheritableThreadLocal<?>> reference = (Reference<InheritableThreadLocal<?>>) k;
                 InheritableThreadLocal key = reference.get();
     if(key != null)                
                 {
                     table[i + 1] = key.childValue(fromParent.table[i + 1]);
-                } //End block
+                } 
                 else
                 {
                     table[i] = TOMBSTONE;
@@ -209,24 +210,25 @@ for(int i = table.length - 2;i >= 0;i -= 2)
                     fromParent.tombstones++;
                     size--;
                     fromParent.size--;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.673 -0400", hash_original_method = "8D46CF6663407215221C449D596ED15A", hash_generated_method = "C7EB45EBDA4EAA513131B1354BE102DF")
         private void initializeTable(int capacity) {
             this.table = new Object[capacity * 2];
             this.mask = table.length - 1;
             this.clean = 0;
             this.maximumLoad = capacity * 2 / 3;
-            // ---------- Original Method ----------
-            //this.table = new Object[capacity * 2];
-            //this.mask = table.length - 1;
-            //this.clean = 0;
-            //this.maximumLoad = capacity * 2 / 3;
+            
+            
+            
+            
+            
         }
 
         
@@ -235,11 +237,11 @@ for(int i = table.length - 2;i >= 0;i -= 2)
     if(rehash())            
             {
                 return;
-            } //End block
+            } 
     if(size == 0)            
             {
                 return;
-            } //End block
+            } 
             int index = clean;
             Object[] table = this.table;
 for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
@@ -248,7 +250,7 @@ for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
     if(k == TOMBSTONE || k == null)                
                 {
                     continue;
-                } //End block
+                } 
                 @SuppressWarnings("unchecked") Reference<ThreadLocal<?>> reference = (Reference<ThreadLocal<?>>) k;
     if(reference.get() == null)                
                 {
@@ -256,11 +258,11 @@ for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
                     table[index + 1] = null;
                     tombstones++;
                     size--;
-                } //End block
-            } //End block
+                } 
+            } 
             clean = index;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -271,13 +273,13 @@ for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
                 boolean var68934A3E9455FA72420237EB05902327_363815882 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1643590665 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1643590665;
-            } //End block
+            } 
             int capacity = table.length >> 1;
             int newCapacity = capacity;
     if(size > (capacity >> 1))            
             {
                 newCapacity = capacity * 2;
-            } //End block
+            } 
             Object[] oldTable = this.table;
             initializeTable(newCapacity);
             this.tombstones = 0;
@@ -286,30 +288,30 @@ for(int counter = table.length;counter > 0;counter >>= 1,index = next(index))
                 boolean varB326B5062B2F0E69046810717534CB09_1261793798 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_358122262 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_358122262;
-            } //End block
+            } 
 for(int i = oldTable.length - 2;i >= 0;i -= 2)
             {
                 Object k = oldTable[i];
     if(k == null || k == TOMBSTONE)                
                 {
                     continue;
-                } //End block
+                } 
                 @SuppressWarnings("unchecked") Reference<ThreadLocal<?>> reference = (Reference<ThreadLocal<?>>) k;
                 ThreadLocal<?> key = reference.get();
     if(key != null)                
                 {
                     add(key, oldTable[i + 1]);
-                } //End block
+                } 
                 else
                 {
                     size--;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1087139618 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_623553870 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_623553870;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -323,17 +325,17 @@ for(int index = key.hash & mask;;index = next(index))
                     table[index] = key.reference;
                     table[index + 1] = value;
                     return;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //for (int index = key.hash & mask;; index = next(index)) {
-                //Object k = table[index];
-                //if (k == null) {
-                    //table[index] = key.reference;
-                    //table[index + 1] = value;
-                    //return;
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -348,7 +350,7 @@ for(int index = key.hash & mask;;index = next(index))
                 {
                     table[index + 1] = value;
                     return;
-                } //End block
+                } 
     if(k == null)                
                 {
     if(firstTombstone == -1)                    
@@ -357,20 +359,20 @@ for(int index = key.hash & mask;;index = next(index))
                         table[index + 1] = value;
                         size++;
                         return;
-                    } //End block
+                    } 
                     table[firstTombstone] = key.reference;
                     table[firstTombstone + 1] = value;
                     tombstones--;
                     size++;
                     return;
-                } //End block
+                } 
     if(firstTombstone == -1 && k == TOMBSTONE)                
                 {
                     firstTombstone = index;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -390,12 +392,12 @@ for(int index = key.hash & mask;;index = next(index))
 Object varAF280DA2BC37D8BE783D8499160168DE_2040529040 =                     value;
                     varAF280DA2BC37D8BE783D8499160168DE_2040529040.addTaint(taint);
                     return varAF280DA2BC37D8BE783D8499160168DE_2040529040;
-                } //End block
+                } 
                 put(key, value);
 Object varAF280DA2BC37D8BE783D8499160168DE_2131690997 =                 value;
                 varAF280DA2BC37D8BE783D8499160168DE_2131690997.addTaint(taint);
                 return varAF280DA2BC37D8BE783D8499160168DE_2131690997;
-            } //End block
+            } 
             int firstTombstone = -1;
 for(index = next(index);;index = next(index))
             {
@@ -405,7 +407,7 @@ for(index = next(index);;index = next(index))
 Object varD4194754A17F2690B3CAEDCBB197DB14_1656936569 =                     table[index + 1];
                     varD4194754A17F2690B3CAEDCBB197DB14_1656936569.addTaint(taint);
                     return varD4194754A17F2690B3CAEDCBB197DB14_1656936569;
-                } //End block
+                } 
     if(reference == null)                
                 {
                     Object value = key.initialValue();
@@ -421,7 +423,7 @@ Object varD4194754A17F2690B3CAEDCBB197DB14_1656936569 =                     tabl
 Object varAF280DA2BC37D8BE783D8499160168DE_790924239 =                             value;
                             varAF280DA2BC37D8BE783D8499160168DE_790924239.addTaint(taint);
                             return varAF280DA2BC37D8BE783D8499160168DE_790924239;
-                        } //End block
+                        } 
     if(table[index] == null)                        
                         {
                             table[index] = key.reference;
@@ -431,20 +433,20 @@ Object varAF280DA2BC37D8BE783D8499160168DE_790924239 =                          
 Object varAF280DA2BC37D8BE783D8499160168DE_1686143331 =                             value;
                             varAF280DA2BC37D8BE783D8499160168DE_1686143331.addTaint(taint);
                             return varAF280DA2BC37D8BE783D8499160168DE_1686143331;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     put(key, value);
 Object varAF280DA2BC37D8BE783D8499160168DE_201675263 =                     value;
                     varAF280DA2BC37D8BE783D8499160168DE_201675263.addTaint(taint);
                     return varAF280DA2BC37D8BE783D8499160168DE_201675263;
-                } //End block
+                } 
     if(firstTombstone == -1 && reference == TOMBSTONE)                
                 {
                     firstTombstone = index;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -462,38 +464,39 @@ for(int index = key.hash & mask;;index = next(index))
                     tombstones++;
                     size--;
                     return;
-                } //End block
+                } 
     if(reference == null)                
                 {
                     return;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //cleanUp();
-            //for (int index = key.hash & mask;; index = next(index)) {
-                //Object reference = table[index];
-                //if (reference == key.reference) {
-                    //table[index] = TOMBSTONE;
-                    //table[index + 1] = null;
-                    //tombstones++;
-                    //size--;
-                    //return;
-                //}
-                //if (reference == null) {
-                    //return;
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+                    
+                
+                
+                    
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.684 -0400", hash_original_method = "A1B9AE6202C436A7C194238B45D86066", hash_generated_method = "050F65DAF140153CCA71BD4CA85E173D")
         private int next(int index) {
             addTaint(index);
             int var893A2141F64F7BF774008DBF6E57D059_732205190 = ((index + 2) & mask);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1032029296 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1032029296;
-            // ---------- Original Method ----------
-            //return (index + 2) & mask;
+            
+            
         }
 
         

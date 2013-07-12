@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,11 +41,11 @@ public class Toast {
         mTN = new TN();
         mTN.mY = context.getResources().getDimensionPixelSize(
                 com.android.internal.R.dimen.toast_y_offset);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mTN = new TN();
-        //mTN.mY = context.getResources().getDimensionPixelSize(
-                //com.android.internal.R.dimen.toast_y_offset);
+        
+        
+        
+        
+                
     }
 
     
@@ -56,7 +56,7 @@ public class Toast {
             RuntimeException varBA45B991E5FDF60526FD75B873E0DD10_982285843 = new RuntimeException("setView must have been called");
             varBA45B991E5FDF60526FD75B873E0DD10_982285843.addTaint(taint);
             throw varBA45B991E5FDF60526FD75B873E0DD10_982285843;
-        } //End block
+        } 
         INotificationManager service = getService();
         String pkg = mContext.getPackageName();
         TN tn = mTN;
@@ -64,138 +64,149 @@ public class Toast {
         try 
         {
             service.enqueueToast(pkg, tn, mDuration);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (mNextView == null) {
-            //throw new RuntimeException("setView must have been called");
-        //}
-        //INotificationManager service = getService();
-        //String pkg = mContext.getPackageName();
-        //TN tn = mTN;
-        //tn.mNextView = mNextView;
-        //try {
-            //service.enqueueToast(pkg, tn, mDuration);
-        //} catch (RemoteException e) {
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.833 -0400", hash_original_method = "905E110A9D66070AD259EFE2B60EBDFA", hash_generated_method = "5E755949284AFD2F0E09AB46034EB948")
     public void cancel() {
         mTN.hide();
-        // ---------- Original Method ----------
-        //mTN.hide();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "A152CAEDF892AE03EF7992276FE51073", hash_generated_method = "BEBF20515F3CF648B66FD299727BC65E")
     public void setView(View view) {
         mNextView = view;
-        // ---------- Original Method ----------
-        //mNextView = view;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "2CED2C577EBE287B42B9009F6CFBB820", hash_generated_method = "85144BB14607A72CF56964EC14F9D0D6")
     public View getView() {
 View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
         varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690.addTaint(taint);
         return varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690;
-        // ---------- Original Method ----------
-        //return mNextView;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "CFB561A2B5CB71F6E4A1F9C7A12A3738", hash_generated_method = "F9C7C4EC13468CD19CD7C7E3AFD925F1")
     public void setDuration(int duration) {
         mDuration = duration;
-        // ---------- Original Method ----------
-        //mDuration = duration;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.834 -0400", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "9B9136AF447A00E58753D65FFEEF18A4")
     public int getDuration() {
         int var25395741BFE51A7D136A5C7109AAD2D8_396519610 = (mDuration);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1480681100 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1480681100;
-        // ---------- Original Method ----------
-        //return mDuration;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.835 -0400", hash_original_method = "F425C47FB7437E78AF178C34F14EA79B", hash_generated_method = "F83E15EA06D82C079894A843F93CA717")
     public void setMargin(float horizontalMargin, float verticalMargin) {
         mTN.mHorizontalMargin = horizontalMargin;
         mTN.mVerticalMargin = verticalMargin;
-        // ---------- Original Method ----------
-        //mTN.mHorizontalMargin = horizontalMargin;
-        //mTN.mVerticalMargin = verticalMargin;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.835 -0400", hash_original_method = "F7B8097D0A28A7644F4CAA36263A6BC5", hash_generated_method = "F58416482C0874D4E36958DDBFB8763F")
     public float getHorizontalMargin() {
         float varDF514617DE53B1EF9217C0FEF8317F13_717779514 = (mTN.mHorizontalMargin);
                 float var546ADE640B6EDFBC8A086EF31347E768_263177445 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_263177445;
-        // ---------- Original Method ----------
-        //return mTN.mHorizontalMargin;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.835 -0400", hash_original_method = "08E3924FC925E4DE8E371EC71C6F9BB2", hash_generated_method = "2A33CB52D6E89A3A4365263B22A1B190")
     public float getVerticalMargin() {
         float var7727757C0A1FC1ED9E73F93E7C322D59_1560569787 = (mTN.mVerticalMargin);
                 float var546ADE640B6EDFBC8A086EF31347E768_580076366 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_580076366;
-        // ---------- Original Method ----------
-        //return mTN.mVerticalMargin;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.836 -0400", hash_original_method = "0F798A7E93CD7957534C3E69090E738D", hash_generated_method = "C5E35E16B7D1472EF7531715FE78EC40")
     public void setGravity(int gravity, int xOffset, int yOffset) {
         mTN.mGravity = gravity;
         mTN.mX = xOffset;
         mTN.mY = yOffset;
-        // ---------- Original Method ----------
-        //mTN.mGravity = gravity;
-        //mTN.mX = xOffset;
-        //mTN.mY = yOffset;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.836 -0400", hash_original_method = "2C9BD84752A31EC6F5E143771739878E", hash_generated_method = "7E13F7CC981161C5A2F7ECB350CDF6CE")
     public int getGravity() {
         int var4E7026CC5A290E65914E34A9471C1765_1957898403 = (mTN.mGravity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49500887 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_49500887;
-        // ---------- Original Method ----------
-        //return mTN.mGravity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.837 -0400", hash_original_method = "2AE943B633C6B771A3DBDC9830EE282D", hash_generated_method = "5D0AB79BB4EF3238360464AC2C143EBA")
     public int getXOffset() {
         int varBD97F6BD1F2018E407E89BCB4E9D862C_1184481132 = (mTN.mX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_518394078 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_518394078;
-        // ---------- Original Method ----------
-        //return mTN.mX;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.837 -0400", hash_original_method = "3212505834221ECE93D6F08E5BDF4AC5", hash_generated_method = "361C462575304E4BD615BF1AE013C49A")
     public int getYOffset() {
         int varF71F6618D90D3064567B08C6118A822C_1181988992 = (mTN.mY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521015914 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_521015914;
-        // ---------- Original Method ----------
-        //return mTN.mY;
+        
+        
     }
 
     
@@ -221,8 +232,8 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     public void setText(int resId) {
         addTaint(resId);
         setText(mContext.getText(resId));
-        // ---------- Original Method ----------
-        //setText(mContext.getText(resId));
+        
+        
     }
 
     
@@ -234,24 +245,24 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
             RuntimeException varDE59A63592C52FD4676C11A3A24C5EB3_1371238181 = new RuntimeException("This Toast was not created with Toast.makeText()");
             varDE59A63592C52FD4676C11A3A24C5EB3_1371238181.addTaint(taint);
             throw varDE59A63592C52FD4676C11A3A24C5EB3_1371238181;
-        } //End block
+        } 
         TextView tv = (TextView) mNextView.findViewById(com.android.internal.R.id.message);
     if(tv == null)        
         {
             RuntimeException varDE59A63592C52FD4676C11A3A24C5EB3_1721582620 = new RuntimeException("This Toast was not created with Toast.makeText()");
             varDE59A63592C52FD4676C11A3A24C5EB3_1721582620.addTaint(taint);
             throw varDE59A63592C52FD4676C11A3A24C5EB3_1721582620;
-        } //End block
+        } 
         tv.setText(s);
-        // ---------- Original Method ----------
-        //if (mNextView == null) {
-            //throw new RuntimeException("This Toast was not created with Toast.makeText()");
-        //}
-        //TextView tv = (TextView) mNextView.findViewById(com.android.internal.R.id.message);
-        //if (tv == null) {
-            //throw new RuntimeException("This Toast was not created with Toast.makeText()");
-        //}
-        //tv.setText(s);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -334,35 +345,35 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
             params.windowAnimations = com.android.internal.R.style.Animation_Toast;
             params.type = WindowManager.LayoutParams.TYPE_TOAST;
             params.setTitle("Toast");
-            // ---------- Original Method ----------
-            //final WindowManager.LayoutParams params = mParams;
-            //params.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            //params.width = WindowManager.LayoutParams.WRAP_CONTENT;
-            //params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                    //| WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
-                    //| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-            //params.format = PixelFormat.TRANSLUCENT;
-            //params.windowAnimations = com.android.internal.R.style.Animation_Toast;
-            //params.type = WindowManager.LayoutParams.TYPE_TOAST;
-            //params.setTitle("Toast");
+            
+            
+            
+            
+            
+                    
+                    
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.840 -0400", hash_original_method = "3E96BAE0A73C07217EE9E69C0532B078", hash_generated_method = "BB5D385BC3C8223150F4E4262DAAE933")
         public void show() {
     if(localLOGV){ }            mHandler.post(mShow);
-            // ---------- Original Method ----------
-            //if (localLOGV) Log.v(TAG, "SHOW: " + this);
-            //mHandler.post(mShow);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.841 -0400", hash_original_method = "FE787FFB2514635467B163AE42817C6A", hash_generated_method = "40ECBFB62DE691BA597DB6DCC67A7515")
         public void hide() {
     if(localLOGV){ }            mHandler.post(mHide);
-            // ---------- Original Method ----------
-            //if (localLOGV) Log.v(TAG, "HIDE: " + this);
-            //mHandler.post(mHide);
+            
+            
+            
         }
 
         
@@ -378,11 +389,11 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     if((gravity & Gravity.HORIZONTAL_GRAVITY_MASK) == Gravity.FILL_HORIZONTAL)                
                 {
                     mParams.horizontalWeight = 1.0f;
-                } //End block
+                } 
     if((gravity & Gravity.VERTICAL_GRAVITY_MASK) == Gravity.FILL_VERTICAL)                
                 {
                     mParams.verticalWeight = 1.0f;
-                } //End block
+                } 
                 mParams.x = mX;
                 mParams.y = mY;
                 mParams.verticalMargin = mVerticalMargin;
@@ -390,12 +401,12 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     if(mView.getParent() != null)                
                 {
     if(localLOGV){ }                    mWM.removeView(mView);
-                } //End block
+                } 
     if(localLOGV){ }                mWM.addView(mView, mParams);
                 trySendAccessibilityEvent();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -405,25 +416,25 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     if(!accessibilityManager.isEnabled())            
             {
                 return;
-            } //End block
+            } 
             AccessibilityEvent event = AccessibilityEvent.obtain(
                     AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED);
             event.setClassName(getClass().getName());
             event.setPackageName(mView.getContext().getPackageName());
             mView.dispatchPopulateAccessibilityEvent(event);
             accessibilityManager.sendAccessibilityEvent(event);
-            // ---------- Original Method ----------
-            //AccessibilityManager accessibilityManager =
-                    //AccessibilityManager.getInstance(mView.getContext());
-            //if (!accessibilityManager.isEnabled()) {
-                //return;
-            //}
-            //AccessibilityEvent event = AccessibilityEvent.obtain(
-                    //AccessibilityEvent.TYPE_NOTIFICATION_STATE_CHANGED);
-            //event.setClassName(getClass().getName());
-            //event.setPackageName(mView.getContext().getPackageName());
-            //mView.dispatchPopulateAccessibilityEvent(event);
-            //accessibilityManager.sendAccessibilityEvent(event);
+            
+            
+                    
+            
+                
+            
+            
+                    
+            
+            
+            
+            
         }
 
         
@@ -434,18 +445,18 @@ View varB9FC41AB8A20AAABE72BE5364175B5CC_1386578690 =         mNextView;
     if(mView.getParent() != null)                
                 {
     if(localLOGV){ }                    mWM.removeView(mView);
-                } //End block
+                } 
                 mView = null;
-            } //End block
-            // ---------- Original Method ----------
-            //if (localLOGV) Log.v(TAG, "HANDLE HIDE: " + this + " mView=" + mView);
-            //if (mView != null) {
-                //if (mView.getParent() != null) {
-                    //if (localLOGV) Log.v(TAG, "REMOVE! " + mView + " in " + this);
-                    //mWM.removeView(mView);
-                //}
-                //mView = null;
-            //}
+            } 
+            
+            
+            
+                
+                    
+                    
+                
+                
+            
         }
 
         

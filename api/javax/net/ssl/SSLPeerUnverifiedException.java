@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class SSLPeerUnverifiedException extends SSLException {
     public  SSLPeerUnverifiedException(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

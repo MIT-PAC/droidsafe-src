@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -96,31 +96,31 @@ public class ScaleGestureDetector {
         mContext = context;
         mListener = listener;
         mEdgeSlop = config.getScaledEdgeSlop();
-        // ---------- Original Method ----------
-        //ViewConfiguration config = ViewConfiguration.get(context);
-        //mContext = context;
-        //mListener = listener;
-        //mEdgeSlop = config.getScaledEdgeSlop();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.711 -0400", hash_original_method = "3D0907AC17DE553CA8E37D6A8A0F580A", hash_generated_method = "6151C0364800B1AB77D23C7E00765D05")
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-        } //End block
+        } 
         final int action = event.getActionMasked();
     if(action == MotionEvent.ACTION_DOWN)        
         {
             reset();
-        } //End block
+        } 
         boolean handled = true;
     if(mInvalidGesture)        
         {
             handled = false;
-        } //End block
+        } 
         else
     if(!mGestureInProgress)        
         {
@@ -129,7 +129,7 @@ switch(action){
             {
                 mActiveId0 = event.getPointerId(0);
                 mActive0MostRecent = true;
-            } //End block
+            } 
             break;
             case MotionEvent.ACTION_UP:
             reset();
@@ -150,7 +150,7 @@ switch(action){
                 {
                     index0 = findNewActiveIndex(event, index0 == index1 ? -1 : mActiveId1, index0);
                     mActiveId0 = event.getPointerId(index0);
-                } //End block
+                } 
                 mActive0MostRecent = false;
                 setContext(event);
                 final float edgeSlop = mEdgeSlop;
@@ -169,27 +169,27 @@ switch(action){
                     mFocusX = -1;
                     mFocusY = -1;
                     mSloppyGesture = true;
-                } //End block
+                } 
                 else
     if(p0sloppy)                
                 {
                     mFocusX = event.getX(index1);
                     mFocusY = event.getY(index1);
                     mSloppyGesture = true;
-                } //End block
+                } 
                 else
     if(p1sloppy)                
                 {
                     mFocusX = event.getX(index0);
                     mFocusY = event.getY(index0);
                     mSloppyGesture = true;
-                } //End block
+                } 
                 else
                 {
                     mSloppyGesture = false;
                     mGestureInProgress = mListener.onScaleBegin(this);
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case MotionEvent.ACTION_MOVE:
     if(mSloppyGesture)            
@@ -217,8 +217,8 @@ switch(action){
                         x0 = getRawX(event, index);
                         y0 = getRawY(event, index);
                         p0sloppy = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(p1sloppy)                
                 {
                     int index = findNewActiveIndex(event, mActiveId0, index1);
@@ -229,31 +229,31 @@ switch(action){
                         x1 = getRawX(event, index);
                         y1 = getRawY(event, index);
                         p1sloppy = false;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(p0sloppy && p1sloppy)                
                 {
                     mFocusX = -1;
                     mFocusY = -1;
-                } //End block
+                } 
                 else
     if(p0sloppy)                
                 {
                     mFocusX = event.getX(index1);
                     mFocusY = event.getY(index1);
-                } //End block
+                } 
                 else
     if(p1sloppy)                
                 {
                     mFocusX = event.getX(index0);
                     mFocusY = event.getY(index0);
-                } //End block
+                } 
                 else
                 {
                     mSloppyGesture = false;
                     mGestureInProgress = mListener.onScaleBegin(this);
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case MotionEvent.ACTION_POINTER_UP:
     if(mSloppyGesture)            
@@ -268,15 +268,15 @@ switch(action){
                         final int newIndex = findNewActiveIndex(event, mActiveId1, actionIndex);
     if(newIndex >= 0)                        
                         mActiveId0 = event.getPointerId(newIndex);
-                    } //End block
+                    } 
                     else
     if(actionId == mActiveId1)                    
                     {
                         final int newIndex = findNewActiveIndex(event, mActiveId0, actionIndex);
     if(newIndex >= 0)                        
                         mActiveId1 = event.getPointerId(newIndex);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     final int index = event.findPointerIndex(actionId == mActiveId0 ?
@@ -287,21 +287,21 @@ switch(action){
     if(mGestureInProgress)                        
                         {
                             mListener.onScaleEnd(this);
-                        } //End block
+                        } 
                         boolean var68934A3E9455FA72420237EB05902327_2060208537 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1198433356 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1198433356;
-                    } //End block
+                    } 
                     mActiveId0 = event.getPointerId(index);
                     mActive0MostRecent = true;
                     mActiveId1 = -1;
                     mFocusX = event.getX(index);
                     mFocusY = event.getY(index);
-                } //End block
-            } //End block
+                } 
+            } 
             break;
 }
-        } //End block
+        } 
         else
         {
 switch(action){
@@ -321,10 +321,10 @@ switch(action){
                     index0 = findNewActiveIndex(event,
                                 mActiveId0 == mActiveId1 ? -1 : mActiveId1, index0);
                     mActiveId0 = event.getPointerId(index0);
-                } //End block
+                } 
                 setContext(event);
                 mGestureInProgress = mListener.onScaleBegin(this);
-            } //End block
+            } 
             break;
             case MotionEvent.ACTION_POINTER_UP:
             {
@@ -345,12 +345,12 @@ switch(action){
                             mPrevEvent = MotionEvent.obtain(event);
                             setContext(event);
                             mGestureInProgress = mListener.onScaleBegin(this);
-                        } //End block
+                        } 
                         else
                         {
                             gestureEnded = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(actionId == mActiveId1)                    
                     {
@@ -363,20 +363,20 @@ switch(action){
                             mPrevEvent = MotionEvent.obtain(event);
                             setContext(event);
                             mGestureInProgress = mListener.onScaleBegin(this);
-                        } //End block
+                        } 
                         else
                         {
                             gestureEnded = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mPrevEvent.recycle();
                     mPrevEvent = MotionEvent.obtain(event);
                     setContext(event);
-                } //End block
+                } 
                 else
                 {
                     gestureEnded = true;
-                } //End block
+                } 
     if(gestureEnded)                
                 {
                     setContext(event);
@@ -388,8 +388,8 @@ switch(action){
                     reset();
                     mActiveId0 = activeId;
                     mActive0MostRecent = true;
-                } //End block
-            } //End block
+                } 
+            } 
             break;
             case MotionEvent.ACTION_CANCEL:
             mListener.onScaleEnd(this);
@@ -408,21 +408,21 @@ switch(action){
                     {
                         mPrevEvent.recycle();
                         mPrevEvent = MotionEvent.obtain(event);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             break;
 }
-        } //End block
+        } 
     if(!handled && mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);
-        } //End block
+        } 
         boolean var98F0599AF776A1FE4101C199A40EEB8F_1418441295 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090289134 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090289134;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -447,30 +447,30 @@ for(int i = 0;i < pointerCount;i++)
                 {
                     newActiveIndex = i;
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int var211F54CDFC9A5C3404569D77056CA9F3_1332966577 = (newActiveIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636430778 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_636430778;
-        // ---------- Original Method ----------
-        //final int pointerCount = ev.getPointerCount();
-        //final int otherActiveIndex = ev.findPointerIndex(otherActiveId);
-        //int newActiveIndex = -1;
-        //for (int i = 0; i < pointerCount; i++) {
-            //if (i != oldIndex && i != otherActiveIndex) {
-                //final float edgeSlop = mEdgeSlop;
-                //final float rightSlop = mRightSlopEdge;
-                //final float bottomSlop = mBottomSlopEdge;
-                //float x = getRawX(ev, i);
-                //float y = getRawY(ev, i);
-                //if (x >= edgeSlop && y >= edgeSlop && x <= rightSlop && y <= bottomSlop) {
-                    //newActiveIndex = i;
-                    //break;
-                //}
-            //}
-        //}
-        //return newActiveIndex;
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -495,7 +495,7 @@ for(int i = 0;i < pointerCount;i++)
     if(mCurrEvent != null)        
         {
             mCurrEvent.recycle();
-        } //End block
+        } 
         mCurrEvent = MotionEvent.obtain(curr);
         mCurrLen = -1;
         mPrevLen = -1;
@@ -511,9 +511,9 @@ for(int i = 0;i < pointerCount;i++)
     if(mGestureInProgress)            
             {
                 mListener.onScaleEnd(this);
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         final float px0 = prev.getX(prevIndex0);
         final float py0 = prev.getY(prevIndex0);
         final float px1 = prev.getX(prevIndex1);
@@ -535,8 +535,8 @@ for(int i = 0;i < pointerCount;i++)
         mTimeDelta = curr.getEventTime() - prev.getEventTime();
         mCurrPressure = curr.getPressure(currIndex0) + curr.getPressure(currIndex1);
         mPrevPressure = prev.getPressure(prevIndex0) + prev.getPressure(prevIndex1);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -546,61 +546,64 @@ for(int i = 0;i < pointerCount;i++)
         {
             mPrevEvent.recycle();
             mPrevEvent = null;
-        } //End block
+        } 
     if(mCurrEvent != null)        
         {
             mCurrEvent.recycle();
             mCurrEvent = null;
-        } //End block
+        } 
         mSloppyGesture = false;
         mGestureInProgress = false;
         mActiveId0 = -1;
         mActiveId1 = -1;
         mInvalidGesture = false;
-        // ---------- Original Method ----------
-        //if (mPrevEvent != null) {
-            //mPrevEvent.recycle();
-            //mPrevEvent = null;
-        //}
-        //if (mCurrEvent != null) {
-            //mCurrEvent.recycle();
-            //mCurrEvent = null;
-        //}
-        //mSloppyGesture = false;
-        //mGestureInProgress = false;
-        //mActiveId0 = -1;
-        //mActiveId1 = -1;
-        //mInvalidGesture = false;
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "898B0555390D80294F48D1832D7CA7F1", hash_generated_method = "F84051EF4AE07616E094DC9CB46B0764")
     public boolean isInProgress() {
         boolean var061B672487708A5F02C378E108FB2523_941464235 = (mGestureInProgress);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1705231885 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1705231885;
-        // ---------- Original Method ----------
-        //return mGestureInProgress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "AC0381EF29B01CFF3C15EBF3D7B069C0")
     public float getFocusX() {
         float varA0FE7B7E6572E9A5C03F808D583D21EF_1594995677 = (mFocusX);
                 float var546ADE640B6EDFBC8A086EF31347E768_677884285 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_677884285;
-        // ---------- Original Method ----------
-        //return mFocusX;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.718 -0400", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "3DDCA51F9D70ADEDAD280E48FAC62846")
     public float getFocusY() {
         float varE371837A8119A3AB321FC558BC169293_274762003 = (mFocusY);
                 float var546ADE640B6EDFBC8A086EF31347E768_1349063432 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1349063432;
-        // ---------- Original Method ----------
-        //return mFocusY;
+        
+        
     }
 
     
@@ -611,37 +614,39 @@ for(int i = 0;i < pointerCount;i++)
             final float cvx = mCurrFingerDiffX;
             final float cvy = mCurrFingerDiffY;
             mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        } //End block
+        } 
         float var8E973CE13F974C6D66FFB6DCB3A83421_1730946218 = (mCurrLen);
                 float var546ADE640B6EDFBC8A086EF31347E768_909970464 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_909970464;
-        // ---------- Original Method ----------
-        //if (mCurrLen == -1) {
-            //final float cvx = mCurrFingerDiffX;
-            //final float cvy = mCurrFingerDiffY;
-            //mCurrLen = FloatMath.sqrt(cvx*cvx + cvy*cvy);
-        //}
-        //return mCurrLen;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "EE1543A06FC47C6D52BAF4F591067AF9")
     public float getCurrentSpanX() {
         float varD797CF4A75F206359DDA7851042405DE_1345950532 = (mCurrFingerDiffX);
                 float var546ADE640B6EDFBC8A086EF31347E768_871195543 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_871195543;
-        // ---------- Original Method ----------
-        //return mCurrFingerDiffX;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.719 -0400", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "BC0019030010366467B8BFBA8B538F3C")
     public float getCurrentSpanY() {
         float varF613F042D8B78098BEAE14BEDF4D7F31_1676932164 = (mCurrFingerDiffY);
                 float var546ADE640B6EDFBC8A086EF31347E768_1038550456 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1038550456;
-        // ---------- Original Method ----------
-        //return mCurrFingerDiffY;
+        
+        
     }
 
     
@@ -652,37 +657,39 @@ for(int i = 0;i < pointerCount;i++)
             final float pvx = mPrevFingerDiffX;
             final float pvy = mPrevFingerDiffY;
             mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        } //End block
+        } 
         float varCCB42BE0A7C21CD017DE96ACABD2762C_1766052128 = (mPrevLen);
                 float var546ADE640B6EDFBC8A086EF31347E768_1106717893 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1106717893;
-        // ---------- Original Method ----------
-        //if (mPrevLen == -1) {
-            //final float pvx = mPrevFingerDiffX;
-            //final float pvy = mPrevFingerDiffY;
-            //mPrevLen = FloatMath.sqrt(pvx*pvx + pvy*pvy);
-        //}
-        //return mPrevLen;
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "9A85C6A1735D5E9215A4E83978C6D841")
     public float getPreviousSpanX() {
         float varE0D70E96C315A6A926A5DF77407556F0_1377267022 = (mPrevFingerDiffX);
                 float var546ADE640B6EDFBC8A086EF31347E768_971942460 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_971942460;
-        // ---------- Original Method ----------
-        //return mPrevFingerDiffX;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.720 -0400", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "D53D118C8B62F6A4698B9E588716B118")
     public float getPreviousSpanY() {
         float var3BCD82D8995452F8C4D8BC4D6958AFA9_186057030 = (mPrevFingerDiffY);
                 float var546ADE640B6EDFBC8A086EF31347E768_511540075 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_511540075;
-        // ---------- Original Method ----------
-        //return mPrevFingerDiffY;
+        
+        
     }
 
     
@@ -691,25 +698,26 @@ for(int i = 0;i < pointerCount;i++)
     if(mScaleFactor == -1)        
         {
             mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        } //End block
+        } 
         float var43B25FDCBE078DC3DA65BC88CAA3AACD_950757768 = (mScaleFactor);
                 float var546ADE640B6EDFBC8A086EF31347E768_277547431 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_277547431;
-        // ---------- Original Method ----------
-        //if (mScaleFactor == -1) {
-            //mScaleFactor = getCurrentSpan() / getPreviousSpan();
-        //}
-        //return mScaleFactor;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "44F0F98CC8CA516D3A3FA2B5A287771A")
     public long getTimeDelta() {
         long varD088DDA1C27B96429D7E4965433B26E2_937456004 = (mTimeDelta);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_608235079 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_608235079;
-        // ---------- Original Method ----------
-        //return mTimeDelta;
+        
+        
     }
 
     
@@ -718,8 +726,8 @@ for(int i = 0;i < pointerCount;i++)
         long varF5CCD1CFF00A6AFC9E9CD33F09ACC5B7_1265989927 = (mCurrEvent.getEventTime());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_405925789 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_405925789;
-        // ---------- Original Method ----------
-        //return mCurrEvent.getEventTime();
+        
+        
     }
 
     
@@ -728,39 +736,42 @@ for(int i = 0;i < pointerCount;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.721 -0400", hash_original_method = "AD1F4E6C43CD567296DC4B26B7E79B23", hash_generated_method = "AD1F4E6C43CD567296DC4B26B7E79B23")
         public SimpleOnScaleGestureListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "F1A51F1E1A44A60BDE5250CC79B6BF22", hash_generated_method = "926392105F005767D7567AB7A88C6C8A")
         public boolean onScale(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(detector.getTaint());
             boolean var68934A3E9455FA72420237EB05902327_1086159499 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1697101529 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1697101529;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "2018A466C052949DAB40F7C8547E8FA5", hash_generated_method = "407486EDB1AE6F4E57A76AD165FB63CC")
         public boolean onScaleBegin(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(detector.getTaint());
             boolean varB326B5062B2F0E69046810717534CB09_522310825 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_296394021 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_296394021;
-            // ---------- Original Method ----------
-            //return true;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.722 -0400", hash_original_method = "5B9499EAA38A4A49EE469DC4AE83A358", hash_generated_method = "60B04B78A4A04F6C7A1F2B5D39D8EB97")
         public void onScaleEnd(ScaleGestureDetector detector) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(detector.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

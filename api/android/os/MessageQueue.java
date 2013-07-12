@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,26 +34,30 @@ public class MessageQueue {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.751 -0400", hash_original_method = "024946A17D31C4FE5B39BFCF4854F539", hash_generated_method = "706665B871FA624C873ACD826DBDE13E")
       MessageQueue() {
         nativeInit();
-        // ---------- Original Method ----------
-        //nativeInit();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.752 -0400", hash_original_method = "22793401C0EAEE553460FBFE217265A2", hash_generated_method = "8042F95F79F7CE85F17E653A09698261")
     private void nativeInit() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.752 -0400", hash_original_method = "E34EA3919C76BD220428BD59B66C56DD", hash_generated_method = "1439525E8540D7F69358452344174A0D")
     private void nativeDestroy() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.752 -0400", hash_original_method = "6B1221F32AD6E733E25E3C4E5A3B3304", hash_generated_method = "E68E2F879822840F7A9D106BA1192115")
     private void nativePollOnce(int ptr, int timeoutMillis) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.753 -0400", hash_original_method = "29C673C89C7A5B5047FFC8F646EEAF46", hash_generated_method = "30625EDBBCA95C5F841D5787B682A772")
     private void nativeWake(int ptr) {
     }
@@ -67,18 +71,18 @@ public class MessageQueue {
             NullPointerException var5D5210E7D516DFF89C3B34535A806DE1_441945927 = new NullPointerException("Can't add a null IdleHandler");
             var5D5210E7D516DFF89C3B34535A806DE1_441945927.addTaint(taint);
             throw var5D5210E7D516DFF89C3B34535A806DE1_441945927;
-        } //End block
+        } 
         synchronized
 (this)        {
             mIdleHandlers.add(handler);
-        } //End block
-        // ---------- Original Method ----------
-        //if (handler == null) {
-            //throw new NullPointerException("Can't add a null IdleHandler");
-        //}
-        //synchronized (this) {
-            //mIdleHandlers.add(handler);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -88,11 +92,11 @@ public class MessageQueue {
         synchronized
 (this)        {
             mIdleHandlers.remove(handler);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mIdleHandlers.remove(handler);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -102,17 +106,17 @@ public class MessageQueue {
         try 
         {
             nativeDestroy();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestroy();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -125,7 +129,7 @@ for(;;)
     if(nextPollTimeoutMillis != 0)            
             {
                 Binder.flushPendingCommands();
-            } //End block
+            } 
             nativePollOnce(mPtr, nextPollTimeoutMillis);
             synchronized
 (this)            {
@@ -143,31 +147,31 @@ for(;;)
 Message varEDC5B72465A7F0BEE288689BCB1DD141_977290955 =                         msg;
                         varEDC5B72465A7F0BEE288689BCB1DD141_977290955.addTaint(taint);
                         return varEDC5B72465A7F0BEE288689BCB1DD141_977290955;
-                    } //End block
+                    } 
                     else
                     {
                         nextPollTimeoutMillis = (int) Math.min(when - now, Integer.MAX_VALUE);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     nextPollTimeoutMillis = -1;
-                } //End block
+                } 
     if(pendingIdleHandlerCount < 0)                
                 {
                     pendingIdleHandlerCount = mIdleHandlers.size();
-                } //End block
+                } 
     if(pendingIdleHandlerCount == 0)                
                 {
                     mBlocked = true;
                     continue;
-                } //End block
+                } 
     if(mPendingIdleHandlers == null)                
                 {
                     mPendingIdleHandlers = new IdleHandler[Math.max(pendingIdleHandlerCount, 4)];
-                } //End block
+                } 
                 mPendingIdleHandlers = mIdleHandlers.toArray(mPendingIdleHandlers);
-            } //End block
+            } 
 for(int i = 0;i < pendingIdleHandlerCount;i++)
             {
                 final IdleHandler idler = mPendingIdleHandlers[i];
@@ -176,24 +180,24 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 try 
                 {
                     keep = idler.queueIdle();
-                } //End block
+                } 
                 catch (Throwable t)
                 {
                     Log.wtf("MessageQueue", "IdleHandler threw exception", t);
-                } //End block
+                } 
     if(!keep)                
                 {
                     synchronized
 (this)                    {
                         mIdleHandlers.remove(idler);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             pendingIdleHandlerCount = 0;
             nextPollTimeoutMillis = 0;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -206,13 +210,13 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                     + " This message is already in use.");
             var7611DAF5A8C0D17F0C6E6AF3F8C7C3C3_1367799359.addTaint(taint);
             throw var7611DAF5A8C0D17F0C6E6AF3F8C7C3C3_1367799359;
-        } //End block
+        } 
     if(msg.target == null && !mQuitAllowed)        
         {
             RuntimeException var0E5D5E1A88532ABF3F01DF6D3F574CE2_575244020 = new RuntimeException("Main thread not allowed to quit");
             var0E5D5E1A88532ABF3F01DF6D3F574CE2_575244020.addTaint(taint);
             throw var0E5D5E1A88532ABF3F01DF6D3F574CE2_575244020;
-        } //End block
+        } 
         boolean needWake;
         synchronized
 (this)        {
@@ -223,12 +227,12 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 boolean var68934A3E9455FA72420237EB05902327_1265624179 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_560037619 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_560037619;
-            } //End block
+            } 
             else
     if(msg.target == null)            
             {
                 mQuiting = true;
-            } //End block
+            } 
             msg.when = when;
             Message p = mMessages;
     if(p == null || when == 0 || when < p.when)            
@@ -236,7 +240,7 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 msg.next = p;
                 mMessages = msg;
                 needWake = mBlocked;
-            } //End block
+            } 
             else
             {
                 Message prev = null;
@@ -245,21 +249,21 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 {
                     prev = p;
                     p = p.next;
-                } //End block
+                } 
                 msg.next = prev.next;
                 prev.next = msg;
                 needWake = false;
-            } //End block
-        } //End block
+            } 
+        } 
     if(needWake)        
         {
             nativeWake(mPtr);
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_86732560 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1431099867 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1431099867;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -289,7 +293,7 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 mMessages = n;
                 p.recycle();
                 p = n;
-            } //End block
+            } 
             while
 (p != null)            
             {
@@ -310,16 +314,16 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                         n.recycle();
                         p.next = nn;
                         continue;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 p = n;
-            } //End block
+            } 
             boolean var6CFE61694EE1BB13AE719D47C2F80B7A_249663795 = (found);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1665100876 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1665100876;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -331,7 +335,7 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
     if(r == null)        
         {
             return;
-        } //End block
+        } 
         synchronized
 (this)        {
             Message p = mMessages;
@@ -343,7 +347,7 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 mMessages = n;
                 p.recycle();
                 p = n;
-            } //End block
+            } 
             while
 (p != null)            
             {
@@ -357,13 +361,13 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                         n.recycle();
                         p.next = nn;
                         continue;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 p = n;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -382,7 +386,7 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                 mMessages = n;
                 p.recycle();
                 p = n;
-            } //End block
+            } 
             while
 (p != null)            
             {
@@ -395,34 +399,34 @@ for(int i = 0;i < pendingIdleHandlerCount;i++)
                         n.recycle();
                         p.next = nn;
                         continue;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 p = n;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //Message p = mMessages;
-            //while (p != null && p.target == h
-                    //&& (object == null || p.obj == object)) {
-                //Message n = p.next;
-                //mMessages = n;
-                //p.recycle();
-                //p = n;
-            //}
-            //while (p != null) {
-                //Message n = p.next;
-                //if (n != null) {
-                    //if (n.target == h && (object == null || n.obj == object)) {
-                        //Message nn = n.next;
-                        //n.recycle();
-                        //p.next = nn;
-                        //continue;
-                    //}
-                //}
-                //p = n;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                    
+                
+                
+                
+                
+            
+            
+                
+                
+                    
+                        
+                        
+                        
+                        
+                    
+                
+                
+            
+        
     }
 
     

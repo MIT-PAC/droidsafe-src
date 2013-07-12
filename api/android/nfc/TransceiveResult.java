@@ -1,6 +1,6 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,9 +20,9 @@ public final class TransceiveResult implements Parcelable {
     public  TransceiveResult(final int result, final byte[] data) {
         mResult = result;
         mResponseData = data;
-        // ---------- Original Method ----------
-        //mResult = result;
-        //mResponseData = data;
+        
+        
+        
     }
 
     
@@ -46,28 +46,29 @@ switch(mResult){
         varC0A3EE5F469C616C75377A96A94F4CF4_600056581.addTaint(taint);
         throw varC0A3EE5F469C616C75377A96A94F4CF4_600056581;
 }
-        // ---------- Original Method ----------
-        //switch (mResult) {
-            //case RESULT_SUCCESS:
-                //return mResponseData;
-            //case RESULT_TAGLOST:
-                //throw new TagLostException("Tag was lost.");
-            //case RESULT_EXCEEDED_LENGTH:
-                //throw new IOException("Transceive length exceeds supported maximum");
-            //default:
-                //throw new IOException("Transceive failed");
-        //}
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.799 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "9853AF00360D41A1ACA8B88830DF9980")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_110876274 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918823880 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918823880;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -81,13 +82,13 @@ switch(mResult){
         {
             dest.writeInt(mResponseData.length);
             dest.writeByteArray(mResponseData);
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeInt(mResult);
-        //if (mResult == RESULT_SUCCESS) {
-            //dest.writeInt(mResponseData.length);
-            //dest.writeByteArray(mResponseData);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     

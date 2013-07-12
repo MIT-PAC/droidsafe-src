@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,9 +32,9 @@ public class LocalSocket {
         this(new LocalSocketImpl());
         isBound = false;
         isConnected = false;
-        // ---------- Original Method ----------
-        //isBound = false;
-        //isConnected = false;
+        
+        
+        
     }
 
     
@@ -43,10 +43,10 @@ public class LocalSocket {
         this.impl = impl;
         this.isConnected = false;
         this.isBound = false;
-        // ---------- Original Method ----------
-        //this.impl = impl;
-        //this.isConnected = false;
-        //this.isBound = false;
+        
+        
+        
+        
     }
 
     
@@ -56,8 +56,8 @@ public class LocalSocket {
 String varB72CC91AEA19C7FA7F561237F68286D5_1793670505 =         super.toString() + " impl:" + impl;
         varB72CC91AEA19C7FA7F561237F68286D5_1793670505.addTaint(taint);
         return varB72CC91AEA19C7FA7F561237F68286D5_1793670505;
-        // ---------- Original Method ----------
-        //return super.toString() + " impl:" + impl;
+        
+        
     }
 
     
@@ -72,26 +72,26 @@ String varB72CC91AEA19C7FA7F561237F68286D5_1793670505 =         super.toString()
                     try 
                     {
                         impl.create(true);
-                    } //End block
+                    } 
                     finally 
                     {
                         implCreated = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!implCreated) {
-            //synchronized (this) {
-                //if (!implCreated) {
-                    //try {
-                        //impl.create(true);
-                    //} finally {
-                        //implCreated = true;
-                    //}
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+            
+                
+                    
+                        
+                    
+                        
+                    
+                
+            
+        
     }
 
     
@@ -105,22 +105,22 @@ String varB72CC91AEA19C7FA7F561237F68286D5_1793670505 =         super.toString()
                 IOException varAD6FEB2EAAB3E3E5352A4783E25F2C9C_291085662 = new IOException("already connected");
                 varAD6FEB2EAAB3E3E5352A4783E25F2C9C_291085662.addTaint(taint);
                 throw varAD6FEB2EAAB3E3E5352A4783E25F2C9C_291085662;
-            } //End block
+            } 
             implCreateIfNeeded();
             impl.connect(endpoint, 0);
             isConnected = true;
             isBound = true;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (isConnected) {
-                //throw new IOException("already connected");
-            //}
-            //implCreateIfNeeded();
-            //impl.connect(endpoint, 0);
-            //isConnected = true;
-            //isBound = true;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -134,31 +134,32 @@ String varB72CC91AEA19C7FA7F561237F68286D5_1793670505 =         super.toString()
                 IOException var401930F119456FF1A65BA8C77BE2F312_1004324466 = new IOException("already bound");
                 var401930F119456FF1A65BA8C77BE2F312_1004324466.addTaint(taint);
                 throw var401930F119456FF1A65BA8C77BE2F312_1004324466;
-            } //End block
+            } 
             localAddress = bindpoint;
             impl.bind(localAddress);
             isBound = true;
-        } //End block
-        // ---------- Original Method ----------
-        //implCreateIfNeeded();
-        //synchronized (this) {
-            //if (isBound) {
-                //throw new IOException("already bound");
-            //}
-            //localAddress = bindpoint;
-            //impl.bind(localAddress);
-            //isBound = true;
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.542 -0400", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "FDDBB7B201E177729C27E5F20E535125")
     public LocalSocketAddress getLocalSocketAddress() {
 LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1725295271 =         localAddress;
         varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1725295271.addTaint(taint);
         return varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1725295271;
-        // ---------- Original Method ----------
-        //return localAddress;
+        
+        
     }
 
     
@@ -168,9 +169,9 @@ LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1725295271 =         loca
 InputStream varA0C6C26B40703E7D9482EAE0B79E45D2_164679106 =         impl.getInputStream();
         varA0C6C26B40703E7D9482EAE0B79E45D2_164679106.addTaint(taint);
         return varA0C6C26B40703E7D9482EAE0B79E45D2_164679106;
-        // ---------- Original Method ----------
-        //implCreateIfNeeded();
-        //return impl.getInputStream();
+        
+        
+        
     }
 
     
@@ -180,9 +181,9 @@ InputStream varA0C6C26B40703E7D9482EAE0B79E45D2_164679106 =         impl.getInpu
 OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOutputStream();
         var8CC2DA174DA31DFA9BB5041834194E8D_382074666.addTaint(taint);
         return var8CC2DA174DA31DFA9BB5041834194E8D_382074666;
-        // ---------- Original Method ----------
-        //implCreateIfNeeded();
-        //return impl.getOutputStream();
+        
+        
+        
     }
 
     
@@ -190,9 +191,9 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void close() throws IOException {
         implCreateIfNeeded();
         impl.close();
-        // ---------- Original Method ----------
-        //implCreateIfNeeded();
-        //impl.close();
+        
+        
+        
     }
 
     
@@ -200,9 +201,9 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void shutdownInput() throws IOException {
         implCreateIfNeeded();
         impl.shutdownInput();
-        // ---------- Original Method ----------
-        //implCreateIfNeeded();
-        //impl.shutdownInput();
+        
+        
+        
     }
 
     
@@ -210,9 +211,9 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void shutdownOutput() throws IOException {
         implCreateIfNeeded();
         impl.shutdownOutput();
-        // ---------- Original Method ----------
-        //implCreateIfNeeded();
-        //impl.shutdownOutput();
+        
+        
+        
     }
 
     
@@ -220,8 +221,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void setReceiveBufferSize(int size) throws IOException {
         addTaint(size);
         impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
-        // ---------- Original Method ----------
-        //impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
+        
+        
     }
 
     
@@ -230,8 +231,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         int varE81451D5C828E046B43EDC22DB07479E_1788741948 = (((Integer) impl.getOption(SocketOptions.SO_RCVBUF)).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1601647232 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1601647232;
-        // ---------- Original Method ----------
-        //return ((Integer) impl.getOption(SocketOptions.SO_RCVBUF)).intValue();
+        
+        
     }
 
     
@@ -239,8 +240,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void setSoTimeout(int n) throws IOException {
         addTaint(n);
         impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(n));
-        // ---------- Original Method ----------
-        //impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(n));
+        
+        
     }
 
     
@@ -249,8 +250,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         int varD9ED706581E59D8A02AABC09446C91B3_1873645458 = (((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373266258 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373266258;
-        // ---------- Original Method ----------
-        //return ((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue();
+        
+        
     }
 
     
@@ -258,8 +259,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void setSendBufferSize(int n) throws IOException {
         addTaint(n);
         impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(n));
-        // ---------- Original Method ----------
-        //impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(n));
+        
+        
     }
 
     
@@ -268,8 +269,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         int var30D2E319E9C2929AD28B20E6E58446D9_77733339 = (((Integer) impl.getOption(SocketOptions.SO_SNDBUF)).intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66824052 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_66824052;
-        // ---------- Original Method ----------
-        //return ((Integer) impl.getOption(SocketOptions.SO_SNDBUF)).intValue();
+        
+        
     }
 
     
@@ -278,18 +279,19 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1824209341 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1824209341.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1824209341;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.547 -0400", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "1B3531055F8ADC5D6FBE76FBFC2331BB")
     public synchronized boolean isConnected() {
         boolean var8CADFAB0F66545464EF713B1AEC0C7DD_2026983560 = (isConnected);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_431622379 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_431622379;
-        // ---------- Original Method ----------
-        //return isConnected;
+        
+        
     }
 
     
@@ -298,18 +300,19 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_433834149 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_433834149.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_433834149;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.547 -0400", hash_original_method = "589AFDD4CA6BF38ABB5F59E26BB3DC6D", hash_generated_method = "14AA8CEBE195BF53ACBE23DC9889471F")
     public synchronized boolean isBound() {
         boolean var8E4D35088206920061AAF7F347854388_1147701814 = (isBound);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_24711474 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_24711474;
-        // ---------- Original Method ----------
-        //return isBound;
+        
+        
     }
 
     
@@ -318,8 +321,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1368337909 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1368337909.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1368337909;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -328,8 +331,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1985889827 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1985889827.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1985889827;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -340,8 +343,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_594594677 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_594594677.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_594594677;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -349,8 +352,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
     public void setFileDescriptorsForSend(FileDescriptor[] fds) {
         addTaint(fds[0].getTaint());
         impl.setFileDescriptorsForSend(fds);
-        // ---------- Original Method ----------
-        //impl.setFileDescriptorsForSend(fds);
+        
+        
     }
 
     
@@ -359,8 +362,8 @@ OutputStream var8CC2DA174DA31DFA9BB5041834194E8D_382074666 =         impl.getOut
 FileDescriptor[] var39C3634A2A1EE5C474896187D63364C3_1521927711 =         impl.getAncillaryFileDescriptors();
         var39C3634A2A1EE5C474896187D63364C3_1521927711.addTaint(taint);
         return var39C3634A2A1EE5C474896187D63364C3_1521927711;
-        // ---------- Original Method ----------
-        //return impl.getAncillaryFileDescriptors();
+        
+        
     }
 
     
@@ -369,8 +372,8 @@ FileDescriptor[] var39C3634A2A1EE5C474896187D63364C3_1521927711 =         impl.g
 Credentials var6122CE1776E20B8EED790D65216238CF_1774459056 =         impl.getPeerCredentials();
         var6122CE1776E20B8EED790D65216238CF_1774459056.addTaint(taint);
         return var6122CE1776E20B8EED790D65216238CF_1774459056;
-        // ---------- Original Method ----------
-        //return impl.getPeerCredentials();
+        
+        
     }
 
     
@@ -379,8 +382,8 @@ Credentials var6122CE1776E20B8EED790D65216238CF_1774459056 =         impl.getPee
 FileDescriptor var05E29FE12AB06423EE2D8B05D08F76BE_2030520617 =         impl.getFileDescriptor();
         var05E29FE12AB06423EE2D8B05D08F76BE_2030520617.addTaint(taint);
         return var05E29FE12AB06423EE2D8B05D08F76BE_2030520617;
-        // ---------- Original Method ----------
-        //return impl.getFileDescriptor();
+        
+        
     }
 
     

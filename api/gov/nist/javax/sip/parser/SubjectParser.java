@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class SubjectParser extends HeaderParser {
     public  SubjectParser(String subject) {
         super(subject);
         addTaint(subject.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class SubjectParser extends HeaderParser {
     protected  SubjectParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,29 +36,29 @@ public class SubjectParser extends HeaderParser {
             this.lexer.SPorHT();
             String s = this.lexer.getRest();
             subject.setSubject(s.trim());
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("SubjectParser.parse");
-        } //End block
+        } 
 SIPHeader varC07EC1407326EABEF2FB6D781FE48674_301657758 =         subject;
         varC07EC1407326EABEF2FB6D781FE48674_301657758.addTaint(taint);
         return varC07EC1407326EABEF2FB6D781FE48674_301657758;
-        // ---------- Original Method ----------
-        //Subject subject = new Subject();
-        //if (debug)
-            //dbg_enter("SubjectParser.parse");
-        //try {
-            //headerName(TokenTypes.SUBJECT);
-            //this.lexer.SPorHT();
-            //String s = this.lexer.getRest();
-            //subject.setSubject(s.trim());
-        //} finally {
-            //if (debug)
-                //dbg_leave("SubjectParser.parse");
-        //}
-        //return subject;
+        
+        
+        
+            
+        
+            
+            
+            
+            
+        
+            
+                
+        
+        
     }
 
     

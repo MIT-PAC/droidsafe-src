@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public final class IccVmNotSupportedException extends IccException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.822 -0400", hash_original_method = "0DA609D1A800BAC68D629EBC1C71BABF", hash_generated_method = "F1E2078F5B9AA92FE4573BDAF4BBC2A5")
       IccVmNotSupportedException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public final class IccVmNotSupportedException extends IccException {
     public  IccVmNotSupportedException(String s) {
         super(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

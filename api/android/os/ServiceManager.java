@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,11 +14,12 @@ public final class ServiceManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.565 -0400", hash_original_method = "C0ECF0E19363472551754760850E1958", hash_generated_method = "C0ECF0E19363472551754760850E1958")
     public ServiceManager ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        private static IServiceManager getIServiceManager() {
+        @DSModeled(DSC.SPEC)
+    private static IServiceManager getIServiceManager() {
         if (sServiceManager != null) {
             return sServiceManager;
         }
@@ -27,7 +28,8 @@ public final class ServiceManager {
     }
 
     
-        public static IBinder getService(String name) {
+        @DSModeled(DSC.SPEC)
+    public static IBinder getService(String name) {
         try {
             IBinder service = sCache.get(name);
             if (service != null) {
@@ -42,7 +44,8 @@ public final class ServiceManager {
     }
 
     
-        public static void addService(String name, IBinder service) {
+        @DSModeled(DSC.SPEC)
+    public static void addService(String name, IBinder service) {
         try {
             getIServiceManager().addService(name, service);
         } catch (RemoteException e) {
@@ -51,7 +54,8 @@ public final class ServiceManager {
     }
 
     
-        public static IBinder checkService(String name) {
+        @DSModeled(DSC.SPEC)
+    public static IBinder checkService(String name) {
         try {
             IBinder service = sCache.get(name);
             if (service != null) {

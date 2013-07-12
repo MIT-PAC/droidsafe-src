@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class ServerParser extends HeaderParser {
     public  ServerParser(String server) {
         super(server);
         addTaint(server.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class ServerParser extends HeaderParser {
     protected  ServerParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -47,7 +47,7 @@ public class ServerParser extends HeaderParser {
                 {
                     String comment = this.lexer.comment();
                     server.addProductToken('(' + comment + ')');
-                } //End block
+                } 
                 else
                 {
                     String tok;
@@ -59,27 +59,27 @@ public class ServerParser extends HeaderParser {
     if(tok.charAt(tok.length() - 1) == '\n')                        
                         tok = tok.trim();
                         server.addProductToken(tok);
-                    } //End block
+                    } 
                     catch (ParseException ex)
                     {
                         this.lexer.rewindInputPosition(marker);
                         tok = this.lexer.getRest().trim();
                         server.addProductToken(tok);
                         break;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("ServerParser.parse");
-        } //End block
+        } 
 SIPHeader varCF007A6E73A4D4959380322938EA0E3D_282022469 =         server;
         varCF007A6E73A4D4959380322938EA0E3D_282022469.addTaint(taint);
         return varCF007A6E73A4D4959380322938EA0E3D_282022469;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

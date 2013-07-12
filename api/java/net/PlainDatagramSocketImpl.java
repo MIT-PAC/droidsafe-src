@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,21 +45,21 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     if(fd.valid())        
         {
             guard.open("close");
-        } //End block
-        // ---------- Original Method ----------
-        //this.fd = fd;
-        //this.localPort = localPort;
-        //if (fd.valid()) {
-            //guard.open("close");
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.969 -0400", hash_original_method = "D4BBB37482735C0570902FEE6B871111", hash_generated_method = "0B50554EC69C2AC737278909772A9528")
     public  PlainDatagramSocketImpl() {
         fd = new FileDescriptor();
-        // ---------- Original Method ----------
-        //fd = new FileDescriptor();
+        
+        
     }
 
     
@@ -72,29 +72,29 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     if(port != 0)        
         {
             localPort = port;
-        } //End block
+        } 
         else
         {
             localPort = IoBridge.getSocketLocalPort(fd);
-        } //End block
+        } 
         try 
         {
             setOption(SocketOptions.SO_BROADCAST, Boolean.TRUE);
-        } //End block
+        } 
         catch (IOException ignored)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //IoBridge.bind(fd, address, port);
-        //if (port != 0) {
-            //localPort = port;
-        //} else {
-            //localPort = IoBridge.getSocketLocalPort(fd);
-        //}
-        //try {
-            //setOption(SocketOptions.SO_BROADCAST, Boolean.TRUE);
-        //} catch (IOException ignored) {
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -105,16 +105,16 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
         try 
         {
             IoBridge.closeSocket(fd);
-        } //End block
+        } 
         catch (IOException ignored)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //try {
-            //IoBridge.closeSocket(fd);
-        //} catch (IOException ignored) {
-        //}
+        } 
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -122,8 +122,8 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     @Override
     public void create() throws SocketException {
         this.fd = IoBridge.socket(false);
-        // ---------- Original Method ----------
-        //this.fd = IoBridge.socket(false);
+        
+        
     }
 
     
@@ -135,22 +135,22 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
     if(guard != null)            
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -161,8 +161,8 @@ public class PlainDatagramSocketImpl extends DatagramSocketImpl {
 Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocketOption(fd, option);
         var7559B8D6B7C6B53535C98372E0E1C884_213983883.addTaint(taint);
         return var7559B8D6B7C6B53535C98372E0E1C884_213983883;
-        // ---------- Original Method ----------
-        //return IoBridge.getSocketOption(fd, option);
+        
+        
     }
 
     
@@ -172,8 +172,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         int var19BF7F6D82885338D253D527FD37888A_631660116 = ((Integer) getOption(IoBridge.JAVA_IP_MULTICAST_TTL));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494555140 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_494555140;
-        // ---------- Original Method ----------
-        //return (Integer) getOption(IoBridge.JAVA_IP_MULTICAST_TTL);
+        
+        
     }
 
     
@@ -183,8 +183,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         byte var27676E53A6ABED4FA8965C27129296E5_214364525 = ((byte) getTimeToLive());
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_1287844804 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_1287844804;
-        // ---------- Original Method ----------
-        //return (byte) getTimeToLive();
+        
+        
     }
 
     
@@ -199,8 +199,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     public void join(InetAddress addr) throws IOException {
         addTaint(addr.getTaint());
         setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(addr, null));
-        // ---------- Original Method ----------
-        //setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(addr, null));
+        
+        
     }
 
     
@@ -213,12 +213,12 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         {
             InetAddress groupAddr = ((InetSocketAddress) addr).getAddress();
             setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(groupAddr, netInterface));
-        } //End block
-        // ---------- Original Method ----------
-        //if (addr instanceof InetSocketAddress) {
-            //InetAddress groupAddr = ((InetSocketAddress) addr).getAddress();
-            //setOption(IoBridge.JAVA_MCAST_JOIN_GROUP, makeGroupReq(groupAddr, netInterface));
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -227,8 +227,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     public void leave(InetAddress addr) throws IOException {
         addTaint(addr.getTaint());
         setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(addr, null));
-        // ---------- Original Method ----------
-        //setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(addr, null));
+        
+        
     }
 
     
@@ -241,15 +241,16 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         {
             InetAddress groupAddr = ((InetSocketAddress) addr).getAddress();
             setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(groupAddr, netInterface));
-        } //End block
-        // ---------- Original Method ----------
-        //if (addr instanceof InetSocketAddress) {
-            //InetAddress groupAddr = ((InetSocketAddress) addr).getAddress();
-            //setOption(IoBridge.JAVA_MCAST_LEAVE_GROUP, makeGroupReq(groupAddr, netInterface));
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.976 -0400", hash_original_method = "0B66924116C94ED3C0FF1D3069EB61F1", hash_generated_method = "CE275C095154BFA6266049D62FD6535E")
     @Override
     protected int peek(InetAddress sender) throws IOException {
@@ -260,11 +261,11 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         int varB4A88417B3D0170D754C647C30B7216A_1428713142 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1243697533 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1243697533;
-        // ---------- Original Method ----------
-        //DatagramPacket packet = new DatagramPacket(EmptyArray.BYTE, 0);
-        //int result = peekData(packet);
-        //sender.ipaddress = packet.getAddress().getAddress();
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
@@ -276,12 +277,12 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     if(isNativeConnected)        
         {
             updatePacketRecvAddress(pack);
-        } //End block
-        // ---------- Original Method ----------
-        //IoBridge.recvfrom(false, fd, pack.getData(), pack.getOffset(), pack.getLength(), flags, pack, isNativeConnected);
-        //if (isNativeConnected) {
-            //updatePacketRecvAddress(pack);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -290,8 +291,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     public void receive(DatagramPacket pack) throws IOException {
         addTaint(pack.getTaint());
         doRecv(pack, 0);
-        // ---------- Original Method ----------
-        //doRecv(pack, 0);
+        
+        
     }
 
     
@@ -303,9 +304,9 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         int varAEF978F8ED92066B9F32649F3DFE2BCD_1178184229 = (pack.getPort());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051122802 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051122802;
-        // ---------- Original Method ----------
-        //doRecv(pack, MSG_PEEK);
-        //return pack.getPort();
+        
+        
+        
     }
 
     
@@ -316,10 +317,10 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         int port = isNativeConnected ? 0 : packet.getPort();
         InetAddress address = isNativeConnected ? null : packet.getAddress();
         IoBridge.sendto(fd, packet.getData(), packet.getOffset(), packet.getLength(), 0, address, port);
-        // ---------- Original Method ----------
-        //int port = isNativeConnected ? 0 : packet.getPort();
-        //InetAddress address = isNativeConnected ? null : packet.getAddress();
-        //IoBridge.sendto(fd, packet.getData(), packet.getOffset(), packet.getLength(), 0, address, port);
+        
+        
+        
+        
     }
 
     
@@ -328,8 +329,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         addTaint(value.getTaint());
         addTaint(option);
         IoBridge.setSocketOption(fd, option, value);
-        // ---------- Original Method ----------
-        //IoBridge.setSocketOption(fd, option, value);
+        
+        
     }
 
     
@@ -338,8 +339,8 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     public void setTimeToLive(int ttl) throws IOException {
         addTaint(ttl);
         setOption(IoBridge.JAVA_IP_MULTICAST_TTL, Integer.valueOf(ttl));
-        // ---------- Original Method ----------
-        //setOption(IoBridge.JAVA_IP_MULTICAST_TTL, Integer.valueOf(ttl));
+        
+        
     }
 
     
@@ -348,11 +349,12 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
     public void setTTL(byte ttl) throws IOException {
         addTaint(ttl);
         setTimeToLive((int) ttl & 0xff);
-        // ---------- Original Method ----------
-        //setTimeToLive((int) ttl & 0xff);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.980 -0400", hash_original_method = "C42A5992F0CED0134F017245292E33CB", hash_generated_method = "52D116244E3B5548C2B7D725627BC55A")
     @Override
     public void connect(InetAddress inetAddr, int port) throws SocketException {
@@ -360,24 +362,24 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         try 
         {
             connectedAddress = InetAddress.getByAddress(inetAddr.getAddress());
-        } //End block
+        } 
         catch (UnknownHostException e)
         {
             SocketException var815C915B1B299CF5E8808EFB2314BEE5_1838966125 = new SocketException("Host is unresolved: " + inetAddr.getHostName());
             var815C915B1B299CF5E8808EFB2314BEE5_1838966125.addTaint(taint);
             throw var815C915B1B299CF5E8808EFB2314BEE5_1838966125;
-        } //End block
+        } 
         connectedPort = port;
         isNativeConnected = true;
-        // ---------- Original Method ----------
-        //IoBridge.connect(fd, inetAddr, port);
-        //try {
-            //connectedAddress = InetAddress.getByAddress(inetAddr.getAddress());
-        //} catch (UnknownHostException e) {
-            //throw new SocketException("Host is unresolved: " + inetAddr.getHostName());
-        //}
-        //connectedPort = port;
-        //isNativeConnected = true;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -387,25 +389,25 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         try 
         {
             Libcore.os.connect(fd, InetAddress.UNSPECIFIED, 0);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             AssertionError var8D75DBC63153835F7D08A31E99200A1F_794997012 = new AssertionError(errnoException);
             var8D75DBC63153835F7D08A31E99200A1F_794997012.addTaint(taint);
             throw var8D75DBC63153835F7D08A31E99200A1F_794997012;
-        } //End block
+        } 
         connectedPort = -1;
         connectedAddress = null;
         isNativeConnected = false;
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.connect(fd, InetAddress.UNSPECIFIED, 0);
-        //} catch (ErrnoException errnoException) {
-            //throw new AssertionError(errnoException);
-        //}
-        //connectedPort = -1;
-        //connectedAddress = null;
-        //isNativeConnected = false;
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -414,9 +416,9 @@ Object var7559B8D6B7C6B53535C98372E0E1C884_213983883 =         IoBridge.getSocke
         addTaint(packet.getTaint());
         packet.setAddress(connectedAddress);
         packet.setPort(connectedPort);
-        // ---------- Original Method ----------
-        //packet.setAddress(connectedAddress);
-        //packet.setPort(connectedPort);
+        
+        
+        
     }
 
     

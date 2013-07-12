@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,10 +26,10 @@ public class ContentProviderResult implements Parcelable {
         }
         this.uri = uri;
         this.count = null;
-        // ---------- Original Method ----------
-        //if (uri == null) throw new IllegalArgumentException("uri must not be null");
-        //this.uri = uri;
-        //this.count = null;
+        
+        
+        
+        
     }
 
     
@@ -37,9 +37,9 @@ public class ContentProviderResult implements Parcelable {
     public  ContentProviderResult(int count) {
         this.count = count;
         this.uri = null;
-        // ---------- Original Method ----------
-        //this.count = count;
-        //this.uri = null;
+        
+        
+        
     }
 
     
@@ -50,21 +50,21 @@ public class ContentProviderResult implements Parcelable {
         {
             count = source.readInt();
             uri = null;
-        } //End block
+        } 
         else
         {
             count = null;
             uri = Uri.CREATOR.createFromParcel(source);
-        } //End block
-        // ---------- Original Method ----------
-        //int type = source.readInt();
-        //if (type == 1) {
-            //count = source.readInt();
-            //uri = null;
-        //} else {
-            //count = null;
-            //uri = Uri.CREATOR.createFromParcel(source);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -76,30 +76,31 @@ public class ContentProviderResult implements Parcelable {
         {
             dest.writeInt(1);
             dest.writeInt(count);
-        } //End block
+        } 
         else
         {
             dest.writeInt(2);
             uri.writeToParcel(dest, 0);
-        } //End block
-        // ---------- Original Method ----------
-        //if (uri == null) {
-            //dest.writeInt(1);
-            //dest.writeInt(count);
-        //} else {
-            //dest.writeInt(2);
-            //uri.writeToParcel(dest, 0);
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.739 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "D1E3B1BFBA0182DAA953B6C51BE23BE0")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1814290310 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1388035626 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1388035626;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -110,15 +111,15 @@ public class ContentProviderResult implements Parcelable {
 String var1833BEAF9797AD8E35A3051EAD41E293_566596860 =             "ContentProviderResult(uri=" + uri.toString() + ")";
             var1833BEAF9797AD8E35A3051EAD41E293_566596860.addTaint(taint);
             return var1833BEAF9797AD8E35A3051EAD41E293_566596860;
-        } //End block
+        } 
 String var1437308D17F62188830CE1DADAF18CCF_1372082095 =         "ContentProviderResult(count=" + count + ")";
         var1437308D17F62188830CE1DADAF18CCF_1372082095.addTaint(taint);
         return var1437308D17F62188830CE1DADAF18CCF_1372082095;
-        // ---------- Original Method ----------
-        //if (uri != null) {
-            //return "ContentProviderResult(uri=" + uri.toString() + ")";
-        //}
-        //return "ContentProviderResult(count=" + count + ")";
+        
+        
+            
+        
+        
     }
 
     
@@ -134,12 +135,12 @@ String var1437308D17F62188830CE1DADAF18CCF_1372082095 =         "ContentProvider
             return new ContentProviderResult[size];
         }
     };
-    // orphaned legacy method
+    
     public ContentProviderResult createFromParcel(Parcel source) {
             return new ContentProviderResult(source);
         }
     
-    // orphaned legacy method
+    
     public ContentProviderResult[] newArray(int size) {
             return new ContentProviderResult[size];
         }

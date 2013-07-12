@@ -1,6 +1,6 @@
 package android.net.rtp;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class AudioStream extends RtpStream {
     public  AudioStream(InetAddress address) throws SocketException {
         super(address);
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,18 +32,19 @@ public class AudioStream extends RtpStream {
         boolean var893EB519F818FFC871EF40D76FDB054E_150940831 = (mGroup != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1355038123 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1355038123;
-        // ---------- Original Method ----------
-        //return mGroup != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.864 -0400", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "C11A4416DDB66440DAEAEA62CD783E9F")
     public AudioGroup getGroup() {
 AudioGroup var8FC275F44636F88FF4B87724812634C3_581841642 =         mGroup;
         var8FC275F44636F88FF4B87724812634C3_581841642.addTaint(taint);
         return var8FC275F44636F88FF4B87724812634C3_581841642;
-        // ---------- Original Method ----------
-        //return mGroup;
+        
+        
     }
 
     
@@ -54,42 +55,43 @@ AudioGroup var8FC275F44636F88FF4B87724812634C3_581841642 =         mGroup;
     if(mGroup == group)            
             {
                 return;
-            } //End block
+            } 
     if(mGroup != null)            
             {
                 mGroup.remove(this);
                 mGroup = null;
-            } //End block
+            } 
     if(group != null)            
             {
                 group.add(this, mCodec, mDtmfType);
                 mGroup = group;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mGroup == group) {
-                //return;
-            //}
-            //if (mGroup != null) {
-                //mGroup.remove(this);
-                //mGroup = null;
-            //}
-            //if (group != null) {
-                //group.add(this, mCodec, mDtmfType);
-                //mGroup = group;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+                
+                
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.866 -0400", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "05C1701C6A1FA5014D1E5801460C992A")
     public AudioCodec getCodec() {
 AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202 =         mCodec;
         var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202.addTaint(taint);
         return var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202;
-        // ---------- Original Method ----------
-        //return mCodec;
+        
+        
     }
 
     
@@ -100,32 +102,33 @@ AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202 =         mCodec;
             IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_1084720105 = new IllegalStateException("Busy");
             varEB02D49C7F66BF6343EB56DDF1963715_1084720105.addTaint(taint);
             throw varEB02D49C7F66BF6343EB56DDF1963715_1084720105;
-        } //End block
+        } 
     if(codec.type == mDtmfType)        
         {
             IllegalArgumentException var8F6F87B886BF78DCA73ED1B291C49528_479986366 = new IllegalArgumentException("The type is used by DTMF");
             var8F6F87B886BF78DCA73ED1B291C49528_479986366.addTaint(taint);
             throw var8F6F87B886BF78DCA73ED1B291C49528_479986366;
-        } //End block
+        } 
         mCodec = codec;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (codec.type == mDtmfType) {
-            //throw new IllegalArgumentException("The type is used by DTMF");
-        //}
-        //mCodec = codec;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.867 -0400", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "62A253F12CB222AB808B21216E17ED9C")
     public int getDtmfType() {
         int var076EC8EB5A4D8D6D0B7B64B27BFB2FB2_974836538 = (mDtmfType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546197463 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1546197463;
-        // ---------- Original Method ----------
-        //return mDtmfType;
+        
+        
     }
 
     
@@ -136,7 +139,7 @@ AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202 =         mCodec;
             IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_652366150 = new IllegalStateException("Busy");
             varEB02D49C7F66BF6343EB56DDF1963715_652366150.addTaint(taint);
             throw varEB02D49C7F66BF6343EB56DDF1963715_652366150;
-        } //End block
+        } 
     if(type != -1)        
         {
     if(type < 96 || type > 127)            
@@ -144,28 +147,28 @@ AudioCodec var37F81D7BD8453D5EBF6A6F3DDE0E93D2_516839202 =         mCodec;
                 IllegalArgumentException var9318CB30B49EC598F0007E207440476A_1490829366 = new IllegalArgumentException("Invalid type");
                 var9318CB30B49EC598F0007E207440476A_1490829366.addTaint(taint);
                 throw var9318CB30B49EC598F0007E207440476A_1490829366;
-            } //End block
+            } 
     if(type == mCodec.type)            
             {
                 IllegalArgumentException var668DAC7753EFB03E4CBB71C2905E5098_554846699 = new IllegalArgumentException("The type is used by codec");
                 var668DAC7753EFB03E4CBB71C2905E5098_554846699.addTaint(taint);
                 throw var668DAC7753EFB03E4CBB71C2905E5098_554846699;
-            } //End block
-        } //End block
+            } 
+        } 
         mDtmfType = type;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (type != -1) {
-            //if (type < 96 || type > 127) {
-                //throw new IllegalArgumentException("Invalid type");
-            //}
-            //if (type == mCodec.type) {
-                //throw new IllegalArgumentException("The type is used by codec");
-            //}
-        //}
-        //mDtmfType = type;
+        
+        
+            
+        
+        
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     

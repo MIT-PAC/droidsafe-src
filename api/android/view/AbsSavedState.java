@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public abstract class AbsSavedState implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.508 -0400", hash_original_method = "98DB61DECD5C8032FFDEFFDBC7A07300", hash_generated_method = "DDE4E11A79D0DBE3ACE7A957674D3B72")
     private  AbsSavedState() {
         mSuperState = null;
-        // ---------- Original Method ----------
-        //mSuperState = null;
+        
+        
     }
 
     
@@ -27,13 +27,13 @@ public abstract class AbsSavedState implements Parcelable {
             IllegalArgumentException var6F246C2A8E6FC55D4CCA5BECC17EDD84_1668567985 = new IllegalArgumentException("superState must not be null");
             var6F246C2A8E6FC55D4CCA5BECC17EDD84_1668567985.addTaint(taint);
             throw var6F246C2A8E6FC55D4CCA5BECC17EDD84_1668567985;
-        } //End block
+        } 
         mSuperState = superState != EMPTY_STATE ? superState : null;
-        // ---------- Original Method ----------
-        //if (superState == null) {
-            //throw new IllegalArgumentException("superState must not be null");
-        //}
-        //mSuperState = superState != EMPTY_STATE ? superState : null;
+        
+        
+            
+        
+        
     }
 
     
@@ -42,9 +42,9 @@ public abstract class AbsSavedState implements Parcelable {
         addTaint(source.getTaint());
         Parcelable superState = source.readParcelable(null);
         mSuperState = superState != null ? superState : EMPTY_STATE;
-        // ---------- Original Method ----------
-        //Parcelable superState = source.readParcelable(null);
-        //mSuperState = superState != null ? superState : EMPTY_STATE;
+        
+        
+        
     }
 
     
@@ -53,28 +53,30 @@ public abstract class AbsSavedState implements Parcelable {
 Parcelable var24424C2D2EF752A9D21649F03626A4B3_322892520 =         mSuperState;
         var24424C2D2EF752A9D21649F03626A4B3_322892520.addTaint(taint);
         return var24424C2D2EF752A9D21649F03626A4B3_322892520;
-        // ---------- Original Method ----------
-        //return mSuperState;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.509 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0EAF65125AB5F514E81A73BEF1A47D5E")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_762002312 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918953396 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918953396;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.510 -0400", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "B89CCEE673445C1158793CC7051F939D")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
         addTaint(dest.getTaint());
         dest.writeParcelable(mSuperState, flags);
-        // ---------- Original Method ----------
-        //dest.writeParcelable(mSuperState, flags);
+        
+        
     }
 
     
@@ -98,7 +100,7 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_322892520 =         mSuperState;
             return new AbsSavedState[size];
         }
     };
-    // orphaned legacy method
+    
     public AbsSavedState createFromParcel(Parcel in) {
             Parcelable superState = in.readParcelable(null);
             if (superState != null) {
@@ -107,7 +109,7 @@ Parcelable var24424C2D2EF752A9D21649F03626A4B3_322892520 =         mSuperState;
             return EMPTY_STATE;
         }
     
-    // orphaned legacy method
+    
     public AbsSavedState[] newArray(int size) {
             return new AbsSavedState[size];
         }

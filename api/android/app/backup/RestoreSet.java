@@ -1,6 +1,6 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class RestoreSet implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.419 -0400", hash_original_method = "8F1DCA72C97A5A82D254BEC6432DE3FB", hash_generated_method = "7FCB63EDEACCF2BAFC1B2567162DB769")
     public  RestoreSet() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,10 +29,10 @@ public class RestoreSet implements Parcelable {
         name = _name;
         device = _dev;
         token = _token;
-        // ---------- Original Method ----------
-        //name = _name;
-        //device = _dev;
-        //token = _token;
+        
+        
+        
+        
     }
 
     
@@ -41,23 +41,25 @@ public class RestoreSet implements Parcelable {
         name = in.readString();
         device = in.readString();
         token = in.readLong();
-        // ---------- Original Method ----------
-        //name = in.readString();
-        //device = in.readString();
-        //token = in.readLong();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.423 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "17B928A4E0E6A4307E245B9D6578CB2C")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_839350441 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080420439 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080420439;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.424 -0400", hash_original_method = "6F3E6147075189D34A5652BA91455185", hash_generated_method = "8C9487D864A81F2D7D66AF69AE52359D")
     public void writeToParcel(Parcel out, int flags) {
         addTaint(flags);
@@ -65,10 +67,10 @@ public class RestoreSet implements Parcelable {
         out.writeString(name);
         out.writeString(device);
         out.writeLong(token);
-        // ---------- Original Method ----------
-        //out.writeString(name);
-        //out.writeString(device);
-        //out.writeLong(token);
+        
+        
+        
+        
     }
 
     
@@ -84,12 +86,12 @@ public class RestoreSet implements Parcelable {
             return new RestoreSet[size];
         }
     };
-    // orphaned legacy method
+    
     public RestoreSet createFromParcel(Parcel in) {
             return new RestoreSet(in);
         }
     
-    // orphaned legacy method
+    
     public RestoreSet[] newArray(int size) {
             return new RestoreSet[size];
         }

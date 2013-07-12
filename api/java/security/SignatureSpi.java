@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public abstract class SignatureSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.554 -0400", hash_original_method = "579C0D6C0992E59A5D82007FD2101B72", hash_generated_method = "579C0D6C0992E59A5D82007FD2101B72")
     public SignatureSpi ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -32,9 +32,9 @@ public abstract class SignatureSpi {
         addTaint(privateKey.getTaint());
         appRandom = random;
         engineInitSign(privateKey);
-        // ---------- Original Method ----------
-        //appRandom = random;
-        //engineInitSign(privateKey);
+        
+        
+        
     }
 
     
@@ -51,7 +51,7 @@ public abstract class SignatureSpi {
     if(!input.hasRemaining())        
         {
             return;
-        } //End block
+        } 
         byte[] tmp;
     if(input.hasArray())        
         {
@@ -62,15 +62,15 @@ public abstract class SignatureSpi {
             try 
             {
                 engineUpdate(tmp, offset + position, limit - position);
-            } //End block
+            } 
             catch (SignatureException e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_978629310 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_978629310.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_978629310;
-            } //End block
+            } 
             input.position(limit);
-        } //End block
+        } 
         else
         {
             tmp = new byte[input.limit() - input.position()];
@@ -78,39 +78,39 @@ public abstract class SignatureSpi {
             try 
             {
                 engineUpdate(tmp, 0, tmp.length);
-            } //End block
+            } 
             catch (SignatureException e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1138322859 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_1138322859.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_1138322859;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!input.hasRemaining()) {
-            //return;
-        //}
-        //byte[] tmp;
-        //if (input.hasArray()) {
-            //tmp = input.array();
-            //int offset = input.arrayOffset();
-            //int position = input.position();
-            //int limit = input.limit();
-            //try {
-                //engineUpdate(tmp, offset + position, limit - position);
-            //} catch (SignatureException e) {
-                //throw new RuntimeException(e); 
-            //}
-            //input.position(limit);
-        //} else {
-            //tmp = new byte[input.limit() - input.position()];
-            //input.get(tmp);
-            //try {
-                //engineUpdate(tmp, 0, tmp.length);
-            //} catch (SignatureException e) {
-                //throw new RuntimeException(e); 
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+        
+            
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -128,45 +128,45 @@ public abstract class SignatureSpi {
             int varCFCD208495D565EF66E7DFF9F98764DA_570581309 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521022860 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1521022860;
-        } //End block
+        } 
     if(len < tmp.length)        
         {
             SignatureException var793DE458F5DAFD639B51EAC37CB6B485_1208890245 = new SignatureException("The value of len parameter is less than the actual signature length");
             var793DE458F5DAFD639B51EAC37CB6B485_1208890245.addTaint(taint);
             throw var793DE458F5DAFD639B51EAC37CB6B485_1208890245;
-        } //End block
+        } 
     if(offset < 0)        
         {
             SignatureException varC087FC5A907B40AA758ABA3900E2EC41_1471854935 = new SignatureException("offset < 0");
             varC087FC5A907B40AA758ABA3900E2EC41_1471854935.addTaint(taint);
             throw varC087FC5A907B40AA758ABA3900E2EC41_1471854935;
-        } //End block
+        } 
     if(offset + len > outbuf.length)        
         {
             SignatureException var2565465B64637ED69FEAB47586A52500_19481804 = new SignatureException("offset + len > outbuf.length");
             var2565465B64637ED69FEAB47586A52500_19481804.addTaint(taint);
             throw var2565465B64637ED69FEAB47586A52500_19481804;
-        } //End block
+        } 
         System.arraycopy(tmp, 0, outbuf, offset, tmp.length);
         int varE4FA7AD586BA429F593A6E87F52C4CF3_1839761036 = (tmp.length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1161111619 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1161111619;
-        // ---------- Original Method ----------
-        //byte[] tmp = engineSign();
-        //if (tmp == null) {
-            //return 0;
-        //}
-        //if (len < tmp.length) {
-            //throw new SignatureException("The value of len parameter is less than the actual signature length");
-        //}
-        //if (offset < 0) {
-            //throw new SignatureException("offset < 0");
-        //}
-        //if (offset + len > outbuf.length) {
-            //throw new SignatureException("offset + len > outbuf.length");
-        //}
-        //System.arraycopy(tmp, 0, outbuf, offset, tmp.length);
-        //return tmp.length;
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -184,10 +184,10 @@ public abstract class SignatureSpi {
         boolean varE900B177C05AEBD098D9B1D815110B2F_382102974 = (engineVerify(tmp));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2020389941 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2020389941;
-        // ---------- Original Method ----------
-        //byte[] tmp = new byte[length];
-        //System.arraycopy(sigBytes, offset, tmp, 0, length);
-        //return engineVerify(tmp);
+        
+        
+        
+        
     }
 
     
@@ -202,8 +202,8 @@ protected abstract void engineSetParameter(String param, Object value)
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_822030722 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_822030722.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_822030722;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -212,8 +212,8 @@ protected abstract void engineSetParameter(String param, Object value)
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1648796934 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1648796934.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1648796934;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -230,15 +230,15 @@ protected abstract Object engineGetParameter(String param)
 Object var46F3A0D86742C1D6E099C2B166941A33_1134618449 =             super.clone();
             var46F3A0D86742C1D6E099C2B166941A33_1134618449.addTaint(taint);
             return var46F3A0D86742C1D6E099C2B166941A33_1134618449;
-        } //End block
+        } 
         CloneNotSupportedException var1615C718FF05C0D800F9FFF876AD8603_2142986331 = new CloneNotSupportedException();
         var1615C718FF05C0D800F9FFF876AD8603_2142986331.addTaint(taint);
         throw var1615C718FF05C0D800F9FFF876AD8603_2142986331;
-        // ---------- Original Method ----------
-        //if (this instanceof Cloneable) {
-            //return super.clone();
-        //}
-        //throw new CloneNotSupportedException();
+        
+        
+            
+        
+        
     }
 
     

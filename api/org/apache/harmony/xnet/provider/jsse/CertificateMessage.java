@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,22 +31,22 @@ public class CertificateMessage extends Message {
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR,
                         "DECODE ERROR: incorrect CertificateMessage");
-            } //End block
+            } 
             certs = new X509Certificate[0];
             encoded_certs = new byte[0][0];
             this.length = 3;
             return;
-        } //End block
+        } 
         CertificateFactory cf;
         try 
         {
             cf = CertificateFactory.getInstance("X509");
-        } //End block
+        } 
         catch (CertificateException e)
         {
             fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR", e);
             return;
-        } //End block
+        } 
         ArrayList<X509Certificate> certsList = new ArrayList<X509Certificate>();
         int size = 0;
         int enc_size = 0;
@@ -58,22 +58,22 @@ public class CertificateMessage extends Message {
             try 
             {
                 certsList.add((X509Certificate) cf.generateCertificate(in));
-            } //End block
+            } 
             catch (CertificateException e)
             {
                 fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR", e);
-            } //End block
+            } 
             l -= size;
             enc_size += size;
-        } //End block
+        } 
         certs = certsList.toArray(new X509Certificate[certsList.size()]);
         this.length = 3 + 3 * certs.length + enc_size;
     if(this.length != length)        
         {
             fatalAlert(AlertProtocol.DECODE_ERROR, "DECODE ERROR: incorrect CertificateMessage");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -85,7 +85,7 @@ public class CertificateMessage extends Message {
             encoded_certs = new byte[0][0];
             length = 3;
             return;
-        } //End block
+        } 
         this.certs = certs;
     if(encoded_certs == null)        
         {
@@ -95,42 +95,42 @@ for(int i = 0;i < certs.length;i++)
                 try 
                 {
                     encoded_certs[i] = certs[i].getEncoded();
-                } //End block
+                } 
                 catch (CertificateEncodingException e)
                 {
                     fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR",
                             e);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         length = 3 + 3 * encoded_certs.length;
 for(int i = 0;i < encoded_certs.length;i++)
         {
             length += encoded_certs[i].length;
-        } //End block
-        // ---------- Original Method ----------
-        //if (certs == null) {
-            //this.certs = new X509Certificate[0];
-            //encoded_certs = new byte[0][0];
-            //length = 3;
-            //return;
-        //}
-        //this.certs = certs;
-        //if (encoded_certs == null) {
-            //encoded_certs = new byte[certs.length][];
-            //for (int i = 0; i < certs.length; i++) {
-                //try {
-                    //encoded_certs[i] = certs[i].getEncoded();
-                //} catch (CertificateEncodingException e) {
-                    //fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR",
-                            //e);
-                //}
-            //}
-        //}
-        //length = 3 + 3 * encoded_certs.length;
-        //for (int i = 0; i < encoded_certs.length; i++) {
-            //length += encoded_certs[i].length;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
+        
+        
+            
+            
+                
+                    
+                
+                    
+                            
+                
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -147,27 +147,27 @@ for(int i = 0;i < certs.length;i++)
                 try 
                 {
                     encoded_certs[i] = certs[i].getEncoded();
-                } //End block
+                } 
                 catch (CertificateEncodingException e)
                 {
                     fatalAlert(AlertProtocol.INTERNAL_ERROR, "INTERNAL ERROR",
                             e);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         total_length = 3 * encoded_certs.length;
 for(int i = 0;i < encoded_certs.length;i++)
         {
             total_length += encoded_certs[i].length;
-        } //End block
+        } 
         out.writeUint24(total_length);
 for(int i = 0;i < encoded_certs.length;i++)
         {
             out.writeUint24(encoded_certs[i].length);
             out.write(encoded_certs[i]);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -176,19 +176,20 @@ for(int i = 0;i < encoded_certs.length;i++)
 String varF523B99BFF261AB8239F9E49DE817850_1805125093 =         certs[0].getPublicKey().getAlgorithm();
         varF523B99BFF261AB8239F9E49DE817850_1805125093.addTaint(taint);
         return varF523B99BFF261AB8239F9E49DE817850_1805125093;
-        // ---------- Original Method ----------
-        //return certs[0].getPublicKey().getAlgorithm();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.842 -0400", hash_original_method = "F562E1306C68C131628B54BA54665996", hash_generated_method = "C02F2F2673A624860D9BA4D1D2B076F8")
     @Override
     public int getType() {
         int varDF620CF8FED61A025C3C908A131BC9A7_1241664923 = (Handshake.CERTIFICATE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1305440671 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1305440671;
-        // ---------- Original Method ----------
-        //return Handshake.CERTIFICATE;
+        
+        
     }
 
     

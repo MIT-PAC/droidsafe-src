@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -42,11 +42,12 @@ public class TextUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.780 -0400", hash_original_method = "B02737FE3AF0C7262E7E1815816AFA38", hash_generated_method = "853174FD0AC9B98EEFD3B7193A02A48C")
     private  TextUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static void getChars(CharSequence s, int start, int end,
+        @DSModeled(DSC.SAFE)
+    public static void getChars(CharSequence s, int start, int end,
                                 char[] dest, int destoff) {
         Class<? extends CharSequence> c = s.getClass();
         if (c == String.class)
@@ -64,12 +65,14 @@ public class TextUtils {
     }
 
     
-        public static int indexOf(CharSequence s, char ch) {
+        @DSModeled(DSC.SAFE)
+    public static int indexOf(CharSequence s, char ch) {
         return indexOf(s, ch, 0);
     }
 
     
-        public static int indexOf(CharSequence s, char ch, int start) {
+        @DSModeled(DSC.SAFE)
+    public static int indexOf(CharSequence s, char ch, int start) {
         Class<? extends CharSequence> c = s.getClass();
         if (c == String.class)
             return ((String) s).indexOf(ch, start);
@@ -77,7 +80,8 @@ public class TextUtils {
     }
 
     
-        public static int indexOf(CharSequence s, char ch, int start, int end) {
+        @DSModeled(DSC.SAFE)
+    public static int indexOf(CharSequence s, char ch, int start, int end) {
         Class<? extends CharSequence> c = s.getClass();
         if (s instanceof GetChars || c == StringBuffer.class ||
             c == StringBuilder.class || c == String.class) {
@@ -107,12 +111,14 @@ public class TextUtils {
     }
 
     
-        public static int lastIndexOf(CharSequence s, char ch) {
+        @DSModeled(DSC.SAFE)
+    public static int lastIndexOf(CharSequence s, char ch) {
         return lastIndexOf(s, ch, s.length() - 1);
     }
 
     
-        public static int lastIndexOf(CharSequence s, char ch, int last) {
+        @DSModeled(DSC.SAFE)
+    public static int lastIndexOf(CharSequence s, char ch, int last) {
         Class<? extends CharSequence> c = s.getClass();
         if (c == String.class)
             return ((String) s).lastIndexOf(ch, last);
@@ -120,7 +126,8 @@ public class TextUtils {
     }
 
     
-        public static int lastIndexOf(CharSequence s, char ch,
+        @DSModeled(DSC.SAFE)
+    public static int lastIndexOf(CharSequence s, char ch,
                                   int start, int last) {
         if (last < 0)
             return -1;
@@ -156,17 +163,20 @@ public class TextUtils {
     }
 
     
-        public static int indexOf(CharSequence s, CharSequence needle) {
+        @DSModeled(DSC.SAFE)
+    public static int indexOf(CharSequence s, CharSequence needle) {
         return indexOf(s, needle, 0, s.length());
     }
 
     
-        public static int indexOf(CharSequence s, CharSequence needle, int start) {
+        @DSModeled(DSC.SAFE)
+    public static int indexOf(CharSequence s, CharSequence needle, int start) {
         return indexOf(s, needle, start, s.length());
     }
 
     
-        public static int indexOf(CharSequence s, CharSequence needle,
+        @DSModeled(DSC.SAFE)
+    public static int indexOf(CharSequence s, CharSequence needle,
                               int start, int end) {
         int nlen = needle.length();
         if (nlen == 0)
@@ -189,7 +199,8 @@ public class TextUtils {
     }
 
     
-        public static boolean regionMatches(CharSequence one, int toffset,
+        @DSModeled(DSC.SAFE)
+    public static boolean regionMatches(CharSequence one, int toffset,
                                         CharSequence two, int ooffset,
                                         int len) {
         char[] temp = obtain(2 * len);
@@ -207,7 +218,8 @@ public class TextUtils {
     }
 
     
-        public static String substring(CharSequence source, int start, int end) {
+        @DSModeled(DSC.SAFE)
+    public static String substring(CharSequence source, int start, int end) {
         if (source instanceof String)
             return ((String) source).substring(start, end);
         if (source instanceof StringBuilder)
@@ -228,7 +240,8 @@ public class TextUtils {
     }
 
     
-        public static String join(CharSequence delimiter, Object[] tokens) {
+        @DSModeled(DSC.SAFE)
+    public static String join(CharSequence delimiter, Object[] tokens) {
         StringBuilder sb = new StringBuilder();
         boolean firstTime = true;
         for (Object token: tokens) {
@@ -243,7 +256,8 @@ public class TextUtils {
     }
 
     
-        public static String join(CharSequence delimiter, Iterable tokens) {
+        @DSModeled(DSC.SAFE)
+    public static String join(CharSequence delimiter, Iterable tokens) {
         StringBuilder sb = new StringBuilder();
         boolean firstTime = true;
         for (Object token: tokens) {
@@ -258,7 +272,8 @@ public class TextUtils {
     }
 
     
-        public static String[] split(String text, String expression) {
+        @DSModeled(DSC.SAFE)
+    public static String[] split(String text, String expression) {
         if (text.length() == 0) {
             return EMPTY_STRING_ARRAY;
         } else {
@@ -267,7 +282,8 @@ public class TextUtils {
     }
 
     
-        public static String[] split(String text, Pattern pattern) {
+        @DSModeled(DSC.SAFE)
+    public static String[] split(String text, Pattern pattern) {
         if (text.length() == 0) {
             return EMPTY_STRING_ARRAY;
         } else {
@@ -276,7 +292,8 @@ public class TextUtils {
     }
 
     
-        public static CharSequence stringOrSpannedString(CharSequence source) {
+        @DSModeled(DSC.SAFE)
+    public static CharSequence stringOrSpannedString(CharSequence source) {
         if (source == null)
             return null;
         if (source instanceof SpannedString)
@@ -287,7 +304,8 @@ public class TextUtils {
     }
 
     
-        public static boolean isEmpty(CharSequence str) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isEmpty(CharSequence str) {
         if (str == null || str.length() == 0)
             return true;
         else
@@ -295,7 +313,8 @@ public class TextUtils {
     }
 
     
-        public static int getTrimmedLength(CharSequence s) {
+        @DSModeled(DSC.SAFE)
+    public static int getTrimmedLength(CharSequence s) {
         int len = s.length();
         int start = 0;
         while (start < len && s.charAt(start) <= ' ') {
@@ -309,7 +328,8 @@ public class TextUtils {
     }
 
     
-        public static boolean equals(CharSequence a, CharSequence b) {
+        @DSModeled(DSC.SAFE)
+    public static boolean equals(CharSequence a, CharSequence b) {
         if (a == b) return true;
         int length;
         if (a != null && b != null && (length = a.length()) == b.length()) {
@@ -326,13 +346,15 @@ public class TextUtils {
     }
 
     
-        public static CharSequence getReverse(CharSequence source,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence getReverse(CharSequence source,
                                           int start, int end) {
         return new Reverser(source, start, end);
     }
 
     
-        public static void writeToParcel(CharSequence cs, Parcel p,
+        @DSModeled(DSC.SAFE)
+    public static void writeToParcel(CharSequence cs, Parcel p,
             int parcelableFlags) {
         if (cs instanceof Spanned) {
             p.writeInt(0);
@@ -364,14 +386,16 @@ public class TextUtils {
     }
 
     
-        private static void writeWhere(Parcel p, Spanned sp, Object o) {
+        @DSModeled(DSC.SAFE)
+    private static void writeWhere(Parcel p, Spanned sp, Object o) {
         p.writeInt(sp.getSpanStart(o));
         p.writeInt(sp.getSpanEnd(o));
         p.writeInt(sp.getSpanFlags(o));
     }
 
     
-        public static void dumpSpans(CharSequence cs, Printer printer, String prefix) {
+        @DSModeled(DSC.SAFE)
+    public static void dumpSpans(CharSequence cs, Printer printer, String prefix) {
         if (cs instanceof Spanned) {
             Spanned sp = (Spanned) cs;
             Object[] os = sp.getSpans(0, cs.length(), Object.class);
@@ -390,7 +414,8 @@ public class TextUtils {
     }
 
     
-        public static CharSequence replace(CharSequence template,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence replace(CharSequence template,
                                        String[] sources,
                                        CharSequence[] destinations) {
         SpannableStringBuilder tb = new SpannableStringBuilder(template);
@@ -450,7 +475,8 @@ public class TextUtils {
     }
 
     
-        public static int getOffsetBefore(CharSequence text, int offset) {
+        @DSModeled(DSC.SAFE)
+    public static int getOffsetBefore(CharSequence text, int offset) {
         if (offset == 0)
             return 0;
         if (offset == 1)
@@ -479,7 +505,8 @@ public class TextUtils {
     }
 
     
-        public static int getOffsetAfter(CharSequence text, int offset) {
+        @DSModeled(DSC.SAFE)
+    public static int getOffsetAfter(CharSequence text, int offset) {
         int len = text.length();
         if (offset == len)
             return len;
@@ -509,12 +536,14 @@ public class TextUtils {
     }
 
     
-        private static void readSpan(Parcel p, Spannable sp, Object o) {
+        @DSModeled(DSC.SAFE)
+    private static void readSpan(Parcel p, Spannable sp, Object o) {
         sp.setSpan(o, p.readInt(), p.readInt(), p.readInt());
     }
 
     
-        public static void copySpansFrom(Spanned source, int start, int end,
+        @DSModeled(DSC.SAFE)
+    public static void copySpansFrom(Spanned source, int start, int end,
                                      Class kind,
                                      Spannable dest, int destoff) {
         if (kind == null) {
@@ -535,14 +564,16 @@ public class TextUtils {
     }
 
     
-        public static CharSequence ellipsize(CharSequence text,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence ellipsize(CharSequence text,
                                          TextPaint p,
                                          float avail, TruncateAt where) {
         return ellipsize(text, p, avail, where, false, null);
     }
 
     
-        public static CharSequence ellipsize(CharSequence text,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence ellipsize(CharSequence text,
                                          TextPaint paint,
                                          float avail, TruncateAt where,
                                          boolean preserveLength,
@@ -553,7 +584,8 @@ public class TextUtils {
     }
 
     
-        public static CharSequence ellipsize(CharSequence text,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence ellipsize(CharSequence text,
             TextPaint paint,
             float avail, TruncateAt where,
             boolean preserveLength,
@@ -625,7 +657,8 @@ public class TextUtils {
     }
 
     
-        public static CharSequence commaEllipsize(CharSequence text,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence commaEllipsize(CharSequence text,
                                               TextPaint p, float avail,
                                               String oneMore,
                                               String more) {
@@ -634,7 +667,8 @@ public class TextUtils {
     }
 
     
-        public static CharSequence commaEllipsize(CharSequence text, TextPaint p,
+        @DSModeled(DSC.SAFE)
+    public static CharSequence commaEllipsize(CharSequence text, TextPaint p,
          float avail, String oneMore, String more, TextDirectionHeuristic textDir) {
         MeasuredText mt = MeasuredText.obtain();
         try {
@@ -685,7 +719,8 @@ public class TextUtils {
     }
 
     
-        private static float setPara(MeasuredText mt, TextPaint paint,
+        @DSModeled(DSC.SAFE)
+    private static float setPara(MeasuredText mt, TextPaint paint,
             CharSequence text, int start, int end, TextDirectionHeuristic textDir) {
         mt.setPara(text, start, end, textDir);
         float width;
@@ -709,7 +744,8 @@ public class TextUtils {
     }
 
     
-        static boolean doesNotNeedBidi(CharSequence s, int start, int end) {
+        @DSModeled(DSC.SAFE)
+    static boolean doesNotNeedBidi(CharSequence s, int start, int end) {
         for (int i = start; i < end; i++) {
             if (s.charAt(i) >= FIRST_RIGHT_TO_LEFT) {
                 return false;
@@ -719,7 +755,8 @@ public class TextUtils {
     }
 
     
-        static boolean doesNotNeedBidi(char[] text, int start, int len) {
+        @DSModeled(DSC.SAFE)
+    static boolean doesNotNeedBidi(char[] text, int start, int len) {
         for (int i = start, e = i + len; i < e; i++) {
             if (text[i] >= FIRST_RIGHT_TO_LEFT) {
                 return false;
@@ -729,7 +766,8 @@ public class TextUtils {
     }
 
     
-        static char[] obtain(int len) {
+        @DSModeled(DSC.SAFE)
+    static char[] obtain(int len) {
         char[] buf;
         synchronized (sLock) {
             buf = sTemp;
@@ -741,7 +779,8 @@ public class TextUtils {
     }
 
     
-        static void recycle(char[] temp) {
+        @DSModeled(DSC.SAFE)
+    static void recycle(char[] temp) {
         if (temp.length > 1000)
             return;
         synchronized (sLock) {
@@ -750,7 +789,8 @@ public class TextUtils {
     }
 
     
-        public static String htmlEncode(String s) {
+        @DSModeled(DSC.SAFE)
+    public static String htmlEncode(String s) {
         StringBuilder sb = new StringBuilder();
         char c;
         for (int i = 0; i < s.length(); i++) {
@@ -813,7 +853,8 @@ public class TextUtils {
     }
 
     
-        public static boolean isGraphic(CharSequence str) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isGraphic(CharSequence str) {
         final int len = str.length();
         for (int i=0; i<len; i++) {
             int gc = Character.getType(str.charAt(i));
@@ -831,7 +872,8 @@ public class TextUtils {
     }
 
     
-        public static boolean isGraphic(char c) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isGraphic(char c) {
         int gc = Character.getType(c);
         return     gc != Character.CONTROL
                 && gc != Character.FORMAT
@@ -843,7 +885,8 @@ public class TextUtils {
     }
 
     
-        public static boolean isDigitsOnly(CharSequence str) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDigitsOnly(CharSequence str) {
         final int len = str.length();
         for (int i = 0; i < len; i++) {
             if (!Character.isDigit(str.charAt(i))) {
@@ -872,7 +915,8 @@ public class TextUtils {
     }
 
     
-        public static int getCapsMode(CharSequence cs, int off, int reqModes) {
+        @DSModeled(DSC.SAFE)
+    public static int getCapsMode(CharSequence cs, int off, int reqModes) {
         if (off < 0) {
             return 0;
         }
@@ -934,7 +978,8 @@ public class TextUtils {
     }
 
     
-        public static boolean delimitedStringContains(
+        @DSModeled(DSC.SAFE)
+    public static boolean delimitedStringContains(
             String delimitedString, char delimiter, String item) {
         if (isEmpty(delimitedString) || isEmpty(item)) {
             return false;
@@ -1005,20 +1050,21 @@ public class TextUtils {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.787 -0400", hash_original_method = "6A654BA34A10AA2B42750EC65A3F679B", hash_generated_method = "BEDF5C296E1AC394E7130E39CA8E7B49")
         public  SimpleStringSplitter(char delimiter) {
             mDelimiter = delimiter;
-            // ---------- Original Method ----------
-            //mDelimiter = delimiter;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.787 -0400", hash_original_method = "6D8C9957AC1A2476C265420CD8A2E354", hash_generated_method = "33A8FDEC591C75E7F0457D4CF5F15253")
         public void setString(String string) {
             mString = string;
             mPosition = 0;
             mLength = mString.length();
-            // ---------- Original Method ----------
-            //mString = string;
-            //mPosition = 0;
-            //mLength = mString.length();
+            
+            
+            
+            
         }
 
         
@@ -1027,51 +1073,54 @@ public class TextUtils {
 Iterator<String> var72A74007B2BE62B849F475C7BDA4658B_746359128 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_746359128.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_746359128;
-            // ---------- Original Method ----------
-            //return this;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.788 -0400", hash_original_method = "675B2012EE41806104DFB06FA586494D", hash_generated_method = "ED8AF99AFA3477113A1B09820F50E665")
         public boolean hasNext() {
             boolean var08931E0A660193FE88B5CCE4F34F221C_1753552410 = (mPosition < mLength);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_549324659 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_549324659;
-            // ---------- Original Method ----------
-            //return mPosition < mLength;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.788 -0400", hash_original_method = "FB7030CECFBAC326EB2083E83B14C66A", hash_generated_method = "3FC66BA4A4F34FB06AA4241462AFCC12")
         public String next() {
             int end = mString.indexOf(mDelimiter, mPosition);
     if(end == -1)            
             {
                 end = mLength;
-            } //End block
+            } 
             String nextString = mString.substring(mPosition, end);
             mPosition = end + 1;
 String varC59F893A61ED32D3CBCDB20357461460_1138327967 =             nextString;
             varC59F893A61ED32D3CBCDB20357461460_1138327967.addTaint(taint);
             return varC59F893A61ED32D3CBCDB20357461460_1138327967;
-            // ---------- Original Method ----------
-            //int end = mString.indexOf(mDelimiter, mPosition);
-            //if (end == -1) {
-                //end = mLength;
-            //}
-            //String nextString = mString.substring(mPosition, end);
-            //mPosition = end + 1;
-            //return nextString;
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.788 -0400", hash_original_method = "89C642158183FED064530A14F092CD81", hash_generated_method = "1CD005DDAF6E0777C686D03F2429729A")
         public void remove() {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1518808122 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_1518808122.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_1518808122;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -1095,20 +1144,21 @@ String varC59F893A61ED32D3CBCDB20357461460_1138327967 =             nextString;
             mSource = source;
             mStart = start;
             mEnd = end;
-            // ---------- Original Method ----------
-            //mSource = source;
-            //mStart = start;
-            //mEnd = end;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:45.789 -0400", hash_original_method = "7B7C0865096082EBDC6C915DBB65AA78", hash_generated_method = "121F295172D62FD101AC16BE8F82DF83")
         public int length() {
             int varE12401DE7F163750A23A237001BAD0C5_1091304433 = (mEnd - mStart);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1810115139 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1810115139;
-            // ---------- Original Method ----------
-            //return mEnd - mStart;
+            
+            
         }
 
         
@@ -1121,10 +1171,10 @@ String varC59F893A61ED32D3CBCDB20357461460_1138327967 =             nextString;
 CharSequence var5B166C4D1D866639CF85033C2F7318C9_1145701683 =             new String(buf);
             var5B166C4D1D866639CF85033C2F7318C9_1145701683.addTaint(taint);
             return var5B166C4D1D866639CF85033C2F7318C9_1145701683;
-            // ---------- Original Method ----------
-            //char[] buf = new char[end - start];
-            //getChars(start, end, buf, 0);
-            //return new String(buf);
+            
+            
+            
+            
         }
 
         
@@ -1134,8 +1184,8 @@ CharSequence var5B166C4D1D866639CF85033C2F7318C9_1145701683 =             new St
 String var2E22F76A1DF5431AD85BD69F1EB550BE_1692678337 =             subSequence(0, length()).toString();
             var2E22F76A1DF5431AD85BD69F1EB550BE_1692678337.addTaint(taint);
             return var2E22F76A1DF5431AD85BD69F1EB550BE_1692678337;
-            // ---------- Original Method ----------
-            //return subSequence(0, length()).toString();
+            
+            
         }
 
         
@@ -1145,8 +1195,8 @@ String var2E22F76A1DF5431AD85BD69F1EB550BE_1692678337 =             subSequence(
             char var2B052FC99472DB3889BD95EBD738C96A_891857131 = (AndroidCharacter.getMirror(mSource.charAt(mEnd - 1 - off)));
                         char varA87DEB01C5F539E6BDA34829C8EF2368_239786464 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_239786464;
-            // ---------- Original Method ----------
-            //return AndroidCharacter.getMirror(mSource.charAt(mEnd - 1 - off));
+            
+            
         }
 
         
@@ -1166,18 +1216,18 @@ for(int i = 0;i < n;i++)
                 char tmp = dest[destoff + i];
                 dest[destoff + i] = dest[destoff + len - i - 1];
                 dest[destoff + len - i - 1] = tmp;
-            } //End block
-            // ---------- Original Method ----------
-            //TextUtils.getChars(mSource, start + mStart, end + mStart,
-                               //dest, destoff);
-            //AndroidCharacter.mirror(dest, 0, end - start);
-            //int len = end - start;
-            //int n = (end - start) / 2;
-            //for (int i = 0; i < n; i++) {
-                //char tmp = dest[destoff + i];
-                //dest[destoff + i] = dest[destoff + len - i - 1];
-                //dest[destoff + len - i - 1] = tmp;
-            //}
+            } 
+            
+            
+                               
+            
+            
+            
+            
+                
+                
+                
+            
         }
 
         

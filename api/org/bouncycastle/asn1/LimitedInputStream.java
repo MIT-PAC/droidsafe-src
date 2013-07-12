@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,19 +20,20 @@ abstract class LimitedInputStream extends InputStream {
         int         limit) {
         this._in = in;
         this._limit = limit;
-        // ---------- Original Method ----------
-        //this._in = in;
-        //this._limit = limit;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.321 -0400", hash_original_method = "40872598AE6AA3CD657ADA29CC622AC7", hash_generated_method = "06C54696748A7A692C49A8B97371A14B")
      int getRemaining() {
         int var21B59360B06F124AC143A9061C12E7FA_920145251 = (_limit);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126767797 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126767797;
-        // ---------- Original Method ----------
-        //return _limit;
+        
+        
     }
 
     
@@ -42,12 +43,12 @@ abstract class LimitedInputStream extends InputStream {
     if(_in instanceof IndefiniteLengthInputStream)        
         {
             ((IndefiniteLengthInputStream)_in).setEofOn00(on);
-        } //End block
-        // ---------- Original Method ----------
-        //if (_in instanceof IndefiniteLengthInputStream)
-        //{
-            //((IndefiniteLengthInputStream)_in).setEofOn00(on);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     

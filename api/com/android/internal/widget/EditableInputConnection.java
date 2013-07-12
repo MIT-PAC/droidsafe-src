@@ -1,6 +1,6 @@
 package com.android.internal.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,8 +26,8 @@ public class EditableInputConnection extends BaseInputConnection {
     public  EditableInputConnection(TextView textview) {
         super(textview, true);
         mTextView = textview;
-        // ---------- Original Method ----------
-        //mTextView = textview;
+        
+        
     }
 
     
@@ -40,16 +40,16 @@ public class EditableInputConnection extends BaseInputConnection {
 Editable var926C39DFB39EF3B61F16708BD5980917_1984798451 =             tv.getEditableText();
             var926C39DFB39EF3B61F16708BD5980917_1984798451.addTaint(taint);
             return var926C39DFB39EF3B61F16708BD5980917_1984798451;
-        } //End block
+        } 
 Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         var540C13E9E156B687226421B24F2DF178_1563661140.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1563661140;
-        // ---------- Original Method ----------
-        //TextView tv = mTextView;
-        //if (tv != null) {
-            //return tv.getEditableText();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -60,9 +60,9 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_902394763 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2053853518 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2053853518;
-        // ---------- Original Method ----------
-        //mTextView.beginBatchEdit();
-        //return true;
+        
+        
+        
     }
 
     
@@ -73,9 +73,9 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_1080015372 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_155344175 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_155344175;
-        // ---------- Original Method ----------
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
     }
 
     
@@ -96,25 +96,25 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
             try 
             {
                 kl.clearMetaKeyState(mTextView, content, states);
-            } //End block
+            } 
             catch (AbstractMethodError e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1680078028 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687523671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687523671;
-        // ---------- Original Method ----------
-        //final Editable content = getEditable();
-        //if (content == null) return false;
-        //KeyListener kl = mTextView.getKeyListener();
-        //if (kl != null) {
-            //try {
-                //kl.clearMetaKeyState(mTextView, content, states);
-            //} catch (AbstractMethodError e) {
-            //}
-        //}
-        //return true;
+        
+        
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -128,15 +128,16 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_947694246 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1155089244 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1155089244;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "commitCompletion " + text);
-        //mTextView.beginBatchEdit();
-        //mTextView.onCommitCompletion(text);
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.053 -0400", hash_original_method = "DB06BCD96079AC12D626255A3932F1C1", hash_generated_method = "0D01EF3775943DA3514034DB8F3B3423")
     @Override
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
@@ -147,12 +148,12 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_1282142925 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_315236708 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_315236708;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "commitCorrection" + correctionInfo);
-        //mTextView.beginBatchEdit();
-        //mTextView.onCommitCorrection(correctionInfo);
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -164,10 +165,10 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_2051982142 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1858557865 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1858557865;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "performEditorAction " + actionCode);
-        //mTextView.onEditorAction(actionCode);
-        //return true;
+        
+        
+        
+        
     }
 
     
@@ -181,12 +182,12 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_276753497 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1775279933 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1775279933;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "performContextMenuAction " + id);
-        //mTextView.beginBatchEdit();
-        //mTextView.onTextContextMenuItem(id);
-        //mTextView.endBatchEdit();
-        //return true;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -203,26 +204,26 @@ Editable var540C13E9E156B687226421B24F2DF178_1563661140 =         null;
     if((flags&GET_EXTRACTED_TEXT_MONITOR) != 0)                
                 {
                     mTextView.setExtracting(request);
-                } //End block
+                } 
 ExtractedText varF4C7021EB2647C5C7DCF2D3426CCC9E4_1040829383 =                 et;
                 varF4C7021EB2647C5C7DCF2D3426CCC9E4_1040829383.addTaint(taint);
                 return varF4C7021EB2647C5C7DCF2D3426CCC9E4_1040829383;
-            } //End block
-        } //End block
+            } 
+        } 
 ExtractedText var540C13E9E156B687226421B24F2DF178_1358193204 =         null;
         var540C13E9E156B687226421B24F2DF178_1358193204.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1358193204;
-        // ---------- Original Method ----------
-        //if (mTextView != null) {
-            //ExtractedText et = new ExtractedText();
-            //if (mTextView.extractText(request, et)) {
-                //if ((flags&GET_EXTRACTED_TEXT_MONITOR) != 0) {
-                    //mTextView.setExtracting(request);
-                //}
-                //return et;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -235,9 +236,9 @@ ExtractedText var540C13E9E156B687226421B24F2DF178_1358193204 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_1412653987 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1613123015 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1613123015;
-        // ---------- Original Method ----------
-        //mTextView.onPrivateIMECommand(action, data);
-        //return true;
+        
+        
+        
     }
 
     
@@ -251,32 +252,32 @@ ExtractedText var540C13E9E156B687226421B24F2DF178_1358193204 =         null;
             boolean var324A71B312F90BDF4597B60B4168456C_1271867273 = (super.commitText(text, newCursorPosition));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773510428 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773510428;
-        } //End block
+        } 
     if(text instanceof Spanned)        
         {
             Spanned spanned = ((Spanned) text);
             SuggestionSpan[] spans = spanned.getSpans(0, text.length(), SuggestionSpan.class);
             mIMM.registerSuggestionSpansForNotification(spans);
-        } //End block
+        } 
         mTextView.resetErrorChangedFlag();
         boolean success = super.commitText(text, newCursorPosition);
         mTextView.hideErrorIfUnchanged();
         boolean var260CA9DD8A4577FC00B7BD5810298076_782425447 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1589892927 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1589892927;
-        // ---------- Original Method ----------
-        //if (mTextView == null) {
-            //return super.commitText(text, newCursorPosition);
-        //}
-        //if (text instanceof Spanned) {
-            //Spanned spanned = ((Spanned) text);
-            //SuggestionSpan[] spans = spanned.getSpans(0, text.length(), SuggestionSpan.class);
-            //mIMM.registerSuggestionSpansForNotification(spans);
-        //}
-        //mTextView.resetErrorChangedFlag();
-        //boolean success = super.commitText(text, newCursorPosition);
-        //mTextView.hideErrorIfUnchanged();
-        //return success;
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     

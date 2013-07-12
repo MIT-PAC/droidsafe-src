@@ -1,6 +1,6 @@
 package android.app.backup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public class BackupManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:06.104 -0400", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "0B376C856E6AD2AF391165CD38C9A30E")
     public  BackupManager(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -41,21 +41,21 @@ public class BackupManager {
             try 
             {
                 sService.dataChanged(mContext.getPackageName());
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 Log.d(TAG, "dataChanged() couldn't connect");
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //checkServiceBinder();
-        //if (sService != null) {
-            //try {
-                //sService.dataChanged(mContext.getPackageName());
-            //} catch (RemoteException e) {
-                //Log.d(TAG, "dataChanged() couldn't connect");
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -85,40 +85,40 @@ public class BackupManager {
                         null);
                 session = new RestoreSession(mContext, binder);
                 result = session.restorePackage(mContext.getPackageName(), observer);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
+            } 
             finally 
             {
     if(session != null)                
                 {
                     session.endRestoreSession();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varB4A88417B3D0170D754C647C30B7216A_37391098 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1137106409 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1137106409;
-        // ---------- Original Method ----------
-        //int result = -1;
-        //checkServiceBinder();
-        //if (sService != null) {
-            //RestoreSession session = null;
-            //try {
-                //IRestoreSession binder = sService.beginRestoreSession(mContext.getPackageName(),
-                        //null);
-                //session = new RestoreSession(mContext, binder);
-                //result = session.restorePackage(mContext.getPackageName(), observer);
-            //} catch (RemoteException e) {
-                //Log.w(TAG, "restoreSelf() unable to contact service");
-            //} finally {
-                //if (session != null) {
-                    //session.endRestoreSession();
-                //}
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+            
+            
+                
+                        
+                
+                
+            
+                
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -132,26 +132,26 @@ public class BackupManager {
             {
                 IRestoreSession binder = sService.beginRestoreSession(null, null);
                 session = new RestoreSession(mContext, binder);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 RestoreSession varD555E544A66E0F97DA6BCDE940E3E79C_563495649 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_563495649.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_563495649;
-        // ---------- Original Method ----------
-        //RestoreSession session = null;
-        //checkServiceBinder();
-        //if (sService != null) {
-            //try {
-                //IRestoreSession binder = sService.beginRestoreSession(null, null);
-                //session = new RestoreSession(mContext, binder);
-            //} catch (RemoteException e) {
-                //Log.w(TAG, "beginRestoreSession() couldn't connect");
-            //}
-        //}
-        //return session;
+        
+        
+        
+        
+            
+                
+                
+            
+                
+            
+        
+        
     }
 
     

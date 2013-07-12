@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,13 +44,14 @@ public final class UUID implements Serializable, Comparable<UUID> {
         this.mostSigBits = mostSigBits;
         this.leastSigBits = leastSigBits;
         init();
-        // ---------- Original Method ----------
-        //this.mostSigBits = mostSigBits;
-        //this.leastSigBits = leastSigBits;
-        //init();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.647 -0400", hash_original_method = "F8E8987A89D640EB2120FADDC9242C3F", hash_generated_method = "4165E6205ECBE08F0A147C73A4BC69BE")
     private void init() {
         int msbHash = (int) (mostSigBits ^ (mostSigBits >>> 32));
@@ -59,29 +60,29 @@ public final class UUID implements Serializable, Comparable<UUID> {
     if((leastSigBits & 0x8000000000000000L) == 0)        
         {
             variant = 0;
-        } //End block
+        } 
         else
     if((leastSigBits & 0x4000000000000000L) != 0)        
         {
             variant = (int) ((leastSigBits & 0xE000000000000000L) >>> 61);
-        } //End block
+        } 
         else
         {
             variant = 2;
-        } //End block
+        } 
         version = (int) ((mostSigBits & 0x000000000000F000) >>> 12);
     if(variant != 2 && version != 1)        
         {
             return;
-        } //End block
+        } 
         long timeLow = (mostSigBits & 0xFFFFFFFF00000000L) >>> 32;
         long timeMid = (mostSigBits & 0x00000000FFFF0000L) << 16;
         long timeHigh = (mostSigBits & 0x0000000000000FFFL) << 48;
         timestamp = timeLow | timeMid | timeHigh;
         clockSequence = (int) ((leastSigBits & 0x3FFF000000000000L) >>> 48);
         node = (leastSigBits & 0x0000FFFFFFFFFFFFL);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -148,43 +149,47 @@ public final class UUID implements Serializable, Comparable<UUID> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.649 -0400", hash_original_method = "A0E7F1AB7FAB66E1A72A040241F18680", hash_generated_method = "5C71CC9CA1D9BA744CDFE5AB4FA6EB87")
     public long getLeastSignificantBits() {
         long var9DE6B31C686396DBA9E6DF04BA663491_433631091 = (leastSigBits);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1373793667 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1373793667;
-        // ---------- Original Method ----------
-        //return leastSigBits;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.649 -0400", hash_original_method = "6EF0A7C64F608CC6275528428E67572B", hash_generated_method = "0F89ABB164DDBEC42E7F7D50BE928618")
     public long getMostSignificantBits() {
         long var6D865F6ED4C841DE5F4163617E9ED5E0_492743686 = (mostSigBits);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1998723662 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1998723662;
-        // ---------- Original Method ----------
-        //return mostSigBits;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.649 -0400", hash_original_method = "33CA23C03592D558650D6881FB39BD17", hash_generated_method = "07A1B626481A6B3A28C02BAF51821065")
     public int version() {
         int var2AF72F100C356273D46284F6FD1DFC08_833793835 = (version);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166977876 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166977876;
-        // ---------- Original Method ----------
-        //return version;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.650 -0400", hash_original_method = "F3E55A7ADD1B924C0020F2B2D27D2CBA", hash_generated_method = "B948141CE926BCA5BC2C3C32D1633400")
     public int variant() {
         int varAA7AC8CD5E0A6993A177746279CC00D2_635174934 = (variant);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164305589 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_164305589;
-        // ---------- Original Method ----------
-        //return variant;
+        
+        
     }
 
     
@@ -195,15 +200,15 @@ public final class UUID implements Serializable, Comparable<UUID> {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_15512172 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_15512172.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_15512172;
-        } //End block
+        } 
         long varD7E6D55BA379A13D08C25D15FAF2A23B_760669989 = (timestamp);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1749775323 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1749775323;
-        // ---------- Original Method ----------
-        //if (version != 1) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return timestamp;
+        
+        
+            
+        
+        
     }
 
     
@@ -214,15 +219,15 @@ public final class UUID implements Serializable, Comparable<UUID> {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_698131018 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_698131018.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_698131018;
-        } //End block
+        } 
         int varE508CBF4FB96E4F7675B06F84B12443F_1912875899 = (clockSequence);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699816817 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699816817;
-        // ---------- Original Method ----------
-        //if (version != 1) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return clockSequence;
+        
+        
+            
+        
+        
     }
 
     
@@ -233,15 +238,15 @@ public final class UUID implements Serializable, Comparable<UUID> {
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2138840716 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_2138840716.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_2138840716;
-        } //End block
+        } 
         long var36C4536996CA5615DCF9911F068786DC_221914887 = (node);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_602659811 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_602659811;
-        // ---------- Original Method ----------
-        //if (version != 1) {
-            //throw new UnsupportedOperationException();
-        //}
-        //return node;
+        
+        
+            
+        
+        
     }
 
     
@@ -253,38 +258,39 @@ public final class UUID implements Serializable, Comparable<UUID> {
             int varCFCD208495D565EF66E7DFF9F98764DA_506371467 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1994217035 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1994217035;
-        } //End block
+        } 
     if(this.mostSigBits != uuid.mostSigBits)        
         {
             int var67C1EDA559C3C798D6B4F77A7FC9F3D4_2123040111 = (this.mostSigBits < uuid.mostSigBits ? -1 : 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806580044 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_806580044;
-        } //End block
+        } 
     if(this.leastSigBits != uuid.leastSigBits)        
         {
             int var7EEEA79B384FDCBA52EA20EC524A0202_759637273 = (this.leastSigBits < uuid.leastSigBits ? -1 : 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340211370 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_340211370;
-        } //End block
+        } 
         int varCFCD208495D565EF66E7DFF9F98764DA_402487359 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_247913990 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_247913990;
-        // ---------- Original Method ----------
-        //if (uuid == this) {
-            //return 0;
-        //}
-        //if (this.mostSigBits != uuid.mostSigBits) {
-            //return this.mostSigBits < uuid.mostSigBits ? -1 : 1;
-        //}
-        //assert this.mostSigBits == uuid.mostSigBits;
-        //if (this.leastSigBits != uuid.leastSigBits) {
-            //return this.leastSigBits < uuid.leastSigBits ? -1 : 1;
-        //}
-        //assert this.leastSigBits == uuid.leastSigBits;
-        //return 0;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.652 -0400", hash_original_method = "A38435ECE2C3D40D1AE6B3B8E9BB77AD", hash_generated_method = "C807A6EA808563CD587093292D34FCB8")
     @Override
     public boolean equals(Object object) {
@@ -294,48 +300,49 @@ public final class UUID implements Serializable, Comparable<UUID> {
             boolean var68934A3E9455FA72420237EB05902327_115269045 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1691966411 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1691966411;
-        } //End block
+        } 
     if(this == object)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_830212629 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682721802 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_682721802;
-        } //End block
+        } 
     if(!(object instanceof UUID))        
         {
             boolean var68934A3E9455FA72420237EB05902327_309936742 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1836384620 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1836384620;
-        } //End block
+        } 
         UUID that = (UUID) object;
         boolean varCFCF99E6670BE96D85DBF729A89A73B4_1729400256 = ((this.leastSigBits == that.leastSigBits)
                 && (this.mostSigBits == that.mostSigBits));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1619892901 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1619892901;
-        // ---------- Original Method ----------
-        //if (object == null) {
-            //return false;
-        //}
-        //if (this == object) {
-            //return true;
-        //}
-        //if (!(object instanceof UUID)) {
-            //return false;
-        //}
-        //UUID that = (UUID) object;
-        //return (this.leastSigBits == that.leastSigBits)
-                //&& (this.mostSigBits == that.mostSigBits);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:14.652 -0400", hash_original_method = "2C05F06EE2A592A2D5972AF8C500920F", hash_generated_method = "BA127E4FF32DBE01C135E2FEF658F765")
     @Override
     public int hashCode() {
         int var0800FC577294C34E0B28AD2839435945_1985290897 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628859874 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_628859874;
-        // ---------- Original Method ----------
-        //return hash;
+        
+        
     }
 
     
@@ -350,8 +357,8 @@ public final class UUID implements Serializable, Comparable<UUID> {
 for(int i = 0;i < diff;i++)
             {
                 builder.append('0');
-            } //End block
-        } //End block
+            } 
+        } 
         builder.append(msbStr);
         builder.insert(8, '-');
         builder.insert(13, '-');
@@ -363,36 +370,36 @@ for(int i = 0;i < diff;i++)
 for(int i = 0;i < diff;i++)
             {
                 builder.append('0');
-            } //End block
-        } //End block
+            } 
+        } 
         builder.append(lsbStr);
         builder.insert(23, '-');
 String varF4CF030572656354ACFDF83FEE21D7A6_1172206412 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_1172206412.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_1172206412;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder(36);
-        //String msbStr = Long.toHexString(mostSigBits);
-        //if (msbStr.length() < 16) {
-            //int diff = 16 - msbStr.length();
-            //for (int i = 0; i < diff; i++) {
-                //builder.append('0');
-            //}
-        //}
-        //builder.append(msbStr);
-        //builder.insert(8, '-');
-        //builder.insert(13, '-');
-        //builder.append('-');
-        //String lsbStr = Long.toHexString(leastSigBits);
-        //if (lsbStr.length() < 16) {
-            //int diff = 16 - lsbStr.length();
-            //for (int i = 0; i < diff; i++) {
-                //builder.append('0');
-            //}
-        //}
-        //builder.append(lsbStr);
-        //builder.insert(23, '-');
-        //return builder.toString();
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
     }
 
     
@@ -402,9 +409,9 @@ String varF4CF030572656354ACFDF83FEE21D7A6_1172206412 =         builder.toString
         addTaint(in.getTaint());
         in.defaultReadObject();
         init();
-        // ---------- Original Method ----------
-        //in.defaultReadObject();
-        //init();
+        
+        
+        
     }
 
     

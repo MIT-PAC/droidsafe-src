@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -145,8 +145,8 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
         mDataConnectionTracker = this;
         createAllDataConnectionList();
         broadcastMessenger();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -168,54 +168,57 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
         mCdmaPhone.mSST.unregisterForRoamingOff(this);
         mPhone.mCM.unregisterForCdmaOtaProvision(this);
         destroyAllDataConnectionList();
-        // ---------- Original Method ----------
-        //cleanUpConnection(false, null);
-        //super.dispose();
-        //mPhone.mCM.unregisterForAvailable(this);
-        //mPhone.mCM.unregisterForOffOrNotAvailable(this);
-        //mCdmaPhone.mIccRecords.unregisterForRecordsLoaded(this);
-        //mPhone.mCM.unregisterForNVReady(this);
-        //mPhone.mCM.unregisterForDataNetworkStateChanged(this);
-        //mCdmaPhone.mCT.unregisterForVoiceCallEnded(this);
-        //mCdmaPhone.mCT.unregisterForVoiceCallStarted(this);
-        //mCdmaPhone.mSST.unregisterForDataConnectionAttached(this);
-        //mCdmaPhone.mSST.unregisterForDataConnectionDetached(this);
-        //mCdmaPhone.mSST.unregisterForRoamingOn(this);
-        //mCdmaPhone.mSST.unregisterForRoamingOff(this);
-        //mPhone.mCM.unregisterForCdmaOtaProvision(this);
-        //destroyAllDataConnectionList();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.332 -0400", hash_original_method = "3DB74CB183E0997C0A31C0F47FB531FD", hash_generated_method = "80999DFA62EE4CA8D4449A230C5D2FDE")
     @Override
     protected void finalize() {
     if(DBG)        
         log("CdmaDataConnectionTracker finalized");
-        // ---------- Original Method ----------
-        //if(DBG) log("CdmaDataConnectionTracker finalized");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.332 -0400", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "EDF6AB68233AEF98A4557E88688983D7")
     @Override
     protected String getActionIntentReconnectAlarm() {
 String var329BD4E79853976212F297A2D79B9594_1982353819 =         INTENT_RECONNECT_ALARM;
         var329BD4E79853976212F297A2D79B9594_1982353819.addTaint(taint);
         return var329BD4E79853976212F297A2D79B9594_1982353819;
-        // ---------- Original Method ----------
-        //return INTENT_RECONNECT_ALARM;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.333 -0400", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "7E3910F406479878E849A6CFDE6A203B")
     @Override
     protected String getActionIntentDataStallAlarm() {
 String var91B284560FDB6DF833F06E9F3D4A1EF3_57160619 =         INTENT_DATA_STALL_ALARM;
         var91B284560FDB6DF833F06E9F3D4A1EF3_57160619.addTaint(taint);
         return var91B284560FDB6DF833F06E9F3D4A1EF3_57160619;
-        // ---------- Original Method ----------
-        //return INTENT_DATA_STALL_ALARM;
+        
+        
     }
 
     
@@ -230,17 +233,18 @@ String var91B284560FDB6DF833F06E9F3D4A1EF3_57160619 =         INTENT_DATA_STALL_
             EventLog.writeEvent(EventLogTags.CDMA_DATA_STATE_CHANGE,
                     mState.toString(), s.toString());
             mState = s;
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) log ("setState: " + s);
-        //if (mState != s) {
-            //EventLog.writeEvent(EventLogTags.CDMA_DATA_STATE_CHANGE,
-                    //mState.toString(), s.toString());
-            //mState = s;
-        //}
+        } 
+        
+        
+        
+            
+                    
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.333 -0400", hash_original_method = "53DA179904795C28B8C89E7D1C885E11", hash_generated_method = "0F585238B64608ADD246C8A8A6904E61")
     @Override
     public synchronized State getState(String apnType) {
@@ -248,11 +252,12 @@ String var91B284560FDB6DF833F06E9F3D4A1EF3_57160619 =         INTENT_DATA_STALL_
 State var8B975C85F13BECB9FD4D21A5F3C8A56D_1083569124 =         mState;
         var8B975C85F13BECB9FD4D21A5F3C8A56D_1083569124.addTaint(taint);
         return var8B975C85F13BECB9FD4D21A5F3C8A56D_1083569124;
-        // ---------- Original Method ----------
-        //return mState;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.334 -0400", hash_original_method = "3AFAE11AEA6F5EDA9B4571182280207F", hash_generated_method = "57830BAE0E8ACC80B028E5DFFDDA3724")
     @Override
     protected boolean isApnTypeAvailable(String type) {
@@ -264,18 +269,18 @@ for(String s : mSupportedApnTypes)
                 boolean varB326B5062B2F0E69046810717534CB09_1223254918 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1915885749 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1915885749;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_535822793 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321556083 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_321556083;
-        // ---------- Original Method ----------
-        //for (String s : mSupportedApnTypes) {
-            //if (TextUtils.equals(type, s)) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -286,7 +291,7 @@ for(String s : mSupportedApnTypes)
         synchronized
 (mDataEnabledLock)        {
             internalDataEnabled = mInternalDataEnabled;
-        } //End block
+        } 
         int psState = mCdmaPhone.mSST.getCurrentDataConnectionState();
         boolean roaming = (mPhone.getServiceState().getRoaming() && !getDataOnRoamingEnabled());
         boolean desiredPowerState = mCdmaPhone.mSST.getDesiredPowerState();
@@ -307,17 +312,17 @@ for(String s : mSupportedApnTypes)
     if(!((psState == ServiceState.STATE_IN_SERVICE) || mAutoAttachOnCreation))            
             {
                 reason += " - psState= " + psState;
-            } //End block
+            } 
     if(!(mPhone.mCM.getNvState() == CommandsInterface.RadioState.NV_READY ||
                     mCdmaPhone.mIccRecords.getRecordsLoaded()))            
             {
                 reason += " - radioState= " + mPhone.mCM.getNvState() + " - RUIM not loaded";
-            } //End block
+            } 
     if(!(mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed() ||
                     mPhone.getState() == Phone.State.IDLE))            
             {
                 reason += " - concurrentVoiceAndData not allowed and state= " + mPhone.getState();
-            } //End block
+            } 
     if(roaming)            
             reason += " - Roaming";
     if(!internalDataEnabled)            
@@ -329,12 +334,12 @@ for(String s : mSupportedApnTypes)
     if(mCdmaPhone.needsOtaServiceProvisioning())            
             reason += " - needs Provisioning";
             log("Data not allowed due to" + reason);
-        } //End block
+        } 
         boolean var22EE71E9DCC9CA12FC313C6E1CE3F806_413488901 = (allowed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1550510808 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1550510808;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -347,20 +352,21 @@ for(String s : mSupportedApnTypes)
     if(!possible && DBG && isDataAllowed())        
         {
             log("Data not possible.  No coverage: dataState = " + mState);
-        } //End block
+        } 
         boolean var6FCC4B7D36184BA33346B4BE2D5D8244_1505024844 = (possible);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526408387 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526408387;
-        // ---------- Original Method ----------
-        //boolean possible = isDataAllowed() && !(getAnyDataEnabled() &&
-                //(mState == State.FAILED || mState == State.IDLE));
-        //if (!possible && DBG && isDataAllowed()) {
-            //log("Data not possible.  No coverage: dataState = " + mState);
-        //}
-        //return possible;
+        
+        
+                
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.337 -0400", hash_original_method = "394F83083B165868EFF2D0029A637488", hash_generated_method = "BAF2884920DF8E4626BEF95D20A7BC39")
     private boolean trySetupData(String reason) {
         addTaint(reason.getTaint());
@@ -375,7 +381,7 @@ for(String s : mSupportedApnTypes)
             boolean varB326B5062B2F0E69046810717534CB09_8811199 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1559574581 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1559574581;
-        } //End block
+        } 
         int psState = mCdmaPhone.mSST.getCurrentDataConnectionState();
         boolean roaming = mPhone.getServiceState().getRoaming();
         boolean desiredPowerState = mCdmaPhone.mSST.getDesiredPowerState();
@@ -387,16 +393,16 @@ for(String s : mSupportedApnTypes)
             boolean var9C7BD17E8EB1C3D0F843684A79A18570_1429265151 = (retValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1636383824 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1636383824;
-        } //End block
+        } 
         else
         {
             notifyOffApnsOfAvailability(reason);
             boolean var68934A3E9455FA72420237EB05902327_23354727 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_142236238 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_142236238;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -411,7 +417,7 @@ for(String s : mSupportedApnTypes)
             AlarmManager am = (AlarmManager) mPhone.getContext().getSystemService(Context.ALARM_SERVICE);
             am.cancel(mReconnectIntent);
             mReconnectIntent = null;
-        } //End block
+        } 
         setState(State.DISCONNECTING);
         notifyOffApnsOfAvailability(reason);
         boolean notificationDeferred = false;
@@ -427,7 +433,7 @@ for(DataConnection conn : mDataConnections.values())
                     conn.tearDown(reason, obtainMessage(EVENT_DISCONNECT_DONE,
                             conn.getDataConnectionId(), 0, reason));
                     notificationDeferred = true;
-                } //End block
+                } 
                 else
                 {
     if(DBG)                    
@@ -435,20 +441,20 @@ for(DataConnection conn : mDataConnections.values())
     if(dcac != null)                    
                     {
                         dcac.resetSync();
-                    } //End block
+                    } 
                     notificationDeferred = false;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         stopNetStatPoll();
     if(!notificationDeferred)        
         {
     if(DBG)            
             log("cleanupConnection: !notificationDeferred");
             gotoIdleAndNotifyDataConnection(reason);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -462,21 +468,21 @@ for(DataConnectionAc dcac : mDataConnectionAsyncChannels.values())
 CdmaDataConnection var64F4870CCAF38C0A05ADA975D81BB478_1523615629 =                 (CdmaDataConnection) dcac.dataConnection;
                 var64F4870CCAF38C0A05ADA975D81BB478_1523615629.addTaint(taint);
                 return var64F4870CCAF38C0A05ADA975D81BB478_1523615629;
-            } //End block
-        } //End block
+            } 
+        } 
         log("NO free CdmaDataConnection");
 CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
         var540C13E9E156B687226421B24F2DF178_295927554.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_295927554;
-        // ---------- Original Method ----------
-        //for (DataConnectionAc dcac : mDataConnectionAsyncChannels.values()) {
-            //if (dcac.isInactiveSync()) {
-                //log("found free GsmDataConnection");
-                //return (CdmaDataConnection) dcac.dataConnection;
-            //}
-        //}
-        //log("NO free CdmaDataConnection");
-        //return null;
+        
+        
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -491,7 +497,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
             boolean var68934A3E9455FA72420237EB05902327_1065628152 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1928895099 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1928895099;
-        } //End block
+        } 
         mPendingDataConnection = conn;
         String[] types;
         int apnId;
@@ -500,12 +506,12 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
             types = new String[1];
             types[0] = Phone.APN_TYPE_DUN;
             apnId = DataConnectionTracker.APN_DUN_ID;
-        } //End block
+        } 
         else
         {
             types = mDefaultApnTypes;
             apnId = mDefaultApnId;
-        } //End block
+        } 
         mActiveApn = new ApnSetting(apnId, "", "", "", "", "", "", "", "", "",
                                     "", 0, types, "IP", "IP", true, 0);
     if(DBG)        
@@ -519,8 +525,8 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_342673732 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291270857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_291270857;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -531,14 +537,15 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
         notifyDataConnection(reason);
         startNetStatPoll();
         mDataConnections.get(0).resetRetryCount();
-        // ---------- Original Method ----------
-        //setState(State.CONNECTED);
-        //notifyDataConnection(reason);
-        //startNetStatPoll();
-        //mDataConnections.get(0).resetRetryCount();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.341 -0400", hash_original_method = "4334EC28628BC2618150E7F73B49358F", hash_generated_method = "CA71E84F421FB531DEE0DB608D05FC5A")
     private void resetPollStats() {
         mTxPkts = -1;
@@ -546,15 +553,16 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
         mSentSinceLastRecv = 0;
         mNetStatPollPeriod = POLL_NETSTAT_MILLIS;
         mNoRecvPollCount = 0;
-        // ---------- Original Method ----------
-        //mTxPkts = -1;
-        //mRxPkts = -1;
-        //mSentSinceLastRecv = 0;
-        //mNetStatPollPeriod = POLL_NETSTAT_MILLIS;
-        //mNoRecvPollCount = 0;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.341 -0400", hash_original_method = "89653F3210B52B01F9AED56AD5EFB50E", hash_generated_method = "5820AAB04D2D50067D2D638FE6D867A4")
     @Override
     protected void startNetStatPoll() {
@@ -564,27 +572,28 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
             resetPollStats();
             mNetStatPollEnabled = true;
             mPollNetStat.run();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mState == State.CONNECTED && mNetStatPollEnabled == false) {
-            //log("[DataConnection] Start poll NetStat");
-            //resetPollStats();
-            //mNetStatPollEnabled = true;
-            //mPollNetStat.run();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.341 -0400", hash_original_method = "B87E2D0F3C8EA5B297B25E95FDB4C600", hash_generated_method = "E63291039876CC2FCDDBA8BE3EFC765C")
     @Override
     protected void stopNetStatPoll() {
         mNetStatPollEnabled = false;
         removeCallbacks(mPollNetStat);
         log("[DataConnection] Stop poll NetStat");
-        // ---------- Original Method ----------
-        //mNetStatPollEnabled = false;
-        //removeCallbacks(mPollNetStat);
-        //log("[DataConnection] Stop poll NetStat");
+        
+        
+        
+        
     }
 
     
@@ -597,23 +606,24 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
         cleanUpAllConnections(null);
         sendEmptyMessageDelayed(EVENT_RESTART_RADIO, TIME_DELAYED_TO_RESTART_RADIO);
         mPendingRestartRadio = true;
-        // ---------- Original Method ----------
-        //if (DBG) log("Cleanup connection and wait " +
-                //(TIME_DELAYED_TO_RESTART_RADIO / 1000) + "s to restart radio");
-        //cleanUpAllConnections(null);
-        //sendEmptyMessageDelayed(EVENT_RESTART_RADIO, TIME_DELAYED_TO_RESTART_RADIO);
-        //mPendingRestartRadio = true;
+        
+        
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.342 -0400", hash_original_method = "7D555C87655E096A1AB206CCF6046FBB", hash_generated_method = "10CB814415FA70A0FB84BF7A995CB8BB")
     private boolean shouldPostNotification(FailCause cause) {
         addTaint(cause.getTaint());
         boolean var0946A14484CB86EA252A404504EBE2CF_1613799579 = ((cause != FailCause.UNKNOWN));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_681321497 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_681321497;
-        // ---------- Original Method ----------
-        //return (cause != FailCause.UNKNOWN);
+        
+        
     }
 
     
@@ -624,16 +634,16 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     if(Phone.REASON_RADIO_TURNED_OFF.equals(reason))        
         {
             retry = false;
-        } //End block
+        } 
         boolean var165E6D21E0A2CC9EBB32CA05F90E0FA7_1102579685 = (retry);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410489131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410489131;
-        // ---------- Original Method ----------
-        //boolean retry = true;
-        //if ( Phone.REASON_RADIO_TURNED_OFF.equals(reason) ) {
-            //retry = false;
-        //}
-        //return retry;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -650,24 +660,24 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
             {
                 log("NOT Posting Data Connection Unavailable notification "
                                 + "-- likely transient error");
-            } //End block
+            } 
             else
             {
                 notifyNoData(lastFailCauseCode);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mState == State.FAILED) {
-            //int nextReconnectDelay = mDataConnections.get(0).getRetryTimer();
-            //startAlarmForReconnect(nextReconnectDelay, reason);
-            //mDataConnections.get(0).increaseRetryCount();
-            //if (!shouldPostNotification(lastFailCauseCode)) {
-                //log("NOT Posting Data Connection Unavailable notification "
-                                //+ "-- likely transient error");
-            //} else {
-                //notifyNoData(lastFailCauseCode);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+            
+                
+                                
+            
+                
+            
+        
     }
 
     
@@ -684,28 +694,29 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
                 mPhone.getContext(), 0, intent, 0);
         am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
                 SystemClock.elapsedRealtime() + delay, mReconnectIntent);
-        // ---------- Original Method ----------
-        //log("Data Connection activate failed. Scheduling next attempt for "
-                //+ (delay / 1000) + "s");
-        //AlarmManager am =
-            //(AlarmManager) mPhone.getContext().getSystemService(Context.ALARM_SERVICE);
-        //Intent intent = new Intent(INTENT_RECONNECT_ALARM);
-        //intent.putExtra(INTENT_RECONNECT_ALARM_EXTRA_REASON, reason);
-        //mReconnectIntent = PendingIntent.getBroadcast(
-                //mPhone.getContext(), 0, intent, 0);
-        //am.set(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                //SystemClock.elapsedRealtime() + delay, mReconnectIntent);
+        
+        
+                
+        
+            
+        
+        
+        
+                
+        
+                
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.344 -0400", hash_original_method = "906A69878943A02EC5DE4E13B27C21B4", hash_generated_method = "6F1D01950156D637CE9DEA87990354C8")
     private void notifyNoData(FailCause lastFailCauseCode) {
         addTaint(lastFailCauseCode.getTaint());
         setState(State.FAILED);
         notifyOffApnsOfAvailability(null);
-        // ---------- Original Method ----------
-        //setState(State.FAILED);
-        //notifyOffApnsOfAvailability(null);
+        
+        
+        
     }
 
     
@@ -717,188 +728,194 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
         setState(State.IDLE);
         notifyDataConnection(reason);
         mActiveApn = null;
-        // ---------- Original Method ----------
-        //if (DBG) log("gotoIdleAndNotifyDataConnection: reason=" + reason);
-        //setState(State.IDLE);
-        //notifyDataConnection(reason);
-        //mActiveApn = null;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.344 -0400", hash_original_method = "E23B6E1AC9BCA9F124B3E389B7DEE3CE", hash_generated_method = "C7174DB275A861F7A2E2E7084E9AB211")
     protected void onRecordsLoaded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mState == State.FAILED)        
         {
             cleanUpAllConnections(null);
-        } //End block
+        } 
         sendMessage(obtainMessage(EVENT_TRY_SETUP_DATA, Phone.REASON_SIM_LOADED));
-        // ---------- Original Method ----------
-        //if (mState == State.FAILED) {
-            //cleanUpAllConnections(null);
-        //}
-        //sendMessage(obtainMessage(EVENT_TRY_SETUP_DATA, Phone.REASON_SIM_LOADED));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "E1428BF12D5C40E221347D3CB6592677", hash_generated_method = "FEB4C482E38D3FFF49B4DF4AA6CFC39E")
     protected void onNVReady() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mState == State.FAILED)        
         {
             cleanUpAllConnections(null);
-        } //End block
+        } 
         sendMessage(obtainMessage(EVENT_TRY_SETUP_DATA));
-        // ---------- Original Method ----------
-        //if (mState == State.FAILED) {
-            //cleanUpAllConnections(null);
-        //}
-        //sendMessage(obtainMessage(EVENT_TRY_SETUP_DATA));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "EA596D7E6B7BB6E966347390783DCB75", hash_generated_method = "928C176826E83B168C4FA2AB3091EDBA")
     @Override
     protected void onEnableNewApn() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         cleanUpConnection(true, Phone.REASON_APN_SWITCHED);
-        // ---------- Original Method ----------
-        //cleanUpConnection(true, Phone.REASON_APN_SWITCHED);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "D1EA04ADDFE8BEB96FCA5B0EBDBE27E4", hash_generated_method = "3AC891FAA179A6E2213F12DACA70185D")
     @Override
     protected boolean onTrySetupData(String reason) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(reason.getTaint());
         boolean varD2506CFB1DEDC3EFB3089D571DE3694B_1520045975 = (trySetupData(reason));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1197284692 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1197284692;
-        // ---------- Original Method ----------
-        //return trySetupData(reason);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.345 -0400", hash_original_method = "456B5B4117DFD69A8357ABE29B636ADA", hash_generated_method = "5809DD5928A3761F6A7669039A1B830A")
     @Override
     protected void onRoamingOff() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(getDataOnRoamingEnabled() == false)        
         {
             notifyOffApnsOfAvailability(Phone.REASON_ROAMING_OFF);
             trySetupData(Phone.REASON_ROAMING_OFF);
-        } //End block
+        } 
         else
         {
             notifyDataConnection(Phone.REASON_ROAMING_OFF);
-        } //End block
-        // ---------- Original Method ----------
-        //if (getDataOnRoamingEnabled() == false) {
-            //notifyOffApnsOfAvailability(Phone.REASON_ROAMING_OFF);
-            //trySetupData(Phone.REASON_ROAMING_OFF);
-        //} else {
-            //notifyDataConnection(Phone.REASON_ROAMING_OFF);
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.346 -0400", hash_original_method = "05517986BB1CA537C6FCF607816BF093", hash_generated_method = "A43C2BAAE51C314CB5B984D2457C0671")
     @Override
     protected void onRoamingOn() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(getDataOnRoamingEnabled())        
         {
             trySetupData(Phone.REASON_ROAMING_ON);
             notifyDataConnection(Phone.REASON_ROAMING_ON);
-        } //End block
+        } 
         else
         {
     if(DBG)            
             log("Tear down data connection on roaming.");
             cleanUpAllConnections(null);
             notifyOffApnsOfAvailability(Phone.REASON_ROAMING_ON);
-        } //End block
-        // ---------- Original Method ----------
-        //if (getDataOnRoamingEnabled()) {
-            //trySetupData(Phone.REASON_ROAMING_ON);
-            //notifyDataConnection(Phone.REASON_ROAMING_ON);
-        //} else {
-            //if (DBG) log("Tear down data connection on roaming.");
-            //cleanUpAllConnections(null);
-            //notifyOffApnsOfAvailability(Phone.REASON_ROAMING_ON);
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.346 -0400", hash_original_method = "F74A764B82D382E1DF4133E695EBD591", hash_generated_method = "781D9550DDE70B054BCF4BB515D66B50")
     @Override
     protected void onRadioAvailable() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mPhone.getSimulatedRadioControl() != null)        
         {
             setState(State.CONNECTED);
             notifyDataConnection(null);
             log("We're on the simulator; assuming data is connected");
-        } //End block
+        } 
         notifyOffApnsOfAvailability(null);
     if(mState != State.IDLE)        
         {
             cleanUpAllConnections(null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPhone.getSimulatedRadioControl() != null) {
-            //setState(State.CONNECTED);
-            //notifyDataConnection(null);
-            //log("We're on the simulator; assuming data is connected");
-        //}
-        //notifyOffApnsOfAvailability(null);
-        //if (mState != State.IDLE) {
-            //cleanUpAllConnections(null);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.347 -0400", hash_original_method = "13044BD14789126E4C7F4A6581DB22DE", hash_generated_method = "5FE64ED2AB322C5FD15B0FDAE71EEBCA")
     @Override
     protected void onRadioOffOrNotAvailable() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mDataConnections.get(0).resetRetryCount();
     if(mPhone.getSimulatedRadioControl() != null)        
         {
             log("We're on the simulator; assuming radio off is meaningless");
-        } //End block
+        } 
         else
         {
     if(DBG)            
             log("Radio is off and clean up all connection");
             cleanUpAllConnections(null);
-        } //End block
-        // ---------- Original Method ----------
-        //mDataConnections.get(0).resetRetryCount();
-        //if (mPhone.getSimulatedRadioControl() != null) {
-            //log("We're on the simulator; assuming radio off is meaningless");
-        //} else {
-            //if (DBG) log("Radio is off and clean up all connection");
-            //cleanUpAllConnections(null);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.347 -0400", hash_original_method = "F38E677B8F89E946D32F2D1EC6556506", hash_generated_method = "A38B0B6CF4EB0D53BA4440D453EC45FE")
     @Override
     protected void onDataSetupComplete(AsyncResult ar) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ar.getTaint());
         String reason = null;
     if(ar.userObj instanceof String)        
         {
             reason = (String) ar.userObj;
-        } //End block
+        } 
     if(isDataSetupCompleteOk(ar))        
         {
             notifyDefaultData(reason);
-        } //End block
+        } 
         else
         {
             FailCause cause = (FailCause) (ar.result);
@@ -908,32 +925,33 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
             {
                 notifyNoData(cause);
                 return;
-            } //End block
+            } 
             startDelayedRetry(cause, reason);
-        } //End block
-        // ---------- Original Method ----------
-        //String reason = null;
-        //if (ar.userObj instanceof String) {
-            //reason = (String) ar.userObj;
-        //}
-        //if (isDataSetupCompleteOk(ar)) {
-            //notifyDefaultData(reason);
-        //} else {
-            //FailCause cause = (FailCause) (ar.result);
-            //if(DBG) log("Data Connection setup failed " + cause);
-            //if (cause.isPermanentFail()) {
-                //notifyNoData(cause);
-                //return;
-            //}
-            //startDelayedRetry(cause, reason);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
+            
+            
+            
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.348 -0400", hash_original_method = "B64AD173877EB61F2BA995A6B9586953", hash_generated_method = "DFC81BA76AB345B641BFE76CE215A2D8")
     @Override
     protected void onDisconnectDone(int connId, AsyncResult ar) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ar.getTaint());
         addTaint(connId);
     if(DBG)        
@@ -942,7 +960,7 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     if(ar.userObj instanceof String)        
         {
             reason = (String) ar.userObj;
-        } //End block
+        } 
         setState(State.IDLE);
     if(mPendingRestartRadio)        
         removeMessages(EVENT_RESTART_RADIO);
@@ -950,120 +968,123 @@ CdmaDataConnection var540C13E9E156B687226421B24F2DF178_295927554 =         null;
     if(ssTracker.processPendingRadioPowerOffAfterDataOff())        
         {
             mPendingRestartRadio = false;
-        } //End block
+        } 
         else
         {
             onRestartRadio();
-        } //End block
+        } 
         notifyDataConnection(reason);
         mActiveApn = null;
     if(retryAfterDisconnected(reason))        
         {
             startAlarmForReconnect(APN_DELAY_MILLIS, reason);
-        } //End block
-        // ---------- Original Method ----------
-        //if(DBG) log("EVENT_DISCONNECT_DONE connId=" + connId);
-        //String reason = null;
-        //if (ar.userObj instanceof String) {
-            //reason = (String) ar.userObj;
-        //}
-        //setState(State.IDLE);
-        //if (mPendingRestartRadio) removeMessages(EVENT_RESTART_RADIO);
-        //CdmaServiceStateTracker ssTracker = mCdmaPhone.mSST;
-        //if (ssTracker.processPendingRadioPowerOffAfterDataOff()) {
-            //mPendingRestartRadio = false;
-        //} else {
-            //onRestartRadio();
-        //}
-        //notifyDataConnection(reason);
-        //mActiveApn = null;
-        //if (retryAfterDisconnected(reason)) {
-          //startAlarmForReconnect(APN_DELAY_MILLIS, reason);
-      //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+          
+      
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.349 -0400", hash_original_method = "8669708C7F9DB85ADE9303FE8B7AF6BC", hash_generated_method = "956DAA5B465A8D40CC1CBDE2B69093F3")
     @Override
     protected void onVoiceCallStarted() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mState == State.CONNECTED && !mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed())        
         {
             stopNetStatPoll();
             notifyDataConnection(Phone.REASON_VOICE_CALL_STARTED);
             notifyOffApnsOfAvailability(Phone.REASON_VOICE_CALL_STARTED);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mState == State.CONNECTED && !mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed()) {
-            //stopNetStatPoll();
-            //notifyDataConnection(Phone.REASON_VOICE_CALL_STARTED);
-            //notifyOffApnsOfAvailability(Phone.REASON_VOICE_CALL_STARTED);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.349 -0400", hash_original_method = "A8CF6D26E9B870CF97B1A301601A4493", hash_generated_method = "D7FC8B39AE60857D7A8DF5AEA93BC6FD")
     @Override
     protected void onVoiceCallEnded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mState == State.CONNECTED)        
         {
     if(!mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed())            
             {
                 startNetStatPoll();
                 notifyDataConnection(Phone.REASON_VOICE_CALL_ENDED);
-            } //End block
+            } 
             else
             {
                 resetPollStats();
-            } //End block
+            } 
             notifyOffApnsOfAvailability(Phone.REASON_VOICE_CALL_ENDED);
-        } //End block
+        } 
         else
         {
             mDataConnections.get(0).resetRetryCount();
             trySetupData(Phone.REASON_VOICE_CALL_ENDED);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mState == State.CONNECTED) {
-            //if (!mCdmaPhone.mSST.isConcurrentVoiceAndDataAllowed()) {
-                //startNetStatPoll();
-                //notifyDataConnection(Phone.REASON_VOICE_CALL_ENDED);
-            //} else {
-                //resetPollStats();
-            //}
-            //notifyOffApnsOfAvailability(Phone.REASON_VOICE_CALL_ENDED);
-        //} else {
-            //mDataConnections.get(0).resetRetryCount();
-            //trySetupData(Phone.REASON_VOICE_CALL_ENDED);
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+                
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.349 -0400", hash_original_method = "1767BD771DD5F6B59CD03646F3315F79", hash_generated_method = "FBAF9C086BCC793D56D46036746FD672")
     @Override
     protected void onCleanUpConnection(boolean tearDown, int apnId, String reason) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(reason.getTaint());
         addTaint(apnId);
         addTaint(tearDown);
         cleanUpConnection(tearDown, reason);
-        // ---------- Original Method ----------
-        //cleanUpConnection(tearDown, reason);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.350 -0400", hash_original_method = "6A2ACA33DA32338447596FF020294793", hash_generated_method = "B80D5F9B327B51B1A60F6F0F1430B62B")
     @Override
     protected void onCleanUpAllConnections(String cause) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(cause.getTaint());
         cleanUpConnection(true, cause);
-        // ---------- Original Method ----------
-        //cleanUpConnection(true, cause);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.350 -0400", hash_original_method = "7F3FB415E824AE28DE838EAC0023F542", hash_generated_method = "FC98E5742FDC33CCB1E2F638E8845C2C")
     private void createAllDataConnectionList() {
         CdmaDataConnection dataConn;
@@ -1078,8 +1099,8 @@ for(int i = 0;i < DATA_CONNECTION_POOL_SIZE;i++)
                     log("Could not configure using DEFAULT_DATA_RETRY_CONFIG="
                             + DEFAULT_DATA_RETRY_CONFIG);
                     rm.configure(20, 2000, 1000);
-                } //End block
-            } //End block
+                } 
+            } 
             int id = mUniqueIdGenerator.getAndIncrement();
             dataConn = CdmaDataConnection.makeDataConnection(mCdmaPhone, id, rm);
             mDataConnections.put(id, dataConn);
@@ -1089,28 +1110,29 @@ for(int i = 0;i < DATA_CONNECTION_POOL_SIZE;i++)
             {
                 log("Fully connected");
                 mDataConnectionAsyncChannels.put(dcac.dataConnection.getDataConnectionId(), dcac);
-            } //End block
+            } 
             else
             {
                 log("Could not connect to dcac.dataConnection=" + dcac.dataConnection +
                         " status=" + status);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.351 -0400", hash_original_method = "8430EFDC31AB81EB1D7F0972246BF5F1", hash_generated_method = "16F6D5B538D560F45EE61E834ADB5D19")
     private void destroyAllDataConnectionList() {
     if(mDataConnections != null)        
         {
             mDataConnections.clear();
-        } //End block
-        // ---------- Original Method ----------
-        //if(mDataConnections != null) {
-            //mDataConnections.clear();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1120,7 +1142,7 @@ for(int i = 0;i < DATA_CONNECTION_POOL_SIZE;i++)
         {
             startNetStatPoll();
             notifyDataConnection(Phone.REASON_CDMA_DATA_DETACHED);
-        } //End block
+        } 
         else
         {
     if(mState == State.FAILED)            
@@ -1131,27 +1153,28 @@ for(int i = 0;i < DATA_CONNECTION_POOL_SIZE;i++)
                 EventLog.writeEvent(EventLogTags.CDMA_DATA_SETUP_FAILED,
                         loc != null ? loc.getBaseStationId() : -1,
                         TelephonyManager.getDefault().getNetworkType());
-            } //End block
+            } 
             trySetupData(Phone.REASON_CDMA_DATA_DETACHED);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mState == State.CONNECTED) {
-            //startNetStatPoll();
-            //notifyDataConnection(Phone.REASON_CDMA_DATA_DETACHED);
-        //} else {
-            //if (mState == State.FAILED) {
-                //cleanUpConnection(false, Phone.REASON_CDMA_DATA_DETACHED);
-                //mDataConnections.get(0).resetRetryCount();
-                //CdmaCellLocation loc = (CdmaCellLocation)(mPhone.getCellLocation());
-                //EventLog.writeEvent(EventLogTags.CDMA_DATA_SETUP_FAILED,
-                        //loc != null ? loc.getBaseStationId() : -1,
-                        //TelephonyManager.getDefault().getNetworkType());
-            //}
-            //trySetupData(Phone.REASON_CDMA_DATA_DETACHED);
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+                
+                
+                
+                
+                        
+                        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.353 -0400", hash_original_method = "A262DC774CC921F05CC1B098B136C4F6", hash_generated_method = "B973EA0872CAAC7B291B579E6280869F")
     private void onCdmaOtaProvision(AsyncResult ar) {
         addTaint(ar.getTaint());
@@ -1168,25 +1191,26 @@ switch(otaPrivision[0]){
                 default:
                 break;
 }
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (ar.exception != null) {
-            //int [] otaPrivision = (int [])ar.result;
-            //if ((otaPrivision != null) && (otaPrivision.length > 1)) {
-                //switch (otaPrivision[0]) {
-                //case Phone.CDMA_OTA_PROVISION_STATUS_COMMITTED:
-                //case Phone.CDMA_OTA_PROVISION_STATUS_OTAPA_STOPPED:
-                    //mDataConnections.get(0).resetRetryCount();
-                    //break;
-                //default:
-                    //break;
-                //}
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.353 -0400", hash_original_method = "7F30476887B77149E22CB7625A399926", hash_generated_method = "D801E5B0596B9E348F2096220744198D")
     private void onRestartRadio() {
     if(mPendingRestartRadio)        
@@ -1194,13 +1218,13 @@ switch(otaPrivision[0]){
             log("************TURN OFF RADIO**************");
             mPhone.mCM.setRadioPower(false, null);
             mPendingRestartRadio = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingRestartRadio) {
-            //log("************TURN OFF RADIO**************");
-            //mPhone.mCM.setRadioPower(false, null);
-            //mPendingRestartRadio = false;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1210,23 +1234,24 @@ switch(otaPrivision[0]){
         EventLog.writeEvent(EventLogTags.CDMA_DATA_DROP,
                 loc != null ? loc.getBaseStationId() : -1,
                 TelephonyManager.getDefault().getNetworkType());
-        // ---------- Original Method ----------
-        //CdmaCellLocation loc = (CdmaCellLocation)(mPhone.getCellLocation());
-        //EventLog.writeEvent(EventLogTags.CDMA_DATA_DROP,
-                //loc != null ? loc.getBaseStationId() : -1,
-                //TelephonyManager.getDefault().getNetworkType());
+        
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.355 -0400", hash_original_method = "D056F1F93E1FCCA005B3D5C4043A4B41", hash_generated_method = "6BAE02B38689D67F1D6D57048BBACD01")
     protected void onDataStateChanged(AsyncResult ar) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ar.getTaint());
         ArrayList<DataCallState> dataCallStates = (ArrayList<DataCallState>)(ar.result);
     if(ar.exception != null)        
         {
             return;
-        } //End block
+        } 
     if(mState == State.CONNECTED)        
         {
             boolean isActiveOrDormantConnectionPresent = false;
@@ -1238,8 +1263,8 @@ for(int index = 0;index < dataCallStates.size();index++)
                 {
                     isActiveOrDormantConnectionPresent = true;
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
     if(!isActiveOrDormantConnectionPresent)            
             {
                 log("onDataStateChanged: No active connection"
@@ -1247,7 +1272,7 @@ for(int index = 0;index < dataCallStates.size();index++)
                 writeEventLogCdmaDataDrop();
                 cleanUpConnection(true, null);
                 return;
-            } //End block
+            } 
 switch(connectionState){
             case DATA_CONNECTION_ACTIVE_PH_LINK_UP:
             log("onDataStateChanged: active=LINK_ACTIVE && CONNECTED, ignore");
@@ -1265,25 +1290,26 @@ switch(connectionState){
             log("onDataStateChanged: IGNORE unexpected DataCallState.active="
                             + connectionState);
 }
-        } //End block
+        } 
         else
         {
             log("onDataStateChanged: not connected, state=" + mState + " ignoring");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.355 -0400", hash_original_method = "E7620C231D98F2722A026ACACB1534C7", hash_generated_method = "CF2D093B244C86B07429DF8C52566AC3")
     private void startDelayedRetry(FailCause cause, String reason) {
         addTaint(reason.getTaint());
         addTaint(cause.getTaint());
         notifyNoData(cause);
         reconnectAfterFail(cause, reason);
-        // ---------- Original Method ----------
-        //notifyNoData(cause);
-        //reconnectAfterFail(cause, reason);
+        
+        
+        
     }
 
     
@@ -1297,7 +1323,7 @@ switch(connectionState){
         {
             log("Ignore CDMA msgs since CDMA phone is inactive");
             return;
-        } //End block
+        } 
 switch(msg.what){
         case EVENT_RECORDS_LOADED:
         onRecordsLoaded();
@@ -1323,19 +1349,20 @@ switch(msg.what){
         super.handleMessage(msg);
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:25.355 -0400", hash_original_method = "40E4BCBCB488969F7D8EBF5CAA1BFE5A", hash_generated_method = "5621D3AD3C086B6CBB30F4C8C9D97A64")
     @Override
     public boolean isDisconnected() {
         boolean varC1DAD21B7942DEF10781808DB2161507_1799404042 = (((mState == State.IDLE) || (mState == State.FAILED)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1827980802 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1827980802;
-        // ---------- Original Method ----------
-        //return ((mState == State.IDLE) || (mState == State.FAILED));
+        
+        
     }
 
     
@@ -1344,8 +1371,8 @@ switch(msg.what){
     protected void log(String s) {
         addTaint(s.getTaint());
         Log.d(LOG_TAG, "[CdmaDCT] " + s);
-        // ---------- Original Method ----------
-        //Log.d(LOG_TAG, "[CdmaDCT] " + s);
+        
+        
     }
 
     
@@ -1353,8 +1380,8 @@ switch(msg.what){
     @Override
     protected void loge(String s) {
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
-        //Log.e(LOG_TAG, "[CdmaDCT] " + s);
+        
+        
     }
 
     

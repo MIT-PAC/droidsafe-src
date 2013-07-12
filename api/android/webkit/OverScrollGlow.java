@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,13 +43,13 @@ public class OverScrollGlow {
         mEdgeGlowBottom = new EdgeEffect(context);
         mEdgeGlowLeft = new EdgeEffect(context);
         mEdgeGlowRight = new EdgeEffect(context);
-        // ---------- Original Method ----------
-        //mHostView = host;
-        //Context context = host.getContext();
-        //mEdgeGlowTop = new EdgeEffect(context);
-        //mEdgeGlowBottom = new EdgeEffect(context);
-        //mEdgeGlowLeft = new EdgeEffect(context);
-        //mEdgeGlowRight = new EdgeEffect(context);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -72,8 +72,8 @@ public class OverScrollGlow {
     if(!mEdgeGlowRight.isFinished())                    
                     {
                         mEdgeGlowRight.onRelease();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(pulledToX > maxX)                
                 {
@@ -81,10 +81,10 @@ public class OverScrollGlow {
     if(!mEdgeGlowLeft.isFinished())                    
                     {
                         mEdgeGlowLeft.onRelease();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mOverScrollDeltaX = 0;
-            } //End block
+            } 
     if(maxY > 0 || mHostView.getOverScrollMode() == View.OVER_SCROLL_ALWAYS)            
             {
                 final int pulledToY = oldY + mOverScrollDeltaY;
@@ -94,8 +94,8 @@ public class OverScrollGlow {
     if(!mEdgeGlowBottom.isFinished())                    
                     {
                         mEdgeGlowBottom.onRelease();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(pulledToY > maxY)                
                 {
@@ -103,23 +103,24 @@ public class OverScrollGlow {
     if(!mEdgeGlowTop.isFinished())                    
                     {
                         mEdgeGlowTop.onRelease();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mOverScrollDeltaY = 0;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.859 -0400", hash_original_method = "898E1992D368021CDA53745F0D37B2ED", hash_generated_method = "DB9138BBE530C1A27762C46B9EBC1FDA")
     public void setOverScrollDeltas(int deltaX, int deltaY) {
         mOverScrollDeltaX = deltaX;
         mOverScrollDeltaY = deltaY;
-        // ---------- Original Method ----------
-        //mOverScrollDeltaX = deltaX;
-        //mOverScrollDeltaY = deltaY;
+        
+        
+        
     }
 
     
@@ -139,8 +140,8 @@ public class OverScrollGlow {
     if(!mEdgeGlowBottom.isFinished())                
                 {
                     mEdgeGlowBottom.onRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(y > rangeY && oldY <= rangeY)            
             {
@@ -148,9 +149,9 @@ public class OverScrollGlow {
     if(!mEdgeGlowTop.isFinished())                
                 {
                     mEdgeGlowTop.onRelease();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(rangeX > 0)        
         {
     if(x < 0 && oldX >= 0)            
@@ -159,8 +160,8 @@ public class OverScrollGlow {
     if(!mEdgeGlowRight.isFinished())                
                 {
                     mEdgeGlowRight.onRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(x > rangeX && oldX <= rangeX)            
             {
@@ -168,11 +169,11 @@ public class OverScrollGlow {
     if(!mEdgeGlowLeft.isFinished())                
                 {
                     mEdgeGlowLeft.onRelease();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -191,7 +192,7 @@ public class OverScrollGlow {
             mEdgeGlowTop.setSize(width, height);
             invalidateForGlow |= mEdgeGlowTop.draw(canvas);
             canvas.restoreToCount(restoreCount);
-        } //End block
+        } 
     if(!mEdgeGlowBottom.isFinished())        
         {
             final int restoreCount = canvas.save();
@@ -201,7 +202,7 @@ public class OverScrollGlow {
             mEdgeGlowBottom.setSize(width, height);
             invalidateForGlow |= mEdgeGlowBottom.draw(canvas);
             canvas.restoreToCount(restoreCount);
-        } //End block
+        } 
     if(!mEdgeGlowLeft.isFinished())        
         {
             final int restoreCount = canvas.save();
@@ -210,7 +211,7 @@ public class OverScrollGlow {
             mEdgeGlowLeft.setSize(height, width);
             invalidateForGlow |= mEdgeGlowLeft.draw(canvas);
             canvas.restoreToCount(restoreCount);
-        } //End block
+        } 
     if(!mEdgeGlowRight.isFinished())        
         {
             final int restoreCount = canvas.save();
@@ -220,12 +221,12 @@ public class OverScrollGlow {
             mEdgeGlowRight.setSize(height, width);
             invalidateForGlow |= mEdgeGlowRight.draw(canvas);
             canvas.restoreToCount(restoreCount);
-        } //End block
+        } 
         boolean varE554BD5478EF6DBBFE9C3BC23BF29BA7_1814931110 = (invalidateForGlow);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1367371479 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1367371479;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -235,9 +236,9 @@ public class OverScrollGlow {
                 !mEdgeGlowLeft.isFinished() || !mEdgeGlowRight.isFinished()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_350924227 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_350924227;
-        // ---------- Original Method ----------
-        //return (!mEdgeGlowTop.isFinished() || !mEdgeGlowBottom.isFinished() ||
-                //!mEdgeGlowLeft.isFinished() || !mEdgeGlowRight.isFinished());
+        
+        
+                
     }
 
     
@@ -247,11 +248,11 @@ public class OverScrollGlow {
         mEdgeGlowBottom.onRelease();
         mEdgeGlowLeft.onRelease();
         mEdgeGlowRight.onRelease();
-        // ---------- Original Method ----------
-        //mEdgeGlowTop.onRelease();
-        //mEdgeGlowBottom.onRelease();
-        //mEdgeGlowLeft.onRelease();
-        //mEdgeGlowRight.onRelease();
+        
+        
+        
+        
+        
     }
 
     

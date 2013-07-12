@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -63,9 +63,9 @@ public class ViewPropertyAnimator {
       ViewPropertyAnimator(View view) {
         mView = view;
         view.ensureTransformationInfo();
-        // ---------- Original Method ----------
-        //mView = view;
-        //view.ensureTransformationInfo();
+        
+        
+        
     }
 
     
@@ -77,20 +77,20 @@ public class ViewPropertyAnimator {
                     duration);
             varBE9004E8E8C014F966F457353E164ECE_1842761425.addTaint(taint);
             throw varBE9004E8E8C014F966F457353E164ECE_1842761425;
-        } //End block
+        } 
         mDurationSet = true;
         mDuration = duration;
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1809856062 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1809856062.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1809856062;
-        // ---------- Original Method ----------
-        //if (duration < 0) {
-            //throw new IllegalArgumentException("Animators cannot have negative duration: " +
-                    //duration);
-        //}
-        //mDurationSet = true;
-        //mDuration = duration;
-        //return this;
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
@@ -101,22 +101,23 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1809856062 =         th
             long var25395741BFE51A7D136A5C7109AAD2D8_858478131 = (mDuration);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_622619126 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_622619126;
-        } //End block
+        } 
         else
         {
             long varE9BF4C9C84488436E1D1F2E5F9AADB49_1469001552 = (new ValueAnimator().getDuration());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_773048794 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_773048794;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDurationSet) {
-            //return mDuration;
-        //} else {
-            //return new ValueAnimator().getDuration();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.624 -0400", hash_original_method = "137A1F44FEDEF7DBAEA1EE8251F82E1F", hash_generated_method = "75A392599894A1D86E29D1F95101AA8C")
     public long getStartDelay() {
     if(mStartDelaySet)        
@@ -124,19 +125,19 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1809856062 =         th
             long varD6348B0CF9AA194EA8CCE71E8A2B9F80_1690411603 = (mStartDelay);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1318857108 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1318857108;
-        } //End block
+        } 
         else
         {
             long varCFCD208495D565EF66E7DFF9F98764DA_2012860087 = (0);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_192324216 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_192324216;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStartDelaySet) {
-            //return mStartDelay;
-        //} else {
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -148,23 +149,24 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1809856062 =         th
                     startDelay);
             varFCA553B88D1C3C33CE9EEFDD31E7822C_1481315794.addTaint(taint);
             throw varFCA553B88D1C3C33CE9EEFDD31E7822C_1481315794;
-        } //End block
+        } 
         mStartDelaySet = true;
         mStartDelay = startDelay;
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_630557976 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_630557976.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_630557976;
-        // ---------- Original Method ----------
-        //if (startDelay < 0) {
-            //throw new IllegalArgumentException("Animators cannot have negative duration: " +
-                    //startDelay);
-        //}
-        //mStartDelaySet = true;
-        //mStartDelay = startDelay;
-        //return this;
+        
+        
+            
+                    
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.626 -0400", hash_original_method = "995017692E981832E150BE79F0CB8507", hash_generated_method = "A8453D832A912FF9E2D89C9AB5C589AA")
     public ViewPropertyAnimator setInterpolator(TimeInterpolator interpolator) {
         mInterpolatorSet = true;
@@ -172,30 +174,31 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_630557976 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1269282868 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1269282868.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1269282868;
-        // ---------- Original Method ----------
-        //mInterpolatorSet = true;
-        //mInterpolator = interpolator;
-        //return this;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.626 -0400", hash_original_method = "D3B983C6B8AF317CF4B7893570C39145", hash_generated_method = "049B26913B300E81924379BFC3180F46")
     public ViewPropertyAnimator setListener(Animator.AnimatorListener listener) {
         mListener = listener;
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1265489122 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1265489122.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1265489122;
-        // ---------- Original Method ----------
-        //mListener = listener;
-        //return this;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.626 -0400", hash_original_method = "8C3C0DB6E3E572D598F887EBD1169042", hash_generated_method = "A5710AE0D85F06F649F4EF64FCC54E4A")
     public void start() {
         startAnimation();
-        // ---------- Original Method ----------
-        //startAnimation();
+        
+        
     }
 
     
@@ -208,21 +211,21 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1265489122 =         th
 for(Animator runningAnim : animatorSet)
             {
                 runningAnim.cancel();
-            } //End block
-        } //End block
+            } 
+        } 
         mPendingAnimations.clear();
         mView.removeCallbacks(mAnimationStarter);
-        // ---------- Original Method ----------
-        //if (mAnimatorMap.size() > 0) {
-            //HashMap<Animator, PropertyBundle> mAnimatorMapCopy =
-                    //(HashMap<Animator, PropertyBundle>)mAnimatorMap.clone();
-            //Set<Animator> animatorSet = mAnimatorMapCopy.keySet();
-            //for (Animator runningAnim : animatorSet) {
-                //runningAnim.cancel();
-            //}
-        //}
-        //mPendingAnimations.clear();
-        //mView.removeCallbacks(mAnimationStarter);
+        
+        
+            
+                    
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -233,9 +236,9 @@ for(Animator runningAnim : animatorSet)
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_139436040 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_139436040.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_139436040;
-        // ---------- Original Method ----------
-        //animateProperty(X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -246,9 +249,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_139436040 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_603986944 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_603986944.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_603986944;
-        // ---------- Original Method ----------
-        //animatePropertyBy(X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -259,9 +262,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_603986944 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_940259750 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_940259750.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_940259750;
-        // ---------- Original Method ----------
-        //animateProperty(Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -272,9 +275,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_940259750 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_34277252 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_34277252.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_34277252;
-        // ---------- Original Method ----------
-        //animatePropertyBy(Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -285,9 +288,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_34277252 =         this
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1549929644 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1549929644.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1549929644;
-        // ---------- Original Method ----------
-        //animateProperty(ROTATION, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -298,9 +301,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1549929644 =         th
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_291238297 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_291238297.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_291238297;
-        // ---------- Original Method ----------
-        //animatePropertyBy(ROTATION, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -311,9 +314,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_291238297 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_330998608 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_330998608.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_330998608;
-        // ---------- Original Method ----------
-        //animateProperty(ROTATION_X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -324,9 +327,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_330998608 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_691952140 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_691952140.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_691952140;
-        // ---------- Original Method ----------
-        //animatePropertyBy(ROTATION_X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -337,9 +340,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_691952140 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_901393013 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_901393013.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_901393013;
-        // ---------- Original Method ----------
-        //animateProperty(ROTATION_Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -350,9 +353,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_901393013 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_98186797 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_98186797.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_98186797;
-        // ---------- Original Method ----------
-        //animatePropertyBy(ROTATION_Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -363,9 +366,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_98186797 =         this
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1378767744 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1378767744.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1378767744;
-        // ---------- Original Method ----------
-        //animateProperty(TRANSLATION_X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -376,9 +379,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1378767744 =         th
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_882589979 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_882589979.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_882589979;
-        // ---------- Original Method ----------
-        //animatePropertyBy(TRANSLATION_X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -389,9 +392,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_882589979 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_424953992 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_424953992.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_424953992;
-        // ---------- Original Method ----------
-        //animateProperty(TRANSLATION_Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -402,9 +405,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_424953992 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_77648592 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_77648592.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_77648592;
-        // ---------- Original Method ----------
-        //animatePropertyBy(TRANSLATION_Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -415,9 +418,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_77648592 =         this
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1158242404 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1158242404.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1158242404;
-        // ---------- Original Method ----------
-        //animateProperty(SCALE_X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -428,9 +431,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1158242404 =         th
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1523642537 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1523642537.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1523642537;
-        // ---------- Original Method ----------
-        //animatePropertyBy(SCALE_X, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -441,9 +444,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1523642537 =         th
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_513294736 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_513294736.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_513294736;
-        // ---------- Original Method ----------
-        //animateProperty(SCALE_Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -454,9 +457,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_513294736 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_880877931 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_880877931.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_880877931;
-        // ---------- Original Method ----------
-        //animatePropertyBy(SCALE_Y, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -467,9 +470,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_880877931 =         thi
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1541752079 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1541752079.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1541752079;
-        // ---------- Original Method ----------
-        //animateProperty(ALPHA, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -480,9 +483,9 @@ ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_1541752079 =         th
 ViewPropertyAnimator var72A74007B2BE62B849F475C7BDA4658B_208761936 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_208761936.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_208761936;
-        // ---------- Original Method ----------
-        //animatePropertyBy(ALPHA, value);
-        //return this;
+        
+        
+        
     }
 
     
@@ -497,25 +500,25 @@ for(int i = 0;i < propertyCount;++i)
         {
             NameValuesHolder nameValuesHolder = nameValueList.get(i);
             propertyMask |= nameValuesHolder.mNameConstant;
-        } //End block
+        } 
         mAnimatorMap.put(animator, new PropertyBundle(propertyMask, nameValueList));
         animator.addUpdateListener(mAnimatorEventListener);
         animator.addListener(mAnimatorEventListener);
     if(mStartDelaySet)        
         {
             animator.setStartDelay(mStartDelay);
-        } //End block
+        } 
     if(mDurationSet)        
         {
             animator.setDuration(mDuration);
-        } //End block
+        } 
     if(mInterpolatorSet)        
         {
             animator.setInterpolator(mInterpolator);
-        } //End block
+        } 
         animator.start();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -526,10 +529,10 @@ for(int i = 0;i < propertyCount;++i)
         float fromValue = getValue(constantName);
         float deltaValue = toValue - fromValue;
         animatePropertyBy(constantName, fromValue, deltaValue);
-        // ---------- Original Method ----------
-        //float fromValue = getValue(constantName);
-        //float deltaValue = toValue - fromValue;
-        //animatePropertyBy(constantName, fromValue, deltaValue);
+        
+        
+        
+        
     }
 
     
@@ -539,9 +542,9 @@ for(int i = 0;i < propertyCount;++i)
         addTaint(constantName);
         float fromValue = getValue(constantName);
         animatePropertyBy(constantName, fromValue, byValue);
-        // ---------- Original Method ----------
-        //float fromValue = getValue(constantName);
-        //animatePropertyBy(constantName, fromValue, byValue);
+        
+        
+        
     }
 
     
@@ -563,23 +566,24 @@ for(Animator runningAnim : animatorSet)
                     {
                         animatorToCancel = runningAnim;
                         break;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(animatorToCancel != null)            
             {
                 animatorToCancel.cancel();
-            } //End block
-        } //End block
+            } 
+        } 
         NameValuesHolder nameValuePair = new NameValuesHolder(constantName, startValue, byValue);
         mPendingAnimations.add(nameValuePair);
         mView.removeCallbacks(mAnimationStarter);
         mView.post(mAnimationStarter);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.635 -0400", hash_original_method = "543199367D6B4536DD4796BA994C91F7", hash_generated_method = "691352C82D26CDF5047A47150F705E2D")
     private void setValue(int propertyConstant, float value) {
         addTaint(value);
@@ -617,11 +621,12 @@ switch(propertyConstant){
         info.mAlpha = value;
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.636 -0400", hash_original_method = "7CFF5C0EAB5A873E8FB7B3F0396E6B5F", hash_generated_method = "4D1EE82F437469F20FF6F4C75A95CB72")
     private float getValue(int propertyConstant) {
         addTaint(propertyConstant);
@@ -670,8 +675,8 @@ switch(propertyConstant){
 }        float varCFCD208495D565EF66E7DFF9F98764DA_285314195 = (0);
                 float var546ADE640B6EDFBC8A086EF31347E768_1267318563 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1267318563;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -687,9 +692,9 @@ switch(propertyConstant){
           PropertyBundle(int propertyMask, ArrayList<NameValuesHolder> nameValuesHolder) {
             mPropertyMask = propertyMask;
             mNameValuesHolder = nameValuesHolder;
-            // ---------- Original Method ----------
-            //mPropertyMask = propertyMask;
-            //mNameValuesHolder = nameValuesHolder;
+            
+            
+            
         }
 
         
@@ -708,25 +713,25 @@ for(int i = 0;i < count;++i)
                         boolean varB326B5062B2F0E69046810717534CB09_1093415438 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_975278263 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_975278263;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_336096389 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387631143 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_387631143;
-            // ---------- Original Method ----------
-            //if ((mPropertyMask & propertyConstant) != 0 && mNameValuesHolder != null) {
-                //int count = mNameValuesHolder.size();
-                //for (int i = 0; i < count; ++i) {
-                    //NameValuesHolder nameValuesHolder = mNameValuesHolder.get(i);
-                    //if (nameValuesHolder.mNameConstant == propertyConstant) {
-                        //mNameValuesHolder.remove(i);
-                        //mPropertyMask &= ~propertyConstant;
-                        //return true;
-                    //}
-                //}
-            //}
-            //return false;
+            
+            
+                
+                
+                    
+                    
+                        
+                        
+                        
+                    
+                
+            
+            
         }
 
         
@@ -750,10 +755,10 @@ for(int i = 0;i < count;++i)
             mNameConstant = nameConstant;
             mFromValue = fromValue;
             mDeltaValue = deltaValue;
-            // ---------- Original Method ----------
-            //mNameConstant = nameConstant;
-            //mFromValue = fromValue;
-            //mDeltaValue = deltaValue;
+            
+            
+            
+            
         }
 
         
@@ -766,80 +771,80 @@ for(int i = 0;i < count;++i)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.638 -0400", hash_original_method = "583F783AF22881FEE7C79B0EC23630FE", hash_generated_method = "583F783AF22881FEE7C79B0EC23630FE")
         public AnimatorEventListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.639 -0400", hash_original_method = "F9860C292F584577E1CB80EC7999B7B9", hash_generated_method = "B43379B21AD61A37C99B1B5256FCA553")
         @Override
         public void onAnimationStart(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mListener != null)            
             {
                 mListener.onAnimationStart(animation);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //mListener.onAnimationStart(animation);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.639 -0400", hash_original_method = "F7FF3E25F5EB45E2838B85C55C1E6F41", hash_generated_method = "BBD6DA3EF6F22D20003390C199319635")
         @Override
         public void onAnimationCancel(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mListener != null)            
             {
                 mListener.onAnimationCancel(animation);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //mListener.onAnimationCancel(animation);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.639 -0400", hash_original_method = "B115085E9A5CEF09E5F889C8A8B6D805", hash_generated_method = "B2B2B47B2236FAD23981728E5EFAACF7")
         @Override
         public void onAnimationRepeat(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mListener != null)            
             {
                 mListener.onAnimationRepeat(animation);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //mListener.onAnimationRepeat(animation);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.639 -0400", hash_original_method = "A70C7A230A722F778ADFA14D1A0F2C8C", hash_generated_method = "D16D3C80558837551264F53DB56BF515")
         @Override
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mListener != null)            
             {
                 mListener.onAnimationEnd(animation);
-            } //End block
+            } 
             mAnimatorMap.remove(animation);
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //mListener.onAnimationEnd(animation);
-            //}
-            //mAnimatorMap.remove(animation);
+            
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:53.640 -0400", hash_original_method = "DF41E3115CE6BC840253482EC4390D2C", hash_generated_method = "8D5F6BC207128194608D29371BEE4934")
         @Override
         public void onAnimationUpdate(ValueAnimator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
             boolean alphaHandled = false;
             mView.invalidateParentCaches();
@@ -849,7 +854,7 @@ for(int i = 0;i < count;++i)
     if((propertyMask & TRANSFORM_MASK) != 0)            
             {
                 mView.invalidate(false);
-            } //End block
+            } 
             ArrayList<NameValuesHolder> valueList = propertyBundle.mNameValuesHolder;
     if(valueList != null)            
             {
@@ -861,21 +866,21 @@ for(int i = 0;i < count;++i)
     if(values.mNameConstant == ALPHA)                    
                     {
                         alphaHandled = mView.setAlphaNoInvalidation(value);
-                    } //End block
+                    } 
                     else
                     {
                         setValue(values.mNameConstant, value);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if((propertyMask & TRANSFORM_MASK) != 0)            
             {
                 mView.mTransformationInfo.mMatrixDirty = true;
                 mView.mPrivateFlags |= View.DRAWN;
-            } //End block
+            } 
             mView.invalidate(alphaHandled);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,11 +35,11 @@ public class Mac implements Cloneable {
         this.algorithm = algorithm;
         this.spiImpl = macSpi;
         this.isInitMac = false;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = macSpi;
-        //this.isInitMac = false;
+        
+        
+        
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ public class Mac implements Cloneable {
 String var44A46B4003FC81ACB0223385BA1FA818_1526371767 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1526371767.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1526371767;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1526371767 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -101,8 +101,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
         int var682E664C96A9B662D36EC2F18A07EE33_425966061 = (spiImpl.engineGetMacLength());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259289700 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1259289700;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetMacLength();
+        
+        
     }
 
     
@@ -115,15 +115,15 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             InvalidKeyException var561EB6DA7D886C25C659084459A45580_1060411852 = new InvalidKeyException("key == null");
             var561EB6DA7D886C25C659084459A45580_1060411852.addTaint(taint);
             throw var561EB6DA7D886C25C659084459A45580_1060411852;
-        } //End block
+        } 
         spiImpl.engineInit(key, params);
         isInitMac = true;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new InvalidKeyException("key == null");
-        //}
-        //spiImpl.engineInit(key, params);
-        //isInitMac = true;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -135,28 +135,28 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             InvalidKeyException var561EB6DA7D886C25C659084459A45580_1081346125 = new InvalidKeyException("key == null");
             var561EB6DA7D886C25C659084459A45580_1081346125.addTaint(taint);
             throw var561EB6DA7D886C25C659084459A45580_1081346125;
-        } //End block
+        } 
         try 
         {
             spiImpl.engineInit(key, null);
             isInitMac = true;
-        } //End block
+        } 
         catch (InvalidAlgorithmParameterException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_2062547285 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_2062547285.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_2062547285;
-        } //End block
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new InvalidKeyException("key == null");
-        //}
-        //try {
-            //spiImpl.engineInit(key, null);
-            //isInitMac = true;
-        //} catch (InvalidAlgorithmParameterException e) {
-            //throw new RuntimeException(e);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -168,13 +168,13 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1183650263 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1183650263.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1183650263;
-        } //End block
+        } 
         spiImpl.engineUpdate(input);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //spiImpl.engineUpdate(input);
+        
+        
+            
+        
+        
     }
 
     
@@ -188,29 +188,29 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1638611937 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1638611937.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1638611937;
-        } //End block
+        } 
     if(input == null)        
         {
             return;
-        } //End block
+        } 
     if((offset < 0) || (len < 0) || ((offset + len) > input.length))        
         {
             IllegalArgumentException varD90B7656D507A0AA47CF759577F77B0C_367006160 = new IllegalArgumentException("Incorrect arguments");
             varD90B7656D507A0AA47CF759577F77B0C_367006160.addTaint(taint);
             throw varD90B7656D507A0AA47CF759577F77B0C_367006160;
-        } //End block
+        } 
         spiImpl.engineUpdate(input, offset, len);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input == null) {
-            //return;
-        //}
-        //if ((offset < 0) || (len < 0) || ((offset + len) > input.length)) {
-            //throw new IllegalArgumentException("Incorrect arguments");
-        //}
-        //spiImpl.engineUpdate(input, offset, len);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -222,18 +222,18 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1896957777 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1896957777.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1896957777;
-        } //End block
+        } 
     if(input != null)        
         {
             spiImpl.engineUpdate(input, 0, input.length);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input, 0, input.length);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -245,26 +245,26 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_2122117791 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_2122117791.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_2122117791;
-        } //End block
+        } 
     if(input != null)        
         {
             spiImpl.engineUpdate(input);
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var6A6A965F33A186280ACCE222064E6554_868155812 = new IllegalArgumentException("input == null");
             var6A6A965F33A186280ACCE222064E6554_868155812.addTaint(taint);
             throw var6A6A965F33A186280ACCE222064E6554_868155812;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input);
-        //} else {
-            //throw new IllegalArgumentException("input == null");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -275,15 +275,15 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_89173384 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_89173384.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_89173384;
-        } //End block
+        } 
         byte[] var3F88785EF2C499F8A050A47ED1CB1FEC_1683941287 = (spiImpl.engineDoFinal());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1573447716 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1573447716;
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //return spiImpl.engineDoFinal();
+        
+        
+            
+        
+        
     }
 
     
@@ -296,44 +296,44 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1120909100 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1120909100.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1120909100;
-        } //End block
+        } 
     if(output == null)        
         {
             ShortBufferException var446DDB2F8E22809C1F40C876189351CE_493492827 = new ShortBufferException("output == null");
             var446DDB2F8E22809C1F40C876189351CE_493492827.addTaint(taint);
             throw var446DDB2F8E22809C1F40C876189351CE_493492827;
-        } //End block
+        } 
     if((outOffset < 0) || (outOffset >= output.length))        
         {
             ShortBufferException var7124C6EE3399F2D7037D3A40381E1031_303776403 = new ShortBufferException("Incorrect outOffset: " + outOffset);
             var7124C6EE3399F2D7037D3A40381E1031_303776403.addTaint(taint);
             throw var7124C6EE3399F2D7037D3A40381E1031_303776403;
-        } //End block
+        } 
         int t = spiImpl.engineGetMacLength();
     if(t > (output.length - outOffset))        
         {
             ShortBufferException varF7322BC0E6DACB842D8025AEE0CA403D_1472354140 = new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
             varF7322BC0E6DACB842D8025AEE0CA403D_1472354140.addTaint(taint);
             throw varF7322BC0E6DACB842D8025AEE0CA403D_1472354140;
-        } //End block
+        } 
         byte[] result = spiImpl.engineDoFinal();
         System.arraycopy(result, 0, output, outOffset, result.length);
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (output == null) {
-            //throw new ShortBufferException("output == null");
-        //}
-        //if ((outOffset < 0) || (outOffset >= output.length)) {
-            //throw new ShortBufferException("Incorrect outOffset: " + outOffset);
-        //}
-        //int t = spiImpl.engineGetMacLength();
-        //if (t > (output.length - outOffset)) {
-            //throw new ShortBufferException("Output buffer is short. Needed " + t + " bytes.");
-        //}
-        //byte[] result = spiImpl.engineDoFinal();
-        //System.arraycopy(result, 0, output, outOffset, result.length);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -345,30 +345,30 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_162775757 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_162775757.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_162775757;
-        } //End block
+        } 
     if(input != null)        
         {
             spiImpl.engineUpdate(input, 0, input.length);
-        } //End block
+        } 
         byte[] var3F88785EF2C499F8A050A47ED1CB1FEC_1181437009 = (spiImpl.engineDoFinal());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_9438314 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_9438314;
-        // ---------- Original Method ----------
-        //if (!isInitMac) {
-            //throw new IllegalStateException();
-        //}
-        //if (input != null) {
-            //spiImpl.engineUpdate(input, 0, input.length);
-        //}
-        //return spiImpl.engineDoFinal();
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.327 -0400", hash_original_method = "81378E48B4C25C37826FA808778D1291", hash_generated_method = "77C57E72DC7D91B702D238A17B41BD51")
     public final void reset() {
         spiImpl.engineReset();
-        // ---------- Original Method ----------
-        //spiImpl.engineReset();
+        
+        
     }
 
     
@@ -381,11 +381,11 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1985049098 =         provider;
 Object var36DD9F01D73A338B6C55C831B6AFFC27_222171004 =         mac;
         var36DD9F01D73A338B6C55C831B6AFFC27_222171004.addTaint(taint);
         return var36DD9F01D73A338B6C55C831B6AFFC27_222171004;
-        // ---------- Original Method ----------
-        //MacSpi newSpiImpl = (MacSpi)spiImpl.clone();
-        //Mac mac = new Mac(newSpiImpl, this.provider, this.algorithm);
-        //mac.isInitMac = this.isInitMac;
-        //return mac;
+        
+        
+        
+        
+        
     }
 
     

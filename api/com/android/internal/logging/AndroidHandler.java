@@ -1,6 +1,6 @@
 package com.android.internal.logging;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,22 +20,24 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.682 -0400", hash_original_method = "3144D6BF2066D661F792BBA409558AA4", hash_generated_method = "499BDCB128B25531C4DD756ECC316A4F")
     public  AndroidHandler() {
         setFormatter(THE_FORMATTER);
-        // ---------- Original Method ----------
-        //setFormatter(THE_FORMATTER);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.682 -0400", hash_original_method = "B96EF178F3ED1A0DFACDA94649407E5C", hash_generated_method = "1A3F8C083102602A57FB2D0CBE40EA76")
     @Override
     public void close() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.682 -0400", hash_original_method = "336EB9AA03C5B902D3CE726BD69F433F", hash_generated_method = "4A4713C8ADAF7778CF4E4BBDA39355C2")
     @Override
     public void flush() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,27 +50,27 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     if(!Log.isLoggable(tag, level))        
         {
             return;
-        } //End block
+        } 
         try 
         {
             String message = getFormatter().format(record);
             Log.println(level, tag, message);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //int level = getAndroidLevel(record.getLevel());
-        //String tag = DalvikLogging.loggerNameToTag(record.getLoggerName());
-        //if (!Log.isLoggable(tag, level)) {
-            //return;
-        //}
-        //try {
-            //String message = getFormatter().format(record);
-            //Log.println(level, tag, message);
-        //} catch (RuntimeException e) {
-            //Log.e("AndroidHandler", "Error logging message.", e);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -82,24 +84,24 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
     if(!Log.isLoggable(tag, priority))        
         {
             return;
-        } //End block
+        } 
         try 
         {
             Log.println(priority, tag, message);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //int priority = getAndroidLevel(level);
-        //if (!Log.isLoggable(tag, priority)) {
-            //return;
-        //}
-        //try {
-            //Log.println(priority, tag, message);
-        //} catch (RuntimeException e) {
-            //Log.e("AndroidHandler", "Error logging message.", e);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     

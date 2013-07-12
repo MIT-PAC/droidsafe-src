@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public class BufferedHeader implements FormattedHeader, Cloneable {
                 ("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1271235949.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1271235949;
-        } //End block
+        } 
         int colon = buffer.indexOf(':');
     if(colon == -1)        
         {
@@ -37,7 +37,7 @@ public class BufferedHeader implements FormattedHeader, Cloneable {
                 ("Invalid header: " + buffer.toString());
             var6CD3B9FDB67218CCBB140415D6E38E41_532588405.addTaint(taint);
             throw var6CD3B9FDB67218CCBB140415D6E38E41_532588405;
-        } //End block
+        } 
         String s = buffer.substringTrimmed(0, colon);
     if(s.length() == 0)        
         {
@@ -45,38 +45,39 @@ public class BufferedHeader implements FormattedHeader, Cloneable {
                 ("Invalid header: " + buffer.toString());
             var6CD3B9FDB67218CCBB140415D6E38E41_1089364791.addTaint(taint);
             throw var6CD3B9FDB67218CCBB140415D6E38E41_1089364791;
-        } //End block
+        } 
         this.buffer = buffer;
         this.name = s;
         this.valuePos = colon + 1;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException
-                //("Char array buffer may not be null");
-        //}
-        //int colon = buffer.indexOf(':');
-        //if (colon == -1) {
-            //throw new ParseException
-                //("Invalid header: " + buffer.toString());
-        //}
-        //String s = buffer.substringTrimmed(0, colon);
-        //if (s.length() == 0) {
-            //throw new ParseException
-                //("Invalid header: " + buffer.toString());
-        //}
-        //this.buffer = buffer;
-        //this.name = s;
-        //this.valuePos = colon + 1;
+        
+        
+            
+                
+        
+        
+        
+            
+                
+        
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.713 -0400", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "78037CBB8BE9FC80A2DE95A780452D01")
     public String getName() {
 String varDC708CD29829AA84C3F2D9B68CF84B0D_1945637881 =         this.name;
         varDC708CD29829AA84C3F2D9B68CF84B0D_1945637881.addTaint(taint);
         return varDC708CD29829AA84C3F2D9B68CF84B0D_1945637881;
-        // ---------- Original Method ----------
-        //return this.name;
+        
+        
     }
 
     
@@ -85,8 +86,8 @@ String varDC708CD29829AA84C3F2D9B68CF84B0D_1945637881 =         this.name;
 String varCDE153C7C83987B368C3E568152249DB_1233022702 =         this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
         varCDE153C7C83987B368C3E568152249DB_1233022702.addTaint(taint);
         return varCDE153C7C83987B368C3E568152249DB_1233022702;
-        // ---------- Original Method ----------
-        //return this.buffer.substringTrimmed(this.valuePos, this.buffer.length());
+        
+        
     }
 
     
@@ -98,31 +99,33 @@ HeaderElement[] varA090F3687291CDA6DAF632EEA41ADCCE_614256499 =         BasicHea
             .parseElements(this.buffer, cursor);
         varA090F3687291CDA6DAF632EEA41ADCCE_614256499.addTaint(taint);
         return varA090F3687291CDA6DAF632EEA41ADCCE_614256499;
-        // ---------- Original Method ----------
-        //ParserCursor cursor = new ParserCursor(0, this.buffer.length());
-        //cursor.updatePos(this.valuePos);
-        //return BasicHeaderValueParser.DEFAULT
-            //.parseElements(this.buffer, cursor);
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.714 -0400", hash_original_method = "E7695A6E14F12AF4805392BEA2D5CE64", hash_generated_method = "76D2A5E66295D2EF8CDA3D17579FDDE2")
     public int getValuePos() {
         int var1747919CF5DB41B03F9FEE684F69A6A5_798550243 = (this.valuePos);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124787103 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124787103;
-        // ---------- Original Method ----------
-        //return this.valuePos;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.714 -0400", hash_original_method = "E316E251CD3E3ED3EEAF4AEFCAA1831D", hash_generated_method = "6F96B3C30AF0A906BD7AAC50F06EF0DA")
     public CharArrayBuffer getBuffer() {
 CharArrayBuffer var45A7A4931E21905A5463F27B77E1344A_542388146 =         this.buffer;
         var45A7A4931E21905A5463F27B77E1344A_542388146.addTaint(taint);
         return var45A7A4931E21905A5463F27B77E1344A_542388146;
-        // ---------- Original Method ----------
-        //return this.buffer;
+        
+        
     }
 
     
@@ -131,8 +134,8 @@ CharArrayBuffer var45A7A4931E21905A5463F27B77E1344A_542388146 =         this.buf
 String var7B8BB72F06E6A8EB72498BA3268BFE1C_146655686 =         this.buffer.toString();
         var7B8BB72F06E6A8EB72498BA3268BFE1C_146655686.addTaint(taint);
         return var7B8BB72F06E6A8EB72498BA3268BFE1C_146655686;
-        // ---------- Original Method ----------
-        //return this.buffer.toString();
+        
+        
     }
 
     
@@ -141,8 +144,8 @@ String var7B8BB72F06E6A8EB72498BA3268BFE1C_146655686 =         this.buffer.toStr
 Object var46F3A0D86742C1D6E099C2B166941A33_992817331 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_992817331.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_992817331;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     

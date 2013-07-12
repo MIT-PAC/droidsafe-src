@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -60,19 +60,19 @@ public class Input implements Parcelable {
         yesNo = false;
         helpAvailable = false;
         duration = null;
-        // ---------- Original Method ----------
-        //text = "";
-        //defaultText = null;
-        //icon = null;
-        //minLen = 0;
-        //maxLen = 1;
-        //ucs2 = false;
-        //packed = false;
-        //digitOnly = false;
-        //echo = false;
-        //yesNo = false;
-        //helpAvailable = false;
-        //duration = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -90,32 +90,34 @@ public class Input implements Parcelable {
         yesNo = in.readInt() == 1 ? true : false;
         helpAvailable = in.readInt() == 1 ? true : false;
         duration = in.readParcelable(null);
-        // ---------- Original Method ----------
-        //text = in.readString();
-        //defaultText = in.readString();
-        //icon = in.readParcelable(null);
-        //minLen = in.readInt();
-        //maxLen = in.readInt();
-        //ucs2 = in.readInt() == 1 ? true : false;
-        //packed = in.readInt() == 1 ? true : false;
-        //digitOnly = in.readInt() == 1 ? true : false;
-        //echo = in.readInt() == 1 ? true : false;
-        //yesNo = in.readInt() == 1 ? true : false;
-        //helpAvailable = in.readInt() == 1 ? true : false;
-        //duration = in.readParcelable(null);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.301 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6D4344D8B7F3E5BF30F14BDF54AACB82")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_578195277 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_780337044 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_780337044;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.302 -0400", hash_original_method = "B53B93ABACC072A2D5F958A02DC16FEB", hash_generated_method = "62FE11E4E09A13FA877C65CE5133C729")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -132,30 +134,31 @@ public class Input implements Parcelable {
         dest.writeInt(yesNo ? 1 : 0);
         dest.writeInt(helpAvailable ? 1 : 0);
         dest.writeParcelable(duration, 0);
-        // ---------- Original Method ----------
-        //dest.writeString(text);
-        //dest.writeString(defaultText);
-        //dest.writeParcelable(icon, 0);
-        //dest.writeInt(minLen);
-        //dest.writeInt(maxLen);
-        //dest.writeInt(ucs2 ? 1 : 0);
-        //dest.writeInt(packed ? 1 : 0);
-        //dest.writeInt(digitOnly ? 1 : 0);
-        //dest.writeInt(echo ? 1 : 0);
-        //dest.writeInt(yesNo ? 1 : 0);
-        //dest.writeInt(helpAvailable ? 1 : 0);
-        //dest.writeParcelable(duration, 0);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.303 -0400", hash_original_method = "B234C4FFCAD94565C16D3A43A2454835", hash_generated_method = "7EC097EFE7AF104EBEA282B3AB0EDC91")
      boolean setIcon(Bitmap Icon) {
         addTaint(Icon.getTaint());
         boolean varB326B5062B2F0E69046810717534CB09_580562060 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_219682180 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_219682180;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -170,12 +173,12 @@ public class Input implements Parcelable {
             return new Input[size];
         }
     };
-    // orphaned legacy method
+    
     public Input createFromParcel(Parcel in) {
             return new Input(in);
         }
     
-    // orphaned legacy method
+    
     public Input[] newArray(int size) {
             return new Input[size];
         }

@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class GsmAlphabet {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.806 -0400", hash_original_method = "ACEB66A7A5EB57C667A16876F7FFD7A1", hash_generated_method = "9D914C4804B753FB0D925E0024275993")
     private  GsmAlphabet() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -162,7 +162,8 @@ public class GsmAlphabet {
     }
 
     
-        private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
+        @DSModeled(DSC.SAFE)
+    private static void packSmsChar(byte[] packedChars, int bitOffset, int value) {
         int byteOffset = bitOffset / 8;
         int shift = bitOffset % 8;
         packedChars[++byteOffset] |= value << shift;
@@ -525,7 +526,8 @@ public class GsmAlphabet {
     }
 
     
-        static synchronized void setEnabledSingleShiftTables(int[] tables) {
+        @DSModeled(DSC.SAFE)
+    static synchronized void setEnabledSingleShiftTables(int[] tables) {
         sEnabledSingleShiftTables = tables;
         if (tables.length > 0) {
             sHighestEnabledSingleShiftCode = tables[tables.length - 1];
@@ -535,17 +537,20 @@ public class GsmAlphabet {
     }
 
     
-        static synchronized void setEnabledLockingShiftTables(int[] tables) {
+        @DSModeled(DSC.SAFE)
+    static synchronized void setEnabledLockingShiftTables(int[] tables) {
         sEnabledLockingShiftTables = tables;
     }
 
     
-        static synchronized int[] getEnabledSingleShiftTables() {
+        @DSModeled(DSC.SAFE)
+    static synchronized int[] getEnabledSingleShiftTables() {
         return sEnabledSingleShiftTables;
     }
 
     
-        static synchronized int[] getEnabledLockingShiftTables() {
+        @DSModeled(DSC.SAFE)
+    static synchronized int[] getEnabledLockingShiftTables() {
         return sEnabledLockingShiftTables;
     }
 
@@ -572,38 +577,38 @@ for(int i = 1, tableOffset = 0;i <= maxSingleShiftCode;i++)
     if(sEnabledSingleShiftTables[tableOffset] == i)                
                 {
                     tableOffset++;
-                } //End block
+                } 
                 else
                 {
                     septetCounts[i] = -1;
-                } //End block
-            } //End block
+                } 
+            } 
     if(code == 1 && maxSingleShiftCode >= 1)            
             {
                 septetCounts[1] = -1;
-            } //End block
+            } 
             else
     if(code == 3 && maxSingleShiftCode >= 2)            
             {
                 septetCounts[2] = -1;
-            } //End block
-            // ---------- Original Method ----------
-            //this.languageCode = code;
-            //int maxSingleShiftCode = sHighestEnabledSingleShiftCode;
-            //septetCounts = new int[maxSingleShiftCode + 1];
-            //unencodableCounts = new int[maxSingleShiftCode + 1];
-            //for (int i = 1, tableOffset = 0; i <= maxSingleShiftCode; i++) {
-                //if (sEnabledSingleShiftTables[tableOffset] == i) {
-                    //tableOffset++;
-                //} else {
-                    //septetCounts[i] = -1;   
-                //}
-            //}
-            //if (code == 1 && maxSingleShiftCode >= 1) {
-                //septetCounts[1] = -1;   
-            //} else if (code == 3 && maxSingleShiftCode >= 2) {
-                //septetCounts[2] = -1;   
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+                
+                    
+                
+                    
+                
+            
+            
+                
+            
+                
+            
         }
 
         

@@ -1,6 +1,6 @@
 package android.net.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -82,10 +82,10 @@ public class SipAudioCall {
         mContext = context;
         mLocalProfile = localProfile;
         mWm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mLocalProfile = localProfile;
-        //mWm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        
+        
+        
+        
     }
 
     
@@ -93,8 +93,8 @@ public class SipAudioCall {
     public void setListener(SipAudioCall.Listener listener) {
         addTaint(listener.getTaint());
         setListener(listener, false);
-        // ---------- Original Method ----------
-        //setListener(listener, false);
+        
+        
     }
 
     
@@ -107,24 +107,24 @@ public class SipAudioCall {
         {
     if((listener == null) || !callbackImmediately)            
             {
-            } //End block
+            } 
             else
     if(mErrorCode != SipErrorCode.NO_ERROR)            
             {
                 listener.onError(this, mErrorCode, mErrorMessage);
-            } //End block
+            } 
             else
     if(mInCall)            
             {
     if(mHold)                
                 {
                     listener.onCallHeld(this);
-                } //End block
+                } 
                 else
                 {
                     listener.onCallEstablished(this);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 int state = getState();
@@ -142,16 +142,17 @@ switch(state){
                 listener.onRingingBack(this);
                 break;
 }
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Throwable t)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.281 -0400", hash_original_method = "5739155C46DD20825CE1C589327CD281", hash_generated_method = "D8FB1E21FD941CB6E9CB63AEB8E66B87")
     public boolean isInCall() {
         synchronized
@@ -159,14 +160,15 @@ switch(state){
             boolean var029969C04EB46A7AE3BF4D86DDAFBBE9_163595196 = (mInCall);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_99573723 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_99573723;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mInCall;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.281 -0400", hash_original_method = "2FD69B096455E1B51D801F19A8DBFD35", hash_generated_method = "4A8F7FD0360C11AD8600419C236C3EE9")
     public boolean isOnHold() {
         synchronized
@@ -174,19 +176,19 @@ switch(state){
             boolean var27ED35B893B6B9D6977636C4667DE0BF_1255726212 = (mHold);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_326512738 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_326512738;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mHold;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.282 -0400", hash_original_method = "597B95CEB5AFD05C977FB508D047C50E", hash_generated_method = "21668DF8FDBDBCA1A469227829ADE78B")
     public void close() {
         close(true);
-        // ---------- Original Method ----------
-        //close(true);
+        
+        
     }
 
     
@@ -204,21 +206,22 @@ switch(state){
         {
             mSipSession.setListener(null);
             mSipSession = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (closeRtp) stopCall(RELEASE_SOCKET);
-        //mInCall = false;
-        //mHold = false;
-        //mSessionId = System.currentTimeMillis();
-        //mErrorCode = SipErrorCode.NO_ERROR;
-        //mErrorMessage = null;
-        //if (mSipSession != null) {
-            //mSipSession.setListener(null);
-            //mSipSession = null;
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.282 -0400", hash_original_method = "A61765ACD427BC1BAFB034CDA7289AED", hash_generated_method = "4C43228FE85993411C06ADE533F519C3")
     public SipProfile getLocalProfile() {
         synchronized
@@ -226,11 +229,11 @@ switch(state){
 SipProfile var435CC30651DB1BF41891A0CDD6107277_498183144 =             mLocalProfile;
             var435CC30651DB1BF41891A0CDD6107277_498183144.addTaint(taint);
             return var435CC30651DB1BF41891A0CDD6107277_498183144;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mLocalProfile;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -241,11 +244,11 @@ SipProfile var435CC30651DB1BF41891A0CDD6107277_498183144 =             mLocalPro
 SipProfile var1F5B6E206EF352601A1166F3159D4E4E_52229583 =             (mSipSession == null) ? null : mSipSession.getPeerProfile();
             var1F5B6E206EF352601A1166F3159D4E4E_52229583.addTaint(taint);
             return var1F5B6E206EF352601A1166F3159D4E4E_52229583;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return (mSipSession == null) ? null : mSipSession.getPeerProfile();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -262,15 +265,16 @@ SipProfile var1F5B6E206EF352601A1166F3159D4E4E_52229583 =             (mSipSessi
             int var8CEF1F27D8AE093B3E141AB7E6C7E59D_485200781 = (mSipSession.getState());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200411733 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_200411733;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mSipSession == null) return SipSession.State.READY_TO_CALL;
-            //return mSipSession.getState();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.283 -0400", hash_original_method = "9DD9B38A5D2A310FA14C467CD9F0FD11", hash_generated_method = "A951FEBEAC85DCDA6053D7AC45880E3B")
     public SipSession getSipSession() {
         synchronized
@@ -278,11 +282,11 @@ SipProfile var1F5B6E206EF352601A1166F3159D4E4E_52229583 =             (mSipSessi
 SipSession varC0E7CBD9D248459FA598C4FAB18B8428_2067705405 =             mSipSession;
             varC0E7CBD9D248459FA598C4FAB18B8428_2067705405.addTaint(taint);
             return varC0E7CBD9D248459FA598C4FAB18B8428_2067705405;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mSipSession;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -296,38 +300,38 @@ SipSession varC0E7CBD9D248459FA598C4FAB18B8428_2067705405 =             mSipSess
     if(mAudioStream != null)        
         {
             mAudioStream.join(null);
-        } //End block
+        } 
         else
         {
             try 
             {
                 mAudioStream = new AudioStream(InetAddress.getByName(
                         getLocalIp()));
-            } //End block
+            } 
             catch (Throwable t)
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(origin != null)        
         origin.endCall();
         startAudio();
-        // ---------- Original Method ----------
-        //if (mTransferringSession == null) return;
-        //SipSession origin = mSipSession;
-        //mSipSession = mTransferringSession;
-        //mTransferringSession = null;
-        //if (mAudioStream != null) {
-            //mAudioStream.join(null);
-        //} else {
-            //try {
-                //mAudioStream = new AudioStream(InetAddress.getByName(
-                        //getLocalIp()));
-            //} catch (Throwable t) {
-                //Log.i(TAG, "transferToNewSession(): " + t);
-            //}
-        //}
-        //if (origin != null) origin.endCall();
-        //startAudio();
+        
+        
+        
+        
+        
+        
+            
+        
+            
+                
+                        
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -337,7 +341,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.287 -0400", hash_original_method = "0B4EFC2EA5E0F3FF31D08EEDE61256FC", hash_generated_method = "5202870B0DE4A45D21019912E0E67697")
         @Override
         public void onCalling(SipSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(session.getTaint());
             Log.d(TAG, "calling... " + session);
             Listener listener = mListener;
@@ -346,26 +350,26 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 try 
                 {
                     listener.onCalling(SipAudioCall.this);
-                } //End block
+                } 
                 catch (Throwable t)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //Log.d(TAG, "calling... " + session);
-            //Listener listener = mListener;
-            //if (listener != null) {
-                    //try {
-                        //listener.onCalling(SipAudioCall.this);
-                    //} catch (Throwable t) {
-                        //Log.i(TAG, "onCalling(): " + t);
-                    //}
-                //}
+                } 
+            } 
+            
+            
+            
+            
+                    
+                        
+                    
+                        
+                    
+                
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.287 -0400", hash_original_method = "FA01AFE96119E691A320DB4A08849437", hash_generated_method = "9BA159F9DD1889EB9859EC9A43AAFC4E")
         @Override
         public void onRingingBack(SipSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(session.getTaint());
             Log.d(TAG, "sip call ringing back: " + session);
             Listener listener = mListener;
@@ -374,27 +378,27 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 try 
                 {
                     listener.onRingingBack(SipAudioCall.this);
-                } //End block
+                } 
                 catch (Throwable t)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //Log.d(TAG, "sip call ringing back: " + session);
-            //Listener listener = mListener;
-            //if (listener != null) {
-                    //try {
-                        //listener.onRingingBack(SipAudioCall.this);
-                    //} catch (Throwable t) {
-                        //Log.i(TAG, "onRingingBack(): " + t);
-                    //}
-                //}
+                } 
+            } 
+            
+            
+            
+            
+                    
+                        
+                    
+                        
+                    
+                
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.287 -0400", hash_original_method = "7370CA2F33F803A4BC98509DFD10599B", hash_generated_method = "E6157A92F7DB0003E885EEF890DE95E4")
         @Override
         public void onRinging(SipSession session,
                     SipProfile peerProfile, String sessionDescription) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(sessionDescription.getTaint());
             addTaint(peerProfile.getTaint());
             addTaint(session.getTaint());
@@ -406,39 +410,39 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 {
                     session.endCall();
                     return;
-                } //End block
+                } 
                 try 
                 {
                     String answer = createAnswer(sessionDescription).encode();
                     mSipSession.answerCall(answer, SESSION_TIMEOUT);
-                } //End block
+                } 
                 catch (Throwable e)
                 {
                     session.endCall();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (SipAudioCall.this) {
-                    //if ((mSipSession == null) || !mInCall
-                            //|| !session.getCallId().equals(
-                                    //mSipSession.getCallId())) {
-                        //session.endCall();
-                        //return;
-                    //}
-                    //try {
-                        //String answer = createAnswer(sessionDescription).encode();
-                        //mSipSession.answerCall(answer, SESSION_TIMEOUT);
-                    //} catch (Throwable e) {
-                        //Log.e(TAG, "onRinging()", e);
-                        //session.endCall();
-                    //}
-                //}
+                } 
+            } 
+            
+            
+                    
+                            
+                                    
+                        
+                        
+                    
+                    
+                        
+                        
+                    
+                        
+                        
+                    
+                
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.288 -0400", hash_original_method = "40BF40985539E4127A37E81035B80A7A", hash_generated_method = "A21F153074FA3366CBF54F1E85DFEAB2")
         @Override
         public void onCallEstablished(SipSession session,
                     String sessionDescription) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(sessionDescription.getTaint());
             addTaint(session.getTaint());
             mPeerSd = sessionDescription;
@@ -447,7 +451,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             {
                 transferToNewSession();
                 return;
-            } //End block
+            } 
             Listener listener = mListener;
     if(listener != null)            
             {
@@ -456,48 +460,48 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
     if(mHold)                    
                     {
                         listener.onCallHeld(SipAudioCall.this);
-                    } //End block
+                    } 
                     else
                     {
                         listener.onCallEstablished(SipAudioCall.this);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (Throwable t)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //mPeerSd = sessionDescription;
-            //Log.v(TAG, "onCallEstablished()" + mPeerSd);
-            //if ((mTransferringSession != null)
-                        //&& (session == mTransferringSession)) {
-                    //transferToNewSession();
-                    //return;
-                //}
-            //Listener listener = mListener;
-            //if (listener != null) {
-                    //try {
-                        //if (mHold) {
-                            //listener.onCallHeld(SipAudioCall.this);
-                        //} else {
-                            //listener.onCallEstablished(SipAudioCall.this);
-                        //}
-                    //} catch (Throwable t) {
-                        //Log.i(TAG, "onCallEstablished(): " + t);
-                    //}
-                //}
+                } 
+            } 
+            
+            
+            
+            
+                        
+                    
+                    
+                
+            
+            
+                    
+                        
+                            
+                        
+                            
+                        
+                    
+                        
+                    
+                
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.288 -0400", hash_original_method = "1DE904A1CABA70AB1A25A453A4094AFC", hash_generated_method = "A450206D97EDFDDDE88414E7D8BEB597")
         @Override
         public void onCallEnded(SipSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(session.getTaint());
             Log.d(TAG, "sip call ended: " + session + " mSipSession:" + mSipSession);
     if(session == mTransferringSession)            
             {
                 mTransferringSession = null;
                 return;
-            } //End block
+            } 
     if((mTransferringSession != null) ||
                     (session != mSipSession))            
             return;
@@ -507,34 +511,34 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 try 
                 {
                     listener.onCallEnded(SipAudioCall.this);
-                } //End block
+                } 
                 catch (Throwable t)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             close();
-            // ---------- Original Method ----------
-            //Log.d(TAG, "sip call ended: " + session + " mSipSession:" + mSipSession);
-            //if (session == mTransferringSession) {
-                    //mTransferringSession = null;
-                    //return;
-                //}
-            //if ((mTransferringSession != null) ||
-                    //(session != mSipSession)) return;
-            //Listener listener = mListener;
-            //if (listener != null) {
-                    //try {
-                        //listener.onCallEnded(SipAudioCall.this);
-                    //} catch (Throwable t) {
-                        //Log.i(TAG, "onCallEnded(): " + t);
-                    //}
-                //}
-            //close();
+            
+            
+            
+                    
+                    
+                
+            
+                    
+            
+            
+                    
+                        
+                    
+                        
+                    
+                
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.289 -0400", hash_original_method = "3CC4E6D954281F2D5FD31AADF17A6DC9", hash_generated_method = "11462D591CE55AB7CB25CF3742988779")
         @Override
         public void onCallBusy(SipSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(session.getTaint());
             Log.d(TAG, "sip call busy: " + session);
             Listener listener = mListener;
@@ -543,29 +547,29 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 try 
                 {
                     listener.onCallBusy(SipAudioCall.this);
-                } //End block
+                } 
                 catch (Throwable t)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             close(false);
-            // ---------- Original Method ----------
-            //Log.d(TAG, "sip call busy: " + session);
-            //Listener listener = mListener;
-            //if (listener != null) {
-                    //try {
-                        //listener.onCallBusy(SipAudioCall.this);
-                    //} catch (Throwable t) {
-                        //Log.i(TAG, "onCallBusy(): " + t);
-                    //}
-                //}
-            //close(false);
+            
+            
+            
+            
+                    
+                        
+                    
+                        
+                    
+                
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.289 -0400", hash_original_method = "16D7065ED36A3B723322ABAA4FB7FA22", hash_generated_method = "BB5DA898AFA1A9FC460707DFD96278EB")
         @Override
         public void onCallChangeFailed(SipSession session, int errorCode,
                     String message) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(message.getTaint());
             addTaint(errorCode);
             addTaint(session.getTaint());
@@ -579,74 +583,74 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 {
                     listener.onError(SipAudioCall.this, mErrorCode,
                                 message);
-                } //End block
+                } 
                 catch (Throwable t)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //Log.d(TAG, "sip call change failed: " + message);
-            //mErrorCode = errorCode;
-            //mErrorMessage = message;
-            //Listener listener = mListener;
-            //if (listener != null) {
-                    //try {
-                        //listener.onError(SipAudioCall.this, mErrorCode,
-                                //message);
-                    //} catch (Throwable t) {
-                        //Log.i(TAG, "onCallBusy(): " + t);
-                    //}
-                //}
+                } 
+            } 
+            
+            
+            
+            
+            
+            
+                    
+                        
+                                
+                    
+                        
+                    
+                
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.289 -0400", hash_original_method = "F58D9162CF10989F568AF55ED18D4C89", hash_generated_method = "87C07FE4E8C14A3E09B742E2A4FECA2C")
         @Override
         public void onError(SipSession session, int errorCode,
                     String message) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(message.getTaint());
             addTaint(errorCode);
             addTaint(session.getTaint());
             SipAudioCall.this.onError(errorCode, message);
-            // ---------- Original Method ----------
-            //SipAudioCall.this.onError(errorCode, message);
+            
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.289 -0400", hash_original_method = "20558DF6BFC1217A7001B14AA50A9A03", hash_generated_method = "F300F8563E2587C43E9A378D2BD8E08B")
         @Override
         public void onRegistering(SipSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.289 -0400", hash_original_method = "43D598AFE19AB6009363638DB64C1F7B", hash_generated_method = "86A86E3C8876E69F7313F986859C72AD")
         @Override
         public void onRegistrationTimeout(SipSession session) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.290 -0400", hash_original_method = "E69FEDA3BC0AF93EB01ADFD4BE332B13", hash_generated_method = "3AEC36D4EFA6F63878CA08B8E3AF5556")
         @Override
         public void onRegistrationFailed(SipSession session, int errorCode,
                     String message) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(message.getTaint());
             addTaint(errorCode);
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.290 -0400", hash_original_method = "7504CEF239C11FEA532F08720FD2042B", hash_generated_method = "CAF2CF01272249C84CB83D8CFB4868BD")
         @Override
         public void onRegistrationDone(SipSession session, int duration) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(duration);
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.290 -0400", hash_original_method = "5F9A92DE1F30C09A899AB4EFC4F87B6D", hash_generated_method = "F5D8488E0997CB696B463C4487D5AA10")
         @Override
         public void onCallTransferring(SipSession newSession,
                     String sessionDescription) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(sessionDescription.getTaint());
             addTaint(newSession.getTaint());
             mTransferringSession = newSession;
@@ -656,39 +660,39 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 {
                     newSession.makeCall(newSession.getPeerProfile(),
                                 createOffer().encode(), TRANSFER_TIMEOUT);
-                } //End block
+                } 
                 else
                 {
                     String answer = createAnswer(sessionDescription).encode();
                     newSession.answerCall(answer, SESSION_TIMEOUT);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (Throwable e)
             {
                 newSession.endCall();
-            } //End block
-            // ---------- Original Method ----------
-            //Log.v(TAG, "onCallTransferring mSipSession:"
-                        //+ mSipSession + " newSession:" + newSession);
-            //mTransferringSession = newSession;
-            //try {
-                    //if (sessionDescription == null) {
-                        //newSession.makeCall(newSession.getPeerProfile(),
-                                //createOffer().encode(), TRANSFER_TIMEOUT);
-                    //} else {
-                        //String answer = createAnswer(sessionDescription).encode();
-                        //newSession.answerCall(answer, SESSION_TIMEOUT);
-                    //}
-                //} catch (Throwable e) {
-                    //Log.e(TAG, "onCallTransferring()", e);
-                    //newSession.endCall();
-                //}
+            } 
+            
+            
+                        
+            
+            
+                    
+                        
+                                
+                    
+                        
+                        
+                    
+                
+                    
+                    
+                
         }
 };
         var471FDD296ED6D8C124DBA353D5A605DC_85907350.addTaint(taint);
         return var471FDD296ED6D8C124DBA353D5A605DC_85907350;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -704,38 +708,38 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             try 
             {
                 listener.onError(this, errorCode, message);
-            } //End block
+            } 
             catch (Throwable t)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         synchronized
 (this)        {
     if((errorCode == SipErrorCode.DATA_CONNECTION_LOST)
                     || !isInCall())            
             {
                 close(true);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Log.d(TAG, "sip session error: "
-                //+ SipErrorCode.toString(errorCode) + ": " + message);
-        //mErrorCode = errorCode;
-        //mErrorMessage = message;
-        //Listener listener = mListener;
-        //if (listener != null) {
-            //try {
-                //listener.onError(this, errorCode, message);
-            //} catch (Throwable t) {
-                //Log.i(TAG, "onError(): " + t);
-            //}
-        //}
-        //synchronized (this) {
-            //if ((errorCode == SipErrorCode.DATA_CONNECTION_LOST)
-                    //|| !isInCall()) {
-                //close(true);
-            //}
-        //}
+            } 
+        } 
+        
+        
+                
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+        
+            
+                    
+                
+            
+        
     }
 
     
@@ -746,7 +750,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             SipException var8139D71B537813371F04348D0E0BAE9A_1096662208 = new SipException("VOIP API is not supported");
             var8139D71B537813371F04348D0E0BAE9A_1096662208.addTaint(taint);
             throw var8139D71B537813371F04348D0E0BAE9A_1096662208;
-        } //End block
+        } 
         synchronized
 (this)        {
             mSipSession = session;
@@ -754,27 +758,27 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             try 
             {
                 session.setListener(createListener());
-            } //End block
+            } 
             catch (Throwable e)
             {
                 throwSipException(e);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!SipManager.isVoipSupported(mContext)) {
-            //throw new SipException("VOIP API is not supported");
-        //}
-        //synchronized (this) {
-            //mSipSession = session;
-            //mPeerSd = sessionDescription;
-            //Log.v(TAG, "attachCall()" + mPeerSd);
-            //try {
-                //session.setListener(createListener());
-            //} catch (Throwable e) {
-                //Log.e(TAG, "attachCall()", e);
-                //throwSipException(e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+            
+                
+            
+                
+                
+            
+        
     }
 
     
@@ -788,7 +792,7 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             SipException var8139D71B537813371F04348D0E0BAE9A_1429360680 = new SipException("VOIP API is not supported");
             var8139D71B537813371F04348D0E0BAE9A_1429360680.addTaint(taint);
             throw var8139D71B537813371F04348D0E0BAE9A_1429360680;
-        } //End block
+        } 
         synchronized
 (this)        {
             mSipSession = sipSession;
@@ -799,30 +803,30 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 sipSession.setListener(createListener());
                 sipSession.makeCall(peerProfile, createOffer().encode(),
                         timeout);
-            } //End block
+            } 
             catch (IOException e)
             {
                 SipException varD52E1E6302BE50931CCBD6D638ECDB3D_1097887343 = new SipException("makeCall()", e);
                 varD52E1E6302BE50931CCBD6D638ECDB3D_1097887343.addTaint(taint);
                 throw varD52E1E6302BE50931CCBD6D638ECDB3D_1097887343;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!SipManager.isVoipSupported(mContext)) {
-            //throw new SipException("VOIP API is not supported");
-        //}
-        //synchronized (this) {
-            //mSipSession = sipSession;
-            //try {
-                //mAudioStream = new AudioStream(InetAddress.getByName(
-                        //getLocalIp()));
-                //sipSession.setListener(createListener());
-                //sipSession.makeCall(peerProfile, createOffer().encode(),
-                        //timeout);
-            //} catch (IOException e) {
-                //throw new SipException("makeCall()", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                        
+                
+                
+                        
+            
+                
+            
+        
     }
 
     
@@ -834,13 +838,13 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             mInCall = false;
     if(mSipSession != null)            
             mSipSession.endCall();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //stopCall(RELEASE_SOCKET);
-            //mInCall = false;
-            //if (mSipSession != null) mSipSession.endCall();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -856,21 +860,21 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 SipException varD54DFA089F8D2841097BE663B9D68A62_499922698 = new SipException("Not in a call to hold call");
                 varD54DFA089F8D2841097BE663B9D68A62_499922698.addTaint(taint);
                 throw varD54DFA089F8D2841097BE663B9D68A62_499922698;
-            } //End block
+            } 
             mSipSession.changeCall(createHoldOffer().encode(), timeout);
             mHold = true;
             setAudioGroupMode();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mHold) return;
-            //if (mSipSession == null) {
-                //throw new SipException("Not in a call to hold call");
-            //}
-            //mSipSession.changeCall(createHoldOffer().encode(), timeout);
-            //mHold = true;
-            //setAudioGroupMode();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -884,33 +888,33 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
                 SipException var651640E4FC6E2248161543E83AEB05BC_1362285865 = new SipException("No call to answer");
                 var651640E4FC6E2248161543E83AEB05BC_1362285865.addTaint(taint);
                 throw var651640E4FC6E2248161543E83AEB05BC_1362285865;
-            } //End block
+            } 
             try 
             {
                 mAudioStream = new AudioStream(InetAddress.getByName(
                         getLocalIp()));
                 mSipSession.answerCall(createAnswer(mPeerSd).encode(), timeout);
-            } //End block
+            } 
             catch (IOException e)
             {
                 SipException var4404AF18DB5E424A2998226EFEAA184B_786551771 = new SipException("answerCall()", e);
                 var4404AF18DB5E424A2998226EFEAA184B_786551771.addTaint(taint);
                 throw var4404AF18DB5E424A2998226EFEAA184B_786551771;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mSipSession == null) {
-                //throw new SipException("No call to answer");
-            //}
-            //try {
-                //mAudioStream = new AudioStream(InetAddress.getByName(
-                        //getLocalIp()));
-                //mSipSession.answerCall(createAnswer(mPeerSd).encode(), timeout);
-            //} catch (IOException e) {
-                //throw new SipException("answerCall()", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+                
+                        
+                
+            
+                
+            
+        
     }
 
     
@@ -924,14 +928,14 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
             mSipSession.changeCall(createContinueOffer().encode(), timeout);
             mHold = false;
             setAudioGroupMode();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (!mHold) return;
-            //mSipSession.changeCall(createContinueOffer().encode(), timeout);
-            //mHold = false;
-            //setAudioGroupMode();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -944,22 +948,22 @@ SipSession.Listener var471FDD296ED6D8C124DBA353D5A605DC_85907350 =         new S
 for(AudioCodec codec : AudioCodec.getCodecs())
         {
             media.setRtpPayload(codec.type, codec.rtpmap, codec.fmtp);
-        } //End block
+        } 
         media.setRtpPayload(127, "telephone-event/8000", "0-15");
 SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_1615658033 =         offer;
         varB15AE9D99DEF4F854AE55C3D652AFE1B_1615658033.addTaint(taint);
         return varB15AE9D99DEF4F854AE55C3D652AFE1B_1615658033;
-        // ---------- Original Method ----------
-        //SimpleSessionDescription offer =
-                //new SimpleSessionDescription(mSessionId, getLocalIp());
-        //AudioCodec[] codecs = AudioCodec.getCodecs();
-        //Media media = offer.newMedia(
-                //"audio", mAudioStream.getLocalPort(), 1, "RTP/AVP");
-        //for (AudioCodec codec : AudioCodec.getCodecs()) {
-            //media.setRtpPayload(codec.type, codec.rtpmap, codec.fmtp);
-        //}
-        //media.setRtpPayload(127, "telephone-event/8000", "0-15");
-        //return offer;
+        
+        
+                
+        
+        
+                
+        
+            
+        
+        
+        
     }
 
     
@@ -988,8 +992,8 @@ for(int type : media.getRtpPayloadTypes())
     if(codec != null)                    
                     {
                         break;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(codec != null)                
                 {
                     Media reply = answer.newMedia(
@@ -1003,48 +1007,48 @@ for(int type : media.getRtpPayloadTypes())
                         {
                             reply.setRtpPayload(
                                     type, rtpmap, media.getFmtp(type));
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(media.getAttribute("recvonly") != null)                    
                     {
                         answer.setAttribute("sendonly", "");
-                    } //End block
+                    } 
                     else
     if(media.getAttribute("sendonly") != null)                    
                     {
                         answer.setAttribute("recvonly", "");
-                    } //End block
+                    } 
                     else
     if(offer.getAttribute("recvonly") != null)                    
                     {
                         answer.setAttribute("sendonly", "");
-                    } //End block
+                    } 
                     else
     if(offer.getAttribute("sendonly") != null)                    
                     {
                         answer.setAttribute("recvonly", "");
-                    } //End block
+                    } 
                     continue;
-                } //End block
-            } //End block
+                } 
+            } 
             Media reply = answer.newMedia(
                     media.getType(), 0, 1, media.getProtocol());
 for(String format : media.getFormats())
             {
                 reply.setFormat(format, null);
-            } //End block
-        } //End block
+            } 
+        } 
     if(codec == null)        
         {
             IllegalStateException varEC5D299EF1FCD2AEECCD4977E52E73B2_1511135214 = new IllegalStateException("Reject SDP: no suitable codecs");
             varEC5D299EF1FCD2AEECCD4977E52E73B2_1511135214.addTaint(taint);
             throw varEC5D299EF1FCD2AEECCD4977E52E73B2_1511135214;
-        } //End block
+        } 
 SimpleSessionDescription var5F54B2A44CB8DC27B659B464640CF0FE_1277730396 =         answer;
         var5F54B2A44CB8DC27B659B464640CF0FE_1277730396.addTaint(taint);
         return var5F54B2A44CB8DC27B659B464640CF0FE_1277730396;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1055,10 +1059,10 @@ SimpleSessionDescription var5F54B2A44CB8DC27B659B464640CF0FE_1277730396 =       
 SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_877280368 =         offer;
         varB15AE9D99DEF4F854AE55C3D652AFE1B_877280368.addTaint(taint);
         return varB15AE9D99DEF4F854AE55C3D652AFE1B_877280368;
-        // ---------- Original Method ----------
-        //SimpleSessionDescription offer = createContinueOffer();
-        //offer.setAttribute("sendonly", "");
-        //return offer;
+        
+        
+        
+        
     }
 
     
@@ -1073,22 +1077,22 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_877280368 =        
     if(dtmfType != -1)        
         {
             media.setRtpPayload(dtmfType, "telephone-event/8000", "0-15");
-        } //End block
+        } 
 SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =         offer;
         varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003.addTaint(taint);
         return varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003;
-        // ---------- Original Method ----------
-        //SimpleSessionDescription offer =
-                //new SimpleSessionDescription(mSessionId, getLocalIp());
-        //Media media = offer.newMedia(
-                //"audio", mAudioStream.getLocalPort(), 1, "RTP/AVP");
-        //AudioCodec codec = mAudioStream.getCodec();
-        //media.setRtpPayload(codec.type, codec.rtpmap, codec.fmtp);
-        //int dtmfType = mAudioStream.getDtmfType();
-        //if (dtmfType != -1) {
-            //media.setRtpPayload(dtmfType, "telephone-event/8000", "0-15");
-        //}
-        //return offer;
+        
+        
+                
+        
+                
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1100,15 +1104,15 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
                     mContext.getSystemService(Context.WIFI_SERVICE))
                     .createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, TAG);
             mWifiHighPerfLock.acquire();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWifiHighPerfLock == null) {
-            //Log.v(TAG, "acquire wifi high perf lock");
-            //mWifiHighPerfLock = ((WifiManager)
-                    //mContext.getSystemService(Context.WIFI_SERVICE))
-                    //.createWifiLock(WifiManager.WIFI_MODE_FULL_HIGH_PERF, TAG);
-            //mWifiHighPerfLock.acquire();
-        //}
+        } 
+        
+        
+            
+            
+                    
+                    
+            
+        
     }
 
     
@@ -1118,13 +1122,13 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
         {
             mWifiHighPerfLock.release();
             mWifiHighPerfLock = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWifiHighPerfLock != null) {
-            //Log.v(TAG, "release wifi high perf lock");
-            //mWifiHighPerfLock.release();
-            //mWifiHighPerfLock = null;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -1133,8 +1137,8 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
         boolean varB83845AFE4A2BD54D45EEA5B632B56C3_12587772 = ((mWm.getConnectionInfo().getBSSID() == null) ? false : true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1981965223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1981965223;
-        // ---------- Original Method ----------
-        //return (mWm.getConnectionInfo().getBSSID() == null) ? false : true;
+        
+        
     }
 
     
@@ -1144,15 +1148,16 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
 (this)        {
             mMuted = !mMuted;
             setAudioGroupMode();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //mMuted = !mMuted;
-            //setAudioGroupMode();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.296 -0400", hash_original_method = "CF2F318ECC83A27F31B207A7653E2463", hash_generated_method = "BE7CD781973A7EA77FCF43A7BF5CDFD9")
     public boolean isMuted() {
         synchronized
@@ -1160,11 +1165,11 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
             boolean varD10511B84B44B96C59D297B21CF3F1BF_2034321995 = (mMuted);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_550979144 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_550979144;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mMuted;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1176,13 +1181,13 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
             ((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
                     .setSpeakerphoneOn(speakerMode);
             setAudioGroupMode();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
-                    //.setSpeakerphoneOn(speakerMode);
-            //setAudioGroupMode();
-        //}
+        } 
+        
+        
+            
+                    
+            
+        
     }
 
     
@@ -1192,9 +1197,9 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
                 .isSpeakerphoneOn());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752215627 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752215627;
-        // ---------- Original Method ----------
-        //return ((AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE))
-                //.isSpeakerphoneOn();
+        
+        
+                
     }
 
     
@@ -1202,8 +1207,8 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
     public void sendDtmf(int code) {
         addTaint(code);
         sendDtmf(code, null);
-        // ---------- Original Method ----------
-        //sendDtmf(code, null);
+        
+        
     }
 
     
@@ -1218,23 +1223,24 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
                     && (SipSession.State.IN_CALL == getState()))            
             {
                 audioGroup.sendDtmf(code);
-            } //End block
+            } 
     if(result != null)            
             result.sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //AudioGroup audioGroup = getAudioGroup();
-            //if ((audioGroup != null) && (mSipSession != null)
-                    //&& (SipSession.State.IN_CALL == getState())) {
-                //Log.v(TAG, "send DTMF: " + code);
-                //audioGroup.sendDtmf(code);
-            //}
-            //if (result != null) result.sendToTarget();
-        //}
+        } 
+        
+        
+            
+            
+                    
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.297 -0400", hash_original_method = "974213146461E5146ED1F54CFC83DFBA", hash_generated_method = "5A04C7ECF6C0F5EC48047FB1A6D58C87")
     public AudioStream getAudioStream() {
         synchronized
@@ -1242,11 +1248,11 @@ SimpleSessionDescription varB15AE9D99DEF4F854AE55C3D652AFE1B_843451003 =        
 AudioStream var7989BA78C9201E5975DDDFB7EFFDB611_580881728 =             mAudioStream;
             var7989BA78C9201E5975DDDFB7EFFDB611_580881728.addTaint(taint);
             return var7989BA78C9201E5975DDDFB7EFFDB611_580881728;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //return mAudioStream;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1263,12 +1269,12 @@ AudioGroup var386B5FD88A7AE01E79AA5CED784288E9_180629942 =             mAudioGro
 AudioGroup varC72C554806D9F24F64BE7554224D6C80_1926966345 =             ((mAudioStream == null) ? null : mAudioStream.getGroup());
             varC72C554806D9F24F64BE7554224D6C80_1926966345.addTaint(taint);
             return varC72C554806D9F24F64BE7554224D6C80_1926966345;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mAudioGroup != null) return mAudioGroup;
-            //return ((mAudioStream == null) ? null : mAudioStream.getGroup());
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1279,16 +1285,16 @@ AudioGroup varC72C554806D9F24F64BE7554224D6C80_1926966345 =             ((mAudio
     if((mAudioStream != null) && (mAudioStream.getGroup() != null))            
             {
                 mAudioStream.join(group);
-            } //End block
+            } 
             mAudioGroup = group;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if ((mAudioStream != null) && (mAudioStream.getGroup() != null)) {
-                //mAudioStream.join(group);
-            //}
-            //mAudioGroup = group;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -1297,23 +1303,23 @@ AudioGroup varC72C554806D9F24F64BE7554224D6C80_1926966345 =             ((mAudio
         try 
         {
             startAudioInternal();
-        } //End block
+        } 
         catch (UnknownHostException e)
         {
             onError(SipErrorCode.PEER_NOT_REACHABLE, e.getMessage());
-        } //End block
+        } 
         catch (Throwable e)
         {
             onError(SipErrorCode.CLIENT_ERROR, e.getMessage());
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //startAudioInternal();
-        //} catch (UnknownHostException e) {
-            //onError(SipErrorCode.PEER_NOT_REACHABLE, e.getMessage());
-        //} catch (Throwable e) {
-            //onError(SipErrorCode.CLIENT_ERROR, e.getMessage());
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -1324,7 +1330,7 @@ AudioGroup varC72C554806D9F24F64BE7554224D6C80_1926966345 =             ((mAudio
             IllegalStateException var709D027B8F80A3D995BD37DFB9CB6EF1_662268385 = new IllegalStateException("mPeerSd = null");
             var709D027B8F80A3D995BD37DFB9CB6EF1_662268385.addTaint(taint);
             throw var709D027B8F80A3D995BD37DFB9CB6EF1_662268385;
-        } //End block
+        } 
         stopCall(DONT_RELEASE_SOCKET);
         mInCall = true;
         SimpleSessionDescription offer = new SimpleSessionDescription(mPeerSd);
@@ -1343,15 +1349,15 @@ for(int type : media.getRtpPayloadTypes())
     if(codec != null)                    
                     {
                         break;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(codec != null)                
                 {
                     String address = media.getAddress();
     if(address == null)                    
                     {
                         address = offer.getAddress();
-                    } //End block
+                    } 
                     stream.associate(InetAddress.getByName(address),
                             media.getPort());
                     stream.setDtmfType(-1);
@@ -1363,61 +1369,61 @@ for(int type : media.getRtpPayloadTypes())
                                 && rtpmap.startsWith("telephone-event"))                        
                         {
                             stream.setDtmfType(type);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(mHold)                    
                     {
                         stream.setMode(RtpStream.MODE_NORMAL);
-                    } //End block
+                    } 
                     else
     if(media.getAttribute("recvonly") != null)                    
                     {
                         stream.setMode(RtpStream.MODE_SEND_ONLY);
-                    } //End block
+                    } 
                     else
     if(media.getAttribute("sendonly") != null)                    
                     {
                         stream.setMode(RtpStream.MODE_RECEIVE_ONLY);
-                    } //End block
+                    } 
                     else
     if(offer.getAttribute("recvonly") != null)                    
                     {
                         stream.setMode(RtpStream.MODE_SEND_ONLY);
-                    } //End block
+                    } 
                     else
     if(offer.getAttribute("sendonly") != null)                    
                     {
                         stream.setMode(RtpStream.MODE_RECEIVE_ONLY);
-                    } //End block
+                    } 
                     else
                     {
                         stream.setMode(RtpStream.MODE_NORMAL);
-                    } //End block
+                    } 
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(codec == null)        
         {
             IllegalStateException varEC5D299EF1FCD2AEECCD4977E52E73B2_470254518 = new IllegalStateException("Reject SDP: no suitable codecs");
             varEC5D299EF1FCD2AEECCD4977E52E73B2_470254518.addTaint(taint);
             throw varEC5D299EF1FCD2AEECCD4977E52E73B2_470254518;
-        } //End block
+        } 
     if(isWifiOn())        
         grabWifiHighPerfLock();
         AudioGroup audioGroup = getAudioGroup();
     if(mHold)        
         {
-        } //End block
+        } 
         else
         {
     if(audioGroup == null)            
             audioGroup = new AudioGroup();
             stream.join(audioGroup);
-        } //End block
+        } 
         setAudioGroupMode();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1429,35 +1435,35 @@ for(int type : media.getRtpPayloadTypes())
     if(mHold)            
             {
                 audioGroup.setMode(AudioGroup.MODE_ON_HOLD);
-            } //End block
+            } 
             else
     if(mMuted)            
             {
                 audioGroup.setMode(AudioGroup.MODE_MUTED);
-            } //End block
+            } 
             else
     if(isSpeakerOn())            
             {
                 audioGroup.setMode(AudioGroup.MODE_ECHO_SUPPRESSION);
-            } //End block
+            } 
             else
             {
                 audioGroup.setMode(AudioGroup.MODE_NORMAL);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //AudioGroup audioGroup = getAudioGroup();
-        //if (audioGroup != null) {
-            //if (mHold) {
-                //audioGroup.setMode(AudioGroup.MODE_ON_HOLD);
-            //} else if (mMuted) {
-                //audioGroup.setMode(AudioGroup.MODE_MUTED);
-            //} else if (isSpeakerOn()) {
-                //audioGroup.setMode(AudioGroup.MODE_ECHO_SUPPRESSION);
-            //} else {
-                //audioGroup.setMode(AudioGroup.MODE_NORMAL);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -1473,18 +1479,18 @@ for(int type : media.getRtpPayloadTypes())
             {
                 mAudioStream.release();
                 mAudioStream = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Log.d(TAG, "stop audiocall");
-        //releaseWifiHighPerfLock();
-        //if (mAudioStream != null) {
-            //mAudioStream.join(null);
-            //if (releaseSocket) {
-                //mAudioStream.release();
-                //mAudioStream = null;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -1493,8 +1499,8 @@ for(int type : media.getRtpPayloadTypes())
 String varD6B92870042BA5D27310C46B2B2CE35E_1010855833 =         mSipSession.getLocalIp();
         varD6B92870042BA5D27310C46B2B2CE35E_1010855833.addTaint(taint);
         return varD6B92870042BA5D27310C46B2B2CE35E_1010855833;
-        // ---------- Original Method ----------
-        //return mSipSession.getLocalIp();
+        
+        
     }
 
     
@@ -1506,19 +1512,19 @@ String varD6B92870042BA5D27310C46B2B2CE35E_1010855833 =         mSipSession.getL
             SipException varAD35909301F1824BA85A4A40DFDDA95D_308108242 = (SipException) throwable;
             varAD35909301F1824BA85A4A40DFDDA95D_308108242.addTaint(taint);
             throw varAD35909301F1824BA85A4A40DFDDA95D_308108242;
-        } //End block
+        } 
         else
         {
             SipException var445FAF0EC3C30FD0CF976DE496EC5D17_1850938826 = new SipException("", throwable);
             var445FAF0EC3C30FD0CF976DE496EC5D17_1850938826.addTaint(taint);
             throw var445FAF0EC3C30FD0CF976DE496EC5D17_1850938826;
-        } //End block
-        // ---------- Original Method ----------
-        //if (throwable instanceof SipException) {
-            //throw (SipException) throwable;
-        //} else {
-            //throw new SipException("", throwable);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1528,8 +1534,8 @@ String varD6B92870042BA5D27310C46B2B2CE35E_1010855833 =         mSipSession.getL
 SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1987812644 =         session.getPeerProfile();
         var2F59EF1259AA7295B0FD1FC865223FC6_1987812644.addTaint(taint);
         return var2F59EF1259AA7295B0FD1FC865223FC6_1987812644;
-        // ---------- Original Method ----------
-        //return session.getPeerProfile();
+        
+        
     }
 
     
@@ -1538,107 +1544,109 @@ SipProfile var2F59EF1259AA7295B0FD1FC865223FC6_1987812644 =         session.getP
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.302 -0400", hash_original_method = "5575F820891B6AD64AFC44C76A4BA5AF", hash_generated_method = "5575F820891B6AD64AFC44C76A4BA5AF")
         public Listener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.302 -0400", hash_original_method = "1692051440F2E30BB9552F9991C2F337", hash_generated_method = "1437C4BAACEE991D53E3D4C693468728")
         public void onReadyToCall(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.302 -0400", hash_original_method = "F61EC18A6F9190266BB417D94187D91F", hash_generated_method = "D2F254533972267BD38ABBA599C28EF8")
         public void onCalling(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.303 -0400", hash_original_method = "80FA944D90A47A92553C0DDAF9805E5E", hash_generated_method = "9B19093F854AD2AE0774BCA056F55F98")
         public void onRinging(SipAudioCall call, SipProfile caller) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(caller.getTaint());
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.303 -0400", hash_original_method = "F638A746C099264E58AA2EF34946D274", hash_generated_method = "4A1AC351FB7D4E94521BD7D9D2684A3A")
         public void onRingingBack(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.303 -0400", hash_original_method = "ED0948473C3573D4349DE4B81266B2ED", hash_generated_method = "D7B8C7B3FFA9BBE461FD8F86B99AA0D1")
         public void onCallEstablished(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.303 -0400", hash_original_method = "87752713DF39DD8F370DBCB68CD08A8A", hash_generated_method = "464E5D70533433713271DCF20E04B9AC")
         public void onCallEnded(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.303 -0400", hash_original_method = "A1C8D07F76B181730B1462483C996C45", hash_generated_method = "12D57F08446B4CC7CCF3C1A68173F58D")
         public void onCallBusy(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.304 -0400", hash_original_method = "901B34C07D0BCB3C3E5EC60CF9AA74AD", hash_generated_method = "46366D093626E901F9AECFA7125D47C9")
         public void onCallHeld(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
             onChanged(call);
-            // ---------- Original Method ----------
-            //onChanged(call);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.304 -0400", hash_original_method = "43C9D48E22A0172861A5C1A464B2052F", hash_generated_method = "190602BC25E5C472D84A293D38E76700")
         public void onError(SipAudioCall call, int errorCode,
                 String errorMessage) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(errorMessage.getTaint());
             addTaint(errorCode);
             addTaint(call.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:28.304 -0400", hash_original_method = "06CD8F9D0FA40D0750F021E4FF896790", hash_generated_method = "5344D2CA13D23FE27CDA3E3AB1CBFDF1")
         public void onChanged(SipAudioCall call) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(call.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

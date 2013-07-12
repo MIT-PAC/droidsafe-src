@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,8 +30,8 @@ public class Handler {
     if((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
                     (klass.getModifiers() & Modifier.STATIC) == 0)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         mLooper = Looper.myLooper();
     if(mLooper == null)        
         {
@@ -39,25 +39,25 @@ public class Handler {
                 "Can't create handler inside thread that has not called Looper.prepare()");
             varE0339C4E2D2CC3153FF43A285C10CA3B_238613189.addTaint(taint);
             throw varE0339C4E2D2CC3153FF43A285C10CA3B_238613189;
-        } //End block
+        } 
         mQueue = mLooper.mQueue;
         mCallback = null;
-        // ---------- Original Method ----------
-        //if (FIND_POTENTIAL_LEAKS) {
-            //final Class<? extends Handler> klass = getClass();
-            //if ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
-                    //(klass.getModifiers() & Modifier.STATIC) == 0) {
-                //Log.w(TAG, "The following Handler class should be static or leaks might occur: " +
-                    //klass.getCanonicalName());
-            //}
-        //}
-        //mLooper = Looper.myLooper();
-        //if (mLooper == null) {
-            //throw new RuntimeException(
-                //"Can't create handler inside thread that has not called Looper.prepare()");
-        //}
-        //mQueue = mLooper.mQueue;
-        //mCallback = null;
+        
+        
+            
+            
+                    
+                
+                    
+            
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
@@ -69,8 +69,8 @@ public class Handler {
     if((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
                     (klass.getModifiers() & Modifier.STATIC) == 0)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         mLooper = Looper.myLooper();
     if(mLooper == null)        
         {
@@ -78,25 +78,25 @@ public class Handler {
                 "Can't create handler inside thread that has not called Looper.prepare()");
             varE0339C4E2D2CC3153FF43A285C10CA3B_1918721489.addTaint(taint);
             throw varE0339C4E2D2CC3153FF43A285C10CA3B_1918721489;
-        } //End block
+        } 
         mQueue = mLooper.mQueue;
         mCallback = callback;
-        // ---------- Original Method ----------
-        //if (FIND_POTENTIAL_LEAKS) {
-            //final Class<? extends Handler> klass = getClass();
-            //if ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
-                    //(klass.getModifiers() & Modifier.STATIC) == 0) {
-                //Log.w(TAG, "The following Handler class should be static or leaks might occur: " +
-                    //klass.getCanonicalName());
-            //}
-        //}
-        //mLooper = Looper.myLooper();
-        //if (mLooper == null) {
-            //throw new RuntimeException(
-                //"Can't create handler inside thread that has not called Looper.prepare()");
-        //}
-        //mQueue = mLooper.mQueue;
-        //mCallback = callback;
+        
+        
+            
+            
+                    
+                
+                    
+            
+        
+        
+        
+            
+                
+        
+        
+        
     }
 
     
@@ -105,10 +105,10 @@ public class Handler {
         mLooper = looper;
         mQueue = looper.mQueue;
         mCallback = null;
-        // ---------- Original Method ----------
-        //mLooper = looper;
-        //mQueue = looper.mQueue;
-        //mCallback = null;
+        
+        
+        
+        
     }
 
     
@@ -117,17 +117,18 @@ public class Handler {
         mLooper = looper;
         mQueue = looper.mQueue;
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mLooper = looper;
-        //mQueue = looper.mQueue;
-        //mCallback = callback;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.349 -0400", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "6C9E5B782C82352543D0D7A957AAB817")
     public void handleMessage(Message msg) {
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -137,7 +138,7 @@ public class Handler {
     if(msg.callback != null)        
         {
             handleCallback(msg);
-        } //End block
+        } 
         else
         {
     if(mCallback != null)            
@@ -145,21 +146,21 @@ public class Handler {
     if(mCallback.handleMessage(msg))                
                 {
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
             handleMessage(msg);
-        } //End block
-        // ---------- Original Method ----------
-        //if (msg.callback != null) {
-            //handleCallback(msg);
-        //} else {
-            //if (mCallback != null) {
-                //if (mCallback.handleMessage(msg)) {
-                    //return;
-                //}
-            //}
-            //handleMessage(msg);
-        //}
+        } 
+        
+        
+            
+        
+            
+                
+                    
+                
+            
+            
+        
     }
 
     
@@ -171,15 +172,15 @@ public class Handler {
 String varF3D40722B9411601D9DEC5D89A0C385A_1940549501 =             message.callback.getClass().getName();
             varF3D40722B9411601D9DEC5D89A0C385A_1940549501.addTaint(taint);
             return varF3D40722B9411601D9DEC5D89A0C385A_1940549501;
-        } //End block
+        } 
 String varBD10C5CB802C447840087B8DCE03339E_858032908 =         "0x" + Integer.toHexString(message.what);
         varBD10C5CB802C447840087B8DCE03339E_858032908.addTaint(taint);
         return varBD10C5CB802C447840087B8DCE03339E_858032908;
-        // ---------- Original Method ----------
-        //if (message.callback != null) {
-            //return message.callback.getClass().getName();
-        //}
-        //return "0x" + Integer.toHexString(message.what);
+        
+        
+            
+        
+        
     }
 
     
@@ -188,8 +189,8 @@ String varBD10C5CB802C447840087B8DCE03339E_858032908 =         "0x" + Integer.to
 Message varFFE27A75B51A30F9F839C92C3BD965AA_925769446 =         Message.obtain(this);
         varFFE27A75B51A30F9F839C92C3BD965AA_925769446.addTaint(taint);
         return varFFE27A75B51A30F9F839C92C3BD965AA_925769446;
-        // ---------- Original Method ----------
-        //return Message.obtain(this);
+        
+        
     }
 
     
@@ -199,8 +200,8 @@ Message varFFE27A75B51A30F9F839C92C3BD965AA_925769446 =         Message.obtain(t
 Message varB83CC02BCA711F53AC867766194BA4A9_664803423 =         Message.obtain(this, what);
         varB83CC02BCA711F53AC867766194BA4A9_664803423.addTaint(taint);
         return varB83CC02BCA711F53AC867766194BA4A9_664803423;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what);
+        
+        
     }
 
     
@@ -211,8 +212,8 @@ Message varB83CC02BCA711F53AC867766194BA4A9_664803423 =         Message.obtain(t
 Message varD3C972A66109A6F4788882442061F6EC_1016786658 =         Message.obtain(this, what, obj);
         varD3C972A66109A6F4788882442061F6EC_1016786658.addTaint(taint);
         return varD3C972A66109A6F4788882442061F6EC_1016786658;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what, obj);
+        
+        
     }
 
     
@@ -224,8 +225,8 @@ Message varD3C972A66109A6F4788882442061F6EC_1016786658 =         Message.obtain(
 Message var32A3C44FDE40EBD19E7DA8DF27C78804_236235061 =         Message.obtain(this, what, arg1, arg2);
         var32A3C44FDE40EBD19E7DA8DF27C78804_236235061.addTaint(taint);
         return var32A3C44FDE40EBD19E7DA8DF27C78804_236235061;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what, arg1, arg2);
+        
+        
     }
 
     
@@ -238,8 +239,8 @@ Message var32A3C44FDE40EBD19E7DA8DF27C78804_236235061 =         Message.obtain(t
 Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(this, what, arg1, arg2, obj);
         var70261DC0D432637FC67FB7F77AF0394F_1359220160.addTaint(taint);
         return var70261DC0D432637FC67FB7F77AF0394F_1359220160;
-        // ---------- Original Method ----------
-        //return Message.obtain(this, what, arg1, arg2, obj);
+        
+        
     }
 
     
@@ -249,8 +250,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var4413CE19446E04BCB84D4DC5AEC33B62_1686399123 = (sendMessageDelayed(getPostMessage(r), 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565730727 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_565730727;
-        // ---------- Original Method ----------
-        //return  sendMessageDelayed(getPostMessage(r), 0);
+        
+        
     }
 
     
@@ -261,8 +262,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var5EAF99ABE6C713AF48B56B1E000FCEC9_1347550689 = (sendMessageAtTime(getPostMessage(r), uptimeMillis));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1547537857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1547537857;
-        // ---------- Original Method ----------
-        //return sendMessageAtTime(getPostMessage(r), uptimeMillis);
+        
+        
     }
 
     
@@ -274,8 +275,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var3C369DA4877DB86952E37548CBBA0F23_1588434123 = (sendMessageAtTime(getPostMessage(r, token), uptimeMillis));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1818124198 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1818124198;
-        // ---------- Original Method ----------
-        //return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
+        
+        
     }
 
     
@@ -286,8 +287,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean varD13B1F096E34E0983BB1809C1512F79B_654678752 = (sendMessageDelayed(getPostMessage(r), delayMillis));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_581614195 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_581614195;
-        // ---------- Original Method ----------
-        //return sendMessageDelayed(getPostMessage(r), delayMillis);
+        
+        
     }
 
     
@@ -297,8 +298,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var3C1D95E160676D2525C06F5BDD5C684B_1084610635 = (sendMessageAtFrontOfQueue(getPostMessage(r)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392279515 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392279515;
-        // ---------- Original Method ----------
-        //return sendMessageAtFrontOfQueue(getPostMessage(r));
+        
+        
     }
 
     
@@ -306,8 +307,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
     public final void removeCallbacks(Runnable r) {
         addTaint(r.getTaint());
         mQueue.removeMessages(this, r, null);
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, r, null);
+        
+        
     }
 
     
@@ -316,8 +317,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         addTaint(token.getTaint());
         addTaint(r.getTaint());
         mQueue.removeMessages(this, r, token);
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, r, token);
+        
+        
     }
 
     
@@ -327,8 +328,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var781D95A1A0E5AD31CA0E5FE11DC07AEE_977685751 = (sendMessageDelayed(msg, 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1639242435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1639242435;
-        // ---------- Original Method ----------
-        //return sendMessageDelayed(msg, 0);
+        
+        
     }
 
     
@@ -338,8 +339,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var286459B55505DABFD0566347297BCD66_763357787 = (sendEmptyMessageDelayed(what, 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1133403066 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1133403066;
-        // ---------- Original Method ----------
-        //return sendEmptyMessageDelayed(what, 0);
+        
+        
     }
 
     
@@ -352,10 +353,10 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var8F36A808C0E7E801F9E5E1C2C84A55EE_1400547899 = (sendMessageDelayed(msg, delayMillis));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1160901228 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1160901228;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //return sendMessageDelayed(msg, delayMillis);
+        
+        
+        
+        
     }
 
     
@@ -368,10 +369,10 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var1BE13E139C4674878DD5E851EB6CA6BB_1540129114 = (sendMessageAtTime(msg, uptimeMillis));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_947957388 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_947957388;
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = what;
-        //return sendMessageAtTime(msg, uptimeMillis);
+        
+        
+        
+        
     }
 
     
@@ -382,15 +383,15 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
     if(delayMillis < 0)        
         {
             delayMillis = 0;
-        } //End block
+        } 
         boolean var41AAB0AB386CC896858254072DDAFBE7_102347655 = (sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_604899773 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_604899773;
-        // ---------- Original Method ----------
-        //if (delayMillis < 0) {
-            //delayMillis = 0;
-        //}
-        //return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
+        
+        
+            
+        
+        
     }
 
     
@@ -404,28 +405,28 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         {
             msg.target = this;
             sent = queue.enqueueMessage(msg, uptimeMillis);
-        } //End block
+        } 
         else
         {
             RuntimeException e = new RuntimeException(
                 this + " sendMessageAtTime() called with no mQueue");
-        } //End block
+        } 
         boolean var789183B7E98646C11D5F0544C8F3C4C9_873203895 = (sent);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57710660 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_57710660;
-        // ---------- Original Method ----------
-        //boolean sent = false;
-        //MessageQueue queue = mQueue;
-        //if (queue != null) {
-            //msg.target = this;
-            //sent = queue.enqueueMessage(msg, uptimeMillis);
-        //}
-        //else {
-            //RuntimeException e = new RuntimeException(
-                //this + " sendMessageAtTime() called with no mQueue");
-            //Log.w("Looper", e.getMessage(), e);
-        //}
-        //return sent;
+        
+        
+        
+        
+            
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -438,28 +439,28 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         {
             msg.target = this;
             sent = queue.enqueueMessage(msg, 0);
-        } //End block
+        } 
         else
         {
             RuntimeException e = new RuntimeException(
                 this + " sendMessageAtTime() called with no mQueue");
-        } //End block
+        } 
         boolean var789183B7E98646C11D5F0544C8F3C4C9_2126040610 = (sent);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068832662 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068832662;
-        // ---------- Original Method ----------
-        //boolean sent = false;
-        //MessageQueue queue = mQueue;
-        //if (queue != null) {
-            //msg.target = this;
-            //sent = queue.enqueueMessage(msg, 0);
-        //}
-        //else {
-            //RuntimeException e = new RuntimeException(
-                //this + " sendMessageAtTime() called with no mQueue");
-            //Log.w("Looper", e.getMessage(), e);
-        //}
-        //return sent;
+        
+        
+        
+        
+            
+            
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -467,8 +468,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
     public final void removeMessages(int what) {
         addTaint(what);
         mQueue.removeMessages(this, what, null, true);
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, what, null, true);
+        
+        
     }
 
     
@@ -477,8 +478,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         addTaint(object.getTaint());
         addTaint(what);
         mQueue.removeMessages(this, what, object, true);
-        // ---------- Original Method ----------
-        //mQueue.removeMessages(this, what, object, true);
+        
+        
     }
 
     
@@ -486,8 +487,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
     public final void removeCallbacksAndMessages(Object token) {
         addTaint(token.getTaint());
         mQueue.removeCallbacksAndMessages(this, token);
-        // ---------- Original Method ----------
-        //mQueue.removeCallbacksAndMessages(this, token);
+        
+        
     }
 
     
@@ -497,8 +498,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean varFE8C582CD938F501217339A00CE7467B_71969556 = (mQueue.removeMessages(this, what, null, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1862424494 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1862424494;
-        // ---------- Original Method ----------
-        //return mQueue.removeMessages(this, what, null, false);
+        
+        
     }
 
     
@@ -509,8 +510,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
         boolean var9F285325104F534BC5F56EF97D070B9E_1518347248 = (mQueue.removeMessages(this, what, object, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001916104 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001916104;
-        // ---------- Original Method ----------
-        //return mQueue.removeMessages(this, what, object, false);
+        
+        
     }
 
     
@@ -519,8 +520,8 @@ Message var70261DC0D432637FC67FB7F77AF0394F_1359220160 =         Message.obtain(
 Looper var0D78717954912E9F181D5C0583378DCC_66344288 =         mLooper;
         var0D78717954912E9F181D5C0583378DCC_66344288.addTaint(taint);
         return var0D78717954912E9F181D5C0583378DCC_66344288;
-        // ---------- Original Method ----------
-        //return mLooper;
+        
+        
     }
 
     
@@ -532,18 +533,18 @@ Looper var0D78717954912E9F181D5C0583378DCC_66344288 =         mLooper;
     if(mLooper == null)        
         {
             pw.println(prefix + "looper uninitialized");
-        } //End block
+        } 
         else
         {
             mLooper.dump(pw, prefix + "  ");
-        } //End block
-        // ---------- Original Method ----------
-        //pw.println(prefix + this + " @ " + SystemClock.uptimeMillis());
-        //if (mLooper == null) {
-            //pw.println(prefix + "looper uninitialized");
-        //} else {
-            //mLooper.dump(pw, prefix + "  ");
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -555,10 +556,10 @@ String var0C1471386DF22590A5BBFD7BB2A28056_955982341 =         "Handler (" + get
         + "}";
         var0C1471386DF22590A5BBFD7BB2A28056_955982341.addTaint(taint);
         return var0C1471386DF22590A5BBFD7BB2A28056_955982341;
-        // ---------- Original Method ----------
-        //return "Handler (" + getClass().getName() + ") {"
-        //+ Integer.toHexString(System.identityHashCode(this))
-        //+ "}";
+        
+        
+        
+        
     }
 
     
@@ -571,20 +572,20 @@ String var0C1471386DF22590A5BBFD7BB2A28056_955982341 =         "Handler (" + get
 IMessenger var8654BE9299324672E260B3FAC70B3CD7_556096091 =                 mMessenger;
                 var8654BE9299324672E260B3FAC70B3CD7_556096091.addTaint(taint);
                 return var8654BE9299324672E260B3FAC70B3CD7_556096091;
-            } //End block
+            } 
             mMessenger = new MessengerImpl();
 IMessenger var8654BE9299324672E260B3FAC70B3CD7_298288956 =             mMessenger;
             var8654BE9299324672E260B3FAC70B3CD7_298288956.addTaint(taint);
             return var8654BE9299324672E260B3FAC70B3CD7_298288956;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mQueue) {
-            //if (mMessenger != null) {
-                //return mMessenger;
-            //}
-            //mMessenger = new MessengerImpl();
-            //return mMessenger;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -596,10 +597,10 @@ IMessenger var8654BE9299324672E260B3FAC70B3CD7_298288956 =             mMessenge
 Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1993863573 =         m;
         varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1993863573.addTaint(taint);
         return varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1993863573;
-        // ---------- Original Method ----------
-        //Message m = Message.obtain();
-        //m.callback = r;
-        //return m;
+        
+        
+        
+        
     }
 
     
@@ -613,11 +614,11 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_1993863573 =         m;
 Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_891598352 =         m;
         varBD22C5ECD1F8BC3EE2416AF7A8014FD2_891598352.addTaint(taint);
         return varBD22C5ECD1F8BC3EE2416AF7A8014FD2_891598352;
-        // ---------- Original Method ----------
-        //Message m = Message.obtain();
-        //m.obj = token;
-        //m.callback = r;
-        //return m;
+        
+        
+        
+        
+        
     }
 
     
@@ -625,8 +626,8 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_891598352 =         m;
     private final void handleCallback(Message message) {
         addTaint(message.getTaint());
         message.callback.run();
-        // ---------- Original Method ----------
-        //message.callback.run();
+        
+        
     }
 
     
@@ -635,7 +636,7 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_891598352 =         m;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.361 -0400", hash_original_method = "68A768E132C1125DE9510AF39EB42EE7", hash_generated_method = "68A768E132C1125DE9510AF39EB42EE7")
         public MessengerImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -643,8 +644,8 @@ Message varBD22C5ECD1F8BC3EE2416AF7A8014FD2_891598352 =         m;
         public void send(Message msg) {
             addTaint(msg.getTaint());
             Handler.this.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Handler.this.sendMessage(msg);
+            
+            
         }
 
         

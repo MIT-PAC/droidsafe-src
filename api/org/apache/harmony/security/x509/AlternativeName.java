@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,30 +19,32 @@ public final class AlternativeName extends ExtensionValue {
         super(encoding);
         this.which = which;
         this.alternativeNames = (GeneralNames) GeneralNames.ASN1.decode(encoding);
-        // ---------- Original Method ----------
-        //this.which = which;
-        //this.alternativeNames = (GeneralNames) GeneralNames.ASN1.decode(encoding);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.686 -0400", hash_original_method = "A70D2DB25ABF0E0F1A8BC79C0C161D91", hash_generated_method = "CDC2931FA81FBA8720F555C2FB874856")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = GeneralNames.ASN1.encode(alternativeNames);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1372141750 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1826948540 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1826948540;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = GeneralNames.ASN1.encode(alternativeNames);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.686 -0400", hash_original_method = "62E9965B6B09CF0D2F916BAB455CC9AA", hash_generated_method = "DB1DABD5F91C43129AC61B45A3862F60")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -51,10 +53,10 @@ public final class AlternativeName extends ExtensionValue {
         sb.append(prefix).append((which) ? "Subject" : "Issuer").append(" Alternative Names [\n");
         alternativeNames.dumpValue(sb, prefix + "  ");
         sb.append(prefix).append("]\n");
-        // ---------- Original Method ----------
-        //sb.append(prefix).append((which) ? "Subject" : "Issuer").append(" Alternative Names [\n");
-        //alternativeNames.dumpValue(sb, prefix + "  ");
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+        
     }
 
     

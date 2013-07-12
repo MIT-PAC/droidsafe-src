@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,24 +36,25 @@ public class NetworkConfig {
         priority = Integer.parseInt(fragments[3]);
         restoreTime = Integer.parseInt(fragments[4]);
         dependencyMet = Boolean.parseBoolean(fragments[5]);
-        // ---------- Original Method ----------
-        //String fragments[] = init.split(",");
-        //name = fragments[0].trim().toLowerCase();
-        //type = Integer.parseInt(fragments[1]);
-        //radio = Integer.parseInt(fragments[2]);
-        //priority = Integer.parseInt(fragments[3]);
-        //restoreTime = Integer.parseInt(fragments[4]);
-        //dependencyMet = Boolean.parseBoolean(fragments[5]);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.632 -0400", hash_original_method = "474B729266EEB37673AA204F699AE5C3", hash_generated_method = "0CD7D69C5BE6F8AA5FB2ED5F898A57BE")
     public boolean isDefault() {
         boolean varF4E52B2901BB1FD7247499B30FF884A3_1759153429 = ((type == radio));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1244654182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1244654182;
-        // ---------- Original Method ----------
-        //return (type == radio);
+        
+        
     }
 
     

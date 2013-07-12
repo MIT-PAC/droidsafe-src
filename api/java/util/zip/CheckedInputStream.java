@@ -1,6 +1,6 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,8 +18,8 @@ public class CheckedInputStream extends java.io.FilterInputStream {
         super(is);
         addTaint(is.getTaint());
         check = csum;
-        // ---------- Original Method ----------
-        //check = csum;
+        
+        
     }
 
     
@@ -30,16 +30,16 @@ public class CheckedInputStream extends java.io.FilterInputStream {
     if(x != -1)        
         {
             check.update(x);
-        } //End block
+        } 
         int var9DD4E461268C8034F5C8564E155C67A6_1015290782 = (x);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82539832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_82539832;
-        // ---------- Original Method ----------
-        //int x = in.read();
-        //if (x != -1) {
-            //check.update(x);
-        //}
-        //return x;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -53,26 +53,27 @@ public class CheckedInputStream extends java.io.FilterInputStream {
     if(x != -1)        
         {
             check.update(buf, off, x);
-        } //End block
+        } 
         int var9DD4E461268C8034F5C8564E155C67A6_705953269 = (x);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066720501 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066720501;
-        // ---------- Original Method ----------
-        //int x = in.read(buf, off, nbytes);
-        //if (x != -1) {
-            //check.update(buf, off, x);
-        //}
-        //return x;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.537 -0400", hash_original_method = "8D60BCB1BD17D4099BEB55CEF28E25BB", hash_generated_method = "03CD7DE9F2C82B7D2BB6054777ABA1AA")
     public Checksum getChecksum() {
 Checksum var9CC2FC46D445C20863EA381528DFA086_2121419141 =         check;
         var9CC2FC46D445C20863EA381528DFA086_2121419141.addTaint(taint);
         return var9CC2FC46D445C20863EA381528DFA086_2121419141;
-        // ---------- Original Method ----------
-        //return check;
+        
+        
     }
 
     
@@ -83,8 +84,8 @@ Checksum var9CC2FC46D445C20863EA381528DFA086_2121419141 =         check;
         long var905193B4CE519E6DD3D91E1E370ADA87_1720785202 = (Streams.skipByReading(this, byteCount));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_232705092 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_232705092;
-        // ---------- Original Method ----------
-        //return Streams.skipByReading(this, byteCount);
+        
+        
     }
 
     

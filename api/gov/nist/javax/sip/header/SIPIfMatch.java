@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.325 -0400", hash_original_method = "BAD2DC814CD45D5939615C62F83835FA", hash_generated_method = "BC1325341205D047D33E2F234910D97F")
     public  SIPIfMatch() {
         super(NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,31 +24,34 @@ public class SIPIfMatch extends SIPHeader implements SIPIfMatchHeader, Extension
         this();
         addTaint(etag.getTaint());
         this.setETag( etag );
-        // ---------- Original Method ----------
-        //this.setETag( etag );
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.326 -0400", hash_original_method = "D71FCA65B3027CF0021F4CC3EAA91DA7", hash_generated_method = "505D6A6746DE21806DF2360A1F541FD5")
     public String encodeBody() {
 String var6F841ECF197400A993B46628101FE372_2031055004 =         entityTag;
         var6F841ECF197400A993B46628101FE372_2031055004.addTaint(taint);
         return var6F841ECF197400A993B46628101FE372_2031055004;
-        // ---------- Original Method ----------
-        //return entityTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.326 -0400", hash_original_method = "3D6890113704CA3A689BE5D16088DA64", hash_generated_method = "25B9B4C3D045DDDECE7452029F969023")
     public String getETag() {
 String var6F841ECF197400A993B46628101FE372_915738000 =         entityTag;
         var6F841ECF197400A993B46628101FE372_915738000.addTaint(taint);
         return var6F841ECF197400A993B46628101FE372_915738000;
-        // ---------- Original Method ----------
-        //return entityTag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.327 -0400", hash_original_method = "FF09F62ACDB51364A1C119FC09E0694A", hash_generated_method = "4A50D59B9324C0E13D0E7D5237AF8333")
     public void setETag(String etag) throws ParseException {
     if(etag == null)        
@@ -60,21 +63,22 @@ String var6F841ECF197400A993B46628101FE372_915738000 =         entityTag;
         throw var95ED79636C178D71A0ABF9AD39122FAE_161639167;
         }
         this.entityTag = etag;
-        // ---------- Original Method ----------
-        //if (etag == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception,"
-                    //+ "SIP-If-Match, setETag(), the etag parameter is null");
-        //this.entityTag = etag;
+        
+        
+            
+                
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.328 -0400", hash_original_method = "7CA3A2804F10C6CA29833F9AB88CD018", hash_generated_method = "A8A2B2114609A7D3128BB34B68EE199C")
     public void setValue(String value) throws ParseException {
         addTaint(value.getTaint());
         this.setETag(value);
-        // ---------- Original Method ----------
-        //this.setETag(value);
+        
+        
     }
 
     

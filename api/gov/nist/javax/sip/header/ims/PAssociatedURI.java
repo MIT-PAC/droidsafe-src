@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersH
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.905 -0400", hash_original_method = "0CE9AC4DACE0AF9EAE08E4894C346C94", hash_generated_method = "E89CFA99CD3013AEEE12279CD13FCD79")
     public  PAssociatedURI() {
         super(PAssociatedURIHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,8 +25,8 @@ public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersH
         super(PAssociatedURIHeader.NAME);
         addTaint(address.getTaint());
         this.address = address;
-        // ---------- Original Method ----------
-        //this.address = address;
+        
+        
     }
 
     
@@ -36,9 +36,9 @@ public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersH
         addTaint(associatedURI.getTaint());
         this.address = new AddressImpl();
         this.address.setURI(associatedURI);
-        // ---------- Original Method ----------
-        //this.address = new AddressImpl();
-        //this.address.setURI(associatedURI);
+        
+        
+        
     }
 
     
@@ -48,29 +48,29 @@ public class PAssociatedURI extends gov.nist.javax.sip.header.AddressParametersH
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(LESS_THAN);
-        } //End block
+        } 
         retval.append(address.encode());
     if(address.getAddressType() == AddressImpl.ADDRESS_SPEC)        
         {
             retval.append(GREATER_THAN);
-        } //End block
+        } 
     if(!parameters.isEmpty())        
         retval.append(SEMICOLON + this.parameters.encode());
 String var1B324365A764C077A55854483509F4AB_1258756981 =         retval.toString();
         var1B324365A764C077A55854483509F4AB_1258756981.addTaint(taint);
         return var1B324365A764C077A55854483509F4AB_1258756981;
-        // ---------- Original Method ----------
-        //StringBuffer retval = new StringBuffer();
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //retval.append(LESS_THAN);
-        //}
-        //retval.append(address.encode());
-        //if (address.getAddressType() == AddressImpl.ADDRESS_SPEC) {
-            //retval.append(GREATER_THAN);
-        //}
-        //if (!parameters.isEmpty())
-            //retval.append(SEMICOLON + this.parameters.encode());
-        //return retval.toString();
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -84,10 +84,10 @@ String var1B324365A764C077A55854483509F4AB_1258756981 =         retval.toString(
         throw varCC2B4CF1D5C3A06C7F71134B2649E466_2111216601;
         }
         this.address.setURI(associatedURI);
-        // ---------- Original Method ----------
-        //if (associatedURI == null)
-            //throw new NullPointerException("null URI");
-        //this.address.setURI(associatedURI);
+        
+        
+            
+        
     }
 
     
@@ -96,8 +96,8 @@ String var1B324365A764C077A55854483509F4AB_1258756981 =         retval.toString(
 URI var90C92A89BE51D95AD79F613CFDD811DA_2120693804 =         this.address.getURI();
         var90C92A89BE51D95AD79F613CFDD811DA_2120693804.addTaint(taint);
         return var90C92A89BE51D95AD79F613CFDD811DA_2120693804;
-        // ---------- Original Method ----------
-        //return this.address.getURI();
+        
+        
     }
 
     
@@ -109,11 +109,11 @@ URI var90C92A89BE51D95AD79F613CFDD811DA_2120693804 =         this.address.getURI
 Object varF9E19AD6135C970F387F77C6F3DE4477_462449601 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_462449601.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_462449601;
-        // ---------- Original Method ----------
-        //PAssociatedURI retval = (PAssociatedURI) super.clone();
-        //if (this.address != null)
-            //retval.address = (AddressImpl) this.address.clone();
-        //return retval;
+        
+        
+        
+            
+        
     }
 
     
@@ -123,8 +123,8 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_462449601 =         retval;
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_1286095329 = new ParseException(value,0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_1286095329.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_1286095329;
-        // ---------- Original Method ----------
-        //throw new ParseException(value,0);
+        
+        
     }
 
     

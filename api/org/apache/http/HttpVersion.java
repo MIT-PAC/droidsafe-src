@@ -1,6 +1,6 @@
 package org.apache.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public final class HttpVersion extends ProtocolVersion implements Serializable {
         super(HTTP, major, minor);
         addTaint(minor);
         addTaint(major);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public final class HttpVersion extends ProtocolVersion implements Serializable {
 ProtocolVersion var72A74007B2BE62B849F475C7BDA4658B_1380326068 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1380326068.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1380326068;
-        } //End block
+        } 
     if(major == 1)        
         {
     if(minor == 0)            
@@ -34,39 +34,39 @@ ProtocolVersion var72A74007B2BE62B849F475C7BDA4658B_1380326068 =             thi
 ProtocolVersion var5EEF0429DA9861C325774B40B1988C10_1198535701 =                 HTTP_1_0;
                 var5EEF0429DA9861C325774B40B1988C10_1198535701.addTaint(taint);
                 return var5EEF0429DA9861C325774B40B1988C10_1198535701;
-            } //End block
+            } 
     if(minor == 1)            
             {
 ProtocolVersion var538DF995AF12E5D64EEE991AADA55B15_1202516356 =                 HTTP_1_1;
                 var538DF995AF12E5D64EEE991AADA55B15_1202516356.addTaint(taint);
                 return var538DF995AF12E5D64EEE991AADA55B15_1202516356;
-            } //End block
-        } //End block
+            } 
+        } 
     if((major == 0) && (minor == 9))        
         {
 ProtocolVersion var0DFF6ED6E4AEC821AD210B8B263E0B40_1801230595 =             HTTP_0_9;
             var0DFF6ED6E4AEC821AD210B8B263E0B40_1801230595.addTaint(taint);
             return var0DFF6ED6E4AEC821AD210B8B263E0B40_1801230595;
-        } //End block
+        } 
 ProtocolVersion varDC7E309066B4DB283EFEDC0B8DEBBD39_1273141414 =         new HttpVersion(major, minor);
         varDC7E309066B4DB283EFEDC0B8DEBBD39_1273141414.addTaint(taint);
         return varDC7E309066B4DB283EFEDC0B8DEBBD39_1273141414;
-        // ---------- Original Method ----------
-        //if ((major == this.major) && (minor == this.minor)) {
-            //return this;
-        //}
-        //if (major == 1) {
-            //if (minor == 0) {
-                //return HTTP_1_0;
-            //}
-            //if (minor == 1) {
-                //return HTTP_1_1;
-            //}
-        //}
-        //if ((major == 0) && (minor == 9)) {
-            //return HTTP_0_9;
-        //}
-        //return new HttpVersion(major, minor);
+        
+        
+            
+        
+        
+            
+                
+            
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     

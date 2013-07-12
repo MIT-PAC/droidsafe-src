@@ -1,6 +1,6 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public abstract class CipherSpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.660 -0400", hash_original_method = "57088A35FB2104AD2CEDD2998A7B7578", hash_generated_method = "B175E18BC1028895593001486C8188AB")
     public  CipherSpi() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -73,13 +73,13 @@ public abstract class CipherSpi {
             NullPointerException var80D12A66DA4390DDDA2651FD3A45533D_431660413 = new NullPointerException("input == null");
             var80D12A66DA4390DDDA2651FD3A45533D_431660413.addTaint(taint);
             throw var80D12A66DA4390DDDA2651FD3A45533D_431660413;
-        } //End block
+        } 
     if(output == null)        
         {
             NullPointerException varBF4B938C40C694CB6BD4546A6615BEC2_197327809 = new NullPointerException("output == null");
             varBF4B938C40C694CB6BD4546A6615BEC2_197327809.addTaint(taint);
             throw varBF4B938C40C694CB6BD4546A6615BEC2_197327809;
-        } //End block
+        } 
         int position = input.position();
         int limit = input.limit();
     if((limit - position) <= 0)        
@@ -87,7 +87,7 @@ public abstract class CipherSpi {
             int varCFCD208495D565EF66E7DFF9F98764DA_664171176 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092057217 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1092057217;
-        } //End block
+        } 
         byte[] bInput;
         byte[] bOutput;
     if(input.hasArray())        
@@ -96,40 +96,40 @@ public abstract class CipherSpi {
             int offset = input.arrayOffset();
             bOutput = engineUpdate(bInput, offset + position, limit - position);
             input.position(limit);
-        } //End block
+        } 
         else
         {
             bInput = new byte[limit - position];
             input.get(bInput);
             bOutput = engineUpdate(bInput, 0, limit - position);
-        } //End block
+        } 
     if(bOutput == null)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_664291530 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861458577 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1861458577;
-        } //End block
+        } 
     if(output.remaining() < bOutput.length)        
         {
             ShortBufferException varDAD5F610721385D9E15DD53D0E564C0D_2058248955 = new ShortBufferException("output buffer too small");
             varDAD5F610721385D9E15DD53D0E564C0D_2058248955.addTaint(taint);
             throw varDAD5F610721385D9E15DD53D0E564C0D_2058248955;
-        } //End block
+        } 
         try 
         {
             output.put(bOutput);
-        } //End block
+        } 
         catch (java.nio.BufferOverflowException e)
         {
             ShortBufferException varDAD5F610721385D9E15DD53D0E564C0D_549433152 = new ShortBufferException("output buffer too small");
             varDAD5F610721385D9E15DD53D0E564C0D_549433152.addTaint(taint);
             throw varDAD5F610721385D9E15DD53D0E564C0D_549433152;
-        } //End block
+        } 
         int varB4034539969FD5731B0199F2A7627E7D_59971044 = (bOutput.length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464818064 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1464818064;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -153,13 +153,13 @@ public abstract class CipherSpi {
             NullPointerException var80D12A66DA4390DDDA2651FD3A45533D_1382153702 = new NullPointerException("input == null");
             var80D12A66DA4390DDDA2651FD3A45533D_1382153702.addTaint(taint);
             throw var80D12A66DA4390DDDA2651FD3A45533D_1382153702;
-        } //End block
+        } 
     if(output == null)        
         {
             NullPointerException varBF4B938C40C694CB6BD4546A6615BEC2_1401995240 = new NullPointerException("output == null");
             varBF4B938C40C694CB6BD4546A6615BEC2_1401995240.addTaint(taint);
             throw varBF4B938C40C694CB6BD4546A6615BEC2_1401995240;
-        } //End block
+        } 
         int position = input.position();
         int limit = input.limit();
     if((limit - position) <= 0)        
@@ -167,7 +167,7 @@ public abstract class CipherSpi {
             int varCFCD208495D565EF66E7DFF9F98764DA_1293491186 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1632267918 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1632267918;
-        } //End block
+        } 
         byte[] bInput;
         byte[] bOutput;
     if(input.hasArray())        
@@ -176,34 +176,34 @@ public abstract class CipherSpi {
             int offset = input.arrayOffset();
             bOutput = engineDoFinal(bInput, offset + position, limit - position);
             input.position(limit);
-        } //End block
+        } 
         else
         {
             bInput = new byte[limit - position];
             input.get(bInput);
             bOutput = engineDoFinal(bInput, 0, limit - position);
-        } //End block
+        } 
     if(output.remaining() < bOutput.length)        
         {
             ShortBufferException varDAD5F610721385D9E15DD53D0E564C0D_925453241 = new ShortBufferException("output buffer too small");
             varDAD5F610721385D9E15DD53D0E564C0D_925453241.addTaint(taint);
             throw varDAD5F610721385D9E15DD53D0E564C0D_925453241;
-        } //End block
+        } 
         try 
         {
             output.put(bOutput);
-        } //End block
+        } 
         catch (java.nio.BufferOverflowException e)
         {
             ShortBufferException varDAD5F610721385D9E15DD53D0E564C0D_100047424 = new ShortBufferException("output buffer too small");
             varDAD5F610721385D9E15DD53D0E564C0D_100047424.addTaint(taint);
             throw varDAD5F610721385D9E15DD53D0E564C0D_100047424;
-        } //End block
+        } 
         int varB4034539969FD5731B0199F2A7627E7D_2027315967 = (bOutput.length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008497038 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1008497038;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -213,8 +213,8 @@ public abstract class CipherSpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1897847288 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1897847288.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1897847288;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -227,8 +227,8 @@ public abstract class CipherSpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_949307390 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_949307390.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_949307390;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -238,8 +238,8 @@ public abstract class CipherSpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2071490054 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2071490054.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2071490054;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,18 +23,18 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
         this.type = type;
         this.OPTIONAL = new boolean[type.length];
         this.DEFAULT = new Object[type.length];
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.OPTIONAL = new boolean[type.length];
-        //this.DEFAULT = new Object[type.length];
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.729 -0400", hash_original_method = "2E3FD069D2ECECC280341BA5C6DB58FF", hash_generated_method = "92AA06D5807671C4D16BB1AC57792687")
     protected final void setOptional(int index) {
         OPTIONAL[index] = true;
-        // ---------- Original Method ----------
-        //OPTIONAL[index] = true;
+        
+        
     }
 
     
@@ -42,9 +42,9 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
     protected final void setDefault(Object object, int index) {
         OPTIONAL[index] = true;
         DEFAULT[index] = object;
-        // ---------- Original Method ----------
-        //OPTIONAL[index] = true;
-        //DEFAULT[index] = object;
+        
+        
+        
     }
 
     
@@ -55,8 +55,8 @@ public abstract class ASN1TypeCollection extends ASN1Constructed {
         RuntimeException varE65FBD5F1AC3348889AAF04FEDF96B49_1211084895 = new RuntimeException("ASN.1 type is not designed to be encoded: " + getClass().getName());
         varE65FBD5F1AC3348889AAF04FEDF96B49_1211084895.addTaint(taint);
         throw varE65FBD5F1AC3348889AAF04FEDF96B49_1211084895;
-        // ---------- Original Method ----------
-        //throw new RuntimeException("ASN.1 type is not designed to be encoded: " + getClass().getName());
+        
+        
     }
 
     

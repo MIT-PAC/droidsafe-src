@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x501;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,11 +40,11 @@ public final class AttributeValue {
         this.hasQE = hasQorE;
         this.rawString = parsedString;
         this.escapedString = makeEscaped(rawString);
-        // ---------- Original Method ----------
-        //wasEncoded = false;
-        //this.hasQE = hasQorE;
-        //this.rawString = parsedString;
-        //this.escapedString = makeEscaped(rawString);
+        
+        
+        
+        
+        
     }
 
     
@@ -61,39 +61,39 @@ public final class AttributeValue {
             {
                 this.rawString = (String) DirectoryString.ASN1.decode(in);
                 this.escapedString = makeEscaped(rawString);
-            } //End block
+            } 
             else
             {
                 this.rawString = hexString;
                 this.escapedString = hexString;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException e)
         {
             IllegalArgumentException iae = new IllegalArgumentException();
             iae.initCause(e);
             iae.addTaint(taint);
             throw iae;
-        } //End block
-        // ---------- Original Method ----------
-        //wasEncoded = true;
-        //this.hexString = hexString;
-        //this.encoded = encoded;
-        //try {
-            //DerInputStream in = new DerInputStream(encoded);
-            //tag = in.tag;
-            //if (DirectoryString.ASN1.checkTag(tag)) {
-                //this.rawString = (String) DirectoryString.ASN1.decode(in);
-                //this.escapedString = makeEscaped(rawString);
-            //} else {
-                //this.rawString = hexString;
-                //this.escapedString = hexString;
-            //}
-        //} catch (IOException e) {
-            //IllegalArgumentException iae = new IllegalArgumentException(); 
-            //iae.initCause(e);
-            //throw iae;
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -106,23 +106,23 @@ public final class AttributeValue {
         {
             this.rawString = getHexString();
             this.escapedString = hexString;
-        } //End block
+        } 
         else
         {
             this.rawString = rawString;
             this.escapedString = makeEscaped(rawString);
-        } //End block
-        // ---------- Original Method ----------
-        //wasEncoded = true;
-        //this.encoded = encoded;
-        //this.tag = tag;
-        //if (rawString == null) {
-            //this.rawString = getHexString();
-            //this.escapedString = hexString;
-        //} else {
-            //this.rawString = rawString;
-            //this.escapedString = makeEscaped(rawString);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -150,17 +150,17 @@ public final class AttributeValue {
             tag = isPrintableString(rawString)
                     ? ASN1StringType.PRINTABLESTRING.id
                     : ASN1StringType.UTF8STRING.id;
-        } //End block
+        } 
         int varE4D23E841D8E8804190027BCE3180FA5_2037862231 = (tag);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033836656 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033836656;
-        // ---------- Original Method ----------
-        //if (tag == -1) {
-            //tag = isPrintableString(rawString)
-                    //? ASN1StringType.PRINTABLESTRING.id
-                    //: ASN1StringType.UTF8STRING.id;
-        //}
-        //return tag;
+        
+        
+            
+                    
+                    
+        
+        
     }
 
     
@@ -173,7 +173,7 @@ public final class AttributeValue {
                 encoded = isPrintableString(rawString)
                         ? ASN1StringType.PRINTABLESTRING.encode(rawString)
                         : ASN1StringType.UTF8STRING.encode(rawString);
-            } //End block
+            } 
             StringBuilder buf = new StringBuilder(encoded.length * 2 + 1);
             buf.append('#');
 for(int i = 0, c;i < encoded.length;i++)
@@ -182,28 +182,28 @@ for(int i = 0, c;i < encoded.length;i++)
     if(c < 10)                
                 {
                     buf.append((char) (c + 48));
-                } //End block
+                } 
                 else
                 {
                     buf.append((char) (c + 87));
-                } //End block
+                } 
                 c = encoded[i] & 0x0F;
     if(c < 10)                
                 {
                     buf.append((char) (c + 48));
-                } //End block
+                } 
                 else
                 {
                     buf.append((char) (c + 87));
-                } //End block
-            } //End block
+                } 
+            } 
             hexString = buf.toString();
-        } //End block
+        } 
 String varBA008EE6531228751573AF399048D4DC_1705916751 =         hexString;
         varBA008EE6531228751573AF399048D4DC_1705916751.addTaint(taint);
         return varBA008EE6531228751573AF399048D4DC_1705916751;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -220,30 +220,30 @@ for(int i = 0;i < rawString.length();i++)
     if(c == '"' || c == '\\')                
                 {
                     sb.append('\\');
-                } //End block
+                } 
                 sb.append(c);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             sb.append(rawString);
-        } //End block
+        } 
         sb.append('"');
-        // ---------- Original Method ----------
-        //sb.append('"');
-        //if (hasQE) {
-            //char c;
-            //for (int i = 0; i < rawString.length(); i++) {
-                //c = rawString.charAt(i);
-                //if (c == '"' || c == '\\') {
-                    //sb.append('\\');
-                //}
-                //sb.append(c);
-            //}
-        //} else {
-            //sb.append(rawString);
-        //}
-        //sb.append('"');
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -256,7 +256,7 @@ for(int i = 0;i < rawString.length();i++)
 String varB017984728AC60AD1F0BF8734F33F15C_1020095620 =             name;
             varB017984728AC60AD1F0BF8734F33F15C_1020095620.addTaint(taint);
             return varB017984728AC60AD1F0BF8734F33F15C_1020095620;
-        } //End block
+        } 
         StringBuilder buf = new StringBuilder(length * 2);
 for(int index = 0;index < length;index++)
         {
@@ -266,7 +266,7 @@ switch(ch){
     if(index == 0 || index == (length - 1))            
             {
                 buf.append('\\');
-            } //End block
+            } 
             buf.append(' ');
             break;
             case '"':
@@ -289,12 +289,12 @@ switch(ch){
             buf.append(ch);
             break;
 }
-        } //End block
+        } 
 String var4FC680801218E6372BC708D6FA44AE60_39639308 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_39639308.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_39639308;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -306,7 +306,7 @@ String var4FC680801218E6372BC708D6FA44AE60_39639308 =         buf.toString();
 String var4B9D0983C640FEFA2A1CCD188F4CB7B8_39022945 =             rawString;
             var4B9D0983C640FEFA2A1CCD188F4CB7B8_39022945.addTaint(taint);
             return var4B9D0983C640FEFA2A1CCD188F4CB7B8_39022945;
-        } //End block
+        } 
         StringBuilder buf = new StringBuilder(length * 2);
         int index = 0;
     if(rawString.charAt(0) == '#')        
@@ -314,7 +314,7 @@ String var4B9D0983C640FEFA2A1CCD188F4CB7B8_39022945 =             rawString;
             buf.append('\\');
             buf.append('#');
             index++;
-        } //End block
+        } 
         int bufLength;
 for(;index < length;index++)
         {
@@ -325,7 +325,7 @@ switch(ch){
     if(bufLength == 0 || buf.charAt(bufLength - 1) == ' ')            
             {
                 break;
-            } //End block
+            } 
             buf.append(' ');
             break;
             case '"':
@@ -339,17 +339,17 @@ switch(ch){
             default:
             buf.append(ch);
 }
-        } //End block
+        } 
 for(bufLength = buf.length() - 1;bufLength > -1
                 && buf.charAt(bufLength) == ' ';bufLength--)
         {
-        } //End block
+        } 
         buf.setLength(bufLength + 1);
 String var4FC680801218E6372BC708D6FA44AE60_1979410913 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1979410913.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1979410913;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -95,7 +95,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     MediaPlayer.OnVideoSizeChangedListener mSizeChangedListener = new MediaPlayer.OnVideoSizeChangedListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.014 -0400", hash_original_method = "65C1900C93D820BA1B5709EC480BC8B9", hash_generated_method = "5A0376C9D05473741310A687D0A1D905")
         public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(height);
             addTaint(width);
             addTaint(mp.getTaint());
@@ -104,13 +104,13 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mVideoWidth != 0 && mVideoHeight != 0)            
             {
                 getHolder().setFixedSize(mVideoWidth, mVideoHeight);
-            } //End block
-            // ---------- Original Method ----------
-            //mVideoWidth = mp.getVideoWidth();
-            //mVideoHeight = mp.getVideoHeight();
-            //if (mVideoWidth != 0 && mVideoHeight != 0) {
-                    //getHolder().setFixedSize(mVideoWidth, mVideoHeight);
-                //}
+            } 
+            
+            
+            
+            
+                    
+                
         }
 
         
@@ -120,7 +120,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     MediaPlayer.OnPreparedListener mPreparedListener = new MediaPlayer.OnPreparedListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.017 -0400", hash_original_method = "0EF132CA9B43E797B9141E33932ED66A", hash_generated_method = "AF4648378D610AEF2F0F11C8233E2476")
         public void onPrepared(MediaPlayer mp) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(mp.getTaint());
             mCurrentState = STATE_PREPARED;
             Metadata data = mp.getMetadata(MediaPlayer.METADATA_ALL,
@@ -133,26 +133,26 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
                         || data.getBoolean(Metadata.SEEK_BACKWARD_AVAILABLE);
                 mCanSeekForward = !data.has(Metadata.SEEK_FORWARD_AVAILABLE)
                         || data.getBoolean(Metadata.SEEK_FORWARD_AVAILABLE);
-            } //End block
+            } 
             else
             {
                 mCanPause = mCanSeekBack = mCanSeekForward = true;
-            } //End block
+            } 
     if(mOnPreparedListener != null)            
             {
                 mOnPreparedListener.onPrepared(mMediaPlayer);
-            } //End block
+            } 
     if(mMediaController != null)            
             {
                 mMediaController.setEnabled(true);
-            } //End block
+            } 
             mVideoWidth = mp.getVideoWidth();
             mVideoHeight = mp.getVideoHeight();
             int seekToPosition = mSeekWhenPrepared;
     if(seekToPosition != 0)            
             {
                 seekTo(seekToPosition);
-            } //End block
+            } 
     if(mVideoWidth != 0 && mVideoHeight != 0)            
             {
                 getHolder().setFixedSize(mVideoWidth, mVideoHeight);
@@ -164,8 +164,8 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mMediaController != null)                        
                         {
                             mMediaController.show();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(!isPlaying() &&
                                (seekToPosition != 0 || getCurrentPosition() > 0))                    
@@ -173,19 +173,19 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mMediaController != null)                        
                         {
                             mMediaController.show(0);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             else
             {
     if(mTargetState == STATE_PLAYING)                
                 {
                     start();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -195,27 +195,27 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.018 -0400", hash_original_method = "ED920C0310CF61207D5F50C29A8DA263", hash_generated_method = "ABC2887D7206852167C55B84DACFB566")
         public void onCompletion(MediaPlayer mp) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(mp.getTaint());
             mCurrentState = STATE_PLAYBACK_COMPLETED;
             mTargetState = STATE_PLAYBACK_COMPLETED;
     if(mMediaController != null)            
             {
                 mMediaController.hide();
-            } //End block
+            } 
     if(mOnCompletionListener != null)            
             {
                 mOnCompletionListener.onCompletion(mMediaPlayer);
-            } //End block
-            // ---------- Original Method ----------
-            //mCurrentState = STATE_PLAYBACK_COMPLETED;
-            //mTargetState = STATE_PLAYBACK_COMPLETED;
-            //if (mMediaController != null) {
-                //mMediaController.hide();
-            //}
-            //if (mOnCompletionListener != null) {
-                //mOnCompletionListener.onCompletion(mMediaPlayer);
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+            
+                
+            
         }
 
         
@@ -225,7 +225,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     private MediaPlayer.OnErrorListener mErrorListener = new MediaPlayer.OnErrorListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.021 -0400", hash_original_method = "184ED7C09E4A303ABD8AE77B83A95A83", hash_generated_method = "3A2B2970BA4530D5F8B7465029C8575B")
         public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(impl_err);
             addTaint(framework_err);
             addTaint(mp.getTaint());
@@ -235,7 +235,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mMediaController != null)            
             {
                 mMediaController.hide();
-            } //End block
+            } 
     if(mOnErrorListener != null)            
             {
     if(mOnErrorListener.onError(mMediaPlayer, framework_err, impl_err))                
@@ -243,8 +243,8 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
                     boolean varB326B5062B2F0E69046810717534CB09_1954290523 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_57041829 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_57041829;
-                } //End block
-            } //End block
+                } 
+            } 
     if(getWindowToken() != null)            
             {
                 Resources r = mContext.getResources();
@@ -252,11 +252,11 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(framework_err == MediaPlayer.MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK)                
                 {
                     messageId = com.android.internal.R.string.VideoView_error_text_invalid_progressive_playback;
-                } //End block
+                } 
                 else
                 {
                     messageId = com.android.internal.R.string.VideoView_error_text_unknown;
-                } //End block
+                } 
                 new AlertDialog.Builder(mContext)
                         .setTitle(com.android.internal.R.string.VideoView_error_title)
                         .setMessage(messageId)
@@ -264,27 +264,27 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
                                 new DialogInterface.OnClickListener() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.021 -0400", hash_original_method = "34424E1DFACB91566F8A1492C534FD5D", hash_generated_method = "85AE64EA9C14DCFDC773171C3D5E8347")
             public void onClick(DialogInterface dialog, int whichButton) {
-                //DSFIXME:  CODE0009: Possible callback target function detected
+                
                 addTaint(whichButton);
                 addTaint(dialog.getTaint());
     if(mOnCompletionListener != null)                
                 {
                     mOnCompletionListener.onCompletion(mMediaPlayer);
-                } //End block
-                // ---------- Original Method ----------
-                //if (mOnCompletionListener != null) {
-                                            //mOnCompletionListener.onCompletion(mMediaPlayer);
-                                        //}
+                } 
+                
+                
+                                            
+                                        
             }
 })
                         .setCancelable(false)
                         .show();
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1000183934 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268543364 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_268543364;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -294,12 +294,12 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     private MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener = new MediaPlayer.OnBufferingUpdateListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.023 -0400", hash_original_method = "16726F937605C6D0A73F251CECEE924B", hash_generated_method = "CAC6A4464B81DB183B5DDB584F5B66EB")
         public void onBufferingUpdate(MediaPlayer mp, int percent) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(percent);
             addTaint(mp.getTaint());
             mCurrentBufferPercentage = percent;
-            // ---------- Original Method ----------
-            //mCurrentBufferPercentage = percent;
+            
+            
         }
 
         
@@ -323,20 +323,20 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mSeekWhenPrepared != 0)                
                 {
                     seekTo(mSeekWhenPrepared);
-                } //End block
+                } 
                 start();
-            } //End block
-            // ---------- Original Method ----------
-            //mSurfaceWidth = w;
-            //mSurfaceHeight = h;
-            //boolean isValidState =  (mTargetState == STATE_PLAYING);
-            //boolean hasValidSize = (mVideoWidth == w && mVideoHeight == h);
-            //if (mMediaPlayer != null && isValidState && hasValidSize) {
-                //if (mSeekWhenPrepared != 0) {
-                    //seekTo(mSeekWhenPrepared);
-                //}
-                //start();
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -345,9 +345,9 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
             addTaint(holder.getTaint());
             mSurfaceHolder = holder;
             openVideo();
-            // ---------- Original Method ----------
-            //mSurfaceHolder = holder;
-            //openVideo();
+            
+            
+            
         }
 
         
@@ -358,10 +358,10 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mMediaController != null)            
             mMediaController.hide();
             release(true);
-            // ---------- Original Method ----------
-            //mSurfaceHolder = null;
-            //if (mMediaController != null) mMediaController.hide();
-            //release(true);
+            
+            
+            
+            
         }
 
         
@@ -372,8 +372,8 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
         super(context);
         addTaint(context.getTaint());
         initVideoView();
-        // ---------- Original Method ----------
-        //initVideoView();
+        
+        
     }
 
     
@@ -383,8 +383,8 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
         initVideoView();
-        // ---------- Original Method ----------
-        //initVideoView();
+        
+        
     }
 
     
@@ -395,15 +395,15 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
         initVideoView();
-        // ---------- Original Method ----------
-        //initVideoView();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.027 -0400", hash_original_method = "399D33D7F524FC7B17B9973DF2D06AB6", hash_generated_method = "6E4AAD1C389460645763C98FA261FB00")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
@@ -413,29 +413,29 @@ public class VideoView extends SurfaceView implements MediaPlayerControl {
     if(mVideoWidth * height  > width * mVideoHeight)            
             {
                 height = width * mVideoHeight / mVideoWidth;
-            } //End block
+            } 
             else
     if(mVideoWidth * height  < width * mVideoHeight)            
             {
                 width = height * mVideoWidth / mVideoHeight;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
         setMeasuredDimension(width, height);
-        // ---------- Original Method ----------
-        //int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
-        //int height = getDefaultSize(mVideoHeight, heightMeasureSpec);
-        //if (mVideoWidth > 0 && mVideoHeight > 0) {
-            //if ( mVideoWidth * height  > width * mVideoHeight ) {
-                //height = width * mVideoHeight / mVideoWidth;
-            //} else if ( mVideoWidth * height  < width * mVideoHeight ) {
-                //width = height * mVideoWidth / mVideoHeight;
-            //} else {
-            //}
-        //}
-        //setMeasuredDimension(width, height);
+        
+        
+        
+        
+            
+                
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -459,22 +459,22 @@ switch(specMode){
 }        int varB4A88417B3D0170D754C647C30B7216A_1352715851 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182058886 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182058886;
-        // ---------- Original Method ----------
-        //int result = desiredSize;
-        //int specMode = MeasureSpec.getMode(measureSpec);
-        //int specSize =  MeasureSpec.getSize(measureSpec);
-        //switch (specMode) {
-            //case MeasureSpec.UNSPECIFIED:
-                //result = desiredSize;
-                //break;
-            //case MeasureSpec.AT_MOST:
-                //result = Math.min(desiredSize, specSize);
-                //break;
-            //case MeasureSpec.EXACTLY:
-                //result = specSize;
-                //break;
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+                
+            
+                
+                
+            
+                
+                
+        
+        
     }
 
     
@@ -489,16 +489,16 @@ switch(specMode){
         requestFocus();
         mCurrentState = STATE_IDLE;
         mTargetState  = STATE_IDLE;
-        // ---------- Original Method ----------
-        //mVideoWidth = 0;
-        //mVideoHeight = 0;
-        //getHolder().addCallback(mSHCallback);
-        //getHolder().setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-        //setFocusable(true);
-        //setFocusableInTouchMode(true);
-        //requestFocus();
-        //mCurrentState = STATE_IDLE;
-        //mTargetState  = STATE_IDLE;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -506,17 +506,18 @@ switch(specMode){
     public void setVideoPath(String path) {
         addTaint(path.getTaint());
         setVideoURI(Uri.parse(path));
-        // ---------- Original Method ----------
-        //setVideoURI(Uri.parse(path));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.030 -0400", hash_original_method = "145B809162AC001B5D3448C75D9513F9", hash_generated_method = "6FEF308FD150ABD03EA089803542F5BB")
     public void setVideoURI(Uri uri) {
         addTaint(uri.getTaint());
         setVideoURI(uri, null);
-        // ---------- Original Method ----------
-        //setVideoURI(uri, null);
+        
+        
     }
 
     
@@ -528,13 +529,13 @@ switch(specMode){
         openVideo();
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mUri = uri;
-        //mHeaders = headers;
-        //mSeekWhenPrepared = 0;
-        //openVideo();
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -547,15 +548,15 @@ switch(specMode){
             mMediaPlayer = null;
             mCurrentState = STATE_IDLE;
             mTargetState  = STATE_IDLE;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMediaPlayer != null) {
-            //mMediaPlayer.stop();
-            //mMediaPlayer.release();
-            //mMediaPlayer = null;
-            //mCurrentState = STATE_IDLE;
-            //mTargetState  = STATE_IDLE;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -564,7 +565,7 @@ switch(specMode){
     if(mUri == null || mSurfaceHolder == null)        
         {
             return;
-        } //End block
+        } 
         Intent i = new Intent("com.android.music.musicservicecommand");
         i.putExtra("command", "pause");
         mContext.sendBroadcast(i);
@@ -586,23 +587,23 @@ switch(specMode){
             mMediaPlayer.prepareAsync();
             mCurrentState = STATE_PREPARING;
             attachMediaController();
-        } //End block
+        } 
         catch (IOException ex)
         {
             mCurrentState = STATE_ERROR;
             mTargetState = STATE_ERROR;
             mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
             return;
-        } //End block
+        } 
         catch (IllegalArgumentException ex)
         {
             mCurrentState = STATE_ERROR;
             mTargetState = STATE_ERROR;
             mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
             return;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -611,15 +612,15 @@ switch(specMode){
     if(mMediaController != null)        
         {
             mMediaController.hide();
-        } //End block
+        } 
         mMediaController = controller;
         attachMediaController();
-        // ---------- Original Method ----------
-        //if (mMediaController != null) {
-            //mMediaController.hide();
-        //}
-        //mMediaController = controller;
-        //attachMediaController();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -632,39 +633,42 @@ switch(specMode){
                     (View)this.getParent() : this;
             mMediaController.setAnchorView(anchorView);
             mMediaController.setEnabled(isInPlaybackState());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMediaPlayer != null && mMediaController != null) {
-            //mMediaController.setMediaPlayer(this);
-            //View anchorView = this.getParent() instanceof View ?
-                    //(View)this.getParent() : this;
-            //mMediaController.setAnchorView(anchorView);
-            //mMediaController.setEnabled(isInPlaybackState());
-        //}
+        } 
+        
+        
+            
+            
+                    
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.034 -0400", hash_original_method = "D1A9D86A0084E612B3B59A1A4238CD00", hash_generated_method = "3710D8ED101BA92E0D7F5A21FDA53560")
     public void setOnPreparedListener(MediaPlayer.OnPreparedListener l) {
         mOnPreparedListener = l;
-        // ---------- Original Method ----------
-        //mOnPreparedListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.034 -0400", hash_original_method = "E72FB4A9E0939C099D3564FC711BE1EB", hash_generated_method = "3DEA5DC4F2B7AF9282FD8AA86CA654D0")
     public void setOnCompletionListener(OnCompletionListener l) {
         mOnCompletionListener = l;
-        // ---------- Original Method ----------
-        //mOnCompletionListener = l;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.034 -0400", hash_original_method = "1D9D4DF006E463AA131E1079BD21BB23", hash_generated_method = "F76228A81F30849808D6699A5C1AC6AA")
     public void setOnErrorListener(OnErrorListener l) {
         mOnErrorListener = l;
-        // ---------- Original Method ----------
-        //mOnErrorListener = l;
+        
+        
     }
 
     
@@ -680,65 +684,65 @@ switch(specMode){
     if(cleartargetstate)            
             {
                 mTargetState  = STATE_IDLE;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMediaPlayer != null) {
-            //mMediaPlayer.reset();
-            //mMediaPlayer.release();
-            //mMediaPlayer = null;
-            //mCurrentState = STATE_IDLE;
-            //if (cleartargetstate) {
-                //mTargetState  = STATE_IDLE;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.035 -0400", hash_original_method = "4F4B3F8532DEC480E2D437E642010990", hash_generated_method = "BF6ED0E51B4A4595954D82789397AC31")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ev.getTaint());
     if(isInPlaybackState() && mMediaController != null)        
         {
             toggleMediaControlsVisiblity();
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1703411622 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_916449815 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_916449815;
-        // ---------- Original Method ----------
-        //if (isInPlaybackState() && mMediaController != null) {
-            //toggleMediaControlsVisiblity();
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.036 -0400", hash_original_method = "8AF49D524D52FF5D4247E0FF5D02E5F0", hash_generated_method = "1E87DFF12A08E6E8440C664CDA522580")
     @Override
     public boolean onTrackballEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ev.getTaint());
     if(isInPlaybackState() && mMediaController != null)        
         {
             toggleMediaControlsVisiblity();
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_600712919 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1572945119 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1572945119;
-        // ---------- Original Method ----------
-        //if (isInPlaybackState() && mMediaController != null) {
-            //toggleMediaControlsVisiblity();
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.036 -0400", hash_original_method = "91A873FF1F5486FD2484C66FB73721D3", hash_generated_method = "BB17BBCAE57651AC107565BF821F085F")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         addTaint(keyCode);
         boolean isKeyCodeSupported = keyCode != KeyEvent.KEYCODE_BACK &&
@@ -757,16 +761,16 @@ switch(specMode){
                 {
                     pause();
                     mMediaController.show();
-                } //End block
+                } 
                 else
                 {
                     start();
                     mMediaController.hide();
-                } //End block
+                } 
                 boolean varB326B5062B2F0E69046810717534CB09_769912595 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1139992428 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1139992428;
-            } //End block
+            } 
             else
     if(keyCode == KeyEvent.KEYCODE_MEDIA_PLAY)            
             {
@@ -774,11 +778,11 @@ switch(specMode){
                 {
                     start();
                     mMediaController.hide();
-                } //End block
+                } 
                 boolean varB326B5062B2F0E69046810717534CB09_1263809914 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_712192399 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_712192399;
-            } //End block
+            } 
             else
     if(keyCode == KeyEvent.KEYCODE_MEDIA_STOP
                     || keyCode == KeyEvent.KEYCODE_MEDIA_PAUSE)            
@@ -787,21 +791,21 @@ switch(specMode){
                 {
                     pause();
                     mMediaController.show();
-                } //End block
+                } 
                 boolean varB326B5062B2F0E69046810717534CB09_351733455 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1651295163 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1651295163;
-            } //End block
+            } 
             else
             {
                 toggleMediaControlsVisiblity();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var947F0C250323B9F4475E02588E9A9740_1160788659 = (super.onKeyDown(keyCode, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1553477775 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1553477775;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -810,17 +814,17 @@ switch(specMode){
     if(mMediaController.isShowing())        
         {
             mMediaController.hide();
-        } //End block
+        } 
         else
         {
             mMediaController.show();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMediaController.isShowing()) {
-            //mMediaController.hide();
-        //} else {
-            //mMediaController.show();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -830,14 +834,14 @@ switch(specMode){
         {
             mMediaPlayer.start();
             mCurrentState = STATE_PLAYING;
-        } //End block
+        } 
         mTargetState = STATE_PLAYING;
-        // ---------- Original Method ----------
-        //if (isInPlaybackState()) {
-            //mMediaPlayer.start();
-            //mCurrentState = STATE_PLAYING;
-        //}
-        //mTargetState = STATE_PLAYING;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -849,33 +853,33 @@ switch(specMode){
             {
                 mMediaPlayer.pause();
                 mCurrentState = STATE_PAUSED;
-            } //End block
-        } //End block
+            } 
+        } 
         mTargetState = STATE_PAUSED;
-        // ---------- Original Method ----------
-        //if (isInPlaybackState()) {
-            //if (mMediaPlayer.isPlaying()) {
-                //mMediaPlayer.pause();
-                //mCurrentState = STATE_PAUSED;
-            //}
-        //}
-        //mTargetState = STATE_PAUSED;
+        
+        
+            
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.039 -0400", hash_original_method = "DB957E41439183A7A4B3F0D26130031C", hash_generated_method = "4898C2CBA953708EFFAC9A29E3A7A14C")
     public void suspend() {
         release(false);
-        // ---------- Original Method ----------
-        //release(false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.039 -0400", hash_original_method = "E6E0A392D25FFAD71752A274562CC374", hash_generated_method = "D12BA13D773BAF0D6B22978BCBFC4335")
     public void resume() {
         openVideo();
-        // ---------- Original Method ----------
-        //openVideo();
+        
+        
     }
 
     
@@ -888,26 +892,26 @@ switch(specMode){
                 int var25395741BFE51A7D136A5C7109AAD2D8_776544809 = (mDuration);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_689183801 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_689183801;
-            } //End block
+            } 
             mDuration = mMediaPlayer.getDuration();
             int var25395741BFE51A7D136A5C7109AAD2D8_338596720 = (mDuration);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2009513767 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2009513767;
-        } //End block
+        } 
         mDuration = -1;
         int var25395741BFE51A7D136A5C7109AAD2D8_1106307002 = (mDuration);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914719633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_914719633;
-        // ---------- Original Method ----------
-        //if (isInPlaybackState()) {
-            //if (mDuration > 0) {
-                //return mDuration;
-            //}
-            //mDuration = mMediaPlayer.getDuration();
-            //return mDuration;
-        //}
-        //mDuration = -1;
-        //return mDuration;
+        
+        
+            
+                
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -918,15 +922,15 @@ switch(specMode){
             int var61A7926289BB780333BFB82793EA442D_1470894222 = (mMediaPlayer.getCurrentPosition());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1302624414 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1302624414;
-        } //End block
+        } 
         int varCFCD208495D565EF66E7DFF9F98764DA_1652220386 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371408258 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_371408258;
-        // ---------- Original Method ----------
-        //if (isInPlaybackState()) {
-            //return mMediaPlayer.getCurrentPosition();
-        //}
-        //return 0;
+        
+        
+            
+        
+        
     }
 
     
@@ -936,18 +940,18 @@ switch(specMode){
         {
             mMediaPlayer.seekTo(msec);
             mSeekWhenPrepared = 0;
-        } //End block
+        } 
         else
         {
             mSeekWhenPrepared = msec;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isInPlaybackState()) {
-            //mMediaPlayer.seekTo(msec);
-            //mSeekWhenPrepared = 0;
-        //} else {
-            //mSeekWhenPrepared = msec;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -956,11 +960,12 @@ switch(specMode){
         boolean var8AEA42665765075ED010C2544315DC0F_562518315 = (isInPlaybackState() && mMediaPlayer.isPlaying());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051252992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051252992;
-        // ---------- Original Method ----------
-        //return isInPlaybackState() && mMediaPlayer.isPlaying();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.041 -0400", hash_original_method = "FEBDDA350C03AAA5C15557B944427C9D", hash_generated_method = "BBBD94A9F9F4145FBD3D9117905C790F")
     public int getBufferPercentage() {
     if(mMediaPlayer != null)        
@@ -968,18 +973,19 @@ switch(specMode){
             int var1873B2B1AC18422B33460DFB5D5CB345_1994723439 = (mCurrentBufferPercentage);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732346839 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732346839;
-        } //End block
+        } 
         int varCFCD208495D565EF66E7DFF9F98764DA_644811481 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101607852 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_101607852;
-        // ---------- Original Method ----------
-        //if (mMediaPlayer != null) {
-            //return mCurrentBufferPercentage;
-        //}
-        //return 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.041 -0400", hash_original_method = "181624277C30FCEFD8B4CC029FACB2EE", hash_generated_method = "A52A298BD6C466747016AE66AD994483")
     private boolean isInPlaybackState() {
         boolean var1C53704901E4033DF3FE8CE3B2EB3177_1038008698 = ((mMediaPlayer != null &&
@@ -988,41 +994,44 @@ switch(specMode){
                 mCurrentState != STATE_PREPARING));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_612582382 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_612582382;
-        // ---------- Original Method ----------
-        //return (mMediaPlayer != null &&
-                //mCurrentState != STATE_ERROR &&
-                //mCurrentState != STATE_IDLE &&
-                //mCurrentState != STATE_PREPARING);
+        
+        
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.041 -0400", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "C2EDB225E3372115C65CEB9B09A4E33E")
     public boolean canPause() {
         boolean var9A4623B61542BEC8D3E426C93DD77346_1035230235 = (mCanPause);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2049301570 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2049301570;
-        // ---------- Original Method ----------
-        //return mCanPause;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.042 -0400", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "5AEC876A2E5D34C41B59233D43512134")
     public boolean canSeekBackward() {
         boolean var260CDABACB2B7A4C6F8B739A9531399D_307931919 = (mCanSeekBack);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_356065658 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_356065658;
-        // ---------- Original Method ----------
-        //return mCanSeekBack;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.042 -0400", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "ED14D37C36D766D8B1AC94B1ADA7D136")
     public boolean canSeekForward() {
         boolean var1042AFD5E2128CC06471C1ED59799B06_1525864080 = (mCanSeekForward);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1962925376 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1962925376;
-        // ---------- Original Method ----------
-        //return mCanSeekForward;
+        
+        
     }
 
     

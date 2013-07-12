@@ -1,6 +1,6 @@
 package android.emoji;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,10 +28,10 @@ public final class EmojiFactory {
         mNativeEmojiFactory = nativeEmojiFactory;
         mName = name;
         mCache = new CustomLinkedHashMap<Integer, WeakReference<Bitmap>>();
-        // ---------- Original Method ----------
-        //mNativeEmojiFactory = nativeEmojiFactory;
-        //mName = name;
-        //mCache = new CustomLinkedHashMap<Integer, WeakReference<Bitmap>>();
+        
+        
+        
+        
     }
 
     
@@ -41,27 +41,28 @@ public final class EmojiFactory {
         try 
         {
             nativeDestructor(mNativeEmojiFactory);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //nativeDestructor(mNativeEmojiFactory);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.645 -0400", hash_original_method = "61A4CE5E0B45509C63F06179C920C9C2", hash_generated_method = "90AD13F1A0BAD69D758E89DA16A900CA")
     public String name() {
 String varDBF15A5FB8102A5C28D5046A0E92E443_316774322 =         mName;
         varDBF15A5FB8102A5C28D5046A0E92E443_316774322.addTaint(taint);
         return varDBF15A5FB8102A5C28D5046A0E92E443_316774322;
-        // ---------- Original Method ----------
-        //return mName;
+        
+        
     }
 
     
@@ -75,11 +76,11 @@ String varDBF15A5FB8102A5C28D5046A0E92E443_316774322 =         mName;
     if(ret != null)            
             {
                 mCache.put(pua, new WeakReference<Bitmap>(ret));
-            } //End block
+            } 
 Bitmap varEDFF4FBBF053B5DC2B444ADFA049EE0F_1689154499 =             ret;
             varEDFF4FBBF053B5DC2B444ADFA049EE0F_1689154499.addTaint(taint);
             return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1689154499;
-        } //End block
+        } 
         else
         {
             Bitmap tmp = cache.get();
@@ -90,32 +91,32 @@ Bitmap varEDFF4FBBF053B5DC2B444ADFA049EE0F_1689154499 =             ret;
 Bitmap varEDFF4FBBF053B5DC2B444ADFA049EE0F_1459485911 =                 ret;
                 varEDFF4FBBF053B5DC2B444ADFA049EE0F_1459485911.addTaint(taint);
                 return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1459485911;
-            } //End block
+            } 
             else
             {
 Bitmap var3F12A0424932F6B5155AA6C49B63FE6E_1579020898 =                 tmp;
                 var3F12A0424932F6B5155AA6C49B63FE6E_1579020898.addTaint(taint);
                 return var3F12A0424932F6B5155AA6C49B63FE6E_1579020898;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //WeakReference<Bitmap> cache = mCache.get(pua);
-        //if (cache == null) {
-            //Bitmap ret = nativeGetBitmapFromAndroidPua(mNativeEmojiFactory, pua);
-            //if (ret != null) {
-               //mCache.put(pua, new WeakReference<Bitmap>(ret));
-            //}
-            //return ret;
-        //} else {
-            //Bitmap tmp = cache.get();
-            //if (tmp == null) {
-                //Bitmap ret = nativeGetBitmapFromAndroidPua(mNativeEmojiFactory, pua);
-                //mCache.put(pua, new WeakReference<Bitmap>(ret));
-                //return ret;
-            //} else {
-                //return tmp;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+               
+            
+            
+        
+            
+            
+                
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -125,8 +126,8 @@ Bitmap var3F12A0424932F6B5155AA6C49B63FE6E_1579020898 =                 tmp;
 Bitmap varC5F7FE1D4DC4CA1B8DCAD3328E5279D5_182224930 =         getBitmapFromAndroidPua(getAndroidPuaFromVendorSpecificSjis(sjis));
         varC5F7FE1D4DC4CA1B8DCAD3328E5279D5_182224930.addTaint(taint);
         return varC5F7FE1D4DC4CA1B8DCAD3328E5279D5_182224930;
-        // ---------- Original Method ----------
-        //return getBitmapFromAndroidPua(getAndroidPuaFromVendorSpecificSjis(sjis));
+        
+        
     }
 
     
@@ -136,8 +137,8 @@ Bitmap varC5F7FE1D4DC4CA1B8DCAD3328E5279D5_182224930 =         getBitmapFromAndr
 Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_196377460 =         getBitmapFromAndroidPua(getAndroidPuaFromVendorSpecificPua(vsp));
         var75D3E4F7EF5701CC303BB7D9BB089B97_196377460.addTaint(taint);
         return var75D3E4F7EF5701CC303BB7D9BB089B97_196377460;
-        // ---------- Original Method ----------
-        //return getBitmapFromAndroidPua(getAndroidPuaFromVendorSpecificPua(vsp));
+        
+        
     }
 
     
@@ -147,8 +148,8 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_196377460 =         getBitmapFromAndr
         int var3843C29FECC0974F690319631B11D9A6_362701282 = (nativeGetAndroidPuaFromVendorSpecificSjis(mNativeEmojiFactory, sjis));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_241630265 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_241630265;
-        // ---------- Original Method ----------
-        //return nativeGetAndroidPuaFromVendorSpecificSjis(mNativeEmojiFactory, sjis);
+        
+        
     }
 
     
@@ -158,8 +159,8 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_196377460 =         getBitmapFromAndr
         int var942FA451A0910B7923574FD7D5787C79_365936696 = (nativeGetVendorSpecificSjisFromAndroidPua(mNativeEmojiFactory, pua));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1794280673 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1794280673;
-        // ---------- Original Method ----------
-        //return nativeGetVendorSpecificSjisFromAndroidPua(mNativeEmojiFactory, pua);
+        
+        
     }
 
     
@@ -169,8 +170,8 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_196377460 =         getBitmapFromAndr
         int var2A8F1EC31A04DB09EF9435EA3EA99842_231249046 = (nativeGetAndroidPuaFromVendorSpecificPua(mNativeEmojiFactory, vsp));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712351201 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712351201;
-        // ---------- Original Method ----------
-        //return nativeGetAndroidPuaFromVendorSpecificPua(mNativeEmojiFactory, vsp);
+        
+        
     }
 
     
@@ -182,7 +183,7 @@ Bitmap var75D3E4F7EF5701CC303BB7D9BB089B97_196377460 =         getBitmapFromAndr
 String var540C13E9E156B687226421B24F2DF178_15187833 =             null;
             var540C13E9E156B687226421B24F2DF178_15187833.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_15187833;
-        } //End block
+        } 
         int minVsp = nativeGetMinimumVendorSpecificPua(mNativeEmojiFactory);
         int maxVsp = nativeGetMaximumVendorSpecificPua(mNativeEmojiFactory);
         int len = vspString.length();
@@ -198,15 +199,15 @@ for(int i = 0;i < len;i = vspString.offsetByCodePoints(i, 1),new_len++)
                 {
                     codePoints[new_len] = newCodePoint;
                     continue;
-                } //End block
-            } //End block
+                } 
+            } 
             codePoints[new_len] = codePoint;
-        } //End block
+        } 
 String var3AC7A0B6507C070325418D20C396FDAC_355235545 =         new String(codePoints, 0, new_len);
         var3AC7A0B6507C070325418D20C396FDAC_355235545.addTaint(taint);
         return var3AC7A0B6507C070325418D20C396FDAC_355235545;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -216,8 +217,8 @@ String var3AC7A0B6507C070325418D20C396FDAC_355235545 =         new String(codePo
         int var3B3B4178179080EADE1EBBBD31DFB279_1114608777 = (nativeGetVendorSpecificPuaFromAndroidPua(mNativeEmojiFactory, pua));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411611369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411611369;
-        // ---------- Original Method ----------
-        //return nativeGetVendorSpecificPuaFromAndroidPua(mNativeEmojiFactory, pua);
+        
+        
     }
 
     
@@ -229,7 +230,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_355235545 =         new String(codePo
 String var540C13E9E156B687226421B24F2DF178_152773081 =             null;
             var540C13E9E156B687226421B24F2DF178_152773081.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_152773081;
-        } //End block
+        } 
         int minVsp = nativeGetMinimumAndroidPua(mNativeEmojiFactory);
         int maxVsp = nativeGetMaximumAndroidPua(mNativeEmojiFactory);
         int len = puaString.length();
@@ -245,15 +246,15 @@ for(int i = 0;i < len;i = puaString.offsetByCodePoints(i, 1),new_len++)
                 {
                     codePoints[new_len] = newCodePoint;
                     continue;
-                } //End block
-            } //End block
+                } 
+            } 
             codePoints[new_len] = codePoint;
-        } //End block
+        } 
 String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codePoints, 0, new_len);
         var3AC7A0B6507C070325418D20C396FDAC_1524006264.addTaint(taint);
         return var3AC7A0B6507C070325418D20C396FDAC_1524006264;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -274,8 +275,8 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
         int var6D01B26D80C78B9F3068F6781CD3B69C_1279084378 = (nativeGetMinimumAndroidPua(mNativeEmojiFactory));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387320954 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_387320954;
-        // ---------- Original Method ----------
-        //return nativeGetMinimumAndroidPua(mNativeEmojiFactory);
+        
+        
     }
 
     
@@ -284,11 +285,12 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
         int var2A941F107A5D696EC71FA20E6118A915_1484419939 = (nativeGetMaximumAndroidPua(mNativeEmojiFactory));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1370894794 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1370894794;
-        // ---------- Original Method ----------
-        //return nativeGetMaximumAndroidPua(mNativeEmojiFactory);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.658 -0400", hash_original_method = "996F154EA43AB1D5A4C151D656C37CF1", hash_generated_method = "306E1F6D8D2B1E2FAFA21FC83BAC450E")
     private void nativeDestructor(int factory) {
     }
@@ -303,6 +305,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
 	}
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.659 -0400", hash_original_method = "3A1554F06CC9CCAF25F7BBE93248CE83", hash_generated_method = "21CA195DD228E0FBB5ECD548ED946C8B")
     private int nativeGetAndroidPuaFromVendorSpecificSjis(int nativeEmojiFactory,
             char sjis) {
@@ -311,6 +314,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.659 -0400", hash_original_method = "C302C3634C2FA6E6CA4CF2CF66D12101", hash_generated_method = "6EDAC1F68D9E30094C781ABA076D7923")
     private int nativeGetVendorSpecificSjisFromAndroidPua(int nativeEmojiFactory,
             int pua) {
@@ -319,6 +323,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.659 -0400", hash_original_method = "75FE7601C9BA865A32982CD0867F654C", hash_generated_method = "6F2BF72A91E1D9E20595A0C05C408AED")
     private int nativeGetAndroidPuaFromVendorSpecificPua(int nativeEmojiFactory,
             int vsp) {
@@ -327,6 +332,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.660 -0400", hash_original_method = "B406416ABF41BEA242E5A40B8BA7386A", hash_generated_method = "81CF200C96B75B89467FB201B3A95950")
     private int nativeGetVendorSpecificPuaFromAndroidPua(int nativeEmojiFactory,
             int pua) {
@@ -335,6 +341,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.660 -0400", hash_original_method = "5A805426DAFA5C3640F25323B1C3B8F5", hash_generated_method = "4483C9E3FFD90919837075CC0124182D")
     private int nativeGetMaximumVendorSpecificPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747136477 = getTaintInt();
@@ -342,6 +349,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.660 -0400", hash_original_method = "0FF4320BBE7657B90285375F65F4DF9D", hash_generated_method = "7E2C76CDDF3A45A429FA3A1D42E608C7")
     private int nativeGetMinimumVendorSpecificPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_633485327 = getTaintInt();
@@ -349,6 +357,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.661 -0400", hash_original_method = "800100FBB9205E441349161A70ADF047", hash_generated_method = "1D0A7425A10509C8F49E7B3A9F8AEEF2")
     private int nativeGetMaximumAndroidPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_681663681 = getTaintInt();
@@ -356,6 +365,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.661 -0400", hash_original_method = "5875EE70D8D47117F3D06FA307D98BB5", hash_generated_method = "AB432FE5CAE37393F1FBBFA2A316E078")
     private int nativeGetMinimumAndroidPua(int nativeEmojiFactory) {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414624735 = getTaintInt();
@@ -368,7 +378,7 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.661 -0400", hash_original_method = "EFD1513E9BFBC9B14636F3CC7AC41B6C", hash_generated_method = "19A9879B12E07C26C0FDCF805FDF3C6D")
         public  CustomLinkedHashMap() {
             super(16, 0.75f, true);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -379,8 +389,8 @@ String var3AC7A0B6507C070325418D20C396FDAC_1524006264 =         new String(codeP
             boolean var4BED03B42BC7B15B15FFD29FAB19079E_1168400156 = (size() > sCacheSize);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_817459959 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_817459959;
-            // ---------- Original Method ----------
-            //return size() > sCacheSize;
+            
+            
         }
 
         

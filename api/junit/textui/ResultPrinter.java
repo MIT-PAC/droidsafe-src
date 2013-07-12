@@ -1,6 +1,6 @@
 package junit.textui;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,8 +24,8 @@ public class ResultPrinter implements TestListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.484 -0400", hash_original_method = "0EA3A66C40E65303973CEBB665EF244A", hash_generated_method = "978016C1B7E60FFF498950E087A58645")
     public  ResultPrinter(PrintStream writer) {
         fWriter= writer;
-        // ---------- Original Method ----------
-        //fWriter= writer;
+        
+        
     }
 
     
@@ -37,11 +37,11 @@ public class ResultPrinter implements TestListener {
         printErrors(result);
         printFailures(result);
         printFooter(result);
-        // ---------- Original Method ----------
-        //printHeader(runTime);
-        //printErrors(result);
-        //printFailures(result);
-        //printFooter(result);
+        
+        
+        
+        
+        
     }
 
     
@@ -49,9 +49,9 @@ public class ResultPrinter implements TestListener {
      void printWaitPrompt() {
         getWriter().println();
         getWriter().println("<RETURN> to continue");
-        // ---------- Original Method ----------
-        //getWriter().println();
-        //getWriter().println("<RETURN> to continue");
+        
+        
+        
     }
 
     
@@ -60,9 +60,9 @@ public class ResultPrinter implements TestListener {
         addTaint(runTime);
         getWriter().println();
         getWriter().println("Time: "+elapsedTimeAsString(runTime));
-        // ---------- Original Method ----------
-        //getWriter().println();
-        //getWriter().println("Time: "+elapsedTimeAsString(runTime));
+        
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class ResultPrinter implements TestListener {
     protected void printErrors(TestResult result) {
         addTaint(result.getTaint());
         printDefects(result.errors(), result.errorCount(), "error");
-        // ---------- Original Method ----------
-        //printDefects(result.errors(), result.errorCount(), "error");
+        
+        
     }
 
     
@@ -79,8 +79,8 @@ public class ResultPrinter implements TestListener {
     protected void printFailures(TestResult result) {
         addTaint(result.getTaint());
         printDefects(result.failures(), result.failureCount(), "failure");
-        // ---------- Original Method ----------
-        //printDefects(result.failures(), result.failureCount(), "failure");
+        
+        
     }
 
     
@@ -98,38 +98,40 @@ public class ResultPrinter implements TestListener {
 for(int i= 1;booBoos.hasMoreElements();i++)
         {
             printDefect((TestFailure) booBoos.nextElement(), i);
-        } //End block
-        // ---------- Original Method ----------
-        //if (count == 0) return;
-        //if (count == 1)
-			//getWriter().println("There was " + count + " " + type + ":");
-		//else
-			//getWriter().println("There were " + count + " " + type + "s:");
-        //for (int i= 1; booBoos.hasMoreElements(); i++) {
-			//printDefect((TestFailure) booBoos.nextElement(), i);
-		//}
+        } 
+        
+        
+        
+			
+		
+			
+        
+			
+		
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.487 -0400", hash_original_method = "8F594E1BD06A99868D35353516D32E3A", hash_generated_method = "CF47FF37D89C4F27271D8ACAC84D013A")
     public void printDefect(TestFailure booBoo, int count) {
         addTaint(count);
         addTaint(booBoo.getTaint());
         printDefectHeader(booBoo, count);
         printDefectTrace(booBoo);
-        // ---------- Original Method ----------
-        //printDefectHeader(booBoo, count);
-        //printDefectTrace(booBoo);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.487 -0400", hash_original_method = "1947DB161F7BEBD07EBB8FC713F6E38E", hash_generated_method = "DC349A5EB909F0FA651946E1F18F48B1")
     protected void printDefectHeader(TestFailure booBoo, int count) {
         addTaint(count);
         addTaint(booBoo.getTaint());
         getWriter().print(count + ") " + booBoo.failedTest());
-        // ---------- Original Method ----------
-        //getWriter().print(count + ") " + booBoo.failedTest());
+        
+        
     }
 
     
@@ -137,8 +139,8 @@ for(int i= 1;booBoos.hasMoreElements();i++)
     protected void printDefectTrace(TestFailure booBoo) {
         addTaint(booBoo.getTaint());
         getWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));
-        // ---------- Original Method ----------
-        //getWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));
+        
+        
     }
 
     
@@ -150,7 +152,7 @@ for(int i= 1;booBoos.hasMoreElements();i++)
             getWriter().println();
             getWriter().print("OK");
             getWriter().println (" (" + result.runCount() + " test" + (result.runCount() == 1 ? "": "s") + ")");
-        } //End block
+        } 
         else
         {
             getWriter().println();
@@ -158,42 +160,44 @@ for(int i= 1;booBoos.hasMoreElements();i++)
             getWriter().println("Tests run: "+result.runCount()+ 
 				         ",  Failures: "+result.failureCount()+
 				         ",  Errors: "+result.errorCount());
-        } //End block
+        } 
         getWriter().println();
-        // ---------- Original Method ----------
-        //if (result.wasSuccessful()) {
-			//getWriter().println();
-			//getWriter().print("OK");
-			//getWriter().println (" (" + result.runCount() + " test" + (result.runCount() == 1 ? "": "s") + ")");
-		//} else {
-			//getWriter().println();
-			//getWriter().println("FAILURES!!!");
-			//getWriter().println("Tests run: "+result.runCount()+ 
-				         //",  Failures: "+result.failureCount()+
-				         //",  Errors: "+result.errorCount());
-		//}
-        //getWriter().println();
+        
+        
+			
+			
+			
+		
+			
+			
+			
+				         
+				         
+		
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.489 -0400", hash_original_method = "0FE324461208CCFE4D6285DE537F7763", hash_generated_method = "AE99DA206692B38FD68065987562F792")
     protected String elapsedTimeAsString(long runTime) {
         addTaint(runTime);
 String var782B052027FDBC1BF731D4722FE1CEA6_2137775224 =         Double.toString((double)runTime/1000);
         var782B052027FDBC1BF731D4722FE1CEA6_2137775224.addTaint(taint);
         return var782B052027FDBC1BF731D4722FE1CEA6_2137775224;
-        // ---------- Original Method ----------
-        //return Double.toString((double)runTime/1000);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.489 -0400", hash_original_method = "E39F1A78CDD5A4CC126B77217AA8CF1F", hash_generated_method = "68974D01644C475FEC66BBA746DDDB75")
     public PrintStream getWriter() {
 PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
         var15EB857739387F1E1116D7F9B05806F0_1394098965.addTaint(taint);
         return var15EB857739387F1E1116D7F9B05806F0_1394098965;
-        // ---------- Original Method ----------
-        //return fWriter;
+        
+        
     }
 
     
@@ -202,8 +206,8 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
         addTaint(t.getTaint());
         addTaint(test.getTaint());
         getWriter().print("E");
-        // ---------- Original Method ----------
-        //getWriter().print("E");
+        
+        
     }
 
     
@@ -212,18 +216,20 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
         addTaint(t.getTaint());
         addTaint(test.getTaint());
         getWriter().print("F");
-        // ---------- Original Method ----------
-        //getWriter().print("F");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.490 -0400", hash_original_method = "290F55CBC59AB09188EC6F36DCD12F0B", hash_generated_method = "FC02CD50599BCB5038979A7D0E8D57CB")
     public void endTest(Test test) {
         addTaint(test.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.490 -0400", hash_original_method = "49677EED3B6788809859A7BA2623E664", hash_generated_method = "BF8E8CB8C73007EAD86B36369D9A10D3")
     public void startTest(Test test) {
         addTaint(test.getTaint());
@@ -232,13 +238,13 @@ PrintStream var15EB857739387F1E1116D7F9B05806F0_1394098965 =         fWriter;
         {
             getWriter().println();
             fColumn= 0;
-        } //End block
-        // ---------- Original Method ----------
-        //getWriter().print(".");
-        //if (fColumn++ >= 40) {
-			//getWriter().println();
-			//fColumn= 0;
-		//}
+        } 
+        
+        
+        
+			
+			
+		
     }
 
     

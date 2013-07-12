@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,17 +48,17 @@ public class ChunkedInputStream extends InputStream {
             IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_1477151009 = new IllegalArgumentException("Session input buffer may not be null");
             varB3677395451B18A3F9262E9D7FE254B3_1477151009.addTaint(taint);
             throw varB3677395451B18A3F9262E9D7FE254B3_1477151009;
-        } //End block
+        } 
         this.in = in;
         this.pos = 0;
         this.buffer = new CharArrayBuffer(16);
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw new IllegalArgumentException("Session input buffer may not be null");
-        //}
-        //this.in = in;
-        //this.pos = 0;
-        //this.buffer = new CharArrayBuffer(16);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -69,13 +69,13 @@ public class ChunkedInputStream extends InputStream {
             IOException varEE3E399CAE0E5DE731C2BF5A8C5ABA04_1952205903 = new IOException("Attempted read from closed stream.");
             varEE3E399CAE0E5DE731C2BF5A8C5ABA04_1952205903.addTaint(taint);
             throw varEE3E399CAE0E5DE731C2BF5A8C5ABA04_1952205903;
-        } //End block
+        } 
     if(this.eof)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1637241303 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757435411 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757435411;
-        } //End block
+        } 
     if(this.pos >= this.chunkSize)        
         {
             nextChunk();
@@ -84,27 +84,27 @@ public class ChunkedInputStream extends InputStream {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_177924018 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805795800 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805795800;
-            } //End block
-        } //End block
+            } 
+        } 
         pos++;
         int varC746AA2461228F1337791E992A2C4661_1969024042 = (in.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193291695 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1193291695;
-        // ---------- Original Method ----------
-        //if (this.closed) {
-            //throw new IOException("Attempted read from closed stream.");
-        //}
-        //if (this.eof) {
-            //return -1;
-        //}
-        //if (this.pos >= this.chunkSize) {
-            //nextChunk();
-            //if (this.eof) { 
-                //return -1;
-            //}
-        //}
-        //pos++;
-        //return in.read();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -118,13 +118,13 @@ public class ChunkedInputStream extends InputStream {
             IOException varEE3E399CAE0E5DE731C2BF5A8C5ABA04_1399651351 = new IOException("Attempted read from closed stream.");
             varEE3E399CAE0E5DE731C2BF5A8C5ABA04_1399651351.addTaint(taint);
             throw varEE3E399CAE0E5DE731C2BF5A8C5ABA04_1399651351;
-        } //End block
+        } 
     if(eof)        
         {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1084840743 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1057581075 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1057581075;
-        } //End block
+        } 
     if(pos >= chunkSize)        
         {
             nextChunk();
@@ -133,31 +133,31 @@ public class ChunkedInputStream extends InputStream {
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_349486945 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_675680070 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_675680070;
-            } //End block
-        } //End block
+            } 
+        } 
         len = Math.min(len, chunkSize - pos);
         int count = in.read(b, off, len);
         pos += count;
         int varE2942A04780E223B215EB8B663CF5353_745603047 = (count);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1148862117 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1148862117;
-        // ---------- Original Method ----------
-        //if (closed) {
-            //throw new IOException("Attempted read from closed stream.");
-        //}
-        //if (eof) { 
-            //return -1;
-        //}
-        //if (pos >= chunkSize) {
-            //nextChunk();
-            //if (eof) { 
-                //return -1;
-            //}
-        //}
-        //len = Math.min(len, chunkSize - pos);
-        //int count = in.read(b, off, len);
-        //pos += count;
-        //return count;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -167,8 +167,8 @@ public class ChunkedInputStream extends InputStream {
         int var3AE1B8835719D1E8BA9C297EF156E04B_2117559790 = (read(b, 0, b.length));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273370083 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_273370083;
-        // ---------- Original Method ----------
-        //return read(b, 0, b.length);
+        
+        
     }
 
     
@@ -180,25 +180,25 @@ public class ChunkedInputStream extends InputStream {
             MalformedChunkCodingException var28C5AFFBEDB64B19E76A8CF5514A8118_1160535115 = new MalformedChunkCodingException("Negative chunk size");
             var28C5AFFBEDB64B19E76A8CF5514A8118_1160535115.addTaint(taint);
             throw var28C5AFFBEDB64B19E76A8CF5514A8118_1160535115;
-        } //End block
+        } 
         bof = false;
         pos = 0;
     if(chunkSize == 0)        
         {
             eof = true;
             parseTrailerHeaders();
-        } //End block
-        // ---------- Original Method ----------
-        //chunkSize = getChunkSize();
-        //if (chunkSize < 0) {
-            //throw new MalformedChunkCodingException("Negative chunk size");
-        //}
-        //bof = false;
-        //pos = 0;
-        //if (chunkSize == 0) {
-            //eof = true;
-            //parseTrailerHeaders();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -214,8 +214,8 @@ public class ChunkedInputStream extends InputStream {
                     "CRLF expected at end of chunk");
                 varA913243D9FF4ADF2D38AC59F4946E043_634285731.addTaint(taint);
                 throw varA913243D9FF4ADF2D38AC59F4946E043_634285731;
-            } //End block
-        } //End block
+            } 
+        } 
         this.buffer.clear();
         int i = this.in.readLine(this.buffer);
     if(i == -1)        
@@ -224,26 +224,26 @@ public class ChunkedInputStream extends InputStream {
                     "Chunked stream ended unexpectedly");
             var7E0993B7D5BCD90AA97B5B44DE9AF341_1012783012.addTaint(taint);
             throw var7E0993B7D5BCD90AA97B5B44DE9AF341_1012783012;
-        } //End block
+        } 
         int separator = this.buffer.indexOf(';');
     if(separator < 0)        
         {
             separator = this.buffer.length();
-        } //End block
+        } 
         try 
         {
             int var9FF7CA7B2D3F599F686EDFDA0F1A651E_1840775573 = (Integer.parseInt(this.buffer.substringTrimmed(0, separator), 16));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1266806991 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1266806991;
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
             MalformedChunkCodingException var8537FEBE30BCA3D60D84474C2C9A4E3E_547779466 = new MalformedChunkCodingException("Bad chunk header");
             var8537FEBE30BCA3D60D84474C2C9A4E3E_547779466.addTaint(taint);
             throw var8537FEBE30BCA3D60D84474C2C9A4E3E_547779466;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -253,7 +253,7 @@ public class ChunkedInputStream extends InputStream {
         {
             this.footers = AbstractMessageParser.parseHeaders
                 (in, -1, -1, null);
-        } //End block
+        } 
         catch (HttpException e)
         {
             IOException ioe = new MalformedChunkCodingException("Invalid footer: " 
@@ -261,17 +261,17 @@ public class ChunkedInputStream extends InputStream {
             ExceptionUtils.initCause(ioe, e);
             ioe.addTaint(taint);
             throw ioe;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //this.footers = AbstractMessageParser.parseHeaders
-                //(in, -1, -1, null);
-        //} catch (HttpException e) {
-            //IOException ioe = new MalformedChunkCodingException("Invalid footer: " 
-                    //+ e.getMessage());
-            //ExceptionUtils.initCause(ioe, e); 
-            //throw ioe;
-        //}
+        } 
+        
+        
+            
+                
+        
+            
+                    
+            
+            
+        
     }
 
     
@@ -284,25 +284,25 @@ public class ChunkedInputStream extends InputStream {
     if(!eof)                
                 {
                     exhaustInputStream(this);
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 eof = true;
                 closed = true;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!closed) {
-            //try {
-                //if (!eof) {
-                    //exhaustInputStream(this);
-                //}
-            //} finally {
-                //eof = true;
-                //closed = true;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                    
+                
+            
+                
+                
+            
+        
     }
 
     
@@ -311,8 +311,8 @@ public class ChunkedInputStream extends InputStream {
 Header[] var9FFC098F6658A5A943CD9CFF2C06B71C_2061484693 =         (Header[])this.footers.clone();
         var9FFC098F6658A5A943CD9CFF2C06B71C_2061484693.addTaint(taint);
         return var9FFC098F6658A5A943CD9CFF2C06B71C_2061484693;
-        // ---------- Original Method ----------
-        //return (Header[])this.footers.clone();
+        
+        
     }
 
     

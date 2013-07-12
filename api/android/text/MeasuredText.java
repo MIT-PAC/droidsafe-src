@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,12 +46,13 @@ class MeasuredText {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.254 -0400", hash_original_method = "D598B3CBC464CFD963CF00BDB269B2BE", hash_generated_method = "42783F836CB64369EF4A69ACD2229E3E")
     private  MeasuredText() {
         mWorkPaint = new TextPaint();
-        // ---------- Original Method ----------
-        //mWorkPaint = new TextPaint();
+        
+        
     }
 
     
-        static MeasuredText obtain() {
+        @DSModeled(DSC.BAN)
+    static MeasuredText obtain() {
         MeasuredText mt;
         synchronized (sLock) {
             for (int i = sCached.length; --i >= 0;) {
@@ -70,7 +71,8 @@ class MeasuredText {
     }
 
     
-        static MeasuredText recycle(MeasuredText mt) {
+        @DSModeled(DSC.SAFE)
+    static MeasuredText recycle(MeasuredText mt) {
         mt.mText = null;
         if (mt.mLen < 1000) {
             synchronized(sLock) {
@@ -99,11 +101,11 @@ class MeasuredText {
     if(mWidths == null || mWidths.length < len)        
         {
             mWidths = new float[ArrayUtils.idealFloatArraySize(len)];
-        } //End block
+        } 
     if(mChars == null || mChars.length < len)        
         {
             mChars = new char[ArrayUtils.idealCharArraySize(len)];
-        } //End block
+        } 
         TextUtils.getChars(text, start, end, mChars, 0);
     if(text instanceof Spanned)        
         {
@@ -117,9 +119,9 @@ for(int i = 0;i < spans.length;i++)
 for(int j = startInPara;j < endInPara;j++)
                 {
                     mChars[j] = '\uFFFC';
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if((textDir == TextDirectionHeuristics.LTR ||
                 textDir == TextDirectionHeuristics.FIRSTSTRONG_LTR ||
                 textDir == TextDirectionHeuristics.ANYRTL_LTR) &&
@@ -127,43 +129,43 @@ for(int j = startInPara;j < endInPara;j++)
         {
             mDir = Layout.DIR_LEFT_TO_RIGHT;
             mEasy = true;
-        } //End block
+        } 
         else
         {
     if(mLevels == null || mLevels.length < len)            
             {
                 mLevels = new byte[ArrayUtils.idealByteArraySize(len)];
-            } //End block
+            } 
             int bidiRequest;
     if(textDir == TextDirectionHeuristics.LTR)            
             {
                 bidiRequest = Layout.DIR_REQUEST_LTR;
-            } //End block
+            } 
             else
     if(textDir == TextDirectionHeuristics.RTL)            
             {
                 bidiRequest = Layout.DIR_REQUEST_RTL;
-            } //End block
+            } 
             else
     if(textDir == TextDirectionHeuristics.FIRSTSTRONG_LTR)            
             {
                 bidiRequest = Layout.DIR_REQUEST_DEFAULT_LTR;
-            } //End block
+            } 
             else
     if(textDir == TextDirectionHeuristics.FIRSTSTRONG_RTL)            
             {
                 bidiRequest = Layout.DIR_REQUEST_DEFAULT_RTL;
-            } //End block
+            } 
             else
             {
                 boolean isRtl = textDir.isRtl(mChars, 0, len);
                 bidiRequest = isRtl ? Layout.DIR_REQUEST_RTL : Layout.DIR_REQUEST_LTR;
-            } //End block
+            } 
             mDir = AndroidBidi.bidi(bidiRequest, mChars, mLevels, len, false);
             mEasy = false;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -174,7 +176,7 @@ for(int j = startInPara;j < endInPara;j++)
     if(fm != null)        
         {
             paint.getFontMetricsInt(fm);
-        } //End block
+        } 
         int p = mPos;
         mPos = p + len;
     if(mEasy)        
@@ -184,7 +186,7 @@ for(int j = startInPara;j < endInPara;j++)
             float var90FC068EE216B039F3FF8B2A9C039344_702854954 = (paint.getTextRunAdvances(mChars, p, len, p, len, flags, mWidths, p));
                         float var546ADE640B6EDFBC8A086EF31347E768_2003222106 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_2003222106;
-        } //End block
+        } 
         float totalAdvance = 0;
         int level = mLevels[p];
 for(int q = p, i = p + 1, e = p + len;;++i)
@@ -197,16 +199,16 @@ for(int q = p, i = p + 1, e = p + len;;++i)
     if(i == e)                
                 {
                     break;
-                } //End block
+                } 
                 q = i;
                 level = mLevels[i];
-            } //End block
-        } //End block
+            } 
+        } 
         float var99D044E1E151D602F35AA00A79C5FE29_1150912400 = (totalAdvance);
                 float var546ADE640B6EDFBC8A086EF31347E768_646846348 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_646846348;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -226,17 +228,17 @@ for(int i = 0;i < spans.length;i++)
     if(span instanceof ReplacementSpan)            
             {
                 replacement = (ReplacementSpan)span;
-            } //End block
+            } 
             else
             {
                 span.updateMeasureState(workPaint);
-            } //End block
-        } //End block
+            } 
+        } 
         float wid;
     if(replacement == null)        
         {
             wid = addStyleRun(workPaint, len, fm);
-        } //End block
+        } 
         else
         {
             wid = replacement.getSize(workPaint, mText, mTextStart + mPos,
@@ -246,28 +248,29 @@ for(int i = 0;i < spans.length;i++)
 for(int i = mPos + 1, e = mPos + len;i < e;i++)
             w[i] = 0;
             mPos += len;
-        } //End block
+        } 
     if(fm != null)        
         {
     if(workPaint.baselineShift < 0)            
             {
                 fm.ascent += workPaint.baselineShift;
                 fm.top += workPaint.baselineShift;
-            } //End block
+            } 
             else
             {
                 fm.descent += workPaint.baselineShift;
                 fm.bottom += workPaint.baselineShift;
-            } //End block
-        } //End block
+            } 
+        } 
         float varDB98B762FFD7DD3877EEA94A2FC88EAD_1375653651 = (wid);
                 float var546ADE640B6EDFBC8A086EF31347E768_1382139698 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1382139698;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.262 -0400", hash_original_method = "F30A282CEAB73A5948442153B9251096", hash_generated_method = "692FAF8CC7DE4427D003E45C58485330")
      int breakText(int start, int limit, boolean forwards, float width) {
         addTaint(width);
@@ -284,9 +287,9 @@ for(int i = start;i < limit;++i)
                     int var43AED58E1B0480E781AAD215D2C26C62_2037484392 = (i - start);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376787292 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376787292;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
 for(int i = limit;--i >= start;)
@@ -296,31 +299,32 @@ for(int i = limit;--i >= start;)
                     int var8B57CACCFE41BB0F37C3B52D30506AA2_281389121 = (limit - i -1);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524126560 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_524126560;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int var48382D55091BF470717A51B5D8CFC1AC_1175353512 = (limit - start);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1856595883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1856595883;
-        // ---------- Original Method ----------
-        //float[] w = mWidths;
-        //if (forwards) {
-            //for (int i = start; i < limit; ++i) {
-                //if ((width -= w[i]) < 0) {
-                    //return i - start;
-                //}
-            //}
-        //} else {
-            //for (int i = limit; --i >= start;) {
-                //if ((width -= w[i]) < 0) {
-                    //return limit - i -1;
-                //}
-            //}
-        //}
-        //return limit - start;
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.262 -0400", hash_original_method = "053843F92349BBB89263F41FED96E473", hash_generated_method = "2575C4D6D9CD815D214BFB85E929B492")
      float measure(int start, int limit) {
         addTaint(limit);
@@ -330,17 +334,17 @@ for(int i = limit;--i >= start;)
 for(int i = start;i < limit;++i)
         {
             width += w[i];
-        } //End block
+        } 
         float varEAAE26A6FB20ED3EF54FB23BFA0B1FCC_800487015 = (width);
                 float var546ADE640B6EDFBC8A086EF31347E768_1878759398 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1878759398;
-        // ---------- Original Method ----------
-        //float width = 0;
-        //float[] w = mWidths;
-        //for (int i = start; i < limit; ++i) {
-            //width += w[i];
-        //}
-        //return width;
+        
+        
+        
+        
+            
+        
+        
     }
 
     

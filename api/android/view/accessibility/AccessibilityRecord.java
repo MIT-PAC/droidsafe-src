@@ -1,6 +1,6 @@
 package android.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -79,7 +79,7 @@ public class AccessibilityRecord {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.288 -0400", hash_original_method = "47B5C6FFA7A08624EFFE67BFFC3F0DF4", hash_generated_method = "49EEADD37CBD0DA6FCCFEC65E1335A11")
       AccessibilityRecord() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -90,21 +90,21 @@ public class AccessibilityRecord {
         {
             mSourceWindowId = source.getAccessibilityWindowId();
             mSourceViewId = source.getAccessibilityViewId();
-        } //End block
+        } 
         else
         {
             mSourceWindowId = UNDEFINED;
             mSourceViewId = UNDEFINED;
-        } //End block
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //if (source != null) {
-            //mSourceWindowId = source.getAccessibilityWindowId();
-            //mSourceViewId = source.getAccessibilityViewId();
-        //} else {
-            //mSourceWindowId = UNDEFINED;
-            //mSourceViewId = UNDEFINED;
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -117,31 +117,32 @@ public class AccessibilityRecord {
 AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_1608262043 =             null;
             var540C13E9E156B687226421B24F2DF178_1608262043.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1608262043;
-        } //End block
+        } 
         AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
 AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         client.findAccessibilityNodeInfoByAccessibilityId(mConnectionId, mSourceWindowId,
                 mSourceViewId);
         var621B0621CDB78401249870185393BC57_1174779756.addTaint(taint);
         return var621B0621CDB78401249870185393BC57_1174779756;
-        // ---------- Original Method ----------
-        //enforceSealed();
-        //if (mConnectionId == UNDEFINED || mSourceWindowId == UNDEFINED
-                //|| mSourceViewId == UNDEFINED) {
-            //return null;
-        //}
-        //AccessibilityInteractionClient client = AccessibilityInteractionClient.getInstance();
-        //return client.findAccessibilityNodeInfoByAccessibilityId(mConnectionId, mSourceWindowId,
-                //mSourceViewId);
+        
+        
+        
+                
+            
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.290 -0400", hash_original_method = "0167B817243C7300A3E7B07356FC6F77", hash_generated_method = "C7F5F455B60851F9C1D000268CB89ABC")
     public int getWindowId() {
         int varC9AE2C28DB057C703A59EF81BFE5FA78_516421763 = (mSourceWindowId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12684840 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12684840;
-        // ---------- Original Method ----------
-        //return mSourceWindowId;
+        
+        
     }
 
     
@@ -150,8 +151,8 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         boolean var6A0CD5272E311D05E98BCF36FBF20ACD_77914733 = (getBooleanProperty(PROPERTY_CHECKED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1770302013 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1770302013;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_CHECKED);
+        
+        
     }
 
     
@@ -160,9 +161,9 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         addTaint(isChecked);
         enforceNotSealed();
         setBooleanProperty(PROPERTY_CHECKED, isChecked);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //setBooleanProperty(PROPERTY_CHECKED, isChecked);
+        
+        
+        
     }
 
     
@@ -171,8 +172,8 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         boolean var6F818D4AF1185DC3F7931FBEF22B2D47_112812443 = (getBooleanProperty(PROPERTY_ENABLED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2133487692 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2133487692;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_ENABLED);
+        
+        
     }
 
     
@@ -181,9 +182,9 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         addTaint(isEnabled);
         enforceNotSealed();
         setBooleanProperty(PROPERTY_ENABLED, isEnabled);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //setBooleanProperty(PROPERTY_ENABLED, isEnabled);
+        
+        
+        
     }
 
     
@@ -192,8 +193,8 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         boolean varC159D45C2E73AC687CB90727F00FD786_204758894 = (getBooleanProperty(PROPERTY_PASSWORD));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_659671592 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_659671592;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_PASSWORD);
+        
+        
     }
 
     
@@ -202,9 +203,9 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         addTaint(isPassword);
         enforceNotSealed();
         setBooleanProperty(PROPERTY_PASSWORD, isPassword);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //setBooleanProperty(PROPERTY_PASSWORD, isPassword);
+        
+        
+        
     }
 
     
@@ -213,8 +214,8 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         boolean var20B7A22B6E97B858868FA1BE6F19CD37_1359077074 = (getBooleanProperty(PROPERTY_FULL_SCREEN));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_262128896 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_262128896;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_FULL_SCREEN);
+        
+        
     }
 
     
@@ -223,9 +224,9 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         addTaint(isFullScreen);
         enforceNotSealed();
         setBooleanProperty(PROPERTY_FULL_SCREEN, isFullScreen);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //setBooleanProperty(PROPERTY_FULL_SCREEN, isFullScreen);
+        
+        
+        
     }
 
     
@@ -234,8 +235,8 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         boolean varA6FFE50E93EDBB77B0E8F1D4016517C5_1657279086 = (getBooleanProperty(PROPERTY_SCROLLABLE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1316940153 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1316940153;
-        // ---------- Original Method ----------
-        //return getBooleanProperty(PROPERTY_SCROLLABLE);
+        
+        
     }
 
     
@@ -244,19 +245,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
         addTaint(scrollable);
         enforceNotSealed();
         setBooleanProperty(PROPERTY_SCROLLABLE, scrollable);
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //setBooleanProperty(PROPERTY_SCROLLABLE, scrollable);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.293 -0400", hash_original_method = "5653D3A6C559AE9B846DF6E2B5CE39F8", hash_generated_method = "E7A6903216273FBF54DE16CD1B450C67")
     public int getItemCount() {
         int varA7392E7FB156CE90DBA601C30BDAD9A0_1719842523 = (mItemCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_833015390 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_833015390;
-        // ---------- Original Method ----------
-        //return mItemCount;
+        
+        
     }
 
     
@@ -264,19 +266,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setItemCount(int itemCount) {
         enforceNotSealed();
         mItemCount = itemCount;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mItemCount = itemCount;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.294 -0400", hash_original_method = "C835140CBE8B50DDD89D13B9DB62A1BF", hash_generated_method = "0AFC4BF852651ABBDB9D1D88D6B35395")
     public int getCurrentItemIndex() {
         int var489E1BE47B1553BA23654F484D8112C8_1366834136 = (mCurrentItemIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080257466 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1080257466;
-        // ---------- Original Method ----------
-        //return mCurrentItemIndex;
+        
+        
     }
 
     
@@ -284,19 +287,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setCurrentItemIndex(int currentItemIndex) {
         enforceNotSealed();
         mCurrentItemIndex = currentItemIndex;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mCurrentItemIndex = currentItemIndex;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.295 -0400", hash_original_method = "67718C1B588EB57EF05CD90DC3F200D7", hash_generated_method = "21A4792D98436D15C2FBC9F702A93FD7")
     public int getFromIndex() {
         int varCB7DD4A683E75326E3BF4E3710D5827C_1692571490 = (mFromIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922651533 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922651533;
-        // ---------- Original Method ----------
-        //return mFromIndex;
+        
+        
     }
 
     
@@ -304,19 +308,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setFromIndex(int fromIndex) {
         enforceNotSealed();
         mFromIndex = fromIndex;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mFromIndex = fromIndex;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.328 -0400", hash_original_method = "579D16111E248F454AD7B48F20E18451", hash_generated_method = "16B78B1D8012236C188D9125A8313505")
     public int getToIndex() {
         int var30B0FE5CDEB065565B0FD203973CA877_402901844 = (mToIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660184686 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660184686;
-        // ---------- Original Method ----------
-        //return mToIndex;
+        
+        
     }
 
     
@@ -324,19 +329,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setToIndex(int toIndex) {
         enforceNotSealed();
         mToIndex = toIndex;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mToIndex = toIndex;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.328 -0400", hash_original_method = "37E422003D62C4BD4746E9CFAAF79E84", hash_generated_method = "F3524D6B77CD6F174AC22AFC30CCB78A")
     public int getScrollX() {
         int var9DC8F9676E14E93147EBEA37CE364B55_925578323 = (mScrollX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_316692831 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_316692831;
-        // ---------- Original Method ----------
-        //return mScrollX;
+        
+        
     }
 
     
@@ -344,19 +350,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setScrollX(int scrollX) {
         enforceNotSealed();
         mScrollX = scrollX;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mScrollX = scrollX;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.329 -0400", hash_original_method = "1E7AE64F8D32210A6E2C97F4869FB31A", hash_generated_method = "B000ABE021696B43073B73C4F50F47F6")
     public int getScrollY() {
         int var4ABBFD585ECE4FE40BECD8E0C30C4E5E_827535923 = (mScrollY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2111771598 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2111771598;
-        // ---------- Original Method ----------
-        //return mScrollY;
+        
+        
     }
 
     
@@ -364,19 +371,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setScrollY(int scrollY) {
         enforceNotSealed();
         mScrollY = scrollY;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mScrollY = scrollY;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.329 -0400", hash_original_method = "C4A2F5E4142D8D5EA688446E7513363C", hash_generated_method = "AF623E5D1861D1573E9041781BA2CC3A")
     public int getMaxScrollX() {
         int varC00A0F4C697A08175EC089AD320E18B8_264582708 = (mMaxScrollX);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_558111361 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_558111361;
-        // ---------- Original Method ----------
-        //return mMaxScrollX;
+        
+        
     }
 
     
@@ -384,19 +392,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setMaxScrollX(int maxScrollX) {
         enforceNotSealed();
         mMaxScrollX = maxScrollX;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mMaxScrollX = maxScrollX;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.329 -0400", hash_original_method = "A3ECA44A0D4150097FAA989997DF13C5", hash_generated_method = "C7B7239AC834082F56FB370B11362875")
     public int getMaxScrollY() {
         int var4DF13F6FEC2D0410B23C6B671B7C8F76_877357441 = (mMaxScrollY);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21972183 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21972183;
-        // ---------- Original Method ----------
-        //return mMaxScrollY;
+        
+        
     }
 
     
@@ -404,19 +413,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setMaxScrollY(int maxScrollY) {
         enforceNotSealed();
         mMaxScrollY = maxScrollY;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mMaxScrollY = maxScrollY;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.330 -0400", hash_original_method = "49E2E44D8419AC51B09A77AC8668D279", hash_generated_method = "84CA8BCC800DAFA3E19B4D320916AC40")
     public int getAddedCount() {
         int varA6326B95254B685CD68E188862F5C34D_1050310980 = (mAddedCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1731090971 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1731090971;
-        // ---------- Original Method ----------
-        //return mAddedCount;
+        
+        
     }
 
     
@@ -424,19 +434,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setAddedCount(int addedCount) {
         enforceNotSealed();
         mAddedCount = addedCount;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mAddedCount = addedCount;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.330 -0400", hash_original_method = "EBD9E1156BBECE10FD62678D5B5AE958", hash_generated_method = "D2320C915CB1121E36683E1644218EC8")
     public int getRemovedCount() {
         int var4058B4F06CD15570EE422A4BBAEB7D02_1960170556 = (mRemovedCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411750968 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1411750968;
-        // ---------- Original Method ----------
-        //return mRemovedCount;
+        
+        
     }
 
     
@@ -444,19 +455,20 @@ AccessibilityNodeInfo var621B0621CDB78401249870185393BC57_1174779756 =         c
     public void setRemovedCount(int removedCount) {
         enforceNotSealed();
         mRemovedCount = removedCount;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mRemovedCount = removedCount;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.330 -0400", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "8781318D075A3187E9C71EA163E3ADB5")
     public CharSequence getClassName() {
 CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_277822884 =         mClassName;
         varDD9C2143734A2F5CB66BF5CFBE75CE5F_277822884.addTaint(taint);
         return varDD9C2143734A2F5CB66BF5CFBE75CE5F_277822884;
-        // ---------- Original Method ----------
-        //return mClassName;
+        
+        
     }
 
     
@@ -464,9 +476,9 @@ CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_277822884 =         mClassName;
     public void setClassName(CharSequence className) {
         enforceNotSealed();
         mClassName = className;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mClassName = className;
+        
+        
+        
     }
 
     
@@ -475,18 +487,19 @@ CharSequence varDD9C2143734A2F5CB66BF5CFBE75CE5F_277822884 =         mClassName;
 List<CharSequence> var7F7ECB4B14362FFBA020956966B29A66_1417021931 =         mText;
         var7F7ECB4B14362FFBA020956966B29A66_1417021931.addTaint(taint);
         return var7F7ECB4B14362FFBA020956966B29A66_1417021931;
-        // ---------- Original Method ----------
-        //return mText;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.331 -0400", hash_original_method = "FE2FD614296585A25D259709588FAD5E", hash_generated_method = "4BD40D63CD66CF5EFC97C049238ABB2E")
     public CharSequence getBeforeText() {
 CharSequence varA52E2B9C078522648046C50A3900A0D8_1236596936 =         mBeforeText;
         varA52E2B9C078522648046C50A3900A0D8_1236596936.addTaint(taint);
         return varA52E2B9C078522648046C50A3900A0D8_1236596936;
-        // ---------- Original Method ----------
-        //return mBeforeText;
+        
+        
     }
 
     
@@ -494,19 +507,20 @@ CharSequence varA52E2B9C078522648046C50A3900A0D8_1236596936 =         mBeforeTex
     public void setBeforeText(CharSequence beforeText) {
         enforceNotSealed();
         mBeforeText = beforeText;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mBeforeText = beforeText;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.331 -0400", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "F546D166031EFD6E8C8030965E140032")
     public CharSequence getContentDescription() {
 CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_111592182 =         mContentDescription;
         varDF4802B31F5D315C6875E7B89F1B2E58_111592182.addTaint(taint);
         return varDF4802B31F5D315C6875E7B89F1B2E58_111592182;
-        // ---------- Original Method ----------
-        //return mContentDescription;
+        
+        
     }
 
     
@@ -514,19 +528,20 @@ CharSequence varDF4802B31F5D315C6875E7B89F1B2E58_111592182 =         mContentDes
     public void setContentDescription(CharSequence contentDescription) {
         enforceNotSealed();
         mContentDescription = contentDescription;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mContentDescription = contentDescription;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.331 -0400", hash_original_method = "336F04D02E102717408E8DD7ED329D8E", hash_generated_method = "E77A0A9DA0FB92B46C9D5CCB5AB1C280")
     public Parcelable getParcelableData() {
 Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableData;
         var3C4A19D3B16D6B0D181314FD46225D0B_133304446.addTaint(taint);
         return var3C4A19D3B16D6B0D181314FD46225D0B_133304446;
-        // ---------- Original Method ----------
-        //return mParcelableData;
+        
+        
     }
 
     
@@ -534,9 +549,9 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
     public void setParcelableData(Parcelable parcelableData) {
         enforceNotSealed();
         mParcelableData = parcelableData;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mParcelableData = parcelableData;
+        
+        
+        
     }
 
     
@@ -544,27 +559,29 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
     public void setConnectionId(int connectionId) {
         enforceNotSealed();
         mConnectionId = connectionId;
-        // ---------- Original Method ----------
-        //enforceNotSealed();
-        //mConnectionId = connectionId;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.332 -0400", hash_original_method = "7730BDD0DFF4FE8B243CA8BC305ED86E", hash_generated_method = "0D7B5E4D59CD0A6DD9DDC234474696D4")
     public void setSealed(boolean sealed) {
         mSealed = sealed;
-        // ---------- Original Method ----------
-        //mSealed = sealed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.332 -0400", hash_original_method = "AF3422E1C079F6B2A15130B45797502F", hash_generated_method = "506F9770BD964585130447CB24DE4FF6")
      boolean isSealed() {
         boolean var61DB78BD493651DCACB5FB89D74B835B_677858330 = (mSealed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_457605213 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_457605213;
-        // ---------- Original Method ----------
-        //return mSealed;
+        
+        
     }
 
     
@@ -576,12 +593,12 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
                     + "action on a not sealed instance.");
             var652F71AFD0D5CCAA2788B927EF140BB3_1895722460.addTaint(taint);
             throw var652F71AFD0D5CCAA2788B927EF140BB3_1895722460;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isSealed()) {
-            //throw new IllegalStateException("Cannot perform this "
-                    //+ "action on a not sealed instance.");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
@@ -593,43 +610,45 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
                     + "action on an sealed instance.");
             var6C39E2F044A2DBD4DB7485B565A80573_1315668960.addTaint(taint);
             throw var6C39E2F044A2DBD4DB7485B565A80573_1315668960;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isSealed()) {
-            //throw new IllegalStateException("Cannot perform this "
-                    //+ "action on an sealed instance.");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.333 -0400", hash_original_method = "4FB14FE7E8FA7F40071202FB709EF8E4", hash_generated_method = "4768C782E00868758C34DD942C31818C")
     private boolean getBooleanProperty(int property) {
         addTaint(property);
         boolean var5D0AB9348D762CC2C1F8CBEC21E95FEF_753581754 = ((mBooleanProperties & property) == property);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1551094030 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1551094030;
-        // ---------- Original Method ----------
-        //return (mBooleanProperties & property) == property;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.333 -0400", hash_original_method = "1E3C58B2EEBD5BD671884B4ADC3ACB2F", hash_generated_method = "95C48EDB697FC48992ED6C6F994F1F64")
     private void setBooleanProperty(int property, boolean value) {
         addTaint(value);
     if(value)        
         {
             mBooleanProperties |= property;
-        } //End block
+        } 
         else
         {
             mBooleanProperties &= ~property;
-        } //End block
-        // ---------- Original Method ----------
-        //if (value) {
-            //mBooleanProperties |= property;
-        //} else {
-            //mBooleanProperties &= ~property;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -662,7 +681,7 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
             IllegalStateException varD5FBBAEC1C9F4FB9B48FC9CC3399D76F_257193778 = new IllegalStateException("Record already recycled!");
             varD5FBBAEC1C9F4FB9B48FC9CC3399D76F_257193778.addTaint(taint);
             throw varD5FBBAEC1C9F4FB9B48FC9CC3399D76F_257193778;
-        } //End block
+        } 
         clear();
         synchronized
 (sPoolLock)        {
@@ -672,21 +691,21 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
                 sPool = this;
                 mIsInPool = true;
                 sPoolSize++;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsInPool) {
-            //throw new IllegalStateException("Record already recycled!");
-        //}
-        //clear();
-        //synchronized (sPoolLock) {
-            //if (sPoolSize <= MAX_POOL_SIZE) {
-                //mNext = sPool;
-                //sPool = this;
-                //mIsInPool = true;
-                //sPoolSize++;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -712,8 +731,8 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
         mSourceWindowId = record.mSourceWindowId;
         mSourceViewId = record.mSourceViewId;
         mConnectionId = record.mConnectionId;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -739,27 +758,27 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
         mSourceViewId = UNDEFINED;
         mSourceWindowId = UNDEFINED;
         mConnectionId = UNDEFINED;
-        // ---------- Original Method ----------
-        //mSealed = false;
-        //mBooleanProperties = 0;
-        //mCurrentItemIndex = UNDEFINED;
-        //mItemCount = UNDEFINED;
-        //mFromIndex = UNDEFINED;
-        //mToIndex = UNDEFINED;
-        //mScrollX = UNDEFINED;
-        //mScrollY = UNDEFINED;
-        //mMaxScrollX = UNDEFINED;
-        //mMaxScrollY = UNDEFINED;
-        //mAddedCount = UNDEFINED;
-        //mRemovedCount = UNDEFINED;
-        //mClassName = null;
-        //mContentDescription = null;
-        //mBeforeText = null;
-        //mParcelableData = null;
-        //mText.clear();
-        //mSourceViewId = UNDEFINED;
-        //mSourceWindowId = UNDEFINED;
-        //mConnectionId = UNDEFINED;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -791,8 +810,8 @@ Parcelable var3C4A19D3B16D6B0D181314FD46225D0B_133304446 =         mParcelableDa
 String varF4CF030572656354ACFDF83FEE21D7A6_1352806788 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_1352806788.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_1352806788;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

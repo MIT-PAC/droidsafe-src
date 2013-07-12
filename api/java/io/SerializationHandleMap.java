@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,11 +25,11 @@ final class SerializationHandleMap {
         this.threshold = 21;
         int arraySize = (int) (((long) threshold * 10000) / LOAD_FACTOR);
         resizeArrays(arraySize);
-        // ---------- Original Method ----------
-        //this.size = 0;
-        //this.threshold = 21;
-        //int arraySize = (int) (((long) threshold * 10000) / LOAD_FACTOR);
-        //resizeArrays(arraySize);
+        
+        
+        
+        
+        
     }
 
     
@@ -48,22 +48,22 @@ for(int i = 0;i < oldKeys.length;++i)
                 int index = findIndex(key, keys);
                 keys[index] = key;
                 values[index] = value;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Object[] oldKeys = keys;
-        //int[] oldValues = values;
-        //this.keys = new Object[newSize];
-        //this.values = new int[newSize];
-        //if (oldKeys != null) {
-            //for (int i = 0; i < oldKeys.length; ++i) {
-                //Object key = oldKeys[i];
-                //int value = oldValues[i];
-                //int index = findIndex(key, keys);
-                //keys[index] = key;
-                //values[index] = value;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -76,16 +76,16 @@ for(int i = 0;i < oldKeys.length;++i)
             int var5E48D24D770C72D5B61547675B2B85AD_1030306681 = (values[index]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_690560953 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_690560953;
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_2058453868 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1226414976 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1226414976;
-        // ---------- Original Method ----------
-        //int index = findIndex(key, keys);
-        //if (keys[index] == key) {
-            //return values[index];
-        //}
-        //return -1;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -102,23 +102,23 @@ for(int i = 0;i < oldKeys.length;++i)
     if(array[index] == key || array[index] == null)            
             {
                 break;
-            } //End block
+            } 
             index = (index + 1) % length;
-        } //End block
+        } 
         int var6A992D5529F459A44FEE58C733255E86_1548129968 = (index);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901459972 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_901459972;
-        // ---------- Original Method ----------
-        //int length = array.length;
-        //int index = getModuloHash(key, length);
-        //int last = (index + length - 1) % length;
-        //while (index != last) {
-            //if (array[index] == key || array[index] == null) {
-                //break;
-            //}
-            //index = (index + 1) % length;
-        //}
-        //return index;
+        
+        
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -129,8 +129,8 @@ for(int i = 0;i < oldKeys.length;++i)
         int varAAF7301A1EB092673EB32DAA57E8540E_1759236343 = ((System.identityHashCode(key) & 0x7FFFFFFF) % length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660454582 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1660454582;
-        // ---------- Original Method ----------
-        //return (System.identityHashCode(key) & 0x7FFFFFFF) % length;
+        
+        
     }
 
     
@@ -147,30 +147,30 @@ for(int i = 0;i < oldKeys.length;++i)
             {
                 rehash();
                 index = findIndex(_key, keys);
-            } //End block
+            } 
             keys[index] = _key;
             values[index] = -1;
-        } //End block
+        } 
         int result = values[index];
         values[index] = _value;
         int varB4A88417B3D0170D754C647C30B7216A_892352666 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015572925 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2015572925;
-        // ---------- Original Method ----------
-        //Object _key = key;
-        //int _value = value;
-        //int index = findIndex(_key, keys);
-        //if (keys[index] != _key) {
-            //if (++size > threshold) {
-                //rehash();
-                //index = findIndex(_key, keys);
-            //}
-            //keys[index] = _key;
-            //values[index] = -1;
-        //}
-        //int result = values[index];
-        //values[index] = _value;
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+                
+            
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -179,13 +179,14 @@ for(int i = 0;i < oldKeys.length;++i)
         int newSize = keys.length * 2;
         resizeArrays(newSize);
         threshold = (int) ((long) (keys.length) * LOAD_FACTOR / 10000);
-        // ---------- Original Method ----------
-        //int newSize = keys.length * 2;
-        //resizeArrays(newSize);
-        //threshold = (int) ((long) (keys.length) * LOAD_FACTOR / 10000);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.006 -0400", hash_original_method = "A55090ECB6D90893D6737F77075A1229", hash_generated_method = "0BF0037FE145DAA3371262A693082813")
     public int remove(Object key) {
         addTaint(key.getTaint());
@@ -201,7 +202,7 @@ for(int i = 0;i < oldKeys.length;++i)
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1940018119 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223096676 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223096676;
-        } //End block
+        } 
         result = values[index];
         int length = keys.length;
         while
@@ -212,42 +213,43 @@ for(int i = 0;i < oldKeys.length;++i)
     if(object == null)            
             {
                 break;
-            } //End block
+            } 
             hash = getModuloHash(object, length);
             hashedOk = hash > index;
     if(next < index)            
             {
                 hashedOk = hashedOk || (hash <= next);
-            } //End block
+            } 
             else
             {
                 hashedOk = hashedOk && (hash <= next);
-            } //End block
+            } 
     if(!hashedOk)            
             {
                 keys[index] = object;
                 values[index] = values[next];
                 index = next;
-            } //End block
-        } //End block
+            } 
+        } 
         size--;
         keys[index] = null;
         values[index] = -1;
         int varB4A88417B3D0170D754C647C30B7216A_2009098484 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_840903621 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_840903621;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.007 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "E328021BEDC685ECF61C34FF4CFFF9D5")
     public boolean isEmpty() {
         boolean var9FB8BC7F775DDD98EEAB5582D340229E_238124799 = (size == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_949316333 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_949316333;
-        // ---------- Original Method ----------
-        //return size == 0;
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.signers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public class ECDSASigner implements ECConstants, DSA {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.405 -0400", hash_original_method = "C1322FCAE454F44B8363BD2382FAD546", hash_generated_method = "C1322FCAE454F44B8363BD2382FAD546")
     public ECDSASigner ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -43,36 +43,36 @@ public class ECDSASigner implements ECConstants, DSA {
                 ParametersWithRandom rParam = (ParametersWithRandom)param;
                 this.random = rParam.getRandom();
                 this.key = (ECPrivateKeyParameters)rParam.getParameters();
-            } //End block
+            } 
             else
             {
                 this.random = new SecureRandom();
                 this.key = (ECPrivateKeyParameters)param;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             this.key = (ECPublicKeyParameters)param;
-        } //End block
-        // ---------- Original Method ----------
-        //if (forSigning)
-        //{
-            //if (param instanceof ParametersWithRandom)
-            //{
-                //ParametersWithRandom    rParam = (ParametersWithRandom)param;
-                //this.random = rParam.getRandom();
-                //this.key = (ECPrivateKeyParameters)rParam.getParameters();
-            //}
-            //else
-            //{
-                //this.random = new SecureRandom();
-                //this.key = (ECPrivateKeyParameters)param;
-            //}
-        //}
-        //else
-        //{
-            //this.key = (ECPublicKeyParameters)param;
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -93,16 +93,16 @@ public class ECDSASigner implements ECConstants, DSA {
                         do {
                             {
                                 k = new BigInteger(nBitLength, random);
-                            } //End block
+                            } 
 } while (k.equals(ZERO) || k.compareTo(n) >= 0);
                         ECPoint p = key.getParameters().getG().multiply(k);
                         BigInteger x = p.getX().toBigInteger();
                         r = x.mod(n);
-                    } //End block
+                    } 
 } while (r.equals(ZERO));
                 BigInteger d = ((ECPrivateKeyParameters)key).getD();
                 s = k.modInverse(n).multiply(e.add(d.multiply(r))).mod(n);
-            } //End block
+            } 
 } while (s.equals(ZERO));
         BigInteger[] res = new BigInteger[2];
         res[0] = r;
@@ -110,8 +110,8 @@ public class ECDSASigner implements ECConstants, DSA {
 BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
         varB5053E025797B3BF768F5C37934C244D_733768322.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_733768322;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -130,13 +130,13 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
             boolean var68934A3E9455FA72420237EB05902327_178620004 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_942402946 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_942402946;
-        } //End block
+        } 
     if(s.compareTo(ONE) < 0 || s.compareTo(n) >= 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1208822641 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1139230099 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1139230099;
-        } //End block
+        } 
         BigInteger c = s.modInverse(n);
         BigInteger u1 = e.multiply(c).mod(n);
         BigInteger u2 = r.multiply(c).mod(n);
@@ -147,25 +147,25 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
         boolean var0DB0FBCFAB98A173AE959039A84C881B_1496540495 = (v.equals(r));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_328756327 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_328756327;
-        // ---------- Original Method ----------
-        //BigInteger n = key.getParameters().getN();
-        //BigInteger e = calculateE(n, message);
-        //if (r.compareTo(ONE) < 0 || r.compareTo(n) >= 0)
-        //{
-            //return false;
-        //}
-        //if (s.compareTo(ONE) < 0 || s.compareTo(n) >= 0)
-        //{
-            //return false;
-        //}
-        //BigInteger c = s.modInverse(n);
-        //BigInteger u1 = e.multiply(c).mod(n);
-        //BigInteger u2 = r.multiply(c).mod(n);
-        //ECPoint G = key.getParameters().getG();
-        //ECPoint Q = ((ECPublicKeyParameters)key).getQ();
-        //ECPoint point = ECAlgorithms.sumOfTwoMultiplies(G, u1, Q, u2);
-        //BigInteger v = point.getX().toBigInteger().mod(n);
-        //return v.equals(r);
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -178,7 +178,7 @@ BigInteger[] varB5053E025797B3BF768F5C37934C244D_733768322 =         res;
 BigInteger var2A58862D25CF80D0C74EED713D3F25E0_1221433584 =             new BigInteger(1, message);
             var2A58862D25CF80D0C74EED713D3F25E0_1221433584.addTaint(taint);
             return var2A58862D25CF80D0C74EED713D3F25E0_1221433584;
-        } //End block
+        } 
         else
         {
             int messageBitLength = message.length * 8;
@@ -186,26 +186,26 @@ BigInteger var2A58862D25CF80D0C74EED713D3F25E0_1221433584 =             new BigI
     if(messageBitLength - n.bitLength() > 0)            
             {
                 trunc = trunc.shiftRight(messageBitLength - n.bitLength());
-            } //End block
+            } 
 BigInteger varAB34F6DE565C1B6F3B64505651718BEC_1776318518 =             trunc;
             varAB34F6DE565C1B6F3B64505651718BEC_1776318518.addTaint(taint);
             return varAB34F6DE565C1B6F3B64505651718BEC_1776318518;
-        } //End block
-        // ---------- Original Method ----------
-        //if (n.bitLength() > message.length * 8)
-        //{
-            //return new BigInteger(1, message);
-        //}
-        //else
-        //{
-            //int messageBitLength = message.length * 8;
-            //BigInteger trunc = new BigInteger(1, message);
-            //if (messageBitLength - n.bitLength() > 0)
-            //{
-                //trunc = trunc.shiftRight(messageBitLength - n.bitLength());
-            //}
-            //return trunc;
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+                
+            
+            
+        
     }
 
     

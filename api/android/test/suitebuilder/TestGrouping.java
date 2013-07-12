@@ -1,6 +1,6 @@
 package android.test.suitebuilder;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,8 +37,8 @@ public class TestGrouping {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.520 -0400", hash_original_method = "E97169CD65D986F2307319C325D5D1C7", hash_generated_method = "EE1C01BD0FD2D553FF0674FFD6591BBB")
     public  TestGrouping(Comparator<Class<? extends TestCase>> comparator) {
         testCaseClasses = new TreeSet<Class<? extends TestCase>>(comparator);
-        // ---------- Original Method ----------
-        //testCaseClasses = new TreeSet<Class<? extends TestCase>>(comparator);
+        
+        
     }
 
     
@@ -50,19 +50,19 @@ for(Class<? extends TestCase> testCase : testCaseClasses)
 for(Method testMethod : getTestMethods(testCase))
             {
                 testMethods.add(new TestMethod(testMethod, testCase));
-            } //End block
-        } //End block
+            } 
+        } 
 List<TestMethod> var24D1ADC4337A1DFDD7EDF48B863FFFFD_1478303335 =         testMethods;
         var24D1ADC4337A1DFDD7EDF48B863FFFFD_1478303335.addTaint(taint);
         return var24D1ADC4337A1DFDD7EDF48B863FFFFD_1478303335;
-        // ---------- Original Method ----------
-        //List<TestMethod> testMethods = new ArrayList<TestMethod>();
-        //for (Class<? extends TestCase> testCase : testCaseClasses) {
-            //for (Method testMethod : getTestMethods(testCase)) {
-                //testMethods.add(new TestMethod(testMethod, testCase));
-            //}
-        //}
-        //return testMethods;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -73,9 +73,9 @@ List<TestMethod> var24D1ADC4337A1DFDD7EDF48B863FFFFD_1478303335 =         testMe
 List<Method> var625C4BA6F2C797C1B5A159EA338B6BDA_1058908807 =         select(methods, new TestMethodPredicate());
         var625C4BA6F2C797C1B5A159EA338B6BDA_1058908807.addTaint(taint);
         return var625C4BA6F2C797C1B5A159EA338B6BDA_1058908807;
-        // ---------- Original Method ----------
-        //List<Method> methods = Arrays.asList(testCaseClass.getMethods());
-        //return select(methods, new TestMethodPredicate());
+        
+        
+        
     }
 
     
@@ -84,8 +84,8 @@ List<Method> var625C4BA6F2C797C1B5A159EA338B6BDA_1058908807 =         select(met
 SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1651822788 =         testCaseClasses;
         varE3DDA91219760C874204BD71102F4461_1651822788.addTaint(taint);
         return varE3DDA91219760C874204BD71102F4461_1651822788;
-        // ---------- Original Method ----------
-        //return testCaseClasses;
+        
+        
     }
 
     
@@ -97,35 +97,35 @@ SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1651822
             boolean varB326B5062B2F0E69046810717534CB09_1812323882 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_738746916 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_738746916;
-        } //End block
+        } 
     if(o == null || getClass() != o.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1986952286 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_332949807 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_332949807;
-        } //End block
+        } 
         TestGrouping other = (TestGrouping) o;
     if(!this.testCaseClasses.equals(other.testCaseClasses))        
         {
             boolean var68934A3E9455FA72420237EB05902327_982432483 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1821058316 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1821058316;
-        } //End block
+        } 
         boolean varF151829E7A1B54F6289E1B77EC955A5E_1400295823 = (this.testCaseClasses.comparator().equals(other.testCaseClasses.comparator()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_581878386 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_581878386;
-        // ---------- Original Method ----------
-        //if (this == o) {
-            //return true;
-        //}
-        //if (o == null || getClass() != o.getClass()) {
-            //return false;
-        //}
-        //TestGrouping other = (TestGrouping) o;
-        //if (!this.testCaseClasses.equals(other.testCaseClasses)) {
-            //return false;
-        //}
-        //return this.testCaseClasses.comparator().equals(other.testCaseClasses.comparator());
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -134,8 +134,8 @@ SortedSet<Class<? extends TestCase>> varE3DDA91219760C874204BD71102F4461_1651822
         int var2910C1999B304E5C1AE264098CA8555A_1389772461 = (testCaseClasses.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922217575 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_922217575;
-        // ---------- Original Method ----------
-        //return testCaseClasses.hashCode();
+        
+        
     }
 
     
@@ -147,29 +147,29 @@ for(String packageName : packageNames)
             List<Class<? extends TestCase>> addedClasses = testCaseClassesInPackage(packageName);
     if(addedClasses.isEmpty())            
             {
-            } //End block
+            } 
             testCaseClasses.addAll(addedClasses);
     if(firstIncludedPackage == null)            
             {
                 firstIncludedPackage = packageName;
-            } //End block
-        } //End block
+            } 
+        } 
 TestGrouping var72A74007B2BE62B849F475C7BDA4658B_836214841 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_836214841.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_836214841;
-        // ---------- Original Method ----------
-        //for (String packageName : packageNames) {
-            //List<Class<? extends TestCase>> addedClasses = testCaseClassesInPackage(packageName);
-            //if (addedClasses.isEmpty()) {
-                //Log.w(LOG_TAG, "Invalid Package: '" + packageName
-                        //+ "' could not be found or has no tests");
-            //}
-            //testCaseClasses.addAll(addedClasses);
-            //if (firstIncludedPackage == null) {
-                //firstIncludedPackage = packageName;
-            //}
-        //}
-        //return this;
+        
+        
+            
+            
+                
+                        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -179,25 +179,26 @@ TestGrouping var72A74007B2BE62B849F475C7BDA4658B_836214841 =         this;
 for(String packageName : packageNames)
         {
             testCaseClasses.removeAll(testCaseClassesInPackage(packageName));
-        } //End block
+        } 
 TestGrouping var72A74007B2BE62B849F475C7BDA4658B_1098533928 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1098533928.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1098533928;
-        // ---------- Original Method ----------
-        //for (String packageName : packageNames) {
-            //testCaseClasses.removeAll(testCaseClassesInPackage(packageName));
-        //}
-        //return this;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.523 -0400", hash_original_method = "C38D4C4BAAACEDDA4FA2C460C27FC791", hash_generated_method = "25E36F10A0E3FFF5D1AA16A8FD4FFD58")
     public String getFirstIncludedPackage() {
 String varF8D28C66D98E8F5E93FEBFB5E22AE752_2106810384 =         firstIncludedPackage;
         varF8D28C66D98E8F5E93FEBFB5E22AE752_2106810384.addTaint(taint);
         return varF8D28C66D98E8F5E93FEBFB5E22AE752_2106810384;
-        // ---------- Original Method ----------
-        //return firstIncludedPackage;
+        
+        
     }
 
     
@@ -209,10 +210,10 @@ String varF8D28C66D98E8F5E93FEBFB5E22AE752_2106810384 =         firstIncludedPac
 List<Class<? extends TestCase>> varF30E1B2D05AB96E9BCFDD94FD0B601B7_182580907 =         selectTestClasses(packageInfo.getTopLevelClassesRecursive());
         varF30E1B2D05AB96E9BCFDD94FD0B601B7_182580907.addTaint(taint);
         return varF30E1B2D05AB96E9BCFDD94FD0B601B7_182580907;
-        // ---------- Original Method ----------
-        //ClassPathPackageInfoSource source = PackageInfoSources.forClassPath(classLoader);
-        //ClassPathPackageInfo packageInfo = source.getPackageInfo(packageName);
-        //return selectTestClasses(packageInfo.getTopLevelClassesRecursive());
+        
+        
+        
+        
     }
 
     
@@ -225,17 +226,17 @@ for(Class<?> testClass : select(allClasses,
                 new TestCasePredicate()))
         {
             testClasses.add((Class<? extends TestCase>) testClass);
-        } //End block
+        } 
 List<Class<? extends TestCase>> var78BD4D09240C84579A1CCDC63A0C994A_572267352 =         testClasses;
         var78BD4D09240C84579A1CCDC63A0C994A_572267352.addTaint(taint);
         return var78BD4D09240C84579A1CCDC63A0C994A_572267352;
-        // ---------- Original Method ----------
-        //List<Class<? extends TestCase>> testClasses = new ArrayList<Class<? extends TestCase>>();
-        //for (Class<?> testClass : select(allClasses,
-                //new TestCasePredicate())) {
-            //testClasses.add((Class<? extends TestCase>) testClass);
-        //}
-        //return testClasses;
+        
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -249,27 +250,28 @@ for(T item : items)
     if(predicate.apply(item))            
             {
                 selectedItems.add(item);
-            } //End block
-        } //End block
+            } 
+        } 
 List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
         var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808.addTaint(taint);
         return var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808;
-        // ---------- Original Method ----------
-        //ArrayList<T> selectedItems = new ArrayList<T>();
-        //for (T item : items) {
-            //if (predicate.apply(item)) {
-                //selectedItems.add(item);
-            //}
-        //}
-        //return selectedItems;
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.525 -0400", hash_original_method = "EF51D9ADCA3E8F522FB005D173D913A5", hash_generated_method = "278C4AA58E3CC699090BB3856901B327")
     public void setClassLoader(ClassLoader classLoader) {
         this.classLoader = classLoader;
-        // ---------- Original Method ----------
-        //this.classLoader = classLoader;
+        
+        
     }
 
     
@@ -278,7 +280,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.525 -0400", hash_original_method = "DF47E6BDF91D187CFB898DEC7629CE17", hash_generated_method = "DF47E6BDF91D187CFB898DEC7629CE17")
         public SortBySimpleName ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -293,16 +295,16 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
                 int varB4A88417B3D0170D754C647C30B7216A_511835841 = (result);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723273880 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723273880;
-            } //End block
+            } 
             int var317CD1D04BF28C00B38F903790589A67_722736708 = (class1.getName().compareTo(class2.getName()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359868269 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359868269;
-            // ---------- Original Method ----------
-            //int result = class1.getSimpleName().compareTo(class2.getSimpleName());
-            //if (result != 0) {
-                //return result;
-            //}
-            //return class1.getName().compareTo(class2.getName());
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -315,7 +317,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.526 -0400", hash_original_method = "E467FE44B8FD2B3FC2F2C02A44638E77", hash_generated_method = "E467FE44B8FD2B3FC2F2C02A44638E77")
         public SortByFullyQualifiedName ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -327,8 +329,8 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
             int var317CD1D04BF28C00B38F903790589A67_631219536 = (class1.getName().compareTo(class2.getName()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1662847374 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1662847374;
-            // ---------- Original Method ----------
-            //return class1.getName().compareTo(class2.getName());
+            
+            
         }
 
         
@@ -341,7 +343,7 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.526 -0400", hash_original_method = "C51D9C1D123C5970141C72E69FC5E23D", hash_generated_method = "C51D9C1D123C5970141C72E69FC5E23D")
         public TestCasePredicate ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -355,12 +357,12 @@ List<T> var7A9FA332A2F68B4B3F12D84C779C06B6_2060467808 =         selectedItems;
                     && hasValidConstructor((Class<?>) aClass));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_965153760 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_965153760;
-            // ---------- Original Method ----------
-            //int modifiers = ((Class<?>) aClass).getModifiers();
-            //return TestCase.class.isAssignableFrom((Class<?>) aClass)
-                    //&& Modifier.isPublic(modifiers)
-                    //&& !Modifier.isAbstract(modifiers)
-                    //&& hasValidConstructor((Class<?>) aClass);
+            
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -380,14 +382,14 @@ for(Constructor<? extends TestCase> constructor : constructors)
                         boolean varB326B5062B2F0E69046810717534CB09_1237007747 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1102111821 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1102111821;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_1215901850 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_980770588 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_980770588;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -400,7 +402,7 @@ for(Constructor<? extends TestCase> constructor : constructors)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.527 -0400", hash_original_method = "5644BC516EF6C647F77F88686C681987", hash_generated_method = "5644BC516EF6C647F77F88686C681987")
         public TestMethodPredicate ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -412,10 +414,10 @@ for(Constructor<? extends TestCase> constructor : constructors)
                     (method.getReturnType().getSimpleName().equals("void"))));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1640292772 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1640292772;
-            // ---------- Original Method ----------
-            //return ((method.getParameterTypes().length == 0) &&
-                    //(method.getName().startsWith("test")) &&
-                    //(method.getReturnType().getSimpleName().equals("void")));
+            
+            
+                    
+                    
         }
 
         

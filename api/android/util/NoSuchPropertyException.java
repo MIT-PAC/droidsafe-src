@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class NoSuchPropertyException extends RuntimeException {
     public  NoSuchPropertyException(String s) {
         super(s);
         addTaint(s.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

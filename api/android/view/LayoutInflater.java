@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,8 +51,8 @@ public abstract class LayoutInflater {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.285 -0400", hash_original_method = "E7207BFA97B4D4DD74A98816C77C472E", hash_generated_method = "E7012C3F049DB497107558CB08563437")
     protected  LayoutInflater(Context context) {
         mContext = context;
-        // ---------- Original Method ----------
-        //mContext = context;
+        
+        
     }
 
     
@@ -63,12 +63,12 @@ public abstract class LayoutInflater {
         mFactory2 = original.mFactory2;
         mPrivateFactory = original.mPrivateFactory;
         mFilter = original.mFilter;
-        // ---------- Original Method ----------
-        //mContext = newContext;
-        //mFactory = original.mFactory;
-        //mFactory2 = original.mFactory2;
-        //mPrivateFactory = original.mPrivateFactory;
-        //mFilter = original.mFilter;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -85,13 +85,14 @@ public abstract class LayoutInflater {
     public abstract LayoutInflater cloneInContext(Context newContext);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.286 -0400", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "C80107CC1CFF6D19D17665D322CA3787")
     public Context getContext() {
 Context var178E2AD52D6FBBB503F908168856B574_2138007396 =         mContext;
         var178E2AD52D6FBBB503F908168856B574_2138007396.addTaint(taint);
         return var178E2AD52D6FBBB503F908168856B574_2138007396;
-        // ---------- Original Method ----------
-        //return mContext;
+        
+        
     }
 
     
@@ -100,8 +101,8 @@ Context var178E2AD52D6FBBB503F908168856B574_2138007396 =         mContext;
 Factory var086273A71AC89A5E1A3A59778647C1F0_1885594354 =         mFactory;
         var086273A71AC89A5E1A3A59778647C1F0_1885594354.addTaint(taint);
         return var086273A71AC89A5E1A3A59778647C1F0_1885594354;
-        // ---------- Original Method ----------
-        //return mFactory;
+        
+        
     }
 
     
@@ -110,8 +111,8 @@ Factory var086273A71AC89A5E1A3A59778647C1F0_1885594354 =         mFactory;
 Factory2 var719195FDDEF7C93B6BEED74314FE4BE8_966945199 =         mFactory2;
         var719195FDDEF7C93B6BEED74314FE4BE8_966945199.addTaint(taint);
         return var719195FDDEF7C93B6BEED74314FE4BE8_966945199;
-        // ---------- Original Method ----------
-        //return mFactory2;
+        
+        
     }
 
     
@@ -122,35 +123,35 @@ Factory2 var719195FDDEF7C93B6BEED74314FE4BE8_966945199 =         mFactory2;
             IllegalStateException var7F3CD20B699DE21D25C99ABD1773E8E9_293893707 = new IllegalStateException("A factory has already been set on this LayoutInflater");
             var7F3CD20B699DE21D25C99ABD1773E8E9_293893707.addTaint(taint);
             throw var7F3CD20B699DE21D25C99ABD1773E8E9_293893707;
-        } //End block
+        } 
     if(factory == null)        
         {
             NullPointerException var4E80D5BF81BCD97DD9195749F4C7E02F_673892588 = new NullPointerException("Given factory can not be null");
             var4E80D5BF81BCD97DD9195749F4C7E02F_673892588.addTaint(taint);
             throw var4E80D5BF81BCD97DD9195749F4C7E02F_673892588;
-        } //End block
+        } 
         mFactorySet = true;
     if(mFactory == null)        
         {
             mFactory = factory;
-        } //End block
+        } 
         else
         {
             mFactory = new FactoryMerger(factory, null, mFactory, mFactory2);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFactorySet) {
-            //throw new IllegalStateException("A factory has already been set on this LayoutInflater");
-        //}
-        //if (factory == null) {
-            //throw new NullPointerException("Given factory can not be null");
-        //}
-        //mFactorySet = true;
-        //if (mFactory == null) {
-            //mFactory = factory;
-        //} else {
-            //mFactory = new FactoryMerger(factory, null, mFactory, mFactory2);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -161,53 +162,55 @@ Factory2 var719195FDDEF7C93B6BEED74314FE4BE8_966945199 =         mFactory2;
             IllegalStateException var7F3CD20B699DE21D25C99ABD1773E8E9_761911056 = new IllegalStateException("A factory has already been set on this LayoutInflater");
             var7F3CD20B699DE21D25C99ABD1773E8E9_761911056.addTaint(taint);
             throw var7F3CD20B699DE21D25C99ABD1773E8E9_761911056;
-        } //End block
+        } 
     if(factory == null)        
         {
             NullPointerException var4E80D5BF81BCD97DD9195749F4C7E02F_492376047 = new NullPointerException("Given factory can not be null");
             var4E80D5BF81BCD97DD9195749F4C7E02F_492376047.addTaint(taint);
             throw var4E80D5BF81BCD97DD9195749F4C7E02F_492376047;
-        } //End block
+        } 
         mFactorySet = true;
     if(mFactory == null)        
         {
             mFactory = mFactory2 = factory;
-        } //End block
+        } 
         else
         {
             mFactory = new FactoryMerger(factory, factory, mFactory, mFactory2);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mFactorySet) {
-            //throw new IllegalStateException("A factory has already been set on this LayoutInflater");
-        //}
-        //if (factory == null) {
-            //throw new NullPointerException("Given factory can not be null");
-        //}
-        //mFactorySet = true;
-        //if (mFactory == null) {
-            //mFactory = mFactory2 = factory;
-        //} else {
-            //mFactory = new FactoryMerger(factory, factory, mFactory, mFactory2);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.289 -0400", hash_original_method = "140FDA0509CDD22FFA77677DC0A919DF", hash_generated_method = "7B48C17DCCFC347FF964BDAD9D35BB77")
     public void setPrivateFactory(Factory2 factory) {
         mPrivateFactory = factory;
-        // ---------- Original Method ----------
-        //mPrivateFactory = factory;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.289 -0400", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "2C7CE8797E9E4FF4891CA9EEAD0284A5")
     public Filter getFilter() {
 Filter var6104E4BD549FCD2640641D136DD683A6_380344631 =         mFilter;
         var6104E4BD549FCD2640641D136DD683A6_380344631.addTaint(taint);
         return var6104E4BD549FCD2640641D136DD683A6_380344631;
-        // ---------- Original Method ----------
-        //return mFilter;
+        
+        
     }
 
     
@@ -217,12 +220,12 @@ Filter var6104E4BD549FCD2640641D136DD683A6_380344631 =         mFilter;
     if(filter != null)        
         {
             mFilterMap = new HashMap<String, Boolean>();
-        } //End block
-        // ---------- Original Method ----------
-        //mFilter = filter;
-        //if (filter != null) {
-            //mFilterMap = new HashMap<String, Boolean>();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -233,8 +236,8 @@ Filter var6104E4BD549FCD2640641D136DD683A6_380344631 =         mFilter;
 View varF5D4BA408024E74ED8C69060F20BBFE3_883950245 =         inflate(resource, root, root != null);
         varF5D4BA408024E74ED8C69060F20BBFE3_883950245.addTaint(taint);
         return varF5D4BA408024E74ED8C69060F20BBFE3_883950245;
-        // ---------- Original Method ----------
-        //return inflate(resource, root, root != null);
+        
+        
     }
 
     
@@ -245,8 +248,8 @@ View varF5D4BA408024E74ED8C69060F20BBFE3_883950245 =         inflate(resource, r
 View varD2994770AB4B2FBF2D952E8ECED55234_897404289 =         inflate(parser, root, root != null);
         varD2994770AB4B2FBF2D952E8ECED55234_897404289.addTaint(taint);
         return varD2994770AB4B2FBF2D952E8ECED55234_897404289;
-        // ---------- Original Method ----------
-        //return inflate(parser, root, root != null);
+        
+        
     }
 
     
@@ -263,19 +266,19 @@ View varD2994770AB4B2FBF2D952E8ECED55234_897404289 =         inflate(parser, roo
 View var754E077DDE07C53AB996CC4C6A8F2A1A_747650761 =             inflate(parser, root, attachToRoot);
             var754E077DDE07C53AB996CC4C6A8F2A1A_747650761.addTaint(taint);
             return var754E077DDE07C53AB996CC4C6A8F2A1A_747650761;
-        } //End block
+        } 
         finally 
         {
             parser.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (DEBUG) System.out.println("INFLATING from resource: " + resource);
-        //XmlResourceParser parser = getContext().getResources().getLayout(resource);
-        //try {
-            //return inflate(parser, root, attachToRoot);
-        //} finally {
-            //parser.close();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -297,14 +300,14 @@ View var754E077DDE07C53AB996CC4C6A8F2A1A_747650761 =             inflate(parser,
 ((type = parser.next()) != XmlPullParser.START_TAG &&
                         type != XmlPullParser.END_DOCUMENT)                
                 {
-                } //End block
+                } 
     if(type != XmlPullParser.START_TAG)                
                 {
                     InflateException varBF7F2731384F279DD8DADDE40FD4FA2A_1977278650 = new InflateException(parser.getPositionDescription()
                             + ": No start tag found!");
                     varBF7F2731384F279DD8DADDE40FD4FA2A_1977278650.addTaint(taint);
                     throw varBF7F2731384F279DD8DADDE40FD4FA2A_1977278650;
-                } //End block
+                } 
                 final String name = parser.getName();
     if(DEBUG)                
                 {
@@ -312,7 +315,7 @@ View var754E077DDE07C53AB996CC4C6A8F2A1A_747650761 =             inflate(parser,
                     System.out.println("Creating root view: "
                             + name);
                     System.out.println("**************************");
-                } //End block
+                } 
     if(TAG_MERGE.equals(name))                
                 {
     if(root == null || !attachToRoot)                    
@@ -321,20 +324,20 @@ View var754E077DDE07C53AB996CC4C6A8F2A1A_747650761 =             inflate(parser,
                                 + "ViewGroup root and attachToRoot=true");
                         var82F4326C85AA650E8E062571146DE3BE_1445488421.addTaint(taint);
                         throw var82F4326C85AA650E8E062571146DE3BE_1445488421;
-                    } //End block
+                    } 
                     rInflate(parser, root, attrs, false);
-                } //End block
+                } 
                 else
                 {
                     View temp;
     if(TAG_1995.equals(name))                    
                     {
                         temp = new BlinkLayout(mContext, attrs);
-                    } //End block
+                    } 
                     else
                     {
                         temp = createViewFromTag(root, name, attrs);
-                    } //End block
+                    } 
                     ViewGroup.LayoutParams params = null;
     if(root != null)                    
                     {
@@ -342,39 +345,39 @@ View var754E077DDE07C53AB996CC4C6A8F2A1A_747650761 =             inflate(parser,
                         {
                             System.out.println("Creating params from root: " +
                                     root);
-                        } //End block
+                        } 
                         params = root.generateLayoutParams(attrs);
     if(!attachToRoot)                        
                         {
                             temp.setLayoutParams(params);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(DEBUG)                    
                     {
                         System.out.println("-----> start inflating children");
-                    } //End block
+                    } 
                     rInflate(parser, temp, attrs, true);
     if(DEBUG)                    
                     {
                         System.out.println("-----> done inflating children");
-                    } //End block
+                    } 
     if(root != null && attachToRoot)                    
                     {
                         root.addView(temp, params);
-                    } //End block
+                    } 
     if(root == null || !attachToRoot)                    
                     {
                         result = temp;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (XmlPullParserException e)
             {
                 InflateException ex = new InflateException(e.getMessage());
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
+            } 
             catch (IOException e)
             {
                 InflateException ex = new InflateException(
@@ -383,18 +386,18 @@ View var754E077DDE07C53AB996CC4C6A8F2A1A_747650761 =             inflate(parser,
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
+            } 
             finally 
             {
                 mConstructorArgs[0] = lastContext;
                 mConstructorArgs[1] = null;
-            } //End block
+            } 
 View varDC838461EE2FA0CA4C9BBB70A15456B0_1506823090 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1506823090.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1506823090;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -417,11 +420,11 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1506823090 =             result;
     if(!allowed)                    
                     {
                         failNotAllowed(name, prefix, attrs);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 constructor = clazz.getConstructor(mConstructorSignature);
                 sConstructorMap.put(name, constructor);
-            } //End block
+            } 
             else
             {
     if(mFilter != null)                
@@ -436,21 +439,21 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_1506823090 =             result;
     if(!allowed)                        
                         {
                             failNotAllowed(name, prefix, attrs);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(allowedState.equals(Boolean.FALSE))                    
                     {
                         failNotAllowed(name, prefix, attrs);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             Object[] args = mConstructorArgs;
             args[1] = attrs;
 View var4A4697B81353FB366B444B5D55EB814F_486638908 =             constructor.newInstance(args);
             var4A4697B81353FB366B444B5D55EB814F_486638908.addTaint(taint);
             return var4A4697B81353FB366B444B5D55EB814F_486638908;
-        } //End block
+        } 
         catch (NoSuchMethodException e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
@@ -459,7 +462,7 @@ View var4A4697B81353FB366B444B5D55EB814F_486638908 =             constructor.new
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } //End block
+        } 
         catch (ClassCastException e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
@@ -468,12 +471,12 @@ View var4A4697B81353FB366B444B5D55EB814F_486638908 =             constructor.new
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         {
             e.addTaint(taint);
             throw e;
-        } //End block
+        } 
         catch (Exception e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
@@ -482,9 +485,9 @@ View var4A4697B81353FB366B444B5D55EB814F_486638908 =             constructor.new
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -498,37 +501,37 @@ View var4A4697B81353FB366B444B5D55EB814F_486638908 =             constructor.new
                 + (prefix != null ? (prefix + name) : name));
         var913E072F8AE7304769637C5265F04CD5_1751372081.addTaint(taint);
         throw var913E072F8AE7304769637C5265F04CD5_1751372081;
-        // ---------- Original Method ----------
-        //throw new InflateException(attrs.getPositionDescription()
-                //+ ": Class not allowed to be inflated "
-                //+ (prefix != null ? (prefix + name) : name));
+        
+        
+                
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.295 -0400", hash_original_method = "9A9783E7AF685525083052EAFC6937D8", hash_generated_method = "C39474C009A905F2F06623974297B275")
     protected View onCreateView(String name, AttributeSet attrs) throws ClassNotFoundException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(attrs.getTaint());
         addTaint(name.getTaint());
 View varA415DC7CF57A628085818A3825C01FB1_1823293627 =         createView(name, "android.view.", attrs);
         varA415DC7CF57A628085818A3825C01FB1_1823293627.addTaint(taint);
         return varA415DC7CF57A628085818A3825C01FB1_1823293627;
-        // ---------- Original Method ----------
-        //return createView(name, "android.view.", attrs);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.296 -0400", hash_original_method = "EEF2BD4B979EFD4F0FBDCDB52C08D7B2", hash_generated_method = "A5FCF064AAD400017EDF4501C30C8CC6")
     protected View onCreateView(View parent, String name, AttributeSet attrs) throws ClassNotFoundException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(attrs.getTaint());
         addTaint(name.getTaint());
         addTaint(parent.getTaint());
 View var7421AB13C5D99D7D5B1FC4BEDFBA8EFD_2013273057 =         onCreateView(name, attrs);
         var7421AB13C5D99D7D5B1FC4BEDFBA8EFD_2013273057.addTaint(taint);
         return var7421AB13C5D99D7D5B1FC4BEDFBA8EFD_2013273057;
-        // ---------- Original Method ----------
-        //return onCreateView(name, attrs);
+        
+        
     }
 
     
@@ -540,7 +543,7 @@ View var7421AB13C5D99D7D5B1FC4BEDFBA8EFD_2013273057 =         onCreateView(name,
     if(name.equals("view"))        
         {
             name = attrs.getAttributeValue(null, "class");
-        } //End block
+        } 
     if(DEBUG)        
         System.out.println("******** Creating view: " + name);
         try 
@@ -556,29 +559,29 @@ View var7421AB13C5D99D7D5B1FC4BEDFBA8EFD_2013273057 =         onCreateView(name,
     if(view == null && mPrivateFactory != null)            
             {
                 view = mPrivateFactory.onCreateView(parent, name, mContext, attrs);
-            } //End block
+            } 
     if(view == null)            
             {
     if(-1 == name.indexOf('.'))                
                 {
                     view = onCreateView(parent, name, attrs);
-                } //End block
+                } 
                 else
                 {
                     view = createView(name, null, attrs);
-                } //End block
-            } //End block
+                } 
+            } 
     if(DEBUG)            
             System.out.println("Created view is: " + view);
 View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
             var057D265746AE9672AFE5F9FF6338071D_1043139585.addTaint(taint);
             return var057D265746AE9672AFE5F9FF6338071D_1043139585;
-        } //End block
+        } 
         catch (InflateException e)
         {
             e.addTaint(taint);
             throw e;
-        } //End block
+        } 
         catch (ClassNotFoundException e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
@@ -586,7 +589,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } //End block
+        } 
         catch (Exception e)
         {
             InflateException ie = new InflateException(attrs.getPositionDescription()
@@ -594,9 +597,9 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
             ie.initCause(e);
             ie.addTaint(taint);
             throw ie;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -616,12 +619,12 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
     if(type != XmlPullParser.START_TAG)            
             {
                 continue;
-            } //End block
+            } 
             final String name = parser.getName();
     if(TAG_REQUEST_FOCUS.equals(name))            
             {
                 parseRequestFocus(parser, parent);
-            } //End block
+            } 
             else
     if(TAG_INCLUDE.equals(name))            
             {
@@ -630,16 +633,16 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
                     InflateException varC2BEA8253C73659E8EED554741960CED_778037450 = new InflateException("<include /> cannot be the root element");
                     varC2BEA8253C73659E8EED554741960CED_778037450.addTaint(taint);
                     throw varC2BEA8253C73659E8EED554741960CED_778037450;
-                } //End block
+                } 
                 parseInclude(parser, parent, attrs);
-            } //End block
+            } 
             else
     if(TAG_MERGE.equals(name))            
             {
                 InflateException var1742B67301D3E89F3D7AAEBA0003F5C1_2125561046 = new InflateException("<merge /> must be the root element");
                 var1742B67301D3E89F3D7AAEBA0003F5C1_2125561046.addTaint(taint);
                 throw var1742B67301D3E89F3D7AAEBA0003F5C1_2125561046;
-            } //End block
+            } 
             else
     if(TAG_1995.equals(name))            
             {
@@ -648,7 +651,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
                 final ViewGroup.LayoutParams params = viewGroup.generateLayoutParams(attrs);
                 rInflate(parser, view, attrs, true);
                 viewGroup.addView(view, params);
-            } //End block
+            } 
             else
             {
                 final View view = createViewFromTag(parent, name, attrs);
@@ -656,12 +659,12 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
                 final ViewGroup.LayoutParams params = viewGroup.generateLayoutParams(attrs);
                 rInflate(parser, view, attrs, true);
                 viewGroup.addView(view, params);
-            } //End block
-        } //End block
+            } 
+        } 
     if(finishInflate)        
         parent.onFinishInflate();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -676,14 +679,14 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
 (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT)        
         {
-        } //End block
-        // ---------- Original Method ----------
-        //int type;
-        //parent.requestFocus();
-        //final int currentDepth = parser.getDepth();
-        //while (((type = parser.next()) != XmlPullParser.END_TAG ||
-                //parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT) {
-        //}
+        } 
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -705,15 +708,15 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
                             + " include tag: <include layout=\"@layout/layoutID\" />");
                     varBED71C54FF9270EDEFD4FCBE204F105D_496967736.addTaint(taint);
                     throw varBED71C54FF9270EDEFD4FCBE204F105D_496967736;
-                } //End block
+                } 
                 else
                 {
                     InflateException var1F2D8A99DC8DD80F6CF7035D2493209C_25821744 = new InflateException("You must specifiy a valid layout "
                             + "reference. The layout ID " + value + " is not valid.");
                     var1F2D8A99DC8DD80F6CF7035D2493209C_25821744.addTaint(taint);
                     throw var1F2D8A99DC8DD80F6CF7035D2493209C_25821744;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 final XmlResourceParser childParser = getContext().getResources().getLayout(layout);
@@ -724,19 +727,19 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
 ((type = childParser.next()) != XmlPullParser.START_TAG &&
                             type != XmlPullParser.END_DOCUMENT)                    
                     {
-                    } //End block
+                    } 
     if(type != XmlPullParser.START_TAG)                    
                     {
                         InflateException varFCFD0253402DADC6B929C2F98725BFB0_2139694770 = new InflateException(childParser.getPositionDescription() +
                                 ": No start tag found!");
                         varFCFD0253402DADC6B929C2F98725BFB0_2139694770.addTaint(taint);
                         throw varFCFD0253402DADC6B929C2F98725BFB0_2139694770;
-                    } //End block
+                    } 
                     final String childName = childParser.getName();
     if(TAG_MERGE.equals(childName))                    
                     {
                         rInflate(childParser, parent, childAttrs, false);
-                    } //End block
+                    } 
                     else
                     {
                         final View view = createViewFromTag(parent, childName, childAttrs);
@@ -745,18 +748,18 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
                         try 
                         {
                             params = group.generateLayoutParams(attrs);
-                        } //End block
+                        } 
                         catch (RuntimeException e)
                         {
                             params = group.generateLayoutParams(childAttrs);
-                        } //End block
+                        } 
                         finally 
                         {
     if(params != null)                            
                             {
                                 view.setLayoutParams(params);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         rInflate(childParser, view, childAttrs, true);
                         TypedArray a = mContext.obtainStyledAttributes(attrs,
                             com.android.internal.R.styleable.View, 0, 0);
@@ -766,7 +769,7 @@ View var057D265746AE9672AFE5F9FF6338071D_1043139585 =             view;
     if(id != View.NO_ID)                        
                         {
                             view.setId(id);
-                        } //End block
+                        } 
 switch(visibility){
                         case 0:
                         view.setVisibility(View.VISIBLE);
@@ -778,28 +781,28 @@ switch(visibility){
                         view.setVisibility(View.GONE);
                         break;
 }                        group.addView(view);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 finally 
                 {
                     childParser.close();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             InflateException var60C2BB7A3404855EA7538D9AF0A12140_714394916 = new InflateException("<include /> can only be used inside of a ViewGroup");
             var60C2BB7A3404855EA7538D9AF0A12140_714394916.addTaint(taint);
             throw var60C2BB7A3404855EA7538D9AF0A12140_714394916;
-        } //End block
+        } 
         final int currentDepth = parser.getDepth();
         while
 (((type = parser.next()) != XmlPullParser.END_TAG ||
                 parser.getDepth() > currentDepth) && type != XmlPullParser.END_DOCUMENT)        
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -823,17 +826,17 @@ switch(visibility){
             mF2 = f2;
             mF12 = f12;
             mF22 = f22;
-            // ---------- Original Method ----------
-            //mF1 = f1;
-            //mF2 = f2;
-            //mF12 = f12;
-            //mF22 = f22;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.304 -0400", hash_original_method = "912C6EE593A6921C8E87D5E0641D7CDD", hash_generated_method = "981C75C0D80DDC017639D5DCAF0829F8")
         public View onCreateView(String name, Context context, AttributeSet attrs) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(attrs.getTaint());
             addTaint(context.getTaint());
             addTaint(name.getTaint());
@@ -847,16 +850,16 @@ View var6DC76BC51820DD65E8396280E884AA78_627150657 =             v;
 View varD559DA7AD46B63303AC4B99BC0A5AD0E_695343260 =             mF2.onCreateView(name, context, attrs);
             varD559DA7AD46B63303AC4B99BC0A5AD0E_695343260.addTaint(taint);
             return varD559DA7AD46B63303AC4B99BC0A5AD0E_695343260;
-            // ---------- Original Method ----------
-            //View v = mF1.onCreateView(name, context, attrs);
-            //if (v != null) return v;
-            //return mF2.onCreateView(name, context, attrs);
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.304 -0400", hash_original_method = "F1957EAE5145EA0F0129265F270794D6", hash_generated_method = "8DFB704134D87B39410A05F0057C15FE")
         public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(attrs.getTaint());
             addTaint(context.getTaint());
             addTaint(name.getTaint());
@@ -873,12 +876,12 @@ View var055A44BB32643942C424748EC4A9CD57_852221574 =             mF22 != null ? 
                     : mF2.onCreateView(name, context, attrs);
             var055A44BB32643942C424748EC4A9CD57_852221574.addTaint(taint);
             return var055A44BB32643942C424748EC4A9CD57_852221574;
-            // ---------- Original Method ----------
-            //View v = mF12 != null ? mF12.onCreateView(parent, name, context, attrs)
-                    //: mF1.onCreateView(name, context, attrs);
-            //if (v != null) return v;
-            //return mF22 != null ? mF22.onCreateView(parent, name, context, attrs)
-                    //: mF2.onCreateView(name, context, attrs);
+            
+            
+                    
+            
+            
+                    
         }
 
         
@@ -913,42 +916,42 @@ View var055A44BB32643942C424748EC4A9CD57_852221574 =             mF22 != null ? 
                     {
                         mBlinkState = !mBlinkState;
                         makeBlink();
-                    } //End block
+                    } 
                     invalidate();
                     boolean varB326B5062B2F0E69046810717534CB09_253433065 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1200168825 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1200168825;
-                } //End block
+                } 
                 boolean var68934A3E9455FA72420237EB05902327_1121732310 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766422598 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_766422598;
-                // ---------- Original Method ----------
-                //if (msg.what == MESSAGE_BLINK) {
-                        //if (mBlink) {
-                            //mBlinkState = !mBlinkState;
-                            //makeBlink();
-                        //}
-                        //invalidate();
-                        //return true;
-                    //}
-                //return false;
+                
+                
+                        
+                            
+                            
+                        
+                        
+                        
+                    
+                
             }
 });
-            // ---------- Original Method ----------
-            //mHandler = new Handler(new Handler.Callback() {
-                //@Override
-                //public boolean handleMessage(Message msg) {
-                    //if (msg.what == MESSAGE_BLINK) {
-                        //if (mBlink) {
-                            //mBlinkState = !mBlinkState;
-                            //makeBlink();
-                        //}
-                        //invalidate();
-                        //return true;
-                    //}
-                    //return false;
-                //}
-            //});
+            
+            
+                
+                
+                    
+                        
+                            
+                            
+                        
+                        
+                        
+                    
+                    
+                
+            
         }
 
         
@@ -956,41 +959,41 @@ View var055A44BB32643942C424748EC4A9CD57_852221574 =             mF22 != null ? 
         private void makeBlink() {
             Message message = mHandler.obtainMessage(MESSAGE_BLINK);
             mHandler.sendMessageDelayed(message, BLINK_DELAY);
-            // ---------- Original Method ----------
-            //Message message = mHandler.obtainMessage(MESSAGE_BLINK);
-            //mHandler.sendMessageDelayed(message, BLINK_DELAY);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.309 -0400", hash_original_method = "F84801EA6DE017B4DF3D928CA8059755", hash_generated_method = "5442A9264ED4F4E31C0BA66C5931886A")
         @Override
         protected void onAttachedToWindow() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onAttachedToWindow();
             mBlink = true;
             mBlinkState = true;
             makeBlink();
-            // ---------- Original Method ----------
-            //super.onAttachedToWindow();
-            //mBlink = true;
-            //mBlinkState = true;
-            //makeBlink();
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.310 -0400", hash_original_method = "68779D94DBD6ED32D8C444331B18EB29", hash_generated_method = "A65982EADCE2056B98837C8AE9E7BCE2")
         @Override
         protected void onDetachedFromWindow() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onDetachedFromWindow();
             mBlink = false;
             mBlinkState = true;
             mHandler.removeMessages(MESSAGE_BLINK);
-            // ---------- Original Method ----------
-            //super.onDetachedFromWindow();
-            //mBlink = false;
-            //mBlinkState = true;
-            //mHandler.removeMessages(MESSAGE_BLINK);
+            
+            
+            
+            
+            
         }
 
         
@@ -1001,11 +1004,11 @@ View var055A44BB32643942C424748EC4A9CD57_852221574 =             mF22 != null ? 
     if(mBlinkState)            
             {
                 super.dispatchDraw(canvas);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mBlinkState) {
-                //super.dispatchDraw(canvas);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         

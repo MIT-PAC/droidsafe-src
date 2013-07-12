@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -62,7 +62,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(keepAliveTime);
         addTaint(maximumPoolSize);
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -81,7 +81,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(keepAliveTime);
         addTaint(maximumPoolSize);
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -100,7 +100,7 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         addTaint(keepAliveTime);
         addTaint(maximumPoolSize);
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -133,72 +133,80 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
         this.keepAliveTime = unit.toNanos(keepAliveTime);
         this.threadFactory = threadFactory;
         this.handler = handler;
-        // ---------- Original Method ----------
-        //if (corePoolSize < 0 ||
-            //maximumPoolSize <= 0 ||
-            //maximumPoolSize < corePoolSize ||
-            //keepAliveTime < 0)
-            //throw new IllegalArgumentException();
-        //if (workQueue == null || threadFactory == null || handler == null)
-            //throw new NullPointerException();
-        //this.corePoolSize = corePoolSize;
-        //this.maximumPoolSize = maximumPoolSize;
-        //this.workQueue = workQueue;
-        //this.keepAliveTime = unit.toNanos(keepAliveTime);
-        //this.threadFactory = threadFactory;
-        //this.handler = handler;
+        
+        
+            
+            
+            
+            
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
-        private static int runStateOf(int c) {
+        @DSModeled(DSC.SAFE)
+    private static int runStateOf(int c) {
         return c & ~CAPACITY;
     }
 
     
-        private static int workerCountOf(int c) {
+        @DSModeled(DSC.SAFE)
+    private static int workerCountOf(int c) {
         return c & CAPACITY;
     }
 
     
-        private static int ctlOf(int rs, int wc) {
+        @DSModeled(DSC.SAFE)
+    private static int ctlOf(int rs, int wc) {
         return rs | wc;
     }
 
     
-        private static boolean runStateLessThan(int c, int s) {
+        @DSModeled(DSC.SAFE)
+    private static boolean runStateLessThan(int c, int s) {
         return c < s;
     }
 
     
-        private static boolean runStateAtLeast(int c, int s) {
+        @DSModeled(DSC.SAFE)
+    private static boolean runStateAtLeast(int c, int s) {
         return c >= s;
     }
 
     
-        private static boolean isRunning(int c) {
+        @DSModeled(DSC.SAFE)
+    private static boolean isRunning(int c) {
         return c < SHUTDOWN;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.590 -0400", hash_original_method = "AB721E5F3628508DEF5AE872A937DFD4", hash_generated_method = "7C7A7163FA17EA2D35C896A6C4D7A07C")
     private boolean compareAndIncrementWorkerCount(int expect) {
         addTaint(expect);
         boolean var4CF03DB615690726105C2CA3787E5959_1667021061 = (ctl.compareAndSet(expect, expect + 1));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1772560921 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1772560921;
-        // ---------- Original Method ----------
-        //return ctl.compareAndSet(expect, expect + 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.590 -0400", hash_original_method = "046A4642208AB0946E7553D201BA8A62", hash_generated_method = "D9E883CCDEA25A33AA0AF2F73101847C")
     private boolean compareAndDecrementWorkerCount(int expect) {
         addTaint(expect);
         boolean varED355889F4D8EFE0D994F27983661DA2_236310502 = (ctl.compareAndSet(expect, expect - 1));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1550727310 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1550727310;
-        // ---------- Original Method ----------
-        //return ctl.compareAndSet(expect, expect - 1);
+        
+        
     }
 
     
@@ -206,10 +214,10 @@ public class ThreadPoolExecutor extends AbstractExecutorService {
     private void decrementWorkerCount() {
         do {
             {
-            } //End block
+            } 
 } while (! compareAndDecrementWorkerCount(ctl.get()));
-        // ---------- Original Method ----------
-        //do {} while (! compareAndDecrementWorkerCount(ctl.get()));
+        
+        
     }
 
     
@@ -222,14 +230,14 @@ for(;;)
     if(runStateAtLeast(c, targetState) ||
                 ctl.compareAndSet(c, ctlOf(targetState, workerCountOf(c))))            
             break;
-        } //End block
-        // ---------- Original Method ----------
-        //for (;;) {
-            //int c = ctl.get();
-            //if (runStateAtLeast(c, targetState) ||
-                //ctl.compareAndSet(c, ctlOf(targetState, workerCountOf(c))))
-                //break;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+        
     }
 
     
@@ -246,7 +254,7 @@ for(;;)
             {
                 interruptIdleWorkers(ONLY_ONE);
                 return;
-            } //End block
+            } 
             final ReentrantLock mainLock = this.mainLock;
             mainLock.lock();
             try 
@@ -256,22 +264,22 @@ for(;;)
                     try 
                     {
                         terminated();
-                    } //End block
+                    } 
                     finally 
                     {
                         ctl.set(ctlOf(TERMINATED, 0));
                         termination.signalAll();
-                    } //End block
+                    } 
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 mainLock.unlock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -287,28 +295,29 @@ for(;;)
             {
 for(Worker w : workers)
                 security.checkAccess(w.thread);
-            } //End block
+            } 
             finally 
             {
                 mainLock.unlock();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //SecurityManager security = System.getSecurityManager();
-        //if (security != null) {
-            //security.checkPermission(shutdownPerm);
-            //final ReentrantLock mainLock = this.mainLock;
-            //mainLock.lock();
-            //try {
-                //for (Worker w : workers)
-                    //security.checkAccess(w.thread);
-            //} finally {
-                //mainLock.unlock();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+            
+                
+                    
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.592 -0400", hash_original_method = "3FD8BB870BC89D5588F0560753D4337F", hash_generated_method = "CD273599E9E004032DAC6E5A1850A95E")
     private void interruptWorkers() {
         final ReentrantLock mainLock = this.mainLock;
@@ -320,29 +329,29 @@ for(Worker w : workers)
                 try 
                 {
                     w.thread.interrupt();
-                } //End block
+                } 
                 catch (SecurityException ignore)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //for (Worker w : workers) {
-                //try {
-                    //w.thread.interrupt();
-                //} catch (SecurityException ignore) {
-                //}
-            //}
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -361,51 +370,51 @@ for(Worker w : workers)
                     try 
                     {
                         t.interrupt();
-                    } //End block
+                    } 
                     catch (SecurityException ignore)
                     {
-                    } //End block
+                    } 
                     finally 
                     {
                         w.unlock();
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(onlyOne)                
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //for (Worker w : workers) {
-                //Thread t = w.thread;
-                //if (!t.isInterrupted() && w.tryLock()) {
-                    //try {
-                        //t.interrupt();
-                    //} catch (SecurityException ignore) {
-                    //} finally {
-                        //w.unlock();
-                    //}
-                //}
-                //if (onlyOne)
-                    //break;
-            //}
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+                
+                
+                    
+                        
+                    
+                    
+                        
+                    
+                
+                
+                    
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.594 -0400", hash_original_method = "8AE0F2FE6E5901DBE1EC6FD71BA67D3B", hash_generated_method = "5A72F35E8F8382990E1FD3DE61AAA8EA")
     private void interruptIdleWorkers() {
         interruptIdleWorkers(false);
-        // ---------- Original Method ----------
-        //interruptIdleWorkers(false);
+        
+        
     }
 
     
@@ -415,11 +424,11 @@ for(Worker w : workers)
             Thread.interrupted() &&
             runStateAtLeast(ctl.get(), STOP))        
         Thread.currentThread().interrupt();
-        // ---------- Original Method ----------
-        //if (runStateLessThan(ctl.get(), STOP) &&
-            //Thread.interrupted() &&
-            //runStateAtLeast(ctl.get(), STOP))
-            //Thread.currentThread().interrupt();
+        
+        
+            
+            
+            
     }
 
     
@@ -427,15 +436,16 @@ for(Worker w : workers)
     final void reject(Runnable command) {
         addTaint(command.getTaint());
         handler.rejectedExecution(command, this);
-        // ---------- Original Method ----------
-        //handler.rejectedExecution(command, this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.594 -0400", hash_original_method = "0A1F69177689475EC5D7889C7292052F", hash_generated_method = "A8810A0A581CC8BD0FA906871342B1C5")
      void onShutdown() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -446,9 +456,9 @@ for(Worker w : workers)
         boolean var409AD087F5F43FEB88D877090C121B34_1312687393 = (rs == RUNNING || (rs == SHUTDOWN && shutdownOK));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_138988765 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_138988765;
-        // ---------- Original Method ----------
-        //int rs = runStateOf(ctl.get());
-        //return rs == RUNNING || (rs == SHUTDOWN && shutdownOK);
+        
+        
+        
     }
 
     
@@ -463,22 +473,22 @@ for(Runnable r : q.toArray(new Runnable[0]))
             {
     if(q.remove(r))                
                 taskList.add(r);
-            } //End block
-        } //End block
+            } 
+        } 
 List<Runnable> var8E14B675DD0E734D8359E9F7C3310A0E_1402132703 =         taskList;
         var8E14B675DD0E734D8359E9F7C3310A0E_1402132703.addTaint(taint);
         return var8E14B675DD0E734D8359E9F7C3310A0E_1402132703;
-        // ---------- Original Method ----------
-        //BlockingQueue<Runnable> q = workQueue;
-        //List<Runnable> taskList = new ArrayList<Runnable>();
-        //q.drainTo(taskList);
-        //if (!q.isEmpty()) {
-            //for (Runnable r : q.toArray(new Runnable[0])) {
-                //if (q.remove(r))
-                    //taskList.add(r);
-            //}
-        //}
-        //return taskList;
+        
+        
+        
+        
+        
+            
+                
+                    
+            
+        
+        
     }
 
     
@@ -515,8 +525,8 @@ for(;;)
                 c = ctl.get();
     if(runStateOf(c) != rs)                
                 continue retry;
-            } //End block
-        } //End block
+            } 
+        } 
         Worker w = new Worker(firstTask);
         Thread t = w.thread;
         final ReentrantLock mainLock = this.mainLock;
@@ -535,24 +545,24 @@ for(;;)
                 boolean var68934A3E9455FA72420237EB05902327_354539936 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2069940510 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2069940510;
-            } //End block
+            } 
             workers.add(w);
             int s = workers.size();
     if(s > largestPoolSize)            
             largestPoolSize = s;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         t.start();
     if(runStateOf(ctl.get()) == STOP && ! t.isInterrupted())        
         t.interrupt();
         boolean varB326B5062B2F0E69046810717534CB09_1811477851 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1047617947 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1047617947;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -567,11 +577,11 @@ for(;;)
         {
             completedTaskCount += w.completedTasks;
             workers.remove(w);
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         tryTerminate();
         int c = ctl.get();
     if(runStateLessThan(c, STOP))        
@@ -583,32 +593,32 @@ for(;;)
                 min = 1;
     if(workerCountOf(c) >= min)                
                 return;
-            } //End block
+            } 
             addWorker(null, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (completedAbruptly) 
-            //decrementWorkerCount();
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //completedTaskCount += w.completedTasks;
-            //workers.remove(w);
-        //} finally {
-            //mainLock.unlock();
-        //}
-        //tryTerminate();
-        //int c = ctl.get();
-        //if (runStateLessThan(c, STOP)) {
-            //if (!completedAbruptly) {
-                //int min = allowCoreThreadTimeOut ? 0 : corePoolSize;
-                //if (min == 0 && ! workQueue.isEmpty())
-                    //min = 1;
-                //if (workerCountOf(c) >= min)
-                    //return; 
-            //}
-            //addWorker(null, false);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+            
+            
+        
     }
 
     
@@ -626,7 +636,7 @@ for(;;)
 Runnable var540C13E9E156B687226421B24F2DF178_595613620 =                 null;
                 var540C13E9E156B687226421B24F2DF178_595613620.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_595613620;
-            } //End block
+            } 
             boolean timed;
 for(;;)
             {
@@ -643,7 +653,7 @@ Runnable var540C13E9E156B687226421B24F2DF178_434928509 =                 null;
                 c = ctl.get();
     if(runStateOf(c) != rs)                
                 continue retry;
-            } //End block
+            } 
             try 
             {
                 Runnable r = timed ?
@@ -656,14 +666,14 @@ Runnable var4C1F3C86A0E56B6E375080F5F710547E_510412530 =                 r;
                 return var4C1F3C86A0E56B6E375080F5F710547E_510412530;
                 }
                 timedOut = true;
-            } //End block
+            } 
             catch (InterruptedException retry)
             {
                 timedOut = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -687,46 +697,46 @@ Runnable var4C1F3C86A0E56B6E375080F5F710547E_510412530 =                 r;
                     try 
                     {
                         task.run();
-                    } //End block
+                    } 
                     catch (RuntimeException x)
                     {
                         thrown = x;
                         x.addTaint(taint);
                         throw x;
-                    } //End block
+                    } 
                     catch (Error x)
                     {
                         thrown = x;
                         x.addTaint(taint);
                         throw x;
-                    } //End block
+                    } 
                     catch (Throwable x)
                     {
                         thrown = x;
                         Error varD8FCF97463C4D7219486B460ADF7528B_1369974033 = new Error(x);
                         varD8FCF97463C4D7219486B460ADF7528B_1369974033.addTaint(taint);
                         throw varD8FCF97463C4D7219486B460ADF7528B_1369974033;
-                    } //End block
+                    } 
                     finally 
                     {
                         afterExecute(task, thrown);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 finally 
                 {
                     task = null;
                     w.completedTasks++;
                     w.unlock();
-                } //End block
-            } //End block
+                } 
+            } 
             completedAbruptly = false;
-        } //End block
+        } 
         finally 
         {
             processWorkerExit(w, completedAbruptly);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -745,7 +755,7 @@ Runnable var4C1F3C86A0E56B6E375080F5F710547E_510412530 =                 r;
     if(addWorker(command, true))            
             return;
             c = ctl.get();
-        } //End block
+        } 
     if(isRunning(c) && workQueue.offer(command))        
         {
             int recheck = ctl.get();
@@ -754,28 +764,28 @@ Runnable var4C1F3C86A0E56B6E375080F5F710547E_510412530 =                 r;
             else
     if(workerCountOf(recheck) == 0)            
             addWorker(null, false);
-        } //End block
+        } 
         else
     if(!addWorker(command, false))        
         reject(command);
-        // ---------- Original Method ----------
-        //if (command == null)
-            //throw new NullPointerException();
-        //int c = ctl.get();
-        //if (workerCountOf(c) < corePoolSize) {
-            //if (addWorker(command, true))
-                //return;
-            //c = ctl.get();
-        //}
-        //if (isRunning(c) && workQueue.offer(command)) {
-            //int recheck = ctl.get();
-            //if (! isRunning(recheck) && remove(command))
-                //reject(command);
-            //else if (workerCountOf(recheck) == 0)
-                //addWorker(null, false);
-        //}
-        //else if (!addWorker(command, false))
-            //reject(command);
+        
+        
+            
+        
+        
+            
+                
+            
+        
+        
+            
+            
+                
+            
+                
+        
+        
+            
     }
 
     
@@ -789,24 +799,24 @@ Runnable var4C1F3C86A0E56B6E375080F5F710547E_510412530 =                 r;
             advanceRunState(SHUTDOWN);
             interruptIdleWorkers();
             onShutdown();
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         tryTerminate();
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //checkShutdownAccess();
-            //advanceRunState(SHUTDOWN);
-            //interruptIdleWorkers();
-            //onShutdown(); 
-        //} finally {
-            //mainLock.unlock();
-        //}
-        //tryTerminate();
+        
+        
+        
+        
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -821,39 +831,40 @@ Runnable var4C1F3C86A0E56B6E375080F5F710547E_510412530 =                 r;
             advanceRunState(STOP);
             interruptWorkers();
             tasks = drainQueue();
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         tryTerminate();
 List<Runnable> var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479 =         tasks;
         var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479.addTaint(taint);
         return var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479;
-        // ---------- Original Method ----------
-        //List<Runnable> tasks;
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //checkShutdownAccess();
-            //advanceRunState(STOP);
-            //interruptWorkers();
-            //tasks = drainQueue();
-        //} finally {
-            //mainLock.unlock();
-        //}
-        //tryTerminate();
-        //return tasks;
+        
+        
+        
+        
+        
+            
+            
+            
+            
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.603 -0400", hash_original_method = "968CAF504B3356CA71CED595275477F9", hash_generated_method = "87C9C80CCD045942E715C44607B5D8B0")
     public boolean isShutdown() {
         boolean var4F365FA39DD9B6B15FB3A09F0927D40E_374448476 = (! isRunning(ctl.get()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2086026616 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2086026616;
-        // ---------- Original Method ----------
-        //return ! isRunning(ctl.get());
+        
+        
     }
 
     
@@ -863,22 +874,24 @@ List<Runnable> var7E53B1D2085D8C7AE88417ECCC5A0893_1787583479 =         tasks;
         boolean var4D90DB0C0BB66D84B496970A6DBB406B_492078732 = (! isRunning(c) && runStateLessThan(c, TERMINATED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953788314 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_953788314;
-        // ---------- Original Method ----------
-        //int c = ctl.get();
-        //return ! isRunning(c) && runStateLessThan(c, TERMINATED);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.603 -0400", hash_original_method = "9F60EBE4EAB8D07AF1E9485C91ACF37E", hash_generated_method = "623543AC919010E51E5F0AD8B7557F03")
     public boolean isTerminated() {
         boolean varD51322F449BE555009645EFF83261349_1753310655 = (runStateAtLeast(ctl.get(), TERMINATED));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_232959578 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_232959578;
-        // ---------- Original Method ----------
-        //return runStateAtLeast(ctl.get(), TERMINATED);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.604 -0400", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "E44D4350B7176B754AA870414FBD7D28")
     public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
         addTaint(unit.getTaint());
@@ -903,35 +916,35 @@ for(;;)
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_555857840;
                 }
                 nanos = termination.awaitNanos(nanos);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //long nanos = unit.toNanos(timeout);
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //for (;;) {
-                //if (runStateAtLeast(ctl.get(), TERMINATED))
-                    //return true;
-                //if (nanos <= 0)
-                    //return false;
-                //nanos = termination.awaitNanos(nanos);
-            //}
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.605 -0400", hash_original_method = "54A2A12810CC337A284FDAF9A692A515", hash_generated_method = "57134A5D1161D28260EB34D287472E08")
     protected void finalize() {
         shutdown();
-        // ---------- Original Method ----------
-        //shutdown();
+        
+        
     }
 
     
@@ -944,20 +957,21 @@ for(;;)
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_1269109306;
         }
         this.threadFactory = threadFactory;
-        // ---------- Original Method ----------
-        //if (threadFactory == null)
-            //throw new NullPointerException();
-        //this.threadFactory = threadFactory;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.605 -0400", hash_original_method = "304653AC486A914BB8844AA1040FA7EB", hash_generated_method = "DFEE187B1CC880CEE5BD00DB8A8E2DC8")
     public ThreadFactory getThreadFactory() {
 ThreadFactory var3580E08ED69603FA4F15CD8F2CD0B9D9_468285180 =         threadFactory;
         var3580E08ED69603FA4F15CD8F2CD0B9D9_468285180.addTaint(taint);
         return var3580E08ED69603FA4F15CD8F2CD0B9D9_468285180;
-        // ---------- Original Method ----------
-        //return threadFactory;
+        
+        
     }
 
     
@@ -970,20 +984,21 @@ ThreadFactory var3580E08ED69603FA4F15CD8F2CD0B9D9_468285180 =         threadFact
         throw var7338BC9F48D81FE0BBD6183F4014DCC4_241820937;
         }
         this.handler = handler;
-        // ---------- Original Method ----------
-        //if (handler == null)
-            //throw new NullPointerException();
-        //this.handler = handler;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.606 -0400", hash_original_method = "6DBE484B7F2A61BE5C5EC698F3E381D8", hash_generated_method = "3FAEE695C855C4E7881691E0CC2A0CCF")
     public RejectedExecutionHandler getRejectedExecutionHandler() {
 RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =         handler;
         var3E73215C2EA435E7F052AAB7C8597D27_2015421571.addTaint(taint);
         return var3E73215C2EA435E7F052AAB7C8597D27_2015421571;
-        // ---------- Original Method ----------
-        //return handler;
+        
+        
     }
 
     
@@ -1008,32 +1023,33 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
             {
     if(workQueue.isEmpty())                
                 break;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (corePoolSize < 0)
-            //throw new IllegalArgumentException();
-        //int delta = corePoolSize - this.corePoolSize;
-        //this.corePoolSize = corePoolSize;
-        //if (workerCountOf(ctl.get()) > corePoolSize)
-            //interruptIdleWorkers();
-        //else if (delta > 0) {
-            //int k = Math.min(delta, workQueue.size());
-            //while (k-- > 0 && addWorker(null, true)) {
-                //if (workQueue.isEmpty())
-                    //break;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+            
+                
+                    
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.607 -0400", hash_original_method = "51C354BC1AFFD9D1E19ED52BB81EBE2C", hash_generated_method = "9757D55B49C83EE4A96651E2FD6500F3")
     public int getCorePoolSize() {
         int varBC84A0387FED241C4B869E825402E08F_712704149 = (corePoolSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294089817 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1294089817;
-        // ---------- Original Method ----------
-        //return corePoolSize;
+        
+        
     }
 
     
@@ -1043,9 +1059,9 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
             addWorker(null, true));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1413580155 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1413580155;
-        // ---------- Original Method ----------
-        //return workerCountOf(ctl.get()) < corePoolSize &&
-            //addWorker(null, true);
+        
+        
+            
     }
 
     
@@ -1058,21 +1074,22 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
         int var7B8B965AD4BCA0E41AB51DE7B31363A1_1803674214 = (n);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1296551592 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1296551592;
-        // ---------- Original Method ----------
-        //int n = 0;
-        //while (addWorker(null, true))
-            //++n;
-        //return n;
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.609 -0400", hash_original_method = "B47D14DD952D3505364B334F55BDAD78", hash_generated_method = "65C01DB0019D91AE7719F4DF822477C6")
     public boolean allowsCoreThreadTimeOut() {
         boolean var8479D8297F4B7D8A1CB6952389C8EDC1_1966400091 = (allowCoreThreadTimeOut);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2099909030 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2099909030;
-        // ---------- Original Method ----------
-        //return allowCoreThreadTimeOut;
+        
+        
     }
 
     
@@ -1089,15 +1106,15 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
             allowCoreThreadTimeOut = value;
     if(value)            
             interruptIdleWorkers();
-        } //End block
-        // ---------- Original Method ----------
-        //if (value && keepAliveTime <= 0)
-            //throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
-        //if (value != allowCoreThreadTimeOut) {
-            //allowCoreThreadTimeOut = value;
-            //if (value)
-                //interruptIdleWorkers();
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+        
     }
 
     
@@ -1112,22 +1129,23 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
         this.maximumPoolSize = maximumPoolSize;
     if(workerCountOf(ctl.get()) > maximumPoolSize)        
         interruptIdleWorkers();
-        // ---------- Original Method ----------
-        //if (maximumPoolSize <= 0 || maximumPoolSize < corePoolSize)
-            //throw new IllegalArgumentException();
-        //this.maximumPoolSize = maximumPoolSize;
-        //if (workerCountOf(ctl.get()) > maximumPoolSize)
-            //interruptIdleWorkers();
+        
+        
+            
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.610 -0400", hash_original_method = "4164BA9A7B4677354D8831E6C94ADF71", hash_generated_method = "F5CB28116E84E1B887F12E4CF21B7724")
     public int getMaximumPoolSize() {
         int var54A9EC393DB750BE987C30FFF3A375D2_672825829 = (maximumPoolSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580543255 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1580543255;
-        // ---------- Original Method ----------
-        //return maximumPoolSize;
+        
+        
     }
 
     
@@ -1152,16 +1170,16 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
         this.keepAliveTime = keepAliveTime;
     if(delta < 0)        
         interruptIdleWorkers();
-        // ---------- Original Method ----------
-        //if (time < 0)
-            //throw new IllegalArgumentException();
-        //if (time == 0 && allowsCoreThreadTimeOut())
-            //throw new IllegalArgumentException("Core threads must have nonzero keep alive times");
-        //long keepAliveTime = unit.toNanos(time);
-        //long delta = keepAliveTime - this.keepAliveTime;
-        //this.keepAliveTime = keepAliveTime;
-        //if (delta < 0)
-            //interruptIdleWorkers();
+        
+        
+            
+        
+            
+        
+        
+        
+        
+            
     }
 
     
@@ -1171,8 +1189,8 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
         long var9E239AE39DEF01474F384A33B72F0A5A_90526390 = (unit.convert(keepAliveTime, TimeUnit.NANOSECONDS));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1055812317 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1055812317;
-        // ---------- Original Method ----------
-        //return unit.convert(keepAliveTime, TimeUnit.NANOSECONDS);
+        
+        
     }
 
     
@@ -1181,8 +1199,8 @@ RejectedExecutionHandler var3E73215C2EA435E7F052AAB7C8597D27_2015421571 =       
 BlockingQueue<Runnable> var29887FCBEA17534A0106FF38266D9590_1363903281 =         workQueue;
         var29887FCBEA17534A0106FF38266D9590_1363903281.addTaint(taint);
         return var29887FCBEA17534A0106FF38266D9590_1363903281;
-        // ---------- Original Method ----------
-        //return workQueue;
+        
+        
     }
 
     
@@ -1194,10 +1212,10 @@ BlockingQueue<Runnable> var29887FCBEA17534A0106FF38266D9590_1363903281 =        
         boolean varB07286EBBB5BC7AA91CC3EAA8BC19711_1273007518 = (removed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1592929577 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1592929577;
-        // ---------- Original Method ----------
-        //boolean removed = workQueue.remove(task);
-        //tryTerminate();
-        //return removed;
+        
+        
+        
+        
     }
 
     
@@ -1213,30 +1231,30 @@ BlockingQueue<Runnable> var29887FCBEA17534A0106FF38266D9590_1363903281 =        
                 Runnable r = it.next();
     if(r instanceof Future<?> && ((Future<?>)r).isCancelled())                
                 it.remove();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ConcurrentModificationException fallThrough)
         {
 for(Object r : q.toArray())
     if(r instanceof Future<?> && ((Future<?>)r).isCancelled())            
             q.remove(r);
-        } //End block
+        } 
         tryTerminate();
-        // ---------- Original Method ----------
-        //final BlockingQueue<Runnable> q = workQueue;
-        //try {
-            //Iterator<Runnable> it = q.iterator();
-            //while (it.hasNext()) {
-                //Runnable r = it.next();
-                //if (r instanceof Future<?> && ((Future<?>)r).isCancelled())
-                    //it.remove();
-            //}
-        //} catch (ConcurrentModificationException fallThrough) {
-            //for (Object r : q.toArray())
-                //if (r instanceof Future<?> && ((Future<?>)r).isCancelled())
-                    //q.remove(r);
-        //}
-        //tryTerminate();
+        
+        
+        
+            
+            
+                
+                
+                    
+            
+        
+            
+                
+                    
+        
+        
     }
 
     
@@ -1250,23 +1268,24 @@ for(Object r : q.toArray())
                 : workers.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712142736 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712142736;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //return runStateAtLeast(ctl.get(), TIDYING) ? 0
-                //: workers.size();
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+                
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.614 -0400", hash_original_method = "F897DAAB3F6E4FA542BB8276CD2A7AD3", hash_generated_method = "1BF9377A45799DF42ED12E4EDC06898A")
     public int getActiveCount() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1280,26 +1299,27 @@ for(Worker w : workers)
             int var7B8B965AD4BCA0E41AB51DE7B31363A1_1382184709 = (n);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102420271 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_102420271;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //int n = 0;
-            //for (Worker w : workers)
-                //if (w.isLocked())
-                    //++n;
-            //return n;
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+                    
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.615 -0400", hash_original_method = "B4A579D5588949E5556CF38ABCB55065", hash_generated_method = "C686F247C306374C56A269B50D9C0BF7")
     public int getLargestPoolSize() {
         final ReentrantLock mainLock = this.mainLock;
@@ -1309,19 +1329,19 @@ for(Worker w : workers)
             int var847B488AE80482898780783A82B6764E_492278665 = (largestPoolSize);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908281446 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908281446;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //return largestPoolSize;
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1337,29 +1357,29 @@ for(Worker w : workers)
                 n += w.completedTasks;
     if(w.isLocked())                
                 ++n;
-            } //End block
+            } 
             long var3FBE1EF47BEF7B991B1CDF7AE8CE1157_2109829777 = (n + workQueue.size());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1116840771 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1116840771;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //long n = completedTaskCount;
-            //for (Worker w : workers) {
-                //n += w.completedTasks;
-                //if (w.isLocked())
-                    //++n;
-            //}
-            //return n + workQueue.size();
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+            
+            
+        
+            
+        
     }
 
     
@@ -1375,22 +1395,22 @@ for(Worker w : workers)
             long var7B8B965AD4BCA0E41AB51DE7B31363A1_149477489 = (n);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_965655161 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_965655161;
-        } //End block
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //final ReentrantLock mainLock = this.mainLock;
-        //mainLock.lock();
-        //try {
-            //long n = completedTaskCount;
-            //for (Worker w : workers)
-                //n += w.completedTasks;
-            //return n;
-        //} finally {
-            //mainLock.unlock();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1411,12 +1431,12 @@ for(Worker w : workers)
                 ncompleted += w.completedTasks;
     if(w.isLocked())                
                 ++nactive;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             mainLock.unlock();
-        } //End block
+        } 
         int c = ctl.get();
         String rs = (runStateLessThan(c, SHUTDOWN) ? "Running" :
                      (runStateAtLeast(c, TERMINATED) ? "Terminated" :
@@ -1430,30 +1450,33 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
             "]";
         var29FB64F814595F23DD616FE19257F50F_1391862596.addTaint(taint);
         return var29FB64F814595F23DD616FE19257F50F_1391862596;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.618 -0400", hash_original_method = "4C3878CDFFA0878930C89982189B5032", hash_generated_method = "56B6C8F5D1AFC7ADF196D539D3B9EE18")
     protected void beforeExecute(Thread t, Runnable r) {
         addTaint(r.getTaint());
         addTaint(t.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.618 -0400", hash_original_method = "1E835AC60F46FC4FB8E958FFB42880D4", hash_generated_method = "03812D400E0817EB73EE3728ED506683")
     protected void afterExecute(Runnable r, Throwable t) {
         addTaint(t.getTaint());
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.618 -0400", hash_original_method = "A29D7F7280B94AB8E3FBFAF6674D4BBC", hash_generated_method = "F157B5EF4A6890FC5741BB31F75810D9")
     protected void terminated() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1472,17 +1495,17 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
           Worker(Runnable firstTask) {
             this.firstTask = firstTask;
             this.thread = getThreadFactory().newThread(this);
-            // ---------- Original Method ----------
-            //this.firstTask = firstTask;
-            //this.thread = getThreadFactory().newThread(this);
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.619 -0400", hash_original_method = "776DC8B2F80D9EC817EF7446A13B40B9", hash_generated_method = "1D172B8AE706040037220A6FE99238AC")
         public void run() {
             runWorker(this);
-            // ---------- Original Method ----------
-            //runWorker(this);
+            
+            
         }
 
         
@@ -1491,8 +1514,8 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
             boolean varC84F38E8FDD2496C130BD8B8E93D2156_1436841455 = (getState() == 1);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_589163411 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_589163411;
-            // ---------- Original Method ----------
-            //return getState() == 1;
+            
+            
         }
 
         
@@ -1505,16 +1528,16 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
                 boolean varB326B5062B2F0E69046810717534CB09_1915211714 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1550672090 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1550672090;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_926084379 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2110677597 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2110677597;
-            // ---------- Original Method ----------
-            //if (compareAndSetState(0, 1)) {
-                //setExclusiveOwnerThread(Thread.currentThread());
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1526,18 +1549,18 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
             boolean varB326B5062B2F0E69046810717534CB09_2071949197 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1112830550 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1112830550;
-            // ---------- Original Method ----------
-            //setExclusiveOwnerThread(null);
-            //setState(0);
-            //return true;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.621 -0400", hash_original_method = "E6AC2D5893CA21F5681F81CF00C94AEB", hash_generated_method = "E250ED120425ABD3596F0FB44742AE76")
         public void lock() {
             acquire(1);
-            // ---------- Original Method ----------
-            //acquire(1);
+            
+            
         }
 
         
@@ -1546,16 +1569,16 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
             boolean var348B72E576425BDCF1A5A5892822D3BD_333139670 = (tryAcquire(1));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_908211723 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_908211723;
-            // ---------- Original Method ----------
-            //return tryAcquire(1);
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.621 -0400", hash_original_method = "375F138297D7668DFC40E00540A7DE61", hash_generated_method = "9980155D40CCECC3DD5DA1A3CA7D2CB7")
         public void unlock() {
             release(1);
-            // ---------- Original Method ----------
-            //release(1);
+            
+            
         }
 
         
@@ -1564,8 +1587,8 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
             boolean var7551F9FF3A4762BCD1133DF4B8691B3D_1894442857 = (isHeldExclusively());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_895426070 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_895426070;
-            // ---------- Original Method ----------
-            //return isHeldExclusively();
+            
+            
         }
 
         
@@ -1580,10 +1603,11 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.622 -0400", hash_original_method = "0024AA22CD353D26AF52EE7A7BFF5B6A", hash_generated_method = "EE6F5E0062E38533EDD0CC7DB47C5E41")
         public  CallerRunsPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.622 -0400", hash_original_method = "1E8BCB605E875657A6EC0245732A9544", hash_generated_method = "41E8071271B295178CB10118669124D1")
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             addTaint(e.getTaint());
@@ -1591,11 +1615,11 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
     if(!e.isShutdown())            
             {
                 r.run();
-            } //End block
-            // ---------- Original Method ----------
-            //if (!e.isShutdown()) {
-                //r.run();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -1607,7 +1631,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.623 -0400", hash_original_method = "0E304EA6C47EF7342B79AE7423647CD0", hash_generated_method = "179F0278660B104E944DF3C713C65A75")
         public  AbortPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1620,10 +1644,10 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
                                                  e.toString());
             var0C1678CC02FC0866DA2642AB9692C836_194565457.addTaint(taint);
             throw var0C1678CC02FC0866DA2642AB9692C836_194565457;
-            // ---------- Original Method ----------
-            //throw new RejectedExecutionException("Task " + r.toString() +
-                                                 //" rejected from " +
-                                                 //e.toString());
+            
+            
+                                                 
+                                                 
         }
 
         
@@ -1635,15 +1659,16 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.623 -0400", hash_original_method = "F09B76305D692D1CB8CB62E17F499CB5", hash_generated_method = "C4B475A3525556F9D1B8C945DF152CD4")
         public  DiscardPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.624 -0400", hash_original_method = "81B7AD8C9B3A9908C7C41F3CCCB6E30B", hash_generated_method = "6F29E6E993E435A8F0C32060F4A39C0C")
         public void rejectedExecution(Runnable r, ThreadPoolExecutor e) {
             addTaint(e.getTaint());
             addTaint(r.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1655,7 +1680,7 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.624 -0400", hash_original_method = "7D42DC0AF0C4E1A1DAE9147B8685950D", hash_generated_method = "887F469A96FA729D52338C565521C0C6")
         public  DiscardOldestPolicy() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1667,12 +1692,12 @@ String var29FB64F814595F23DD616FE19257F50F_1391862596 =         super.toString()
             {
                 e.getQueue().poll();
                 e.execute(r);
-            } //End block
-            // ---------- Original Method ----------
-            //if (!e.isShutdown()) {
-                //e.getQueue().poll();
-                //e.execute(r);
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         

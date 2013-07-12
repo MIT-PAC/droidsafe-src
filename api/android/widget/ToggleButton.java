@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,15 +39,15 @@ public class ToggleButton extends CompoundButton {
         mDisabledAlpha = a.getFloat(com.android.internal.R.styleable.ToggleButton_disabledAlpha, 0.5f);
         syncTextState();
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a =
-            //context.obtainStyledAttributes(
-                    //attrs, com.android.internal.R.styleable.ToggleButton, defStyle, 0);
-        //mTextOn = a.getText(com.android.internal.R.styleable.ToggleButton_textOn);
-        //mTextOff = a.getText(com.android.internal.R.styleable.ToggleButton_textOff);
-        //mDisabledAlpha = a.getFloat(com.android.internal.R.styleable.ToggleButton_disabledAlpha, 0.5f);
-        //syncTextState();
-        //a.recycle();
+        
+        
+            
+                    
+        
+        
+        
+        
+        
     }
 
     
@@ -56,7 +56,7 @@ public class ToggleButton extends CompoundButton {
         this(context, attrs, com.android.internal.R.attr.buttonStyleToggle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -64,7 +64,7 @@ public class ToggleButton extends CompoundButton {
     public  ToggleButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -74,9 +74,9 @@ public class ToggleButton extends CompoundButton {
         addTaint(checked);
         super.setChecked(checked);
         syncTextState();
-        // ---------- Original Method ----------
-        //super.setChecked(checked);
-        //syncTextState();
+        
+        
+        
     }
 
     
@@ -86,67 +86,71 @@ public class ToggleButton extends CompoundButton {
     if(checked && mTextOn != null)        
         {
             setText(mTextOn);
-        } //End block
+        } 
         else
     if(!checked && mTextOff != null)        
         {
             setText(mTextOff);
-        } //End block
-        // ---------- Original Method ----------
-        //boolean checked = isChecked();
-        //if (checked && mTextOn != null) {
-            //setText(mTextOn);
-        //} else if (!checked && mTextOff != null) {
-            //setText(mTextOff);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.867 -0400", hash_original_method = "5C0E5388314CF71485B1BF56327EECD2", hash_generated_method = "65E1CB3B004935508ECB739DD9996D5C")
     public CharSequence getTextOn() {
 CharSequence varB717BC0D87EF7CA63EF5B2DADD0E238D_542537258 =         mTextOn;
         varB717BC0D87EF7CA63EF5B2DADD0E238D_542537258.addTaint(taint);
         return varB717BC0D87EF7CA63EF5B2DADD0E238D_542537258;
-        // ---------- Original Method ----------
-        //return mTextOn;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.867 -0400", hash_original_method = "ACAEE36BE44A4D8B24B7AB5EAF55367A", hash_generated_method = "67CC13008751AF9B4E65B5930EB2969F")
     public void setTextOn(CharSequence textOn) {
         mTextOn = textOn;
-        // ---------- Original Method ----------
-        //mTextOn = textOn;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.867 -0400", hash_original_method = "EAEA80D56F502C97F845DE2B9DA853EF", hash_generated_method = "FC23A15F123455EB3F05A71820A46F49")
     public CharSequence getTextOff() {
 CharSequence varAB991E92B38590F8C1DAE21519779556_959363587 =         mTextOff;
         varAB991E92B38590F8C1DAE21519779556_959363587.addTaint(taint);
         return varAB991E92B38590F8C1DAE21519779556_959363587;
-        // ---------- Original Method ----------
-        //return mTextOff;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.868 -0400", hash_original_method = "60B041A4AF8BC6B9E7C69B28CDF70955", hash_generated_method = "F6CD4645E4AAFA85FDCFCC947F51F705")
     public void setTextOff(CharSequence textOff) {
         mTextOff = textOff;
-        // ---------- Original Method ----------
-        //mTextOff = textOff;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.868 -0400", hash_original_method = "CD87BB009216C6E394DAEB7F0CACBDC7", hash_generated_method = "81D9C38B61009D24E1CDF52F90536A51")
     @Override
     protected void onFinishInflate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onFinishInflate();
         updateReferenceToIndicatorDrawable(getBackground());
-        // ---------- Original Method ----------
-        //super.onFinishInflate();
-        //updateReferenceToIndicatorDrawable(getBackground());
+        
+        
+        
     }
 
     
@@ -156,9 +160,9 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_959363587 =         mTextOff;
         addTaint(d.getTaint());
         super.setBackgroundDrawable(d);
         updateReferenceToIndicatorDrawable(d);
-        // ---------- Original Method ----------
-        //super.setBackgroundDrawable(d);
-        //updateReferenceToIndicatorDrawable(d);
+        
+        
+        
     }
 
     
@@ -170,19 +174,19 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_959363587 =         mTextOff;
             LayerDrawable layerDrawable = (LayerDrawable) backgroundDrawable;
             mIndicatorDrawable =
                     layerDrawable.findDrawableByLayerId(com.android.internal.R.id.toggle);
-        } //End block
+        } 
         else
         {
             mIndicatorDrawable = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (backgroundDrawable instanceof LayerDrawable) {
-            //LayerDrawable layerDrawable = (LayerDrawable) backgroundDrawable;
-            //mIndicatorDrawable =
-                    //layerDrawable.findDrawableByLayerId(com.android.internal.R.id.toggle);
-        //} else {
-            //mIndicatorDrawable = null;
-        //}
+        } 
+        
+        
+            
+            
+                    
+        
+            
+        
     }
 
     
@@ -193,36 +197,36 @@ CharSequence varAB991E92B38590F8C1DAE21519779556_959363587 =         mTextOff;
     if(mIndicatorDrawable != null)        
         {
             mIndicatorDrawable.setAlpha(isEnabled() ? NO_ALPHA : (int) (NO_ALPHA * mDisabledAlpha));
-        } //End block
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //if (mIndicatorDrawable != null) {
-            //mIndicatorDrawable.setAlpha(isEnabled() ? NO_ALPHA : (int) (NO_ALPHA * mDisabledAlpha));
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:13.870 -0400", hash_original_method = "829A7520B55299EB98890ECCFB9822BF", hash_generated_method = "A6559AD65A1F1E2AA131A5114B922936")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         super.onPopulateAccessibilityEvent(event);
     if(isChecked())        
         {
             event.getText().add(mContext.getString(R.string.togglebutton_pressed));
-        } //End block
+        } 
         else
         {
             event.getText().add(mContext.getString(R.string.togglebutton_not_pressed));
-        } //End block
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //event.getText().add(mContext.getString(R.string.togglebutton_pressed));
-        //} else {
-            //event.getText().add(mContext.getString(R.string.togglebutton_not_pressed));
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     

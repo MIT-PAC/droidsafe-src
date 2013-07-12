@@ -1,6 +1,6 @@
 package org.apache.harmony.security.pkcs7;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,36 +22,38 @@ final class AuthenticatedAttributes {
             List<AttributeTypeAndValue> authenticatedAttributes) {
         this.encoding = encoding;
         this.authenticatedAttributes = authenticatedAttributes;
-        // ---------- Original Method ----------
-        //this.encoding = encoding;
-        //this.authenticatedAttributes = authenticatedAttributes;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.099 -0400", hash_original_method = "17512B9B260049DCE667B4C278AB32BC", hash_generated_method = "1B85CABCB77B56A931EBDC3E741605B4")
     public List<AttributeTypeAndValue> getAttributes() {
 List<AttributeTypeAndValue> varA7E65B047A1744DF616E2152119C59A0_1147355223 =         authenticatedAttributes;
         varA7E65B047A1744DF616E2152119C59A0_1147355223.addTaint(taint);
         return varA7E65B047A1744DF616E2152119C59A0_1147355223;
-        // ---------- Original Method ----------
-        //return authenticatedAttributes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.099 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "0CF1955FE2836DCE208EAB6C45702DDC")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_2110772761 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_313738067 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_313738067;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     

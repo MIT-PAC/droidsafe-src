@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,7 +37,7 @@ public class UserData {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.548 -0400", hash_original_method = "09164C91BCB463A1239D064C926A7134", hash_generated_method = "09164C91BCB463A1239D064C926A7134")
     public UserData ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -69,18 +69,18 @@ public class UserData {
 String varF4CF030572656354ACFDF83FEE21D7A6_816630309 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_816630309.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_816630309;
-        // ---------- Original Method ----------
-        //StringBuilder builder = new StringBuilder();
-        //builder.append("UserData ");
-        //builder.append("{ msgEncoding=" + (msgEncodingSet ? msgEncoding : "unset"));
-        //builder.append(", msgType=" + msgType);
-        //builder.append(", paddingBits=" + paddingBits);
-        //builder.append(", numFields=" + numFields);
-        //builder.append(", userDataHeader=" + userDataHeader);
-        //builder.append(", payload='" + HexDump.toHexString(payload) + "'");
-        //builder.append(", payloadStr='" + payloadStr + "'");
-        //builder.append(" }");
-        //return builder.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

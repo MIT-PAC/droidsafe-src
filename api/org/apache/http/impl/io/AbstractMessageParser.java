@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,32 +44,32 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
             IllegalArgumentException varB3677395451B18A3F9262E9D7FE254B3_314006414 = new IllegalArgumentException("Session input buffer may not be null");
             varB3677395451B18A3F9262E9D7FE254B3_314006414.addTaint(taint);
             throw varB3677395451B18A3F9262E9D7FE254B3_314006414;
-        } //End block
+        } 
     if(params == null)        
         {
             IllegalArgumentException var497CCC27A43EDD6EE25BEEC5507E2BE2_1345721087 = new IllegalArgumentException("HTTP parameters may not be null");
             var497CCC27A43EDD6EE25BEEC5507E2BE2_1345721087.addTaint(taint);
             throw var497CCC27A43EDD6EE25BEEC5507E2BE2_1345721087;
-        } //End block
+        } 
         this.sessionBuffer = buffer;
         this.maxHeaderCount = params.getIntParameter(
                 CoreConnectionPNames.MAX_HEADER_COUNT, -1);
         this.maxLineLen = params.getIntParameter(
                 CoreConnectionPNames.MAX_LINE_LENGTH, -1);
         this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Session input buffer may not be null");
-        //}
-        //if (params == null) {
-            //throw new IllegalArgumentException("HTTP parameters may not be null");
-        //}
-        //this.sessionBuffer = buffer;
-        //this.maxHeaderCount = params.getIntParameter(
-                //CoreConnectionPNames.MAX_HEADER_COUNT, -1);
-        //this.maxLineLen = params.getIntParameter(
-                //CoreConnectionPNames.MAX_LINE_LENGTH, -1);
-        //this.lineParser = (parser != null) ? parser : BasicLineParser.DEFAULT;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -143,13 +143,13 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
         try 
         {
             message = parseHead(this.sessionBuffer);
-        } //End block
+        } 
         catch (ParseException px)
         {
             ProtocolException varD95A16F7A42FB78AC45970093BB1D826_77002380 = new ProtocolException(px.getMessage(), px);
             varD95A16F7A42FB78AC45970093BB1D826_77002380.addTaint(taint);
             throw varD95A16F7A42FB78AC45970093BB1D826_77002380;
-        } //End block
+        } 
         Header[] headers = AbstractMessageParser.parseHeaders(
                 this.sessionBuffer, 
                 this.maxHeaderCount,
@@ -159,20 +159,20 @@ public abstract class AbstractMessageParser implements HttpMessageParser {
 HttpMessage varFD182D7074F3848E773A38B067BBB880_477225068 =         message;
         varFD182D7074F3848E773A38B067BBB880_477225068.addTaint(taint);
         return varFD182D7074F3848E773A38B067BBB880_477225068;
-        // ---------- Original Method ----------
-        //HttpMessage message = null;
-        //try {
-            //message = parseHead(this.sessionBuffer);
-        //} catch (ParseException px) {
-            //throw new ProtocolException(px.getMessage(), px);
-        //}
-        //Header[] headers = AbstractMessageParser.parseHeaders(
-                //this.sessionBuffer, 
-                //this.maxHeaderCount,
-                //this.maxLineLen,
-                //this.lineParser);
-        //message.setHeaders(headers);
-        //return message;
+        
+        
+        
+            
+        
+            
+        
+        
+                
+                
+                
+                
+        
+        
     }
 
     

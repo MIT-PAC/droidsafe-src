@@ -1,6 +1,6 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public final class StructGroupReq {
     public  StructGroupReq(int gr_interface, InetAddress gr_group) {
         this.gr_interface = gr_interface;
         this.gr_group = gr_group;
-        // ---------- Original Method ----------
-        //this.gr_interface = gr_interface;
-        //this.gr_group = gr_group;
+        
+        
+        
     }
 
     
@@ -30,8 +30,8 @@ public final class StructGroupReq {
 String varC22313FE41AB4DFD72436E790656802F_1467771974 =         "StructGroupReq[gr_interface=" + gr_interface + ",gr_group=" + gr_group + "]";
         varC22313FE41AB4DFD72436E790656802F_1467771974.addTaint(taint);
         return varC22313FE41AB4DFD72436E790656802F_1467771974;
-        // ---------- Original Method ----------
-        //return "StructGroupReq[gr_interface=" + gr_interface + ",gr_group=" + gr_group + "]";
+        
+        
     }
 
     

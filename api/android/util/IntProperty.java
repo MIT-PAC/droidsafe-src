@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
     public  IntProperty(String name) {
         super(Integer.class, name);
         addTaint(name.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,8 +25,8 @@ public abstract class IntProperty<T> extends Property<T, Integer> {
         addTaint(value.getTaint());
         addTaint(object.getTaint());
         set(object, value.intValue());
-        // ---------- Original Method ----------
-        //set(object, value.intValue());
+        
+        
     }
 
     

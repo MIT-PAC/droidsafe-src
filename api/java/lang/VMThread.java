@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ class VMThread {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.800 -0400", hash_original_method = "1F6D5BC845AA1BFC5CA0AAC86B89BD84", hash_generated_method = "491E6C78D5C5B622654A9B44AD8AA760")
       VMThread(Thread t) {
         thread = t;
-        // ---------- Original Method ----------
-        //thread = t;
+        
+        
     }
 
     
@@ -49,11 +49,13 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.803 -0400", hash_original_method = "72EE977944BFE2711990DF062DD76748", hash_generated_method = "94B6702A412D748369A93518D1439045")
      void interrupt() {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.803 -0400", hash_original_method = "52F72D61B7E8A4F0C857BD363070E325", hash_generated_method = "3488D200B3B5E087EE57A8286847AB41")
      boolean isInterrupted() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_651179995 = getTaintBoolean();
@@ -65,11 +67,12 @@ class VMThread {
      void start(long stackSize) {
         addTaint(stackSize);
         VMThread.create(thread, stackSize);
-        // ---------- Original Method ----------
-        //VMThread.create(thread, stackSize);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.804 -0400", hash_original_method = "E049D119A7B4A553F02CF8223BDECCF5", hash_generated_method = "26B233CE636341022A644FBC50C4095C")
      boolean holdsLock(Object object) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_441055090 = getTaintBoolean();
@@ -77,11 +80,13 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.805 -0400", hash_original_method = "7C8E9A670D06C8AE48DAFFA12CDF6628", hash_generated_method = "A11F7437771887EBEDB3015231AB3F04")
      void setPriority(int newPriority) {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.805 -0400", hash_original_method = "133516DDD0D787C1D7D737647A15F491", hash_generated_method = "2C749DD8CCC1CAE12A35D9FB714D9D36")
      int getStatus() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1220808898 = getTaintInt();
@@ -89,6 +94,7 @@ class VMThread {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.806 -0400", hash_original_method = "E4C63287FA81E5CD749A3DF00B7871AE", hash_generated_method = "FD1E9D6CA0E361F0092CB029A4E0F83F")
      void nameChanged(String newName) {
     }

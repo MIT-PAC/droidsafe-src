@@ -1,6 +1,6 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;

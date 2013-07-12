@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,11 +30,11 @@ public class OperatorInfo implements Parcelable {
         this.operatorAlphaShort = operatorAlphaShort;
         this.operatorNumeric = operatorNumeric;
         this.state = state;
-        // ---------- Original Method ----------
-        //this.operatorAlphaLong = operatorAlphaLong;
-        //this.operatorAlphaShort = operatorAlphaShort;
-        //this.operatorNumeric = operatorNumeric;
-        //this.state = state;
+        
+        
+        
+        
+        
     }
 
     
@@ -49,47 +49,51 @@ public class OperatorInfo implements Parcelable {
         addTaint(operatorNumeric.getTaint());
         addTaint(operatorAlphaShort.getTaint());
         addTaint(operatorAlphaLong.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.990 -0400", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "4DB8E282BA4CB3CEE274257B490601B7")
     public String getOperatorAlphaLong() {
 String var1B7C97A61CBCC0846D213DF60C49D4F5_668724215 =         operatorAlphaLong;
         var1B7C97A61CBCC0846D213DF60C49D4F5_668724215.addTaint(taint);
         return var1B7C97A61CBCC0846D213DF60C49D4F5_668724215;
-        // ---------- Original Method ----------
-        //return operatorAlphaLong;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.990 -0400", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "DF24778C77F759A34D508F82759571C5")
     public String getOperatorAlphaShort() {
 String varCD7C131ECB0CB94030B0581F1C3C360A_1826922945 =         operatorAlphaShort;
         varCD7C131ECB0CB94030B0581F1C3C360A_1826922945.addTaint(taint);
         return varCD7C131ECB0CB94030B0581F1C3C360A_1826922945;
-        // ---------- Original Method ----------
-        //return operatorAlphaShort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.990 -0400", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "B9C3FCAFF51EE655BC0E5310785B9497")
     public String getOperatorNumeric() {
 String var2910E34F66A87ACEB979401752EFC981_365238696 =         operatorNumeric;
         var2910E34F66A87ACEB979401752EFC981_365238696.addTaint(taint);
         return var2910E34F66A87ACEB979401752EFC981_365238696;
-        // ---------- Original Method ----------
-        //return operatorNumeric;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.991 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "A6B34C9A6A008F4848B5B260A50C45F6")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_2130942889 =         state;
         var37C56C9D63C623261861C16DCFB73F6D_2130942889.addTaint(taint);
         return var37C56C9D63C623261861C16DCFB73F6D_2130942889;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
@@ -117,21 +121,22 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_84119934 =         "OperatorInfo " + 
                 + "/" + state;
         varDA2EAB669D8286E1B66AAEFC8A7FAD34_84119934.addTaint(taint);
         return varDA2EAB669D8286E1B66AAEFC8A7FAD34_84119934;
-        // ---------- Original Method ----------
-        //return "OperatorInfo " + operatorAlphaLong
-                //+ "/" + operatorAlphaShort
-                //+ "/" + operatorNumeric
-                //+ "/" + state;
+        
+        
+                
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.991 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "4D8EAEDBE4EE55E65C1A23DDFB972382")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1251292398 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315896127 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315896127;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -143,11 +148,11 @@ String varDA2EAB669D8286E1B66AAEFC8A7FAD34_84119934 =         "OperatorInfo " + 
         dest.writeString(operatorAlphaShort);
         dest.writeString(operatorNumeric);
         dest.writeSerializable(state);
-        // ---------- Original Method ----------
-        //dest.writeString(operatorAlphaLong);
-        //dest.writeString(operatorAlphaShort);
-        //dest.writeString(operatorNumeric);
-        //dest.writeSerializable(state);
+        
+        
+        
+        
+        
     }
 
     

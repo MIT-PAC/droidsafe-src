@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class HexDump {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.728 -0400", hash_original_method = "41D5EB93F66EEE1C2A5191C2288E5263", hash_generated_method = "41D5EB93F66EEE1C2A5191C2288E5263")
     public HexDump ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -103,14 +103,16 @@ public class HexDump {
     }
 
     
-        public static byte[] toByteArray(byte b) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(byte b) {
         byte[] array = new byte[1];
         array[0] = b;
         return array;
     }
 
     
-        public static byte[] toByteArray(int i) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] toByteArray(int i) {
         byte[] array = new byte[4];
         array[3] = (byte)(i & 0xFF);
         array[2] = (byte)((i >> 8) & 0xFF);

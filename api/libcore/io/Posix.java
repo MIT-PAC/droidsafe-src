@@ -1,6 +1,6 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public final class Posix implements Os {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.882 -0400", hash_original_method = "4046CDE00BB837810E8AFBFF17A6CE8F", hash_generated_method = "05221F2C631AA96E1462A4F7CC11A1BC")
       Posix() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,6 +30,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.882 -0400", hash_original_method = "B1689CE6DA8AD962BE72C0197D9C07BB", hash_generated_method = "BFCF43581C6ACC98DCE012A728DD5645")
     public boolean access(String path, int mode) throws ErrnoException {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1280874118 = getTaintBoolean();
@@ -37,21 +38,25 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.883 -0400", hash_original_method = "291C8049FE6F5CDE681BB5AEA2008B38", hash_generated_method = "84FB031E5366E9FCB162C111EEB27C87")
     public void bind(FileDescriptor fd, InetAddress address, int port) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.883 -0400", hash_original_method = "C6B53F2282285C6075341EF2C607CF79", hash_generated_method = "1ADDDBE52AB61E2DC2D40B06BD38924E")
     public void chmod(String path, int mode) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.883 -0400", hash_original_method = "5621A98DBDE11BB13B9D88FD5C4303F9", hash_generated_method = "88AC1D1AA0DA20420EB3EC3F557D0CE2")
     public void close(FileDescriptor fd) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.883 -0400", hash_original_method = "583B21CF7E43DBF5EACD223A833123C4", hash_generated_method = "32A14EC0714501BE2AD1DD1B23C061AD")
     public void connect(FileDescriptor fd, InetAddress address, int port) throws ErrnoException {
     }
@@ -84,6 +89,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.884 -0400", hash_original_method = "2CB0275F8932D4CF3644D073C3F0700F", hash_generated_method = "E9577352E162AA549FB2C2228529EC2C")
     public int fcntlVoid(FileDescriptor fd, int cmd) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163778413 = getTaintInt();
@@ -91,6 +97,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.884 -0400", hash_original_method = "2A7DB0B256B2976732DDA9A901297EFA", hash_generated_method = "8D00C33E3EB9BEE4B82DCEE676C282E8")
     public int fcntlLong(FileDescriptor fd, int cmd, long arg) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1855741427 = getTaintInt();
@@ -98,6 +105,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.885 -0400", hash_original_method = "5842C7622D740E7A11EA29095C58FEF2", hash_generated_method = "0429BA34ECBE79931BDEC463C842278D")
     public int fcntlFlock(FileDescriptor fd, int cmd, StructFlock arg) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_800194118 = getTaintInt();
@@ -105,6 +113,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.885 -0400", hash_original_method = "CC5ECBC11DCDAEE11F3D1714EA5105D5", hash_generated_method = "2476A3C255789407A2CB89613FFC0767")
     public void fdatasync(FileDescriptor fd) throws ErrnoException {
     }
@@ -133,11 +142,13 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.885 -0400", hash_original_method = "BC5DB2B4AC1C25097A3FF5E2C6AF2CA8", hash_generated_method = "E54FD0DB1F8F4382C4F5D3AC3B6E8F36")
     public void fsync(FileDescriptor fd) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.886 -0400", hash_original_method = "C3B05E353984E75A36400D4268798B4D", hash_generated_method = "4E6152073BE3DCA66E0B3ACC6C860A59")
     public void ftruncate(FileDescriptor fd, long length) throws ErrnoException {
     }
@@ -159,6 +170,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.886 -0400", hash_original_method = "B351A98E9308B82B72BD8C1A77C5DADB", hash_generated_method = "6610B41E6161829FB610DDFAC18C343B")
     public int getegid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_432438747 = getTaintInt();
@@ -166,6 +178,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.887 -0400", hash_original_method = "03FF5CC42F38A66A948C17532C044A2D", hash_generated_method = "4C812DEEF3F8BDACBFC11257346283C7")
     public int geteuid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2082927147 = getTaintInt();
@@ -173,6 +186,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.887 -0400", hash_original_method = "82D0BD1E53FB93AB39C412F5615316CA", hash_generated_method = "B15872F24F28621B203DD3EE82B24811")
     public int getgid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163580327 = getTaintInt();
@@ -199,6 +213,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.887 -0400", hash_original_method = "ED1FF6EE6302372A02F6AB9DF837F424", hash_generated_method = "5882707813C880889E03AB02A8F68D47")
     public int getpid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1221504638 = getTaintInt();
@@ -206,6 +221,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.888 -0400", hash_original_method = "E9C872CD5783C25015966D177C4AF8C6", hash_generated_method = "A2DF1BCA1BF0AD46B204C2C2DD7C7226")
     public int getppid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1850048329 = getTaintInt();
@@ -240,6 +256,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.889 -0400", hash_original_method = "51446225C69A8CF648D53B0005AE4AA4", hash_generated_method = "8AFAA2E98CFD17F8C2BC6B816914F15A")
     public int getsockoptByte(FileDescriptor fd, int level, int option) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1041936377 = getTaintInt();
@@ -256,6 +273,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.889 -0400", hash_original_method = "B939E72BF03DDCEDAC639A7621114578", hash_generated_method = "CCC6EB5C2DBA80EB785ED43E85B3B221")
     public int getsockoptInt(FileDescriptor fd, int level, int option) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1186810012 = getTaintInt();
@@ -280,6 +298,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.890 -0400", hash_original_method = "DCBAE976FF6D195847EC9B9CCBB16DA2", hash_generated_method = "98922D859CDB5D503B6BC7721DF2DB6D")
     public int getuid() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_899971989 = getTaintInt();
@@ -310,6 +329,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.891 -0400", hash_original_method = "06336F68D97266AEF577672F8C03A8E4", hash_generated_method = "30D64C83DA4B6A74882759A0CB7465CF")
     public int ioctlInt(FileDescriptor fd, int cmd, MutableInt arg) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1750439577 = getTaintInt();
@@ -317,6 +337,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.891 -0400", hash_original_method = "94B275389FB7735E79DD0606BB6663FC", hash_generated_method = "750B50B23648EA9FBB6BE73DC9272168")
     public boolean isatty(FileDescriptor fd) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1038491404 = getTaintBoolean();
@@ -324,16 +345,19 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.892 -0400", hash_original_method = "77BC6E1CDAEA7EC218D4C88B6DD6F628", hash_generated_method = "F6F6E534CA3E6662FA9A588696A9D1A5")
     public void kill(int pid, int signal) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.892 -0400", hash_original_method = "6ED23D1EA76BF029EEF21B4EAFA6CFF2", hash_generated_method = "DAA83A0CD96D69C2B0AA6D7503222609")
     public void listen(FileDescriptor fd, int backlog) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.892 -0400", hash_original_method = "6DE073E1DD2161D7E507CF5C1E8B8B5C", hash_generated_method = "EC6F506ED10BAC53695FF37786EFC6CC")
     public long lseek(FileDescriptor fd, long offset, int whence) throws ErrnoException {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1929243858 = getTaintLong();
@@ -353,21 +377,25 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.893 -0400", hash_original_method = "EC9A299C6214A51B56DA51B591F6FF36", hash_generated_method = "F10B9DD324CECF0A86818AC7CC0C8EAB")
     public void mincore(long address, long byteCount, byte[] vector) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.893 -0400", hash_original_method = "4CC22C39A827987000370BD10B3B7F89", hash_generated_method = "5A7BEC510CF43D25B53554F6D2F2A2AE")
     public void mkdir(String path, int mode) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.893 -0400", hash_original_method = "40B753FBD702B9115A8CFFA4EBDDD434", hash_generated_method = "ED2C99AFEF903695150B0308D01F5D2B")
     public void mlock(long address, long byteCount) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.893 -0400", hash_original_method = "51925E7C1A595364A34E53403D531BF1", hash_generated_method = "04521DEB3CCCC466CA00B6517C9A9078")
     public long mmap(long address, long byteCount, int prot, int flags, FileDescriptor fd, long offset) throws ErrnoException {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_1172337815 = getTaintLong();
@@ -375,16 +403,19 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.894 -0400", hash_original_method = "E2366875958D829A580E669A2DB1A4B1", hash_generated_method = "8864C229845A0E2CC8F7FDA72470613D")
     public void msync(long address, long byteCount, int flags) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.894 -0400", hash_original_method = "300DE062DB1D5D96D86ACEAAE1343E18", hash_generated_method = "E47F369491E1B5E634DDD0810DD2F19A")
     public void munlock(long address, long byteCount) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.894 -0400", hash_original_method = "FD321BF6752ECFAABCD6429010BD098F", hash_generated_method = "08EB766C3DA5DD7C92B90F48070EBB89")
     public void munmap(long address, long byteCount) throws ErrnoException {
     }
@@ -426,22 +457,23 @@ public final class Posix implements Os {
             int var9CF553709E4B10E0D7E3D3DBC5705CC2_1850953554 = (preadBytes(fd, buffer, buffer.position(), buffer.remaining(), offset));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315711764 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1315711764;
-        } //End block
+        } 
         else
         {
             int var1E7E4A1207810B5C44747B19DFB5EE92_304784161 = (preadBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017361063 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2017361063;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return preadBytes(fd, buffer, buffer.position(), buffer.remaining(), offset);
-        //} else {
-            //return preadBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.896 -0400", hash_original_method = "4B8706AF5748B9EE5E9BCCA6FC3C73C0", hash_generated_method = "9D70705DE43653627F9CDD92BFFE56B0")
     public int pread(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
         addTaint(offset);
@@ -452,11 +484,12 @@ public final class Posix implements Os {
         int var4E45F17089126BBD4C9BC17AB2517E62_67261139 = (preadBytes(fd, bytes, byteOffset, byteCount, offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_542274428 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_542274428;
-        // ---------- Original Method ----------
-        //return preadBytes(fd, bytes, byteOffset, byteCount, offset);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.897 -0400", hash_original_method = "5819B25FAD4FEDA7F174A32C15365436", hash_generated_method = "563E292CD049EABC246E9E72A7A92860")
     private int preadBytes(FileDescriptor fd, Object buffer, int bufferOffset, int byteCount, long offset) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1371933852 = getTaintInt();
@@ -474,22 +507,23 @@ public final class Posix implements Os {
             int varED2CED1A8D69AA3517C98ABA9EDEC050_1894802296 = (pwriteBytes(fd, buffer, buffer.position(), buffer.remaining(), offset));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694064502 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1694064502;
-        } //End block
+        } 
         else
         {
             int var2E57FBEAB8193884750BA0E23C6360A3_1813954853 = (pwriteBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2064250057 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2064250057;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return pwriteBytes(fd, buffer, buffer.position(), buffer.remaining(), offset);
-        //} else {
-            //return pwriteBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), offset);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.897 -0400", hash_original_method = "364FA462AFF3FCDD2B79B5A0A9405455", hash_generated_method = "6D76A0CD58EAF8C8804B455891B8135F")
     public int pwrite(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, long offset) throws ErrnoException {
         addTaint(offset);
@@ -500,11 +534,12 @@ public final class Posix implements Os {
         int var88727F79D61A7D7599EE3878EFE837D9_1265109893 = (pwriteBytes(fd, bytes, byteOffset, byteCount, offset));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155798965 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155798965;
-        // ---------- Original Method ----------
-        //return pwriteBytes(fd, bytes, byteOffset, byteCount, offset);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.898 -0400", hash_original_method = "90B6FC1B27EC82D887BE52674747E195", hash_generated_method = "E942AAB3463152122B4BA42FC44955BC")
     private int pwriteBytes(FileDescriptor fd, Object buffer, int bufferOffset, int byteCount, long offset) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1754273476 = getTaintInt();
@@ -521,22 +556,23 @@ public final class Posix implements Os {
             int varCD7C56A6606830298D652104B003CCE4_1359919781 = (readBytes(fd, buffer, buffer.position(), buffer.remaining()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986224961 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_986224961;
-        } //End block
+        } 
         else
         {
             int var1E6550E68AE0A30BFDA86F2C50970647_1201117567 = (readBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_970654114 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_970654114;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return readBytes(fd, buffer, buffer.position(), buffer.remaining());
-        //} else {
-            //return readBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining());
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.899 -0400", hash_original_method = "6168115C79D46336D7C888D619663F88", hash_generated_method = "029D8E80C4E344715F9863EB5E365F24")
     public int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
         addTaint(byteCount);
@@ -546,11 +582,12 @@ public final class Posix implements Os {
         int var2F91088E503F8BAB0138FB15F0A9AC48_902433637 = (readBytes(fd, bytes, byteOffset, byteCount));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429270795 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429270795;
-        // ---------- Original Method ----------
-        //return readBytes(fd, bytes, byteOffset, byteCount);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.899 -0400", hash_original_method = "2C7E892AABA7BE06DDD2C6AC692575BC", hash_generated_method = "7A0DE3AD0DBDC94C8637A24FEE982FDF")
     private int readBytes(FileDescriptor fd, Object buffer, int offset, int byteCount) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1485707103 = getTaintInt();
@@ -558,6 +595,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.900 -0400", hash_original_method = "D5205EB48193928ACF79029A7B33E86B", hash_generated_method = "49EF05ABA9FC08669B5FFEE75B48025C")
     public int readv(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641850569 = getTaintInt();
@@ -576,22 +614,23 @@ public final class Posix implements Os {
             int var12F2D97C8A59609498BA12716F44601C_3545352 = (recvfromBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, srcAddress));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723612372 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723612372;
-        } //End block
+        } 
         else
         {
             int var68DF75D02035940F5D17832A53D51C59_1713397724 = (recvfromBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, srcAddress));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1441031707 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1441031707;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return recvfromBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, srcAddress);
-        //} else {
-            //return recvfromBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, srcAddress);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.901 -0400", hash_original_method = "D6B3FC14ED62FEA7873773B8EF3E6A7B", hash_generated_method = "D9A616ABB78338BF1F08344F52694C3A")
     public int recvfrom(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException {
         addTaint(srcAddress.getTaint());
@@ -603,11 +642,12 @@ public final class Posix implements Os {
         int var77E1AA1A1DBA25F24BFF4EFC7A571925_551838189 = (recvfromBytes(fd, bytes, byteOffset, byteCount, flags, srcAddress));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_346193372 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_346193372;
-        // ---------- Original Method ----------
-        //return recvfromBytes(fd, bytes, byteOffset, byteCount, flags, srcAddress);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.901 -0400", hash_original_method = "4ADC9C5F635814CDC8DA4D81B23D96F7", hash_generated_method = "59A8BF0E91BDCC3065DEE5EFD9F2D004")
     private int recvfromBytes(FileDescriptor fd, Object buffer, int byteOffset, int byteCount, int flags, InetSocketAddress srcAddress) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_356124893 = getTaintInt();
@@ -615,16 +655,19 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.902 -0400", hash_original_method = "C4D2972D60AD59B1B88202B59332518F", hash_generated_method = "F785749D71099D3C2EF1A4F3482E2FC9")
     public void remove(String path) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.902 -0400", hash_original_method = "79CCF6DA9C97D5D1A767D340D63FA141", hash_generated_method = "ECFA7C07C31807064D12083B534138D1")
     public void rename(String oldPath, String newPath) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.902 -0400", hash_original_method = "9AFCCF531361D938553CC3693890CE79", hash_generated_method = "F949578D5B03E720AC36171C75DC5BA1")
     public long sendfile(FileDescriptor outFd, FileDescriptor inFd, MutableLong inOffset, long byteCount) throws ErrnoException {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_387151571 = getTaintLong();
@@ -644,22 +687,23 @@ public final class Posix implements Os {
             int varB0ECB811C70F6EAF3856ABEB1D6ADEE3_1969890262 = (sendtoBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, inetAddress, port));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_789491261 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_789491261;
-        } //End block
+        } 
         else
         {
             int var399EA733E3545F6476C9B18F1CE0496F_2013964003 = (sendtoBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, inetAddress, port));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1290132424 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1290132424;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return sendtoBytes(fd, buffer, buffer.position(), buffer.remaining(), flags, inetAddress, port);
-        //} else {
-            //return sendtoBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining(), flags, inetAddress, port);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.903 -0400", hash_original_method = "23CCF7407B7F91C60BE72C6923799443", hash_generated_method = "ABB44773695A7049C99FADDF52FB5E43")
     public int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
         addTaint(port);
@@ -672,11 +716,12 @@ public final class Posix implements Os {
         int varCB79D9BEC467C575C19F483DDDB196F7_407209947 = (sendtoBytes(fd, bytes, byteOffset, byteCount, flags, inetAddress, port));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663478058 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1663478058;
-        // ---------- Original Method ----------
-        //return sendtoBytes(fd, bytes, byteOffset, byteCount, flags, inetAddress, port);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.904 -0400", hash_original_method = "F841D540A211C98E750DE668FD283BE2", hash_generated_method = "C2BFA61AED6C5E50C46B34E919250992")
     private int sendtoBytes(FileDescriptor fd, Object buffer, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_932009864 = getTaintInt();
@@ -684,61 +729,73 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.904 -0400", hash_original_method = "4EDFF9AE0EBC71C5A87E99E89B76EA1C", hash_generated_method = "5E48F6E110C1016C239B842F8C474176")
     public void setegid(int egid) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.904 -0400", hash_original_method = "A63D77D63BF9B7372008734FF96F48BC", hash_generated_method = "D406270C51FEA4C57DDD126C99DCDAC4")
     public void seteuid(int euid) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.905 -0400", hash_original_method = "5915305B25E8BEDA092C77560CFF8FA0", hash_generated_method = "C0F83CBE23D4A2D3DF140C77705BC0FD")
     public void setgid(int gid) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.905 -0400", hash_original_method = "9A5169BBE0282BCC00E74B397F068D4B", hash_generated_method = "3E08FEFBDE4D2BF5FCDEA705F6189D5A")
     public void setsockoptByte(FileDescriptor fd, int level, int option, int value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.905 -0400", hash_original_method = "5041A6120F51EBC2B109E6AF0AE7FC14", hash_generated_method = "E635827CCD8247E74839393BBD93500E")
     public void setsockoptIfreq(FileDescriptor fd, int level, int option, String value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.906 -0400", hash_original_method = "CE894EBBCEEC6D8A98A23F1D6DFA91AF", hash_generated_method = "A343E3AD0EAD83A0531ADBCCF86109AA")
     public void setsockoptInt(FileDescriptor fd, int level, int option, int value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.906 -0400", hash_original_method = "6DBB3F1DC41874C1778513E87DD13712", hash_generated_method = "96EE4BF8E717F1B21BE9FA5405FB5833")
     public void setsockoptIpMreqn(FileDescriptor fd, int level, int option, int value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.906 -0400", hash_original_method = "44866C5C735DD960E2B282162D2DFF44", hash_generated_method = "2464FDFB24FF4B764E38B335F935BD04")
     public void setsockoptGroupReq(FileDescriptor fd, int level, int option, StructGroupReq value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.907 -0400", hash_original_method = "8265FFDA0D5B54E0714AF7F36058F0FD", hash_generated_method = "C0337305BF631A0C473462C66250C132")
     public void setsockoptLinger(FileDescriptor fd, int level, int option, StructLinger value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.907 -0400", hash_original_method = "D0EFA67C69EE44E619BC32AD0ABAAA94", hash_generated_method = "E68EB8161F63BB5AD5B88B1DA31DE467")
     public void setsockoptTimeval(FileDescriptor fd, int level, int option, StructTimeval value) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.907 -0400", hash_original_method = "7541ED33DCEBBB89FE1430508C680E96", hash_generated_method = "98772075B4300BB00447E5FD75DA804A")
     public void setuid(int uid) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.908 -0400", hash_original_method = "1961EE437DD0A4352BCFCF2F346982D9", hash_generated_method = "AF53C7188D1B544BB358D63F5C774F2E")
     public void shutdown(FileDescriptor fd, int how) throws ErrnoException {
     }
@@ -787,11 +844,13 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.909 -0400", hash_original_method = "551DE00FB0B39FAF904A5DC205CAA2EB", hash_generated_method = "A129CF58BB7DCBA118CE2E16606EEC07")
     public void symlink(String oldPath, String newPath) throws ErrnoException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.909 -0400", hash_original_method = "0CA56D59A1B623A4EE1DB5A7E1204662", hash_generated_method = "EF82D277D0EFD4C31399FEBB7F8AD772")
     public long sysconf(int name) {
         long var0F5264038205EDFB1AC05FBB0E8C5E94_608835285 = getTaintLong();
@@ -806,6 +865,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.910 -0400", hash_original_method = "FE84032F23145F65306977A4498767E9", hash_generated_method = "575ACB989BF2A4033D1A60C6345D4347")
     public int waitpid(int pid, MutableInt status, int options) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_95892570 = getTaintInt();
@@ -822,22 +882,23 @@ public final class Posix implements Os {
             int var6E91C45D5B7EA487438AE9A770EAA981_842252014 = (writeBytes(fd, buffer, buffer.position(), buffer.remaining()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1787507381 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1787507381;
-        } //End block
+        } 
         else
         {
             int varC1B44A4E9C5BD8F9E38B0E0EAD9937D1_2141462081 = (writeBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711253296 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1711253296;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buffer.isDirect()) {
-            //return writeBytes(fd, buffer, buffer.position(), buffer.remaining());
-        //} else {
-            //return writeBytes(fd, NioUtils.unsafeArray(buffer), NioUtils.unsafeArrayOffset(buffer) + buffer.position(), buffer.remaining());
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.911 -0400", hash_original_method = "077A8F097DECE8A2C8BBB2583BE2D8BE", hash_generated_method = "8679C5C35F9C7DDD697829E5DA707EBA")
     public int write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws ErrnoException {
         addTaint(byteCount);
@@ -847,11 +908,12 @@ public final class Posix implements Os {
         int var179BF145CC8EDD1D00F4A842A47493BF_2027241074 = (writeBytes(fd, bytes, byteOffset, byteCount));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256133495 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_256133495;
-        // ---------- Original Method ----------
-        //return writeBytes(fd, bytes, byteOffset, byteCount);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.911 -0400", hash_original_method = "E853B1F146558B1458DE2FB65CF651EB", hash_generated_method = "773A2060A3BDE6F13CC20F4468F90F51")
     private int writeBytes(FileDescriptor fd, Object buffer, int offset, int byteCount) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1566393103 = getTaintInt();
@@ -859,6 +921,7 @@ public final class Posix implements Os {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.912 -0400", hash_original_method = "B9E2C692ADA119F653BB2CBF261E7047", hash_generated_method = "6E36A476103D2F1C3C420F1D39539046")
     public int writev(FileDescriptor fd, Object[] buffers, int[] offsets, int[] byteCounts) throws ErrnoException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_93852513 = getTaintInt();

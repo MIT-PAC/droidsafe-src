@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -54,15 +54,15 @@ public class SIPDate implements Cloneable, Serializable {
         minute = -1;
         second = -1;
         javaCal = null;
-        // ---------- Original Method ----------
-        //wkday = -1;
-        //day = -1;
-        //month = -1;
-        //year = -1;
-        //hour = -1;
-        //minute = -1;
-        //second = -1;
-        //javaCal = null;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -147,11 +147,12 @@ switch(month){
         hour = javaCal.get(Calendar.HOUR_OF_DAY);
         minute = javaCal.get(Calendar.MINUTE);
         second = javaCal.get(Calendar.SECOND);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.090 -0400", hash_original_method = "17EF9A3AE37B7BA0C102396D80392A03", hash_generated_method = "546F843125CB7AB81FAC3FE5BC6D1422")
     public boolean equals(Object that) {
         addTaint(that.getTaint());
@@ -171,47 +172,48 @@ switch(month){
         this.second == other.second);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1611550600 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1611550600;
-        // ---------- Original Method ----------
-        //if (that.getClass() != this.getClass())return false;
-        //SIPDate other = (SIPDate)that;
-        //return this.wkday == other.wkday &&
-        //this.day == other.day &&
-        //this.month == other.month &&
-        //this.year == other.year &&
-        //this.hour == other.hour &&
-        //this.minute == other.minute &&
-        //this.second == other.second;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.091 -0400", hash_original_method = "124CFAD93358C90C664BE8C1CAE8945E", hash_generated_method = "39F28163EDA202500C3BA03827EF0515")
     public String encode() {
         String dayString;
     if(day < 10)        
         {
             dayString = "0" + day;
-        } //End block
+        } 
         else
         dayString = "" + day;
         String hourString;
     if(hour < 10)        
         {
             hourString = "0" + hour;
-        } //End block
+        } 
         else
         hourString = "" + hour;
         String minuteString;
     if(minute < 10)        
         {
             minuteString = "0" + minute;
-        } //End block
+        } 
         else
         minuteString = "" + minute;
         String secondString;
     if(second < 10)        
         {
             secondString = "0" + second;
-        } //End block
+        } 
         else
         secondString = "" + second;
         String encoding = "";
@@ -232,8 +234,8 @@ switch(month){
 String varE424DD5E6E58EB63E1272B71B5A81966_1070871338 =         encoding;
         varE424DD5E6E58EB63E1272B71B5A81966_1070871338.addTaint(taint);
         return varE424DD5E6E58EB63E1272B71B5A81966_1070871338;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -244,63 +246,69 @@ String varE424DD5E6E58EB63E1272B71B5A81966_1070871338 =         encoding;
 java.util.Calendar varB9F9E543D49F5A6C9B26B757C6434821_1020653331 =         javaCal;
         varB9F9E543D49F5A6C9B26B757C6434821_1020653331.addTaint(taint);
         return varB9F9E543D49F5A6C9B26B757C6434821_1020653331;
-        // ---------- Original Method ----------
-        //if (javaCal == null)
-            //setJavaCal();
-        //return javaCal;
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.092 -0400", hash_original_method = "457D7CE469867FC10EBD436F0D51643B", hash_generated_method = "79659DD8AB5AB3E02731DF452F34FA4B")
     public String getWkday() {
 String varAF8BC7AE70F97D08A2C5ED767D4202A4_1045810397 =         sipWkDay;
         varAF8BC7AE70F97D08A2C5ED767D4202A4_1045810397.addTaint(taint);
         return varAF8BC7AE70F97D08A2C5ED767D4202A4_1045810397;
-        // ---------- Original Method ----------
-        //return sipWkDay;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.092 -0400", hash_original_method = "A22F3A31D7F5863E790748C0D0AB40F6", hash_generated_method = "32AC24E4118773A14E5C37394C6BF470")
     public String getMonth() {
 String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         var2A647B1AB7CAB288D6A463E2252BABED_818181031.addTaint(taint);
         return var2A647B1AB7CAB288D6A463E2252BABED_818181031;
-        // ---------- Original Method ----------
-        //return sipMonth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.093 -0400", hash_original_method = "4346EB52B1E97382E292AD2394C76CAA", hash_generated_method = "F24CE4BD9D961BAF2AAA29E11F907DAA")
     public int getHour() {
         int var896C55CC5E46FAB38CE9F51EBF7BFCD3_785153852 = (hour);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1466193075 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1466193075;
-        // ---------- Original Method ----------
-        //return hour;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.093 -0400", hash_original_method = "ADC91C6D58A75EA1079C93B22A777A18", hash_generated_method = "C6007DBFA23109BA26FAF6CBCE94296B")
     public int getMinute() {
         int var0A7D55BE9D12A369A6A8DA0FB517FBA4_289748999 = (minute);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724446203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_724446203;
-        // ---------- Original Method ----------
-        //return minute;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.093 -0400", hash_original_method = "033202145FC9480CAEE9B3FD508F85AB", hash_generated_method = "259AC6F4FCD477B4A3809DF27DC5C7EE")
     public int getSecond() {
         int varA9F0E61A137D86AA9DB53465E0801612_897602014 = (second);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268302066 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1268302066;
-        // ---------- Original Method ----------
-        //return second;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.094 -0400", hash_original_method = "ED081120415B25517E6A51D04161FC1C", hash_generated_method = "D96D5D4772A1CFC8C90621C14BC511EE")
     private void setJavaCal() {
         javaCal =
@@ -321,93 +329,95 @@ String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         javaCal.set(Calendar.MINUTE, minute);
     if(second != -1)        
         javaCal.set(Calendar.SECOND, second);
-        // ---------- Original Method ----------
-        //javaCal =
-            //new GregorianCalendar(
-                //TimeZone.getTimeZone("GMT:0"),
-                //Locale.getDefault());
-        //if (year != -1)
-            //javaCal.set(Calendar.YEAR, year);
-        //if (day != -1)
-            //javaCal.set(Calendar.DAY_OF_MONTH, day);
-        //if (month != -1)
-            //javaCal.set(Calendar.MONTH, month);
-        //if (wkday != -1)
-            //javaCal.set(Calendar.DAY_OF_WEEK, wkday);
-        //if (hour != -1)
-            //javaCal.set(Calendar.HOUR, hour);
-        //if (minute != -1)
-            //javaCal.set(Calendar.MINUTE, minute);
-        //if (second != -1)
-            //javaCal.set(Calendar.SECOND, second);
+        
+        
+            
+                
+                
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.095 -0400", hash_original_method = "AC7B5ED74AB02B130D63CC72231A28FF", hash_generated_method = "219C65D50009A86BCC0EC6B5EDB71511")
     public void setWkday(String w) throws IllegalArgumentException {
         sipWkDay = w;
     if(sipWkDay.compareToIgnoreCase(MON) == 0)        
         {
             wkday = Calendar.MONDAY;
-        } //End block
+        } 
         else
     if(sipWkDay.compareToIgnoreCase(TUE) == 0)        
         {
             wkday = Calendar.TUESDAY;
-        } //End block
+        } 
         else
     if(sipWkDay.compareToIgnoreCase(WED) == 0)        
         {
             wkday = Calendar.WEDNESDAY;
-        } //End block
+        } 
         else
     if(sipWkDay.compareToIgnoreCase(THU) == 0)        
         {
             wkday = Calendar.THURSDAY;
-        } //End block
+        } 
         else
     if(sipWkDay.compareToIgnoreCase(FRI) == 0)        
         {
             wkday = Calendar.FRIDAY;
-        } //End block
+        } 
         else
     if(sipWkDay.compareToIgnoreCase(SAT) == 0)        
         {
             wkday = Calendar.SATURDAY;
-        } //End block
+        } 
         else
     if(sipWkDay.compareToIgnoreCase(SUN) == 0)        
         {
             wkday = Calendar.SUNDAY;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var1737B0A32D4320C1D8085D8F308E9CDC_645811381 = new IllegalArgumentException("Illegal Week day :" + w);
             var1737B0A32D4320C1D8085D8F308E9CDC_645811381.addTaint(taint);
             throw var1737B0A32D4320C1D8085D8F308E9CDC_645811381;
-        } //End block
-        // ---------- Original Method ----------
-        //sipWkDay = w;
-        //if (sipWkDay.compareToIgnoreCase(MON) == 0) {
-            //wkday = Calendar.MONDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(TUE) == 0) {
-            //wkday = Calendar.TUESDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(WED) == 0) {
-            //wkday = Calendar.WEDNESDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(THU) == 0) {
-            //wkday = Calendar.THURSDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(FRI) == 0) {
-            //wkday = Calendar.FRIDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(SAT) == 0) {
-            //wkday = Calendar.SATURDAY;
-        //} else if (sipWkDay.compareToIgnoreCase(SUN) == 0) {
-            //wkday = Calendar.SUNDAY;
-        //} else {
-            //throw new IllegalArgumentException("Illegal Week day :" + w);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.096 -0400", hash_original_method = "79BC1DF7B5884941473DA919072706C3", hash_generated_method = "6ECF186D1D5D2849A0BD96495550CB0A")
     public void setDay(int d) throws IllegalArgumentException {
     if(d < 1 || d > 31)        
@@ -418,87 +428,89 @@ String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         throw var58BC0D4AC5876E17BC897F22DA7D304A_272019339;
         }
         day = d;
-        // ---------- Original Method ----------
-        //if (d < 1 || d > 31)
-            //throw new IllegalArgumentException(
-                //"Illegal Day of the month " + Integer.toString(d));
-        //day = d;
+        
+        
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.097 -0400", hash_original_method = "F81F66CB2E9CA66D72BD9964B3A16CCB", hash_generated_method = "7FFD6B2C868445E5F7C42F4A1F7F4B6A")
     public void setMonth(String m) throws IllegalArgumentException {
         sipMonth = m;
     if(sipMonth.compareToIgnoreCase(JAN) == 0)        
         {
             month = Calendar.JANUARY;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(FEB) == 0)        
         {
             month = Calendar.FEBRUARY;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(MAR) == 0)        
         {
             month = Calendar.MARCH;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(APR) == 0)        
         {
             month = Calendar.APRIL;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(MAY) == 0)        
         {
             month = Calendar.MAY;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(JUN) == 0)        
         {
             month = Calendar.JUNE;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(JUL) == 0)        
         {
             month = Calendar.JULY;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(AUG) == 0)        
         {
             month = Calendar.AUGUST;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(SEP) == 0)        
         {
             month = Calendar.SEPTEMBER;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(OCT) == 0)        
         {
             month = Calendar.OCTOBER;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(NOV) == 0)        
         {
             month = Calendar.NOVEMBER;
-        } //End block
+        } 
         else
     if(sipMonth.compareToIgnoreCase(DEC) == 0)        
         {
             month = Calendar.DECEMBER;
-        } //End block
+        } 
         else
         {
             IllegalArgumentException var814901485D303FC431FC64CE9D4A23C4_1752313056 = new IllegalArgumentException("Illegal Month :" + m);
             var814901485D303FC431FC64CE9D4A23C4_1752313056.addTaint(taint);
             throw var814901485D303FC431FC64CE9D4A23C4_1752313056;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.099 -0400", hash_original_method = "65E0B59727307B53E2290DE9B41E88A5", hash_generated_method = "3FE0E0D2CAC1785D48B4E72427958424")
     public void setYear(int y) throws IllegalArgumentException {
     if(y < 0)        
@@ -509,24 +521,26 @@ String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         }
         javaCal = null;
         year = y;
-        // ---------- Original Method ----------
-        //if (y < 0)
-            //throw new IllegalArgumentException("Illegal year : " + y);
-        //javaCal = null;
-        //year = y;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.099 -0400", hash_original_method = "685E9F12E07BC44AEFABA3E87A7BA88C", hash_generated_method = "5FAE8F2F0BAAA9D074C81D67ED414D06")
     public int getYear() {
         int var84CDC76CABF41BD7C961F6AB12F117D8_1533542023 = (year);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472663813 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472663813;
-        // ---------- Original Method ----------
-        //return year;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.100 -0400", hash_original_method = "8F41240A07063AF12A20DAC696350061", hash_generated_method = "6D471A9DFB772D107BFDBDEF2A678CF9")
     public void setHour(int h) throws IllegalArgumentException {
     if(h < 0 || h > 24)        
@@ -537,14 +551,15 @@ String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         }
         javaCal = null;
         hour = h;
-        // ---------- Original Method ----------
-        //if (h < 0 || h > 24)
-            //throw new IllegalArgumentException("Illegal hour : " + h);
-        //javaCal = null;
-        //hour = h;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.100 -0400", hash_original_method = "0A40A5D1C091DEF2AA14C093CC6460BC", hash_generated_method = "CF7AE45DB92628A50BC29DB08113DE49")
     public void setMinute(int m) throws IllegalArgumentException {
     if(m < 0 || m >= 60)        
@@ -556,15 +571,16 @@ String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         }
         javaCal = null;
         minute = m;
-        // ---------- Original Method ----------
-        //if (m < 0 || m >= 60)
-            //throw new IllegalArgumentException(
-                //"Illegal minute : " + (Integer.toString(m)));
-        //javaCal = null;
-        //minute = m;
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.101 -0400", hash_original_method = "2AD3B3771A5FA25E5792A620A7EA9BAA", hash_generated_method = "4F7AFC7CCA47B3F5950A699001FF4A05")
     public void setSecond(int s) throws IllegalArgumentException {
     if(s < 0 || s >= 60)        
@@ -576,55 +592,57 @@ String var2A647B1AB7CAB288D6A463E2252BABED_818181031 =         sipMonth;
         }
         javaCal = null;
         second = s;
-        // ---------- Original Method ----------
-        //if (s < 0 || s >= 60)
-            //throw new IllegalArgumentException(
-                //"Illegal second : " + Integer.toString(s));
-        //javaCal = null;
-        //second = s;
+        
+        
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.101 -0400", hash_original_method = "2F4F469E30C2F586A40940F33F0E1586", hash_generated_method = "7700721F491F6D06696B9C46E03BE3F1")
     public int getDeltaSeconds() {
         long ctime = this.getJavaCal().getTime().getTime();
         int var912A5FE0D780AF2A90211073F0C20C13_1871031676 = ((int) (ctime - System.currentTimeMillis()) / 1000);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582732970 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1582732970;
-        // ---------- Original Method ----------
-        //long ctime = this.getJavaCal().getTime().getTime();
-        //return (int) (ctime - System.currentTimeMillis()) / 1000;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.102 -0400", hash_original_method = "4BA050DE2121A2990466253CFC8AD778", hash_generated_method = "98610E7F77647865BEEEE3B65A49D4D5")
     public Object clone() {
         SIPDate retval;
         try 
         {
             retval = (SIPDate) super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             RuntimeException var1A3D561C49733FF4B8E39ED1A5C8FCCD_1604862649 = new RuntimeException("Internal error");
             var1A3D561C49733FF4B8E39ED1A5C8FCCD_1604862649.addTaint(taint);
             throw var1A3D561C49733FF4B8E39ED1A5C8FCCD_1604862649;
-        } //End block
+        } 
     if(javaCal != null)        
         retval.javaCal = (java.util.Calendar) javaCal.clone();
 Object varF9E19AD6135C970F387F77C6F3DE4477_726816225 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_726816225.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_726816225;
-        // ---------- Original Method ----------
-        //SIPDate retval;
-        //try {
-            //retval = (SIPDate) super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new RuntimeException("Internal error");
-        //}
-        //if (javaCal != null)
-            //retval.javaCal = (java.util.Calendar) javaCal.clone();
-        //return retval;
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.567 -0400", hash_original_method = "F95FAB28024AE66FDF40AADA9827F511", hash_generated_method = "4DCA6C773F36EA8FC0B6A1623E43CC26")
     public  NetscapeDomainHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,8 +40,8 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
                         + "special domains");
                     var3DB6640826D10C6574D0817D011D0490_1533863347.addTaint(taint);
                     throw var3DB6640826D10C6574D0817D011D0490_1533863347;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(domainParts < 3)                
@@ -51,11 +51,11 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
                         + "\" violates the Netscape cookie specification");
                     var939C26DC878B6508D4A9471872C9F14E_1622054723.addTaint(taint);
                     throw var939C26DC878B6508D4A9471872C9F14E_1622054723;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -81,13 +81,13 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1366844759 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_1366844759.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_1366844759;
-        } //End block
+        } 
     if(origin == null)        
         {
             IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1848900427 = new IllegalArgumentException("Cookie origin may not be null");
             var4264914F0057BA70A0B3E6621821A095_1848900427.addTaint(taint);
             throw var4264914F0057BA70A0B3E6621821A095_1848900427;
-        } //End block
+        } 
         String host = origin.getHost();
         String domain = cookie.getDomain();
     if(domain == null)        
@@ -95,23 +95,23 @@ public class NetscapeDomainHandler extends BasicDomainHandler {
             boolean var68934A3E9455FA72420237EB05902327_353151267 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321380124 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_321380124;
-        } //End block
+        } 
         boolean varD5638ED266D9523B0FDD6B6E7C62BCAF_1108551558 = (host.endsWith(domain));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988663631 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_988663631;
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-           //throw new IllegalArgumentException("Cookie may not be null");
-       //}
-        //if (origin == null) {
-           //throw new IllegalArgumentException("Cookie origin may not be null");
-       //}
-        //String host = origin.getHost();
-        //String domain = cookie.getDomain();
-        //if (domain == null) {
-           //return false;
-       //}
-        //return host.endsWith(domain);
+        
+        
+           
+       
+        
+           
+       
+        
+        
+        
+           
+       
+        
     }
 
     

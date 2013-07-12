@@ -1,6 +1,6 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,8 +26,8 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
         addTaint(preferenceManager.getTaint());
         addTaint(context.getTaint());
         init(preferenceManager);
-        // ---------- Original Method ----------
-        //init(preferenceManager);
+        
+        
     }
 
     
@@ -38,8 +38,8 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
         addTaint(preferenceManager.getTaint());
         addTaint(original.getTaint());
         init(preferenceManager);
-        // ---------- Original Method ----------
-        //init(preferenceManager);
+        
+        
     }
 
     
@@ -50,8 +50,8 @@ class PreferenceInflater extends GenericInflater<Preference, PreferenceGroup> {
 GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64_1047807505 =         new PreferenceInflater(this, mPreferenceManager, newContext);
         varDC7DDB264446171E53B77F6F68C4AD64_1047807505.addTaint(taint);
         return varDC7DDB264446171E53B77F6F68C4AD64_1047807505;
-        // ---------- Original Method ----------
-        //return new PreferenceInflater(this, mPreferenceManager, newContext);
+        
+        
     }
 
     
@@ -59,9 +59,9 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
     private void init(PreferenceManager preferenceManager) {
         mPreferenceManager = preferenceManager;
         setDefaultPackage("android.preference.");
-        // ---------- Original Method ----------
-        //mPreferenceManager = preferenceManager;
-        //setDefaultPackage("android.preference.");
+        
+        
+        
     }
 
     
@@ -69,7 +69,7 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
     @Override
     protected boolean onCreateCustomFromTag(XmlPullParser parser, Preference parentPreference,
             AttributeSet attrs) throws XmlPullParserException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(attrs.getTaint());
         addTaint(parentPreference.getTaint());
         addTaint(parser.getTaint());
@@ -80,7 +80,7 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
             try 
             {
                 intent = Intent.parseIntent(getContext().getResources(), parser, attrs);
-            } //End block
+            } 
             catch (IOException e)
             {
                 XmlPullParserException ex = new XmlPullParserException(
@@ -88,15 +88,15 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
+            } 
     if(intent != null)            
             {
                 parentPreference.setIntent(intent);
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1210856098 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_597639499 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_597639499;
-        } //End block
+        } 
         else
     if(tag.equals(EXTRA_TAG_NAME))        
         {
@@ -105,7 +105,7 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
             try 
             {
                 XmlUtils.skipCurrentTag(parser);
-            } //End block
+            } 
             catch (IOException e)
             {
                 XmlPullParserException ex = new XmlPullParserException(
@@ -113,16 +113,16 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_732324334 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1514664631 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1514664631;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_728445961 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_757487047 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_757487047;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -130,7 +130,7 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
     @Override
     protected PreferenceGroup onMergeRoots(PreferenceGroup givenRoot, boolean attachToGivenRoot,
             PreferenceGroup xmlRoot) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(xmlRoot.getTaint());
         addTaint(attachToGivenRoot);
         addTaint(givenRoot.getTaint());
@@ -140,20 +140,20 @@ GenericInflater<Preference, PreferenceGroup> varDC7DDB264446171E53B77F6F68C4AD64
 PreferenceGroup varCBFCBF588E89F8CE897CCC58BE8F27B0_551237326 =             xmlRoot;
             varCBFCBF588E89F8CE897CCC58BE8F27B0_551237326.addTaint(taint);
             return varCBFCBF588E89F8CE897CCC58BE8F27B0_551237326;
-        } //End block
+        } 
         else
         {
 PreferenceGroup var8684B8CF102173B1E0B883EE19F403C8_473613144 =             givenRoot;
             var8684B8CF102173B1E0B883EE19F403C8_473613144.addTaint(taint);
             return var8684B8CF102173B1E0B883EE19F403C8_473613144;
-        } //End block
-        // ---------- Original Method ----------
-        //if (givenRoot == null) {
-            //xmlRoot.onAttachedToHierarchy(mPreferenceManager);
-            //return xmlRoot;
-        //} else {
-            //return givenRoot;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     

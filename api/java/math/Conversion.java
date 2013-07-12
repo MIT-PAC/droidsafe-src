@@ -1,6 +1,6 @@
 package java.math;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ class Conversion {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.007 -0400", hash_original_method = "A600C72BC77DD5DD4F1CBED3B2E3D2F0", hash_generated_method = "80546BF6DE416F93FA5C3272886F6955")
     private  Conversion() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -319,7 +319,8 @@ class Conversion {
     }
 
     
-        static long divideLongByBillion(long a) {
+        @DSModeled(DSC.SAFE)
+    static long divideLongByBillion(long a) {
         long quot;
         long rem;
         if (a >= 0) {

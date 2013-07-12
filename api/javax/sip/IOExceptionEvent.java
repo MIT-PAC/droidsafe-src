@@ -1,6 +1,6 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,40 +25,43 @@ public class IOExceptionEvent extends EventObject {
         mHost = host;
         mPort = port;
         mTransport = transport;
-        // ---------- Original Method ----------
-        //mHost = host;
-        //mPort = port;
-        //mTransport = transport;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.205 -0400", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "4E165758FEB104C3BB2458F73F777122")
     public String getHost() {
 String varE57614B151242FB69B92E61EEA287D33_717141459 =         mHost;
         varE57614B151242FB69B92E61EEA287D33_717141459.addTaint(taint);
         return varE57614B151242FB69B92E61EEA287D33_717141459;
-        // ---------- Original Method ----------
-        //return mHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.205 -0400", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "E1DB3B831E83B9CB522D7F98AF898D2B")
     public int getPort() {
         int var5EFA61C4FCA92CA992BE37C2BAF4D350_1980837880 = (mPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1323129006 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1323129006;
-        // ---------- Original Method ----------
-        //return mPort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.206 -0400", hash_original_method = "CC293D4A58B4AE34EE1EAFE01D7A0F93", hash_generated_method = "35CDDC7720A2EE43745877BDCDA2604E")
     public String getTransport() {
 String varF2CB7A1EAFE712633AC71AFDD720A221_211410361 =         mTransport;
         varF2CB7A1EAFE712633AC71AFDD720A221_211410361.addTaint(taint);
         return varF2CB7A1EAFE712633AC71AFDD720A221_211410361;
-        // ---------- Original Method ----------
-        //return mTransport;
+        
+        
     }
 
     

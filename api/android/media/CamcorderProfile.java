@@ -1,6 +1,6 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -70,19 +70,19 @@ public class CamcorderProfile {
         this.audioBitRate     = audioBitRate;
         this.audioSampleRate  = audioSampleRate;
         this.audioChannels    = audioChannels;
-        // ---------- Original Method ----------
-        //this.duration         = duration;
-        //this.quality          = quality;
-        //this.fileFormat       = fileFormat;
-        //this.videoCodec       = videoCodec;
-        //this.videoBitRate     = videoBitRate;
-        //this.videoFrameRate   = videoFrameRate;
-        //this.videoFrameWidth  = videoWidth;
-        //this.videoFrameHeight = videoHeight;
-        //this.audioCodec       = audioCodec;
-        //this.audioBitRate     = audioBitRate;
-        //this.audioSampleRate  = audioSampleRate;
-        //this.audioChannels    = audioChannels;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public class DERUniversalString extends ASN1Object implements DERString {
     public  DERUniversalString(
         byte[]   string) {
         this.string = string;
-        // ---------- Original Method ----------
-        //this.string = string;
+        
+        
     }
 
     
@@ -54,41 +54,41 @@ public class DERUniversalString extends ASN1Object implements DERString {
         try 
         {
             aOut.writeObject(this);
-        } //End block
+        } 
         catch (IOException e)
         {
             RuntimeException var56AF4A68FA1BC5130CBC0C2451EDF493_785720814 = new RuntimeException("internal error encoding BitString");
             var56AF4A68FA1BC5130CBC0C2451EDF493_785720814.addTaint(taint);
             throw var56AF4A68FA1BC5130CBC0C2451EDF493_785720814;
-        } //End block
+        } 
         byte[] string = bOut.toByteArray();
 for(int i = 0;i != string.length;i++)
         {
             buf.append(table[(string[i] >>> 4) & 0xf]);
             buf.append(table[string[i] & 0xf]);
-        } //End block
+        } 
 String var4FC680801218E6372BC708D6FA44AE60_667513948 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_667513948.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_667513948;
-        // ---------- Original Method ----------
-        //StringBuffer    buf = new StringBuffer("#");
-        //ByteArrayOutputStream    bOut = new ByteArrayOutputStream();
-        //ASN1OutputStream            aOut = new ASN1OutputStream(bOut);
-        //try
-        //{
-            //aOut.writeObject(this);
-        //}
-        //catch (IOException e)
-        //{
-           //throw new RuntimeException("internal error encoding BitString");
-        //}
-        //byte[]    string = bOut.toByteArray();
-        //for (int i = 0; i != string.length; i++)
-        //{
-            //buf.append(table[(string[i] >>> 4) & 0xf]);
-            //buf.append(table[string[i] & 0xf]);
-        //}
-        //return buf.toString();
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+           
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -97,18 +97,19 @@ String var4FC680801218E6372BC708D6FA44AE60_667513948 =         buf.toString();
 String var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469 =         getString();
         var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469.addTaint(taint);
         return var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469;
-        // ---------- Original Method ----------
-        //return getString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.264 -0400", hash_original_method = "C5326C1D0359BDCEF8241B3A70DD591D", hash_generated_method = "8A47B53D35D0F399E220CC23C856115D")
     public byte[] getOctets() {
         byte[] varB45CFFE084DD3D20D928BEE85E7B0F21_1105875028 = (string);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_719379681 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_719379681;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -117,8 +118,8 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469 =         getString();
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(UNIVERSAL_STRING, this.getOctets());
-        // ---------- Original Method ----------
-        //out.writeEncoded(UNIVERSAL_STRING, this.getOctets());
+        
+        
     }
 
     
@@ -131,16 +132,16 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469 =         getString();
             boolean var68934A3E9455FA72420237EB05902327_1857400598 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_419102938 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_419102938;
-        } //End block
+        } 
         boolean var5FB290BD94CF14033886264596514A2E_294761687 = (this.getString().equals(((DERUniversalString)o).getString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_344820165 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_344820165;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERUniversalString))
-        //{
-            //return false;
-        //}
-        //return this.getString().equals(((DERUniversalString)o).getString());
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -149,8 +150,8 @@ String var8DB59AA9A0821BE4812A8E2F6919F1D5_1422567469 =         getString();
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_213092191 = (this.getString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163388926 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163388926;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     

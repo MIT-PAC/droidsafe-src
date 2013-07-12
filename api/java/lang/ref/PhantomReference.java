@@ -1,6 +1,6 @@
 package java.lang.ref;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class PhantomReference<T> extends Reference<T> {
         super(r, q);
         addTaint(q.getTaint());
         addTaint(r.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,8 +22,8 @@ public class PhantomReference<T> extends Reference<T> {
 T var540C13E9E156B687226421B24F2DF178_1201659714 =         null;
         var540C13E9E156B687226421B24F2DF178_1201659714.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1201659714;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     

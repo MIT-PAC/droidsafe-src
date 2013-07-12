@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x500;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,9 +23,9 @@ public class AttributeTypeAndValue extends ASN1Encodable {
     private  AttributeTypeAndValue(ASN1Sequence seq) {
         type = (ASN1ObjectIdentifier)seq.getObjectAt(0);
         value = (ASN1Encodable)seq.getObjectAt(1);
-        // ---------- Original Method ----------
-        //type = (ASN1ObjectIdentifier)seq.getObjectAt(0);
-        //value = (ASN1Encodable)seq.getObjectAt(1);
+        
+        
+        
     }
 
     
@@ -35,9 +35,9 @@ public class AttributeTypeAndValue extends ASN1Encodable {
         ASN1Encodable value) {
         this.type = type;
         this.value = value;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.value = value;
+        
+        
+        
     }
 
     
@@ -54,23 +54,25 @@ public class AttributeTypeAndValue extends ASN1Encodable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.684 -0400", hash_original_method = "55F928B5E605E2163AD3D5D479C3E067", hash_generated_method = "57995449174BC238582A75582A65FCFD")
     public ASN1ObjectIdentifier getType() {
 ASN1ObjectIdentifier varC5B9F25B4EEAD3E8E2C33F9429204397_961979033 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_961979033.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_961979033;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.684 -0400", hash_original_method = "C951B7A7C5D7EABF1F828E9D0FE876A9", hash_generated_method = "59A1A420103AE3FE6AF92FAD410CAB18")
     public ASN1Encodable getValue() {
 ASN1Encodable varAF280DA2BC37D8BE783D8499160168DE_1667650551 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_1667650551.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_1667650551;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -82,11 +84,11 @@ ASN1Encodable varAF280DA2BC37D8BE783D8499160168DE_1667650551 =         value;
 DERObject var0B338F106E3279986C87B595B0F4A439_851658618 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_851658618.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_851658618;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector v = new ASN1EncodableVector();
-        //v.add(type);
-        //v.add(value);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

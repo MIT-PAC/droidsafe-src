@@ -1,6 +1,6 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,16 +27,16 @@ public class Country implements Parcelable {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_915415573 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_915415573.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_915415573;
-        } //End block
+        } 
         mCountryIso = countryIso.toUpperCase(Locale.US);
         mSource = source;
-        // ---------- Original Method ----------
-        //if (countryIso == null || source < COUNTRY_SOURCE_NETWORK
-                //|| source > COUNTRY_SOURCE_LOCALE) {
-            //throw new IllegalArgumentException();
-        //}
-        //mCountryIso = countryIso.toUpperCase(Locale.US);
-        //mSource = source;
+        
+        
+                
+            
+        
+        
+        
     }
 
     
@@ -44,9 +44,9 @@ public class Country implements Parcelable {
     public  Country(Country country) {
         mCountryIso = country.mCountryIso;
         mSource = country.mSource;
-        // ---------- Original Method ----------
-        //mCountryIso = country.mCountryIso;
-        //mSource = country.mSource;
+        
+        
+        
     }
 
     
@@ -55,8 +55,8 @@ public class Country implements Parcelable {
 String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
         varABD26FAEF97E5A889B52BBA304F6F7F1_97258137.addTaint(taint);
         return varABD26FAEF97E5A889B52BBA304F6F7F1_97258137;
-        // ---------- Original Method ----------
-        //return mCountryIso;
+        
+        
     }
 
     
@@ -65,18 +65,19 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
         int var6917951DFB797D97827BAAA584F128DE_1900625072 = (mSource);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_534003878 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_534003878;
-        // ---------- Original Method ----------
-        //return mSource;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:22.634 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BEDADB0F2AEBFB57D44D10426198402F")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2090165108 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620498585 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620498585;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -86,9 +87,9 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
         addTaint(parcel.getTaint());
         parcel.writeString(mCountryIso);
         parcel.writeInt(mSource);
-        // ---------- Original Method ----------
-        //parcel.writeString(mCountryIso);
-        //parcel.writeInt(mSource);
+        
+        
+        
     }
 
     
@@ -101,26 +102,26 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
             boolean varB326B5062B2F0E69046810717534CB09_342621820 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1580326931 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1580326931;
-        } //End block
+        } 
     if(object instanceof Country)        
         {
             Country c = (Country) object;
             boolean var5FC13BC6A32FB31F79551723D6CD596A_168535472 = (mCountryIso.equals(c.getCountryIso()) && mSource == c.getSource());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1125039279 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1125039279;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1193212138 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149167862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_149167862;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (object instanceof Country) {
-            //Country c = (Country) object;
-            //return mCountryIso.equals(c.getCountryIso()) && mSource == c.getSource();
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -134,19 +135,19 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
             hash = hash * 13 + mCountryIso.hashCode();
             hash = hash * 13 + mSource;
             mHashCode = hash;
-        } //End block
+        } 
         int varD1324C907E3C733CA9E17C8F90836F79_422341651 = (mHashCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1529771839 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1529771839;
-        // ---------- Original Method ----------
-        //int hash = mHashCode;
-        //if (hash == 0) {
-            //hash = 17;
-            //hash = hash * 13 + mCountryIso.hashCode();
-            //hash = hash * 13 + mSource;
-            //mHashCode = hash;
-        //}
-        //return mHashCode;
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -156,8 +157,8 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
         boolean varFFFECAA58B78103A8116914F7E63689B_795074183 = (country != null && mCountryIso.equals(country.getCountryIso()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_983096147 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_983096147;
-        // ---------- Original Method ----------
-        //return country != null && mCountryIso.equals(country.getCountryIso());
+        
+        
     }
 
     
@@ -184,12 +185,12 @@ String varABD26FAEF97E5A889B52BBA304F6F7F1_97258137 =         mCountryIso;
             return new Country[size];
         }
     };
-    // orphaned legacy method
+    
     public Country createFromParcel(Parcel in) {
             return new Country(in.readString(), in.readInt());
         }
     
-    // orphaned legacy method
+    
     public Country[] newArray(int size) {
             return new Country[size];
         }

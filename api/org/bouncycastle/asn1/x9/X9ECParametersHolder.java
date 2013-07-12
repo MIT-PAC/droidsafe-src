@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class X9ECParametersHolder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.504 -0400", hash_original_method = "FD737115DECB7E666F320685834584A5", hash_generated_method = "FD737115DECB7E666F320685834584A5")
     public X9ECParametersHolder ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -22,16 +22,16 @@ public abstract class X9ECParametersHolder {
     if(params == null)        
         {
             params = createParameters();
-        } //End block
+        } 
 X9ECParameters varD15CEB6F45B18F7EB233792D020C6115_729611661 =         params;
         varD15CEB6F45B18F7EB233792D020C6115_729611661.addTaint(taint);
         return varD15CEB6F45B18F7EB233792D020C6115_729611661;
-        // ---------- Original Method ----------
-        //if (params == null)
-        //{
-            //params = createParameters();
-        //}
-        //return params;
+        
+        
+        
+            
+        
+        
     }
 
     

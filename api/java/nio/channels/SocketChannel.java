@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
     protected  SocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,8 +41,8 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
         int varC233D815DCF051CC3EC450F60F56810D_844506269 = ((SelectionKey.OP_CONNECT | SelectionKey.OP_READ | SelectionKey.OP_WRITE));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_634465465 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_634465465;
-        // ---------- Original Method ----------
-        //return (SelectionKey.OP_CONNECT | SelectionKey.OP_READ | SelectionKey.OP_WRITE);
+        
+        
     }
 
     
@@ -73,8 +73,8 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
         long varFE1CA8A4AFFB15DED53509F1AD9D6EED_124750863 = (read(targets, 0, targets.length));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1572331434 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1572331434;
-        // ---------- Original Method ----------
-        //return read(targets, 0, targets.length);
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ public abstract class SocketChannel extends AbstractSelectableChannel implements
         long varE628A2D924D52EAEBDED640B5A4AC008_1634085901 = (write(sources, 0, sources.length));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_779927209 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_779927209;
-        // ---------- Original Method ----------
-        //return write(sources, 0, sources.length);
+        
+        
     }
 
     

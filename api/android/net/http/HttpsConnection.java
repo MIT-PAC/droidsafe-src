@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -54,8 +54,8 @@ public class HttpsConnection extends Connection {
         addTaint(host.getTaint());
         addTaint(context.getTaint());
         mProxyHost = proxy;
-        // ---------- Original Method ----------
-        //mProxyHost = proxy;
+        
+        
     }
 
     
@@ -94,17 +94,19 @@ public class HttpsConnection extends Connection {
     }
 
     
-        private synchronized static SSLSocketFactory getSocketFactory() {
+        @DSModeled(DSC.SAFE)
+    private synchronized static SSLSocketFactory getSocketFactory() {
         return mSslSocketFactory;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.261 -0400", hash_original_method = "CE5F1A45B1025117B442485B7D853DDB", hash_generated_method = "4B8075248C213E7C49A5EEBA2B95A200")
      void setCertificate(SslCertificate certificate) {
         addTaint(certificate.getTaint());
         mCertificate = certificate;
-        // ---------- Original Method ----------
-        //mCertificate = certificate;
+        
+        
     }
 
     
@@ -126,23 +128,23 @@ public class HttpsConnection extends Connection {
                 HttpParams params = new BasicHttpParams();
                 HttpConnectionParams.setSocketBufferSize(params, 8192);
                 proxyConnection.bind(proxySock, params);
-            } //End block
+            } 
             catch (IOException e)
             {
     if(proxyConnection != null)                
                 {
                     proxyConnection.close();
-                } //End block
+                } 
                 String errorMessage = e.getMessage();
     if(errorMessage == null)                
                 {
                     errorMessage =
                         "failed to establish a connection to the proxy";
-                } //End block
+                } 
                 IOException var342594BFE7B1414446AFBD7940E755CF_2046380963 = new IOException(errorMessage);
                 var342594BFE7B1414446AFBD7940E755CF_2046380963.addTaint(taint);
                 throw var342594BFE7B1414446AFBD7940E755CF_2046380963;
-            } //End block
+            } 
             StatusLine statusLine = null;
             int statusCode = 0;
             Headers headers = new Headers();
@@ -157,17 +159,17 @@ for(Header h : req.mHttpRequest.getAllHeaders())
                             || headerName.equals("host"))                    
                     {
                         proxyReq.addHeader(h);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 proxyConnection.sendRequestHeader(proxyReq);
                 proxyConnection.flush();
                 do {
                     {
                         statusLine = proxyConnection.parseResponseHeader(headers);
                         statusCode = statusLine.getStatusCode();
-                    } //End block
+                    } 
 } while (statusCode < HttpStatus.SC_OK);
-            } //End block
+            } 
             catch (ParseException e)
             {
                 String errorMessage = e.getMessage();
@@ -175,11 +177,11 @@ for(Header h : req.mHttpRequest.getAllHeaders())
                 {
                     errorMessage =
                         "failed to send a CONNECT request";
-                } //End block
+                } 
                 IOException var342594BFE7B1414446AFBD7940E755CF_320871208 = new IOException(errorMessage);
                 var342594BFE7B1414446AFBD7940E755CF_320871208.addTaint(taint);
                 throw var342594BFE7B1414446AFBD7940E755CF_320871208;
-            } //End block
+            } 
             catch (HttpException e)
             {
                 String errorMessage = e.getMessage();
@@ -187,11 +189,11 @@ for(Header h : req.mHttpRequest.getAllHeaders())
                 {
                     errorMessage =
                         "failed to send a CONNECT request";
-                } //End block
+                } 
                 IOException var342594BFE7B1414446AFBD7940E755CF_1707671641 = new IOException(errorMessage);
                 var342594BFE7B1414446AFBD7940E755CF_1707671641.addTaint(taint);
                 throw var342594BFE7B1414446AFBD7940E755CF_1707671641;
-            } //End block
+            } 
             catch (IOException e)
             {
                 String errorMessage = e.getMessage();
@@ -199,35 +201,35 @@ for(Header h : req.mHttpRequest.getAllHeaders())
                 {
                     errorMessage =
                         "failed to send a CONNECT request";
-                } //End block
+                } 
                 IOException var342594BFE7B1414446AFBD7940E755CF_206796214 = new IOException(errorMessage);
                 var342594BFE7B1414446AFBD7940E755CF_206796214.addTaint(taint);
                 throw var342594BFE7B1414446AFBD7940E755CF_206796214;
-            } //End block
+            } 
     if(statusCode == HttpStatus.SC_OK)            
             {
                 try 
                 {
                     sslSock = (SSLSocket) getSocketFactory().createSocket(
                             proxySock, mHost.getHostName(), mHost.getPort(), true);
-                } //End block
+                } 
                 catch (IOException e)
                 {
     if(sslSock != null)                    
                     {
                         sslSock.close();
-                    } //End block
+                    } 
                     String errorMessage = e.getMessage();
     if(errorMessage == null)                    
                     {
                         errorMessage =
                             "failed to create an SSL socket";
-                    } //End block
+                    } 
                     IOException var342594BFE7B1414446AFBD7940E755CF_669831831 = new IOException(errorMessage);
                     var342594BFE7B1414446AFBD7940E755CF_669831831.addTaint(taint);
                     throw var342594BFE7B1414446AFBD7940E755CF_669831831;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 ProtocolVersion version = statusLine.getProtocolVersion();
@@ -241,8 +243,8 @@ for(Header h : req.mHttpRequest.getAllHeaders())
 AndroidHttpClientConnection var540C13E9E156B687226421B24F2DF178_1242111072 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1242111072.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1242111072;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             try 
@@ -250,23 +252,23 @@ AndroidHttpClientConnection var540C13E9E156B687226421B24F2DF178_1242111072 =    
                 sslSock = (SSLSocket) getSocketFactory().createSocket(
                         mHost.getHostName(), mHost.getPort());
                 sslSock.setSoTimeout(SOCKET_TIMEOUT);
-            } //End block
+            } 
             catch (IOException e)
             {
     if(sslSock != null)                
                 {
                     sslSock.close();
-                } //End block
+                } 
                 String errorMessage = e.getMessage();
     if(errorMessage == null)                
                 {
                     errorMessage = "failed to create an SSL socket";
-                } //End block
+                } 
                 IOException var342594BFE7B1414446AFBD7940E755CF_1763856580 = new IOException(errorMessage);
                 var342594BFE7B1414446AFBD7940E755CF_1763856580.addTaint(taint);
                 throw var342594BFE7B1414446AFBD7940E755CF_1763856580;
-            } //End block
-        } //End block
+            } 
+        } 
         SslError error = CertificateChainValidator.getInstance().
             doHandshakeAndValidateServerCertificates(this, sslSock, mHost.getHostName());
     if(error != null)        
@@ -274,14 +276,14 @@ AndroidHttpClientConnection var540C13E9E156B687226421B24F2DF178_1242111072 =    
             synchronized
 (mSuspendLock)            {
                 mSuspended = true;
-            } //End block
+            } 
             boolean canHandle = req.getEventHandler().handleSslErrorRequest(error);
     if(!canHandle)            
             {
                 IOException varD2B3D5F35813EE7438CB3CC60DCF7D28_1931371236 = new IOException("failed to handle "+ error);
                 varD2B3D5F35813EE7438CB3CC60DCF7D28_1931371236.addTaint(taint);
                 throw varD2B3D5F35813EE7438CB3CC60DCF7D28_1931371236;
-            } //End block
+            } 
             synchronized
 (mSuspendLock)            {
     if(mSuspended)                
@@ -297,22 +299,22 @@ AndroidHttpClientConnection var540C13E9E156B687226421B24F2DF178_1242111072 =    
                             {
                                 HttpLog.v("HttpsConnection.openConnection():" +
                                           " SSL timeout expired and request was cancelled!!!");
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     catch (InterruptedException e)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(mAborted)                
                 {
                     sslSock.close();
                     SSLConnectionClosedByUserException var31C0B60A93882ED6BE945B6E20382201_731189732 = new SSLConnectionClosedByUserException("connection closed by the user");
                     var31C0B60A93882ED6BE945B6E20382201_731189732.addTaint(taint);
                     throw var31C0B60A93882ED6BE945B6E20382201_731189732;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         AndroidHttpClientConnection conn = new AndroidHttpClientConnection();
         BasicHttpParams params = new BasicHttpParams();
         params.setIntParameter(HttpConnectionParams.SOCKET_BUFFER_SIZE, 8192);
@@ -320,8 +322,8 @@ AndroidHttpClientConnection var540C13E9E156B687226421B24F2DF178_1242111072 =    
 AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772 =         conn;
         varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772.addTaint(taint);
         return varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -331,35 +333,35 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772 =    
     if(mSuspended)        
         {
             restartConnection(false);
-        } //End block
+        } 
         try 
         {
     if(mHttpClientConnection != null && mHttpClientConnection.isOpen())            
             {
                 mHttpClientConnection.close();
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException e)
         {
     if(HttpLog.LOGV)            
             HttpLog.v("HttpsConnection.closeConnection():" +
                           " failed closing connection " + mHost);
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSuspended) {
-            //restartConnection(false);
-        //}
-        //try {
-            //if (mHttpClientConnection != null && mHttpClientConnection.isOpen()) {
-                //mHttpClientConnection.close();
-            //}
-        //} catch (IOException e) {
-            //if (HttpLog.LOGV)
-                //HttpLog.v("HttpsConnection.closeConnection():" +
-                          //" failed closing connection " + mHost);
-            //e.printStackTrace();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+            
+        
+            
+                
+                          
+            
+        
     }
 
     
@@ -369,7 +371,7 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772 =    
         {
             HttpLog.v("HttpsConnection.restartConnection():" +
                       " proceed: " + proceed);
-        } //End block
+        } 
         synchronized
 (mSuspendLock)        {
     if(mSuspended)            
@@ -377,31 +379,32 @@ AndroidHttpClientConnection varE92EA799FE726EFFA481FDDF43ADE4CF_1722223772 =    
                 mSuspended = false;
                 mAborted = !proceed;
                 mSuspendLock.notify();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (HttpLog.LOGV) {
-            //HttpLog.v("HttpsConnection.restartConnection():" +
-                      //" proceed: " + proceed);
-        //}
-        //synchronized (mSuspendLock) {
-            //if (mSuspended) {
-                //mSuspended = false;
-                //mAborted = !proceed;
-                //mSuspendLock.notify();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                      
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.268 -0400", hash_original_method = "369703D22EBB0B4280A990A7CBC1073E", hash_generated_method = "B7E9C3346E3CAE55436A0927AEAF4490")
     @Override
      String getScheme() {
 String varD77F5CF20131CC5BD2D3B9090001888B_210239682 =         "https";
         varD77F5CF20131CC5BD2D3B9090001888B_210239682.addTaint(taint);
         return varD77F5CF20131CC5BD2D3B9090001888B_210239682;
-        // ---------- Original Method ----------
-        //return "https";
+        
+        
     }
 
     
@@ -412,17 +415,17 @@ String varD77F5CF20131CC5BD2D3B9090001888B_210239682 =         "https";
         initializeEngine(null);
     }
     
-    // orphaned legacy method
+    
     public void checkServerTrusted(
                         X509Certificate[] certs, String authType) {
                     }
     
-    // orphaned legacy method
+    
     public X509Certificate[] getAcceptedIssuers() {
                         return null;
                     }
     
-    // orphaned legacy method
+    
     public void checkClientTrusted(
                         X509Certificate[] certs, String authType) {
                     }
@@ -435,7 +438,7 @@ class SSLConnectionClosedByUserException extends SSLException {
     public  SSLConnectionClosedByUserException(String reason) {
         super(reason);
         addTaint(reason.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

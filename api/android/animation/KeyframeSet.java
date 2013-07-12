@@ -1,6 +1,6 @@
 package android.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,13 +38,13 @@ class KeyframeSet {
         mFirstKeyframe = mKeyframes.get(0);
         mLastKeyframe = mKeyframes.get(mNumKeyframes - 1);
         mInterpolator = mLastKeyframe.getInterpolator();
-        // ---------- Original Method ----------
-        //mNumKeyframes = keyframes.length;
-        //mKeyframes = new ArrayList<Keyframe>();
-        //mKeyframes.addAll(Arrays.asList(keyframes));
-        //mFirstKeyframe = mKeyframes.get(0);
-        //mLastKeyframe = mKeyframes.get(mNumKeyframes - 1);
-        //mInterpolator = mLastKeyframe.getInterpolator();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -128,11 +128,12 @@ class KeyframeSet {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:33.539 -0400", hash_original_method = "EEDF4BFC49E3BB0A5C905B0E8446FBFF", hash_generated_method = "B27A43CC2EED297119DEAFB17EFEE8BB")
     public void setEvaluator(TypeEvaluator evaluator) {
         mEvaluator = evaluator;
-        // ---------- Original Method ----------
-        //mEvaluator = evaluator;
+        
+        
     }
 
     
@@ -145,20 +146,20 @@ class KeyframeSet {
 for(int i = 0;i < numKeyframes;++i)
         {
             newKeyframes[i] = keyframes.get(i).clone();
-        } //End block
+        } 
         KeyframeSet newSet = new KeyframeSet(newKeyframes);
 KeyframeSet var887F3F78AE0C9FB0CC98EDF99F492138_1983271124 =         newSet;
         var887F3F78AE0C9FB0CC98EDF99F492138_1983271124.addTaint(taint);
         return var887F3F78AE0C9FB0CC98EDF99F492138_1983271124;
-        // ---------- Original Method ----------
-        //ArrayList<Keyframe> keyframes = mKeyframes;
-        //int numKeyframes = mKeyframes.size();
-        //Keyframe[] newKeyframes = new Keyframe[numKeyframes];
-        //for (int i = 0; i < numKeyframes; ++i) {
-            //newKeyframes[i] = keyframes.get(i).clone();
-        //}
-        //KeyframeSet newSet = new KeyframeSet(newKeyframes);
-        //return newSet;
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -170,12 +171,12 @@ KeyframeSet var887F3F78AE0C9FB0CC98EDF99F492138_1983271124 =         newSet;
     if(mInterpolator != null)            
             {
                 fraction = mInterpolator.getInterpolation(fraction);
-            } //End block
+            } 
 Object var34E4E058AF9CE8B969DF6DEF2537A537_1145486492 =             mEvaluator.evaluate(fraction, mFirstKeyframe.getValue(),
                     mLastKeyframe.getValue());
             var34E4E058AF9CE8B969DF6DEF2537A537_1145486492.addTaint(taint);
             return var34E4E058AF9CE8B969DF6DEF2537A537_1145486492;
-        } //End block
+        } 
     if(fraction <= 0f)        
         {
             final Keyframe nextKeyframe = mKeyframes.get(1);
@@ -183,7 +184,7 @@ Object var34E4E058AF9CE8B969DF6DEF2537A537_1145486492 =             mEvaluator.e
     if(interpolator != null)            
             {
                 fraction = interpolator.getInterpolation(fraction);
-            } //End block
+            } 
             final float prevFraction = mFirstKeyframe.getFraction();
             float intervalFraction = (fraction - prevFraction) /
                 (nextKeyframe.getFraction() - prevFraction);
@@ -191,7 +192,7 @@ Object varF00583FB3258D795DDC10D4FDA15B588_222020060 =             mEvaluator.ev
                     nextKeyframe.getValue());
             varF00583FB3258D795DDC10D4FDA15B588_222020060.addTaint(taint);
             return varF00583FB3258D795DDC10D4FDA15B588_222020060;
-        } //End block
+        } 
         else
     if(fraction >= 1f)        
         {
@@ -200,7 +201,7 @@ Object varF00583FB3258D795DDC10D4FDA15B588_222020060 =             mEvaluator.ev
     if(interpolator != null)            
             {
                 fraction = interpolator.getInterpolation(fraction);
-            } //End block
+            } 
             final float prevFraction = prevKeyframe.getFraction();
             float intervalFraction = (fraction - prevFraction) /
                 (mLastKeyframe.getFraction() - prevFraction);
@@ -208,7 +209,7 @@ Object var740E31ABF97BAA5271118DBF805FBE8F_1379733917 =             mEvaluator.e
                     mLastKeyframe.getValue());
             var740E31ABF97BAA5271118DBF805FBE8F_1379733917.addTaint(taint);
             return var740E31ABF97BAA5271118DBF805FBE8F_1379733917;
-        } //End block
+        } 
         Keyframe prevKeyframe = mFirstKeyframe;
 for(int i = 1;i < mNumKeyframes;++i)
         {
@@ -219,7 +220,7 @@ for(int i = 1;i < mNumKeyframes;++i)
     if(interpolator != null)                
                 {
                     fraction = interpolator.getInterpolation(fraction);
-                } //End block
+                } 
                 final float prevFraction = prevKeyframe.getFraction();
                 float intervalFraction = (fraction - prevFraction) /
                     (nextKeyframe.getFraction() - prevFraction);
@@ -227,14 +228,14 @@ Object varDD3A0D22802CF8E227E3E1110E0A0DC1_1974256520 =                 mEvaluat
                         nextKeyframe.getValue());
                 varDD3A0D22802CF8E227E3E1110E0A0DC1_1974256520.addTaint(taint);
                 return varDD3A0D22802CF8E227E3E1110E0A0DC1_1974256520;
-            } //End block
+            } 
             prevKeyframe = nextKeyframe;
-        } //End block
+        } 
 Object var91FB1B83987C58943E8A4DED27A29F6D_1437539521 =         mLastKeyframe.getValue();
         var91FB1B83987C58943E8A4DED27A29F6D_1437539521.addTaint(taint);
         return var91FB1B83987C58943E8A4DED27A29F6D_1437539521;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -245,16 +246,16 @@ Object var91FB1B83987C58943E8A4DED27A29F6D_1437539521 =         mLastKeyframe.ge
 for(int i = 0;i < mNumKeyframes;++i)
         {
             returnVal += mKeyframes.get(i).getValue() + "  ";
-        } //End block
+        } 
 String var74D8482D05AF02514EABC315066E6806_1821908998 =         returnVal;
         var74D8482D05AF02514EABC315066E6806_1821908998.addTaint(taint);
         return var74D8482D05AF02514EABC315066E6806_1821908998;
-        // ---------- Original Method ----------
-        //String returnVal = " ";
-        //for (int i = 0; i < mNumKeyframes; ++i) {
-            //returnVal += mKeyframes.get(i).getValue() + "  ";
-        //}
-        //return returnVal;
+        
+        
+        
+            
+        
+        
     }
 
     

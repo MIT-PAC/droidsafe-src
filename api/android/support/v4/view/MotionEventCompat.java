@@ -1,6 +1,6 @@
 package android.support.v4.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class MotionEventCompat {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.776 -0400", hash_original_method = "5A13315CB97E0E2867AD42FF281F6179", hash_generated_method = "5A13315CB97E0E2867AD42FF281F6179")
     public MotionEventCompat ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -56,10 +56,11 @@ public class MotionEventCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.778 -0400", hash_original_method = "1452E4140DDA36A9AA18888B766DC89D", hash_generated_method = "1452E4140DDA36A9AA18888B766DC89D")
         public BaseMotionEventVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.778 -0400", hash_original_method = "915485589CA18931BFA6184EB5D82CE0", hash_generated_method = "5521660517A5CB4B6C3F0A8378E1BF9C")
         @Override
         public int findPointerIndex(MotionEvent event, int pointerId) {
@@ -70,15 +71,15 @@ public class MotionEventCompat {
                 int varCFCD208495D565EF66E7DFF9F98764DA_2008659999 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_142568255 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_142568255;
-            } //End block
+            } 
             int var6BB61E3B7BCE0931DA574D19D1D82C88_746432723 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1380939046 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1380939046;
-            // ---------- Original Method ----------
-            //if (pointerId == 0) {
-                //return 0;
-            //}
-            //return -1;
+            
+            
+                
+            
+            
         }
 
         
@@ -92,15 +93,15 @@ public class MotionEventCompat {
                 int varCFCD208495D565EF66E7DFF9F98764DA_1763160317 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772545452 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_772545452;
-            } //End block
+            } 
             IndexOutOfBoundsException varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_863285430 = new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
             varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_863285430.addTaint(taint);
             throw varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_863285430;
-            // ---------- Original Method ----------
-            //if (pointerIndex == 0) {
-                //return 0;
-            //}
-            //throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
+            
+            
+                
+            
+            
         }
 
         
@@ -114,15 +115,15 @@ public class MotionEventCompat {
                 float var5A4C8BA8E3F304B8752A45E6A3A6D4FB_1336425280 = (event.getX());
                                 float var546ADE640B6EDFBC8A086EF31347E768_252201387 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_252201387;
-            } //End block
+            } 
             IndexOutOfBoundsException varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_363128948 = new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
             varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_363128948.addTaint(taint);
             throw varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_363128948;
-            // ---------- Original Method ----------
-            //if (pointerIndex == 0) {
-                //return event.getX();
-            //}
-            //throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
+            
+            
+                
+            
+            
         }
 
         
@@ -136,15 +137,15 @@ public class MotionEventCompat {
                 float varC5AB7FD21957E7EBC0E9A40F08AFB325_1731570432 = (event.getY());
                                 float var546ADE640B6EDFBC8A086EF31347E768_61897491 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_61897491;
-            } //End block
+            } 
             IndexOutOfBoundsException varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_956093172 = new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
             varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_956093172.addTaint(taint);
             throw varFB6DBA9FCC1FE2B5EB2CB2CFCA71FA1A_956093172;
-            // ---------- Original Method ----------
-            //if (pointerIndex == 0) {
-                //return event.getY();
-            //}
-            //throw new IndexOutOfBoundsException("Pre-Eclair does not support multiple pointers");
+            
+            
+                
+            
+            
         }
 
         
@@ -155,8 +156,8 @@ public class MotionEventCompat {
             int varC4CA4238A0B923820DCC509A6F75849B_1397795922 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134403165 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134403165;
-            // ---------- Original Method ----------
-            //return 1;
+            
+            
         }
 
         
@@ -169,7 +170,7 @@ public class MotionEventCompat {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.783 -0400", hash_original_method = "042D39F66E91ADDA4B8AD5816FDB91A1", hash_generated_method = "042D39F66E91ADDA4B8AD5816FDB91A1")
         public EclairMotionEventVersionImpl ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -181,8 +182,8 @@ public class MotionEventCompat {
             int varE62E7B17F19D8C087D1F6291891581A7_2039451945 = (MotionEventCompatEclair.findPointerIndex(event, pointerId));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906000269 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906000269;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.findPointerIndex(event, pointerId);
+            
+            
         }
 
         
@@ -194,8 +195,8 @@ public class MotionEventCompat {
             int var4C22A572F25F1EC2E523F073F961A1E5_645788644 = (MotionEventCompatEclair.getPointerId(event, pointerIndex));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_947446603 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_947446603;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getPointerId(event, pointerIndex);
+            
+            
         }
 
         
@@ -207,8 +208,8 @@ public class MotionEventCompat {
             float varB080E7BF07FE665BD3A6C35AF1F2203D_1988060151 = (MotionEventCompatEclair.getX(event, pointerIndex));
                         float var546ADE640B6EDFBC8A086EF31347E768_304536668 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_304536668;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getX(event, pointerIndex);
+            
+            
         }
 
         
@@ -220,8 +221,8 @@ public class MotionEventCompat {
             float var697F62025966D984AB3627608CB4FDDC_1204920271 = (MotionEventCompatEclair.getY(event, pointerIndex));
                         float var546ADE640B6EDFBC8A086EF31347E768_1596777676 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1596777676;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getY(event, pointerIndex);
+            
+            
         }
 
         
@@ -232,8 +233,8 @@ public class MotionEventCompat {
             int var28718044D95E132813DF0065AA460AFB_560161189 = (MotionEventCompatEclair.getPointerCount(event));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_540709549 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_540709549;
-            // ---------- Original Method ----------
-            //return MotionEventCompatEclair.getPointerCount(event);
+            
+            
         }
 
         

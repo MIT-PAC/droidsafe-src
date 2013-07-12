@@ -1,6 +1,6 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,9 +17,9 @@ public final class StructTimeval {
     private  StructTimeval(long tv_sec, long tv_usec) {
         this.tv_sec = tv_sec;
         this.tv_usec = tv_usec;
-        // ---------- Original Method ----------
-        //this.tv_sec = tv_sec;
-        //this.tv_usec = tv_usec;
+        
+        
+        
     }
 
     
@@ -30,13 +30,14 @@ public final class StructTimeval {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.971 -0400", hash_original_method = "D7D8FCD49C11BCD20431CC831BF1CCDC", hash_generated_method = "4022DA7A73A7CB9AA35B7C7B303CA2E6")
     public long toMillis() {
         long var3673DBE55B214193F59EC713B7869D47_1991797408 = ((tv_sec * 1000) + (tv_usec / 1000));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_42836238 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_42836238;
-        // ---------- Original Method ----------
-        //return (tv_sec * 1000) + (tv_usec / 1000);
+        
+        
     }
 
     
@@ -46,8 +47,8 @@ public final class StructTimeval {
 String var227B2F1F7B818243AD5BEE376C80779D_254218985 =         "StructTimeval[tv_sec=" + tv_sec + ",tv_usec=" + tv_usec + "]";
         var227B2F1F7B818243AD5BEE376C80779D_254218985.addTaint(taint);
         return var227B2F1F7B818243AD5BEE376C80779D_254218985;
-        // ---------- Original Method ----------
-        //return "StructTimeval[tv_sec=" + tv_sec + ",tv_usec=" + tv_usec + "]";
+        
+        
     }
 
     

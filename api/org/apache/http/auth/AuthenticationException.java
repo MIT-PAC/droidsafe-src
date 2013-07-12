@@ -1,6 +1,6 @@
 package org.apache.http.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class AuthenticationException extends ProtocolException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.083 -0400", hash_original_method = "013088ABC431C6F3F4CF96BA31947D05", hash_generated_method = "3148FB1AEB7DC11678194C4759D9EA95")
     public  AuthenticationException() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -19,7 +19,7 @@ public class AuthenticationException extends ProtocolException {
     public  AuthenticationException(String message) {
         super(message);
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class AuthenticationException extends ProtocolException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

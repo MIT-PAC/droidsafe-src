@@ -1,6 +1,6 @@
 package org.apache.http.conn.routing;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class BasicRouteDirector implements HttpRouteDirector {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.461 -0400", hash_original_method = "AEF78390BB51E5E5DCB8CA44B8B94889", hash_generated_method = "AEF78390BB51E5E5DCB8CA44B8B94889")
     public BasicRouteDirector ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -24,7 +24,7 @@ public class BasicRouteDirector implements HttpRouteDirector {
                 ("Planned route may not be null.");
             varD18AAFD4D49E5C0AE7C21EBCCB2F15E3_161228701.addTaint(taint);
             throw varD18AAFD4D49E5C0AE7C21EBCCB2F15E3_161228701;
-        } //End block
+        } 
         int step = UNREACHABLE;
     if((fact == null) || (fact.getHopCount() < 1))        
         step = firstStep(plan);
@@ -36,19 +36,19 @@ public class BasicRouteDirector implements HttpRouteDirector {
         int var2764CA9D34E90313978D044F27AE433B_1409092420 = (step);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1978739048 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1978739048;
-        // ---------- Original Method ----------
-        //if (plan == null) {
-            //throw new IllegalArgumentException
-                //("Planned route may not be null.");
-        //}
-        //int step = UNREACHABLE;
-        //if ((fact == null) || (fact.getHopCount() < 1))
-            //step = firstStep(plan);
-        //else if (plan.getHopCount() > 1)
-            //step = proxiedStep(plan, fact);
-        //else
-            //step = directStep(plan, fact);
-        //return step;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -59,9 +59,9 @@ public class BasicRouteDirector implements HttpRouteDirector {
             CONNECT_PROXY : CONNECT_TARGET);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372684638 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_372684638;
-        // ---------- Original Method ----------
-        //return (plan.getHopCount() > 1) ?
-            //CONNECT_PROXY : CONNECT_TARGET;
+        
+        
+            
     }
 
     
@@ -97,18 +97,18 @@ public class BasicRouteDirector implements HttpRouteDirector {
         int var3DE44296982E58199AFC513A715B12BA_1677160235 = (COMPLETE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659735599 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1659735599;
-        // ---------- Original Method ----------
-        //if (fact.getHopCount() > 1)
-            //return UNREACHABLE;
-        //if (!plan.getTargetHost().equals(fact.getTargetHost()))
-            //return UNREACHABLE;
-        //if (plan.isSecure() != fact.isSecure())
-            //return UNREACHABLE;
-        //if ((plan.getLocalAddress() != null) &&
-            //!plan.getLocalAddress().equals(fact.getLocalAddress())
-            //)
-            //return UNREACHABLE;
-        //return COMPLETE;
+        
+        
+            
+        
+            
+        
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -144,7 +144,7 @@ for(int i=0;i<fhc-1;i++)
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332877938 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1332877938;
             }
-        } //End block
+        } 
     if(phc > fhc)        
         {
         int varBF531891E7568480D1039EF413BB779F_751516437 = (TUNNEL_PROXY);
@@ -179,8 +179,8 @@ for(int i=0;i<fhc-1;i++)
         int var3DE44296982E58199AFC513A715B12BA_1096403672 = (COMPLETE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620213055 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620213055;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

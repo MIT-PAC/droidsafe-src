@@ -1,6 +1,6 @@
 package dalvik.system;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,17 +10,19 @@ public class Zygote {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.850 -0400", hash_original_method = "571209F1E0BFAC649B933D0F6DC3BC96", hash_generated_method = "73F0DE5FDE691A3192BDD297AB8647BC")
     private  Zygote() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        private static void preFork() {
+        @DSModeled(DSC.BAN)
+    private static void preFork() {
         Daemons.stop();
         waitUntilAllThreadsStopped();
     }
 
     
-        private static void waitUntilAllThreadsStopped() {
+        @DSModeled(DSC.BAN)
+    private static void waitUntilAllThreadsStopped() {
         File tasks = new File("/proc/self/task");
         while (tasks.list().length > 1) {
             try {
@@ -31,12 +33,14 @@ public class Zygote {
     }
 
     
-        private static void postFork() {
+        @DSModeled(DSC.BAN)
+    private static void postFork() {
         Daemons.start();
     }
 
     
-        public static int fork() {
+        @DSModeled(DSC.BAN)
+    public static int fork() {
         preFork();
         int pid = nativeFork();
         postFork();
@@ -50,7 +54,8 @@ public class Zygote {
     }
 
     
-        public static int forkAndSpecialize(int uid, int gid, int[] gids,
+        @DSModeled(DSC.BAN)
+    public static int forkAndSpecialize(int uid, int gid, int[] gids,
             int debugFlags, int[][] rlimits) {
         preFork();
         int pid = nativeForkAndSpecialize(uid, gid, gids, debugFlags, rlimits);
@@ -66,7 +71,8 @@ public class Zygote {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.BAN)
+    @Deprecated
     public static int forkAndSpecialize(int uid, int gid, int[] gids,
             boolean enableDebugger, int[][] rlimits) {
         int debugFlags = enableDebugger ? DEBUG_ENABLE_DEBUGGER : 0;
@@ -74,7 +80,8 @@ public class Zygote {
     }
 
     
-        public static int forkSystemServer(int uid, int gid, int[] gids,
+        @DSModeled(DSC.BAN)
+    public static int forkSystemServer(int uid, int gid, int[] gids,
             int debugFlags, int[][] rlimits,
             long permittedCapabilities, long effectiveCapabilities) {
         preFork();
@@ -86,7 +93,8 @@ public class Zygote {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.BAN)
+    @Deprecated
     public static int forkSystemServer(int uid, int gid, int[] gids,
             boolean enableDebugger, int[][] rlimits) {
         int debugFlags = enableDebugger ? DEBUG_ENABLE_DEBUGGER : 0;
@@ -102,12 +110,14 @@ public class Zygote {
     }
 
     
-        public static void execShell(String command) {
+        @DSModeled(DSC.BAN)
+    public static void execShell(String command) {
         nativeExecShell(command);
     }
 
     
-        public static void appendQuotedShellArgs(StringBuilder command, String[] args) {
+        @DSModeled(DSC.BAN)
+    public static void appendQuotedShellArgs(StringBuilder command, String[] args) {
         for (String arg : args) {
             command.append(" '").append(arg.replace("'", "'\\''")).append("'");
         }

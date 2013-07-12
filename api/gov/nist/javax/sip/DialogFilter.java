@@ -1,6 +1,6 @@
 package gov.nist.javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,8 +56,8 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.337 -0400", hash_original_method = "A91C8A8D71CBF898AE2C5B460693B699", hash_generated_method = "481B6844F1AF263D7835463CFF37158A")
     public  DialogFilter(SipStackImpl sipStack) {
         this.sipStack = sipStack;
-        // ---------- Original Method ----------
-        //this.sipStack = sipStack;
+        
+        
     }
 
     
@@ -71,7 +71,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(serverHeader != null)        
         {
             sipResponse.setHeader(serverHeader);
-        } //End block
+        } 
         try 
         {
             RetryAfter retryAfter = new RetryAfter();
@@ -80,18 +80,18 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(sipRequest.getMethod().equals(Request.INVITE))            
             {
                 sipStack.addTransactionPendingAck(transaction);
-            } //End block
+            } 
             transaction.sendResponse(sipResponse);
             transaction.releaseSem();
-        } //End block
+        } 
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("Problem sending error response", ex);
             transaction.releaseSem();
             sipStack.removeTransaction(transaction);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -108,41 +108,41 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(serverHeader != null)        
         {
             sipResponse.setHeader(serverHeader);
-        } //End block
+        } 
         try 
         {
     if(sipRequest.getMethod().equals(Request.INVITE))            
             {
                 sipStack.addTransactionPendingAck(transaction);
-            } //End block
+            } 
             transaction.sendResponse(sipResponse);
             transaction.releaseSem();
-        } //End block
+        } 
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("Problem sending error response", ex);
             transaction.releaseSem();
             sipStack.removeTransaction(transaction);
-        } //End block
-        // ---------- Original Method ----------
-        //SIPResponse sipResponse = sipRequest.createResponse(Response.BAD_REQUEST);
-        //if (reasonPhrase != null)
-            //sipResponse.setReasonPhrase(reasonPhrase);
-        //ServerHeader serverHeader = MessageFactoryImpl.getDefaultServerHeader();
-        //if (serverHeader != null) {
-            //sipResponse.setHeader(serverHeader);
-        //}
-        //try {
-            //if (sipRequest.getMethod().equals(Request.INVITE)) {
-                //sipStack.addTransactionPendingAck(transaction);
-            //}
-            //transaction.sendResponse(sipResponse);
-            //transaction.releaseSem();
-        //} catch (Exception ex) {
-            //sipStack.getStackLogger().logError("Problem sending error response", ex);
-            //transaction.releaseSem();
-            //sipStack.removeTransaction(transaction);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -157,40 +157,40 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(serverHeader != null)        
         {
             sipResponse.setHeader(serverHeader);
-        } //End block
+        } 
         try 
         {
     if(sipRequest.getMethod().equals(Request.INVITE))            
             {
                 sipStack.addTransactionPendingAck(transaction);
-            } //End block
+            } 
             transaction.sendResponse(sipResponse);
             transaction.releaseSem();
-        } //End block
+        } 
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("Problem sending error response", ex);
             transaction.releaseSem();
             sipStack.removeTransaction(transaction);
-        } //End block
-        // ---------- Original Method ----------
-        //SIPResponse sipResponse = sipRequest
-                //.createResponse(Response.CALL_OR_TRANSACTION_DOES_NOT_EXIST);
-        //ServerHeader serverHeader = MessageFactoryImpl.getDefaultServerHeader();
-        //if (serverHeader != null) {
-            //sipResponse.setHeader(serverHeader);
-        //}
-        //try {
-            //if (sipRequest.getMethod().equals(Request.INVITE)) {
-                //sipStack.addTransactionPendingAck(transaction);
-            //}
-            //transaction.sendResponse(sipResponse);
-            //transaction.releaseSem();
-        //} catch (Exception ex) {
-            //sipStack.getStackLogger().logError("Problem sending error response", ex);
-            //transaction.releaseSem();
-            //sipStack.removeTransaction(transaction);
-        //}
+        } 
+        
+        
+                
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -203,34 +203,34 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(serverHeader != null)        
         {
             sipResponse.setHeader(serverHeader);
-        } //End block
+        } 
         try 
         {
             sipStack.addTransactionPendingAck(transaction);
             transaction.sendResponse(sipResponse);
             transaction.releaseSem();
-        } //End block
+        } 
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("Problem sending error response", ex);
             transaction.releaseSem();
             sipStack.removeTransaction(transaction);
-        } //End block
-        // ---------- Original Method ----------
-        //SIPResponse sipResponse = sipRequest.createResponse(Response.LOOP_DETECTED);
-        //ServerHeader serverHeader = MessageFactoryImpl.getDefaultServerHeader();
-        //if (serverHeader != null) {
-            //sipResponse.setHeader(serverHeader);
-        //}
-        //try {
-            //sipStack.addTransactionPendingAck(transaction);
-            //transaction.sendResponse(sipResponse);
-            //transaction.releaseSem();
-        //} catch (Exception ex) {
-            //sipStack.getStackLogger().logError("Problem sending error response", ex);
-            //transaction.releaseSem();
-            //sipStack.removeTransaction(transaction);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -248,7 +248,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
         {
             ServerHeader serverHeader = MessageFactoryImpl.getDefaultServerHeader();
             sipResponse.setHeader(serverHeader);
-        } //End block
+        } 
         try 
         {
             RetryAfter retryAfter = new RetryAfter();
@@ -257,15 +257,15 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             sipStack.addTransactionPendingAck(transaction);
             transaction.sendResponse(sipResponse);
             transaction.releaseSem();
-        } //End block
+        } 
         catch (Exception ex)
         {
             sipStack.getStackLogger().logError("Problem sending response", ex);
             transaction.releaseSem();
             sipStack.removeTransaction(transaction);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -284,7 +284,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             sipStack.getStackLogger().logDebug(
                         "Dropping message: No listening point registered!");
             return;
-        } //End block
+        } 
         SipStackImpl sipStack = (SipStackImpl) transactionChannel.getSIPStack();
         SipProviderImpl sipProvider = listeningPoint.getProvider();
     if(sipProvider == null)        
@@ -292,7 +292,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logDebug("No provider - dropping !!");
             return;
-        } //End block
+        } 
     if(sipStack == null)        
         InternalErrorHandler.handleException("Egads! no sip stack!");
         SIPServerTransaction transaction = (SIPServerTransaction) this.transactionChannel;
@@ -301,7 +301,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logDebug(
                         "transaction state = " + transaction.getState());
-        } //End block
+        } 
         String dialogId = sipRequest.getDialogId(true);
         SIPDialog dialog = sipStack.getDialog(dialogId);
     if(dialog != null && sipProvider != dialog.getSipProvider())        
@@ -321,7 +321,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     contactPort = 5060;
                     else
                     contactPort = 5061;
-                } //End block
+                } 
     if(ipAddress != null
                         && (!ipAddress.equals(listeningPoint.getIPAddress()) || contactPort != listeningPoint
                                 .getPort()))                
@@ -331,11 +331,11 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         sipStack.getStackLogger().logDebug(
                                 "nulling dialog -- listening point mismatch!  " + contactPort
                                         + "  lp port = " + listeningPoint.getPort());
-                    } //End block
+                    } 
                     dialog = null;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(sipProvider.isAutomaticDialogSupportEnabled()
                 && sipProvider.isDialogErrorsAutomaticallyHandled()
                 && sipRequest.getToTag() == null)        
@@ -346,13 +346,13 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             {
                 this.sendLoopDetectedResponse(sipRequest, transaction);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug("dialogId = " + dialogId);
             sipStack.getStackLogger().logDebug("dialog = " + dialog);
-        } //End block
+        } 
     if(sipRequest.getHeader(Route.NAME) != null && transaction.getDialog() != null)        
         {
             RouteList routes = sipRequest.getRouteHeaders();
@@ -362,14 +362,14 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(uri.getHostPort().hasPort())            
             {
                 port = uri.getHostPort().getPort();
-            } //End block
+            } 
             else
             {
     if(listeningPoint.getTransport().equalsIgnoreCase("TLS"))                
                 port = 5061;
                 else
                 port = 5060;
-            } //End block
+            } 
             String host = uri.getHost();
     if((host.equals(listeningPoint.getIPAddress()) || host
                     .equalsIgnoreCase(listeningPoint.getSentBy()))
@@ -379,8 +379,8 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                 sipRequest.removeHeader(Route.NAME);
                 else
                 routes.removeFirst();
-            } //End block
-        } //End block
+            } 
+        } 
     if(sipRequest.getMethod().equals(Request.REFER) && dialog != null
                 && sipProvider.isDialogErrorsAutomaticallyHandled())        
         {
@@ -391,7 +391,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         .sendBadRequestResponse(sipRequest, transaction,
                                 "Refer-To header is missing");
                 return;
-            } //End block
+            } 
             SIPTransaction lastTransaction = ((SIPDialog) dialog).getLastTransaction();
     if(lastTransaction != null  && sipProvider.isDialogErrorsAutomaticallyHandled())            
             {
@@ -403,8 +403,8 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     {
                         this.sendRequestPendingResponse(sipRequest, transaction);
                         return;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(lastTransaction instanceof SIPClientTransaction)                
                 {
@@ -414,10 +414,10 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     {
                         this.sendRequestPendingResponse(sipRequest, transaction);
                         return;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         else
     if(sipRequest.getMethod().equals(Request.UPDATE))        
         {
@@ -425,8 +425,8 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             {
                 this.sendCallOrTransactionDoesNotExistResponse(sipRequest, transaction);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(sipRequest.getMethod().equals(Request.ACK))        
         {
@@ -434,7 +434,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             {
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger().logDebug("Processing ACK for INVITE Tx ");
-            } //End block
+            } 
             else
             {
     if(sipStack.isLoggingEnabled())                
@@ -446,13 +446,13 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         sipStack.getStackLogger().logDebug(
                                 "Dialog does not exist " + sipRequest.getFirstLine()
                                         + " isServerTransaction = " + true);
-                    } //End block
+                    } 
                     SIPServerTransaction st = sipStack
                             .getRetransmissionAlertTransaction(dialogId);
     if(st != null && st.isRetransmissionAlertEnabled())                    
                     {
                         st.disableRetransmissionAlerts();
-                    } //End block
+                    } 
                     SIPServerTransaction ackTransaction = sipStack
                             .findTransactionPendingAck(sipRequest);
     if(ackTransaction != null)                    
@@ -464,18 +464,18 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                             ackTransaction.setAckSeen();
                             sipStack.removeTransaction(ackTransaction);
                             sipStack.removeTransactionPendingAck(ackTransaction);
-                        } //End block
+                        } 
                         catch (Exception ex)
                         {
     if(sipStack.isLoggingEnabled())                            
                             {
                                 sipStack.getStackLogger().logError(
                                         "Problem terminating transaction", ex);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         return;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
     if(!dialog.handleAck(transaction))                    
@@ -489,21 +489,21 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                                                 + sipRequest.getFirstLine()
                                                 + " isServerTransaction = " + true + " dialog = "
                                                 + dialog.getDialogId());
-                            } //End block
+                            } 
                             SIPServerTransaction st = sipStack
                                     .getRetransmissionAlertTransaction(dialogId);
     if(st != null && st.isRetransmissionAlertEnabled())                            
                             {
                                 st.disableRetransmissionAlerts();
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
                         {
     if(sipStack.isLoggingEnabled())                            
                             {
                                 sipStack.getStackLogger().logDebug(
                                         "Dropping ACK - cannot find a transaction or dialog");
-                            } //End block
+                            } 
                             SIPServerTransaction ackTransaction = sipStack
                                     .findTransactionPendingAck(sipRequest);
     if(ackTransaction != null)                            
@@ -515,19 +515,19 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                                     ackTransaction.setAckSeen();
                                     sipStack.removeTransaction(ackTransaction);
                                     sipStack.removeTransactionPendingAck(ackTransaction);
-                                } //End block
+                                } 
                                 catch (Exception ex)
                                 {
     if(sipStack.isLoggingEnabled())                                    
                                     {
                                         sipStack.getStackLogger().logError(
                                                 "Problem terminating transaction", ex);
-                                    } //End block
-                                } //End block
-                            } //End block
+                                    } 
+                                } 
+                            } 
                             return;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         transaction.passToListener();
@@ -538,26 +538,26 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                                 && sipProvider.isDialogErrorsAutomaticallyHandled())                        
                         {
                             sipStack.putInMergeTable(transaction, sipRequest);
-                        } //End block
+                        } 
     if(sipStack.deliverTerminatedEventForAck)                        
                         {
                             try 
                             {
                                 sipStack.addTransaction(transaction);
                                 transaction.scheduleAckRemoval();
-                            } //End block
+                            } 
                             catch (IOException ex)
                             {
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
                         {
                             transaction.setMapped(true);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         else
     if(sipRequest.getMethod().equals(Request.PRACK))        
         {
@@ -570,31 +570,31 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     sipStack.getStackLogger().logDebug(
                             "Dialog does not exist " + sipRequest.getFirstLine()
                                     + " isServerTransaction = " + true);
-                } //End block
+                } 
     if(sipStack.isLoggingEnabled())                
                 {
                     sipStack
                             .getStackLogger()
                             .logDebug(
                                     "Sending 481 for PRACK - automatic dialog support is enabled -- cant find dialog!");
-                } //End block
+                } 
                 SIPResponse notExist = sipRequest
                         .createResponse(Response.CALL_OR_TRANSACTION_DOES_NOT_EXIST);
                 try 
                 {
                     sipProvider.sendResponse(notExist);
-                } //End block
+                } 
                 catch (SipException e)
                 {
                     sipStack.getStackLogger().logError("error sending response", e);
-                } //End block
+                } 
     if(transaction != null)                
                 {
                     sipStack.removeTransaction(transaction);
                     transaction.releaseSem();
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
             else
     if(dialog != null)            
             {
@@ -606,9 +606,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     {
                         sipStack.removeTransaction(transaction);
                         transaction.releaseSem();
-                    } //End block
+                    } 
                     return;
-                } //End block
+                } 
                 else
                 {
                     try 
@@ -617,20 +617,20 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         dialog.addTransaction(transaction);
                         dialog.addRoute(sipRequest);
                         transaction.setDialog(dialog, dialogId);
-                    } //End block
+                    } 
                     catch (Exception ex)
                     {
                         InternalErrorHandler.handleException(ex);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger().logDebug(
                             "Processing PRACK without a DIALOG -- this must be a proxy element");
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(sipRequest.getMethod().equals(Request.BYE))        
         {
@@ -644,11 +644,11 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         && transaction.getState() == TransactionState.TRYING)                
                 {
                     this.sendServerInternalErrorResponse(sipRequest, transaction);
-                } //End block
+                } 
     if(transaction != null)                
                 sipStack.removeTransaction(transaction);
                 return;
-            } //End block
+            } 
             else
     if(dialog == null && sipProvider.isAutomaticDialogSupportEnabled())            
             {
@@ -662,19 +662,19 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                 try 
                 {
                     transaction.sendResponse(response);
-                } //End block
+                } 
                 catch (SipException ex)
                 {
                     sipStack.getStackLogger().logError("Error in sending response", ex);
-                } //End block
+                } 
     if(transaction != null)                
                 {
                     sipStack.removeTransaction(transaction);
                     transaction.releaseSem();
                     transaction = null;
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
     if(transaction != null && dialog != null)            
             {
                 try 
@@ -684,20 +684,20 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         sipStack.addTransaction(transaction);
                         dialog.addTransaction(transaction);
                         transaction.setDialog(dialog, dialogId);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (IOException ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } //End block
-            } //End block
+                } 
+            } 
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug(
                         "BYE Tx = " + transaction + " isMapped ="
                                 + transaction.isTransactionMapped());
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(sipRequest.getMethod().equals(Request.CANCEL))        
         {
@@ -709,7 +709,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         "Got a CANCEL, InviteServerTx = " + st + " cancel Server Tx ID = "
                                 + transaction + " isMapped = "
                                 + transaction.isTransactionMapped());
-            } //End block
+            } 
     if(sipRequest.getMethod().equals(Request.CANCEL))            
             {
     if(st != null && st.getState() == SIPTransaction.TERMINATED_STATE)                
@@ -719,24 +719,24 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     try 
                     {
                         transaction.sendResponse(sipRequest.createResponse(Response.OK));
-                    } //End block
+                    } 
                     catch (Exception ex)
                     {
     if(ex.getCause() != null && ex.getCause() instanceof IOException)                        
                         {
                             st.raiseIOExceptionEvent();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     return;
-                } //End block
+                } 
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger().logDebug("Cancel transaction = " + st);
-            } //End block
+            } 
     if(transaction != null && st != null && st.getDialog() != null)            
             {
                 transaction.setDialog((SIPDialog) st.getDialog(), dialogId);
                 dialog = (SIPDialog) st.getDialog();
-            } //End block
+            } 
             else
     if(st == null && sipProvider.isAutomaticDialogSupportEnabled()
                     && transaction != null)            
@@ -748,22 +748,22 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     sipStack.getStackLogger().logDebug(
                             "dropping request -- automatic dialog support "
                                     + "enabled and INVITE ST does not exist!");
-                } //End block
+                } 
                 try 
                 {
                     sipProvider.sendResponse(response);
-                } //End block
+                } 
                 catch (SipException ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } //End block
+                } 
     if(transaction != null)                
                 {
                     sipStack.removeTransaction(transaction);
                     transaction.releaseSem();
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
     if(st != null)            
             {
                 try 
@@ -774,14 +774,14 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         transaction.setPassToListener();
                         transaction.setInviteTransaction(st);
                         st.acquireSem();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (Exception ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
     if(sipRequest.getMethod().equals(Request.INVITE))        
         {
@@ -801,10 +801,10 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                 {
                     sipStack.getStackLogger().logDebug(
                             "Sending 500 response for out of sequence message");
-                } //End block
+                } 
                 this.sendServerInternalErrorResponse(sipRequest, transaction);
                 return;
-            } //End block
+            } 
             lastTransaction = (dialog == null ? null : dialog.getLastTransaction());
     if(dialog != null
                     && sipProvider.isDialogErrorsAutomaticallyHandled()
@@ -820,10 +820,10 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                 {
                     sipStack.getStackLogger().logDebug(
                             "Sending 491 response for client Dialog ACK not sent.");
-                } //End block
+                } 
                 this.sendRequestPendingResponse(sipRequest, transaction);
                 return;
-            } //End block
+            } 
     if(dialog != null && lastTransaction != null
                     && sipProvider.isDialogErrorsAutomaticallyHandled()
                     && lastTransaction.isInviteTransaction()
@@ -833,16 +833,16 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                 {
                     sipStack.getStackLogger().logDebug(
                             "Sending 491 response for server Dialog ACK not seen.");
-                } //End block
+                } 
                 this.sendRequestPendingResponse(sipRequest, transaction);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug(
                     "CHECK FOR OUT OF SEQ MESSAGE " + dialog + " transaction " + transaction);
-        } //End block
+        } 
     if(dialog != null && transaction != null && !sipRequest.getMethod().equals(Request.BYE)
                 && !sipRequest.getMethod().equals(Request.CANCEL)
                 && !sipRequest.getMethod().equals(Request.ACK)
@@ -855,16 +855,16 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     sipStack.getStackLogger().logDebug(
                             "Dropping out of sequence message " + dialog.getRemoteSeqNumber()
                                     + " " + sipRequest.getCSeq());
-                } //End block
+                } 
     if(dialog.getRemoteSeqNumber() >= sipRequest.getCSeq().getSeqNumber()
                         && sipProvider.isDialogErrorsAutomaticallyHandled()
                         && (transaction.getState() == TransactionState.TRYING || transaction
                                 .getState() == TransactionState.PROCEEDING))                
                 {
                     this.sendServerInternalErrorResponse(sipRequest, transaction);
-                } //End block
+                } 
                 return;
-            } //End block
+            } 
             try 
             {
     if(sipProvider == dialog.getSipProvider())                
@@ -873,22 +873,22 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     dialog.addTransaction(transaction);
                     dialog.addRoute(sipRequest);
                     transaction.setDialog(dialog, dialogId);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IOException ex)
             {
                 transaction.raiseIOExceptionEvent();
                 sipStack.removeTransaction(transaction);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         RequestEvent sipEvent;
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug(
                     sipRequest.getMethod() + " transaction.isMapped = "
                             + transaction.isTransactionMapped());
-        } //End block
+        } 
     if(dialog == null && sipRequest.getMethod().equals(Request.NOTIFY))        
         {
             SIPClientTransaction pendingSubscribeClientTx = sipStack.findSubscribeTransaction(
@@ -897,7 +897,7 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             {
                 sipStack.getStackLogger().logDebug(
                         "PROCESSING NOTIFY  DIALOG == null " + pendingSubscribeClientTx);
-            } //End block
+            } 
     if(sipProvider.isAutomaticDialogSupportEnabled() && pendingSubscribeClientTx == null
                     && !sipStack.deliverUnsolicitedNotify)            
             {
@@ -907,20 +907,20 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     {
                         sipStack.getStackLogger().logDebug(
                                 "Could not find Subscription for Notify Tx.");
-                    } //End block
+                    } 
                     Response errorResponse = sipRequest
                             .createResponse(Response.CALL_OR_TRANSACTION_DOES_NOT_EXIST);
                     errorResponse.setReasonPhrase("Subscription does not exist");
                     sipProvider.sendResponse(errorResponse);
                     return;
-                } //End block
+                } 
                 catch (Exception ex)
                 {
                     sipStack.getStackLogger().logError(
                             "Exception while sending error response statelessly", ex);
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
     if(pendingSubscribeClientTx != null)            
             {
                 transaction.setPendingSubscribe(pendingSubscribeClientTx);
@@ -932,16 +932,16 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
     if(subscriptionDialog != null && subscriptionDialog.getDialogId() == null)                    
                     {
                         subscriptionDialog.setDialogId(dialogId);
-                    } //End block
+                    } 
                     else
                     {
                         subscriptionDialog = pendingSubscribeClientTx.getDialog(dialogId);
-                    } //End block
+                    } 
     if(sipStack.isLoggingEnabled())                    
                     {
                         sipStack.getStackLogger().logDebug(
                                 "PROCESSING NOTIFY Subscribe DIALOG " + subscriptionDialog);
-                    } //End block
+                    } 
     if(subscriptionDialog == null
                             && (sipProvider.isAutomaticDialogSupportEnabled() || pendingSubscribeClientTx
                                     .getDefaultDialog() != null))                    
@@ -951,8 +951,8 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         {
                             subscriptionDialog = SIPDialog.createFromNOTIFY(
                                     pendingSubscribeClientTx, transaction);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(subscriptionDialog != null)                    
                     {
                         transaction.setDialog(subscriptionDialog, dialogId);
@@ -966,13 +966,13 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                             try 
                             {
                                 this.sipStack.addTransaction(transaction);
-                            } //End block
+                            } 
                             catch (Exception ex)
                             {
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 else
                 {
                     transaction.setDialog(subscriptionDialog, dialogId);
@@ -984,40 +984,40 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         try 
                         {
                             this.sipStack.addTransaction(transaction);
-                        } //End block
+                        } 
                         catch (Exception ex)
                         {
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     sipStack.putDialog(subscriptionDialog);
     if(pendingSubscribeClientTx != null)                    
                     {
                         subscriptionDialog.addTransaction(pendingSubscribeClientTx);
                         pendingSubscribeClientTx.setDialog(subscriptionDialog, dialogId);
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(transaction != null
                         && ((SIPServerTransaction) transaction).isTransactionMapped())                
                 {
                     sipEvent = new RequestEvent((SipProvider) sipProvider,
                             (ServerTransaction) transaction, subscriptionDialog,
                             (Request) sipRequest);
-                } //End block
+                } 
                 else
                 {
                     sipEvent = new RequestEvent((SipProvider) sipProvider, null,
                             subscriptionDialog, (Request) sipRequest);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(sipStack.isLoggingEnabled())                
                 {
                     sipStack.getStackLogger().logDebug("could not find subscribe tx");
-                } //End block
+                } 
                 sipEvent = new RequestEvent(sipProvider, null, null, (Request) sipRequest);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(transaction != null
@@ -1025,15 +1025,15 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             {
                 sipEvent = new RequestEvent(sipProvider, (ServerTransaction) transaction, dialog,
                         (Request) sipRequest);
-            } //End block
+            } 
             else
             {
                 sipEvent = new RequestEvent(sipProvider, null, dialog, (Request) sipRequest);
-            } //End block
-        } //End block
+            } 
+        } 
         sipProvider.handleEvent(sipEvent, transaction);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1047,14 +1047,14 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
         {
             sipStack.getStackLogger().logDebug(
                     "PROCESSING INCOMING RESPONSE" + response.encodeMessage());
-        } //End block
+        } 
     if(listeningPoint == null)        
         {
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logError(
                         "Dropping message: No listening point" + " registered!");
             return;
-        } //End block
+        } 
     if(sipStack.checkBranchId() && !Utils.getInstance().responseBelongsToUs(response))        
         {
     if(sipStack.isLoggingEnabled())            
@@ -1063,32 +1063,32 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                         .getStackLogger()
                         .logError(
                                 "Dropping response - topmost VIA header does not originate from this stack");
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         SipProviderImpl sipProvider = listeningPoint.getProvider();
     if(sipProvider == null)        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logError("Dropping message:  no provider");
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(sipProvider.getSipListener() == null)        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logError("No listener -- dropping response!");
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         SIPClientTransaction transaction = (SIPClientTransaction) this.transactionChannel;
         SipStackImpl sipStackImpl = sipProvider.sipStack;
     if(sipStack.isLoggingEnabled())        
         {
             sipStackImpl.getStackLogger().logDebug("Transaction = " + transaction);
-        } //End block
+        } 
     if(transaction == null)        
         {
     if(dialog != null)            
@@ -1101,9 +1101,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                                 .getStackLogger()
                                 .logDebug(
                                         "Response is not a final response and dialog is found for response -- dropping response!");
-                    } //End block
+                    } 
                     return;
-                } //End block
+                } 
                 else
     if(dialog.getState() == DialogState.TERMINATED)                
                 {
@@ -1111,9 +1111,9 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                     {
                         sipStack.getStackLogger().logDebug(
                                 "Dialog is terminated -- dropping response!");
-                    } //End block
+                    } 
                     return;
-                } //End block
+                } 
                 else
                 {
                     boolean ackAlreadySent = false;
@@ -1123,8 +1123,8 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                                 .getCSeq().getSeqNumber())                        
                         {
                             ackAlreadySent = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(ackAlreadySent
                             && response.getCSeq().getMethod().equals(dialog.getMethod()))                    
                     {
@@ -1134,22 +1134,22 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                             {
                                 sipStack.getStackLogger().logDebug(
                                         "Retransmission of OK detected: Resending last ACK");
-                            } //End block
+                            } 
                             dialog.resendAck();
                             return;
-                        } //End block
+                        } 
                         catch (SipException ex)
                         {
                             sipStack.getStackLogger().logError("could not resend ack", ex);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug(
                         "could not find tx, handling statelessly Dialog =  " + dialog);
-            } //End block
+            } 
             ResponseEventExt sipEvent = new ResponseEventExt(sipProvider, transaction, dialog,
                     (Response) response);
     if(response.getCSeqHeader().getMethod().equals(Request.INVITE))            
@@ -1157,10 +1157,10 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
                 SIPClientTransaction forked = this.sipStack.getForkedTransaction(response
                         .getTransactionId());
                 sipEvent.setOriginalTransaction(forked);
-            } //End block
+            } 
             sipProvider.handleEvent(sipEvent, transaction);
             return;
-        } //End block
+        } 
         ResponseEventExt responseEvent = null;
         responseEvent = new ResponseEventExt(sipProvider, (ClientTransactionExt) transaction,
                 dialog, (Response) response);
@@ -1169,25 +1169,26 @@ class DialogFilter implements ServerRequestInterface, ServerResponseInterface {
             SIPClientTransaction forked = this.sipStack.getForkedTransaction(response
                     .getTransactionId());
             responseEvent.setOriginalTransaction(forked);
-        } //End block
+        } 
     if(dialog != null && response.getStatusCode() != 100)        
         {
             dialog.setLastResponse(transaction, response);
             transaction.setDialog(dialog, dialog.getDialogId());
-        } //End block
+        } 
         sipProvider.handleEvent(responseEvent, transaction);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.378 -0400", hash_original_method = "45F8896428832201E8BC8983A22C5151", hash_generated_method = "616A1929BEDCE0AD6BE8B6839619A0C2")
     public String getProcessingInfo() {
 String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
         var540C13E9E156B687226421B24F2DF178_1393674542.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1393674542;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -1202,47 +1203,47 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
         {
             sipStack.getStackLogger().logDebug(
                     "PROCESSING INCOMING RESPONSE: " + sipResponse.encodeMessage());
-        } //End block
+        } 
     if(sipStack.checkBranchId() && !Utils.getInstance().responseBelongsToUs(sipResponse))        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logError("Detected stray response -- dropping");
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(listeningPoint == null)        
         {
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logDebug(
                         "Dropping message: No listening point" + " registered!");
             return;
-        } //End block
+        } 
         SipProviderImpl sipProvider = listeningPoint.getProvider();
     if(sipProvider == null)        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug("Dropping message:  no provider");
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(sipProvider.getSipListener() == null)        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug(
                         "Dropping message:  no sipListener registered!");
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         SIPClientTransaction transaction = (SIPClientTransaction) this.transactionChannel;
     if(sipDialog == null && transaction != null)        
         {
             sipDialog = transaction.getDialog(dialogID);
     if(sipDialog != null && sipDialog.getState() == DialogState.TERMINATED)            
             sipDialog = null;
-        } //End block
+        } 
     if(sipStack.isLoggingEnabled())        
         sipStack.getStackLogger().logDebug(
                     "Transaction = " + transaction + " sipDialog = " + sipDialog);
@@ -1255,15 +1256,15 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
                 return;
-            } //End block
+            } 
     if(originalFrom != null
                     && !originalFrom.equalsIgnoreCase(sipResponse.getFrom().getTag()))            
             {
     if(sipStack.isLoggingEnabled())                
                 sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
     if(sipStack.isDialogCreated(method) && sipResponse.getStatusCode() != 100
                 && sipResponse.getFrom().getTag() != null && sipResponse.getTo().getTag() != null
                 && sipDialog == null)        
@@ -1278,14 +1279,14 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
                                 (SIPClientTransaction) this.transactionChannel, sipResponse);
                         this.transactionChannel.setDialog(sipDialog, sipResponse
                                 .getDialogId(false));
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     sipDialog = this.sipStack.createDialog(sipProvider, sipResponse);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
     if(sipDialog != null && transaction == null
@@ -1297,7 +1298,7 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
                     sipStack.getStackLogger().logDebug(
                                 "status code != 200 ; statusCode = "
                                         + sipResponse.getStatusCode());
-                } //End block
+                } 
                 else
     if(sipDialog.getState() == DialogState.TERMINATED)                
                 {
@@ -1305,7 +1306,7 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
                     {
                         sipStack.getStackLogger().logDebug(
                                 "Dialog is terminated -- dropping response!");
-                    } //End block
+                    } 
     if(sipResponse.getStatusCode() / 100 == 2
                             && sipResponse.getCSeq().getMethod().equals(Request.INVITE))                    
                     {
@@ -1314,14 +1315,14 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
                             Request ackRequest = sipDialog.createAck(sipResponse.getCSeq()
                                     .getSeqNumber());
                             sipDialog.sendAck(ackRequest);
-                        } //End block
+                        } 
                         catch (Exception ex)
                         {
                             sipStack.getStackLogger().logError("Error creating ack", ex);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     return;
-                } //End block
+                } 
                 else
                 {
                     boolean ackAlreadySent = false;
@@ -1333,8 +1334,8 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
                                         sipDialog.getLastAckSent().getDialogId(false)))                        
                         {
                             ackAlreadySent = true;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(ackAlreadySent
                             && sipResponse.getCSeq().getMethod().equals(sipDialog.getMethod()))                    
                     {
@@ -1344,21 +1345,21 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
                             sipStack.getStackLogger().logDebug("resending ACK");
                             sipDialog.resendAck();
                             return;
-                        } //End block
+                        } 
                         catch (SipException ex)
                         {
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
     if(sipStack.isLoggingEnabled())        
         sipStack.getStackLogger().logDebug("sending response to TU for processing ");
     if(sipDialog != null && sipResponse.getStatusCode() != 100
                 && sipResponse.getTo().getTag() != null)        
         {
             sipDialog.setLastResponse(transaction, sipResponse);
-        } //End block
+        } 
         ResponseEventExt responseEvent = new ResponseEventExt(sipProvider,
                 (ClientTransactionExt) transaction, sipDialog, (Response) sipResponse);
     if(sipResponse.getCSeq().getMethod().equals(Request.INVITE))        
@@ -1366,10 +1367,10 @@ String var540C13E9E156B687226421B24F2DF178_1393674542 =         null;
             ClientTransactionExt originalTx = this.sipStack.getForkedTransaction(sipResponse
                     .getTransactionId());
             responseEvent.setOriginalTransaction(originalTx);
-        } //End block
+        } 
         sipProvider.handleEvent(responseEvent, transaction);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

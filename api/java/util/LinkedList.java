@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,10 +23,10 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         voidLink = new Link<E>(null, null, null);
         voidLink.previous = voidLink;
         voidLink.next = voidLink;
-        // ---------- Original Method ----------
-        //voidLink = new Link<E>(null, null, null);
-        //voidLink.previous = voidLink;
-        //voidLink.next = voidLink;
+        
+        
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
         this();
         addTaint(collection.getTaint());
         addAll(collection);
-        // ---------- Original Method ----------
-        //addAll(collection);
+        
+        
     }
 
     
@@ -53,49 +53,49 @@ public class LinkedList<E> extends AbstractSequentialList<E> implements List<E>,
 for(int i = 0;i <= location;i++)
                 {
                     link = link.next;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
 for(int i = size;i > location;i--)
                 {
                     link = link.previous;
-                } //End block
-            } //End block
+                } 
+            } 
             Link<E> previous = link.previous;
             Link<E> newLink = new Link<E>(object, previous, link);
             previous.next = newLink;
             link.previous = newLink;
             size++;
             modCount++;
-        } //End block
+        } 
         else
         {
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1385374363 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1385374363.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1385374363;
-        } //End block
-        // ---------- Original Method ----------
-        //if (location >= 0 && location <= size) {
-            //Link<E> link = voidLink;
-            //if (location < (size / 2)) {
-                //for (int i = 0; i <= location; i++) {
-                    //link = link.next;
-                //}
-            //} else {
-                //for (int i = size; i > location; i--) {
-                    //link = link.previous;
-                //}
-            //}
-            //Link<E> previous = link.previous;
-            //Link<E> newLink = new Link<E>(object, previous, link);
-            //previous.next = newLink;
-            //link.previous = newLink;
-            //size++;
-            //modCount++;
-        //} else {
-            //throw new IndexOutOfBoundsException();
-        //}
+        } 
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -106,8 +106,8 @@ for(int i = size;i > location;i--)
         boolean varCF3A1FB654444BBD2951772DE0522D74_1669171090 = (addLastImpl(object));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387741720 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_387741720;
-        // ---------- Original Method ----------
-        //return addLastImpl(object);
+        
+        
     }
 
     
@@ -123,14 +123,14 @@ for(int i = size;i > location;i--)
         boolean varB326B5062B2F0E69046810717534CB09_699732985 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1562323651 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1562323651;
-        // ---------- Original Method ----------
-        //Link<E> oldLast = voidLink.previous;
-        //Link<E> newLink = new Link<E>(object, oldLast, voidLink);
-        //voidLink.previous = newLink;
-        //oldLast.next = newLink;
-        //size++;
-        //modCount++;
-        //return true;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -144,14 +144,14 @@ for(int i = size;i > location;i--)
             IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1983567318 = new IndexOutOfBoundsException();
             varE4A00D3DB3B35ED0F12562B8AA17377A_1983567318.addTaint(taint);
             throw varE4A00D3DB3B35ED0F12562B8AA17377A_1983567318;
-        } //End block
+        } 
         int adding = collection.size();
     if(adding == 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1190387335 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1426430309 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1426430309;
-        } //End block
+        } 
         Collection<? extends E> elements = (collection == this) ?
                 new ArrayList<E>(collection) : collection;
         Link<E> previous = voidLink;
@@ -160,22 +160,22 @@ for(int i = size;i > location;i--)
 for(int i = 0;i < location;i++)
             {
                 previous = previous.next;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
 for(int i = size;i >= location;i--)
             {
                 previous = previous.previous;
-            } //End block
-        } //End block
+            } 
+        } 
         Link<E> next = previous.next;
 for(E e : elements)
         {
             Link<E> newLink = new Link<E>(e, previous, null);
             previous.next = newLink;
             previous = newLink;
-        } //End block
+        } 
         previous.next = next;
         next.previous = previous;
         size += adding;
@@ -183,8 +183,8 @@ for(E e : elements)
         boolean varB326B5062B2F0E69046810717534CB09_648920263 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1436905868 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1436905868;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -198,7 +198,7 @@ for(E e : elements)
             boolean var68934A3E9455FA72420237EB05902327_503410527 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_217810522 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_217810522;
-        } //End block
+        } 
         Collection<? extends E> elements = (collection == this) ?
                 new ArrayList<E>(collection) : collection;
         Link<E> previous = voidLink.previous;
@@ -207,7 +207,7 @@ for(E e : elements)
             Link<E> newLink = new Link<E>(e, previous, null);
             previous.next = newLink;
             previous = newLink;
-        } //End block
+        } 
         previous.next = voidLink;
         voidLink.previous = previous;
         size += adding;
@@ -215,24 +215,24 @@ for(E e : elements)
         boolean varB326B5062B2F0E69046810717534CB09_353726081 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1399091182 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1399091182;
-        // ---------- Original Method ----------
-        //int adding = collection.size();
-        //if (adding == 0) {
-            //return false;
-        //}
-        //Collection<? extends E> elements = (collection == this) ?
-                //new ArrayList<E>(collection) : collection;
-        //Link<E> previous = voidLink.previous;
-        //for (E e : elements) {
-            //Link<E> newLink = new Link<E>(e, previous, null);
-            //previous.next = newLink;
-            //previous = newLink;
-        //}
-        //previous.next = voidLink;
-        //voidLink.previous = previous;
-        //size += adding;
-        //modCount++;
-        //return true;
+        
+        
+        
+            
+        
+        
+                
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -240,8 +240,8 @@ for(E e : elements)
     public void addFirst(E object) {
         addTaint(object.getTaint());
         addFirstImpl(object);
-        // ---------- Original Method ----------
-        //addFirstImpl(object);
+        
+        
     }
 
     
@@ -257,14 +257,14 @@ for(E e : elements)
         boolean varB326B5062B2F0E69046810717534CB09_482570588 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1730617515 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1730617515;
-        // ---------- Original Method ----------
-        //Link<E> oldFirst = voidLink.next;
-        //Link<E> newLink = new Link<E>(object, voidLink, oldFirst);
-        //voidLink.next = newLink;
-        //oldFirst.previous = newLink;
-        //size++;
-        //modCount++;
-        //return true;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -272,11 +272,12 @@ for(E e : elements)
     public void addLast(E object) {
         addTaint(object.getTaint());
         addLastImpl(object);
-        // ---------- Original Method ----------
-        //addLastImpl(object);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.145 -0400", hash_original_method = "F4AB109BD4924C3D8662019AA7349AF5", hash_generated_method = "8DEF4216863EAF1EF004538968BFEB12")
     @Override
     public void clear() {
@@ -286,17 +287,18 @@ for(E e : elements)
             voidLink.next = voidLink;
             voidLink.previous = voidLink;
             modCount++;
-        } //End block
-        // ---------- Original Method ----------
-        //if (size > 0) {
-            //size = 0;
-            //voidLink.next = voidLink;
-            //voidLink.previous = voidLink;
-            //modCount++;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.146 -0400", hash_original_method = "1B9E5D872B5FE69DD2C5F33B9044F30B", hash_generated_method = "229853188A8BE753D07D6D68FD09452D")
     @SuppressWarnings("unchecked")
     @Override
@@ -312,28 +314,29 @@ for(E e : elements)
 Object var792FD495AAD83D144D2F19BF9BB22987_444036679 =             l;
             var792FD495AAD83D144D2F19BF9BB22987_444036679.addTaint(taint);
             return var792FD495AAD83D144D2F19BF9BB22987_444036679;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_783418754 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_783418754.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_783418754;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //LinkedList<E> l = (LinkedList<E>) super.clone();
-            //l.size = 0;
-            //l.voidLink = new Link<E>(null, null, null);
-            //l.voidLink.previous = l.voidLink;
-            //l.voidLink.next = l.voidLink;
-            //l.addAll(this);
-            //return l;
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.147 -0400", hash_original_method = "56D0217BC0A5D945F9BCFA2A5AF2C1AD", hash_generated_method = "41133C010069BFE2BA35A24C340CBB66")
     @Override
     public boolean contains(Object object) {
@@ -349,10 +352,10 @@ Object var792FD495AAD83D144D2F19BF9BB22987_444036679 =             l;
                     boolean varB326B5062B2F0E69046810717534CB09_111632648 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149610872 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_149610872;
-                } //End block
+                } 
                 link = link.next;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             while
@@ -363,31 +366,31 @@ Object var792FD495AAD83D144D2F19BF9BB22987_444036679 =             l;
                     boolean varB326B5062B2F0E69046810717534CB09_1286119891 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1895144633 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1895144633;
-                } //End block
+                } 
                 link = link.next;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1714122100 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1792417620 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1792417620;
-        // ---------- Original Method ----------
-        //Link<E> link = voidLink.next;
-        //if (object != null) {
-            //while (link != voidLink) {
-                //if (object.equals(link.data)) {
-                    //return true;
-                //}
-                //link = link.next;
-            //}
-        //} else {
-            //while (link != voidLink) {
-                //if (link.data == null) {
-                    //return true;
-                //}
-                //link = link.next;
-            //}
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -403,37 +406,37 @@ Object var792FD495AAD83D144D2F19BF9BB22987_444036679 =             l;
 for(int i = 0;i <= location;i++)
                 {
                     link = link.next;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
 for(int i = size;i > location;i--)
                 {
                     link = link.previous;
-                } //End block
-            } //End block
+                } 
+            } 
 E var3CF301EF1455302B1A7564AEE107BC17_1815463061 =             link.data;
             var3CF301EF1455302B1A7564AEE107BC17_1815463061.addTaint(taint);
             return var3CF301EF1455302B1A7564AEE107BC17_1815463061;
-        } //End block
+        } 
         IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1847441768 = new IndexOutOfBoundsException();
         varE4A00D3DB3B35ED0F12562B8AA17377A_1847441768.addTaint(taint);
         throw varE4A00D3DB3B35ED0F12562B8AA17377A_1847441768;
-        // ---------- Original Method ----------
-        //if (location >= 0 && location < size) {
-            //Link<E> link = voidLink;
-            //if (location < (size / 2)) {
-                //for (int i = 0; i <= location; i++) {
-                    //link = link.next;
-                //}
-            //} else {
-                //for (int i = size; i > location; i--) {
-                    //link = link.previous;
-                //}
-            //}
-            //return link.data;
-        //}
-        //throw new IndexOutOfBoundsException();
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -442,8 +445,8 @@ E var3CF301EF1455302B1A7564AEE107BC17_1815463061 =             link.data;
 E var47B6E8AF818F6390E3E49621F01F780F_1665189721 =         getFirstImpl();
         var47B6E8AF818F6390E3E49621F01F780F_1665189721.addTaint(taint);
         return var47B6E8AF818F6390E3E49621F01F780F_1665189721;
-        // ---------- Original Method ----------
-        //return getFirstImpl();
+        
+        
     }
 
     
@@ -455,16 +458,16 @@ E var47B6E8AF818F6390E3E49621F01F780F_1665189721 =         getFirstImpl();
 E var32190092A31795B8431D755C5C48DC21_1443691860 =             first.data;
             var32190092A31795B8431D755C5C48DC21_1443691860.addTaint(taint);
             return var32190092A31795B8431D755C5C48DC21_1443691860;
-        } //End block
+        } 
         NoSuchElementException var28D00AB599969908D71F102AF992D49A_928297091 = new NoSuchElementException();
         var28D00AB599969908D71F102AF992D49A_928297091.addTaint(taint);
         throw var28D00AB599969908D71F102AF992D49A_928297091;
-        // ---------- Original Method ----------
-        //Link<E> first = voidLink.next;
-        //if (first != voidLink) {
-            //return first.data;
-        //}
-        //throw new NoSuchElementException();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -476,19 +479,20 @@ E var32190092A31795B8431D755C5C48DC21_1443691860 =             first.data;
 E varB1F122C9C1AAC8A4CFF306CF36360451_413687342 =             last.data;
             varB1F122C9C1AAC8A4CFF306CF36360451_413687342.addTaint(taint);
             return varB1F122C9C1AAC8A4CFF306CF36360451_413687342;
-        } //End block
+        } 
         NoSuchElementException var28D00AB599969908D71F102AF992D49A_329310089 = new NoSuchElementException();
         var28D00AB599969908D71F102AF992D49A_329310089.addTaint(taint);
         throw var28D00AB599969908D71F102AF992D49A_329310089;
-        // ---------- Original Method ----------
-        //Link<E> last = voidLink.previous;
-        //if (last != voidLink) {
-            //return last.data;
-        //}
-        //throw new NoSuchElementException();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.150 -0400", hash_original_method = "223AFBB612F259C1ECF52502B2C38D06", hash_generated_method = "7D8275B08F501A500774D6A1D9DE9AC7")
     @Override
     public int indexOf(Object object) {
@@ -505,11 +509,11 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_413687342 =             last.data;
                     int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_1160818344 = (pos);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373793674 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_373793674;
-                } //End block
+                } 
                 link = link.next;
                 pos++;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             while
@@ -520,38 +524,39 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_413687342 =             last.data;
                     int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_1235126192 = (pos);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645325442 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_645325442;
-                } //End block
+                } 
                 link = link.next;
                 pos++;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_633021797 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924354143 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_924354143;
-        // ---------- Original Method ----------
-        //int pos = 0;
-        //Link<E> link = voidLink.next;
-        //if (object != null) {
-            //while (link != voidLink) {
-                //if (object.equals(link.data)) {
-                    //return pos;
-                //}
-                //link = link.next;
-                //pos++;
-            //}
-        //} else {
-            //while (link != voidLink) {
-                //if (link.data == null) {
-                    //return pos;
-                //}
-                //link = link.next;
-                //pos++;
-            //}
-        //}
-        //return -1;
+        
+        
+        
+        
+            
+                
+                    
+                
+                
+                
+            
+        
+            
+                
+                    
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.151 -0400", hash_original_method = "C5BD92F697D9C0CCDCACCA1E644478EA", hash_generated_method = "50DD51D1457B97DEF566E82A3E477DD4")
     @Override
     public int lastIndexOf(Object object) {
@@ -569,10 +574,10 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_413687342 =             last.data;
                     int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_2061566777 = (pos);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249015396 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249015396;
-                } //End block
+                } 
                 link = link.previous;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             while
@@ -584,34 +589,34 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_413687342 =             last.data;
                     int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_1998410349 = (pos);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1018196895 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1018196895;
-                } //End block
+                } 
                 link = link.previous;
-            } //End block
-        } //End block
+            } 
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1860824897 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376634203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_376634203;
-        // ---------- Original Method ----------
-        //int pos = size;
-        //Link<E> link = voidLink.previous;
-        //if (object != null) {
-            //while (link != voidLink) {
-                //pos--;
-                //if (object.equals(link.data)) {
-                    //return pos;
-                //}
-                //link = link.previous;
-            //}
-        //} else {
-            //while (link != voidLink) {
-                //pos--;
-                //if (link.data == null) {
-                    //return pos;
-                //}
-                //link = link.previous;
-            //}
-        //}
-        //return -1;
+        
+        
+        
+        
+            
+                
+                
+                    
+                
+                
+            
+        
+            
+                
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -622,8 +627,8 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_413687342 =             last.data;
 ListIterator<E> varF5869D7C478B5AD13C9F94EE40954182_37759800 =         new LinkIterator<E>(this, location);
         varF5869D7C478B5AD13C9F94EE40954182_37759800.addTaint(taint);
         return varF5869D7C478B5AD13C9F94EE40954182_37759800;
-        // ---------- Original Method ----------
-        //return new LinkIterator<E>(this, location);
+        
+        
     }
 
     
@@ -639,15 +644,15 @@ ListIterator<E> varF5869D7C478B5AD13C9F94EE40954182_37759800 =         new LinkI
 for(int i = 0;i <= location;i++)
                 {
                     link = link.next;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
 for(int i = size;i > location;i--)
                 {
                     link = link.previous;
-                } //End block
-            } //End block
+                } 
+            } 
             Link<E> previous = link.previous;
             Link<E> next = link.next;
             previous.next = next;
@@ -657,34 +662,35 @@ for(int i = size;i > location;i--)
 E var3CF301EF1455302B1A7564AEE107BC17_257217871 =             link.data;
             var3CF301EF1455302B1A7564AEE107BC17_257217871.addTaint(taint);
             return var3CF301EF1455302B1A7564AEE107BC17_257217871;
-        } //End block
+        } 
         IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_357976353 = new IndexOutOfBoundsException();
         varE4A00D3DB3B35ED0F12562B8AA17377A_357976353.addTaint(taint);
         throw varE4A00D3DB3B35ED0F12562B8AA17377A_357976353;
-        // ---------- Original Method ----------
-        //if (location >= 0 && location < size) {
-            //Link<E> link = voidLink;
-            //if (location < (size / 2)) {
-                //for (int i = 0; i <= location; i++) {
-                    //link = link.next;
-                //}
-            //} else {
-                //for (int i = size; i > location; i--) {
-                    //link = link.previous;
-                //}
-            //}
-            //Link<E> previous = link.previous;
-            //Link<E> next = link.next;
-            //previous.next = next;
-            //next.previous = previous;
-            //size--;
-            //modCount++;
-            //return link.data;
-        //}
-        //throw new IndexOutOfBoundsException();
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.153 -0400", hash_original_method = "E895D44AE5728A8CB5D4093F924DE858", hash_generated_method = "5EA15F1B208B20BE26FA4101580D18B0")
     @Override
     public boolean remove(Object object) {
@@ -692,8 +698,8 @@ E var3CF301EF1455302B1A7564AEE107BC17_257217871 =             link.data;
         boolean var36088FA245EBE6875E99FB01345160D0_411633239 = (removeFirstOccurrenceImpl(object));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_790471098 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_790471098;
-        // ---------- Original Method ----------
-        //return removeFirstOccurrenceImpl(object);
+        
+        
     }
 
     
@@ -702,8 +708,8 @@ E var3CF301EF1455302B1A7564AEE107BC17_257217871 =             link.data;
 E varAD3301876DF8721CEF17AFAABE29CC10_415190754 =         removeFirstImpl();
         varAD3301876DF8721CEF17AFAABE29CC10_415190754.addTaint(taint);
         return varAD3301876DF8721CEF17AFAABE29CC10_415190754;
-        // ---------- Original Method ----------
-        //return removeFirstImpl();
+        
+        
     }
 
     
@@ -720,21 +726,21 @@ E varAD3301876DF8721CEF17AFAABE29CC10_415190754 =         removeFirstImpl();
 E var32190092A31795B8431D755C5C48DC21_1805736002 =             first.data;
             var32190092A31795B8431D755C5C48DC21_1805736002.addTaint(taint);
             return var32190092A31795B8431D755C5C48DC21_1805736002;
-        } //End block
+        } 
         NoSuchElementException var28D00AB599969908D71F102AF992D49A_1634376294 = new NoSuchElementException();
         var28D00AB599969908D71F102AF992D49A_1634376294.addTaint(taint);
         throw var28D00AB599969908D71F102AF992D49A_1634376294;
-        // ---------- Original Method ----------
-        //Link<E> first = voidLink.next;
-        //if (first != voidLink) {
-            //Link<E> next = first.next;
-            //voidLink.next = next;
-            //next.previous = voidLink;
-            //size--;
-            //modCount++;
-            //return first.data;
-        //}
-        //throw new NoSuchElementException();
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -743,8 +749,8 @@ E var32190092A31795B8431D755C5C48DC21_1805736002 =             first.data;
 E var9B185E513539753A1568AE8CD0F09784_337914097 =         removeLastImpl();
         var9B185E513539753A1568AE8CD0F09784_337914097.addTaint(taint);
         return var9B185E513539753A1568AE8CD0F09784_337914097;
-        // ---------- Original Method ----------
-        //return removeLastImpl();
+        
+        
     }
 
     
@@ -761,21 +767,21 @@ E var9B185E513539753A1568AE8CD0F09784_337914097 =         removeLastImpl();
 E varB1F122C9C1AAC8A4CFF306CF36360451_412724213 =             last.data;
             varB1F122C9C1AAC8A4CFF306CF36360451_412724213.addTaint(taint);
             return varB1F122C9C1AAC8A4CFF306CF36360451_412724213;
-        } //End block
+        } 
         NoSuchElementException var28D00AB599969908D71F102AF992D49A_1411486751 = new NoSuchElementException();
         var28D00AB599969908D71F102AF992D49A_1411486751.addTaint(taint);
         throw var28D00AB599969908D71F102AF992D49A_1411486751;
-        // ---------- Original Method ----------
-        //Link<E> last = voidLink.previous;
-        //if (last != voidLink) {
-            //Link<E> previous = last.previous;
-            //voidLink.previous = previous;
-            //previous.next = voidLink;
-            //size--;
-            //modCount++;
-            //return last.data;
-        //}
-        //throw new NoSuchElementException();
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -784,8 +790,8 @@ E varB1F122C9C1AAC8A4CFF306CF36360451_412724213 =             last.data;
 Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_495129282 =         new ReverseLinkIterator<E>(this);
         var3C0C25881C2D4E8C7AFB7E0B8222F14B_495129282.addTaint(taint);
         return var3C0C25881C2D4E8C7AFB7E0B8222F14B_495129282;
-        // ---------- Original Method ----------
-        //return new ReverseLinkIterator<E>(this);
+        
+        
     }
 
     
@@ -795,8 +801,8 @@ Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_495129282 =         new ReverseL
         boolean var859A5F6C4110FD060308B4761657EBA7_2142746220 = (addFirstImpl(e));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1764566900 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1764566900;
-        // ---------- Original Method ----------
-        //return addFirstImpl(e);
+        
+        
     }
 
     
@@ -806,8 +812,8 @@ Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_495129282 =         new ReverseL
         boolean var61B56F913C2670389CAB1654F5BA1D28_604773610 = (addLastImpl(e));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_704423274 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_704423274;
-        // ---------- Original Method ----------
-        //return addLastImpl(e);
+        
+        
     }
 
     
@@ -816,8 +822,8 @@ Iterator<E> var3C0C25881C2D4E8C7AFB7E0B8222F14B_495129282 =         new ReverseL
 E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_368856789 =         peekFirstImpl();
         varC5D6CF62AE624C33AEE3FCED2C6BFAA2_368856789.addTaint(taint);
         return varC5D6CF62AE624C33AEE3FCED2C6BFAA2_368856789;
-        // ---------- Original Method ----------
-        //return peekFirstImpl();
+        
+        
     }
 
     
@@ -827,9 +833,9 @@ E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_368856789 =         peekFirstImpl();
 E var97150CAA35F90974D4775F30988DD726_1409479672 =         (last == voidLink) ? null : last.data;
         var97150CAA35F90974D4775F30988DD726_1409479672.addTaint(taint);
         return var97150CAA35F90974D4775F30988DD726_1409479672;
-        // ---------- Original Method ----------
-        //Link<E> last = voidLink.previous;
-        //return (last == voidLink) ? null : last.data;
+        
+        
+        
     }
 
     
@@ -838,8 +844,8 @@ E var97150CAA35F90974D4775F30988DD726_1409479672 =         (last == voidLink) ? 
 E var76EAE988EE17492C661288638E6F6F40_90204101 =         (size == 0) ? null : removeFirstImpl();
         var76EAE988EE17492C661288638E6F6F40_90204101.addTaint(taint);
         return var76EAE988EE17492C661288638E6F6F40_90204101;
-        // ---------- Original Method ----------
-        //return (size == 0) ? null : removeFirstImpl();
+        
+        
     }
 
     
@@ -848,8 +854,8 @@ E var76EAE988EE17492C661288638E6F6F40_90204101 =         (size == 0) ? null : re
 E var53B0A53ED6225EB3767DD5FE637D8E88_1358413712 =         (size == 0) ? null : removeLastImpl();
         var53B0A53ED6225EB3767DD5FE637D8E88_1358413712.addTaint(taint);
         return var53B0A53ED6225EB3767DD5FE637D8E88_1358413712;
-        // ---------- Original Method ----------
-        //return (size == 0) ? null : removeLastImpl();
+        
+        
     }
 
     
@@ -858,8 +864,8 @@ E var53B0A53ED6225EB3767DD5FE637D8E88_1358413712 =         (size == 0) ? null : 
 E varAD3301876DF8721CEF17AFAABE29CC10_1663817210 =         removeFirstImpl();
         varAD3301876DF8721CEF17AFAABE29CC10_1663817210.addTaint(taint);
         return varAD3301876DF8721CEF17AFAABE29CC10_1663817210;
-        // ---------- Original Method ----------
-        //return removeFirstImpl();
+        
+        
     }
 
     
@@ -867,22 +873,24 @@ E varAD3301876DF8721CEF17AFAABE29CC10_1663817210 =         removeFirstImpl();
     public void push(E e) {
         addTaint(e.getTaint());
         addFirstImpl(e);
-        // ---------- Original Method ----------
-        //addFirstImpl(e);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.158 -0400", hash_original_method = "87160631C9EB1EFA1DB767740655C072", hash_generated_method = "D82E9401E0B969C3EA2432E1790373E1")
     public boolean removeFirstOccurrence(Object o) {
         addTaint(o.getTaint());
         boolean var8F395D378673FF03D3E905BD5760116F_2089798133 = (removeFirstOccurrenceImpl(o));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1020211660 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1020211660;
-        // ---------- Original Method ----------
-        //return removeFirstOccurrenceImpl(o);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.158 -0400", hash_original_method = "1733EDDF12DE29E16D5005CF30B5972D", hash_generated_method = "9DCDD3F568A26D0BB5297516AD073829")
     public boolean removeLastOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -890,12 +898,13 @@ E varAD3301876DF8721CEF17AFAABE29CC10_1663817210 =         removeFirstImpl();
         boolean var3365F736CE3B87EEC5D86CE6612A84A0_806559445 = (removeOneOccurrence(o, iter));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1174537166 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1174537166;
-        // ---------- Original Method ----------
-        //Iterator<E> iter = new ReverseLinkIterator<E>(this);
-        //return removeOneOccurrence(o, iter);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.159 -0400", hash_original_method = "BE1ED77C9E5B42F2AAE1F87EC7415C20", hash_generated_method = "78FFCAC407211BAC87E50727F861A96A")
     private boolean removeFirstOccurrenceImpl(Object o) {
         addTaint(o.getTaint());
@@ -903,9 +912,9 @@ E varAD3301876DF8721CEF17AFAABE29CC10_1663817210 =         removeFirstImpl();
         boolean var3365F736CE3B87EEC5D86CE6612A84A0_1129444699 = (removeOneOccurrence(o, iter));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_586096473 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_586096473;
-        // ---------- Original Method ----------
-        //Iterator<E> iter = new LinkIterator<E>(this, 0);
-        //return removeOneOccurrence(o, iter);
+        
+        
+        
     }
 
     
@@ -923,20 +932,20 @@ E varAD3301876DF8721CEF17AFAABE29CC10_1663817210 =         removeFirstImpl();
                 boolean varB326B5062B2F0E69046810717534CB09_490682183 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057582344 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057582344;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_643909519 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864390018 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_864390018;
-        // ---------- Original Method ----------
-        //while (iter.hasNext()) {
-            //E element = iter.next();
-            //if (o == null ? element == null : o.equals(element)) {
-                //iter.remove();
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -953,52 +962,53 @@ E varAD3301876DF8721CEF17AFAABE29CC10_1663817210 =         removeFirstImpl();
 for(int i = 0;i <= location;i++)
                 {
                     link = link.next;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
 for(int i = size;i > location;i--)
                 {
                     link = link.previous;
-                } //End block
-            } //End block
+                } 
+            } 
             E result = link.data;
             link.data = object;
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1249774029 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1249774029.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1249774029;
-        } //End block
+        } 
         IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1707239958 = new IndexOutOfBoundsException();
         varE4A00D3DB3B35ED0F12562B8AA17377A_1707239958.addTaint(taint);
         throw varE4A00D3DB3B35ED0F12562B8AA17377A_1707239958;
-        // ---------- Original Method ----------
-        //if (location >= 0 && location < size) {
-            //Link<E> link = voidLink;
-            //if (location < (size / 2)) {
-                //for (int i = 0; i <= location; i++) {
-                    //link = link.next;
-                //}
-            //} else {
-                //for (int i = size; i > location; i--) {
-                    //link = link.previous;
-                //}
-            //}
-            //E result = link.data;
-            //link.data = object;
-            //return result;
-        //}
-        //throw new IndexOutOfBoundsException();
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.161 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "C688996896AC3945036F5DAAC84A44DE")
     @Override
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_351808335 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487476198 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_487476198;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -1008,8 +1018,8 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1249774029 =             result;
         boolean var29D0A13D767EBEC9C1FE76208DE66DF4_151973312 = (addLastImpl(o));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_527803030 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_527803030;
-        // ---------- Original Method ----------
-        //return addLastImpl(o);
+        
+        
     }
 
     
@@ -1018,8 +1028,8 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1249774029 =             result;
 E varBD3DE60B97A4CAE572BB184D74D72321_427491331 =         size == 0 ? null : removeFirst();
         varBD3DE60B97A4CAE572BB184D74D72321_427491331.addTaint(taint);
         return varBD3DE60B97A4CAE572BB184D74D72321_427491331;
-        // ---------- Original Method ----------
-        //return size == 0 ? null : removeFirst();
+        
+        
     }
 
     
@@ -1028,8 +1038,8 @@ E varBD3DE60B97A4CAE572BB184D74D72321_427491331 =         size == 0 ? null : rem
 E varAD3301876DF8721CEF17AFAABE29CC10_334140247 =         removeFirstImpl();
         varAD3301876DF8721CEF17AFAABE29CC10_334140247.addTaint(taint);
         return varAD3301876DF8721CEF17AFAABE29CC10_334140247;
-        // ---------- Original Method ----------
-        //return removeFirstImpl();
+        
+        
     }
 
     
@@ -1038,8 +1048,8 @@ E varAD3301876DF8721CEF17AFAABE29CC10_334140247 =         removeFirstImpl();
 E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_1397068295 =         peekFirstImpl();
         varC5D6CF62AE624C33AEE3FCED2C6BFAA2_1397068295.addTaint(taint);
         return varC5D6CF62AE624C33AEE3FCED2C6BFAA2_1397068295;
-        // ---------- Original Method ----------
-        //return peekFirstImpl();
+        
+        
     }
 
     
@@ -1049,9 +1059,9 @@ E varC5D6CF62AE624C33AEE3FCED2C6BFAA2_1397068295 =         peekFirstImpl();
 E varCFFADB90EC8B0C6958D9CAB391DA534D_2521820 =         first == voidLink ? null : first.data;
         varCFFADB90EC8B0C6958D9CAB391DA534D_2521820.addTaint(taint);
         return varCFFADB90EC8B0C6958D9CAB391DA534D_2521820;
-        // ---------- Original Method ----------
-        //Link<E> first = voidLink.next;
-        //return first == voidLink ? null : first.data;
+        
+        
+        
     }
 
     
@@ -1060,11 +1070,12 @@ E varCFFADB90EC8B0C6958D9CAB391DA534D_2521820 =         first == voidLink ? null
 E var47B6E8AF818F6390E3E49621F01F780F_1431351391 =         getFirstImpl();
         var47B6E8AF818F6390E3E49621F01F780F_1431351391.addTaint(taint);
         return var47B6E8AF818F6390E3E49621F01F780F_1431351391;
-        // ---------- Original Method ----------
-        //return getFirstImpl();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.163 -0400", hash_original_method = "4C8EA5672445A0C074E2691E7533B645", hash_generated_method = "BFDF9E54CF7BB4C625564E37DF37D00C")
     @Override
     public Object[] toArray() {
@@ -1076,19 +1087,19 @@ E var47B6E8AF818F6390E3E49621F01F780F_1431351391 =         getFirstImpl();
         {
             contents[index++] = link.data;
             link = link.next;
-        } //End block
+        } 
 Object[] var5DC9C33EDB9F81CF1216538024B770BE_1705126076 =         contents;
         var5DC9C33EDB9F81CF1216538024B770BE_1705126076.addTaint(taint);
         return var5DC9C33EDB9F81CF1216538024B770BE_1705126076;
-        // ---------- Original Method ----------
-        //int index = 0;
-        //Object[] contents = new Object[size];
-        //Link<E> link = voidLink.next;
-        //while (link != voidLink) {
-            //contents[index++] = link.data;
-            //link = link.next;
-        //}
-        //return contents;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1102,39 +1113,40 @@ Object[] var5DC9C33EDB9F81CF1216538024B770BE_1705126076 =         contents;
         {
             Class<?> ct = contents.getClass().getComponentType();
             contents = (T[]) Array.newInstance(ct, size);
-        } //End block
+        } 
         Link<E> link = voidLink.next;
         while
 (link != voidLink)        
         {
             contents[index++] = (T) link.data;
             link = link.next;
-        } //End block
+        } 
     if(index < contents.length)        
         {
             contents[index] = null;
-        } //End block
+        } 
 T[] var5DC9C33EDB9F81CF1216538024B770BE_1304057653 =         contents;
         var5DC9C33EDB9F81CF1216538024B770BE_1304057653.addTaint(taint);
         return var5DC9C33EDB9F81CF1216538024B770BE_1304057653;
-        // ---------- Original Method ----------
-        //int index = 0;
-        //if (size > contents.length) {
-            //Class<?> ct = contents.getClass().getComponentType();
-            //contents = (T[]) Array.newInstance(ct, size);
-        //}
-        //Link<E> link = voidLink.next;
-        //while (link != voidLink) {
-            //contents[index++] = (T) link.data;
-            //link = link.next;
-        //}
-        //if (index < contents.length) {
-            //contents[index] = null;
-        //}
-        //return contents;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.164 -0400", hash_original_method = "6BB9A441F12D3E8CACB448F2BFF70164", hash_generated_method = "15C731CFA7712C533369F8FFD15F051E")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1145,17 +1157,18 @@ T[] var5DC9C33EDB9F81CF1216538024B770BE_1304057653 =         contents;
 (it.hasNext())        
         {
             stream.writeObject(it.next());
-        } //End block
-        // ---------- Original Method ----------
-        //stream.defaultWriteObject();
-        //stream.writeInt(size);
-        //Iterator<E> it = iterator();
-        //while (it.hasNext()) {
-            //stream.writeObject(it.next());
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.165 -0400", hash_original_method = "7A7BB5A4D858D82384B74EA358B45BD7", hash_generated_method = "581C710E4AAE3D3860B5F9D074085890")
     @SuppressWarnings("unchecked")
     private void readObject(ObjectInputStream stream) throws IOException,
@@ -1169,21 +1182,21 @@ for(int i = size;--i >= 0;)
             Link<E> nextLink = new Link<E>((E) stream.readObject(), link, null);
             link.next = nextLink;
             link = nextLink;
-        } //End block
+        } 
         link.next = voidLink;
         voidLink.previous = link;
-        // ---------- Original Method ----------
-        //stream.defaultReadObject();
-        //size = stream.readInt();
-        //voidLink = new Link<E>(null, null, null);
-        //Link<E> link = voidLink;
-        //for (int i = size; --i >= 0;) {
-            //Link<E> nextLink = new Link<E>((E) stream.readObject(), link, null);
-            //link.next = nextLink;
-            //link = nextLink;
-        //}
-        //link.next = voidLink;
-        //voidLink.previous = link;
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
     }
 
     
@@ -1203,10 +1216,10 @@ for(int i = size;--i >= 0;)
             data = o;
             previous = p;
             next = n;
-            // ---------- Original Method ----------
-            //data = o;
-            //previous = p;
-            //next = n;
+            
+            
+            
+            
         }
 
         
@@ -1244,39 +1257,39 @@ for(int i = size;--i >= 0;)
 for(pos = -1;pos + 1 < location;pos++)
                     {
                         link = link.next;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
 for(pos = list.size;pos >= location;pos--)
                     {
                         link = link.previous;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
                 IndexOutOfBoundsException varE4A00D3DB3B35ED0F12562B8AA17377A_1335887839 = new IndexOutOfBoundsException();
                 varE4A00D3DB3B35ED0F12562B8AA17377A_1335887839.addTaint(taint);
                 throw varE4A00D3DB3B35ED0F12562B8AA17377A_1335887839;
-            } //End block
-            // ---------- Original Method ----------
-            //list = object;
-            //expectedModCount = list.modCount;
-            //if (location >= 0 && location <= list.size) {
-                //link = list.voidLink;
-                //if (location < list.size / 2) {
-                    //for (pos = -1; pos + 1 < location; pos++) {
-                        //link = link.next;
-                    //}
-                //} else {
-                    //for (pos = list.size; pos >= location; pos--) {
-                        //link = link.previous;
-                    //}
-                //}
-            //} else {
-                //throw new IndexOutOfBoundsException();
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                
+                    
+                        
+                    
+                
+            
+                
+            
         }
 
         
@@ -1295,48 +1308,50 @@ for(pos = list.size;pos >= location;pos--)
                 expectedModCount++;
                 list.size++;
                 list.modCount++;
-            } //End block
+            } 
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1115869234 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_1115869234.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_1115869234;
-            } //End block
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //Link<ET> next = link.next;
-                //Link<ET> newLink = new Link<ET>(object, link, next);
-                //link.next = newLink;
-                //next.previous = newLink;
-                //link = newLink;
-                //lastLink = null;
-                //pos++;
-                //expectedModCount++;
-                //list.size++;
-                //list.modCount++;
-            //} else {
-                //throw new ConcurrentModificationException();
-            //}
+            } 
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.170 -0400", hash_original_method = "D12271F7604D5FEC65FB34942C4AE52F", hash_generated_method = "8A312B8563946FEB2D390CD4A97139C7")
         public boolean hasNext() {
             boolean varAD6FE720EFC75BB0F476FCE3EDA7D791_35824225 = (link.next != list.voidLink);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_974906675 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_974906675;
-            // ---------- Original Method ----------
-            //return link.next != list.voidLink;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.170 -0400", hash_original_method = "D62F69678251E4F27FB63666837CF4D1", hash_generated_method = "F10E054B031362561CC9C093F1CB4BBB")
         public boolean hasPrevious() {
             boolean var7402B0DEA06103F10127D3EB592F398E_354738054 = (link != list.voidLink);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1846610712 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1846610712;
-            // ---------- Original Method ----------
-            //return link != list.voidLink;
+            
+            
         }
 
         
@@ -1352,35 +1367,36 @@ for(pos = list.size;pos >= location;pos--)
 ET var3CF301EF1455302B1A7564AEE107BC17_591142894 =                     link.data;
                     var3CF301EF1455302B1A7564AEE107BC17_591142894.addTaint(taint);
                     return var3CF301EF1455302B1A7564AEE107BC17_591142894;
-                } //End block
+                } 
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_1607848910 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_1607848910.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_1607848910;
-            } //End block
+            } 
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_2124777599 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_2124777599.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_2124777599;
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //LinkedList.Link<ET> next = link.next;
-                //if (next != list.voidLink) {
-                    //lastLink = link = next;
-                    //pos++;
-                    //return link.data;
-                //}
-                //throw new NoSuchElementException();
-            //}
-            //throw new ConcurrentModificationException();
+            
+            
+                
+                
+                    
+                    
+                    
+                
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.171 -0400", hash_original_method = "1B59C01DCB2067B0BBD0025D75B60071", hash_generated_method = "AFC31DBE5517D772461190DD9EEE3203")
         public int nextIndex() {
             int varF9B06598B7E41FEBC3492F881D35DA6D_840699141 = (pos + 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061226192 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2061226192;
-            // ---------- Original Method ----------
-            //return pos + 1;
+            
+            
         }
 
         
@@ -1396,35 +1412,36 @@ ET var3CF301EF1455302B1A7564AEE107BC17_591142894 =                     link.data
 ET var31C1257716FF314002B1C1E06C0E652A_854666762 =                     lastLink.data;
                     var31C1257716FF314002B1C1E06C0E652A_854666762.addTaint(taint);
                     return var31C1257716FF314002B1C1E06C0E652A_854666762;
-                } //End block
+                } 
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_179155651 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_179155651.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_179155651;
-            } //End block
+            } 
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1726398932 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_1726398932.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_1726398932;
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //if (link != list.voidLink) {
-                    //lastLink = link;
-                    //link = link.previous;
-                    //pos--;
-                    //return lastLink.data;
-                //}
-                //throw new NoSuchElementException();
-            //}
-            //throw new ConcurrentModificationException();
+            
+            
+                
+                    
+                    
+                    
+                    
+                
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.172 -0400", hash_original_method = "DC75AA0325D63F3F64774210ED43B204", hash_generated_method = "2D85E66FBF167453577DFF508BACE2D7")
         public int previousIndex() {
             int var5E0BDCBDDCCCA4D66D74BA8C1CEE1A68_719298862 = (pos);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1786161184 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1786161184;
-            // ---------- Original Method ----------
-            //return pos;
+            
+            
         }
 
         
@@ -1441,47 +1458,47 @@ ET var31C1257716FF314002B1C1E06C0E652A_854666762 =                     lastLink.
     if(lastLink == link)                    
                     {
                         pos--;
-                    } //End block
+                    } 
                     link = previous;
                     lastLink = null;
                     expectedModCount++;
                     list.size--;
                     list.modCount++;
-                } //End block
+                } 
                 else
                 {
                     IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1784566709 = new IllegalStateException();
                     varC311A989A119B96A6232C22ABFE87C25_1784566709.addTaint(taint);
                     throw varC311A989A119B96A6232C22ABFE87C25_1784566709;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_775469462 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_775469462.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_775469462;
-            } //End block
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //if (lastLink != null) {
-                    //Link<ET> next = lastLink.next;
-                    //Link<ET> previous = lastLink.previous;
-                    //next.previous = previous;
-                    //previous.next = next;
-                    //if (lastLink == link) {
-                        //pos--;
-                    //}
-                    //link = previous;
-                    //lastLink = null;
-                    //expectedModCount++;
-                    //list.size--;
-                    //list.modCount++;
-                //} else {
-                    //throw new IllegalStateException();
-                //}
-            //} else {
-                //throw new ConcurrentModificationException();
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                        
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                    
+                
+            
+                
+            
         }
 
         
@@ -1492,30 +1509,30 @@ ET var31C1257716FF314002B1C1E06C0E652A_854666762 =                     lastLink.
     if(lastLink != null)                
                 {
                     lastLink.data = object;
-                } //End block
+                } 
                 else
                 {
                     IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1049309281 = new IllegalStateException();
                     varC311A989A119B96A6232C22ABFE87C25_1049309281.addTaint(taint);
                     throw varC311A989A119B96A6232C22ABFE87C25_1049309281;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_373780927 = new ConcurrentModificationException();
                 var779BA6969BD29E5F2D0448781C543B65_373780927.addTaint(taint);
                 throw var779BA6969BD29E5F2D0448781C543B65_373780927;
-            } //End block
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //if (lastLink != null) {
-                    //lastLink.data = object;
-                //} else {
-                    //throw new IllegalStateException();
-                //}
-            //} else {
-                //throw new ConcurrentModificationException();
-            //}
+            } 
+            
+            
+                
+                    
+                
+                    
+                
+            
+                
+            
         }
 
         
@@ -1543,21 +1560,22 @@ ET var31C1257716FF314002B1C1E06C0E652A_854666762 =                     lastLink.
             expectedModCount = list.modCount;
             link = list.voidLink;
             canRemove = false;
-            // ---------- Original Method ----------
-            //list = linkedList;
-            //expectedModCount = list.modCount;
-            //link = list.voidLink;
-            //canRemove = false;
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:05.175 -0400", hash_original_method = "683C5349A490B93F6F23CFDE8DA49A7E", hash_generated_method = "532D70150E0D69E4284DF666CE2FA31D")
         public boolean hasNext() {
             boolean var3FF1ABEDF980308C41F7F499B74280AE_400027452 = (link.previous != list.voidLink);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1529916138 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1529916138;
-            // ---------- Original Method ----------
-            //return link.previous != list.voidLink;
+            
+            
         }
 
         
@@ -1572,24 +1590,24 @@ ET var31C1257716FF314002B1C1E06C0E652A_854666762 =                     lastLink.
 ET var3CF301EF1455302B1A7564AEE107BC17_440829307 =                     link.data;
                     var3CF301EF1455302B1A7564AEE107BC17_440829307.addTaint(taint);
                     return var3CF301EF1455302B1A7564AEE107BC17_440829307;
-                } //End block
+                } 
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_2118222095 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_2118222095.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_2118222095;
-            } //End block
+            } 
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_1487658398 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_1487658398.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_1487658398;
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //if (hasNext()) {
-                    //link = link.previous;
-                    //canRemove = true;
-                    //return link.data;
-                //}
-                //throw new NoSuchElementException();
-            //}
-            //throw new ConcurrentModificationException();
+            
+            
+                
+                    
+                    
+                    
+                
+                
+            
+            
         }
 
         
@@ -1609,31 +1627,31 @@ ET var3CF301EF1455302B1A7564AEE107BC17_440829307 =                     link.data
                     expectedModCount++;
                     canRemove = false;
                     return;
-                } //End block
+                } 
                 IllegalStateException varC311A989A119B96A6232C22ABFE87C25_401848687 = new IllegalStateException();
                 varC311A989A119B96A6232C22ABFE87C25_401848687.addTaint(taint);
                 throw varC311A989A119B96A6232C22ABFE87C25_401848687;
-            } //End block
+            } 
             ConcurrentModificationException var779BA6969BD29E5F2D0448781C543B65_283121275 = new ConcurrentModificationException();
             var779BA6969BD29E5F2D0448781C543B65_283121275.addTaint(taint);
             throw var779BA6969BD29E5F2D0448781C543B65_283121275;
-            // ---------- Original Method ----------
-            //if (expectedModCount == list.modCount) {
-                //if (canRemove) {
-                    //Link<ET> next = link.previous;
-                    //Link<ET> previous = link.next;
-                    //next.next = previous;
-                    //previous.previous = next;
-                    //link = previous;
-                    //list.size--;
-                    //list.modCount++;
-                    //expectedModCount++;
-                    //canRemove = false;
-                    //return;
-                //}
-                //throw new IllegalStateException();
-            //}
-            //throw new ConcurrentModificationException();
+            
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+                
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.http.conn.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class InetAddressUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.769 -0400", hash_original_method = "E7DF1187E83FF322875E27EB624FDD7F", hash_generated_method = "888B48C74A32AFD9606BF2D2E8E545B4")
     private  InetAddressUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     

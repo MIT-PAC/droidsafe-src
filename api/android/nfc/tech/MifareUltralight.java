@@ -1,6 +1,6 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,23 +29,23 @@ public final class MifareUltralight extends BasicTagTechnology {
     if(extras.getBoolean(EXTRA_IS_UL_C))            
             {
                 mType = TYPE_ULTRALIGHT_C;
-            } //End block
+            } 
             else
             {
                 mType = TYPE_ULTRALIGHT;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //NfcA a = NfcA.get(tag);
-        //mType = TYPE_UNKNOWN;
-        //if (a.getSak() == 0x00 && tag.getId()[0] == NXP_MANUFACTURER_ID) {
-            //Bundle extras = tag.getTechExtras(TagTechnology.MIFARE_ULTRALIGHT);
-            //if (extras.getBoolean(EXTRA_IS_UL_C)) {
-                //mType = TYPE_ULTRALIGHT_C;
-            //} else {
-                //mType = TYPE_ULTRALIGHT;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -59,13 +59,14 @@ public final class MifareUltralight extends BasicTagTechnology {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.921 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "51B4205BDA63620D767B878582FDE331")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_558013965 = (mType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083991614 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2083991614;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     
@@ -78,11 +79,11 @@ public final class MifareUltralight extends BasicTagTechnology {
         byte[] var8E202568BEDD06F864FDA8E60E6C3088_829631729 = (transceive(cmd, false));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_744660648 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_744660648;
-        // ---------- Original Method ----------
-        //validatePageIndex(pageOffset);
-        //checkConnected();
-        //byte[] cmd = { 0x30, (byte) pageOffset};
-        //return transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
@@ -97,14 +98,14 @@ public final class MifareUltralight extends BasicTagTechnology {
         cmd[1] = (byte) pageOffset;
         System.arraycopy(data, 0, cmd, 2, data.length);
         transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validatePageIndex(pageOffset);
-        //checkConnected();
-        //byte[] cmd = new byte[data.length + 2];
-        //cmd[0] = (byte) 0xA2;
-        //cmd[1] = (byte) pageOffset;
-        //System.arraycopy(data, 0, cmd, 2, data.length);
-        //transceive(cmd, false);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -114,8 +115,8 @@ public final class MifareUltralight extends BasicTagTechnology {
         byte[] varEE32C696607EBC614D9A30134ACB1AE3_939282023 = (transceive(data, true));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_364249436 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_364249436;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
@@ -124,8 +125,8 @@ public final class MifareUltralight extends BasicTagTechnology {
         int var534FE261D7083B235B3B010A14A83EE1_210312361 = (getMaxTransceiveLengthInternal());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051761196 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1051761196;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     
@@ -141,21 +142,21 @@ public final class MifareUltralight extends BasicTagTechnology {
                 IllegalArgumentException varDB68BEF11A046B44BA82450BD6BDD1ED_1368946426 = new IllegalArgumentException("The supplied timeout is not valid");
                 varDB68BEF11A046B44BA82450BD6BDD1ED_1368946426.addTaint(taint);
                 throw varDB68BEF11A046B44BA82450BD6BDD1ED_1368946426;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(
-                    //TagTechnology.MIFARE_ULTRALIGHT, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        } 
+        
+        
+            
+                    
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -166,20 +167,20 @@ public final class MifareUltralight extends BasicTagTechnology {
             int var714BFC2CAF19A2E2B5C524B9434C7348_807654509 = (mTag.getTagService().getTimeout(TagTechnology.MIFARE_ULTRALIGHT));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182416869 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_182416869;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1995503484 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2082218796 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2082218796;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.MIFARE_ULTRALIGHT);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     

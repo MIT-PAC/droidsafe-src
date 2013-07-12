@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,11 +35,11 @@ public class HandlerCaller {
         mMainLooper = context.getMainLooper();
         mH = new MyHandler(mMainLooper);
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mMainLooper = context.getMainLooper();
-        //mH = new MyHandler(mMainLooper);
-        //mCallback = callback;
+        
+        
+        
+        
+        
     }
 
     
@@ -49,11 +49,11 @@ public class HandlerCaller {
         mMainLooper = looper;
         mH = new MyHandler(mMainLooper);
         mCallback = callback;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mMainLooper = looper;
-        //mH = new MyHandler(mMainLooper);
-        //mCallback = callback;
+        
+        
+        
+        
+        
     }
 
     
@@ -70,25 +70,26 @@ public class HandlerCaller {
 SomeArgs var7BCCA1EB8ECD10BA7D4B968A010F7894_576839023 =                 args;
                 var7BCCA1EB8ECD10BA7D4B968A010F7894_576839023.addTaint(taint);
                 return var7BCCA1EB8ECD10BA7D4B968A010F7894_576839023;
-            } //End block
-        } //End block
+            } 
+        } 
 SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs();
         var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780.addTaint(taint);
         return var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780;
-        // ---------- Original Method ----------
-        //synchronized (mH) {
-            //SomeArgs args = mArgsPool;
-            //if (args != null) {
-                //mArgsPool = args.next;
-                //args.next = null;
-                //mArgsPoolSize--;
-                //return args;
-            //}
-        //}
-        //return new SomeArgs();
+        
+        
+            
+            
+                
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.931 -0400", hash_original_method = "E4D2DD64F276F5C1793412D257C8C8A2", hash_generated_method = "A9D66F406D866E62779A07E177DA3E42")
     public void recycleArgs(SomeArgs args) {
         synchronized
@@ -98,16 +99,16 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
                 args.next = mArgsPool;
                 mArgsPool = args;
                 mArgsPoolSize++;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mH) {
-            //if (mArgsPoolSize < ARGS_POOL_MAX_SIZE) {
-                //args.next = mArgsPool;
-                //mArgsPool = args;
-                //mArgsPoolSize++;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+            
+        
     }
 
     
@@ -119,15 +120,15 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
             mCallback.executeMessage(msg);
             msg.recycle();
             return;
-        } //End block
+        } 
         mH.sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (Looper.myLooper() == mMainLooper) {
-            //mCallback.executeMessage(msg);
-            //msg.recycle();
-            //return;
-        //}
-        //mH.sendMessage(msg);
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -137,8 +138,8 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
         boolean var289AC79E7E0518B3F63B70B6CBD28E15_1550723446 = (mH.hasMessages(what));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954695202 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954695202;
-        // ---------- Original Method ----------
-        //return mH.hasMessages(what);
+        
+        
     }
 
     
@@ -146,8 +147,8 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
     public void removeMessages(int what) {
         addTaint(what);
         mH.removeMessages(what);
-        // ---------- Original Method ----------
-        //mH.removeMessages(what);
+        
+        
     }
 
     
@@ -156,8 +157,8 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
         addTaint(obj.getTaint());
         addTaint(what);
         mH.removeMessages(what, obj);
-        // ---------- Original Method ----------
-        //mH.removeMessages(what, obj);
+        
+        
     }
 
     
@@ -165,8 +166,8 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
     public void sendMessage(Message msg) {
         addTaint(msg.getTaint());
         mH.sendMessage(msg);
-        // ---------- Original Method ----------
-        //mH.sendMessage(msg);
+        
+        
     }
 
     
@@ -176,8 +177,8 @@ SomeArgs var3D528EF95CDEA694A7BAAAADBA8E1F7D_1562086780 =         new SomeArgs()
 Message var0A074E99CF455DBBC1653B54C1535B52_2107360327 =         mH.obtainMessage(what);
         var0A074E99CF455DBBC1653B54C1535B52_2107360327.addTaint(taint);
         return var0A074E99CF455DBBC1653B54C1535B52_2107360327;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what);
+        
+        
     }
 
     
@@ -189,8 +190,8 @@ Message var0A074E99CF455DBBC1653B54C1535B52_2107360327 =         mH.obtainMessag
 Message var8936877D68185D0B4EB65AC8508991DB_1950212714 =         mH.obtainMessage(what, arg1 ? 1 : 0, 0, arg2);
         var8936877D68185D0B4EB65AC8508991DB_1950212714.addTaint(taint);
         return var8936877D68185D0B4EB65AC8508991DB_1950212714;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1 ? 1 : 0, 0, arg2);
+        
+        
     }
 
     
@@ -206,11 +207,11 @@ Message var8936877D68185D0B4EB65AC8508991DB_1950212714 =         mH.obtainMessag
 Message var8CD7882DD82B207C219EF242467E72A7_554213108 =         mH.obtainMessage(what, arg1 ? 1 : 0, 0, args);
         var8CD7882DD82B207C219EF242467E72A7_554213108.addTaint(taint);
         return var8CD7882DD82B207C219EF242467E72A7_554213108;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg2;
-        //args.arg2 = arg3;
-        //return mH.obtainMessage(what, arg1 ? 1 : 0, 0, args);
+        
+        
+        
+        
+        
     }
 
     
@@ -221,8 +222,8 @@ Message var8CD7882DD82B207C219EF242467E72A7_554213108 =         mH.obtainMessage
 Message var12CDD1AFE5E6600F8EC4A70E6284B925_1588859466 =         mH.obtainMessage(what, 0, 0, arg1);
         var12CDD1AFE5E6600F8EC4A70E6284B925_1588859466.addTaint(taint);
         return var12CDD1AFE5E6600F8EC4A70E6284B925_1588859466;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, 0, 0, arg1);
+        
+        
     }
 
     
@@ -233,8 +234,8 @@ Message var12CDD1AFE5E6600F8EC4A70E6284B925_1588859466 =         mH.obtainMessag
 Message varA61A46C8A8EC07D7F87A90750DD76055_1727234137 =         mH.obtainMessage(what, arg1, 0);
         varA61A46C8A8EC07D7F87A90750DD76055_1727234137.addTaint(taint);
         return varA61A46C8A8EC07D7F87A90750DD76055_1727234137;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, 0);
+        
+        
     }
 
     
@@ -246,8 +247,8 @@ Message varA61A46C8A8EC07D7F87A90750DD76055_1727234137 =         mH.obtainMessag
 Message var2005F2BFA3651910E62A138190D96BC6_1732882785 =         mH.obtainMessage(what, arg1, arg2);
         var2005F2BFA3651910E62A138190D96BC6_1732882785.addTaint(taint);
         return var2005F2BFA3651910E62A138190D96BC6_1732882785;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, arg2);
+        
+        
     }
 
     
@@ -259,8 +260,8 @@ Message var2005F2BFA3651910E62A138190D96BC6_1732882785 =         mH.obtainMessag
 Message var1EA5D3012D434458EE54B63DB011E658_993285503 =         mH.obtainMessage(what, arg1, 0, arg2);
         var1EA5D3012D434458EE54B63DB011E658_993285503.addTaint(taint);
         return var1EA5D3012D434458EE54B63DB011E658_993285503;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, 0, arg2);
+        
+        
     }
 
     
@@ -273,8 +274,8 @@ Message var1EA5D3012D434458EE54B63DB011E658_993285503 =         mH.obtainMessage
 Message varA9E913F50F1F9B12E959A49B9E93986F_1424199821 =         mH.obtainMessage(what, arg1, arg2, arg3);
         varA9E913F50F1F9B12E959A49B9E93986F_1424199821.addTaint(taint);
         return varA9E913F50F1F9B12E959A49B9E93986F_1424199821;
-        // ---------- Original Method ----------
-        //return mH.obtainMessage(what, arg1, arg2, arg3);
+        
+        
     }
 
     
@@ -292,11 +293,11 @@ Message varA9E913F50F1F9B12E959A49B9E93986F_1424199821 =         mH.obtainMessag
 Message var77BF585217243532581F9F8C4041DDF0_1334727543 =         mH.obtainMessage(what, arg1, arg2, args);
         var77BF585217243532581F9F8C4041DDF0_1334727543.addTaint(taint);
         return var77BF585217243532581F9F8C4041DDF0_1334727543;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg3;
-        //args.arg2 = arg4;
-        //return mH.obtainMessage(what, arg1, arg2, args);
+        
+        
+        
+        
+        
     }
 
     
@@ -312,11 +313,11 @@ Message var77BF585217243532581F9F8C4041DDF0_1334727543 =         mH.obtainMessag
 Message varB613521389A33EC54F8F174F01C6658A_1285248705 =         mH.obtainMessage(what, arg1, 0, args);
         varB613521389A33EC54F8F174F01C6658A_1285248705.addTaint(taint);
         return varB613521389A33EC54F8F174F01C6658A_1285248705;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg2;
-        //args.arg2 = arg3;
-        //return mH.obtainMessage(what, arg1, 0, args);
+        
+        
+        
+        
+        
     }
 
     
@@ -331,11 +332,11 @@ Message varB613521389A33EC54F8F174F01C6658A_1285248705 =         mH.obtainMessag
 Message varA09BA0A68969A0A00DFB7B824079B8FE_1421961838 =         mH.obtainMessage(what, 0, 0, args);
         varA09BA0A68969A0A00DFB7B824079B8FE_1421961838.addTaint(taint);
         return varA09BA0A68969A0A00DFB7B824079B8FE_1421961838;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
     }
 
     
@@ -352,12 +353,12 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_1421961838 =         mH.obtainMessag
 Message varA09BA0A68969A0A00DFB7B824079B8FE_40348624 =         mH.obtainMessage(what, 0, 0, args);
         varA09BA0A68969A0A00DFB7B824079B8FE_40348624.addTaint(taint);
         return varA09BA0A68969A0A00DFB7B824079B8FE_40348624;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //args.arg3 = arg3;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -377,13 +378,13 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_40348624 =         mH.obtainMessage(
 Message varA09BA0A68969A0A00DFB7B824079B8FE_760134993 =         mH.obtainMessage(what, 0, 0, args);
         varA09BA0A68969A0A00DFB7B824079B8FE_760134993.addTaint(taint);
         return varA09BA0A68969A0A00DFB7B824079B8FE_760134993;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg1;
-        //args.arg2 = arg2;
-        //args.arg3 = arg3;
-        //args.arg4 = arg4;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -403,13 +404,13 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_760134993 =         mH.obtainMessage
 Message varA09BA0A68969A0A00DFB7B824079B8FE_351880806 =         mH.obtainMessage(what, 0, 0, args);
         varA09BA0A68969A0A00DFB7B824079B8FE_351880806.addTaint(taint);
         return varA09BA0A68969A0A00DFB7B824079B8FE_351880806;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.argi1 = arg1;
-        //args.argi2 = arg2;
-        //args.argi3 = arg3;
-        //args.argi4 = arg4;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -433,15 +434,15 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_351880806 =         mH.obtainMessage
 Message varA09BA0A68969A0A00DFB7B824079B8FE_1740982539 =         mH.obtainMessage(what, 0, 0, args);
         varA09BA0A68969A0A00DFB7B824079B8FE_1740982539.addTaint(taint);
         return varA09BA0A68969A0A00DFB7B824079B8FE_1740982539;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.argi1 = arg1;
-        //args.argi2 = arg2;
-        //args.argi3 = arg3;
-        //args.argi4 = arg4;
-        //args.argi5 = arg5;
-        //args.argi6 = arg6;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -463,14 +464,14 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_1740982539 =         mH.obtainMessag
 Message varA09BA0A68969A0A00DFB7B824079B8FE_272639840 =         mH.obtainMessage(what, 0, 0, args);
         varA09BA0A68969A0A00DFB7B824079B8FE_272639840.addTaint(taint);
         return varA09BA0A68969A0A00DFB7B824079B8FE_272639840;
-        // ---------- Original Method ----------
-        //SomeArgs args = obtainArgs();
-        //args.arg1 = arg5;
-        //args.argi1 = arg1;
-        //args.argi2 = arg2;
-        //args.argi3 = arg3;
-        //args.argi4 = arg4;
-        //return mH.obtainMessage(what, 0, 0, args);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -512,7 +513,7 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_272639840 =         mH.obtainMessage
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.952 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
         public SomeArgs ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -526,7 +527,7 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_272639840 =         mH.obtainMessage
           MyHandler(Looper looper) {
             super(looper);
             addTaint(looper.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -535,8 +536,8 @@ Message varA09BA0A68969A0A00DFB7B824079B8FE_272639840 =         mH.obtainMessage
         public void handleMessage(Message msg) {
             addTaint(msg.getTaint());
             mCallback.executeMessage(msg);
-            // ---------- Original Method ----------
-            //mCallback.executeMessage(msg);
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,31 +49,31 @@ public class ServerKeyExchange extends Message {
     if(hash != null)        
         {
             length += 2 + hash.length;
-        } //End block
+        } 
     if(par3 == null)        
         {
             bytes3 = null;
             return;
-        } //End block
+        } 
         bytes3 = toUnsignedByteArray(this.par3);
         length += 2 + bytes3.length;
-        // ---------- Original Method ----------
-        //this.par1 = par1;
-        //this.par2 = par2;
-        //this.par3 = par3;
-        //this.hash = hash;
-        //bytes1 = toUnsignedByteArray(this.par1);
-        //bytes2 = toUnsignedByteArray(this.par2);
-        //length = 4 + bytes1.length + bytes2.length;
-        //if (hash != null) {
-            //length += 2 + hash.length;
-        //}
-        //if (par3 == null) {
-            //bytes3 = null;
-            //return;
-        //}
-        //bytes3 = toUnsignedByteArray(this.par3);
-        //length += 2 + bytes3.length;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -96,30 +96,30 @@ public class ServerKeyExchange extends Message {
             bytes3 = in.read(size);
             par3 = new BigInteger(1, bytes3);
             this.length += 2 + bytes3.length;
-        } //End block
+        } 
         else
         {
             par3 = null;
             bytes3 = null;
-        } //End block
+        } 
     if(keyExchange != CipherSuite.KEY_EXCHANGE_DH_anon_EXPORT
                 && keyExchange != CipherSuite.KEY_EXCHANGE_DH_anon)        
         {
             size = in.readUint16();
             hash = in.read(size);
             this.length += 2 + hash.length;
-        } //End block
+        } 
         else
         {
             hash = null;
-        } //End block
+        } 
     if(this.length != length)        
         {
             fatalAlert(AlertProtocol.DECODE_ERROR,
                     "DECODE ERROR: incorrect ServerKeyExchange");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -150,25 +150,25 @@ public class ServerKeyExchange extends Message {
         {
             out.writeUint16(bytes3.length);
             out.write(bytes3);
-        } //End block
+        } 
     if(hash != null)        
         {
             out.writeUint16(hash.length);
             out.write(hash);
-        } //End block
-        // ---------- Original Method ----------
-        //out.writeUint16(bytes1.length);
-        //out.write(bytes1);
-        //out.writeUint16(bytes2.length);
-        //out.write(bytes2);
-        //if (bytes3 != null) {
-            //out.writeUint16(bytes3.length);
-            //out.write(bytes3);
-        //}
-        //if (hash != null) {
-            //out.writeUint16(hash.length);
-            //out.write(hash);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -179,45 +179,46 @@ public class ServerKeyExchange extends Message {
 RSAPublicKey var6A95247616A3A8B93CFF7783DABD08D4_1885864872 =             key;
             var6A95247616A3A8B93CFF7783DABD08D4_1885864872.addTaint(taint);
             return var6A95247616A3A8B93CFF7783DABD08D4_1885864872;
-        } //End block
+        } 
         try 
         {
             KeyFactory kf = KeyFactory.getInstance("RSA");
             key = (RSAPublicKey) kf.generatePublic(new RSAPublicKeySpec(par1,
                     par2));
-        } //End block
+        } 
         catch (Exception e)
         {
 RSAPublicKey var540C13E9E156B687226421B24F2DF178_161459358 =             null;
             var540C13E9E156B687226421B24F2DF178_161459358.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_161459358;
-        } //End block
+        } 
 RSAPublicKey var6A95247616A3A8B93CFF7783DABD08D4_511960425 =         key;
         var6A95247616A3A8B93CFF7783DABD08D4_511960425.addTaint(taint);
         return var6A95247616A3A8B93CFF7783DABD08D4_511960425;
-        // ---------- Original Method ----------
-        //if (key != null) {
-            //return key;
-        //}
-        //try {
-            //KeyFactory kf = KeyFactory.getInstance("RSA");
-            //key = (RSAPublicKey) kf.generatePublic(new RSAPublicKeySpec(par1,
-                    //par2));
-        //} catch (Exception e) {
-            //return null;
-        //}
-        //return key;
+        
+        
+            
+        
+        
+            
+            
+                    
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.689 -0400", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "63797F7AD4E910CEFC9B62FC7C6B11B4")
     @Override
     public int getType() {
         int var652F7368021684034DA1DE93A12D12E0_2021589586 = (Handshake.SERVER_KEY_EXCHANGE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394836234 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_394836234;
-        // ---------- Original Method ----------
-        //return Handshake.SERVER_KEY_EXCHANGE;
+        
+        
     }
 
     

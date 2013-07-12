@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,41 +21,44 @@ final class MiniEnumSet<E extends Enum<E>> extends EnumSet<E> {
         super(elementType);
         addTaint(elementType.getTaint());
         this.enums = enums;
-        // ---------- Original Method ----------
-        //this.enums = enums;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.250 -0400", hash_original_method = "B65740ADDB851C7AEA4DC0329B3A4F67", hash_generated_method = "C595DF64A4B249807B3847443D4FE7C3")
     @Override
     public Iterator<E> iterator() {
 Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSetIterator();
         var15F17A9EC28CD5C4699F216D04F7AF45_1393563.addTaint(taint);
         return var15F17A9EC28CD5C4699F216D04F7AF45_1393563;
-        // ---------- Original Method ----------
-        //return new MiniEnumSetIterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.251 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "ADF5DCE77F6413A59102223D8039026B")
     @Override
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_1002857357 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1184397037 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1184397037;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.252 -0400", hash_original_method = "025226B2883D32895649213F93C1A199", hash_generated_method = "3713CFA0CB1A568F7EA76D80B212B858")
     @Override
     public void clear() {
         bits = 0;
         size = 0;
-        // ---------- Original Method ----------
-        //bits = 0;
-        //size = 0;
+        
+        
+        
     }
 
     
@@ -73,20 +76,20 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean varB326B5062B2F0E69046810717534CB09_1720284806 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_719404184 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_719404184;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_397388788 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1891078269 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1891078269;
-        // ---------- Original Method ----------
-        //elementClass.cast(element);
-        //long oldBits = bits;
-        //long newBits = oldBits | (1L << element.ordinal());
-        //if (oldBits != newBits) {
-            //bits = newBits;
-            //size++;
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -99,7 +102,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean var68934A3E9455FA72420237EB05902327_179087583 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44600446 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_44600446;
-        } //End block
+        } 
     if(collection instanceof EnumSet)        
         {
             EnumSet<?> set = (EnumSet) collection;
@@ -112,25 +115,25 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean varFC70C6FFC636294FBF57C338EA4F7851_924413446 = ((oldBits != newBits));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_714256640 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_714256640;
-        } //End block
+        } 
         boolean varB2042CE01B55200C7258CBFA6D7E5E4D_1426332315 = (super.addAll(collection));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1120155137 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1120155137;
-        // ---------- Original Method ----------
-        //if (collection.isEmpty()) {
-            //return false;
-        //}
-        //if (collection instanceof EnumSet) {
-            //EnumSet<?> set = (EnumSet) collection; 
-            //set.elementClass.asSubclass(elementClass); 
-            //MiniEnumSet<?> miniSet = (MiniEnumSet<?>) set;
-            //long oldBits = bits;
-            //long newBits = oldBits | miniSet.bits;
-            //bits = newBits;
-            //size = Long.bitCount(newBits);
-            //return (oldBits != newBits);
-        //}
-        //return super.addAll(collection);
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -143,23 +146,24 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean var68934A3E9455FA72420237EB05902327_1679314693 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69032124 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_69032124;
-        } //End block
+        } 
         @SuppressWarnings("unchecked") Enum<E> element = (Enum<E>) object;
         int ordinal = element.ordinal();
         boolean varBB59F39C94E3C16864A1A047E9EF9EEC_319618990 = ((bits & (1L << ordinal)) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1224959651 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1224959651;
-        // ---------- Original Method ----------
-        //if (object == null || !isValidType(object.getClass())) {
-            //return false;
-        //}
-        //@SuppressWarnings("unchecked") 
-        //Enum<E> element = (Enum<E>) object;
-        //int ordinal = element.ordinal();
-        //return (bits & (1L << ordinal)) != 0;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.257 -0400", hash_original_method = "F9B76DA5C8885A8F064E3CAE60CAF100", hash_generated_method = "CACCC54EFEF4364FE09E83EA2F1EBC88")
     @Override
     public boolean containsAll(Collection<?> collection) {
@@ -169,7 +173,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean varB326B5062B2F0E69046810717534CB09_504879876 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_694681124 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_694681124;
-        } //End block
+        } 
     if(collection instanceof MiniEnumSet)        
         {
             MiniEnumSet<?> set = (MiniEnumSet<?>) collection;
@@ -177,23 +181,24 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean var47E022E6C7E98A97129EC3E197729329_421668961 = (isValidType(set.elementClass) && ((bits & setBits) == setBits));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_63548690 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_63548690;
-        } //End block
+        } 
         boolean var0F80B7441EDA20A6384C819B6A7145F9_769455926 = (!(collection instanceof EnumSet) && super.containsAll(collection));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_708368114 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_708368114;
-        // ---------- Original Method ----------
-        //if (collection.isEmpty()) {
-            //return true;
-        //}
-        //if (collection instanceof MiniEnumSet) {
-            //MiniEnumSet<?> set = (MiniEnumSet<?>) collection;
-            //long setBits = set.bits;
-            //return isValidType(set.elementClass) && ((bits & setBits) == setBits);
-        //}
-        //return !(collection instanceof EnumSet) && super.containsAll(collection);
+        
+        
+            
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.259 -0400", hash_original_method = "0FAF468D35EFC7156A8E4C7EB1F47E75", hash_generated_method = "B203EA23BB37FF192949B1C4C2254A51")
     @Override
     public boolean removeAll(Collection<?> collection) {
@@ -203,7 +208,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean var68934A3E9455FA72420237EB05902327_216462141 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_336296354 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_336296354;
-        } //End block
+        } 
     if(collection instanceof EnumSet)        
         {
             EnumSet<?> set = (EnumSet<?>) collection;
@@ -212,7 +217,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
                 boolean var68934A3E9455FA72420237EB05902327_256234716 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522414838 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_522414838;
-            } //End block
+            } 
             MiniEnumSet<E> miniSet = (MiniEnumSet<E>) set;
             long oldBits = bits;
             long newBits = oldBits & ~miniSet.bits;
@@ -223,37 +228,38 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
                 boolean varB326B5062B2F0E69046810717534CB09_287053967 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79204994 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_79204994;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_1926690332 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964450034 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_964450034;
-        } //End block
+        } 
         boolean varC59E950B034B0097B868C2C96544231D_601210581 = (super.removeAll(collection));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1844348507 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1844348507;
-        // ---------- Original Method ----------
-        //if (collection.isEmpty()) {
-            //return false;
-        //}
-        //if (collection instanceof EnumSet) {
-            //EnumSet<?> set = (EnumSet<?>) collection;
-            //if (!isValidType(set.elementClass)) {
-                //return false;
-            //}
-            //MiniEnumSet<E> miniSet = (MiniEnumSet<E>) set;
-            //long oldBits = bits;
-            //long newBits = oldBits & ~miniSet.bits;
-            //if (oldBits != newBits) {
-                //bits = newBits;
-                //size = Long.bitCount(newBits);
-                //return true;
-            //}
-            //return false;
-        //}
-        //return super.removeAll(collection);
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.260 -0400", hash_original_method = "017E11B07B37D92215BE552EFD39EA89", hash_generated_method = "7CD810459803717106597FD1D8172F98")
     @Override
     public boolean retainAll(Collection<?> collection) {
@@ -269,14 +275,14 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
                     boolean varB326B5062B2F0E69046810717534CB09_1724476779 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2127893697 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2127893697;
-                } //End block
+                } 
                 else
                 {
                     boolean var68934A3E9455FA72420237EB05902327_50444399 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1930850489 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1930850489;
-                } //End block
-            } //End block
+                } 
+            } 
             MiniEnumSet<E> miniSet = (MiniEnumSet<E>) set;
             long oldBits = bits;
             long newBits = oldBits & miniSet.bits;
@@ -287,36 +293,36 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
                 boolean varB326B5062B2F0E69046810717534CB09_432579933 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071034084 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071034084;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_397107497 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_215181008 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_215181008;
-        } //End block
+        } 
         boolean var503FF497CC541185965B7F24CCB51DB8_361802954 = (super.retainAll(collection));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_479945166 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_479945166;
-        // ---------- Original Method ----------
-        //if (collection instanceof EnumSet) {
-            //EnumSet<?> set = (EnumSet<?>) collection;
-            //if (!isValidType(set.elementClass)) {
-                //if (size > 0) {
-                    //clear();
-                    //return true;
-                //} else {
-                    //return false;
-                //}
-            //}
-            //MiniEnumSet<E> miniSet = (MiniEnumSet<E>) set;
-            //long oldBits = bits;
-            //long newBits = oldBits & miniSet.bits;
-            //if (oldBits != newBits) {
-                //bits = newBits;
-                //size = Long.bitCount(newBits);
-                //return true;
-            //}
-            //return false;
-        //}
-        //return super.retainAll(collection);
+        
+        
+            
+            
+                
+                    
+                    
+                
+                    
+                
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+        
+        
     }
 
     
@@ -329,7 +335,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean var68934A3E9455FA72420237EB05902327_904525956 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_611559059 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_611559059;
-        } //End block
+        } 
         @SuppressWarnings("unchecked") Enum<E> element = (Enum<E>) object;
         int ordinal = element.ordinal();
         long oldBits = bits;
@@ -341,25 +347,25 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean varB326B5062B2F0E69046810717534CB09_638067075 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579674308 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579674308;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_969854084 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1960918406 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1960918406;
-        // ---------- Original Method ----------
-        //if (object == null || !isValidType(object.getClass())) {
-            //return false;
-        //}
-        //@SuppressWarnings("unchecked") 
-        //Enum<E> element = (Enum<E>) object;
-        //int ordinal = element.ordinal();
-        //long oldBits = bits;
-        //long newBits = oldBits & ~(1L << ordinal);
-        //if (oldBits != newBits) {
-            //bits = newBits;
-            //size--;
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -372,29 +378,30 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             boolean var75EAEC12DA10D524D5BB1C4333283B8A_1232320569 = (super.equals(object));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_698281564 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_698281564;
-        } //End block
+        } 
         EnumSet<?> set = (EnumSet<?>) object;
     if(!isValidType(set.elementClass))        
         {
             boolean var50FBEE4B6B0931F2E34777F14FD04D99_1855790414 = (size == 0 && set.isEmpty());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1042751739 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1042751739;
-        } //End block
+        } 
         boolean var73FA85E2934753FD9B0FAEB53005796B_817792555 = (bits == ((MiniEnumSet<?>) set).bits);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1646254390 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1646254390;
-        // ---------- Original Method ----------
-        //if (!(object instanceof EnumSet)) {
-            //return super.equals(object);
-        //}
-        //EnumSet<?> set =(EnumSet<?>) object;
-        //if (!isValidType(set.elementClass)) {
-            //return size == 0 && set.isEmpty();
-        //}
-        //return bits == ((MiniEnumSet<?>) set).bits;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.262 -0400", hash_original_method = "34C2A46ACE6140E33D58771C1EEACFB4", hash_generated_method = "DAC34BCE88EAEE87FA2EBB9256194714")
     @Override
      void complement() {
@@ -403,16 +410,17 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
             bits = ~bits;
             bits &= (-1L >>> (MAX_ELEMENTS - enums.length));
             size = enums.length - size;
-        } //End block
-        // ---------- Original Method ----------
-        //if (enums.length != 0) {
-            //bits = ~bits;
-            //bits &= (-1L >>> (MAX_ELEMENTS - enums.length));
-            //size = enums.length - size;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.263 -0400", hash_original_method = "9CD323C98F30FAEA7DF6B6CE47F14F1E", hash_generated_method = "C73C8BE214706D864CBE8D8F96708FC9")
     @Override
      void setRange(E start, E end) {
@@ -422,11 +430,11 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
         long range = (-1L >>> (MAX_ELEMENTS - length)) << start.ordinal();
         bits |= range;
         size = Long.bitCount(bits);
-        // ---------- Original Method ----------
-        //int length = end.ordinal() - start.ordinal() + 1;
-        //long range = (-1L >>> (MAX_ELEMENTS - length)) << start.ordinal();
-        //bits |= range;
-        //size = Long.bitCount(bits);
+        
+        
+        
+        
+        
     }
 
     
@@ -444,17 +452,18 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.263 -0400", hash_original_method = "C8509CBB611C286825BCD6AFB35ADC31", hash_generated_method = "C8509CBB611C286825BCD6AFB35ADC31")
         public MiniEnumSetIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.264 -0400", hash_original_method = "04AD09EE87D1D0FB4F163A9180F152BA", hash_generated_method = "C498174E6D8B885D1BBA094226391ED4")
         public boolean hasNext() {
             boolean varD4C71BBF3A783D0D50DB7E2A5ECD4FBD_182845570 = (mask != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_139797946 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_139797946;
-            // ---------- Original Method ----------
-            //return mask != 0;
+            
+            
         }
 
         
@@ -465,7 +474,7 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
                 NoSuchElementException var28D00AB599969908D71F102AF992D49A_978125415 = new NoSuchElementException();
                 var28D00AB599969908D71F102AF992D49A_978125415.addTaint(taint);
                 throw var28D00AB599969908D71F102AF992D49A_978125415;
-            } //End block
+            } 
             int ordinal = Long.numberOfTrailingZeros(mask);
             last = enums[ordinal];
             currentBits &= ~mask;
@@ -473,15 +482,15 @@ Iterator<E> var15F17A9EC28CD5C4699F216D04F7AF45_1393563 =         new MiniEnumSe
 E var3D331EA760A7BCD3BF7E380A6C79C638_1058988489 =             last;
             var3D331EA760A7BCD3BF7E380A6C79C638_1058988489.addTaint(taint);
             return var3D331EA760A7BCD3BF7E380A6C79C638_1058988489;
-            // ---------- Original Method ----------
-            //if (mask == 0) {
-                //throw new NoSuchElementException();
-            //}
-            //int ordinal = Long.numberOfTrailingZeros(mask);
-            //last = enums[ordinal];
-            //currentBits &= ~mask;
-            //mask = currentBits & -currentBits;
-            //return last;
+            
+            
+                
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -492,15 +501,15 @@ E var3D331EA760A7BCD3BF7E380A6C79C638_1058988489 =             last;
                 IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1041172918 = new IllegalStateException();
                 varC311A989A119B96A6232C22ABFE87C25_1041172918.addTaint(taint);
                 throw varC311A989A119B96A6232C22ABFE87C25_1041172918;
-            } //End block
+            } 
             MiniEnumSet.this.remove(last);
             last = null;
-            // ---------- Original Method ----------
-            //if (last == null) {
-                //throw new IllegalStateException();
-            //}
-            //MiniEnumSet.this.remove(last);
-            //last = null;
+            
+            
+                
+            
+            
+            
         }
 
         

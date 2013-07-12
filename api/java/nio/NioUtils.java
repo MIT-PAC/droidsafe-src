@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,11 +11,12 @@ public final class NioUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.895 -0400", hash_original_method = "8E7A8D6DFD82A6BAC9AB3CD54CF31BDC", hash_generated_method = "0EA9CC78AA483B22B86873E261FF908D")
     private  NioUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static int getDirectBufferAddress(Buffer buffer) {
+        @DSModeled(DSC.SAFE)
+    public static int getDirectBufferAddress(Buffer buffer) {
         return buffer.effectiveDirectAddress;
     }
 
@@ -44,12 +45,14 @@ public final class NioUtils {
     }
 
     
-        public static byte[] unsafeArray(ByteBuffer b) {
+        @DSModeled(DSC.SAFE)
+    public static byte[] unsafeArray(ByteBuffer b) {
         return ((HeapByteBuffer) b).backingArray;
     }
 
     
-        public static int unsafeArrayOffset(ByteBuffer b) {
+        @DSModeled(DSC.SAFE)
+    public static int unsafeArrayOffset(ByteBuffer b) {
         return ((HeapByteBuffer) b).offset;
     }
 

@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,13 +12,13 @@ public class CRLException extends GeneralSecurityException {
     public  CRLException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.581 -0400", hash_original_method = "5E03B595357100C7FE02CA0C3CD0CBF1", hash_generated_method = "07FD205AE337C0D605903EA8F88E0A30")
     public  CRLException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class CRLException extends GeneralSecurityException {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,7 +35,7 @@ public class CRLException extends GeneralSecurityException {
     public  CRLException(Throwable cause) {
         super(cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

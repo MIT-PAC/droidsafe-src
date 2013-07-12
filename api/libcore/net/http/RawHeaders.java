@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,7 +32,7 @@ public final class RawHeaders {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.617 -0400", hash_original_method = "29CBB7411AB87121F534DC6D89E1C3FF", hash_generated_method = "15AC6645C1F6E653E1857608E76C2802")
     public  RawHeaders() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,12 +43,12 @@ public final class RawHeaders {
         httpMinorVersion = copyFrom.httpMinorVersion;
         responseCode = copyFrom.responseCode;
         responseMessage = copyFrom.responseMessage;
-        // ---------- Original Method ----------
-        //namesAndValues.addAll(copyFrom.namesAndValues);
-        //statusLine = copyFrom.statusLine;
-        //httpMinorVersion = copyFrom.httpMinorVersion;
-        //responseCode = copyFrom.responseCode;
-        //responseMessage = copyFrom.responseMessage;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -59,89 +59,93 @@ public final class RawHeaders {
     if(statusLine == null || !statusLine.startsWith("HTTP/"))        
         {
             return;
-        } //End block
+        } 
         statusLine = statusLine.trim();
         int mark = statusLine.indexOf(" ") + 1;
     if(mark == 0)        
         {
             return;
-        } //End block
+        } 
     if(statusLine.charAt(mark - 2) != '1')        
         {
             this.httpMinorVersion = 0;
-        } //End block
+        } 
         int last = mark + 3;
     if(last > statusLine.length())        
         {
             last = statusLine.length();
-        } //End block
+        } 
         this.responseCode = Integer.parseInt(statusLine.substring(mark, last));
     if(last + 1 <= statusLine.length())        
         {
             this.responseMessage = statusLine.substring(last + 1);
-        } //End block
-        // ---------- Original Method ----------
-        //statusLine = statusLine.trim();
-        //this.statusLine = statusLine;
-        //if (statusLine == null || !statusLine.startsWith("HTTP/")) {
-            //return;
-        //}
-        //statusLine = statusLine.trim();
-        //int mark = statusLine.indexOf(" ") + 1;
-        //if (mark == 0) {
-            //return;
-        //}
-        //if (statusLine.charAt(mark - 2) != '1') {
-            //this.httpMinorVersion = 0;
-        //}
-        //int last = mark + 3;
-        //if (last > statusLine.length()) {
-            //last = statusLine.length();
-        //}
-        //this.responseCode = Integer.parseInt(statusLine.substring(mark, last));
-        //if (last + 1 <= statusLine.length()) {
-            //this.responseMessage = statusLine.substring(last + 1);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.620 -0400", hash_original_method = "A2AF11C5A8C661AB11C9AC7FDCDD9C73", hash_generated_method = "835D5449AF0EBF0F6340221885A96B8E")
     public String getStatusLine() {
 String var85DBBD945A449462F4B20B9C5986C926_1824347674 =         statusLine;
         var85DBBD945A449462F4B20B9C5986C926_1824347674.addTaint(taint);
         return var85DBBD945A449462F4B20B9C5986C926_1824347674;
-        // ---------- Original Method ----------
-        //return statusLine;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.620 -0400", hash_original_method = "DB8BE97BE5124EB81D65BC5698249D9B", hash_generated_method = "3DCA9159E390869BF15D040FFA375486")
     public int getHttpMinorVersion() {
         int varE3CB6BC3D26619CC09F2D62AAF1FEA4B_871424777 = (httpMinorVersion != -1 ? httpMinorVersion : 1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471104362 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471104362;
-        // ---------- Original Method ----------
-        //return httpMinorVersion != -1 ? httpMinorVersion : 1;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.621 -0400", hash_original_method = "9E4A5E9FF258EB24BD25F51C84D6D494", hash_generated_method = "5882D92A31B0FD942FF5C856BDFC027C")
     public int getResponseCode() {
         int var30F8CC0A3AD81545F79B55CD4A8D8C8E_1070230994 = (responseCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358643851 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1358643851;
-        // ---------- Original Method ----------
-        //return responseCode;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.621 -0400", hash_original_method = "84763A1C87A993ECD4976A3E0463024E", hash_generated_method = "A6A13F362FA98BFAED3CFC3F3ACADB2F")
     public String getResponseMessage() {
 String var0EA3F56E6B543F51FDF09BD18CE60D5C_1073565066 =         responseMessage;
         var0EA3F56E6B543F51FDF09BD18CE60D5C_1073565066.addTaint(taint);
         return var0EA3F56E6B543F51FDF09BD18CE60D5C_1073565066;
-        // ---------- Original Method ----------
-        //return responseMessage;
+        
+        
     }
 
     
@@ -152,18 +156,18 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1073565066 =         responseMessage;
     if(index == -1)        
         {
             add("", line);
-        } //End block
+        } 
         else
         {
             add(line.substring(0, index), line.substring(index + 1));
-        } //End block
-        // ---------- Original Method ----------
-        //int index = line.indexOf(":");
-        //if (index == -1) {
-            //add("", line);
-        //} else {
-            //add(line.substring(0, index), line.substring(index + 1));
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -176,24 +180,24 @@ String var0EA3F56E6B543F51FDF09BD18CE60D5C_1073565066 =         responseMessage;
             IllegalArgumentException varD4DE986D44C47BB6F9B6066E40961F4F_1315201070 = new IllegalArgumentException("fieldName == null");
             varD4DE986D44C47BB6F9B6066E40961F4F_1315201070.addTaint(taint);
             throw varD4DE986D44C47BB6F9B6066E40961F4F_1315201070;
-        } //End block
+        } 
     if(value == null)        
         {
             System.logW("Ignoring HTTP header field '" + fieldName + "' because its value is null");
             return;
-        } //End block
+        } 
         namesAndValues.add(fieldName);
         namesAndValues.add(value.trim());
-        // ---------- Original Method ----------
-        //if (fieldName == null) {
-            //throw new IllegalArgumentException("fieldName == null");
-        //}
-        //if (value == null) {
-            //System.logW("Ignoring HTTP header field '" + fieldName + "' because its value is null");
-            //return;
-        //}
-        //namesAndValues.add(fieldName);
-        //namesAndValues.add(value.trim());
+        
+        
+            
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -206,15 +210,15 @@ for(int i = 0;i < namesAndValues.size();i += 2)
             {
                 namesAndValues.remove(i);
                 namesAndValues.remove(i);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < namesAndValues.size(); i += 2) {
-            //if (fieldName.equalsIgnoreCase(namesAndValues.get(i))) {
-                //namesAndValues.remove(i); 
-                //namesAndValues.remove(i); 
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -225,11 +229,11 @@ for(int i = 0;i < namesAndValues.size();i += 2)
 for(String value : headerFields)
         {
             add(fieldName, value);
-        } //End block
-        // ---------- Original Method ----------
-        //for (String value : headerFields) {
-            //add(fieldName, value);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -239,9 +243,9 @@ for(String value : headerFields)
         addTaint(fieldName.getTaint());
         removeAll(fieldName);
         add(fieldName, value);
-        // ---------- Original Method ----------
-        //removeAll(fieldName);
-        //add(fieldName, value);
+        
+        
+        
     }
 
     
@@ -250,8 +254,8 @@ for(String value : headerFields)
         int varE63A1D855242D8FF8D0BF3DDD621831D_1133453927 = (namesAndValues.size() / 2);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043228996 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043228996;
-        // ---------- Original Method ----------
-        //return namesAndValues.size() / 2;
+        
+        
     }
 
     
@@ -264,16 +268,16 @@ for(String value : headerFields)
 String var540C13E9E156B687226421B24F2DF178_2089718611 =             null;
             var540C13E9E156B687226421B24F2DF178_2089718611.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2089718611;
-        } //End block
+        } 
 String var4C1162125A66AB3D5F5C1CB3ACCE21E2_1087041575 =         namesAndValues.get(fieldNameIndex);
         var4C1162125A66AB3D5F5C1CB3ACCE21E2_1087041575.addTaint(taint);
         return var4C1162125A66AB3D5F5C1CB3ACCE21E2_1087041575;
-        // ---------- Original Method ----------
-        //int fieldNameIndex = index * 2;
-        //if (fieldNameIndex < 0 || fieldNameIndex >= namesAndValues.size()) {
-            //return null;
-        //}
-        //return namesAndValues.get(fieldNameIndex);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -286,16 +290,16 @@ String var4C1162125A66AB3D5F5C1CB3ACCE21E2_1087041575 =         namesAndValues.g
 String var540C13E9E156B687226421B24F2DF178_1568525008 =             null;
             var540C13E9E156B687226421B24F2DF178_1568525008.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1568525008;
-        } //End block
+        } 
 String varAB0AA5003D99383723C8D8C1BFF8E756_1103205848 =         namesAndValues.get(valueIndex);
         varAB0AA5003D99383723C8D8C1BFF8E756_1103205848.addTaint(taint);
         return varAB0AA5003D99383723C8D8C1BFF8E756_1103205848;
-        // ---------- Original Method ----------
-        //int valueIndex = index * 2 + 1;
-        //if (valueIndex < 0 || valueIndex >= namesAndValues.size()) {
-            //return null;
-        //}
-        //return namesAndValues.get(valueIndex);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -309,18 +313,18 @@ for(int i = namesAndValues.size() - 2;i >= 0;i -= 2)
 String var0C3DC92EE3041149F898372E184451DD_1033118534 =                 namesAndValues.get(i + 1);
                 var0C3DC92EE3041149F898372E184451DD_1033118534.addTaint(taint);
                 return var0C3DC92EE3041149F898372E184451DD_1033118534;
-            } //End block
-        } //End block
+            } 
+        } 
 String var540C13E9E156B687226421B24F2DF178_1160243249 =         null;
         var540C13E9E156B687226421B24F2DF178_1160243249.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1160243249;
-        // ---------- Original Method ----------
-        //for (int i = namesAndValues.size() - 2; i >= 0; i -= 2) {
-            //if (fieldName.equalsIgnoreCase(namesAndValues.get(i))) {
-                //return namesAndValues.get(i + 1);
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -334,20 +338,20 @@ for(int i = 0;i < namesAndValues.size();i += 2)
     if(fieldNames.contains(fieldName))            
             {
                 result.add(fieldName, namesAndValues.get(i + 1));
-            } //End block
-        } //End block
+            } 
+        } 
 RawHeaders varDC838461EE2FA0CA4C9BBB70A15456B0_1582181066 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1582181066.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1582181066;
-        // ---------- Original Method ----------
-        //RawHeaders result = new RawHeaders();
-        //for (int i = 0; i < namesAndValues.size(); i += 2) {
-            //String fieldName = namesAndValues.get(i);
-            //if (fieldNames.contains(fieldName)) {
-                //result.add(fieldName, namesAndValues.get(i + 1));
-            //}
-        //}
-        //return result;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -359,20 +363,20 @@ for(int i = 0;i < namesAndValues.size();i += 2)
         {
             result.append(namesAndValues.get(i)).append(": ")
                     .append(namesAndValues.get(i + 1)).append("\r\n");
-        } //End block
+        } 
         result.append("\r\n");
 String varE65B3A02759122992CB82C0E651AD408_891245912 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_891245912.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_891245912;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder(256);
-        //result.append(statusLine).append("\r\n");
-        //for (int i = 0; i < namesAndValues.size(); i += 2) {
-            //result.append(namesAndValues.get(i)).append(": ")
-                    //.append(namesAndValues.get(i + 1)).append("\r\n");
-        //}
-        //result.append("\r\n");
-        //return result.toString();
+        
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
@@ -388,34 +392,34 @@ for(int i = 0;i < namesAndValues.size();i += 2)
     if(otherValues != null)            
             {
                 allValues.addAll(otherValues);
-            } //End block
+            } 
             allValues.add(value);
             result.put(fieldName, Collections.unmodifiableList(allValues));
-        } //End block
+        } 
     if(statusLine != null)        
         {
             result.put(null, Collections.unmodifiableList(Collections.singletonList(statusLine)));
-        } //End block
+        } 
 Map<String, List<String>> var7574B6F28DE66C39A71661FC6443DD41_1503424655 =         Collections.unmodifiableMap(result);
         var7574B6F28DE66C39A71661FC6443DD41_1503424655.addTaint(taint);
         return var7574B6F28DE66C39A71661FC6443DD41_1503424655;
-        // ---------- Original Method ----------
-        //Map<String, List<String>> result = new TreeMap<String, List<String>>(FIELD_NAME_COMPARATOR);
-        //for (int i = 0; i < namesAndValues.size(); i += 2) {
-            //String fieldName = namesAndValues.get(i);
-            //String value = namesAndValues.get(i + 1);
-            //List<String> allValues = new ArrayList<String>();
-            //List<String> otherValues = result.get(fieldName);
-            //if (otherValues != null) {
-                //allValues.addAll(otherValues);
-            //}
-            //allValues.add(value);
-            //result.put(fieldName, Collections.unmodifiableList(allValues));
-        //}
-        //if (statusLine != null) {
-            //result.put(null, Collections.unmodifiableList(Collections.singletonList(statusLine)));
-        //}
-        //return Collections.unmodifiableMap(result);
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+            
+        
+        
+            
+        
+        
     }
 
     

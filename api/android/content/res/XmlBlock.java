@@ -1,6 +1,6 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,10 +33,10 @@ final class XmlBlock {
         mAssets = null;
         mNative = nativeCreate(data, 0, data.length);
         mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
-        // ---------- Original Method ----------
-        //mAssets = null;
-        //mNative = nativeCreate(data, 0, data.length);
-        //mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
+        
+        
+        
+        
     }
 
     
@@ -45,10 +45,10 @@ final class XmlBlock {
         mAssets = null;
         mNative = nativeCreate(data, offset, size);
         mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
-        // ---------- Original Method ----------
-        //mAssets = null;
-        //mNative = nativeCreate(data, offset, size);
-        //mStrings = new StringBlock(nativeGetStringBlock(mNative), false);
+        
+        
+        
+        
     }
 
     
@@ -57,10 +57,10 @@ final class XmlBlock {
         mAssets = assets;
         mNative = xmlBlock;
         mStrings = new StringBlock(nativeGetStringBlock(xmlBlock), false);
-        // ---------- Original Method ----------
-        //mAssets = assets;
-        //mNative = xmlBlock;
-        //mStrings = new StringBlock(nativeGetStringBlock(xmlBlock), false);
+        
+        
+        
+        
     }
 
     
@@ -72,15 +72,15 @@ final class XmlBlock {
             {
                 mOpen = false;
                 decOpenCountLocked();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mOpen) {
-                //mOpen = false;
-                //decOpenCountLocked();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+        
     }
 
     
@@ -93,16 +93,16 @@ final class XmlBlock {
     if(mAssets != null)            
             {
                 mAssets.xmlBlockGone(hashCode());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mOpenCount--;
-        //if (mOpenCount == 0) {
-            //nativeDestroy(mNative);
-            //if (mAssets != null) {
-                //mAssets.xmlBlockGone(hashCode());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -115,26 +115,26 @@ final class XmlBlock {
 XmlResourceParser var4172B33804D80B8E22876EF5A96DF9D3_1651896970 =                 new Parser(nativeCreateParseState(mNative), this);
                 var4172B33804D80B8E22876EF5A96DF9D3_1651896970.addTaint(taint);
                 return var4172B33804D80B8E22876EF5A96DF9D3_1651896970;
-            } //End block
+            } 
 XmlResourceParser var540C13E9E156B687226421B24F2DF178_94114213 =             null;
             var540C13E9E156B687226421B24F2DF178_94114213.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_94114213;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mNative != 0) {
-                //return new Parser(nativeCreateParseState(mNative), this);
-            //}
-            //return null;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.783 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
     protected void finalize() throws Throwable {
         close();
-        // ---------- Original Method ----------
-        //close();
+        
+        
     }
 
     
@@ -268,10 +268,10 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_94114213 =             nul
             mParseState = parseState;
             mBlock = block;
             block.mOpenCount++;
-            // ---------- Original Method ----------
-            //mParseState = parseState;
-            //mBlock = block;
-            //block.mOpenCount++;
+            
+            
+            
+            
         }
 
         
@@ -282,22 +282,22 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_94114213 =             nul
     if(FEATURE_PROCESS_NAMESPACES.equals(name) && state)            
             {
                 return;
-            } //End block
+            } 
     if(FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name) && state)            
             {
                 return;
-            } //End block
+            } 
             XmlPullParserException var36669038112E18ABF864A1F87B292726_859845248 = new XmlPullParserException("Unsupported feature: " + name);
             var36669038112E18ABF864A1F87B292726_859845248.addTaint(taint);
             throw var36669038112E18ABF864A1F87B292726_859845248;
-            // ---------- Original Method ----------
-            //if (FEATURE_PROCESS_NAMESPACES.equals(name) && state) {
-                //return;
-            //}
-            //if (FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name) && state) {
-                //return;
-            //}
-            //throw new XmlPullParserException("Unsupported feature: " + name);
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -309,24 +309,24 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_94114213 =             nul
                 boolean varB326B5062B2F0E69046810717534CB09_2128254122 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980417300 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980417300;
-            } //End block
+            } 
     if(FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name))            
             {
                 boolean varB326B5062B2F0E69046810717534CB09_1965216708 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70225994 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_70225994;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_1186364879 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628489911 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628489911;
-            // ---------- Original Method ----------
-            //if (FEATURE_PROCESS_NAMESPACES.equals(name)) {
-                //return true;
-            //}
-            //if (FEATURE_REPORT_NAMESPACE_ATTRIBUTES.equals(name)) {
-                //return true;
-            //}
-            //return false;
+            
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -337,19 +337,20 @@ XmlResourceParser var540C13E9E156B687226421B24F2DF178_94114213 =             nul
             XmlPullParserException varC2E75CC38D1CD2AAFFEF04666510802E_1973064791 = new XmlPullParserException("setProperty() not supported");
             varC2E75CC38D1CD2AAFFEF04666510802E_1973064791.addTaint(taint);
             throw varC2E75CC38D1CD2AAFFEF04666510802E_1973064791;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("setProperty() not supported");
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.793 -0400", hash_original_method = "5175B2315D9AD451CFA017AE30114E6D", hash_generated_method = "7ED305E603A8DE0D439E4232E044C2B5")
         public Object getProperty(String name) {
             addTaint(name.getTaint());
 Object var540C13E9E156B687226421B24F2DF178_1425880725 =             null;
             var540C13E9E156B687226421B24F2DF178_1425880725.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1425880725;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -359,8 +360,8 @@ Object var540C13E9E156B687226421B24F2DF178_1425880725 =             null;
             XmlPullParserException var13720D275E029A000AE4F226DC2DDED2_642176445 = new XmlPullParserException("setInput() not supported");
             var13720D275E029A000AE4F226DC2DDED2_642176445.addTaint(taint);
             throw var13720D275E029A000AE4F226DC2DDED2_642176445;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("setInput() not supported");
+            
+            
         }
 
         
@@ -371,8 +372,8 @@ Object var540C13E9E156B687226421B24F2DF178_1425880725 =             null;
             XmlPullParserException var13720D275E029A000AE4F226DC2DDED2_915566436 = new XmlPullParserException("setInput() not supported");
             var13720D275E029A000AE4F226DC2DDED2_915566436.addTaint(taint);
             throw var13720D275E029A000AE4F226DC2DDED2_915566436;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("setInput() not supported");
+            
+            
         }
 
         
@@ -383,8 +384,8 @@ Object var540C13E9E156B687226421B24F2DF178_1425880725 =             null;
             XmlPullParserException var4D0F832342B70C9DBBBDEA990AA3619E_1634012305 = new XmlPullParserException("defineEntityReplacementText() not supported");
             var4D0F832342B70C9DBBBDEA990AA3619E_1634012305.addTaint(taint);
             throw var4D0F832342B70C9DBBBDEA990AA3619E_1634012305;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("defineEntityReplacementText() not supported");
+            
+            
         }
 
         
@@ -394,18 +395,19 @@ Object var540C13E9E156B687226421B24F2DF178_1425880725 =             null;
             XmlPullParserException varC9B4C07D42DC39CA7EFC095E58B0FF54_1339981397 = new XmlPullParserException("getNamespacePrefix() not supported");
             varC9B4C07D42DC39CA7EFC095E58B0FF54_1339981397.addTaint(taint);
             throw varC9B4C07D42DC39CA7EFC095E58B0FF54_1339981397;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("getNamespacePrefix() not supported");
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.795 -0400", hash_original_method = "5C999184AAA0F0E674F1363E90C0FD13", hash_generated_method = "062310341906C6EEF745C5D4E14E232E")
         public String getInputEncoding() {
 String var540C13E9E156B687226421B24F2DF178_707728699 =             null;
             var540C13E9E156B687226421B24F2DF178_707728699.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_707728699;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -415,8 +417,8 @@ String var540C13E9E156B687226421B24F2DF178_707728699 =             null;
             RuntimeException varA8F476CB2C567179C00D18D91F8C0404_77964208 = new RuntimeException("getNamespace() not supported");
             varA8F476CB2C567179C00D18D91F8C0404_77964208.addTaint(taint);
             throw varA8F476CB2C567179C00D18D91F8C0404_77964208;
-            // ---------- Original Method ----------
-            //throw new RuntimeException("getNamespace() not supported");
+            
+            
         }
 
         
@@ -426,8 +428,8 @@ String var540C13E9E156B687226421B24F2DF178_707728699 =             null;
             XmlPullParserException var773A08DB55EF063FA9BBF9D70DCC6FAB_380298443 = new XmlPullParserException("getNamespaceCount() not supported");
             var773A08DB55EF063FA9BBF9D70DCC6FAB_380298443.addTaint(taint);
             throw var773A08DB55EF063FA9BBF9D70DCC6FAB_380298443;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("getNamespaceCount() not supported");
+            
+            
         }
 
         
@@ -436,8 +438,8 @@ String var540C13E9E156B687226421B24F2DF178_707728699 =             null;
 String varA8A936FAF2F1582A5549DC73887E1742_329086352 =             "Binary XML file line #" + getLineNumber();
             varA8A936FAF2F1582A5549DC73887E1742_329086352.addTaint(taint);
             return varA8A936FAF2F1582A5549DC73887E1742_329086352;
-            // ---------- Original Method ----------
-            //return "Binary XML file line #" + getLineNumber();
+            
+            
         }
 
         
@@ -447,28 +449,30 @@ String varA8A936FAF2F1582A5549DC73887E1742_329086352 =             "Binary XML f
             XmlPullParserException varC91C9D26BE7AFD0B97CBA8DA33336DEF_678346707 = new XmlPullParserException("getNamespaceUri() not supported");
             varC91C9D26BE7AFD0B97CBA8DA33336DEF_678346707.addTaint(taint);
             throw varC91C9D26BE7AFD0B97CBA8DA33336DEF_678346707;
-            // ---------- Original Method ----------
-            //throw new XmlPullParserException("getNamespaceUri() not supported");
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.796 -0400", hash_original_method = "8861CD3D81AD120598D5847E998DCDDD", hash_generated_method = "C413C75C481BDA40778B29256371C743")
         public int getColumnNumber() {
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1072265543 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1940281635 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1940281635;
-            // ---------- Original Method ----------
-            //return -1;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.797 -0400", hash_original_method = "DE1021F4C2B2A1E4D5CF36677B434DEA", hash_generated_method = "A0A589A73024A1943130D50E9997B840")
         public int getDepth() {
             int var67EB95621332D6338FBDBCE544F839EC_828244204 = (mDepth);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_327859676 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_327859676;
-            // ---------- Original Method ----------
-            //return mDepth;
+            
+            
         }
 
         
@@ -478,9 +482,9 @@ String varA8A936FAF2F1582A5549DC73887E1742_329086352 =             "Binary XML f
 String varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843 =             id >= 0 ? mStrings.get(id).toString() : null;
             varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843.addTaint(taint);
             return varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843;
-            // ---------- Original Method ----------
-            //int id = nativeGetText(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
@@ -489,28 +493,30 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843 =             id >= 0 ? mS
             int var9E3B6725FD649218AC1817BECBC5A43E_1579718207 = (nativeGetLineNumber(mParseState));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225437591 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225437591;
-            // ---------- Original Method ----------
-            //return nativeGetLineNumber(mParseState);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.797 -0400", hash_original_method = "8A2CD03AAFDD20222A8759980FBB28AE", hash_generated_method = "F9AF1E21FA4CF620E7D95D383F200AEA")
         public int getEventType() throws XmlPullParserException {
             int varC7C43C278E8643FF27A9474560193A6F_1665472864 = (mEventType);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_943537661 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_943537661;
-            // ---------- Original Method ----------
-            //return mEventType;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.798 -0400", hash_original_method = "926F3413D3806C4A183D059B4FD2543E", hash_generated_method = "3AA4599EFFC2C24F8CCC1BFE6DC44F2E")
         public boolean isWhitespace() throws XmlPullParserException {
             boolean var68934A3E9455FA72420237EB05902327_355378625 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1177764118 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1177764118;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -519,8 +525,8 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843 =             id >= 0 ? mS
             RuntimeException var18578E829D598674630F7F501652FBAE_532305594 = new RuntimeException("getPrefix not supported");
             var18578E829D598674630F7F501652FBAE_532305594.addTaint(taint);
             throw var18578E829D598674630F7F501652FBAE_532305594;
-            // ---------- Original Method ----------
-            //throw new RuntimeException("getPrefix not supported");
+            
+            
         }
 
         
@@ -535,20 +541,20 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843 =             id >= 0 ? mS
                 holderForStartAndLength[1] = txt.length();
                 chars = new char[txt.length()];
                 txt.getChars(0, txt.length(), chars, 0);
-            } //End block
+            } 
             char[] varB69D9BC635CCD79AD2C64BC862ABE3B4_449975777 = (chars);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_685188745 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_685188745;
-            // ---------- Original Method ----------
-            //String txt = getText();
-            //char[] chars = null;
-            //if (txt != null) {
-                //holderForStartAndLength[0] = 0;
-                //holderForStartAndLength[1] = txt.length();
-                //chars = new char[txt.length()];
-                //txt.getChars(0, txt.length(), chars, 0);
-            //}
-            //return chars;
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
         }
 
         
@@ -558,9 +564,9 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1663231843 =             id >= 0 ? mS
 String var0DB8E8DA55A048D8C582FCA9C8A1CDAF_1367201635 =             id >= 0 ? mStrings.get(id).toString() : "";
             var0DB8E8DA55A048D8C582FCA9C8A1CDAF_1367201635.addTaint(taint);
             return var0DB8E8DA55A048D8C582FCA9C8A1CDAF_1367201635;
-            // ---------- Original Method ----------
-            //int id = nativeGetNamespace(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : "";
+            
+            
+            
         }
 
         
@@ -570,9 +576,9 @@ String var0DB8E8DA55A048D8C582FCA9C8A1CDAF_1367201635 =             id >= 0 ? mS
 String varAB024744B99AEC970E7EFF5B57F7E3E8_482947212 =             id >= 0 ? mStrings.get(id).toString() : null;
             varAB024744B99AEC970E7EFF5B57F7E3E8_482947212.addTaint(taint);
             return varAB024744B99AEC970E7EFF5B57F7E3E8_482947212;
-            // ---------- Original Method ----------
-            //int id = nativeGetName(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
@@ -598,12 +604,12 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1352545107 =             "";
             IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_313342982 = new IndexOutOfBoundsException(String.valueOf(index));
             varDC2A30BE720FF28962244F217E60E3D1_313342982.addTaint(taint);
             throw varDC2A30BE720FF28962244F217E60E3D1_313342982;
-            // ---------- Original Method ----------
-            //int id = nativeGetAttributeNamespace(mParseState, index);
-            //if (DEBUG) System.out.println("getAttributeNamespace of " + index + " = " + id);
-            //if (id >= 0) return mStrings.get(id).toString();
-            //else if (id == -1) return "";
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -622,11 +628,11 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_990957361 =             mStrings.get(
             IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_1579985227 = new IndexOutOfBoundsException(String.valueOf(index));
             varDC2A30BE720FF28962244F217E60E3D1_1579985227.addTaint(taint);
             throw varDC2A30BE720FF28962244F217E60E3D1_1579985227;
-            // ---------- Original Method ----------
-            //int id = nativeGetAttributeName(mParseState, index);
-            //if (DEBUG) System.out.println("getAttributeName of " + index + " = " + id);
-            //if (id >= 0) return mStrings.get(id).toString();
-            //throw new IndexOutOfBoundsException(String.valueOf(index));
+            
+            
+            
+            
+            
         }
 
         
@@ -636,18 +642,19 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_990957361 =             mStrings.get(
             RuntimeException var82F3D809FCDE04A7958FC0E209861B27_1107991239 = new RuntimeException("getAttributePrefix not supported");
             var82F3D809FCDE04A7958FC0E209861B27_1107991239.addTaint(taint);
             throw var82F3D809FCDE04A7958FC0E209861B27_1107991239;
-            // ---------- Original Method ----------
-            //throw new RuntimeException("getAttributePrefix not supported");
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.801 -0400", hash_original_method = "860332C2A14F44509730B84BDA1621A5", hash_generated_method = "C34A88BF0F247F284ADEC086D3818EEF")
         public boolean isEmptyElementTag() throws XmlPullParserException {
             boolean var68934A3E9455FA72420237EB05902327_603639987 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_150383932 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_150383932;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -656,8 +663,8 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_990957361 =             mStrings.get(
             int varA684D62E66CE7CA72731D6D7CD33556F_339774994 = (mEventType == START_TAG ? nativeGetAttributeCount(mParseState) : -1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243738201 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_243738201;
-            // ---------- Original Method ----------
-            //return mEventType == START_TAG ? nativeGetAttributeCount(mParseState) : -1;
+            
+            
         }
 
         
@@ -679,43 +686,45 @@ String varC1C98DA6DE8FF3C09EA690EC1717A80F_770869817 =             mStrings.get(
                 IndexOutOfBoundsException varDC2A30BE720FF28962244F217E60E3D1_639928920 = new IndexOutOfBoundsException(String.valueOf(index));
                 varDC2A30BE720FF28962244F217E60E3D1_639928920.addTaint(taint);
                 throw varDC2A30BE720FF28962244F217E60E3D1_639928920;
-            } //End block
+            } 
             int v = nativeGetAttributeData(mParseState, index);
 String var917B89ADD92DCC9B7E6E4C601918A285_1085843877 =             TypedValue.coerceToString(t, v);
             var917B89ADD92DCC9B7E6E4C601918A285_1085843877.addTaint(taint);
             return var917B89ADD92DCC9B7E6E4C601918A285_1085843877;
-            // ---------- Original Method ----------
-            //int id = nativeGetAttributeStringValue(mParseState, index);
-            //if (DEBUG) System.out.println("getAttributeValue of " + index + " = " + id);
-            //if (id >= 0) return mStrings.get(id).toString();
-            //int t = nativeGetAttributeDataType(mParseState, index);
-            //if (t == TypedValue.TYPE_NULL) {
-                //throw new IndexOutOfBoundsException(String.valueOf(index));
-            //}
-            //int v = nativeGetAttributeData(mParseState, index);
-            //return TypedValue.coerceToString(t, v);
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.802 -0400", hash_original_method = "D075B222334138AA51A395211AD5E8BA", hash_generated_method = "349EEE950B96C4F5AB126BFCC5EBA876")
         public String getAttributeType(int index) {
             addTaint(index);
 String var51FC5D2EB0F14BB856F2382E944EB3B9_1251438365 =             "CDATA";
             var51FC5D2EB0F14BB856F2382E944EB3B9_1251438365.addTaint(taint);
             return var51FC5D2EB0F14BB856F2382E944EB3B9_1251438365;
-            // ---------- Original Method ----------
-            //return "CDATA";
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.802 -0400", hash_original_method = "506EE66AC609639C08948796E644B012", hash_generated_method = "CBC84E360098D5DB44E079C7A0070738")
         public boolean isAttributeDefault(int index) {
             addTaint(index);
             boolean var68934A3E9455FA72420237EB05902327_823798436 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_180845698 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_180845698;
-            // ---------- Original Method ----------
-            //return false;
+            
+            
         }
 
         
@@ -724,8 +733,8 @@ String var51FC5D2EB0F14BB856F2382E944EB3B9_1251438365 =             "CDATA";
             int var664F8784E379383402F73AEB98BCA97F_2028698593 = (next());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533740905 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_533740905;
-            // ---------- Original Method ----------
-            //return next();
+            
+            
         }
 
         
@@ -747,22 +756,22 @@ String var51FC5D2EB0F14BB856F2382E944EB3B9_1251438365 =             "CDATA";
 String varF241B30B5190DB615ACC5E947F22D845_2065158399 =                 getAttributeValue(idx);
                 varF241B30B5190DB615ACC5E947F22D845_2065158399.addTaint(taint);
                 return varF241B30B5190DB615ACC5E947F22D845_2065158399;
-            } //End block
+            } 
 String var540C13E9E156B687226421B24F2DF178_244000273 =             null;
             var540C13E9E156B687226421B24F2DF178_244000273.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_244000273;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, name);
-            //if (idx >= 0) {
-                //if (DEBUG) System.out.println("getAttributeName of "
-                        //+ namespace + ":" + name + " index = " + idx);
-                //if (DEBUG) System.out.println(
-                        //"Namespace=" + getAttributeNamespace(idx)
-                        //+ "Name=" + getAttributeName(idx)
-                        //+ ", Value=" + getAttributeValue(idx));
-                //return getAttributeValue(idx);
-            //}
-            //return null;
+            
+            
+            
+                
+                        
+                
+                        
+                        
+                        
+                
+            
+            
         }
 
         
@@ -774,19 +783,19 @@ String var540C13E9E156B687226421B24F2DF178_244000273 =             null;
                 int var44789CC4B01E17A13BBF6EB1C0517A03_2099939087 = (START_DOCUMENT);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2064344644 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2064344644;
-            } //End block
+            } 
     if(mParseState == 0)            
             {
                 int var4620EC92A1E599503D1824B7D72639A9_1986810387 = (END_DOCUMENT);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_556154849 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_556154849;
-            } //End block
+            } 
             int ev = nativeNext(mParseState);
     if(mDecNextDepth)            
             {
                 mDepth--;
                 mDecNextDepth = false;
-            } //End block
+            } 
 switch(ev){
             case START_TAG:
             mDepth++;
@@ -798,36 +807,36 @@ switch(ev){
     if(ev == END_DOCUMENT)            
             {
                 close();
-            } //End block
+            } 
             int var3CF804E7182AB12879C33C914E1C5CD8_1501373205 = (ev);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_797380311 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_797380311;
-            // ---------- Original Method ----------
-            //if (!mStarted) {
-                //mStarted = true;
-                //return START_DOCUMENT;
-            //}
-            //if (mParseState == 0) {
-                //return END_DOCUMENT;
-            //}
-            //int ev = nativeNext(mParseState);
-            //if (mDecNextDepth) {
-                //mDepth--;
-                //mDecNextDepth = false;
-            //}
-            //switch (ev) {
-            //case START_TAG:
-                //mDepth++;
-                //break;
-            //case END_TAG:
-                //mDecNextDepth = true;
-                //break;
-            //}
-            //mEventType = ev;
-            //if (ev == END_DOCUMENT) {
-                //close();
-            //}
-            //return ev;
+            
+            
+                
+                
+            
+            
+                
+            
+            
+            
+                
+                
+            
+            
+            
+                
+                
+            
+                
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -844,11 +853,11 @@ switch(ev){
             varE41E622105B5125938ACBE30679C95EE_406571191.addTaint(taint);
             throw varE41E622105B5125938ACBE30679C95EE_406571191;
             }
-            // ---------- Original Method ----------
-            //if (type != getEventType()
-                //|| (namespace != null && !namespace.equals( getNamespace () ) )
-                //|| (name != null && !name.equals( getName() ) ) )
-                //throw new XmlPullParserException( "expected "+ TYPES[ type ]+getPositionDescription());
+            
+            
+                
+                
+                
         }
 
         
@@ -861,7 +870,7 @@ switch(ev){
                  + ": parser must be on START_TAG to read next text", this, null);
                 varDCE3D1008149699819D8D8094B11E189_434519212.addTaint(taint);
                 throw varDCE3D1008149699819D8D8094B11E189_434519212;
-            } //End block
+            } 
             int eventType = next();
     if(eventType == TEXT)            
             {
@@ -874,18 +883,18 @@ switch(ev){
                     + ": event TEXT it must be immediately followed by END_TAG", this, null);
                     varEDB6AE54CD1BA3452F32C8801D98FA0A_19531865.addTaint(taint);
                     throw varEDB6AE54CD1BA3452F32C8801D98FA0A_19531865;
-                } //End block
+                } 
 String varDC838461EE2FA0CA4C9BBB70A15456B0_1472770339 =                 result;
                 varDC838461EE2FA0CA4C9BBB70A15456B0_1472770339.addTaint(taint);
                 return varDC838461EE2FA0CA4C9BBB70A15456B0_1472770339;
-            } //End block
+            } 
             else
     if(eventType == END_TAG)            
             {
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475.addTaint(taint);
                 return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475;
-            } //End block
+            } 
             else
             {
                 XmlPullParserException var7479EABD1BC4B9487BD1B52EC928FE5F_910854754 = new XmlPullParserException(
@@ -893,9 +902,9 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                  + ": parser must be on START_TAG or TEXT to read text", this, null);
                 var7479EABD1BC4B9487BD1B52EC928FE5F_910854754.addTaint(taint);
                 throw var7479EABD1BC4B9487BD1B52EC928FE5F_910854754;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -905,7 +914,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
     if(eventType == TEXT && isWhitespace())            
             {
                 eventType = next();
-            } //End block
+            } 
     if(eventType != START_TAG && eventType != END_TAG)            
             {
                 XmlPullParserException var3AF76C9C5CAFF3B4AB5417C37949A0A1_999545894 = new XmlPullParserException(
@@ -913,21 +922,21 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                    + ": expected start or end tag", this, null);
                 var3AF76C9C5CAFF3B4AB5417C37949A0A1_999545894.addTaint(taint);
                 throw var3AF76C9C5CAFF3B4AB5417C37949A0A1_999545894;
-            } //End block
+            } 
             int var2F264034C73ACBD6BAAE70DD7EDB3D3F_8030748 = (eventType);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1384160112 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1384160112;
-            // ---------- Original Method ----------
-            //int eventType = next();
-            //if(eventType == TEXT && isWhitespace()) {   
-               //eventType = next();
-            //}
-            //if (eventType != START_TAG && eventType != END_TAG) {
-               //throw new XmlPullParserException(
-                   //getPositionDescription() 
-                   //+ ": expected start or end tag", this, null);
-            //}
-            //return eventType;
+            
+            
+            
+               
+            
+            
+               
+                   
+                   
+            
+            
         }
 
         
@@ -937,8 +946,8 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
             int var00177517A6CA03A83035BBE864478806_932124648 = (nativeGetAttributeResource(mParseState, index));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379480842 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379480842;
-            // ---------- Original Method ----------
-            //return nativeGetAttributeResource(mParseState, index);
+            
+            
         }
 
         
@@ -955,16 +964,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int var1E98E5DE7362378F2B645B289E69073D_1025300479 = (getAttributeListValue(idx, options, defaultValue));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_702685107 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_702685107;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_1579274904 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_456399503 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_456399503;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeListValue(idx, options, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -980,16 +989,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 boolean var4933B6B8D8D0E59B2FEA8D3F7FA5F6E4_754203887 = (getAttributeBooleanValue(idx, defaultValue));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1285659510 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1285659510;
-            } //End block
+            } 
             boolean var16830A58E1E33A4163524366BA7B701B_1528469712 = (defaultValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_73539030 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_73539030;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeBooleanValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1005,16 +1014,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int var8F636DCD663B68984BE0038795501BD7_527636961 = (getAttributeResourceValue(idx, defaultValue));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972175610 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_972175610;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_1658128708 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_245304788 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_245304788;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeResourceValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1030,16 +1039,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int varBFDC6DAECC7C726E0D57EA41CF84B40F_319476047 = (getAttributeIntValue(idx, defaultValue));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758399031 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_758399031;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_614866776 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716910840 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_716910840;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeIntValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1055,16 +1064,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int varBFF34230F58599DBD52BE2E80D08A039_465420295 = (getAttributeUnsignedIntValue(idx, defaultValue));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_246287050 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_246287050;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_1800427785 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228234055 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1228234055;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeUnsignedIntValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1080,16 +1089,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 float var2B5CC95C575F8450CEF7CCAA3A7FE562_380533408 = (getAttributeFloatValue(idx, defaultValue));
                                 float var546ADE640B6EDFBC8A086EF31347E768_60808037 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_60808037;
-            } //End block
+            } 
             float var16830A58E1E33A4163524366BA7B701B_269795923 = (defaultValue);
                         float var546ADE640B6EDFBC8A086EF31347E768_1371762850 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1371762850;
-            // ---------- Original Method ----------
-            //int idx = nativeGetAttributeIndex(mParseState, namespace, attribute);
-            //if (idx >= 0) {
-                //return getAttributeFloatValue(idx, defaultValue);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1107,18 +1116,18 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                     mStrings.get(v), options, defaultValue));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_803705753 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_803705753;
-            } //End block
+            } 
             int var9E3669D19B675BD57058FD4664205D2A_1235901343 = (v);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_853917739 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_853917739;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //int v = nativeGetAttributeData(mParseState, idx);
-            //if (t == TypedValue.TYPE_STRING) {
-                //return XmlUtils.convertValueToList(
-                    //mStrings.get(v), options, defaultValue);
-            //}
-            //return v;
+            
+            
+            
+            
+                
+                    
+            
+            
         }
 
         
@@ -1134,17 +1143,17 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 boolean var05CF6AF39B3AB74A060D12E4CA8CA26C_1293672776 = (nativeGetAttributeData(mParseState, idx) != 0);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1575485997 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1575485997;
-            } //End block
+            } 
             boolean var16830A58E1E33A4163524366BA7B701B_1450406110 = (defaultValue);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1306494177 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1306494177;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t >= TypedValue.TYPE_FIRST_INT &&
-                //t <= TypedValue.TYPE_LAST_INT) {
-                //return nativeGetAttributeData(mParseState, idx) != 0;
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1158,16 +1167,16 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int var4ABA23A3F2BE8432141FF4E1F023A687_1318265503 = (nativeGetAttributeData(mParseState, idx));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1604245022 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1604245022;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_1977954634 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1972218064 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1972218064;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t == TypedValue.TYPE_REFERENCE) {
-                //return nativeGetAttributeData(mParseState, idx);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1182,17 +1191,17 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int var4ABA23A3F2BE8432141FF4E1F023A687_1108968797 = (nativeGetAttributeData(mParseState, idx));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026133899 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2026133899;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_1485078732 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617683628 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1617683628;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t >= TypedValue.TYPE_FIRST_INT &&
-                //t <= TypedValue.TYPE_LAST_INT) {
-                //return nativeGetAttributeData(mParseState, idx);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1207,17 +1216,17 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                 int var4ABA23A3F2BE8432141FF4E1F023A687_1278358734 = (nativeGetAttributeData(mParseState, idx));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2049963724 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2049963724;
-            } //End block
+            } 
             int var16830A58E1E33A4163524366BA7B701B_1268134814 = (defaultValue);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280614160 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1280614160;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t >= TypedValue.TYPE_FIRST_INT &&
-                //t <= TypedValue.TYPE_LAST_INT) {
-                //return nativeGetAttributeData(mParseState, idx);
-            //}
-            //return defaultValue;
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -1232,17 +1241,17 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
                     nativeGetAttributeData(mParseState, idx)));
                                 float var546ADE640B6EDFBC8A086EF31347E768_978563730 = getTaintFloat();
                 return var546ADE640B6EDFBC8A086EF31347E768_978563730;
-            } //End block
+            } 
             RuntimeException var82C8D0685FB3FB164499685B7906795E_286359450 = new RuntimeException("not a float!");
             var82C8D0685FB3FB164499685B7906795E_286359450.addTaint(taint);
             throw var82C8D0685FB3FB164499685B7906795E_286359450;
-            // ---------- Original Method ----------
-            //int t = nativeGetAttributeDataType(mParseState, idx);
-            //if (t == TypedValue.TYPE_FLOAT) {
-                //return Float.intBitsToFloat(
-                    //nativeGetAttributeData(mParseState, idx));
-            //}
-            //throw new RuntimeException("not a float!");
+            
+            
+            
+                
+                    
+            
+            
         }
 
         
@@ -1252,9 +1261,9 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_851041475 =                 "";
 String varAB024744B99AEC970E7EFF5B57F7E3E8_814080065 =             id >= 0 ? mStrings.get(id).toString() : null;
             varAB024744B99AEC970E7EFF5B57F7E3E8_814080065.addTaint(taint);
             return varAB024744B99AEC970E7EFF5B57F7E3E8_814080065;
-            // ---------- Original Method ----------
-            //int id = nativeGetIdAttribute(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
@@ -1264,9 +1273,9 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_814080065 =             id >= 0 ? mSt
 String varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881 =             id >= 0 ? mStrings.get(id).toString() : null;
             varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881.addTaint(taint);
             return varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881;
-            // ---------- Original Method ----------
-            //int id = nativeGetClassAttribute(mParseState);
-            //return id >= 0 ? mStrings.get(id).toString() : null;
+            
+            
+            
         }
 
         
@@ -1276,8 +1285,8 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881 =             id >= 0 ? mS
             int varCD137CD47DD67CEDD2FB3C345949E98D_1065318745 = (getAttributeResourceValue(null, "id", defaultValue));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_933918880 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_933918880;
-            // ---------- Original Method ----------
-            //return getAttributeResourceValue(null, "id", defaultValue);
+            
+            
         }
 
         
@@ -1286,8 +1295,8 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881 =             id >= 0 ? mS
             int var672FF0DE58331DB878C91499A9F3541B_1193211088 = (nativeGetStyleAttribute(mParseState));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1786698594 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1786698594;
-            // ---------- Original Method ----------
-            //return nativeGetStyleAttribute(mParseState);
+            
+            
         }
 
         
@@ -1300,24 +1309,24 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881 =             id >= 0 ? mS
                     nativeDestroyParseState(mParseState);
                     mParseState = 0;
                     mBlock.decOpenCountLocked();
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mBlock) {
-                //if (mParseState != 0) {
-                    //nativeDestroyParseState(mParseState);
-                    //mParseState = 0;
-                    //mBlock.decOpenCountLocked();
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:15.818 -0400", hash_original_method = "4D47F0EAA663BB7736165BE426E6C1B2", hash_generated_method = "D49A6EC8D8327F8E6A58054E448C9AAB")
         protected void finalize() throws Throwable {
             close();
-            // ---------- Original Method ----------
-            //close();
+            
+            
         }
 
         
@@ -1327,8 +1336,8 @@ String varAB024744B99AEC970E7EFF5B57F7E3E8_1666508881 =             id >= 0 ? mS
 CharSequence varE60373DEF60CD26E76B56CA0EAE527B4_302469867 =             mStrings.get(id);
             varE60373DEF60CD26E76B56CA0EAE527B4_302469867.addTaint(taint);
             return varE60373DEF60CD26E76B56CA0EAE527B4_302469867;
-            // ---------- Original Method ----------
-            //return mStrings.get(id);
+            
+            
         }
 
         

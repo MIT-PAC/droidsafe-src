@@ -1,6 +1,6 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public abstract class ReplacementTransformationMethod implements TransformationM
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.899 -0400", hash_original_method = "1B7B28F98DAC94187572CC248AC52BB7", hash_generated_method = "1B7B28F98DAC94187572CC248AC52BB7")
     public ReplacementTransformationMethod ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -28,6 +28,7 @@ public abstract class ReplacementTransformationMethod implements TransformationM
     protected abstract char[] getReplacement();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.900 -0400", hash_original_method = "194DC730C60A1F45F368AD90A104F0FE", hash_generated_method = "D4A5BF3DABADE06EF1E9551501B369E7")
     public CharSequence getTransformation(CharSequence source, View v) {
         addTaint(v.getTaint());
@@ -44,14 +45,14 @@ for(int i = 0;i < n;i++)
                 {
                     doNothing = false;
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
     if(doNothing)            
             {
 CharSequence var87D92E4D22D3928BDE6A72969186AF86_297558527 =                 source;
                 var87D92E4D22D3928BDE6A72969186AF86_297558527.addTaint(taint);
                 return var87D92E4D22D3928BDE6A72969186AF86_297558527;
-            } //End block
+            } 
     if(!(source instanceof Spannable))            
             {
     if(source instanceof Spanned)                
@@ -61,7 +62,7 @@ CharSequence var9E7570C979D39715F7EE038B1A45D20D_510698981 =                    
                                                         original, replacement));
                     var9E7570C979D39715F7EE038B1A45D20D_510698981.addTaint(taint);
                     return var9E7570C979D39715F7EE038B1A45D20D_510698981;
-                } //End block
+                } 
                 else
                 {
 CharSequence varF85F8A286DE5E8F9739D0C80DF338810_971015473 =                     new ReplacementCharSequence(source,
@@ -69,38 +70,39 @@ CharSequence varF85F8A286DE5E8F9739D0C80DF338810_971015473 =                    
                                                        replacement).toString();
                     varF85F8A286DE5E8F9739D0C80DF338810_971015473.addTaint(taint);
                     return varF85F8A286DE5E8F9739D0C80DF338810_971015473;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(source instanceof Spanned)        
         {
 CharSequence var0A88A6362D54875F6CD556A667CEC802_1033734766 =             new SpannedReplacementCharSequence((Spanned) source,
                                                       original, replacement);
             var0A88A6362D54875F6CD556A667CEC802_1033734766.addTaint(taint);
             return var0A88A6362D54875F6CD556A667CEC802_1033734766;
-        } //End block
+        } 
         else
         {
 CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new ReplacementCharSequence(source, original, replacement);
             varCD506DB4E74DA4B564FA03112F99BB17_1907547577.addTaint(taint);
             return varCD506DB4E74DA4B564FA03112F99BB17_1907547577;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.901 -0400", hash_original_method = "13D8211EBDC6D4196EF2DDB70ED5CACD", hash_generated_method = "F6B7EB031AD974B960E9E01380665FE1")
     public void onFocusChanged(View view, CharSequence sourceText,
                                boolean focused, int direction,
                                Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         addTaint(focused);
         addTaint(sourceText.getTaint());
         addTaint(view.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -121,10 +123,10 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
             mSource = source;
             mOriginal = original;
             mReplacement = replacement;
-            // ---------- Original Method ----------
-            //mSource = source;
-            //mOriginal = original;
-            //mReplacement = replacement;
+            
+            
+            
+            
         }
 
         
@@ -133,8 +135,8 @@ CharSequence varCD506DB4E74DA4B564FA03112F99BB17_1907547577 =             new Re
             int var9E844678846AA17EBC2ADB2098AEA729_230838726 = (mSource.length());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681744191 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1681744191;
-            // ---------- Original Method ----------
-            //return mSource.length();
+            
+            
         }
 
         
@@ -148,20 +150,20 @@ for(int j = 0;j < n;j++)
     if(c == mOriginal[j])                
                 {
                     c = mReplacement[j];
-                } //End block
-            } //End block
+                } 
+            } 
             char var4A8A08F09D37B73795649038408B5F33_551565862 = (c);
                         char varA87DEB01C5F539E6BDA34829C8EF2368_1304563526 = getTaintChar();
             return varA87DEB01C5F539E6BDA34829C8EF2368_1304563526;
-            // ---------- Original Method ----------
-            //char c = mSource.charAt(i);
-            //int n = mOriginal.length;
-            //for (int j = 0; j < n; j++) {
-                //if (c == mOriginal[j]) {
-                    //c = mReplacement[j];
-                //}
-            //}
-            //return c;
+            
+            
+            
+            
+                
+                    
+                
+            
+            
         }
 
         
@@ -174,10 +176,10 @@ for(int j = 0;j < n;j++)
 CharSequence varB221E45F434F915AFB96577CA5936EA6_1900545842 =             new String(c);
             varB221E45F434F915AFB96577CA5936EA6_1900545842.addTaint(taint);
             return varB221E45F434F915AFB96577CA5936EA6_1900545842;
-            // ---------- Original Method ----------
-            //char[] c = new char[end - start];
-            //getChars(start, end, c, 0);
-            //return new String(c);
+            
+            
+            
+            
         }
 
         
@@ -188,10 +190,10 @@ CharSequence varB221E45F434F915AFB96577CA5936EA6_1900545842 =             new St
 String varB221E45F434F915AFB96577CA5936EA6_352666195 =             new String(c);
             varB221E45F434F915AFB96577CA5936EA6_352666195.addTaint(taint);
             return varB221E45F434F915AFB96577CA5936EA6_352666195;
-            // ---------- Original Method ----------
-            //char[] c = new char[length()];
-            //getChars(0, length(), c, 0);
-            //return new String(c);
+            
+            
+            
+            
         }
 
         
@@ -212,21 +214,21 @@ for(int j = 0;j < n;j++)
     if(c == mOriginal[j])                    
                     {
                         dest[i] = mReplacement[j];
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //TextUtils.getChars(mSource, start, end, dest, off);
-            //int offend = end - start + off;
-            //int n = mOriginal.length;
-            //for (int i = off; i < offend; i++) {
-                //char c = dest[i];
-                //for (int j = 0; j < n; j++) {
-                    //if (c == mOriginal[j]) {
-                        //dest[i] = mReplacement[j];
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                
+            
         }
 
         
@@ -246,8 +248,8 @@ for(int j = 0;j < n;j++)
             addTaint(replacement[0]);
             addTaint(original[0]);
             mSpanned = source;
-            // ---------- Original Method ----------
-            //mSpanned = source;
+            
+            
         }
 
         
@@ -258,8 +260,8 @@ for(int j = 0;j < n;j++)
 CharSequence varE28690A64C217C05112E541C85F69946_980270610 =             new SpannedString(this).subSequence(start, end);
             varE28690A64C217C05112E541C85F69946_980270610.addTaint(taint);
             return varE28690A64C217C05112E541C85F69946_980270610;
-            // ---------- Original Method ----------
-            //return new SpannedString(this).subSequence(start, end);
+            
+            
         }
 
         
@@ -271,8 +273,8 @@ CharSequence varE28690A64C217C05112E541C85F69946_980270610 =             new Spa
 T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpans(start, end, type);
             varF03F51B4D510CEB709FCAEAB771CF011_1458673821.addTaint(taint);
             return varF03F51B4D510CEB709FCAEAB771CF011_1458673821;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpans(start, end, type);
+            
+            
         }
 
         
@@ -282,8 +284,8 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
             int var800F360D0EFE39368ED5E50C7D513A55_424013490 = (mSpanned.getSpanStart(tag));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652244404 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652244404;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpanStart(tag);
+            
+            
         }
 
         
@@ -293,8 +295,8 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
             int var7238B1DBF5539E6FFFB0C5533E719DCF_941980489 = (mSpanned.getSpanEnd(tag));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437591639 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1437591639;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpanEnd(tag);
+            
+            
         }
 
         
@@ -304,8 +306,8 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
             int var55E53B9FA7449A4A00466336ED252163_70781273 = (mSpanned.getSpanFlags(tag));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158295982 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_158295982;
-            // ---------- Original Method ----------
-            //return mSpanned.getSpanFlags(tag);
+            
+            
         }
 
         
@@ -317,8 +319,8 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1458673821 =             mSpanned.getSpa
             int var69794DFBCD367E9F529E44E71CBFF48F_1365474931 = (mSpanned.nextSpanTransition(start, end, type));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1363182445 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1363182445;
-            // ---------- Original Method ----------
-            //return mSpanned.nextSpanTransition(start, end, type);
+            
+            
         }
 
         

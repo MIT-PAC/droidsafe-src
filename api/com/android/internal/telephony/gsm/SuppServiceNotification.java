@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,7 +26,7 @@ public class SuppServiceNotification {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.878 -0400", hash_original_method = "874E946CBC113089EBEC7DA6D34DA654", hash_generated_method = "874E946CBC113089EBEC7DA6D34DA654")
     public SuppServiceNotification ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -40,13 +40,13 @@ String varFD564195B2D314AB58505BEAE5A1510A_1062241110 =         super.toString()
             + PhoneNumberUtils.stringFromStringAndTOA(number, type) + "\" ";
         varFD564195B2D314AB58505BEAE5A1510A_1062241110.addTaint(taint);
         return varFD564195B2D314AB58505BEAE5A1510A_1062241110;
-        // ---------- Original Method ----------
-        //return super.toString() + " mobile"
-            //+ (notificationType == 0 ? " originated " : " terminated ")
-            //+ " code: " + code
-            //+ " index: " + index
-            //+ " \""
-            //+ PhoneNumberUtils.stringFromStringAndTOA(number, type) + "\" ";
+        
+        
+            
+            
+            
+            
+            
     }
 
     

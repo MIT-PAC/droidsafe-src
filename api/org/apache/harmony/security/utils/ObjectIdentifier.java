@@ -1,6 +1,6 @@
 package org.apache.harmony.security.utils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,9 +30,9 @@ public final class ObjectIdentifier {
     public  ObjectIdentifier(int[] oid) {
         validateOid(oid);
         this.oid = oid;
-        // ---------- Original Method ----------
-        //validateOid(oid);
-        //this.oid = oid;
+        
+        
+        
     }
 
     
@@ -45,47 +45,50 @@ public final class ObjectIdentifier {
             NullPointerException varE44F839234FE1E111036D9CCC87F2537_1514977803 = new NullPointerException("oidGroup == null");
             varE44F839234FE1E111036D9CCC87F2537_1514977803.addTaint(taint);
             throw varE44F839234FE1E111036D9CCC87F2537_1514977803;
-        } //End block
+        } 
         this.group = oidGroup;
         this.name = name;
         toOIDString();
-        // ---------- Original Method ----------
-        //if (oidGroup == null) {
-            //throw new NullPointerException("oidGroup == null");
-        //}
-        //this.group = oidGroup;
-        //this.name = name;
-        //toOIDString();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.434 -0400", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "CA45C723251216BB7EC56717465D4DC2")
     public int[] getOid() {
         int[] var130F43112BB8A7A7790EBFC08EE9D6AF_39922093 = (oid);
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_1873613705 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_1873613705;
-        // ---------- Original Method ----------
-        //return oid;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.435 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "3FA308681331D06972913A0C3DE9BEB6")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1151702311 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_1151702311.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_1151702311;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.435 -0400", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "E8BC571C0FE48BAA844F5DCAE8D4B488")
     public Object getGroup() {
 Object varD15A27BD67EB0D670CD5C298FF20B74F_1360345573 =         group;
         varD15A27BD67EB0D670CD5C298FF20B74F_1360345573.addTaint(taint);
         return varD15A27BD67EB0D670CD5C298FF20B74F_1360345573;
-        // ---------- Original Method ----------
-        //return group;
+        
+        
     }
 
     
@@ -97,41 +100,42 @@ Object varD15A27BD67EB0D670CD5C298FF20B74F_1360345573 =         group;
             boolean varB326B5062B2F0E69046810717534CB09_1089376907 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1846908314 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1846908314;
-        } //End block
+        } 
     if(o == null || this.getClass() != o.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_247296854 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1704021358 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1704021358;
-        } //End block
+        } 
         boolean var62A536C7516308AA2A6C1868C0B5E7EE_892097730 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_877398181 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_877398181;
-        // ---------- Original Method ----------
-        //if (this == o) {
-            //return true;
-        //}
-        //if (o == null || this.getClass() != o.getClass()) {
-            //return false;
-        //}
-        //return Arrays.equals(oid, ((ObjectIdentifier) o).oid);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.437 -0400", hash_original_method = "81F5AC8E69E1A1CBA984F8550D6AF5BD", hash_generated_method = "5A223EA65B2ABFE8EDC8B73F23F4AD23")
     public String toOIDString() {
     if(sOID == null)        
         {
             sOID = "OID." + toString();
-        } //End block
+        } 
 String var1644F0E5DA14318D1460A2F3EC7526E4_1309316059 =         sOID;
         var1644F0E5DA14318D1460A2F3EC7526E4_1309316059.addTaint(taint);
         return var1644F0E5DA14318D1460A2F3EC7526E4_1309316059;
-        // ---------- Original Method ----------
-        //if (sOID == null) {
-            //sOID = "OID." + toString();
-        //}
-        //return sOID;
+        
+        
+            
+        
+        
     }
 
     
@@ -144,24 +148,24 @@ for(int i = 0;i < oid.length - 1;++i)
             {
                 sb.append(oid[i]);
                 sb.append('.');
-            } //End block
+            } 
             sb.append(oid[oid.length - 1]);
             soid = sb.toString();
-        } //End block
+        } 
 String var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614 =         soid;
         var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614.addTaint(taint);
         return var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614;
-        // ---------- Original Method ----------
-        //if (soid == null) {
-            //StringBuilder sb = new StringBuilder(4 * oid.length);
-            //for (int i = 0; i < oid.length - 1; ++i) {
-                //sb.append(oid[i]);
-                //sb.append('.');
-            //}
-            //sb.append(oid[oid.length - 1]);
-            //soid = sb.toString();
-        //}
-        //return soid;
+        
+        
+            
+            
+                
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -170,15 +174,15 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614 =         soid;
     if(hash == -1)        
         {
             hash = hashIntArray(oid);
-        } //End block
+        } 
         int var0800FC577294C34E0B28AD2839435945_1059887815 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1290019700 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1290019700;
-        // ---------- Original Method ----------
-        //if (hash == -1) {
-            //hash = hashIntArray(oid);
-        //}
-        //return hash;
+        
+        
+            
+        
+        
     }
 
     
@@ -197,7 +201,8 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_1680422614 =         soid;
     }
 
     
-        public static int hashIntArray(int[] array) {
+        @DSModeled(DSC.SAFE)
+    public static int hashIntArray(int[] array) {
         int intHash = 0;
         for (int i = 0; i < array.length && i < 4; i++) {
             intHash += array[i] << (8 * i); 

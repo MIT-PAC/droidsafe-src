@@ -1,6 +1,6 @@
 package android.net.wifi.p2p;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class WifiP2pInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.244 -0400", hash_original_method = "F3F0ABA121ED75F0A34990BB87685D5A", hash_generated_method = "8D8A828B3FE364068776E0C23F2C39D1")
     public  WifiP2pInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,13 +33,13 @@ public class WifiP2pInfo implements Parcelable {
             groupFormed = source.groupFormed;
             isGroupOwner = source.isGroupOwner;
             groupOwnerAddress = source.groupOwnerAddress;
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //groupFormed = source.groupFormed;
-            //isGroupOwner = source.isGroupOwner;
-            //groupOwnerAddress = source.groupOwnerAddress;
-       //}
+        } 
+        
+        
+            
+            
+            
+       
     }
 
     
@@ -52,22 +52,23 @@ public class WifiP2pInfo implements Parcelable {
 String var69222FFA45D1268AEE1923C5558B0BD5_945638731 =         sbuf.toString();
         var69222FFA45D1268AEE1923C5558B0BD5_945638731.addTaint(taint);
         return var69222FFA45D1268AEE1923C5558B0BD5_945638731;
-        // ---------- Original Method ----------
-        //StringBuffer sbuf = new StringBuffer();
-        //sbuf.append("groupFormed: ").append(groupFormed)
-            //.append("isGroupOwner: ").append(isGroupOwner)
-            //.append("groupOwnerAddress: ").append(groupOwnerAddress);
-        //return sbuf.toString();
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.245 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "0A86670341B055491757FE5BCD974E26")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_148176744 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1063806542 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1063806542;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -81,20 +82,20 @@ String var69222FFA45D1268AEE1923C5558B0BD5_945638731 =         sbuf.toString();
         {
             dest.writeByte((byte)1);
             dest.writeByteArray(groupOwnerAddress.getAddress());
-        } //End block
+        } 
         else
         {
             dest.writeByte((byte)0);
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeByte(groupFormed ? (byte)1 : (byte)0);
-        //dest.writeByte(isGroupOwner ? (byte)1 : (byte)0);
-        //if (groupOwnerAddress != null) {
-            //dest.writeByte((byte)1);
-            //dest.writeByteArray(groupOwnerAddress.getAddress());
-        //} else {
-            //dest.writeByte((byte)0);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -118,7 +119,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_945638731 =         sbuf.toString();
                 return new WifiP2pInfo[size];
             }
         };
-    // orphaned legacy method
+    
     public WifiP2pInfo createFromParcel(Parcel in) {
                 WifiP2pInfo info = new WifiP2pInfo();
                 info.groupFormed = (in.readByte() == 1);
@@ -131,7 +132,7 @@ String var69222FFA45D1268AEE1923C5558B0BD5_945638731 =         sbuf.toString();
                 return info;
             }
     
-    // orphaned legacy method
+    
     public WifiP2pInfo[] newArray(int size) {
                 return new WifiP2pInfo[size];
             }

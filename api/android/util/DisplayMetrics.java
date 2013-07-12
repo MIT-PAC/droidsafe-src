@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,10 +49,11 @@ public class DisplayMetrics {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.849 -0400", hash_original_method = "72B3D95037FCF3814777C19051FFD99D", hash_generated_method = "2E9FDC4700C3C30CD4E712DF6E2BF6E3")
     public  DisplayMetrics() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.852 -0400", hash_original_method = "D037FDEFC3DBB26170014E91328ECE75", hash_generated_method = "6DE88EBBD112C6976B1E762E9C4AF96A")
     public void setTo(DisplayMetrics o) {
         widthPixels = o.widthPixels;
@@ -68,23 +69,24 @@ public class DisplayMetrics {
         noncompatScaledDensity = o.noncompatScaledDensity;
         noncompatXdpi = o.noncompatXdpi;
         noncompatYdpi = o.noncompatYdpi;
-        // ---------- Original Method ----------
-        //widthPixels = o.widthPixels;
-        //heightPixels = o.heightPixels;
-        //density = o.density;
-        //densityDpi = o.densityDpi;
-        //scaledDensity = o.scaledDensity;
-        //xdpi = o.xdpi;
-        //ydpi = o.ydpi;
-        //noncompatWidthPixels = o.noncompatWidthPixels;
-        //noncompatHeightPixels = o.noncompatHeightPixels;
-        //noncompatDensity = o.noncompatDensity;
-        //noncompatScaledDensity = o.noncompatScaledDensity;
-        //noncompatXdpi = o.noncompatXdpi;
-        //noncompatYdpi = o.noncompatYdpi;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.853 -0400", hash_original_method = "31EFDB43C431C1F23D54785D2F7319F2", hash_generated_method = "0FE93195343B6E74E337464525C71129")
     public void setToDefaults() {
         widthPixels = 0;
@@ -96,16 +98,16 @@ public class DisplayMetrics {
         ydpi = DENSITY_DEVICE;
         noncompatWidthPixels = 0;
         noncompatHeightPixels = 0;
-        // ---------- Original Method ----------
-        //widthPixels = 0;
-        //heightPixels = 0;
-        //density = DENSITY_DEVICE / (float) DENSITY_DEFAULT;
-        //densityDpi = DENSITY_DEVICE;
-        //scaledDensity = density;
-        //xdpi = DENSITY_DEVICE;
-        //ydpi = DENSITY_DEVICE;
-        //noncompatWidthPixels = 0;
-        //noncompatHeightPixels = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -117,14 +119,15 @@ String varB7BF8DE5B505C57E0EF72407430C5108_850413790 =         "DisplayMetrics{d
             ", xdpi=" + xdpi + ", ydpi=" + ydpi + "}";
         varB7BF8DE5B505C57E0EF72407430C5108_850413790.addTaint(taint);
         return varB7BF8DE5B505C57E0EF72407430C5108_850413790;
-        // ---------- Original Method ----------
-        //return "DisplayMetrics{density=" + density + ", width=" + widthPixels +
-            //", height=" + heightPixels + ", scaledDensity=" + scaledDensity +
-            //", xdpi=" + xdpi + ", ydpi=" + ydpi + "}";
+        
+        
+            
+            
     }
 
     
-        private static int getDeviceDensity() {
+        @DSModeled(DSC.SPEC)
+    private static int getDeviceDensity() {
         return SystemProperties.getInt("qemu.sf.lcd_density",
                 SystemProperties.getInt("ro.sf.lcd_density", DENSITY_DEFAULT));
     }

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class ViaParser extends HeaderParser {
     public  ViaParser(String via) {
         super(via);
         addTaint(via.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class ViaParser extends HeaderParser {
     public  ViaParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,10 +69,10 @@ public class ViaParser extends HeaderParser {
                 varE52C48940FC22DA57128553A5474BF5E_702081967.addTaint(taint);
                 throw varE52C48940FC22DA57128553A5474BF5E_702081967;
                 }
-            } //End block
+            } 
             v.setParameter(nameValue);
             this.lexer.SPorHT();
-        } //End block
+        } 
     if(lexer.lookAhead(0) == '(')        
         {
             this.lexer.selectLexer("charLexer");
@@ -86,7 +86,7 @@ public class ViaParser extends HeaderParser {
                 {
                     lexer.consume(1);
                     break;
-                } //End block
+                } 
                 else
     if(ch == '\\')                
                 {
@@ -96,22 +96,22 @@ public class ViaParser extends HeaderParser {
                     tok = lexer.getNextToken();
                     comment.append(tok.getTokenValue());
                     lexer.consume(1);
-                } //End block
+                } 
                 else
     if(ch == '\n')                
                 {
                     break;
-                } //End block
+                } 
                 else
                 {
                     comment.append(ch);
                     lexer.consume(1);
-                } //End block
-            } //End block
+                } 
+            } 
             v.setComment(comment.toString());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -136,21 +136,21 @@ public class ViaParser extends HeaderParser {
     if(name.getTokenValue().compareToIgnoreCase(Via.RECEIVED) == 0)                    
                     {
                         str = lexer.byteStringNoSemicolon();
-                    } //End block
+                    } 
                     else
                     {
     if(lexer.lookAhead(0) == '\"')                        
                         {
                             str = lexer.quotedString();
                             quoted = true;
-                        } //End block
+                        } 
                         else
                         {
                             lexer.match(LexerCore.ID);
                             Token value = lexer.getNextToken();
                             str = value.getTokenValue();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     NameValue nv = new NameValue(name.getTokenValue()
                             .toLowerCase(), str);
     if(quoted)                    
@@ -158,29 +158,29 @@ public class ViaParser extends HeaderParser {
 NameValue var8CDC8D1FFB0B29D7089B99B596CC9F85_1725069277 =                     nv;
                     var8CDC8D1FFB0B29D7089B99B596CC9F85_1725069277.addTaint(taint);
                     return var8CDC8D1FFB0B29D7089B99B596CC9F85_1725069277;
-                } //End block
+                } 
                 else
                 {
 NameValue var1B621EC7BECB3B67D1650544C7F9B8BD_532670432 =                     new NameValue(name.getTokenValue().toLowerCase(),
                             null);
                     var1B621EC7BECB3B67D1650544C7F9B8BD_532670432.addTaint(taint);
                     return var1B621EC7BECB3B67D1650544C7F9B8BD_532670432;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (ParseException ex)
             {
 NameValue varAA6B0F6934A3DB1618778075C32053F2_1198911583 =                 new NameValue(name.getTokenValue(), null);
                 varAA6B0F6934A3DB1618778075C32053F2_1198911583.addTaint(taint);
                 return varAA6B0F6934A3DB1618778075C32053F2_1198911583;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("nameValue");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -206,22 +206,22 @@ NameValue varAA6B0F6934A3DB1618778075C32053F2_1198911583 =                 new N
                 {
                     this.lexer.consume(1);
                     this.lexer.SPorHT();
-                } //End block
+                } 
     if(this.lexer.lookAhead(0) == '\n')                
                 break;
-            } //End block
+            } 
             this.lexer.match('\n');
 SIPHeader varE2A372C5D26EBDD07722713ECCD40253_354084958 =             viaList;
             varE2A372C5D26EBDD07722713ECCD40253_354084958.addTaint(taint);
             return varE2A372C5D26EBDD07722713ECCD40253_354084958;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

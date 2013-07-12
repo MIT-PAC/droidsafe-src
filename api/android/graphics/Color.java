@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,41 +13,48 @@ public class Color {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.068 -0400", hash_original_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA", hash_generated_method = "34DAB7DC9B66BC3931AEC17E77DE7DFA")
     public Color ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static int alpha(int color) {
+        @DSModeled(DSC.SAFE)
+    public static int alpha(int color) {
         return color >>> 24;
     }
 
     
-        public static int red(int color) {
+        @DSModeled(DSC.SAFE)
+    public static int red(int color) {
         return (color >> 16) & 0xFF;
     }
 
     
-        public static int green(int color) {
+        @DSModeled(DSC.SAFE)
+    public static int green(int color) {
         return (color >> 8) & 0xFF;
     }
 
     
-        public static int blue(int color) {
+        @DSModeled(DSC.SAFE)
+    public static int blue(int color) {
         return color & 0xFF;
     }
 
     
-        public static int rgb(int red, int green, int blue) {
+        @DSModeled(DSC.SAFE)
+    public static int rgb(int red, int green, int blue) {
         return (0xFF << 24) | (red << 16) | (green << 8) | blue;
     }
 
     
-        public static int argb(int alpha, int red, int green, int blue) {
+        @DSModeled(DSC.SAFE)
+    public static int argb(int alpha, int red, int green, int blue) {
         return (alpha << 24) | (red << 16) | (green << 8) | blue;
     }
 
     
-        public static float hue(int color) {
+        @DSModeled(DSC.SAFE)
+    public static float hue(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
         int b = color & 0xFF;
@@ -77,7 +84,8 @@ public class Color {
     }
 
     
-        public static float saturation(int color) {
+        @DSModeled(DSC.SAFE)
+    public static float saturation(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
         int b = color & 0xFF;
@@ -93,7 +101,8 @@ public class Color {
     }
 
     
-        public static float brightness(int color) {
+        @DSModeled(DSC.SAFE)
+    public static float brightness(int color) {
         int r = (color >> 16) & 0xFF;
         int g = (color >> 8) & 0xFF;
         int b = color & 0xFF;
@@ -102,7 +111,8 @@ public class Color {
     }
 
     
-        public static int parseColor(String colorString) {
+        @DSModeled(DSC.SAFE)
+    public static int parseColor(String colorString) {
         if (colorString.charAt(0) == '#') {
             long color = Long.parseLong(colorString.substring(1), 16);
             if (colorString.length() == 7) {
@@ -121,12 +131,14 @@ public class Color {
     }
 
     
-        public static int HSBtoColor(float[] hsb) {
+        @DSModeled(DSC.SAFE)
+    public static int HSBtoColor(float[] hsb) {
         return HSBtoColor(hsb[0], hsb[1], hsb[2]);
     }
 
     
-        public static int HSBtoColor(float h, float s, float b) {
+        @DSModeled(DSC.SAFE)
+    public static int HSBtoColor(float h, float s, float b) {
         h = MathUtils.constrain(h, 0.0f, 1.0f);
         s = MathUtils.constrain(s, 0.0f, 1.0f);
         b = MathUtils.constrain(b, 0.0f, 1.0f);

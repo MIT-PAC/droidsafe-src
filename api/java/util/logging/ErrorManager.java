@@ -1,6 +1,6 @@
 package java.util.logging;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,10 +12,11 @@ public class ErrorManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.047 -0400", hash_original_method = "F8543B5AF6CB4B42529104ECFDE08620", hash_generated_method = "4CBB7C3EF85E54BBF4EC847A9E1DDCAF")
     public  ErrorManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:18.047 -0400", hash_original_method = "88D78C1D6CF19D14D0670D7F86679469", hash_generated_method = "CAF7317F7B9A37C7951787C25FA8FEFB")
     public void error(String message, Exception exception, int errorCode) {
         addTaint(errorCode);
@@ -26,32 +27,32 @@ public class ErrorManager {
     if(called)            
             {
                 return;
-            } //End block
+            } 
             called = true;
-        } //End block
+        } 
         System.err.println(this.getClass().getName() + ": " + FAILURES[errorCode]);
     if(message != null)        
         {
             System.err.println("Error message - " + message);
-        } //End block
+        } 
     if(exception != null)        
         {
             System.err.println("Exception - " + exception);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (called) {
-                //return;
-            //}
-            //called = true;
-        //}
-        //System.err.println(this.getClass().getName() + ": " + FAILURES[errorCode]);
-        //if (message != null) {
-            //System.err.println("Error message - " + message);
-        //}
-        //if (exception != null) {
-            //System.err.println("Exception - " + exception);
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     

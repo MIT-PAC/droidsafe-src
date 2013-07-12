@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,10 +21,10 @@ public class SmsResponse {
         this.messageRef = messageRef;
         this.ackPdu = ackPdu;
         this.errorCode = errorCode;
-        // ---------- Original Method ----------
-        //this.messageRef = messageRef;
-        //this.ackPdu = ackPdu;
-        //this.errorCode = errorCode;
+        
+        
+        
+        
     }
 
     
@@ -37,12 +37,12 @@ public class SmsResponse {
 String varEDFF4FBBF053B5DC2B444ADFA049EE0F_1229177383 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_1229177383.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1229177383;
-        // ---------- Original Method ----------
-        //String ret = "{ messageRef = " + messageRef
-                        //+ ", errorCode = " + errorCode
-                        //+ ", ackPdu = " + ackPdu
-                        //+ "}";
-        //return ret;
+        
+        
+                        
+                        
+                        
+        
     }
 
     

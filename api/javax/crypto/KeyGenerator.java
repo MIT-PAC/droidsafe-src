@@ -1,6 +1,6 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,10 +30,10 @@ public class KeyGenerator {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = keyGenSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = keyGenSpi;
+        
+        
+        
+        
     }
 
     
@@ -42,8 +42,8 @@ public class KeyGenerator {
 String var44A46B4003FC81ACB0223385BA1FA818_1362515431 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1362515431.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1362515431;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1362515431 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_5314621 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_5314621.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_5314621;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -97,8 +97,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_5314621 =         provider;
 SecretKey var04457856BF7B8B913E518C25CAF747D7_19335401 =         spiImpl.engineGenerateKey();
         var04457856BF7B8B913E518C25CAF747D7_19335401.addTaint(taint);
         return var04457856BF7B8B913E518C25CAF747D7_19335401;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateKey();
+        
+        
     }
 
     
@@ -106,8 +106,8 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_19335401 =         spiImpl.engineG
     public final void init(AlgorithmParameterSpec params) throws InvalidAlgorithmParameterException {
         addTaint(params.getTaint());
         spiImpl.engineInit(params, RANDOM);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(params, RANDOM);
+        
+        
     }
 
     
@@ -116,8 +116,8 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_19335401 =         spiImpl.engineG
         addTaint(random.getTaint());
         addTaint(params.getTaint());
         spiImpl.engineInit(params, random);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(params, random);
+        
+        
     }
 
     
@@ -125,8 +125,8 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_19335401 =         spiImpl.engineG
     public final void init(int keysize) {
         addTaint(keysize);
         spiImpl.engineInit(keysize, RANDOM);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(keysize, RANDOM);
+        
+        
     }
 
     
@@ -135,8 +135,8 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_19335401 =         spiImpl.engineG
         addTaint(random.getTaint());
         addTaint(keysize);
         spiImpl.engineInit(keysize, random);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(keysize, random);
+        
+        
     }
 
     
@@ -144,8 +144,8 @@ SecretKey var04457856BF7B8B913E518C25CAF747D7_19335401 =         spiImpl.engineG
     public final void init(SecureRandom random) {
         addTaint(random.getTaint());
         spiImpl.engineInit(random);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(random);
+        
+        
     }
 
     

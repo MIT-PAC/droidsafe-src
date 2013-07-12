@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,21 +27,22 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
     if(ServiceManager.getService("simphonebook") == null)        
         {
             ServiceManager.addService("simphonebook", this);
-        } //End block
-        // ---------- Original Method ----------
-        //mIccPhoneBookInterfaceManager = iccPhoneBookInterfaceManager;
-        //if(ServiceManager.getService("simphonebook") == null) {
-            //ServiceManager.addService("simphonebook", this);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.600 -0400", hash_original_method = "D73EC83F9CAB72AF50214ABBB6029AE3", hash_generated_method = "7410F9F304037814B37AE40C5E08E3F2")
     public void setmIccPhoneBookInterfaceManager(
             IccPhoneBookInterfaceManager iccPhoneBookInterfaceManager) {
         this.mIccPhoneBookInterfaceManager = iccPhoneBookInterfaceManager;
-        // ---------- Original Method ----------
-        //this.mIccPhoneBookInterfaceManager = iccPhoneBookInterfaceManager;
+        
+        
     }
 
     
@@ -60,9 +61,9 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
                 efid, oldTag, oldPhoneNumber, newTag, newPhoneNumber, pin2));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500161660 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_500161660;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.updateAdnRecordsInEfBySearch(
-                //efid, oldTag, oldPhoneNumber, newTag, newPhoneNumber, pin2);
+        
+        
+                
     }
 
     
@@ -78,9 +79,9 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
                 newTag, newPhoneNumber, index, pin2));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_779084890 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_779084890;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.updateAdnRecordsInEfByIndex(efid,
-                //newTag, newPhoneNumber, index, pin2);
+        
+        
+                
     }
 
     
@@ -90,8 +91,8 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
         int[] varDA05ABA2FA884170302962B204321BA0_1010013114 = (mIccPhoneBookInterfaceManager.getAdnRecordsSize(efid));
                 int[] varB4CCCA26F9DB9189C32F33E82D425CFB_669194616 = {getTaintInt()};
         return varB4CCCA26F9DB9189C32F33E82D425CFB_669194616;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.getAdnRecordsSize(efid);
+        
+        
     }
 
     
@@ -101,8 +102,8 @@ public class IccPhoneBookInterfaceManagerProxy extends IIccPhoneBook.Stub {
 List<AdnRecord> var24E03C974B6797027BF7ED53C6A4078C_1496456800 =         mIccPhoneBookInterfaceManager.getAdnRecordsInEf(efid);
         var24E03C974B6797027BF7ED53C6A4078C_1496456800.addTaint(taint);
         return var24E03C974B6797027BF7ED53C6A4078C_1496456800;
-        // ---------- Original Method ----------
-        //return mIccPhoneBookInterfaceManager.getAdnRecordsInEf(efid);
+        
+        
     }
 
     

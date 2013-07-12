@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public class RegionIterator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.325 -0400", hash_original_method = "8221B1C759F7AE45DFBE3F2918777459", hash_generated_method = "79006011C2E682714FDDFBE507D6EEAE")
     public  RegionIterator(Region region) {
         mNativeIter = nativeConstructor(region.ni());
-        // ---------- Original Method ----------
-        //mNativeIter = nativeConstructor(region.ni());
+        
+        
     }
 
     
@@ -26,23 +26,24 @@ public class RegionIterator {
             NullPointerException varFC8C8C558367CA16CA6B45324C278234_723104169 = new NullPointerException("The Rect must be provided");
             varFC8C8C558367CA16CA6B45324C278234_723104169.addTaint(taint);
             throw varFC8C8C558367CA16CA6B45324C278234_723104169;
-        } //End block
+        } 
         boolean var7FC3484CABDCF3A2E3955129CC26B05C_466469405 = (nativeNext(mNativeIter, r));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_551458591 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_551458591;
-        // ---------- Original Method ----------
-        //if (r == null) {
-            //throw new NullPointerException("The Rect must be provided");
-        //}
-        //return nativeNext(mNativeIter, r);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.326 -0400", hash_original_method = "ED5A48D85C90AAF769D53509399DCB2D", hash_generated_method = "53E4248613FD2167FADC1CDA5F4F8DB7")
     protected void finalize() throws Throwable {
         nativeDestructor(mNativeIter);
-        // ---------- Original Method ----------
-        //nativeDestructor(mNativeIter);
+        
+        
     }
 
     

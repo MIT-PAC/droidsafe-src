@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -43,9 +43,9 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
     public  HashMap() {
         table = (HashMapEntry<K, V>[]) EMPTY_TABLE;
         threshold = -1;
-        // ---------- Original Method ----------
-        //table = (HashMapEntry<K, V>[]) EMPTY_TABLE;
-        //threshold = -1;
+        
+        
+        
     }
 
     
@@ -57,47 +57,47 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             IllegalArgumentException varE68AB0C8AF29B541CCF795D60D7AEAE6_238441193 = new IllegalArgumentException("Capacity: " + capacity);
             varE68AB0C8AF29B541CCF795D60D7AEAE6_238441193.addTaint(taint);
             throw varE68AB0C8AF29B541CCF795D60D7AEAE6_238441193;
-        } //End block
+        } 
     if(capacity == 0)        
         {
             @SuppressWarnings("unchecked") HashMapEntry<K, V>[] tab = (HashMapEntry<K, V>[]) EMPTY_TABLE;
             table = tab;
             threshold = -1;
             return;
-        } //End block
+        } 
     if(capacity < MINIMUM_CAPACITY)        
         {
             capacity = MINIMUM_CAPACITY;
-        } //End block
+        } 
         else
     if(capacity > MAXIMUM_CAPACITY)        
         {
             capacity = MAXIMUM_CAPACITY;
-        } //End block
+        } 
         else
         {
             capacity = roundUpToPowerOfTwo(capacity);
-        } //End block
+        } 
         makeTable(capacity);
-        // ---------- Original Method ----------
-        //if (capacity < 0) {
-            //throw new IllegalArgumentException("Capacity: " + capacity);
-        //}
-        //if (capacity == 0) {
-            //@SuppressWarnings("unchecked")
-            //HashMapEntry<K, V>[] tab = (HashMapEntry<K, V>[]) EMPTY_TABLE;
-            //table = tab;
-            //threshold = -1; 
-            //return;
-        //}
-        //if (capacity < MINIMUM_CAPACITY) {
-            //capacity = MINIMUM_CAPACITY;
-        //} else if (capacity > MAXIMUM_CAPACITY) {
-            //capacity = MAXIMUM_CAPACITY;
-        //} else {
-            //capacity = roundUpToPowerOfTwo(capacity);
-        //}
-        //makeTable(capacity);
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+        
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -111,11 +111,11 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
             IllegalArgumentException var5B3332F9036D49CF8BF1BBF51FC6B72E_1652996573 = new IllegalArgumentException("Load factor: " + loadFactor);
             var5B3332F9036D49CF8BF1BBF51FC6B72E_1652996573.addTaint(taint);
             throw var5B3332F9036D49CF8BF1BBF51FC6B72E_1652996573;
-        } //End block
-        // ---------- Original Method ----------
-        //if (loadFactor <= 0 || Float.isNaN(loadFactor)) {
-            //throw new IllegalArgumentException("Load factor: " + loadFactor);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -124,8 +124,8 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
         this(capacityForInitSize(map.size()));
         addTaint(map.getTaint());
         constructorPutAll(map);
-        // ---------- Original Method ----------
-        //constructorPutAll(map);
+        
+        
     }
 
     
@@ -135,20 +135,22 @@ public class HashMap<K, V> extends AbstractMap<K, V> implements Cloneable, Seria
 for(Entry<? extends K, ? extends V> e : map.entrySet())
         {
             constructorPut(e.getKey(), e.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //for (Entry<? extends K, ? extends V> e : map.entrySet()) {
-            //constructorPut(e.getKey(), e.getValue());
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
-        static int capacityForInitSize(int size) {
+        @DSModeled(DSC.SAFE)
+    static int capacityForInitSize(int size) {
         int result = (size >> 1) + size;
         return (result & ~(MAXIMUM_CAPACITY-1))==0 ? result : MAXIMUM_CAPACITY;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.330 -0400", hash_original_method = "C555E25CE67FE12926CA5480B863847E", hash_generated_method = "9D88A2719A5AA55CE8F7B1F4BC80B0AD")
     @SuppressWarnings("unchecked")
     @Override
@@ -157,13 +159,13 @@ for(Entry<? extends K, ? extends V> e : map.entrySet())
         try 
         {
             result = (HashMap<K, V>) super.clone();
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             AssertionError varA5A331D65C8C3F32D42E49D64BCF4109_1726073032 = new AssertionError(e);
             varA5A331D65C8C3F32D42E49D64BCF4109_1726073032.addTaint(taint);
             throw varA5A331D65C8C3F32D42E49D64BCF4109_1726073032;
-        } //End block
+        } 
         result.makeTable(table.length);
         result.entryForNullKey = null;
         result.size = 0;
@@ -175,50 +177,53 @@ for(Entry<? extends K, ? extends V> e : map.entrySet())
 Object varDC838461EE2FA0CA4C9BBB70A15456B0_1397747498 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1397747498.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1397747498;
-        // ---------- Original Method ----------
-        //HashMap<K, V> result;
-        //try {
-            //result = (HashMap<K, V>) super.clone();
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError(e);
-        //}
-        //result.makeTable(table.length);
-        //result.entryForNullKey = null;
-        //result.size = 0;
-        //result.keySet = null;
-        //result.entrySet = null;
-        //result.values = null;
-        //result.init();
-        //result.constructorPutAll(this);
-        //return result;
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.331 -0400", hash_original_method = "417EF77086319CE91314CCF850ADA61E", hash_generated_method = "2067003B6622767497B839D408201FF1")
      void init() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.331 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "7305103C694C83C8E691102300057EB1")
     @Override
     public boolean isEmpty() {
         boolean var9FB8BC7F775DDD98EEAB5582D340229E_345712387 = (size == 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_321411188 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_321411188;
-        // ---------- Original Method ----------
-        //return size == 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.332 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "7014EB9C80407863C08EDB29DDA4F9A3")
     @Override
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_467449385 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979173397 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_979173397;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -231,7 +236,7 @@ Object varDC838461EE2FA0CA4C9BBB70A15456B0_1397747498 =         result;
 V var78AF416712B960DDFC22256875A90AD3_1563457158 =             e == null ? null : e.value;
             var78AF416712B960DDFC22256875A90AD3_1563457158.addTaint(taint);
             return var78AF416712B960DDFC22256875A90AD3_1563457158;
-        } //End block
+        } 
         int hash = key.hashCode();
         hash ^= (hash >>> 20) ^ (hash >>> 12);
         hash ^= (hash >>> 7) ^ (hash >>> 4);
@@ -244,31 +249,32 @@ for(HashMapEntry<K, V> e = tab[hash & (tab.length - 1)];e != null;e = e.next)
 V var65D32B0ADAFF3F55986024909BAFC34B_1052490243 =                 e.value;
                 var65D32B0ADAFF3F55986024909BAFC34B_1052490243.addTaint(taint);
                 return var65D32B0ADAFF3F55986024909BAFC34B_1052490243;
-            } //End block
-        } //End block
+            } 
+        } 
 V var540C13E9E156B687226421B24F2DF178_489149903 =         null;
         var540C13E9E156B687226421B24F2DF178_489149903.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_489149903;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //HashMapEntry<K, V> e = entryForNullKey;
-            //return e == null ? null : e.value;
-        //}
-        //int hash = key.hashCode();
-        //hash ^= (hash >>> 20) ^ (hash >>> 12);
-        //hash ^= (hash >>> 7) ^ (hash >>> 4);
-        //HashMapEntry<K, V>[] tab = table;
-        //for (HashMapEntry<K, V> e = tab[hash & (tab.length - 1)];
-                //e != null; e = e.next) {
-            //K eKey = e.key;
-            //if (eKey == key || (e.hash == hash && key.equals(eKey))) {
-                //return e.value;
-            //}
-        //}
-        //return null;
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+                
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.334 -0400", hash_original_method = "664DBEAFB6D0F34975160DBB887BD5CA", hash_generated_method = "1793E3A1C1CAA3AA46F33C2AAE78486A")
     @Override
     public boolean containsKey(Object key) {
@@ -278,7 +284,7 @@ V var540C13E9E156B687226421B24F2DF178_489149903 =         null;
             boolean varF21C562BE459533EEFBE06DDE1004600_940582818 = (entryForNullKey != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440014893 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_440014893;
-        } //End block
+        } 
         int hash = key.hashCode();
         hash ^= (hash >>> 20) ^ (hash >>> 12);
         hash ^= (hash >>> 7) ^ (hash >>> 4);
@@ -291,30 +297,31 @@ for(HashMapEntry<K, V> e = tab[hash & (tab.length - 1)];e != null;e = e.next)
                 boolean varB326B5062B2F0E69046810717534CB09_908655599 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435571141 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_435571141;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_861093430 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2039487621 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2039487621;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //return entryForNullKey != null;
-        //}
-        //int hash = key.hashCode();
-        //hash ^= (hash >>> 20) ^ (hash >>> 12);
-        //hash ^= (hash >>> 7) ^ (hash >>> 4);
-        //HashMapEntry<K, V>[] tab = table;
-        //for (HashMapEntry<K, V> e = tab[hash & (tab.length - 1)];
-                //e != null; e = e.next) {
-            //K eKey = e.key;
-            //if (eKey == key || (e.hash == hash && key.equals(eKey))) {
-                //return true;
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+                
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.335 -0400", hash_original_method = "8A9DFD8A0E528EE1DFDA14FDA5F2B177", hash_generated_method = "1C4B4CE6A270AEC3BA7E857E2E82AA24")
     @Override
     public boolean containsValue(Object value) {
@@ -332,13 +339,13 @@ for(HashMapEntry e = tab[i];e != null;e = e.next)
                         boolean varB326B5062B2F0E69046810717534CB09_21971431 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1680715061 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1680715061;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             boolean varBED79A40078FAB4BD9A2B4CB0127BB45_1526948084 = (entryForNullKey != null && entryForNullKey.value == null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_919346972 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_919346972;
-        } //End block
+        } 
 for(int i = 0;i < len;i++)
         {
 for(HashMapEntry e = tab[i];e != null;e = e.next)
@@ -348,33 +355,33 @@ for(HashMapEntry e = tab[i];e != null;e = e.next)
                     boolean varB326B5062B2F0E69046810717534CB09_1027550739 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_988602118 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_988602118;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var61B0A99FE77B255BC00677C823E02ED8_450187875 = (entryForNullKey != null && value.equals(entryForNullKey.value));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2056057551 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2056057551;
-        // ---------- Original Method ----------
-        //HashMapEntry[] tab = table;
-        //int len = tab.length;
-        //if (value == null) {
-            //for (int i = 0; i < len; i++) {
-                //for (HashMapEntry e = tab[i]; e != null; e = e.next) {
-                    //if (e.value == null) {
-                        //return true;
-                    //}
-                //}
-            //}
-            //return entryForNullKey != null && entryForNullKey.value == null;
-        //}
-        //for (int i = 0; i < len; i++) {
-            //for (HashMapEntry e = tab[i]; e != null; e = e.next) {
-                //if (value.equals(e.value)) {
-                    //return true;
-                //}
-            //}
-        //}
-        //return entryForNullKey != null && value.equals(entryForNullKey.value);
+        
+        
+        
+        
+            
+                
+                    
+                        
+                    
+                
+            
+            
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -388,7 +395,7 @@ for(HashMapEntry e = tab[i];e != null;e = e.next)
 V var1511B2704E8FA27130A4520ED7054286_880113258 =             putValueForNullKey(value);
             var1511B2704E8FA27130A4520ED7054286_880113258.addTaint(taint);
             return var1511B2704E8FA27130A4520ED7054286_880113258;
-        } //End block
+        } 
         int hash = secondaryHash(key.hashCode());
         HashMapEntry<K, V>[] tab = table;
         int index = hash & (tab.length - 1);
@@ -402,43 +409,44 @@ for(HashMapEntry<K, V> e = tab[index];e != null;e = e.next)
 V var8CDBD2181CBEF5C2129AFFA68C014D4A_2034195612 =                 oldValue;
                 var8CDBD2181CBEF5C2129AFFA68C014D4A_2034195612.addTaint(taint);
                 return var8CDBD2181CBEF5C2129AFFA68C014D4A_2034195612;
-            } //End block
-        } //End block
+            } 
+        } 
         modCount++;
     if(size++ > threshold)        
         {
             tab = doubleCapacity();
             index = hash & (tab.length - 1);
-        } //End block
+        } 
         addNewEntry(key, value, hash, index);
 V var540C13E9E156B687226421B24F2DF178_308592793 =         null;
         var540C13E9E156B687226421B24F2DF178_308592793.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_308592793;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //return putValueForNullKey(value);
-        //}
-        //int hash = secondaryHash(key.hashCode());
-        //HashMapEntry<K, V>[] tab = table;
-        //int index = hash & (tab.length - 1);
-        //for (HashMapEntry<K, V> e = tab[index]; e != null; e = e.next) {
-            //if (e.hash == hash && key.equals(e.key)) {
-                //preModify(e);
-                //V oldValue = e.value;
-                //e.value = value;
-                //return oldValue;
-            //}
-        //}
-        //modCount++;
-        //if (size++ > threshold) {
-            //tab = doubleCapacity();
-            //index = hash & (tab.length - 1);
-        //}
-        //addNewEntry(key, value, hash, index);
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+        
+            
+                
+                
+                
+                
+            
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.337 -0400", hash_original_method = "23837E71B15780DD12C36C21FB15F598", hash_generated_method = "F9C5BBE84CF6499B72E2206100EB00A2")
     private V putValueForNullKey(V value) {
         addTaint(value.getTaint());
@@ -451,7 +459,7 @@ V var540C13E9E156B687226421B24F2DF178_308592793 =         null;
 V var540C13E9E156B687226421B24F2DF178_2013893596 =             null;
             var540C13E9E156B687226421B24F2DF178_2013893596.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2013893596;
-        } //End block
+        } 
         else
         {
             preModify(entry);
@@ -460,27 +468,27 @@ V var540C13E9E156B687226421B24F2DF178_2013893596 =             null;
 V var8CDBD2181CBEF5C2129AFFA68C014D4A_106579181 =             oldValue;
             var8CDBD2181CBEF5C2129AFFA68C014D4A_106579181.addTaint(taint);
             return var8CDBD2181CBEF5C2129AFFA68C014D4A_106579181;
-        } //End block
-        // ---------- Original Method ----------
-        //HashMapEntry<K, V> entry = entryForNullKey;
-        //if (entry == null) {
-            //addNewEntryForNullKey(value);
-            //size++;
-            //modCount++;
-            //return null;
-        //} else {
-            //preModify(entry);
-            //V oldValue = entry.value;
-            //entry.value = value;
-            //return oldValue;
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.338 -0400", hash_original_method = "DFE0557B59605BA6C5CD9DE7502DD68F", hash_generated_method = "8E8423E144F06F950B93A82209065B3F")
      void preModify(HashMapEntry<K, V> e) {
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -494,13 +502,13 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_106579181 =             oldValue;
             {
                 entryForNullKey = constructorNewEntry(null, value, 0, null);
                 size++;
-            } //End block
+            } 
             else
             {
                 entry.value = value;
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         int hash = secondaryHash(key.hashCode());
         HashMapEntry<K, V>[] tab = table;
         int index = hash & (tab.length - 1);
@@ -511,49 +519,49 @@ for(HashMapEntry<K, V> e = first;e != null;e = e.next)
             {
                 e.value = value;
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         tab[index] = constructorNewEntry(key, value, hash, first);
         size++;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //HashMapEntry<K, V> entry = entryForNullKey;
-            //if (entry == null) {
-                //entryForNullKey = constructorNewEntry(null, value, 0, null);
-                //size++;
-            //} else {
-                //entry.value = value;
-            //}
-            //return;
-        //}
-        //int hash = secondaryHash(key.hashCode());
-        //HashMapEntry<K, V>[] tab = table;
-        //int index = hash & (tab.length - 1);
-        //HashMapEntry<K, V> first = tab[index];
-        //for (HashMapEntry<K, V> e = first; e != null; e = e.next) {
-            //if (e.hash == hash && key.equals(e.key)) {
-                //e.value = value;
-                //return;
-            //}
-        //}
-        //tab[index] = constructorNewEntry(key, value, hash, first);
-        //size++;
+        
+        
+            
+            
+                
+                
+            
+                
+            
+            
+        
+        
+        
+        
+        
+        
+            
+                
+                
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.340 -0400", hash_original_method = "6DFE8ABD0EB0EC55F81B8127E2FB540C", hash_generated_method = "453D2264FFA6453AAFEB1CBBCCBC261D")
      void addNewEntry(K key, V value, int hash, int index) {
         table[index] = new HashMapEntry<K, V>(key, value, hash, table[index]);
-        // ---------- Original Method ----------
-        //table[index] = new HashMapEntry<K, V>(key, value, hash, table[index]);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.341 -0400", hash_original_method = "1A0C0EFFA3B59B8426ED7AB00D5D7C14", hash_generated_method = "0ED80084966D32973E9213641BE7C311")
      void addNewEntryForNullKey(V value) {
         entryForNullKey = new HashMapEntry<K, V>(null, value, 0, null);
-        // ---------- Original Method ----------
-        //entryForNullKey = new HashMapEntry<K, V>(null, value, 0, null);
+        
+        
     }
 
     
@@ -567,8 +575,8 @@ for(HashMapEntry<K, V> e = first;e != null;e = e.next)
 HashMapEntry<K, V> var32D4351C727AE69E15ACD6733FAC472C_575458211 =         new HashMapEntry<K, V>(key, value, hash, first);
         var32D4351C727AE69E15ACD6733FAC472C_575458211.addTaint(taint);
         return var32D4351C727AE69E15ACD6733FAC472C_575458211;
-        // ---------- Original Method ----------
-        //return new HashMapEntry<K, V>(key, value, hash, first);
+        
+        
     }
 
     
@@ -578,12 +586,13 @@ HashMapEntry<K, V> var32D4351C727AE69E15ACD6733FAC472C_575458211 =         new H
         addTaint(map.getTaint());
         ensureCapacity(map.size());
         super.putAll(map);
-        // ---------- Original Method ----------
-        //ensureCapacity(map.size());
-        //super.putAll(map);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.344 -0400", hash_original_method = "4BE6F38D6656B87B29773B0AAEA75993", hash_generated_method = "BA99B5709024C608E4A1123BBC665ACB")
     private void ensureCapacity(int numMappings) {
         addTaint(numMappings);
@@ -593,12 +602,12 @@ HashMapEntry<K, V> var32D4351C727AE69E15ACD6733FAC472C_575458211 =         new H
     if(newCapacity <= oldCapacity)        
         {
             return;
-        } //End block
+        } 
     if(newCapacity == oldCapacity * 2)        
         {
             doubleCapacity();
             return;
-        } //End block
+        } 
         HashMapEntry<K, V>[] newTable = makeTable(newCapacity);
     if(size != 0)        
         {
@@ -613,11 +622,11 @@ for(HashMapEntry<K, V> e = oldTable[i];e != null;)
                     newTable[newIndex] = e;
                     e.next = newNext;
                     e = oldNext;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -629,12 +638,12 @@ for(HashMapEntry<K, V> e = oldTable[i];e != null;)
 HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_2076248186 =         newTable;
         varBBDF9FA229AA843E98D9C8441545D1D6_2076248186.addTaint(taint);
         return varBBDF9FA229AA843E98D9C8441545D1D6_2076248186;
-        // ---------- Original Method ----------
-        //@SuppressWarnings("unchecked") HashMapEntry<K, V>[] newTable
-                //= (HashMapEntry<K, V>[]) new HashMapEntry[newCapacity];
-        //table = newTable;
-        //threshold = (newCapacity >> 1) + (newCapacity >> 2);
-        //return newTable;
+        
+        
+                
+        
+        
+        
     }
 
     
@@ -647,7 +656,7 @@ HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_2076248186 =         ne
 HashMapEntry<K, V>[] var644E69580A9DE331964CDB2EEA8BEBA2_203004406 =             oldTable;
             var644E69580A9DE331964CDB2EEA8BEBA2_203004406.addTaint(taint);
             return var644E69580A9DE331964CDB2EEA8BEBA2_203004406;
-        } //End block
+        } 
         int newCapacity = oldCapacity * 2;
         HashMapEntry<K, V>[] newTable = makeTable(newCapacity);
     if(size == 0)        
@@ -655,14 +664,14 @@ HashMapEntry<K, V>[] var644E69580A9DE331964CDB2EEA8BEBA2_203004406 =            
 HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_216896675 =             newTable;
             varBBDF9FA229AA843E98D9C8441545D1D6_216896675.addTaint(taint);
             return varBBDF9FA229AA843E98D9C8441545D1D6_216896675;
-        } //End block
+        } 
 for(int j = 0;j < oldCapacity;j++)
         {
             HashMapEntry<K, V> e = oldTable[j];
     if(e == null)            
             {
                 continue;
-            } //End block
+            } 
             int highBit = e.hash & oldCapacity;
             HashMapEntry<K, V> broken = null;
             newTable[j | highBit] = e;
@@ -677,16 +686,16 @@ for(HashMapEntry<K, V> n = e.next;n != null;e = n,n = n.next)
                     broken.next = n;
                     broken = e;
                     highBit = nextHighBit;
-                } //End block
-            } //End block
+                } 
+            } 
     if(broken != null)            
             broken.next = null;
-        } //End block
+        } 
 HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_704836610 =         newTable;
         varBBDF9FA229AA843E98D9C8441545D1D6_704836610.addTaint(taint);
         return varBBDF9FA229AA843E98D9C8441545D1D6_704836610;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -699,7 +708,7 @@ HashMapEntry<K, V>[] varBBDF9FA229AA843E98D9C8441545D1D6_704836610 =         new
 V var7EA115A11D6B5E6A00E8CE3D3832EB2E_146716187 =             removeNullKey();
             var7EA115A11D6B5E6A00E8CE3D3832EB2E_146716187.addTaint(taint);
             return var7EA115A11D6B5E6A00E8CE3D3832EB2E_146716187;
-        } //End block
+        } 
         int hash = secondaryHash(key.hashCode());
         HashMapEntry<K, V>[] tab = table;
         int index = hash & (tab.length - 1);
@@ -710,47 +719,48 @@ for(HashMapEntry<K, V> e = tab[index], prev = null;e != null;prev = e,e = e.next
     if(prev == null)                
                 {
                     tab[index] = e.next;
-                } //End block
+                } 
                 else
                 {
                     prev.next = e.next;
-                } //End block
+                } 
                 modCount++;
                 size--;
                 postRemove(e);
 V var65D32B0ADAFF3F55986024909BAFC34B_1388457624 =                 e.value;
                 var65D32B0ADAFF3F55986024909BAFC34B_1388457624.addTaint(taint);
                 return var65D32B0ADAFF3F55986024909BAFC34B_1388457624;
-            } //End block
-        } //End block
+            } 
+        } 
 V var540C13E9E156B687226421B24F2DF178_996302998 =         null;
         var540C13E9E156B687226421B24F2DF178_996302998.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_996302998;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //return removeNullKey();
-        //}
-        //int hash = secondaryHash(key.hashCode());
-        //HashMapEntry<K, V>[] tab = table;
-        //int index = hash & (tab.length - 1);
-        //for (HashMapEntry<K, V> e = tab[index], prev = null;
-                //e != null; prev = e, e = e.next) {
-            //if (e.hash == hash && key.equals(e.key)) {
-                //if (prev == null) {
-                    //tab[index] = e.next;
-                //} else {
-                    //prev.next = e.next;
-                //}
-                //modCount++;
-                //size--;
-                //postRemove(e);
-                //return e.value;
-            //}
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+        
+                
+            
+                
+                    
+                
+                    
+                
+                
+                
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.351 -0400", hash_original_method = "C27EF61BE4179F161C4389258A9892DE", hash_generated_method = "50ED63E3A0812E5464DECAF168619384")
     private V removeNullKey() {
         HashMapEntry<K, V> e = entryForNullKey;
@@ -759,7 +769,7 @@ V var540C13E9E156B687226421B24F2DF178_996302998 =         null;
 V var540C13E9E156B687226421B24F2DF178_1392056929 =             null;
             var540C13E9E156B687226421B24F2DF178_1392056929.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1392056929;
-        } //End block
+        } 
         entryForNullKey = null;
         modCount++;
         size--;
@@ -767,26 +777,28 @@ V var540C13E9E156B687226421B24F2DF178_1392056929 =             null;
 V var65D32B0ADAFF3F55986024909BAFC34B_1945246574 =         e.value;
         var65D32B0ADAFF3F55986024909BAFC34B_1945246574.addTaint(taint);
         return var65D32B0ADAFF3F55986024909BAFC34B_1945246574;
-        // ---------- Original Method ----------
-        //HashMapEntry<K, V> e = entryForNullKey;
-        //if (e == null) {
-            //return null;
-        //}
-        //entryForNullKey = null;
-        //modCount++;
-        //size--;
-        //postRemove(e);
-        //return e.value;
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.352 -0400", hash_original_method = "FA0A77625972B3EBD78B9E2926769234", hash_generated_method = "BDB96E09DB8E60586F70F118100AD4CC")
      void postRemove(HashMapEntry<K, V> e) {
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.353 -0400", hash_original_method = "19183B81B15552124143C4B9B1D176AB", hash_generated_method = "3A7FA2C7F18D6DE314506B54972462B8")
     @Override
     public void clear() {
@@ -796,14 +808,14 @@ V var65D32B0ADAFF3F55986024909BAFC34B_1945246574 =         e.value;
             entryForNullKey = null;
             modCount++;
             size = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (size != 0) {
-            //Arrays.fill(table, null);
-            //entryForNullKey = null;
-            //modCount++;
-            //size = 0;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -814,9 +826,9 @@ V var65D32B0ADAFF3F55986024909BAFC34B_1945246574 =         e.value;
 Set<K> varB6853687BE649BA8B10F9701AD179BB7_546263736 =         (ks != null) ? ks : (keySet = new KeySet());
         varB6853687BE649BA8B10F9701AD179BB7_546263736.addTaint(taint);
         return varB6853687BE649BA8B10F9701AD179BB7_546263736;
-        // ---------- Original Method ----------
-        //Set<K> ks = keySet;
-        //return (ks != null) ? ks : (keySet = new KeySet());
+        
+        
+        
     }
 
     
@@ -827,9 +839,9 @@ Set<K> varB6853687BE649BA8B10F9701AD179BB7_546263736 =         (ks != null) ? ks
 Collection<V> var5CABA883D65798B391E2C02013734397_666767781 =         (vs != null) ? vs : (values = new Values());
         var5CABA883D65798B391E2C02013734397_666767781.addTaint(taint);
         return var5CABA883D65798B391E2C02013734397_666767781;
-        // ---------- Original Method ----------
-        //Collection<V> vs = values;
-        //return (vs != null) ? vs : (values = new Values());
+        
+        
+        
     }
 
     
@@ -839,12 +851,13 @@ Collection<V> var5CABA883D65798B391E2C02013734397_666767781 =         (vs != nul
 Set<Entry<K, V>> var25D080FAAE722B04AA5C8EBDE33DD606_888290897 =         (es != null) ? es : (entrySet = new EntrySet());
         var25D080FAAE722B04AA5C8EBDE33DD606_888290897.addTaint(taint);
         return var25D080FAAE722B04AA5C8EBDE33DD606_888290897;
-        // ---------- Original Method ----------
-        //Set<Entry<K, V>> es = entrySet;
-        //return (es != null) ? es : (entrySet = new EntrySet());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.356 -0400", hash_original_method = "DB078B96D3A026778ABE08AF9188B4AF", hash_generated_method = "12838DE6C25B232EB05A0BA633CDDF94")
     private boolean containsMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -855,7 +868,7 @@ Set<Entry<K, V>> var25D080FAAE722B04AA5C8EBDE33DD606_888290897 =         (es != 
             boolean var2DF30576FF9B9478F6D70015D77602DE_2126870896 = (e != null && Objects.equal(value, e.value));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1561910758 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1561910758;
-        } //End block
+        } 
         int hash = secondaryHash(key.hashCode());
         HashMapEntry<K, V>[] tab = table;
         int index = hash & (tab.length - 1);
@@ -866,28 +879,29 @@ for(HashMapEntry<K, V> e = tab[index];e != null;e = e.next)
                 boolean varD272096AE2A6FE49BA001908161744C6_1172870073 = (Objects.equal(value, e.value));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_619134841 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_619134841;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2054055236 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1627182201 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1627182201;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //HashMapEntry<K, V> e = entryForNullKey;
-            //return e != null && Objects.equal(value, e.value);
-        //}
-        //int hash = secondaryHash(key.hashCode());
-        //HashMapEntry<K, V>[] tab = table;
-        //int index = hash & (tab.length - 1);
-        //for (HashMapEntry<K, V> e = tab[index]; e != null; e = e.next) {
-            //if (e.hash == hash && key.equals(e.key)) {
-                //return Objects.equal(value, e.value);
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.358 -0400", hash_original_method = "6968B8C772086C45A00DBEEB8B4680E5", hash_generated_method = "B8B9307692EE74C89E7E4A554BEFACBE")
     private boolean removeMapping(Object key, Object value) {
         addTaint(value.getTaint());
@@ -900,7 +914,7 @@ for(HashMapEntry<K, V> e = tab[index];e != null;e = e.next)
                 boolean var68934A3E9455FA72420237EB05902327_1783438847 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_495366214 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_495366214;
-            } //End block
+            } 
             entryForNullKey = null;
             modCount++;
             size--;
@@ -908,7 +922,7 @@ for(HashMapEntry<K, V> e = tab[index];e != null;e = e.next)
             boolean varB326B5062B2F0E69046810717534CB09_384970783 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1204272940 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1204272940;
-        } //End block
+        } 
         int hash = secondaryHash(key.hashCode());
         HashMapEntry<K, V>[] tab = table;
         int index = hash & (tab.length - 1);
@@ -921,48 +935,50 @@ for(HashMapEntry<K, V> e = tab[index], prev = null;e != null;prev = e,e = e.next
                     boolean var68934A3E9455FA72420237EB05902327_217458334 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555119911 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1555119911;
-                } //End block
+                } 
     if(prev == null)                
                 {
                     tab[index] = e.next;
-                } //End block
+                } 
                 else
                 {
                     prev.next = e.next;
-                } //End block
+                } 
                 modCount++;
                 size--;
                 postRemove(e);
                 boolean varB326B5062B2F0E69046810717534CB09_630183291 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_499023565 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_499023565;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1598678724 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_771059325 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_771059325;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.360 -0400", hash_original_method = "E5C2B853B7FE0DFF8A1198070D9AED67", hash_generated_method = "62D790BB0688C1042BD562FADB22DCA6")
      Iterator<K> newKeyIterator() {
 Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_208621437 =         new KeyIterator();
         var3934136BB713579A43A8E8C1C3034CA0_208621437.addTaint(taint);
         return var3934136BB713579A43A8E8C1C3034CA0_208621437;
-        // ---------- Original Method ----------
-        //return new KeyIterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.360 -0400", hash_original_method = "58BEE1C21CE9010029EB8FF9FDCDF9B3", hash_generated_method = "E81A6E40614B676CC989E105EA9EE0E2")
      Iterator<V> newValueIterator() {
 Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_927881599 =         new ValueIterator();
         varA5D0B7DD47403A81B3461DEE499DEE74_927881599.addTaint(taint);
         return varA5D0B7DD47403A81B3461DEE499DEE74_927881599;
-        // ---------- Original Method ----------
-        //return new ValueIterator();
+        
+        
     }
 
     
@@ -971,18 +987,20 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_927881599 =         new ValueIte
 Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_2075987724 =         new EntryIterator();
         varA27729B8E339A6F174B2D9A9BA7B896F_2075987724.addTaint(taint);
         return varA27729B8E339A6F174B2D9A9BA7B896F_2075987724;
-        // ---------- Original Method ----------
-        //return new EntryIterator();
+        
+        
     }
 
     
-        private static int secondaryHash(int h) {
+        @DSModeled(DSC.SAFE)
+    private static int secondaryHash(int h) {
         h ^= (h >>> 20) ^ (h >>> 12);
         return h ^ (h >>> 7) ^ (h >>> 4);
     }
 
     
-        private static int roundUpToPowerOfTwo(int i) {
+        @DSModeled(DSC.SAFE)
+    private static int roundUpToPowerOfTwo(int i) {
         i--;
         i |= i >>>  1;
         i |= i >>>  2;
@@ -993,6 +1011,7 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_2075987724 =         n
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.362 -0400", hash_original_method = "04BAFB4D83496263E755E7BD0F7C13FF", hash_generated_method = "52C658DC0E2F13C5A057F812129BFFD0")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -1005,20 +1024,21 @@ for(Entry<K, V> e : entrySet())
         {
             stream.writeObject(e.getKey());
             stream.writeObject(e.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //ObjectOutputStream.PutField fields = stream.putFields();
-        //fields.put("loadFactor", DEFAULT_LOAD_FACTOR);
-        //stream.writeFields();
-        //stream.writeInt(table.length);
-        //stream.writeInt(size);
-        //for (Entry<K, V> e : entrySet()) {
-            //stream.writeObject(e.getKey());
-            //stream.writeObject(e.getValue());
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.365 -0400", hash_original_method = "332DDC73CD162DC81E3D2D410CF74F29", hash_generated_method = "A582E5B9559E03C80D1D743EBF98D31A")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
@@ -1030,20 +1050,20 @@ for(Entry<K, V> e : entrySet())
             InvalidObjectException var4B6A7F779A4667EA55847180B6A27960_2019354479 = new InvalidObjectException("Capacity: " + capacity);
             var4B6A7F779A4667EA55847180B6A27960_2019354479.addTaint(taint);
             throw var4B6A7F779A4667EA55847180B6A27960_2019354479;
-        } //End block
+        } 
     if(capacity < MINIMUM_CAPACITY)        
         {
             capacity = MINIMUM_CAPACITY;
-        } //End block
+        } 
         else
     if(capacity > MAXIMUM_CAPACITY)        
         {
             capacity = MAXIMUM_CAPACITY;
-        } //End block
+        } 
         else
         {
             capacity = roundUpToPowerOfTwo(capacity);
-        } //End block
+        } 
         makeTable(capacity);
         int size = stream.readInt();
     if(size < 0)        
@@ -1051,16 +1071,16 @@ for(Entry<K, V> e : entrySet())
             InvalidObjectException varE685AABC7A986A19539C13F2F8920021_358993441 = new InvalidObjectException("Size: " + size);
             varE685AABC7A986A19539C13F2F8920021_358993441.addTaint(taint);
             throw varE685AABC7A986A19539C13F2F8920021_358993441;
-        } //End block
+        } 
         init();
 for(int i = 0;i < size;i++)
         {
             @SuppressWarnings("unchecked") K key = (K) stream.readObject();
             @SuppressWarnings("unchecked") V val = (V) stream.readObject();
             constructorPut(key, val);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1084,11 +1104,11 @@ for(int i = 0;i < size;i++)
             this.value = value;
             this.hash = hash;
             this.next = next;
-            // ---------- Original Method ----------
-            //this.key = key;
-            //this.value = value;
-            //this.hash = hash;
-            //this.next = next;
+            
+            
+            
+            
+            
         }
 
         
@@ -1097,8 +1117,8 @@ for(int i = 0;i < size;i++)
 K var6A95247616A3A8B93CFF7783DABD08D4_786779553 =             key;
             var6A95247616A3A8B93CFF7783DABD08D4_786779553.addTaint(taint);
             return var6A95247616A3A8B93CFF7783DABD08D4_786779553;
-            // ---------- Original Method ----------
-            //return key;
+            
+            
         }
 
         
@@ -1107,8 +1127,8 @@ K var6A95247616A3A8B93CFF7783DABD08D4_786779553 =             key;
 V varAF280DA2BC37D8BE783D8499160168DE_722072930 =             value;
             varAF280DA2BC37D8BE783D8499160168DE_722072930.addTaint(taint);
             return varAF280DA2BC37D8BE783D8499160168DE_722072930;
-            // ---------- Original Method ----------
-            //return value;
+            
+            
         }
 
         
@@ -1119,10 +1139,10 @@ V varAF280DA2BC37D8BE783D8499160168DE_722072930 =             value;
 V var8CDBD2181CBEF5C2129AFFA68C014D4A_788611384 =             oldValue;
             var8CDBD2181CBEF5C2129AFFA68C014D4A_788611384.addTaint(taint);
             return var8CDBD2181CBEF5C2129AFFA68C014D4A_788611384;
-            // ---------- Original Method ----------
-            //V oldValue = this.value;
-            //this.value = value;
-            //return oldValue;
+            
+            
+            
+            
         }
 
         
@@ -1135,19 +1155,19 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_788611384 =             oldValue;
                 boolean var68934A3E9455FA72420237EB05902327_170749501 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1835926925 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1835926925;
-            } //End block
+            } 
             Entry<?, ?> e = (Entry<?, ?>) o;
             boolean var18631C95EE2886E3AE12AE4A13CE37D4_909961950 = (Objects.equal(e.getKey(), key)
                     && Objects.equal(e.getValue(), value));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_553773035 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_553773035;
-            // ---------- Original Method ----------
-            //if (!(o instanceof Entry)) {
-                //return false;
-            //}
-            //Entry<?, ?> e = (Entry<?, ?>) o;
-            //return Objects.equal(e.getKey(), key)
-                    //&& Objects.equal(e.getValue(), value);
+            
+            
+                
+            
+            
+            
+                    
         }
 
         
@@ -1158,9 +1178,9 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_788611384 =             oldValue;
                     (value == null ? 0 : value.hashCode()));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192320876 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192320876;
-            // ---------- Original Method ----------
-            //return (key == null ? 0 : key.hashCode()) ^
-                    //(value == null ? 0 : value.hashCode());
+            
+            
+                    
         }
 
         
@@ -1170,8 +1190,8 @@ V var8CDBD2181CBEF5C2129AFFA68C014D4A_788611384 =             oldValue;
 String varFE698C13EFD83B87FAF2DC2AB0874271_837323381 =             key + "=" + value;
             varFE698C13EFD83B87FAF2DC2AB0874271_837323381.addTaint(taint);
             return varFE698C13EFD83B87FAF2DC2AB0874271_837323381;
-            // ---------- Original Method ----------
-            //return key + "=" + value;
+            
+            
         }
 
         
@@ -1203,28 +1223,29 @@ String varFE698C13EFD83B87FAF2DC2AB0874271_837323381 =             key + "=" + v
 (next == null && nextIndex < tab.length)                
                 {
                     next = tab[nextIndex++];
-                } //End block
+                } 
                 nextEntry = next;
-            } //End block
-            // ---------- Original Method ----------
-            //if (nextEntry == null) {
-                //HashMapEntry<K, V>[] tab = table;
-                //HashMapEntry<K, V> next = null;
-                //while (next == null && nextIndex < tab.length) {
-                    //next = tab[nextIndex++];
-                //}
-                //nextEntry = next;
-            //}
+            } 
+            
+            
+                
+                
+                
+                    
+                
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.369 -0400", hash_original_method = "F0F1A7352709A4A442C7E6635A47CE9D", hash_generated_method = "A5ECB23CD89F47CF74EFA16F6519C5E7")
         public boolean hasNext() {
             boolean var89CBB2F442CE6BC294273342C489EBAF_496669358 = (nextEntry != null);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_20954547 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_20954547;
-            // ---------- Original Method ----------
-            //return nextEntry != null;
+            
+            
         }
 
         
@@ -1249,27 +1270,28 @@ String varFE698C13EFD83B87FAF2DC2AB0874271_837323381 =             key + "=" + v
 (next == null && nextIndex < tab.length)            
             {
                 next = tab[nextIndex++];
-            } //End block
+            } 
             nextEntry = next;
 HashMapEntry<K, V> var4D0F707C8B7B92ABA91FE6E8CAA540A2_480396030 =             lastEntryReturned = entryToReturn;
             var4D0F707C8B7B92ABA91FE6E8CAA540A2_480396030.addTaint(taint);
             return var4D0F707C8B7B92ABA91FE6E8CAA540A2_480396030;
-            // ---------- Original Method ----------
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //if (nextEntry == null)
-                //throw new NoSuchElementException();
-            //HashMapEntry<K, V> entryToReturn = nextEntry;
-            //HashMapEntry<K, V>[] tab = table;
-            //HashMapEntry<K, V> next = entryToReturn.next;
-            //while (next == null && nextIndex < tab.length) {
-                //next = tab[nextIndex++];
-            //}
-            //nextEntry = next;
-            //return lastEntryReturned = entryToReturn;
+            
+            
+                
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "FE8482BFEC11D819DE4FA740E823F031", hash_generated_method = "980E37F3263AA4D4EA59066FF91F92FD")
         public void remove() {
     if(lastEntryReturned == null)            
@@ -1287,14 +1309,14 @@ HashMapEntry<K, V> var4D0F707C8B7B92ABA91FE6E8CAA540A2_480396030 =             l
             HashMap.this.remove(lastEntryReturned.key);
             lastEntryReturned = null;
             expectedModCount = modCount;
-            // ---------- Original Method ----------
-            //if (lastEntryReturned == null)
-                //throw new IllegalStateException();
-            //if (modCount != expectedModCount)
-                //throw new ConcurrentModificationException();
-            //HashMap.this.remove(lastEntryReturned.key);
-            //lastEntryReturned = null;
-            //expectedModCount = modCount;
+            
+            
+                
+            
+                
+            
+            
+            
         }
 
         
@@ -1307,17 +1329,18 @@ HashMapEntry<K, V> var4D0F707C8B7B92ABA91FE6E8CAA540A2_480396030 =             l
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "F1A12FA7FDFCBC1B54210EBDFEB312D4", hash_generated_method = "F1A12FA7FDFCBC1B54210EBDFEB312D4")
         public KeyIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "EA50D6F1622FBE805CA447972176B648", hash_generated_method = "2D5CDD36238519B918C29565D8B4794C")
         public K next() {
 K varDFFFB017DDA62C15E8D1D49BA5F94802_983620083 =             nextEntry().key;
             varDFFFB017DDA62C15E8D1D49BA5F94802_983620083.addTaint(taint);
             return varDFFFB017DDA62C15E8D1D49BA5F94802_983620083;
-            // ---------- Original Method ----------
-            //return nextEntry().key;
+            
+            
         }
 
         
@@ -1330,17 +1353,18 @@ K varDFFFB017DDA62C15E8D1D49BA5F94802_983620083 =             nextEntry().key;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "F211FE83547E030E3E0992549D0B21BC", hash_generated_method = "F211FE83547E030E3E0992549D0B21BC")
         public ValueIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "53BB4827D74FCF37FAF510D076C14D5E", hash_generated_method = "779CC3B20250077AE34516F03B6A3585")
         public V next() {
 V var57B066C0B962D4E7D7CC8F9272046644_1902720535 =             nextEntry().value;
             var57B066C0B962D4E7D7CC8F9272046644_1902720535.addTaint(taint);
             return var57B066C0B962D4E7D7CC8F9272046644_1902720535;
-            // ---------- Original Method ----------
-            //return nextEntry().value;
+            
+            
         }
 
         
@@ -1353,7 +1377,7 @@ V var57B066C0B962D4E7D7CC8F9272046644_1902720535 =             nextEntry().value
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "B80B70BCEBFE7A41A1C46DBA21C09DAD", hash_generated_method = "B80B70BCEBFE7A41A1C46DBA21C09DAD")
         public EntryIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1362,8 +1386,8 @@ V var57B066C0B962D4E7D7CC8F9272046644_1902720535 =             nextEntry().value
 Entry<K, V> varDC8D7EA83135934E991F02D91E02BF6E_1924291958 =             nextEntry();
             varDC8D7EA83135934E991F02D91E02BF6E_1924291958.addTaint(taint);
             return varDC8D7EA83135934E991F02D91E02BF6E_1924291958;
-            // ---------- Original Method ----------
-            //return nextEntry();
+            
+            
         }
 
         
@@ -1376,51 +1400,56 @@ Entry<K, V> varDC8D7EA83135934E991F02D91E02BF6E_1924291958 =             nextEnt
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.370 -0400", hash_original_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF", hash_generated_method = "8EEFEB9CAE8A4D06D5B6F35742C5D3CF")
         public KeySet ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.371 -0400", hash_original_method = "29CBC31BB957230FC921EA16C45EAF59", hash_generated_method = "FCDD6C8257EC3890ECC2EEFEF5458549")
         public Iterator<K> iterator() {
 Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1999889152 =             newKeyIterator();
             var3934136BB713579A43A8E8C1C3034CA0_1999889152.addTaint(taint);
             return var3934136BB713579A43A8E8C1C3034CA0_1999889152;
-            // ---------- Original Method ----------
-            //return newKeyIterator();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.371 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "0EE97DFE1B3FA5A86BA68270DB808846")
         public int size() {
             int varF7BD60B75B29D79B660A2859395C1A24_1591552022 = (size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921150493 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_921150493;
-            // ---------- Original Method ----------
-            //return size;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.371 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "27923F40D2FEBE50AA351889889C4EF7")
         public boolean isEmpty() {
             boolean var9FB8BC7F775DDD98EEAB5582D340229E_651646741 = (size == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124875218 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124875218;
-            // ---------- Original Method ----------
-            //return size == 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.371 -0400", hash_original_method = "55474555B71DFC8666AC2B6E4F0261A5", hash_generated_method = "BF088541DE16B00BEBF2A67F1638C59A")
         public boolean contains(Object o) {
             addTaint(o.getTaint());
             boolean var6CE6D88A4041ABB2C763C00DFE3D40ED_1966718377 = (containsKey(o));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_365642984 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_365642984;
-            // ---------- Original Method ----------
-            //return containsKey(o);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.371 -0400", hash_original_method = "AFD23FBC02983B6BF4B878FD36F94DEB", hash_generated_method = "CF180032165AEE02C4FAF02A4DDC68D1")
         public boolean remove(Object o) {
             addTaint(o.getTaint());
@@ -1429,18 +1458,19 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1999889152 =             newKeyI
             boolean varF5DDED0F84B0A41C9923865D0C223F3C_2068165410 = (size != oldSize);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013268527 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013268527;
-            // ---------- Original Method ----------
-            //int oldSize = size;
-            //HashMap.this.remove(o);
-            //return size != oldSize;
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "CC7950FE19A79FE938BA7BE1D102D14C", hash_generated_method = "CEF95997841CE3C868205CB0933370FD")
         public void clear() {
             HashMap.this.clear();
-            // ---------- Original Method ----------
-            //HashMap.this.clear();
+            
+            
         }
 
         
@@ -1453,56 +1483,61 @@ Iterator<K> var3934136BB713579A43A8E8C1C3034CA0_1999889152 =             newKeyI
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "8414E1987B9E45F65340921EF84D9A89", hash_generated_method = "8414E1987B9E45F65340921EF84D9A89")
         public Values ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "3C7262C80A3C469695720BFA46AA113C", hash_generated_method = "27FE8E408D76A1A5D69B6A884788E904")
         public Iterator<V> iterator() {
 Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_1411262237 =             newValueIterator();
             varA5D0B7DD47403A81B3461DEE499DEE74_1411262237.addTaint(taint);
             return varA5D0B7DD47403A81B3461DEE499DEE74_1411262237;
-            // ---------- Original Method ----------
-            //return newValueIterator();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "29AA5B600D11CF0C628F14D4D46EF991")
         public int size() {
             int varF7BD60B75B29D79B660A2859395C1A24_459390433 = (size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1622999867 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1622999867;
-            // ---------- Original Method ----------
-            //return size;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "E5BC049C64CDF7F0BE6A6772D865ED36")
         public boolean isEmpty() {
             boolean var9FB8BC7F775DDD98EEAB5582D340229E_14255094 = (size == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1696030056 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1696030056;
-            // ---------- Original Method ----------
-            //return size == 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "C13053467D6FDF772DF450C87D40A3D5", hash_generated_method = "1CE6FCC46C3E7E0E5403851070F9D1D9")
         public boolean contains(Object o) {
             addTaint(o.getTaint());
             boolean var1B8C9A98435D2C268A243B67E80B7085_432916302 = (containsValue(o));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024024199 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024024199;
-            // ---------- Original Method ----------
-            //return containsValue(o);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.372 -0400", hash_original_method = "CC7950FE19A79FE938BA7BE1D102D14C", hash_generated_method = "CEF95997841CE3C868205CB0933370FD")
         public void clear() {
             HashMap.this.clear();
-            // ---------- Original Method ----------
-            //HashMap.this.clear();
+            
+            
         }
 
         
@@ -1515,7 +1550,7 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_1411262237 =             newValu
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.373 -0400", hash_original_method = "AA90B2AD56C6E037D76F6D8ACC9327A5", hash_generated_method = "AA90B2AD56C6E037D76F6D8ACC9327A5")
         public EntrySet ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1524,11 +1559,12 @@ Iterator<V> varA5D0B7DD47403A81B3461DEE499DEE74_1411262237 =             newValu
 Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1356708314 =             newEntryIterator();
             varA27729B8E339A6F174B2D9A9BA7B896F_1356708314.addTaint(taint);
             return varA27729B8E339A6F174B2D9A9BA7B896F_1356708314;
-            // ---------- Original Method ----------
-            //return newEntryIterator();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.373 -0400", hash_original_method = "6E695F138E29D844DC896198513B6135", hash_generated_method = "20A59886E26F2089F35FC3A6BA6C21F9")
         public boolean contains(Object o) {
             addTaint(o.getTaint());
@@ -1542,14 +1578,15 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1356708314 =          
             boolean varBCB5439A3C90DA1EEC1D1019805D2AEB_1615907774 = (containsMapping(e.getKey(), e.getValue()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1988647811 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1988647811;
-            // ---------- Original Method ----------
-            //if (!(o instanceof Entry))
-                //return false;
-            //Entry<?, ?> e = (Entry<?, ?>) o;
-            //return containsMapping(e.getKey(), e.getValue());
+            
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.374 -0400", hash_original_method = "F484CBC8566C601718EDE0034034C7B3", hash_generated_method = "49F7DA7BB437144B29310410A15371D2")
         public boolean remove(Object o) {
             addTaint(o.getTaint());
@@ -1563,39 +1600,42 @@ Iterator<Entry<K, V>> varA27729B8E339A6F174B2D9A9BA7B896F_1356708314 =          
             boolean varC8B62CA77D8440BA8EB39DF9C30B611A_1896714960 = (removeMapping(e.getKey(), e.getValue()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_261910499 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_261910499;
-            // ---------- Original Method ----------
-            //if (!(o instanceof Entry))
-                //return false;
-            //Entry<?, ?> e = (Entry<?, ?>)o;
-            //return removeMapping(e.getKey(), e.getValue());
+            
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.374 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "00BE7EC6C0E311BF05EBFA2E4F1A6930")
         public int size() {
             int varF7BD60B75B29D79B660A2859395C1A24_1129338067 = (size);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228606851 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_228606851;
-            // ---------- Original Method ----------
-            //return size;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.374 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "DCD4E5D3B23893E45D34A4C61E019638")
         public boolean isEmpty() {
             boolean var9FB8BC7F775DDD98EEAB5582D340229E_521608166 = (size == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_316325066 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_316325066;
-            // ---------- Original Method ----------
-            //return size == 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:04.375 -0400", hash_original_method = "CC7950FE19A79FE938BA7BE1D102D14C", hash_generated_method = "CEF95997841CE3C868205CB0933370FD")
         public void clear() {
             HashMap.this.clear();
-            // ---------- Original Method ----------
-            //HashMap.this.clear();
+            
+            
         }
 
         

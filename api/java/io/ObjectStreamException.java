@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public abstract class ObjectStreamException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:42.408 -0400", hash_original_method = "7277EDCE895E14A1718765213C9E754B", hash_generated_method = "CD941114279F982226046C44432E1AD5")
     protected  ObjectStreamException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public abstract class ObjectStreamException extends IOException {
     protected  ObjectStreamException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

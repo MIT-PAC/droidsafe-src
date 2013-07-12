@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class X509NameTokenizer {
         String  oid) {
         this(oid, ',');
         addTaint(oid.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,10 +35,10 @@ public class X509NameTokenizer {
         this.value = oid;
         this.index = -1;
         this.seperator = seperator;
-        // ---------- Original Method ----------
-        //this.value = oid;
-        //this.index = -1;
-        //this.seperator = seperator;
+        
+        
+        
+        
     }
 
     
@@ -47,8 +47,8 @@ public class X509NameTokenizer {
         boolean var93EB2FC7E0BFEAF90EB3D9B6C402E119_1577853505 = ((index != value.length()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510863621 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510863621;
-        // ---------- Original Method ----------
-        //return (index != value.length());
+        
+        
     }
 
     
@@ -59,7 +59,7 @@ public class X509NameTokenizer {
 String var540C13E9E156B687226421B24F2DF178_812139944 =             null;
             var540C13E9E156B687226421B24F2DF178_812139944.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_812139944;
-        } //End block
+        } 
         int end = index + 1;
         boolean quoted = false;
         boolean escaped = false;
@@ -73,22 +73,22 @@ String var540C13E9E156B687226421B24F2DF178_812139944 =             null;
     if(!escaped)                
                 {
                     quoted = !quoted;
-                } //End block
+                } 
                 else
                 {
     if(c == '#' && buf.charAt(buf.length() - 1) == '=')                    
                     {
                         buf.append('\\');
-                    } //End block
+                    } 
                     else
     if(c == '+' && seperator != '+')                    
                     {
                         buf.append('\\');
-                    } //End block
+                    } 
                     buf.append(c);
-                } //End block
+                } 
                 escaped = false;
-            } //End block
+            } 
             else
             {
     if(escaped || quoted)                
@@ -96,38 +96,38 @@ String var540C13E9E156B687226421B24F2DF178_812139944 =             null;
     if(c == '#' && buf.charAt(buf.length() - 1) == '=')                    
                     {
                         buf.append('\\');
-                    } //End block
+                    } 
                     else
     if(c == '+' && seperator != '+')                    
                     {
                         buf.append('\\');
-                    } //End block
+                    } 
                     buf.append(c);
                     escaped = false;
-                } //End block
+                } 
                 else
     if(c == '\\')                
                 {
                     escaped = true;
-                } //End block
+                } 
                 else
     if(c == seperator)                
                 {
                     break;
-                } //End block
+                } 
                 else
                 {
                     buf.append(c);
-                } //End block
-            } //End block
+                } 
+            } 
             end++;
-        } //End block
+        } 
         index = end;
 String varBDA64BFF30DEE049350358D65DFD8D33_1988793733 =         buf.toString().trim();
         varBDA64BFF30DEE049350358D65DFD8D33_1988793733.addTaint(taint);
         return varBDA64BFF30DEE049350358D65DFD8D33_1988793733;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

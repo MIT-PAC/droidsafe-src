@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class UnknownHostException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.867 -0400", hash_original_method = "63F4AB968FFD132B70B6AA5D00C05B79", hash_generated_method = "F64B44015C6B2F668B99417C6CF8EE19")
     public  UnknownHostException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -18,7 +18,7 @@ public class UnknownHostException extends IOException {
     public  UnknownHostException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

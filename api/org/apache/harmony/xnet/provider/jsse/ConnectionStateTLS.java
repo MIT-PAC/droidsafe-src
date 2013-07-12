@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,7 +50,7 @@ public class ConnectionStateTLS extends ConnectionState {
                 logger.println("  block size: " + block_size);
                 logger.println("  IV size:" + iv_size);
                 logger.println("  key size: " + key_size);
-            } //End block
+            } 
             byte[] clientRandom = session.clientRandom;
             byte[] serverRandom = session.serverRandom;
             byte[] key_block = new byte[2*hash_size + 2*key_size + 2*iv_size];
@@ -93,8 +93,8 @@ public class ConnectionStateTLS extends ConnectionState {
                     PRF.computePRF(iv_block, null, IV_BLOCK_LABEL, seed);
                     clientIV = new IvParameterSpec(iv_block, 0, iv_size);
                     serverIV = new IvParameterSpec(iv_block, iv_size, iv_size);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(block_size != 0)            
             {
@@ -102,7 +102,7 @@ public class ConnectionStateTLS extends ConnectionState {
                         2*(hash_size+key_size), iv_size);
                 serverIV = new IvParameterSpec(key_block,
                         2*(hash_size+key_size)+iv_size, iv_size);
-            } //End block
+            } 
     if(logger != null)            
             {
                 logger.println("is exportable: "+is_exportabe);
@@ -123,20 +123,20 @@ public class ConnectionStateTLS extends ConnectionState {
     if(clientIV == null)                
                 {
                     logger.println("no IV.");
-                } //End block
+                } 
                 else
                 {
                     logger.println("client_iv");
                     logger.print(clientIV.getIV());
                     logger.println("server_iv");
                     logger.print(serverIV.getIV());
-                } //End block
-            } //End block
+                } 
+            } 
     if(algName == null)            
             {
                 encCipher = new NullCipher();
                 decCipher = new NullCipher();
-            } //End block
+            } 
             else
             {
                 encCipher = Cipher.getInstance(algName);
@@ -147,28 +147,28 @@ public class ConnectionStateTLS extends ConnectionState {
                                    new SecretKeySpec(client_key, algName), clientIV);
                     decCipher.init(Cipher.DECRYPT_MODE,
                                    new SecretKeySpec(server_key, algName), serverIV);
-                } //End block
+                } 
                 else
                 {
                     encCipher.init(Cipher.ENCRYPT_MODE,
                                    new SecretKeySpec(server_key, algName), serverIV);
                     decCipher.init(Cipher.DECRYPT_MODE,
                                    new SecretKeySpec(client_key, algName), clientIV);
-                } //End block
-            } //End block
+                } 
+            } 
             encMac = Mac.getInstance(macName);
             decMac = Mac.getInstance(macName);
     if(is_client)            
             {
                 encMac.init(new SecretKeySpec(client_mac_secret, macName));
                 decMac.init(new SecretKeySpec(server_mac_secret, macName));
-            } //End block
+            } 
             else
             {
                 encMac.init(new SecretKeySpec(server_mac_secret, macName));
                 decMac.init(new SecretKeySpec(client_mac_secret, macName));
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             e.printStackTrace();
@@ -177,9 +177,9 @@ public class ConnectionStateTLS extends ConnectionState {
                         "Error during computation of security parameters"));
             var886399C6341AEABBC45DD13CCAF5571B_945307427.addTaint(taint);
             throw var886399C6341AEABBC45DD13CCAF5571B_945307427;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -205,7 +205,7 @@ public class ConnectionStateTLS extends ConnectionState {
             {
                 Arrays.fill(res, content_mac_length-1,
                         res.length, (byte) (padding_length));
-            } //End block
+            } 
     if(logger != null)            
             {
                 logger.println("SSLRecordProtocol.do_encryption: Generic"
@@ -213,14 +213,14 @@ public class ConnectionStateTLS extends ConnectionState {
                             ? "BlockCipher with padding["+padding_length+"]:"
                             : "StreamCipher:"));
                 logger.print(res);
-            } //End block
+            } 
             byte[] rez = new byte[encCipher.getOutputSize(res.length)];
             encCipher.update(res, 0, res.length, rez);
             incSequenceNumber(write_seq_num);
             byte[] varD33BC499CA0ACD0CDF659B4AD190DCEC_231224989 = (rez);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_802337971 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_802337971;
-        } //End block
+        } 
         catch (GeneralSecurityException e)
         {
             e.printStackTrace();
@@ -228,9 +228,9 @@ public class ConnectionStateTLS extends ConnectionState {
                     new SSLProtocolException("Error during the encryption"));
             var73EB725A695601E67DA15B6BA3118BBA_1188053717.addTaint(taint);
             throw var73EB725A695601E67DA15B6BA3118BBA_1188053717;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -256,14 +256,14 @@ for(int i=0;i<padding_length;i++)
                                 "Received message has bad padding"));
                     var92834CD3795640470A2BA84DE19F568D_1381931052.addTaint(taint);
                     throw var92834CD3795640470A2BA84DE19F568D_1381931052;
-                } //End block
-            } //End block
+                } 
+            } 
             content = new byte[data.length - hash_size - padding_length - 1];
-        } //End block
+        } 
         else
         {
             content = new byte[data.length - hash_size];
-        } //End block
+        } 
         mac_material_header[0] = type;
         mac_material_header[3] = (byte) ((0x00FF00 & content.length) >> 8);
         mac_material_header[4] = (byte) (0x0000FF & content.length);
@@ -277,7 +277,7 @@ for(int i=0;i<padding_length;i++)
             logger.print(data);
             logger.println("Expected mac value:");
             logger.print(mac_value);
-        } //End block
+        } 
 for(int i=0;i<hash_size;i++)
         {
     if(mac_value[i] != data[i+content.length])            
@@ -286,15 +286,15 @@ for(int i=0;i<hash_size;i++)
                         new SSLProtocolException("Bad record MAC"));
                 var8DEAD6D6B22176DE990E0F77D252D32C_1923096642.addTaint(taint);
                 throw var8DEAD6D6B22176DE990E0F77D252D32C_1923096642;
-            } //End block
-        } //End block
+            } 
+        } 
         System.arraycopy(data, 0, content, 0, content.length);
         incSequenceNumber(read_seq_num);
         byte[] var9A0364B9E99BB480DD25E1F0284C8555_176868016 = (content);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_721773783 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_721773783;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

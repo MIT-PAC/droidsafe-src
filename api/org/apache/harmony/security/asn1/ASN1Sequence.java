@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,10 +12,11 @@ public class ASN1Sequence extends ASN1TypeCollection {
     public  ASN1Sequence(ASN1Type[] type) {
         super(TAG_SEQUENCE, type);
         addTaint(type[0].getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.679 -0400", hash_original_method = "C5F60D3147ABDE99A60159C3AF8B464E", hash_generated_method = "77BE75B14A96526A1B5712AC4DE2570E")
     public Object decode(BerInputStream in) throws IOException {
         addTaint(in.getTaint());
@@ -25,16 +26,16 @@ public class ASN1Sequence extends ASN1TypeCollection {
 Object var540C13E9E156B687226421B24F2DF178_1656061463 =             null;
             var540C13E9E156B687226421B24F2DF178_1656061463.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1656061463;
-        } //End block
+        } 
 Object var6AD043AF0280111F31D0D60A6CD70863_1420209069 =         getDecodedObject(in);
         var6AD043AF0280111F31D0D60A6CD70863_1420209069.addTaint(taint);
         return var6AD043AF0280111F31D0D60A6CD70863_1420209069;
-        // ---------- Original Method ----------
-        //in.readSequence(this);
-        //if (in.isVerify) {
-            //return null;
-        //}
-        //return getDecodedObject(in);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -42,8 +43,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1420209069 =         getDecodedObject
     public final void encodeContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.encodeSequence(this);
-        // ---------- Original Method ----------
-        //out.encodeSequence(this);
+        
+        
     }
 
     
@@ -51,8 +52,8 @@ Object var6AD043AF0280111F31D0D60A6CD70863_1420209069 =         getDecodedObject
     public final void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         out.getSequenceLength(this);
-        // ---------- Original Method ----------
-        //out.getSequenceLength(this);
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,11 +18,11 @@ public class BitmapShader extends Shader {
         final int b = bitmap.ni();
         native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
         native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
-        // ---------- Original Method ----------
-        //mBitmap = bitmap;
-        //final int b = bitmap.ni();
-        //native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
-        //native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
+        
+        
+        
+        
+        
     }
 
     

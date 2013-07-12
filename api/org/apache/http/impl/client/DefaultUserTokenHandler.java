@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.610 -0400", hash_original_method = "55806A67FE4596FA71F9FF04E560BE1C", hash_generated_method = "55806A67FE4596FA71F9FF04E560BE1C")
     public DefaultUserTokenHandler ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -38,8 +38,8 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
                 AuthState proxyAuthState = (AuthState) context.getAttribute(
                         ClientContext.PROXY_AUTH_STATE);
                 userPrincipal = getAuthPrincipal(proxyAuthState);
-            } //End block
-        } //End block
+            } 
+        } 
     if(userPrincipal == null)        
         {
             ManagedClientConnection conn = (ManagedClientConnection) context.getAttribute(
@@ -50,14 +50,14 @@ public class DefaultUserTokenHandler implements UserTokenHandler {
     if(sslsession != null)                
                 {
                     userPrincipal = sslsession.getLocalPrincipal();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 Object var0CDBC293F5686809A28657B94AD2C0FD_1383396708 =         userPrincipal;
         var0CDBC293F5686809A28657B94AD2C0FD_1383396708.addTaint(taint);
         return var0CDBC293F5686809A28657B94AD2C0FD_1383396708;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

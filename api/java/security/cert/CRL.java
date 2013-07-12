@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,8 +13,8 @@ public abstract class CRL {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.756 -0400", hash_original_method = "F343602788E22E62E7F41ECF989C2105", hash_generated_method = "61E7826751DBB365A55127637BE7FF03")
     protected  CRL(String type) {
         this.type = type;
-        // ---------- Original Method ----------
-        //this.type = type;
+        
+        
     }
 
     
@@ -23,8 +23,8 @@ public abstract class CRL {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1243577149 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_1243577149.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_1243577149;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     

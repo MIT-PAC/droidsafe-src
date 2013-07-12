@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class KeyDerivationFunc extends AlgorithmIdentifier {
         ASN1Sequence  seq) {
         super(seq);
         addTaint(seq.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class KeyDerivationFunc extends AlgorithmIdentifier {
         super(id, params);
         addTaint(params.getTaint());
         addTaint(id.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

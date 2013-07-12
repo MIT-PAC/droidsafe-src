@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,11 +10,12 @@ public abstract class TimezoneGetter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.231 -0400", hash_original_method = "66ED1F8E1E851198705C6DFD8EC10BBB", hash_generated_method = "66ED1F8E1E851198705C6DFD8EC10BBB")
     public TimezoneGetter ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static TimezoneGetter getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static TimezoneGetter getInstance() {
         return instance;
     }
 

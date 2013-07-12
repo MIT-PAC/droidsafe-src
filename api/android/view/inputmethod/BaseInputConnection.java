@@ -1,6 +1,6 @@
 package android.view.inputmethod;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ class ComposingText implements NoCopySpan {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.076 -0400", hash_original_method = "299AC39680AC1BE3A17612B5D7B1D330", hash_generated_method = "299AC39680AC1BE3A17612B5D7B1D330")
     public ComposingText ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -60,10 +60,10 @@ public class BaseInputConnection implements InputConnection {
         mIMM = mgr;
         mTargetView = null;
         mDummyMode = !fullEditor;
-        // ---------- Original Method ----------
-        //mIMM = mgr;
-        //mTargetView = null;
-        //mDummyMode = !fullEditor;
+        
+        
+        
+        
     }
 
     
@@ -73,11 +73,11 @@ public class BaseInputConnection implements InputConnection {
                 Context.INPUT_METHOD_SERVICE);
         mTargetView = targetView;
         mDummyMode = !fullEditor;
-        // ---------- Original Method ----------
-        //mIMM = (InputMethodManager)targetView.getContext().getSystemService(
-                //Context.INPUT_METHOD_SERVICE);
-        //mTargetView = targetView;
-        //mDummyMode = !fullEditor;
+        
+        
+                
+        
+        
     }
 
     
@@ -140,36 +140,38 @@ public class BaseInputConnection implements InputConnection {
         {
             mEditable = Editable.Factory.getInstance().newEditable("");
             Selection.setSelection(mEditable, 0);
-        } //End block
+        } 
 Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
         varCC26BBC33AB90DD8701B3B15E792A870_384425446.addTaint(taint);
         return varCC26BBC33AB90DD8701B3B15E792A870_384425446;
-        // ---------- Original Method ----------
-        //if (mEditable == null) {
-            //mEditable = Editable.Factory.getInstance().newEditable("");
-            //Selection.setSelection(mEditable, 0);
-        //}
-        //return mEditable;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.080 -0400", hash_original_method = "E28DA299470AFBBB55E3F0E22CB4A567", hash_generated_method = "DB98A8A72401F402057B24EC7C08B714")
     public boolean beginBatchEdit() {
         boolean var68934A3E9455FA72420237EB05902327_104615228 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_202633324 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_202633324;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.081 -0400", hash_original_method = "68C20202F4C35ADB2F9CDE7850BF84CC", hash_generated_method = "DB96F0E57C7118FAD0E51A4E209A9A88")
     public boolean endBatchEdit() {
         boolean var68934A3E9455FA72420237EB05902327_1039160252 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1071989843 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1071989843;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -187,33 +189,35 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
         boolean varB326B5062B2F0E69046810717534CB09_350655833 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_32090452 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_32090452;
-        // ---------- Original Method ----------
-        //final Editable content = getEditable();
-        //if (content == null) return false;
-        //MetaKeyKeyListener.clearMetaKeyState(content, states);
-        //return true;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.081 -0400", hash_original_method = "AA7244FCF81F32F7DEF3D51FAE032B7D", hash_generated_method = "0D5B813BB093CA31CBA2C0262C1EA745")
     public boolean commitCompletion(CompletionInfo text) {
         addTaint(text.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_824852294 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_19364002 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_19364002;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.082 -0400", hash_original_method = "8ECFF7D6DBED10855DA2C653047584D7", hash_generated_method = "379FF6DE81B2BC298D12E4A7F612EA4F")
     public boolean commitCorrection(CorrectionInfo correctionInfo) {
         addTaint(correctionInfo.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_473701950 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2034225279 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2034225279;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -226,11 +230,11 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
         boolean varB326B5062B2F0E69046810717534CB09_1043406263 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1736587574 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1736587574;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "commitText " + text);
-        //replaceText(text, newCursorPosition, false);
-        //sendCurrentText();
-        //return true;
+        
+        
+        
+        
+        
     }
 
     
@@ -253,7 +257,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
             int tmp = a;
             a = b;
             b = tmp;
-        } //End block
+        } 
         int ca = getComposingSpanStart(content);
         int cb = getComposingSpanEnd(content);
     if(cb < ca)        
@@ -261,14 +265,14 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
             int tmp = ca;
             ca = cb;
             cb = tmp;
-        } //End block
+        } 
     if(ca != -1 && cb != -1)        
         {
     if(ca < a)            
             a = ca;
     if(cb > b)            
             b = cb;
-        } //End block
+        } 
         int deleted = 0;
     if(leftLength > 0)        
         {
@@ -277,7 +281,7 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
             start = 0;
             content.delete(start, a);
             deleted = a - start;
-        } //End block
+        } 
     if(rightLength > 0)        
         {
             b = b - deleted;
@@ -285,13 +289,13 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
     if(end > content.length())            
             end = content.length();
             content.delete(b, end);
-        } //End block
+        } 
         endBatchEdit();
         boolean varB326B5062B2F0E69046810717534CB09_21079395 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1204424471 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1204424471;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -304,20 +308,20 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
             removeComposingSpans(content);
             endBatchEdit();
             sendCurrentText();
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1698639921 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1405617694 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1405617694;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "finishComposingText");
-        //final Editable content = getEditable();
-        //if (content != null) {
-            //beginBatchEdit();
-            //removeComposingSpans(content);
-            //endBatchEdit();
-            //sendCurrentText();
-        //}
-        //return true;
+        
+        
+        
+        
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -344,25 +348,26 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
             int tmp = a;
             a = b;
             b = tmp;
-        } //End block
+        } 
         int varAC1DC7664A2FAF8D24FFCD56574315AA_513603299 = (TextUtils.getCapsMode(content, a, reqModes));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126550986 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1126550986;
-        // ---------- Original Method ----------
-        //if (mDummyMode) return 0;
-        //final Editable content = getEditable();
-        //if (content == null) return 0;
-        //int a = Selection.getSelectionStart(content);
-        //int b = Selection.getSelectionEnd(content);
-        //if (a > b) {
-            //int tmp = a;
-            //a = b;
-            //b = tmp;
-        //}
-        //return TextUtils.getCapsMode(content, a, reqModes);
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.087 -0400", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "2176D6FFBFB184BF2631512223A4628A")
     public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
         addTaint(flags);
@@ -370,8 +375,8 @@ Editable varCC26BBC33AB90DD8701B3B15E792A870_384425446 =         mEditable;
 ExtractedText var540C13E9E156B687226421B24F2DF178_2142871960 =         null;
         var540C13E9E156B687226421B24F2DF178_2142871960.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2142871960;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -393,46 +398,46 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1734835582 =         null;
             int tmp = a;
             a = b;
             b = tmp;
-        } //End block
+        } 
     if(a <= 0)        
         {
 CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1455720086 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1455720086.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1455720086;
-        } //End block
+        } 
     if(length > a)        
         {
             length = a;
-        } //End block
+        } 
     if((flags&GET_TEXT_WITH_STYLES) != 0)        
         {
 CharSequence var98F4DAC361D2DB9395F44CE0388E2FEB_1166177242 =             content.subSequence(a - length, a);
             var98F4DAC361D2DB9395F44CE0388E2FEB_1166177242.addTaint(taint);
             return var98F4DAC361D2DB9395F44CE0388E2FEB_1166177242;
-        } //End block
+        } 
 CharSequence varE0983249B3322D55B8820CF6237DB0C2_883790790 =         TextUtils.substring(content, a - length, a);
         varE0983249B3322D55B8820CF6237DB0C2_883790790.addTaint(taint);
         return varE0983249B3322D55B8820CF6237DB0C2_883790790;
-        // ---------- Original Method ----------
-        //final Editable content = getEditable();
-        //if (content == null) return null;
-        //int a = Selection.getSelectionStart(content);
-        //int b = Selection.getSelectionEnd(content);
-        //if (a > b) {
-            //int tmp = a;
-            //a = b;
-            //b = tmp;
-        //}
-        //if (a <= 0) {
-            //return "";
-        //}
-        //if (length > a) {
-            //length = a;
-        //}
-        //if ((flags&GET_TEXT_WITH_STYLES) != 0) {
-            //return content.subSequence(a - length, a);
-        //}
-        //return TextUtils.substring(content, a - length, a);
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -453,7 +458,7 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1857486432 =         null;
             int tmp = a;
             a = b;
             b = tmp;
-        } //End block
+        } 
     if(a == b)        
         {
 CharSequence var540C13E9E156B687226421B24F2DF178_46999601 =         null;
@@ -465,25 +470,25 @@ CharSequence var540C13E9E156B687226421B24F2DF178_46999601 =         null;
 CharSequence var9FEC3648C14F3AF70D16DE447BDE5069_133852979 =             content.subSequence(a, b);
             var9FEC3648C14F3AF70D16DE447BDE5069_133852979.addTaint(taint);
             return var9FEC3648C14F3AF70D16DE447BDE5069_133852979;
-        } //End block
+        } 
 CharSequence var7A2F1FD98731D6CF16BD95DD1582A13C_1396024072 =         TextUtils.substring(content, a, b);
         var7A2F1FD98731D6CF16BD95DD1582A13C_1396024072.addTaint(taint);
         return var7A2F1FD98731D6CF16BD95DD1582A13C_1396024072;
-        // ---------- Original Method ----------
-        //final Editable content = getEditable();
-        //if (content == null) return null;
-        //int a = Selection.getSelectionStart(content);
-        //int b = Selection.getSelectionEnd(content);
-        //if (a > b) {
-            //int tmp = a;
-            //a = b;
-            //b = tmp;
-        //}
-        //if (a == b) return null;
-        //if ((flags&GET_TEXT_WITH_STYLES) != 0) {
-            //return content.subSequence(a, b);
-        //}
-        //return TextUtils.substring(content, a, b);
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -505,44 +510,44 @@ CharSequence var540C13E9E156B687226421B24F2DF178_477662322 =         null;
             int tmp = a;
             a = b;
             b = tmp;
-        } //End block
+        } 
     if(b < 0)        
         {
             b = 0;
-        } //End block
+        } 
     if(b + length > content.length())        
         {
             length = content.length() - b;
-        } //End block
+        } 
     if((flags&GET_TEXT_WITH_STYLES) != 0)        
         {
 CharSequence var4A6E4E8B570A86454B984D76FFE2C8FA_1734170861 =             content.subSequence(b, b + length);
             var4A6E4E8B570A86454B984D76FFE2C8FA_1734170861.addTaint(taint);
             return var4A6E4E8B570A86454B984D76FFE2C8FA_1734170861;
-        } //End block
+        } 
 CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.substring(content, b, b + length);
         var6D90238DD76AA0130EFA44B03DDEEA38_1985735670.addTaint(taint);
         return var6D90238DD76AA0130EFA44B03DDEEA38_1985735670;
-        // ---------- Original Method ----------
-        //final Editable content = getEditable();
-        //if (content == null) return null;
-        //int a = Selection.getSelectionStart(content);
-        //int b = Selection.getSelectionEnd(content);
-        //if (a > b) {
-            //int tmp = a;
-            //a = b;
-            //b = tmp;
-        //}
-        //if (b < 0) {
-            //b = 0;
-        //}
-        //if (b + length > content.length()) {
-            //length = content.length() - b;
-        //}
-        //if ((flags&GET_TEXT_WITH_STYLES) != 0) {
-            //return content.subSequence(b, b + length);
-        //}
-        //return TextUtils.substring(content, b, b + length);
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -563,33 +568,35 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.
         boolean varB326B5062B2F0E69046810717534CB09_1287054674 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1790359906 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1790359906;
-        // ---------- Original Method ----------
-        //long eventTime = SystemClock.uptimeMillis();
-        //sendKeyEvent(new KeyEvent(eventTime, eventTime,
-                //KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER, 0, 0,
-                //KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
-                //KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE
-                //| KeyEvent.FLAG_EDITOR_ACTION));
-        //sendKeyEvent(new KeyEvent(SystemClock.uptimeMillis(), eventTime,
-                //KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER, 0, 0,
-                //KeyCharacterMap.VIRTUAL_KEYBOARD, 0,
-                //KeyEvent.FLAG_SOFT_KEYBOARD | KeyEvent.FLAG_KEEP_TOUCH_MODE
-                //| KeyEvent.FLAG_EDITOR_ACTION));
-        //return true;
+        
+        
+        
+                
+                
+                
+                
+        
+                
+                
+                
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.090 -0400", hash_original_method = "CC9943DA76C04BDA8199AB8562F111EF", hash_generated_method = "C3718773EC631C9751D63BE8B19BA7AD")
     public boolean performContextMenuAction(int id) {
         addTaint(id);
         boolean var68934A3E9455FA72420237EB05902327_1284113193 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2020978956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2020978956;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:56.091 -0400", hash_original_method = "E554B360562612AFCC9A87837C58FB1E", hash_generated_method = "9F53D70F9ED1677AA23FFE6284AAD7EF")
     public boolean performPrivateCommand(String action, Bundle data) {
         addTaint(data.getTaint());
@@ -597,8 +604,8 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.
         boolean var68934A3E9455FA72420237EB05902327_589930454 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016922840 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016922840;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -610,10 +617,10 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.
         boolean varB326B5062B2F0E69046810717534CB09_1235371455 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1539054700 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1539054700;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "setComposingText " + text);
-        //replaceText(text, newCursorPosition, true);
-        //return true;
+        
+        
+        
+        
     }
 
     
@@ -633,7 +640,7 @@ CharSequence var6D90238DD76AA0130EFA44B03DDEEA38_1985735670 =         TextUtils.
                 int tmp = a;
                 a = b;
                 b = tmp;
-            } //End block
+            } 
             final int length = content.length();
     if(a < 0)            
             a = 0;
@@ -650,18 +657,18 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
                 {
                     content.setSpan(mDefaultComposingSpans[i], a, b,
                             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE | Spanned.SPAN_COMPOSING);
-                } //End block
-            } //End block
+                } 
+            } 
             content.setSpan(COMPOSING, a, b,
                     Spanned.SPAN_EXCLUSIVE_EXCLUSIVE | Spanned.SPAN_COMPOSING);
             endBatchEdit();
             sendCurrentText();
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1400584690 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647369167 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647369167;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -682,34 +689,34 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
             boolean varB326B5062B2F0E69046810717534CB09_1528225161 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_421806679 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_421806679;
-        } //End block
+        } 
     if(start == end && MetaKeyKeyListener.getMetaState(content,
                 MetaKeyKeyListener.META_SELECTING) != 0)        
         {
             Selection.extendSelection(content, start);
-        } //End block
+        } 
         else
         {
             Selection.setSelection(content, start, end);
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1372161644 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_890437522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_890437522;
-        // ---------- Original Method ----------
-        //if (DEBUG) Log.v(TAG, "setSelection " + start + ", " + end);
-        //final Editable content = getEditable();
-        //if (content == null) return false;
-        //int len = content.length();
-        //if (start > len || end > len) {
-            //return true;
-        //}
-        //if (start == end && MetaKeyKeyListener.getMetaState(content,
-                //MetaKeyKeyListener.META_SELECTING) != 0) {
-            //Selection.extendSelection(content, start);
-        //} else {
-            //Selection.setSelection(content, start, end);
-        //}
-        //return true;
+        
+        
+        
+        
+        
+        
+            
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -724,31 +731,31 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     if(mIMM.mServedView != null)                
                 {
                     h = mIMM.mServedView.getHandler();
-                } //End block
-            } //End block
+                } 
+            } 
     if(h != null)            
             {
                 h.sendMessage(h.obtainMessage(ViewRootImpl.DISPATCH_KEY_FROM_IME,
                         event));
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2096770441 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1647748932 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1647748932;
-        // ---------- Original Method ----------
-        //synchronized (mIMM.mH) {
-            //Handler h = mTargetView != null ? mTargetView.getHandler() : null;
-            //if (h == null) {
-                //if (mIMM.mServedView != null) {
-                    //h = mIMM.mServedView.getHandler();
-                //}
-            //}
-            //if (h != null) {
-                //h.sendMessage(h.obtainMessage(ViewRootImpl.DISPATCH_KEY_FROM_IME,
-                        //event));
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+                    
+                
+            
+            
+                
+                        
+            
+        
+        
     }
 
     
@@ -759,9 +766,9 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
         boolean varB326B5062B2F0E69046810717534CB09_1414490031 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1492786659 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1492786659;
-        // ---------- Original Method ----------
-        //mIMM.setFullscreenMode(enabled);
-        //return true;
+        
+        
+        
     }
 
     
@@ -770,7 +777,7 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     if(!mDummyMode)        
         {
             return;
-        } //End block
+        } 
         Editable content = getEditable();
     if(content != null)        
         {
@@ -778,13 +785,13 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
     if(N == 0)            
             {
                 return;
-            } //End block
+            } 
     if(N == 1)            
             {
     if(mKeyCharacterMap == null)                
                 {
                     mKeyCharacterMap = KeyCharacterMap.load(KeyCharacterMap.VIRTUAL_KEYBOARD);
-                } //End block
+                } 
                 char[] chars = new char[1];
                 content.getChars(0, 1, chars, 0);
                 KeyEvent[] events = mKeyCharacterMap.getEvents(chars);
@@ -793,18 +800,18 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
 for(int i=0;i<events.length;i++)
                     {
     if(DEBUG){ }                        sendKeyEvent(events[i]);
-                    } //End block
+                    } 
                     content.clear();
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
             KeyEvent event = new KeyEvent(SystemClock.uptimeMillis(),
                     content.toString(), KeyCharacterMap.VIRTUAL_KEYBOARD, 0);
             sendKeyEvent(event);
             content.clear();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -816,16 +823,16 @@ for(int i=0;i<events.length;i++)
     if(mTargetView != null)            
             {
                 context = mTargetView.getContext();
-            } //End block
+            } 
             else
     if(mIMM.mServedView != null)            
             {
                 context = mIMM.mServedView.getContext();
-            } //End block
+            } 
             else
             {
                 context = null;
-            } //End block
+            } 
     if(context != null)            
             {
                 TypedArray ta = context.getTheme()
@@ -838,11 +845,11 @@ for(int i=0;i<events.length;i++)
                 {
                     mDefaultComposingSpans = ((Spanned)style).getSpans(
                             0, style.length(), Object.class);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -856,7 +863,7 @@ for(int i=0;i<events.length;i++)
     if(content == null)        
         {
             return;
-        } //End block
+        } 
         beginBatchEdit();
         int a = getComposingSpanStart(content);
         int b = getComposingSpanEnd(content);
@@ -865,11 +872,11 @@ for(int i=0;i<events.length;i++)
             int tmp = a;
             a = b;
             b = tmp;
-        } //End block
+        } 
     if(a != -1 && b != -1)        
         {
             removeComposingSpans(content);
-        } //End block
+        } 
         else
         {
             a = Selection.getSelectionStart(content);
@@ -883,8 +890,8 @@ for(int i=0;i<events.length;i++)
                 int tmp = a;
                 a = b;
                 b = tmp;
-            } //End block
-        } //End block
+            } 
+        } 
     if(composing)        
         {
             Spannable sp = null;
@@ -899,15 +906,15 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
                     {
                         sp.setSpan(mDefaultComposingSpans[i], 0, sp.length(),
                                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE | Spanned.SPAN_COMPOSING);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
                 sp = (Spannable)text;
-            } //End block
+            } 
             setComposingSpans(sp);
-        } //End block
+        } 
     if(DEBUG){ }    if(DEBUG)        
         {
             LogPrinter lp = new LogPrinter(Log.VERBOSE, TAG);
@@ -915,15 +922,15 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
             TextUtils.dumpSpans(content, lp, "  ");
             lp.println("Composing text:");
             TextUtils.dumpSpans(text, lp, "  ");
-        } //End block
+        } 
     if(newCursorPosition > 0)        
         {
             newCursorPosition += b - 1;
-        } //End block
+        } 
         else
         {
             newCursorPosition += a;
-        } //End block
+        } 
     if(newCursorPosition < 0)        
         newCursorPosition = 0;
     if(newCursorPosition > content.length())        
@@ -935,10 +942,10 @@ for(int i = 0;i < mDefaultComposingSpans.length;++i)
             LogPrinter lp = new LogPrinter(Log.VERBOSE, TAG);
             lp.println("Final text:");
             TextUtils.dumpSpans(content, lp, "  ");
-        } //End block
+        } 
         endBatchEdit();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

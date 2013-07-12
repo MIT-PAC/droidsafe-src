@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class MalformedURLException extends IOException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.850 -0400", hash_original_method = "6F3415F478603350217F65D672585814", hash_generated_method = "AD568FEDA3A16AFE9C14138F3CCC4B4D")
     public  MalformedURLException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -18,7 +18,7 @@ public class MalformedURLException extends IOException {
     public  MalformedURLException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class MalformedURLException extends IOException {
         super(detailMessage, cause);
         addTaint(cause.getTaint());
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

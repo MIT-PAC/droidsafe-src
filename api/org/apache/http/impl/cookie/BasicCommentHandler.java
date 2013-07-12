@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class BasicCommentHandler extends AbstractCookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.259 -0400", hash_original_method = "753BC5BDDB6B9E5E273FEAA2E3B0731A", hash_generated_method = "FE8BA2DCEA8CC629CBFD2093BB214103")
     public  BasicCommentHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,13 +25,13 @@ public class BasicCommentHandler extends AbstractCookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_59555416 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_59555416.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_59555416;
-        } //End block
+        } 
         cookie.setComment(value);
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //cookie.setComment(value);
+        
+        
+            
+        
+        
     }
 
     

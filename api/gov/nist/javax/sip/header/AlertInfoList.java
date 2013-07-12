@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,10 +11,11 @@ public class AlertInfoList extends SIPHeaderList<AlertInfo> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.731 -0400", hash_original_method = "A08E8746373CA778814FF59876F6CC5B", hash_generated_method = "1454CC4C294B31424367C5E69A11C07E")
     public  AlertInfoList() {
         super( AlertInfo.class,AlertInfoHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:35.731 -0400", hash_original_method = "DA21929F9B4B968B70B27DDE76B9FF23", hash_generated_method = "C1262CAA94EA6E6A1F3DD8725B1814D4")
     public Object clone() {
         AlertInfoList retval = new AlertInfoList();
@@ -22,10 +23,10 @@ public class AlertInfoList extends SIPHeaderList<AlertInfo> {
 Object varF9E19AD6135C970F387F77C6F3DE4477_1330308165 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1330308165.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1330308165;
-        // ---------- Original Method ----------
-        //AlertInfoList retval = new AlertInfoList();
-        //retval.clonehlist(this.hlist);
-        //return retval;
+        
+        
+        
+        
     }
 
     

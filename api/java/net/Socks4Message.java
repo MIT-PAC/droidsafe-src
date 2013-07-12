@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,89 +17,97 @@ class Socks4Message {
     public  Socks4Message() {
         buffer = new byte[BUFFER_LENGTH];
         setVersionNumber(SOCKS_VERSION);
-        // ---------- Original Method ----------
-        //buffer = new byte[BUFFER_LENGTH];
-        //setVersionNumber(SOCKS_VERSION);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.332 -0400", hash_original_method = "A4884809092D405A6CA5F6BEFDF8445C", hash_generated_method = "2BE6B35A23D6BD41692196B6C331F0C6")
     public int getCommandOrResult() {
         int varEEE63384C5EEC1D1F26BE7F607885436_1701381325 = (buffer[INDEX_COMMAND]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289254558 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_289254558;
-        // ---------- Original Method ----------
-        //return buffer[INDEX_COMMAND];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.332 -0400", hash_original_method = "338C1B26BFB9D7C284F2A4F94981D480", hash_generated_method = "AB61003D3B9ED48A84B27CC2A1E7703D")
     public void setCommandOrResult(int command) {
         buffer[INDEX_COMMAND] = (byte) command;
-        // ---------- Original Method ----------
-        //buffer[INDEX_COMMAND] = (byte) command;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.333 -0400", hash_original_method = "469B36103954E60DA4EDBA1638A3DCA3", hash_generated_method = "BCB582224BCA777124B85BD9DB133BE8")
     public int getPort() {
         int varB511F2DC5EB97FB588E4FF68674CB533_1210208411 = (Memory.peekShort(buffer, INDEX_PORT, ByteOrder.BIG_ENDIAN));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134277059 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1134277059;
-        // ---------- Original Method ----------
-        //return Memory.peekShort(buffer, INDEX_PORT, ByteOrder.BIG_ENDIAN);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.333 -0400", hash_original_method = "5ADD361358F9B7D845CC4C6A0E6C787A", hash_generated_method = "FDB203FECF84024288521347C8C8FF5A")
     public void setPort(int port) {
         addTaint(port);
         Memory.pokeShort(buffer, INDEX_PORT, (short) port, ByteOrder.BIG_ENDIAN);
-        // ---------- Original Method ----------
-        //Memory.pokeShort(buffer, INDEX_PORT, (short) port, ByteOrder.BIG_ENDIAN);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.333 -0400", hash_original_method = "2791CEFF5B7A34F564852C42E861A745", hash_generated_method = "066E63CCC427558FB40CEA39B05A08AF")
     public int getIP() {
         int var43169D413FEAC3CEDA9A813B7443971C_647344312 = (Memory.peekInt(buffer, INDEX_IP, ByteOrder.BIG_ENDIAN));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249903134 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_249903134;
-        // ---------- Original Method ----------
-        //return Memory.peekInt(buffer, INDEX_IP, ByteOrder.BIG_ENDIAN);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.334 -0400", hash_original_method = "CD63C26544B74E77AC58BA3597D39036", hash_generated_method = "5BCA823E0F4C72375C8EB1DA49BCFC44")
     public void setIP(byte[] ip) {
         buffer[INDEX_IP] = ip[0];
         buffer[INDEX_IP + 1] = ip[1];
         buffer[INDEX_IP + 2] = ip[2];
         buffer[INDEX_IP + 3] = ip[3];
-        // ---------- Original Method ----------
-        //buffer[INDEX_IP] = ip[0];
-        //buffer[INDEX_IP + 1] = ip[1];
-        //buffer[INDEX_IP + 2] = ip[2];
-        //buffer[INDEX_IP + 3] = ip[3];
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.335 -0400", hash_original_method = "6684A79AEF4191DE9F243F196998CD91", hash_generated_method = "9FFB82DE7CA4AA545F15CD756077937A")
     public String getUserId() {
 String var3DD5599848628D833D4D71F889062CED_792779263 =         getString(INDEX_USER_ID, MAX_USER_ID_LENGTH);
         var3DD5599848628D833D4D71F889062CED_792779263.addTaint(taint);
         return var3DD5599848628D833D4D71F889062CED_792779263;
-        // ---------- Original Method ----------
-        //return getString(INDEX_USER_ID, MAX_USER_ID_LENGTH);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.335 -0400", hash_original_method = "D89FFAAC0CE83481287E79A931367547", hash_generated_method = "A0E7EA3A91B7443981EE6682AFBEDAF6")
     public void setUserId(String id) {
         addTaint(id.getTaint());
         setString(INDEX_USER_ID, MAX_USER_ID_LENGTH, id);
-        // ---------- Original Method ----------
-        //setString(INDEX_USER_ID, MAX_USER_ID_LENGTH, id);
+        
+        
     }
 
     
@@ -120,41 +128,43 @@ String var3DD5599848628D833D4D71F889062CED_792779263 =         getString(INDEX_U
 String var4FC680801218E6372BC708D6FA44AE60_634002430 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_634002430.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_634002430;
-        // ---------- Original Method ----------
-        //StringBuilder buf = new StringBuilder(50);
-        //buf.append("Version: ");
-        //buf.append(Integer.toHexString(getVersionNumber()));
-        //buf.append(" Command: ");
-        //buf.append(Integer.toHexString(getCommandOrResult()));
-        //buf.append(" Port: ");
-        //buf.append(getPort());
-        //buf.append(" IP: ");
-        //buf.append(Integer.toHexString(getIP()));
-        //buf.append(" User ID: ");
-        //buf.append(getUserId());
-        //return buf.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.336 -0400", hash_original_method = "C6D8DA97966902AB2F65AB6185B0BF06", hash_generated_method = "514521C2E3BA87074999C13790FA496D")
     public int getLength() {
         int index = 0;
 for(index = INDEX_USER_ID;buffer[index] != 0;index++)
         {
-        } //End block
+        } 
         index++;
         int var6A992D5529F459A44FEE58C733255E86_962164706 = (index);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_553241835 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_553241835;
-        // ---------- Original Method ----------
-        //int index = 0;
-        //for (index = INDEX_USER_ID; buffer[index] != 0; index++) {
-        //}
-        //index++;
-        //return index;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.336 -0400", hash_original_method = "B4F98C9F9790743D28172709107A8C07", hash_generated_method = "075AEAEF4D2F041E93D4D1AF778DF90D")
     public String getErrorString(int error) {
         addTaint(error);
@@ -176,27 +186,28 @@ String var75B00C229FB73EC955B2048ABEF9CD64_1142432287 =         "Success";
         var75B00C229FB73EC955B2048ABEF9CD64_1142432287.addTaint(taint);
         return var75B00C229FB73EC955B2048ABEF9CD64_1142432287;
 }
-        // ---------- Original Method ----------
-        //switch (error) {
-        //case RETURN_FAILURE:
-            //return "Failure to connect to SOCKS server";
-        //case RETURN_CANNOT_CONNECT_TO_IDENTD:
-            //return "Unable to connect to identd to verify user";
-        //case RETURN_DIFFERENT_USER_IDS:
-            //return "Failure - user ids do not match";
-        //default:
-            //return "Success";
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.337 -0400", hash_original_method = "3E8202366775B7F03BFD8ECC0DED5E39", hash_generated_method = "0DB72FCE47D7448D6157FD8B96F33C80")
     public byte[] getBytes() {
         byte[] var7F2DB423A49B305459147332FB01CF87_1837627739 = (buffer);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_2112459578 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_2112459578;
-        // ---------- Original Method ----------
-        //return buffer;
+        
+        
     }
 
     
@@ -210,27 +221,28 @@ String var75B00C229FB73EC955B2048ABEF9CD64_1142432287 =         "Success";
 (index < lastIndex && (buffer[index] != 0))        
         {
             index++;
-        } //End block
+        } 
 String varD6DBB704B6C19F3F537EF08C38038191_1919335089 =         new String(buffer, offset, index - offset, Charsets.ISO_8859_1);
         varD6DBB704B6C19F3F537EF08C38038191_1919335089.addTaint(taint);
         return varD6DBB704B6C19F3F537EF08C38038191_1919335089;
-        // ---------- Original Method ----------
-        //int index = offset;
-        //int lastIndex = index + maxLength;
-        //while (index < lastIndex && (buffer[index] != 0)) {
-            //index++;
-        //}
-        //return new String(buffer, offset, index - offset, Charsets.ISO_8859_1);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.338 -0400", hash_original_method = "7A63CD666B1834D5EA2D981ACB832F0E", hash_generated_method = "1900F7CBE172FAB5FC5591A40954B047")
     private int getVersionNumber() {
         int var3BDC3373F100A77A4D510F10D3356443_1847244460 = (buffer[INDEX_VERSION]);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027721193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1027721193;
-        // ---------- Original Method ----------
-        //return buffer[INDEX_VERSION];
+        
+        
     }
 
     
@@ -242,19 +254,20 @@ String varD6DBB704B6C19F3F537EF08C38038191_1919335089 =         new String(buffe
         int length = Math.min(stringBytes.length, maxLength);
         System.arraycopy(stringBytes, 0, buffer, offset, length);
         buffer[offset + length] = 0;
-        // ---------- Original Method ----------
-        //byte[] stringBytes = theString.getBytes(Charsets.ISO_8859_1);
-        //int length = Math.min(stringBytes.length, maxLength);
-        //System.arraycopy(stringBytes, 0, buffer, offset, length);
-        //buffer[offset + length] = 0;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.339 -0400", hash_original_method = "551CE4AE0E4E79E50F85783B3E28117C", hash_generated_method = "057034333245897DECAF09231E016CBC")
     private void setVersionNumber(int number) {
         buffer[INDEX_VERSION] = (byte) number;
-        // ---------- Original Method ----------
-        //buffer[INDEX_VERSION] = (byte) number;
+        
+        
     }
 
     

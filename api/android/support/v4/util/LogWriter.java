@@ -1,6 +1,6 @@
 package android.support.v4.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,8 +18,8 @@ public class LogWriter extends Writer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.534 -0400", hash_original_method = "9BFCBEDD9F75493AAF00467F3D68B8DC", hash_generated_method = "0DD707CB45BA89D429A8BE7521AD42EB")
     public  LogWriter(String tag) {
         mTag = tag;
-        // ---------- Original Method ----------
-        //mTag = tag;
+        
+        
     }
 
     
@@ -27,8 +27,8 @@ public class LogWriter extends Writer {
     @Override
     public void close() {
         flushBuilder();
-        // ---------- Original Method ----------
-        //flushBuilder();
+        
+        
     }
 
     
@@ -36,8 +36,8 @@ public class LogWriter extends Writer {
     @Override
     public void flush() {
         flushBuilder();
-        // ---------- Original Method ----------
-        //flushBuilder();
+        
+        
     }
 
     
@@ -53,22 +53,22 @@ for(int i = 0;i < count;i++)
     if(c == '\n')            
             {
                 flushBuilder();
-            } //End block
+            } 
             else
             {
                 mBuilder.append(c);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for(int i = 0; i < count; i++) {
-            //char c = buf[offset + i];
-            //if ( c == '\n') {
-                //flushBuilder();
-            //}
-            //else {
-                //mBuilder.append(c);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -78,12 +78,12 @@ for(int i = 0;i < count;i++)
         {
             Log.d(mTag, mBuilder.toString());
             mBuilder.delete(0, mBuilder.length());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBuilder.length() > 0) {
-            //Log.d(mTag, mBuilder.toString());
-            //mBuilder.delete(0, mBuilder.length());
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     

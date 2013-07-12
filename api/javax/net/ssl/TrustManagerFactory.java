@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,10 +30,10 @@ public class TrustManagerFactory {
         this.provider = provider;
         this.algorithm = algorithm;
         this.spiImpl = factorySpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.algorithm = algorithm;
-        //this.spiImpl = factorySpi;
+        
+        
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ public class TrustManagerFactory {
 String var44A46B4003FC81ACB0223385BA1FA818_1155640350 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1155640350.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1155640350;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1155640350 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2042764614 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_2042764614.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_2042764614;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -99,8 +99,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2042764614 =         provider;
     public final void init(KeyStore ks) throws KeyStoreException {
         addTaint(ks.getTaint());
         spiImpl.engineInit(ks);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(ks);
+        
+        
     }
 
     
@@ -108,8 +108,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2042764614 =         provider;
     public final void init(ManagerFactoryParameters spec) throws InvalidAlgorithmParameterException {
         addTaint(spec.getTaint());
         spiImpl.engineInit(spec);
-        // ---------- Original Method ----------
-        //spiImpl.engineInit(spec);
+        
+        
     }
 
     
@@ -118,8 +118,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_2042764614 =         provider;
 TrustManager[] var864DD8A2A9CEA759F4550FE28D6AA441_1939815536 =         spiImpl.engineGetTrustManagers();
         var864DD8A2A9CEA759F4550FE28D6AA441_1939815536.addTaint(taint);
         return var864DD8A2A9CEA759F4550FE28D6AA441_1939815536;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetTrustManagers();
+        
+        
     }
 
     

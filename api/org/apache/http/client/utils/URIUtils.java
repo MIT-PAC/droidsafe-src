@@ -1,6 +1,6 @@
 package org.apache.http.client.utils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class URIUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.331 -0400", hash_original_method = "76E8736EFBBC9BF69FA0C2D7E3BBC6EF", hash_generated_method = "77A26DB302405FD332BF0150E844EF5E")
     private  URIUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     

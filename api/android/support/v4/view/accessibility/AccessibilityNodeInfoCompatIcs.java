@@ -1,6 +1,6 @@
 package android.support.v4.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ class AccessibilityNodeInfoCompatIcs {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.474 -0400", hash_original_method = "90D82575443FCC4920A59159F197ECDC", hash_generated_method = "90D82575443FCC4920A59159F197ECDC")
     public AccessibilityNodeInfoCompatIcs ()
     {
-        //Synthesized constructor
+        
     }
 
 

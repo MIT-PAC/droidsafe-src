@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,13 +28,14 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
         this.socketOut = socketOut;
         this.maxChunkLength = Math.max(1, dataLength(maxChunkLength));
         this.bufferedChunk = new ByteArrayOutputStream(maxChunkLength);
-        // ---------- Original Method ----------
-        //this.socketOut = socketOut;
-        //this.maxChunkLength = Math.max(1, dataLength(maxChunkLength));
-        //this.bufferedChunk = new ByteArrayOutputStream(maxChunkLength);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.073 -0400", hash_original_method = "4E0221343957C12C5A2A1CAE66CCC091", hash_generated_method = "7A21661DCB921487C31D22C35B7161E5")
     private int dataLength(int dataPlusHeaderLength) {
         addTaint(dataPlusHeaderLength);
@@ -42,16 +43,16 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
 for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
         {
             headerLength++;
-        } //End block
+        } 
         int var7C5135D75AF4DE2B800035B834BA9249_388671258 = (dataPlusHeaderLength - headerLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1891514777 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1891514777;
-        // ---------- Original Method ----------
-        //int headerLength = 4;
-        //for (int i = dataPlusHeaderLength - headerLength; i > 0; i >>= 4) {
-            //headerLength++;
-        //}
-        //return dataPlusHeaderLength - headerLength;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -74,20 +75,20 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     if(bufferedChunk.size() == maxChunkLength)                
                 {
                     writeBufferedChunkToSocket();
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 numBytesWritten = maxChunkLength;
                 writeHex(numBytesWritten);
                 socketOut.write(buffer, offset, numBytesWritten);
                 socketOut.write(CRLF);
-            } //End block
+            } 
             offset += numBytesWritten;
             count -= numBytesWritten;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -97,15 +98,15 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
         do {
             {
                 hex[--cursor] = HEX_DIGITS[i & 0xf];
-            } //End block
+            } 
 } while ((i >>>= 4) != 0);
         socketOut.write(hex, cursor, hex.length - cursor);
-        // ---------- Original Method ----------
-        //int cursor = 8;
-        //do {
-            //hex[--cursor] = HEX_DIGITS[i & 0xf];
-        //} while ((i >>>= 4) != 0);
-        //socketOut.write(hex, cursor, hex.length - cursor);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -115,15 +116,15 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     if(closed)        
         {
             return;
-        } //End block
+        } 
         writeBufferedChunkToSocket();
         socketOut.flush();
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return; 
-        //}
-        //writeBufferedChunkToSocket();
-        //socketOut.flush();
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -133,17 +134,17 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     if(closed)        
         {
             return;
-        } //End block
+        } 
         closed = true;
         writeBufferedChunkToSocket();
         socketOut.write(FINAL_CHUNK);
-        // ---------- Original Method ----------
-        //if (closed) {
-            //return;
-        //}
-        //closed = true;
-        //writeBufferedChunkToSocket();
-        //socketOut.write(FINAL_CHUNK);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -153,20 +154,20 @@ for(int i = dataPlusHeaderLength - headerLength;i > 0;i >>= 4)
     if(size <= 0)        
         {
             return;
-        } //End block
+        } 
         writeHex(size);
         bufferedChunk.writeTo(socketOut);
         bufferedChunk.reset();
         socketOut.write(CRLF);
-        // ---------- Original Method ----------
-        //int size = bufferedChunk.size();
-        //if (size <= 0) {
-            //return;
-        //}
-        //writeHex(size);
-        //bufferedChunk.writeTo(socketOut);
-        //bufferedChunk.reset();
-        //socketOut.write(CRLF);
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     

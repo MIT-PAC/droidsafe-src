@@ -1,6 +1,6 @@
 package com.android.internal.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,11 +46,12 @@ public class VpnConfig implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.863 -0400", hash_original_method = "0CC41B74437C55587D7B09044ACFFB33", hash_generated_method = "0CC41B74437C55587D7B09044ACFFB33")
     public VpnConfig ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static Intent getIntentForConfirmation() {
+        @DSModeled(DSC.SPEC)
+    public static Intent getIntentForConfirmation() {
         Intent intent = new Intent();
         intent.setClassName("com.android.vpndialogs", "com.android.vpndialogs.ConfirmDialog");
         return intent;
@@ -68,14 +69,15 @@ public class VpnConfig implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:18.863 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "91801F1123EB41B825D39B964FCE2B10")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1411948294 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2114015262 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2114015262;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -94,17 +96,17 @@ public class VpnConfig implements Parcelable {
         out.writeStringList(searchDomains);
         out.writeParcelable(configureIntent, flags);
         out.writeLong(startTime);
-        // ---------- Original Method ----------
-        //out.writeString(user);
-        //out.writeString(interfaze);
-        //out.writeString(session);
-        //out.writeInt(mtu);
-        //out.writeString(addresses);
-        //out.writeString(routes);
-        //out.writeStringList(dnsServers);
-        //out.writeStringList(searchDomains);
-        //out.writeParcelable(configureIntent, flags);
-        //out.writeLong(startTime);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

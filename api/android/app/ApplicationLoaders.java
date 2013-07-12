@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,15 +16,17 @@ class ApplicationLoaders {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.321 -0400", hash_original_method = "B28ECCCB6DE1A645261BEF05FE1982E7", hash_generated_method = "B28ECCCB6DE1A645261BEF05FE1982E7")
     public ApplicationLoaders ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static ApplicationLoaders getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static ApplicationLoaders getDefault() {
         return gApplicationLoaders;
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.326 -0400", hash_original_method = "EA4DC0433A5C7A22C1BA1C659599A634", hash_generated_method = "296C8BAD2C692DA0E40F38799501CC8A")
     public ClassLoader getClassLoader(String zip, String libPath, ClassLoader parent) {
         addTaint(parent.getTaint());
@@ -36,7 +38,7 @@ class ApplicationLoaders {
     if(parent == null)            
             {
                 parent = baseParent;
-            } //End block
+            } 
     if(parent == baseParent)            
             {
                 ClassLoader loader = mLoaders.get(zip);
@@ -45,35 +47,35 @@ class ApplicationLoaders {
 ClassLoader var556906CF8230EF926A9ABDA8D8CDBEFA_1959296254 =                     loader;
                     var556906CF8230EF926A9ABDA8D8CDBEFA_1959296254.addTaint(taint);
                     return var556906CF8230EF926A9ABDA8D8CDBEFA_1959296254;
-                } //End block
+                } 
                 PathClassLoader pathClassloader = new PathClassLoader(zip, libPath, parent);
                 mLoaders.put(zip, pathClassloader);
 ClassLoader var11BD277B934D6BB854C5E9693754CBD2_1467601469 =                 pathClassloader;
                 var11BD277B934D6BB854C5E9693754CBD2_1467601469.addTaint(taint);
                 return var11BD277B934D6BB854C5E9693754CBD2_1467601469;
-            } //End block
+            } 
 ClassLoader var5C909D560907FF186591EB06317A564A_1240203060 =             new PathClassLoader(zip, parent);
             var5C909D560907FF186591EB06317A564A_1240203060.addTaint(taint);
             return var5C909D560907FF186591EB06317A564A_1240203060;
-        } //End block
-        // ---------- Original Method ----------
-        //ClassLoader baseParent = ClassLoader.getSystemClassLoader().getParent();
-        //synchronized (mLoaders) {
-            //if (parent == null) {
-                //parent = baseParent;
-            //}
-            //if (parent == baseParent) {
-                //ClassLoader loader = mLoaders.get(zip);
-                //if (loader != null) {
-                    //return loader;
-                //}
-                //PathClassLoader pathClassloader =
-                    //new PathClassLoader(zip, libPath, parent);
-                //mLoaders.put(zip, pathClassloader);
-                //return pathClassloader;
-            //}
-            //return new PathClassLoader(zip, parent);
-        //}
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+                
+                    
+                
+                
+                    
+                
+                
+            
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,11 +11,12 @@ public class PixelXorXfermode extends Xfermode {
     public  PixelXorXfermode(int opColor) {
         addTaint(opColor);
         native_instance = nativeCreate(opColor);
-        // ---------- Original Method ----------
-        //native_instance = nativeCreate(opColor);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeCreate(int opColor) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725099153 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1725099153;

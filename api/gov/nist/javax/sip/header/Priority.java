@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,30 +15,33 @@ public class Priority extends SIPHeader implements PriorityHeader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "33A980E78264A96D694E0BA8D4330749", hash_generated_method = "2DAB64ED9F1F75184A9783CA81667401")
     public  Priority() {
         super(NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "275A06F50E7B2077A23380B094FCE956", hash_generated_method = "1DF8313397D86E93A768FEA0A452CB94")
     public String encodeBody() {
 String var9141C1D2D467F4F6FF150C27DE3F01A3_373640585 =         priority;
         var9141C1D2D467F4F6FF150C27DE3F01A3_373640585.addTaint(taint);
         return var9141C1D2D467F4F6FF150C27DE3F01A3_373640585;
-        // ---------- Original Method ----------
-        //return priority;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "6DFC1BDF5FFE5EB6A183C3674CCE0974", hash_generated_method = "AC75F30C8EC9876CCCC8499A70C4E5E6")
     public String getPriority() {
 String var9141C1D2D467F4F6FF150C27DE3F01A3_549223744 =         priority;
         var9141C1D2D467F4F6FF150C27DE3F01A3_549223744.addTaint(taint);
         return var9141C1D2D467F4F6FF150C27DE3F01A3_549223744;
-        // ---------- Original Method ----------
-        //return priority;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:36.690 -0400", hash_original_method = "5B52FF98236754242B91AFCB31F1DBDC", hash_generated_method = "06E5BA8C167ADEC28DD963D9AD0FE4D6")
     public void setPriority(String p) throws ParseException {
     if(p == null)        
@@ -50,12 +53,12 @@ String var9141C1D2D467F4F6FF150C27DE3F01A3_549223744 =         priority;
         throw var80B54727C42D176719B12B809902E010_1862891343;
         }
         priority = p;
-        // ---------- Original Method ----------
-        //if (p == null)
-            //throw new NullPointerException(
-                //"JAIN-SIP Exception,"
-                    //+ "Priority, setPriority(), the priority parameter is null");
-        //priority = p;
+        
+        
+            
+                
+                    
+        
     }
 
     

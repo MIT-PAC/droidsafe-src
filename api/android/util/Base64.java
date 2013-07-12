@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class Base64 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.736 -0400", hash_original_method = "B12DC6BE1A1E2EB3A4F484EDEACB8E03", hash_generated_method = "96F9E0BDD170E9FC5C3951236F2EB54E")
     private  Base64() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -97,7 +97,7 @@ public class Base64 {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.738 -0400", hash_original_method = "1EFD9A0D338C10B7A776AFC361894E38", hash_generated_method = "1EFD9A0D338C10B7A776AFC361894E38")
         public Coder ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -129,25 +129,27 @@ public class Base64 {
             alphabet = ((flags & URL_SAFE) == 0) ? DECODE : DECODE_WEBSAFE;
             state = 0;
             value = 0;
-            // ---------- Original Method ----------
-            //this.output = output;
-            //alphabet = ((flags & URL_SAFE) == 0) ? DECODE : DECODE_WEBSAFE;
-            //state = 0;
-            //value = 0;
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.740 -0400", hash_original_method = "006B314D1443F75FACC9C9CF957F4174", hash_generated_method = "92E11B3D7F0CDB00CAA297B330E97868")
         public int maxOutputSize(int len) {
             addTaint(len);
             int var2696DBD0CF405B815A4B08291CE1C595_770163176 = (len * 3/4 + 10);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1245726307 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1245726307;
-            // ---------- Original Method ----------
-            //return len * 3/4 + 10;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.745 -0400", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "20CC8F0A016261CA2DC1298D14C83F58")
         public boolean process(byte[] input, int offset, int len, boolean finish) {
             addTaint(finish);
@@ -184,10 +186,10 @@ public class Base64 {
                         output[op] = (byte) (value >> 16);
                         op += 3;
                         p += 4;
-                    } //End block
+                    } 
     if(p >= len)                    
                     break;
-                } //End block
+                } 
                 int d = alphabet[input[p++] & 0xff];
 switch(state){
                 case 0:
@@ -195,7 +197,7 @@ switch(state){
                 {
                     value = d;
                     ++state;
-                } //End block
+                } 
                 else
     if(d != SKIP)                
                 {
@@ -203,14 +205,14 @@ switch(state){
                     boolean var68934A3E9455FA72420237EB05902327_939308704 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1175969902 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1175969902;
-                } //End block
+                } 
                 break;
                 case 1:
     if(d >= 0)                
                 {
                     value = (value << 6) | d;
                     ++state;
-                } //End block
+                } 
                 else
     if(d != SKIP)                
                 {
@@ -218,20 +220,20 @@ switch(state){
                     boolean var68934A3E9455FA72420237EB05902327_1193409511 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1844068471 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1844068471;
-                } //End block
+                } 
                 break;
                 case 2:
     if(d >= 0)                
                 {
                     value = (value << 6) | d;
                     ++state;
-                } //End block
+                } 
                 else
     if(d == EQUALS)                
                 {
                     output[op++] = (byte) (value >> 4);
                     state = 4;
-                } //End block
+                } 
                 else
     if(d != SKIP)                
                 {
@@ -239,7 +241,7 @@ switch(state){
                     boolean var68934A3E9455FA72420237EB05902327_135984228 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1970227011 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1970227011;
-                } //End block
+                } 
                 break;
                 case 3:
     if(d >= 0)                
@@ -250,7 +252,7 @@ switch(state){
                     output[op] = (byte) (value >> 16);
                     op += 3;
                     state = 0;
-                } //End block
+                } 
                 else
     if(d == EQUALS)                
                 {
@@ -258,7 +260,7 @@ switch(state){
                     output[op] = (byte) (value >> 10);
                     op += 2;
                     state = 5;
-                } //End block
+                } 
                 else
     if(d != SKIP)                
                 {
@@ -266,13 +268,13 @@ switch(state){
                     boolean var68934A3E9455FA72420237EB05902327_1183214320 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831533460 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831533460;
-                } //End block
+                } 
                 break;
                 case 4:
     if(d == EQUALS)                
                 {
                     ++state;
-                } //End block
+                } 
                 else
     if(d != SKIP)                
                 {
@@ -280,7 +282,7 @@ switch(state){
                     boolean var68934A3E9455FA72420237EB05902327_1814030564 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_274820782 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_274820782;
-                } //End block
+                } 
                 break;
                 case 5:
     if(d != SKIP)                
@@ -289,10 +291,10 @@ switch(state){
                     boolean var68934A3E9455FA72420237EB05902327_504540675 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1853277200 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853277200;
-                } //End block
+                } 
                 break;
 }
-            } //End block
+            } 
     if(!finish)            
             {
                 this.state = state;
@@ -301,7 +303,7 @@ switch(state){
                 boolean varB326B5062B2F0E69046810717534CB09_189817141 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_607941947 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_607941947;
-            } //End block
+            } 
 switch(state){
             case 0:
             break;
@@ -329,8 +331,8 @@ switch(state){
             boolean varB326B5062B2F0E69046810717534CB09_429001334 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_937584572 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_937584572;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -418,26 +420,27 @@ switch(state){
             tail = new byte[2];
             tailLen = 0;
             count = do_newline ? LINE_GROUPS : -1;
-            // ---------- Original Method ----------
-            //this.output = output;
-            //do_padding = (flags & NO_PADDING) == 0;
-            //do_newline = (flags & NO_WRAP) == 0;
-            //do_cr = (flags & CRLF) != 0;
-            //alphabet = ((flags & URL_SAFE) == 0) ? ENCODE : ENCODE_WEBSAFE;
-            //tail = new byte[2];
-            //tailLen = 0;
-            //count = do_newline ? LINE_GROUPS : -1;
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.749 -0400", hash_original_method = "9D3D65123317D09985A4DE210ACBFBB3", hash_generated_method = "6213963919350540069660E8BBAF4049")
         public int maxOutputSize(int len) {
             addTaint(len);
             int varBDA77988D3102AF821F5AD4D081E7C2F_921621461 = (len * 8/5 + 10);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639256487 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_639256487;
-            // ---------- Original Method ----------
-            //return len * 8/5 + 10;
+            
+            
         }
 
         
@@ -463,7 +466,7 @@ switch(tailLen){
                             ((input[p++] & 0xff) << 8) |
                             (input[p++] & 0xff);
                 tailLen = 0;
-            } //End block
+            } 
             ;
             break;
             case 2:
@@ -473,7 +476,7 @@ switch(tailLen){
                             ((tail[1] & 0xff) << 8) |
                             (input[p++] & 0xff);
                 tailLen = 0;
-            } //End block
+            } 
             break;
 }    if(v != -1)            
             {
@@ -487,8 +490,8 @@ switch(tailLen){
                     output[op++] = '\r';
                     output[op++] = '\n';
                     count = LINE_GROUPS;
-                } //End block
-            } //End block
+                } 
+            } 
             while
 (p+3 <= len)            
             {
@@ -507,8 +510,8 @@ switch(tailLen){
                     output[op++] = '\r';
                     output[op++] = '\n';
                     count = LINE_GROUPS;
-                } //End block
-            } //End block
+                } 
+            } 
     if(finish)            
             {
     if(p-tailLen == len-1)                
@@ -522,14 +525,14 @@ switch(tailLen){
                     {
                         output[op++] = '=';
                         output[op++] = '=';
-                    } //End block
+                    } 
     if(do_newline)                    
                     {
     if(do_cr)                        
                         output[op++] = '\r';
                         output[op++] = '\n';
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(p-tailLen == len-2)                
                 {
@@ -543,42 +546,42 @@ switch(tailLen){
     if(do_padding)                    
                     {
                         output[op++] = '=';
-                    } //End block
+                    } 
     if(do_newline)                    
                     {
     if(do_cr)                        
                         output[op++] = '\r';
                         output[op++] = '\n';
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(do_newline && op > 0 && count != LINE_GROUPS)                
                 {
     if(do_cr)                    
                     output[op++] = '\r';
                     output[op++] = '\n';
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(p == len-1)                
                 {
                     tail[tailLen++] = input[p];
-                } //End block
+                } 
                 else
     if(p == len-2)                
                 {
                     tail[tailLen++] = input[p];
                     tail[tailLen++] = input[p+1];
-                } //End block
-            } //End block
+                } 
+            } 
             this.op = op;
             this.count = count;
             boolean varB326B5062B2F0E69046810717534CB09_1286336717 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1802376602 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1802376602;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

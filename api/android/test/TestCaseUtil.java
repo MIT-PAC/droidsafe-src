@@ -1,6 +1,6 @@
 package android.test;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class TestCaseUtil {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.249 -0400", hash_original_method = "8B3FB0DB9AA59378E1F246FBF0E78671", hash_generated_method = "3AE31D122ABA53FDBBC70130B76C3925")
     private  TestCaseUtil() {
-        // ---------- Original Method ----------
+        
     }
 
     

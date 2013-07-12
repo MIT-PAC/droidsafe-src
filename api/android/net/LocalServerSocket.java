@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,12 +22,12 @@ public class LocalServerSocket {
         localAddress = new LocalSocketAddress(name);
         impl.bind(localAddress);
         impl.listen(LISTEN_BACKLOG);
-        // ---------- Original Method ----------
-        //impl = new LocalSocketImpl();
-        //impl.create(true);
-        //localAddress = new LocalSocketAddress(name);
-        //impl.bind(localAddress);
-        //impl.listen(LISTEN_BACKLOG);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -36,20 +36,21 @@ public class LocalServerSocket {
         impl = new LocalSocketImpl(fd);
         impl.listen(LISTEN_BACKLOG);
         localAddress = impl.getSockAddress();
-        // ---------- Original Method ----------
-        //impl = new LocalSocketImpl(fd);
-        //impl.listen(LISTEN_BACKLOG);
-        //localAddress = impl.getSockAddress();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.518 -0400", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "90742025E434A3573D4978F65CA5AE8D")
     public LocalSocketAddress getLocalSocketAddress() {
 LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1251121402 =         localAddress;
         varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1251121402.addTaint(taint);
         return varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1251121402;
-        // ---------- Original Method ----------
-        //return localAddress;
+        
+        
     }
 
     
@@ -60,10 +61,10 @@ LocalSocketAddress varAD2ECC3D59386A6CEBDBFE5B70B7F72A_1251121402 =         loca
 LocalSocket var81615AF6EA73F8A8262A88467A8E1AF9_1525656247 =         new LocalSocket(acceptedImpl);
         var81615AF6EA73F8A8262A88467A8E1AF9_1525656247.addTaint(taint);
         return var81615AF6EA73F8A8262A88467A8E1AF9_1525656247;
-        // ---------- Original Method ----------
-        //LocalSocketImpl acceptedImpl = new LocalSocketImpl();
-        //impl.accept (acceptedImpl);
-        //return new LocalSocket(acceptedImpl);
+        
+        
+        
+        
     }
 
     
@@ -72,16 +73,16 @@ LocalSocket var81615AF6EA73F8A8262A88467A8E1AF9_1525656247 =         new LocalSo
 FileDescriptor var05E29FE12AB06423EE2D8B05D08F76BE_1423846540 =         impl.getFileDescriptor();
         var05E29FE12AB06423EE2D8B05D08F76BE_1423846540.addTaint(taint);
         return var05E29FE12AB06423EE2D8B05D08F76BE_1423846540;
-        // ---------- Original Method ----------
-        //return impl.getFileDescriptor();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.519 -0400", hash_original_method = "CB913E335DEA23070E332AEE6AD401FB", hash_generated_method = "12F0B4AF8EE7B599F14465C727089231")
     public void close() throws IOException {
         impl.close();
-        // ---------- Original Method ----------
-        //impl.close();
+        
+        
     }
 
     

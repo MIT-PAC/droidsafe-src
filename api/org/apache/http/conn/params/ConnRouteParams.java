@@ -1,6 +1,6 @@
 package org.apache.http.conn.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class ConnRouteParams implements ConnRoutePNames {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.434 -0400", hash_original_method = "2F583F6C69B80DBD9155194B569BE764", hash_generated_method = "FFA6007C752912BAF6FA892E8F7D0248")
     private  ConnRouteParams() {
-        // ---------- Original Method ----------
+        
     }
 
     

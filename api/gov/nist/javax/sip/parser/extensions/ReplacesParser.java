@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.extensions;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class ReplacesParser extends ParametersParser {
     public  ReplacesParser(String callID) {
         super(callID);
         addTaint(callID.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,10 +23,11 @@ public class ReplacesParser extends ParametersParser {
     protected  ReplacesParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.934 -0400", hash_original_method = "C779AD4EE203E642C9A6B93773CE1027", hash_generated_method = "4B9CBB7DA6130E212C7A7CEFE7ED9738")
     public SIPHeader parse() throws ParseException {
     if(debug)        
@@ -43,28 +44,28 @@ public class ReplacesParser extends ParametersParser {
 SIPHeader varC6183C02DA53C65BFA5F0C5E1854FB03_25942051 =             replaces;
             varC6183C02DA53C65BFA5F0C5E1854FB03_25942051.addTaint(taint);
             return varC6183C02DA53C65BFA5F0C5E1854FB03_25942051;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parse");
-        //try {
-            //headerName(TokenTypes.REPLACES_TO);
-            //Replaces replaces = new Replaces();
-            //this.lexer.SPorHT();
-            //String callId = lexer.byteStringNoSemicolon();
-            //this.lexer.SPorHT();
-            //super.parse(replaces);
-            //replaces.setCallId(callId);
-            //return replaces;
-        //} finally {
-            //if (debug)
-                //dbg_leave("parse");
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,13 +24,13 @@ public class SocketOutputBuffer extends AbstractSessionOutputBuffer {
             IllegalArgumentException varCBABC6A96FAFFF53CCBEEA230A20A836_1737955247 = new IllegalArgumentException("Socket may not be null");
             varCBABC6A96FAFFF53CCBEEA230A20A836_1737955247.addTaint(taint);
             throw varCBABC6A96FAFFF53CCBEEA230A20A836_1737955247;
-        } //End block
+        } 
         init(socket.getOutputStream(), 8192, params);
-        // ---------- Original Method ----------
-        //if (socket == null) {
-            //throw new IllegalArgumentException("Socket may not be null");
-        //}
-        //init(socket.getOutputStream(), 8192, params);
+        
+        
+            
+        
+        
     }
 
     

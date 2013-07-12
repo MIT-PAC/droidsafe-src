@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
       LongBuffer(int capacity) {
         super(3, capacity, null);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,8 +43,8 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
         long[] var68B89E48382A0AA51B25AC59599E2EB0_1940592925 = (protectedArray());
                 long[] var3908C7C3AF5171CEE1F112DAE77A5C4D_489823164 = {getTaintLong()};
         return var3908C7C3AF5171CEE1F112DAE77A5C4D_489823164;
-        // ---------- Original Method ----------
-        //return protectedArray();
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
         int var0B794CE56A38A9F3BFDD2D53E83BB109_133585603 = (protectedArrayOffset());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353140169 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353140169;
-        // ---------- Original Method ----------
-        //return protectedArrayOffset();
+        
+        
     }
 
     
@@ -83,31 +83,31 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
                 int varA8E1A787D0C8C8750D6A153FD61F6B1C_866204349 = (thisLong < otherLong ? -1 : 1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38650208 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_38650208;
-            } //End block
+            } 
             thisPos++;
             otherPos++;
             compareRemaining--;
-        } //End block
+        } 
         int var1DC167191FBC7DAD3BADAE830552C692_1430184746 = (remaining() - otherBuffer.remaining());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657843920 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1657843920;
-        // ---------- Original Method ----------
-        //int compareRemaining = (remaining() < otherBuffer.remaining()) ? remaining()
-                //: otherBuffer.remaining();
-        //int thisPos = position;
-        //int otherPos = otherBuffer.position;
-        //long thisLong, otherLong;
-        //while (compareRemaining > 0) {
-            //thisLong = get(thisPos);
-            //otherLong = otherBuffer.get(otherPos);
-            //if (thisLong != otherLong) {
-                //return thisLong < otherLong ? -1 : 1;
-            //}
-            //thisPos++;
-            //otherPos++;
-            //compareRemaining--;
-        //}
-        //return remaining() - otherBuffer.remaining();
+        
+        
+                
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -123,14 +123,14 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
             boolean var68934A3E9455FA72420237EB05902327_612197668 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110687787 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110687787;
-        } //End block
+        } 
         LongBuffer otherBuffer = (LongBuffer) other;
     if(remaining() != otherBuffer.remaining())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1254806613 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1405513522 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1405513522;
-        } //End block
+        } 
         int myPosition = position;
         int otherPosition = otherBuffer.position;
         boolean equalSoFar = true;
@@ -138,25 +138,25 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
 (equalSoFar && (myPosition < limit))        
         {
             equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        } //End block
+        } 
         boolean var4A97EF18B93B276118DD50585250A586_882960911 = (equalSoFar);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_117295705 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_117295705;
-        // ---------- Original Method ----------
-        //if (!(other instanceof LongBuffer)) {
-            //return false;
-        //}
-        //LongBuffer otherBuffer = (LongBuffer) other;
-        //if (remaining() != otherBuffer.remaining()) {
-            //return false;
-        //}
-        //int myPosition = position;
-        //int otherPosition = otherBuffer.position;
-        //boolean equalSoFar = true;
-        //while (equalSoFar && (myPosition < limit)) {
-            //equalSoFar = get(myPosition++) == otherBuffer.get(otherPosition++);
-        //}
-        //return equalSoFar;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -169,8 +169,8 @@ public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer
 LongBuffer varAF8F268F60258FE30F192DE78F11CD4A_1915582442 =         get(dst, 0, dst.length);
         varAF8F268F60258FE30F192DE78F11CD4A_1915582442.addTaint(taint);
         return varAF8F268F60258FE30F192DE78F11CD4A_1915582442;
-        // ---------- Original Method ----------
-        //return get(dst, 0, dst.length);
+        
+        
     }
 
     
@@ -185,23 +185,23 @@ LongBuffer varAF8F268F60258FE30F192DE78F11CD4A_1915582442 =         get(dst, 0, 
             BufferUnderflowException var77B0EAE3DCF68E57AAEF834AFBC7D762_1461838764 = new BufferUnderflowException();
             var77B0EAE3DCF68E57AAEF834AFBC7D762_1461838764.addTaint(taint);
             throw var77B0EAE3DCF68E57AAEF834AFBC7D762_1461838764;
-        } //End block
+        } 
 for(int i = dstOffset;i < dstOffset + longCount;++i)
         {
             dst[i] = get();
-        } //End block
+        } 
 LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1925856977 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1925856977.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1925856977;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(dst.length, dstOffset, longCount);
-        //if (longCount > remaining()) {
-            //throw new BufferUnderflowException();
-        //}
-        //for (int i = dstOffset; i < dstOffset + longCount; ++i) {
-            //dst[i] = get();
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -213,8 +213,8 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1925856977 =         this;
         boolean var55B7C03E3C1EBABD22606AD17EE923C3_2109716732 = (protectedHasArray());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1137638017 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1137638017;
-        // ---------- Original Method ----------
-        //return protectedHasArray();
+        
+        
     }
 
     
@@ -229,19 +229,19 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1925856977 =         this;
         {
             l = get(myPosition++);
             hash = hash + ((int) l) ^ ((int) (l >> 32));
-        } //End block
+        } 
         int var0800FC577294C34E0B28AD2839435945_737751964 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1609703610 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1609703610;
-        // ---------- Original Method ----------
-        //int myPosition = position;
-        //int hash = 0;
-        //long l;
-        //while (myPosition < limit) {
-            //l = get(myPosition++);
-            //hash = hash + ((int) l) ^ ((int) (l >> 32));
-        //}
-        //return hash;
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -269,8 +269,8 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1925856977 =         this;
 LongBuffer var7D505613BED257805463C43ADCB4DBAD_1278592092 =         put(src, 0, src.length);
         var7D505613BED257805463C43ADCB4DBAD_1278592092.addTaint(taint);
         return var7D505613BED257805463C43ADCB4DBAD_1278592092;
-        // ---------- Original Method ----------
-        //return put(src, 0, src.length);
+        
+        
     }
 
     
@@ -285,23 +285,23 @@ LongBuffer var7D505613BED257805463C43ADCB4DBAD_1278592092 =         put(src, 0, 
             BufferOverflowException var773478A23217201B18B531915D367F31_10574068 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_10574068.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_10574068;
-        } //End block
+        } 
 for(int i = srcOffset;i < srcOffset + longCount;++i)
         {
             put(src[i]);
-        } //End block
+        } 
 LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1868028732 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1868028732.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1868028732;
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(src.length, srcOffset, longCount);
-        //if (longCount > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //for (int i = srcOffset; i < srcOffset + longCount; ++i) {
-            //put(src[i]);
-        //}
-        //return this;
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -313,30 +313,30 @@ LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1868028732 =         this;
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_790669559 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_790669559.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_790669559;
-        } //End block
+        } 
     if(src.remaining() > remaining())        
         {
             BufferOverflowException var773478A23217201B18B531915D367F31_1801779305 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1801779305.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1801779305;
-        } //End block
+        } 
         long[] contents = new long[src.remaining()];
         src.get(contents);
         put(contents);
 LongBuffer var72A74007B2BE62B849F475C7BDA4658B_1410114006 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1410114006.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1410114006;
-        // ---------- Original Method ----------
-        //if (src == this) {
-            //throw new IllegalArgumentException();
-        //}
-        //if (src.remaining() > remaining()) {
-            //throw new BufferOverflowException();
-        //}
-        //long[] contents = new long[src.remaining()];
-        //src.get(contents);
-        //put(contents);
-        //return this;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,8 +46,8 @@ public abstract class MessageProcessor implements Runnable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.790 -0400", hash_original_method = "BC8F7D4E4A2ED3DFF02CD99DF0273205", hash_generated_method = "BE2224366E62DB88B879A0C9A552860C")
     protected  MessageProcessor( String transport ) {
         this.transport = transport;
-        // ---------- Original Method ----------
-        //this.transport = transport;
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ public abstract class MessageProcessor implements Runnable {
         addTaint(port);
         addTaint(ipAddress.getTaint());
         this.initialize(ipAddress, port, transactionStack);
-        // ---------- Original Method ----------
-        //this.initialize(ipAddress, port, transactionStack);
+        
+        
     }
 
     
@@ -75,34 +75,36 @@ public abstract class MessageProcessor implements Runnable {
         this.sentByHostPort = new HostPort();
         this.sentByHostPort.setHost(new Host(ipAddress.getHostAddress()));
         this.sentByHostPort.setPort(port);
-        // ---------- Original Method ----------
-        //this.sipStack = transactionStack;
-        //this.savedIpAddress = ipAddress.getHostAddress();
-        //this.ipAddress = ipAddress;
-        //this.port = port;
-        //this.sentByHostPort = new HostPort();
-        //this.sentByHostPort.setHost(new Host(ipAddress.getHostAddress()));
-        //this.sentByHostPort.setPort(port);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.793 -0400", hash_original_method = "22854860B4C916CC2FA65D60880C8F3F", hash_generated_method = "564DB85A4C244446A395DD5B7785AE9A")
     public String getTransport() {
 String var555A7CA0390490B84966DAB12A131C9F_1923936223 =         this.transport;
         var555A7CA0390490B84966DAB12A131C9F_1923936223.addTaint(taint);
         return var555A7CA0390490B84966DAB12A131C9F_1923936223;
-        // ---------- Original Method ----------
-        //return this.transport;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.794 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "C921892BA0CF1FD35DB4A7EB141AB231")
     public int getPort() {
         int var02075052AFB1BA5EC4413B52BC401B14_560797678 = (this.port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2034927064 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2034927064;
-        // ---------- Original Method ----------
-        //return this.port;
+        
+        
     }
 
     
@@ -115,7 +117,7 @@ String var555A7CA0390490B84966DAB12A131C9F_1923936223 =         this.transport;
             {
                 via.setSentBy(sentByHostPort);
                 via.setTransport(this.getTransport());
-            } //End block
+            } 
             else
             {
                 Host host = new Host();
@@ -123,46 +125,46 @@ String var555A7CA0390490B84966DAB12A131C9F_1923936223 =         this.transport;
                 via.setHost(host);
                 via.setPort(this.getPort());
                 via.setTransport(this.getTransport());
-            } //End block
+            } 
 Via var744F9AD2C48AA2D9C877F464ADEF2D12_78244418 =             via;
             var744F9AD2C48AA2D9C877F464ADEF2D12_78244418.addTaint(taint);
             return var744F9AD2C48AA2D9C877F464ADEF2D12_78244418;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             ex.printStackTrace();
 Via var540C13E9E156B687226421B24F2DF178_1100558363 =             null;
             var540C13E9E156B687226421B24F2DF178_1100558363.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1100558363;
-        } //End block
+        } 
         catch (InvalidArgumentException ex)
         {
             ex.printStackTrace();
 Via var540C13E9E156B687226421B24F2DF178_1701257404 =             null;
             var540C13E9E156B687226421B24F2DF178_1701257404.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1701257404;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //Via via = new Via();
-            //if (this.sentByHostPort != null) {
-                //via.setSentBy(sentByHostPort);
-                //via.setTransport(this.getTransport());
-            //} else {
-                //Host host = new Host();
-                //host.setHostname(this.getIpAddress().getHostAddress());
-                //via.setHost(host);
-                //via.setPort(this.getPort());
-                //via.setTransport(this.getTransport());
-            //}
-            //return via;
-        //} catch (ParseException ex) {
-            //ex.printStackTrace();
-            //return null;
-        //} catch (InvalidArgumentException ex) {
-            //ex.printStackTrace();
-            //return null;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+            
+                
+                
+                
+                
+                
+            
+            
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -174,19 +176,19 @@ Via var540C13E9E156B687226421B24F2DF178_1701257404 =             null;
             {
                 this.getSIPStack().getStackLogger().logError("getListeningPoint" + this +
                         " returning null listeningpoint");
-            } //End block
-        } //End block
+            } 
+        } 
 ListeningPointImpl var28610F0C322E41C5E84A3628D8BE13E8_1711802144 =         listeningPoint;
         var28610F0C322E41C5E84A3628D8BE13E8_1711802144.addTaint(taint);
         return var28610F0C322E41C5E84A3628D8BE13E8_1711802144;
-        // ---------- Original Method ----------
-        //if ( listeningPoint == null )  {
-            //if ( this.getSIPStack().isLoggingEnabled()) {
-                //this.getSIPStack().getStackLogger().logError("getListeningPoint" + this +
-                        //" returning null listeningpoint");
-            //}
-        //}
-        //return listeningPoint;
+        
+        
+            
+                
+                        
+            
+        
+        
     }
 
     
@@ -196,40 +198,42 @@ ListeningPointImpl var28610F0C322E41C5E84A3628D8BE13E8_1711802144 =         list
         {
             this.getSIPStack().getStackLogger().logDebug("setListeningPoint" + this +
                     " listeningPoint = " + lp);
-        } //End block
+        } 
     if(lp.getPort() != this.getPort())        
         InternalErrorHandler.handleException
             ("lp mismatch with provider",getSIPStack().getStackLogger());
         this.listeningPoint = lp;
-        // ---------- Original Method ----------
-        //if ( this.getSIPStack().isLoggingEnabled()) {
-            //this.getSIPStack().getStackLogger().logDebug("setListeningPoint" + this +
-                    //" listeningPoint = " + lp);
-        //}
-        //if ( lp.getPort() != this.getPort())
-            //InternalErrorHandler.handleException
-            //("lp mismatch with provider",getSIPStack().getStackLogger());
-        //this.listeningPoint = lp;
+        
+        
+            
+                    
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.798 -0400", hash_original_method = "63BE272C790EA048A7B52BA4EDD2764B", hash_generated_method = "858EFBF5019013BDA61B1D46ED01BC8C")
     public String getSavedIpAddress() {
 String var72F771F0BAA193F21ED628CB549B7B74_749933115 =         this.savedIpAddress;
         var72F771F0BAA193F21ED628CB549B7B74_749933115.addTaint(taint);
         return var72F771F0BAA193F21ED628CB549B7B74_749933115;
-        // ---------- Original Method ----------
-        //return this.savedIpAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.799 -0400", hash_original_method = "884B07577FCFC9DD806F4641FDB0A38E", hash_generated_method = "8881B564CBA6F3CC9F76DDCE1A81CFC7")
     public InetAddress getIpAddress() {
 InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddress;
         var021FE4BB5A9347AB07122A06261B0E87_924582487.addTaint(taint);
         return var021FE4BB5A9347AB07122A06261B0E87_924582487;
-        // ---------- Original Method ----------
-        //return this.ipAddress;
+        
+        
     }
 
     
@@ -237,9 +241,9 @@ InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddre
     protected void setIpAddress(InetAddress ipAddress) {
         this.sentByHostPort.setHost( new Host(ipAddress.getHostAddress()));
         this.ipAddress = ipAddress;
-        // ---------- Original Method ----------
-        //this.sentByHostPort.setHost( new Host(ipAddress.getHostAddress()));
-        //this.ipAddress = ipAddress;
+        
+        
+        
     }
 
     
@@ -250,7 +254,7 @@ InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddre
         {
             this.sentByHostPort = new HostPort();
             this.sentByHostPort.setHost(new Host(sentBy));
-        } //End block
+        } 
         else
         {
             this.sentByHostPort = new HostPort();
@@ -260,34 +264,34 @@ InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddre
             {
                 int port = Integer.parseInt(portStr);
                 this.sentByHostPort.setPort(port);
-            } //End block
+            } 
             catch (NumberFormatException ex)
             {
                 ParseException var27520CD594AB9B9D41EE218A7505B68E_1080833194 = new ParseException("Bad format encountered at ", ind);
                 var27520CD594AB9B9D41EE218A7505B68E_1080833194.addTaint(taint);
                 throw var27520CD594AB9B9D41EE218A7505B68E_1080833194;
-            } //End block
-        } //End block
+            } 
+        } 
         this.sentBySet = true;
         this.sentBy = sentBy;
-        // ---------- Original Method ----------
-        //int ind = sentBy.indexOf(":");
-        //if (ind == -1) {
-            //this.sentByHostPort = new HostPort();
-            //this.sentByHostPort.setHost(new Host(sentBy));
-        //} else {
-            //this.sentByHostPort = new HostPort();
-            //this.sentByHostPort.setHost(new Host(sentBy.substring(0, ind)));
-            //String portStr = sentBy.substring(ind + 1);
-            //try {
-                //int port = Integer.parseInt(portStr);
-                //this.sentByHostPort.setPort(port);
-            //} catch (NumberFormatException ex) {
-                //throw new ParseException("Bad format encountered at ", ind);
-            //}
-        //}
-        //this.sentBySet = true;
-        //this.sentBy = sentBy;
+        
+        
+        
+            
+            
+        
+            
+            
+            
+            
+                
+                
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -296,15 +300,15 @@ InetAddress var021FE4BB5A9347AB07122A06261B0E87_924582487 =         this.ipAddre
     if(this.sentBy == null && this.sentByHostPort != null)        
         {
             this.sentBy = this.sentByHostPort.toString();
-        } //End block
+        } 
 String varD51D88094686E0D480B6E2DDA4DFBAA7_1578934438 =         this.sentBy;
         varD51D88094686E0D480B6E2DDA4DFBAA7_1578934438.addTaint(taint);
         return varD51D88094686E0D480B6E2DDA4DFBAA7_1578934438;
-        // ---------- Original Method ----------
-        //if ( this.sentBy == null && this.sentByHostPort != null) {
-            //this.sentBy = this.sentByHostPort.toString();
-        //}
-        //return this.sentBy;
+        
+        
+            
+        
+        
     }
 
     
@@ -340,13 +344,14 @@ String varD51D88094686E0D480B6E2DDA4DFBAA7_1578934438 =         this.sentBy;
     public abstract void run();
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.803 -0400", hash_original_method = "7D85FA3843A3F240694BBADD6AC174E2", hash_generated_method = "39538BF8E17ADCF708AC73B594F5866B")
     public boolean isSentBySet() {
         boolean varD15D2ED694D19F8DC9203DA930128F7F_548914074 = (sentBySet);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_955770480 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_955770480;
-        // ---------- Original Method ----------
-        //return sentBySet;
+        
+        
     }
 
     

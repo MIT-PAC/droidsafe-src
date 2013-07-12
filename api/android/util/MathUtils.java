@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,21 +10,24 @@ public final class MathUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.081 -0400", hash_original_method = "36B7D6354601651DD814431AA0DFA6C7", hash_generated_method = "DED0A2D08FDE4310446B2635C520DAE6")
     private  MathUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static float abs(float v) {
+        @DSModeled(DSC.SAFE)
+    public static float abs(float v) {
         return v > 0 ? v : -v;
     }
 
     
-        public static int constrain(int amount, int low, int high) {
+        @DSModeled(DSC.SAFE)
+    public static int constrain(int amount, int low, int high) {
         return amount < low ? low : (amount > high ? high : amount);
     }
 
     
-        public static float constrain(float amount, float low, float high) {
+        @DSModeled(DSC.SAFE)
+    public static float constrain(float amount, float low, float high) {
         return amount < low ? low : (amount > high ? high : amount);
     }
 
@@ -44,42 +47,50 @@ public final class MathUtils {
     }
 
     
-        public static float max(float a, float b) {
+        @DSModeled(DSC.SAFE)
+    public static float max(float a, float b) {
         return a > b ? a : b;
     }
 
     
-        public static float max(int a, int b) {
+        @DSModeled(DSC.SAFE)
+    public static float max(int a, int b) {
         return a > b ? a : b;
     }
 
     
-        public static float max(float a, float b, float c) {
+        @DSModeled(DSC.SAFE)
+    public static float max(float a, float b, float c) {
         return a > b ? (a > c ? a : c) : (b > c ? b : c);
     }
 
     
-        public static float max(int a, int b, int c) {
+        @DSModeled(DSC.SAFE)
+    public static float max(int a, int b, int c) {
         return a > b ? (a > c ? a : c) : (b > c ? b : c);
     }
 
     
-        public static float min(float a, float b) {
+        @DSModeled(DSC.SAFE)
+    public static float min(float a, float b) {
         return a < b ? a : b;
     }
 
     
-        public static float min(int a, int b) {
+        @DSModeled(DSC.SAFE)
+    public static float min(int a, int b) {
         return a < b ? a : b;
     }
 
     
-        public static float min(float a, float b, float c) {
+        @DSModeled(DSC.SAFE)
+    public static float min(float a, float b, float c) {
         return a < b ? (a < c ? a : c) : (b < c ? b : c);
     }
 
     
-        public static float min(int a, int b, int c) {
+        @DSModeled(DSC.SAFE)
+    public static float min(int a, int b, int c) {
         return a < b ? (a < c ? a : c) : (b < c ? b : c);
     }
 
@@ -109,17 +120,20 @@ public final class MathUtils {
     }
 
     
-        public static float sq(float v) {
+        @DSModeled(DSC.SAFE)
+    public static float sq(float v) {
         return v * v;
     }
 
     
-        public static float radians(float degrees) {
+        @DSModeled(DSC.SAFE)
+    public static float radians(float degrees) {
         return degrees * DEG_TO_RAD;
     }
 
     
-        public static float degrees(float radians) {
+        @DSModeled(DSC.SAFE)
+    public static float degrees(float radians) {
         return radians * RAD_TO_DEG;
     }
 
@@ -149,17 +163,20 @@ public final class MathUtils {
     }
 
     
-        public static float lerp(float start, float stop, float amount) {
+        @DSModeled(DSC.SAFE)
+    public static float lerp(float start, float stop, float amount) {
         return start + (stop - start) * amount;
     }
 
     
-        public static float norm(float start, float stop, float value) {
+        @DSModeled(DSC.SAFE)
+    public static float norm(float start, float stop, float value) {
         return (value - start) / (stop - start);
     }
 
     
-        public static float map(float minStart, float minStop, float maxStart, float maxStop, float value) {
+        @DSModeled(DSC.SAFE)
+    public static float map(float minStart, float minStop, float maxStart, float maxStop, float value) {
         return maxStart + (maxStart - maxStop) * ((value - minStart) / (minStop - minStart));
     }
 

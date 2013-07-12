@@ -1,6 +1,6 @@
 package android.support.v4.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,7 +34,7 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     public  AsyncTaskLoader(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,29 +44,29 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     if(delayMS != 0)        
         {
             mHandler = new Handler();
-        } //End block
-        // ---------- Original Method ----------
-        //mUpdateThrottle = delayMS;
-        //if (delayMS != 0) {
-            //mHandler = new Handler();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.263 -0400", hash_original_method = "432E7B986B9CB9166C0D2E103A5093E2", hash_generated_method = "98784D694CDE9210C7AD1BC559086B5F")
     @Override
     protected void onForceLoad() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onForceLoad();
         cancelLoad();
         mTask = new LoadTask();
     if(DEBUG){ }        executePendingTask();
-        // ---------- Original Method ----------
-        //super.onForceLoad();
-        //cancelLoad();
-        //mTask = new LoadTask();
-        //if (DEBUG) Log.v(TAG, "Preparing load: mTask=" + mTask);
-        //executePendingTask();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -80,12 +80,12 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
                 {
                     mTask.waiting = false;
                     mHandler.removeCallbacks(mTask);
-                } //End block
+                } 
                 mTask = null;
                 boolean var68934A3E9455FA72420237EB05902327_186431196 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124922694 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124922694;
-            } //End block
+            } 
             else
     if(mTask.waiting)            
             {
@@ -95,33 +95,33 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
                 boolean var68934A3E9455FA72420237EB05902327_1233725685 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_936159344 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_936159344;
-            } //End block
+            } 
             else
             {
                 boolean cancelled = mTask.cancel(false);
     if(DEBUG){ }    if(cancelled)                
                 {
                     mCancellingTask = mTask;
-                } //End block
+                } 
                 mTask = null;
                 boolean var38881E0A24039DC2621E1D6F86CB71F7_734271741 = (cancelled);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1090861181 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1090861181;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1826653275 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2103209640 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2103209640;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.271 -0400", hash_original_method = "6EDCFF0D227BFAAE1F619E412FD9521B", hash_generated_method = "0F4F990AA22D5996D91D9A1E1C026B8F")
     public void onCanceled(D data) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(data.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -133,7 +133,7 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
             {
                 mTask.waiting = false;
                 mHandler.removeCallbacks(mTask);
-            } //End block
+            } 
     if(mUpdateThrottle > 0)            
             {
                 long now = SystemClock.uptimeMillis();
@@ -142,12 +142,12 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     if(DEBUG){ }                    mTask.waiting = true;
                     mHandler.postAtTime(mTask, mLastLoadCompleteTime+mUpdateThrottle);
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
     if(DEBUG){ }            mTask.executeOnExecutor(ModernAsyncTask.THREAD_POOL_EXECUTOR, (Void[]) null);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -161,15 +161,15 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     if(DEBUG){ }            mLastLoadCompleteTime = SystemClock.uptimeMillis();
             mCancellingTask = null;
             executePendingTask();
-        } //End block
-        // ---------- Original Method ----------
-        //onCanceled(data);
-        //if (mCancellingTask == task) {
-            //if (DEBUG) Log.v(TAG, "Cancelled task is now canceled!");
-            //mLastLoadCompleteTime = SystemClock.uptimeMillis();
-            //mCancellingTask = null;
-            //executePendingTask();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -180,34 +180,34 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     if(mTask != task)        
         {
     if(DEBUG){ }            dispatchOnCancelled(task, data);
-        } //End block
+        } 
         else
         {
     if(isAbandoned())            
             {
                 onCanceled(data);
-            } //End block
+            } 
             else
             {
                 mLastLoadCompleteTime = SystemClock.uptimeMillis();
                 mTask = null;
     if(DEBUG){ }                deliverResult(data);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTask != task) {
-            //if (DEBUG) Log.v(TAG, "Load complete of old task, trying to cancel");
-            //dispatchOnCancelled(task, data);
-        //} else {
-            //if (isAbandoned()) {
-                //onCanceled(data);
-            //} else {
-                //mLastLoadCompleteTime = SystemClock.uptimeMillis();
-                //mTask = null;
-                //if (DEBUG) Log.v(TAG, "Delivering result");
-                //deliverResult(data);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+        
+            
+                
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -216,12 +216,12 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.272 -0400", hash_original_method = "4A83A9163F83587A19BB5376A46D430D", hash_generated_method = "63462BA86D5EB3129D0543FF64A055A7")
     protected D onLoadInBackground() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
 D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
         var7522CCD187CB392DA75B6694C38569FC_1042541103.addTaint(taint);
         return var7522CCD187CB392DA75B6694C38569FC_1042541103;
-        // ---------- Original Method ----------
-        //return loadInBackground();
+        
+        
     }
 
     
@@ -233,19 +233,19 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
             try 
             {
                 task.done.await();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //LoadTask task = mTask;
-        //if (task != null) {
-            //try {
-                //task.done.await();
-            //} catch (InterruptedException e) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -264,7 +264,7 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
             writer.print(mTask);
             writer.print(" waiting=");
             writer.println(mTask.waiting);
-        } //End block
+        } 
     if(mCancellingTask != null)        
         {
             writer.print(prefix);
@@ -272,7 +272,7 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
             writer.print(mCancellingTask);
             writer.print(" waiting=");
             writer.println(mCancellingTask.waiting);
-        } //End block
+        } 
     if(mUpdateThrottle != 0)        
         {
             writer.print(prefix);
@@ -282,9 +282,9 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
             TimeUtils.formatDuration(mLastLoadCompleteTime,
                             SystemClock.uptimeMillis(), writer);
             writer.println();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -302,7 +302,7 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.273 -0400", hash_original_method = "16D80339785A96B3DBCA213BDE6C22F0", hash_generated_method = "16D80339785A96B3DBCA213BDE6C22F0")
         public LoadTask ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -314,56 +314,56 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
     if(DEBUG){ }D varDC838461EE2FA0CA4C9BBB70A15456B0_1998206749 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1998206749.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1998206749;
-            // ---------- Original Method ----------
-            //if (DEBUG) Log.v(TAG, this + " >>> doInBackground");
-            //result = AsyncTaskLoader.this.onLoadInBackground();
-            //if (DEBUG) Log.v(TAG, this + "  <<< doInBackground");
-            //return result;
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.273 -0400", hash_original_method = "58FAE55DC10E415A2FA190657D4F1D85", hash_generated_method = "63B4541D12E91A63EEE43C00050E6559")
         @Override
         protected void onPostExecute(D data) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(data.getTaint());
     if(DEBUG){ }            try 
             {
                 AsyncTaskLoader.this.dispatchOnLoadComplete(this, data);
-            } //End block
+            } 
             finally 
             {
                 done.countDown();
-            } //End block
-            // ---------- Original Method ----------
-            //if (DEBUG) Log.v(TAG, this + " onPostExecute");
-            //try {
-                //AsyncTaskLoader.this.dispatchOnLoadComplete(this, data);
-            //} finally {
-                //done.countDown();
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:39.273 -0400", hash_original_method = "B83F1AA509F54D59951BAD91749D4A0A", hash_generated_method = "7E9F53F70FEDD5B4E50A5542E92F1A8B")
         @Override
         protected void onCancelled() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
     if(DEBUG){ }            try 
             {
                 AsyncTaskLoader.this.dispatchOnCancelled(this, result);
-            } //End block
+            } 
             finally 
             {
                 done.countDown();
-            } //End block
-            // ---------- Original Method ----------
-            //if (DEBUG) Log.v(TAG, this + " onCancelled");
-            //try {
-                //AsyncTaskLoader.this.dispatchOnCancelled(this, result);
-            //} finally {
-                //done.countDown();
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -372,9 +372,9 @@ D var7522CCD187CB392DA75B6694C38569FC_1042541103 =         loadInBackground();
         public void run() {
             waiting = false;
             AsyncTaskLoader.this.executePendingTask();
-            // ---------- Original Method ----------
-            //waiting = false;
-            //AsyncTaskLoader.this.executePendingTask();
+            
+            
+            
         }
 
         

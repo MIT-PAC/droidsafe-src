@@ -1,6 +1,6 @@
 package com.google.android.gles_jni;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public class EGLSurfaceImpl extends EGLSurface {
     public  EGLSurfaceImpl() {
         mEGLSurface = 0;
         mNativePixelRef = 0;
-        // ---------- Original Method ----------
-        //mEGLSurface = 0;
-        //mNativePixelRef = 0;
+        
+        
+        
     }
 
     
@@ -28,9 +28,9 @@ public class EGLSurfaceImpl extends EGLSurface {
     public  EGLSurfaceImpl(int surface) {
         mEGLSurface = surface;
         mNativePixelRef = 0;
-        // ---------- Original Method ----------
-        //mEGLSurface = surface;
-        //mNativePixelRef = 0;
+        
+        
+        
     }
 
     
@@ -54,22 +54,23 @@ public class EGLSurfaceImpl extends EGLSurface {
         boolean var0025C9A2D992FA770BB0E4FD12D3504C_1717222895 = (mEGLSurface == that.mEGLSurface);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1223933405 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1223933405;
-        // ---------- Original Method ----------
-        //if (this == o) return true;
-        //if (o == null || getClass() != o.getClass()) return false;
-        //EGLSurfaceImpl that = (EGLSurfaceImpl) o;
-        //return mEGLSurface == that.mEGLSurface;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.423 -0400", hash_original_method = "688B514F649E9FC55EF131746A1254F0", hash_generated_method = "2D9B342E08F3A4EB557CA4872F885943")
     @Override
     public int hashCode() {
         int var3DC8CA11CDD01EA82F28251758139AEE_1566575145 = (mEGLSurface);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474969280 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_474969280;
-        // ---------- Original Method ----------
-        //return mEGLSurface;
+        
+        
     }
 
     

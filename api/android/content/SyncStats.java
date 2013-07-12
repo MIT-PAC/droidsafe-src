@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,16 +47,16 @@ public class SyncStats implements Parcelable {
         numDeletes = 0;
         numEntries = 0;
         numSkippedEntries = 0;
-        // ---------- Original Method ----------
-        //numAuthExceptions = 0;
-        //numIoExceptions = 0;
-        //numParseExceptions = 0;
-        //numConflictDetectedExceptions = 0;
-        //numInserts = 0;
-        //numUpdates = 0;
-        //numDeletes = 0;
-        //numEntries = 0;
-        //numSkippedEntries = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -71,16 +71,16 @@ public class SyncStats implements Parcelable {
         numDeletes = in.readLong();
         numEntries = in.readLong();
         numSkippedEntries = in.readLong();
-        // ---------- Original Method ----------
-        //numAuthExceptions = in.readLong();
-        //numIoExceptions = in.readLong();
-        //numParseExceptions = in.readLong();
-        //numConflictDetectedExceptions = in.readLong();
-        //numInserts = in.readLong();
-        //numUpdates = in.readLong();
-        //numDeletes = in.readLong();
-        //numEntries = in.readLong();
-        //numSkippedEntries = in.readLong();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -111,11 +111,12 @@ public class SyncStats implements Parcelable {
 String var2460B846747F8B22185AD8BE722266A5_259545228 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_259545228.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_259545228;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.282 -0400", hash_original_method = "1DD335886100A2D5B4563E7A7FCB1E25", hash_generated_method = "93AA46C01012055B3F5E59B0B8F94448")
     public void clear() {
         numAuthExceptions = 0;
@@ -127,26 +128,27 @@ String var2460B846747F8B22185AD8BE722266A5_259545228 =         sb.toString();
         numDeletes = 0;
         numEntries = 0;
         numSkippedEntries = 0;
-        // ---------- Original Method ----------
-        //numAuthExceptions = 0;
-        //numIoExceptions = 0;
-        //numParseExceptions = 0;
-        //numConflictDetectedExceptions = 0;
-        //numInserts = 0;
-        //numUpdates = 0;
-        //numDeletes = 0;
-        //numEntries = 0;
-        //numSkippedEntries = 0;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:11.282 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6B7D43EA95FD703D4CB299AEE2AE03A2")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_970050077 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1341767883 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1341767883;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -163,16 +165,16 @@ String var2460B846747F8B22185AD8BE722266A5_259545228 =         sb.toString();
         dest.writeLong(numDeletes);
         dest.writeLong(numEntries);
         dest.writeLong(numSkippedEntries);
-        // ---------- Original Method ----------
-        //dest.writeLong(numAuthExceptions);
-        //dest.writeLong(numIoExceptions);
-        //dest.writeLong(numParseExceptions);
-        //dest.writeLong(numConflictDetectedExceptions);
-        //dest.writeLong(numInserts);
-        //dest.writeLong(numUpdates);
-        //dest.writeLong(numDeletes);
-        //dest.writeLong(numEntries);
-        //dest.writeLong(numSkippedEntries);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -187,12 +189,12 @@ String var2460B846747F8B22185AD8BE722266A5_259545228 =         sb.toString();
             return new SyncStats[size];
         }
     };
-    // orphaned legacy method
+    
     public SyncStats createFromParcel(Parcel in) {
             return new SyncStats(in);
         }
     
-    // orphaned legacy method
+    
     public SyncStats[] newArray(int size) {
             return new SyncStats[size];
         }

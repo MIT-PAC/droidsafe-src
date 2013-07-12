@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -46,29 +46,30 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.942 -0400", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "23496EAA8BA27F5B931F748485941DF8")
     public  DialogFragment() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.944 -0400", hash_original_method = "E2CE03FA6B4DC8948BADB09C58533480", hash_generated_method = "962D503C076A31A11A2FFB6D500830DE")
     public void setStyle(int style, int theme) {
         mStyle = style;
     if(mStyle == STYLE_NO_FRAME || mStyle == STYLE_NO_INPUT)        
         {
             mTheme = com.android.internal.R.style.Theme_DeviceDefault_Dialog_NoFrame;
-        } //End block
+        } 
     if(theme != 0)        
         {
             mTheme = theme;
-        } //End block
-        // ---------- Original Method ----------
-        //mStyle = style;
-        //if (mStyle == STYLE_NO_FRAME || mStyle == STYLE_NO_INPUT) {
-            //mTheme = com.android.internal.R.style.Theme_DeviceDefault_Dialog_NoFrame;
-        //}
-        //if (theme != 0) {
-            //mTheme = theme;
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -81,12 +82,12 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         FragmentTransaction ft = manager.beginTransaction();
         ft.add(this, tag);
         ft.commit();
-        // ---------- Original Method ----------
-        //mDismissed = false;
-        //mShownByMe = true;
-        //FragmentTransaction ft = manager.beginTransaction();
-        //ft.add(this, tag);
-        //ft.commit();
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -101,29 +102,29 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
         int varB954FF8BE7F5F0091FD83820D5EFD3AB_2087912579 = (mBackStackId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_932957988 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_932957988;
-        // ---------- Original Method ----------
-        //mDismissed = false;
-        //mShownByMe = true;
-        //transaction.add(this, tag);
-        //mViewDestroyed = false;
-        //mBackStackId = transaction.commit();
-        //return mBackStackId;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.950 -0400", hash_original_method = "DB04742794ECD07699F134042784BBAE", hash_generated_method = "62668574154E1163FCB1B97491A8357D")
     public void dismiss() {
         dismissInternal(false);
-        // ---------- Original Method ----------
-        //dismissInternal(false);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.951 -0400", hash_original_method = "C37A06AA62DF1D8997FD4317E6F51B99", hash_generated_method = "56682A4FD8FC4BFCF89A5113DBCA6CC0")
     public void dismissAllowingStateLoss() {
         dismissInternal(true);
-        // ---------- Original Method ----------
-        //dismissInternal(true);
+        
+        
     }
 
     
@@ -133,21 +134,21 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     if(mDismissed)        
         {
             return;
-        } //End block
+        } 
         mDismissed = true;
         mShownByMe = false;
     if(mDialog != null)        
         {
             mDialog.dismiss();
             mDialog = null;
-        } //End block
+        } 
         mViewDestroyed = true;
     if(mBackStackId >= 0)        
         {
             getFragmentManager().popBackStack(mBackStackId,
                     FragmentManager.POP_BACK_STACK_INCLUSIVE);
             mBackStackId = -1;
-        } //End block
+        } 
         else
         {
             FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -155,56 +156,58 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     if(allowStateLoss)            
             {
                 ft.commitAllowingStateLoss();
-            } //End block
+            } 
             else
             {
                 ft.commit();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDismissed) {
-            //return;
-        //}
-        //mDismissed = true;
-        //mShownByMe = false;
-        //if (mDialog != null) {
-            //mDialog.dismiss();
-            //mDialog = null;
-        //}
-        //mViewDestroyed = true;
-        //if (mBackStackId >= 0) {
-            //getFragmentManager().popBackStack(mBackStackId,
-                    //FragmentManager.POP_BACK_STACK_INCLUSIVE);
-            //mBackStackId = -1;
-        //} else {
-            //FragmentTransaction ft = getFragmentManager().beginTransaction();
-            //ft.remove(this);
-            //if (allowStateLoss) {
-                //ft.commitAllowingStateLoss();
-            //} else {
-                //ft.commit();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
+        
+            
+                    
+            
+        
+            
+            
+            
+                
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.954 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "ABC55C629C71FD5E58E525CEF712E830")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
         var91E8306796CF70F787962B1CE02ED969_389857909.addTaint(taint);
         return var91E8306796CF70F787962B1CE02ED969_389857909;
-        // ---------- Original Method ----------
-        //return mDialog;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.954 -0400", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "9EE9EA85FF72145684CAE56698B835EB")
     public int getTheme() {
         int varF33340182B9891501636E62AEA88BE69_228648683 = (mTheme);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072657193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072657193;
-        // ---------- Original Method ----------
-        //return mTheme;
+        
+        
     }
 
     
@@ -213,79 +216,82 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
         mCancelable = cancelable;
     if(mDialog != null)        
         mDialog.setCancelable(cancelable);
-        // ---------- Original Method ----------
-        //mCancelable = cancelable;
-        //if (mDialog != null) mDialog.setCancelable(cancelable);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.957 -0400", hash_original_method = "C5B21DACDF63560D5CBEBB813CF00A94", hash_generated_method = "77133C2635D85D6EF1C4411F9C7EB603")
     public boolean isCancelable() {
         boolean var895157BE8E63EE5D1276B7D79E82D10B_357367223 = (mCancelable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1200941212 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1200941212;
-        // ---------- Original Method ----------
-        //return mCancelable;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.958 -0400", hash_original_method = "9B3CB0767DA345E448E7161B8A1612ED", hash_generated_method = "498BC809D2A3B6E137721CDFAE7E8200")
     public void setShowsDialog(boolean showsDialog) {
         mShowsDialog = showsDialog;
-        // ---------- Original Method ----------
-        //mShowsDialog = showsDialog;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.959 -0400", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "6544E66075B3146266BD27F427E54DB1")
     public boolean getShowsDialog() {
         boolean varBB3DF4294DE62C91BD8B047DF87E1F79_942691824 = (mShowsDialog);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_776433796 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_776433796;
-        // ---------- Original Method ----------
-        //return mShowsDialog;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.959 -0400", hash_original_method = "4F6E3ACB3030C4724A44B02F1B4FB1BA", hash_generated_method = "B04DEB10959885684E0C6FCF45E75BB3")
     @Override
     public void onAttach(Activity activity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(activity.getTaint());
         super.onAttach(activity);
     if(!mShownByMe)        
         {
             mDismissed = false;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttach(activity);
-        //if (!mShownByMe) {
-            //mDismissed = false;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.960 -0400", hash_original_method = "2C281285ACC0A61C67E7A68F54E6F98C", hash_generated_method = "BD19C885100836AD596001408F378257")
     @Override
     public void onDetach() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetach();
     if(!mShownByMe && !mDismissed)        
         {
             mDismissed = true;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDetach();
-        //if (!mShownByMe && !mDismissed) {
-            //mDismissed = true;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.961 -0400", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "FBA378C447185CF9B49F231C4D236EBF")
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onCreate(savedInstanceState);
         mShowsDialog = mContainerId == 0;
     if(savedInstanceState != null)        
@@ -295,17 +301,17 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
             mCancelable = savedInstanceState.getBoolean(SAVED_CANCELABLE, true);
             mShowsDialog = savedInstanceState.getBoolean(SAVED_SHOWS_DIALOG, mShowsDialog);
             mBackStackId = savedInstanceState.getInt(SAVED_BACK_STACK_ID, -1);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onCreate(savedInstanceState);
-        //mShowsDialog = mContainerId == 0;
-        //if (savedInstanceState != null) {
-            //mStyle = savedInstanceState.getInt(SAVED_STYLE, STYLE_NORMAL);
-            //mTheme = savedInstanceState.getInt(SAVED_THEME, 0);
-            //mCancelable = savedInstanceState.getBoolean(SAVED_CANCELABLE, true);
-            //mShowsDialog = savedInstanceState.getBoolean(SAVED_SHOWS_DIALOG, mShowsDialog);
-            //mBackStackId = savedInstanceState.getInt(SAVED_BACK_STACK_ID, -1);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -317,7 +323,7 @@ Dialog var91E8306796CF70F787962B1CE02ED969_389857909 =         mDialog;
 LayoutInflater var3BD3BF49DA02C3B8A31EA4982EEE0B45_1205052540 =             super.getLayoutInflater(savedInstanceState);
             var3BD3BF49DA02C3B8A31EA4982EEE0B45_1205052540.addTaint(taint);
             return var3BD3BF49DA02C3B8A31EA4982EEE0B45_1205052540;
-        } //End block
+        } 
         mDialog = onCreateDialog(savedInstanceState);
 switch(mStyle){
         case STYLE_NO_INPUT:
@@ -333,61 +339,62 @@ LayoutInflater var60A95D6CBF37F88B7073669F4585C1AA_255342550 =             (Layo
                     Context.LAYOUT_INFLATER_SERVICE);
             var60A95D6CBF37F88B7073669F4585C1AA_255342550.addTaint(taint);
             return var60A95D6CBF37F88B7073669F4585C1AA_255342550;
-        } //End block
+        } 
 LayoutInflater varAAEF3E5344A533E1A8E0FBAA0822B7FC_609409581 =         (LayoutInflater)mActivity.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         varAAEF3E5344A533E1A8E0FBAA0822B7FC_609409581.addTaint(taint);
         return varAAEF3E5344A533E1A8E0FBAA0822B7FC_609409581;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.964 -0400", hash_original_method = "94CB11021A94D8409376FA3A852A41E9", hash_generated_method = "380807519C4B9A80559A6A1494C9E53D")
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
 Dialog var5C7D6DC943C129796A12D487F3E52C87_1700016975 =         new Dialog(getActivity(), getTheme());
         var5C7D6DC943C129796A12D487F3E52C87_1700016975.addTaint(taint);
         return var5C7D6DC943C129796A12D487F3E52C87_1700016975;
-        // ---------- Original Method ----------
-        //return new Dialog(getActivity(), getTheme());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.964 -0400", hash_original_method = "355678003B9B3B1563024A6589368B65", hash_generated_method = "ED2DA15A78724B9512FA1FE0573630C9")
     public void onCancel(DialogInterface dialog) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(dialog.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.965 -0400", hash_original_method = "2F7D346350F9327D0059F752221072E9", hash_generated_method = "109DE52D7C743EFFE3E54F26F86B9A08")
     public void onDismiss(DialogInterface dialog) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(dialog.getTaint());
     if(!mViewDestroyed)        
         {
             dismissInternal(true);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mViewDestroyed) {
-            //dismissInternal(true);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.968 -0400", hash_original_method = "B958C5F8B85A3937B9102EC0291E48E7", hash_generated_method = "DE0D4F353BA981A63B79D829233AD202")
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         super.onActivityCreated(savedInstanceState);
     if(!mShowsDialog)        
         {
             return;
-        } //End block
+        } 
         View view = getView();
     if(view != null)        
         {
@@ -396,9 +403,9 @@ Dialog var5C7D6DC943C129796A12D487F3E52C87_1700016975 =         new Dialog(getAc
                 IllegalStateException var27ACD4F65CA3D405A1711472A3F088CB_1391388075 = new IllegalStateException("DialogFragment can not be attached to a container view");
                 var27ACD4F65CA3D405A1711472A3F088CB_1391388075.addTaint(taint);
                 throw var27ACD4F65CA3D405A1711472A3F088CB_1391388075;
-            } //End block
+            } 
             mDialog.setContentView(view);
-        } //End block
+        } 
         mDialog.setOwnerActivity(getActivity());
         mDialog.setCancelable(mCancelable);
     if(!mDialog.takeCancelAndDismissListeners("DialogFragment", this, this))        
@@ -407,43 +414,43 @@ Dialog var5C7D6DC943C129796A12D487F3E52C87_1700016975 =         new Dialog(getAc
                     "You can not set Dialog's OnCancelListener or OnDismissListener");
             varE25F3CD4D728BFEA1ADFD86B8B0F9675_888454436.addTaint(taint);
             throw varE25F3CD4D728BFEA1ADFD86B8B0F9675_888454436;
-        } //End block
+        } 
     if(savedInstanceState != null)        
         {
             Bundle dialogState = savedInstanceState.getBundle(SAVED_DIALOG_STATE_TAG);
     if(dialogState != null)            
             {
                 mDialog.onRestoreInstanceState(dialogState);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.969 -0400", hash_original_method = "CFA39F554612E24A4614D286AB70C801", hash_generated_method = "22A9B7D22C0088D4B61B9AC60055C91C")
     @Override
     public void onStart() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onStart();
     if(mDialog != null)        
         {
             mViewDestroyed = false;
             mDialog.show();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onStart();
-        //if (mDialog != null) {
-            //mViewDestroyed = false;
-            //mDialog.show();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.970 -0400", hash_original_method = "36AA220233F5FF78B8725588D009C1D9", hash_generated_method = "4B4E4835B7E819A352CB0F7EF051219E")
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(outState.getTaint());
         super.onSaveInstanceState(outState);
     if(mDialog != null)        
@@ -452,89 +459,89 @@ Dialog var5C7D6DC943C129796A12D487F3E52C87_1700016975 =         new Dialog(getAc
     if(dialogState != null)            
             {
                 outState.putBundle(SAVED_DIALOG_STATE_TAG, dialogState);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mStyle != STYLE_NORMAL)        
         {
             outState.putInt(SAVED_STYLE, mStyle);
-        } //End block
+        } 
     if(mTheme != 0)        
         {
             outState.putInt(SAVED_THEME, mTheme);
-        } //End block
+        } 
     if(!mCancelable)        
         {
             outState.putBoolean(SAVED_CANCELABLE, mCancelable);
-        } //End block
+        } 
     if(!mShowsDialog)        
         {
             outState.putBoolean(SAVED_SHOWS_DIALOG, mShowsDialog);
-        } //End block
+        } 
     if(mBackStackId != -1)        
         {
             outState.putInt(SAVED_BACK_STACK_ID, mBackStackId);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onSaveInstanceState(outState);
-        //if (mDialog != null) {
-            //Bundle dialogState = mDialog.onSaveInstanceState();
-            //if (dialogState != null) {
-                //outState.putBundle(SAVED_DIALOG_STATE_TAG, dialogState);
-            //}
-        //}
-        //if (mStyle != STYLE_NORMAL) {
-            //outState.putInt(SAVED_STYLE, mStyle);
-        //}
-        //if (mTheme != 0) {
-            //outState.putInt(SAVED_THEME, mTheme);
-        //}
-        //if (!mCancelable) {
-            //outState.putBoolean(SAVED_CANCELABLE, mCancelable);
-        //}
-        //if (!mShowsDialog) {
-            //outState.putBoolean(SAVED_SHOWS_DIALOG, mShowsDialog);
-        //}
-        //if (mBackStackId != -1) {
-            //outState.putInt(SAVED_BACK_STACK_ID, mBackStackId);
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.971 -0400", hash_original_method = "17D046BD7350E945F7CAD60E8CDA42D0", hash_generated_method = "836D801CCB9C0F6E04195A90ED6B1484")
     @Override
     public void onStop() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onStop();
     if(mDialog != null)        
         {
             mDialog.hide();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onStop();
-        //if (mDialog != null) {
-            //mDialog.hide();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:01.972 -0400", hash_original_method = "A28646D8654C968065CCEE80C360B171", hash_generated_method = "29C983C51EF581437D1846703B2E3A2A")
     @Override
     public void onDestroyView() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDestroyView();
     if(mDialog != null)        
         {
             mViewDestroyed = true;
             mDialog.dismiss();
             mDialog = null;
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDestroyView();
-        //if (mDialog != null) {
-            //mViewDestroyed = true;
-            //mDialog.dismiss();
-            //mDialog = null;
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -570,8 +577,8 @@ Dialog var5C7D6DC943C129796A12D487F3E52C87_1700016975 =         new Dialog(getAc
         writer.print(mDismissed);
         writer.print(" mShownByMe=");
         writer.println(mShownByMe);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

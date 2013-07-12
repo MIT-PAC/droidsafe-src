@@ -1,6 +1,6 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,7 +53,7 @@ public final class Tag implements Parcelable {
             IllegalArgumentException varC58615044F1EEBC9993FC8DC55AC3544_543054676 = new IllegalArgumentException("rawTargets cannot be null");
             varC58615044F1EEBC9993FC8DC55AC3544_543054676.addTaint(taint);
             throw varC58615044F1EEBC9993FC8DC55AC3544_543054676;
-        } //End block
+        } 
         mId = id;
         mTechList = Arrays.copyOf(techList, techList.length);
         mTechStringList = generateTechStringList(techList);
@@ -61,17 +61,17 @@ public final class Tag implements Parcelable {
         mServiceHandle = serviceHandle;
         mTagService = tagService;
         mConnectedTechnology = -1;
-        // ---------- Original Method ----------
-        //if (techList == null) {
-            //throw new IllegalArgumentException("rawTargets cannot be null");
-        //}
-        //mId = id;
-        //mTechList = Arrays.copyOf(techList, techList.length);
-        //mTechStringList = generateTechStringList(techList);
-        //mTechExtras = Arrays.copyOf(techListExtras, techList.length);
-        //mServiceHandle = serviceHandle;
-        //mTagService = tagService;
-        //mConnectedTechnology = -1;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -120,42 +120,45 @@ switch(techList[i]){
             var256048EF6D22C5D5ECA9C9DAEA7110FA_1243036146.addTaint(taint);
             throw var256048EF6D22C5D5ECA9C9DAEA7110FA_1243036146;
 }
-        } //End block
+        } 
 String[] var2E6885ACC179B2D302813BAD2D696933_1661297653 =         strings;
         var2E6885ACC179B2D302813BAD2D696933_1661297653.addTaint(taint);
         return var2E6885ACC179B2D302813BAD2D696933_1661297653;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.745 -0400", hash_original_method = "89421ECB0C954DB9BA373A13BA3FAA83", hash_generated_method = "071AA858788F65B8E707E1AEC550FEE7")
     public int getServiceHandle() {
         int var2C5FEB0198F897EC9ED4F5F58999D842_11636731 = (mServiceHandle);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1492107553 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1492107553;
-        // ---------- Original Method ----------
-        //return mServiceHandle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.745 -0400", hash_original_method = "119449B9FCBA8EB72735DF05D41F23E7", hash_generated_method = "C540352B390F2FD6B5A21B795B7CD7EE")
     public byte[] getId() {
         byte[] var6AC7F06B6413A1BE9C136DC7DF0D2B60_40871674 = (mId);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1032137386 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1032137386;
-        // ---------- Original Method ----------
-        //return mId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.745 -0400", hash_original_method = "ED11FAFB07CA3B90E3FEDDA21BAFA279", hash_generated_method = "64F72F7CF7851FEA63667A664127A116")
     public String[] getTechList() {
 String[] varCD028AAF1881533C9F08026F039B4C4D_238755482 =         mTechStringList;
         varCD028AAF1881533C9F08026F039B4C4D_238755482.addTaint(taint);
         return varCD028AAF1881533C9F08026F039B4C4D_238755482;
-        // ---------- Original Method ----------
-        //return mTechStringList;
+        
+        
     }
 
     
@@ -166,7 +169,7 @@ String[] varCD028AAF1881533C9F08026F039B4C4D_238755482 =         mTechStringList
             IllegalStateException var984D8BA48DC48CBA090B19434FB7D408_126905137 = new IllegalStateException("Close connection to the technology first!");
             var984D8BA48DC48CBA090B19434FB7D408_126905137.addTaint(taint);
             throw var984D8BA48DC48CBA090B19434FB7D408_126905137;
-        } //End block
+        } 
         try 
         {
             Tag newTag = mTagService.rediscover(getServiceHandle());
@@ -175,37 +178,38 @@ String[] varCD028AAF1881533C9F08026F039B4C4D_238755482 =         mTechStringList
 Tag var9B601A3966D02397507C32AA33318068_526634755 =                 newTag;
                 var9B601A3966D02397507C32AA33318068_526634755.addTaint(taint);
                 return var9B601A3966D02397507C32AA33318068_526634755;
-            } //End block
+            } 
             else
             {
                 IOException var902C48C8B5D62C3CB23219936FB8A620_548036142 = new IOException("Failed to rediscover tag");
                 var902C48C8B5D62C3CB23219936FB8A620_548036142.addTaint(taint);
                 throw var902C48C8B5D62C3CB23219936FB8A620_548036142;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             IOException var85ABB819BF0F37D7F06E65856C8FB735_2852915 = new IOException("NFC service dead");
             var85ABB819BF0F37D7F06E65856C8FB735_2852915.addTaint(taint);
             throw var85ABB819BF0F37D7F06E65856C8FB735_2852915;
-        } //End block
-        // ---------- Original Method ----------
-        //if (getConnectedTechnology() != -1) {
-            //throw new IllegalStateException("Close connection to the technology first!");
-        //}
-        //try {
-            //Tag newTag = mTagService.rediscover(getServiceHandle());
-            //if (newTag != null) {
-                //return newTag;
-            //} else {
-                //throw new IOException("Failed to rediscover tag");
-            //}
-        //} catch (RemoteException e) {
-            //throw new IOException("NFC service dead");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.746 -0400", hash_original_method = "066FD8962F433FECE6D4FD3B60FADEA0", hash_generated_method = "49AA6C4E2B46C3496B69DA2176838E0C")
     public boolean hasTech(int techType) {
         addTaint(techType);
@@ -217,18 +221,19 @@ for(int tech : mTechList)
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_828123004 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_828123004;
             }
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1905618510 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1222854406 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1222854406;
-        // ---------- Original Method ----------
-        //for (int tech : mTechList) {
-            //if (tech == techType) return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.747 -0400", hash_original_method = "31360E4A8CC1CC354A13744DCF6ABA65", hash_generated_method = "59571D9E3BD4E557F423FB3BAE1BC990")
     public Bundle getTechExtras(int tech) {
         addTaint(tech);
@@ -239,39 +244,40 @@ for(int idx = 0;idx < mTechList.length;idx++)
             {
                 pos = idx;
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
     if(pos < 0)        
         {
 Bundle var540C13E9E156B687226421B24F2DF178_290353884 =             null;
             var540C13E9E156B687226421B24F2DF178_290353884.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_290353884;
-        } //End block
+        } 
 Bundle var6543B1FECCBBFB52C39498A0EC7DCB0D_1781082447 =         mTechExtras[pos];
         var6543B1FECCBBFB52C39498A0EC7DCB0D_1781082447.addTaint(taint);
         return var6543B1FECCBBFB52C39498A0EC7DCB0D_1781082447;
-        // ---------- Original Method ----------
-        //int pos = -1;
-        //for (int idx = 0; idx < mTechList.length; idx++) {
-          //if (mTechList[idx] == tech) {
-              //pos = idx;
-              //break;
-          //}
-        //}
-        //if (pos < 0) {
-            //return null;
-        //}
-        //return mTechExtras[pos];
+        
+        
+        
+          
+              
+              
+          
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.747 -0400", hash_original_method = "67284B405524DECAA6F6D36DFD293E76", hash_generated_method = "ED754AB6ECE2BA2E40DD898AAFE628E7")
     public INfcTag getTagService() {
 INfcTag varCEA41967F78A032165E0C3EE868F689A_556929694 =         mTagService;
         varCEA41967F78A032165E0C3EE868F689A_556929694.addTaint(taint);
         return varCEA41967F78A032165E0C3EE868F689A_556929694;
-        // ---------- Original Method ----------
-        //return mTagService;
+        
+        
     }
 
     
@@ -287,24 +293,24 @@ for(int i = 0;i < length;i++)
     if(i < length - 1)            
             {
                 sb.append(", ");
-            } //End block
-        } //End block
+            } 
+        } 
         sb.append("]");
 String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_1890451433.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_1890451433;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder("TAG: Tech [");
-        //String[] techList = getTechList();
-        //int length = techList.length;
-        //for (int i = 0; i < length; i++) {
-            //sb.append(techList[i]);
-            //if (i < length - 1) {
-                //sb.append(", ");
-            //}
-        //}
-        //sb.append("]");
-        //return sb.toString();
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -329,14 +335,15 @@ String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.748 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C6133079B7CF5E9AF7C1836EB5266956")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2135647463 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381905873 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_381905873;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -355,18 +362,18 @@ String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
     if(isMock == 0)        
         {
             dest.writeStrongBinder(mTagService.asBinder());
-        } //End block
-        // ---------- Original Method ----------
-        //int isMock = (mTagService == null)?1:0;
-        //writeBytesWithNull(dest, mId);
-        //dest.writeInt(mTechList.length);
-        //dest.writeIntArray(mTechList);
-        //dest.writeTypedArray(mTechExtras, 0);
-        //dest.writeInt(mServiceHandle);
-        //dest.writeInt(isMock);
-        //if (isMock == 0) {
-            //dest.writeStrongBinder(mTagService.asBinder());
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -375,37 +382,39 @@ String var2460B846747F8B22185AD8BE722266A5_1890451433 =         sb.toString();
     if(mConnectedTechnology == -1)        
         {
             mConnectedTechnology = technology;
-        } //End block
+        } 
         else
         {
             IllegalStateException var268A1622F35E361EE39921151619CEFC_1733442464 = new IllegalStateException("Close other technology first!");
             var268A1622F35E361EE39921151619CEFC_1733442464.addTaint(taint);
             throw var268A1622F35E361EE39921151619CEFC_1733442464;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mConnectedTechnology == -1) {
-            //mConnectedTechnology = technology;
-        //} else {
-            //throw new IllegalStateException("Close other technology first!");
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.750 -0400", hash_original_method = "B7538F13EF8EEF4B4D475104909015D7", hash_generated_method = "2475BD739BB9F2FDEDB63047DAF61090")
     public int getConnectedTechnology() {
         int var824FFD6D91C3217E3C5250F0EF6A1CF5_2056547954 = (mConnectedTechnology);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041989742 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2041989742;
-        // ---------- Original Method ----------
-        //return mConnectedTechnology;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.751 -0400", hash_original_method = "4FE592F130B2AB198D9A9024B7A375C0", hash_generated_method = "CDDFA9CDCDA74E225B20B2008ED8B5D1")
     public void setTechnologyDisconnected() {
         mConnectedTechnology = -1;
-        // ---------- Original Method ----------
-        //mConnectedTechnology = -1;
+        
+        
     }
 
     

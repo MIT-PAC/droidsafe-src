@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,33 +37,34 @@ public final class BluetoothPan implements BluetoothProfile {
     if(mServiceListener != null)            
             {
                 mServiceListener.onServiceConnected(BluetoothProfile.PAN, this);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mService = null;
-        } //End block
-        // ---------- Original Method ----------
-        //IBinder b = ServiceManager.getService(BluetoothAdapter.BLUETOOTH_SERVICE);
-        //mServiceListener = l;
-        //mAdapter = BluetoothAdapter.getDefaultAdapter();
-        //if (b != null) {
-            //mService = IBluetooth.Stub.asInterface(b);
-            //if (mServiceListener != null) {
-                //mServiceListener.onServiceConnected(BluetoothProfile.PAN, this);
-            //}
-        //} else {
-            //Log.w(TAG, "Bluetooth Service not available!");
-            //mService = null;
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.307 -0400", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "7E2810AC4BDE36569F993386C707233F")
      void close() {
         mServiceListener = null;
-        // ---------- Original Method ----------
-        //mServiceListener = null;
+        
+        
     }
 
     
@@ -80,30 +81,30 @@ public final class BluetoothPan implements BluetoothProfile {
                 boolean var8D37F1688D7F88AD6D8C397696501FDB_1636110907 = (mService.connectPanDevice(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1356992147 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1356992147;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1624995404 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_797275682 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_797275682;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_566049593 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2089474739 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2089474739;
-        // ---------- Original Method ----------
-        //if (DBG) log("connect(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.connectPanDevice(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -120,30 +121,30 @@ public final class BluetoothPan implements BluetoothProfile {
                 boolean var3C52C08EA13C27B54C776ED1F3966C19_2094223265 = (mService.disconnectPanDevice(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045812054 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1045812054;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1821756931 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1261313458 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1261313458;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_372000273 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1831382436 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1831382436;
-        // ---------- Original Method ----------
-        //if (DBG) log("disconnect(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.disconnectPanDevice(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -158,29 +159,29 @@ public final class BluetoothPan implements BluetoothProfile {
 List<BluetoothDevice> var6407D4ECF80280021A257FD5BE1EC7C5_1263016359 =                 mService.getConnectedPanDevices();
                 var6407D4ECF80280021A257FD5BE1EC7C5_1263016359.addTaint(taint);
                 return var6407D4ECF80280021A257FD5BE1EC7C5_1263016359;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1961692371 =                 new ArrayList<BluetoothDevice>();
                 var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1961692371.addTaint(taint);
                 return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1961692371;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_2025474471 =         new ArrayList<BluetoothDevice>();
         var0DD13883ABBA5DF8AB8CAFEE38A3B82C_2025474471.addTaint(taint);
         return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_2025474471;
-        // ---------- Original Method ----------
-        //if (DBG) log("getConnectedDevices()");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getConnectedPanDevices();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -196,29 +197,29 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1961692371 =          
 List<BluetoothDevice> varC8AE10C9488DE333DE190403B15AF009_742987998 =                 mService.getPanDevicesMatchingConnectionStates(states);
                 varC8AE10C9488DE333DE190403B15AF009_742987998.addTaint(taint);
                 return varC8AE10C9488DE333DE190403B15AF009_742987998;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446 =                 new ArrayList<BluetoothDevice>();
                 var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446.addTaint(taint);
                 return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1627633097 =         new ArrayList<BluetoothDevice>();
         var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1627633097.addTaint(taint);
         return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1627633097;
-        // ---------- Original Method ----------
-        //if (DBG) log("getDevicesMatchingStates()");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getPanDevicesMatchingConnectionStates(states);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -235,30 +236,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446 =          
                 int varDA047ACF3B9990A7BC6FD0A61DD2E356_1847347390 = (mService.getPanDeviceConnectionState(device));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471741313 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_471741313;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 int var6DC267D6C0363C5B94F222673460F45F_1612325419 = (BluetoothProfile.STATE_DISCONNECTED);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085664004 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085664004;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        int var6DC267D6C0363C5B94F222673460F45F_1590919890 = (BluetoothProfile.STATE_DISCONNECTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428130031 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428130031;
-        // ---------- Original Method ----------
-        //if (DBG) log("getState(" + device + ")");
-        //if (mService != null && isEnabled()
-            //&& isValidDevice(device)) {
-            //try {
-                //return mService.getPanDeviceConnectionState(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return BluetoothProfile.STATE_DISCONNECTED;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return BluetoothProfile.STATE_DISCONNECTED;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -270,17 +271,17 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446 =          
         try 
         {
             mService.setBluetoothTethering(value);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) log("setBluetoothTethering(" + value + ")");
-        //try {
-            //mService.setBluetoothTethering(value);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -293,21 +294,21 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446 =          
             boolean varCD9FD4C89EC0FA7B03094886DB661C9F_2002811844 = (mService.isTetheringOn());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_387448259 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_387448259;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1098130702 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1014259263 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1014259263;
-        } //End block
-        // ---------- Original Method ----------
-        //if (DBG) log("isTetheringOn()");
-        //try {
-            //return mService.isTetheringOn();
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-            //return false;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -322,9 +323,9 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446 =          
         boolean var68934A3E9455FA72420237EB05902327_2103081362 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2139779935 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2139779935;
-        // ---------- Original Method ----------
-        //if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
-        //return false;
+        
+        
+        
     }
 
     
@@ -346,10 +347,10 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1515711446 =          
         boolean var68934A3E9455FA72420237EB05902327_1359709641 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1544665854 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1544665854;
-        // ---------- Original Method ----------
-        //if (device == null) return false;
-        //if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
-        //return false;
+        
+        
+        
+        
     }
 
     

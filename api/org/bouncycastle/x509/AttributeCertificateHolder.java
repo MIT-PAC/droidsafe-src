@@ -1,6 +1,6 @@
 package org.bouncycastle.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,8 +39,8 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.692 -0400", hash_original_method = "5CADDEA19B83B0D9A5BBB8113D1E397F", hash_generated_method = "F59428356E32C4723CDCA0BF11B8E6A2")
       AttributeCertificateHolder(ASN1Sequence seq) {
         holder = Holder.getInstance(seq);
-        // ---------- Original Method ----------
-        //holder = Holder.getInstance(seq);
+        
+        
     }
 
     
@@ -50,10 +50,10 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
         holder = new org.bouncycastle.asn1.x509.Holder(new IssuerSerial(
             new GeneralNames(new DERSequence(new GeneralName(issuerName))),
             new DERInteger(serialNumber)));
-        // ---------- Original Method ----------
-        //holder = new org.bouncycastle.asn1.x509.Holder(new IssuerSerial(
-            //new GeneralNames(new DERSequence(new GeneralName(issuerName))),
-            //new DERInteger(serialNumber)));
+        
+        
+            
+            
     }
 
     
@@ -63,7 +63,7 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
         this(X509Util.convertPrincipal(issuerName), serialNumber);
         addTaint(serialNumber.getTaint());
         addTaint(issuerName.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -73,35 +73,35 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
         try 
         {
             name = PrincipalUtil.getIssuerX509Principal(cert);
-        } //End block
+        } 
         catch (Exception e)
         {
             CertificateParsingException var9ECFF51269413FFE65CC631CA16E3743_1361879655 = new CertificateParsingException(e.getMessage());
             var9ECFF51269413FFE65CC631CA16E3743_1361879655.addTaint(taint);
             throw var9ECFF51269413FFE65CC631CA16E3743_1361879655;
-        } //End block
+        } 
         holder = new Holder(new IssuerSerial(generateGeneralNames(name),
             new DERInteger(cert.getSerialNumber())));
-        // ---------- Original Method ----------
-        //X509Principal name;
-        //try
-        //{
-            //name = PrincipalUtil.getIssuerX509Principal(cert);
-        //}
-        //catch (Exception e)
-        //{
-            //throw new CertificateParsingException(e.getMessage());
-        //}
-        //holder = new Holder(new IssuerSerial(generateGeneralNames(name),
-            //new DERInteger(cert.getSerialNumber())));
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.694 -0400", hash_original_method = "BB3F8ED7A12081786FFA678549853DD7", hash_generated_method = "9DAC6696A4355E038108E0ADFA13A2E4")
     public  AttributeCertificateHolder(X509Principal principal) {
         holder = new Holder(generateGeneralNames(principal));
-        // ---------- Original Method ----------
-        //holder = new Holder(generateGeneralNames(principal));
+        
+        
     }
 
     
@@ -109,7 +109,7 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
     public  AttributeCertificateHolder(X500Principal principal) {
         this(X509Util.convertPrincipal(principal));
         addTaint(principal.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -119,10 +119,10 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
         holder = new Holder(new ObjectDigestInfo(digestedObjectType,
             otherObjectTypeID, new AlgorithmIdentifier(digestAlgorithm), Arrays
                 .clone(objectDigest)));
-        // ---------- Original Method ----------
-        //holder = new Holder(new ObjectDigestInfo(digestedObjectType,
-            //otherObjectTypeID, new AlgorithmIdentifier(digestAlgorithm), Arrays
-                //.clone(objectDigest)));
+        
+        
+            
+                
     }
 
     
@@ -134,17 +134,17 @@ public class AttributeCertificateHolder implements CertSelector, Selector {
                 .getValue().intValue());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223394139 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_223394139;
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_1554195087 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124159369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2124159369;
-        // ---------- Original Method ----------
-        //if (holder.getObjectDigestInfo() != null)
-        //{
-            //return holder.getObjectDigestInfo().getDigestedObjectType()
-                //.getValue().intValue();
-        //}
-        //return -1;
+        
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -156,17 +156,17 @@ String var1E93A44C0555128AC5428CFBAFC67BD1_1564668630 =             holder.getOb
                 .getId();
             var1E93A44C0555128AC5428CFBAFC67BD1_1564668630.addTaint(taint);
             return var1E93A44C0555128AC5428CFBAFC67BD1_1564668630;
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_673344529 =         null;
         var540C13E9E156B687226421B24F2DF178_673344529.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_673344529;
-        // ---------- Original Method ----------
-        //if (holder.getObjectDigestInfo() != null)
-        //{
-            //return holder.getObjectDigestInfo().getDigestAlgorithm().getObjectId()
-                //.getId();
-        //}
-        //return null;
+        
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -177,16 +177,16 @@ String var540C13E9E156B687226421B24F2DF178_673344529 =         null;
             byte[] varF3A3B800A0376B2AA79672C6DAF118C8_1217029667 = (holder.getObjectDigestInfo().getObjectDigest().getBytes());
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_212897879 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_212897879;
-        } //End block
+        } 
         byte[] var37A6259CC0C1DAE299A7866489DFF0BD_354060188 = (null);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_387382900 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_387382900;
-        // ---------- Original Method ----------
-        //if (holder.getObjectDigestInfo() != null)
-        //{
-            //return holder.getObjectDigestInfo().getObjectDigest().getBytes();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -195,16 +195,16 @@ String var540C13E9E156B687226421B24F2DF178_673344529 =         null;
     if(holder.getObjectDigestInfo() != null)        
         {
             holder.getObjectDigestInfo().getOtherObjectTypeID().getId();
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_369608407 =         null;
         var540C13E9E156B687226421B24F2DF178_369608407.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_369608407;
-        // ---------- Original Method ----------
-        //if (holder.getObjectDigestInfo() != null)
-        //{
-            //holder.getObjectDigestInfo().getOtherObjectTypeID().getId();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -214,8 +214,8 @@ String var540C13E9E156B687226421B24F2DF178_369608407 =         null;
 GeneralNames var94B0934CB17A73A5ED7AD1B3F1523ADC_1708545973 =         new GeneralNames(new DERSequence(new GeneralName(principal)));
         var94B0934CB17A73A5ED7AD1B3F1523ADC_1708545973.addTaint(taint);
         return var94B0934CB17A73A5ED7AD1B3F1523ADC_1708545973;
-        // ---------- Original Method ----------
-        //return new GeneralNames(new DERSequence(new GeneralName(principal)));
+        
+        
     }
 
     
@@ -237,37 +237,37 @@ for(int i = 0;i != names.length;i++)
                         boolean varB326B5062B2F0E69046810717534CB09_1468135142 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_18286793 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_18286793;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (IOException e)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2077357230 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1961331064 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1961331064;
-        // ---------- Original Method ----------
-        //GeneralName[] names = targets.getNames();
-        //for (int i = 0; i != names.length; i++)
-        //{
-            //GeneralName gn = names[i];
-            //if (gn.getTagNo() == GeneralName.directoryName)
-            //{
-                //try
-                //{
-                    //if (new X509Principal(((ASN1Encodable)gn.getName())
-                        //.getEncoded()).equals(subject))
-                    //{
-                        //return true;
-                    //}
-                //}
-                //catch (IOException e)
-                //{
-                //}
-            //}
-        //}
-        //return false;
+        
+        
+        
+        
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                        
+                    
+                
+                
+                
+                
+            
+        
+        
     }
 
     
@@ -283,36 +283,36 @@ for(int i = 0;i != names.length;i++)
                 {
                     l.add(new X500Principal(
                         ((ASN1Encodable)names[i].getName()).getEncoded()));
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     RuntimeException var4980AE888B424D26E0A3FAF1A1097229_868360563 = new RuntimeException("badly formed Name object");
                     var4980AE888B424D26E0A3FAF1A1097229_868360563.addTaint(taint);
                     throw var4980AE888B424D26E0A3FAF1A1097229_868360563;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 Object[] var6C26F6EC1F7A67F950053C95FE24CCE6_748838728 =         l.toArray(new Object[l.size()]);
         var6C26F6EC1F7A67F950053C95FE24CCE6_748838728.addTaint(taint);
         return var6C26F6EC1F7A67F950053C95FE24CCE6_748838728;
-        // ---------- Original Method ----------
-        //List l = new ArrayList(names.length);
-        //for (int i = 0; i != names.length; i++)
-        //{
-            //if (names[i].getTagNo() == GeneralName.directoryName)
-            //{
-                //try
-                //{
-                    //l.add(new X500Principal(
-                        //((ASN1Encodable)names[i].getName()).getEncoded()));
-                //}
-                //catch (IOException e)
-                //{
-                    //throw new RuntimeException("badly formed Name object");
-                //}
-            //}
-        //}
-        //return l.toArray(new Object[l.size()]);
+        
+        
+        
+        
+            
+            
+                
+                
+                    
+                        
+                
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -326,22 +326,22 @@ for(int i = 0;i != p.length;i++)
     if(p[i] instanceof Principal)            
             {
                 l.add(p[i]);
-            } //End block
-        } //End block
+            } 
+        } 
 Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_1534865581 =         (Principal[])l.toArray(new Principal[l.size()]);
         var2BC6CB15026C258E2509F6CFCF0FEAB1_1534865581.addTaint(taint);
         return var2BC6CB15026C258E2509F6CFCF0FEAB1_1534865581;
-        // ---------- Original Method ----------
-        //Object[] p = this.getNames(names.getNames());
-        //List l = new ArrayList();
-        //for (int i = 0; i != p.length; i++)
-        //{
-            //if (p[i] instanceof Principal)
-            //{
-                //l.add(p[i]);
-            //}
-        //}
-        //return (Principal[])l.toArray(new Principal[l.size()]);
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -352,16 +352,16 @@ Principal[] var2BC6CB15026C258E2509F6CFCF0FEAB1_1534865581 =         (Principal[
 Principal[] varDFC31D129B04B241822A136DF77C702E_588986198 =             getPrincipals(holder.getEntityName());
             varDFC31D129B04B241822A136DF77C702E_588986198.addTaint(taint);
             return varDFC31D129B04B241822A136DF77C702E_588986198;
-        } //End block
+        } 
 Principal[] var540C13E9E156B687226421B24F2DF178_638473698 =         null;
         var540C13E9E156B687226421B24F2DF178_638473698.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_638473698;
-        // ---------- Original Method ----------
-        //if (holder.getEntityName() != null)
-        //{
-            //return getPrincipals(holder.getEntityName());
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -372,16 +372,16 @@ Principal[] var540C13E9E156B687226421B24F2DF178_638473698 =         null;
 Principal[] varAA7DA35A79C7F874F57357A5F83F9BF0_290319604 =             getPrincipals(holder.getBaseCertificateID().getIssuer());
             varAA7DA35A79C7F874F57357A5F83F9BF0_290319604.addTaint(taint);
             return varAA7DA35A79C7F874F57357A5F83F9BF0_290319604;
-        } //End block
+        } 
 Principal[] var540C13E9E156B687226421B24F2DF178_1415697148 =         null;
         var540C13E9E156B687226421B24F2DF178_1415697148.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1415697148;
-        // ---------- Original Method ----------
-        //if (holder.getBaseCertificateID() != null)
-        //{
-            //return getPrincipals(holder.getBaseCertificateID().getIssuer());
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -392,16 +392,16 @@ Principal[] var540C13E9E156B687226421B24F2DF178_1415697148 =         null;
 BigInteger var0366267DB5B10F5EB62E9812B64E09EA_2058023305 =             holder.getBaseCertificateID().getSerial().getValue();
             var0366267DB5B10F5EB62E9812B64E09EA_2058023305.addTaint(taint);
             return var0366267DB5B10F5EB62E9812B64E09EA_2058023305;
-        } //End block
+        } 
 BigInteger var540C13E9E156B687226421B24F2DF178_246015968 =         null;
         var540C13E9E156B687226421B24F2DF178_246015968.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_246015968;
-        // ---------- Original Method ----------
-        //if (holder.getBaseCertificateID() != null)
-        //{
-            //return holder.getBaseCertificateID().getSerial().getValue();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -411,9 +411,9 @@ Object varEAE8D4E202CC08FFA1C38E04DB4DFE1D_158016558 =         new AttributeCert
             .toASN1Object());
         varEAE8D4E202CC08FFA1C38E04DB4DFE1D_158016558.addTaint(taint);
         return varEAE8D4E202CC08FFA1C38E04DB4DFE1D_158016558;
-        // ---------- Original Method ----------
-        //return new AttributeCertificateHolder((ASN1Sequence)holder
-            //.toASN1Object());
+        
+        
+            
     }
 
     
@@ -425,7 +425,7 @@ Object varEAE8D4E202CC08FFA1C38E04DB4DFE1D_158016558 =         new AttributeCert
             boolean var68934A3E9455FA72420237EB05902327_284443876 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_939619416 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_939619416;
-        } //End block
+        } 
         X509Certificate x509Cert = (X509Certificate)cert;
         try 
         {
@@ -435,7 +435,7 @@ Object varEAE8D4E202CC08FFA1C38E04DB4DFE1D_158016558 =         new AttributeCert
                     && matchesDN(PrincipalUtil.getIssuerX509Principal(x509Cert), holder.getBaseCertificateID().getIssuer()));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_188768711 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_188768711;
-            } //End block
+            } 
     if(holder.getEntityName() != null)            
             {
     if(matchesDN(PrincipalUtil.getSubjectX509Principal(x509Cert),
@@ -444,21 +444,21 @@ Object varEAE8D4E202CC08FFA1C38E04DB4DFE1D_158016558 =         new AttributeCert
                     boolean varB326B5062B2F0E69046810717534CB09_1194184291 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_446434802 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_446434802;
-                } //End block
-            } //End block
+                } 
+            } 
     if(holder.getObjectDigestInfo() != null)            
             {
                 MessageDigest md = null;
                 try 
                 {
                     md = MessageDigest.getInstance(getDigestAlgorithm(), "BC");
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     boolean var68934A3E9455FA72420237EB05902327_820545150 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_87383130 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_87383130;
-                } //End block
+                } 
 switch(getDigestedObjectType()){
                 case ObjectDigestInfo.publicKey:
                 md.update(cert.getPublicKey().getEncoded());
@@ -471,20 +471,20 @@ switch(getDigestedObjectType()){
                     boolean var68934A3E9455FA72420237EB05902327_50683863 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1510664934 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1510664934;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (CertificateEncodingException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1139233531 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_651430038 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_651430038;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1625128531 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1968431062 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1968431062;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -496,28 +496,28 @@ switch(getDigestedObjectType()){
             boolean varB326B5062B2F0E69046810717534CB09_553527670 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1384452140 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1384452140;
-        } //End block
+        } 
     if(!(obj instanceof AttributeCertificateHolder))        
         {
             boolean var68934A3E9455FA72420237EB05902327_1606772836 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1402814433 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1402814433;
-        } //End block
+        } 
         AttributeCertificateHolder other = (AttributeCertificateHolder)obj;
         boolean var375AF02C41746B5375B2A9E0F63FA517_211672079 = (this.holder.equals(other.holder));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_32474670 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_32474670;
-        // ---------- Original Method ----------
-        //if (obj == this)
-        //{
-            //return true;
-        //}
-        //if (!(obj instanceof AttributeCertificateHolder))
-        //{
-            //return false;
-        //}
-        //AttributeCertificateHolder other = (AttributeCertificateHolder)obj;
-        //return this.holder.equals(other.holder);
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -526,8 +526,8 @@ switch(getDigestedObjectType()){
         int varAB1C3240F0D80F83C6A8B97E9553840F_552191530 = (this.holder.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865626233 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_865626233;
-        // ---------- Original Method ----------
-        //return this.holder.hashCode();
+        
+        
     }
 
     
@@ -539,16 +539,16 @@ switch(getDigestedObjectType()){
             boolean var68934A3E9455FA72420237EB05902327_1541494594 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070462778 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070462778;
-        } //End block
+        } 
         boolean varADA7754756F13D45E6E9A386DF7AABD4_1408479160 = (match((Certificate)obj));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526541484 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526541484;
-        // ---------- Original Method ----------
-        //if (!(obj instanceof X509Certificate))
-        //{
-            //return false;
-        //}
-        //return match((Certificate)obj);
+        
+        
+        
+            
+        
+        
     }
 
     

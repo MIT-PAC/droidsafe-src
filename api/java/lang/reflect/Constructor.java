@@ -1,6 +1,6 @@
 package java.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -39,7 +39,7 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.952 -0400", hash_original_method = "F22CB981733D75C2BC34BDB791B93657", hash_generated_method = "5981B35754AB4E8CEEDEF9BB5EC55BCB")
 	public  Constructor() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,11 +49,11 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
         this.parameterTypes = ptypes;
         this.exceptionTypes = extypes;
         this.slot = slot;
-        // ---------- Original Method ----------
-        //this.declaringClass = declaringClass;
-        //this.parameterTypes = ptypes;
-        //this.exceptionTypes = extypes;
-        //this.slot = slot;
+        
+        
+        
+        
+        
     }
 
     
@@ -69,18 +69,18 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
             genericParameterTypes = parser.parameterTypes;
             genericExceptionTypes = parser.exceptionTypes;
             genericTypesAreInitialized = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!genericTypesAreInitialized) {
-            //String signatureAttribute = getSignatureAttribute();
-            //GenericSignatureParser parser = new GenericSignatureParser(
-                    //declaringClass.getClassLoader());
-            //parser.parseForConstructor(this, signatureAttribute, exceptionTypes);
-            //formalTypeParameters = parser.formalTypeParameters;
-            //genericParameterTypes = parser.parameterTypes;
-            //genericExceptionTypes = parser.exceptionTypes;
-            //genericTypesAreInitialized = true;
-        //}
+        } 
+        
+        
+            
+            
+                    
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -93,16 +93,16 @@ public final class Constructor<T> extends AccessibleObject implements GenericDec
 String var540C13E9E156B687226421B24F2DF178_1904914411 =             null;
             var540C13E9E156B687226421B24F2DF178_1904914411.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1904914411;
-        } //End block
+        } 
 String var2F8E51633C4B934C6A6871930033C26B_1077421858 =         StringUtils.combineStrings(annotation);
         var2F8E51633C4B934C6A6871930033C26B_1077421858.addTaint(taint);
         return var2F8E51633C4B934C6A6871930033C26B_1077421858;
-        // ---------- Original Method ----------
-        //Object[] annotation = Method.getSignatureAnnotation(declaringClass, slot);
-        //if (annotation == null) {
-            //return null;
-        //}
-        //return StringUtils.combineStrings(annotation);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -112,9 +112,9 @@ String var2F8E51633C4B934C6A6871930033C26B_1077421858 =         StringUtils.comb
 TypeVariable<Constructor<T>>[] var530714F4AE8FC705F00A16C33AA9F354_614669536 =         formalTypeParameters.clone();
         var530714F4AE8FC705F00A16C33AA9F354_614669536.addTaint(taint);
         return var530714F4AE8FC705F00A16C33AA9F354_614669536;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return formalTypeParameters.clone();
+        
+        
+        
     }
 
     
@@ -126,7 +126,7 @@ TypeVariable<Constructor<T>>[] var530714F4AE8FC705F00A16C33AA9F354_614669536 =  
     if(modifier != 0)        
         {
             sb.append(Modifier.toString(modifier & ~Modifier.VARARGS)).append(' ');
-        } //End block
+        } 
     if(formalTypeParameters != null && formalTypeParameters.length > 0)        
         {
             sb.append('<');
@@ -136,10 +136,10 @@ for(int i = 0;i < formalTypeParameters.length;i++)
     if(i < formalTypeParameters.length - 1)                
                 {
                     sb.append(",");
-                } //End block
-            } //End block
+                } 
+            } 
             sb.append("> ");
-        } //End block
+        } 
         appendArrayType(sb, getDeclaringClass());
         sb.append('(');
         appendArrayGenericType(sb,
@@ -150,12 +150,12 @@ for(int i = 0;i < formalTypeParameters.length;i++)
         {
             sb.append(" throws ");
             appendArrayGenericType(sb, genericExceptionTypeArray);
-        } //End block
+        } 
 String var2460B846747F8B22185AD8BE722266A5_770365075 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_770365075.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_770365075;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -165,9 +165,9 @@ String var2460B846747F8B22185AD8BE722266A5_770365075 =         sb.toString();
 Type[] var5CB4FE98CE4670BB8FD40D4DEBE96905_273458394 =         Types.getClonedTypeArray(genericParameterTypes);
         var5CB4FE98CE4670BB8FD40D4DEBE96905_273458394.addTaint(taint);
         return var5CB4FE98CE4670BB8FD40D4DEBE96905_273458394;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return Types.getClonedTypeArray(genericParameterTypes);
+        
+        
+        
     }
 
     
@@ -177,9 +177,9 @@ Type[] var5CB4FE98CE4670BB8FD40D4DEBE96905_273458394 =         Types.getClonedTy
 Type[] var5B58D007921425E5297F5C75058387B8_2141367989 =         Types.getClonedTypeArray(genericExceptionTypes);
         var5B58D007921425E5297F5C75058387B8_2141367989.addTaint(taint);
         return var5B58D007921425E5297F5C75058387B8_2141367989;
-        // ---------- Original Method ----------
-        //initGenericTypes();
-        //return Types.getClonedTypeArray(genericExceptionTypes);
+        
+        
+        
     }
 
     
@@ -189,8 +189,8 @@ Type[] var5B58D007921425E5297F5C75058387B8_2141367989 =         Types.getClonedT
 Annotation[] varCEB162A873EFD10835F6CE1FB96D8CB2_636716379 =         Method.getDeclaredAnnotations(declaringClass, slot);
         varCEB162A873EFD10835F6CE1FB96D8CB2_636716379.addTaint(taint);
         return varCEB162A873EFD10835F6CE1FB96D8CB2_636716379;
-        // ---------- Original Method ----------
-        //return Method.getDeclaredAnnotations(declaringClass, slot);
+        
+        
     }
 
     
@@ -203,15 +203,15 @@ Annotation[] varCEB162A873EFD10835F6CE1FB96D8CB2_636716379 =         Method.getD
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_122882119 = new NullPointerException("annotationType == null");
             varD3565833EFC12BC5822ABFE94D257EDE_122882119.addTaint(taint);
             throw varD3565833EFC12BC5822ABFE94D257EDE_122882119;
-        } //End block
+        } 
 A var5417718CA49F9779F67999A1AA0ED4BB_1056788597 =         Method.getAnnotation(declaringClass, slot, annotationType);
         var5417718CA49F9779F67999A1AA0ED4BB_1056788597.addTaint(taint);
         return var5417718CA49F9779F67999A1AA0ED4BB_1056788597;
-        // ---------- Original Method ----------
-        //if (annotationType == null) {
-            //throw new NullPointerException("annotationType == null");
-        //}
-        //return Method.getAnnotation(declaringClass, slot, annotationType);
+        
+        
+            
+        
+        
     }
 
     
@@ -224,15 +224,15 @@ A var5417718CA49F9779F67999A1AA0ED4BB_1056788597 =         Method.getAnnotation(
             NullPointerException varD3565833EFC12BC5822ABFE94D257EDE_1135763233 = new NullPointerException("annotationType == null");
             varD3565833EFC12BC5822ABFE94D257EDE_1135763233.addTaint(taint);
             throw varD3565833EFC12BC5822ABFE94D257EDE_1135763233;
-        } //End block
+        } 
         boolean var89CB16F80799F534D0464C04A07CF9A6_1015721709 = (Method.isAnnotationPresent(declaringClass, slot, annotationType));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_905869731 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_905869731;
-        // ---------- Original Method ----------
-        //if (annotationType == null) {
-            //throw new NullPointerException("annotationType == null");
-        //}
-        //return Method.isAnnotationPresent(declaringClass, slot, annotationType);
+        
+        
+            
+        
+        
     }
 
     
@@ -244,17 +244,17 @@ A var5417718CA49F9779F67999A1AA0ED4BB_1056788597 =         Method.getAnnotation(
 Annotation[][] var15C5F2AAEB28119B840E422D93DB09D2_1928347386 =             Method.noAnnotations(parameterTypes.length);
             var15C5F2AAEB28119B840E422D93DB09D2_1928347386.addTaint(taint);
             return var15C5F2AAEB28119B840E422D93DB09D2_1928347386;
-        } //End block
+        } 
 Annotation[][] varAD240742A5BFADFDA08547188EAD9960_2129773125 =         parameterAnnotations;
         varAD240742A5BFADFDA08547188EAD9960_2129773125.addTaint(taint);
         return varAD240742A5BFADFDA08547188EAD9960_2129773125;
-        // ---------- Original Method ----------
-        //Annotation[][] parameterAnnotations
-                //= Method.getParameterAnnotations(declaringClass, slot);
-        //if (parameterAnnotations.length == 0) {
-            //return Method.noAnnotations(parameterTypes.length);
-        //}
-        //return parameterAnnotations;
+        
+        
+                
+        
+            
+        
+        
     }
 
     
@@ -264,9 +264,9 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_2129773125 =         paramete
         boolean var86DAE4C613A84946DC68E64495A528D2_1116603657 = ((mods & Modifier.VARARGS) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2018911997 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2018911997;
-        // ---------- Original Method ----------
-        //int mods = Method.getMethodModifiers(declaringClass, slot);
-        //return (mods & Modifier.VARARGS) != 0;
+        
+        
+        
     }
 
     
@@ -276,9 +276,9 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_2129773125 =         paramete
         boolean varBAC0FB6B5CDCE03373AF4C7AA6974822_2056287181 = ((mods & Modifier.SYNTHETIC) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1474285695 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1474285695;
-        // ---------- Original Method ----------
-        //int mods = Method.getMethodModifiers(declaringClass, slot);
-        //return (mods & Modifier.SYNTHETIC) != 0;
+        
+        
+        
     }
 
     
@@ -289,8 +289,8 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_2129773125 =         paramete
         boolean varEA1FEBC74C07235B6607AFA36D5D2D7F_1593207452 = (object instanceof Constructor && toString().equals(object.toString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_497927371 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_497927371;
-        // ---------- Original Method ----------
-        //return object instanceof Constructor && toString().equals(object.toString());
+        
+        
     }
 
     
@@ -299,8 +299,8 @@ Annotation[][] varAD240742A5BFADFDA08547188EAD9960_2129773125 =         paramete
 Class<T> var55840ACAE88F5536515BB8E6ADD923C6_1960450849 =         declaringClass;
         var55840ACAE88F5536515BB8E6ADD923C6_1960450849.addTaint(taint);
         return var55840ACAE88F5536515BB8E6ADD923C6_1960450849;
-        // ---------- Original Method ----------
-        //return declaringClass;
+        
+        
     }
 
     
@@ -311,15 +311,15 @@ Class<T> var55840ACAE88F5536515BB8E6ADD923C6_1960450849 =         declaringClass
 Class<?>[] varE954D1DB65BB4FD70AD6204227C6F506_430049724 =             EmptyArray.CLASS;
             varE954D1DB65BB4FD70AD6204227C6F506_430049724.addTaint(taint);
             return varE954D1DB65BB4FD70AD6204227C6F506_430049724;
-        } //End block
+        } 
 Class<?>[] varDA0125CDA48071C4AD5C63141D7B3037_994244087 =         exceptionTypes.clone();
         varDA0125CDA48071C4AD5C63141D7B3037_994244087.addTaint(taint);
         return varDA0125CDA48071C4AD5C63141D7B3037_994244087;
-        // ---------- Original Method ----------
-        //if (exceptionTypes == null) {
-            //return EmptyArray.CLASS;
-        //}
-        //return exceptionTypes.clone();
+        
+        
+            
+        
+        
     }
 
     
@@ -328,8 +328,8 @@ Class<?>[] varDA0125CDA48071C4AD5C63141D7B3037_994244087 =         exceptionType
         int var3D5D6FB7EE785F40601FDFE4E8B5F167_1051745807 = (Method.getMethodModifiers(declaringClass, slot));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129175643 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129175643;
-        // ---------- Original Method ----------
-        //return Method.getMethodModifiers(declaringClass, slot);
+        
+        
     }
 
     
@@ -338,8 +338,8 @@ Class<?>[] varDA0125CDA48071C4AD5C63141D7B3037_994244087 =         exceptionType
 String varB4CCF06CFE87AC518D337F45219126F6_354172290 =         declaringClass.getName();
         varB4CCF06CFE87AC518D337F45219126F6_354172290.addTaint(taint);
         return varB4CCF06CFE87AC518D337F45219126F6_354172290;
-        // ---------- Original Method ----------
-        //return declaringClass.getName();
+        
+        
     }
 
     
@@ -348,8 +348,8 @@ String varB4CCF06CFE87AC518D337F45219126F6_354172290 =         declaringClass.ge
 Class<?>[] var5C3F1AD275E23F393681FEA8A66E0F80_1365122307 =         parameterTypes.clone();
         var5C3F1AD275E23F393681FEA8A66E0F80_1365122307.addTaint(taint);
         return var5C3F1AD275E23F393681FEA8A66E0F80_1365122307;
-        // ---------- Original Method ----------
-        //return parameterTypes.clone();
+        
+        
     }
 
     
@@ -361,19 +361,19 @@ Class<?>[] var5C3F1AD275E23F393681FEA8A66E0F80_1365122307 =         parameterTyp
 for(int i = 0;i < parameterTypes.length;i++)
         {
             result.append(getSignature(parameterTypes[i]));
-        } //End block
+        } 
         result.append(")V");
 String varE65B3A02759122992CB82C0E651AD408_212605422 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_212605422.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_212605422;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder();
-        //result.append('(');
-        //for (int i = 0; i < parameterTypes.length; i++) {
-            //result.append(getSignature(parameterTypes[i]));
-        //}
-        //result.append(")V");
-        //return result.toString();
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -383,8 +383,8 @@ String varE65B3A02759122992CB82C0E651AD408_212605422 =         result.toString()
         int var97279D0B088E61DAFBD188BDBD8D2AA4_1249442860 = (declaringClass.getName().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_349179969 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_349179969;
-        // ---------- Original Method ----------
-        //return declaringClass.getName().hashCode();
+        
+        
     }
 
     
@@ -395,8 +395,8 @@ String varE65B3A02759122992CB82C0E651AD408_212605422 =         result.toString()
 T var21285D308A0AF4A83E6B1D541C321546_1238813355 =         constructNative (args, declaringClass, parameterTypes, slot, flag);
         var21285D308A0AF4A83E6B1D541C321546_1238813355.addTaint(taint);
         return var21285D308A0AF4A83E6B1D541C321546_1238813355;
-        // ---------- Original Method ----------
-        //return constructNative (args, declaringClass, parameterTypes, slot, flag);
+        
+        
     }
 
     
@@ -429,23 +429,23 @@ T var21285D308A0AF4A83E6B1D541C321546_1238813355 =         constructNative (args
         {
             result.append(" throws ");
             result.append(toString(exceptionTypes));
-        } //End block
+        } 
 String varE65B3A02759122992CB82C0E651AD408_34058575 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_34058575.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_34058575;
-        // ---------- Original Method ----------
-        //StringBuilder result = new StringBuilder(Modifier.toString(getModifiers()));
-        //if (result.length() != 0)
-            //result.append(' ');
-        //result.append(declaringClass.getName());
-        //result.append("(");
-        //result.append(toString(parameterTypes));
-        //result.append(")");
-        //if (exceptionTypes != null && exceptionTypes.length != 0) {
-            //result.append(" throws ");
-            //result.append(toString(exceptionTypes));
-        //}
-        //return result.toString();
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     

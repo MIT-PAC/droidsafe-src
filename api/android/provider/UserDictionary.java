@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class UserDictionary {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.934 -0400", hash_original_method = "A702CC64E997273813B5205310B01CF9", hash_generated_method = "A702CC64E997273813B5205310B01CF9")
     public UserDictionary ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -25,7 +25,7 @@ public class UserDictionary {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.935 -0400", hash_original_method = "C1D0CFC6A151C5F38326116B5D69C610", hash_generated_method = "C1D0CFC6A151C5F38326116B5D69C610")
         public Words ()
         {
-            //Synthesized constructor
+            
         }
 
 

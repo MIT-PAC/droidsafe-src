@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -59,21 +59,22 @@ public class PhoneProxy extends Handler implements Phone {
         mCommandsInterface = ((PhoneBase)mActivePhone).mCM;
         mCommandsInterface.registerForRadioTechnologyChanged(
                 this, EVENT_RADIO_TECHNOLOGY_CHANGED, null);
-        // ---------- Original Method ----------
-        //mActivePhone = phone;
-        //mResetModemOnRadioTechnologyChange = SystemProperties.getBoolean(
-                //TelephonyProperties.PROPERTY_RESET_ON_RADIO_TECH_CHANGE, false);
-        //mIccSmsInterfaceManagerProxy = new IccSmsInterfaceManagerProxy(
-                //phone.getIccSmsInterfaceManager());
-        //mIccPhoneBookInterfaceManagerProxy = new IccPhoneBookInterfaceManagerProxy(
-                //phone.getIccPhoneBookInterfaceManager());
-        //mPhoneSubInfoProxy = new PhoneSubInfoProxy(phone.getPhoneSubInfo());
-        //mCommandsInterface = ((PhoneBase)mActivePhone).mCM;
-        //mCommandsInterface.registerForRadioTechnologyChanged(
-                //this, EVENT_RADIO_TECHNOLOGY_CHANGED, null);
+        
+        
+        
+                
+        
+                
+        
+                
+        
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.290 -0400", hash_original_method = "E195EC1A1EABBEB6AA309412029DC755", hash_generated_method = "4EC7E7070072C95BC7C7CA4B02330777")
     @Override
     public void handleMessage(Message msg) {
@@ -91,8 +92,8 @@ switch(msg.what){
                 oldPowerState = true;
                 logd("Setting Radio Power to Off");
                 mCommandsInterface.setRadioPower(false, null);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mOutgoingPhone.equals("GSM"))        
         {
             logd("Make a new CDMAPhone and destroy the old GSMPhone.");
@@ -101,7 +102,7 @@ switch(msg.what){
             mActivePhone = PhoneFactory.getCdmaPhone();
             ((GSMPhone)oldPhone).removeReferences();
             oldPhone = null;
-        } //End block
+        } 
         else
         {
             logd("Make a new GSMPhone and destroy the old CDMAPhone.");
@@ -110,12 +111,12 @@ switch(msg.what){
             mActivePhone = PhoneFactory.getGsmPhone();
             ((CDMAPhone)oldPhone).removeReferences();
             oldPhone = null;
-        } //End block
+        } 
     if(mResetModemOnRadioTechnologyChange)        
         {
             logd("Resetting Radio");
             mCommandsInterface.setRadioPower(oldPowerState, null);
-        } //End block
+        } 
         mIccSmsInterfaceManagerProxy.setmIccSmsInterfaceManager(
                     mActivePhone.getIccSmsInterfaceManager());
         mIccPhoneBookInterfaceManagerProxy.setmIccPhoneBookInterfaceManager(
@@ -130,8 +131,8 @@ switch(msg.what){
         default:
         break;
 }        super.handleMessage(msg);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -145,8 +146,8 @@ switch(msg.what){
 ServiceState varB60F40D412C20B5CBF579A3940E0A1CC_154721447 =         mActivePhone.getServiceState();
         varB60F40D412C20B5CBF579A3940E0A1CC_154721447.addTaint(taint);
         return varB60F40D412C20B5CBF579A3940E0A1CC_154721447;
-        // ---------- Original Method ----------
-        //return mActivePhone.getServiceState();
+        
+        
     }
 
     
@@ -155,8 +156,8 @@ ServiceState varB60F40D412C20B5CBF579A3940E0A1CC_154721447 =         mActivePhon
 CellLocation varD3736C0AB7755A59D7EADF001F3ECFF7_1390872399 =         mActivePhone.getCellLocation();
         varD3736C0AB7755A59D7EADF001F3ECFF7_1390872399.addTaint(taint);
         return varD3736C0AB7755A59D7EADF001F3ECFF7_1390872399;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCellLocation();
+        
+        
     }
 
     
@@ -165,8 +166,8 @@ CellLocation varD3736C0AB7755A59D7EADF001F3ECFF7_1390872399 =         mActivePho
 DataState var85D280C9C316E2C568EB5A1F249D156E_922034460 =         mActivePhone.getDataConnectionState(Phone.APN_TYPE_DEFAULT);
         var85D280C9C316E2C568EB5A1F249D156E_922034460.addTaint(taint);
         return var85D280C9C316E2C568EB5A1F249D156E_922034460;
-        // ---------- Original Method ----------
-        //return mActivePhone.getDataConnectionState(Phone.APN_TYPE_DEFAULT);
+        
+        
     }
 
     
@@ -176,8 +177,8 @@ DataState var85D280C9C316E2C568EB5A1F249D156E_922034460 =         mActivePhone.g
 DataState var2A179317F19FC4AC7BBD4C47EF4079EF_2110288824 =         mActivePhone.getDataConnectionState(apnType);
         var2A179317F19FC4AC7BBD4C47EF4079EF_2110288824.addTaint(taint);
         return var2A179317F19FC4AC7BBD4C47EF4079EF_2110288824;
-        // ---------- Original Method ----------
-        //return mActivePhone.getDataConnectionState(apnType);
+        
+        
     }
 
     
@@ -186,8 +187,8 @@ DataState var2A179317F19FC4AC7BBD4C47EF4079EF_2110288824 =         mActivePhone.
 DataActivityState varC767C1F3BD4173C01DC59523451D79E7_299543807 =         mActivePhone.getDataActivityState();
         varC767C1F3BD4173C01DC59523451D79E7_299543807.addTaint(taint);
         return varC767C1F3BD4173C01DC59523451D79E7_299543807;
-        // ---------- Original Method ----------
-        //return mActivePhone.getDataActivityState();
+        
+        
     }
 
     
@@ -196,8 +197,8 @@ DataActivityState varC767C1F3BD4173C01DC59523451D79E7_299543807 =         mActiv
 Context var54AA9DCA0CA04F20B6DA14B3F8D0281B_1388559017 =         mActivePhone.getContext();
         var54AA9DCA0CA04F20B6DA14B3F8D0281B_1388559017.addTaint(taint);
         return var54AA9DCA0CA04F20B6DA14B3F8D0281B_1388559017;
-        // ---------- Original Method ----------
-        //return mActivePhone.getContext();
+        
+        
     }
 
     
@@ -205,8 +206,8 @@ Context var54AA9DCA0CA04F20B6DA14B3F8D0281B_1388559017 =         mActivePhone.ge
     public void disableDnsCheck(boolean b) {
         addTaint(b);
         mActivePhone.disableDnsCheck(b);
-        // ---------- Original Method ----------
-        //mActivePhone.disableDnsCheck(b);
+        
+        
     }
 
     
@@ -215,8 +216,8 @@ Context var54AA9DCA0CA04F20B6DA14B3F8D0281B_1388559017 =         mActivePhone.ge
         boolean var78018A2ADDE0F738B0FAC58F77DC3E07_417352717 = (mActivePhone.isDnsCheckDisabled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_492900288 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_492900288;
-        // ---------- Original Method ----------
-        //return mActivePhone.isDnsCheckDisabled();
+        
+        
     }
 
     
@@ -225,8 +226,8 @@ Context var54AA9DCA0CA04F20B6DA14B3F8D0281B_1388559017 =         mActivePhone.ge
 State varACFA40C09E4BF09E90FCEF22FEF4C12F_315596749 =         mActivePhone.getState();
         varACFA40C09E4BF09E90FCEF22FEF4C12F_315596749.addTaint(taint);
         return varACFA40C09E4BF09E90FCEF22FEF4C12F_315596749;
-        // ---------- Original Method ----------
-        //return mActivePhone.getState();
+        
+        
     }
 
     
@@ -235,8 +236,8 @@ State varACFA40C09E4BF09E90FCEF22FEF4C12F_315596749 =         mActivePhone.getSt
 String var7724E001F0B0AD1F05835F621BEB19F0_2096142646 =         mActivePhone.getPhoneName();
         var7724E001F0B0AD1F05835F621BEB19F0_2096142646.addTaint(taint);
         return var7724E001F0B0AD1F05835F621BEB19F0_2096142646;
-        // ---------- Original Method ----------
-        //return mActivePhone.getPhoneName();
+        
+        
     }
 
     
@@ -245,8 +246,8 @@ String var7724E001F0B0AD1F05835F621BEB19F0_2096142646 =         mActivePhone.get
         int var44199ACE5F580D5BBCAE7F1C66CFA865_2027998397 = (mActivePhone.getPhoneType());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_451091199 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_451091199;
-        // ---------- Original Method ----------
-        //return mActivePhone.getPhoneType();
+        
+        
     }
 
     
@@ -255,8 +256,8 @@ String var7724E001F0B0AD1F05835F621BEB19F0_2096142646 =         mActivePhone.get
 String[] varFDAE55379D17F23EC7B416DF9CA7C3CA_1887599125 =         mActivePhone.getActiveApnTypes();
         varFDAE55379D17F23EC7B416DF9CA7C3CA_1887599125.addTaint(taint);
         return varFDAE55379D17F23EC7B416DF9CA7C3CA_1887599125;
-        // ---------- Original Method ----------
-        //return mActivePhone.getActiveApnTypes();
+        
+        
     }
 
     
@@ -266,8 +267,8 @@ String[] varFDAE55379D17F23EC7B416DF9CA7C3CA_1887599125 =         mActivePhone.g
 String var18DD9340F2BD938B2AE2F34A00E865B3_824937698 =         mActivePhone.getActiveApnHost(apnType);
         var18DD9340F2BD938B2AE2F34A00E865B3_824937698.addTaint(taint);
         return var18DD9340F2BD938B2AE2F34A00E865B3_824937698;
-        // ---------- Original Method ----------
-        //return mActivePhone.getActiveApnHost(apnType);
+        
+        
     }
 
     
@@ -277,8 +278,8 @@ String var18DD9340F2BD938B2AE2F34A00E865B3_824937698 =         mActivePhone.getA
 LinkProperties var17071AFAEE87FB3A9A650B9DB7BA4CA5_424698585 =         mActivePhone.getLinkProperties(apnType);
         var17071AFAEE87FB3A9A650B9DB7BA4CA5_424698585.addTaint(taint);
         return var17071AFAEE87FB3A9A650B9DB7BA4CA5_424698585;
-        // ---------- Original Method ----------
-        //return mActivePhone.getLinkProperties(apnType);
+        
+        
     }
 
     
@@ -288,8 +289,8 @@ LinkProperties var17071AFAEE87FB3A9A650B9DB7BA4CA5_424698585 =         mActivePh
 LinkCapabilities varE4B010A20B7B7134C11F9A30E54489CA_1918517689 =         mActivePhone.getLinkCapabilities(apnType);
         varE4B010A20B7B7134C11F9A30E54489CA_1918517689.addTaint(taint);
         return varE4B010A20B7B7134C11F9A30E54489CA_1918517689;
-        // ---------- Original Method ----------
-        //return mActivePhone.getLinkCapabilities(apnType);
+        
+        
     }
 
     
@@ -298,20 +299,20 @@ LinkCapabilities varE4B010A20B7B7134C11F9A30E54489CA_1918517689 =         mActiv
 SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActivePhone.getSignalStrength();
         varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037.addTaint(taint);
         return varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037;
-        // ---------- Original Method ----------
-        //return mActivePhone.getSignalStrength();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.302 -0400", hash_original_method = "B019DDAEB9A74F24038762D0D1339B1C", hash_generated_method = "24F56D053027AB08C8A79DC4E866CE86")
     public void registerForUnknownConnection(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForUnknownConnection(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForUnknownConnection(h, what, obj);
+        
+        
     }
 
     
@@ -319,20 +320,20 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForUnknownConnection(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForUnknownConnection(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForUnknownConnection(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.302 -0400", hash_original_method = "6D3352A526035270D65D3D2A47D52853", hash_generated_method = "F63CA439CBFCEA93A8E3F120B84A0DFD")
     public void registerForPreciseCallStateChanged(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForPreciseCallStateChanged(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForPreciseCallStateChanged(h, what, obj);
+        
+        
     }
 
     
@@ -340,20 +341,20 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForPreciseCallStateChanged(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForPreciseCallStateChanged(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForPreciseCallStateChanged(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.303 -0400", hash_original_method = "2C1C8B4A632E4710725E0C29E7614A86", hash_generated_method = "5984FEC8D12245C97D2EF82819794A49")
     public void registerForNewRingingConnection(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForNewRingingConnection(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForNewRingingConnection(h, what, obj);
+        
+        
     }
 
     
@@ -361,20 +362,20 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForNewRingingConnection(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForNewRingingConnection(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForNewRingingConnection(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.303 -0400", hash_original_method = "5382BBEF54B2531E597E5DC240CA82C3", hash_generated_method = "BE868B82B463239D97A17B1BE7E7F31B")
     public void registerForIncomingRing(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForIncomingRing(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForIncomingRing(h, what, obj);
+        
+        
     }
 
     
@@ -382,20 +383,20 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForIncomingRing(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForIncomingRing(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForIncomingRing(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.303 -0400", hash_original_method = "F17E27799AE092E3FA781F6890524880", hash_generated_method = "53EE0B98D628436BCED0AC062E2C8CA2")
     public void registerForDisconnect(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForDisconnect(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForDisconnect(h, what, obj);
+        
+        
     }
 
     
@@ -403,20 +404,20 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForDisconnect(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForDisconnect(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForDisconnect(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.303 -0400", hash_original_method = "51AC3BCFCF338CB35BE82F32A708F6C1", hash_generated_method = "C4DA4BC2B71451A8DA7D681124D659EB")
     public void registerForMmiInitiate(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForMmiInitiate(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForMmiInitiate(h, what, obj);
+        
+        
     }
 
     
@@ -424,20 +425,20 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForMmiInitiate(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForMmiInitiate(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForMmiInitiate(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.303 -0400", hash_original_method = "3A199A3D1AD81E2E9E1ED53B30A1398C", hash_generated_method = "E456F613788A10DF5A63AD9AA5751218")
     public void registerForMmiComplete(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForMmiComplete(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForMmiComplete(h, what, obj);
+        
+        
     }
 
     
@@ -445,8 +446,8 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
     public void unregisterForMmiComplete(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForMmiComplete(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForMmiComplete(h);
+        
+        
     }
 
     
@@ -455,8 +456,8 @@ SignalStrength varE4D241E8138A7EFDC5C6CF9ABD047B39_1628795037 =         mActiveP
 List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =         mActivePhone.getPendingMmiCodes();
         varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594.addTaint(taint);
         return varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594;
-        // ---------- Original Method ----------
-        //return mActivePhone.getPendingMmiCodes();
+        
+        
     }
 
     
@@ -464,20 +465,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void sendUssdResponse(String ussdMessge) {
         addTaint(ussdMessge.getTaint());
         mActivePhone.sendUssdResponse(ussdMessge);
-        // ---------- Original Method ----------
-        //mActivePhone.sendUssdResponse(ussdMessge);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.304 -0400", hash_original_method = "CDE1783A5D3B55BB6E102EB1AE836901", hash_generated_method = "1DF7E215BA0848B405697C3FAB7FDB4C")
     public void registerForServiceStateChanged(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForServiceStateChanged(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForServiceStateChanged(h, what, obj);
+        
+        
     }
 
     
@@ -485,20 +486,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForServiceStateChanged(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForServiceStateChanged(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForServiceStateChanged(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.304 -0400", hash_original_method = "BFB77B5FF783EC80AF90C227BA732748", hash_generated_method = "41490700FBAD2FD1763AFF00B7BD0B45")
     public void registerForSuppServiceNotification(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForSuppServiceNotification(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForSuppServiceNotification(h, what, obj);
+        
+        
     }
 
     
@@ -506,20 +507,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForSuppServiceNotification(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForSuppServiceNotification(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForSuppServiceNotification(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.304 -0400", hash_original_method = "291C78A7F0F8DC1C11FF93915605337F", hash_generated_method = "40308FBF3D8D885AB48280DA00E4DF3F")
     public void registerForSuppServiceFailed(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForSuppServiceFailed(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForSuppServiceFailed(h, what, obj);
+        
+        
     }
 
     
@@ -527,20 +528,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForSuppServiceFailed(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForSuppServiceFailed(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForSuppServiceFailed(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.304 -0400", hash_original_method = "496A0D696EBB860F00C524D2C874530D", hash_generated_method = "1B7FFF0C25FB8CBD7F1F44C1E9CBE65E")
     public void registerForInCallVoicePrivacyOn(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForInCallVoicePrivacyOn(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForInCallVoicePrivacyOn(h,what,obj);
+        
+        
     }
 
     
@@ -548,20 +549,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForInCallVoicePrivacyOn(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForInCallVoicePrivacyOn(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForInCallVoicePrivacyOn(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.305 -0400", hash_original_method = "8580D37C907E7A9F693EB245DEF13136", hash_generated_method = "89CEBD1EDFD0B12EB579108819D14367")
     public void registerForInCallVoicePrivacyOff(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForInCallVoicePrivacyOff(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForInCallVoicePrivacyOff(h,what,obj);
+        
+        
     }
 
     
@@ -569,20 +570,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForInCallVoicePrivacyOff(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForInCallVoicePrivacyOff(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForInCallVoicePrivacyOff(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.305 -0400", hash_original_method = "63FB86C462C85472E9B1DE83D5992033", hash_generated_method = "37483E64A759BFC872D87B2A1EBB19FD")
     public void registerForCdmaOtaStatusChange(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForCdmaOtaStatusChange(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForCdmaOtaStatusChange(h,what,obj);
+        
+        
     }
 
     
@@ -590,20 +591,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForCdmaOtaStatusChange(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForCdmaOtaStatusChange(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForCdmaOtaStatusChange(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.305 -0400", hash_original_method = "D2EC4ABC85C2DBBBD2F97B01B00FC354", hash_generated_method = "17367D3F3CCBF8BD408B558442E3AF85")
     public void registerForSubscriptionInfoReady(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForSubscriptionInfoReady(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForSubscriptionInfoReady(h, what, obj);
+        
+        
     }
 
     
@@ -611,20 +612,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForSubscriptionInfoReady(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForSubscriptionInfoReady(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForSubscriptionInfoReady(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.305 -0400", hash_original_method = "F20E47EE52F6D2491D65D5697A31CABF", hash_generated_method = "535D7BEFD06CA78319BAA51F74C2BB69")
     public void registerForEcmTimerReset(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForEcmTimerReset(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForEcmTimerReset(h,what,obj);
+        
+        
     }
 
     
@@ -632,20 +633,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForEcmTimerReset(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForEcmTimerReset(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForEcmTimerReset(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.306 -0400", hash_original_method = "7EF3A6A80892F2979555A67DD970C0E2", hash_generated_method = "7B5E90F4C3CFE3BA8118699252DF7AAD")
     public void registerForRingbackTone(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForRingbackTone(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForRingbackTone(h,what,obj);
+        
+        
     }
 
     
@@ -653,20 +654,20 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForRingbackTone(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForRingbackTone(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForRingbackTone(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.306 -0400", hash_original_method = "1F657D031A61151E70121C4B52E6A8BE", hash_generated_method = "6717D6D6DDE155FCFCE61ADF6B62AE2F")
     public void registerForResendIncallMute(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForResendIncallMute(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForResendIncallMute(h,what,obj);
+        
+        
     }
 
     
@@ -674,8 +675,8 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
     public void unregisterForResendIncallMute(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForResendIncallMute(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForResendIncallMute(h);
+        
+        
     }
 
     
@@ -684,8 +685,8 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
         boolean varDB21FD823653993E72363904C598AB1F_769916210 = (mActivePhone.getIccRecordsLoaded());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1826142527 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1826142527;
-        // ---------- Original Method ----------
-        //return mActivePhone.getIccRecordsLoaded();
+        
+        
     }
 
     
@@ -694,32 +695,32 @@ List<? extends MmiCode> varA24E567B8E59D50FBE82A57AB56DE5D2_1957538594 =        
 IccCard var650671E1AA670BFE90657C7A4B1796AD_1648888597 =         mActivePhone.getIccCard();
         var650671E1AA670BFE90657C7A4B1796AD_1648888597.addTaint(taint);
         return var650671E1AA670BFE90657C7A4B1796AD_1648888597;
-        // ---------- Original Method ----------
-        //return mActivePhone.getIccCard();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.306 -0400", hash_original_method = "818C139D018C986F782D9EE4A8763344", hash_generated_method = "A277E50117A2E01AD5FB8CC532607D62")
     public void acceptCall() throws CallStateException {
         mActivePhone.acceptCall();
-        // ---------- Original Method ----------
-        //mActivePhone.acceptCall();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.306 -0400", hash_original_method = "97E2AC795479FE1B7319A33A335CD66F", hash_generated_method = "C2B9EDFBE66B3696443E4D7CCAC2C89C")
     public void rejectCall() throws CallStateException {
         mActivePhone.rejectCall();
-        // ---------- Original Method ----------
-        //mActivePhone.rejectCall();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.307 -0400", hash_original_method = "549C1597B8B994A03D2CEB12047B69BF", hash_generated_method = "9F7F775A077B9F6F14E584FC9157BCAF")
     public void switchHoldingAndActive() throws CallStateException {
         mActivePhone.switchHoldingAndActive();
-        // ---------- Original Method ----------
-        //mActivePhone.switchHoldingAndActive();
+        
+        
     }
 
     
@@ -728,16 +729,16 @@ IccCard var650671E1AA670BFE90657C7A4B1796AD_1648888597 =         mActivePhone.ge
         boolean varF833CA419DB19C0593324DD68EF3B9D1_1875870408 = (mActivePhone.canConference());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1061785476 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1061785476;
-        // ---------- Original Method ----------
-        //return mActivePhone.canConference();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.307 -0400", hash_original_method = "B22D8C438D71F38CB8F4D8D6DFAC611B", hash_generated_method = "2767764ED8E32D7B2DC8DBC8F1C54100")
     public void conference() throws CallStateException {
         mActivePhone.conference();
-        // ---------- Original Method ----------
-        //mActivePhone.conference();
+        
+        
     }
 
     
@@ -746,8 +747,8 @@ IccCard var650671E1AA670BFE90657C7A4B1796AD_1648888597 =         mActivePhone.ge
         addTaint(onComplete.getTaint());
         addTaint(enable);
         mActivePhone.enableEnhancedVoicePrivacy(enable, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.enableEnhancedVoicePrivacy(enable, onComplete);
+        
+        
     }
 
     
@@ -755,8 +756,8 @@ IccCard var650671E1AA670BFE90657C7A4B1796AD_1648888597 =         mActivePhone.ge
     public void getEnhancedVoicePrivacy(Message onComplete) {
         addTaint(onComplete.getTaint());
         mActivePhone.getEnhancedVoicePrivacy(onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.getEnhancedVoicePrivacy(onComplete);
+        
+        
     }
 
     
@@ -765,24 +766,24 @@ IccCard var650671E1AA670BFE90657C7A4B1796AD_1648888597 =         mActivePhone.ge
         boolean var3E1FD3F8175208BF34A50CBCD5C003E6_1472502699 = (mActivePhone.canTransfer());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_149290871 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_149290871;
-        // ---------- Original Method ----------
-        //return mActivePhone.canTransfer();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.307 -0400", hash_original_method = "3CEA96380D119DFA11B425ED6B3125D9", hash_generated_method = "17DCD3FECAB90CF0C35DB2DA1F0E5B0C")
     public void explicitCallTransfer() throws CallStateException {
         mActivePhone.explicitCallTransfer();
-        // ---------- Original Method ----------
-        //mActivePhone.explicitCallTransfer();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.307 -0400", hash_original_method = "02B61187C67CC232DCBA69D31D34EA32", hash_generated_method = "A7271A2F092FEA9C5ED4627E2ECE310B")
     public void clearDisconnected() {
         mActivePhone.clearDisconnected();
-        // ---------- Original Method ----------
-        //mActivePhone.clearDisconnected();
+        
+        
     }
 
     
@@ -791,8 +792,8 @@ IccCard var650671E1AA670BFE90657C7A4B1796AD_1648888597 =         mActivePhone.ge
 Call var0A144D171E8EE3644BEE80F7CB4EE10E_1949759308 =         mActivePhone.getForegroundCall();
         var0A144D171E8EE3644BEE80F7CB4EE10E_1949759308.addTaint(taint);
         return var0A144D171E8EE3644BEE80F7CB4EE10E_1949759308;
-        // ---------- Original Method ----------
-        //return mActivePhone.getForegroundCall();
+        
+        
     }
 
     
@@ -801,8 +802,8 @@ Call var0A144D171E8EE3644BEE80F7CB4EE10E_1949759308 =         mActivePhone.getFo
 Call var9298720A9FFCCDE84E4DB6400DDA8A11_531724145 =         mActivePhone.getBackgroundCall();
         var9298720A9FFCCDE84E4DB6400DDA8A11_531724145.addTaint(taint);
         return var9298720A9FFCCDE84E4DB6400DDA8A11_531724145;
-        // ---------- Original Method ----------
-        //return mActivePhone.getBackgroundCall();
+        
+        
     }
 
     
@@ -811,8 +812,8 @@ Call var9298720A9FFCCDE84E4DB6400DDA8A11_531724145 =         mActivePhone.getBac
 Call var9CBEE4FD766BECD84BEC5FFC3CFB73AC_1241921375 =         mActivePhone.getRingingCall();
         var9CBEE4FD766BECD84BEC5FFC3CFB73AC_1241921375.addTaint(taint);
         return var9CBEE4FD766BECD84BEC5FFC3CFB73AC_1241921375;
-        // ---------- Original Method ----------
-        //return mActivePhone.getRingingCall();
+        
+        
     }
 
     
@@ -822,8 +823,8 @@ Call var9CBEE4FD766BECD84BEC5FFC3CFB73AC_1241921375 =         mActivePhone.getRi
 Connection var0E9AF1264BBE0E05A3D02BE43DB349C0_187772438 =         mActivePhone.dial(dialString);
         var0E9AF1264BBE0E05A3D02BE43DB349C0_187772438.addTaint(taint);
         return var0E9AF1264BBE0E05A3D02BE43DB349C0_187772438;
-        // ---------- Original Method ----------
-        //return mActivePhone.dial(dialString);
+        
+        
     }
 
     
@@ -834,8 +835,8 @@ Connection var0E9AF1264BBE0E05A3D02BE43DB349C0_187772438 =         mActivePhone.
 Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone.dial(dialString, uusInfo);
         var1943C260F8A86B3303DF30E653E5A3AD_2092147651.addTaint(taint);
         return var1943C260F8A86B3303DF30E653E5A3AD_2092147651;
-        // ---------- Original Method ----------
-        //return mActivePhone.dial(dialString, uusInfo);
+        
+        
     }
 
     
@@ -845,8 +846,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
         boolean varCFF8CA61D4D9884A3A242BAC3CD1E0CA_1219883610 = (mActivePhone.handlePinMmi(dialString));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1691865597 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1691865597;
-        // ---------- Original Method ----------
-        //return mActivePhone.handlePinMmi(dialString);
+        
+        
     }
 
     
@@ -856,8 +857,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
         boolean var89ADBAD6C0B3529DB0DB7E7F0FBAD4D0_2087611516 = (mActivePhone.handleInCallMmiCommands(command));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_555113327 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_555113327;
-        // ---------- Original Method ----------
-        //return mActivePhone.handleInCallMmiCommands(command);
+        
+        
     }
 
     
@@ -865,8 +866,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
     public void sendDtmf(char c) {
         addTaint(c);
         mActivePhone.sendDtmf(c);
-        // ---------- Original Method ----------
-        //mActivePhone.sendDtmf(c);
+        
+        
     }
 
     
@@ -874,16 +875,16 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
     public void startDtmf(char c) {
         addTaint(c);
         mActivePhone.startDtmf(c);
-        // ---------- Original Method ----------
-        //mActivePhone.startDtmf(c);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.310 -0400", hash_original_method = "7A948DB508D0F070854394E948C19D5E", hash_generated_method = "E2D070ECDE64FCAAC101196E4561F340")
     public void stopDtmf() {
         mActivePhone.stopDtmf();
-        // ---------- Original Method ----------
-        //mActivePhone.stopDtmf();
+        
+        
     }
 
     
@@ -891,8 +892,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
     public void setRadioPower(boolean power) {
         addTaint(power);
         mActivePhone.setRadioPower(power);
-        // ---------- Original Method ----------
-        //mActivePhone.setRadioPower(power);
+        
+        
     }
 
     
@@ -901,8 +902,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
         boolean var8DE0DD89F4263F8099E41573A72B7058_347100597 = (mActivePhone.getMessageWaitingIndicator());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_281775705 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_281775705;
-        // ---------- Original Method ----------
-        //return mActivePhone.getMessageWaitingIndicator();
+        
+        
     }
 
     
@@ -911,8 +912,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
         boolean varB4D062715EDE2BF724527FF56EEB9044_1108011608 = (mActivePhone.getCallForwardingIndicator());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1142813239 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1142813239;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCallForwardingIndicator();
+        
+        
     }
 
     
@@ -921,8 +922,8 @@ Connection var1943C260F8A86B3303DF30E653E5A3AD_2092147651 =         mActivePhone
 String varD615B04F3BFFE4352C5A5E76D0877B8C_1227796939 =         mActivePhone.getLine1Number();
         varD615B04F3BFFE4352C5A5E76D0877B8C_1227796939.addTaint(taint);
         return varD615B04F3BFFE4352C5A5E76D0877B8C_1227796939;
-        // ---------- Original Method ----------
-        //return mActivePhone.getLine1Number();
+        
+        
     }
 
     
@@ -931,8 +932,8 @@ String varD615B04F3BFFE4352C5A5E76D0877B8C_1227796939 =         mActivePhone.get
 String var7B46B2E34699106F982A7086F53B001C_1207044658 =         mActivePhone.getCdmaMin();
         var7B46B2E34699106F982A7086F53B001C_1207044658.addTaint(taint);
         return var7B46B2E34699106F982A7086F53B001C_1207044658;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCdmaMin();
+        
+        
     }
 
     
@@ -941,8 +942,8 @@ String var7B46B2E34699106F982A7086F53B001C_1207044658 =         mActivePhone.get
         boolean varC1EAD206A28E9865F7CE7E7DBE7B107C_881475568 = (mActivePhone.isMinInfoReady());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1896281313 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1896281313;
-        // ---------- Original Method ----------
-        //return mActivePhone.isMinInfoReady();
+        
+        
     }
 
     
@@ -951,8 +952,8 @@ String var7B46B2E34699106F982A7086F53B001C_1207044658 =         mActivePhone.get
 String var6DA4A58D3FB2D81E89A9BF1A54764489_2142740515 =         mActivePhone.getCdmaPrlVersion();
         var6DA4A58D3FB2D81E89A9BF1A54764489_2142740515.addTaint(taint);
         return var6DA4A58D3FB2D81E89A9BF1A54764489_2142740515;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCdmaPrlVersion();
+        
+        
     }
 
     
@@ -961,8 +962,8 @@ String var6DA4A58D3FB2D81E89A9BF1A54764489_2142740515 =         mActivePhone.get
 String var4F99A82D9222BF2D67395946F5434E6A_583937973 =         mActivePhone.getLine1AlphaTag();
         var4F99A82D9222BF2D67395946F5434E6A_583937973.addTaint(taint);
         return var4F99A82D9222BF2D67395946F5434E6A_583937973;
-        // ---------- Original Method ----------
-        //return mActivePhone.getLine1AlphaTag();
+        
+        
     }
 
     
@@ -972,8 +973,8 @@ String var4F99A82D9222BF2D67395946F5434E6A_583937973 =         mActivePhone.getL
         addTaint(number.getTaint());
         addTaint(alphaTag.getTaint());
         mActivePhone.setLine1Number(alphaTag, number, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.setLine1Number(alphaTag, number, onComplete);
+        
+        
     }
 
     
@@ -982,8 +983,8 @@ String var4F99A82D9222BF2D67395946F5434E6A_583937973 =         mActivePhone.getL
 String varE7F307187646B548EFAC44A59EF31EBA_1197743588 =         mActivePhone.getVoiceMailNumber();
         varE7F307187646B548EFAC44A59EF31EBA_1197743588.addTaint(taint);
         return varE7F307187646B548EFAC44A59EF31EBA_1197743588;
-        // ---------- Original Method ----------
-        //return mActivePhone.getVoiceMailNumber();
+        
+        
     }
 
     
@@ -992,8 +993,8 @@ String varE7F307187646B548EFAC44A59EF31EBA_1197743588 =         mActivePhone.get
         int var50F99E7353D3DAF7CE4A9C6A6EFB1EB5_237710712 = (mActivePhone.getVoiceMessageCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033634973 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2033634973;
-        // ---------- Original Method ----------
-        //return mActivePhone.getVoiceMessageCount();
+        
+        
     }
 
     
@@ -1002,8 +1003,8 @@ String varE7F307187646B548EFAC44A59EF31EBA_1197743588 =         mActivePhone.get
 String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.getVoiceMailAlphaTag();
         var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155.addTaint(taint);
         return var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155;
-        // ---------- Original Method ----------
-        //return mActivePhone.getVoiceMailAlphaTag();
+        
+        
     }
 
     
@@ -1014,8 +1015,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(voiceMailNumber.getTaint());
         addTaint(alphaTag.getTaint());
         mActivePhone.setVoiceMailNumber(alphaTag, voiceMailNumber, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.setVoiceMailNumber(alphaTag, voiceMailNumber, onComplete);
+        
+        
     }
 
     
@@ -1026,9 +1027,9 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(commandInterfaceCFReason);
         mActivePhone.getCallForwardingOption(commandInterfaceCFReason,
                 onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.getCallForwardingOption(commandInterfaceCFReason,
-                //onComplete);
+        
+        
+                
     }
 
     
@@ -1043,9 +1044,9 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(commandInterfaceCFReason);
         mActivePhone.setCallForwardingOption(commandInterfaceCFReason,
             commandInterfaceCFAction, dialingNumber, timerSeconds, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.setCallForwardingOption(commandInterfaceCFReason,
-            //commandInterfaceCFAction, dialingNumber, timerSeconds, onComplete);
+        
+        
+            
     }
 
     
@@ -1053,8 +1054,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void getOutgoingCallerIdDisplay(Message onComplete) {
         addTaint(onComplete.getTaint());
         mActivePhone.getOutgoingCallerIdDisplay(onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.getOutgoingCallerIdDisplay(onComplete);
+        
+        
     }
 
     
@@ -1065,9 +1066,9 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(commandInterfaceCLIRMode);
         mActivePhone.setOutgoingCallerIdDisplay(commandInterfaceCLIRMode,
                 onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.setOutgoingCallerIdDisplay(commandInterfaceCLIRMode,
-                //onComplete);
+        
+        
+                
     }
 
     
@@ -1075,8 +1076,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void getCallWaiting(Message onComplete) {
         addTaint(onComplete.getTaint());
         mActivePhone.getCallWaiting(onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.getCallWaiting(onComplete);
+        
+        
     }
 
     
@@ -1085,8 +1086,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(onComplete.getTaint());
         addTaint(enable);
         mActivePhone.setCallWaiting(enable, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.setCallWaiting(enable, onComplete);
+        
+        
     }
 
     
@@ -1094,8 +1095,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void getAvailableNetworks(Message response) {
         addTaint(response.getTaint());
         mActivePhone.getAvailableNetworks(response);
-        // ---------- Original Method ----------
-        //mActivePhone.getAvailableNetworks(response);
+        
+        
     }
 
     
@@ -1103,8 +1104,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void setNetworkSelectionModeAutomatic(Message response) {
         addTaint(response.getTaint());
         mActivePhone.setNetworkSelectionModeAutomatic(response);
-        // ---------- Original Method ----------
-        //mActivePhone.setNetworkSelectionModeAutomatic(response);
+        
+        
     }
 
     
@@ -1113,8 +1114,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(network.getTaint());
         mActivePhone.selectNetworkManually(network, response);
-        // ---------- Original Method ----------
-        //mActivePhone.selectNetworkManually(network, response);
+        
+        
     }
 
     
@@ -1123,8 +1124,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(networkType);
         mActivePhone.setPreferredNetworkType(networkType, response);
-        // ---------- Original Method ----------
-        //mActivePhone.setPreferredNetworkType(networkType, response);
+        
+        
     }
 
     
@@ -1132,8 +1133,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void getPreferredNetworkType(Message response) {
         addTaint(response.getTaint());
         mActivePhone.getPreferredNetworkType(response);
-        // ---------- Original Method ----------
-        //mActivePhone.getPreferredNetworkType(response);
+        
+        
     }
 
     
@@ -1141,8 +1142,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void getNeighboringCids(Message response) {
         addTaint(response.getTaint());
         mActivePhone.getNeighboringCids(response);
-        // ---------- Original Method ----------
-        //mActivePhone.getNeighboringCids(response);
+        
+        
     }
 
     
@@ -1152,8 +1153,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.setOnPostDialCharacter(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.setOnPostDialCharacter(h, what, obj);
+        
+        
     }
 
     
@@ -1161,8 +1162,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void setMute(boolean muted) {
         addTaint(muted);
         mActivePhone.setMute(muted);
-        // ---------- Original Method ----------
-        //mActivePhone.setMute(muted);
+        
+        
     }
 
     
@@ -1171,8 +1172,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         boolean varCC1DAA68F33B8E3CDE3E8FE4212AA755_1497561997 = (mActivePhone.getMute());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_180592685 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_180592685;
-        // ---------- Original Method ----------
-        //return mActivePhone.getMute();
+        
+        
     }
 
     
@@ -1180,8 +1181,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void setEchoSuppressionEnabled(boolean enabled) {
         addTaint(enabled);
         mActivePhone.setEchoSuppressionEnabled(enabled);
-        // ---------- Original Method ----------
-        //mActivePhone.setEchoSuppressionEnabled(enabled);
+        
+        
     }
 
     
@@ -1190,8 +1191,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(data[0]);
         mActivePhone.invokeOemRilRequestRaw(data, response);
-        // ---------- Original Method ----------
-        //mActivePhone.invokeOemRilRequestRaw(data, response);
+        
+        
     }
 
     
@@ -1200,8 +1201,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(strings[0].getTaint());
         mActivePhone.invokeOemRilRequestStrings(strings, response);
-        // ---------- Original Method ----------
-        //mActivePhone.invokeOemRilRequestStrings(strings, response);
+        
+        
     }
 
     
@@ -1209,32 +1210,32 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void getDataCallList(Message response) {
         addTaint(response.getTaint());
         mActivePhone.getDataCallList(response);
-        // ---------- Original Method ----------
-        //mActivePhone.getDataCallList(response);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.315 -0400", hash_original_method = "1C09DC09B772867440DA6E2967E9FBFD", hash_generated_method = "6AC143B2A053E16C92E4BC668BDC8386")
     public void updateServiceLocation() {
         mActivePhone.updateServiceLocation();
-        // ---------- Original Method ----------
-        //mActivePhone.updateServiceLocation();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.315 -0400", hash_original_method = "640EA3CF557AB7DE58B7D737C6DA4C5C", hash_generated_method = "EE686EA0C1CC3D0FF23D1171258EA387")
     public void enableLocationUpdates() {
         mActivePhone.enableLocationUpdates();
-        // ---------- Original Method ----------
-        //mActivePhone.enableLocationUpdates();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.315 -0400", hash_original_method = "063B9FD715E5F2F2C3C83ECA8334F519", hash_generated_method = "918C89BD45069A6F50EBD48797A4DB8B")
     public void disableLocationUpdates() {
         mActivePhone.disableLocationUpdates();
-        // ---------- Original Method ----------
-        //mActivePhone.disableLocationUpdates();
+        
+        
     }
 
     
@@ -1242,8 +1243,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void setUnitTestMode(boolean f) {
         addTaint(f);
         mActivePhone.setUnitTestMode(f);
-        // ---------- Original Method ----------
-        //mActivePhone.setUnitTestMode(f);
+        
+        
     }
 
     
@@ -1252,8 +1253,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         boolean var59F70D5C16101D1739ED9D05961581BF_910827999 = (mActivePhone.getUnitTestMode());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1121954038 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1121954038;
-        // ---------- Original Method ----------
-        //return mActivePhone.getUnitTestMode();
+        
+        
     }
 
     
@@ -1262,8 +1263,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(bandMode);
         mActivePhone.setBandMode(bandMode, response);
-        // ---------- Original Method ----------
-        //mActivePhone.setBandMode(bandMode, response);
+        
+        
     }
 
     
@@ -1271,8 +1272,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void queryAvailableBandMode(Message response) {
         addTaint(response.getTaint());
         mActivePhone.queryAvailableBandMode(response);
-        // ---------- Original Method ----------
-        //mActivePhone.queryAvailableBandMode(response);
+        
+        
     }
 
     
@@ -1281,8 +1282,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         boolean var500232FE6E30ADF3A5E96A7BA7421CD9_2082010372 = (mActivePhone.getDataRoamingEnabled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1938146087 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1938146087;
-        // ---------- Original Method ----------
-        //return mActivePhone.getDataRoamingEnabled();
+        
+        
     }
 
     
@@ -1290,8 +1291,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void setDataRoamingEnabled(boolean enable) {
         addTaint(enable);
         mActivePhone.setDataRoamingEnabled(enable);
-        // ---------- Original Method ----------
-        //mActivePhone.setDataRoamingEnabled(enable);
+        
+        
     }
 
     
@@ -1299,8 +1300,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
     public void queryCdmaRoamingPreference(Message response) {
         addTaint(response.getTaint());
         mActivePhone.queryCdmaRoamingPreference(response);
-        // ---------- Original Method ----------
-        //mActivePhone.queryCdmaRoamingPreference(response);
+        
+        
     }
 
     
@@ -1309,8 +1310,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(cdmaRoamingType);
         mActivePhone.setCdmaRoamingPreference(cdmaRoamingType, response);
-        // ---------- Original Method ----------
-        //mActivePhone.setCdmaRoamingPreference(cdmaRoamingType, response);
+        
+        
     }
 
     
@@ -1319,8 +1320,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
         addTaint(response.getTaint());
         addTaint(cdmaSubscriptionType);
         mActivePhone.setCdmaSubscription(cdmaSubscriptionType, response);
-        // ---------- Original Method ----------
-        //mActivePhone.setCdmaSubscription(cdmaSubscriptionType, response);
+        
+        
     }
 
     
@@ -1329,8 +1330,8 @@ String var6E31F87FCF9C640E3D8683C179B7E5FD_1219650155 =         mActivePhone.get
 SimulatedRadioControl var260C456268C668FFD10DC75D44F419D6_530867824 =         mActivePhone.getSimulatedRadioControl();
         var260C456268C668FFD10DC75D44F419D6_530867824.addTaint(taint);
         return var260C456268C668FFD10DC75D44F419D6_530867824;
-        // ---------- Original Method ----------
-        //return mActivePhone.getSimulatedRadioControl();
+        
+        
     }
 
     
@@ -1340,8 +1341,8 @@ SimulatedRadioControl var260C456268C668FFD10DC75D44F419D6_530867824 =         mA
         int var340D8E4E06F7EF077C5DBACF93546724_1660098333 = (mActivePhone.enableApnType(type));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696456423 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1696456423;
-        // ---------- Original Method ----------
-        //return mActivePhone.enableApnType(type);
+        
+        
     }
 
     
@@ -1351,8 +1352,8 @@ SimulatedRadioControl var260C456268C668FFD10DC75D44F419D6_530867824 =         mA
         int varDEB79BE8BFFABED2E1315AFDC6B0A6B7_1374533655 = (mActivePhone.disableApnType(type));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1938486246 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1938486246;
-        // ---------- Original Method ----------
-        //return mActivePhone.disableApnType(type);
+        
+        
     }
 
     
@@ -1361,8 +1362,8 @@ SimulatedRadioControl var260C456268C668FFD10DC75D44F419D6_530867824 =         mA
         boolean var3F7CBC748801F446D625745FF37272A1_871198274 = (mActivePhone.isDataConnectivityPossible(Phone.APN_TYPE_DEFAULT));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1383960890 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1383960890;
-        // ---------- Original Method ----------
-        //return mActivePhone.isDataConnectivityPossible(Phone.APN_TYPE_DEFAULT);
+        
+        
     }
 
     
@@ -1372,8 +1373,8 @@ SimulatedRadioControl var260C456268C668FFD10DC75D44F419D6_530867824 =         mA
         boolean var13B4BA73D19143BDF678F579BD8E6D13_806619003 = (mActivePhone.isDataConnectivityPossible(apnType));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1942798631 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1942798631;
-        // ---------- Original Method ----------
-        //return mActivePhone.isDataConnectivityPossible(apnType);
+        
+        
     }
 
     
@@ -1382,8 +1383,8 @@ SimulatedRadioControl var260C456268C668FFD10DC75D44F419D6_530867824 =         mA
 String var198CF460537B68DF3698EB5C512E12E3_219546483 =         mActivePhone.getDeviceId();
         var198CF460537B68DF3698EB5C512E12E3_219546483.addTaint(taint);
         return var198CF460537B68DF3698EB5C512E12E3_219546483;
-        // ---------- Original Method ----------
-        //return mActivePhone.getDeviceId();
+        
+        
     }
 
     
@@ -1392,8 +1393,8 @@ String var198CF460537B68DF3698EB5C512E12E3_219546483 =         mActivePhone.getD
 String var1A03CCEA3F2C44E7F6EE61AE8F23BC30_187072320 =         mActivePhone.getDeviceSvn();
         var1A03CCEA3F2C44E7F6EE61AE8F23BC30_187072320.addTaint(taint);
         return var1A03CCEA3F2C44E7F6EE61AE8F23BC30_187072320;
-        // ---------- Original Method ----------
-        //return mActivePhone.getDeviceSvn();
+        
+        
     }
 
     
@@ -1402,8 +1403,8 @@ String var1A03CCEA3F2C44E7F6EE61AE8F23BC30_187072320 =         mActivePhone.getD
 String varC6678EE2A7E2C464908C3BD63EA27F86_1337013918 =         mActivePhone.getSubscriberId();
         varC6678EE2A7E2C464908C3BD63EA27F86_1337013918.addTaint(taint);
         return varC6678EE2A7E2C464908C3BD63EA27F86_1337013918;
-        // ---------- Original Method ----------
-        //return mActivePhone.getSubscriberId();
+        
+        
     }
 
     
@@ -1412,8 +1413,8 @@ String varC6678EE2A7E2C464908C3BD63EA27F86_1337013918 =         mActivePhone.get
 String var267F6EC3729A7AED6A1BF9FC3CCAF802_925446959 =         mActivePhone.getIccSerialNumber();
         var267F6EC3729A7AED6A1BF9FC3CCAF802_925446959.addTaint(taint);
         return var267F6EC3729A7AED6A1BF9FC3CCAF802_925446959;
-        // ---------- Original Method ----------
-        //return mActivePhone.getIccSerialNumber();
+        
+        
     }
 
     
@@ -1422,8 +1423,8 @@ String var267F6EC3729A7AED6A1BF9FC3CCAF802_925446959 =         mActivePhone.getI
 String varDAE5B56A4AE5B60AC7D4369DE4597632_1526382776 =         mActivePhone.getEsn();
         varDAE5B56A4AE5B60AC7D4369DE4597632_1526382776.addTaint(taint);
         return varDAE5B56A4AE5B60AC7D4369DE4597632_1526382776;
-        // ---------- Original Method ----------
-        //return mActivePhone.getEsn();
+        
+        
     }
 
     
@@ -1432,8 +1433,8 @@ String varDAE5B56A4AE5B60AC7D4369DE4597632_1526382776 =         mActivePhone.get
 String varC4CD200E31813246A2E36C3829F947E0_1391034040 =         mActivePhone.getMeid();
         varC4CD200E31813246A2E36C3829F947E0_1391034040.addTaint(taint);
         return varC4CD200E31813246A2E36C3829F947E0_1391034040;
-        // ---------- Original Method ----------
-        //return mActivePhone.getMeid();
+        
+        
     }
 
     
@@ -1442,8 +1443,8 @@ String varC4CD200E31813246A2E36C3829F947E0_1391034040 =         mActivePhone.get
 String varB5AECFB92CF4F2BBF40515FBEC2A147B_840943526 =         mActivePhone.getMsisdn();
         varB5AECFB92CF4F2BBF40515FBEC2A147B_840943526.addTaint(taint);
         return varB5AECFB92CF4F2BBF40515FBEC2A147B_840943526;
-        // ---------- Original Method ----------
-        //return mActivePhone.getMsisdn();
+        
+        
     }
 
     
@@ -1452,8 +1453,8 @@ String varB5AECFB92CF4F2BBF40515FBEC2A147B_840943526 =         mActivePhone.getM
 String var199807B9CFD251093717FF07AB2613E7_1786167136 =         mActivePhone.getImei();
         var199807B9CFD251093717FF07AB2613E7_1786167136.addTaint(taint);
         return var199807B9CFD251093717FF07AB2613E7_1786167136;
-        // ---------- Original Method ----------
-        //return mActivePhone.getImei();
+        
+        
     }
 
     
@@ -1462,8 +1463,8 @@ String var199807B9CFD251093717FF07AB2613E7_1786167136 =         mActivePhone.get
 PhoneSubInfo var16550AC9086C0A3F72B46C8930895899_620542194 =         mActivePhone.getPhoneSubInfo();
         var16550AC9086C0A3F72B46C8930895899_620542194.addTaint(taint);
         return var16550AC9086C0A3F72B46C8930895899_620542194;
-        // ---------- Original Method ----------
-        //return mActivePhone.getPhoneSubInfo();
+        
+        
     }
 
     
@@ -1472,8 +1473,8 @@ PhoneSubInfo var16550AC9086C0A3F72B46C8930895899_620542194 =         mActivePhon
 IccSmsInterfaceManager var7EBB15B8ED2C4F7DC4D4BE1E19A1A37F_388030057 =         mActivePhone.getIccSmsInterfaceManager();
         var7EBB15B8ED2C4F7DC4D4BE1E19A1A37F_388030057.addTaint(taint);
         return var7EBB15B8ED2C4F7DC4D4BE1E19A1A37F_388030057;
-        // ---------- Original Method ----------
-        //return mActivePhone.getIccSmsInterfaceManager();
+        
+        
     }
 
     
@@ -1482,8 +1483,8 @@ IccSmsInterfaceManager var7EBB15B8ED2C4F7DC4D4BE1E19A1A37F_388030057 =         m
 IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =         mActivePhone.getIccPhoneBookInterfaceManager();
         var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494.addTaint(taint);
         return var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494;
-        // ---------- Original Method ----------
-        //return mActivePhone.getIccPhoneBookInterfaceManager();
+        
+        
     }
 
     
@@ -1492,8 +1493,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
         addTaint(onComplete.getTaint());
         addTaint(ttyMode);
         mActivePhone.setTTYMode(ttyMode, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.setTTYMode(ttyMode, onComplete);
+        
+        
     }
 
     
@@ -1501,8 +1502,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
     public void queryTTYMode(Message onComplete) {
         addTaint(onComplete.getTaint());
         mActivePhone.queryTTYMode(onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.queryTTYMode(onComplete);
+        
+        
     }
 
     
@@ -1511,8 +1512,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
         addTaint(response.getTaint());
         addTaint(activate);
         mActivePhone.activateCellBroadcastSms(activate, response);
-        // ---------- Original Method ----------
-        //mActivePhone.activateCellBroadcastSms(activate, response);
+        
+        
     }
 
     
@@ -1520,8 +1521,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
     public void getCellBroadcastSmsConfig(Message response) {
         addTaint(response.getTaint());
         mActivePhone.getCellBroadcastSmsConfig(response);
-        // ---------- Original Method ----------
-        //mActivePhone.getCellBroadcastSmsConfig(response);
+        
+        
     }
 
     
@@ -1530,16 +1531,16 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
         addTaint(response.getTaint());
         addTaint(configValuesArray[0]);
         mActivePhone.setCellBroadcastSmsConfig(configValuesArray, response);
-        // ---------- Original Method ----------
-        //mActivePhone.setCellBroadcastSmsConfig(configValuesArray, response);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.321 -0400", hash_original_method = "126AB2B3AB841B888F5ABFA3111435C5", hash_generated_method = "146B4894587E9A8C34FBA98E63CB8ABC")
     public void notifyDataActivity() {
         mActivePhone.notifyDataActivity();
-        // ---------- Original Method ----------
-        //mActivePhone.notifyDataActivity();
+        
+        
     }
 
     
@@ -1547,8 +1548,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
     public void getSmscAddress(Message result) {
         addTaint(result.getTaint());
         mActivePhone.getSmscAddress(result);
-        // ---------- Original Method ----------
-        //mActivePhone.getSmscAddress(result);
+        
+        
     }
 
     
@@ -1557,8 +1558,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
         addTaint(result.getTaint());
         addTaint(address.getTaint());
         mActivePhone.setSmscAddress(address, result);
-        // ---------- Original Method ----------
-        //mActivePhone.setSmscAddress(address, result);
+        
+        
     }
 
     
@@ -1567,8 +1568,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
         int var97F376A0CADC0E4F36957FFCCAA76010_2108037967 = (mActivePhone.getCdmaEriIconIndex());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_651707386 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_651707386;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCdmaEriIconIndex();
+        
+        
     }
 
     
@@ -1577,8 +1578,8 @@ IccPhoneBookInterfaceManager var313BD6618DEBD160EEE2FF9BFF8F071E_2074080494 =   
 String varFBAA172F150BFFB1490E4FAFF06EF198_2078417219 =         mActivePhone.getCdmaEriText();
         varFBAA172F150BFFB1490E4FAFF06EF198_2078417219.addTaint(taint);
         return varFBAA172F150BFFB1490E4FAFF06EF198_2078417219;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCdmaEriText();
+        
+        
     }
 
     
@@ -1587,18 +1588,19 @@ String varFBAA172F150BFFB1490E4FAFF06EF198_2078417219 =         mActivePhone.get
         int varA3BAE708044E7BB258DBC489E1A088D7_201949841 = (mActivePhone.getCdmaEriIconMode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1615871614 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1615871614;
-        // ---------- Original Method ----------
-        //return mActivePhone.getCdmaEriIconMode();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.325 -0400", hash_original_method = "C3F5107FB4E93BC1C37D52CD5D46B8CE", hash_generated_method = "12041D3D4DC7E3A010E88179279D74AE")
     public Phone getActivePhone() {
 Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
         var80DB6AE27D465D54797BEB544C72E98B_694173884.addTaint(taint);
         return var80DB6AE27D465D54797BEB544C72E98B_694173884;
-        // ---------- Original Method ----------
-        //return mActivePhone;
+        
+        
     }
 
     
@@ -1609,16 +1611,16 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
         addTaint(on);
         addTaint(dtmfString.getTaint());
         mActivePhone.sendBurstDtmf(dtmfString, on, off, onComplete);
-        // ---------- Original Method ----------
-        //mActivePhone.sendBurstDtmf(dtmfString, on, off, onComplete);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.326 -0400", hash_original_method = "8BFD81BBE49EE543CC3D717485A9086C", hash_generated_method = "FB8A8D637BCF4A179080A06ED7351DF8")
     public void exitEmergencyCallbackMode() {
         mActivePhone.exitEmergencyCallbackMode();
-        // ---------- Original Method ----------
-        //mActivePhone.exitEmergencyCallbackMode();
+        
+        
     }
 
     
@@ -1627,8 +1629,8 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
         boolean var3D8AA6EF8A5C1C19617F8C58BDE40E86_699183905 = (mActivePhone.needsOtaServiceProvisioning());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_196206071 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_196206071;
-        // ---------- Original Method ----------
-        //return mActivePhone.needsOtaServiceProvisioning();
+        
+        
     }
 
     
@@ -1638,20 +1640,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
         boolean varB501AD12C60C738D74C29D7FCFDEC660_1800657073 = (mActivePhone.isOtaSpNumber(dialStr));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_181647231 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_181647231;
-        // ---------- Original Method ----------
-        //return mActivePhone.isOtaSpNumber(dialStr);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.327 -0400", hash_original_method = "81EEB667D660E1C4817CDA2165DBC719", hash_generated_method = "7A0F7E9DFA1082A7F5B28975FE2FAC57")
     public void registerForCallWaiting(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForCallWaiting(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForCallWaiting(h,what,obj);
+        
+        
     }
 
     
@@ -1659,20 +1661,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForCallWaiting(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForCallWaiting(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForCallWaiting(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.328 -0400", hash_original_method = "B8A81334C9B85923298A0218EB6228DA", hash_generated_method = "29CF2ECC84B8D3E199FB2457C17199C1")
     public void registerForSignalInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForSignalInfo(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForSignalInfo(h,what,obj);
+        
+        
     }
 
     
@@ -1680,20 +1682,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForSignalInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForSignalInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForSignalInfo(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.328 -0400", hash_original_method = "BBDB04AE23DA14934AE112C01736669E", hash_generated_method = "72532511B8696689C0AD463F22A3525B")
     public void registerForDisplayInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForDisplayInfo(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForDisplayInfo(h,what,obj);
+        
+        
     }
 
     
@@ -1701,20 +1703,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForDisplayInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForDisplayInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForDisplayInfo(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.328 -0400", hash_original_method = "36E3230BC8D9B35B76BF13641751629A", hash_generated_method = "9DF97B3015B6B76ABDD7975F04A82130")
     public void registerForNumberInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForNumberInfo(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForNumberInfo(h, what, obj);
+        
+        
     }
 
     
@@ -1722,20 +1724,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForNumberInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForNumberInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForNumberInfo(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.330 -0400", hash_original_method = "2B564E821C2FB72BDEAD4AA025AF0066", hash_generated_method = "B6268C334D64FE579DDC7337A843FDFB")
     public void registerForRedirectedNumberInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForRedirectedNumberInfo(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForRedirectedNumberInfo(h, what, obj);
+        
+        
     }
 
     
@@ -1743,20 +1745,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForRedirectedNumberInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForRedirectedNumberInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForRedirectedNumberInfo(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.331 -0400", hash_original_method = "9CC0055A8F08112A17125C260D3A9792", hash_generated_method = "EB8F68ECE541AE5212C58BAE22FE6407")
     public void registerForLineControlInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForLineControlInfo( h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForLineControlInfo( h, what, obj);
+        
+        
     }
 
     
@@ -1764,20 +1766,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForLineControlInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForLineControlInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForLineControlInfo(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.331 -0400", hash_original_method = "B6078895A8CE2B44D88AB2AA42C5B470", hash_generated_method = "6EF3FE13E8D4B4DE0EF30449891D2C5E")
     public void registerFoT53ClirlInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerFoT53ClirlInfo(h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerFoT53ClirlInfo(h, what, obj);
+        
+        
     }
 
     
@@ -1785,20 +1787,20 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForT53ClirInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForT53ClirInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForT53ClirInfo(h);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.331 -0400", hash_original_method = "32A2CE43AB145EDFCAA8E4ECC9759844", hash_generated_method = "38C9723DD1FF75F97274430CFC153B29")
     public void registerForT53AudioControlInfo(Handler h, int what, Object obj) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(obj.getTaint());
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.registerForT53AudioControlInfo( h, what, obj);
-        // ---------- Original Method ----------
-        //mActivePhone.registerForT53AudioControlInfo( h, what, obj);
+        
+        
     }
 
     
@@ -1806,8 +1808,8 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unregisterForT53AudioControlInfo(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unregisterForT53AudioControlInfo(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unregisterForT53AudioControlInfo(h);
+        
+        
     }
 
     
@@ -1817,8 +1819,8 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
         addTaint(what);
         addTaint(h.getTaint());
         mActivePhone.setOnEcbModeExitResponse(h,what,obj);
-        // ---------- Original Method ----------
-        //mActivePhone.setOnEcbModeExitResponse(h,what,obj);
+        
+        
     }
 
     
@@ -1826,8 +1828,8 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
     public void unsetOnEcbModeExitResponse(Handler h) {
         addTaint(h.getTaint());
         mActivePhone.unsetOnEcbModeExitResponse(h);
-        // ---------- Original Method ----------
-        //mActivePhone.unsetOnEcbModeExitResponse(h);
+        
+        
     }
 
     
@@ -1836,8 +1838,8 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
         boolean var968DC313E986F7E5171A3009C3A6CFD0_1784609394 = (mActivePhone.isCspPlmnEnabled());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1138303830 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1138303830;
-        // ---------- Original Method ----------
-        //return mActivePhone.isCspPlmnEnabled();
+        
+        
     }
 
     
@@ -1846,8 +1848,8 @@ Phone var80DB6AE27D465D54797BEB544C72E98B_694173884 =         mActivePhone;
 IsimRecords varCB282C5CF39647CE67B46523B0308458_62889743 =         mActivePhone.getIsimRecords();
         varCB282C5CF39647CE67B46523B0308458_62889743.addTaint(taint);
         return varCB282C5CF39647CE67B46523B0308458_62889743;
-        // ---------- Original Method ----------
-        //return mActivePhone.getIsimRecords();
+        
+        
     }
 
     
@@ -1856,19 +1858,20 @@ IsimRecords varCB282C5CF39647CE67B46523B0308458_62889743 =         mActivePhone.
         addTaint(response.getTaint());
         addTaint(nonce.getTaint());
         mActivePhone.requestIsimAuthentication(nonce, response);
-        // ---------- Original Method ----------
-        //mActivePhone.requestIsimAuthentication(nonce, response);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:22.333 -0400", hash_original_method = "941A6F344732C9909039B3394C47476B", hash_generated_method = "8F2FA52A6A5BE925E2E227EC9D5B436B")
     @Override
     public int getLteOnCdmaMode() {
         int var78D6CBEEE4919F50A98D963F157B7ED1_315513407 = (mActivePhone.getLteOnCdmaMode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1823190732 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1823190732;
-        // ---------- Original Method ----------
-        //return mActivePhone.getLteOnCdmaMode();
+        
+        
     }
 
     
@@ -1878,8 +1881,8 @@ IsimRecords varCB282C5CF39647CE67B46523B0308458_62889743 =         mActivePhone.
         addTaint(countWaiting);
         addTaint(line);
         mActivePhone.setVoiceMessageWaiting(line, countWaiting);
-        // ---------- Original Method ----------
-        //mActivePhone.setVoiceMessageWaiting(line, countWaiting);
+        
+        
     }
 
     
@@ -1889,8 +1892,8 @@ IsimRecords varCB282C5CF39647CE67B46523B0308458_62889743 =         mActivePhone.
 UsimServiceTable var2C7209F7557F0CD3DC521DED36839829_696113601 =         mActivePhone.getUsimServiceTable();
         var2C7209F7557F0CD3DC521DED36839829_696113601.addTaint(taint);
         return var2C7209F7557F0CD3DC521DED36839829_696113601;
-        // ---------- Original Method ----------
-        //return mActivePhone.getUsimServiceTable();
+        
+        
     }
 
     

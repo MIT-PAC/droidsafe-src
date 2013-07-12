@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     public  PathParser(String path) {
         super(path);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
     protected  PathParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,7 +53,7 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
                 {
                     this.lexer.match(',');
                     this.lexer.SPorHT();
-                } //End block
+                } 
                 else
     if(la == '\n')                
                 break;
@@ -63,18 +63,18 @@ public class PathParser extends AddressParametersParser implements TokenTypes {
                 var7805DD1445672D84C07E56FCC19D9765_1809240963.addTaint(taint);
                 throw var7805DD1445672D84C07E56FCC19D9765_1809240963;
                 }
-            } //End block
+            } 
 SIPHeader var024CEB90B19D0AC297D288C50E00741D_325636660 =             pathList;
             var024CEB90B19D0AC297D288C50E00741D_325636660.addTaint(taint);
             return var024CEB90B19D0AC297D288C50E00741D_325636660;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("PathParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,7 +27,7 @@ public final class GeolocationPermissions {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.200 -0400", hash_original_method = "BCFC7E69B898D596BF2DB066E056C985", hash_generated_method = "BCFC7E69B898D596BF2DB066E056C985")
     public GeolocationPermissions ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -55,7 +55,7 @@ switch(msg.what){
                 Set<String> origins = (Set<String>) values.get(ORIGINS);
                 ValueCallback<Set<String> > callback = (ValueCallback<Set<String> >) values.get(CALLBACK);
                 callback.onReceiveValue(origins);
-            } //End block
+            } 
             break;
             case RETURN_ALLOWED:
             {
@@ -63,16 +63,16 @@ switch(msg.what){
                 Boolean allowed = (Boolean) values.get(ALLOWED);
                 ValueCallback<Boolean> callback = (ValueCallback<Boolean>) values.get(CALLBACK);
                 callback.onReceiveValue(allowed);
-            } //End block
+            } 
             break;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 };
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -94,7 +94,7 @@ switch(msg.what){
                 values.put(CALLBACK, callback);
                 values.put(ORIGINS, origins);
                 postUIMessage(Message.obtain(null, RETURN_ORIGINS, values));
-            } //End block
+            } 
             break;
             case GET_ALLOWED:
             {
@@ -106,7 +106,7 @@ switch(msg.what){
                 retValues.put(CALLBACK, callback);
                 retValues.put(ALLOWED, Boolean.valueOf(allowed));
                 postUIMessage(Message.obtain(null, RETURN_ALLOWED, retValues));
-            } //End block
+            } 
             break;
             case CLEAR:
             nativeClear((String) msg.obj);
@@ -118,8 +118,8 @@ switch(msg.what){
             nativeClearAll();
             break;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 };
     if(mQueuedMessages != null)            
@@ -128,12 +128,12 @@ switch(msg.what){
 (!mQueuedMessages.isEmpty())                
                 {
                     mHandler.sendMessage(mQueuedMessages.remove(0));
-                } //End block
+                } 
                 mQueuedMessages = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -145,22 +145,22 @@ switch(msg.what){
     if(mQueuedMessages == null)            
             {
                 mQueuedMessages = new Vector<Message>();
-            } //End block
+            } 
             mQueuedMessages.add(msg);
-        } //End block
+        } 
         else
         {
             mHandler.sendMessage(msg);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHandler == null) {
-            //if (mQueuedMessages == null) {
-                //mQueuedMessages = new Vector<Message>();
-            //}
-            //mQueuedMessages.add(msg);
-        //} else {
-            //mHandler.sendMessage(msg);
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -170,11 +170,11 @@ switch(msg.what){
     if(mUIHandler != null)        
         {
             mUIHandler.sendMessage(msg);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mUIHandler != null) {
-            //mUIHandler.sendMessage(msg);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -187,21 +187,21 @@ switch(msg.what){
             {
                 Set origins = nativeGetOrigins();
                 callback.onReceiveValue(origins);
-            } //End block
+            } 
             else
             {
                 postMessage(Message.obtain(null, GET_ORIGINS, callback));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (callback != null) {
-            //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-                //Set origins = nativeGetOrigins();
-                //callback.onReceiveValue(origins);
-            //} else {
-                //postMessage(Message.obtain(null, GET_ORIGINS, callback));
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+                
+            
+        
     }
 
     
@@ -212,41 +212,41 @@ switch(msg.what){
     if(callback == null)        
         {
             return;
-        } //End block
+        } 
     if(origin == null)        
         {
             callback.onReceiveValue(null);
             return;
-        } //End block
+        } 
     if(WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName()))        
         {
             boolean allowed = nativeGetAllowed(origin);
             callback.onReceiveValue(new Boolean(allowed));
-        } //End block
+        } 
         else
         {
             Map values = new HashMap<String, Object>();
             values.put(ORIGIN, origin);
             values.put(CALLBACK, callback);
             postMessage(Message.obtain(null, GET_ALLOWED, values));
-        } //End block
-        // ---------- Original Method ----------
-        //if (callback == null) {
-            //return;
-        //}
-        //if (origin == null) {
-            //callback.onReceiveValue(null);
-            //return;
-        //}
-        //if (WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName())) {
-            //boolean allowed = nativeGetAllowed(origin);
-            //callback.onReceiveValue(new Boolean(allowed));
-        //} else {
-            //Map values = new HashMap<String, Object>();
-            //values.put(ORIGIN, origin);
-            //values.put(CALLBACK, callback);
-            //postMessage(Message.obtain(null, GET_ALLOWED, values));
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -254,8 +254,8 @@ switch(msg.what){
     public void clear(String origin) {
         addTaint(origin.getTaint());
         postMessage(Message.obtain(null, CLEAR, origin));
-        // ---------- Original Method ----------
-        //postMessage(Message.obtain(null, CLEAR, origin));
+        
+        
     }
 
     
@@ -263,16 +263,16 @@ switch(msg.what){
     public void allow(String origin) {
         addTaint(origin.getTaint());
         postMessage(Message.obtain(null, ALLOW, origin));
-        // ---------- Original Method ----------
-        //postMessage(Message.obtain(null, ALLOW, origin));
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.205 -0400", hash_original_method = "0FC7F7395F602EA6BDC8C8831D80FE6E", hash_generated_method = "9AE310F1A84B8D911C336132598C553B")
     public void clearAll() {
         postMessage(Message.obtain(null, CLEAR_ALL));
-        // ---------- Original Method ----------
-        //postMessage(Message.obtain(null, CLEAR_ALL));
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class RoutedRequest {
         super();
         this.request = req;
         this.route   = route;
-        // ---------- Original Method ----------
-        //this.request = req;
-        //this.route   = route;
+        
+        
+        
     }
 
     
@@ -30,8 +30,8 @@ public class RoutedRequest {
 RequestWrapper varCA5195E6E15F740103A7066F05C33A8B_1557855597 =         request;
         varCA5195E6E15F740103A7066F05C33A8B_1557855597.addTaint(taint);
         return varCA5195E6E15F740103A7066F05C33A8B_1557855597;
-        // ---------- Original Method ----------
-        //return request;
+        
+        
     }
 
     
@@ -40,8 +40,8 @@ RequestWrapper varCA5195E6E15F740103A7066F05C33A8B_1557855597 =         request;
 HttpRoute var6679678B82FF79D06F753D1737D68FA6_1190586451 =         route;
         var6679678B82FF79D06F753D1737D68FA6_1190586451.addTaint(taint);
         return var6679678B82FF79D06F753D1737D68FA6_1190586451;
-        // ---------- Original Method ----------
-        //return route;
+        
+        
     }
 
     

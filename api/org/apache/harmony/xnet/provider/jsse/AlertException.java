@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,29 +19,31 @@ public class AlertException extends RuntimeException {
         super(reason);
         this.reason = reason;
         this.description = description;
-        // ---------- Original Method ----------
-        //this.reason = reason;
-        //this.description = description;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.771 -0400", hash_original_method = "5B702ECC4BAE0D4CD4DED59A097CDBFC", hash_generated_method = "1182393C0C5FE468696013A56AC62651")
     protected SSLException getReason() {
 SSLException varD602C4C1684F7464133CA1A6851CC44A_1012208409 =         reason;
         varD602C4C1684F7464133CA1A6851CC44A_1012208409.addTaint(taint);
         return varD602C4C1684F7464133CA1A6851CC44A_1012208409;
-        // ---------- Original Method ----------
-        //return reason;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:31.772 -0400", hash_original_method = "4016638ED8025AA5C043B11675AF3321", hash_generated_method = "4CCBE9E52FFFC7C909BF73EB1E8DBB44")
     protected byte getDescriptionCode() {
         byte var67DAF92C833C41C95DB874E18FCB2786_838178184 = (description);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_463631732 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_463631732;
-        // ---------- Original Method ----------
-        //return description;
+        
+        
     }
 
     

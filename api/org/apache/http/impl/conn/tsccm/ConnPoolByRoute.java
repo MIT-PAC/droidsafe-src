@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,7 +52,7 @@ public class ConnPoolByRoute extends AbstractConnPool {
             IllegalArgumentException var77D8C168DB874D3F429F1A2BBEABDD03_1927357760 = new IllegalArgumentException("Connection operator may not be null");
             var77D8C168DB874D3F429F1A2BBEABDD03_1927357760.addTaint(taint);
             throw var77D8C168DB874D3F429F1A2BBEABDD03_1927357760;
-        } //End block
+        } 
         this.operator = operator;
         freeConnections = createFreeConnQueue();
         waitingThreads  = createWaitingThreadQueue();
@@ -61,18 +61,18 @@ public class ConnPoolByRoute extends AbstractConnPool {
             .getMaxTotalConnections(params);
         connPerRoute = ConnManagerParams
             .getMaxConnectionsPerRoute(params);
-        // ---------- Original Method ----------
-        //if (operator == null) {
-            //throw new IllegalArgumentException("Connection operator may not be null");
-        //}
-        //this.operator = operator;
-        //freeConnections = createFreeConnQueue();
-        //waitingThreads  = createWaitingThreadQueue();
-        //routeToPool     = createRouteToPoolMap();
-        //maxTotalConnections = ConnManagerParams
-            //.getMaxTotalConnections(params);
-        //connPerRoute = ConnManagerParams
-            //.getMaxConnectionsPerRoute(params);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+            
     }
 
     
@@ -81,8 +81,8 @@ public class ConnPoolByRoute extends AbstractConnPool {
 Queue<BasicPoolEntry> var01B77BB2B7DAEB18A121DF47998865B8_1996144486 =         new LinkedList<BasicPoolEntry>();
         var01B77BB2B7DAEB18A121DF47998865B8_1996144486.addTaint(taint);
         return var01B77BB2B7DAEB18A121DF47998865B8_1996144486;
-        // ---------- Original Method ----------
-        //return new LinkedList<BasicPoolEntry>();
+        
+        
     }
 
     
@@ -91,8 +91,8 @@ Queue<BasicPoolEntry> var01B77BB2B7DAEB18A121DF47998865B8_1996144486 =         n
 Queue<WaitingThread> var291A08B00D43E126646A8B5C8C6F7C49_1735501448 =         new LinkedList<WaitingThread>();
         var291A08B00D43E126646A8B5C8C6F7C49_1735501448.addTaint(taint);
         return var291A08B00D43E126646A8B5C8C6F7C49_1735501448;
-        // ---------- Original Method ----------
-        //return new LinkedList<WaitingThread>();
+        
+        
     }
 
     
@@ -101,8 +101,8 @@ Queue<WaitingThread> var291A08B00D43E126646A8B5C8C6F7C49_1735501448 =         ne
 Map<HttpRoute, RouteSpecificPool> var134DFE940BF69D54A54951EBDC23A049_1411715309 =         new HashMap<HttpRoute, RouteSpecificPool>();
         var134DFE940BF69D54A54951EBDC23A049_1411715309.addTaint(taint);
         return var134DFE940BF69D54A54951EBDC23A049_1411715309;
-        // ---------- Original Method ----------
-        //return new HashMap<HttpRoute, RouteSpecificPool>();
+        
+        
     }
 
     
@@ -112,8 +112,8 @@ Map<HttpRoute, RouteSpecificPool> var134DFE940BF69D54A54951EBDC23A049_1411715309
 RouteSpecificPool var4C24997C04DFA56270A7A8E269A0BC66_1685230555 =         new RouteSpecificPool(route, connPerRoute.getMaxForRoute(route));
         var4C24997C04DFA56270A7A8E269A0BC66_1685230555.addTaint(taint);
         return var4C24997C04DFA56270A7A8E269A0BC66_1685230555;
-        // ---------- Original Method ----------
-        //return new RouteSpecificPool(route, connPerRoute.getMaxForRoute(route));
+        
+        
     }
 
     
@@ -125,8 +125,8 @@ RouteSpecificPool var4C24997C04DFA56270A7A8E269A0BC66_1685230555 =         new R
 WaitingThread varDFDF030C3807F5EFC0894FF071EF6497_370962266 =         new WaitingThread(cond, rospl);
         varDFDF030C3807F5EFC0894FF071EF6497_370962266.addTaint(taint);
         return varDFDF030C3807F5EFC0894FF071EF6497_370962266;
-        // ---------- Original Method ----------
-        //return new WaitingThread(cond, rospl);
+        
+        
     }
 
     
@@ -144,28 +144,28 @@ WaitingThread varDFDF030C3807F5EFC0894FF071EF6497_370962266 =         new Waitin
             {
                 rospl = newRouteSpecificPool(route);
                 routeToPool.put(route, rospl);
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
 RouteSpecificPool varCC98A0C084730B1A1F306BC097B9A40E_673951562 =         rospl;
         varCC98A0C084730B1A1F306BC097B9A40E_673951562.addTaint(taint);
         return varCC98A0C084730B1A1F306BC097B9A40E_673951562;
-        // ---------- Original Method ----------
-        //RouteSpecificPool rospl = null;
-        //poolLock.lock();
-        //try {
-            //rospl = routeToPool.get(route);
-            //if ((rospl == null) && create) {
-                //rospl = newRouteSpecificPool(route);
-                //routeToPool.put(route, rospl);
-            //}
-        //} finally {
-            //poolLock.unlock();
-        //}
-        //return rospl;
+        
+        
+        
+        
+            
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -179,19 +179,19 @@ RouteSpecificPool varCC98A0C084730B1A1F306BC097B9A40E_673951562 =         rospl;
             int varDDC0D817358B407776C5AC80C93F45C4_809282912 = ((rospl != null) ? rospl.getEntryCount() : 0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6943888 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_6943888;
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //RouteSpecificPool rospl = getRoutePool(route, false);
-            //return (rospl != null) ? rospl.getEntryCount() : 0;
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -210,18 +210,18 @@ PoolEntryRequest var1B2A51D879C1F73D768B957F412A1315_651671484 =         new Poo
             try 
             {
                 aborter.abort();
-            } //End block
+            } 
             finally 
             {
                 poolLock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //poolLock.lock();
-            //try {
-                    //aborter.abort();
-                //} finally {
-                    //poolLock.unlock();
-                //}
+            } 
+            
+            
+            
+                    
+                
+                    
+                
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.085 -0400", hash_original_method = "5C56F9CAB1134243DEE9B4B085AFA43E", hash_generated_method = "D44D65E099FA595EBE7D8688D6CB9B58")
         public BasicPoolEntry getPoolEntry(
@@ -232,30 +232,30 @@ PoolEntryRequest var1B2A51D879C1F73D768B957F412A1315_651671484 =         new Poo
 BasicPoolEntry var3ADC47A1A9E57B79D43B9B27BBB00DC3_714315262 =             getEntryBlocking(route, state, timeout, tunit, aborter);
             var3ADC47A1A9E57B79D43B9B27BBB00DC3_714315262.addTaint(taint);
             return var3ADC47A1A9E57B79D43B9B27BBB00DC3_714315262;
-            // ---------- Original Method ----------
-            //return getEntryBlocking(route, state, timeout, tunit, aborter);
+            
+            
         }
 };
         var1B2A51D879C1F73D768B957F412A1315_651671484.addTaint(taint);
         return var1B2A51D879C1F73D768B957F412A1315_651671484;
-        // ---------- Original Method ----------
-        //final WaitingThreadAborter aborter = new WaitingThreadAborter();
-        //return new PoolEntryRequest() {
-            //public void abortRequest() {
-                //poolLock.lock();
-                //try {
-                    //aborter.abort();
-                //} finally {
-                    //poolLock.unlock();
-                //}
-            //}
-            //public BasicPoolEntry getPoolEntry(
-                    //long timeout,
-                    //TimeUnit tunit)
-                        //throws InterruptedException, ConnectionPoolTimeoutException {
-                //return getEntryBlocking(route, state, timeout, tunit, aborter);
-            //}
-        //};
+        
+        
+        
+            
+                
+                
+                    
+                
+                    
+                
+            
+            
+                    
+                    
+                        
+                
+            
+        
     }
 
     
@@ -274,7 +274,7 @@ BasicPoolEntry var3ADC47A1A9E57B79D43B9B27BBB00DC3_714315262 =             getEn
         {
             deadline = new Date
                 (System.currentTimeMillis() + tunit.toMillis(timeout));
-        } //End block
+        } 
         BasicPoolEntry entry = null;
         poolLock.lock();
         try 
@@ -290,60 +290,60 @@ BasicPoolEntry var3ADC47A1A9E57B79D43B9B27BBB00DC3_714315262 =             getEn
                         ("Connection pool shut down.");
                     var6E6039D9A4C3BA391612A72168B10397_1158008076.addTaint(taint);
                     throw var6E6039D9A4C3BA391612A72168B10397_1158008076;
-                } //End block
+                } 
     if(log.isDebugEnabled())                
                 {
                     log.debug("Total connections kept alive: " + freeConnections.size());
                     log.debug("Total issued connections: " + issuedConnections.size());
                     log.debug("Total allocated connection: " + numConnections + " out of " + maxTotalConnections);
-                } //End block
+                } 
                 entry = getFreeEntry(rospl, state);
     if(entry != null)                
                 {
                     break;
-                } //End block
+                } 
                 boolean hasCapacity = rospl.getCapacity() > 0;
     if(log.isDebugEnabled())                
                 {
                     log.debug("Available capacity: " + rospl.getCapacity() 
                             + " out of " + rospl.getMaxEntries()
                             + " [" + route + "][" + state + "]");
-                } //End block
+                } 
     if(hasCapacity && numConnections < maxTotalConnections)                
                 {
                     entry = createEntry(rospl, operator);
-                } //End block
+                } 
                 else
     if(hasCapacity && !freeConnections.isEmpty())                
                 {
                     deleteLeastUsedEntry();
                     entry = createEntry(rospl, operator);
-                } //End block
+                } 
                 else
                 {
     if(log.isDebugEnabled())                    
                     {
                         log.debug("Need to wait for connection" +
                                 " [" + route + "][" + state + "]");
-                    } //End block
+                    } 
     if(waitingThread == null)                    
                     {
                         waitingThread =
                             newWaitingThread(poolLock.newCondition(), rospl);
                         aborter.setWaitingThread(waitingThread);
-                    } //End block
+                    } 
                     boolean success = false;
                     try 
                     {
                         rospl.queueThread(waitingThread);
                         waitingThreads.add(waitingThread);
                         success = waitingThread.await(deadline);
-                    } //End block
+                    } 
                     finally 
                     {
                         rospl.removeThread(waitingThread);
                         waitingThreads.remove(waitingThread);
-                    } //End block
+                    } 
     if(!success && (deadline != null) &&
                         (deadline.getTime() <= System.currentTimeMillis()))                    
                     {
@@ -351,19 +351,19 @@ BasicPoolEntry var3ADC47A1A9E57B79D43B9B27BBB00DC3_714315262 =             getEn
                             ("Timeout waiting for connection");
                         var96319C47C8FA016BD9C81CF53419CF0E_1452468045.addTaint(taint);
                         throw var96319C47C8FA016BD9C81CF53419CF0E_1452468045;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
 BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_254583454.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_254583454;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -379,7 +379,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
         {
             log.debug("Freeing connection" +                                 
                     " [" + route + "][" + entry.getState() + "]");
-        } //End block
+        } 
         poolLock.lock();
         try 
         {
@@ -387,7 +387,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
             {
                 closeConnection(entry.getConnection());
                 return;
-            } //End block
+            } 
             issuedConnections.remove(entry.getWeakRef());
             RouteSpecificPool rospl = getRoutePool(route, true);
     if(reusable)            
@@ -395,20 +395,20 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
                 rospl.freeEntry(entry);
                 freeConnections.add(entry);
                 idleConnHandler.add(entry.getConnection(), validDuration, timeUnit);
-            } //End block
+            } 
             else
             {
                 rospl.dropEntry();
                 numConnections--;
-            } //End block
+            } 
             notifyWaitingThread(rospl);
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -431,7 +431,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
                     {
                         log.debug("Getting free connection" 
                                 + " [" + rospl.getRoute() + "][" + state + "]");
-                    } //End block
+                    } 
                     freeConnections.remove(entry);
                     boolean valid = idleConnHandler.remove(entry.getConnection());
     if(!valid)                    
@@ -442,13 +442,13 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
                         closeConnection(entry.getConnection());
                         rospl.dropEntry();
                         numConnections--;
-                    } //End block
+                    } 
                     else
                     {
                         issuedConnections.add(entry.getWeakRef());
                         done = true;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     done = true;
@@ -456,19 +456,19 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_254583454 =         entry;
                     {
                         log.debug("No free connections" 
                                 + " [" + rospl.getRoute() + "][" + state + "]");
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
 BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1556351764 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_1556351764.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_1556351764;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -480,7 +480,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1556351764 =         entry;
     if(log.isDebugEnabled())        
         {
             log.debug("Creating new connection [" + rospl.getRoute() + "]");
-        } //End block
+        } 
         BasicPoolEntry entry = new BasicPoolEntry(op, rospl.getRoute(), refQueue);
         poolLock.lock();
         try 
@@ -488,29 +488,29 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_1556351764 =         entry;
             rospl.createdEntry(entry);
             numConnections++;
             issuedConnections.add(entry.getWeakRef());
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
+        } 
 BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
         varF26DBE38545460D6F6AE1D948FF53869_23921454.addTaint(taint);
         return varF26DBE38545460D6F6AE1D948FF53869_23921454;
-        // ---------- Original Method ----------
-        //if (log.isDebugEnabled()) {
-            //log.debug("Creating new connection [" + rospl.getRoute() + "]");
-        //}
-        //BasicPoolEntry entry =
-            //new BasicPoolEntry(op, rospl.getRoute(), refQueue);
-        //poolLock.lock();
-        //try {
-            //rospl.createdEntry(entry);
-            //numConnections++;
-            //issuedConnections.add(entry.getWeakRef());
-        //} finally {
-            //poolLock.unlock();
-        //}
-        //return entry;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -522,7 +522,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
         {
             log.debug("Deleting connection" 
                     + " [" + route + "][" + entry.getState() + "]");
-        } //End block
+        } 
         poolLock.lock();
         try 
         {
@@ -533,32 +533,32 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
     if(rospl.isUnused())            
             {
                 routeToPool.remove(route);
-            } //End block
+            } 
             idleConnHandler.remove(entry.getConnection());
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //HttpRoute route = entry.getPlannedRoute();
-        //if (log.isDebugEnabled()) {
-            //log.debug("Deleting connection" 
-                    //+ " [" + route + "][" + entry.getState() + "]");
-        //}
-        //poolLock.lock();
-        //try {
-            //closeConnection(entry.getConnection());
-            //RouteSpecificPool rospl = getRoutePool(route, true);
-            //rospl.deleteEntry(entry);
-            //numConnections--;
-            //if (rospl.isUnused()) {
-                //routeToPool.remove(route);
-            //}
-            //idleConnHandler.remove(entry.getConnection());
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+                    
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -571,29 +571,29 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
     if(entry != null)            
             {
                 deleteEntry(entry);
-            } //End block
+            } 
             else
     if(log.isDebugEnabled())            
             {
                 log.debug("No free connection to delete.");
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //poolLock.lock();
-            //BasicPoolEntry entry = freeConnections.remove();
-            //if (entry != null) {
-                //deleteEntry(entry);
-            //} else if (log.isDebugEnabled()) {
-                //log.debug("No free connection to delete.");
-            //}
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -609,27 +609,27 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
     if(rospl.isUnused())            
             {
                 routeToPool.remove(route);
-            } //End block
+            } 
             numConnections--;
             notifyWaitingThread(rospl);
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //RouteSpecificPool rospl = getRoutePool(route, true);
-            //rospl.dropEntry();
-            //if (rospl.isUnused()) {
-                //routeToPool.remove(route);
-            //}
-            //numConnections--;
-            //notifyWaitingThread(rospl);
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -646,34 +646,34 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
                 {
                     log.debug("Notifying thread waiting on pool" +
                             " [" + rospl.getRoute() + "]");
-                } //End block
+                } 
                 waitingThread = rospl.nextThread();
-            } //End block
+            } 
             else
     if(!waitingThreads.isEmpty())            
             {
     if(log.isDebugEnabled())                
                 {
                     log.debug("Notifying thread waiting on any pool");
-                } //End block
+                } 
                 waitingThread = waitingThreads.remove();
-            } //End block
+            } 
             else
     if(log.isDebugEnabled())            
             {
                 log.debug("Notifying no-one, there are no waiting threads");
-            } //End block
+            } 
     if(waitingThread != null)            
             {
                 waitingThread.wakeup();
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -692,27 +692,27 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
                 {
                     iter.remove();
                     deleteEntry(entry);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //Iterator<BasicPoolEntry>  iter = freeConnections.iterator();
-            //while (iter.hasNext()) {
-                //BasicPoolEntry entry = iter.next();
-                //if (!entry.getConnection().isOpen()) {
-                    //iter.remove();
-                    //deleteEntry(entry);
-                //}
-            //}
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
+            
+        
     }
 
     
@@ -730,7 +730,7 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
                 BasicPoolEntry entry = ibpe.next();
                 ibpe.remove();
                 closeConnection(entry.getConnection());
-            } //End block
+            } 
             Iterator<WaitingThread> iwth = waitingThreads.iterator();
             while
 (iwth.hasNext())            
@@ -738,33 +738,33 @@ BasicPoolEntry varF26DBE38545460D6F6AE1D948FF53869_23921454 =         entry;
                 WaitingThread waiter = iwth.next();
                 iwth.remove();
                 waiter.wakeup();
-            } //End block
+            } 
             routeToPool.clear();
-        } //End block
+        } 
         finally 
         {
             poolLock.unlock();
-        } //End block
-        // ---------- Original Method ----------
-        //poolLock.lock();
-        //try {
-            //super.shutdown();
-            //Iterator<BasicPoolEntry> ibpe = freeConnections.iterator();
-            //while (ibpe.hasNext()) {
-                //BasicPoolEntry entry = ibpe.next();
-                //ibpe.remove();
-                //closeConnection(entry.getConnection());
-            //}
-            //Iterator<WaitingThread> iwth = waitingThreads.iterator();
-            //while (iwth.hasNext()) {
-                //WaitingThread waiter = iwth.next();
-                //iwth.remove();
-                //waiter.wakeup();
-            //}
-            //routeToPool.clear();
-        //} finally {
-            //poolLock.unlock();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+                
+                
+            
+            
+        
+            
+        
     }
 
     

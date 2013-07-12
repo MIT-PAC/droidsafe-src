@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -78,16 +78,16 @@ public final class SmsStorageMonitor extends Handler {
         filter.addAction(Intent.ACTION_DEVICE_STORAGE_FULL);
         filter.addAction(Intent.ACTION_DEVICE_STORAGE_NOT_FULL);
         mContext.registerReceiver(mResultReceiver, filter);
-        // ---------- Original Method ----------
-        //mContext = phone.getContext();
-        //mCm = phone.mCM;
-        //createWakelock();
-        //mCm.setOnIccSmsFull(this, EVENT_ICC_FULL, null);
-        //mCm.registerForOn(this, EVENT_RADIO_ON, null);
-        //IntentFilter filter = new IntentFilter();
-        //filter.addAction(Intent.ACTION_DEVICE_STORAGE_FULL);
-        //filter.addAction(Intent.ACTION_DEVICE_STORAGE_NOT_FULL);
-        //mContext.registerReceiver(mResultReceiver, filter);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -96,10 +96,10 @@ public final class SmsStorageMonitor extends Handler {
         mCm.unSetOnIccSmsFull(this);
         mCm.unregisterForOn(this);
         mContext.unregisterReceiver(mResultReceiver);
-        // ---------- Original Method ----------
-        //mCm.unSetOnIccSmsFull(this);
-        //mCm.unregisterForOn(this);
-        //mContext.unregisterReceiver(mResultReceiver);
+        
+        
+        
+        
     }
 
     
@@ -117,22 +117,22 @@ switch(msg.what){
     if(ar.exception != null)        
         {
             mReportMemoryStatusPending = true;
-        } //End block
+        } 
         else
         {
             mReportMemoryStatusPending = false;
-        } //End block
+        } 
         break;
         case EVENT_RADIO_ON:
     if(mReportMemoryStatusPending)        
         {
             mCm.reportSmsMemoryStatus(mStorageAvailable,
                             obtainMessage(EVENT_REPORT_MEMORY_STATUS_DONE));
-        } //End block
+        } 
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -141,10 +141,10 @@ switch(msg.what){
         PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
         mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "SmsStorageMonitor");
         mWakeLock.setReferenceCounted(true);
-        // ---------- Original Method ----------
-        //PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
-        //mWakeLock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "SmsStorageMonitor");
-        //mWakeLock.setReferenceCounted(true);
+        
+        
+        
+        
     }
 
     
@@ -153,20 +153,21 @@ switch(msg.what){
         Intent intent = new Intent(Intents.SIM_FULL_ACTION);
         mWakeLock.acquire(WAKE_LOCK_TIMEOUT);
         mContext.sendBroadcast(intent, SMSDispatcher.RECEIVE_SMS_PERMISSION);
-        // ---------- Original Method ----------
-        //Intent intent = new Intent(Intents.SIM_FULL_ACTION);
-        //mWakeLock.acquire(WAKE_LOCK_TIMEOUT);
-        //mContext.sendBroadcast(intent, SMSDispatcher.RECEIVE_SMS_PERMISSION);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:23.513 -0400", hash_original_method = "8AEABE91EB74288702D500EE9C97116A", hash_generated_method = "2075939FE18B626416DA0CBE1EF30D5F")
     public boolean isStorageAvailable() {
         boolean var3CACC54997DC9ED5FC3D015BD6B4854B_1809073970 = (mStorageAvailable);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211382881 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211382881;
-        // ---------- Original Method ----------
-        //return mStorageAvailable;
+        
+        
     }
 
     

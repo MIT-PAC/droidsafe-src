@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
     public  SecurityVerifyParser(String security) {
         super(security);
         addTaint(security.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,7 +25,7 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
     protected  SecurityVerifyParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,22 +40,22 @@ public class SecurityVerifyParser extends SecurityAgreeParser {
 SIPHeader var876F10E1BE6B90CF9FF5833E171F5271_1311033756 =             secVerifyList;
             var876F10E1BE6B90CF9FF5833E171F5271_1311033756.addTaint(taint);
             return var876F10E1BE6B90CF9FF5833E171F5271_1311033756;
-        } //End block
+        } 
         finally 
         {
             dbg_leave("SecuriryVerify parse");
-        } //End block
-        // ---------- Original Method ----------
-        //dbg_enter("SecuriryVerify parse");
-        //try {
-            //headerName(TokenTypes.SECURITY_VERIFY);
-            //SecurityVerify secVerify = new SecurityVerify();
-            //SecurityVerifyList secVerifyList =
-                //(SecurityVerifyList) super.parse(secVerify);
-            //return secVerifyList;
-        //} finally {
-            //dbg_leave("SecuriryVerify parse");
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+        
+            
+        
     }
 
     

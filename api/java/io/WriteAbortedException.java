@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,9 +16,9 @@ public class WriteAbortedException extends ObjectStreamException {
         addTaint(detailMessage.getTaint());
         detail = rootCause;
         initCause(rootCause);
-        // ---------- Original Method ----------
-        //detail = rootCause;
-        //initCause(rootCause);
+        
+        
+        
     }
 
     
@@ -29,27 +29,28 @@ public class WriteAbortedException extends ObjectStreamException {
     if(detail != null)        
         {
             msg = msg + "; " + detail.toString();
-        } //End block
+        } 
 String varEDC5B72465A7F0BEE288689BCB1DD141_1043689755 =         msg;
         varEDC5B72465A7F0BEE288689BCB1DD141_1043689755.addTaint(taint);
         return varEDC5B72465A7F0BEE288689BCB1DD141_1043689755;
-        // ---------- Original Method ----------
-        //String msg = super.getMessage();
-        //if (detail != null) {
-            //msg = msg + "; " + detail.toString();
-        //}
-        //return msg;
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:43.082 -0400", hash_original_method = "CA6C7AF43E4792C258E5E6922F45606C", hash_generated_method = "B91B7474BBDD96095D3F2C14FADCA2C4")
     @Override
     public Throwable getCause() {
 Throwable var7D32F5AE0FDCBBF6DD3F34C021592055_709118040 =         detail;
         var7D32F5AE0FDCBBF6DD3F34C021592055_709118040.addTaint(taint);
         return var7D32F5AE0FDCBBF6DD3F34C021592055_709118040;
-        // ---------- Original Method ----------
-        //return detail;
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ class ListOfVariables {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:17.383 -0400", hash_original_method = "41422E53316C05168ACE5C5221EA93B8", hash_generated_method = "41422E53316C05168ACE5C5221EA93B8")
     public ListOfVariables ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -23,8 +23,8 @@ class ListOfVariables {
      void add(TypeVariable<?> elem) {
         addTaint(elem.getTaint());
         array.add(elem);
-        // ---------- Original Method ----------
-        //array.add(elem);
+        
+        
     }
 
     
@@ -34,9 +34,9 @@ class ListOfVariables {
 TypeVariable<?>[] varF96F010B71A4E3E42E8EFB41CD660DA5_240750842 =         array.toArray(a);
         varF96F010B71A4E3E42E8EFB41CD660DA5_240750842.addTaint(taint);
         return varF96F010B71A4E3E42E8EFB41CD660DA5_240750842;
-        // ---------- Original Method ----------
-        //TypeVariable<?>[] a = new TypeVariable[array.size()];
-        //return array.toArray(a);
+        
+        
+        
     }
 
     

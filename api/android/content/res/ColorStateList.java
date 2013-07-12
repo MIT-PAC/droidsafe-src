@@ -1,6 +1,6 @@
 package android.content.res;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,7 +30,7 @@ public class ColorStateList implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.716 -0400", hash_original_method = "A1B9AA8D55CC71F4C566F389AC3D8BBC", hash_generated_method = "B853D9FA4CC0F774905FDCA69D04F16F")
     private  ColorStateList() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,20 +46,20 @@ for(int i = 0;i < states.length;i++)
     if(states[i].length == 0)                
                 {
                     mDefaultColor = colors[i];
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mStateSpecs = states;
-        //mColors = colors;
-        //if (states.length > 0) {
-            //mDefaultColor = colors[0];
-            //for (int i = 0; i < states.length; i++) {
-                //if (states[i].length == 0) {
-                    //mDefaultColor = colors[i];
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+                
+                    
+                
+            
+        
     }
 
     
@@ -113,17 +113,17 @@ for(int i = 0;i < states.length;i++)
 for(int i = 0;i < len;i++)
         {
             colors[i] = (mColors[i] & 0xFFFFFF) | (alpha << 24);
-        } //End block
+        } 
 ColorStateList var3DD0BBD465CAAA82779B9248F9A3D5BF_995728275 =         new ColorStateList(mStateSpecs, colors);
         var3DD0BBD465CAAA82779B9248F9A3D5BF_995728275.addTaint(taint);
         return var3DD0BBD465CAAA82779B9248F9A3D5BF_995728275;
-        // ---------- Original Method ----------
-        //int[] colors = new int[mColors.length];
-        //int len = colors.length;
-        //for (int i = 0; i < len; i++) {
-            //colors[i] = (mColors[i] & 0xFFFFFF) | (alpha << 24);
-        //}
-        //return new ColorStateList(mStateSpecs, colors);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -147,11 +147,11 @@ ColorStateList var3DD0BBD465CAAA82779B9248F9A3D5BF_995728275 =         new Color
     if(type != XmlPullParser.START_TAG)            
             {
                 continue;
-            } //End block
+            } 
     if(depth > innerDepth || !parser.getName().equals("item"))            
             {
                 continue;
-            } //End block
+            } 
             int colorRes = 0;
             int color = 0xffff0000;
             boolean haveColor = false;
@@ -171,20 +171,20 @@ for(i = 0;i < numAttrs;i++)
                     {
                         color = attrs.getAttributeIntValue(i, color);
                         haveColor = true;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     stateSpec[j++] = attrs.getAttributeBooleanValue(i, false)
                                   ? stateResId
                                   : -stateResId;
-                } //End block
-            } //End block
+                } 
+            } 
             stateSpec = StateSet.trimStateSet(stateSpec, j);
     if(colorRes != 0)            
             {
                 color = r.getColor(colorRes);
-            } //End block
+            } 
             else
     if(!haveColor)            
             {
@@ -193,11 +193,11 @@ for(i = 0;i < numAttrs;i++)
                         + ": <item> tag requires a 'android:color' attribute.");
                 var026DDF440CEE724E4E77FAC9736CB4D3_220204383.addTaint(taint);
                 throw var026DDF440CEE724E4E77FAC9736CB4D3_220204383;
-            } //End block
+            } 
     if(listSize == 0 || stateSpec.length == 0)            
             {
                 mDefaultColor = color;
-            } //End block
+            } 
     if(listSize + 1 >= listAllocated)            
             {
                 listAllocated = ArrayUtils.idealIntArraySize(listSize + 1);
@@ -207,27 +207,28 @@ for(i = 0;i < numAttrs;i++)
                 System.arraycopy(stateSpecList, 0, nstate, 0, listSize);
                 colorList = ncolor;
                 stateSpecList = nstate;
-            } //End block
+            } 
             colorList[listSize] = color;
             stateSpecList[listSize] = stateSpec;
             listSize++;
-        } //End block
+        } 
         mColors = new int[listSize];
         mStateSpecs = new int[listSize][];
         System.arraycopy(colorList, 0, mColors, 0, listSize);
         System.arraycopy(stateSpecList, 0, mStateSpecs, 0, listSize);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.723 -0400", hash_original_method = "1C923E0661B9E6FB6B4C6C1FDCEBD767", hash_generated_method = "F22548537C5AFC5398523BAF80CA6854")
     public boolean isStateful() {
         boolean varE10B369199E1AC74C448DAA7938908FC_1787841065 = (mStateSpecs.length > 1);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_879583090 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_879583090;
-        // ---------- Original Method ----------
-        //return mStateSpecs.length > 1;
+        
+        
     }
 
     
@@ -244,30 +245,31 @@ for(int i = 0;i < setLength;i++)
                 int varEFD1363BD01A6BD85E174C4B82BC9D4F_1545378745 = (mColors[i]);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_16564314 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_16564314;
-            } //End block
-        } //End block
+            } 
+        } 
         int varC70EAEDB17963A6537F334D99DE972DE_1012919628 = (defaultColor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_600777206 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_600777206;
-        // ---------- Original Method ----------
-        //final int setLength = mStateSpecs.length;
-        //for (int i = 0; i < setLength; i++) {
-            //int[] stateSpec = mStateSpecs[i];
-            //if (StateSet.stateSetMatches(stateSpec, stateSet)) {
-                //return mColors[i];
-            //}
-        //}
-        //return defaultColor;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.724 -0400", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "D5E65D32D6FBE278611E27603BFC5042")
     public int getDefaultColor() {
         int var27A2282CE852080081DD6A76ACF8DAC0_1252600221 = (mDefaultColor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1793360266 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1793360266;
-        // ---------- Original Method ----------
-        //return mDefaultColor;
+        
+        
     }
 
     
@@ -279,21 +281,22 @@ String var214C2B72655A76B1EFDC24D7C88B2748_234513353 =         "ColorStateList{"
                "mDefaultColor=" + mDefaultColor + '}';
         var214C2B72655A76B1EFDC24D7C88B2748_234513353.addTaint(taint);
         return var214C2B72655A76B1EFDC24D7C88B2748_234513353;
-        // ---------- Original Method ----------
-        //return "ColorStateList{" +
-               //"mStateSpecs=" + Arrays.deepToString(mStateSpecs) +
-               //"mColors=" + Arrays.toString(mColors) +
-               //"mDefaultColor=" + mDefaultColor + '}';
+        
+        
+               
+               
+               
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.724 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "40AFB68B4EFCB9E79903EC6AA92F1537")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_794853710 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1153408660 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1153408660;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -306,15 +309,15 @@ String var214C2B72655A76B1EFDC24D7C88B2748_234513353 =         "ColorStateList{"
 for(int i=0;i<N;i++)
         {
             dest.writeIntArray(mStateSpecs[i]);
-        } //End block
+        } 
         dest.writeIntArray(mColors);
-        // ---------- Original Method ----------
-        //final int N = mStateSpecs.length;
-        //dest.writeInt(N);
-        //for (int i=0; i<N; i++) {
-            //dest.writeIntArray(mStateSpecs[i]);
-        //}
-        //dest.writeIntArray(mColors);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -342,7 +345,7 @@ for(int i=0;i<N;i++)
             return new ColorStateList(stateSpecs, colors);
         }
     };
-    // orphaned legacy method
+    
     public ColorStateList createFromParcel(Parcel source) {
             final int N = source.readInt();
             int[][] stateSpecs = new int[N][];
@@ -353,7 +356,7 @@ for(int i=0;i<N;i++)
             return new ColorStateList(stateSpecs, colors);
         }
     
-    // orphaned legacy method
+    
     public ColorStateList[] newArray(int size) {
             return new ColorStateList[size];
         }

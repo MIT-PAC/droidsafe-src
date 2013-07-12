@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class Patterns {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.117 -0400", hash_original_method = "91DADCDFBE7734A1949A5AEB67A00312", hash_generated_method = "DCA1D744818DE2F75F6DF6E223A6F400")
     private  Patterns() {
-        // ---------- Original Method ----------
+        
     }
 
     

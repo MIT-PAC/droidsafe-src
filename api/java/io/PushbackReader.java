@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,9 +20,9 @@ public class PushbackReader extends FilterReader {
         addTaint(in.getTaint());
         buf = new char[1];
         pos = 1;
-        // ---------- Original Method ----------
-        //buf = new char[1];
-        //pos = 1;
+        
+        
+        
     }
 
     
@@ -35,15 +35,15 @@ public class PushbackReader extends FilterReader {
             IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_647828675 = new IllegalArgumentException("size <= 0");
             var5AFB46BA040E4CEE38200888DC74991F_647828675.addTaint(taint);
             throw var5AFB46BA040E4CEE38200888DC74991F_647828675;
-        } //End block
+        } 
         buf = new char[size];
         pos = size;
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //buf = new char[size];
-        //pos = size;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -54,12 +54,12 @@ public class PushbackReader extends FilterReader {
 (lock)        {
             buf = null;
             in.close();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //buf = null;
-            //in.close();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -70,19 +70,20 @@ public class PushbackReader extends FilterReader {
         IOException varF3311591D77E2C66F905CA1B4CA5DEFB_658492356 = new IOException("mark/reset not supported");
         varF3311591D77E2C66F905CA1B4CA5DEFB_658492356.addTaint(taint);
         throw varF3311591D77E2C66F905CA1B4CA5DEFB_658492356;
-        // ---------- Original Method ----------
-        //throw new IOException("mark/reset not supported");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:48.876 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "7E03E4F886F4ECBEB68B34D9C69592D3")
     @Override
     public boolean markSupported() {
         boolean var68934A3E9455FA72420237EB05902327_1441878180 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1194897070 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1194897070;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -97,19 +98,19 @@ public class PushbackReader extends FilterReader {
                 int varB70884BE019EF8C23F78111B3A15614D_1346040845 = (buf[pos++]);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284478804 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_284478804;
-            } //End block
+            } 
             int varC746AA2461228F1337791E992A2C4661_1879090981 = (in.read());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803634020 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1803634020;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (pos < buf.length) {
-                //return buf[pos++];
-            //}
-            //return in.read();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -120,11 +121,11 @@ public class PushbackReader extends FilterReader {
             IOException var7B3501B38832105182B3AE136EAA767B_338825058 = new IOException("PushbackReader is closed");
             var7B3501B38832105182B3AE136EAA767B_338825058.addTaint(taint);
             throw var7B3501B38832105182B3AE136EAA767B_338825058;
-        } //End block
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //throw new IOException("PushbackReader is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -149,32 +150,32 @@ public class PushbackReader extends FilterReader {
                 newOffset += copyLength;
                 copiedChars += copyLength;
                 pos += copyLength;
-            } //End block
+            } 
     if(copyLength == count)            
             {
                 int varE2942A04780E223B215EB8B663CF5353_1728333015 = (count);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317032342 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317032342;
-            } //End block
+            } 
             int inCopied = in.read(buffer, newOffset, count - copiedChars);
     if(inCopied > 0)            
             {
                 int var166A9EF762FEF657CDB434EEC361E9C7_163309408 = (inCopied + copiedChars);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258194217 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1258194217;
-            } //End block
+            } 
     if(copiedChars == 0)            
             {
                 int var787E8700E82D0C2395ECBB8EA3AA68D6_887292393 = (inCopied);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281528349 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_281528349;
-            } //End block
+            } 
             int varF869658D8E2DD1E33F978666D0818948_2059688008 = (copiedChars);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1487175486 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1487175486;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -188,18 +189,18 @@ public class PushbackReader extends FilterReader {
                 IOException var7743A3FE5EA94AC5B2DA1B811283245D_1803289302 = new IOException("Reader is closed");
                 var7743A3FE5EA94AC5B2DA1B811283245D_1803289302.addTaint(taint);
                 throw var7743A3FE5EA94AC5B2DA1B811283245D_1803289302;
-            } //End block
+            } 
             boolean var2672685A5B4F1FB14CA48CFE5A71221C_34196263 = ((buf.length - pos > 0 || in.ready()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1903949179 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1903949179;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (buf == null) {
-                //throw new IOException("Reader is closed");
-            //}
-            //return (buf.length - pos > 0 || in.ready());
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -209,8 +210,8 @@ public class PushbackReader extends FilterReader {
         IOException varF3311591D77E2C66F905CA1B4CA5DEFB_2146281264 = new IOException("mark/reset not supported");
         varF3311591D77E2C66F905CA1B4CA5DEFB_2146281264.addTaint(taint);
         throw varF3311591D77E2C66F905CA1B4CA5DEFB_2146281264;
-        // ---------- Original Method ----------
-        //throw new IOException("mark/reset not supported");
+        
+        
     }
 
     
@@ -218,8 +219,8 @@ public class PushbackReader extends FilterReader {
     public void unread(char[] buffer) throws IOException {
         addTaint(buffer[0]);
         unread(buffer, 0, buffer.length);
-        // ---------- Original Method ----------
-        //unread(buffer, 0, buffer.length);
+        
+        
     }
 
     
@@ -236,24 +237,24 @@ public class PushbackReader extends FilterReader {
                 IOException var026BB6CEDAAF18AFE37343DFB85FF3B4_385463032 = new IOException("Pushback buffer full");
                 var026BB6CEDAAF18AFE37343DFB85FF3B4_385463032.addTaint(taint);
                 throw var026BB6CEDAAF18AFE37343DFB85FF3B4_385463032;
-            } //End block
+            } 
             Arrays.checkOffsetAndCount(buffer.length, offset, length);
 for(int i = offset + length - 1;i >= offset;i--)
             {
                 unread(buffer[i]);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (length > pos) {
-                //throw new IOException("Pushback buffer full");
-            //}
-            //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-            //for (int i = offset + length - 1; i >= offset; i--) {
-                //unread(buffer[i]);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -267,17 +268,17 @@ for(int i = offset + length - 1;i >= offset;i--)
                 IOException var026BB6CEDAAF18AFE37343DFB85FF3B4_591040433 = new IOException("Pushback buffer full");
                 var026BB6CEDAAF18AFE37343DFB85FF3B4_591040433.addTaint(taint);
                 throw var026BB6CEDAAF18AFE37343DFB85FF3B4_591040433;
-            } //End block
+            } 
             buf[--pos] = (char) oneChar;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (pos == 0) {
-                //throw new IOException("Pushback buffer full");
-            //}
-            //buf[--pos] = (char) oneChar;
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -289,7 +290,7 @@ for(int i = offset + length - 1;i >= offset;i--)
             IllegalArgumentException var1938519F99623D8B8D1D15216863BFAB_1268329571 = new IllegalArgumentException("charCount < 0: " + charCount);
             var1938519F99623D8B8D1D15216863BFAB_1268329571.addTaint(taint);
             throw var1938519F99623D8B8D1D15216863BFAB_1268329571;
-        } //End block
+        } 
         synchronized
 (lock)        {
             checkNotClosed();
@@ -298,7 +299,7 @@ for(int i = offset + length - 1;i >= offset;i--)
                 long varCFCD208495D565EF66E7DFF9F98764DA_1961434833 = (0);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_595248262 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_595248262;
-            } //End block
+            } 
             long inSkipped;
             int availableFromBuffer = buf.length - pos;
     if(availableFromBuffer > 0)            
@@ -310,20 +311,20 @@ for(int i = offset + length - 1;i >= offset;i--)
                     long var87B6255985D14399838576A0F7C87503_2005441498 = (charCount);
                                         long var0F5264038205EDFB1AC05FBB0E8C5E94_188035617 = getTaintLong();
                     return var0F5264038205EDFB1AC05FBB0E8C5E94_188035617;
-                } //End block
+                } 
                 pos += availableFromBuffer;
                 inSkipped = in.skip(requiredFromIn);
-            } //End block
+            } 
             else
             {
                 inSkipped = in.skip(charCount);
-            } //End block
+            } 
             long var2B3F6752AF749E934595A4A941B84409_861443536 = (inSkipped + availableFromBuffer);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1366034595 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1366034595;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

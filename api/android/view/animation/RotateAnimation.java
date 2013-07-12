@@ -1,6 +1,6 @@
 package android.view.animation;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,21 +53,21 @@ public class RotateAnimation extends Animation {
         mPivotYType = d.type;
         mPivotYValue = d.value;
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.RotateAnimation);
-        //mFromDegrees = a.getFloat(
-                //com.android.internal.R.styleable.RotateAnimation_fromDegrees, 0.0f);
-        //mToDegrees = a.getFloat(com.android.internal.R.styleable.RotateAnimation_toDegrees, 0.0f);
-        //Description d = Description.parseValue(a.peekValue(
-            //com.android.internal.R.styleable.RotateAnimation_pivotX));
-        //mPivotXType = d.type;
-        //mPivotXValue = d.value;
-        //d = Description.parseValue(a.peekValue(
-            //com.android.internal.R.styleable.RotateAnimation_pivotY));
-        //mPivotYType = d.type;
-        //mPivotYValue = d.value;
-        //a.recycle();
+        
+        
+                
+        
+                
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -77,11 +77,11 @@ public class RotateAnimation extends Animation {
         mToDegrees = toDegrees;
         mPivotX = 0.0f;
         mPivotY = 0.0f;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotX = 0.0f;
-        //mPivotY = 0.0f;
+        
+        
+        
+        
+        
     }
 
     
@@ -93,13 +93,13 @@ public class RotateAnimation extends Animation {
         mPivotYType = ABSOLUTE;
         mPivotXValue = pivotX;
         mPivotYValue = pivotY;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotXType = ABSOLUTE;
-        //mPivotYType = ABSOLUTE;
-        //mPivotXValue = pivotX;
-        //mPivotYValue = pivotY;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -112,13 +112,13 @@ public class RotateAnimation extends Animation {
         mPivotXType = pivotXType;
         mPivotYValue = pivotYValue;
         mPivotYType = pivotYType;
-        // ---------- Original Method ----------
-        //mFromDegrees = fromDegrees;
-        //mToDegrees = toDegrees;
-        //mPivotXValue = pivotXValue;
-        //mPivotXType = pivotXType;
-        //mPivotYValue = pivotYValue;
-        //mPivotYType = pivotYType;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -132,19 +132,19 @@ public class RotateAnimation extends Animation {
     if(mPivotX == 0.0f && mPivotY == 0.0f)        
         {
             t.getMatrix().setRotate(degrees);
-        } //End block
+        } 
         else
         {
             t.getMatrix().setRotate(degrees, mPivotX * scale, mPivotY * scale);
-        } //End block
-        // ---------- Original Method ----------
-        //float degrees = mFromDegrees + ((mToDegrees - mFromDegrees) * interpolatedTime);
-        //float scale = getScaleFactor();
-        //if (mPivotX == 0.0f && mPivotY == 0.0f) {
-            //t.getMatrix().setRotate(degrees);
-        //} else {
-            //t.getMatrix().setRotate(degrees, mPivotX * scale, mPivotY * scale);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -154,10 +154,10 @@ public class RotateAnimation extends Animation {
         super.initialize(width, height, parentWidth, parentHeight);
         mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
         mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
-        // ---------- Original Method ----------
-        //super.initialize(width, height, parentWidth, parentHeight);
-        //mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
-        //mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,46 +25,50 @@ public class Registrant {
         refH = new WeakReference(h);
         this.what = what;
         userObj = obj;
-        // ---------- Original Method ----------
-        //refH = new WeakReference(h);
-        //this.what = what;
-        //userObj = obj;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.432 -0400", hash_original_method = "AD65744D6793AC8F89861EE1586F2E60", hash_generated_method = "0652DDD73EE83AEB0035EB645B57E65A")
     public void clear() {
         refH = null;
         userObj = null;
-        // ---------- Original Method ----------
-        //refH = null;
-        //userObj = null;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.432 -0400", hash_original_method = "4409C699F4CAB16C2D504E283EFD3CDE", hash_generated_method = "28D035BF35B005A395534D365D96D57D")
     public void notifyRegistrant() {
         internalNotifyRegistrant (null, null);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (null, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.432 -0400", hash_original_method = "64830107363F59A49C8D9CD8F53D1153", hash_generated_method = "EE1CD4AA79A03607A94F9EE115A6B472")
     public void notifyResult(Object result) {
         addTaint(result.getTaint());
         internalNotifyRegistrant (result, null);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (result, null);
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.433 -0400", hash_original_method = "3375894D9F21481D987FA847F34F65EF", hash_generated_method = "690CF7D49B68DF3F37F2A474174C0397")
     public void notifyException(Throwable exception) {
         addTaint(exception.getTaint());
         internalNotifyRegistrant (null, exception);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (null, exception);
+        
+        
     }
 
     
@@ -72,11 +76,12 @@ public class Registrant {
     public void notifyRegistrant(AsyncResult ar) {
         addTaint(ar.getTaint());
         internalNotifyRegistrant (ar.result, ar.exception);
-        // ---------- Original Method ----------
-        //internalNotifyRegistrant (ar.result, ar.exception);
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.434 -0400", hash_original_method = "8E93682DAE1125F8892DB75F842EE54A", hash_generated_method = "6BE42F4E4466874DF431DFBC36BB6F73")
      void internalNotifyRegistrant(Object result, Throwable exception) {
         addTaint(exception.getTaint());
@@ -85,24 +90,24 @@ public class Registrant {
     if(h == null)        
         {
             clear();
-        } //End block
+        } 
         else
         {
             Message msg = Message.obtain();
             msg.what = what;
             msg.obj = new AsyncResult(userObj, result, exception);
             h.sendMessage(msg);
-        } //End block
-        // ---------- Original Method ----------
-        //Handler h = getHandler();
-        //if (h == null) {
-            //clear();
-        //} else {
-            //Message msg = Message.obtain();
-            //msg.what = what;
-            //msg.obj = new AsyncResult(userObj, result, exception);
-            //h.sendMessage(msg);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -115,7 +120,7 @@ public class Registrant {
 Message var540C13E9E156B687226421B24F2DF178_1780511197 =             null;
             var540C13E9E156B687226421B24F2DF178_1780511197.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1780511197;
-        } //End block
+        } 
         else
         {
             Message msg = h.obtainMessage();
@@ -124,21 +129,22 @@ Message var540C13E9E156B687226421B24F2DF178_1780511197 =             null;
 Message varEDC5B72465A7F0BEE288689BCB1DD141_67798529 =             msg;
             varEDC5B72465A7F0BEE288689BCB1DD141_67798529.addTaint(taint);
             return varEDC5B72465A7F0BEE288689BCB1DD141_67798529;
-        } //End block
-        // ---------- Original Method ----------
-        //Handler h = getHandler();
-        //if (h == null) {
-            //clear();
-            //return null;
-        //} else {
-            //Message msg = h.obtainMessage();
-            //msg.what = what;
-            //msg.obj = userObj;
-            //return msg;
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.436 -0400", hash_original_method = "7FEDB520AB82A5F00001E1B2C02807FF", hash_generated_method = "8B43ADEDD03CF5703E1E9DA730F93E07")
     public Handler getHandler() {
     if(refH == null)        
@@ -150,10 +156,10 @@ Handler var540C13E9E156B687226421B24F2DF178_1857672542 =         null;
 Handler varEEB4D628C97FC203FD0112B40DDC1199_1650529545 =         (Handler) refH.get();
         varEEB4D628C97FC203FD0112B40DDC1199_1650529545.addTaint(taint);
         return varEEB4D628C97FC203FD0112B40DDC1199_1650529545;
-        // ---------- Original Method ----------
-        //if (refH == null)
-            //return null;
-        //return (Handler) refH.get();
+        
+        
+            
+        
     }
 
     

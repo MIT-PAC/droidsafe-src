@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,11 +14,12 @@ public class L10nUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:58.549 -0400", hash_original_method = "E0BD4E5359B29F1B1ED75AB21E0F35C1", hash_generated_method = "E0BD4E5359B29F1B1ED75AB21E0F35C1")
     public L10nUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static void setApplicationContext(Context applicationContext) {
+        @DSModeled(DSC.BAN)
+    public static void setApplicationContext(Context applicationContext) {
         mApplicationContext = applicationContext.getApplicationContext();
     }
 
@@ -33,7 +34,8 @@ public class L10nUtils {
     }
 
     
-        public static String getLocalisedString(int id) {
+        @DSModeled(DSC.SPEC)
+    public static String getLocalisedString(int id) {
         if (mStrings == null) {
             return loadString(id);
         }

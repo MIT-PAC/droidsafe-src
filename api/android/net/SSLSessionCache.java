@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public final class SSLSessionCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:26.478 -0400", hash_original_method = "6BE9C825DC583F0CB57790078D9D850C", hash_generated_method = "BFF2023672F9B3C3573F503758C24A48")
     public  SSLSessionCache(File dir) throws IOException {
         mSessionCache = FileClientSessionCache.usingDirectory(dir);
-        // ---------- Original Method ----------
-        //mSessionCache = FileClientSessionCache.usingDirectory(dir);
+        
+        
     }
 
     
@@ -32,20 +32,20 @@ public final class SSLSessionCache {
         try 
         {
             cache = FileClientSessionCache.usingDirectory(dir);
-        } //End block
+        } 
         catch (IOException e)
         {
-        } //End block
+        } 
         mSessionCache = cache;
-        // ---------- Original Method ----------
-        //File dir = context.getDir("sslcache", Context.MODE_PRIVATE);
-        //SSLClientSessionCache cache = null;
-        //try {
-            //cache = FileClientSessionCache.usingDirectory(dir);
-        //} catch (IOException e) {
-            //Log.w(TAG, "Unable to create SSL session cache in " + dir, e);
-        //}
-        //mSessionCache = cache;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     

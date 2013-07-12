@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,11 +19,12 @@ public class TimeUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.408 -0400", hash_original_method = "90FFA2BDF77FA646318F5F30EF504BD2", hash_generated_method = "011199797FD3B540ED86DA17205AFF1D")
     public  TimeUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
+        @DSModeled(DSC.SPEC)
+    public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
         if (country == null) {
             return null;
         }
@@ -78,7 +79,8 @@ public class TimeUtils {
     }
 
     
-        static private int accumField(int amt, int suffix, boolean always, int zeropad) {
+        @DSModeled(DSC.SAFE)
+    static private int accumField(int amt, int suffix, boolean always, int zeropad) {
         if (amt > 99 || (always && zeropad >= 3)) {
             return 3+suffix;
         }
@@ -92,7 +94,8 @@ public class TimeUtils {
     }
 
     
-        static private int printField(char[] formatStr, int amt, char suffix, int pos,
+        @DSModeled(DSC.SAFE)
+    static private int printField(char[] formatStr, int amt, char suffix, int pos,
             boolean always, int zeropad) {
         if (always || amt > 0) {
             final int startPos = pos;

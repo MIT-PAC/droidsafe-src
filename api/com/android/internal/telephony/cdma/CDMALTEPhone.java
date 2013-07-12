@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,8 +36,8 @@ public class CDMALTEPhone extends CDMAPhone {
         addTaint(ci.getTaint());
         addTaint(context.getTaint());
         m3gppSMS = new GsmSMSDispatcher(this, mSmsStorageMonitor, mSmsUsageMonitor);
-        // ---------- Original Method ----------
-        //m3gppSMS = new GsmSMSDispatcher(this, mSmsStorageMonitor, mSmsUsageMonitor);
+        
+        
     }
 
     
@@ -54,16 +54,16 @@ switch(msg.what){
         default:
         super.handleMessage(msg);
 }
-        // ---------- Original Method ----------
-        //AsyncResult ar;
-        //Message onComplete;
-        //switch (msg.what) {
-            //case EVENT_SET_NETWORK_MANUAL_COMPLETE:
-                //handleSetSelectNetwork((AsyncResult) msg.obj);
-                //break;
-            //default:
-                //super.handleMessage(msg);
-        //}
+        
+        
+        
+        
+            
+                
+                
+            
+                
+        
     }
 
     
@@ -74,11 +74,11 @@ switch(msg.what){
         mIccRecords = new CdmaLteUiccRecords(this);
         mIccCard = new SimCard(this, LOG_TAG, DBG);
         mIccFileHandler = new CdmaLteUiccFileHandler(this);
-        // ---------- Original Method ----------
-        //mSST = new CdmaLteServiceStateTracker(this);
-        //mIccRecords = new CdmaLteUiccRecords(this);
-        //mIccCard = new SimCard(this, LOG_TAG, DBG);
-        //mIccFileHandler = new CdmaLteUiccFileHandler(this);
+        
+        
+        
+        
+        
     }
 
     
@@ -89,12 +89,12 @@ switch(msg.what){
 (PhoneProxy.lockForRadioTechnologyChange)        {
             super.dispose();
             m3gppSMS.dispose();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized(PhoneProxy.lockForRadioTechnologyChange) {
-            //super.dispose();
-            //m3gppSMS.dispose();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -103,9 +103,9 @@ switch(msg.what){
     public void removeReferences() {
         super.removeReferences();
         m3gppSMS = null;
-        // ---------- Original Method ----------
-        //super.removeReferences();
-        //m3gppSMS = null;
+        
+        
+        
     }
 
     
@@ -117,12 +117,12 @@ switch(msg.what){
     if(mSST == null)        
         {
             ret = DataState.DISCONNECTED;
-        } //End block
+        } 
         else
     if(mDataConnectionTracker.isApnTypeEnabled(apnType) == false)        
         {
             ret = DataState.DISCONNECTED;
-        } //End block
+        } 
         else
         {
 switch(mDataConnectionTracker.getState(apnType)){
@@ -135,11 +135,11 @@ switch(mDataConnectionTracker.getState(apnType)){
     if(mCT.state != Phone.State.IDLE && !mSST.isConcurrentVoiceAndDataAllowed())            
             {
                 ret = DataState.SUSPENDED;
-            } //End block
+            } 
             else
             {
                 ret = DataState.CONNECTED;
-            } //End block
+            } 
             break;
             case INITING:
             case CONNECTING:
@@ -147,16 +147,17 @@ switch(mDataConnectionTracker.getState(apnType)){
             ret = DataState.CONNECTING;
             break;
 }
-        } //End block
+        } 
         log("getDataConnectionState apnType=" + apnType + " ret=" + ret);
 DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.622 -0400", hash_original_method = "388CF66FD02B64F200B61D1E744A0B56", hash_generated_method = "ED3994A72D1681C6ED272E38D565CABC")
     @Override
     public void selectNetworkManually(OperatorInfo network,
@@ -169,13 +170,13 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
         nsm.operatorAlphaLong = network.getOperatorAlphaLong();
         Message msg = obtainMessage(EVENT_SET_NETWORK_MANUAL_COMPLETE, nsm);
         mCM.setNetworkSelectionModeManual(network.getOperatorNumeric(), msg);
-        // ---------- Original Method ----------
-        //NetworkSelectMessage nsm = new NetworkSelectMessage();
-        //nsm.message = response;
-        //nsm.operatorNumeric = network.getOperatorNumeric();
-        //nsm.operatorAlphaLong = network.getOperatorAlphaLong();
-        //Message msg = obtainMessage(EVENT_SET_NETWORK_MANUAL_COMPLETE, nsm);
-        //mCM.setNetworkSelectionModeManual(network.getOperatorNumeric(), msg);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -187,7 +188,7 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     if(DBG)            
             Log.d(LOG_TAG, "unexpected result from user object.");
             return;
-        } //End block
+        } 
         NetworkSelectMessage nsm = (NetworkSelectMessage) ar.userObj;
     if(nsm.message != null)        
         {
@@ -195,16 +196,16 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
             Log.d(LOG_TAG, "sending original message to recipient");
             AsyncResult.forMessage(nsm.message, ar.result, ar.exception);
             nsm.message.sendToTarget();
-        } //End block
+        } 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(getContext());
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(NETWORK_SELECTION_KEY, nsm.operatorNumeric);
         editor.putString(NETWORK_SELECTION_NAME_KEY, nsm.operatorAlphaLong);
     if(! editor.commit())        
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -224,38 +225,39 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
                 boolean varB326B5062B2F0E69046810717534CB09_878570954 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_883869464 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_883869464;
-            } //End block
+            } 
             catch (SQLException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             log("updateCurrentCarrierInProvider mIccRecords == null ret false");
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_304827799 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_33579852 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_33579852;
-        // ---------- Original Method ----------
-        //if (mIccRecords != null) {
-            //try {
-                //Uri uri = Uri.withAppendedPath(Telephony.Carriers.CONTENT_URI, "current");
-                //ContentValues map = new ContentValues();
-                //String operatorNumeric = mIccRecords.getOperatorNumeric();
-                //map.put(Telephony.Carriers.NUMERIC, operatorNumeric);
-                //log("updateCurrentCarrierInProvider from UICC: numeric=" + operatorNumeric);
-                //mContext.getContentResolver().insert(uri, map);
-                //return true;
-            //} catch (SQLException e) {
-                //Log.e(LOG_TAG, "[CDMALTEPhone] Can't store current operator ret false", e);
-            //}
-        //} else {
-            //log("updateCurrentCarrierInProvider mIccRecords == null ret false");
-        //}
-        //return false;
+        
+        
+            
+                
+                
+                
+                
+                
+                
+                
+            
+                
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "3E01D20FCE14548AEDCD05440449A2C4", hash_generated_method = "C0318C47A19F42F3751E8F5DF75E2F6C")
     @Override
     public void setSystemLocale(String language, String country, boolean fromMcc) {
@@ -265,9 +267,9 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
     if(fromMcc)        
         return;
         super.setSystemLocale(language, country, false);
-        // ---------- Original Method ----------
-        //if (fromMcc) return;
-        //super.setSystemLocale(language, country, false);
+        
+        
+        
     }
 
     
@@ -277,30 +279,32 @@ DataState varEDFF4FBBF053B5DC2B444ADFA049EE0F_2034734996 =         ret;
 String var9E0F6CF9E749066E7163DA637BDC770E_1890310153 =         mIccRecords.getIMSI();
         var9E0F6CF9E749066E7163DA637BDC770E_1890310153.addTaint(taint);
         return var9E0F6CF9E749066E7163DA637BDC770E_1890310153;
-        // ---------- Original Method ----------
-        //return mIccRecords.getIMSI();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.626 -0400", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "5AFCBAB8A5BDA69A65622C7BE760B9B5")
     @Override
     public String getImei() {
 String varDEC341D68DE51B3F93C3763FDA1DF1F5_1923884351 =         mImei;
         varDEC341D68DE51B3F93C3763FDA1DF1F5_1923884351.addTaint(taint);
         return varDEC341D68DE51B3F93C3763FDA1DF1F5_1923884351;
-        // ---------- Original Method ----------
-        //return mImei;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.627 -0400", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "134730FC46821F3CA992113221862242")
     @Override
     public String getDeviceSvn() {
 String var440DA0F542A7DF067CD1A564FADAEE1C_943659356 =         mImeiSv;
         var440DA0F542A7DF067CD1A564FADAEE1C_943659356.addTaint(taint);
         return var440DA0F542A7DF067CD1A564FADAEE1C_943659356;
-        // ---------- Original Method ----------
-        //return mImeiSv;
+        
+        
     }
 
     
@@ -310,8 +314,8 @@ String var440DA0F542A7DF067CD1A564FADAEE1C_943659356 =         mImeiSv;
 IsimRecords varA54E2F00206ADE38CAE9E5438115660C_800510347 =         mIccRecords.getIsimRecords();
         varA54E2F00206ADE38CAE9E5438115660C_800510347.addTaint(taint);
         return varA54E2F00206ADE38CAE9E5438115660C_800510347;
-        // ---------- Original Method ----------
-        //return mIccRecords.getIsimRecords();
+        
+        
     }
 
     
@@ -321,8 +325,8 @@ IsimRecords varA54E2F00206ADE38CAE9E5438115660C_800510347 =         mIccRecords.
 String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMsisdnNumber();
         var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075.addTaint(taint);
         return var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075;
-        // ---------- Original Method ----------
-        //return mIccRecords.getMsisdnNumber();
+        
+        
     }
 
     
@@ -331,8 +335,8 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
     public void getAvailableNetworks(Message response) {
         addTaint(response.getTaint());
         mCM.getAvailableNetworks(response);
-        // ---------- Original Method ----------
-        //mCM.getAvailableNetworks(response);
+        
+        
     }
 
     
@@ -342,8 +346,8 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
         addTaint(result.getTaint());
         addTaint(nonce.getTaint());
         mCM.requestIsimAuthentication(nonce, result);
-        // ---------- Original Method ----------
-        //mCM.requestIsimAuthentication(nonce, result);
+        
+        
     }
 
     
@@ -353,9 +357,9 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
         addTaint(s.getTaint());
     if(DBG)        
         Log.d(LOG_TAG, "[CDMALTEPhone] " + s);
-        // ---------- Original Method ----------
-        //if (DBG)
-            //Log.d(LOG_TAG, "[CDMALTEPhone] " + s);
+        
+        
+            
     }
 
     
@@ -373,7 +377,7 @@ String var5C9367DA2C8CEA98FE0C3A1CC04F5C4B_222578075 =         mIccRecords.getMs
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.629 -0400", hash_original_method = "3039E12EC83A8AA31D55051619D54055", hash_generated_method = "3039E12EC83A8AA31D55051619D54055")
         public NetworkSelectMessage ()
         {
-            //Synthesized constructor
+            
         }
 
 

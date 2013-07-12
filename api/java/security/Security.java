@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,7 +23,7 @@ public final class Security {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.484 -0400", hash_original_method = "8A23448EE3E63F2FDD1EDADC770A872E", hash_generated_method = "F38A362CCE128359797141D3F83E6272")
     private  Security() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -221,15 +221,15 @@ public final class Security {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.489 -0400", hash_original_method = "65CA8440349C4BCE4680F5FB73F99876", hash_generated_method = "65CA8440349C4BCE4680F5FB73F99876")
         public SecurityDoor ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.490 -0400", hash_original_method = "CC38396CF5E2C0D8624B241063796894", hash_generated_method = "CB29F99BA7A9E1FCCA38171345383D55")
         public void renumProviders() {
             Security.renumProviders();
-            // ---------- Original Method ----------
-            //Security.renumProviders();
+            
+            
         }
 
         
@@ -239,8 +239,8 @@ public final class Security {
 List<String> varFB798771B5D9FDB202B7BDE0A3A47609_506834003 =             s.getAliases();
             varFB798771B5D9FDB202B7BDE0A3A47609_506834003.addTaint(taint);
             return varFB798771B5D9FDB202B7BDE0A3A47609_506834003;
-            // ---------- Original Method ----------
-            //return s.getAliases();
+            
+            
         }
 
         
@@ -251,8 +251,8 @@ List<String> varFB798771B5D9FDB202B7BDE0A3A47609_506834003 =             s.getAl
 Provider.Service var97654D0B775FC299036FDFBB664F9A11_770030087 =             p.getService(type);
             var97654D0B775FC299036FDFBB664F9A11_770030087.addTaint(taint);
             return var97654D0B775FC299036FDFBB664F9A11_770030087;
-            // ---------- Original Method ----------
-            //return p.getService(type);
+            
+            
         }
 
         

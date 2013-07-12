@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class AcceptParser extends ParametersParser {
     public  AcceptParser(String accept) {
         super(accept);
         addTaint(accept.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class AcceptParser extends ParametersParser {
     protected  AcceptParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,18 +63,18 @@ public class AcceptParser extends ParametersParser {
                 this.lexer.SPorHT();
                 super.parse(accept);
                 list.add(accept);
-            } //End block
+            } 
 SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_1273043867;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("AcceptParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

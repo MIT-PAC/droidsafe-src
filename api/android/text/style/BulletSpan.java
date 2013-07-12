@@ -1,6 +1,6 @@
 package android.text.style;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,10 +30,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = STANDARD_GAP_WIDTH;
         mWantColor = false;
         mColor = 0;
-        // ---------- Original Method ----------
-        //mGapWidth = STANDARD_GAP_WIDTH;
-        //mWantColor = false;
-        //mColor = 0;
+        
+        
+        
+        
     }
 
     
@@ -42,10 +42,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = gapWidth;
         mWantColor = false;
         mColor = 0;
-        // ---------- Original Method ----------
-        //mGapWidth = gapWidth;
-        //mWantColor = false;
-        //mColor = 0;
+        
+        
+        
+        
     }
 
     
@@ -54,10 +54,10 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = gapWidth;
         mWantColor = true;
         mColor = color;
-        // ---------- Original Method ----------
-        //mGapWidth = gapWidth;
-        //mWantColor = true;
-        //mColor = color;
+        
+        
+        
+        
     }
 
     
@@ -66,33 +66,36 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         mGapWidth = src.readInt();
         mWantColor = src.readInt() != 0;
         mColor = src.readInt();
-        // ---------- Original Method ----------
-        //mGapWidth = src.readInt();
-        //mWantColor = src.readInt() != 0;
-        //mColor = src.readInt();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.141 -0400", hash_original_method = "487ABDFFC7C87077FB337ABC7D22F575", hash_generated_method = "5C084C9A5C4469C5E39311B4A54CBEBA")
     public int getSpanTypeId() {
         int var6AB8F49C46B377A2606471607E7ED458_878187425 = (TextUtils.BULLET_SPAN);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2103231317 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2103231317;
-        // ---------- Original Method ----------
-        //return TextUtils.BULLET_SPAN;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.141 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6E6F7041041095079D18B2CC95DDC668")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1560468743 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_682246741 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_682246741;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.141 -0400", hash_original_method = "D1CA1ADAD215DD7AD321DC70F751BAEF", hash_generated_method = "6FA2F406DF5220CDC31A040907A762E5")
     public void writeToParcel(Parcel dest, int flags) {
         addTaint(flags);
@@ -100,24 +103,26 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
         dest.writeInt(mGapWidth);
         dest.writeInt(mWantColor ? 1 : 0);
         dest.writeInt(mColor);
-        // ---------- Original Method ----------
-        //dest.writeInt(mGapWidth);
-        //dest.writeInt(mWantColor ? 1 : 0);
-        //dest.writeInt(mColor);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.142 -0400", hash_original_method = "77C9B4F0913BD5D8F7E0CF3C61E7D063", hash_generated_method = "D851C68CF77EF9E96FCE650BC348B5B7")
     public int getLeadingMargin(boolean first) {
         addTaint(first);
         int var56C1E329B9F661A38D634CA2962DC7B4_467164054 = (2 * BULLET_RADIUS + mGapWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1022421517 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1022421517;
-        // ---------- Original Method ----------
-        //return 2 * BULLET_RADIUS + mGapWidth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.143 -0400", hash_original_method = "BA5CC5CF550A22429CB3793943786FE7", hash_generated_method = "C4FEE5F3203BDCECE94F45D8901C4AAE")
     public void drawLeadingMargin(Canvas c, Paint p, int x, int dir,
                                   int top, int baseline, int bottom,
@@ -143,7 +148,7 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
             {
                 oldcolor = p.getColor();
                 p.setColor(mColor);
-            } //End block
+            } 
             p.setStyle(Paint.Style.FILL);
     if(c.isHardwareAccelerated())            
             {
@@ -151,24 +156,24 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
                 {
                     sBulletPath = new Path();
                     sBulletPath.addCircle(0.0f, 0.0f, 1.2f * BULLET_RADIUS, Direction.CW);
-                } //End block
+                } 
                 c.save();
                 c.translate(x + dir * BULLET_RADIUS, (top + bottom) / 2.0f);
                 c.drawPath(sBulletPath, p);
                 c.restore();
-            } //End block
+            } 
             else
             {
                 c.drawCircle(x + dir * BULLET_RADIUS, (top + bottom) / 2.0f, BULLET_RADIUS, p);
-            } //End block
+            } 
     if(mWantColor)            
             {
                 p.setColor(oldcolor);
-            } //End block
+            } 
             p.setStyle(style);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

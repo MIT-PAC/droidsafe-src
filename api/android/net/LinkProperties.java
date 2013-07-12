@@ -1,6 +1,6 @@
 package android.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,8 +34,8 @@ public class LinkProperties implements Parcelable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.492 -0400", hash_original_method = "A2AA1798C08A5590A3DB637A5B794F80", hash_generated_method = "61D49920A9252FA3879C7DD8F5F55E1D")
     public  LinkProperties() {
         clear();
-        // ---------- Original Method ----------
-        //clear();
+        
+        
     }
 
     
@@ -52,34 +52,36 @@ for(RouteInfo r : source.getRoutes())
             mRoutes.add(r);
             mHttpProxy = (source.getHttpProxy() == null)  ?
                 null : new ProxyProperties(source.getHttpProxy());
-        } //End block
-        // ---------- Original Method ----------
-        //if (source != null) {
-            //mIfaceName = source.getInterfaceName();
-            //for (LinkAddress l : source.getLinkAddresses()) mLinkAddresses.add(l);
-            //for (InetAddress i : source.getDnses()) mDnses.add(i);
-            //for (RouteInfo r : source.getRoutes()) mRoutes.add(r);
-            //mHttpProxy = (source.getHttpProxy() == null)  ?
-                //null : new ProxyProperties(source.getHttpProxy());
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.493 -0400", hash_original_method = "658C71C3CDAAE8BF2A6E808615EC0533", hash_generated_method = "D58C219F5C5992BE6A4B05BFFDE78502")
     public void setInterfaceName(String iface) {
         mIfaceName = iface;
-        // ---------- Original Method ----------
-        //mIfaceName = iface;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.493 -0400", hash_original_method = "DE3FEB2907F1F43DDDDBA76FC2B5A592", hash_generated_method = "00DBDC025AE1C4F2B2711052096EE4DC")
     public String getInterfaceName() {
 String varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303 =         mIfaceName;
         varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303.addTaint(taint);
         return varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303;
-        // ---------- Original Method ----------
-        //return mIfaceName;
+        
+        
     }
 
     
@@ -89,16 +91,16 @@ String varDBBF7F34FEA77D2F5A034B4E3366C61F_1175500303 =         mIfaceName;
 for(LinkAddress linkAddress : mLinkAddresses)
         {
             addresses.add(linkAddress.getAddress());
-        } //End block
+        } 
 Collection<InetAddress> var6419FF4782F380F3448977EB89A48275_1919595701 =         Collections.unmodifiableCollection(addresses);
         var6419FF4782F380F3448977EB89A48275_1919595701.addTaint(taint);
         return var6419FF4782F380F3448977EB89A48275_1919595701;
-        // ---------- Original Method ----------
-        //Collection<InetAddress> addresses = new ArrayList<InetAddress>();
-        //for (LinkAddress linkAddress : mLinkAddresses) {
-            //addresses.add(linkAddress.getAddress());
-        //}
-        //return Collections.unmodifiableCollection(addresses);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -107,8 +109,8 @@ Collection<InetAddress> var6419FF4782F380F3448977EB89A48275_1919595701 =        
         addTaint(address.getTaint());
     if(address != null)        
         mLinkAddresses.add(address);
-        // ---------- Original Method ----------
-        //if (address != null) mLinkAddresses.add(address);
+        
+        
     }
 
     
@@ -117,8 +119,8 @@ Collection<InetAddress> var6419FF4782F380F3448977EB89A48275_1919595701 =        
 Collection<LinkAddress> var27C4CB910FDED38F12DD8846316AB7F8_2005307710 =         Collections.unmodifiableCollection(mLinkAddresses);
         var27C4CB910FDED38F12DD8846316AB7F8_2005307710.addTaint(taint);
         return var27C4CB910FDED38F12DD8846316AB7F8_2005307710;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(mLinkAddresses);
+        
+        
     }
 
     
@@ -127,8 +129,8 @@ Collection<LinkAddress> var27C4CB910FDED38F12DD8846316AB7F8_2005307710 =        
         addTaint(dns.getTaint());
     if(dns != null)        
         mDnses.add(dns);
-        // ---------- Original Method ----------
-        //if (dns != null) mDnses.add(dns);
+        
+        
     }
 
     
@@ -137,8 +139,8 @@ Collection<LinkAddress> var27C4CB910FDED38F12DD8846316AB7F8_2005307710 =        
 Collection<InetAddress> var403B15EFA3DEE7746142DD35B22D830C_2026083592 =         Collections.unmodifiableCollection(mDnses);
         var403B15EFA3DEE7746142DD35B22D830C_2026083592.addTaint(taint);
         return var403B15EFA3DEE7746142DD35B22D830C_2026083592;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(mDnses);
+        
+        
     }
 
     
@@ -147,8 +149,8 @@ Collection<InetAddress> var403B15EFA3DEE7746142DD35B22D830C_2026083592 =        
         addTaint(route.getTaint());
     if(route != null)        
         mRoutes.add(route);
-        // ---------- Original Method ----------
-        //if (route != null) mRoutes.add(route);
+        
+        
     }
 
     
@@ -157,26 +159,28 @@ Collection<InetAddress> var403B15EFA3DEE7746142DD35B22D830C_2026083592 =        
 Collection<RouteInfo> var5AD2DA20604AB9506F6623852FC9A803_533550709 =         Collections.unmodifiableCollection(mRoutes);
         var5AD2DA20604AB9506F6623852FC9A803_533550709.addTaint(taint);
         return var5AD2DA20604AB9506F6623852FC9A803_533550709;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableCollection(mRoutes);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "A3A7E4451F64D99820B4BAAEF1AFE8A2", hash_generated_method = "8C961CFF90F31516B337EDFD675E66E4")
     public void setHttpProxy(ProxyProperties proxy) {
         mHttpProxy = proxy;
-        // ---------- Original Method ----------
-        //mHttpProxy = proxy;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.496 -0400", hash_original_method = "6E571D9EDF02B85B7F325367F981AC91", hash_generated_method = "352AD3DD3C4D13D8016303D99EFCA098")
     public ProxyProperties getHttpProxy() {
 ProxyProperties var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512 =         mHttpProxy;
         var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512.addTaint(taint);
         return var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512;
-        // ---------- Original Method ----------
-        //return mHttpProxy;
+        
+        
     }
 
     
@@ -187,22 +191,23 @@ ProxyProperties var8C1D00C1505CE1BA6F0EC413A8FF4F4A_1967034512 =         mHttpPr
         mDnses.clear();
         mRoutes.clear();
         mHttpProxy = null;
-        // ---------- Original Method ----------
-        //mIfaceName = null;
-        //mLinkAddresses.clear();
-        //mDnses.clear();
-        //mRoutes.clear();
-        //mHttpProxy = null;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.497 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "8827EB6ED5EE35586619A7AC08AEC4ED")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1484843669 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152223887 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1152223887;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -226,19 +231,19 @@ for(RouteInfo route : mRoutes)
 String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkAddresses + routes + dns + proxy;
         var430472DB386972AD2D3982D89089051C_863804347.addTaint(taint);
         return var430472DB386972AD2D3982D89089051C_863804347;
-        // ---------- Original Method ----------
-        //String ifaceName = (mIfaceName == null ? "" : "InterfaceName: " + mIfaceName + " ");
-        //String linkAddresses = "LinkAddresses: [";
-        //for (LinkAddress addr : mLinkAddresses) linkAddresses += addr.toString() + ",";
-        //linkAddresses += "] ";
-        //String dns = "DnsAddresses: [";
-        //for (InetAddress addr : mDnses) dns += addr.getHostAddress() + ",";
-        //dns += "] ";
-        //String routes = "Routes: [";
-        //for (RouteInfo route : mRoutes) routes += route.toString() + ",";
-        //routes += "] ";
-        //String proxy = (mHttpProxy == null ? "" : "HttpProxy: " + mHttpProxy.toString() + " ");
-        //return ifaceName + linkAddresses + routes + dns + proxy;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -248,8 +253,8 @@ String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkA
         boolean varD20D30097790CAF68F9CE6536FAE7A8F_1731274473 = (TextUtils.equals(getInterfaceName(), target.getInterfaceName()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_685383607 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_685383607;
-        // ---------- Original Method ----------
-        //return TextUtils.equals(getInterfaceName(), target.getInterfaceName());
+        
+        
     }
 
     
@@ -262,11 +267,11 @@ String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkA
                     sourceAddresses.containsAll(targetAddresses) : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_249774975 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_249774975;
-        // ---------- Original Method ----------
-        //Collection<InetAddress> targetAddresses = target.getAddresses();
-        //Collection<InetAddress> sourceAddresses = getAddresses();
-        //return (sourceAddresses.size() == targetAddresses.size()) ?
-                    //sourceAddresses.containsAll(targetAddresses) : false;
+        
+        
+        
+        
+                    
     }
 
     
@@ -278,10 +283,10 @@ String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkA
                     mDnses.containsAll(targetDnses) : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_24848705 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_24848705;
-        // ---------- Original Method ----------
-        //Collection<InetAddress> targetDnses = target.getDnses();
-        //return (mDnses.size() == targetDnses.size()) ?
-                    //mDnses.containsAll(targetDnses) : false;
+        
+        
+        
+                    
     }
 
     
@@ -293,10 +298,10 @@ String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkA
                     mRoutes.containsAll(targetRoutes) : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373478115 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373478115;
-        // ---------- Original Method ----------
-        //Collection<RouteInfo> targetRoutes = target.getRoutes();
-        //return (mRoutes.size() == targetRoutes.size()) ?
-                    //mRoutes.containsAll(targetRoutes) : false;
+        
+        
+        
+                    
     }
 
     
@@ -307,9 +312,9 @@ String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkA
                     getHttpProxy().equals(target.getHttpProxy()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_329138992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_329138992;
-        // ---------- Original Method ----------
-        //return getHttpProxy() == null ? target.getHttpProxy() == null :
-                    //getHttpProxy().equals(target.getHttpProxy());
+        
+        
+                    
     }
 
     
@@ -337,15 +342,15 @@ String var430472DB386972AD2D3982D89089051C_863804347 =         ifaceName + linkA
                 isIdenticalHttpProxy(target));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_503640270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_503640270;
-        // ---------- Original Method ----------
-        //if (this == obj) return true;
-        //if (!(obj instanceof LinkProperties)) return false;
-        //LinkProperties target = (LinkProperties) obj;
-        //return isIdenticalInterfaceName(target) &&
-                //isIdenticalAddresses(target) &&
-                //isIdenticalDnses(target) &&
-                //isIdenticalRoutes(target) &&
-                //isIdenticalHttpProxy(target);
+        
+        
+        
+        
+        
+                
+                
+                
+                
     }
 
     
@@ -362,24 +367,24 @@ for(LinkAddress newAddress : target.getLinkAddresses())
     if(! result.removed.remove(newAddress))                
                 {
                     result.added.add(newAddress);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 CompareResult<LinkAddress> varDC838461EE2FA0CA4C9BBB70A15456B0_1027406539 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1027406539.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1027406539;
-        // ---------- Original Method ----------
-        //CompareResult<LinkAddress> result = new CompareResult<LinkAddress>();
-        //result.removed = new ArrayList<LinkAddress>(mLinkAddresses);
-        //result.added.clear();
-        //if (target != null) {
-            //for (LinkAddress newAddress : target.getLinkAddresses()) {
-                //if (! result.removed.remove(newAddress)) {
-                    //result.added.add(newAddress);
-                //}
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -396,24 +401,24 @@ for(InetAddress newAddress : target.getDnses())
     if(! result.removed.remove(newAddress))                
                 {
                     result.added.add(newAddress);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 CompareResult<InetAddress> varDC838461EE2FA0CA4C9BBB70A15456B0_439974277 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_439974277.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_439974277;
-        // ---------- Original Method ----------
-        //CompareResult<InetAddress> result = new CompareResult<InetAddress>();
-        //result.removed = new ArrayList<InetAddress>(mDnses);
-        //result.added.clear();
-        //if (target != null) {
-            //for (InetAddress newAddress : target.getDnses()) {
-                //if (! result.removed.remove(newAddress)) {
-                    //result.added.add(newAddress);
-                //}
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -430,24 +435,24 @@ for(RouteInfo r : target.getRoutes())
     if(! result.removed.remove(r))                
                 {
                     result.added.add(r);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 CompareResult<RouteInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_718880752 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_718880752.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_718880752;
-        // ---------- Original Method ----------
-        //CompareResult<RouteInfo> result = new CompareResult<RouteInfo>();
-        //result.removed = new ArrayList<RouteInfo>(mRoutes);
-        //result.added.clear();
-        //if (target != null) {
-            //for (RouteInfo r : target.getRoutes()) {
-                //if (! result.removed.remove(r)) {
-                    //result.added.add(r);
-                //}
-            //}
-        //}
-        //return result;
+        
+        
+        
+        
+        
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -461,12 +466,12 @@ CompareResult<RouteInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_718880752 =        
                 + ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode())));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894944891 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_894944891;
-        // ---------- Original Method ----------
-        //return ((null == mIfaceName) ? 0 : mIfaceName.hashCode()
-                //+ mLinkAddresses.size() * 31
-                //+ mDnses.size() * 37
-                //+ mRoutes.size() * 41
-                //+ ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode()));
+        
+        
+                
+                
+                
+                
     }
 
     
@@ -479,46 +484,46 @@ CompareResult<RouteInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_718880752 =        
 for(LinkAddress linkAddress : mLinkAddresses)
         {
             dest.writeParcelable(linkAddress, flags);
-        } //End block
+        } 
         dest.writeInt(mDnses.size());
 for(InetAddress d : mDnses)
         {
             dest.writeByteArray(d.getAddress());
-        } //End block
+        } 
         dest.writeInt(mRoutes.size());
 for(RouteInfo route : mRoutes)
         {
             dest.writeParcelable(route, flags);
-        } //End block
+        } 
     if(mHttpProxy != null)        
         {
             dest.writeByte((byte)1);
             dest.writeParcelable(mHttpProxy, flags);
-        } //End block
+        } 
         else
         {
             dest.writeByte((byte)0);
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeString(getInterfaceName());
-        //dest.writeInt(mLinkAddresses.size());
-        //for(LinkAddress linkAddress : mLinkAddresses) {
-            //dest.writeParcelable(linkAddress, flags);
-        //}
-        //dest.writeInt(mDnses.size());
-        //for(InetAddress d : mDnses) {
-            //dest.writeByteArray(d.getAddress());
-        //}
-        //dest.writeInt(mRoutes.size());
-        //for(RouteInfo route : mRoutes) {
-            //dest.writeParcelable(route, flags);
-        //}
-        //if (mHttpProxy != null) {
-            //dest.writeByte((byte)1);
-            //dest.writeParcelable(mHttpProxy, flags);
-        //} else {
-            //dest.writeByte((byte)0);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -533,7 +538,7 @@ for(RouteInfo route : mRoutes)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:25.504 -0400", hash_original_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3", hash_generated_method = "8B9C887FE92C246DB85CDDBCEEBB2CF3")
         public CompareResult ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -550,13 +555,13 @@ for(T addr : added)
 String var906583DF257E5B26DD99AC8582D137B0_1476379577 =             retVal;
             var906583DF257E5B26DD99AC8582D137B0_1476379577.addTaint(taint);
             return var906583DF257E5B26DD99AC8582D137B0_1476379577;
-            // ---------- Original Method ----------
-            //String retVal = "removed=[";
-            //for (T addr : removed) retVal += addr.toString() + ",";
-            //retVal += "] added=[";
-            //for (T addr : added) retVal += addr.toString() + ",";
-            //retVal += "]";
-            //return retVal;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -602,7 +607,7 @@ String var906583DF257E5B26DD99AC8582D137B0_1476379577 =             retVal;
                 return new LinkProperties[size];
             }
         };
-    // orphaned legacy method
+    
     public LinkProperties createFromParcel(Parcel in) {
                 LinkProperties netProp = new LinkProperties();
                 String iface = in.readString();
@@ -633,7 +638,7 @@ String var906583DF257E5B26DD99AC8582D137B0_1476379577 =             retVal;
                 return netProp;
             }
     
-    // orphaned legacy method
+    
     public LinkProperties[] newArray(int size) {
                 return new LinkProperties[size];
             }

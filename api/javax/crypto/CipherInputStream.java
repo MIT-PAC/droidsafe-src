@@ -1,6 +1,6 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,8 +32,8 @@ public class CipherInputStream extends FilterInputStream {
         super(is);
         addTaint(is.getTaint());
         this.cipher = c;
-        // ---------- Original Method ----------
-        //this.cipher = c;
+        
+        
     }
 
     
@@ -41,7 +41,7 @@ public class CipherInputStream extends FilterInputStream {
     protected  CipherInputStream(InputStream is) {
         this(is, new NullCipher());
         addTaint(is.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -55,13 +55,13 @@ public class CipherInputStream extends FilterInputStream {
                             : outputBuffer[index++] & 0xFF);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_864969611 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_864969611;
-        } //End block
+        } 
     if((outputBuffer != null) && (index < outputBuffer.length))        
         {
             int var848357DABED5A612DE4CE8610A8C5E73_523659492 = (outputBuffer[index++] & 0xFF);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1517938409 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1517938409;
-        } //End block
+        } 
         index = 0;
         outputBuffer = null;
         int byteCount;
@@ -73,23 +73,23 @@ public class CipherInputStream extends FilterInputStream {
                 try 
                 {
                     outputBuffer = cipher.doFinal();
-                } //End block
+                } 
                 catch (Exception e)
                 {
                     IOException varDFC4605B531BC1C5380FD94E58912494_227017183 = new IOException(e.getMessage());
                     varDFC4605B531BC1C5380FD94E58912494_227017183.addTaint(taint);
                     throw varDFC4605B531BC1C5380FD94E58912494_227017183;
-                } //End block
+                } 
                 finished = true;
                 break;
-            } //End block
+            } 
             outputBuffer = cipher.update(inputBuffer, 0, byteCount);
-        } //End block
+        } 
         int varE7E34719EF211F19813DDD55A235C6DD_1682091622 = (read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904761269 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1904761269;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -104,7 +104,7 @@ public class CipherInputStream extends FilterInputStream {
             NullPointerException varFBA351A1EA49D8F5DF9241EE589B5CD1_1001562305 = new NullPointerException("Underlying input stream is null");
             varFBA351A1EA49D8F5DF9241EE589B5CD1_1001562305.addTaint(taint);
             throw varFBA351A1EA49D8F5DF9241EE589B5CD1_1001562305;
-        } //End block
+        } 
         int i;
 for(i = 0;i < len;++i)
         {
@@ -114,30 +114,30 @@ for(i = 0;i < len;++i)
                 int var9094914C036467CD32E9F7E210E518F4_209887684 = ((i == 0) ? -1 : i);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_726664221 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_726664221;
-            } //End block
+            } 
     if(buf != null)            
             {
                 buf[off+i] = (byte) b;
-            } //End block
-        } //End block
+            } 
+        } 
         int var865C0C0B4AB0E063E5CAA3387C1A8741_1208710928 = (i);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162948169 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_162948169;
-        // ---------- Original Method ----------
-        //if (in == null) {
-            //throw new NullPointerException("Underlying input stream is null");
-        //}
-        //int i;
-        //for (i = 0; i < len; ++i) {
-            //int b = read();
-            //if (b == -1) {
-                //return (i == 0) ? -1 : i;
-            //}
-            //if (buf != null) {
-                //buf[off+i] = (byte) b;
-            //}
-        //}
-        //return i;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -148,19 +148,20 @@ for(i = 0;i < len;++i)
         long var905193B4CE519E6DD3D91E1E370ADA87_1380095878 = (Streams.skipByReading(this, byteCount));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_52701423 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_52701423;
-        // ---------- Original Method ----------
-        //return Streams.skipByReading(this, byteCount);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.059 -0400", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "6DA00AE61863004D9AE46CBFE91C49B2")
     @Override
     public int available() throws IOException {
         int varCFCD208495D565EF66E7DFF9F98764DA_249561632 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_444224908 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_444224908;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -171,27 +172,28 @@ for(i = 0;i < len;++i)
         try 
         {
             cipher.doFinal();
-        } //End block
+        } 
         catch (GeneralSecurityException ignore)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //in.close();
-        //try {
-            //cipher.doFinal();
-        //} catch (GeneralSecurityException ignore) {
-        //}
+        } 
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.060 -0400", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "DBFBB5090A429A3D5EEDC01DA54EC2DC")
     @Override
     public boolean markSupported() {
         boolean var68934A3E9455FA72420237EB05902327_833131082 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_977719463 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_977719463;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     

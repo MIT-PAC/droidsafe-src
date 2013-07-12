@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,10 +34,10 @@ public class MenuInflater {
         mContext = context;
         mActionViewConstructorArguments = new Object[] {context};
         mActionProviderConstructorArguments = mActionViewConstructorArguments;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mActionViewConstructorArguments = new Object[] {context};
-        //mActionProviderConstructorArguments = mActionViewConstructorArguments;
+        
+        
+        
+        
     }
 
     
@@ -51,37 +51,37 @@ public class MenuInflater {
             parser = mContext.getResources().getLayout(menuRes);
             AttributeSet attrs = Xml.asAttributeSet(parser);
             parseMenu(parser, attrs, menu);
-        } //End block
+        } 
         catch (XmlPullParserException e)
         {
             InflateException var965BF2854D26F4CEBECF7A7E2AC4BFD8_28807165 = new InflateException("Error inflating menu XML", e);
             var965BF2854D26F4CEBECF7A7E2AC4BFD8_28807165.addTaint(taint);
             throw var965BF2854D26F4CEBECF7A7E2AC4BFD8_28807165;
-        } //End block
+        } 
         catch (IOException e)
         {
             InflateException var965BF2854D26F4CEBECF7A7E2AC4BFD8_1385014851 = new InflateException("Error inflating menu XML", e);
             var965BF2854D26F4CEBECF7A7E2AC4BFD8_1385014851.addTaint(taint);
             throw var965BF2854D26F4CEBECF7A7E2AC4BFD8_1385014851;
-        } //End block
+        } 
         finally 
         {
     if(parser != null)            
             parser.close();
-        } //End block
-        // ---------- Original Method ----------
-        //XmlResourceParser parser = null;
-        //try {
-            //parser = mContext.getResources().getLayout(menuRes);
-            //AttributeSet attrs = Xml.asAttributeSet(parser);
-            //parseMenu(parser, attrs, menu);
-        //} catch (XmlPullParserException e) {
-            //throw new InflateException("Error inflating menu XML", e);
-        //} catch (IOException e) {
-            //throw new InflateException("Error inflating menu XML", e);
-        //} finally {
-            //if (parser != null) parser.close();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -104,13 +104,13 @@ public class MenuInflater {
                     {
                         eventType = parser.next();
                         break;
-                    } //End block
+                    } 
                     RuntimeException var37817869A81465585B5F7B7DC66DD07F_1706543432 = new RuntimeException("Expecting menu, got " + tagName);
                     var37817869A81465585B5F7B7DC66DD07F_1706543432.addTaint(taint);
                     throw var37817869A81465585B5F7B7DC66DD07F_1706543432;
-                } //End block
+                } 
                 eventType = parser.next();
-            } //End block
+            } 
 } while (eventType != XmlPullParser.END_DOCUMENT);
         boolean reachedEndOfMenu = false;
         while
@@ -121,28 +121,28 @@ switch(eventType){
     if(lookingForEndOfUnknownTag)            
             {
                 break;
-            } //End block
+            } 
             tagName = parser.getName();
     if(tagName.equals(XML_GROUP))            
             {
                 menuState.readGroup(attrs);
-            } //End block
+            } 
             else
     if(tagName.equals(XML_ITEM))            
             {
                 menuState.readItem(attrs);
-            } //End block
+            } 
             else
     if(tagName.equals(XML_MENU))            
             {
                 SubMenu subMenu = menuState.addSubMenuItem();
                 parseMenu(parser, attrs, subMenu);
-            } //End block
+            } 
             else
             {
                 lookingForEndOfUnknownTag = true;
                 unknownTagName = tagName;
-            } //End block
+            } 
             break;
             case XmlPullParser.END_TAG:
             tagName = parser.getName();
@@ -150,12 +150,12 @@ switch(eventType){
             {
                 lookingForEndOfUnknownTag = false;
                 unknownTagName = null;
-            } //End block
+            } 
             else
     if(tagName.equals(XML_GROUP))            
             {
                 menuState.resetGroup();
-            } //End block
+            } 
             else
     if(tagName.equals(XML_ITEM))            
             {
@@ -165,27 +165,27 @@ switch(eventType){
                                     menuState.itemActionProvider.hasSubMenu())                    
                     {
                         menuState.addSubMenuItem();
-                    } //End block
+                    } 
                     else
                     {
                         menuState.addItem();
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
     if(tagName.equals(XML_MENU))            
             {
                 reachedEndOfMenu = true;
-            } //End block
+            } 
             break;
             case XmlPullParser.END_DOCUMENT:
             RuntimeException var5B1BC7F24CCF3F04B2AFF43071D937ED_1451543602 = new RuntimeException("Unexpected end of document");
             var5B1BC7F24CCF3F04B2AFF43071D937ED_1451543602.addTaint(taint);
             throw var5B1BC7F24CCF3F04B2AFF43071D937ED_1451543602;
 }            eventType = parser.next();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -204,7 +204,7 @@ switch(eventType){
             try 
             {
                 mMethod = c.getMethod(methodName, PARAM_TYPES);
-            } //End block
+            } 
             catch (Exception e)
             {
                 InflateException ex = new InflateException(
@@ -213,25 +213,25 @@ switch(eventType){
                 ex.initCause(e);
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
-            // ---------- Original Method ----------
-            //mContext = context;
-            //Class<?> c = context.getClass();
-            //try {
-                //mMethod = c.getMethod(methodName, PARAM_TYPES);
-            //} catch (Exception e) {
-                //InflateException ex = new InflateException(
-                        //"Couldn't resolve menu item onClick handler " + methodName +
-                        //" in class " + c.getName());
-                //ex.initCause(e);
-                //throw ex;
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+                        
+                        
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.395 -0400", hash_original_method = "73DDD6FE1A9FD43CC9793E596C7A60B9", hash_generated_method = "CD04077BDD90036646921B29DD1385C3")
         public boolean onMenuItemClick(MenuItem item) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(item.getTaint());
             try 
             {
@@ -240,32 +240,32 @@ switch(eventType){
                     boolean var9B821A6AE6EA34003E5287231B5E9F6C_1371887492 = ((Boolean) mMethod.invoke(mContext, item));
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_970433666 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_970433666;
-                } //End block
+                } 
                 else
                 {
                     mMethod.invoke(mContext, item);
                     boolean varB326B5062B2F0E69046810717534CB09_1551567438 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_587750118 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_587750118;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (Exception e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_158554439 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_158554439.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_158554439;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //if (mMethod.getReturnType() == Boolean.TYPE) {
-                    //return (Boolean) mMethod.invoke(mContext, item);
-                //} else {
-                    //mMethod.invoke(mContext, item);
-                    //return true;
-                //}
-            //} catch (Exception e) {
-                //throw new RuntimeException(e);
-            //}
+            } 
+            
+            
+                
+                    
+                
+                    
+                    
+                
+            
+                
+            
         }
 
         
@@ -357,12 +357,13 @@ switch(eventType){
         public  MenuState(final Menu menu) {
             this.menu = menu;
             resetGroup();
-            // ---------- Original Method ----------
-            //this.menu = menu;
-            //resetGroup();
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.399 -0400", hash_original_method = "72B0BA7C11D7E690CFEDBC790E5F02DB", hash_generated_method = "52EC9BD2B64C18BC1661223C54B55626")
         public void resetGroup() {
             groupId = defaultGroupId;
@@ -371,13 +372,13 @@ switch(eventType){
             groupCheckable = defaultItemCheckable;
             groupVisible = defaultItemVisible;
             groupEnabled = defaultItemEnabled;
-            // ---------- Original Method ----------
-            //groupId = defaultGroupId;
-            //groupCategory = defaultItemCategory;
-            //groupOrder = defaultItemOrder;
-            //groupCheckable = defaultItemCheckable;
-            //groupVisible = defaultItemVisible;
-            //groupEnabled = defaultItemEnabled;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -393,8 +394,8 @@ switch(eventType){
             groupVisible = a.getBoolean(com.android.internal.R.styleable.MenuGroup_visible, defaultItemVisible);
             groupEnabled = a.getBoolean(com.android.internal.R.styleable.MenuGroup_enabled, defaultItemEnabled);
             a.recycle();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -417,11 +418,11 @@ switch(eventType){
     if(a.hasValue(com.android.internal.R.styleable.MenuItem_checkable))            
             {
                 itemCheckable = a.getBoolean(com.android.internal.R.styleable.MenuItem_checkable, false) ? 1 : 0;
-            } //End block
+            } 
             else
             {
                 itemCheckable = groupCheckable;
-            } //End block
+            } 
             itemChecked = a.getBoolean(com.android.internal.R.styleable.MenuItem_checked, defaultItemChecked);
             itemVisible = a.getBoolean(com.android.internal.R.styleable.MenuItem_visible, groupVisible);
             itemEnabled = a.getBoolean(com.android.internal.R.styleable.MenuItem_enabled, groupEnabled);
@@ -436,18 +437,18 @@ switch(eventType){
                 itemActionProvider = newInstance(itemActionProviderClassName,
                             ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE,
                             mActionProviderConstructorArguments);
-            } //End block
+            } 
             else
             {
     if(hasActionProvider)                
                 {
-                } //End block
+                } 
                 itemActionProvider = null;
-            } //End block
+            } 
             a.recycle();
             itemAdded = false;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -459,19 +460,19 @@ switch(eventType){
                 char varCFCD208495D565EF66E7DFF9F98764DA_1410313408 = (0);
                                 char varA87DEB01C5F539E6BDA34829C8EF2368_164285981 = getTaintChar();
                 return varA87DEB01C5F539E6BDA34829C8EF2368_164285981;
-            } //End block
+            } 
             else
             {
                 char varB63A892152E1827B9E94F1BA9B520DC5_73672389 = (shortcutString.charAt(0));
                                 char varA87DEB01C5F539E6BDA34829C8EF2368_809710157 = getTaintChar();
                 return varA87DEB01C5F539E6BDA34829C8EF2368_809710157;
-            } //End block
-            // ---------- Original Method ----------
-            //if (shortcutString == null) {
-                //return 0;
-            //} else {
-                //return shortcutString.charAt(0);
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -489,7 +490,7 @@ switch(eventType){
     if(itemShowAsAction >= 0)            
             {
                 item.setShowAsAction(itemShowAsAction);
-            } //End block
+            } 
     if(itemListenerMethodName != null)            
             {
     if(mContext.isRestricted())                
@@ -498,18 +499,18 @@ switch(eventType){
                             + "be used within a restricted context");
                     varE51FA648E43677A316E33BB1DE286CFC_1783691686.addTaint(taint);
                     throw varE51FA648E43677A316E33BB1DE286CFC_1783691686;
-                } //End block
+                } 
                 item.setOnMenuItemClickListener(
                         new InflatedOnMenuItemClickListener(mContext, itemListenerMethodName));
-            } //End block
+            } 
     if(item instanceof MenuItemImpl)            
             {
                 MenuItemImpl impl = (MenuItemImpl) item;
     if(itemCheckable >= 2)                
                 {
                     impl.setExclusiveCheckable(true);
-                } //End block
-            } //End block
+                } 
+            } 
             boolean actionViewSpecified = false;
     if(itemActionViewClassName != null)            
             {
@@ -517,24 +518,24 @@ switch(eventType){
                         ACTION_VIEW_CONSTRUCTOR_SIGNATURE, mActionViewConstructorArguments);
                 item.setActionView(actionView);
                 actionViewSpecified = true;
-            } //End block
+            } 
     if(itemActionViewLayout > 0)            
             {
     if(!actionViewSpecified)                
                 {
                     item.setActionView(itemActionViewLayout);
                     actionViewSpecified = true;
-                } //End block
+                } 
                 else
                 {
-                } //End block
-            } //End block
+                } 
+            } 
     if(itemActionProvider != null)            
             {
                 item.setActionProvider(itemActionProvider);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -542,9 +543,9 @@ switch(eventType){
         public void addItem() {
             itemAdded = true;
             setItem(menu.add(groupId, itemId, itemCategoryOrder, itemTitle));
-            // ---------- Original Method ----------
-            //itemAdded = true;
-            //setItem(menu.add(groupId, itemId, itemCategoryOrder, itemTitle));
+            
+            
+            
         }
 
         
@@ -556,21 +557,22 @@ switch(eventType){
 SubMenu var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_360757177 =             subMenu;
             var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_360757177.addTaint(taint);
             return var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_360757177;
-            // ---------- Original Method ----------
-            //itemAdded = true;
-            //SubMenu subMenu = menu.addSubMenu(groupId, itemId, itemCategoryOrder, itemTitle);
-            //setItem(subMenu.getItem());
-            //return subMenu;
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.409 -0400", hash_original_method = "EEE8EEEED979875FD25E1447BB361BB0", hash_generated_method = "EA68BE9856021BCE994A2AD3B53CA591")
         public boolean hasAddedItem() {
             boolean varD151196352EED1C008F77891EF564455_433192570 = (itemAdded);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442554272 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442554272;
-            // ---------- Original Method ----------
-            //return itemAdded;
+            
+            
         }
 
         
@@ -588,22 +590,22 @@ SubMenu var0DB7EBD0BEDE8F5ABDCBBB980827FFD2_360757177 =             subMenu;
 T var1B6EA7B4D87788B4A4FAC443448837E5_1344359995 =                 (T) constructor.newInstance(arguments);
                 var1B6EA7B4D87788B4A4FAC443448837E5_1344359995.addTaint(taint);
                 return var1B6EA7B4D87788B4A4FAC443448837E5_1344359995;
-            } //End block
+            } 
             catch (Exception e)
             {
-            } //End block
+            } 
 T var540C13E9E156B687226421B24F2DF178_1126536542 =             null;
             var540C13E9E156B687226421B24F2DF178_1126536542.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1126536542;
-            // ---------- Original Method ----------
-            //try {
-                //Class<?> clazz = mContext.getClassLoader().loadClass(className);
-                //Constructor<?> constructor = clazz.getConstructor(constructorSignature);
-                //return (T) constructor.newInstance(arguments);
-            //} catch (Exception e) {
-                //Log.w(LOG_TAG, "Cannot instantiate class: " + className, e);
-            //}
-            //return null;
+            
+            
+                
+                
+                
+            
+                
+            
+            
         }
 
         

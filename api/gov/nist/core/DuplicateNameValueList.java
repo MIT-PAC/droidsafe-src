@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,16 +21,17 @@ public class DuplicateNameValueList implements Serializable, Cloneable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.087 -0400", hash_original_method = "20742916A9CB1D797182F33AF39D95AA", hash_generated_method = "477020C756F336130B9566E280E5FF72")
     public  DuplicateNameValueList() {
         this.separator = ";";
-        // ---------- Original Method ----------
-        //this.separator = ";";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.088 -0400", hash_original_method = "45084252F3EC1C5D752F2E607BC4F59B", hash_generated_method = "87C291B29969431F03CD87D5C89B7360")
     public void setSeparator(String separator) {
         this.separator = separator;
-        // ---------- Original Method ----------
-        //this.separator = separator;
+        
+        
     }
 
     
@@ -39,8 +40,8 @@ public class DuplicateNameValueList implements Serializable, Cloneable {
 String var678B6FE61D54E5BD4E109D01C318C133_1639666401 =         encode(new StringBuffer()).toString();
         var678B6FE61D54E5BD4E109D01C318C133_1639666401.addTaint(taint);
         return var678B6FE61D54E5BD4E109D01C318C133_1639666401;
-        // ---------- Original Method ----------
-        //return encode(new StringBuffer()).toString();
+        
+        
     }
 
     
@@ -60,41 +61,41 @@ String var678B6FE61D54E5BD4E109D01C318C133_1639666401 =         encode(new Strin
                     {
                         GenericObject gobj = (GenericObject) obj;
                         gobj.encode(buffer);
-                    } //End block
+                    } 
                     else
                     {
                         buffer.append(obj.toString());
-                    } //End block
+                    } 
     if(iterator.hasNext())                    
                     buffer.append(separator);
                     else
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1326033841 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_1326033841.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_1326033841;
-        // ---------- Original Method ----------
-        //if (!nameValueMap.isEmpty()) {
-            //Iterator<NameValue> iterator = nameValueMap.values().iterator();
-            //if (iterator.hasNext()) {
-                //while (true) {
-                    //Object obj = iterator.next();
-                    //if (obj instanceof GenericObject) {
-                        //GenericObject gobj = (GenericObject) obj;
-                        //gobj.encode(buffer);
-                    //} else {
-                        //buffer.append(obj.toString());
-                    //}
-                    //if (iterator.hasNext())
-                        //buffer.append(separator);
-                    //else
-                        //break;
-                //}
-            //}
-        //}
-        //return buffer;
+        
+        
+            
+            
+                
+                    
+                    
+                        
+                        
+                    
+                        
+                    
+                    
+                        
+                    
+                        
+                
+            
+        
+        
     }
 
     
@@ -103,8 +104,8 @@ StringBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1326033841 =         buffer;
 String varB17575D7C845B2C662583710539AAEBB_995801400 =         this.encode();
         varB17575D7C845B2C662583710539AAEBB_995801400.addTaint(taint);
         return varB17575D7C845B2C662583710539AAEBB_995801400;
-        // ---------- Original Method ----------
-        //return this.encode();
+        
+        
     }
 
     
@@ -112,8 +113,8 @@ String varB17575D7C845B2C662583710539AAEBB_995801400 =         this.encode();
     public void set(NameValue nv) {
         addTaint(nv.getTaint());
         this.nameValueMap.put(nv.getName().toLowerCase(), nv);
-        // ---------- Original Method ----------
-        //this.nameValueMap.put(nv.getName().toLowerCase(), nv);
+        
+        
     }
 
     
@@ -123,9 +124,9 @@ String varB17575D7C845B2C662583710539AAEBB_995801400 =         this.encode();
         addTaint(name.getTaint());
         NameValue nameValue = new NameValue(name, value);
         nameValueMap.put(name.toLowerCase(), nameValue);
-        // ---------- Original Method ----------
-        //NameValue nameValue = new NameValue(name, value);
-        //nameValueMap.put(name.toLowerCase(), nameValue);
+        
+        
+        
     }
 
     
@@ -137,20 +138,20 @@ String varB17575D7C845B2C662583710539AAEBB_995801400 =         this.encode();
             boolean var68934A3E9455FA72420237EB05902327_1464225832 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_55047330 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_55047330;
-        } //End block
+        } 
     if(!otherObject.getClass().equals(this.getClass()))        
         {
             boolean var68934A3E9455FA72420237EB05902327_2069046452 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_759372533 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_759372533;
-        } //End block
+        } 
         DuplicateNameValueList other = (DuplicateNameValueList) otherObject;
     if(nameValueMap.size() != other.nameValueMap.size())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1564093521 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2085885279 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2085885279;
-        } //End block
+        } 
         Iterator<String> li = this.nameValueMap.keySet().iterator();
         while
 (li.hasNext())        
@@ -171,32 +172,32 @@ String varB17575D7C845B2C662583710539AAEBB_995801400 =         this.encode();
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_451705984 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_451705984;
             }
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_31587616 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1396514825 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1396514825;
-        // ---------- Original Method ----------
-        //if ( otherObject == null ) {
-            //return false;
-        //}
-        //if (!otherObject.getClass().equals(this.getClass())) {
-            //return false;
-        //}
-        //DuplicateNameValueList other = (DuplicateNameValueList) otherObject;
-        //if (nameValueMap.size() != other.nameValueMap.size()) {
-            //return false;
-        //}
-        //Iterator<String> li = this.nameValueMap.keySet().iterator();
-        //while (li.hasNext()) {
-            //String key = (String) li.next();
-            //Collection nv1 = this.getNameValue(key);
-            //Collection nv2 = (Collection) other.nameValueMap.get(key);
-            //if (nv2 == null)
-                //return false;
-            //else if (!nv2.equals(nv1))
-                //return false;
-        //}
-        //return true;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+                
+            
+                
+        
+        
     }
 
     
@@ -216,12 +217,12 @@ Object var540C13E9E156B687226421B24F2DF178_1741587176 =         null;
         var540C13E9E156B687226421B24F2DF178_1741587176.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1741587176;
         }
-        // ---------- Original Method ----------
-        //Collection nv = this.getNameValue(name.toLowerCase());
-        //if (nv != null)
-            //return nv;
-        //else
-            //return null;
+        
+        
+        
+            
+        
+            
     }
 
     
@@ -231,8 +232,8 @@ Object var540C13E9E156B687226421B24F2DF178_1741587176 =         null;
 Collection var455A788153979E96E14570CFD1CFB4E6_1964438657 =         (Collection) this.nameValueMap.get(name.toLowerCase());
         var455A788153979E96E14570CFD1CFB4E6_1964438657.addTaint(taint);
         return var455A788153979E96E14570CFD1CFB4E6_1964438657;
-        // ---------- Original Method ----------
-        //return (Collection) this.nameValueMap.get(name.toLowerCase());
+        
+        
     }
 
     
@@ -242,8 +243,8 @@ Collection var455A788153979E96E14570CFD1CFB4E6_1964438657 =         (Collection)
         boolean var6AD953012EFDFEF4A9A9FD4ED4B74DF1_1340585862 = (nameValueMap.containsKey(name.toLowerCase()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1310186245 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1310186245;
-        // ---------- Original Method ----------
-        //return nameValueMap.containsKey(name.toLowerCase());
+        
+        
     }
 
     
@@ -257,21 +258,21 @@ Collection var455A788153979E96E14570CFD1CFB4E6_1964438657 =         (Collection)
             boolean varB326B5062B2F0E69046810717534CB09_1506263980 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1091306120 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1091306120;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1705889839 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331208867 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_331208867;
-        } //End block
-        // ---------- Original Method ----------
-        //String lcName = name.toLowerCase();
-        //if (this.nameValueMap.containsKey(lcName)) {
-            //this.nameValueMap.remove(lcName);
-            //return true;
-        //} else {
-            //return false;
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -284,18 +285,18 @@ Collection var455A788153979E96E14570CFD1CFB4E6_1964438657 =         (Collection)
 (it.hasNext())        
         {
             retval.set((NameValue) ((NameValue) it.next()).clone());
-        } //End block
+        } 
 Object varF9E19AD6135C970F387F77C6F3DE4477_590194642 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_590194642.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_590194642;
-        // ---------- Original Method ----------
-        //DuplicateNameValueList retval = new DuplicateNameValueList();
-        //retval.setSeparator(this.separator);
-        //Iterator<NameValue> it = this.nameValueMap.values().iterator();
-        //while (it.hasNext()) {
-            //retval.set((NameValue) ((NameValue) it.next()).clone());
-        //}
-        //return retval;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -304,8 +305,8 @@ Object varF9E19AD6135C970F387F77C6F3DE4477_590194642 =         retval;
 Iterator<NameValue> var3CCF030E2580117B40A1C1EF98CF1C47_31807067 =         this.nameValueMap.values().iterator();
         var3CCF030E2580117B40A1C1EF98CF1C47_31807067.addTaint(taint);
         return var3CCF030E2580117B40A1C1EF98CF1C47_31807067;
-        // ---------- Original Method ----------
-        //return this.nameValueMap.values().iterator();
+        
+        
     }
 
     
@@ -314,8 +315,8 @@ Iterator<NameValue> var3CCF030E2580117B40A1C1EF98CF1C47_31807067 =         this.
 Iterator<String> varFE962324A4DFB062FF834823E440D647_348847667 =         this.nameValueMap.keySet().iterator();
         varFE962324A4DFB062FF834823E440D647_348847667.addTaint(taint);
         return varFE962324A4DFB062FF834823E440D647_348847667;
-        // ---------- Original Method ----------
-        //return this.nameValueMap.keySet().iterator();
+        
+        
     }
 
     
@@ -341,22 +342,22 @@ String var38570108501B3BE2AC163FA564B07985_1878771293 =         val.toString();
         var38570108501B3BE2AC163FA564B07985_1878771293.addTaint(taint);
         return var38570108501B3BE2AC163FA564B07985_1878771293;
         }
-        // ---------- Original Method ----------
-        //Object val = this.getValue(name);
-        //if (val == null)
-            //return null;
-        //if (val instanceof GenericObject)
-            //return ((GenericObject) val).encode();
-        //else
-            //return val.toString();
+        
+        
+        
+            
+        
+            
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.093 -0400", hash_original_method = "B40C6D0DEDA13F85BB68C572A20E397F", hash_generated_method = "0E3C4AF8B49E5DCB08329C4AB11AFFF8")
     public void clear() {
         nameValueMap.clear();
-        // ---------- Original Method ----------
-        //nameValueMap.clear();
+        
+        
     }
 
     
@@ -365,8 +366,8 @@ String var38570108501B3BE2AC163FA564B07985_1878771293 =         val.toString();
         boolean var66EDF94C9474C52F132B65CE8BDE5FAA_1643562667 = (this.nameValueMap.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_366938157 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_366938157;
-        // ---------- Original Method ----------
-        //return this.nameValueMap.isEmpty();
+        
+        
     }
 
     
@@ -377,8 +378,8 @@ String var38570108501B3BE2AC163FA564B07985_1878771293 =         val.toString();
 NameValue var2B432BD1998424D6C81EB1582E4435AA_1223069233 =         (NameValue) this.nameValueMap.put(key, value);
         var2B432BD1998424D6C81EB1582E4435AA_1223069233.addTaint(taint);
         return var2B432BD1998424D6C81EB1582E4435AA_1223069233;
-        // ---------- Original Method ----------
-        //return (NameValue) this.nameValueMap.put(key, value);
+        
+        
     }
 
     
@@ -388,8 +389,8 @@ NameValue var2B432BD1998424D6C81EB1582E4435AA_1223069233 =         (NameValue) t
 NameValue var6D5B9855993E18BC4C470CBB87EC89C7_1603990612 =         (NameValue) this.nameValueMap.remove(key);
         var6D5B9855993E18BC4C470CBB87EC89C7_1603990612.addTaint(taint);
         return var6D5B9855993E18BC4C470CBB87EC89C7_1603990612;
-        // ---------- Original Method ----------
-        //return (NameValue) this.nameValueMap.remove(key);
+        
+        
     }
 
     
@@ -398,8 +399,8 @@ NameValue var6D5B9855993E18BC4C470CBB87EC89C7_1603990612 =         (NameValue) t
         int var16870F6CB26CD74A1A54B5A0588DA15C_1588312481 = (this.nameValueMap.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699856455 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1699856455;
-        // ---------- Original Method ----------
-        //return this.nameValueMap.size();
+        
+        
     }
 
     
@@ -408,8 +409,8 @@ NameValue var6D5B9855993E18BC4C470CBB87EC89C7_1603990612 =         (NameValue) t
 Collection<NameValue> var0EAA2656FF6694E38E984612E9842F13_61394045 =         this.nameValueMap.values();
         var0EAA2656FF6694E38E984612E9842F13_61394045.addTaint(taint);
         return var0EAA2656FF6694E38E984612E9842F13_61394045;
-        // ---------- Original Method ----------
-        //return this.nameValueMap.values();
+        
+        
     }
 
     
@@ -418,8 +419,8 @@ Collection<NameValue> var0EAA2656FF6694E38E984612E9842F13_61394045 =         thi
         int varA97A615DC1FDA241FE73BCB450CF12B9_234180803 = (this.nameValueMap.keySet().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608483611 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608483611;
-        // ---------- Original Method ----------
-        //return this.nameValueMap.keySet().hashCode();
+        
+        
     }
 
     

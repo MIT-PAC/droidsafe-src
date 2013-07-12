@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -63,8 +63,8 @@ public class SSLSocketImpl extends SSLSocket {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.377 -0400", hash_original_method = "7B6D79A24FC469186EEF1935CCE0FAAE", hash_generated_method = "76D8E06FA8235152D346BA475221EC7E")
     protected  SSLSocketImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = sslParameters;
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
+        
+        
     }
 
     
@@ -75,9 +75,9 @@ public class SSLSocketImpl extends SSLSocket {
         addTaint(host.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -93,9 +93,9 @@ public class SSLSocketImpl extends SSLSocket {
         addTaint(host.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -107,9 +107,9 @@ public class SSLSocketImpl extends SSLSocket {
         addTaint(host.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -124,9 +124,9 @@ public class SSLSocketImpl extends SSLSocket {
         addTaint(address.getTaint());
         this.sslParameters = sslParameters;
         init();
-        // ---------- Original Method ----------
-        //this.sslParameters = sslParameters;
-        //init();
+        
+        
+        
     }
 
     
@@ -135,17 +135,17 @@ public class SSLSocketImpl extends SSLSocket {
     if(appDataIS != null)        
         {
             return;
-        } //End block
+        } 
         initTransportLayer();
         appDataIS = new SSLSocketInputStream(this);
         appDataOS = new SSLSocketOutputStream(this);
-        // ---------- Original Method ----------
-        //if (appDataIS != null) {
-            //return;
-        //}
-        //initTransportLayer();
-        //appDataIS = new SSLSocketInputStream(this);
-        //appDataOS = new SSLSocketOutputStream(this);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -153,9 +153,9 @@ public class SSLSocketImpl extends SSLSocket {
     protected void initTransportLayer() throws IOException {
         input = super.getInputStream();
         output = super.getOutputStream();
-        // ---------- Original Method ----------
-        //input = super.getInputStream();
-        //output = super.getOutputStream();
+        
+        
+        
     }
 
     
@@ -166,13 +166,13 @@ public class SSLSocketImpl extends SSLSocket {
         {
             input.close();
             output.close();
-        } //End block
-        // ---------- Original Method ----------
-        //super.close();
-        //if (input != null) {
-            //input.close();
-            //output.close();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -182,8 +182,8 @@ public class SSLSocketImpl extends SSLSocket {
 String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1145626462 =         CipherSuite.getSupportedCipherSuiteNames();
         varF6F3ABBB205DDE294417F777EFDFB1AB_1145626462.addTaint(taint);
         return varF6F3ABBB205DDE294417F777EFDFB1AB_1145626462;
-        // ---------- Original Method ----------
-        //return CipherSuite.getSupportedCipherSuiteNames();
+        
+        
     }
 
     
@@ -193,8 +193,8 @@ String[] varF6F3ABBB205DDE294417F777EFDFB1AB_1145626462 =         CipherSuite.ge
 String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_933209100 =         sslParameters.getEnabledCipherSuites();
         varE73CF5FBDF510EEFDF00C7E4AF85C310_933209100.addTaint(taint);
         return varE73CF5FBDF510EEFDF00C7E4AF85C310_933209100;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnabledCipherSuites();
+        
+        
     }
 
     
@@ -203,8 +203,8 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_933209100 =         sslParameters.g
     public void setEnabledCipherSuites(String[] suites) {
         addTaint(suites[0].getTaint());
         sslParameters.setEnabledCipherSuites(suites);
-        // ---------- Original Method ----------
-        //sslParameters.setEnabledCipherSuites(suites);
+        
+        
     }
 
     
@@ -214,8 +214,8 @@ String[] varE73CF5FBDF510EEFDF00C7E4AF85C310_933209100 =         sslParameters.g
 String[] varCE68CF4030A908DFE590B8EDFA039BDD_676852720 =         ProtocolVersion.supportedProtocols.clone();
         varCE68CF4030A908DFE590B8EDFA039BDD_676852720.addTaint(taint);
         return varCE68CF4030A908DFE590B8EDFA039BDD_676852720;
-        // ---------- Original Method ----------
-        //return ProtocolVersion.supportedProtocols.clone();
+        
+        
     }
 
     
@@ -225,8 +225,8 @@ String[] varCE68CF4030A908DFE590B8EDFA039BDD_676852720 =         ProtocolVersion
 String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.getEnabledProtocols();
         var845A46B817F78B5E0728F82AD0FF52E6_1812045237.addTaint(taint);
         return var845A46B817F78B5E0728F82AD0FF52E6_1812045237;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnabledProtocols();
+        
+        
     }
 
     
@@ -235,8 +235,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
     public void setEnabledProtocols(String[] protocols) {
         addTaint(protocols[0].getTaint());
         sslParameters.setEnabledProtocols(protocols);
-        // ---------- Original Method ----------
-        //sslParameters.setEnabledProtocols(protocols);
+        
+        
     }
 
     
@@ -250,14 +250,14 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
             "Could not change the mode after the initial handshake has begun.");
             var090A9C2074D1C9D942FE5C4CFD7155B6_612458429.addTaint(taint);
             throw var090A9C2074D1C9D942FE5C4CFD7155B6_612458429;
-        } //End block
+        } 
         sslParameters.setUseClientMode(mode);
-        // ---------- Original Method ----------
-        //if (handshake_started) {
-            //throw new IllegalArgumentException(
-            //"Could not change the mode after the initial handshake has begun.");
-        //}
-        //sslParameters.setUseClientMode(mode);
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -267,8 +267,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
         boolean var264C485BBAEC609C8CEC6E380F554AB0_1020723198 = (sslParameters.getUseClientMode());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1132904568 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1132904568;
-        // ---------- Original Method ----------
-        //return sslParameters.getUseClientMode();
+        
+        
     }
 
     
@@ -277,8 +277,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
     public void setNeedClientAuth(boolean need) {
         addTaint(need);
         sslParameters.setNeedClientAuth(need);
-        // ---------- Original Method ----------
-        //sslParameters.setNeedClientAuth(need);
+        
+        
     }
 
     
@@ -288,8 +288,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
         boolean var8775D3F02F22101BF43E8B27516BBE95_99281592 = (sslParameters.getNeedClientAuth());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500302207 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_500302207;
-        // ---------- Original Method ----------
-        //return sslParameters.getNeedClientAuth();
+        
+        
     }
 
     
@@ -298,8 +298,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
     public void setWantClientAuth(boolean want) {
         addTaint(want);
         sslParameters.setWantClientAuth(want);
-        // ---------- Original Method ----------
-        //sslParameters.setWantClientAuth(want);
+        
+        
     }
 
     
@@ -309,8 +309,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
         boolean var49776A2797A76D9AE0E32B9F61634A24_1172871875 = (sslParameters.getWantClientAuth());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_318110708 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_318110708;
-        // ---------- Original Method ----------
-        //return sslParameters.getWantClientAuth();
+        
+        
     }
 
     
@@ -319,8 +319,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
     public void setEnableSessionCreation(boolean flag) {
         addTaint(flag);
         sslParameters.setEnableSessionCreation(flag);
-        // ---------- Original Method ----------
-        //sslParameters.setEnableSessionCreation(flag);
+        
+        
     }
 
     
@@ -330,8 +330,8 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
         boolean var6A496EF2CB1B11366741370C45064742_1286911184 = (sslParameters.getEnableSessionCreation());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1492665608 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1492665608;
-        // ---------- Original Method ----------
-        //return sslParameters.getEnableSessionCreation();
+        
+        
     }
 
     
@@ -343,26 +343,26 @@ String[] var845A46B817F78B5E0728F82AD0FF52E6_1812045237 =         sslParameters.
             try 
             {
                 startHandshake();
-            } //End block
+            } 
             catch (IOException e)
             {
 SSLSession var33266EACB2455415ED08B160E2815F03_1028381573 =                 SSLSessionImpl.NULL_SESSION;
                 var33266EACB2455415ED08B160E2815F03_1028381573.addTaint(taint);
                 return var33266EACB2455415ED08B160E2815F03_1028381573;
-            } //End block
-        } //End block
+            } 
+        } 
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1570421217 =         session;
         varD555E544A66E0F97DA6BCDE940E3E79C_1570421217.addTaint(taint);
         return varD555E544A66E0F97DA6BCDE940E3E79C_1570421217;
-        // ---------- Original Method ----------
-        //if (!handshake_started) {
-            //try {
-                //startHandshake();
-            //} catch (IOException e) {
-                //return SSLSessionImpl.NULL_SESSION;
-            //}
-        //}
-        //return session;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -376,20 +376,20 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1570421217 =         session;
             IllegalArgumentException varB02095FE0265340AABD25383D7376280_1545419185 = new IllegalArgumentException("Provided listener is null");
             varB02095FE0265340AABD25383D7376280_1545419185.addTaint(taint);
             throw varB02095FE0265340AABD25383D7376280_1545419185;
-        } //End block
+        } 
     if(listeners == null)        
         {
             listeners = new ArrayList<HandshakeCompletedListener>();
-        } //End block
+        } 
         listeners.add(listener);
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //listeners = new ArrayList<HandshakeCompletedListener>();
-        //}
-        //listeners.add(listener);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -403,33 +403,33 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1570421217 =         session;
             IllegalArgumentException varB02095FE0265340AABD25383D7376280_93516247 = new IllegalArgumentException("Provided listener is null");
             varB02095FE0265340AABD25383D7376280_93516247.addTaint(taint);
             throw varB02095FE0265340AABD25383D7376280_93516247;
-        } //End block
+        } 
     if(listeners == null)        
         {
             IllegalArgumentException var10FDB35631F14D25CC68C0C86726BCA4_178247306 = new IllegalArgumentException(
                     "Provided listener is not registered");
             var10FDB35631F14D25CC68C0C86726BCA4_178247306.addTaint(taint);
             throw var10FDB35631F14D25CC68C0C86726BCA4_178247306;
-        } //End block
+        } 
     if(!listeners.remove(listener))        
         {
             IllegalArgumentException var10FDB35631F14D25CC68C0C86726BCA4_1532789647 = new IllegalArgumentException(
                     "Provided listener is not registered");
             var10FDB35631F14D25CC68C0C86726BCA4_1532789647.addTaint(taint);
             throw var10FDB35631F14D25CC68C0C86726BCA4_1532789647;
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("Provided listener is null");
-        //}
-        //if (listeners == null) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
-        //if (!listeners.remove(listener)) {
-            //throw new IllegalArgumentException(
-                    //"Provided listener is not registered");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
     }
 
     
@@ -441,13 +441,13 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1570421217 =         session;
             IOException var99A85DDF1243551359017D19FA2DBF3F_1336056880 = new IOException("Socket is not connected.");
             var99A85DDF1243551359017D19FA2DBF3F_1336056880.addTaint(taint);
             throw var99A85DDF1243551359017D19FA2DBF3F_1336056880;
-        } //End block
+        } 
     if(socket_was_closed)        
         {
             IOException varEBBB0E65BA2598B9856A65403EB38C96_1932902891 = new IOException("Socket has already been closed.");
             varEBBB0E65BA2598B9856A65403EB38C96_1932902891.addTaint(taint);
             throw varEBBB0E65BA2598B9856A65403EB38C96_1932902891;
-        } //End block
+        } 
     if(!handshake_started)        
         {
             handshake_started = true;
@@ -456,34 +456,34 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1570421217 =         session;
     if(logger != null)                
                 {
                     logger.println("SSLSocketImpl: CLIENT");
-                } //End block
+                } 
                 handshakeProtocol = new ClientHandshakeImpl(this);
-            } //End block
+            } 
             else
             {
     if(logger != null)                
                 {
                     logger.println("SSLSocketImpl: SERVER");
-                } //End block
+                } 
                 handshakeProtocol = new ServerHandshakeImpl(this);
-            } //End block
+            } 
             alertProtocol = new AlertProtocol();
             recordProtocol = new SSLRecordProtocol(handshakeProtocol,
                     alertProtocol, new SSLStreamedInput(input),
                     appDataIS.dataPoint);
-        } //End block
+        } 
     if(logger != null)        
         {
             logger.println("SSLSocketImpl.startHandshake");
-        } //End block
+        } 
         handshakeProtocol.start();
         doHandshake();
     if(logger != null)        
         {
             logger.println("SSLSocketImpl.startHandshake: END");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -495,15 +495,15 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1570421217 =         session;
             IOException varEBBB0E65BA2598B9856A65403EB38C96_661109562 = new IOException("Socket has already been closed.");
             varEBBB0E65BA2598B9856A65403EB38C96_661109562.addTaint(taint);
             throw varEBBB0E65BA2598B9856A65403EB38C96_661109562;
-        } //End block
+        } 
 InputStream var397DC1305100C24326D91594B7E88366_1342520447 =         appDataIS;
         var397DC1305100C24326D91594B7E88366_1342520447.addTaint(taint);
         return var397DC1305100C24326D91594B7E88366_1342520447;
-        // ---------- Original Method ----------
-        //if (socket_was_closed) {
-            //throw new IOException("Socket has already been closed.");
-        //}
-        //return appDataIS;
+        
+        
+            
+        
+        
     }
 
     
@@ -515,15 +515,15 @@ InputStream var397DC1305100C24326D91594B7E88366_1342520447 =         appDataIS;
             IOException varEBBB0E65BA2598B9856A65403EB38C96_2007905696 = new IOException("Socket has already been closed.");
             varEBBB0E65BA2598B9856A65403EB38C96_2007905696.addTaint(taint);
             throw varEBBB0E65BA2598B9856A65403EB38C96_2007905696;
-        } //End block
+        } 
 OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
         var7C35464E15AF057D033B64BB3C503DA0_1056942362.addTaint(taint);
         return var7C35464E15AF057D033B64BB3C503DA0_1056942362;
-        // ---------- Original Method ----------
-        //if (socket_was_closed) {
-            //throw new IOException("Socket has already been closed.");
-        //}
-        //return appDataOS;
+        
+        
+            
+        
+        
     }
 
     
@@ -533,9 +533,9 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
         addTaint(endpoint.getTaint());
         super.connect(endpoint);
         init();
-        // ---------- Original Method ----------
-        //super.connect(endpoint);
-        //init();
+        
+        
+        
     }
 
     
@@ -546,9 +546,9 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
         addTaint(endpoint.getTaint());
         super.connect(endpoint, timeout);
         init();
-        // ---------- Original Method ----------
-        //super.connect(endpoint, timeout);
-        //init();
+        
+        
+        
     }
 
     
@@ -558,7 +558,7 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
     if(logger != null)        
         {
             logger.println("SSLSocket.close "+socket_was_closed);
-        } //End block
+        } 
     if(!socket_was_closed)        
         {
     if(handshake_started)            
@@ -568,33 +568,33 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
                 try 
                 {
                     output.write(alertProtocol.wrap());
-                } //End block
+                } 
                 catch (IOException ex)
                 {
-                } //End block
+                } 
                 alertProtocol.setProcessed();
-            } //End block
+            } 
             shutdown();
             closeTransportLayer();
             socket_was_closed = true;
-        } //End block
-        // ---------- Original Method ----------
-        //if (logger != null) {
-            //logger.println("SSLSocket.close "+socket_was_closed);
-        //}
-        //if (!socket_was_closed) {
-            //if (handshake_started) {
-                //alertProtocol.alert(AlertProtocol.WARNING,
-                        //AlertProtocol.CLOSE_NOTIFY);
-                //try {
-                    //output.write(alertProtocol.wrap());
-                //} catch (IOException ex) { }
-                //alertProtocol.setProcessed();
-            //}
-            //shutdown();
-            //closeTransportLayer();
-            //socket_was_closed = true;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+                        
+                
+                    
+                
+                
+            
+            
+            
+            
+        
     }
 
     
@@ -606,9 +606,9 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
                 "Method sendUrgentData() is not supported.");
         var50B8BFCDC6E8315B913207C5748AC53B_112509179.addTaint(taint);
         throw var50B8BFCDC6E8315B913207C5748AC53B_112509179;
-        // ---------- Original Method ----------
-        //throw new SocketException(
-                //"Method sendUrgentData() is not supported.");
+        
+        
+                
     }
 
     
@@ -620,9 +620,9 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
                 "Methods sendUrgentData, setOOBInline are not supported.");
         var88B0E59078F2F2FADE721829F824BF94_1441817095.addTaint(taint);
         throw var88B0E59078F2F2FADE721829F824BF94_1441817095;
-        // ---------- Original Method ----------
-        //throw new SocketException(
-                //"Methods sendUrgentData, setOOBInline are not supported.");
+        
+        
+                
     }
 
     
@@ -636,18 +636,18 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
             handshakeProtocol = null;
             recordProtocol.shutdown();
             recordProtocol = null;
-        } //End block
+        } 
         socket_was_closed = true;
-        // ---------- Original Method ----------
-        //if (handshake_started) {
-            //alertProtocol.shutdown();
-            //alertProtocol = null;
-            //handshakeProtocol.shutdown();
-            //handshakeProtocol = null;
-            //recordProtocol.shutdown();
-            //recordProtocol = null;
-        //}
-        //socket_was_closed = true;
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -656,12 +656,12 @@ OutputStream var7C35464E15AF057D033B64BB3C503DA0_1056942362 =         appDataOS;
     if(!handshake_started)        
         {
             startHandshake();
-        } //End block
+        } 
         int type;
     if(logger != null)        
         {
             logger.println("SSLSocket.needAppData..");
-        } //End block
+        } 
         try 
         {
             while
@@ -674,21 +674,21 @@ switch(type = recordProtocol.unwrap()){
                                 .NOT_HANDSHAKING))                
                 {
                     doHandshake();
-                } //End block
+                } 
                 break;
                 case ContentType.ALERT:
                 processAlert();
     if(socket_was_closed)                
                 {
                     return;
-                } //End block
+                } 
                 break;
                 case ContentType.APPLICATION_DATA:
     if(logger != null)                
                 {
                     logger.println(
                                     "SSLSocket.needAppData: got the data");
-                } //End block
+                } 
                 break;
                 default:
                 reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
@@ -698,29 +698,29 @@ switch(type = recordProtocol.unwrap()){
                 {
                     output.write(alertProtocol.wrap());
                     alertProtocol.setProcessed();
-                } //End block
+                } 
     if(socket_was_closed)                
                 {
                     appDataIS.setEnd();
                     return;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (AlertException e)
         {
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
+        } 
         catch (EndOfSourceException e)
         {
             appDataIS.setEnd();
-        } //End block
+        } 
     if(logger != null)        
         {
             logger.println("SSLSocket.needAppData: app data len: "
                     + appDataIS.available());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -732,19 +732,19 @@ switch(type = recordProtocol.unwrap()){
     if(!handshake_started)        
         {
             startHandshake();
-        } //End block
+        } 
     if(logger != null)        
         {
             logger.println("SSLSocket.writeAppData: " +
                     len + " " + SSLRecordProtocol.MAX_DATA_LENGTH);
-        } //End block
+        } 
         try 
         {
     if(len < SSLRecordProtocol.MAX_DATA_LENGTH)            
             {
                 output.write(recordProtocol.wrap(ContentType.APPLICATION_DATA,
                             data, offset, len));
-            } //End block
+            } 
             else
             {
                 while
@@ -755,24 +755,25 @@ switch(type = recordProtocol.unwrap()){
                                 SSLRecordProtocol.MAX_DATA_LENGTH));
                     offset += SSLRecordProtocol.MAX_DATA_LENGTH;
                     len -= SSLRecordProtocol.MAX_DATA_LENGTH;
-                } //End block
+                } 
     if(len > 0)                
                 {
                     output.write(
                         recordProtocol.wrap(ContentType.APPLICATION_DATA,
                                             data, offset, len));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (AlertException e)
         {
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.402 -0400", hash_original_method = "B11A6FC07E880C42041746EA2FD3607A", hash_generated_method = "C1695AE7DFED5B6A53610B6DDC6B44F9")
     private void doHandshake() throws IOException {
         SSLEngineResult.HandshakeStatus status;
@@ -793,11 +794,11 @@ switch(type = recordProtocol.unwrap()){
                             ? "NEED_UNWRAP"
                             : "STATUS: OTHER!";
                     logger.println("SSLSocketImpl: HS status: "+s+" "+status);
-                } //End block
+                } 
     if(status.equals(SSLEngineResult.HandshakeStatus.NEED_WRAP))                
                 {
                     output.write(handshakeProtocol.wrap());
-                } //End block
+                } 
                 else
     if(status.equals(
                             SSLEngineResult.HandshakeStatus.NEED_UNWRAP))                
@@ -813,7 +814,7 @@ switch(type = recordProtocol.unwrap()){
     if(socket_was_closed)                    
                     {
                         return;
-                    } //End block
+                    } 
                     break;
                     default:
                     reportFatalAlert(AlertProtocol.UNEXPECTED_MESSAGE,
@@ -821,31 +822,31 @@ switch(type = recordProtocol.unwrap()){
                                         "Unexpected message of type "
                                         + type + " has been got"));
 }
-                } //End block
+                } 
                 else
                 {
                     reportFatalAlert(AlertProtocol.INTERNAL_ERROR,
                         new SSLException(
                             "Handshake passed unexpected status: "+status));
-                } //End block
+                } 
     if(alertProtocol.hasAlert())                
                 {
                     output.write(alertProtocol.wrap());
                     alertProtocol.setProcessed();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (EndOfSourceException e)
         {
             appDataIS.setEnd();
             IOException var2C376D28D3F113EFF1565DB5EFCF58E6_1203646391 = new IOException("Connection was closed");
             var2C376D28D3F113EFF1565DB5EFCF58E6_1203646391.addTaint(taint);
             throw var2C376D28D3F113EFF1565DB5EFCF58E6_1203646391;
-        } //End block
+        } 
         catch (AlertException e)
         {
             reportFatalAlert(e.getDescriptionCode(), e.getReason());
-        } //End block
+        } 
         session = recordProtocol.getSession();
     if(listeners != null)        
         {
@@ -855,19 +856,20 @@ for(int i=0;i<size;i++)
             {
                 listeners.get(i)
                     .handshakeCompleted(event);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:33.402 -0400", hash_original_method = "1DCA961CD2F2BCD453967A97232AAFC6", hash_generated_method = "EEEBAB35DBDAB7E1CD2D955BE0668ED9")
     private void processAlert() throws IOException {
     if(!alertProtocol.hasAlert())        
         {
             return;
-        } //End block
+        } 
     if(alertProtocol.isFatalAlert())        
         {
             alertProtocol.setProcessed();
@@ -877,12 +879,12 @@ for(int i=0;i<size;i++)
             SSLException var30A4E97391385D7A4E772B8C367E9DCB_1494392420 = new SSLException(description);
             var30A4E97391385D7A4E772B8C367E9DCB_1494392420.addTaint(taint);
             throw var30A4E97391385D7A4E772B8C367E9DCB_1494392420;
-        } //End block
+        } 
     if(logger != null)        
         {
             logger.println("Warning alert received: "
                 + alertProtocol.getAlertDescription());
-        } //End block
+        } 
 switch(alertProtocol.getDescriptionCode()){
         case AlertProtocol.CLOSE_NOTIFY:
         alertProtocol.setProcessed();
@@ -892,8 +894,8 @@ switch(alertProtocol.getDescriptionCode()){
         default:
         alertProtocol.setProcessed();
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -906,22 +908,22 @@ switch(alertProtocol.getDescriptionCode()){
         try 
         {
             output.write(alertProtocol.wrap());
-        } //End block
+        } 
         catch (IOException ex)
         {
-        } //End block
+        } 
         alertProtocol.setProcessed();
         shutdown();
         reason.addTaint(taint);
         throw reason;
-        // ---------- Original Method ----------
-        //alertProtocol.alert(AlertProtocol.FATAL, description_code);
-        //try {
-            //output.write(alertProtocol.wrap());
-        //} catch (IOException ex) { }
-        //alertProtocol.setProcessed();
-        //shutdown();
-        //throw reason;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     

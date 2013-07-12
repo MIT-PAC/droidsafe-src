@@ -1,6 +1,6 @@
 package gov.nist.core;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:33.578 -0400", hash_original_method = "92FBF841CDA8BB538E9BCFC9D2E80E36", hash_generated_method = "BBAE31DA49C30209803972329341FA59")
     public  MultiValueMapImpl() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,19 +33,19 @@ public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable
         {
             keyList = new ArrayList<V>(10);
             map.put(key, keyList);
-        } //End block
+        } 
         keyList.add(value);
 List<V> varCC0C5B4D79414422EDBBE9E933224EAF_738196787 =         keyList;
         varCC0C5B4D79414422EDBBE9E933224EAF_738196787.addTaint(taint);
         return varCC0C5B4D79414422EDBBE9E933224EAF_738196787;
-        // ---------- Original Method ----------
-        //ArrayList<V> keyList = map.get(key);
-        //if (keyList == null) {
-            //keyList = new ArrayList<V>(10);
-            //map.put(key, keyList);
-        //}
-        //keyList.add(value);
-        //return keyList;
+        
+        
+        
+            
+            
+        
+        
+        
     }
 
     
@@ -71,22 +71,22 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_738196787 =         keyList;
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_215522387 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_215522387;
             }
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1490351695 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_698845911 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_698845911;
-        // ---------- Original Method ----------
-        //Set pairs = map.entrySet();
-        //if (pairs == null)
-            //return false;
-        //Iterator pairsIterator = pairs.iterator();
-        //while (pairsIterator.hasNext()) {
-            //Map.Entry keyValuePair = (Map.Entry) (pairsIterator.next());
-            //ArrayList list = (ArrayList) (keyValuePair.getValue());
-            //if (list.contains(value))
-                //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+        
+        
     }
 
     
@@ -100,17 +100,17 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_738196787 =         keyList;
             Map.Entry keyValuePair = (Map.Entry) (pairsIterator.next());
             ArrayList list = (ArrayList) (keyValuePair.getValue());
             list.clear();
-        } //End block
+        } 
         map.clear();
-        // ---------- Original Method ----------
-        //Set pairs = map.entrySet();
-        //Iterator pairsIterator = pairs.iterator();
-        //while (pairsIterator.hasNext()) {
-            //Map.Entry keyValuePair = (Map.Entry) (pairsIterator.next());
-            //ArrayList list = (ArrayList) (keyValuePair.getValue());
-            //list.clear();
-        //}
-        //map.clear();
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -128,24 +128,24 @@ List<V> varCC0C5B4D79414422EDBBE9E933224EAF_738196787 =         keyList;
 for(int ii = 0;ii < values.length;ii++)
             {
                 returnList.add(values[ii]);
-            } //End block
-        } //End block
+            } 
+        } 
 Collection var195207CFC264788B20A079C8C3E1371E_1590439384 =         returnList;
         var195207CFC264788B20A079C8C3E1371E_1590439384.addTaint(taint);
         return var195207CFC264788B20A079C8C3E1371E_1590439384;
-        // ---------- Original Method ----------
-        //ArrayList returnList = new ArrayList(map.size());
-        //Set pairs = map.entrySet();
-        //Iterator pairsIterator = pairs.iterator();
-        //while (pairsIterator.hasNext()) {
-            //Map.Entry keyValuePair = (Map.Entry) (pairsIterator.next());
-            //ArrayList list = (ArrayList) (keyValuePair.getValue());
-            //Object[] values = list.toArray();
-            //for (int ii = 0; ii < values.length; ii++) {
-                //returnList.add(values[ii]);
-            //}
-        //}
-        //return returnList;
+        
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -156,10 +156,10 @@ Collection var195207CFC264788B20A079C8C3E1371E_1590439384 =         returnList;
 Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
         var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780.addTaint(taint);
         return var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780;
-        // ---------- Original Method ----------
-        //MultiValueMapImpl obj = new MultiValueMapImpl<V>();
-        //obj.map = (HashMap<Object, ArrayList<V>>) this.map.clone();
-        //return obj;
+        
+        
+        
+        
     }
 
     
@@ -168,8 +168,8 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
         int varF2202A8501CD0EEDB2506BC8F112F883_275648384 = (this.map.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1183589285 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1183589285;
-        // ---------- Original Method ----------
-        //return this.map.size();
+        
+        
     }
 
     
@@ -179,8 +179,8 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
         boolean var1F5C7C829096E4FDB1A63A2E9D4DD6A2_868168074 = (map.containsKey(key));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1258367100 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1258367100;
-        // ---------- Original Method ----------
-        //return map.containsKey(key);
+        
+        
     }
 
     
@@ -189,8 +189,8 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_830820780 =         obj;
 Set varD70A818A9C24919C79B0A6854ED78BA4_1438188410 =         map.entrySet();
         varD70A818A9C24919C79B0A6854ED78BA4_1438188410.addTaint(taint);
         return varD70A818A9C24919C79B0A6854ED78BA4_1438188410;
-        // ---------- Original Method ----------
-        //return map.entrySet();
+        
+        
     }
 
     
@@ -199,8 +199,8 @@ Set varD70A818A9C24919C79B0A6854ED78BA4_1438188410 =         map.entrySet();
         boolean varAF143B23ABB0913809523AA7F6DBE946_347325777 = (map.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_118125105 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_118125105;
-        // ---------- Original Method ----------
-        //return map.isEmpty();
+        
+        
     }
 
     
@@ -209,8 +209,8 @@ Set varD70A818A9C24919C79B0A6854ED78BA4_1438188410 =         map.entrySet();
 Set<String> varF820A78B2E5CB85B7FD62FD1DAFAA525_303072810 =         this.map.keySet();
         varF820A78B2E5CB85B7FD62FD1DAFAA525_303072810.addTaint(taint);
         return varF820A78B2E5CB85B7FD62FD1DAFAA525_303072810;
-        // ---------- Original Method ----------
-        //return this.map.keySet();
+        
+        
     }
 
     
@@ -224,20 +224,20 @@ Set<String> varF820A78B2E5CB85B7FD62FD1DAFAA525_303072810 =         this.map.key
 Object var540C13E9E156B687226421B24F2DF178_909235882 =             null;
             var540C13E9E156B687226421B24F2DF178_909235882.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_909235882;
-        } //End block
+        } 
         else
         {
 Object varA9485A2631DFC87793B41E94772B18C9_601969208 =             list.remove(item);
             varA9485A2631DFC87793B41E94772B18C9_601969208.addTaint(taint);
             return varA9485A2631DFC87793B41E94772B18C9_601969208;
-        } //End block
-        // ---------- Original Method ----------
-        //ArrayList<V> list = this.map.get(key);
-        //if (list == null) {
-            //return null;
-        //} else {
-            //return list.remove(item);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -247,8 +247,8 @@ Object varA9485A2631DFC87793B41E94772B18C9_601969208 =             list.remove(i
 List<V> var97156AACD411ADC83FECC30C065B5B0C_2084543171 =         map.get(key);
         var97156AACD411ADC83FECC30C065B5B0C_2084543171.addTaint(taint);
         return var97156AACD411ADC83FECC30C065B5B0C_2084543171;
-        // ---------- Original Method ----------
-        //return map.get(key);
+        
+        
     }
 
     
@@ -259,8 +259,8 @@ List<V> var97156AACD411ADC83FECC30C065B5B0C_2084543171 =         map.get(key);
 List<V> var02481C24BCFA11D91CC01A5BB2621143_1506066333 =         this.map.put(key,(ArrayList<V>) value);
         var02481C24BCFA11D91CC01A5BB2621143_1506066333.addTaint(taint);
         return var02481C24BCFA11D91CC01A5BB2621143_1506066333;
-        // ---------- Original Method ----------
-        //return this.map.put(key,(ArrayList<V>) value);
+        
+        
     }
 
     
@@ -270,8 +270,8 @@ List<V> var02481C24BCFA11D91CC01A5BB2621143_1506066333 =         this.map.put(ke
 List<V> var680816A9C90635BE8F543A56792CAAE8_599440894 =         map.remove(key);
         var680816A9C90635BE8F543A56792CAAE8_599440894.addTaint(taint);
         return var680816A9C90635BE8F543A56792CAAE8_599440894;
-        // ---------- Original Method ----------
-        //return map.remove(key);
+        
+        
     }
 
     
@@ -283,13 +283,13 @@ for(String k : mapToPut.keySet())
             ArrayList<V> al = new ArrayList<V>();
             al.addAll(mapToPut.get(k));
             this.map.put(k, al);
-        } //End block
-        // ---------- Original Method ----------
-        //for (String k : mapToPut.keySet()) {
-            //ArrayList<V> al = new ArrayList<V>();
-            //al.addAll(mapToPut.get(k));
-            //this.map.put(k, al);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     

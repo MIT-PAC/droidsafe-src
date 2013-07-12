@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.pkcs;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,24 +29,24 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     if(funcSeq.getObjectAt(0).equals(id_PBKDF2))        
         {
             func = new KeyDerivationFunc(id_PBKDF2, PBKDF2Params.getInstance(funcSeq.getObjectAt(1)));
-        } //End block
+        } 
         else
         {
             func = new KeyDerivationFunc(funcSeq);
-        } //End block
+        } 
         scheme = (EncryptionScheme)EncryptionScheme.getInstance(e.nextElement());
-        // ---------- Original Method ----------
-        //Enumeration e = obj.getObjects();
-        //ASN1Sequence  funcSeq = ASN1Sequence.getInstance(((DEREncodable)e.nextElement()).getDERObject());
-        //if (funcSeq.getObjectAt(0).equals(id_PBKDF2))
-        //{
-            //func = new KeyDerivationFunc(id_PBKDF2, PBKDF2Params.getInstance(funcSeq.getObjectAt(1)));
-        //}
-        //else
-        //{
-            //func = new KeyDerivationFunc(funcSeq);
-        //}
-        //scheme = (EncryptionScheme)EncryptionScheme.getInstance(e.nextElement());
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -64,23 +64,25 @@ public class PBES2Parameters extends ASN1Encodable implements PKCSObjectIdentifi
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.392 -0400", hash_original_method = "EA8CB9021471F89DCA3D4DA5F755F4FC", hash_generated_method = "6DBF150153F2CD4CBD54BF16FBA87EA4")
     public KeyDerivationFunc getKeyDerivationFunc() {
 KeyDerivationFunc varC9940A7354FB2A62A9E534A0DDC131A7_821260431 =         func;
         varC9940A7354FB2A62A9E534A0DDC131A7_821260431.addTaint(taint);
         return varC9940A7354FB2A62A9E534A0DDC131A7_821260431;
-        // ---------- Original Method ----------
-        //return func;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:39.392 -0400", hash_original_method = "9053FDAC6FE0628F4B096189E8DDF584", hash_generated_method = "C5BBC4A99F5ABF4C8DC4FBD9651AAE31")
     public EncryptionScheme getEncryptionScheme() {
 EncryptionScheme varFD3305CF8340E40F0AC0AB554909AEBC_1442337729 =         scheme;
         varFD3305CF8340E40F0AC0AB554909AEBC_1442337729.addTaint(taint);
         return varFD3305CF8340E40F0AC0AB554909AEBC_1442337729;
-        // ---------- Original Method ----------
-        //return scheme;
+        
+        
     }
 
     
@@ -92,11 +94,11 @@ EncryptionScheme varFD3305CF8340E40F0AC0AB554909AEBC_1442337729 =         scheme
 DERObject var0B338F106E3279986C87B595B0F4A439_919429608 =         new DERSequence(v);
         var0B338F106E3279986C87B595B0F4A439_919429608.addTaint(taint);
         return var0B338F106E3279986C87B595B0F4A439_919429608;
-        // ---------- Original Method ----------
-        //ASN1EncodableVector  v = new ASN1EncodableVector();
-        //v.add(func);
-        //v.add(scheme);
-        //return new DERSequence(v);
+        
+        
+        
+        
+        
     }
 
     

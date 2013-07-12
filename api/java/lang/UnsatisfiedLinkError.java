@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class UnsatisfiedLinkError extends LinkageError {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.775 -0400", hash_original_method = "4F1AAD53B033EB263910F7523EBBB434", hash_generated_method = "7AB5ED1DC96BEAEC657FF0F58A7545D2")
     public  UnsatisfiedLinkError() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class UnsatisfiedLinkError extends LinkageError {
     public  UnsatisfiedLinkError(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

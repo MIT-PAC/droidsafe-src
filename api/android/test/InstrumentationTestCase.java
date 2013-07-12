@@ -1,6 +1,6 @@
 package android.test;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,15 +24,16 @@ public class InstrumentationTestCase extends TestCase {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.964 -0400", hash_original_method = "F06054A79CB0E1296A7D2CB8684D0A88", hash_generated_method = "F06054A79CB0E1296A7D2CB8684D0A88")
     public InstrumentationTestCase ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.964 -0400", hash_original_method = "30957576898B0AE27F5837919E36AECD", hash_generated_method = "52FC0986A496E063EF447F094F5B0687")
     public void injectInstrumentation(Instrumentation instrumentation) {
         mInstrumentation = instrumentation;
-        // ---------- Original Method ----------
-        //mInstrumentation = instrumentation;
+        
+        
     }
 
     
@@ -41,18 +42,19 @@ public class InstrumentationTestCase extends TestCase {
     public void injectInsrumentation(Instrumentation instrumentation) {
         addTaint(instrumentation.getTaint());
         injectInstrumentation(instrumentation);
-        // ---------- Original Method ----------
-        //injectInstrumentation(instrumentation);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.965 -0400", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "E0FF34DE2FBCFD195E1CFE02D70E32BA")
     public Instrumentation getInstrumentation() {
 Instrumentation var0FB7EFFFC0B8CD54E817BBC71710DE88_958141454 =         mInstrumentation;
         var0FB7EFFFC0B8CD54E817BBC71710DE88_958141454.addTaint(taint);
         return var0FB7EFFFC0B8CD54E817BBC71710DE88_958141454;
-        // ---------- Original Method ----------
-        //return mInstrumentation;
+        
+        
     }
 
     
@@ -68,16 +70,16 @@ Instrumentation var0FB7EFFFC0B8CD54E817BBC71710DE88_958141454 =         mInstrum
     if(extras != null)        
         {
             intent.putExtras(extras);
-        } //End block
+        } 
 T varE7F6C12080F9D8EF62DC3FF8BA750C63_1108358642 =         launchActivityWithIntent(pkg, activityCls, intent);
         varE7F6C12080F9D8EF62DC3FF8BA750C63_1108358642.addTaint(taint);
         return varE7F6C12080F9D8EF62DC3FF8BA750C63_1108358642;
-        // ---------- Original Method ----------
-        //Intent intent = new Intent(Intent.ACTION_MAIN);
-        //if (extras != null) {
-            //intent.putExtras(extras);
-        //}
-        //return launchActivityWithIntent(pkg, activityCls, intent);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -97,12 +99,12 @@ T varE7F6C12080F9D8EF62DC3FF8BA750C63_1108358642 =         launchActivityWithInt
 T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
         var8CEBAC25E19008E785695F06EF11C2CD_27759386.addTaint(taint);
         return var8CEBAC25E19008E785695F06EF11C2CD_27759386;
-        // ---------- Original Method ----------
-        //intent.setClassName(pkg, activityCls.getName());
-        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        //T activity = (T) getInstrumentation().startActivitySync(intent);
-        //getInstrumentation().waitForIdleSync();
-        //return activity;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -116,17 +118,17 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
             try 
             {
                 r.run();
-            } //End block
+            } 
             catch (Throwable throwable)
             {
                 exceptions[0] = throwable;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                    //r.run();
-                //} catch (Throwable throwable) {
-                    //exceptions[0] = throwable;
-                //}
+            } 
+            
+            
+                    
+                
+                    
+                
         }
 });
     if(exceptions[0] != null)        
@@ -134,24 +136,25 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
             Throwable var296B1984B2B2C37AA52E811D451E8A46_170464197 = exceptions[0];
             var296B1984B2B2C37AA52E811D451E8A46_170464197.addTaint(taint);
             throw var296B1984B2B2C37AA52E811D451E8A46_170464197;
-        } //End block
-        // ---------- Original Method ----------
-        //final Throwable[] exceptions = new Throwable[1];
-        //getInstrumentation().runOnMainSync(new Runnable() {
-            //public void run() {
-                //try {
-                    //r.run();
-                //} catch (Throwable throwable) {
-                    //exceptions[0] = throwable;
-                //}
-            //}
-        //});
-        //if (exceptions[0] != null) {
-            //throw exceptions[0];
-        //}
+        } 
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.969 -0400", hash_original_method = "58232FB81B29EAE27E4B0E868189E51E", hash_generated_method = "5AECC44B194BF7066DB96161C10A1946")
     @Override
     protected void runTest() throws Throwable {
@@ -161,27 +164,27 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
         try 
         {
             method = getClass().getMethod(fName, (Class[]) null);
-        } //End block
+        } 
         catch (NoSuchMethodException e)
         {
             fail("Method \""+fName+"\" not found");
-        } //End block
+        } 
     if(!Modifier.isPublic(method.getModifiers()))        
         {
             fail("Method \""+fName+"\" should be public");
-        } //End block
+        } 
         int runCount = 1;
         boolean isRepetitive = false;
     if(method.isAnnotationPresent(FlakyTest.class))        
         {
             runCount = method.getAnnotation(FlakyTest.class).tolerance();
-        } //End block
+        } 
         else
     if(method.isAnnotationPresent(RepetitiveTest.class))        
         {
             runCount = method.getAnnotation(RepetitiveTest.class).numIterations();
             isRepetitive = true;
-        } //End block
+        } 
     if(method.isAnnotationPresent(UiThreadTest.class))        
         {
             final int tolerance = runCount;
@@ -194,17 +197,17 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
             try 
             {
                 runMethod(testMethod, tolerance, repetitive);
-            } //End block
+            } 
             catch (Throwable throwable)
             {
                 exceptions[0] = throwable;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                        //runMethod(testMethod, tolerance, repetitive);
-                    //} catch (Throwable throwable) {
-                        //exceptions[0] = throwable;
-                    //}
+            } 
+            
+            
+                        
+                    
+                        
+                    
         }
 });
     if(exceptions[0] != null)            
@@ -212,14 +215,14 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
                 Throwable var296B1984B2B2C37AA52E811D451E8A46_281405114 = exceptions[0];
                 var296B1984B2B2C37AA52E811D451E8A46_281405114.addTaint(taint);
                 throw var296B1984B2B2C37AA52E811D451E8A46_281405114;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             runMethod(method, runCount, isRepetitive);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -228,8 +231,8 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
         addTaint(tolerance);
         addTaint(runMethod.getTaint());
         runMethod(runMethod, tolerance, false);
-        // ---------- Original Method ----------
-        //runMethod(runMethod, tolerance, false);
+        
+        
     }
 
     
@@ -246,17 +249,17 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
                 {
                     runMethod.invoke(this, (Object[]) null);
                     exception = null;
-                } //End block
+                } 
                 catch (InvocationTargetException e)
                 {
                     e.fillInStackTrace();
                     exception = e.getTargetException();
-                } //End block
+                } 
                 catch (IllegalAccessException e)
                 {
                     e.fillInStackTrace();
                     exception = e;
-                } //End block
+                } 
                 finally 
                 {
                     runCount++;
@@ -265,17 +268,17 @@ T var8CEBAC25E19008E785695F06EF11C2CD_27759386 =         activity;
                         Bundle iterations = new Bundle();
                         iterations.putInt("currentiterations", runCount);
                         getInstrumentation().sendStatus(2, iterations);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
 } while ((runCount < tolerance) && (isRepetitive || exception != null));
     if(exception != null)        
         {
             exception.addTaint(taint);
             throw exception;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -293,15 +296,15 @@ for(int i = 0;i < count;i++)
             try 
             {
                 keyCount = repeater == -1 ? 1 : Integer.parseInt(key.substring(0, repeater));
-            } //End block
+            } 
             catch (NumberFormatException e)
             {
                 continue;
-            } //End block
+            } 
     if(repeater != -1)            
             {
                 key = key.substring(repeater + 1);
-            } //End block
+            } 
 for(int j = 0;j < keyCount;j++)
             {
                 try 
@@ -311,24 +314,24 @@ for(int j = 0;j < keyCount;j++)
                     try 
                     {
                         instrumentation.sendKeyDownUpSync(keyCode);
-                    } //End block
+                    } 
                     catch (SecurityException e)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (NoSuchFieldException e)
                 {
                     break;
-                } //End block
+                } 
                 catch (IllegalAccessException e)
                 {
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         instrumentation.waitForIdleSync();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -342,22 +345,22 @@ for(int i = 0;i < count;i++)
             try 
             {
                 instrumentation.sendKeyDownUpSync(keys[i]);
-            } //End block
+            } 
             catch (SecurityException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         instrumentation.waitForIdleSync();
-        // ---------- Original Method ----------
-        //final int count = keys.length;
-        //final Instrumentation instrumentation = getInstrumentation();
-        //for (int i = 0; i < count; i++) {
-            //try {
-                //instrumentation.sendKeyDownUpSync(keys[i]);
-            //} catch (SecurityException e) {
-            //}
-        //}
-        //instrumentation.waitForIdleSync();
+        
+        
+        
+        
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -371,7 +374,7 @@ for(int i = 0;i < count;i++)
                     + "be a multiple of 2");
             var5656FBDBB1C46FC1D6197ED73B4B9310_491406881.addTaint(taint);
             throw var5656FBDBB1C46FC1D6197ED73B4B9310_491406881;
-        } //End block
+        } 
         final Instrumentation instrumentation = getInstrumentation();
 for(int i = 0;i < count;i += 2)
         {
@@ -382,31 +385,31 @@ for(int j = 0;j < keyCount;j++)
                 try 
                 {
                     instrumentation.sendKeyDownUpSync(keyCode);
-                } //End block
+                } 
                 catch (SecurityException e)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         instrumentation.waitForIdleSync();
-        // ---------- Original Method ----------
-        //final int count = keys.length;
-        //if ((count & 0x1) == 0x1) {
-            //throw new IllegalArgumentException("The size of the keys array must "
-                    //+ "be a multiple of 2");
-        //}
-        //final Instrumentation instrumentation = getInstrumentation();
-        //for (int i = 0; i < count; i += 2) {
-            //final int keyCount = keys[i];
-            //final int keyCode = keys[i + 1];
-            //for (int j = 0; j < keyCount; j++) {
-                //try {
-                    //instrumentation.sendKeyDownUpSync(keyCode);
-                //} catch (SecurityException e) {
-                //}
-            //}
-        //}
-        //instrumentation.waitForIdleSync();
+        
+        
+        
+            
+                    
+        
+        
+        
+            
+            
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -417,11 +420,11 @@ for(int j = 0;j < keyCount;j++)
         Runtime.getRuntime().runFinalization();
         Runtime.getRuntime().gc();
         super.tearDown();
-        // ---------- Original Method ----------
-        //Runtime.getRuntime().gc();
-        //Runtime.getRuntime().runFinalization();
-        //Runtime.getRuntime().gc();
-        //super.tearDown();
+        
+        
+        
+        
+        
     }
 
     

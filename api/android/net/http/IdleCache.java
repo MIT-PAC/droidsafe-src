@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,11 +29,11 @@ class IdleCache {
 for(int i = 0;i < IDLE_CACHE_MAX;i++)
         {
             mEntries[i] = new Entry();
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < IDLE_CACHE_MAX; i++) {
-            //mEntries[i] = new Entry();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -46,7 +46,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
     if(HttpLog.LOGV)        
         {
             HttpLog.v("IdleCache size " + mCount + " host "  + host);
-        } //End block
+        } 
     if(mCount < IDLE_CACHE_MAX)        
         {
             long time = SystemClock.uptimeMillis();
@@ -66,16 +66,16 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
                     {
                         mThread = new IdleReaper();
                         mThread.start();
-                    } //End block
+                    } 
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_580394185 = (ret);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622971862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_622971862;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -98,29 +98,29 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
     if(HttpLog.LOGV)                    
                     mReused++;
                     break;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 Connection varEDFF4FBBF053B5DC2B444ADFA049EE0F_1894352810 =         ret;
         varEDFF4FBBF053B5DC2B444ADFA049EE0F_1894352810.addTaint(taint);
         return varEDFF4FBBF053B5DC2B444ADFA049EE0F_1894352810;
-        // ---------- Original Method ----------
-        //Connection ret = null;
-        //if (mCount > 0) {
-            //for (int i = 0; i < IDLE_CACHE_MAX; i++) {
-                //Entry entry = mEntries[i];
-                //HttpHost eHost = entry.mHost;
-                //if (eHost != null && eHost.equals(host)) {
-                    //ret = entry.mConnection;
-                    //entry.mHost = null;
-                    //entry.mConnection = null;
-                    //mCount--;
-                    //if (HttpLog.LOGV) mReused++;
-                    //break;
-                //}
-            //}
-        //}
-        //return ret;
+        
+        
+        
+            
+                
+                
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -135,18 +135,18 @@ for(int i = 0;mCount > 0 && i < IDLE_CACHE_MAX;i++)
                 entry.mConnection.closeConnection();
                 entry.mConnection = null;
                 mCount--;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; mCount > 0 && i < IDLE_CACHE_MAX; i++) {
-            //Entry entry = mEntries[i];
-            //if (entry.mHost != null) {
-                //entry.mHost = null;
-                //entry.mConnection.closeConnection();
-                //entry.mConnection = null;
-                //mCount--;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+                
+            
+        
     }
 
     
@@ -164,22 +164,22 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
                     entry.mConnection.closeConnection();
                     entry.mConnection = null;
                     mCount--;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCount > 0) {
-            //long time = SystemClock.uptimeMillis();
-            //for (int i = 0; i < IDLE_CACHE_MAX; i++) {
-                //Entry entry = mEntries[i];
-                //if (entry.mHost != null && time > entry.mTimeout) {
-                    //entry.mHost = null;
-                    //entry.mConnection.closeConnection();
-                    //entry.mConnection = null;
-                    //mCount--;
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                    
+                    
+                    
+                    
+                
+            
+        
     }
 
     
@@ -197,7 +197,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.293 -0400", hash_original_method = "629F4A8E90A91F8ECA92C26A9EB219B2", hash_generated_method = "629F4A8E90A91F8ECA92C26A9EB219B2")
         public Entry ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -210,7 +210,7 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.293 -0400", hash_original_method = "C9AFDFC698BD8B70E3BC662C5244B0E4", hash_generated_method = "C9AFDFC698BD8B70E3BC662C5244B0E4")
         public IdleReaper ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -228,31 +228,31 @@ for(int i = 0;i < IDLE_CACHE_MAX;i++)
                     try 
                     {
                         IdleCache.this.wait(CHECK_INTERVAL);
-                    } //End block
+                    } 
                     catch (InterruptedException ex)
                     {
-                    } //End block
+                    } 
     if(mCount == 0)                    
                     {
                         check++;
-                    } //End block
+                    } 
                     else
                     {
                         check = 0;
                         clearIdle();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mThread = null;
-            } //End block
+            } 
     if(HttpLog.LOGV)            
             {
                 HttpLog.v("IdleCache IdleReaper shutdown: cached " + mCached +
                           " reused " + mReused);
                 mCached = 0;
                 mReused = 0;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         

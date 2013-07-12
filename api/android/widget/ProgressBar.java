@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -124,7 +124,7 @@ public class ProgressBar extends View {
     public  ProgressBar(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -133,7 +133,7 @@ public class ProgressBar extends View {
         this(context, attrs, com.android.internal.R.attr.progressBarStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -143,7 +143,7 @@ public class ProgressBar extends View {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -163,7 +163,7 @@ public class ProgressBar extends View {
         {
             drawable = tileify(drawable, false);
             setProgressDrawable(drawable);
-        } //End block
+        } 
         mDuration = a.getInt(R.styleable.ProgressBar_indeterminateDuration, mDuration);
         mMinWidth = a.getDimensionPixelSize(R.styleable.ProgressBar_minWidth, mMinWidth);
         mMaxWidth = a.getDimensionPixelSize(R.styleable.ProgressBar_maxWidth, mMaxWidth);
@@ -176,7 +176,7 @@ public class ProgressBar extends View {
     if(resID > 0)        
         {
             setInterpolator(context, resID);
-        } //End block
+        } 
         setMax(a.getInt(R.styleable.ProgressBar_max, mMax));
         setProgress(a.getInt(R.styleable.ProgressBar_progress, mProgress));
         setSecondaryProgress(
@@ -186,7 +186,7 @@ public class ProgressBar extends View {
         {
             drawable = tileifyIndeterminate(drawable);
             setIndeterminateDrawable(drawable);
-        } //End block
+        } 
         mOnlyIndeterminate = a.getBoolean(
                 R.styleable.ProgressBar_indeterminateOnly, mOnlyIndeterminate);
         mNoInvalidate = false;
@@ -195,8 +195,8 @@ public class ProgressBar extends View {
         mAnimationResolution = a.getInteger(R.styleable.ProgressBar_animationResolution,
                 ANIMATION_RESOLUTION);
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -214,16 +214,16 @@ for(int i = 0;i < N;i++)
                 int id = background.getId(i);
                 outDrawables[i] = tileify(background.getDrawable(i),
                         (id == R.id.progress || id == R.id.secondaryProgress));
-            } //End block
+            } 
             LayerDrawable newBg = new LayerDrawable(outDrawables);
 for(int i = 0;i < N;i++)
             {
                 newBg.setId(i, background.getId(i));
-            } //End block
+            } 
 Drawable var2649DE119BD6106393C67CBB797B1AB8_1602343450 =             newBg;
             var2649DE119BD6106393C67CBB797B1AB8_1602343450.addTaint(taint);
             return var2649DE119BD6106393C67CBB797B1AB8_1602343450;
-        } //End block
+        } 
         else
     if(drawable instanceof StateListDrawable)        
         {
@@ -233,11 +233,11 @@ Drawable var2649DE119BD6106393C67CBB797B1AB8_1602343450 =             newBg;
 for(int i = 0;i < numStates;i++)
             {
                 out.addState(in.getStateSet(i), tileify(in.getStateDrawable(i), clip));
-            } //End block
+            } 
 Drawable varFE81D892BE5757A0E16305825903D324_1095780643 =             out;
             varFE81D892BE5757A0E16305825903D324_1095780643.addTaint(taint);
             return varFE81D892BE5757A0E16305825903D324_1095780643;
-        } //End block
+        } 
         else
     if(drawable instanceof BitmapDrawable)        
         {
@@ -245,7 +245,7 @@ Drawable varFE81D892BE5757A0E16305825903D324_1095780643 =             out;
     if(mSampleTile == null)            
             {
                 mSampleTile = tileBitmap;
-            } //End block
+            } 
             final ShapeDrawable shapeDrawable = new ShapeDrawable(getDrawableShape());
             final BitmapShader bitmapShader = new BitmapShader(tileBitmap,
                     Shader.TileMode.REPEAT, Shader.TileMode.CLAMP);
@@ -254,12 +254,12 @@ Drawable var8C1667BE174DF8110DB6DD29959FE973_296896380 =             (clip) ? ne
                     ClipDrawable.HORIZONTAL) : shapeDrawable;
             var8C1667BE174DF8110DB6DD29959FE973_296896380.addTaint(taint);
             return var8C1667BE174DF8110DB6DD29959FE973_296896380;
-        } //End block
+        } 
 Drawable varA22A26D75522826F9AEFA195DDDFD365_1650392433 =         drawable;
         varA22A26D75522826F9AEFA195DDDFD365_1650392433.addTaint(taint);
         return varA22A26D75522826F9AEFA195DDDFD365_1650392433;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -269,9 +269,9 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_1650392433 =         drawable;
 Shape varE5AD6A465EDE45C705AEBAD629956806_1720155310 =         new RoundRectShape(roundedCorners, null, null);
         varE5AD6A465EDE45C705AEBAD629956806_1720155310.addTaint(taint);
         return varE5AD6A465EDE45C705AEBAD629956806_1720155310;
-        // ---------- Original Method ----------
-        //final float[] roundedCorners = new float[] { 5, 5, 5, 5, 5, 5, 5, 5 };
-        //return new RoundRectShape(roundedCorners, null, null);
+        
+        
+        
     }
 
     
@@ -289,31 +289,32 @@ for(int i = 0;i < N;i++)
                 Drawable frame = tileify(background.getFrame(i), true);
                 frame.setLevel(10000);
                 newBg.addFrame(frame, background.getDuration(i));
-            } //End block
+            } 
             newBg.setLevel(10000);
             drawable = newBg;
-        } //End block
+        } 
 Drawable varA22A26D75522826F9AEFA195DDDFD365_828585929 =         drawable;
         varA22A26D75522826F9AEFA195DDDFD365_828585929.addTaint(taint);
         return varA22A26D75522826F9AEFA195DDDFD365_828585929;
-        // ---------- Original Method ----------
-        //if (drawable instanceof AnimationDrawable) {
-            //AnimationDrawable background = (AnimationDrawable) drawable;
-            //final int N = background.getNumberOfFrames();
-            //AnimationDrawable newBg = new AnimationDrawable();
-            //newBg.setOneShot(background.isOneShot());
-            //for (int i = 0; i < N; i++) {
-                //Drawable frame = tileify(background.getFrame(i), true);
-                //frame.setLevel(10000);
-                //newBg.addFrame(frame, background.getDuration(i));
-            //}
-            //newBg.setLevel(10000);
-            //drawable = newBg;
-        //}
-        //return drawable;
+        
+        
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.040 -0400", hash_original_method = "E5E4BC7A2B363BE6E2FBD0B5C26F4050", hash_generated_method = "8DA820DB7B007C068BE9D230A5110A34")
     private void initProgressBar() {
         mMax = 100;
@@ -327,29 +328,30 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_828585929 =         drawable;
         mMaxWidth = 48;
         mMinHeight = 24;
         mMaxHeight = 48;
-        // ---------- Original Method ----------
-        //mMax = 100;
-        //mProgress = 0;
-        //mSecondaryProgress = 0;
-        //mIndeterminate = false;
-        //mOnlyIndeterminate = false;
-        //mDuration = 4000;
-        //mBehavior = AlphaAnimation.RESTART;
-        //mMinWidth = 24;
-        //mMaxWidth = 48;
-        //mMinHeight = 24;
-        //mMaxHeight = 48;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.041 -0400", hash_original_method = "3387FD7633AB5B9FD9EC30B2946E89DA", hash_generated_method = "2B24F2D7A3F15D5E114A09648799C77D")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized boolean isIndeterminate() {
         boolean var066BD2341E290903C1ACFDCFA38A9B44_139347418 = (mIndeterminate);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_523639251 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_523639251;
-        // ---------- Original Method ----------
-        //return mIndeterminate;
+        
+        
     }
 
     
@@ -363,34 +365,35 @@ Drawable varA22A26D75522826F9AEFA195DDDFD365_828585929 =         drawable;
             {
                 mCurrentDrawable = mIndeterminateDrawable;
                 startAnimation();
-            } //End block
+            } 
             else
             {
                 mCurrentDrawable = mProgressDrawable;
                 stopAnimation();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if ((!mOnlyIndeterminate || !mIndeterminate) && indeterminate != mIndeterminate) {
-            //mIndeterminate = indeterminate;
-            //if (indeterminate) {
-                //mCurrentDrawable = mIndeterminateDrawable;
-                //startAnimation();
-            //} else {
-                //mCurrentDrawable = mProgressDrawable;
-                //stopAnimation();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.042 -0400", hash_original_method = "460B65565106BA0615FD22E30B040519", hash_generated_method = "7E34091691A60CA8084526FDD2819192")
     public Drawable getIndeterminateDrawable() {
 Drawable varF00153B56D2CB49C3A37B1DEFFA7532F_254098331 =         mIndeterminateDrawable;
         varF00153B56D2CB49C3A37B1DEFFA7532F_254098331.addTaint(taint);
         return varF00153B56D2CB49C3A37B1DEFFA7532F_254098331;
-        // ---------- Original Method ----------
-        //return mIndeterminateDrawable;
+        
+        
     }
 
     
@@ -399,32 +402,33 @@ Drawable varF00153B56D2CB49C3A37B1DEFFA7532F_254098331 =         mIndeterminateD
     if(d != null)        
         {
             d.setCallback(this);
-        } //End block
+        } 
         mIndeterminateDrawable = d;
     if(mIndeterminate)        
         {
             mCurrentDrawable = d;
             postInvalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (d != null) {
-            //d.setCallback(this);
-        //}
-        //mIndeterminateDrawable = d;
-        //if (mIndeterminate) {
-            //mCurrentDrawable = d;
-            //postInvalidate();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.042 -0400", hash_original_method = "6C8C8D805DC88A29293BE605923D5590", hash_generated_method = "DCD7D537AD8302D3000E2D383DD54FD1")
     public Drawable getProgressDrawable() {
 Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753 =         mProgressDrawable;
         varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753.addTaint(taint);
         return varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753;
-        // ---------- Original Method ----------
-        //return mProgressDrawable;
+        
+        
     }
 
     
@@ -435,11 +439,11 @@ Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753 =         mProgressDrawab
         {
             mProgressDrawable.setCallback(null);
             needUpdate = true;
-        } //End block
+        } 
         else
         {
             needUpdate = false;
-        } //End block
+        } 
     if(d != null)        
         {
             d.setCallback(this);
@@ -448,33 +452,34 @@ Drawable varE3CF59E02A1DFBC354305A0CD25ECEA2_104428753 =         mProgressDrawab
             {
                 mMaxHeight = drawableHeight;
                 requestLayout();
-            } //End block
-        } //End block
+            } 
+        } 
         mProgressDrawable = d;
     if(!mIndeterminate)        
         {
             mCurrentDrawable = d;
             postInvalidate();
-        } //End block
+        } 
     if(needUpdate)        
         {
             updateDrawableBounds(getWidth(), getHeight());
             updateDrawableState();
             doRefreshProgress(R.id.progress, mProgress, false, false);
             doRefreshProgress(R.id.secondaryProgress, mSecondaryProgress, false, false);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.044 -0400", hash_original_method = "BC108B758414D6B13292C41A47E0F703", hash_generated_method = "F91E69DC27C701854BDCBB9DB0A4FDE8")
      Drawable getCurrentDrawable() {
 Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawable;
         varCF8D9BC802F0D54A46071309A1C41866_987699610.addTaint(taint);
         return varCF8D9BC802F0D54A46071309A1C41866_987699610;
-        // ---------- Original Method ----------
-        //return mCurrentDrawable;
+        
+        
     }
 
     
@@ -486,9 +491,9 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
                 || super.verifyDrawable(who));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_39527596 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_39527596;
-        // ---------- Original Method ----------
-        //return who == mProgressDrawable || who == mIndeterminateDrawable
-                //|| super.verifyDrawable(who);
+        
+        
+                
     }
 
     
@@ -500,10 +505,10 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
         mProgressDrawable.jumpToCurrentState();
     if(mIndeterminateDrawable != null)        
         mIndeterminateDrawable.jumpToCurrentState();
-        // ---------- Original Method ----------
-        //super.jumpDrawablesToCurrentState();
-        //if (mProgressDrawable != null) mProgressDrawable.jumpToCurrentState();
-        //if (mIndeterminateDrawable != null) mIndeterminateDrawable.jumpToCurrentState();
+        
+        
+        
+        
     }
 
     
@@ -513,11 +518,11 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(!mNoInvalidate)        
         {
             super.postInvalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mNoInvalidate) {
-            //super.postInvalidate();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -536,50 +541,50 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(d instanceof LayerDrawable)            
             {
                 progressDrawable = ((LayerDrawable) d).findDrawableByLayerId(id);
-            } //End block
+            } 
             final int level = (int) (scale * MAX_LEVEL);
             (progressDrawable != null ? progressDrawable : d).setLevel(level);
-        } //End block
+        } 
         else
         {
             invalidate();
-        } //End block
+        } 
     if(callBackToApp && id == R.id.progress)        
         {
             onProgressRefresh(scale, fromUser);
-        } //End block
-        // ---------- Original Method ----------
-        //float scale = mMax > 0 ? (float) progress / (float) mMax : 0;
-        //final Drawable d = mCurrentDrawable;
-        //if (d != null) {
-            //Drawable progressDrawable = null;
-            //if (d instanceof LayerDrawable) {
-                //progressDrawable = ((LayerDrawable) d).findDrawableByLayerId(id);
-            //}
-            //final int level = (int) (scale * MAX_LEVEL);
-            //(progressDrawable != null ? progressDrawable : d).setLevel(level);
-        //} else {
-            //invalidate();
-        //}
-        //if (callBackToApp && id == R.id.progress) {
-            //onProgressRefresh(scale, fromUser);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.046 -0400", hash_original_method = "1EE4C81513694B44BBA27F5A11B0191B", hash_generated_method = "7A76CCB4B14B7266EE64CCE8EB036548")
      void onProgressRefresh(float scale, boolean fromUser) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(fromUser);
         addTaint(scale);
     if(AccessibilityManager.getInstance(mContext).isEnabled())        
         {
             scheduleAccessibilityEventSender();
-        } //End block
-        // ---------- Original Method ----------
-        //if (AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //scheduleAccessibilityEventSender();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -591,7 +596,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(mUiThreadId == Thread.currentThread().getId())        
         {
             doRefreshProgress(id, progress, fromUser, true);
-        } //End block
+        } 
         else
         {
             RefreshProgressRunnable r;
@@ -600,27 +605,27 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
                 r = mRefreshProgressRunnable;
                 mRefreshProgressRunnable = null;
                 r.setup(id, progress, fromUser);
-            } //End block
+            } 
             else
             {
                 r = new RefreshProgressRunnable(id, progress, fromUser);
-            } //End block
+            } 
             post(r);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mUiThreadId == Thread.currentThread().getId()) {
-            //doRefreshProgress(id, progress, fromUser, true);
-        //} else {
-            //RefreshProgressRunnable r;
-            //if (mRefreshProgressRunnable != null) {
-                //r = mRefreshProgressRunnable;
-                //mRefreshProgressRunnable = null;
-                //r.setup(id, progress, fromUser);
-            //} else {
-                //r = new RefreshProgressRunnable(id, progress, fromUser);
-            //}
-            //post(r);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+                
+                
+            
+                
+            
+            
+        
     }
 
     
@@ -629,8 +634,8 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     public synchronized void setProgress(int progress) {
         addTaint(progress);
         setProgress(progress, false);
-        // ---------- Original Method ----------
-        //setProgress(progress, false);
+        
+        
     }
 
     
@@ -641,34 +646,34 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(mIndeterminate)        
         {
             return;
-        } //End block
+        } 
     if(progress < 0)        
         {
             progress = 0;
-        } //End block
+        } 
     if(progress > mMax)        
         {
             progress = mMax;
-        } //End block
+        } 
     if(progress != mProgress)        
         {
             mProgress = progress;
             refreshProgress(R.id.progress, mProgress, fromUser);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIndeterminate) {
-            //return;
-        //}
-        //if (progress < 0) {
-            //progress = 0;
-        //}
-        //if (progress > mMax) {
-            //progress = mMax;
-        //}
-        //if (progress != mProgress) {
-            //mProgress = progress;
-            //refreshProgress(R.id.progress, mProgress, fromUser);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -678,67 +683,70 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(mIndeterminate)        
         {
             return;
-        } //End block
+        } 
     if(secondaryProgress < 0)        
         {
             secondaryProgress = 0;
-        } //End block
+        } 
     if(secondaryProgress > mMax)        
         {
             secondaryProgress = mMax;
-        } //End block
+        } 
     if(secondaryProgress != mSecondaryProgress)        
         {
             mSecondaryProgress = secondaryProgress;
             refreshProgress(R.id.secondaryProgress, mSecondaryProgress, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIndeterminate) {
-            //return;
-        //}
-        //if (secondaryProgress < 0) {
-            //secondaryProgress = 0;
-        //}
-        //if (secondaryProgress > mMax) {
-            //secondaryProgress = mMax;
-        //}
-        //if (secondaryProgress != mSecondaryProgress) {
-            //mSecondaryProgress = secondaryProgress;
-            //refreshProgress(R.id.secondaryProgress, mSecondaryProgress, false);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.051 -0400", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "8617B40D738880618A8088F5E8FD3649")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getProgress() {
         int var896E81319782829B034F26E4F256A5AD_327378146 = (mIndeterminate ? 0 : mProgress);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451573704 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1451573704;
-        // ---------- Original Method ----------
-        //return mIndeterminate ? 0 : mProgress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.052 -0400", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "54E5AC5A931A5C1774A2EFC77FE60C5B")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getSecondaryProgress() {
         int varCC09693E30955777A6A27C5CBFFFF66A_975138584 = (mIndeterminate ? 0 : mSecondaryProgress);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1573427779 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1573427779;
-        // ---------- Original Method ----------
-        //return mIndeterminate ? 0 : mSecondaryProgress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.052 -0400", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "32319C2F0FA3728467D6583A8124692B")
     @ViewDebug.ExportedProperty(category = "progress")
     public synchronized int getMax() {
         int varC886C6FF92A43B3F6833B7BAFD354FBA_1398770069 = (mMax);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732617256 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1732617256;
-        // ---------- Original Method ----------
-        //return mMax;
+        
+        
     }
 
     
@@ -748,7 +756,7 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(max < 0)        
         {
             max = 0;
-        } //End block
+        } 
     if(max != mMax)        
         {
             mMax = max;
@@ -756,21 +764,21 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(mProgress > max)            
             {
                 mProgress = max;
-            } //End block
+            } 
             refreshProgress(R.id.progress, mProgress, false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (max < 0) {
-            //max = 0;
-        //}
-        //if (max != mMax) {
-            //mMax = max;
-            //postInvalidate();
-            //if (mProgress > max) {
-                //mProgress = max;
-            //}
-            //refreshProgress(R.id.progress, mProgress, false);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+            
+        
     }
 
     
@@ -778,8 +786,8 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     public synchronized final void incrementProgressBy(int diff) {
         addTaint(diff);
         setProgress(mProgress + diff);
-        // ---------- Original Method ----------
-        //setProgress(mProgress + diff);
+        
+        
     }
 
     
@@ -787,8 +795,8 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     public synchronized final void incrementSecondaryProgressBy(int diff) {
         addTaint(diff);
         setSecondaryProgress(mSecondaryProgress + diff);
-        // ---------- Original Method ----------
-        //setSecondaryProgress(mSecondaryProgress + diff);
+        
+        
     }
 
     
@@ -797,18 +805,18 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
     if(getVisibility() != VISIBLE)        
         {
             return;
-        } //End block
+        } 
     if(mIndeterminateDrawable instanceof Animatable)        
         {
             mShouldStartAnimationDrawable = true;
             mAnimation = null;
-        } //End block
+        } 
         else
         {
     if(mInterpolator == null)            
             {
                 mInterpolator = new LinearInterpolator();
-            } //End block
+            } 
             mTransformation = new Transformation();
             mAnimation = new AlphaAnimation(0.0f, 1.0f);
             mAnimation.setRepeatMode(mBehavior);
@@ -816,28 +824,28 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
             mAnimation.setDuration(mDuration);
             mAnimation.setInterpolator(mInterpolator);
             mAnimation.setStartTime(Animation.START_ON_FIRST_FRAME);
-        } //End block
+        } 
         postInvalidate();
-        // ---------- Original Method ----------
-        //if (getVisibility() != VISIBLE) {
-            //return;
-        //}
-        //if (mIndeterminateDrawable instanceof Animatable) {
-            //mShouldStartAnimationDrawable = true;
-            //mAnimation = null;
-        //} else {
-            //if (mInterpolator == null) {
-                //mInterpolator = new LinearInterpolator();
-            //}
-            //mTransformation = new Transformation();
-            //mAnimation = new AlphaAnimation(0.0f, 1.0f);
-            //mAnimation.setRepeatMode(mBehavior);
-            //mAnimation.setRepeatCount(Animation.INFINITE);
-            //mAnimation.setDuration(mDuration);
-            //mAnimation.setInterpolator(mInterpolator);
-            //mAnimation.setStartTime(Animation.START_ON_FIRST_FRAME);
-        //}
-        //postInvalidate();
+        
+        
+            
+        
+        
+            
+            
+        
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -849,16 +857,16 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
         {
             ((Animatable) mIndeterminateDrawable).stop();
             mShouldStartAnimationDrawable = false;
-        } //End block
+        } 
         postInvalidate();
-        // ---------- Original Method ----------
-        //mAnimation = null;
-        //mTransformation = null;
-        //if (mIndeterminateDrawable instanceof Animatable) {
-            //((Animatable) mIndeterminateDrawable).stop();
-            //mShouldStartAnimationDrawable = false;
-        //}
-        //postInvalidate();
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -867,26 +875,28 @@ Drawable varCF8D9BC802F0D54A46071309A1C41866_987699610 =         mCurrentDrawabl
         addTaint(resID);
         addTaint(context.getTaint());
         setInterpolator(AnimationUtils.loadInterpolator(context, resID));
-        // ---------- Original Method ----------
-        //setInterpolator(AnimationUtils.loadInterpolator(context, resID));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.054 -0400", hash_original_method = "7D5A9A852D608ADF508B994526BF9EAC", hash_generated_method = "305B3174980281AD6A6C4213980CE615")
     public void setInterpolator(Interpolator interpolator) {
         mInterpolator = interpolator;
-        // ---------- Original Method ----------
-        //mInterpolator = interpolator;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.054 -0400", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "26E256E628190747BE3B88396F7E5FF2")
     public Interpolator getInterpolator() {
 Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolator;
         var9FA301F6AF154FEBBB2C7439D021F894_533603458.addTaint(taint);
         return var9FA301F6AF154FEBBB2C7439D021F894_533603458;
-        // ---------- Original Method ----------
-        //return mInterpolator;
+        
+        
     }
 
     
@@ -903,31 +913,31 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
     if(v == GONE || v == INVISIBLE)                
                 {
                     stopAnimation();
-                } //End block
+                } 
                 else
                 {
                     startAnimation();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (getVisibility() != v) {
-            //super.setVisibility(v);
-            //if (mIndeterminate) {
-                //if (v == GONE || v == INVISIBLE) {
-                    //stopAnimation();
-                //} else {
-                    //startAnimation();
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.054 -0400", hash_original_method = "E937F441086D9A40C4DA651781180A92", hash_generated_method = "F814E6E5CD4BFC60A367A89CAAE37887")
     @Override
     protected void onVisibilityChanged(View changedView, int visibility) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(visibility);
         addTaint(changedView.getTaint());
         super.onVisibilityChanged(changedView, visibility);
@@ -936,21 +946,21 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
     if(visibility == GONE || visibility == INVISIBLE)            
             {
                 stopAnimation();
-            } //End block
+            } 
             else
             {
                 startAnimation();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onVisibilityChanged(changedView, visibility);
-        //if (mIndeterminate) {
-            //if (visibility == GONE || visibility == INVISIBLE) {
-                //stopAnimation();
-            //} else {
-                //startAnimation();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -967,24 +977,24 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
                 final int scrollY = mScrollY + mPaddingTop;
                 invalidate(dirty.left + scrollX, dirty.top + scrollY,
                         dirty.right + scrollX, dirty.bottom + scrollY);
-            } //End block
+            } 
             else
             {
                 super.invalidateDrawable(dr);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mInDrawing) {
-            //if (verifyDrawable(dr)) {
-                //final Rect dirty = dr.getBounds();
-                //final int scrollX = mScrollX + mPaddingLeft;
-                //final int scrollY = mScrollY + mPaddingTop;
-                //invalidate(dirty.left + scrollX, dirty.top + scrollY,
-                        //dirty.right + scrollX, dirty.bottom + scrollY);
-            //} else {
-                //super.invalidateDrawable(dr);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+                
+                
+                        
+            
+                
+            
+        
     }
 
     
@@ -996,23 +1006,23 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
             getResolvedLayoutDirection() : super.getResolvedLayoutDirection(who));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379377771 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1379377771;
-        // ---------- Original Method ----------
-        //return (who == mProgressDrawable || who == mIndeterminateDrawable) ?
-            //getResolvedLayoutDirection() : super.getResolvedLayoutDirection(who);
+        
+        
+            
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.055 -0400", hash_original_method = "69EE8DE1AB95A9498391F63C2C373DBD", hash_generated_method = "8E3F25468214CB99C9456EF69A803E35")
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(oldh);
         addTaint(oldw);
         addTaint(h);
         addTaint(w);
         updateDrawableBounds(w, h);
-        // ---------- Original Method ----------
-        //updateDrawableBounds(w, h);
+        
+        
     }
 
     
@@ -1039,30 +1049,30 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
                         final int width = (int) (h * intrinsicAspect);
                         left = (w - width) / 2;
                         right = left + width;
-                    } //End block
+                    } 
                     else
                     {
                         final int height = (int) (w * (1 / intrinsicAspect));
                         top = (h - height) / 2;
                         bottom = top + height;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             mIndeterminateDrawable.setBounds(left, top, right, bottom);
-        } //End block
+        } 
     if(mProgressDrawable != null)        
         {
             mProgressDrawable.setBounds(0, 0, right, bottom);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.056 -0400", hash_original_method = "16CD7BB578E96B322FC9201A377B65CC", hash_generated_method = "229270E8BFECAF2393326E1A1065DCD7")
     @Override
     protected synchronized void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
         super.onDraw(canvas);
         Drawable d = mCurrentDrawable;
@@ -1079,34 +1089,34 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
                 {
                     mInDrawing = true;
                     d.setLevel((int) (scale * MAX_LEVEL));
-                } //End block
+                } 
                 finally 
                 {
                     mInDrawing = false;
-                } //End block
+                } 
     if(SystemClock.uptimeMillis() - mLastDrawTime >= mAnimationResolution)                
                 {
                     mLastDrawTime = SystemClock.uptimeMillis();
                     postInvalidateDelayed(mAnimationResolution);
-                } //End block
-            } //End block
+                } 
+            } 
             d.draw(canvas);
             canvas.restore();
     if(mShouldStartAnimationDrawable && d instanceof Animatable)            
             {
                 ((Animatable) d).start();
                 mShouldStartAnimationDrawable = false;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.056 -0400", hash_original_method = "6FFAE46060D92EDBE1BD141B1F5C353A", hash_generated_method = "5CE2802FDFABB61BD444615EF31B6D82")
     @Override
     protected synchronized void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         Drawable d = mCurrentDrawable;
@@ -1116,25 +1126,25 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
         {
             dw = Math.max(mMinWidth, Math.min(mMaxWidth, d.getIntrinsicWidth()));
             dh = Math.max(mMinHeight, Math.min(mMaxHeight, d.getIntrinsicHeight()));
-        } //End block
+        } 
         updateDrawableState();
         dw += mPaddingLeft + mPaddingRight;
         dh += mPaddingTop + mPaddingBottom;
         setMeasuredDimension(resolveSizeAndState(dw, widthMeasureSpec, 0),
                 resolveSizeAndState(dh, heightMeasureSpec, 0));
-        // ---------- Original Method ----------
-        //Drawable d = mCurrentDrawable;
-        //int dw = 0;
-        //int dh = 0;
-        //if (d != null) {
-            //dw = Math.max(mMinWidth, Math.min(mMaxWidth, d.getIntrinsicWidth()));
-            //dh = Math.max(mMinHeight, Math.min(mMaxHeight, d.getIntrinsicHeight()));
-        //}
-        //updateDrawableState();
-        //dw += mPaddingLeft + mPaddingRight;
-        //dh += mPaddingTop + mPaddingBottom;
-        //setMeasuredDimension(resolveSizeAndState(dw, widthMeasureSpec, 0),
-                //resolveSizeAndState(dh, heightMeasureSpec, 0));
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -1143,9 +1153,9 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
     protected void drawableStateChanged() {
         super.drawableStateChanged();
         updateDrawableState();
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //updateDrawableState();
+        
+        
+        
     }
 
     
@@ -1155,26 +1165,26 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
     if(mProgressDrawable != null && mProgressDrawable.isStateful())        
         {
             mProgressDrawable.setState(state);
-        } //End block
+        } 
     if(mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful())        
         {
             mIndeterminateDrawable.setState(state);
-        } //End block
-        // ---------- Original Method ----------
-        //int[] state = getDrawableState();
-        //if (mProgressDrawable != null && mProgressDrawable.isStateful()) {
-            //mProgressDrawable.setState(state);
-        //}
-        //if (mIndeterminateDrawable != null && mIndeterminateDrawable.isStateful()) {
-            //mIndeterminateDrawable.setState(state);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.057 -0400", hash_original_method = "875308A47ADC87038CC9E153A4D8FE71", hash_generated_method = "F261D63E7612A6F37557B4699522E025")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
         ss.progress = mProgress;
@@ -1182,92 +1192,92 @@ Interpolator var9FA301F6AF154FEBBB2C7439D021F894_533603458 =         mInterpolat
 Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
         var182E37827114C3F455816E0E29D81D76_428011043.addTaint(taint);
         return var182E37827114C3F455816E0E29D81D76_428011043;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //SavedState ss = new SavedState(superState);
-        //ss.progress = mProgress;
-        //ss.secondaryProgress = mSecondaryProgress;
-        //return ss;
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.057 -0400", hash_original_method = "A42CFAF758710477BAC4A7B2A0C98761", hash_generated_method = "03DA06A994E94488FD6261FD993B394B")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state.getTaint());
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
         setProgress(ss.progress);
         setSecondaryProgress(ss.secondaryProgress);
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //setProgress(ss.progress);
-        //setSecondaryProgress(ss.secondaryProgress);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.057 -0400", hash_original_method = "608AE3D8DA74959AA8F2204845C7317D", hash_generated_method = "BD28E03E51CC17CCA52C53EA3B241745")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
     if(mIndeterminate)        
         {
             startAnimation();
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (mIndeterminate) {
-            //startAnimation();
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.057 -0400", hash_original_method = "3E30480EE15E7D073BA14A1FE62DC464", hash_generated_method = "4E75B1242BABD343DD6395D004C5A81F")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mIndeterminate)        
         {
             stopAnimation();
-        } //End block
+        } 
     if(mRefreshProgressRunnable != null)        
         {
             removeCallbacks(mRefreshProgressRunnable);
-        } //End block
+        } 
     if(mAccessibilityEventSender != null)        
         {
             removeCallbacks(mAccessibilityEventSender);
-        } //End block
+        } 
         super.onDetachedFromWindow();
-        // ---------- Original Method ----------
-        //if (mIndeterminate) {
-            //stopAnimation();
-        //}
-        //if(mRefreshProgressRunnable != null) {
-            //removeCallbacks(mRefreshProgressRunnable);
-        //}
-        //if (mAccessibilityEventSender != null) {
-            //removeCallbacks(mAccessibilityEventSender);
-        //}
-        //super.onDetachedFromWindow();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.057 -0400", hash_original_method = "D1990D7DB1A5D8E4C14ADC3323533C4A", hash_generated_method = "C887023349DFAB3818350D8E5A890EB8")
     @Override
     public void onInitializeAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         super.onInitializeAccessibilityEvent(event);
         event.setItemCount(mMax);
         event.setCurrentItemIndex(mProgress);
-        // ---------- Original Method ----------
-        //super.onInitializeAccessibilityEvent(event);
-        //event.setItemCount(mMax);
-        //event.setCurrentItemIndex(mProgress);
+        
+        
+        
+        
     }
 
     
@@ -1276,19 +1286,19 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
     if(mAccessibilityEventSender == null)        
         {
             mAccessibilityEventSender = new AccessibilityEventSender();
-        } //End block
+        } 
         else
         {
             removeCallbacks(mAccessibilityEventSender);
-        } //End block
+        } 
         postDelayed(mAccessibilityEventSender, TIMEOUT_SEND_ACCESSIBILITY_EVENT);
-        // ---------- Original Method ----------
-        //if (mAccessibilityEventSender == null) {
-            //mAccessibilityEventSender = new AccessibilityEventSender();
-        //} else {
-            //removeCallbacks(mAccessibilityEventSender);
-        //}
-        //postDelayed(mAccessibilityEventSender, TIMEOUT_SEND_ACCESSIBILITY_EVENT);
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1308,10 +1318,10 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
             mId = id;
             mProgress = progress;
             mFromUser = fromUser;
-            // ---------- Original Method ----------
-            //mId = id;
-            //mProgress = progress;
-            //mFromUser = fromUser;
+            
+            
+            
+            
         }
 
         
@@ -1319,21 +1329,22 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
         public void run() {
             doRefreshProgress(mId, mProgress, mFromUser, true);
             mRefreshProgressRunnable = this;
-            // ---------- Original Method ----------
-            //doRefreshProgress(mId, mProgress, mFromUser, true);
-            //mRefreshProgressRunnable = this;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.058 -0400", hash_original_method = "992C4D927E51E72BEA0F4017381D8EC2", hash_generated_method = "A238CC5542317B5EC7A431478DA6D0E3")
         public void setup(int id, int progress, boolean fromUser) {
             mId = id;
             mProgress = progress;
             mFromUser = fromUser;
-            // ---------- Original Method ----------
-            //mId = id;
-            //mProgress = progress;
-            //mFromUser = fromUser;
+            
+            
+            
+            
         }
 
         
@@ -1353,7 +1364,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1362,9 +1373,9 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
             super(in);
             progress = in.readInt();
             secondaryProgress = in.readInt();
-            // ---------- Original Method ----------
-            //progress = in.readInt();
-            //secondaryProgress = in.readInt();
+            
+            
+            
         }
 
         
@@ -1376,10 +1387,10 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
             super.writeToParcel(out, flags);
             out.writeInt(progress);
             out.writeInt(secondaryProgress);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeInt(progress);
-            //out.writeInt(secondaryProgress);
+            
+            
+            
+            
         }
 
         
@@ -1395,12 +1406,12 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -1414,15 +1425,15 @@ Parcelable var182E37827114C3F455816E0E29D81D76_428011043 =         ss;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.059 -0400", hash_original_method = "5812CBDC5E0171D8BC07CE56DB600368", hash_generated_method = "5812CBDC5E0171D8BC07CE56DB600368")
         public AccessibilityEventSender ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.059 -0400", hash_original_method = "D171B097136E37DF343D32BCCA8935F6", hash_generated_method = "2295CF57C52786E3AEEE5BA06534C7E1")
         public void run() {
             sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-            // ---------- Original Method ----------
-            //sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
+            
+            
         }
 
         

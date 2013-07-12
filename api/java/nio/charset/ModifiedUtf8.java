@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class ModifiedUtf8 {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.890 -0400", hash_original_method = "64489454DCC17A9858C56DA9699AAAE7", hash_generated_method = "7413CA2F03D7938EC2CAD9273A6D3E8D")
     private  ModifiedUtf8() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,7 +69,8 @@ public class ModifiedUtf8 {
     }
 
     
-        public static void encode(byte[] dst, int offset, String s) {
+        @DSModeled(DSC.SPEC)
+    public static void encode(byte[] dst, int offset, String s) {
         final int length = s.length();
         for (int i = 0; i < length; i++) {
             char ch = s.charAt(i);

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -59,8 +59,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         super(context);
         addTaint(context.getTaint());
         initAbsSpinner();
-        // ---------- Original Method ----------
-        //initAbsSpinner();
+        
+        
     }
 
     
@@ -69,7 +69,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -89,21 +89,21 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                             R.layout.simple_spinner_item, entries);
             adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
             setAdapter(adapter);
-        } //End block
+        } 
         a.recycle();
-        // ---------- Original Method ----------
-        //initAbsSpinner();
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.AbsSpinner, defStyle, 0);
-        //CharSequence[] entries = a.getTextArray(R.styleable.AbsSpinner_entries);
-        //if (entries != null) {
-            //ArrayAdapter<CharSequence> adapter =
-                    //new ArrayAdapter<CharSequence>(context,
-                            //R.layout.simple_spinner_item, entries);
-            //adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-            //setAdapter(adapter);
-        //}
-        //a.recycle();
+        
+        
+        
+                
+        
+        
+            
+                    
+                            
+            
+            
+        
+        
     }
 
     
@@ -111,9 +111,9 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     private void initAbsSpinner() {
         setFocusable(true);
         setWillNotDraw(false);
-        // ---------- Original Method ----------
-        //setFocusable(true);
-        //setWillNotDraw(false);
+        
+        
+        
     }
 
     
@@ -124,7 +124,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
             resetList();
-        } //End block
+        } 
         mAdapter = adapter;
         mOldSelectedPosition = INVALID_POSITION;
         mOldSelectedRowId = INVALID_ROW_ID;
@@ -141,17 +141,17 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     if(mItemCount == 0)            
             {
                 checkSelectionChanged();
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             checkFocus();
             resetList();
             checkSelectionChanged();
-        } //End block
+        } 
         requestLayout();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -165,22 +165,22 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         setSelectedPositionInt(INVALID_POSITION);
         setNextSelectedPositionInt(INVALID_POSITION);
         invalidate();
-        // ---------- Original Method ----------
-        //mDataChanged = false;
-        //mNeedSync = false;
-        //removeAllViewsInLayout();
-        //mOldSelectedPosition = INVALID_POSITION;
-        //mOldSelectedRowId = INVALID_ROW_ID;
-        //setSelectedPositionInt(INVALID_POSITION);
-        //setNextSelectedPositionInt(INVALID_POSITION);
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.707 -0400", hash_original_method = "29BB60D69D80C0C6339E2E86482D98C0", hash_generated_method = "7F65E16E6BD324D6AD8260BD7215B900")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSize;
         int heightSize;
@@ -195,7 +195,7 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     if(mDataChanged)        
         {
             handleDataChanged();
-        } //End block
+        } 
         int preferredHeight = 0;
         int preferredWidth = 0;
         boolean needsMeasuring = true;
@@ -206,11 +206,11 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
     if(view == null)            
             {
                 view = mAdapter.getView(selectedPosition, null, this);
-            } //End block
+            } 
     if(view != null)            
             {
                 mRecycler.put(selectedPosition, view);
-            } //End block
+            } 
     if(view != null)            
             {
     if(view.getLayoutParams() == null)                
@@ -218,21 +218,21 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
                     mBlockLayoutRequests = true;
                     view.setLayoutParams(generateDefaultLayoutParams());
                     mBlockLayoutRequests = false;
-                } //End block
+                } 
                 measureChild(view, widthMeasureSpec, heightMeasureSpec);
                 preferredHeight = getChildHeight(view) + mSpinnerPadding.top + mSpinnerPadding.bottom;
                 preferredWidth = getChildWidth(view) + mSpinnerPadding.left + mSpinnerPadding.right;
                 needsMeasuring = false;
-            } //End block
-        } //End block
+            } 
+        } 
     if(needsMeasuring)        
         {
             preferredHeight = mSpinnerPadding.top + mSpinnerPadding.bottom;
     if(widthMode == MeasureSpec.UNSPECIFIED)            
             {
                 preferredWidth = mSpinnerPadding.left + mSpinnerPadding.right;
-            } //End block
-        } //End block
+            } 
+        } 
         preferredHeight = Math.max(preferredHeight, getSuggestedMinimumHeight());
         preferredWidth = Math.max(preferredWidth, getSuggestedMinimumWidth());
         heightSize = resolveSizeAndState(preferredHeight, heightMeasureSpec, 0);
@@ -240,8 +240,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         setMeasuredDimension(widthSize, heightSize);
         mHeightMeasureSpec = heightMeasureSpec;
         mWidthMeasureSpec = widthMeasureSpec;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -251,8 +251,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         int var4E2C59BAAB25C5B90D5B4A9309C0D212_2120321003 = (child.getMeasuredHeight());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2077806515 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2077806515;
-        // ---------- Original Method ----------
-        //return child.getMeasuredHeight();
+        
+        
     }
 
     
@@ -262,8 +262,8 @@ public abstract class AbsSpinner extends AdapterView<SpinnerAdapter> {
         int varA148F7A70A75E615286508B90DEBEEA7_422634796 = (child.getMeasuredWidth());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1377456862 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1377456862;
-        // ---------- Original Method ----------
-        //return child.getMeasuredWidth();
+        
+        
     }
 
     
@@ -275,10 +275,10 @@ ViewGroup.LayoutParams varC7143A11FF7EC06883706B8F169DCB38_1700826739 =         
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         varC7143A11FF7EC06883706B8F169DCB38_1700826739.addTaint(taint);
         return varC7143A11FF7EC06883706B8F169DCB38_1700826739;
-        // ---------- Original Method ----------
-        //return new ViewGroup.LayoutParams(
-                //ViewGroup.LayoutParams.MATCH_PARENT,
-                //ViewGroup.LayoutParams.WRAP_CONTENT);
+        
+        
+                
+                
     }
 
     
@@ -292,19 +292,20 @@ for(int i = 0;i < childCount;i++)
             View v = getChildAt(i);
             int index = position + i;
             recycleBin.put(index, v);
-        } //End block
-        // ---------- Original Method ----------
-        //final int childCount = getChildCount();
-        //final AbsSpinner.RecycleBin recycleBin = mRecycler;
-        //final int position = mFirstPosition;
-        //for (int i = 0; i < childCount; i++) {
-            //View v = getChildAt(i);
-            //int index = position + i;
-            //recycleBin.put(index, v);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.710 -0400", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "DB2DD21D96AA192577D4BFB0A2BACF6C")
     public void setSelection(int position, boolean animate) {
         addTaint(animate);
@@ -312,10 +313,10 @@ for(int i = 0;i < childCount;i++)
         boolean shouldAnimate = animate && mFirstPosition <= position &&
                 position <= mFirstPosition + getChildCount() - 1;
         setSelectionInt(position, shouldAnimate);
-        // ---------- Original Method ----------
-        //boolean shouldAnimate = animate && mFirstPosition <= position &&
-                //position <= mFirstPosition + getChildCount() - 1;
-        //setSelectionInt(position, shouldAnimate);
+        
+        
+                
+        
     }
 
     
@@ -326,10 +327,10 @@ for(int i = 0;i < childCount;i++)
         setNextSelectedPositionInt(position);
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //setNextSelectedPositionInt(position);
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
     }
 
     
@@ -344,15 +345,15 @@ for(int i = 0;i < childCount;i++)
             setNextSelectedPositionInt(position);
             layout(delta, animate);
             mBlockLayoutRequests = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (position != mOldSelectedPosition) {
-            //mBlockLayoutRequests = true;
-            //int delta  = position - mSelectedPosition;
-            //setNextSelectedPositionInt(position);
-            //layout(delta, animate);
-            //mBlockLayoutRequests = false;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -367,19 +368,19 @@ for(int i = 0;i < childCount;i++)
 View var9232114380D348AA08914BA6993F21A2_1650814704 =             getChildAt(mSelectedPosition - mFirstPosition);
             var9232114380D348AA08914BA6993F21A2_1650814704.addTaint(taint);
             return var9232114380D348AA08914BA6993F21A2_1650814704;
-        } //End block
+        } 
         else
         {
 View var540C13E9E156B687226421B24F2DF178_654490972 =             null;
             var540C13E9E156B687226421B24F2DF178_654490972.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_654490972;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mItemCount > 0 && mSelectedPosition >= 0) {
-            //return getChildAt(mSelectedPosition - mFirstPosition);
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -389,33 +390,35 @@ View var540C13E9E156B687226421B24F2DF178_654490972 =             null;
     if(!mBlockLayoutRequests)        
         {
             super.requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mBlockLayoutRequests) {
-            //super.requestLayout();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.713 -0400", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "B02C95B4E62625ACF7EE0AB16138E2FA")
     @Override
     public SpinnerAdapter getAdapter() {
 SpinnerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1178636636 =         mAdapter;
         varD72668EDE5E63ADF9340F3D8A19FD205_1178636636.addTaint(taint);
         return varD72668EDE5E63ADF9340F3D8A19FD205_1178636636;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.714 -0400", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "6F8ECD1F175F22C2DEF8B062C82D4FE4")
     @Override
     public int getCount() {
         int varA7392E7FB156CE90DBA601C30BDAD9A0_1398145404 = (mItemCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248999379 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1248999379;
-        // ---------- Original Method ----------
-        //return mItemCount;
+        
+        
     }
 
     
@@ -428,7 +431,7 @@ SpinnerAdapter varD72668EDE5E63ADF9340F3D8A19FD205_1178636636 =         mAdapter
         {
             mTouchFrame = new Rect();
             frame = mTouchFrame;
-        } //End block
+        } 
         final int count = getChildCount();
 for(int i = count - 1;i >= 0;i--)
         {
@@ -441,67 +444,67 @@ for(int i = count - 1;i >= 0;i--)
                     int varB4D2F09D0AD5244C9E57B5AF8AB759AE_502104702 = (mFirstPosition + i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1419407619 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1419407619;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int var296D6C732A05FBA51C5854FA7933FE23_1261694306 = (INVALID_POSITION);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882279209 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1882279209;
-        // ---------- Original Method ----------
-        //Rect frame = mTouchFrame;
-        //if (frame == null) {
-            //mTouchFrame = new Rect();
-            //frame = mTouchFrame;
-        //}
-        //final int count = getChildCount();
-        //for (int i = count - 1; i >= 0; i--) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() == View.VISIBLE) {
-                //child.getHitRect(frame);
-                //if (frame.contains(x, y)) {
-                    //return mFirstPosition + i;
-                //}
-            //}
-        //}
-        //return INVALID_POSITION;
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.717 -0400", hash_original_method = "2B2E0178AF4521152109C90D1424ECD0", hash_generated_method = "3441BF34EDD3E35AA8DA02BCE5CEB0C3")
     @Override
     public Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         Parcelable superState = super.onSaveInstanceState();
         SavedState ss = new SavedState(superState);
         ss.selectedId = getSelectedItemId();
     if(ss.selectedId >= 0)        
         {
             ss.position = getSelectedItemPosition();
-        } //End block
+        } 
         else
         {
             ss.position = INVALID_POSITION;
-        } //End block
+        } 
 Parcelable var182E37827114C3F455816E0E29D81D76_1446930523 =         ss;
         var182E37827114C3F455816E0E29D81D76_1446930523.addTaint(taint);
         return var182E37827114C3F455816E0E29D81D76_1446930523;
-        // ---------- Original Method ----------
-        //Parcelable superState = super.onSaveInstanceState();
-        //SavedState ss = new SavedState(superState);
-        //ss.selectedId = getSelectedItemId();
-        //if (ss.selectedId >= 0) {
-            //ss.position = getSelectedItemPosition();
-        //} else {
-            //ss.position = INVALID_POSITION;
-        //}
-        //return ss;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.718 -0400", hash_original_method = "41BC9B1A20EF7E956C712A8B84EE3401", hash_generated_method = "6E6C67961C05C24613BBF803BB4B7D0E")
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state.getTaint());
         SavedState ss = (SavedState) state;
         super.onRestoreInstanceState(ss.getSuperState());
@@ -513,18 +516,18 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1446930523 =         ss;
             mSyncPosition = ss.position;
             mSyncMode = SYNC_SELECTED_POSITION;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //SavedState ss = (SavedState) state;
-        //super.onRestoreInstanceState(ss.getSuperState());
-        //if (ss.selectedId >= 0) {
-            //mDataChanged = true;
-            //mNeedSync = true;
-            //mSyncRowId = ss.selectedId;
-            //mSyncPosition = ss.position;
-            //mSyncMode = SYNC_SELECTED_POSITION;
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -540,7 +543,7 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1446930523 =         ss;
           SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -549,9 +552,9 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1446930523 =         ss;
             super(in);
             selectedId = in.readLong();
             position = in.readInt();
-            // ---------- Original Method ----------
-            //selectedId = in.readLong();
-            //position = in.readInt();
+            
+            
+            
         }
 
         
@@ -563,10 +566,10 @@ Parcelable var182E37827114C3F455816E0E29D81D76_1446930523 =         ss;
             super.writeToParcel(out, flags);
             out.writeLong(selectedId);
             out.writeInt(position);
-            // ---------- Original Method ----------
-            //super.writeToParcel(out, flags);
-            //out.writeLong(selectedId);
-            //out.writeInt(position);
+            
+            
+            
+            
         }
 
         
@@ -579,11 +582,11 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_697871804 =             "AbsSpinner.S
                     + " position=" + position + "}";
             var7F98A14C1972F3FDF68002B7A4E6BB79_697871804.addTaint(taint);
             return var7F98A14C1972F3FDF68002B7A4E6BB79_697871804;
-            // ---------- Original Method ----------
-            //return "AbsSpinner.SavedState{"
-                    //+ Integer.toHexString(System.identityHashCode(this))
-                    //+ " selectedId=" + selectedId
-                    //+ " position=" + position + "}";
+            
+            
+                    
+                    
+                    
         }
 
         
@@ -599,12 +602,12 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_697871804 =             "AbsSpinner.S
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }
@@ -621,7 +624,7 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_697871804 =             "AbsSpinner.S
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.721 -0400", hash_original_method = "8B96BADF61C6544CC3B73116E3B60C53", hash_generated_method = "8B96BADF61C6544CC3B73116E3B60C53")
         public RecycleBin ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -630,8 +633,8 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_697871804 =             "AbsSpinner.S
             addTaint(v.getTaint());
             addTaint(position);
             mScrapHeap.put(position, v);
-            // ---------- Original Method ----------
-            //mScrapHeap.put(position, v);
+            
+            
         }
 
         
@@ -642,20 +645,20 @@ String var7F98A14C1972F3FDF68002B7A4E6BB79_697871804 =             "AbsSpinner.S
     if(result != null)            
             {
                 mScrapHeap.delete(position);
-            } //End block
+            } 
             else
             {
-            } //End block
+            } 
 View varDC838461EE2FA0CA4C9BBB70A15456B0_490442606 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_490442606.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_490442606;
-            // ---------- Original Method ----------
-            //View result = mScrapHeap.get(position);
-            //if (result != null) {
-                //mScrapHeap.delete(position);
-            //} else {
-            //}
-            //return result;
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -669,19 +672,19 @@ for(int i = 0;i < count;i++)
     if(view != null)                
                 {
                     removeDetachedView(view, true);
-                } //End block
-            } //End block
+                } 
+            } 
             scrapHeap.clear();
-            // ---------- Original Method ----------
-            //final SparseArray<View> scrapHeap = mScrapHeap;
-            //final int count = scrapHeap.size();
-            //for (int i = 0; i < count; i++) {
-                //final View view = scrapHeap.valueAt(i);
-                //if (view != null) {
-                    //removeDetachedView(view, true);
-                //}
-            //}
-            //scrapHeap.clear();
+            
+            
+            
+            
+                
+                
+                    
+                
+            
+            
         }
 
         

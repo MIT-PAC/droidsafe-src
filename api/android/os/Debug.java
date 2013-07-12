@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ public final class Debug {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.131 -0400", hash_original_method = "2057C70024BF253BE1820FDFE7216E44", hash_generated_method = "CEC0EF1C9C14E821D3D42B954D6BD596")
     private  Debug() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -70,7 +70,8 @@ public final class Debug {
     }
 
     
-        public static boolean waitingForDebugger() {
+        @DSModeled(DSC.SAFE)
+    public static boolean waitingForDebugger() {
         return mWaiting;
     }
 
@@ -85,7 +86,8 @@ public final class Debug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void changeDebugPort(int port) {
     }
 
@@ -217,25 +219,29 @@ public final class Debug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int getGlobalExternalAllocCount() {
         return 0;
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int getGlobalExternalAllocSize() {
         return 0;
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int getGlobalExternalFreedCount() {
         return 0;
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int getGlobalExternalFreedSize() {
         return 0;
     }
@@ -256,13 +262,15 @@ public final class Debug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int getThreadExternalAllocCount() {
         return 0;
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int getThreadExternalAllocSize() {
         return 0;
     }
@@ -303,22 +311,26 @@ public final class Debug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void resetGlobalExternalAllocCount() {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void resetGlobalExternalAllocSize() {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void resetGlobalExternalFreedCount() {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void resetGlobalExternalFreedSize() {
     }
 
@@ -338,12 +350,14 @@ public final class Debug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void resetThreadExternalAllocCount() {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static void resetThreadExternalAllocSize() {
     }
 
@@ -398,13 +412,15 @@ public final class Debug {
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int setAllocationLimit(int limit) {
         return -1;
     }
 
     
-        @Deprecated
+        @DSModeled(DSC.SAFE)
+    @Deprecated
     public static int setGlobalAllocationLimit(int limit) {
         return -1;
     }
@@ -624,7 +640,7 @@ public final class Debug {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "FF74B0D10914F28AB3E573FB192E254D")
         public  MemoryInfo() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -632,75 +648,82 @@ public final class Debug {
         private  MemoryInfo(Parcel source) {
             addTaint(source.getTaint());
             readFromParcel(source);
-            // ---------- Original Method ----------
-            //readFromParcel(source);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "0F7876D4F39A60F2060DE34A3D4B321B", hash_generated_method = "BEA2754475B839C9B99F345AC7B6D65C")
         public int getTotalPss() {
             int var6A0B9D535EE465ACD427EA3428C5371B_1484162644 = (dalvikPss + nativePss + otherPss);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359632015 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1359632015;
-            // ---------- Original Method ----------
-            //return dalvikPss + nativePss + otherPss;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "5F6AFDC3B733846B095E6E612D37EF25", hash_generated_method = "E0B3100E8307A734806A244308C6B879")
         public int getTotalPrivateDirty() {
             int varD55679A9240E9250ABB4551BE253AB93_1198226460 = (dalvikPrivateDirty + nativePrivateDirty + otherPrivateDirty);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1538097095 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1538097095;
-            // ---------- Original Method ----------
-            //return dalvikPrivateDirty + nativePrivateDirty + otherPrivateDirty;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.137 -0400", hash_original_method = "DD332BDFA0A32D6562D4D066F36B1807", hash_generated_method = "CFA4C5B23385E63E5253620592E2834E")
         public int getTotalSharedDirty() {
             int var0D3ECF4D368075ECCA91E925F3038A81_1996752857 = (dalvikSharedDirty + nativeSharedDirty + otherSharedDirty);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039607361 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2039607361;
-            // ---------- Original Method ----------
-            //return dalvikSharedDirty + nativeSharedDirty + otherSharedDirty;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "8C545D479EA5CCAA2D5CE5956250CE73", hash_generated_method = "1985C99709510BE4B4059F61CECFA560")
         public int getOtherPss(int which) {
             addTaint(which);
             int varBA831434BBAB83037F6510E23CA16989_1918947427 = (otherStats[which*3]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189727729 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1189727729;
-            // ---------- Original Method ----------
-            //return otherStats[which*3];
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "45A31C2AA910C3CDA42EF94E68B5E963", hash_generated_method = "6552591E66DB2F96FEDAE91DB55426D0")
         public int getOtherPrivateDirty(int which) {
             addTaint(which);
             int varB200439FAF960DE5B31B1304509C9122_1989930884 = (otherStats[which*3 + 1]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453853017 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453853017;
-            // ---------- Original Method ----------
-            //return otherStats[which*3 + 1];
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "1FF35BC5D0D80C168B4EDFE5B23B6F0A", hash_generated_method = "177D2087AF8F252ADC102B13BD9BE635")
         public int getOtherSharedDirty(int which) {
             addTaint(which);
             int varB9640207533E7BD4FD84172C6854621A_158699011 = (otherStats[which*3 + 2]);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_193779748 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_193779748;
-            // ---------- Original Method ----------
-            //return otherStats[which*3 + 2];
+            
+            
         }
 
         
-                public static String getOtherLabel(int which) {
+                @DSModeled(DSC.SAFE)
+        public static String getOtherLabel(int which) {
             switch (which) {
                 case 0: return "Cursor";
                 case 1: return "Ashmem";
@@ -716,13 +739,14 @@ public final class Debug {
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.138 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "E1674A3D703C201195E9B6A7E17A1725")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_2028291891 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745183214 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1745183214;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
@@ -740,17 +764,17 @@ public final class Debug {
             dest.writeInt(otherPrivateDirty);
             dest.writeInt(otherSharedDirty);
             dest.writeIntArray(otherStats);
-            // ---------- Original Method ----------
-            //dest.writeInt(dalvikPss);
-            //dest.writeInt(dalvikPrivateDirty);
-            //dest.writeInt(dalvikSharedDirty);
-            //dest.writeInt(nativePss);
-            //dest.writeInt(nativePrivateDirty);
-            //dest.writeInt(nativeSharedDirty);
-            //dest.writeInt(otherPss);
-            //dest.writeInt(otherPrivateDirty);
-            //dest.writeInt(otherSharedDirty);
-            //dest.writeIntArray(otherStats);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -766,17 +790,17 @@ public final class Debug {
             otherPrivateDirty = source.readInt();
             otherSharedDirty = source.readInt();
             otherStats = source.createIntArray();
-            // ---------- Original Method ----------
-            //dalvikPss = source.readInt();
-            //dalvikPrivateDirty = source.readInt();
-            //dalvikSharedDirty = source.readInt();
-            //nativePss = source.readInt();
-            //nativePrivateDirty = source.readInt();
-            //nativeSharedDirty = source.readInt();
-            //otherPss = source.readInt();
-            //otherPrivateDirty = source.readInt();
-            //otherSharedDirty = source.readInt();
-            //otherStats = source.createIntArray();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -793,12 +817,12 @@ public final class Debug {
                 return new MemoryInfo[size];
             }
         };
-        // orphaned legacy method
+        
         public MemoryInfo createFromParcel(Parcel source) {
                 return new MemoryInfo(source);
             }
         
-        // orphaned legacy method
+        
         public MemoryInfo[] newArray(int size) {
                 return new MemoryInfo[size];
             }
@@ -815,8 +839,8 @@ public final class Debug {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.139 -0400", hash_original_method = "409452CAAA99AF062D1B45C0A8D86C97", hash_generated_method = "5D14DE560AC6781B6BEDE1D45CC48926")
         public  InstructionCount() {
             mCounts = new int[NUM_INSTR];
-            // ---------- Original Method ----------
-            //mCounts = new int[NUM_INSTR];
+            
+            
         }
 
         
@@ -826,24 +850,24 @@ public final class Debug {
             {
                 VMDebug.startInstructionCounting();
                 VMDebug.resetInstructionCount();
-            } //End block
+            } 
             catch (UnsupportedOperationException uoe)
             {
                 boolean var68934A3E9455FA72420237EB05902327_605144088 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535079120 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_535079120;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_609107384 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565022242 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_565022242;
-            // ---------- Original Method ----------
-            //try {
-                //VMDebug.startInstructionCounting();
-                //VMDebug.resetInstructionCount();
-            //} catch (UnsupportedOperationException uoe) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -853,43 +877,44 @@ public final class Debug {
             {
                 VMDebug.stopInstructionCounting();
                 VMDebug.getInstructionCount(mCounts);
-            } //End block
+            } 
             catch (UnsupportedOperationException uoe)
             {
                 boolean var68934A3E9455FA72420237EB05902327_927933037 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_408540185 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_408540185;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1260473081 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_604392980 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_604392980;
-            // ---------- Original Method ----------
-            //try {
-                //VMDebug.stopInstructionCounting();
-                //VMDebug.getInstructionCount(mCounts);
-            //} catch (UnsupportedOperationException uoe) {
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.140 -0400", hash_original_method = "51D086FA18F9CD076FA7BBB430E7197D", hash_generated_method = "890FD7A040F33A531A23D3465C66D4A5")
         public int globalTotal() {
             int count = 0;
 for(int i = 0;i < NUM_INSTR;i++)
             {
                 count += mCounts[i];
-            } //End block
+            } 
             int varE2942A04780E223B215EB8B663CF5353_2015754497 = (count);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514642890 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1514642890;
-            // ---------- Original Method ----------
-            //int count = 0;
-            //for (int i = 0; i < NUM_INSTR; i++) {
-                //count += mCounts[i];
-            //}
-            //return count;
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -901,19 +926,19 @@ for(int i = 0;i < NUM_INSTR;i++)
     if(OpcodeInfo.isInvoke(i))                
                 {
                     count += mCounts[i];
-                } //End block
-            } //End block
+                } 
+            } 
             int varE2942A04780E223B215EB8B663CF5353_458281948 = (count);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031139037 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1031139037;
-            // ---------- Original Method ----------
-            //int count = 0;
-            //for (int i = 0; i < NUM_INSTR; i++) {
-                //if (OpcodeInfo.isInvoke(i)) {
-                    //count += mCounts[i];
-                //}
-            //}
-            //return count;
+            
+            
+            
+                
+                    
+                
+            
+            
         }
 
         

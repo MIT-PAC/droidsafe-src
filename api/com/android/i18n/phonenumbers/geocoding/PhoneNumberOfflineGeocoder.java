@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers.geocoding;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,9 +33,9 @@ public class PhoneNumberOfflineGeocoder {
       PhoneNumberOfflineGeocoder(String phonePrefixDataDirectory) {
         this.phonePrefixDataDirectory = phonePrefixDataDirectory;
         loadMappingFileProvider();
-        // ---------- Original Method ----------
-        //this.phonePrefixDataDirectory = phonePrefixDataDirectory;
-        //loadMappingFileProvider();
+        
+        
+        
     }
 
     
@@ -47,27 +47,27 @@ public class PhoneNumberOfflineGeocoder {
         {
             in = new ObjectInputStream(source);
             mappingFileProvider.readExternal(in);
-        } //End block
+        } 
         catch (IOException e)
         {
             LOGGER.log(Level.WARNING, e.toString());
-        } //End block
+        } 
         finally 
         {
             close(in);
-        } //End block
-        // ---------- Original Method ----------
-        //InputStream source =
-        //PhoneNumberOfflineGeocoder.class.getResourceAsStream(phonePrefixDataDirectory + "config");
-        //ObjectInputStream in = null;
-        //try {
-      //in = new ObjectInputStream(source);
-      //mappingFileProvider.readExternal(in);
-    //} catch (IOException e) {
-      //LOGGER.log(Level.WARNING, e.toString());
-    //} finally {
-      //close(in);
-    //}
+        } 
+        
+        
+        
+        
+        
+      
+      
+    
+      
+    
+      
+    
     }
 
     
@@ -84,23 +84,23 @@ public class PhoneNumberOfflineGeocoder {
 AreaCodeMap var540C13E9E156B687226421B24F2DF178_328360302 =             null;
             var540C13E9E156B687226421B24F2DF178_328360302.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_328360302;
-        } //End block
+        } 
     if(!availablePhonePrefixMaps.containsKey(fileName))        
         {
             loadAreaCodeMapFromFile(fileName);
-        } //End block
+        } 
 AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_435183533 =         availablePhonePrefixMaps.get(fileName);
         var5B1B4B795B719A2CCEF18674C52B5D6E_435183533.addTaint(taint);
         return var5B1B4B795B719A2CCEF18674C52B5D6E_435183533;
-        // ---------- Original Method ----------
-        //String fileName = mappingFileProvider.getFileName(countryCallingCode, language, script, region);
-        //if (fileName.length() == 0) {
-      //return null;
-    //}
-        //if (!availablePhonePrefixMaps.containsKey(fileName)) {
-      //loadAreaCodeMapFromFile(fileName);
-    //}
-        //return availablePhonePrefixMaps.get(fileName);
+        
+        
+        
+      
+    
+        
+      
+    
+        
     }
 
     
@@ -115,29 +115,29 @@ AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_435183533 =         availablePho
             AreaCodeMap map = new AreaCodeMap();
             map.readExternal(in);
             availablePhonePrefixMaps.put(fileName, map);
-        } //End block
+        } 
         catch (IOException e)
         {
             LOGGER.log(Level.WARNING, e.toString());
-        } //End block
+        } 
         finally 
         {
             close(in);
-        } //End block
-        // ---------- Original Method ----------
-        //InputStream source =
-        //PhoneNumberOfflineGeocoder.class.getResourceAsStream(phonePrefixDataDirectory + fileName);
-        //ObjectInputStream in = null;
-        //try {
-      //in = new ObjectInputStream(source);
-      //AreaCodeMap map = new AreaCodeMap();
-      //map.readExternal(in);
-      //availablePhonePrefixMaps.put(fileName, map);
-    //} catch (IOException e) {
-      //LOGGER.log(Level.WARNING, e.toString());
-    //} finally {
-      //close(in);
-    //}
+        } 
+        
+        
+        
+        
+        
+      
+      
+      
+      
+    
+      
+    
+      
+    
     }
 
     
@@ -149,20 +149,20 @@ AreaCodeMap var5B1B4B795B719A2CCEF18674C52B5D6E_435183533 =         availablePho
             try 
             {
                 in.close();
-            } //End block
+            } 
             catch (IOException e)
             {
                 LOGGER.log(Level.WARNING, e.toString());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (in != null) {
-      //try {
-        //in.close();
-      //} catch (IOException e) {
-        //LOGGER.log(Level.WARNING, e.toString());
-      //}
-    //}
+            } 
+        } 
+        
+        
+      
+        
+      
+        
+      
+    
     }
 
     
@@ -183,10 +183,10 @@ String varC942936C1DE055EED6142794CDBBAC27_887384098 =         (regionCode == nu
         ? "" : new Locale("", regionCode).getDisplayCountry(language);
         varC942936C1DE055EED6142794CDBBAC27_887384098.addTaint(taint);
         return varC942936C1DE055EED6142794CDBBAC27_887384098;
-        // ---------- Original Method ----------
-        //String regionCode = phoneUtil.getRegionCodeForNumber(number);
-        //return (regionCode == null || regionCode.equals("ZZ"))
-        //? "" : new Locale("", regionCode).getDisplayCountry(language);
+        
+        
+        
+        
     }
 
     
@@ -202,14 +202,14 @@ String varD34CF9974FC14F46EA66AD196503C90F_256722724 =         (areaDescription.
         ? areaDescription : getCountryNameForNumber(number, languageCode);
         varD34CF9974FC14F46EA66AD196503C90F_256722724.addTaint(taint);
         return varD34CF9974FC14F46EA66AD196503C90F_256722724;
-        // ---------- Original Method ----------
-        //String langStr = languageCode.getLanguage();
-        //String scriptStr = "";
-        //String regionStr = languageCode.getCountry();
-        //String areaDescription =
-        //getAreaDescriptionForNumber(number, langStr, scriptStr, regionStr);
-        //return (areaDescription.length() > 0)
-        //? areaDescription : getCountryNameForNumber(number, languageCode);
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -222,15 +222,15 @@ String varD34CF9974FC14F46EA66AD196503C90F_256722724 =         (areaDescription.
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_427181466 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_427181466.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_427181466;
-        } //End block
+        } 
 String var4E416BD293427CE8843A4D977CB49767_1895274549 =         getDescriptionForValidNumber(number, languageCode);
         var4E416BD293427CE8843A4D977CB49767_1895274549.addTaint(taint);
         return var4E416BD293427CE8843A4D977CB49767_1895274549;
-        // ---------- Original Method ----------
-        //if (!phoneUtil.isValidNumber(number)) {
-      //return "";
-    //}
-        //return getDescriptionForValidNumber(number, languageCode);
+        
+        
+      
+    
+        
     }
 
     
@@ -248,13 +248,13 @@ String var4E416BD293427CE8843A4D977CB49767_1895274549 =         getDescriptionFo
 String var2B27E3BBA63F45F369F65694B5848533_135488492 =         (phonePrefixDescriptions != null) ? phonePrefixDescriptions.lookup(number) : "";
         var2B27E3BBA63F45F369F65694B5848533_135488492.addTaint(taint);
         return var2B27E3BBA63F45F369F65694B5848533_135488492;
-        // ---------- Original Method ----------
-        //int countryCallingCode = number.getCountryCode();
-        //int phonePrefix = (countryCallingCode != 1) ?
-        //countryCallingCode : (1000 + (int) (number.getNationalNumber() / 10000000));
-        //AreaCodeMap phonePrefixDescriptions =
-        //getPhonePrefixDescriptions(phonePrefix, lang, script, region);
-        //return (phonePrefixDescriptions != null) ? phonePrefixDescriptions.lookup(number) : "";
+        
+        
+        
+        
+        
+        
+        
     }
 
     

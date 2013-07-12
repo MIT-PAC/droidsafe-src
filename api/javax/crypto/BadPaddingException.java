@@ -1,6 +1,6 @@
 package javax.crypto;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,13 +12,13 @@ public class BadPaddingException extends GeneralSecurityException {
     public  BadPaddingException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.551 -0400", hash_original_method = "93AC86C418E78DB07C3A1E0229C09FBC", hash_generated_method = "BEC10E384823F5A0EB6660587E005727")
     public  BadPaddingException() {
-        // ---------- Original Method ----------
+        
     }
 
     

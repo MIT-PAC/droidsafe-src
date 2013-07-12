@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,15 +18,15 @@ public class DERIA5String extends ASN1Object implements DERString {
 for(int i = 0;i != cs.length;i++)
         {
             cs[i] = (char)(string[i] & 0xff);
-        } //End block
+        } 
         this.string = new String(cs);
-        // ---------- Original Method ----------
-        //char[]  cs = new char[string.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)(string[i] & 0xff);
-        //}
-        //this.string = new String(cs);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -35,7 +35,7 @@ for(int i = 0;i != cs.length;i++)
         String   string) {
         this(string, false);
         addTaint(string.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,24 +49,24 @@ for(int i = 0;i != cs.length;i++)
             NullPointerException var583B156DFC6C0D3E5E7C194136874CD3_2064865810 = new NullPointerException("string cannot be null");
             var583B156DFC6C0D3E5E7C194136874CD3_2064865810.addTaint(taint);
             throw var583B156DFC6C0D3E5E7C194136874CD3_2064865810;
-        } //End block
+        } 
     if(validate && !isIA5String(string))        
         {
             IllegalArgumentException var004F07C3BE12B584F6B99C05A347E3ED_1903528895 = new IllegalArgumentException("string contains illegal characters");
             var004F07C3BE12B584F6B99C05A347E3ED_1903528895.addTaint(taint);
             throw var004F07C3BE12B584F6B99C05A347E3ED_1903528895;
-        } //End block
+        } 
         this.string = string;
-        // ---------- Original Method ----------
-        //if (string == null)
-        //{
-            //throw new NullPointerException("string cannot be null");
-        //}
-        //if (validate && !isIA5String(string))
-        //{
-            //throw new IllegalArgumentException("string contains illegal characters");
-        //}
-        //this.string = string;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -95,23 +95,25 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.075 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "42FB37FD1EFA4B8520CE029E99B484D9")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_897201784 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_897201784.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_897201784;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.075 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "DC8D45D9BB00FB20E8D099A0136CC2E1")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_1309653163 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_1309653163.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_1309653163;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -122,18 +124,18 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_1309653163 =         string;
 for(int i = 0;i != cs.length;i++)
         {
             bs[i] = (byte)cs[i];
-        } //End block
+        } 
         byte[] var7C9DF801238ABE28CAE2675FD3166A1A_265900849 = (bs);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_425470241 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_425470241;
-        // ---------- Original Method ----------
-        //char[]  cs = string.toCharArray();
-        //byte[]  bs = new byte[cs.length];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //bs[i] = (byte)cs[i];
-        //}
-        //return bs;
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -142,8 +144,8 @@ for(int i = 0;i != cs.length;i++)
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(IA5_STRING, this.getOctets());
-        // ---------- Original Method ----------
-        //out.writeEncoded(IA5_STRING, this.getOctets());
+        
+        
     }
 
     
@@ -152,8 +154,8 @@ for(int i = 0;i != cs.length;i++)
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_424222641 = (this.getString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980651551 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1980651551;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     
@@ -166,18 +168,18 @@ for(int i = 0;i != cs.length;i++)
             boolean var68934A3E9455FA72420237EB05902327_1930317668 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_893722272 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_893722272;
-        } //End block
+        } 
         DERIA5String s = (DERIA5String)o;
         boolean varEDB7CD599351FA878152EF17A169B1A6_489939820 = (this.getString().equals(s.getString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1752627022 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1752627022;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERIA5String))
-        //{
-            //return false;
-        //}
-        //DERIA5String  s = (DERIA5String)o;
-        //return this.getString().equals(s.getString());
+        
+        
+        
+            
+        
+        
+        
     }
 
     

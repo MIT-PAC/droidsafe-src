@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,15 +14,15 @@ class AddressCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.436 -0400", hash_original_method = "FAF57634870A3B339F1CC57081189EF2", hash_generated_method = "FAF57634870A3B339F1CC57081189EF2")
     public AddressCache ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.436 -0400", hash_original_method = "D1FF7490F54CF1A82BA3C6629046B5CD", hash_generated_method = "AAA1ED0CE5EB800F50693357CCB1D777")
     public void clear() {
         cache.evictAll();
-        // ---------- Original Method ----------
-        //cache.evictAll();
+        
+        
     }
 
     
@@ -35,16 +35,16 @@ class AddressCache {
 Object varD2C0624DDD8A4F8F307477F36B405DFB_1478442212 =             entry.value;
             varD2C0624DDD8A4F8F307477F36B405DFB_1478442212.addTaint(taint);
             return varD2C0624DDD8A4F8F307477F36B405DFB_1478442212;
-        } //End block
+        } 
 Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
         var540C13E9E156B687226421B24F2DF178_1435379857.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1435379857;
-        // ---------- Original Method ----------
-        //AddressCacheEntry entry = cache.get(hostname);
-        //if (entry != null && entry.expiryNanos >= System.nanoTime()) {
-            //return entry.value;
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -53,8 +53,8 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
         addTaint(addresses[0].getTaint());
         addTaint(hostname.getTaint());
         put(hostname, addresses, true);
-        // ---------- Original Method ----------
-        //put(hostname, addresses, true);
+        
+        
     }
 
     
@@ -63,8 +63,8 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
         addTaint(detailMessage.getTaint());
         addTaint(hostname.getTaint());
         put(hostname, detailMessage, false);
-        // ---------- Original Method ----------
-        //put(hostname, detailMessage, false);
+        
+        
     }
 
     
@@ -77,11 +77,11 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
         long defaultTtlNanos = isPositive ? DEFAULT_POSITIVE_TTL_NANOS : DEFAULT_NEGATIVE_TTL_NANOS;
         long expiryNanos = System.nanoTime() + defaultTtlNanos;
         cache.put(hostname, new AddressCacheEntry(value, expiryNanos));
-        // ---------- Original Method ----------
-        //String propertyName = isPositive ? "networkaddress.cache.ttl" : "networkaddress.cache.negative.ttl";
-        //long defaultTtlNanos = isPositive ? DEFAULT_POSITIVE_TTL_NANOS : DEFAULT_NEGATIVE_TTL_NANOS;
-        //long expiryNanos = System.nanoTime() + defaultTtlNanos;
-        //cache.put(hostname, new AddressCacheEntry(value, expiryNanos));
+        
+        
+        
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
         addTaint(detailMessage.getTaint());
         addTaint(hostname.getTaint());
         put(hostname, detailMessage);
-        // ---------- Original Method ----------
-        //put(hostname, detailMessage);
+        
+        
     }
 
     
@@ -105,7 +105,7 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
             long var2F9E00B275DD994638791D91872E5D48_1607769688 = (System.nanoTime() + defaultTtlNanos);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_567497938 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_567497938;
-        } //End block
+        } 
         try 
         {
             long ttlS = Long.parseLong(ttlString);
@@ -114,44 +114,44 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
                 long var85712C72209F40438E81734FCEEB0717_1907358774 = (Long.MAX_VALUE);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1715523365 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1715523365;
-            } //End block
+            } 
             else
     if(ttlS == 0)            
             {
                 long var3C8E60A5FA3722D6B0A8842B383A1743_595707301 = (Long.MIN_VALUE);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1730666608 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_1730666608;
-            } //End block
+            } 
             else
             {
                 long varB106ACDC7D4EC2C901913EEAB9BBD0BF_636062863 = (System.nanoTime() + ttlS * 1000000000L);
                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_341760949 = getTaintLong();
                 return var0F5264038205EDFB1AC05FBB0E8C5E94_341760949;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (NumberFormatException ex)
         {
             long var2F9E00B275DD994638791D91872E5D48_1568596515 = (System.nanoTime() + defaultTtlNanos);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_396673506 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_396673506;
-        } //End block
-        // ---------- Original Method ----------
-        //String ttlString = System.getProperty(propertyName, null);
-        //if (ttlString == null) {
-            //return System.nanoTime() + defaultTtlNanos;
-        //}
-        //try {
-            //long ttlS = Long.parseLong(ttlString);
-            //if (ttlS == -1) {
-                //return Long.MAX_VALUE;
-            //} else if (ttlS == 0) {
-                //return Long.MIN_VALUE;
-            //} else {
-                //return System.nanoTime() + ttlS * 1000000000L;
-            //}
-        //} catch (NumberFormatException ex) {
-            //return System.nanoTime() + defaultTtlNanos;
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -167,9 +167,9 @@ Object var540C13E9E156B687226421B24F2DF178_1435379857 =         null;
           AddressCacheEntry(Object value, long expiryNanos) {
             this.value = value;
             this.expiryNanos = expiryNanos;
-            // ---------- Original Method ----------
-            //this.value = value;
-            //this.expiryNanos = expiryNanos;
+            
+            
+            
         }
 
         

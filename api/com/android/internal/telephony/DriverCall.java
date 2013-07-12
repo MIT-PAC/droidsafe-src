@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,7 +51,7 @@ public class DriverCall implements Comparable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.709 -0400", hash_original_method = "DF91F81E80FDB939BBEABFE9635EC975", hash_generated_method = "A0F6DD97DA81B4F7A55DEAA088C14728")
     public  DriverCall() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -82,6 +82,7 @@ public class DriverCall implements Comparable {
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.710 -0400", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "26862FAF5417F2D35217E63421E200F6")
     public String toString() {
 String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + ","
@@ -96,21 +97,22 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
                  + "," + namePresentation;
         var73E2365DCE80719343796B149C5DF735_2026198323.addTaint(taint);
         return var73E2365DCE80719343796B149C5DF735_2026198323;
-        // ---------- Original Method ----------
-        //return "id=" + index + ","
-                //+ state + ","
-                //+ "toa=" + TOA + ","
-                //+ (isMpty ? "conf" : "norm") + ","
-                //+ (isMT ? "mt" : "mo") + ","
-                //+ als + ","
-                //+ (isVoice ? "voc" : "nonvoc") + ","
-                //+ (isVoicePrivacy ? "evp" : "noevp") + ","
-                 //+ ",cli=" + numberPresentation + ","
-                 //+ "," + namePresentation;
+        
+        
+                
+                
+                
+                
+                
+                
+                
+                 
+                 
     }
 
     
-        public static State stateFromCLCC(int state) throws ATParseEx {
+        @DSModeled(DSC.BAN)
+    public static State stateFromCLCC(int state) throws ATParseEx {
         switch(state) {
             case 0: return State.ACTIVE;
             case 1: return State.HOLDING;
@@ -124,7 +126,8 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
-        public static int presentationFromCLIP(int cli) throws ATParseEx {
+        @DSModeled(DSC.BAN)
+    public static int presentationFromCLIP(int cli) throws ATParseEx {
         switch(cli) {
             case 0: return Connection.PRESENTATION_ALLOWED;
             case 1: return Connection.PRESENTATION_RESTRICTED;
@@ -136,6 +139,7 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.711 -0400", hash_original_method = "7A57313C9AA4F0F08ECFF99E7B6FC0B1", hash_generated_method = "079678F34F08CF6B5C6BF4E4FB8D5233")
     public int compareTo(Object o) {
         addTaint(o.getTaint());
@@ -146,30 +150,30 @@ String var73E2365DCE80719343796B149C5DF735_2026198323 =         "id=" + index + 
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1587830972 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959393180 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_959393180;
-        } //End block
+        } 
         else
     if(index == dc.index)        
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_1653476 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_99158285 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_99158285;
-        } //End block
+        } 
         else
         {
             int varC4CA4238A0B923820DCC509A6F75849B_1849279687 = (1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1591522230 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1591522230;
-        } //End block
-        // ---------- Original Method ----------
-        //DriverCall dc;
-        //dc = (DriverCall)o;
-        //if (index < dc.index) {
-            //return -1;
-        //} else if (index == dc.index) {
-            //return 0;
-        //} else { 
-            //return 1;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     

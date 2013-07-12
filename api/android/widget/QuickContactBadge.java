@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -51,7 +51,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     public  QuickContactBadge(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,7 +60,7 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -76,16 +76,17 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
         styledAttributes.recycle();
         mQueryHandler = new QueryHandler(mContext.getContentResolver());
         setOnClickListener(this);
-        // ---------- Original Method ----------
-        //TypedArray styledAttributes = mContext.obtainStyledAttributes(R.styleable.Theme);
-        //mOverlay = styledAttributes.getDrawable(
-                //com.android.internal.R.styleable.Theme_quickContactBadgeOverlay);
-        //styledAttributes.recycle();
-        //mQueryHandler = new QueryHandler(mContext.getContentResolver());
-        //setOnClickListener(this);
+        
+        
+        
+                
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.098 -0400", hash_original_method = "5693D4EF6FAC7E7AFE930BDF5EC8E103", hash_generated_method = "3A49175F7D70A1781AD14F7C9FD0E3B4")
     @Override
     protected void drawableStateChanged() {
@@ -94,44 +95,46 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
         {
             mOverlay.setState(getDrawableState());
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //super.drawableStateChanged();
-        //if (mOverlay != null && mOverlay.isStateful()) {
-            //mOverlay.setState(getDrawableState());
-            //invalidate();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.099 -0400", hash_original_method = "02B3BF267746F04A443A6F33FDD49C50", hash_generated_method = "D4021E48063A8881864778297492D18C")
     @SuppressWarnings("unused")
     public void setMode(int size) {
         addTaint(size);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.100 -0400", hash_original_method = "23D2E4F314D26FFBC9D75F31C49B7153", hash_generated_method = "4C29E491FBADA83BF3F370F2B8FBECB6")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
         super.onDraw(canvas);
     if(!isEnabled())        
         {
             return;
-        } //End block
+        } 
     if(mOverlay == null || mOverlay.getIntrinsicWidth() == 0 ||
                 mOverlay.getIntrinsicHeight() == 0)        
         {
             return;
-        } //End block
+        } 
         mOverlay.setBounds(0, 0, getWidth(), getHeight());
     if(mPaddingTop == 0 && mPaddingLeft == 0)        
         {
             mOverlay.draw(canvas);
-        } //End block
+        } 
         else
         {
             int saveCount = canvas.getSaveCount();
@@ -139,68 +142,72 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
             canvas.translate(mPaddingLeft, mPaddingTop);
             mOverlay.draw(canvas);
             canvas.restoreToCount(saveCount);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDraw(canvas);
-        //if (!isEnabled()) {
-            //return;
-        //}
-        //if (mOverlay == null || mOverlay.getIntrinsicWidth() == 0 ||
-                //mOverlay.getIntrinsicHeight() == 0) {
-            //return;
-        //}
-        //mOverlay.setBounds(0, 0, getWidth(), getHeight());
-        //if (mPaddingTop == 0 && mPaddingLeft == 0) {
-            //mOverlay.draw(canvas);
-        //} else {
-            //int saveCount = canvas.getSaveCount();
-            //canvas.save();
-            //canvas.translate(mPaddingLeft, mPaddingTop);
-            //mOverlay.draw(canvas);
-            //canvas.restoreToCount(saveCount);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+                
+            
+        
+        
+        
+            
+        
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.100 -0400", hash_original_method = "FCE3B5086AEC0F336253CCDCDE531810", hash_generated_method = "D2DF84E4BA478A811608D336EBAB0FEC")
     private boolean isAssigned() {
         boolean var5B311DB59956F2A2D93DB75AFB520017_2008060442 = (mContactUri != null || mContactEmail != null || mContactPhone != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1407896009 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1407896009;
-        // ---------- Original Method ----------
-        //return mContactUri != null || mContactEmail != null || mContactPhone != null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.101 -0400", hash_original_method = "E4AF1B9673F011A8417C08012510E27B", hash_generated_method = "6810026ABE20C92676789320376FD9E7")
     public void setImageToDefault() {
     if(mDefaultAvatar == null)        
         {
             mDefaultAvatar = getResources().getDrawable(R.drawable.ic_contact_picture);
-        } //End block
+        } 
         setImageDrawable(mDefaultAvatar);
-        // ---------- Original Method ----------
-        //if (mDefaultAvatar == null) {
-            //mDefaultAvatar = getResources().getDrawable(R.drawable.ic_contact_picture);
-        //}
-        //setImageDrawable(mDefaultAvatar);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.102 -0400", hash_original_method = "F07B10D1C60A4CC654BA1655A0E456BD", hash_generated_method = "1C1D96C40DD0DE46B710181BFE8FC45E")
     public void assignContactUri(Uri contactUri) {
         mContactUri = contactUri;
         mContactEmail = null;
         mContactPhone = null;
         onContactUriChanged();
-        // ---------- Original Method ----------
-        //mContactUri = contactUri;
-        //mContactEmail = null;
-        //mContactPhone = null;
-        //onContactUriChanged();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.102 -0400", hash_original_method = "7E46CBF823F769C000B50BD24A037D73", hash_generated_method = "8A2D93579F7F511CF665A27BDE67F8E4")
     public void assignContactFromEmail(String emailAddress, boolean lazyLookup) {
         addTaint(lazyLookup);
@@ -210,25 +217,26 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
             mQueryHandler.startQuery(TOKEN_EMAIL_LOOKUP, null,
                     Uri.withAppendedPath(Email.CONTENT_LOOKUP_URI, Uri.encode(mContactEmail)),
                     EMAIL_LOOKUP_PROJECTION, null, null, null);
-        } //End block
+        } 
         else
         {
             mContactUri = null;
             onContactUriChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //mContactEmail = emailAddress;
-        //if (!lazyLookup) {
-            //mQueryHandler.startQuery(TOKEN_EMAIL_LOOKUP, null,
-                    //Uri.withAppendedPath(Email.CONTENT_LOOKUP_URI, Uri.encode(mContactEmail)),
-                    //EMAIL_LOOKUP_PROJECTION, null, null, null);
-        //} else {
-            //mContactUri = null;
-            //onContactUriChanged();
-        //}
+        } 
+        
+        
+        
+            
+                    
+                    
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.103 -0400", hash_original_method = "615886346605DCC8A37347200BE80EDB", hash_generated_method = "DBB7A6FE59CC0A00910C99B4D28F6A8B")
     public void assignContactFromPhone(String phoneNumber, boolean lazyLookup) {
         addTaint(lazyLookup);
@@ -238,71 +246,74 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
             mQueryHandler.startQuery(TOKEN_PHONE_LOOKUP, null,
                     Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, mContactPhone),
                     PHONE_LOOKUP_PROJECTION, null, null, null);
-        } //End block
+        } 
         else
         {
             mContactUri = null;
             onContactUriChanged();
-        } //End block
-        // ---------- Original Method ----------
-        //mContactPhone = phoneNumber;
-        //if (!lazyLookup) {
-            //mQueryHandler.startQuery(TOKEN_PHONE_LOOKUP, null,
-                    //Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, mContactPhone),
-                    //PHONE_LOOKUP_PROJECTION, null, null, null);
-        //} else {
-            //mContactUri = null;
-            //onContactUriChanged();
-        //}
+        } 
+        
+        
+        
+            
+                    
+                    
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.104 -0400", hash_original_method = "8712FDD692B08E6979A43AB02ED73539", hash_generated_method = "9332C53BC9532EB272CB981FE68B7B39")
     private void onContactUriChanged() {
         setEnabled(isAssigned());
-        // ---------- Original Method ----------
-        //setEnabled(isAssigned());
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.104 -0400", hash_original_method = "58382461F76E5F0CD49350469EC07976", hash_generated_method = "AE3D74460F56B9E573BF63B69A7BAB14")
     @Override
     public void onClick(View v) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(v.getTaint());
     if(mContactUri != null)        
         {
             QuickContact.showQuickContact(getContext(), QuickContactBadge.this, mContactUri,
                     QuickContact.MODE_LARGE, mExcludeMimes);
-        } //End block
+        } 
         else
     if(mContactEmail != null)        
         {
             mQueryHandler.startQuery(TOKEN_EMAIL_LOOKUP_AND_TRIGGER, mContactEmail,
                     Uri.withAppendedPath(Email.CONTENT_LOOKUP_URI, Uri.encode(mContactEmail)),
                     EMAIL_LOOKUP_PROJECTION, null, null, null);
-        } //End block
+        } 
         else
     if(mContactPhone != null)        
         {
             mQueryHandler.startQuery(TOKEN_PHONE_LOOKUP_AND_TRIGGER, mContactPhone,
                     Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, mContactPhone),
                     PHONE_LOOKUP_PROJECTION, null, null, null);
-        } //End block
+        } 
         else
         {
             return;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.105 -0400", hash_original_method = "6EE6B4CDAB8A2B121BC24B2101C4B640", hash_generated_method = "C5F83460E261F170BDD1386C11FBEC35")
     public void setExcludeMimes(String[] excludeMimes) {
         mExcludeMimes = excludeMimes;
-        // ---------- Original Method ----------
-        //mExcludeMimes = excludeMimes;
+        
+        
     }
 
     
@@ -312,14 +323,15 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
         public  QueryHandler(ContentResolver cr) {
             super(cr);
             addTaint(cr.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.106 -0400", hash_original_method = "8665D4A0C21AED185AE6812E2DF2128E", hash_generated_method = "C00305FB1E3219C61BD323674488A045")
         @Override
         protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(cursor.getTaint());
             addTaint(cookie.getTaint());
             addTaint(token);
@@ -339,9 +351,9 @@ switch(token){
                         long contactId = cursor.getLong(PHONE_ID_COLUMN_INDEX);
                         String lookupKey = cursor.getString(PHONE_LOOKUP_STRING_COLUMN_INDEX);
                         lookupUri = Contacts.getLookupUri(contactId, lookupKey);
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
                 case TOKEN_EMAIL_LOOKUP_AND_TRIGGER:
                 trigger = true;
                 createUri = Uri.fromParts("mailto", (String)cookie, null);
@@ -352,33 +364,33 @@ switch(token){
                         long contactId = cursor.getLong(EMAIL_ID_COLUMN_INDEX);
                         String lookupKey = cursor.getString(EMAIL_LOOKUP_STRING_COLUMN_INDEX);
                         lookupUri = Contacts.getLookupUri(contactId, lookupKey);
-                    } //End block
+                    } 
                     break;
-                } //End block
+                } 
 }
-            } //End block
+            } 
             finally 
             {
     if(cursor != null)                
                 {
                     cursor.close();
-                } //End block
-            } //End block
+                } 
+            } 
             mContactUri = lookupUri;
             onContactUriChanged();
     if(trigger && lookupUri != null)            
             {
                 QuickContact.showQuickContact(getContext(), QuickContactBadge.this, lookupUri,
                         QuickContact.MODE_LARGE, mExcludeMimes);
-            } //End block
+            } 
             else
     if(createUri != null)            
             {
                 final Intent intent = new Intent(Intents.SHOW_OR_CREATE_CONTACT, createUri);
                 getContext().startActivity(intent);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public  FileOutputStream(File file) throws FileNotFoundException {
         this(file, false);
         addTaint(file.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,19 +44,19 @@ public class FileOutputStream extends OutputStream implements Closeable {
             NullPointerException var34C654CB6A962C169433BF5C5405377F_686117817 = new NullPointerException("file == null");
             var34C654CB6A962C169433BF5C5405377F_686117817.addTaint(taint);
             throw var34C654CB6A962C169433BF5C5405377F_686117817;
-        } //End block
+        } 
         this.mode = O_WRONLY | O_CREAT | (append ? O_APPEND : O_TRUNC);
         this.fd = IoBridge.open(file.getAbsolutePath(), mode);
         this.shouldClose = true;
         this.guard.open("close");
-        // ---------- Original Method ----------
-        //if (file == null) {
-            //throw new NullPointerException("file == null");
-        //}
-        //this.mode = O_WRONLY | O_CREAT | (append ? O_APPEND : O_TRUNC);
-        //this.fd = IoBridge.open(file.getAbsolutePath(), mode);
-        //this.shouldClose = true;
-        //this.guard.open("close");
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -67,19 +67,19 @@ public class FileOutputStream extends OutputStream implements Closeable {
             NullPointerException var80E87090A64E83D6A9C06DE7A777A91D_914203668 = new NullPointerException("fd == null");
             var80E87090A64E83D6A9C06DE7A777A91D_914203668.addTaint(taint);
             throw var80E87090A64E83D6A9C06DE7A777A91D_914203668;
-        } //End block
+        } 
         this.fd = fd;
         this.shouldClose = false;
         this.mode = O_WRONLY;
         this.channel = NioUtils.newFileChannel(this, fd, mode);
-        // ---------- Original Method ----------
-        //if (fd == null) {
-            //throw new NullPointerException("fd == null");
-        //}
-        //this.fd = fd;
-        //this.shouldClose = false;
-        //this.mode = O_WRONLY;
-        //this.channel = NioUtils.newFileChannel(this, fd, mode);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -87,7 +87,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
     public  FileOutputStream(String path) throws FileNotFoundException {
         this(path, false);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -96,7 +96,7 @@ public class FileOutputStream extends OutputStream implements Closeable {
         this(new File(path), append);
         addTaint(append);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -109,28 +109,28 @@ public class FileOutputStream extends OutputStream implements Closeable {
     if(channel != null)            
             {
                 channel.close();
-            } //End block
+            } 
     if(shouldClose)            
             {
                 IoUtils.close(fd);
-            } //End block
+            } 
             else
             {
                 fd = new FileDescriptor();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //guard.close();
-        //synchronized (this) {
-            //if (channel != null) {
-                //channel.close();
-            //}
-            //if (shouldClose) {
-                //IoUtils.close(fd);
-            //} else {
-                //fd = new FileDescriptor();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -142,35 +142,35 @@ public class FileOutputStream extends OutputStream implements Closeable {
     if(guard != null)            
             {
                 guard.warnIfOpen();
-            } //End block
+            } 
             close();
-        } //End block
+        } 
         finally 
         {
             try 
             {
                 super.finalize();
-            } //End block
+            } 
             catch (Throwable t)
             {
                 AssertionError var31F1143F51E5C3306DAC550F61AF5CBA_1715520415 = new AssertionError(t);
                 var31F1143F51E5C3306DAC550F61AF5CBA_1715520415.addTaint(taint);
                 throw var31F1143F51E5C3306DAC550F61AF5CBA_1715520415;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //if (guard != null) {
-                //guard.warnIfOpen();
-            //}
-            //close();
-        //} finally {
-            //try {
-                //super.finalize();
-            //} catch (Throwable t) {
-                //throw new AssertionError(t);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+        
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -181,18 +181,18 @@ public class FileOutputStream extends OutputStream implements Closeable {
     if(channel == null)            
             {
                 channel = NioUtils.newFileChannel(this, fd, mode);
-            } //End block
+            } 
 FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_443760914 =             channel;
             var99BA3483FD74E36EACD435CEE6BD5D6F_443760914.addTaint(taint);
             return var99BA3483FD74E36EACD435CEE6BD5D6F_443760914;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (channel == null) {
-                //channel = NioUtils.newFileChannel(this, fd, mode);
-            //}
-            //return channel;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -201,8 +201,8 @@ FileChannel var99BA3483FD74E36EACD435CEE6BD5D6F_443760914 =             channel;
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1876595336 =         fd;
         var020F72FC5D1BB0511CAD11CC0AA674A0_1876595336.addTaint(taint);
         return var020F72FC5D1BB0511CAD11CC0AA674A0_1876595336;
-        // ---------- Original Method ----------
-        //return fd;
+        
+        
     }
 
     
@@ -213,8 +213,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1876595336 =         fd;
         addTaint(byteOffset);
         addTaint(buffer[0]);
         IoBridge.write(fd, buffer, byteOffset, byteCount);
-        // ---------- Original Method ----------
-        //IoBridge.write(fd, buffer, byteOffset, byteCount);
+        
+        
     }
 
     
@@ -223,8 +223,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1876595336 =         fd;
     public void write(int oneByte) throws IOException {
         addTaint(oneByte);
         write(new byte[] { (byte) oneByte }, 0, 1);
-        // ---------- Original Method ----------
-        //write(new byte[] { (byte) oneByte }, 0, 1);
+        
+        
     }
 
     

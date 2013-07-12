@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class Singleton<T> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.207 -0400", hash_original_method = "02AC1105777FFE0AFBB34EFAC306ABC3", hash_generated_method = "02AC1105777FFE0AFBB34EFAC306ABC3")
     public Singleton ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -27,18 +27,18 @@ public abstract class Singleton<T> {
     if(mInstance == null)            
             {
                 mInstance = create();
-            } //End block
+            } 
 T var01A4E1572BEF98558ED7F4E845C07CFE_1466157868 =             mInstance;
             var01A4E1572BEF98558ED7F4E845C07CFE_1466157868.addTaint(taint);
             return var01A4E1572BEF98558ED7F4E845C07CFE_1466157868;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mInstance == null) {
-                //mInstance = create();
-            //}
-            //return mInstance;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     

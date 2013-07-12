@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
     public  UnsafeArrayList(Class<T> elementType, int initialCapacity) {
         this.array = (T[]) Array.newInstance(elementType, initialCapacity);
         this.elementType = elementType;
-        // ---------- Original Method ----------
-        //this.array = (T[]) Array.newInstance(elementType, initialCapacity);
-        //this.elementType = elementType;
+        
+        
+        
     }
 
     
@@ -35,21 +35,21 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
             T[] newArray = (T[]) Array.newInstance(elementType, size * 2);
             System.arraycopy(array, 0, newArray, 0, size);
             array = newArray;
-        } //End block
+        } 
         array[size++] = element;
         ++modCount;
         boolean varB326B5062B2F0E69046810717534CB09_675212374 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_291987912 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_291987912;
-        // ---------- Original Method ----------
-        //if (size == array.length) {
-            //T[] newArray = (T[]) Array.newInstance(elementType, size * 2);
-            //System.arraycopy(array, 0, newArray, 0, size);
-            //array = newArray;
-        //}
-        //array[size++] = element;
-        //++modCount;
-        //return true;
+        
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class UnsafeArrayList<T> extends AbstractList<T> {
 T[] var1270D5B74B756F17D644A15D775499D9_830415236 =         array;
         var1270D5B74B756F17D644A15D775499D9_830415236.addTaint(taint);
         return var1270D5B74B756F17D644A15D775499D9_830415236;
-        // ---------- Original Method ----------
-        //return array;
+        
+        
     }
 
     
@@ -69,18 +69,19 @@ T[] var1270D5B74B756F17D644A15D775499D9_830415236 =         array;
 T varF21683B7BF428041682AC146600794E7_295478551 =         array[i];
         varF21683B7BF428041682AC146600794E7_295478551.addTaint(taint);
         return varF21683B7BF428041682AC146600794E7_295478551;
-        // ---------- Original Method ----------
-        //return array[i];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.830 -0400", hash_original_method = "3CA361324F026F8C9B0AA94A864ACDD9", hash_generated_method = "97EFD0817708B083C9CA6C0BB60BCDD5")
     public int size() {
         int varF7BD60B75B29D79B660A2859395C1A24_1213634774 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1991847385 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1991847385;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     

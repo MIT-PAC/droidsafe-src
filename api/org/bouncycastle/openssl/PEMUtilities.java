@@ -1,6 +1,6 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,7 +31,7 @@ final class PEMUtilities {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.336 -0400", hash_original_method = "5344C5F9BC7B07765B0DBE5794533466", hash_generated_method = "5344C5F9BC7B07765B0DBE5794533466")
     public PEMUtilities ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -89,7 +89,8 @@ final class PEMUtilities {
     }
 
     
-        static byte[] crypt(
+        @DSModeled(DSC.SPEC)
+    static byte[] crypt(
         boolean encrypt,
         Provider provider,
         byte[]  bytes,

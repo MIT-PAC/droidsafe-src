@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public abstract class IntRangeManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:21.876 -0400", hash_original_method = "362FA502CCB486C4D0A9F66987CBC492", hash_generated_method = "22D07BAE17359B60391CE9F4DA674915")
     protected  IntRangeManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,14 +32,14 @@ public abstract class IntRangeManager {
                 boolean varB326B5062B2F0E69046810717534CB09_1341311134 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_678621476 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_678621476;
-            } //End block
+            } 
             else
             {
                 boolean var68934A3E9455FA72420237EB05902327_1286627584 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2044124934 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2044124934;
-            } //End block
-        } //End block
+            } 
+        } 
 for(int startIndex = 0;startIndex < len;startIndex++)
         {
             IntRange range = mRanges.get(startIndex);
@@ -53,14 +53,14 @@ for(int startIndex = 0;startIndex < len;startIndex++)
                         boolean varB326B5062B2F0E69046810717534CB09_1826379292 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_647351967 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_647351967;
-                    } //End block
+                    } 
                     else
                     {
                         boolean var68934A3E9455FA72420237EB05902327_450817259 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579064691 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579064691;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(endId <= range.endId)                
                 {
@@ -71,14 +71,14 @@ for(int startIndex = 0;startIndex < len;startIndex++)
                         boolean varB326B5062B2F0E69046810717534CB09_92902718 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_411305575 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_411305575;
-                    } //End block
+                    } 
                     else
                     {
                         boolean var68934A3E9455FA72420237EB05902327_1891205371 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648691772 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648691772;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
 for(int endIndex = startIndex+1;endIndex < len;endIndex++)
@@ -97,18 +97,18 @@ for(int i = joinIndex;i < endIndex;i++)
                                     IntRange joinRange = mRanges.get(joinIndex);
                                     range.clients.addAll(joinRange.clients);
                                     mRanges.remove(joinRange);
-                                } //End block
+                                } 
                                 boolean varB326B5062B2F0E69046810717534CB09_198388575 = (true);
                                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1016309142 = getTaintBoolean();
                                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1016309142;
-                            } //End block
+                            } 
                             else
                             {
                                 boolean var68934A3E9455FA72420237EB05902327_169284039 = (false);
                                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_880645399 = getTaintBoolean();
                                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_880645399;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
     if(endId <= endRange.endId)                        
                         {
@@ -123,19 +123,19 @@ for(int i = joinIndex;i <= endIndex;i++)
                                     IntRange joinRange = mRanges.get(joinIndex);
                                     range.clients.addAll(joinRange.clients);
                                     mRanges.remove(joinRange);
-                                } //End block
+                                } 
                                 boolean varB326B5062B2F0E69046810717534CB09_1105584859 = (true);
                                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_243987637 = getTaintBoolean();
                                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_243987637;
-                            } //End block
+                            } 
                             else
                             {
                                 boolean var68934A3E9455FA72420237EB05902327_265965423 = (false);
                                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1066790580 = getTaintBoolean();
                                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1066790580;
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
     if(tryAddSingleRange(startId, endId, true))                    
                     {
                         range.startId = startId;
@@ -147,19 +147,19 @@ for(int i = joinIndex;i < len;i++)
                             IntRange joinRange = mRanges.get(joinIndex);
                             range.clients.addAll(joinRange.clients);
                             mRanges.remove(joinRange);
-                        } //End block
+                        } 
                         boolean varB326B5062B2F0E69046810717534CB09_1006251487 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_666081910 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_666081910;
-                    } //End block
+                    } 
                     else
                     {
                         boolean var68934A3E9455FA72420237EB05902327_838944086 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1922523841 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1922523841;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
     if((startId + 1) <= range.endId)            
             {
@@ -169,7 +169,7 @@ for(int i = joinIndex;i < len;i++)
                     boolean varB326B5062B2F0E69046810717534CB09_1988168179 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1957528350 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1957528350;
-                } //End block
+                } 
                 else
                 {
                     int endIndex = startIndex;
@@ -179,12 +179,12 @@ for(int testIndex = startIndex+1;testIndex < len;testIndex++)
     if((endId + 1) < testRange.startId)                        
                         {
                             break;
-                        } //End block
+                        } 
                         else
                         {
                             endIndex = testIndex;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(endIndex == startIndex)                    
                     {
     if(tryAddSingleRange(range.endId + 1, endId, true))                        
@@ -194,14 +194,14 @@ for(int testIndex = startIndex+1;testIndex < len;testIndex++)
                             boolean varB326B5062B2F0E69046810717534CB09_1180567800 = (true);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1957280574 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1957280574;
-                        } //End block
+                        } 
                         else
                         {
                             boolean var68934A3E9455FA72420237EB05902327_695098606 = (false);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1105675790 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1105675790;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     IntRange endRange = mRanges.get(endIndex);
                     int newRangeEndId = (endId <= endRange.endId) ? endRange.startId - 1 : endId;
     if(tryAddSingleRange(range.endId + 1, newRangeEndId, true))                    
@@ -214,35 +214,35 @@ for(int i = joinIndex;i < endIndex;i++)
                             IntRange joinRange = mRanges.get(joinIndex);
                             range.clients.addAll(joinRange.clients);
                             mRanges.remove(joinRange);
-                        } //End block
+                        } 
                         boolean varB326B5062B2F0E69046810717534CB09_900235969 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_514550876 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_514550876;
-                    } //End block
+                    } 
                     else
                     {
                         boolean var68934A3E9455FA72420237EB05902327_1016696008 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1734730209 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1734730209;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(tryAddSingleRange(startId, endId, true))        
         {
             mRanges.add(new IntRange(startId, endId, client));
             boolean varB326B5062B2F0E69046810717534CB09_499483722 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_490803396 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_490803396;
-        } //End block
+        } 
         else
         {
             boolean var68934A3E9455FA72420237EB05902327_1731355318 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1465475512 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1465475512;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -260,7 +260,7 @@ for(int i=0;i < len;i++)
                 boolean var68934A3E9455FA72420237EB05902327_1273699804 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1464402460 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1464402460;
-            } //End block
+            } 
             else
     if(endId <= range.endId)            
             {
@@ -277,21 +277,21 @@ for(int i=0;i < len;i++)
                             boolean varB326B5062B2F0E69046810717534CB09_888893645 = (true);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79712346 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_79712346;
-                        } //End block
+                        } 
                         else
                         {
                             boolean var68934A3E9455FA72420237EB05902327_789635241 = (false);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535488786 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_535488786;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         boolean var68934A3E9455FA72420237EB05902327_2073775258 = (false);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1997666411 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1997666411;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 int largestEndId = Integer.MIN_VALUE;
                 boolean updateStarted = false;
 for(int crIndex=0;crIndex < crLength;crIndex++)
@@ -307,7 +307,7 @@ for(int crIndex=0;crIndex < crLength;crIndex++)
                                 boolean varB326B5062B2F0E69046810717534CB09_1563120473 = (true);
                                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1232268569 = getTaintBoolean();
                                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1232268569;
-                            } //End block
+                            } 
                             else
                             {
     if(tryAddSingleRange(largestEndId + 1, range.endId, false))                                
@@ -317,15 +317,15 @@ for(int crIndex=0;crIndex < crLength;crIndex++)
                                     boolean varB326B5062B2F0E69046810717534CB09_251692851 = (true);
                                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1071119311 = getTaintBoolean();
                                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1071119311;
-                                } //End block
+                                } 
                                 else
                                 {
                                     boolean var68934A3E9455FA72420237EB05902327_169903215 = (false);
                                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1041056427 = getTaintBoolean();
                                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1041056427;
-                                } //End block
-                            } //End block
-                        } //End block
+                                } 
+                            } 
+                        } 
                         IntRange rangeCopy = new IntRange(range, crIndex);
     if(crIndex == 0)                        
                         {
@@ -336,9 +336,9 @@ for(int crIndex=0;crIndex < crLength;crIndex++)
                                 updateStarted = true;
                                 addRange(range.startId, nextStartId - 1, false);
                                 rangeCopy.startId = nextStartId;
-                            } //End block
+                            } 
                             largestEndId = clients.get(1).endId;
-                        } //End block
+                        } 
                         ArrayList<IntRange> newRanges = new ArrayList<IntRange>();
                         IntRange currentRange = rangeCopy;
 for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
@@ -350,59 +350,59 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
                                 {
                                     startUpdate();
                                     updateStarted = true;
-                                } //End block
+                                } 
                                 addRange(largestEndId + 1, nextCr.startId - 1, false);
                                 currentRange.endId = largestEndId;
                                 newRanges.add(currentRange);
                                 currentRange = new IntRange(nextCr);
-                            } //End block
+                            } 
                             else
                             {
                                 currentRange.clients.add(nextCr);
-                            } //End block
+                            } 
     if(nextCr.endId > largestEndId)                            
                             {
                                 largestEndId = nextCr.endId;
-                            } //End block
-                        } //End block
+                            } 
+                        } 
     if(largestEndId < endId)                        
                         {
     if(!updateStarted)                            
                             {
                                 startUpdate();
                                 updateStarted = true;
-                            } //End block
+                            } 
                             addRange(largestEndId + 1, endId, false);
                             currentRange.endId = largestEndId;
-                        } //End block
+                        } 
                         newRanges.add(currentRange);
     if(updateStarted && !finishUpdate())                        
                         {
                             boolean var68934A3E9455FA72420237EB05902327_1407177725 = (false);
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_92006248 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_92006248;
-                        } //End block
+                        } 
                         mRanges.remove(i);
                         mRanges.addAll(i, newRanges);
                         boolean varB326B5062B2F0E69046810717534CB09_1169924303 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_527473822 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_527473822;
-                    } //End block
+                    } 
                     else
                     {
     if(cr.endId > largestEndId)                        
                         {
                             largestEndId = cr.endId;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_476655555 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1662978078 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1662978078;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -424,42 +424,42 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
     if(nextNode.endId > end)                    
                     {
                         end = nextNode.endId;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     addRange(start, end, true);
                     start = nextNode.startId;
                     end = nextNode.endId;
-                } //End block
-            } //End block
+                } 
+            } 
             addRange(start, end, true);
-        } //End block
+        } 
         boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_264727433 = (finishUpdate());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1965178355 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1965178355;
-        // ---------- Original Method ----------
-        //startUpdate();
-        //Iterator<IntRange> iterator = mRanges.iterator();
-        //if (iterator.hasNext()) {
-            //IntRange range = iterator.next();
-            //int start = range.startId;
-            //int end = range.endId;
-            //while (iterator.hasNext()) {
-                //IntRange nextNode = iterator.next();
-                //if (nextNode.startId <= (end + 1)) {
-                    //if (nextNode.endId > end) {
-                        //end = nextNode.endId;
-                    //}
-                //} else {
-                    //addRange(start, end, true);
-                    //start = nextNode.startId;
-                    //end = nextNode.endId;
-                //}
-            //}
-            //addRange(start, end, true);
-        //}
-        //return finishUpdate();
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                
+                    
+                    
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -473,10 +473,10 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
         boolean var4C3605E2FED9FB10BADCCCDB35A8BC62_1403463620 = (finishUpdate());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_293162675 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_293162675;
-        // ---------- Original Method ----------
-        //startUpdate();
-        //addRange(startId, endId, selected);
-        //return finishUpdate();
+        
+        
+        
+        
     }
 
     
@@ -485,8 +485,8 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
         boolean var4A182B3170A47CB458F8C45AB3739898_655847125 = (mRanges.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837689875 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837689875;
-        // ---------- Original Method ----------
-        //return mRanges.isEmpty();
+        
+        
     }
 
     
@@ -517,11 +517,11 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
             this.endId = endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
             clients.add(new ClientRange(startId, endId, client));
-            // ---------- Original Method ----------
-            //this.startId = startId;
-            //this.endId = endId;
-            //clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
-            //clients.add(new ClientRange(startId, endId, client));
+            
+            
+            
+            
+            
         }
 
         
@@ -531,11 +531,11 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
             endId = clientRange.endId;
             clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
             clients.add(clientRange);
-            // ---------- Original Method ----------
-            //startId = clientRange.startId;
-            //endId = clientRange.endId;
-            //clients = new ArrayList<ClientRange>(INITIAL_CLIENTS_ARRAY_SIZE);
-            //clients.add(clientRange);
+            
+            
+            
+            
+            
         }
 
         
@@ -548,14 +548,14 @@ for(int nextIndex = crIndex + 1;nextIndex < crLength;nextIndex++)
 for(int i=0;i < numElements;i++)
             {
                 this.clients.add(intRange.clients.get(i));
-            } //End block
-            // ---------- Original Method ----------
-            //this.startId = intRange.startId;
-            //this.endId = intRange.endId;
-            //this.clients = new ArrayList<ClientRange>(intRange.clients.size());
-            //for (int i=0; i < numElements; i++) {
-                //this.clients.add(intRange.clients.get(i));
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -571,23 +571,23 @@ for(int i=0;i < len;i++)
     if(!range.equals(nextRange))                    
                     {
                         clients.add(i, range);
-                    } //End block
+                    } 
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
             clients.add(range);
-            // ---------- Original Method ----------
-            //int len = clients.size();
-            //for (int i=0; i < len; i++) {
-                //ClientRange nextRange = clients.get(i);
-                //if (range.startId <= nextRange.startId) {
-                    //if (!range.equals(nextRange)) {
-                        //clients.add(i, range);
-                    //}
-                    //return;
-                //}
-            //}
-            //clients.add(range);
+            
+            
+            
+                
+                
+                    
+                        
+                    
+                    
+                
+            
+            
         }
 
         
@@ -611,10 +611,10 @@ for(int i=0;i < len;i++)
             this.startId = startId;
             this.endId = endId;
             this.client = client;
-            // ---------- Original Method ----------
-            //this.startId = startId;
-            //this.endId = endId;
-            //this.client = client;
+            
+            
+            
+            
         }
 
         
@@ -630,22 +630,22 @@ for(int i=0;i < len;i++)
                         client.equals(other.client));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_275866829 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_275866829;
-            } //End block
+            } 
             else
             {
                 boolean var68934A3E9455FA72420237EB05902327_982989317 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2009481562 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2009481562;
-            } //End block
-            // ---------- Original Method ----------
-            //if (o != null && o instanceof ClientRange) {
-                //ClientRange other = (ClientRange) o;
-                //return startId == other.startId &&
-                        //endId == other.endId &&
-                        //client.equals(other.client);
-            //} else {
-                //return false;
-            //}
+            } 
+            
+            
+                
+                
+                        
+                        
+            
+                
+            
         }
 
         
@@ -655,8 +655,8 @@ for(int i=0;i < len;i++)
             int var4844D2584D9A8987A29943F2F0DD954C_921702960 = ((startId * 31 + endId) * 31 + client.hashCode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479972 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_479972;
-            // ---------- Original Method ----------
-            //return (startId * 31 + endId) * 31 + client.hashCode();
+            
+            
         }
 
         

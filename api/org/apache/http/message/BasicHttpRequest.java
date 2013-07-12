@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,26 +28,26 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
             IllegalArgumentException var8A5B4D7BD491CB0F8D7A1A7F250316C5_973586119 = new IllegalArgumentException("Method name may not be null");
             var8A5B4D7BD491CB0F8D7A1A7F250316C5_973586119.addTaint(taint);
             throw var8A5B4D7BD491CB0F8D7A1A7F250316C5_973586119;
-        } //End block
+        } 
     if(uri == null)        
         {
             IllegalArgumentException var7E2E287C9A1E5F37DBFB2C9CB0A67B1E_1850966418 = new IllegalArgumentException("Request URI may not be null");
             var7E2E287C9A1E5F37DBFB2C9CB0A67B1E_1850966418.addTaint(taint);
             throw var7E2E287C9A1E5F37DBFB2C9CB0A67B1E_1850966418;
-        } //End block
+        } 
         this.method = method;
         this.uri = uri;
         this.requestline = null;
-        // ---------- Original Method ----------
-        //if (method == null) {
-            //throw new IllegalArgumentException("Method name may not be null");
-        //}
-        //if (uri == null) {
-            //throw new IllegalArgumentException("Request URI may not be null");
-        //}
-        //this.method = method;
-        //this.uri = uri;
-        //this.requestline = null;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -57,7 +57,7 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
         addTaint(ver.getTaint());
         addTaint(uri.getTaint());
         addTaint(method.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,17 +69,17 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
             IllegalArgumentException var57E7C227464A845296BA51EE2C094FE3_584782272 = new IllegalArgumentException("Request line may not be null");
             var57E7C227464A845296BA51EE2C094FE3_584782272.addTaint(taint);
             throw var57E7C227464A845296BA51EE2C094FE3_584782272;
-        } //End block
+        } 
         this.requestline = requestline;
         this.method = requestline.getMethod();
         this.uri = requestline.getUri();
-        // ---------- Original Method ----------
-        //if (requestline == null) {
-            //throw new IllegalArgumentException("Request line may not be null");
-        //}
-        //this.requestline = requestline;
-        //this.method = requestline.getMethod();
-        //this.uri = requestline.getUri();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -90,19 +90,19 @@ public class BasicHttpRequest extends AbstractHttpMessage implements HttpRequest
 ProtocolVersion varD6486995FFCD7C27F8CD9B1B0590B82A_1912461121 =             this.requestline.getProtocolVersion();
             varD6486995FFCD7C27F8CD9B1B0590B82A_1912461121.addTaint(taint);
             return varD6486995FFCD7C27F8CD9B1B0590B82A_1912461121;
-        } //End block
+        } 
         else
         {
 ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_1013079929 =             HttpProtocolParams.getVersion(getParams());
             varEDB6822BC4AFEFEDB387B740DB02A284_1013079929.addTaint(taint);
             return varEDB6822BC4AFEFEDB387B740DB02A284_1013079929;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.requestline != null) {
-            //return this.requestline.getProtocolVersion();
-        //} else {
-            //return HttpProtocolParams.getVersion(getParams());
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -113,21 +113,21 @@ ProtocolVersion varEDB6822BC4AFEFEDB387B740DB02A284_1013079929 =             Htt
 RequestLine var601B9A07762CDECF774B860E98E786BE_1167059138 =             this.requestline;
             var601B9A07762CDECF774B860E98E786BE_1167059138.addTaint(taint);
             return var601B9A07762CDECF774B860E98E786BE_1167059138;
-        } //End block
+        } 
         else
         {
             ProtocolVersion ver = HttpProtocolParams.getVersion(getParams());
 RequestLine var3D9B02579459F8A1CA31232B14F74FCA_1895410224 =             new BasicRequestLine(this.method, this.uri, ver);
             var3D9B02579459F8A1CA31232B14F74FCA_1895410224.addTaint(taint);
             return var3D9B02579459F8A1CA31232B14F74FCA_1895410224;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.requestline != null) {
-            //return this.requestline;
-        //} else {
-            //ProtocolVersion ver = HttpProtocolParams.getVersion(getParams());
-            //return new BasicRequestLine(this.method, this.uri, ver);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     

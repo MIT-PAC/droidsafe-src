@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,16 +13,18 @@ public abstract class ResponseCache {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:50.161 -0400", hash_original_method = "D16C43EEDC21B64FF5979CBD3059BA6B", hash_generated_method = "D16C43EEDC21B64FF5979CBD3059BA6B")
     public ResponseCache ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static ResponseCache getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static ResponseCache getDefault() {
         return defaultResponseCache;
     }
 
     
-        public static void setDefault(ResponseCache responseCache) {
+        @DSModeled(DSC.SAFE)
+    public static void setDefault(ResponseCache responseCache) {
         defaultResponseCache = responseCache;
     }
 

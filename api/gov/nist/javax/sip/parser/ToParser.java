@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class ToParser extends AddressParametersParser {
     public  ToParser(String to) {
         super(to);
         addTaint(to.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,10 +23,11 @@ public class ToParser extends AddressParametersParser {
     protected  ToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:42.112 -0400", hash_original_method = "9D8B9A06C15E6D7FEEEC143ED65417C6", hash_generated_method = "56AD002D41CC2338DA3544B6131B33DE")
     public SIPHeader parse() throws ParseException {
         headerName(TokenTypes.TO);
@@ -36,12 +37,12 @@ public class ToParser extends AddressParametersParser {
 SIPHeader var26633470D0AEBDC975B85A12020B47EA_2086129825 =         to;
         var26633470D0AEBDC975B85A12020B47EA_2086129825.addTaint(taint);
         return var26633470D0AEBDC975B85A12020B47EA_2086129825;
-        // ---------- Original Method ----------
-        //headerName(TokenTypes.TO);
-        //To to = new To();
-        //super.parse(to);
-        //this.lexer.match('\n');
-        //return to;
+        
+        
+        
+        
+        
+        
     }
 
     

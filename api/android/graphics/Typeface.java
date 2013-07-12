@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,23 +19,24 @@ public class Typeface {
             RuntimeException var6E6EF9A75208BA676FC2CA96D7988D82_802324706 = new RuntimeException("native typeface cannot be made");
             var6E6EF9A75208BA676FC2CA96D7988D82_802324706.addTaint(taint);
             throw var6E6EF9A75208BA676FC2CA96D7988D82_802324706;
-        } //End block
+        } 
         native_instance = ni;
-        // ---------- Original Method ----------
-        //if (0 == ni) {
-            //throw new RuntimeException("native typeface cannot be made");
-        //}
-        //native_instance = ni;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.424 -0400", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "511C9D05BA1066745813F16DE26DAA45")
     public int getStyle() {
         int varB7050576F2925C21EF90B7165C471A32_857690634 = (nativeGetStyle(native_instance));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522584001 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522584001;
-        // ---------- Original Method ----------
-        //return nativeGetStyle(native_instance);
+        
+        
     }
 
     
@@ -44,8 +45,8 @@ public class Typeface {
         boolean var22FB91444A43EC94B14A455A2BAAC963_1440629333 = ((getStyle() & BOLD) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_404368803 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_404368803;
-        // ---------- Original Method ----------
-        //return (getStyle() & BOLD) != 0;
+        
+        
     }
 
     
@@ -54,17 +55,19 @@ public class Typeface {
         boolean var31DE17569930B7690D33C8D6EEF228C7_261370604 = ((getStyle() & ITALIC) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1439117563 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1439117563;
-        // ---------- Original Method ----------
-        //return (getStyle() & ITALIC) != 0;
+        
+        
     }
 
     
-        public static Typeface create(String familyName, int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface create(String familyName, int style) {
         return new Typeface(nativeCreate(familyName, style));
     }
 
     
-        public static Typeface create(Typeface family, int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface create(Typeface family, int style) {
         int ni = 0;
         if (family != null) {
             ni = family.native_instance;
@@ -73,33 +76,38 @@ public class Typeface {
     }
 
     
-        public static Typeface defaultFromStyle(int style) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface defaultFromStyle(int style) {
         return sDefaults[style];
     }
 
     
-        public static Typeface createFromAsset(AssetManager mgr, String path) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface createFromAsset(AssetManager mgr, String path) {
         return new Typeface(nativeCreateFromAsset(mgr, path));
     }
 
     
-        public static Typeface createFromFile(File path) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface createFromFile(File path) {
         return new Typeface(nativeCreateFromFile(path.getAbsolutePath()));
     }
 
     
-        public static Typeface createFromFile(String path) {
+        @DSModeled(DSC.SAFE)
+    public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.429 -0400", hash_original_method = "365BC48BBC32364F202A52D242C543E7", hash_generated_method = "542BA0200575B34094B0AA4D80DE2CA4")
     protected void finalize() throws Throwable {
         super.finalize();
         nativeUnref(native_instance);
-        // ---------- Original Method ----------
-        //super.finalize();
-        //nativeUnref(native_instance);
+        
+        
+        
     }
 
     

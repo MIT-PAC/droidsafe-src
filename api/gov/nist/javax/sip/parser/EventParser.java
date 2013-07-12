@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class EventParser extends ParametersParser {
     public  EventParser(String event) {
         super(event);
         addTaint(event.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class EventParser extends ParametersParser {
     protected  EventParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,39 +45,39 @@ public class EventParser extends ParametersParser {
 SIPHeader var3162E7A4A1E5D72F1058A9B39A6A8738_1318595037 =             event;
             var3162E7A4A1E5D72F1058A9B39A6A8738_1318595037.addTaint(taint);
             return var3162E7A4A1E5D72F1058A9B39A6A8738_1318595037;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1457525522 = createParseException(ex.getMessage());
             varB8C80F72F95BF6A850D07F4EC5726C09_1457525522.addTaint(taint);
             throw varB8C80F72F95BF6A850D07F4EC5726C09_1457525522;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("EventParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("EventParser.parse");
-        //try {
-            //headerName(TokenTypes.EVENT);
-            //this.lexer.SPorHT();
-            //Event event = new Event();
-            //this.lexer.match(TokenTypes.ID);
-            //Token token = lexer.getNextToken();
-            //String value = token.getTokenValue();
-            //event.setEventType(value);
-            //super.parse(event);
-            //this.lexer.SPorHT();
-            //this.lexer.match('\n');
-            //return event;
-        //} catch (ParseException ex) {
-            //throw createParseException(ex.getMessage());
-        //} finally {
-            //if (debug)
-                //dbg_leave("EventParser.parse");
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+        
+            
+                
+        
     }
 
     

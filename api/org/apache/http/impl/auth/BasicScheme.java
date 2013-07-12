@@ -1,6 +1,6 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,18 +25,19 @@ public class BasicScheme extends RFC2617Scheme {
     public  BasicScheme() {
         super();
         this.complete = false;
-        // ---------- Original Method ----------
-        //this.complete = false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.107 -0400", hash_original_method = "456652B0A19A82DBC909302CFB2200F1", hash_generated_method = "388F5C1C772B94710724A1E849A7F0D7")
     public String getSchemeName() {
 String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
         varC223609D18BB55F930AA94C44D8E4264_815773655.addTaint(taint);
         return varC223609D18BB55F930AA94C44D8E4264_815773655;
-        // ---------- Original Method ----------
-        //return "basic";
+        
+        
     }
 
     
@@ -47,29 +48,31 @@ String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
         addTaint(header.getTaint());
         super.processChallenge(header);
         this.complete = true;
-        // ---------- Original Method ----------
-        //super.processChallenge(header);
-        //this.complete = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "2000A91F89DD442E06AD762821BFEEA3", hash_generated_method = "55F297D8F03182901153C40DE976D667")
     public boolean isComplete() {
         boolean varF04431E2940FB2099EE63A9B8E626BFD_1376477476 = (this.complete);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_172713477 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_172713477;
-        // ---------- Original Method ----------
-        //return this.complete;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.108 -0400", hash_original_method = "52FB523EE33548A5337713590AB1DF72", hash_generated_method = "2FE624D476337A9A71BC0B305EE55B9D")
     public boolean isConnectionBased() {
         boolean var68934A3E9455FA72420237EB05902327_944673243 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_727648275 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_727648275;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -84,26 +87,26 @@ String varC223609D18BB55F930AA94C44D8E4264_815773655 =         "basic";
             IllegalArgumentException varD8A19DCE85FA03BB6CE5F603E7A4C74C_1311592898 = new IllegalArgumentException("Credentials may not be null");
             varD8A19DCE85FA03BB6CE5F603E7A4C74C_1311592898.addTaint(taint);
             throw varD8A19DCE85FA03BB6CE5F603E7A4C74C_1311592898;
-        } //End block
+        } 
     if(request == null)        
         {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_2083731098 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_2083731098.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_2083731098;
-        } //End block
+        } 
         String charset = AuthParams.getCredentialCharset(request.getParams());
 Header var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463 =         authenticate(credentials, charset, isProxy());
         var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463.addTaint(taint);
         return var8AEE839CAE1B1C47635E3A116D25EFDD_1766431463;
-        // ---------- Original Method ----------
-        //if (credentials == null) {
-            //throw new IllegalArgumentException("Credentials may not be null");
-        //}
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //String charset = AuthParams.getCredentialCharset(request.getParams());
-        //return authenticate(credentials, charset, isProxy());
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     

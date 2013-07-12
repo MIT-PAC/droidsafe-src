@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,16 +13,18 @@ public abstract class CookieHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.487 -0400", hash_original_method = "88D15E3335299CEFE37CA24D0A89E063", hash_generated_method = "88D15E3335299CEFE37CA24D0A89E063")
     public CookieHandler ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static CookieHandler getDefault() {
+        @DSModeled(DSC.SAFE)
+    public static CookieHandler getDefault() {
         return systemWideCookieHandler;
     }
 
     
-        public static void setDefault(CookieHandler cHandler) {
+        @DSModeled(DSC.SAFE)
+    public static void setDefault(CookieHandler cHandler) {
         systemWideCookieHandler = cHandler;
     }
 

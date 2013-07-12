@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class CertificateFactorySpi {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.640 -0400", hash_original_method = "5D6CCD92AEFDD2109C84465ED1C78995", hash_generated_method = "C286B4EE0E22EDBF9018054D79D5D19E")
     public  CertificateFactorySpi() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -39,8 +39,8 @@ public abstract class CertificateFactorySpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1417462253 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1417462253.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1417462253;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -51,8 +51,8 @@ public abstract class CertificateFactorySpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1023970147 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1023970147.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1023970147;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ public abstract class CertificateFactorySpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_914371496 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_914371496.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_914371496;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -72,8 +72,8 @@ public abstract class CertificateFactorySpi {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1254601344 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1254601344.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1254601344;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     

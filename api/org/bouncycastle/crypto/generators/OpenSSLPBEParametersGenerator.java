@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.generators;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.282 -0400", hash_original_method = "469CB0205646D06181D1559BA7D61CF9", hash_generated_method = "1CCF825CE7F4725EE21D0B68C89CAE4D")
     public  OpenSSLPBEParametersGenerator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,8 +29,8 @@ public class OpenSSLPBEParametersGenerator extends PBEParametersGenerator {
         addTaint(salt[0]);
         addTaint(password[0]);
         super.init(password, salt, 1);
-        // ---------- Original Method ----------
-        //super.init(password, salt, 1);
+        
+        
     }
 
     
@@ -53,34 +53,34 @@ for(;;)
     if(bytesNeeded == 0)            
             {
                 break;
-            } //End block
+            } 
             digest.reset();
             digest.update(buf, 0, buf.length);
-        } //End block
+        } 
         byte[] var3C6E0B8A9C15224A8228B9A98CA1531D_1136420234 = (key);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_587738623 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_587738623;
-        // ---------- Original Method ----------
-        //byte[]  buf = new byte[digest.getDigestSize()];
-        //byte[]  key = new byte[bytesNeeded];
-        //int     offset = 0;
-        //for (;;)
-        //{
-            //digest.update(password, 0, password.length);
-            //digest.update(salt, 0, salt.length);
-            //digest.doFinal(buf, 0);
-            //int len = (bytesNeeded > buf.length) ? buf.length : bytesNeeded;
-            //System.arraycopy(buf, 0, key, offset, len);
-            //offset += len;
-            //bytesNeeded -= len;
-            //if (bytesNeeded == 0)
-            //{
-                //break;
-            //}
-            //digest.reset();
-            //digest.update(buf, 0, buf.length);
-        //}
-        //return key;
+        
+        
+        
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -93,10 +93,10 @@ for(;;)
 CipherParameters var6D94FE6EDC09D11F0842CB9C3B01FB06_192297652 =         new KeyParameter(dKey, 0, keySize);
         var6D94FE6EDC09D11F0842CB9C3B01FB06_192297652.addTaint(taint);
         return var6D94FE6EDC09D11F0842CB9C3B01FB06_192297652;
-        // ---------- Original Method ----------
-        //keySize = keySize / 8;
-        //byte[]  dKey = generateDerivedKey(keySize);
-        //return new KeyParameter(dKey, 0, keySize);
+        
+        
+        
+        
     }
 
     
@@ -112,11 +112,11 @@ CipherParameters var6D94FE6EDC09D11F0842CB9C3B01FB06_192297652 =         new Key
 CipherParameters var03ABCD9D26B2AC8C264C443A6B20AF1A_2100677700 =         new ParametersWithIV(new KeyParameter(dKey, 0, keySize), dKey, keySize, ivSize);
         var03ABCD9D26B2AC8C264C443A6B20AF1A_2100677700.addTaint(taint);
         return var03ABCD9D26B2AC8C264C443A6B20AF1A_2100677700;
-        // ---------- Original Method ----------
-        //keySize = keySize / 8;
-        //ivSize = ivSize / 8;
-        //byte[]  dKey = generateDerivedKey(keySize + ivSize);
-        //return new ParametersWithIV(new KeyParameter(dKey, 0, keySize), dKey, keySize, ivSize);
+        
+        
+        
+        
+        
     }
 
     
@@ -127,8 +127,8 @@ CipherParameters var03ABCD9D26B2AC8C264C443A6B20AF1A_2100677700 =         new Pa
 CipherParameters var9505286CD610A91174FF03781FA2DA54_661367193 =         generateDerivedParameters(keySize);
         var9505286CD610A91174FF03781FA2DA54_661367193.addTaint(taint);
         return var9505286CD610A91174FF03781FA2DA54_661367193;
-        // ---------- Original Method ----------
-        //return generateDerivedParameters(keySize);
+        
+        
     }
 
     

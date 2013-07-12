@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -65,39 +65,39 @@ class MessageLog implements LogRecord {
             throw var72A141E2207E3451703674B97CA15882_261621722;
             }
             this.timeStamp = ts;
-        } //End block
+        } 
         catch (NumberFormatException ex)
         {
             IllegalArgumentException var3C433D34CA8D49524ED15D3900C1F930_2100264990 = new IllegalArgumentException(
                 "Bad number format " + timeStamp);
             var3C433D34CA8D49524ED15D3900C1F930_2100264990.addTaint(taint);
             throw var3C433D34CA8D49524ED15D3900C1F930_2100264990;
-        } //End block
+        } 
         this.isSender = isSender;
         this.firstLine = firstLine;
         this.tid = tid;
         this.callId = callId;
         this.timeStampHeaderValue = timeStampHeaderValue;
-        // ---------- Original Method ----------
-        //if (message == null || message.equals(""))
-            //throw new IllegalArgumentException("null msg");
-        //this.message = message;
-        //this.source = source;
-        //this.destination = destination;
-        //try {
-            //long ts = Long.parseLong(timeStamp);
-            //if (ts < 0)
-                //throw new IllegalArgumentException("Bad time stamp ");
-            //this.timeStamp = ts;
-        //} catch (NumberFormatException ex) {
-            //throw new IllegalArgumentException(
-                //"Bad number format " + timeStamp);
-        //}
-        //this.isSender = isSender;
-        //this.firstLine = firstLine;
-        //this.tid = tid;
-        //this.callId = callId;
-        //this.timeStampHeaderValue = timeStampHeaderValue;
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+                
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -133,23 +133,24 @@ class MessageLog implements LogRecord {
         this.tid = tid;
         this.callId = callId;
         this.timeStampHeaderValue = timestampVal;
-        // ---------- Original Method ----------
-        //if (message == null || message.equals(""))
-            //throw new IllegalArgumentException("null msg");
-        //this.message = message;
-        //this.source = source;
-        //this.destination = destination;
-        //if (timeStamp < 0)
-            //throw new IllegalArgumentException("negative ts");
-        //this.timeStamp = timeStamp;
-        //this.isSender = isSender;
-        //this.firstLine = firstLine;
-        //this.tid = tid;
-        //this.callId = callId;
-        //this.timeStampHeaderValue = timestampVal;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.747 -0400", hash_original_method = "818407DE55CFD10CF1C5E889367D1C2C", hash_generated_method = "C97DDC1E16DD1F1B3599960216C51C4D")
     public boolean equals(Object other) {
         addTaint(other.getTaint());
@@ -158,7 +159,7 @@ class MessageLog implements LogRecord {
             boolean var68934A3E9455FA72420237EB05902327_829693542 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_56080314 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_56080314;
-        } //End block
+        } 
         else
         {
             MessageLog otherLog = (MessageLog) other;
@@ -166,18 +167,19 @@ class MessageLog implements LogRecord {
                 && otherLog.timeStamp == timeStamp);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_264913925 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_264913925;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!(other instanceof MessageLog)) {
-            //return false;
-        //} else {
-            //MessageLog otherLog = (MessageLog) other;
-            //return otherLog.message.equals(message)
-                //&& otherLog.timeStamp == timeStamp;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:43.749 -0400", hash_original_method = "41C5D33A303365643BC91460F622FA81", hash_generated_method = "B4C3E1D399DAAF67E55F4853A75C2261")
     public String toString() {
         String log;
@@ -206,8 +208,8 @@ class MessageLog implements LogRecord {
 String varB735BC6DB913B856C485F8C0403CECB1_1298159751 =         log;
         varB735BC6DB913B856C485F8C0403CECB1_1298159751.addTaint(taint);
         return varB735BC6DB913B856C485F8C0403CECB1_1298159751;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

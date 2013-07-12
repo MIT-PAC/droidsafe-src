@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class EmptyStackException extends RuntimeException {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:09.073 -0400", hash_original_method = "B5ECB17DA447AD08C97D9D207CBCF002", hash_generated_method = "A409B49F3610C656D8B9F05E73416DC1")
     public  EmptyStackException() {
-        // ---------- Original Method ----------
+        
     }
 
     

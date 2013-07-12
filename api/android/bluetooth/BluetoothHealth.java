@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,32 +36,32 @@ public final class BluetoothHealth implements BluetoothProfile {
     if(mServiceListener != null)            
             {
                 mServiceListener.onServiceConnected(BluetoothProfile.HEALTH, this);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mService = null;
-        } //End block
-        // ---------- Original Method ----------
-        //IBinder b = ServiceManager.getService(BluetoothAdapter.BLUETOOTH_SERVICE);
-        //mServiceListener = l;
-        //mAdapter = BluetoothAdapter.getDefaultAdapter();
-        //if (b != null) {
-            //mService = IBluetooth.Stub.asInterface(b);
-            //if (mServiceListener != null) {
-                //mServiceListener.onServiceConnected(BluetoothProfile.HEALTH, this);
-            //}
-        //} else {
-            //Log.w(TAG, "Bluetooth Service not available!");
-            //mService = null;
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.129 -0400", hash_original_method = "03B44160021EEDDFCC6AB190DB37D972", hash_generated_method = "EAC616EF094D85C9974A63986E28E304")
     public boolean registerSinkAppConfiguration(String name, int dataType,
             BluetoothHealthCallback callback) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(callback.getTaint());
         addTaint(dataType);
         addTaint(name.getTaint());
@@ -77,18 +77,18 @@ public final class BluetoothHealth implements BluetoothProfile {
                 CHANNEL_TYPE_ANY, callback));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_283926742 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_283926742;
-        // ---------- Original Method ----------
-        //if (!isEnabled() || name == null) return false;
-        //if (DBG) log("registerSinkApplication(" + name + ":" + dataType + ")");
-        //return registerAppConfiguration(name, dataType, SINK_ROLE,
-                //CHANNEL_TYPE_ANY, callback);
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.130 -0400", hash_original_method = "D5CE227EABEF7149743D2E168D147812", hash_generated_method = "A0B5C068E3C8AC127600326DA0591D13")
     public boolean registerAppConfiguration(String name, int dataType, int role,
             int channelType, BluetoothHealthCallback callback) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(callback.getTaint());
         addTaint(channelType);
         addTaint(role);
@@ -110,21 +110,21 @@ public final class BluetoothHealth implements BluetoothProfile {
             try 
             {
                 result = mService.registerAppConfiguration(config, wrapper);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean varB4A88417B3D0170D754C647C30B7216A_288840431 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1469363778 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1469363778;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -137,32 +137,32 @@ public final class BluetoothHealth implements BluetoothProfile {
             try 
             {
                 result = mService.unregisterAppConfiguration(config);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean varB4A88417B3D0170D754C647C30B7216A_328681653 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_39976969 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_39976969;
-        // ---------- Original Method ----------
-        //boolean result = false;
-        //if (mService != null && isEnabled() && config != null) {
-            //try {
-                //result = mService.unregisterAppConfiguration(config);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return result;
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -179,32 +179,32 @@ public final class BluetoothHealth implements BluetoothProfile {
                 boolean var4018DA102F4EEDC00F89F6D601B5408F_1218706050 = (mService.connectChannelToSource(device, config));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_179043745 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_179043745;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1460428753 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_557114622 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_557114622;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled() && isValidDevice(device) &&
-                //config != null) {
-            //try {
-                //return mService.connectChannelToSource(device, config);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+                
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -222,32 +222,32 @@ public final class BluetoothHealth implements BluetoothProfile {
                 boolean var7EC348A47A1D71235D6012750C86D703_313137562 = (mService.connectChannelToSink(device, config, channelType));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815041407 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815041407;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1654580415 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1834119696 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1834119696;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled() && isValidDevice(device) &&
-                //config != null) {
-            //try {
-                //return mService.connectChannelToSink(device, config, channelType);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+                
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -265,32 +265,32 @@ public final class BluetoothHealth implements BluetoothProfile {
                 boolean var155E33497C24A8DD8BBE975B520B2106_1923050872 = (mService.disconnectChannel(device, config, channelId));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_510731583 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_510731583;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2011618410 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_856407494 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_856407494;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled() && isValidDevice(device) &&
-                //config != null) {
-            //try {
-                //return mService.disconnectChannel(device, config, channelId);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+                
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -307,32 +307,32 @@ public final class BluetoothHealth implements BluetoothProfile {
 ParcelFileDescriptor var8FA2BDC3FA95CAE7B7414AAFC25085E7_1207797763 =                 mService.getMainChannelFd(device, config);
                 var8FA2BDC3FA95CAE7B7414AAFC25085E7_1207797763.addTaint(taint);
                 return var8FA2BDC3FA95CAE7B7414AAFC25085E7_1207797763;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
 ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_666865120 =         null;
         var540C13E9E156B687226421B24F2DF178_666865120.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_666865120;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled() && isValidDevice(device) &&
-                //config != null) {
-            //try {
-                //return mService.getMainChannelFd(device, config);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return null;
+        
+        
+                
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -347,31 +347,31 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_666865120 =         nul
                 int varD265F06680F89F6B56211E193F206697_1423042608 = (mService.getHealthDeviceConnectionState(device));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1338952263 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1338952263;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         int varABFB3174B1E65FE97DCD3DE70218F370_784450830 = (STATE_DISCONNECTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1070116402 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1070116402;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled() && isValidDevice(device)) {
-            //try {
-                //return mService.getHealthDeviceConnectionState(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return STATE_DISCONNECTED;
+        
+        
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -385,28 +385,28 @@ ParcelFileDescriptor var540C13E9E156B687226421B24F2DF178_666865120 =         nul
 List<BluetoothDevice> var67653FBF9B16DCC4DAD7E9B2EFAD83AE_1497222565 =                 mService.getConnectedHealthDevices();
                 var67653FBF9B16DCC4DAD7E9B2EFAD83AE_1497222565.addTaint(taint);
                 return var67653FBF9B16DCC4DAD7E9B2EFAD83AE_1497222565;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1129269476 =                 new ArrayList<BluetoothDevice>();
                 var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1129269476.addTaint(taint);
                 return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1129269476;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_76316804 =         new ArrayList<BluetoothDevice>();
         var0DD13883ABBA5DF8AB8CAFEE38A3B82C_76316804.addTaint(taint);
         return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_76316804;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getConnectedHealthDevices();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -421,36 +421,37 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1129269476 =          
 List<BluetoothDevice> varDFEBCE90D930A2FBBC5E2E9C7DEABB7B_1917517280 =                 mService.getHealthDevicesMatchingConnectionStates(states);
                 varDFEBCE90D930A2FBBC5E2E9C7DEABB7B_1917517280.addTaint(taint);
                 return varDFEBCE90D930A2FBBC5E2E9C7DEABB7B_1917517280;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =                 new ArrayList<BluetoothDevice>();
                 var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729.addTaint(taint);
                 return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1279079623 =         new ArrayList<BluetoothDevice>();
         var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1279079623.addTaint(taint);
         return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1279079623;
-        // ---------- Original Method ----------
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getHealthDevicesMatchingConnectionStates(states);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, "Stack:" + Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.138 -0400", hash_original_method = "D3BF3BAE58FFF66435185BE94948ED76", hash_generated_method = "7E2810AC4BDE36569F993386C707233F")
      void close() {
         mServiceListener = null;
-        // ---------- Original Method ----------
-        //mServiceListener = null;
+        
+        
     }
 
     
@@ -467,11 +468,11 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
         boolean var68934A3E9455FA72420237EB05902327_2075296697 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1310694205 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1310694205;
-        // ---------- Original Method ----------
-        //BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
-        //if (adapter != null && adapter.getState() == BluetoothAdapter.STATE_ON) return true;
-        //log("Bluetooth is Not enabled");
-        //return false;
+        
+        
+        
+        
+        
     }
 
     
@@ -493,13 +494,14 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
         boolean var68934A3E9455FA72420237EB05902327_1611460860 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_565251733 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_565251733;
-        // ---------- Original Method ----------
-        //if (device == null) return false;
-        //if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
-        //return false;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.140 -0400", hash_original_method = "55A0A269422935E819E2C55F9C91FE5D", hash_generated_method = "367D8896D27685A4B3741BFB87879B22")
     private boolean checkAppParam(String name, int role, int channelType,
             BluetoothHealthCallback callback) {
@@ -515,7 +517,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
             boolean var68934A3E9455FA72420237EB05902327_1637382603 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1231704366 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1231704366;
-        } //End block
+        } 
     if(role == SOURCE_ROLE && channelType == CHANNEL_TYPE_ANY)        
         {
         boolean var68934A3E9455FA72420237EB05902327_1217961047 = (false);
@@ -525,15 +527,15 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
         boolean varB326B5062B2F0E69046810717534CB09_1207847839 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_535025818 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_535025818;
-        // ---------- Original Method ----------
-        //if (name == null || (role != SOURCE_ROLE && role != SINK_ROLE) ||
-                //(channelType != CHANNEL_TYPE_RELIABLE &&
-                //channelType != CHANNEL_TYPE_STREAMING &&
-                //channelType != CHANNEL_TYPE_ANY) || callback == null) {
-            //return false;
-        //}
-        //if (role == SOURCE_ROLE && channelType == CHANNEL_TYPE_ANY) return false;
-        //return true;
+        
+        
+                
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -550,8 +552,8 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.142 -0400", hash_original_method = "052172748E38AFDC47B4485751DFA95F", hash_generated_method = "EE63100FF09CF821946E1B8C4DF0A2B5")
         public  BluetoothHealthCallbackWrapper(BluetoothHealthCallback callback) {
             mCallback = callback;
-            // ---------- Original Method ----------
-            //mCallback = callback;
+            
+            
         }
 
         
@@ -559,12 +561,12 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
         @Override
         public void onHealthAppConfigurationStatusChange(BluetoothHealthAppConfiguration config,
                                                          int status) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(status);
             addTaint(config.getTaint());
             mCallback.onHealthAppConfigurationStatusChange(config, status);
-            // ---------- Original Method ----------
-            //mCallback.onHealthAppConfigurationStatusChange(config, status);
+            
+            
         }
 
         
@@ -573,7 +575,7 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
         public void onHealthChannelStateChange(BluetoothHealthAppConfiguration config,
                                        BluetoothDevice device, int prevState, int newState,
                                        ParcelFileDescriptor fd, int channelId) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(channelId);
             addTaint(fd.getTaint());
             addTaint(newState);
@@ -582,9 +584,9 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1007882729 =          
             addTaint(config.getTaint());
             mCallback.onHealthChannelStateChange(config, device, prevState, newState, fd,
                                                  channelId);
-            // ---------- Original Method ----------
-            //mCallback.onHealthChannelStateChange(config, device, prevState, newState, fd,
-                                                 //channelId);
+            
+            
+                                                 
         }
 
         

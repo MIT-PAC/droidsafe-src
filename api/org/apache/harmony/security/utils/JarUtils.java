@@ -1,6 +1,6 @@
 package org.apache.harmony.security.utils;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,7 +33,7 @@ public class JarUtils {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.413 -0400", hash_original_method = "C4E6A9DD3A1CC4544C825D59A384053A", hash_generated_method = "C4E6A9DD3A1CC4544C825D59A384053A")
     public JarUtils ()
     {
-        //Synthesized constructor
+        
     }
 
 

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,29 +17,31 @@ public final class ReasonCode extends ExtensionValue {
     public  ReasonCode(byte[] encoding) throws IOException {
         super(encoding);
         this.code = ((byte[]) ASN1.decode(encoding))[0];
-        // ---------- Original Method ----------
-        //this.code = ((byte[]) ASN1.decode(encoding))[0];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.254 -0400", hash_original_method = "410E015295E6E50D0A716577DAE7F9D9", hash_generated_method = "0D548A862740AC19879E03BB89A49586")
     @Override
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(new byte[] { code });
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_1416001025 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_723806664 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_723806664;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(new byte[] { code });
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.255 -0400", hash_original_method = "12E79139137D00D785F5C6D5EDD972F8", hash_generated_method = "E8462291E6A8AE6A49DF0459F9F11A76")
     @Override
     public void dumpValue(StringBuilder sb, String prefix) {
@@ -78,8 +80,8 @@ switch(code){
         sb.append("aACompromise");
         break;
 }        sb.append(" ]\n");
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package org.apache.harmony.security.fortress;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public class Engine {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.059 -0400", hash_original_method = "197C44846842D871388F9BC9DA5E7C36", hash_generated_method = "E075FDC3EE78D0EB2810A12FFECF67F0")
     public  Engine(String service) {
         this.serviceName = service;
-        // ---------- Original Method ----------
-        //this.serviceName = service;
+        
+        
     }
 
     
@@ -32,7 +32,7 @@ public class Engine {
             NoSuchAlgorithmException varB586576221ABA1FE807C4CEFF2CC23ED_1498949990 = new NoSuchAlgorithmException("Null algorithm name");
             varB586576221ABA1FE807C4CEFF2CC23ED_1498949990.addTaint(taint);
             throw varB586576221ABA1FE807C4CEFF2CC23ED_1498949990;
-        } //End block
+        } 
         Services.refresh();
         Provider.Service service;
         ServiceCacheEntry cacheEntry = this.serviceCache;
@@ -41,7 +41,7 @@ public class Engine {
                 && Services.refreshNumber == cacheEntry.refreshNumber)        
         {
             service = cacheEntry.service;
-        } //End block
+        } 
         else
         {
     if(Services.isEmpty())            
@@ -49,7 +49,7 @@ public class Engine {
                 java.security.NoSuchAlgorithmException varA37EC1B235CB9F6F8CBFD29D43E4368F_1057683988 = notFound(serviceName, algorithm);
                 varA37EC1B235CB9F6F8CBFD29D43E4368F_1057683988.addTaint(taint);
                 throw varA37EC1B235CB9F6F8CBFD29D43E4368F_1057683988;
-            } //End block
+            } 
             String name = this.serviceName + "." + algorithm.toUpperCase(Locale.US);
             service = Services.getService(name);
     if(service == null)            
@@ -57,14 +57,14 @@ public class Engine {
                 java.security.NoSuchAlgorithmException varA37EC1B235CB9F6F8CBFD29D43E4368F_464666026 = notFound(serviceName, algorithm);
                 varA37EC1B235CB9F6F8CBFD29D43E4368F_464666026.addTaint(taint);
                 throw varA37EC1B235CB9F6F8CBFD29D43E4368F_464666026;
-            } //End block
+            } 
             this.serviceCache = new ServiceCacheEntry(algorithm, Services.refreshNumber, service);
-        } //End block
+        } 
 SpiAndProvider var4FD37FCABA311ED3E9B8D1F9B44E3BE2_858557845 =         new SpiAndProvider(service.newInstance(param), service.getProvider());
         var4FD37FCABA311ED3E9B8D1F9B44E3BE2_858557845.addTaint(taint);
         return var4FD37FCABA311ED3E9B8D1F9B44E3BE2_858557845;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -78,26 +78,26 @@ SpiAndProvider var4FD37FCABA311ED3E9B8D1F9B44E3BE2_858557845 =         new SpiAn
             NoSuchAlgorithmException var32ECACFEC41D346E1F3A3A94950FDF34_2118805151 = new NoSuchAlgorithmException("algorithm == null");
             var32ECACFEC41D346E1F3A3A94950FDF34_2118805151.addTaint(taint);
             throw var32ECACFEC41D346E1F3A3A94950FDF34_2118805151;
-        } //End block
+        } 
         Provider.Service service = provider.getService(serviceName, algorithm);
     if(service == null)        
         {
             java.security.NoSuchAlgorithmException varA37EC1B235CB9F6F8CBFD29D43E4368F_68284655 = notFound(serviceName, algorithm);
             varA37EC1B235CB9F6F8CBFD29D43E4368F_68284655.addTaint(taint);
             throw varA37EC1B235CB9F6F8CBFD29D43E4368F_68284655;
-        } //End block
+        } 
 Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstance(param);
         var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545.addTaint(taint);
         return var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545;
-        // ---------- Original Method ----------
-        //if (algorithm == null) {
-            //throw new NoSuchAlgorithmException("algorithm == null");
-        //}
-        //Provider.Service service = provider.getService(serviceName, algorithm);
-        //if (service == null) {
-            //throw notFound(serviceName, algorithm);
-        //}
-        //return service.newInstance(param);
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -109,9 +109,9 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstan
                                            + " implementation not found");
         var418B58AF9CAEF0477030DA365F382308_1265349465.addTaint(taint);
         throw var418B58AF9CAEF0477030DA365F382308_1265349465;
-        // ---------- Original Method ----------
-        //throw new NoSuchAlgorithmException(serviceName + " " + algorithm
-                                           //+ " implementation not found");
+        
+        
+                                           
     }
 
     
@@ -133,10 +133,10 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstan
             this.algorithm = algorithm;
             this.refreshNumber = refreshNumber;
             this.service = service;
-            // ---------- Original Method ----------
-            //this.algorithm = algorithm;
-            //this.refreshNumber = refreshNumber;
-            //this.service = service;
+            
+            
+            
+            
         }
 
         
@@ -156,9 +156,9 @@ Object var67C46C91EC95982FAA7F5AAD7A93F0B2_251446545 =         service.newInstan
         private  SpiAndProvider(Object spi, Provider provider) {
             this.spi = spi;
             this.provider = provider;
-            // ---------- Original Method ----------
-            //this.spi = spi;
-            //this.provider = provider;
+            
+            
+            
         }
 
         

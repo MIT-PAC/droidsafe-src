@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,14 +36,14 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
                 ("Scheme registry must not be null.");
             var9D0DCFA9FB8D2370B81F25E8E10E412A_240621843.addTaint(taint);
             throw var9D0DCFA9FB8D2370B81F25E8E10E412A_240621843;
-        } //End block
+        } 
         schemeRegistry = schemes;
-        // ---------- Original Method ----------
-        //if (schemes == null) {
-            //throw new IllegalArgumentException
-                //("Scheme registry must not be null.");
-        //}
-        //schemeRegistry = schemes;
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ public class DefaultClientConnectionOperator implements ClientConnectionOperator
 OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1170696350 =         new DefaultClientConnection();
         varB7F75C6A5AEFC78EC04959C9746E7695_1170696350.addTaint(taint);
         return varB7F75C6A5AEFC78EC04959C9746E7695_1170696350;
-        // ---------- Original Method ----------
-        //return new DefaultClientConnection();
+        
+        
     }
 
     
@@ -74,28 +74,28 @@ OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1170696350 =       
                 ("Connection must not be null.");
             varEE0931985C4077C40A6DEC3DEB45BA63_1240242638.addTaint(taint);
             throw varEE0931985C4077C40A6DEC3DEB45BA63_1240242638;
-        } //End block
+        } 
     if(target == null)        
         {
             IllegalArgumentException varEC83656C97A1AEE534C63E8749A9F3F6_867365704 = new IllegalArgumentException
                 ("Target host must not be null.");
             varEC83656C97A1AEE534C63E8749A9F3F6_867365704.addTaint(taint);
             throw varEC83656C97A1AEE534C63E8749A9F3F6_867365704;
-        } //End block
+        } 
     if(params == null)        
         {
             IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_707729953 = new IllegalArgumentException
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_707729953.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_707729953;
-        } //End block
+        } 
     if(conn.isOpen())        
         {
             IllegalArgumentException varE99A0414E35FADD7209110E9DC35FDC4_619605505 = new IllegalArgumentException
                 ("Connection must not be open.");
             varE99A0414E35FADD7209110E9DC35FDC4_619605505.addTaint(taint);
             throw varE99A0414E35FADD7209110E9DC35FDC4_619605505;
-        } //End block
+        } 
         final Scheme schm = schemeRegistry.getScheme(target.getSchemeName());
         final SocketFactory sf = schm.getSocketFactory();
         SocketFactory plain_sf;
@@ -104,12 +104,12 @@ OperatedClientConnection varB7F75C6A5AEFC78EC04959C9746E7695_1170696350 =       
         {
             plain_sf = staticPlainSocketFactory;
             layered_sf = (LayeredSocketFactory)sf;
-        } //End block
+        } 
         else
         {
             plain_sf = sf;
             layered_sf = null;
-        } //End block
+        } 
         InetAddress[] addresses = InetAddress.getAllByName(target.getHostName());
 for(int i = 0;i < addresses.length;++i)
         {
@@ -125,7 +125,7 @@ for(int i = 0;i < addresses.length;++i)
                 {
                     sock = connsock;
                     conn.opening(sock, target);
-                } //End block
+                } 
                 prepareSocket(sock, context, params);
     if(layered_sf != null)                
                 {
@@ -136,15 +136,15 @@ for(int i = 0;i < addresses.length;++i)
     if(layeredsock != sock)                    
                     {
                         conn.opening(layeredsock, target);
-                    } //End block
+                    } 
                     conn.openCompleted(sf.isSecure(layeredsock), params);
-                } //End block
+                } 
                 else
                 {
                     conn.openCompleted(sf.isSecure(sock), params);
-                } //End block
+                } 
                 break;
-            } //End block
+            } 
             catch (SocketException ex)
             {
     if(i == addresses.length - 1)                
@@ -154,19 +154,19 @@ for(int i = 0;i < addresses.length;++i)
                     HttpHostConnectException var9013BD2F333EDC7603EB273BF6B33D82_126525461 = new HttpHostConnectException(target, cause);
                     var9013BD2F333EDC7603EB273BF6B33D82_126525461.addTaint(taint);
                     throw var9013BD2F333EDC7603EB273BF6B33D82_126525461;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (ConnectTimeoutException ex)
             {
     if(i == addresses.length - 1)                
                 {
                     ex.addTaint(taint);
                     throw ex;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -185,28 +185,28 @@ for(int i = 0;i < addresses.length;++i)
                 ("Connection must not be null.");
             varEE0931985C4077C40A6DEC3DEB45BA63_2123073884.addTaint(taint);
             throw varEE0931985C4077C40A6DEC3DEB45BA63_2123073884;
-        } //End block
+        } 
     if(target == null)        
         {
             IllegalArgumentException varEC83656C97A1AEE534C63E8749A9F3F6_257273070 = new IllegalArgumentException
                 ("Target host must not be null.");
             varEC83656C97A1AEE534C63E8749A9F3F6_257273070.addTaint(taint);
             throw varEC83656C97A1AEE534C63E8749A9F3F6_257273070;
-        } //End block
+        } 
     if(params == null)        
         {
             IllegalArgumentException var08D38DBCA08B6FB4CC571675E42E3D3C_937098425 = new IllegalArgumentException
                 ("Parameters must not be null.");
             var08D38DBCA08B6FB4CC571675E42E3D3C_937098425.addTaint(taint);
             throw var08D38DBCA08B6FB4CC571675E42E3D3C_937098425;
-        } //End block
+        } 
     if(!conn.isOpen())        
         {
             IllegalArgumentException var3FC106620C2F669DF3AA6AB529A6D958_1414096672 = new IllegalArgumentException
                 ("Connection must be open.");
             var3FC106620C2F669DF3AA6AB529A6D958_1414096672.addTaint(taint);
             throw var3FC106620C2F669DF3AA6AB529A6D958_1414096672;
-        } //End block
+        } 
         final Scheme schm = schemeRegistry.getScheme(target.getSchemeName());
     if(!(schm.getSocketFactory() instanceof LayeredSocketFactory))        
         {
@@ -215,27 +215,28 @@ for(int i = 0;i < addresses.length;++i)
                  ") must have layered socket factory.");
             var164C817E75C4DF376FE08E5BA46DE128_1860016003.addTaint(taint);
             throw var164C817E75C4DF376FE08E5BA46DE128_1860016003;
-        } //End block
+        } 
         final LayeredSocketFactory lsf = (LayeredSocketFactory) schm.getSocketFactory();
         Socket sock;
         try 
         {
             sock = lsf.createSocket
                 (conn.getSocket(), target.getHostName(), schm.resolvePort(target.getPort()), true);
-        } //End block
+        } 
         catch (ConnectException ex)
         {
             HttpHostConnectException varC75EB74B85814145957679B765BD7655_950206392 = new HttpHostConnectException(target, ex);
             varC75EB74B85814145957679B765BD7655_950206392.addTaint(taint);
             throw varC75EB74B85814145957679B765BD7655_950206392;
-        } //End block
+        } 
         prepareSocket(sock, context, params);
         conn.update(sock, target, lsf.isSecure(sock), params);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.810 -0400", hash_original_method = "EEE63DC836F5AA81B1ECC566DDEA88C5", hash_generated_method = "59042B2CF1FC4CDCDBDD66CFB82220B7")
     protected void prepareSocket(Socket sock, HttpContext context,
                                  HttpParams params) throws IOException {
@@ -248,14 +249,14 @@ for(int i = 0;i < addresses.length;++i)
     if(linger >= 0)        
         {
             sock.setSoLinger(linger > 0, linger);
-        } //End block
-        // ---------- Original Method ----------
-        //sock.setTcpNoDelay(HttpConnectionParams.getTcpNoDelay(params));
-        //sock.setSoTimeout(HttpConnectionParams.getSoTimeout(params));
-        //int linger = HttpConnectionParams.getLinger(params);
-        //if (linger >= 0) {
-            //sock.setSoLinger(linger > 0, linger);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     

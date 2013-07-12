@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.598 -0400", hash_original_method = "83B142C3BB9A0955DF4A02493E658347", hash_generated_method = "4FACE08269B9BC298D130C2482F30092")
     public  DefaultTargetAuthenticationHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,17 +32,17 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
             IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_1725373246 = new IllegalArgumentException("HTTP response may not be null");
             var81F7C558D1B895656E1A076743F59C7C_1725373246.addTaint(taint);
             throw var81F7C558D1B895656E1A076743F59C7C_1725373246;
-        } //End block
+        } 
         int status = response.getStatusLine().getStatusCode();
         boolean varEE4F31572B9D7880CB5311B68444BB37_1776448396 = (status == HttpStatus.SC_UNAUTHORIZED);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1485667282 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1485667282;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //int status = response.getStatusLine().getStatusCode();
-        //return status == HttpStatus.SC_UNAUTHORIZED;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -57,17 +57,17 @@ public class DefaultTargetAuthenticationHandler extends AbstractAuthenticationHa
             IllegalArgumentException var81F7C558D1B895656E1A076743F59C7C_846393838 = new IllegalArgumentException("HTTP response may not be null");
             var81F7C558D1B895656E1A076743F59C7C_846393838.addTaint(taint);
             throw var81F7C558D1B895656E1A076743F59C7C_846393838;
-        } //End block
+        } 
         Header[] headers = response.getHeaders(AUTH.WWW_AUTH);
 Map<String, Header> var2509FA3DA12E052D3E9CF21AA5DB9796_2006956002 =         parseChallenges(headers);
         var2509FA3DA12E052D3E9CF21AA5DB9796_2006956002.addTaint(taint);
         return var2509FA3DA12E052D3E9CF21AA5DB9796_2006956002;
-        // ---------- Original Method ----------
-        //if (response == null) {
-            //throw new IllegalArgumentException("HTTP response may not be null");
-        //}
-        //Header[] headers = response.getHeaders(AUTH.WWW_AUTH);
-        //return parseChallenges(headers);
+        
+        
+            
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,8 +21,8 @@ public class HandlerThread extends Thread {
         super(name);
         addTaint(name.getTaint());
         mPriority = Process.THREAD_PRIORITY_DEFAULT;
-        // ---------- Original Method ----------
-        //mPriority = Process.THREAD_PRIORITY_DEFAULT;
+        
+        
     }
 
     
@@ -31,15 +31,16 @@ public class HandlerThread extends Thread {
         super(name);
         addTaint(name.getTaint());
         mPriority = priority;
-        // ---------- Original Method ----------
-        //mPriority = priority;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.375 -0400", hash_original_method = "7869505C1EE96F329E4F7F0EA5AF9C5D", hash_generated_method = "FB28300AB029F1A68D6A159EC4AF6459")
     protected void onLooperPrepared() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
-        // ---------- Original Method ----------
+        
+        
     }
 
     
@@ -51,22 +52,22 @@ public class HandlerThread extends Thread {
 (this)        {
             mLooper = Looper.myLooper();
             notifyAll();
-        } //End block
+        } 
         Process.setThreadPriority(mPriority);
         onLooperPrepared();
         Looper.loop();
         mTid = -1;
-        // ---------- Original Method ----------
-        //mTid = Process.myTid();
-        //Looper.prepare();
-        //synchronized (this) {
-            //mLooper = Looper.myLooper();
-            //notifyAll();
-        //}
-        //Process.setThreadPriority(mPriority);
-        //onLooperPrepared();
-        //Looper.loop();
-        //mTid = -1;
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -77,7 +78,7 @@ public class HandlerThread extends Thread {
 Looper var540C13E9E156B687226421B24F2DF178_1929163776 =             null;
             var540C13E9E156B687226421B24F2DF178_1929163776.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1929163776;
-        } //End block
+        } 
         synchronized
 (this)        {
             while
@@ -86,28 +87,28 @@ Looper var540C13E9E156B687226421B24F2DF178_1929163776 =             null;
                 try 
                 {
                     wait();
-                } //End block
+                } 
                 catch (InterruptedException e)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 Looper var0D78717954912E9F181D5C0583378DCC_1278228616 =         mLooper;
         var0D78717954912E9F181D5C0583378DCC_1278228616.addTaint(taint);
         return var0D78717954912E9F181D5C0583378DCC_1278228616;
-        // ---------- Original Method ----------
-        //if (!isAlive()) {
-            //return null;
-        //}
-        //synchronized (this) {
-            //while (isAlive() && mLooper == null) {
-                //try {
-                    //wait();
-                //} catch (InterruptedException e) {
-                //}
-            //}
-        //}
-        //return mLooper;
+        
+        
+            
+        
+        
+            
+                
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -120,27 +121,28 @@ Looper var0D78717954912E9F181D5C0583378DCC_1278228616 =         mLooper;
             boolean varB326B5062B2F0E69046810717534CB09_338512112 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_313172855 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_313172855;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2371865 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2086455720 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2086455720;
-        // ---------- Original Method ----------
-        //Looper looper = getLooper();
-        //if (looper != null) {
-            //looper.quit();
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.377 -0400", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "E800AEF4A19FD1C46A717B385BE4E0B4")
     public int getThreadId() {
         int var112D67724C3A8F952B4AC2B5A69FBC94_827878585 = (mTid);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172043645 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_172043645;
-        // ---------- Original Method ----------
-        //return mTid;
+        
+        
     }
 
     

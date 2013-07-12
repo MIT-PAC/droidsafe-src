@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,10 +13,10 @@ public class ColorMatrixColorFilter extends ColorFilter {
         final float[] colorMatrix = matrix.getArray();
         native_instance = nativeColorMatrixFilter(colorMatrix);
         nativeColorFilter = nColorMatrixFilter(native_instance, colorMatrix);
-        // ---------- Original Method ----------
-        //final float[] colorMatrix = matrix.getArray();
-        //native_instance = nativeColorMatrixFilter(colorMatrix);
-        //nativeColorFilter = nColorMatrixFilter(native_instance, colorMatrix);
+        
+        
+        
+        
     }
 
     
@@ -28,24 +28,26 @@ public class ColorMatrixColorFilter extends ColorFilter {
             ArrayIndexOutOfBoundsException var37DB57B1FEB1C9FBA644A093BFA8B678_1106077398 = new ArrayIndexOutOfBoundsException();
             var37DB57B1FEB1C9FBA644A093BFA8B678_1106077398.addTaint(taint);
             throw var37DB57B1FEB1C9FBA644A093BFA8B678_1106077398;
-        } //End block
+        } 
         native_instance = nativeColorMatrixFilter(array);
         nativeColorFilter = nColorMatrixFilter(native_instance, array);
-        // ---------- Original Method ----------
-        //if (array.length < 20) {
-            //throw new ArrayIndexOutOfBoundsException();
-        //}
-        //native_instance = nativeColorMatrixFilter(array);
-        //nativeColorFilter = nColorMatrixFilter(native_instance, array);
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nativeColorMatrixFilter(float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702;
     }
 
     
+    @DSModeled(DSC.SAFE)
     private static int nColorMatrixFilter(int nativeFilter, float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373;

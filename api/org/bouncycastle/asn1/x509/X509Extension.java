@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -25,9 +25,9 @@ public class X509Extension {
         ASN1OctetString         value) {
         this.critical = critical.isTrue();
         this.value = value;
-        // ---------- Original Method ----------
-        //this.critical = critical.isTrue();
-        //this.value = value;
+        
+        
+        
     }
 
     
@@ -37,29 +37,31 @@ public class X509Extension {
         ASN1OctetString         value) {
         this.critical = critical;
         this.value = value;
-        // ---------- Original Method ----------
-        //this.critical = critical;
-        //this.value = value;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "99E720A5A58C8C8AC266D5DB5489BE5B", hash_generated_method = "5B06E9B4EF98B87018DB3AC69BFA1081")
     public boolean isCritical() {
         boolean var7E85BCB66FB9A809D5AB4F62A8B8BEA8_758275978 = (critical);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_686395717 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_686395717;
-        // ---------- Original Method ----------
-        //return critical;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "EB9162E88B2ECD208428A8DA5B61CEE8", hash_generated_method = "589D0471BF35B93215E1A2B69B282694")
     public ASN1OctetString getValue() {
 ASN1OctetString varAF280DA2BC37D8BE783D8499160168DE_621815942 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_621815942.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_621815942;
-        // ---------- Original Method ----------
-        //return value;
+        
+        
     }
 
     
@@ -68,11 +70,12 @@ ASN1OctetString varAF280DA2BC37D8BE783D8499160168DE_621815942 =         value;
 ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertValueToObject(this);
         var47B17C3D944300E6B2DC899E4956696B_573837958.addTaint(taint);
         return var47B17C3D944300E6B2DC899E4956696B_573837958;
-        // ---------- Original Method ----------
-        //return convertValueToObject(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "F51FC5FDE8514BA4D7895E2CA6F69CED", hash_generated_method = "0DC0D06401C545F146863806B81F7471")
     public int hashCode() {
     if(this.isCritical())        
@@ -80,19 +83,20 @@ ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertVal
             int var44C5B24854B018223DC89C168638075C_1776437902 = (this.getValue().hashCode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908862026 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_908862026;
-        } //End block
+        } 
         int varDC698B7E6879823CB29588BAE8C87A4E_1936275132 = (~this.getValue().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782982319 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1782982319;
-        // ---------- Original Method ----------
-        //if (this.isCritical())
-        //{
-            //return this.getValue().hashCode();
-        //}
-        //return ~this.getValue().hashCode();
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:40.395 -0400", hash_original_method = "63E75CEC65A75841B4924B9C6901B009", hash_generated_method = "36E84808FF85D52A3905D4E649DA04C7")
     public boolean equals(
         Object  o) {
@@ -102,20 +106,20 @@ ASN1Encodable var47B17C3D944300E6B2DC899E4956696B_573837958 =         convertVal
             boolean var68934A3E9455FA72420237EB05902327_1588448691 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_435606667 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_435606667;
-        } //End block
+        } 
         X509Extension other = (X509Extension)o;
         boolean var0CCB67611799E8BFEAED04299717C340_1716429143 = (other.getValue().equals(this.getValue())
             && (other.isCritical() == this.isCritical()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_161251099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_161251099;
-        // ---------- Original Method ----------
-        //if (!(o instanceof X509Extension))
-        //{
-            //return false;
-        //}
-        //X509Extension   other = (X509Extension)o;
-        //return other.getValue().equals(this.getValue())
-            //&& (other.isCritical() == this.isCritical());
+        
+        
+        
+            
+        
+        
+        
+            
     }
 
     

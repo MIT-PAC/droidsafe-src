@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,43 +30,45 @@ final class PipeImpl extends Pipe {
             FileDescriptor[] fds = Libcore.os.pipe();
             this.sink = new PipeSinkChannel(fds[1]);
             this.source = new PipeSourceChannel(fds[0]);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_568702265 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_568702265.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_568702265;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //FileDescriptor[] fds = Libcore.os.pipe();
-            //this.sink = new PipeSinkChannel(fds[1]);
-            //this.source = new PipeSourceChannel(fds[0]);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.912 -0400", hash_original_method = "C0C603D3286C71D643834A21D35D5621", hash_generated_method = "C030505E16C2988312C0F7B2003250DE")
     @Override
     public SinkChannel sink() {
 SinkChannel var9F52798A617E8085E84A971BADA1AE49_4473272 =         sink;
         var9F52798A617E8085E84A971BADA1AE49_4473272.addTaint(taint);
         return var9F52798A617E8085E84A971BADA1AE49_4473272;
-        // ---------- Original Method ----------
-        //return sink;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.912 -0400", hash_original_method = "06051B335F1A44C7022D361E395E201A", hash_generated_method = "D9627D87D728EB04956F8F4135D9D7AD")
     @Override
     public SourceChannel source() {
 SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         var87D92E4D22D3928BDE6A72969186AF86_797869111.addTaint(taint);
         return var87D92E4D22D3928BDE6A72969186AF86_797869111;
-        // ---------- Original Method ----------
-        //return source;
+        
+        
     }
 
     
@@ -78,16 +80,16 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.913 -0400", hash_original_method = "86C415C3CB1DC768FC064168AEB16626", hash_generated_method = "848D3F377F277155D9207132A062928F")
         private  FdCloser(FileDescriptor fd) {
             this.fd = fd;
-            // ---------- Original Method ----------
-            //this.fd = fd;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.913 -0400", hash_original_method = "086A2D08812022B74CB094B0E86783F6", hash_generated_method = "6B149A865F845EB3A84DA324127301FE")
         public void close() throws IOException {
             IoUtils.close(fd);
-            // ---------- Original Method ----------
-            //IoUtils.close(fd);
+            
+            
         }
 
         
@@ -108,9 +110,9 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
             super(SelectorProvider.provider());
             this.fd = fd;
             this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_RDONLY);
-            // ---------- Original Method ----------
-            //this.fd = fd;
-            //this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_RDONLY);
+            
+            
+            
         }
 
         
@@ -118,8 +120,8 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         @Override
         protected void implCloseSelectableChannel() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -128,8 +130,8 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
         protected void implConfigureBlocking(boolean blocking) throws IOException {
             addTaint(blocking);
             IoUtils.setBlocking(getFD(), blocking);
-            // ---------- Original Method ----------
-            //IoUtils.setBlocking(getFD(), blocking);
+            
+            
         }
 
         
@@ -139,8 +141,8 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
             int var05A0862A70F970EF4987A45F5B311658_436866789 = (channel.read(buffer));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200643131 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1200643131;
-            // ---------- Original Method ----------
-            //return channel.read(buffer);
+            
+            
         }
 
         
@@ -150,8 +152,8 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
             long var40B4FFD91AB5711EEFB9BF1574CDE1AA_1415283243 = (channel.read(buffers));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_441164377 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_441164377;
-            // ---------- Original Method ----------
-            //return channel.read(buffers);
+            
+            
         }
 
         
@@ -163,18 +165,19 @@ SourceChannel var87D92E4D22D3928BDE6A72969186AF86_797869111 =         source;
             long varE3BCE5085F84900FC8E0366F324230C8_1591541790 = (channel.read(buffers, offset, length));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_653938554 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_653938554;
-            // ---------- Original Method ----------
-            //return channel.read(buffers, offset, length);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.916 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "85E864B9C17F6AC90A25753CF70618CD")
         public FileDescriptor getFD() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
             var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611.addTaint(taint);
             return var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611;
-            // ---------- Original Method ----------
-            //return fd;
+            
+            
         }
 
         
@@ -195,9 +198,9 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
             super(SelectorProvider.provider());
             this.fd = fd;
             this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_WRONLY);
-            // ---------- Original Method ----------
-            //this.fd = fd;
-            //this.channel = NioUtils.newFileChannel(new FdCloser(fd), fd, O_WRONLY);
+            
+            
+            
         }
 
         
@@ -205,8 +208,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         @Override
         protected void implCloseSelectableChannel() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -215,8 +218,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
         protected void implConfigureBlocking(boolean blocking) throws IOException {
             addTaint(blocking);
             IoUtils.setBlocking(getFD(), blocking);
-            // ---------- Original Method ----------
-            //IoUtils.setBlocking(getFD(), blocking);
+            
+            
         }
 
         
@@ -226,8 +229,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
             int var183321E7C6DAB489DA3995211076854F_1918782192 = (channel.write(buffer));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906417691 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906417691;
-            // ---------- Original Method ----------
-            //return channel.write(buffer);
+            
+            
         }
 
         
@@ -237,8 +240,8 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
             long varED54120D0998E94B4D9467E773B48ECD_1847038940 = (channel.write(buffers));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1811574014 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1811574014;
-            // ---------- Original Method ----------
-            //return channel.write(buffers);
+            
+            
         }
 
         
@@ -250,18 +253,19 @@ FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1209778611 =             fd;
             long var4F830F751FC09068EA2D97F31096FF76_2080590361 = (channel.write(buffers, offset, length));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_872382808 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_872382808;
-            // ---------- Original Method ----------
-            //return channel.write(buffers, offset, length);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:51.920 -0400", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "442F8A5F1A33A9FFCB3194F446222B4E")
         public FileDescriptor getFD() {
 FileDescriptor var020F72FC5D1BB0511CAD11CC0AA674A0_1665417238 =             fd;
             var020F72FC5D1BB0511CAD11CC0AA674A0_1665417238.addTaint(taint);
             return var020F72FC5D1BB0511CAD11CC0AA674A0_1665417238;
-            // ---------- Original Method ----------
-            //return fd;
+            
+            
         }
 
         

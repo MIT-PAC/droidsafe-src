@@ -1,6 +1,6 @@
 package android.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class KeyChainException extends Exception {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.053 -0400", hash_original_method = "07A073FF0F51A72901A8B28E6AC903AE", hash_generated_method = "23E3F1B8D4BA1176F337353CEEB0458D")
     public  KeyChainException() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -17,7 +17,7 @@ public class KeyChainException extends Exception {
     public  KeyChainException(String detailMessage) {
         super(detailMessage);
         addTaint(detailMessage.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class KeyChainException extends Exception {
         super(message, cause);
         addTaint(cause.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class KeyChainException extends Exception {
     public  KeyChainException(Throwable cause) {
         super((cause == null ? null : cause.toString()), cause);
         addTaint(cause.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

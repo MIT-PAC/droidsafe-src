@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,9 +53,9 @@ abstract class AbstractSessionContext implements SSLSessionContext {
       AbstractSessionContext(int maximumSize, int timeout) {
         this.maximumSize = maximumSize;
         this.timeout = timeout;
-        // ---------- Original Method ----------
-        //this.maximumSize = maximumSize;
-        //this.timeout = timeout;
+        
+        
+        
     }
 
     
@@ -68,13 +68,13 @@ abstract class AbstractSessionContext implements SSLSessionContext {
 Iterator<SSLSession> varE7DE1FD668E3CBBA265EA6B0639F2D9B_1369547459 =             Arrays.asList(array).iterator();
             varE7DE1FD668E3CBBA265EA6B0639F2D9B_1369547459.addTaint(taint);
             return varE7DE1FD668E3CBBA265EA6B0639F2D9B_1369547459;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sessions) {
-            //SSLSession[] array = sessions.values().toArray(
-                    //new SSLSession[sessions.size()]);
-            //return Arrays.asList(array).iterator();
-        //}
+        } 
+        
+        
+            
+                    
+            
+        
     }
 
     
@@ -90,7 +90,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
                 boolean varB326B5062B2F0E69046810717534CB09_1709095165 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_77740010 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_77740010;
-            } //End block
+            } 
             while
 (i.hasNext())            
             {
@@ -101,25 +101,25 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
                     boolean varB326B5062B2F0E69046810717534CB09_1256456301 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1341508858 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1341508858;
-                } //End block
-            } //End block
+                } 
+            } 
             next = null;
             boolean var68934A3E9455FA72420237EB05902327_537362430 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_608615161 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_608615161;
-            // ---------- Original Method ----------
-            //if (next != null) {
-                    //return true;
-                //}
-            //while (i.hasNext()) {
-                    //SSLSession session = i.next();
-                    //if (session.isValid()) {
-                        //next = session;
-                        //return true;
-                    //}
-                //}
-            //next = null;
-            //return false;
+            
+            
+                    
+                
+            
+                    
+                    
+                        
+                        
+                    
+                
+            
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.042 -0400", hash_original_method = "7968D7DCCB027A5D41A2AFCAEBC6C83D", hash_generated_method = "35260ABD89C978E2AA67AA2B16D895D0")
         public byte[] nextElement() {
@@ -130,23 +130,23 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
                 byte[] varB80BB7740288FDA1F201890375A60C8F_607021926 = (id);
                                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_782932616 = {getTaintByte()};
                 return var2F9C81BC6E497382285CD6B7A7E33DE1_782932616;
-            } //End block
+            } 
             NoSuchElementException var28D00AB599969908D71F102AF992D49A_1380366072 = new NoSuchElementException();
             var28D00AB599969908D71F102AF992D49A_1380366072.addTaint(taint);
             throw var28D00AB599969908D71F102AF992D49A_1380366072;
-            // ---------- Original Method ----------
-            //if (hasMoreElements()) {
-                    //byte[] id = next.getId();
-                    //next = null;
-                    //return id;
-                //}
-            //throw new NoSuchElementException();
+            
+            
+                    
+                    
+                    
+                
+            
         }
 };
         varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124.addTaint(taint);
         return varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -155,8 +155,8 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
         int varF7558008F30251ED687039538F2EE14F_345498646 = (maximumSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1202802453 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1202802453;
-        // ---------- Original Method ----------
-        //return maximumSize;
+        
+        
     }
 
     
@@ -165,8 +165,8 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
         int var90272DDA245AE1FB3CF197E91A8689DC_1337382572 = (timeout);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805804812 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_805804812;
-        // ---------- Original Method ----------
-        //return timeout;
+        
+        
     }
 
     
@@ -184,26 +184,27 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
                         SSLSession session = i.next();
                         i.remove();
                         sessionRemoved(session);
-                    } //End block
+                    } 
 } while (--removals > 0);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sessions) {
-            //int size = sessions.size();
-            //if (size > maximumSize) {
-                //int removals = size - maximumSize;
-                //Iterator<SSLSession> i = sessions.values().iterator();
-                //do {
-                    //SSLSession session = i.next();
-                    //i.remove();
-                    //sessionRemoved(session);
-                //} while (--removals > 0);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+                
+                    
+                    
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.044 -0400", hash_original_method = "39A7527C252FC67E9B785D11757CBC70", hash_generated_method = "6B2C4FCB1980CB329906ADFE1CEFC25C")
     public void setSessionTimeout(int seconds) throws IllegalArgumentException {
     if(seconds < 0)        
@@ -211,7 +212,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
             IllegalArgumentException varDD2C31E3868F1B0ECB3F0404533DD6FF_684996077 = new IllegalArgumentException("seconds < 0");
             varDD2C31E3868F1B0ECB3F0404533DD6FF_684996077.addTaint(taint);
             throw varDD2C31E3868F1B0ECB3F0404533DD6FF_684996077;
-        } //End block
+        } 
         timeout = seconds;
         synchronized
 (sessions)        {
@@ -224,24 +225,24 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
                 {
                     i.remove();
                     sessionRemoved(session);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (seconds < 0) {
-            //throw new IllegalArgumentException("seconds < 0");
-        //}
-        //timeout = seconds;
-        //synchronized (sessions) {
-            //Iterator<SSLSession> i = sessions.values().iterator();
-            //while (i.hasNext()) {
-                //SSLSession session = i.next();
-                //if (!session.isValid()) {
-                    //i.remove();
-                    //sessionRemoved(session);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
     }
 
     
@@ -255,22 +256,22 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
             IllegalArgumentException var2382BBC2482763F398967EC587DEA9AE_1184405721 = new IllegalArgumentException("size < 0");
             var2382BBC2482763F398967EC587DEA9AE_1184405721.addTaint(taint);
             throw var2382BBC2482763F398967EC587DEA9AE_1184405721;
-        } //End block
+        } 
         int oldMaximum = maximumSize;
         maximumSize = size;
     if(size < oldMaximum)        
         {
             trimToSize();
-        } //End block
-        // ---------- Original Method ----------
-        //if (size < 0) {
-            //throw new IllegalArgumentException("size < 0");
-        //}
-        //int oldMaximum = maximumSize;
-        //maximumSize = size;
-        //if (size < oldMaximum) {
-            //trimToSize();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -282,7 +283,7 @@ Enumeration varF6BBB41F8B560415F4CBC1CD8616FD15_1936634124 =         new Enumera
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_269514593 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1837111401 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1837111401;
-        } //End block
+        } 
         OpenSSLSessionImpl sslSession = (OpenSSLSessionImpl) session;
         try 
         {
@@ -299,30 +300,31 @@ for(Certificate cert : certs)
                 data = cert.getEncoded();
                 daos.writeInt(data.length);
                 daos.write(data);
-            } //End block
+            } 
             byte[] varC8074949A93D391136C4F0EAA54243E5_56823673 = (baos.toByteArray());
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_181133463 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_181133463;
-        } //End block
+        } 
         catch (IOException e)
         {
             log(e);
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_2025111207 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_816652178 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_816652178;
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             log(e);
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_640407480 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_276820385 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_276820385;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.047 -0400", hash_original_method = "1F6A50EAF05C581243DFC8EDF15FF940", hash_generated_method = "22D36EF54D25F609FB4DEF5FCCBDEDCE")
      SSLSession toSession(byte[] data, String host, int port) {
         addTaint(port);
@@ -339,7 +341,7 @@ for(Certificate cert : certs)
 SSLSession var540C13E9E156B687226421B24F2DF178_1861975189 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1861975189.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1861975189;
-            } //End block
+            } 
             int length = dais.readInt();
             byte[] sessionData = new byte[length];
             dais.readFully(sessionData);
@@ -351,23 +353,24 @@ for(int i = 0;i < count;i++)
                 byte[] certData = new byte[length];
                 dais.readFully(certData);
                 certs[i] = new X509CertImpl(certData);
-            } //End block
+            } 
 SSLSession var84AB2E1B3000FC8F6DE25653ECE56C54_527478291 =             new OpenSSLSessionImpl(sessionData, host, port, certs, this);
             var84AB2E1B3000FC8F6DE25653ECE56C54_527478291.addTaint(taint);
             return var84AB2E1B3000FC8F6DE25653ECE56C54_527478291;
-        } //End block
+        } 
         catch (IOException e)
         {
             log(e);
 SSLSession var540C13E9E156B687226421B24F2DF178_1877852270 =             null;
             var540C13E9E156B687226421B24F2DF178_1877852270.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1877852270;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.048 -0400", hash_original_method = "C269704A4F254C894FBE48E4ADC3F7DA", hash_generated_method = "037C39F8F1A0533A5728C40FC355E7C8")
     public SSLSession getSession(byte[] sessionId) {
         addTaint(sessionId[0]);
@@ -376,38 +379,39 @@ SSLSession var540C13E9E156B687226421B24F2DF178_1877852270 =             null;
             NullPointerException var6FE05A4D95E15DCE22A2066FE5B04F68_246296059 = new NullPointerException("sessionId == null");
             var6FE05A4D95E15DCE22A2066FE5B04F68_246296059.addTaint(taint);
             throw var6FE05A4D95E15DCE22A2066FE5B04F68_246296059;
-        } //End block
+        } 
         ByteArray key = new ByteArray(sessionId);
         SSLSession session;
         synchronized
 (sessions)        {
             session = sessions.get(key);
-        } //End block
+        } 
     if(session != null && session.isValid())        
         {
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1115430951 =             session;
             varD555E544A66E0F97DA6BCDE940E3E79C_1115430951.addTaint(taint);
             return varD555E544A66E0F97DA6BCDE940E3E79C_1115430951;
-        } //End block
+        } 
 SSLSession var540C13E9E156B687226421B24F2DF178_454155010 =         null;
         var540C13E9E156B687226421B24F2DF178_454155010.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_454155010;
-        // ---------- Original Method ----------
-        //if (sessionId == null) {
-            //throw new NullPointerException("sessionId == null");
-        //}
-        //ByteArray key = new ByteArray(sessionId);
-        //SSLSession session;
-        //synchronized (sessions) {
-            //session = sessions.get(key);
-        //}
-        //if (session != null && session.isValid()) {
-            //return session;
-        //}
-        //return null;
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.048 -0400", hash_original_method = "01E7B06223DFEA7D5DECA9A679FEAED7", hash_generated_method = "56E46675B2DACAAFBD15DCD7A9590ED2")
      void putSession(SSLSession session) {
         addTaint(session.getTaint());
@@ -415,46 +419,48 @@ SSLSession var540C13E9E156B687226421B24F2DF178_454155010 =         null;
     if(id.length == 0)        
         {
             return;
-        } //End block
+        } 
         ByteArray key = new ByteArray(id);
         synchronized
 (sessions)        {
             sessions.put(key, session);
-        } //End block
-        // ---------- Original Method ----------
-        //byte[] id = session.getId();
-        //if (id.length == 0) {
-            //return;
-        //}
-        //ByteArray key = new ByteArray(id);
-        //synchronized (sessions) {
-            //sessions.put(key, session);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
-        static void log(Throwable t) {
+        @DSModeled(DSC.SPEC)
+    static void log(Throwable t) {
         System.logW("Error converting session.", t);
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.049 -0400", hash_original_method = "F38656E203DF2568CDB8FB5A6C876744", hash_generated_method = "415C95D5B1D7C63D7DD32000B7CCE6AC")
     @Override
     protected void finalize() throws Throwable {
         try 
         {
             NativeCrypto.SSL_CTX_free(sslCtxNativePointer);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //NativeCrypto.SSL_CTX_free(sslCtxNativePointer);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

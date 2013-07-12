@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -198,7 +198,7 @@ public class NumberPicker extends LinearLayout {
     public  NumberPicker(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -207,7 +207,7 @@ public class NumberPicker extends LinearLayout {
         this(context, attrs, R.attr.numberPickerStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -237,7 +237,7 @@ public class NumberPicker extends LinearLayout {
             IllegalArgumentException var8D069734A7E6EA90F4BB4FD1AA37DB2A_565713982 = new IllegalArgumentException("minHeight > maxHeight");
             var8D069734A7E6EA90F4BB4FD1AA37DB2A_565713982.addTaint(taint);
             throw var8D069734A7E6EA90F4BB4FD1AA37DB2A_565713982;
-        } //End block
+        } 
         mMinWidth = attributesArray.getDimensionPixelSize(R.styleable.NumberPicker_minWidth,
                 SIZE_UNSPECIFIED);
         mMaxWidth = attributesArray.getDimensionPixelSize(R.styleable.NumberPicker_maxWidth,
@@ -248,7 +248,7 @@ public class NumberPicker extends LinearLayout {
             IllegalArgumentException var7EA0E56EADCF46DFCE2D3CD52DA32DA9_841372294 = new IllegalArgumentException("minWidth > maxWidth");
             var7EA0E56EADCF46DFCE2D3CD52DA32DA9_841372294.addTaint(taint);
             throw var7EA0E56EADCF46DFCE2D3CD52DA32DA9_841372294;
-        } //End block
+        } 
         mComputeMaxWidth = (mMaxWidth == Integer.MAX_VALUE);
         attributesArray.recycle();
         mShowInputControlsAnimimationDuration = getResources().getInteger(
@@ -293,7 +293,7 @@ public class NumberPicker extends LinearLayout {
         mInputText.setOnFocusChangeListener(new OnFocusChangeListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.495 -0400", hash_original_method = "78C9C9D108DFA9B840217E0D621D6794", hash_generated_method = "0EE6A1A3AF05D8608A0B206F9BCB4110")
         public void onFocusChange(View v, boolean hasFocus) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(hasFocus);
             addTaint(v.getTaint());
     if(hasFocus)            
@@ -303,24 +303,24 @@ public class NumberPicker extends LinearLayout {
     if(inputMethodManager != null)                
                 {
                     inputMethodManager.showSoftInput(mInputText, 0);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 mInputText.setSelection(0, 0);
                 validateInputTextView(v);
-            } //End block
-            // ---------- Original Method ----------
-            //if (hasFocus) {
-                    //mInputText.selectAll();
-                    //InputMethodManager inputMethodManager = InputMethodManager.peekInstance();
-                    //if (inputMethodManager != null) {
-                        //inputMethodManager.showSoftInput(mInputText, 0);
-                    //}
-                //} else {
-                    //mInputText.setSelection(0, 0);
-                    //validateInputTextView(v);
-                //}
+            } 
+            
+            
+                    
+                    
+                    
+                        
+                    
+                
+                    
+                    
+                
         }
 });
         mInputText.setFilters(new InputFilter[] {
@@ -357,32 +357,32 @@ public class NumberPicker extends LinearLayout {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.496 -0400", hash_original_method = "189FC240B4143654008EFD2A47B5C1DA", hash_generated_method = "A63EBD097891F02E29C296F865FE75AF")
         @Override
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(!mCanceled)            
             {
                 setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
-            } //End block
+            } 
             mCanceled = false;
-            // ---------- Original Method ----------
-            //if (!mCanceled) {
-                    //setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
-                //}
-            //mCanceled = false;
+            
+            
+                    
+                
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.497 -0400", hash_original_method = "9FA63CB44D9C62117F441F772E67C603", hash_generated_method = "083E86FD16B2DE17A7324E8279BAEA56")
         @Override
         public void onAnimationCancel(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mShowInputControlsAnimator.isRunning())            
             {
                 mCanceled = true;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mShowInputControlsAnimator.isRunning()) {
-                    //mCanceled = true;
-                //}
+            } 
+            
+            
+                    
+                
         }
 });
         mFlingScroller = new Scroller(getContext(), null, true);
@@ -394,22 +394,22 @@ public class NumberPicker extends LinearLayout {
     if(isInEditMode())            
             {
                 setSelectorWheelState(SELECTOR_WHEEL_STATE_SMALL);
-            } //End block
+            } 
             else
             {
                 setSelectorWheelState(SELECTOR_WHEEL_STATE_LARGE);
                 hideInputControls();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.499 -0400", hash_original_method = "E727E2B4CEB86D0A1B38AD8650A5C905", hash_generated_method = "3DA0B43E060AB9E2683DA25877F55EAE")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(bottom);
         addTaint(right);
         addTaint(top);
@@ -441,16 +441,16 @@ public class NumberPicker extends LinearLayout {
             mScrollWheelAndFadingEdgesInitialized = true;
             initializeSelectorWheel();
             initializeFadingEdges();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.499 -0400", hash_original_method = "048719DA53F07F7F498A46C4561541BF", hash_generated_method = "155EE1E1C6CF7F39817CD818170C9501")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         final int newWidthMeasureSpec = makeMeasureSpec(widthMeasureSpec, mMaxWidth);
@@ -461,28 +461,28 @@ public class NumberPicker extends LinearLayout {
         final int heightSize = resolveSizeAndStateRespectingMinSize(mMinHeight, getMeasuredHeight(),
                 heightMeasureSpec);
         setMeasuredDimension(widthSize, heightSize);
-        // ---------- Original Method ----------
-        //final int newWidthMeasureSpec = makeMeasureSpec(widthMeasureSpec, mMaxWidth);
-        //final int newHeightMeasureSpec = makeMeasureSpec(heightMeasureSpec, mMaxHeight);
-        //super.onMeasure(newWidthMeasureSpec, newHeightMeasureSpec);
-        //final int widthSize = resolveSizeAndStateRespectingMinSize(mMinWidth, getMeasuredWidth(),
-                //widthMeasureSpec);
-        //final int heightSize = resolveSizeAndStateRespectingMinSize(mMinHeight, getMeasuredHeight(),
-                //heightMeasureSpec);
-        //setMeasuredDimension(widthSize, heightSize);
+        
+        
+        
+        
+        
+                
+        
+                
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.502 -0400", hash_original_method = "10C35B0DAD7657DB14B7F950A0414363", hash_generated_method = "43EF54CDC2A425C4D5E0674B579D9E1B")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(!isEnabled() || !mFlingable)        
         {
             boolean var68934A3E9455FA72420237EB05902327_603613559 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1027675833 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1027675833;
-        } //End block
+        } 
 switch(event.getActionMasked()){
         case MotionEvent.ACTION_DOWN:
         mLastMotionEventY = mLastDownEventY = event.getY();
@@ -501,21 +501,21 @@ switch(event.getActionMasked()){
                 mFlingScroller.forceFinished(true);
                 mAdjustScroller.forceFinished(true);
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            } //End block
+            } 
             mBeginEditOnUpEvent = scrollersFinished;
             mAdjustScrollerOnUpEvent = true;
             hideInputControls();
             boolean varB326B5062B2F0E69046810717534CB09_1323549033 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1611686551 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1611686551;
-        } //End block
+        } 
     if(isEventInVisibleViewHitRect(event, mIncrementButton)
                         || isEventInVisibleViewHitRect(event, mDecrementButton))        
         {
             boolean var68934A3E9455FA72420237EB05902327_717693584 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1283147827 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1283147827;
-        } //End block
+        } 
         mAdjustScrollerOnUpEvent = false;
         setSelectorWheelState(SELECTOR_WHEEL_STATE_LARGE);
         hideInputControls();
@@ -534,31 +534,31 @@ switch(event.getActionMasked()){
             boolean varB326B5062B2F0E69046810717534CB09_777524087 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_773305306 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_773305306;
-        } //End block
+        } 
         break;
 }        boolean var68934A3E9455FA72420237EB05902327_715618187 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060406464 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060406464;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.503 -0400", hash_original_method = "235D8E8A92689E68622E8E516F140226", hash_generated_method = "8120FC589E869C53FC86CF60B265A3A8")
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(ev.getTaint());
     if(!isEnabled())        
         {
             boolean var68934A3E9455FA72420237EB05902327_1735625279 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2079968471 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2079968471;
-        } //End block
+        } 
     if(mVelocityTracker == null)        
         {
             mVelocityTracker = VelocityTracker.obtain();
-        } //End block
+        } 
         mVelocityTracker.addMovement(ev);
         int action = ev.getActionMasked();
 switch(action){
@@ -572,8 +572,8 @@ switch(action){
             {
                 mBeginEditOnUpEvent = false;
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_TOUCH_SCROLL);
-            } //End block
-        } //End block
+            } 
+        } 
         int deltaMoveY = (int) (currentMoveY - mLastMotionEventY);
         scrollBy(0, deltaMoveY);
         invalidate();
@@ -588,7 +588,7 @@ switch(action){
             boolean varB326B5062B2F0E69046810717534CB09_299704275 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2143471866 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2143471866;
-        } //End block
+        } 
         VelocityTracker velocityTracker = mVelocityTracker;
         velocityTracker.computeCurrentVelocity(1000, mMaximumFlingVelocity);
         int initialVelocity = (int) velocityTracker.getYVelocity();
@@ -596,7 +596,7 @@ switch(action){
         {
             fling(initialVelocity);
             onScrollStateChange(OnScrollListener.SCROLL_STATE_FLING);
-        } //End block
+        } 
         else
         {
     if(mAdjustScrollerOnUpEvent)            
@@ -604,21 +604,21 @@ switch(action){
     if(mFlingScroller.isFinished() && mAdjustScroller.isFinished())                
                 {
                     postAdjustScrollerCommand(0);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 postAdjustScrollerCommand(SHOW_INPUT_CONTROLS_DELAY_MILLIS);
-            } //End block
-        } //End block
+            } 
+        } 
         mVelocityTracker.recycle();
         mVelocityTracker = null;
         break;
 }        boolean varB326B5062B2F0E69046810717534CB09_1273899223 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1103333977 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1103333977;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -633,7 +633,7 @@ switch(action){
         {
             removeAllCallbacks();
             forceCompleteChangeCurrentByOneViaScroll();
-        } //End block
+        } 
         break;
         case MotionEvent.ACTION_CANCEL:
         case MotionEvent.ACTION_UP:
@@ -642,21 +642,21 @@ switch(action){
 }        boolean var041E6F53DFDAFFD9826FB441AB720FF1_1940756808 = (super.dispatchTouchEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1345832599 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1345832599;
-        // ---------- Original Method ----------
-        //final int action = event.getActionMasked();
-        //switch (action) {
-            //case MotionEvent.ACTION_MOVE:
-                //if (mSelectorWheelState == SELECTOR_WHEEL_STATE_LARGE) {
-                    //removeAllCallbacks();
-                    //forceCompleteChangeCurrentByOneViaScroll();
-                //}
-                //break;
-            //case MotionEvent.ACTION_CANCEL:
-            //case MotionEvent.ACTION_UP:
-                //removeAllCallbacks();
-                //break;
-        //}
-        //return super.dispatchTouchEvent(event);
+        
+        
+        
+            
+                
+                    
+                    
+                
+                
+            
+            
+                
+                
+        
+        
     }
 
     
@@ -668,16 +668,16 @@ switch(action){
     if(keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER)        
         {
             removeAllCallbacks();
-        } //End block
+        } 
         boolean var639DD27D10E8FF69097B1398D445D1B9_156034645 = (super.dispatchKeyEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_80027102 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_80027102;
-        // ---------- Original Method ----------
-        //int keyCode = event.getKeyCode();
-        //if (keyCode == KeyEvent.KEYCODE_DPAD_CENTER || keyCode == KeyEvent.KEYCODE_ENTER) {
-            //removeAllCallbacks();
-        //}
-        //return super.dispatchKeyEvent(event);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -689,16 +689,16 @@ switch(action){
     if(action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP)        
         {
             removeAllCallbacks();
-        } //End block
+        } 
         boolean varBB41FA8540C179CC2F1F874F79E6CC5C_839363392 = (super.dispatchTrackballEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1233012605 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1233012605;
-        // ---------- Original Method ----------
-        //int action = event.getActionMasked();
-        //if (action == MotionEvent.ACTION_CANCEL || action == MotionEvent.ACTION_UP) {
-            //removeAllCallbacks();
-        //}
-        //return super.dispatchTrackballEvent(event);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -708,7 +708,7 @@ switch(action){
     if(mSelectorWheelState == SELECTOR_WHEEL_STATE_NONE)        
         {
             return;
-        } //End block
+        } 
         Scroller scroller = mFlingScroller;
     if(scroller.isFinished())        
         {
@@ -716,47 +716,47 @@ switch(action){
     if(scroller.isFinished())            
             {
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         scroller.computeScrollOffset();
         int currentScrollerY = scroller.getCurrY();
     if(mPreviousScrollerY == 0)        
         {
             mPreviousScrollerY = scroller.getStartY();
-        } //End block
+        } 
         scrollBy(0, currentScrollerY - mPreviousScrollerY);
         mPreviousScrollerY = currentScrollerY;
     if(scroller.isFinished())        
         {
             onScrollerFinished(scroller);
-        } //End block
+        } 
         else
         {
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSelectorWheelState == SELECTOR_WHEEL_STATE_NONE) {
-            //return;
-        //}
-        //Scroller scroller = mFlingScroller;
-        //if (scroller.isFinished()) {
-            //scroller = mAdjustScroller;
-            //if (scroller.isFinished()) {
-                //return;
-            //}
-        //}
-        //scroller.computeScrollOffset();
-        //int currentScrollerY = scroller.getCurrY();
-        //if (mPreviousScrollerY == 0) {
-            //mPreviousScrollerY = scroller.getStartY();
-        //}
-        //scrollBy(0, currentScrollerY - mPreviousScrollerY);
-        //mPreviousScrollerY = currentScrollerY;
-        //if (scroller.isFinished()) {
-            //onScrollerFinished(scroller);
-        //} else {
-            //invalidate();
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -768,11 +768,11 @@ switch(action){
         mIncrementButton.setEnabled(enabled);
         mDecrementButton.setEnabled(enabled);
         mInputText.setEnabled(enabled);
-        // ---------- Original Method ----------
-        //super.setEnabled(enabled);
-        //mIncrementButton.setEnabled(enabled);
-        //mDecrementButton.setEnabled(enabled);
-        //mInputText.setEnabled(enabled);
+        
+        
+        
+        
+        
     }
 
     
@@ -783,20 +783,20 @@ switch(action){
     if(mSelectorWheelState == SELECTOR_WHEEL_STATE_NONE)        
         {
             return;
-        } //End block
+        } 
         int[] selectorIndices = mSelectorIndices;
     if(!mWrapSelectorWheel && y > 0
                 && selectorIndices[SELECTOR_MIDDLE_ITEM_INDEX] <= mMinValue)        
         {
             mCurrentScrollOffset = mInitialScrollOffset;
             return;
-        } //End block
+        } 
     if(!mWrapSelectorWheel && y < 0
                 && selectorIndices[SELECTOR_MIDDLE_ITEM_INDEX] >= mMaxValue)        
         {
             mCurrentScrollOffset = mInitialScrollOffset;
             return;
-        } //End block
+        } 
         mCurrentScrollOffset += y;
         while
 (mCurrentScrollOffset - mInitialScrollOffset > mSelectorTextGapHeight)        
@@ -807,8 +807,8 @@ switch(action){
     if(!mWrapSelectorWheel && selectorIndices[SELECTOR_MIDDLE_ITEM_INDEX] <= mMinValue)            
             {
                 mCurrentScrollOffset = mInitialScrollOffset;
-            } //End block
-        } //End block
+            } 
+        } 
         while
 (mCurrentScrollOffset - mInitialScrollOffset < -mSelectorTextGapHeight)        
         {
@@ -818,37 +818,40 @@ switch(action){
     if(!mWrapSelectorWheel && selectorIndices[SELECTOR_MIDDLE_ITEM_INDEX] >= mMaxValue)            
             {
                 mCurrentScrollOffset = mInitialScrollOffset;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.508 -0400", hash_original_method = "A5D52728D322EA76B9FE19A001AC2619", hash_generated_method = "6947FA1AD406D8D6FAD675CA4842198A")
     @Override
     public int getSolidColor() {
         int varF761CF39D7B955BCB3910DD42D5B01E4_2075502078 = (mSolidColor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707705818 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_707705818;
-        // ---------- Original Method ----------
-        //return mSolidColor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.508 -0400", hash_original_method = "B8FD740B950D37D2ACEC32CDC9BBCB3E", hash_generated_method = "D55BA1C0A2CC4BCD0E3EE7C50853AF06")
     public void setOnValueChangedListener(OnValueChangeListener onValueChangedListener) {
         mOnValueChangeListener = onValueChangedListener;
-        // ---------- Original Method ----------
-        //mOnValueChangeListener = onValueChangedListener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.508 -0400", hash_original_method = "E07C1A1F4DD9D0D02072D75B16D4DB8B", hash_generated_method = "8D444529148A09F38F528175C920BB2D")
     public void setOnScrollListener(OnScrollListener onScrollListener) {
         mOnScrollListener = onScrollListener;
-        // ---------- Original Method ----------
-        //mOnScrollListener = onScrollListener;
+        
+        
     }
 
     
@@ -857,17 +860,17 @@ switch(action){
     if(formatter == mFormatter)        
         {
             return;
-        } //End block
+        } 
         mFormatter = formatter;
         initializeSelectorWheelIndices();
         updateInputTextView();
-        // ---------- Original Method ----------
-        //if (formatter == mFormatter) {
-            //return;
-        //}
-        //mFormatter = formatter;
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -876,35 +879,35 @@ switch(action){
     if(mValue == value)        
         {
             return;
-        } //End block
+        } 
     if(value < mMinValue)        
         {
             value = mWrapSelectorWheel ? mMaxValue : mMinValue;
-        } //End block
+        } 
     if(value > mMaxValue)        
         {
             value = mWrapSelectorWheel ? mMinValue : mMaxValue;
-        } //End block
+        } 
         mValue = value;
         initializeSelectorWheelIndices();
         updateInputTextView();
         updateIncrementAndDecrementButtonsVisibilityState();
         invalidate();
-        // ---------- Original Method ----------
-        //if (mValue == value) {
-            //return;
-        //}
-        //if (value < mMinValue) {
-            //value = mWrapSelectorWheel ? mMaxValue : mMinValue;
-        //}
-        //if (value > mMaxValue) {
-            //value = mWrapSelectorWheel ? mMinValue : mMaxValue;
-        //}
-        //mValue = value;
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
-        //updateIncrementAndDecrementButtonsVisibilityState();
-        //invalidate();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -913,7 +916,7 @@ switch(action){
     if(!mComputeMaxWidth)        
         {
             return;
-        } //End block
+        } 
         int maxTextWidth = 0;
     if(mDisplayedValues == null)        
         {
@@ -924,8 +927,8 @@ for(int i = 0;i <= 9;i++)
     if(digitWidth > maxDigitWidth)                
                 {
                     maxDigitWidth = digitWidth;
-                } //End block
-            } //End block
+                } 
+            } 
             int numberOfDigits = 0;
             int current = mMaxValue;
             while
@@ -933,9 +936,9 @@ for(int i = 0;i <= 9;i++)
             {
                 numberOfDigits++;
                 current = current / 10;
-            } //End block
+            } 
             maxTextWidth = (int) (numberOfDigits * maxDigitWidth);
-        } //End block
+        } 
         else
         {
             final int valueCount = mDisplayedValues.length;
@@ -945,34 +948,35 @@ for(int i = 0;i < valueCount;i++)
     if(textWidth > maxTextWidth)                
                 {
                     maxTextWidth = (int) textWidth;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         maxTextWidth += mInputText.getPaddingLeft() + mInputText.getPaddingRight();
     if(mMaxWidth != maxTextWidth)        
         {
     if(maxTextWidth > mMinWidth)            
             {
                 mMaxWidth = maxTextWidth;
-            } //End block
+            } 
             else
             {
                 mMaxWidth = mMinWidth;
-            } //End block
+            } 
             invalidate();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.512 -0400", hash_original_method = "0DE9A61E4C9F0206942BD1BD5DBB2993", hash_generated_method = "95F815AE7A4023C9C0075C0D51F4855F")
     public boolean getWrapSelectorWheel() {
         boolean varFC769FBB094551A074259CD0A7B6736A_93220430 = (mWrapSelectorWheel);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1340941500 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1340941500;
-        // ---------- Original Method ----------
-        //return mWrapSelectorWheel;
+        
+        
     }
 
     
@@ -983,48 +987,51 @@ for(int i = 0;i < valueCount;i++)
             IllegalStateException var551E8E82A92632D17220099947F2F2E9_609898093 = new IllegalStateException("Range less than selector items count.");
             var551E8E82A92632D17220099947F2F2E9_609898093.addTaint(taint);
             throw var551E8E82A92632D17220099947F2F2E9_609898093;
-        } //End block
+        } 
     if(wrapSelectorWheel != mWrapSelectorWheel)        
         {
             mWrapSelectorWheel = wrapSelectorWheel;
             updateIncrementAndDecrementButtonsVisibilityState();
-        } //End block
-        // ---------- Original Method ----------
-        //if (wrapSelectorWheel && (mMaxValue - mMinValue) < mSelectorIndices.length) {
-            //throw new IllegalStateException("Range less than selector items count.");
-        //}
-        //if (wrapSelectorWheel != mWrapSelectorWheel) {
-            //mWrapSelectorWheel = wrapSelectorWheel;
-            //updateIncrementAndDecrementButtonsVisibilityState();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.513 -0400", hash_original_method = "8C354EDC01FB7FE8E35D5D03601EF310", hash_generated_method = "A112829F0E2370B87C41F6E6B0002254")
     public void setOnLongPressUpdateInterval(long intervalMillis) {
         mLongPressUpdateInterval = intervalMillis;
-        // ---------- Original Method ----------
-        //mLongPressUpdateInterval = intervalMillis;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.513 -0400", hash_original_method = "873C7D38131A035B7F6055170D432634", hash_generated_method = "B78618EAE5F8C8C940FF7269531391B7")
     public int getValue() {
         int varCBAFE11E7BAE23358D70D54D132C3064_1810829450 = (mValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1364597756 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1364597756;
-        // ---------- Original Method ----------
-        //return mValue;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.513 -0400", hash_original_method = "734B6103B2E180B236F243E5AD573634", hash_generated_method = "0EE8F761E31069AF1B54A898CD436327")
     public int getMinValue() {
         int varC996577FD89E2D9ACA600D3AF5442EB3_1876177702 = (mMinValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065976695 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2065976695;
-        // ---------- Original Method ----------
-        //return mMinValue;
+        
+        
     }
 
     
@@ -1033,49 +1040,50 @@ for(int i = 0;i < valueCount;i++)
     if(mMinValue == minValue)        
         {
             return;
-        } //End block
+        } 
     if(minValue < 0)        
         {
             IllegalArgumentException var4CF4FB73F5BFCB0B30A98D2B19DFD802_212301957 = new IllegalArgumentException("minValue must be >= 0");
             var4CF4FB73F5BFCB0B30A98D2B19DFD802_212301957.addTaint(taint);
             throw var4CF4FB73F5BFCB0B30A98D2B19DFD802_212301957;
-        } //End block
+        } 
         mMinValue = minValue;
     if(mMinValue > mValue)        
         {
             mValue = mMinValue;
-        } //End block
+        } 
         boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
         setWrapSelectorWheel(wrapSelectorWheel);
         initializeSelectorWheelIndices();
         updateInputTextView();
         tryComputeMaxWidth();
-        // ---------- Original Method ----------
-        //if (mMinValue == minValue) {
-            //return;
-        //}
-        //if (minValue < 0) {
-            //throw new IllegalArgumentException("minValue must be >= 0");
-        //}
-        //mMinValue = minValue;
-        //if (mMinValue > mValue) {
-            //mValue = mMinValue;
-        //}
-        //boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
-        //setWrapSelectorWheel(wrapSelectorWheel);
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
-        //tryComputeMaxWidth();
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.514 -0400", hash_original_method = "D9333690652DA8538B4523261E9BBD48", hash_generated_method = "911A49AF8EA66A2AFDE7B5A62E52F15F")
     public int getMaxValue() {
         int varEB798AAFC3D0D018951E684107D8CF72_1412004956 = (mMaxValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_553840219 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_553840219;
-        // ---------- Original Method ----------
-        //return mMaxValue;
+        
+        
     }
 
     
@@ -1084,49 +1092,50 @@ for(int i = 0;i < valueCount;i++)
     if(mMaxValue == maxValue)        
         {
             return;
-        } //End block
+        } 
     if(maxValue < 0)        
         {
             IllegalArgumentException var41F7D13EEC67DDDF39DA35379C0D39FB_287900224 = new IllegalArgumentException("maxValue must be >= 0");
             var41F7D13EEC67DDDF39DA35379C0D39FB_287900224.addTaint(taint);
             throw var41F7D13EEC67DDDF39DA35379C0D39FB_287900224;
-        } //End block
+        } 
         mMaxValue = maxValue;
     if(mMaxValue < mValue)        
         {
             mValue = mMaxValue;
-        } //End block
+        } 
         boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
         setWrapSelectorWheel(wrapSelectorWheel);
         initializeSelectorWheelIndices();
         updateInputTextView();
         tryComputeMaxWidth();
-        // ---------- Original Method ----------
-        //if (mMaxValue == maxValue) {
-            //return;
-        //}
-        //if (maxValue < 0) {
-            //throw new IllegalArgumentException("maxValue must be >= 0");
-        //}
-        //mMaxValue = maxValue;
-        //if (mMaxValue < mValue) {
-            //mValue = mMaxValue;
-        //}
-        //boolean wrapSelectorWheel = mMaxValue - mMinValue > mSelectorIndices.length;
-        //setWrapSelectorWheel(wrapSelectorWheel);
-        //initializeSelectorWheelIndices();
-        //updateInputTextView();
-        //tryComputeMaxWidth();
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.514 -0400", hash_original_method = "7D8D8A804F018648196BF68A974CA568", hash_generated_method = "9EA0999E235397F20EEC9FB1994C852B")
     public String[] getDisplayedValues() {
 String[] var0B87CE87A92799FAB05539CDBFD795AD_1941108022 =         mDisplayedValues;
         var0B87CE87A92799FAB05539CDBFD795AD_1941108022.addTaint(taint);
         return var0B87CE87A92799FAB05539CDBFD795AD_1941108022;
-        // ---------- Original Method ----------
-        //return mDisplayedValues;
+        
+        
     }
 
     
@@ -1135,91 +1144,94 @@ String[] var0B87CE87A92799FAB05539CDBFD795AD_1941108022 =         mDisplayedValu
     if(mDisplayedValues == displayedValues)        
         {
             return;
-        } //End block
+        } 
         mDisplayedValues = displayedValues;
     if(mDisplayedValues != null)        
         {
             mInputText.setRawInputType(InputType.TYPE_CLASS_TEXT
                     | InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        } //End block
+        } 
         else
         {
             mInputText.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-        } //End block
+        } 
         updateInputTextView();
         initializeSelectorWheelIndices();
         tryComputeMaxWidth();
-        // ---------- Original Method ----------
-        //if (mDisplayedValues == displayedValues) {
-            //return;
-        //}
-        //mDisplayedValues = displayedValues;
-        //if (mDisplayedValues != null) {
-            //mInputText.setRawInputType(InputType.TYPE_CLASS_TEXT
-                    //| InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS);
-        //} else {
-            //mInputText.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-        //}
-        //updateInputTextView();
-        //initializeSelectorWheelIndices();
-        //tryComputeMaxWidth();
+        
+        
+            
+        
+        
+        
+            
+                    
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "26009EEE98735F9AF4C2D76E4A1AFAB0", hash_generated_method = "F49802677772A291C24879F392816D31")
     @Override
     protected float getTopFadingEdgeStrength() {
         float var63885AA7D968E63F4CC5ED35BC4CF22A_1495116555 = (TOP_AND_BOTTOM_FADING_EDGE_STRENGTH);
                 float var546ADE640B6EDFBC8A086EF31347E768_1785610478 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1785610478;
-        // ---------- Original Method ----------
-        //return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "A0CE61C0CAF5846D2D470684E7070854", hash_generated_method = "9CFB7075078012475CA300514A59425C")
     @Override
     protected float getBottomFadingEdgeStrength() {
         float var63885AA7D968E63F4CC5ED35BC4CF22A_1512224230 = (TOP_AND_BOTTOM_FADING_EDGE_STRENGTH);
                 float var546ADE640B6EDFBC8A086EF31347E768_154280950 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_154280950;
-        // ---------- Original Method ----------
-        //return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "D8635D04A384ABA875A77249BA87A3E4", hash_generated_method = "3B187CB8951B91098C93297C2CB23108")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
     if(mFlingable && !isInEditMode())        
         {
             showInputControls(mShowInputControlsAnimimationDuration * 2);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (mFlingable && !isInEditMode()) {
-            //showInputControls(mShowInputControlsAnimimationDuration * 2);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "1AF381BAEFDBA706A0AAFFFCBFBE7386", hash_generated_method = "B6B24701F125BC28DDEDFD787141F4D6")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         removeAllCallbacks();
-        // ---------- Original Method ----------
-        //removeAllCallbacks();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.515 -0400", hash_original_method = "0296ECFD4FBB578ABFB3DEE9D2F54084", hash_generated_method = "8827C1FA31E6998965C439129AE20899")
     @Override
     protected void dispatchDraw(Canvas canvas) {
         addTaint(canvas.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1238,35 +1250,35 @@ for(int i = 0, count = getChildCount();i < count;i++)
     if(!child.isShown())                
                 {
                     continue;
-                } //End block
+                } 
                 drawChild(canvas, getChildAt(i), drawTime);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.draw(canvas);
-        //if (mShowInputControlsAnimator.isRunning()
-                //|| mSelectorWheelState != SELECTOR_WHEEL_STATE_LARGE) {
-            //long drawTime = getDrawingTime();
-            //for (int i = 0, count = getChildCount(); i < count; i++) {
-                //View child = getChildAt(i);
-                //if (!child.isShown()) {
-                    //continue;
-                //}
-                //drawChild(canvas, getChildAt(i), drawTime);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+                
+            
+            
+                
+                
+                    
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.517 -0400", hash_original_method = "73B10A324A4034D5CD70F03023B591F2", hash_generated_method = "8DD86029BF829DE2DDFB5685A0C845D9")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
     if(mSelectorWheelState == SELECTOR_WHEEL_STATE_NONE)        
         {
             return;
-        } //End block
+        } 
         float x = (mRight - mLeft) / 2;
         float y = mCurrentScrollOffset;
         final int restoreCount = canvas.save();
@@ -1275,7 +1287,7 @@ for(int i = 0, count = getChildCount();i < count;i++)
             Rect clipBounds = canvas.getClipBounds();
             clipBounds.inset(0, mSelectorElementHeight);
             canvas.clipRect(clipBounds);
-        } //End block
+        } 
         int[] selectorIndices = mSelectorIndices;
 for(int i = 0;i < selectorIndices.length;i++)
         {
@@ -1284,9 +1296,9 @@ for(int i = 0;i < selectorIndices.length;i++)
     if(i != SELECTOR_MIDDLE_ITEM_INDEX || mInputText.getVisibility() != VISIBLE)            
             {
                 canvas.drawText(scrollSelectorValue, x, y, mSelectorWheelPaint);
-            } //End block
+            } 
             y += mSelectorElementHeight;
-        } //End block
+        } 
     if(mSelectionDivider != null)        
         {
             int topOfTopDivider = (getHeight() - mSelectorElementHeight - mSelectionDividerHeight) / 2;
@@ -1297,18 +1309,19 @@ for(int i = 0;i < selectorIndices.length;i++)
             int bottomOfBottomDivider = bottomOfTopDivider + mSelectorElementHeight;
             mSelectionDivider.setBounds(0, topOfBottomDivider, mRight, bottomOfBottomDivider);
             mSelectionDivider.draw(canvas);
-        } //End block
+        } 
         canvas.restoreToCount(restoreCount);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.517 -0400", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "6A09BD8EA53A915AB5F822E12CBC5F98")
     @Override
     public void sendAccessibilityEvent(int eventType) {
         addTaint(eventType);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1321,7 +1334,7 @@ for(int i = 0;i < selectorIndices.length;i++)
             int var4DBE2C778E19A82616066A0A1C1DBEC9_959729687 = (measureSpec);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_224193578 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_224193578;
-        } //End block
+        } 
         final int size = MeasureSpec.getSize(measureSpec);
         final int mode = MeasureSpec.getMode(measureSpec);
 switch(mode){
@@ -1342,22 +1355,22 @@ switch(mode){
         var23681CC8989F68BBA8881AEB1152B33D_1244203094.addTaint(taint);
         throw var23681CC8989F68BBA8881AEB1152B33D_1244203094;
 }
-        // ---------- Original Method ----------
-        //if (maxSize == SIZE_UNSPECIFIED) {
-            //return measureSpec;
-        //}
-        //final int size = MeasureSpec.getSize(measureSpec);
-        //final int mode = MeasureSpec.getMode(measureSpec);
-        //switch (mode) {
-            //case MeasureSpec.EXACTLY:
-                //return measureSpec;
-            //case MeasureSpec.AT_MOST:
-                //return MeasureSpec.makeMeasureSpec(Math.min(size, maxSize), MeasureSpec.EXACTLY);
-            //case MeasureSpec.UNSPECIFIED:
-                //return MeasureSpec.makeMeasureSpec(maxSize, MeasureSpec.EXACTLY);
-            //default:
-                //throw new IllegalArgumentException("Unknown measure mode: " + mode);
-        //}
+        
+        
+            
+        
+        
+        
+        
+            
+                
+            
+                
+            
+                
+            
+                
+        
     }
 
     
@@ -1373,20 +1386,20 @@ switch(mode){
             int var33B0EA3388819D1D185791DA131994CD_64830867 = (resolveSizeAndState(desiredWidth, measureSpec, 0));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992904191 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1992904191;
-        } //End block
+        } 
         else
         {
             int varDADAD521D636870C2365C428BAC0A5C6_216855336 = (measuredSize);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448228164 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448228164;
-        } //End block
-        // ---------- Original Method ----------
-        //if (minSize != SIZE_UNSPECIFIED) {
-            //final int desiredWidth = Math.max(minSize, measuredSize);
-            //return resolveSizeAndState(desiredWidth, measureSpec, 0);
-        //} else {
-            //return measuredSize;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -1401,22 +1414,22 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     if(mWrapSelectorWheel)            
             {
                 selectorIndex = getWrappedSelectorIndex(selectorIndex);
-            } //End block
+            } 
             mSelectorIndices[i] = selectorIndex;
             ensureCachedScrollSelectorValue(mSelectorIndices[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //mSelectorIndexToStringCache.clear();
-        //int[] selectorIdices = mSelectorIndices;
-        //int current = getValue();
-        //for (int i = 0; i < mSelectorIndices.length; i++) {
-            //int selectorIndex = current + (i - SELECTOR_MIDDLE_ITEM_INDEX);
-            //if (mWrapSelectorWheel) {
-                //selectorIndex = getWrappedSelectorIndex(selectorIndex);
-            //}
-            //mSelectorIndices[i] = selectorIndex;
-            //ensureCachedScrollSelectorValue(mSelectorIndices[i]);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -1426,24 +1439,24 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     if(mValue == current)        
         {
             return;
-        } //End block
+        } 
     if(mWrapSelectorWheel)        
         {
             current = getWrappedSelectorIndex(current);
-        } //End block
+        } 
         int previous = mValue;
         setValue(current);
         notifyChange(previous, current);
-        // ---------- Original Method ----------
-        //if (mValue == current) {
-            //return;
-        //}
-        //if (mWrapSelectorWheel) {
-            //current = getWrappedSelectorIndex(current);
-        //}
-        //int previous = mValue;
-        //setValue(current);
-        //notifyChange(previous, current);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -1461,27 +1474,27 @@ for(int i = 0;i < mSelectorIndices.length;i++)
             {
                 mFlingScroller.startScroll(0, 0, 0, -mSelectorElementHeight,
                         CHANGE_CURRENT_BY_ONE_SCROLL_DURATION);
-            } //End block
+            } 
             else
             {
                 mFlingScroller.startScroll(0, 0, 0, mSelectorElementHeight,
                         CHANGE_CURRENT_BY_ONE_SCROLL_DURATION);
-            } //End block
+            } 
             invalidate();
-        } //End block
+        } 
         else
         {
     if(increment)            
             {
                 changeCurrent(mValue + 1);
-            } //End block
+            } 
             else
             {
                 changeCurrent(mValue - 1);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1494,15 +1507,15 @@ for(int i = 0;i < mSelectorIndices.length;i++)
             scroller.abortAnimation();
             final int yDelta = scroller.getCurrY() - yBeforeAbort;
             scrollBy(0, yDelta);
-        } //End block
-        // ---------- Original Method ----------
-        //Scroller scroller = mFlingScroller;
-        //if (!scroller.isFinished()) {
-            //final int yBeforeAbort = scroller.getCurrY();
-            //scroller.abortAnimation();
-            //final int yDelta = scroller.getCurrY() - yBeforeAbort;
-            //scrollBy(0, yDelta);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -1512,9 +1525,9 @@ for(int i = 0;i < mSelectorIndices.length;i++)
         addTaint(alpha);
         mSelectorWheelPaint.setAlpha(alpha);
         invalidate();
-        // ---------- Original Method ----------
-        //mSelectorWheelPaint.setAlpha(alpha);
-        //invalidate();
+        
+        
+        
     }
 
     
@@ -1528,16 +1541,16 @@ for(int i = 0;i < mSelectorIndices.length;i++)
             boolean var991FC5B8EEB72A36FE527B79D633649A_2140468630 = (mTempRect.contains((int) event.getX(), (int) event.getY()));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_253656580 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_253656580;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_375246976 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_812765201 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_812765201;
-        // ---------- Original Method ----------
-        //if (view.getVisibility() == VISIBLE) {
-            //view.getHitRect(mTempRect);
-            //return mTempRect.contains((int) event.getX(), (int) event.getY());
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1547,7 +1560,7 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     if(selectorWheelState == SELECTOR_WHEEL_STATE_LARGE)        
         {
             mSelectorWheelPaint.setAlpha(SELECTOR_WHEEL_BRIGHT_ALPHA);
-        } //End block
+        } 
     if(mFlingable && selectorWheelState == SELECTOR_WHEEL_STATE_LARGE
                 && AccessibilityManager.getInstance(mContext).isEnabled())        
         {
@@ -1556,20 +1569,20 @@ for(int i = 0;i < mSelectorIndices.length;i++)
             mInputText.setContentDescription(text);
             mInputText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
             mInputText.setContentDescription(null);
-        } //End block
-        // ---------- Original Method ----------
-        //mSelectorWheelState = selectorWheelState;
-        //if (selectorWheelState == SELECTOR_WHEEL_STATE_LARGE) {
-            //mSelectorWheelPaint.setAlpha(SELECTOR_WHEEL_BRIGHT_ALPHA);
-        //}
-        //if (mFlingable && selectorWheelState == SELECTOR_WHEEL_STATE_LARGE
-                //&& AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //AccessibilityManager.getInstance(mContext).interrupt();
-            //String text = mContext.getString(R.string.number_picker_increment_scroll_action);
-            //mInputText.setContentDescription(text);
-            //mInputText.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_SELECTED);
-            //mInputText.setContentDescription(null);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+                
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -1587,19 +1600,19 @@ for(int i = 0;i < mSelectorIndices.length;i++)
                 (mSelectorElementHeight * SELECTOR_MIDDLE_ITEM_INDEX);
         mCurrentScrollOffset = mInitialScrollOffset;
         updateInputTextView();
-        // ---------- Original Method ----------
-        //initializeSelectorWheelIndices();
-        //int[] selectorIndices = mSelectorIndices;
-        //int totalTextHeight = selectorIndices.length * mTextSize;
-        //float totalTextGapHeight = (mBottom - mTop) - totalTextHeight;
-        //float textGapCount = selectorIndices.length - 1;
-        //mSelectorTextGapHeight = (int) (totalTextGapHeight / textGapCount + 0.5f);
-        //mSelectorElementHeight = mTextSize + mSelectorTextGapHeight;
-        //int editTextTextPosition = mInputText.getBaseline() + mInputText.getTop();
-        //mInitialScrollOffset = editTextTextPosition -
-                //(mSelectorElementHeight * SELECTOR_MIDDLE_ITEM_INDEX);
-        //mCurrentScrollOffset = mInitialScrollOffset;
-        //updateInputTextView();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
+        
     }
 
     
@@ -1607,9 +1620,9 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     private void initializeFadingEdges() {
         setVerticalFadingEdgeEnabled(true);
         setFadingEdgeLength((mBottom - mTop - mTextSize) / 2);
-        // ---------- Original Method ----------
-        //setVerticalFadingEdgeEnabled(true);
-        //setFadingEdgeLength((mBottom - mTop - mTextSize) / 2);
+        
+        
+        
     }
 
     
@@ -1622,31 +1635,31 @@ for(int i = 0;i < mSelectorIndices.length;i++)
             {
                 postAdjustScrollerCommand(0);
                 onScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            } //End block
+            } 
             else
             {
                 updateInputTextView();
                 fadeSelectorWheel(mShowInputControlsAnimimationDuration);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             updateInputTextView();
             showInputControls(mShowInputControlsAnimimationDuration);
-        } //End block
-        // ---------- Original Method ----------
-        //if (scroller == mFlingScroller) {
-            //if (mSelectorWheelState == SELECTOR_WHEEL_STATE_LARGE) {
-                //postAdjustScrollerCommand(0);
-                //onScrollStateChange(OnScrollListener.SCROLL_STATE_IDLE);
-            //} else {
-                //updateInputTextView();
-                //fadeSelectorWheel(mShowInputControlsAnimimationDuration);
-            //}
-        //} else {
-            //updateInputTextView();
-            //showInputControls(mShowInputControlsAnimimationDuration);
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+                
+                
+            
+        
+            
+            
+        
     }
 
     
@@ -1655,20 +1668,20 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     if(mScrollState == scrollState)        
         {
             return;
-        } //End block
+        } 
         mScrollState = scrollState;
     if(mOnScrollListener != null)        
         {
             mOnScrollListener.onScrollStateChange(this, scrollState);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mScrollState == scrollState) {
-            //return;
-        //}
-        //mScrollState = scrollState;
-        //if (mOnScrollListener != null) {
-            //mOnScrollListener.onScrollStateChange(this, scrollState);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -1679,20 +1692,20 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     if(velocityY > 0)        
         {
             mFlingScroller.fling(0, 0, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        } //End block
+        } 
         else
         {
             mFlingScroller.fling(0, Integer.MAX_VALUE, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        } //End block
+        } 
         invalidate();
-        // ---------- Original Method ----------
-        //mPreviousScrollerY = 0;
-        //if (velocityY > 0) {
-            //mFlingScroller.fling(0, 0, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        //} else {
-            //mFlingScroller.fling(0, Integer.MAX_VALUE, 0, velocityY, 0, 0, 0, Integer.MAX_VALUE);
-        //}
-        //invalidate();
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1702,11 +1715,11 @@ for(int i = 0;i < mSelectorIndices.length;i++)
         mIncrementButton.setVisibility(INVISIBLE);
         mDecrementButton.setVisibility(INVISIBLE);
         mInputText.setVisibility(INVISIBLE);
-        // ---------- Original Method ----------
-        //mShowInputControlsAnimator.cancel();
-        //mIncrementButton.setVisibility(INVISIBLE);
-        //mDecrementButton.setVisibility(INVISIBLE);
-        //mInputText.setVisibility(INVISIBLE);
+        
+        
+        
+        
+        
     }
 
     
@@ -1717,11 +1730,11 @@ for(int i = 0;i < mSelectorIndices.length;i++)
         mInputText.setVisibility(VISIBLE);
         mShowInputControlsAnimator.setDuration(animationDuration);
         mShowInputControlsAnimator.start();
-        // ---------- Original Method ----------
-        //updateIncrementAndDecrementButtonsVisibilityState();
-        //mInputText.setVisibility(VISIBLE);
-        //mShowInputControlsAnimator.setDuration(animationDuration);
-        //mShowInputControlsAnimator.start();
+        
+        
+        
+        
+        
     }
 
     
@@ -1731,10 +1744,10 @@ for(int i = 0;i < mSelectorIndices.length;i++)
         mInputText.setVisibility(VISIBLE);
         mDimSelectorWheelAnimator.setDuration(animationDuration);
         mDimSelectorWheelAnimator.start();
-        // ---------- Original Method ----------
-        //mInputText.setVisibility(VISIBLE);
-        //mDimSelectorWheelAnimator.setDuration(animationDuration);
-        //mDimSelectorWheelAnimator.start();
+        
+        
+        
+        
     }
 
     
@@ -1743,33 +1756,34 @@ for(int i = 0;i < mSelectorIndices.length;i++)
     if(mWrapSelectorWheel || mValue < mMaxValue)        
         {
             mIncrementButton.setVisibility(VISIBLE);
-        } //End block
+        } 
         else
         {
             mIncrementButton.setVisibility(INVISIBLE);
-        } //End block
+        } 
     if(mWrapSelectorWheel || mValue > mMinValue)        
         {
             mDecrementButton.setVisibility(VISIBLE);
-        } //End block
+        } 
         else
         {
             mDecrementButton.setVisibility(INVISIBLE);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWrapSelectorWheel || mValue < mMaxValue) {
-            //mIncrementButton.setVisibility(VISIBLE);
-        //} else {
-            //mIncrementButton.setVisibility(INVISIBLE);
-        //}
-        //if (mWrapSelectorWheel || mValue > mMinValue) {
-            //mDecrementButton.setVisibility(VISIBLE);
-        //} else {
-            //mDecrementButton.setVisibility(INVISIBLE);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.527 -0400", hash_original_method = "98EC96D2E9172670F87F406C69617E1C", hash_generated_method = "E6CAB49E9703B6E82AF288E97750F591")
     private int getWrappedSelectorIndex(int selectorIndex) {
         addTaint(selectorIndex);
@@ -1778,24 +1792,24 @@ for(int i = 0;i < mSelectorIndices.length;i++)
             int var0F23B062BF9BEC85B9C6CD15072F1B8C_288139660 = (mMinValue + (selectorIndex - mMaxValue) % (mMaxValue - mMinValue) - 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198892312 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1198892312;
-        } //End block
+        } 
         else
     if(selectorIndex < mMinValue)        
         {
             int var268B90C58DD38AEE3C5A7246D37C6A63_509962366 = (mMaxValue - (mMinValue - selectorIndex) % (mMaxValue - mMinValue) + 1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459258592 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1459258592;
-        } //End block
+        } 
         int varE225E95950C9A50590D115CCDD11D3F7_1060646431 = (selectorIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1396288204 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1396288204;
-        // ---------- Original Method ----------
-        //if (selectorIndex > mMaxValue) {
-            //return mMinValue + (selectorIndex - mMaxValue) % (mMaxValue - mMinValue) - 1;
-        //} else if (selectorIndex < mMinValue) {
-            //return mMaxValue - (mMinValue - selectorIndex) % (mMaxValue - mMinValue) + 1;
-        //}
-        //return selectorIndex;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1805,24 +1819,24 @@ for(int i = 0;i < mSelectorIndices.length;i++)
 for(int i = 0;i < selectorIndices.length - 1;i++)
         {
             selectorIndices[i] = selectorIndices[i + 1];
-        } //End block
+        } 
         int nextScrollSelectorIndex = selectorIndices[selectorIndices.length - 2] + 1;
     if(mWrapSelectorWheel && nextScrollSelectorIndex > mMaxValue)        
         {
             nextScrollSelectorIndex = mMinValue;
-        } //End block
+        } 
         selectorIndices[selectorIndices.length - 1] = nextScrollSelectorIndex;
         ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
-        // ---------- Original Method ----------
-        //for (int i = 0; i < selectorIndices.length - 1; i++) {
-            //selectorIndices[i] = selectorIndices[i + 1];
-        //}
-        //int nextScrollSelectorIndex = selectorIndices[selectorIndices.length - 2] + 1;
-        //if (mWrapSelectorWheel && nextScrollSelectorIndex > mMaxValue) {
-            //nextScrollSelectorIndex = mMinValue;
-        //}
-        //selectorIndices[selectorIndices.length - 1] = nextScrollSelectorIndex;
-        //ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1832,24 +1846,24 @@ for(int i = 0;i < selectorIndices.length - 1;i++)
 for(int i = selectorIndices.length - 1;i > 0;i--)
         {
             selectorIndices[i] = selectorIndices[i - 1];
-        } //End block
+        } 
         int nextScrollSelectorIndex = selectorIndices[1] - 1;
     if(mWrapSelectorWheel && nextScrollSelectorIndex < mMinValue)        
         {
             nextScrollSelectorIndex = mMaxValue;
-        } //End block
+        } 
         selectorIndices[0] = nextScrollSelectorIndex;
         ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
-        // ---------- Original Method ----------
-        //for (int i = selectorIndices.length - 1; i > 0; i--) {
-            //selectorIndices[i] = selectorIndices[i - 1];
-        //}
-        //int nextScrollSelectorIndex = selectorIndices[1] - 1;
-        //if (mWrapSelectorWheel && nextScrollSelectorIndex < mMinValue) {
-            //nextScrollSelectorIndex = mMaxValue;
-        //}
-        //selectorIndices[0] = nextScrollSelectorIndex;
-        //ensureCachedScrollSelectorValue(nextScrollSelectorIndex);
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1861,41 +1875,41 @@ for(int i = selectorIndices.length - 1;i > 0;i--)
     if(scrollSelectorValue != null)        
         {
             return;
-        } //End block
+        } 
     if(selectorIndex < mMinValue || selectorIndex > mMaxValue)        
         {
             scrollSelectorValue = "";
-        } //End block
+        } 
         else
         {
     if(mDisplayedValues != null)            
             {
                 int displayedValueIndex = selectorIndex - mMinValue;
                 scrollSelectorValue = mDisplayedValues[displayedValueIndex];
-            } //End block
+            } 
             else
             {
                 scrollSelectorValue = formatNumber(selectorIndex);
-            } //End block
-        } //End block
+            } 
+        } 
         cache.put(selectorIndex, scrollSelectorValue);
-        // ---------- Original Method ----------
-        //SparseArray<String> cache = mSelectorIndexToStringCache;
-        //String scrollSelectorValue = cache.get(selectorIndex);
-        //if (scrollSelectorValue != null) {
-            //return;
-        //}
-        //if (selectorIndex < mMinValue || selectorIndex > mMaxValue) {
-            //scrollSelectorValue = "";
-        //} else {
-            //if (mDisplayedValues != null) {
-                //int displayedValueIndex = selectorIndex - mMinValue;
-                //scrollSelectorValue = mDisplayedValues[displayedValueIndex];
-            //} else {
-                //scrollSelectorValue = formatNumber(selectorIndex);
-            //}
-        //}
-        //cache.put(selectorIndex, scrollSelectorValue);
+        
+        
+        
+        
+            
+        
+        
+            
+        
+            
+                
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -1905,8 +1919,8 @@ for(int i = selectorIndices.length - 1;i > 0;i--)
 String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != null) ? mFormatter.format(value) : String.valueOf(value);
         varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190.addTaint(taint);
         return varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190;
-        // ---------- Original Method ----------
-        //return (mFormatter != null) ? mFormatter.format(value) : String.valueOf(value);
+        
+        
     }
 
     
@@ -1917,20 +1931,20 @@ String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != n
     if(TextUtils.isEmpty(str))        
         {
             updateInputTextView();
-        } //End block
+        } 
         else
         {
             int current = getSelectedPos(str.toString());
             changeCurrent(current);
-        } //End block
-        // ---------- Original Method ----------
-        //String str = String.valueOf(((TextView) v).getText());
-        //if (TextUtils.isEmpty(str)) {
-            //updateInputTextView();
-        //} else {
-            //int current = getSelectedPos(str.toString());
-            //changeCurrent(current);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1939,30 +1953,30 @@ String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != n
     if(mDisplayedValues == null)        
         {
             mInputText.setText(formatNumber(mValue));
-        } //End block
+        } 
         else
         {
             mInputText.setText(mDisplayedValues[mValue - mMinValue]);
-        } //End block
+        } 
         mInputText.setSelection(mInputText.getText().length());
     if(mFlingable && AccessibilityManager.getInstance(mContext).isEnabled())        
         {
             String text = mContext.getString(R.string.number_picker_increment_scroll_mode,
                     mInputText.getText());
             mInputText.setContentDescription(text);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDisplayedValues == null) {
-            //mInputText.setText(formatNumber(mValue));
-        //} else {
-            //mInputText.setText(mDisplayedValues[mValue - mMinValue]);
-        //}
-        //mInputText.setSelection(mInputText.getText().length());
-        //if (mFlingable && AccessibilityManager.getInstance(mContext).isEnabled()) {
-            //String text = mContext.getString(R.string.number_picker_increment_scroll_mode,
-                    //mInputText.getText());
-            //mInputText.setContentDescription(text);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
+        
+        
+            
+                    
+            
+        
     }
 
     
@@ -1973,11 +1987,11 @@ String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != n
     if(mOnValueChangeListener != null)        
         {
             mOnValueChangeListener.onValueChange(this, previous, mValue);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOnValueChangeListener != null) {
-            //mOnValueChangeListener.onValueChange(this, previous, mValue);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -1989,17 +2003,17 @@ String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != n
     if(mChangeCurrentByOneFromLongPressCommand == null)        
         {
             mChangeCurrentByOneFromLongPressCommand = new ChangeCurrentByOneFromLongPressCommand();
-        } //End block
+        } 
         mChangeCurrentByOneFromLongPressCommand.setIncrement(increment);
         post(mChangeCurrentByOneFromLongPressCommand);
-        // ---------- Original Method ----------
-        //mInputText.clearFocus();
-        //removeAllCallbacks();
-        //if (mChangeCurrentByOneFromLongPressCommand == null) {
-            //mChangeCurrentByOneFromLongPressCommand = new ChangeCurrentByOneFromLongPressCommand();
-        //}
-        //mChangeCurrentByOneFromLongPressCommand.setIncrement(increment);
-        //post(mChangeCurrentByOneFromLongPressCommand);
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -2008,25 +2022,25 @@ String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != n
     if(mChangeCurrentByOneFromLongPressCommand != null)        
         {
             removeCallbacks(mChangeCurrentByOneFromLongPressCommand);
-        } //End block
+        } 
     if(mAdjustScrollerCommand != null)        
         {
             removeCallbacks(mAdjustScrollerCommand);
-        } //End block
+        } 
     if(mSetSelectionCommand != null)        
         {
             removeCallbacks(mSetSelectionCommand);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mChangeCurrentByOneFromLongPressCommand != null) {
-            //removeCallbacks(mChangeCurrentByOneFromLongPressCommand);
-        //}
-        //if (mAdjustScrollerCommand != null) {
-            //removeCallbacks(mAdjustScrollerCommand);
-        //}
-        //if (mSetSelectionCommand != null) {
-            //removeCallbacks(mSetSelectionCommand);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -2040,11 +2054,11 @@ String varE2CFEEEC89DAA2D60C6B2B3DF505F6D2_1542723190 =         (mFormatter != n
                 int var20FFFD77EFBC3C0974E059C438208616_692895435 = (Integer.parseInt(value));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481597978 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1481597978;
-            } //End block
+            } 
             catch (NumberFormatException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
 for(int i = 0;i < mDisplayedValues.length;i++)
@@ -2055,40 +2069,40 @@ for(int i = 0;i < mDisplayedValues.length;i++)
                     int var7775755DB3663430902A48AF70F57DD3_1452762627 = (mMinValue + i);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646790009 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1646790009;
-                } //End block
-            } //End block
+                } 
+            } 
             try 
             {
                 int var20FFFD77EFBC3C0974E059C438208616_1185742757 = (Integer.parseInt(value));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_738134523 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_738134523;
-            } //End block
+            } 
             catch (NumberFormatException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         int varC996577FD89E2D9ACA600D3AF5442EB3_175276924 = (mMinValue);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1454066252 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1454066252;
-        // ---------- Original Method ----------
-        //if (mDisplayedValues == null) {
-            //try {
-                //return Integer.parseInt(value);
-            //} catch (NumberFormatException e) {
-            //}
-        //} else {
-            //for (int i = 0; i < mDisplayedValues.length; i++) {
-                //value = value.toLowerCase();
-                //if (mDisplayedValues[i].toLowerCase().startsWith(value)) {
-                    //return mMinValue + i;
-                //}
-            //}
-            //try {
-                //return Integer.parseInt(value);
-            //} catch (NumberFormatException e) {
-            //}
-        //}
-        //return mMinValue;
+        
+        
+            
+                
+            
+            
+        
+            
+                
+                
+                    
+                
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -2097,23 +2111,23 @@ for(int i = 0;i < mDisplayedValues.length;i++)
     if(mSetSelectionCommand == null)        
         {
             mSetSelectionCommand = new SetSelectionCommand();
-        } //End block
+        } 
         else
         {
             removeCallbacks(mSetSelectionCommand);
-        } //End block
+        } 
         mSetSelectionCommand.mSelectionStart = selectionStart;
         mSetSelectionCommand.mSelectionEnd = selectionEnd;
         post(mSetSelectionCommand);
-        // ---------- Original Method ----------
-        //if (mSetSelectionCommand == null) {
-            //mSetSelectionCommand = new SetSelectionCommand();
-        //} else {
-            //removeCallbacks(mSetSelectionCommand);
-        //}
-        //mSetSelectionCommand.mSelectionStart = selectionStart;
-        //mSetSelectionCommand.mSelectionEnd = selectionEnd;
-        //post(mSetSelectionCommand);
+        
+        
+            
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -2123,19 +2137,19 @@ for(int i = 0;i < mDisplayedValues.length;i++)
     if(mAdjustScrollerCommand == null)        
         {
             mAdjustScrollerCommand = new AdjustScrollerCommand();
-        } //End block
+        } 
         else
         {
             removeCallbacks(mAdjustScrollerCommand);
-        } //End block
+        } 
         postDelayed(mAdjustScrollerCommand, delayMillis);
-        // ---------- Original Method ----------
-        //if (mAdjustScrollerCommand == null) {
-            //mAdjustScrollerCommand = new AdjustScrollerCommand();
-        //} else {
-            //removeCallbacks(mAdjustScrollerCommand);
-        //}
-        //postDelayed(mAdjustScrollerCommand, delayMillis);
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -2144,17 +2158,18 @@ for(int i = 0;i < mDisplayedValues.length;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.535 -0400", hash_original_method = "10D9049FFA6F11A4560862F2A7A49039", hash_generated_method = "10D9049FFA6F11A4560862F2A7A49039")
         public InputTextFilter ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.535 -0400", hash_original_method = "5619839AC48FF521F5D3DA01ED2E4A22", hash_generated_method = "50CCD7BD12886D8D49BCFD64550E83B1")
         public int getInputType() {
             int var86C66DE81A691CAFE3C9CD60100D1BD9_1028374079 = (InputType.TYPE_CLASS_TEXT);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_59851590 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_59851590;
-            // ---------- Original Method ----------
-            //return InputType.TYPE_CLASS_TEXT;
+            
+            
         }
 
         
@@ -2164,8 +2179,8 @@ for(int i = 0;i < mDisplayedValues.length;i++)
             char[] var1EC7A40DC2F9CC1A4F4A61E1340D2FE7_923680019 = (DIGIT_CHARACTERS);
                         char[] var50607924ABD4C17119BAF3A1CE41C0EC_533453464 = {getTaintChar()};
             return var50607924ABD4C17119BAF3A1CE41C0EC_533453464;
-            // ---------- Original Method ----------
-            //return DIGIT_CHARACTERS;
+            
+            
         }
 
         
@@ -2185,7 +2200,7 @@ for(int i = 0;i < mDisplayedValues.length;i++)
     if(filtered == null)                
                 {
                     filtered = source.subSequence(start, end);
-                } //End block
+                } 
                 String result = String.valueOf(dest.subSequence(0, dstart)) + filtered
                         + dest.subSequence(dend, dest.length());
     if("".equals(result))                
@@ -2193,21 +2208,21 @@ for(int i = 0;i < mDisplayedValues.length;i++)
 CharSequence varDC838461EE2FA0CA4C9BBB70A15456B0_1238197892 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_1238197892.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_1238197892;
-                } //End block
+                } 
                 int val = getSelectedPos(result);
     if(val > mMaxValue)                
                 {
 CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_471624448 =                     "";
                     var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_471624448.addTaint(taint);
                     return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_471624448;
-                } //End block
+                } 
                 else
                 {
 CharSequence var59AFDF48DAC2B65C0DC9F976A34BEAF9_760730127 =                     filtered;
                     var59AFDF48DAC2B65C0DC9F976A34BEAF9_760730127.addTaint(taint);
                     return var59AFDF48DAC2B65C0DC9F976A34BEAF9_760730127;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 CharSequence filtered = String.valueOf(source.subSequence(start, end));
@@ -2216,7 +2231,7 @@ CharSequence var59AFDF48DAC2B65C0DC9F976A34BEAF9_760730127 =                    
 CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_485385131 =                     "";
                     var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_485385131.addTaint(taint);
                     return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_485385131;
-                } //End block
+                } 
                 String result = String.valueOf(dest.subSequence(0, dstart)) + filtered
                         + dest.subSequence(dend, dest.length());
                 String str = String.valueOf(result).toLowerCase();
@@ -2229,14 +2244,14 @@ for(String val : mDisplayedValues)
 CharSequence varECD1DA29E5B77EC283004BD9A32C44C9_1834903277 =                         val.subSequence(dstart, val.length());
                         varECD1DA29E5B77EC283004BD9A32C44C9_1834903277.addTaint(taint);
                         return varECD1DA29E5B77EC283004BD9A32C44C9_1834903277;
-                    } //End block
-                } //End block
+                    } 
+                } 
 CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
                 var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043.addTaint(taint);
                 return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -2255,15 +2270,15 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.538 -0400", hash_original_method = "8A1B763782C13D7A531CCCB7905DBC5E", hash_generated_method = "8A1B763782C13D7A531CCCB7905DBC5E")
         public SetSelectionCommand ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.538 -0400", hash_original_method = "5A9CF76A42C671BAE659DDDD324A19D9", hash_generated_method = "D5DE829BC4A9BD93C1BA19F296BB6266")
         public void run() {
             mInputText.setSelection(mSelectionStart, mSelectionEnd);
-            // ---------- Original Method ----------
-            //mInputText.setSelection(mSelectionStart, mSelectionEnd);
+            
+            
         }
 
         
@@ -2276,7 +2291,7 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.538 -0400", hash_original_method = "04A50735AF7565EFEB09DB8389B3EF59", hash_generated_method = "04A50735AF7565EFEB09DB8389B3EF59")
         public AdjustScrollerCommand ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2288,27 +2303,27 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
                 updateInputTextView();
                 showInputControls(mShowInputControlsAnimimationDuration);
                 return;
-            } //End block
+            } 
             int deltaY = mInitialScrollOffset - mCurrentScrollOffset;
     if(Math.abs(deltaY) > mSelectorElementHeight / 2)            
             {
                 deltaY += (deltaY > 0) ? -mSelectorElementHeight : mSelectorElementHeight;
-            } //End block
+            } 
             mAdjustScroller.startScroll(0, 0, 0, deltaY, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
             invalidate();
-            // ---------- Original Method ----------
-            //mPreviousScrollerY = 0;
-            //if (mInitialScrollOffset == mCurrentScrollOffset) {
-                //updateInputTextView();
-                //showInputControls(mShowInputControlsAnimimationDuration);
-                //return;
-            //}
-            //int deltaY = mInitialScrollOffset - mCurrentScrollOffset;
-            //if (Math.abs(deltaY) > mSelectorElementHeight / 2) {
-                //deltaY += (deltaY > 0) ? -mSelectorElementHeight : mSelectorElementHeight;
-            //}
-            //mAdjustScroller.startScroll(0, 0, 0, deltaY, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
-            //invalidate();
+            
+            
+            
+                
+                
+                
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -2324,15 +2339,16 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.539 -0400", hash_original_method = "A263DA149B2C322986CF6F1865703F44", hash_generated_method = "A263DA149B2C322986CF6F1865703F44")
         public ChangeCurrentByOneFromLongPressCommand ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:08.540 -0400", hash_original_method = "ED1739B7A0ACAE655C07ED8C0ABABF1C", hash_generated_method = "3E122DEB3F2DDEA67EBDA1CC64C07EBB")
         private void setIncrement(boolean increment) {
             mIncrement = increment;
-            // ---------- Original Method ----------
-            //mIncrement = increment;
+            
+            
         }
 
         
@@ -2340,9 +2356,9 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_8904043 =                 "";
         public void run() {
             changeCurrentByOne(mIncrement);
             postDelayed(this, mLongPressUpdateInterval);
-            // ---------- Original Method ----------
-            //changeCurrentByOne(mIncrement);
-            //postDelayed(this, mLongPressUpdateInterval);
+            
+            
+            
         }
 
         

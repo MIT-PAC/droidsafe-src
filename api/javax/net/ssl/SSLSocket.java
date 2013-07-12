@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public abstract class SSLSocket extends Socket {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:09.961 -0400", hash_original_method = "65A9306BD8ABF19429A09B81D2DB8751", hash_generated_method = "EAC140E24487698B2C738A891B9338D9")
     protected  SSLSocket() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public abstract class SSLSocket extends Socket {
         super(host, port);
         addTaint(port);
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -31,7 +31,7 @@ public abstract class SSLSocket extends Socket {
         super(address, port);
         addTaint(port);
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -42,7 +42,7 @@ public abstract class SSLSocket extends Socket {
         addTaint(clientAddress.getTaint());
         addTaint(port);
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -53,7 +53,7 @@ public abstract class SSLSocket extends Socket {
         addTaint(clientAddress.getTaint());
         addTaint(port);
         addTaint(address.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,8 +63,8 @@ public abstract class SSLSocket extends Socket {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1118327563 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1118327563.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1118327563;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -74,8 +74,8 @@ public abstract class SSLSocket extends Socket {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_686745982 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_686745982.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_686745982;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -143,13 +143,13 @@ public abstract class SSLSocket extends Socket {
 SSLParameters var74E4690D9F2A026504928C017944E149_1964446758 =         p;
         var74E4690D9F2A026504928C017944E149_1964446758.addTaint(taint);
         return var74E4690D9F2A026504928C017944E149_1964446758;
-        // ---------- Original Method ----------
-        //SSLParameters p = new SSLParameters();
-        //p.setCipherSuites(getEnabledCipherSuites());
-        //p.setProtocols(getEnabledProtocols());
-        //p.setNeedClientAuth(getNeedClientAuth());
-        //p.setWantClientAuth(getWantClientAuth());
-        //return p;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -160,41 +160,41 @@ SSLParameters var74E4690D9F2A026504928C017944E149_1964446758 =         p;
     if(cipherSuites != null)        
         {
             setEnabledCipherSuites(cipherSuites);
-        } //End block
+        } 
         String[] protocols = p.getProtocols();
     if(protocols != null)        
         {
             setEnabledProtocols(protocols);
-        } //End block
+        } 
     if(p.getNeedClientAuth())        
         {
             setNeedClientAuth(true);
-        } //End block
+        } 
         else
     if(p.getWantClientAuth())        
         {
             setWantClientAuth(true);
-        } //End block
+        } 
         else
         {
             setWantClientAuth(false);
-        } //End block
-        // ---------- Original Method ----------
-        //String[] cipherSuites = p.getCipherSuites();
-        //if (cipherSuites != null) {
-            //setEnabledCipherSuites(cipherSuites);
-        //}
-        //String[] protocols = p.getProtocols();
-        //if (protocols != null) {
-            //setEnabledProtocols(protocols);
-        //}
-        //if (p.getNeedClientAuth()) {
-            //setNeedClientAuth(true);
-        //} else if (p.getWantClientAuth()) {
-            //setWantClientAuth(true);
-        //} else {
-            //setWantClientAuth(false);
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.296 -0400", hash_original_method = "8C7B174379DD3B2C843811B1130834BD", hash_generated_method = "151203C88A4AC41E68C2D3AED6B6A179")
     public  ArrayDeque() {
         elements = (E[]) new Object[16];
-        // ---------- Original Method ----------
-        //elements = (E[]) new Object[16];
+        
+        
     }
 
     
@@ -29,8 +29,8 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     public  ArrayDeque(int numElements) {
         addTaint(numElements);
         allocateElements(numElements);
-        // ---------- Original Method ----------
-        //allocateElements(numElements);
+        
+        
     }
 
     
@@ -39,12 +39,13 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         addTaint(c.getTaint());
         allocateElements(c.size());
         addAll(c);
-        // ---------- Original Method ----------
-        //allocateElements(c.size());
-        //addAll(c);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.298 -0400", hash_original_method = "86AF4C096D752C20A8CB0D886E79B7FB", hash_generated_method = "7880F76458629820F33A005C779B0222")
     private void allocateElements(int numElements) {
         addTaint(numElements);
@@ -60,25 +61,26 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
             initialCapacity++;
     if(initialCapacity < 0)            
             initialCapacity >>>= 1;
-        } //End block
+        } 
         elements = (E[]) new Object[initialCapacity];
-        // ---------- Original Method ----------
-        //int initialCapacity = MIN_INITIAL_CAPACITY;
-        //if (numElements >= initialCapacity) {
-            //initialCapacity = numElements;
-            //initialCapacity |= (initialCapacity >>>  1);
-            //initialCapacity |= (initialCapacity >>>  2);
-            //initialCapacity |= (initialCapacity >>>  4);
-            //initialCapacity |= (initialCapacity >>>  8);
-            //initialCapacity |= (initialCapacity >>> 16);
-            //initialCapacity++;
-            //if (initialCapacity < 0)   
-                //initialCapacity >>>= 1;
-        //}
-        //elements = (E[]) new Object[initialCapacity];
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.300 -0400", hash_original_method = "35225802D7F18BE5673FDDFDE4B70B2E", hash_generated_method = "E4219F5A662CDA7DF3953A3D54FFFB1D")
     private void doubleCapacity() {
         int p = head;
@@ -97,20 +99,20 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
         elements = (E[])a;
         head = 0;
         tail = n;
-        // ---------- Original Method ----------
-        //assert head == tail;
-        //int p = head;
-        //int n = elements.length;
-        //int r = n - p;
-        //int newCapacity = n << 1;
-        //if (newCapacity < 0)
-            //throw new IllegalStateException("Sorry, deque too big");
-        //Object[] a = new Object[newCapacity];
-        //System.arraycopy(elements, p, a, 0, r);
-        //System.arraycopy(elements, 0, a, r, p);
-        //elements = (E[])a;
-        //head = 0;
-        //tail = n;
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -120,26 +122,26 @@ public class ArrayDeque<E> extends AbstractCollection<E> implements Deque<E>, Cl
     if(head < tail)        
         {
             System.arraycopy(elements, head, a, 0, size());
-        } //End block
+        } 
         else
     if(head > tail)        
         {
             int headPortionLen = elements.length - head;
             System.arraycopy(elements, head, a, 0, headPortionLen);
             System.arraycopy(elements, 0, a, headPortionLen, tail);
-        } //End block
+        } 
 T[] var3F5343BF1D849954A73F0BB303805FFD_1355809722 =         a;
         var3F5343BF1D849954A73F0BB303805FFD_1355809722.addTaint(taint);
         return var3F5343BF1D849954A73F0BB303805FFD_1355809722;
-        // ---------- Original Method ----------
-        //if (head < tail) {
-            //System.arraycopy(elements, head, a, 0, size());
-        //} else if (head > tail) {
-            //int headPortionLen = elements.length - head;
-            //System.arraycopy(elements, head, a, 0, headPortionLen);
-            //System.arraycopy(elements, 0, a, headPortionLen, tail);
-        //}
-        //return a;
+        
+        
+            
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -154,12 +156,12 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1355809722 =         a;
         elements[head = (head - 1) & (elements.length - 1)] = e;
     if(head == tail)        
         doubleCapacity();
-        // ---------- Original Method ----------
-        //if (e == null)
-            //throw new NullPointerException();
-        //elements[head = (head - 1) & (elements.length - 1)] = e;
-        //if (head == tail)
-            //doubleCapacity();
+        
+        
+            
+        
+        
+            
     }
 
     
@@ -174,12 +176,12 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1355809722 =         a;
         elements[tail] = e;
     if((tail = (tail + 1) & (elements.length - 1)) == head)        
         doubleCapacity();
-        // ---------- Original Method ----------
-        //if (e == null)
-            //throw new NullPointerException();
-        //elements[tail] = e;
-        //if ( (tail = (tail + 1) & (elements.length - 1)) == head)
-            //doubleCapacity();
+        
+        
+            
+        
+        
+            
     }
 
     
@@ -190,9 +192,9 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1355809722 =         a;
         boolean varB326B5062B2F0E69046810717534CB09_1224718487 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_20518279 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_20518279;
-        // ---------- Original Method ----------
-        //addFirst(e);
-        //return true;
+        
+        
+        
     }
 
     
@@ -203,9 +205,9 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1355809722 =         a;
         boolean varB326B5062B2F0E69046810717534CB09_517003688 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_195296799 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_195296799;
-        // ---------- Original Method ----------
-        //addLast(e);
-        //return true;
+        
+        
+        
     }
 
     
@@ -221,11 +223,11 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1355809722 =         a;
 E varEA5659DA512DECF23E6D37EE8060D074_1479077215 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_1479077215.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_1479077215;
-        // ---------- Original Method ----------
-        //E x = pollFirst();
-        //if (x == null)
-            //throw new NoSuchElementException();
-        //return x;
+        
+        
+        
+            
+        
     }
 
     
@@ -241,11 +243,11 @@ E varEA5659DA512DECF23E6D37EE8060D074_1479077215 =         x;
 E varEA5659DA512DECF23E6D37EE8060D074_1780918085 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_1780918085.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_1780918085;
-        // ---------- Original Method ----------
-        //E x = pollLast();
-        //if (x == null)
-            //throw new NoSuchElementException();
-        //return x;
+        
+        
+        
+            
+        
     }
 
     
@@ -264,14 +266,14 @@ E var540C13E9E156B687226421B24F2DF178_1000308713 =         null;
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1312680936 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1312680936.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1312680936;
-        // ---------- Original Method ----------
-        //int h = head;
-        //E result = elements[h];
-        //if (result == null)
-            //return null;
-        //elements[h] = null;
-        //head = (h + 1) & (elements.length - 1);
-        //return result;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -290,14 +292,14 @@ E var540C13E9E156B687226421B24F2DF178_102130178 =         null;
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1544972162 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1544972162.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1544972162;
-        // ---------- Original Method ----------
-        //int t = (tail - 1) & (elements.length - 1);
-        //E result = elements[t];
-        //if (result == null)
-            //return null;
-        //elements[t] = null;
-        //tail = t;
-        //return result;
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -313,11 +315,11 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1544972162 =         result;
 E varEA5659DA512DECF23E6D37EE8060D074_209807203 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_209807203.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_209807203;
-        // ---------- Original Method ----------
-        //E x = elements[head];
-        //if (x == null)
-            //throw new NoSuchElementException();
-        //return x;
+        
+        
+        
+            
+        
     }
 
     
@@ -333,11 +335,11 @@ E varEA5659DA512DECF23E6D37EE8060D074_209807203 =         x;
 E varEA5659DA512DECF23E6D37EE8060D074_572768200 =         x;
         varEA5659DA512DECF23E6D37EE8060D074_572768200.addTaint(taint);
         return varEA5659DA512DECF23E6D37EE8060D074_572768200;
-        // ---------- Original Method ----------
-        //E x = elements[(tail - 1) & (elements.length - 1)];
-        //if (x == null)
-            //throw new NoSuchElementException();
-        //return x;
+        
+        
+        
+            
+        
     }
 
     
@@ -346,8 +348,8 @@ E varEA5659DA512DECF23E6D37EE8060D074_572768200 =         x;
 E var297F504D134443EA5FCC106634CF91BA_750801766 =         elements[head];
         var297F504D134443EA5FCC106634CF91BA_750801766.addTaint(taint);
         return var297F504D134443EA5FCC106634CF91BA_750801766;
-        // ---------- Original Method ----------
-        //return elements[head];
+        
+        
     }
 
     
@@ -356,11 +358,12 @@ E var297F504D134443EA5FCC106634CF91BA_750801766 =         elements[head];
 E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & (elements.length - 1)];
         varF0B2874D5567D866BA71F92F44C6276F_656722780.addTaint(taint);
         return varF0B2874D5567D866BA71F92F44C6276F_656722780;
-        // ---------- Original Method ----------
-        //return elements[(tail - 1) & (elements.length - 1)];
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.306 -0400", hash_original_method = "2655E37A6129D552BDB18D712FBDBB78", hash_generated_method = "4CA33911EB983BAD4AC0D2149A8C8D4C")
     public boolean removeFirstOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -382,29 +385,30 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
                 boolean varB326B5062B2F0E69046810717534CB09_1285166608 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_354638252 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_354638252;
-            } //End block
+            } 
             i = (i + 1) & mask;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2115816786 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_691061835 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_691061835;
-        // ---------- Original Method ----------
-        //if (o == null)
-            //return false;
-        //int mask = elements.length - 1;
-        //int i = head;
-        //E x;
-        //while ( (x = elements[i]) != null) {
-            //if (o.equals(x)) {
-                //delete(i);
-                //return true;
-            //}
-            //i = (i + 1) & mask;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+        
+            
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.306 -0400", hash_original_method = "67D061371E16CEF717EF2A58AA73F6CB", hash_generated_method = "96592FC28524D7AC28BAD8470F219F45")
     public boolean removeLastOccurrence(Object o) {
         addTaint(o.getTaint());
@@ -426,26 +430,26 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
                 boolean varB326B5062B2F0E69046810717534CB09_360417096 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_96372536 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_96372536;
-            } //End block
+            } 
             i = (i - 1) & mask;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_838986932 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1245300552 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1245300552;
-        // ---------- Original Method ----------
-        //if (o == null)
-            //return false;
-        //int mask = elements.length - 1;
-        //int i = (tail - 1) & mask;
-        //E x;
-        //while ( (x = elements[i]) != null) {
-            //if (o.equals(x)) {
-                //delete(i);
-                //return true;
-            //}
-            //i = (i - 1) & mask;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+        
+            
+                
+                
+            
+            
+        
+        
     }
 
     
@@ -456,9 +460,9 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
         boolean varB326B5062B2F0E69046810717534CB09_886787946 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_692006905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_692006905;
-        // ---------- Original Method ----------
-        //addLast(e);
-        //return true;
+        
+        
+        
     }
 
     
@@ -468,8 +472,8 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
         boolean varE4235613B1D945AEF4FDF4363C71A8BF_1330762748 = (offerLast(e));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1879092226 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1879092226;
-        // ---------- Original Method ----------
-        //return offerLast(e);
+        
+        
     }
 
     
@@ -478,8 +482,8 @@ E varF0B2874D5567D866BA71F92F44C6276F_656722780 =         elements[(tail - 1) & 
 E var2157E264C867DE2EF0CC4E40F6B9582B_1276253779 =         removeFirst();
         var2157E264C867DE2EF0CC4E40F6B9582B_1276253779.addTaint(taint);
         return var2157E264C867DE2EF0CC4E40F6B9582B_1276253779;
-        // ---------- Original Method ----------
-        //return removeFirst();
+        
+        
     }
 
     
@@ -488,8 +492,8 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_1276253779 =         removeFirst();
 E var268557EBF9358B7227A2055747F14D9D_125865923 =         pollFirst();
         var268557EBF9358B7227A2055747F14D9D_125865923.addTaint(taint);
         return var268557EBF9358B7227A2055747F14D9D_125865923;
-        // ---------- Original Method ----------
-        //return pollFirst();
+        
+        
     }
 
     
@@ -498,8 +502,8 @@ E var268557EBF9358B7227A2055747F14D9D_125865923 =         pollFirst();
 E var9C3B53F949FCC17872659181725745DF_124020136 =         getFirst();
         var9C3B53F949FCC17872659181725745DF_124020136.addTaint(taint);
         return var9C3B53F949FCC17872659181725745DF_124020136;
-        // ---------- Original Method ----------
-        //return getFirst();
+        
+        
     }
 
     
@@ -508,8 +512,8 @@ E var9C3B53F949FCC17872659181725745DF_124020136 =         getFirst();
 E var217A98F40A2036F4314C54A2E490EB26_964362583 =         peekFirst();
         var217A98F40A2036F4314C54A2E490EB26_964362583.addTaint(taint);
         return var217A98F40A2036F4314C54A2E490EB26_964362583;
-        // ---------- Original Method ----------
-        //return peekFirst();
+        
+        
     }
 
     
@@ -517,8 +521,8 @@ E var217A98F40A2036F4314C54A2E490EB26_964362583 =         peekFirst();
     public void push(E e) {
         addTaint(e.getTaint());
         addFirst(e);
-        // ---------- Original Method ----------
-        //addFirst(e);
+        
+        
     }
 
     
@@ -527,22 +531,24 @@ E var217A98F40A2036F4314C54A2E490EB26_964362583 =         peekFirst();
 E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
         var2157E264C867DE2EF0CC4E40F6B9582B_700236210.addTaint(taint);
         return var2157E264C867DE2EF0CC4E40F6B9582B_700236210;
-        // ---------- Original Method ----------
-        //return removeFirst();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.308 -0400", hash_original_method = "BBF79E0ADE5790277B99F1D7AA727B20", hash_generated_method = "1D9C6F57BCDE2C7294D7BB32ACA5DF67")
     private void checkInvariants() {
-        // ---------- Original Method ----------
-        //assert elements[tail] == null;
-        //assert head == tail ? elements[head] == null :
-            //(elements[head] != null &&
-             //elements[(tail - 1) & (elements.length - 1)] != null);
-        //assert elements[(head - 1) & (elements.length - 1)] == null;
+        
+        
+        
+            
+             
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.309 -0400", hash_original_method = "6B28B7CDDDC5837E98E272935A4DA74A", hash_generated_method = "687DD7CBA6DEC3A1EE5BFD52B31E6E12")
     private boolean delete(int i) {
         addTaint(i);
@@ -564,59 +570,61 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
     if(h <= i)            
             {
                 System.arraycopy(elements, h, elements, h + 1, front);
-            } //End block
+            } 
             else
             {
                 System.arraycopy(elements, 0, elements, 1, i);
                 elements[0] = elements[mask];
                 System.arraycopy(elements, h, elements, h + 1, mask - h);
-            } //End block
+            } 
             elements[h] = null;
             head = (h + 1) & mask;
             boolean var68934A3E9455FA72420237EB05902327_646068009 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1378178296 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1378178296;
-        } //End block
+        } 
         else
         {
     if(i < t)            
             {
                 System.arraycopy(elements, i + 1, elements, i, back);
                 tail = t - 1;
-            } //End block
+            } 
             else
             {
                 System.arraycopy(elements, i + 1, elements, i, mask - i);
                 elements[mask] = elements[0];
                 System.arraycopy(elements, 1, elements, 0, t);
                 tail = (t - 1) & mask;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1262724157 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068617956 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068617956;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.310 -0400", hash_original_method = "D58AA3C48B1B36CF35B203F4633D4120", hash_generated_method = "E0EDD6CA4D052B0929AC0E990AAB3BAC")
     public int size() {
         int var53753E05B8FB8484B39EF846CAB8CEDF_1201820863 = ((tail - head) & (elements.length - 1));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023654853 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1023654853;
-        // ---------- Original Method ----------
-        //return (tail - head) & (elements.length - 1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.310 -0400", hash_original_method = "029A9450FF46747D2F1AB4761630FBFA", hash_generated_method = "BC30E759B0D249D83F0AAA32E564B760")
     public boolean isEmpty() {
         boolean varB2DD0C25DFB38C2E9B584FF5E8E2A5EA_193647773 = (head == tail);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1097501797 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1097501797;
-        // ---------- Original Method ----------
-        //return head == tail;
+        
+        
     }
 
     
@@ -625,8 +633,8 @@ E var2157E264C867DE2EF0CC4E40F6B9582B_700236210 =         removeFirst();
 Iterator<E> varEE02B56C0952177FF7B9B6EF5EC917CC_952980723 =         new DeqIterator();
         varEE02B56C0952177FF7B9B6EF5EC917CC_952980723.addTaint(taint);
         return varEE02B56C0952177FF7B9B6EF5EC917CC_952980723;
-        // ---------- Original Method ----------
-        //return new DeqIterator();
+        
+        
     }
 
     
@@ -635,11 +643,12 @@ Iterator<E> varEE02B56C0952177FF7B9B6EF5EC917CC_952980723 =         new DeqItera
 Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new DescendingIterator();
         var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938.addTaint(taint);
         return var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938;
-        // ---------- Original Method ----------
-        //return new DescendingIterator();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.311 -0400", hash_original_method = "76B0F415E6F814FE548D14BC6D5843EE", hash_generated_method = "E038C062F25BB7D737F7DD2A989AAD0D")
     public boolean contains(Object o) {
         addTaint(o.getTaint());
@@ -662,36 +671,38 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1853442314;
             }
             i = (i + 1) & mask;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_82637768 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1833183270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1833183270;
-        // ---------- Original Method ----------
-        //if (o == null)
-            //return false;
-        //int mask = elements.length - 1;
-        //int i = head;
-        //E x;
-        //while ( (x = elements[i]) != null) {
-            //if (o.equals(x))
-                //return true;
-            //i = (i + 1) & mask;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+        
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.311 -0400", hash_original_method = "953726349F424E37042C19BD0C0A52B8", hash_generated_method = "44B444A20F0FECF1187C62BD5533D503")
     public boolean remove(Object o) {
         addTaint(o.getTaint());
         boolean var6E37986A993A2A916076A1C4367014FB_1938411874 = (removeFirstOccurrence(o));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1107614956 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1107614956;
-        // ---------- Original Method ----------
-        //return removeFirstOccurrence(o);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.312 -0400", hash_original_method = "AB065CB5BA1D923138DE6DFF9B806E2B", hash_generated_method = "3BCD3849948858A40A885C9B955FBE53")
     public void clear() {
         int h = head;
@@ -705,31 +716,32 @@ Iterator<E> var79122F73E4C010A8E7103B4CCD1BD3AA_1630821938 =         new Descend
                 {
                     elements[i] = null;
                     i = (i + 1) & mask;
-                } //End block
+                } 
 } while (i != t);
-        } //End block
-        // ---------- Original Method ----------
-        //int h = head;
-        //int t = tail;
-        //if (h != t) { 
-            //head = tail = 0;
-            //int i = h;
-            //int mask = elements.length - 1;
-            //do {
-                //elements[i] = null;
-                //i = (i + 1) & mask;
-            //} while (i != t);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.312 -0400", hash_original_method = "33D76C50C1E8C0374668B986897D9D9E", hash_generated_method = "EECD777348082AE7032A970F05F6D9E3")
     public Object[] toArray() {
 Object[] var6FD0027538EDD1DC845C98DBD6A35104_1052444438 =         copyElements(new Object[size()]);
         var6FD0027538EDD1DC845C98DBD6A35104_1052444438.addTaint(taint);
         return var6FD0027538EDD1DC845C98DBD6A35104_1052444438;
-        // ---------- Original Method ----------
-        //return copyElements(new Object[size()]);
+        
+        
     }
 
     
@@ -746,15 +758,15 @@ Object[] var6FD0027538EDD1DC845C98DBD6A35104_1052444438 =         copyElements(n
 T[] var3F5343BF1D849954A73F0BB303805FFD_420248428 =         a;
         var3F5343BF1D849954A73F0BB303805FFD_420248428.addTaint(taint);
         return var3F5343BF1D849954A73F0BB303805FFD_420248428;
-        // ---------- Original Method ----------
-        //int size = size();
-        //if (a.length < size)
-            //a = (T[])java.lang.reflect.Array.newInstance(
-                    //a.getClass().getComponentType(), size);
-        //copyElements(a);
-        //if (a.length > size)
-            //a[size] = null;
-        //return a;
+        
+        
+        
+            
+                    
+        
+        
+            
+        
     }
 
     
@@ -767,24 +779,25 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_420248428 =         a;
 ArrayDeque<E> varDC838461EE2FA0CA4C9BBB70A15456B0_528796972 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_528796972.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_528796972;
-        } //End block
+        } 
         catch (CloneNotSupportedException e)
         {
             AssertionError varA81442E36297E737EB908877E58260E8_1453137482 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_1453137482.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_1453137482;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //ArrayDeque<E> result = (ArrayDeque<E>) super.clone();
-            //result.elements = Arrays.copyOf(elements, elements.length);
-            //return result;
-        //} catch (CloneNotSupportedException e) {
-            //throw new AssertionError();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "5A84D35A2C5A040CC18139106D665D0E", hash_generated_method = "93EB7642BA8BB24E3533817E9BA3E16B")
     private void writeObject(ObjectOutputStream s) throws IOException {
         addTaint(s.getTaint());
@@ -793,15 +806,16 @@ ArrayDeque<E> varDC838461EE2FA0CA4C9BBB70A15456B0_528796972 =             result
         int mask = elements.length - 1;
 for(int i = head;i != tail;i = (i + 1) & mask)
         s.writeObject(elements[i]);
-        // ---------- Original Method ----------
-        //s.defaultWriteObject();
-        //s.writeInt(size());
-        //int mask = elements.length - 1;
-        //for (int i = head; i != tail; i = (i + 1) & mask)
-            //s.writeObject(elements[i]);
+        
+        
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "ABF871D717FCC2D87CA02E500CE54CBF", hash_generated_method = "247F5C6B322A797807EB5831518B08F7")
     private void readObject(ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
@@ -811,14 +825,14 @@ for(int i = head;i != tail;i = (i + 1) & mask)
         tail = size;
 for(int i = 0;i < size;i++)
         elements[i] = (E)s.readObject();
-        // ---------- Original Method ----------
-        //s.defaultReadObject();
-        //int size = s.readInt();
-        //allocateElements(size);
-        //head = 0;
-        //tail = size;
-        //for (int i = 0; i < size; i++)
-            //elements[i] = (E)s.readObject();
+        
+        
+        
+        
+        
+        
+        
+            
     }
 
     
@@ -836,17 +850,18 @@ for(int i = 0;i < size;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "8F728FEBD0A799A5BB08E38FDCDEB966", hash_generated_method = "8F728FEBD0A799A5BB08E38FDCDEB966")
         public DeqIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.314 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "3A79DAD59E65E3487D948FA6BCEA0772")
         public boolean hasNext() {
             boolean varBB2FFB801149738DC5BBBE92D097852F_1962929142 = (cursor != fence);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837565780 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837565780;
-            // ---------- Original Method ----------
-            //return cursor != fence;
+            
+            
         }
 
         
@@ -870,15 +885,15 @@ for(int i = 0;i < size;i++)
 E varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077;
-            // ---------- Original Method ----------
-            //if (cursor == fence)
-                //throw new NoSuchElementException();
-            //E result = elements[cursor];
-            //if (tail != fence || result == null)
-                //throw new ConcurrentModificationException();
-            //lastRet = cursor;
-            //cursor = (cursor + 1) & (elements.length - 1);
-            //return result;
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -894,16 +909,16 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077 =             result;
             {
                 cursor = (cursor - 1) & (elements.length - 1);
                 fence = tail;
-            } //End block
+            } 
             lastRet = -1;
-            // ---------- Original Method ----------
-            //if (lastRet < 0)
-                //throw new IllegalStateException();
-            //if (delete(lastRet)) { 
-                //cursor = (cursor - 1) & (elements.length - 1);
-                //fence = tail;
-            //}
-            //lastRet = -1;
+            
+            
+                
+            
+                
+                
+            
+            
         }
 
         
@@ -925,17 +940,18 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077 =             result;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.316 -0400", hash_original_method = "EFD23C54297A65B9A603FACFE0E34AA6", hash_generated_method = "EFD23C54297A65B9A603FACFE0E34AA6")
         public DescendingIterator ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:01.316 -0400", hash_original_method = "8D6FDA09A878582CCF6BFDDE96A3C673", hash_generated_method = "6365C8E9384BF696C7C4D56DF1C27B7F")
         public boolean hasNext() {
             boolean varBB2FFB801149738DC5BBBE92D097852F_1578215704 = (cursor != fence);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_868137100 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_868137100;
-            // ---------- Original Method ----------
-            //return cursor != fence;
+            
+            
         }
 
         
@@ -959,15 +975,15 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_2002252077 =             result;
 E varDC838461EE2FA0CA4C9BBB70A15456B0_1937113322 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1937113322.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1937113322;
-            // ---------- Original Method ----------
-            //if (cursor == fence)
-                //throw new NoSuchElementException();
-            //cursor = (cursor - 1) & (elements.length - 1);
-            //E result = elements[cursor];
-            //if (head != fence || result == null)
-                //throw new ConcurrentModificationException();
-            //lastRet = cursor;
-            //return result;
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -983,16 +999,16 @@ E varDC838461EE2FA0CA4C9BBB70A15456B0_1937113322 =             result;
             {
                 cursor = (cursor + 1) & (elements.length - 1);
                 fence = head;
-            } //End block
+            } 
             lastRet = -1;
-            // ---------- Original Method ----------
-            //if (lastRet < 0)
-                //throw new IllegalStateException();
-            //if (!delete(lastRet)) {
-                //cursor = (cursor + 1) & (elements.length - 1);
-                //fence = head;
-            //}
-            //lastRet = -1;
+            
+            
+                
+            
+                
+                
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,22 +23,22 @@ public class OpenSSLServerSocketFactoryImpl extends javax.net.ssl.SSLServerSocke
         {
             this.sslParameters = SSLParametersImpl.getDefault();
             this.sslParameters.setUseClientMode(false);
-        } //End block
+        } 
         catch (KeyManagementException e)
         {
             instantiationException =
                 new IOException("Delayed instantiation exception:");
             instantiationException.initCause(e);
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //this.sslParameters = SSLParametersImpl.getDefault();
-            //this.sslParameters.setUseClientMode(false);
-        //} catch (KeyManagementException e) {
-            //instantiationException =
-                //new IOException("Delayed instantiation exception:");
-            //instantiationException.initCause(e);
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+                
+            
+        
     }
 
     
@@ -46,9 +46,9 @@ public class OpenSSLServerSocketFactoryImpl extends javax.net.ssl.SSLServerSocke
     public  OpenSSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
         this.sslParameters = (SSLParametersImpl) sslParameters.clone();
         this.sslParameters.setUseClientMode(false);
-        // ---------- Original Method ----------
-        //this.sslParameters = (SSLParametersImpl) sslParameters.clone();
-        //this.sslParameters.setUseClientMode(false);
+        
+        
+        
     }
 
     
@@ -57,8 +57,8 @@ public class OpenSSLServerSocketFactoryImpl extends javax.net.ssl.SSLServerSocke
 String[] var82D10C47ABE9DD1DDD091B4BC41FC622_1639390946 =         NativeCrypto.getDefaultCipherSuites();
         var82D10C47ABE9DD1DDD091B4BC41FC622_1639390946.addTaint(taint);
         return var82D10C47ABE9DD1DDD091B4BC41FC622_1639390946;
-        // ---------- Original Method ----------
-        //return NativeCrypto.getDefaultCipherSuites();
+        
+        
     }
 
     
@@ -67,8 +67,8 @@ String[] var82D10C47ABE9DD1DDD091B4BC41FC622_1639390946 =         NativeCrypto.g
 String[] var0633111015CD199BA68A1C170162F6EA_1816348113 =         NativeCrypto.getSupportedCipherSuites();
         var0633111015CD199BA68A1C170162F6EA_1816348113.addTaint(taint);
         return var0633111015CD199BA68A1C170162F6EA_1816348113;
-        // ---------- Original Method ----------
-        //return NativeCrypto.getSupportedCipherSuites();
+        
+        
     }
 
     
@@ -77,8 +77,8 @@ String[] var0633111015CD199BA68A1C170162F6EA_1816348113 =         NativeCrypto.g
 ServerSocket varAB777A02E5E4EC7645631A6D6DB618E3_2005853386 =         new OpenSSLServerSocketImpl((SSLParametersImpl) sslParameters.clone());
         varAB777A02E5E4EC7645631A6D6DB618E3_2005853386.addTaint(taint);
         return varAB777A02E5E4EC7645631A6D6DB618E3_2005853386;
-        // ---------- Original Method ----------
-        //return new OpenSSLServerSocketImpl((SSLParametersImpl) sslParameters.clone());
+        
+        
     }
 
     
@@ -88,8 +88,8 @@ ServerSocket varAB777A02E5E4EC7645631A6D6DB618E3_2005853386 =         new OpenSS
 ServerSocket varE20C8707972AA2E55EA91779119BA68D_1935371496 =         new OpenSSLServerSocketImpl(port, (SSLParametersImpl) sslParameters.clone());
         varE20C8707972AA2E55EA91779119BA68D_1935371496.addTaint(taint);
         return varE20C8707972AA2E55EA91779119BA68D_1935371496;
-        // ---------- Original Method ----------
-        //return new OpenSSLServerSocketImpl(port, (SSLParametersImpl) sslParameters.clone());
+        
+        
     }
 
     
@@ -102,10 +102,10 @@ ServerSocket varCFB86758BDF5C04809F455AEB84F876F_1700508176 =         new OpenSS
                                            (SSLParametersImpl) sslParameters.clone());
         varCFB86758BDF5C04809F455AEB84F876F_1700508176.addTaint(taint);
         return varCFB86758BDF5C04809F455AEB84F876F_1700508176;
-        // ---------- Original Method ----------
-        //return new OpenSSLServerSocketImpl(port,
-                                           //backlog,
-                                           //(SSLParametersImpl) sslParameters.clone());
+        
+        
+                                           
+                                           
     }
 
     
@@ -122,11 +122,11 @@ ServerSocket var2B649B4E6F13F47CF6D59BBABD7DE65E_1907216615 =         new OpenSS
                                            (SSLParametersImpl) sslParameters.clone());
         var2B649B4E6F13F47CF6D59BBABD7DE65E_1907216615.addTaint(taint);
         return var2B649B4E6F13F47CF6D59BBABD7DE65E_1907216615;
-        // ---------- Original Method ----------
-        //return new OpenSSLServerSocketImpl(port,
-                                           //backlog,
-                                           //iAddress,
-                                           //(SSLParametersImpl) sslParameters.clone());
+        
+        
+                                           
+                                           
+                                           
     }
 
     

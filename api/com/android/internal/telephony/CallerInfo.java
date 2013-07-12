@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -92,13 +92,14 @@ public class CallerInfo {
     public  CallerInfo() {
         mIsEmergency = false;
         mIsVoiceMail = false;
-        // ---------- Original Method ----------
-        //mIsEmergency = false;
-        //mIsVoiceMail = false;
+        
+        
+        
     }
 
     
-        public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
+        @DSModeled(DSC.SPEC)
+    public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
         CallerInfo info = new CallerInfo();
         info.photoResource = 0;
         info.phoneLabel = null;
@@ -161,13 +162,15 @@ public class CallerInfo {
     }
 
     
-        public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
+        @DSModeled(DSC.SPEC)
+    public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
         return getCallerInfo(context, contactRef,
                 context.getContentResolver().query(contactRef, null, null, null, null));
     }
 
     
-        public static CallerInfo getCallerInfo(Context context, String number) {
+        @DSModeled(DSC.SPEC)
+    public static CallerInfo getCallerInfo(Context context, String number) {
         if (VDBG) Log.v(TAG, "getCallerInfo() based on number...");
         if (TextUtils.isEmpty(number)) {
             return null;
@@ -217,23 +220,25 @@ public class CallerInfo {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.107 -0400", hash_original_method = "949F12A508ED637C7BFB9FE80F3ED419", hash_generated_method = "BB1ACFE533811C83D50680B8BA911E82")
     public boolean isEmergencyNumber() {
         boolean var7376A55F5290745246270E1790E042B5_1724196077 = (mIsEmergency);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773073837 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773073837;
-        // ---------- Original Method ----------
-        //return mIsEmergency;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.107 -0400", hash_original_method = "61436A0A05C2AD638DF9E2E803CA6155", hash_generated_method = "2AF79E2BD2172D65CF1A301A99062E45")
     public boolean isVoiceMailNumber() {
         boolean var4452D8CFC3290241F7E75DF22D239FD7_748976189 = (mIsVoiceMail);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675100428 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_675100428;
-        // ---------- Original Method ----------
-        //return mIsVoiceMail;
+        
+        
     }
 
     
@@ -246,15 +251,16 @@ public class CallerInfo {
 CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1666032546 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1666032546.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1666032546;
-        // ---------- Original Method ----------
-        //phoneNumber = context.getString(
-            //com.android.internal.R.string.emergency_call_dialog_number_for_display);
-        //photoResource = com.android.internal.R.drawable.picture_emergency;
-        //mIsEmergency = true;
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.108 -0400", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "0E7B2638A8A68BEFA5AB29F42A048C30")
      CallerInfo markAsVoiceMail() {
         mIsVoiceMail = true;
@@ -262,26 +268,27 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1666032546 =         this;
         {
             String voiceMailLabel = TelephonyManager.getDefault().getVoiceMailAlphaTag();
             phoneNumber = voiceMailLabel;
-        } //End block
+        } 
         catch (SecurityException se)
         {
-        } //End block
+        } 
 CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1626403126 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1626403126.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1626403126;
-        // ---------- Original Method ----------
-        //mIsVoiceMail = true;
-        //try {
-            //String voiceMailLabel = TelephonyManager.getDefault().getVoiceMailAlphaTag();
-            //phoneNumber = voiceMailLabel;
-        //} catch (SecurityException se) {
-            //Log.e(TAG, "Cannot access VoiceMail.", se);
-        //}
-        //return this;
+        
+        
+        
+            
+            
+        
+            
+        
+        
     }
 
     
-        private static String normalize(String s) {
+        @DSModeled(DSC.SPEC)
+    private static String normalize(String s) {
         if (s == null || s.length() > 0) {
             return s;
         } else {
@@ -290,7 +297,8 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1626403126 =         this;
     }
 
     
-        private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
+        @DSModeled(DSC.SPEC)
+    private static int getColumnIndexForPersonId(Uri contactRef, Cursor cursor) {
         if (VDBG) Log.v(TAG, "- getColumnIndexForPersonId: contactRef URI = '"
                         + contactRef + "'...");
         String url = contactRef.toString();
@@ -314,18 +322,20 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1626403126 =         this;
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:20.110 -0400", hash_original_method = "3180F1E37BC19852F53F68E8E13D968F", hash_generated_method = "4C6D13AE6F83DD7FE5892D790FE2AE9F")
     public void updateGeoDescription(Context context, String fallbackNumber) {
         addTaint(fallbackNumber.getTaint());
         String number = TextUtils.isEmpty(phoneNumber) ? fallbackNumber : phoneNumber;
         geoDescription = getGeoDescription(context, number);
-        // ---------- Original Method ----------
-        //String number = TextUtils.isEmpty(phoneNumber) ? fallbackNumber : phoneNumber;
-        //geoDescription = getGeoDescription(context, number);
+        
+        
+        
     }
 
     
-        private static String getGeoDescription(Context context, String number) {
+        @DSModeled(DSC.SPEC)
+    private static String getGeoDescription(Context context, String number) {
         if (VDBG) Log.v(TAG, "getGeoDescription('" + number + "')...");
         if (TextUtils.isEmpty(number)) {
             return null;
@@ -353,7 +363,8 @@ CallerInfo var72A74007B2BE62B849F475C7BDA4658B_1626403126 =         this;
     }
 
     
-        private static String getCurrentCountryIso(Context context, Locale locale) {
+        @DSModeled(DSC.SPEC)
+    private static String getCurrentCountryIso(Context context, Locale locale) {
         String countryIso;
         CountryDetector detector = (CountryDetector) context.getSystemService(
           Context.COUNTRY_DETECTOR);
@@ -401,7 +412,7 @@ String varB0E974098EC24B66E77031F32EEA3BB7_1130626801 =             new StringBu
                     .toString();
             varB0E974098EC24B66E77031F32EEA3BB7_1130626801.addTaint(taint);
             return varB0E974098EC24B66E77031F32EEA3BB7_1130626801;
-        } //End block
+        } 
         else
         {
 String varEB68FA4DA29D6D2DA3AE46CB2065A18F_1938591135 =             new StringBuilder(128)
@@ -412,9 +423,9 @@ String varEB68FA4DA29D6D2DA3AE46CB2065A18F_1938591135 =             new StringBu
                     .toString();
             varEB68FA4DA29D6D2DA3AE46CB2065A18F_1938591135.addTaint(taint);
             return varEB68FA4DA29D6D2DA3AE46CB2065A18F_1938591135;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

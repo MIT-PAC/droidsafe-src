@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,15 +18,15 @@ public class DERBMPString extends ASN1Object implements DERString {
 for(int i = 0;i != cs.length;i++)
         {
             cs[i] = (char)((string[2 * i] << 8) | (string[2 * i + 1] & 0xff));
-        } //End block
+        } 
         this.string = new String(cs);
-        // ---------- Original Method ----------
-        //char[]  cs = new char[string.length / 2];
-        //for (int i = 0; i != cs.length; i++)
-        //{
-            //cs[i] = (char)((string[2 * i] << 8) | (string[2 * i + 1] & 0xff));
-        //}
-        //this.string = new String(cs);
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -34,8 +34,8 @@ for(int i = 0;i != cs.length;i++)
     public  DERBMPString(
         String   string) {
         this.string = string;
-        // ---------- Original Method ----------
-        //this.string = string;
+        
+        
     }
 
     
@@ -64,23 +64,25 @@ for(int i = 0;i != cs.length;i++)
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.897 -0400", hash_original_method = "3CB977BE316CAC9520A0E1ADE8D338F7", hash_generated_method = "59B19B0B6C6BB3BBC612423BB8B1B3D7")
     public String getString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_149474089 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_149474089.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_149474089;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.897 -0400", hash_original_method = "A7AD745E242BD88C36EC3708384A50C0", hash_generated_method = "FF71B1797E5A6112C7EF252063BFE8CE")
     public String toString() {
 String varDCF8A90B03379D9C1C8BF337A3879E0C_671080249 =         string;
         varDCF8A90B03379D9C1C8BF337A3879E0C_671080249.addTaint(taint);
         return varDCF8A90B03379D9C1C8BF337A3879E0C_671080249;
-        // ---------- Original Method ----------
-        //return string;
+        
+        
     }
 
     
@@ -89,8 +91,8 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_671080249 =         string;
         int var5EE87F4C9D30CCD0C63D46FAC325C3D6_458644554 = (this.getString().hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_9790258 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_9790258;
-        // ---------- Original Method ----------
-        //return this.getString().hashCode();
+        
+        
     }
 
     
@@ -103,18 +105,18 @@ String varDCF8A90B03379D9C1C8BF337A3879E0C_671080249 =         string;
             boolean var68934A3E9455FA72420237EB05902327_1478151864 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1040854151 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1040854151;
-        } //End block
+        } 
         DERBMPString s = (DERBMPString)o;
         boolean varEDB7CD599351FA878152EF17A169B1A6_959108342 = (this.getString().equals(s.getString()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_190205401 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_190205401;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERBMPString))
-        //{
-            //return false;
-        //}
-        //DERBMPString  s = (DERBMPString)o;
-        //return this.getString().equals(s.getString());
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -128,17 +130,17 @@ for(int i = 0;i != c.length;i++)
         {
             b[2 * i] = (byte)(c[i] >> 8);
             b[2 * i + 1] = (byte)c[i];
-        } //End block
+        } 
         out.writeEncoded(BMP_STRING, b);
-        // ---------- Original Method ----------
-        //char[]  c = string.toCharArray();
-        //byte[]  b = new byte[c.length * 2];
-        //for (int i = 0; i != c.length; i++)
-        //{
-            //b[2 * i] = (byte)(c[i] >> 8);
-            //b[2 * i + 1] = (byte)c[i];
-        //}
-        //out.writeEncoded(BMP_STRING, b);
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     

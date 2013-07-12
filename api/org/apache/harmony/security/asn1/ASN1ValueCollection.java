@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ public abstract class ASN1ValueCollection extends ASN1Constructed {
         super(tagNumber);
         addTaint(tagNumber);
         this.type = type;
-        // ---------- Original Method ----------
-        //this.type = type;
+        
+        
     }
 
     
@@ -27,8 +27,8 @@ public abstract class ASN1ValueCollection extends ASN1Constructed {
 Collection<?> var89C2C578EE73DD2F152B0E462560B532_397700536 =         (Collection<?>) object;
         var89C2C578EE73DD2F152B0E462560B532_397700536.addTaint(taint);
         return var89C2C578EE73DD2F152B0E462560B532_397700536;
-        // ---------- Original Method ----------
-        //return (Collection<?>) object;
+        
+        
     }
 
     

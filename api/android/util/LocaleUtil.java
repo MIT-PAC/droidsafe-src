@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class LocaleUtil {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.932 -0400", hash_original_method = "DB2CFC1123D815AD16F73168E1C2B755", hash_generated_method = "F9680582E9F3FF3D5F3D7BEF7775E7F5")
     private  LocaleUtil() {
-        // ---------- Original Method ----------
+        
     }
 
     

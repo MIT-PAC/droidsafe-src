@@ -1,6 +1,6 @@
 package libcore.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public final class Streams {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.926 -0400", hash_original_method = "C77AFB36715A9D022AA555F8E2CA0E65", hash_generated_method = "1AA6BD22E66D64175A500F429CBE1AC9")
     private  Streams() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,7 +41,8 @@ public final class Streams {
     }
 
     
-        public static void readFully(InputStream in, byte[] dst, int offset, int byteCount) throws IOException {
+        @DSModeled(DSC.SPEC)
+    public static void readFully(InputStream in, byte[] dst, int offset, int byteCount) throws IOException {
         if (byteCount == 0) {
             return;
         }

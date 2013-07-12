@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
         super(tagNo, obj);
         addTaint(obj.getTaint());
         addTaint(tagNo);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
         addTaint(obj.getTaint());
         addTaint(tagNo);
         addTaint(explicit);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,7 +37,7 @@ public class DERTaggedObject extends ASN1TaggedObject {
         int             tagNo) {
         super(false, tagNo, new DERSequence());
         addTaint(tagNo);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,53 +51,53 @@ public class DERTaggedObject extends ASN1TaggedObject {
     if(explicit)            
             {
                 out.writeEncoded(CONSTRUCTED | TAGGED, tagNo, bytes);
-            } //End block
+            } 
             else
             {
                 int flags;
     if((bytes[0] & CONSTRUCTED) != 0)                
                 {
                     flags = CONSTRUCTED | TAGGED;
-                } //End block
+                } 
                 else
                 {
                     flags = TAGGED;
-                } //End block
+                } 
                 out.writeTag(flags, tagNo);
                 out.write(bytes, 1, bytes.length - 1);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             out.writeEncoded(CONSTRUCTED | TAGGED, tagNo, ZERO_BYTES);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!empty)
-        //{
-            //byte[] bytes = obj.getDERObject().getEncoded(DER);
-            //if (explicit)
-            //{
-                //out.writeEncoded(CONSTRUCTED | TAGGED, tagNo, bytes);
-            //}
-            //else
-            //{
-                //int flags;
-                //if ((bytes[0] & CONSTRUCTED) != 0)
-                //{
-                    //flags = CONSTRUCTED | TAGGED;
-                //}
-                //else
-                //{
-                    //flags = TAGGED;
-                //}
-                //out.writeTag(flags, tagNo);
-                //out.write(bytes, 1, bytes.length - 1);
-            //}
-        //}
-        //else
-        //{
-            //out.writeEncoded(CONSTRUCTED | TAGGED, tagNo, ZERO_BYTES);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                    
+                
+                
+                
+            
+        
+        
+        
+            
+        
     }
 
     

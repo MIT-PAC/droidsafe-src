@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public final class Channels {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:57.418 -0400", hash_original_method = "E5756BC98BED6794F2A2668CF27D9D40", hash_generated_method = "A3FFC3FD46BE47AAF4DAB2140E96D8E8")
     private  Channels() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -95,13 +95,13 @@ public final class Channels {
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_235038925 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_235038925.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_235038925;
-            } //End block
+            } 
             this.channel = channel;
-            // ---------- Original Method ----------
-            //if (channel == null) {
-                //throw new NullPointerException();
-            //}
-            //this.channel = channel;
+            
+            
+                
+            
+            
         }
 
         
@@ -111,8 +111,8 @@ public final class Channels {
             int varC29A5AE95A30EE64395CAB97F32FA4B0_704770319 = (Streams.readSingleByte(this));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1804792685 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1804792685;
-            // ---------- Original Method ----------
-            //return Streams.readSingleByte(this);
+            
+            
         }
 
         
@@ -127,10 +127,10 @@ public final class Channels {
             int var05A0862A70F970EF4987A45F5B311658_690341335 = (channel.read(buffer));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145566064 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1145566064;
-            // ---------- Original Method ----------
-            //ByteBuffer buffer = ByteBuffer.wrap(target, offset, length);
-            //checkBlocking(channel);
-            //return channel.read(buffer);
+            
+            
+            
+            
         }
 
         
@@ -144,21 +144,21 @@ public final class Channels {
                 int var10672B7CFD0677E520DF08DA1D5AFB60_336994158 = (result > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) result);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12841667 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_12841667;
-            } //End block
+            } 
             else
             {
                 int varCCBDC8EC9CFFD338AA68EE17A00D45BD_91615826 = (super.available());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1211891797 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1211891797;
-            } //End block
-            // ---------- Original Method ----------
-            //if (channel instanceof FileChannel) {
-                //FileChannel fileChannel = (FileChannel) channel;
-                //long result = fileChannel.size() - fileChannel.position();
-                //return result > Integer.MAX_VALUE ? Integer.MAX_VALUE : (int) result;
-            //} else {
-                //return super.available();
-            //}
+            } 
+            
+            
+                
+                
+                
+            
+                
+            
         }
 
         
@@ -166,8 +166,8 @@ public final class Channels {
         @Override
         public synchronized void close() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -187,13 +187,13 @@ public final class Channels {
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_626788153 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_626788153.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_626788153;
-            } //End block
+            } 
             this.channel = channel;
-            // ---------- Original Method ----------
-            //if (channel == null) {
-                //throw new NullPointerException();
-            //}
-            //this.channel = channel;
+            
+            
+                
+            
+            
         }
 
         
@@ -203,9 +203,9 @@ public final class Channels {
             addTaint(oneByte);
             byte[] wrappedByte = { (byte) oneByte };
             write(wrappedByte);
-            // ---------- Original Method ----------
-            //byte[] wrappedByte = { (byte) oneByte };
-            //write(wrappedByte);
+            
+            
+            
         }
 
         
@@ -222,14 +222,14 @@ public final class Channels {
 (total < length)            
             {
                 total += channel.write(buffer);
-            } //End block
-            // ---------- Original Method ----------
-            //ByteBuffer buffer = ByteBuffer.wrap(source, offset, length);
-            //checkBlocking(channel);
-            //int total = 0;
-            //while (total < length) {
-                //total += channel.write(buffer);
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -237,8 +237,8 @@ public final class Channels {
         @Override
         public synchronized void close() throws IOException {
             channel.close();
-            // ---------- Original Method ----------
-            //channel.close();
+            
+            
         }
 
         
@@ -258,13 +258,13 @@ public final class Channels {
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_267661861 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_267661861.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_267661861;
-            } //End block
+            } 
             this.inputStream = inputStream;
-            // ---------- Original Method ----------
-            //if (inputStream == null) {
-                //throw new NullPointerException();
-            //}
-            //this.inputStream = inputStream;
+            
+            
+                
+            
+            
         }
 
         
@@ -276,7 +276,7 @@ public final class Channels {
                 ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1091767867 = new ClosedChannelException();
                 var553E3C0ED28F94CE76A7A8061DFFDCF3_1091767867.addTaint(taint);
                 throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1091767867;
-            } //End block
+            } 
             int bytesRemain = target.remaining();
             byte[] bytes = new byte[bytesRemain];
             int readCount = 0;
@@ -284,35 +284,35 @@ public final class Channels {
             {
                 begin();
                 readCount = inputStream.read(bytes);
-            } //End block
+            } 
             finally 
             {
                 end(readCount >= 0);
-            } //End block
+            } 
     if(readCount > 0)            
             {
                 target.put(bytes, 0, readCount);
-            } //End block
+            } 
             int varADC9E8D761A52E26BEC5404508AFC000_974317614 = (readCount);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672242847 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_672242847;
-            // ---------- Original Method ----------
-            //if (!isOpen()) {
-                //throw new ClosedChannelException();
-            //}
-            //int bytesRemain = target.remaining();
-            //byte[] bytes = new byte[bytesRemain];
-            //int readCount = 0;
-            //try {
-                //begin();
-                //readCount = inputStream.read(bytes);
-            //} finally {
-                //end(readCount >= 0);
-            //}
-            //if (readCount > 0) {
-                //target.put(bytes, 0, readCount);
-            //}
-            //return readCount;
+            
+            
+                
+            
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
+                
+            
+            
         }
 
         
@@ -320,8 +320,8 @@ public final class Channels {
         @Override
         protected void implCloseChannel() throws IOException {
             inputStream.close();
-            // ---------- Original Method ----------
-            //inputStream.close();
+            
+            
         }
 
         
@@ -341,13 +341,13 @@ public final class Channels {
                 NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1822450144 = new NullPointerException();
                 var7338BC9F48D81FE0BBD6183F4014DCC4_1822450144.addTaint(taint);
                 throw var7338BC9F48D81FE0BBD6183F4014DCC4_1822450144;
-            } //End block
+            } 
             this.outputStream = outputStream;
-            // ---------- Original Method ----------
-            //if (outputStream == null) {
-                //throw new NullPointerException();
-            //}
-            //this.outputStream = outputStream;
+            
+            
+                
+            
+            
         }
 
         
@@ -359,45 +359,45 @@ public final class Channels {
                 ClosedChannelException var553E3C0ED28F94CE76A7A8061DFFDCF3_1063322813 = new ClosedChannelException();
                 var553E3C0ED28F94CE76A7A8061DFFDCF3_1063322813.addTaint(taint);
                 throw var553E3C0ED28F94CE76A7A8061DFFDCF3_1063322813;
-            } //End block
+            } 
             int bytesRemain = source.remaining();
     if(bytesRemain == 0)            
             {
                 int varCFCD208495D565EF66E7DFF9F98764DA_1920249267 = (0);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319544271 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319544271;
-            } //End block
+            } 
             byte[] buf = new byte[bytesRemain];
             source.get(buf);
             try 
             {
                 begin();
                 outputStream.write(buf, 0, bytesRemain);
-            } //End block
+            } 
             finally 
             {
                 end(bytesRemain >= 0);
-            } //End block
+            } 
             int varA1D047EA9354214BE040E1E8C9D69DBC_2002898050 = (bytesRemain);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436833910 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1436833910;
-            // ---------- Original Method ----------
-            //if (!isOpen()) {
-                //throw new ClosedChannelException();
-            //}
-            //int bytesRemain = source.remaining();
-            //if (bytesRemain == 0) {
-                //return 0;
-            //}
-            //byte[] buf = new byte[bytesRemain];
-            //source.get(buf);
-            //try {
-                //begin();
-                //outputStream.write(buf, 0, bytesRemain);
-            //} finally {
-                //end(bytesRemain >= 0);
-            //}
-            //return bytesRemain;
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -405,8 +405,8 @@ public final class Channels {
         @Override
         protected void implCloseChannel() throws IOException {
             outputStream.close();
-            // ---------- Original Method ----------
-            //outputStream.close();
+            
+            
         }
 
         

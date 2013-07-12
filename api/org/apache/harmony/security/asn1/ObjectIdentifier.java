@@ -1,6 +1,6 @@
 package org.apache.harmony.security.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,9 +18,9 @@ public final class ObjectIdentifier {
     public  ObjectIdentifier(int[] oid) {
         validate(oid);
         this.oid = oid;
-        // ---------- Original Method ----------
-        //validate(oid);
-        //this.oid = oid;
+        
+        
+        
     }
 
     
@@ -28,12 +28,13 @@ public final class ObjectIdentifier {
     public  ObjectIdentifier(String strOid) {
         this.oid = toIntArray(strOid);
         this.soid = strOid;
-        // ---------- Original Method ----------
-        //this.oid = toIntArray(strOid);
-        //this.soid = strOid;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.044 -0400", hash_original_method = "7A1590EC642F64148081547F7DE77EEF", hash_generated_method = "258A5D9454C461720698B6310FAD15DE")
     @Override
     public boolean equals(Object o) {
@@ -43,45 +44,47 @@ public final class ObjectIdentifier {
             boolean varB326B5062B2F0E69046810717534CB09_183676437 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1379373875 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1379373875;
-        } //End block
+        } 
     if(o == null || this.getClass() != o.getClass())        
         {
             boolean var68934A3E9455FA72420237EB05902327_67950994 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_956870140 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_956870140;
-        } //End block
+        } 
         boolean var62A536C7516308AA2A6C1868C0B5E7EE_1102807471 = (Arrays.equals(oid, ((ObjectIdentifier) o).oid));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_83169106 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_83169106;
-        // ---------- Original Method ----------
-        //if (this == o) {
-            //return true;
-        //}
-        //if (o == null || this.getClass() != o.getClass()) {
-            //return false;
-        //}
-        //return Arrays.equals(oid, ((ObjectIdentifier) o).oid);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.045 -0400", hash_original_method = "CBAF5DCAABB7CFC3E05C923E938DB148", hash_generated_method = "F83F5CEA729BFAF035DB79F583905770")
     @Override
     public String toString() {
     if(soid == null)        
         {
             soid = toString(oid);
-        } //End block
+        } 
 String var2D98CC55C81F1E6E04CCE50DEB76A9B7_616375120 =         soid;
         var2D98CC55C81F1E6E04CCE50DEB76A9B7_616375120.addTaint(taint);
         return var2D98CC55C81F1E6E04CCE50DEB76A9B7_616375120;
-        // ---------- Original Method ----------
-        //if (soid == null) {
-            //soid = toString(oid);
-        //}
-        //return soid;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.045 -0400", hash_original_method = "8929009F517116C951EAF49377701B44", hash_generated_method = "FE3FE4DA4D1EBC0A13BBAAFB3B22F669")
     @Override
     public int hashCode() {
@@ -89,16 +92,16 @@ String var2D98CC55C81F1E6E04CCE50DEB76A9B7_616375120 =         soid;
 for(int i = 0;i < oid.length && i < 4;i++)
         {
             intHash += oid[i] << (8 * i);
-        } //End block
+        } 
         int varA649C0FF433C9DEED60103F772C02F3A_449785004 = (intHash & 0x7FFFFFFF);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_839692482 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_839692482;
-        // ---------- Original Method ----------
-        //int intHash = 0;
-        //for (int i = 0; i < oid.length && i < 4; i++) {
-            //intHash += oid[i] << (8 * i); 
-        //}
-        //return intHash & 0x7FFFFFFF;
+        
+        
+        
+            
+        
+        
     }
 
     

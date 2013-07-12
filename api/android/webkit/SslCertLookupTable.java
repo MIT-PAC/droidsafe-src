@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,12 +17,13 @@ final class SslCertLookupTable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.082 -0400", hash_original_method = "81BA7CE42C429B1D2F4A8FA68B131FF3", hash_generated_method = "EE496E3F3072DFAFBDE3B99BD9B2BC37")
     private  SslCertLookupTable() {
         table = new Bundle();
-        // ---------- Original Method ----------
-        //table = new Bundle();
+        
+        
     }
 
     
-        public static SslCertLookupTable getInstance() {
+        @DSModeled(DSC.SPEC)
+    public static SslCertLookupTable getInstance() {
         if (sTable == null) {
             sTable = new SslCertLookupTable();
         }
@@ -30,6 +31,7 @@ final class SslCertLookupTable {
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.083 -0400", hash_original_method = "D1D349299054A2A05843F53D2271E3F3", hash_generated_method = "132CBC29873CD844CD84EF9A625617F7")
     public void setIsAllowed(SslError sslError) {
         addTaint(sslError.getTaint());
@@ -37,23 +39,24 @@ final class SslCertLookupTable {
         try 
         {
             host = new URL(sslError.getUrl()).getHost();
-        } //End block
+        } 
         catch (MalformedURLException e)
         {
             return;
-        } //End block
+        } 
         table.putInt(host, sslError.getPrimaryError());
-        // ---------- Original Method ----------
-        //String host;
-        //try {
-            //host = new URL(sslError.getUrl()).getHost();
-        //} catch(MalformedURLException e) {
-            //return;
-        //}
-        //table.putInt(host, sslError.getPrimaryError());
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.084 -0400", hash_original_method = "BE69D625DE69B336FE62B540E51D9D21", hash_generated_method = "315A91BA84ED0B2E03F9A2160530F036")
     public boolean isAllowed(SslError sslError) {
         addTaint(sslError.getTaint());
@@ -61,32 +64,33 @@ final class SslCertLookupTable {
         try 
         {
             host = new URL(sslError.getUrl()).getHost();
-        } //End block
+        } 
         catch (MalformedURLException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1845394708 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1560948689 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1560948689;
-        } //End block
+        } 
         boolean varA54A5D7738C823F006F606F4EBE004BB_125978325 = (table.containsKey(host) && sslError.getPrimaryError() <= table.getInt(host));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235481693 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_235481693;
-        // ---------- Original Method ----------
-        //String host;
-        //try {
-            //host = new URL(sslError.getUrl()).getHost();
-        //} catch(MalformedURLException e) {
-            //return false;
-        //}
-        //return table.containsKey(host) && sslError.getPrimaryError() <= table.getInt(host);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.084 -0400", hash_original_method = "ACAE13D192212363EBD03A770903E836", hash_generated_method = "50263D7EA683F7C86C6DCDB42989A20A")
     public void clear() {
         table.clear();
-        // ---------- Original Method ----------
-        //table.clear();
+        
+        
     }
 
     

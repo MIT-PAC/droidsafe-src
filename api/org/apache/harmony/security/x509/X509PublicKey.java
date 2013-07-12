@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,43 +22,47 @@ public final class X509PublicKey implements PublicKey {
         this.algorithm = algorithm;
         this.encoded = encoded;
         this.keyBytes = keyBytes;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
-        //this.encoded = encoded;
-        //this.keyBytes = keyBytes;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.491 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "4700BA1D967A849AC430A6949A96BE0E")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_622114149 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_622114149.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_622114149;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.491 -0400", hash_original_method = "52CFE6084CDA819966418EDF944DBC96", hash_generated_method = "4263F17F835BCF423CBB6A8EDA1AA89A")
     public String getFormat() {
 String varF820115C876B7F160DE375988A3E1CA1_836851858 =         "X.509";
         varF820115C876B7F160DE375988A3E1CA1_836851858.addTaint(taint);
         return varF820115C876B7F160DE375988A3E1CA1_836851858;
-        // ---------- Original Method ----------
-        //return "X.509";
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.491 -0400", hash_original_method = "4EC4E5E78B7F57FB746895217115C4A0", hash_generated_method = "74A2538AE93B0DE45A3D41048D870808")
     public byte[] getEncoded() {
         byte[] var4B719ACEE4A1D5E30577F59E80D06205_1158298820 = (encoded);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1706146712 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1706146712;
-        // ---------- Original Method ----------
-        //return encoded;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.492 -0400", hash_original_method = "20DEFC617AA5E46ABFC95D3E93C239C4", hash_generated_method = "9E9BF0C6115A46E0936FE11D72A20D8E")
     @Override
     public String toString() {
@@ -68,11 +72,11 @@ String varF820115C876B7F160DE375988A3E1CA1_836851858 =         "X.509";
 String var4FC680801218E6372BC708D6FA44AE60_1746723920 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1746723920.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1746723920;
-        // ---------- Original Method ----------
-        //StringBuilder buf = new StringBuilder("algorithm = ");
-        //buf.append(algorithm);
-        //buf.append(", params unparsed, unparsed keybits = \n");
-        //return buf.toString();
+        
+        
+        
+        
+        
     }
 
     

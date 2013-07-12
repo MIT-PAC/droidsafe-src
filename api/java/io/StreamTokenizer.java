@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -60,15 +60,15 @@ public class StreamTokenizer {
         quoteChar('"');
         quoteChar('\'');
         parseNumbers();
-        // ---------- Original Method ----------
-        //wordChars('A', 'Z');
-        //wordChars('a', 'z');
-        //wordChars(160, 255);
-        //whitespaceChars(0, 32);
-        //commentChar('/');
-        //quoteChar('"');
-        //quoteChar('\'');
-        //parseNumbers();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -81,13 +81,13 @@ public class StreamTokenizer {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1621420585 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1621420585.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1621420585;
-        } //End block
+        } 
         inStream = is;
-        // ---------- Original Method ----------
-        //if (is == null) {
-            //throw new NullPointerException();
-        //}
-        //inStream = is;
+        
+        
+            
+        
+        
     }
 
     
@@ -99,52 +99,56 @@ public class StreamTokenizer {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_1063393170 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_1063393170.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_1063393170;
-        } //End block
+        } 
         inReader = r;
-        // ---------- Original Method ----------
-        //if (r == null) {
-            //throw new NullPointerException();
-        //}
-        //inReader = r;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.106 -0400", hash_original_method = "E38E4469494A7A375F4DC16613BFC71B", hash_generated_method = "ED124AB306A25409029CC9A90A681766")
     public void commentChar(int ch) {
     if(ch >= 0 && ch < tokenTypes.length)        
         {
             tokenTypes[ch] = TOKEN_COMMENT;
-        } //End block
-        // ---------- Original Method ----------
-        //if (ch >= 0 && ch < tokenTypes.length) {
-            //tokenTypes[ch] = TOKEN_COMMENT;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.107 -0400", hash_original_method = "4574927758DBFC248F61FB44F6B60AD5", hash_generated_method = "E7ACAC53B63CEEEDB7720AC0F5F43491")
     public void eolIsSignificant(boolean flag) {
         isEOLSignificant = flag;
-        // ---------- Original Method ----------
-        //isEOLSignificant = flag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.107 -0400", hash_original_method = "CFD9FB1CAAFA0B398D0DDE009E39DD95", hash_generated_method = "7692A54D353186E3D309495908BF7167")
     public int lineno() {
         int varBB8A5A0BF5B38F7D371E940DAED92DA6_1739225165 = (lineNumber);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569968303 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1569968303;
-        // ---------- Original Method ----------
-        //return lineNumber;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.107 -0400", hash_original_method = "C3C8ED01DF0631C29C770DF7973EAB61", hash_generated_method = "BED58A09E44AEB960ACFACB2D18D13A6")
     public void lowerCaseMode(boolean flag) {
         forceLowercase = flag;
-        // ---------- Original Method ----------
-        //forceLowercase = flag;
+        
+        
     }
 
     
@@ -158,21 +162,21 @@ public class StreamTokenizer {
                 int var8812C2D4C7F71CB374BF8DD7386F19CF_35355953 = (ttype);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_844947462 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_844947462;
-            } //End block
-        } //End block
+            } 
+        } 
         sval = null;
         int currentChar = peekChar == -2 ? read() : peekChar;
     if(lastCr && currentChar == '\n')        
         {
             lastCr = false;
             currentChar = read();
-        } //End block
+        } 
     if(currentChar == -1)        
         {
             int varC9DE119BAFD1DCCB628DC3D44BBA1AF5_1919696732 = ((ttype = TT_EOF));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1357071221 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1357071221;
-        } //End block
+        } 
         byte currentType = currentChar > 255 ? TOKEN_WORD
                 : tokenTypes[currentChar];
         while
@@ -188,12 +192,12 @@ public class StreamTokenizer {
                     int varA4395DC2D3B87A20D350581C3116D9E3_31507114 = ((ttype = TT_EOL));
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756061996 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_756061996;
-                } //End block
+                } 
     if((currentChar = read()) == '\n')                
                 {
                     currentChar = read();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(currentChar == '\n')            
             {
@@ -204,22 +208,22 @@ public class StreamTokenizer {
                     int varA4395DC2D3B87A20D350581C3116D9E3_1551275969 = ((ttype = TT_EOL));
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871839673 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1871839673;
-                } //End block
+                } 
                 currentChar = read();
-            } //End block
+            } 
             else
             {
                 currentChar = read();
-            } //End block
+            } 
     if(currentChar == -1)            
             {
                 int varC9DE119BAFD1DCCB628DC3D44BBA1AF5_1867467293 = ((ttype = TT_EOF));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348160190 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348160190;
-            } //End block
+            } 
             currentType = currentChar > 255 ? TOKEN_WORD
                     : tokenTypes[currentChar];
-        } //End block
+        } 
     if((currentType & TOKEN_DIGIT) != 0)        
         {
             StringBuilder digits = new StringBuilder(20);
@@ -231,34 +235,34 @@ public class StreamTokenizer {
     if(currentChar == '.')                
                 {
                     haveDecimal = true;
-                } //End block
+                } 
                 digits.append((char) currentChar);
                 currentChar = read();
     if((currentChar < '0' || currentChar > '9')
                         && (haveDecimal || currentChar != '.'))                
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             peekChar = currentChar;
     if(checkJustNegative && digits.length() == 1)            
             {
                 int var73250C787BA7444F0D63A654EAB220B8_2031203735 = ((ttype = '-'));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1999706408 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1999706408;
-            } //End block
+            } 
             try 
             {
                 nval = Double.valueOf(digits.toString()).doubleValue();
-            } //End block
+            } 
             catch (NumberFormatException e)
             {
                 nval = 0;
-            } //End block
+            } 
             int var351A85F054D52C6754D94EF5B167FD54_1843725799 = ((ttype = TT_NUMBER));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652517515 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1652517515;
-        } //End block
+        } 
     if((currentType & TOKEN_WORD) != 0)        
         {
             StringBuilder word = new StringBuilder(20);
@@ -271,18 +275,18 @@ public class StreamTokenizer {
                         || (currentChar < 256 && (tokenTypes[currentChar] & (TOKEN_WORD | TOKEN_DIGIT)) == 0))                
                 {
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             peekChar = currentChar;
             sval = word.toString();
     if(forceLowercase)            
             {
                 sval = sval.toLowerCase(Locale.getDefault());
-            } //End block
+            } 
             int var181E792688DB98713E1CB956D35C356C_432985173 = ((ttype = TT_WORD));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472676090 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1472676090;
-        } //End block
+        } 
     if(currentType == TOKEN_QUOTE)        
         {
             int matchQuote = currentChar;
@@ -303,7 +307,7 @@ public class StreamTokenizer {
     if(c1 > '7' || c1 < '0')                        
                         {
                             readPeek = false;
-                        } //End block
+                        } 
                         else
                         {
                             digitValue = digitValue * 8 + (c1 - '0');
@@ -311,22 +315,22 @@ public class StreamTokenizer {
     if(digitValue > 037 || c1 > '7' || c1 < '0')                            
                             {
                                 readPeek = false;
-                            } //End block
+                            } 
                             else
                             {
                                 digitValue = digitValue * 8 + (c1 - '0');
-                            } //End block
-                        } //End block
+                            } 
+                        } 
     if(!readPeek)                        
                         {
                             quoteString.append((char) digitValue);
                             peekOne = c1;
-                        } //End block
+                        } 
                         else
                         {
                             peekOne = digitValue;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
 switch(c1){
@@ -354,25 +358,25 @@ switch(c1){
                         default:
                         peekOne = c1;
 }
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(readPeek)                
                 {
                     quoteString.append((char) peekOne);
                     peekOne = read();
-                } //End block
-            } //End block
+                } 
+            } 
     if(peekOne == matchQuote)            
             {
                 peekOne = read();
-            } //End block
+            } 
             peekChar = peekOne;
             ttype = matchQuote;
             sval = quoteString.toString();
             int var8812C2D4C7F71CB374BF8DD7386F19CF_531962184 = (ttype);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_473748734 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_473748734;
-        } //End block
+        } 
     if(currentChar == '/' && (slashSlashComments || slashStarComments))        
         {
     if((currentChar = read()) == '*' && slashStarComments)            
@@ -389,20 +393,20 @@ switch(c1){
                         int varC9DE119BAFD1DCCB628DC3D44BBA1AF5_161737248 = ((ttype = TT_EOF));
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1131372682 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1131372682;
-                    } //End block
+                    } 
     if(currentChar == '\r')                    
                     {
     if(peekOne == '\n')                        
                         {
                             peekOne = read();
-                        } //End block
+                        } 
                         lineNumber++;
-                    } //End block
+                    } 
                     else
     if(currentChar == '\n')                    
                     {
                         lineNumber++;
-                    } //End block
+                    } 
                     else
     if(currentChar == '*' && peekOne == '/')                    
                     {
@@ -410,9 +414,9 @@ switch(c1){
                         int var751813CF5AC7FADDD843B4C87D27707A_778950212 = (nextToken());
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906384700 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_906384700;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
     if(currentChar == '/' && slashSlashComments)            
             {
@@ -420,12 +424,12 @@ switch(c1){
 ((currentChar = read()) >= 0 && currentChar != '\r'
                         && currentChar != '\n')                
                 {
-                } //End block
+                } 
                 peekChar = currentChar;
                 int var751813CF5AC7FADDD843B4C87D27707A_1805877091 = (nextToken());
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2114807168 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2114807168;
-            } //End block
+            } 
             else
     if(currentType != TOKEN_COMMENT)            
             {
@@ -433,42 +437,44 @@ switch(c1){
                 int varD9EC5456601809E2A13F311A8B31D33B_1324845693 = ((ttype = '/'));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1022570001 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1022570001;
-            } //End block
-        } //End block
+            } 
+        } 
     if(currentType == TOKEN_COMMENT)        
         {
             while
 ((currentChar = read()) >= 0 && currentChar != '\r'
                     && currentChar != '\n')            
             {
-            } //End block
+            } 
             peekChar = currentChar;
             int var751813CF5AC7FADDD843B4C87D27707A_1167564561 = (nextToken());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120916297 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1120916297;
-        } //End block
+        } 
         peekChar = read();
         int var70029BB3C7E3C6FD887C1A992CC874F5_1105483603 = ((ttype = currentChar));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_454626203 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_454626203;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.136 -0400", hash_original_method = "F56215932CA46446CC1F49421E19E4D4", hash_generated_method = "6C1B78B929C369C2F919B80E00706968")
     public void ordinaryChar(int ch) {
     if(ch >= 0 && ch < tokenTypes.length)        
         {
             tokenTypes[ch] = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (ch >= 0 && ch < tokenTypes.length) {
-            //tokenTypes[ch] = 0;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.136 -0400", hash_original_method = "022AE8E9D3C39CFDE89A16E6E6C68B23", hash_generated_method = "A8CD68C8B88D027BF8A246225A237EE5")
     public void ordinaryChars(int low, int hi) {
         addTaint(hi);
@@ -476,63 +482,66 @@ switch(c1){
     if(low < 0)        
         {
             low = 0;
-        } //End block
+        } 
     if(hi > tokenTypes.length)        
         {
             hi = tokenTypes.length - 1;
-        } //End block
+        } 
 for(int i = low;i <= hi;i++)
         {
             tokenTypes[i] = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (low < 0) {
-            //low = 0;
-        //}
-        //if (hi > tokenTypes.length) {
-            //hi = tokenTypes.length - 1;
-        //}
-        //for (int i = low; i <= hi; i++) {
-            //tokenTypes[i] = 0;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.136 -0400", hash_original_method = "F9A1AE339D1E856A34C84852283E0CEC", hash_generated_method = "FA88DE51AA39EE60F6FD01320465E0DB")
     public void parseNumbers() {
 for(int i = '0';i <= '9';i++)
         {
             tokenTypes[i] |= TOKEN_DIGIT;
-        } //End block
+        } 
         tokenTypes['.'] |= TOKEN_DIGIT;
         tokenTypes['-'] |= TOKEN_DIGIT;
-        // ---------- Original Method ----------
-        //for (int i = '0'; i <= '9'; i++) {
-            //tokenTypes[i] |= TOKEN_DIGIT;
-        //}
-        //tokenTypes['.'] |= TOKEN_DIGIT;
-        //tokenTypes['-'] |= TOKEN_DIGIT;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "60DC1125C539441B12106C43E5B596F1", hash_generated_method = "A3EF001CA6E665A21C1D9FF188DBBDB5")
     public void pushBack() {
         pushBackToken = true;
-        // ---------- Original Method ----------
-        //pushBackToken = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "9CC8FE0D7A922378FBAE42482AA646D9", hash_generated_method = "CE49B7669173FB20506B3DDECDA93C7F")
     public void quoteChar(int ch) {
     if(ch >= 0 && ch < tokenTypes.length)        
         {
             tokenTypes[ch] = TOKEN_QUOTE;
-        } //End block
-        // ---------- Original Method ----------
-        //if (ch >= 0 && ch < tokenTypes.length) {
-            //tokenTypes[ch] = TOKEN_QUOTE;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -543,44 +552,47 @@ for(int i = '0';i <= '9';i++)
             int varA3AB61B365B0DB71BD77D5CF383908F8_1233443967 = (inReader.read());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2028274045 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2028274045;
-        } //End block
+        } 
         int var53C087BBC2F9BF571A1BBD6418D936C3_2018140435 = (inStream.read());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570510777 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_570510777;
-        // ---------- Original Method ----------
-        //if (inStream == null) {
-            //return inReader.read();
-        //}
-        //return inStream.read();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "2D6865C117A48D63E7E9EC7F43B1136B", hash_generated_method = "D7551DC93546FF8CDC2C89A563FCBE0F")
     public void resetSyntax() {
 for(int i = 0;i < 256;i++)
         {
             tokenTypes[i] = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i < 256; i++) {
-            //tokenTypes[i] = 0;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "0BBEE324D353623AAF036FC109969157", hash_generated_method = "54079048C39252366A87C0EA330A3491")
     public void slashSlashComments(boolean flag) {
         slashSlashComments = flag;
-        // ---------- Original Method ----------
-        //slashSlashComments = flag;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.137 -0400", hash_original_method = "73AA04832C7FF855283D30769102DB3E", hash_generated_method = "FEA5FDEAC577D365D3552916E6F5E766")
     public void slashStarComments(boolean flag) {
         slashStarComments = flag;
-        // ---------- Original Method ----------
-        //slashStarComments = flag;
+        
+        
     }
 
     
@@ -607,23 +619,24 @@ switch(ttype){
     if(ttype == TT_UNKNOWN || tokenTypes[ttype] == TOKEN_QUOTE)        
         {
             result.append(sval);
-        } //End block
+        } 
         else
         {
             result.append('\'');
             result.append((char) ttype);
             result.append('\'');
-        } //End block
+        } 
 }        result.append("], line ");
         result.append(lineNumber);
 String varE65B3A02759122992CB82C0E651AD408_449939454 =         result.toString();
         varE65B3A02759122992CB82C0E651AD408_449939454.addTaint(taint);
         return varE65B3A02759122992CB82C0E651AD408_449939454;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.138 -0400", hash_original_method = "70A99B8CFA2D4FEC72EA62C54EC3FE21", hash_generated_method = "7E9F6E09F46B343D5F6C7CB3F7D3EC77")
     public void whitespaceChars(int low, int hi) {
         addTaint(hi);
@@ -631,28 +644,29 @@ String varE65B3A02759122992CB82C0E651AD408_449939454 =         result.toString()
     if(low < 0)        
         {
             low = 0;
-        } //End block
+        } 
     if(hi > tokenTypes.length)        
         {
             hi = tokenTypes.length - 1;
-        } //End block
+        } 
 for(int i = low;i <= hi;i++)
         {
             tokenTypes[i] = TOKEN_WHITE;
-        } //End block
-        // ---------- Original Method ----------
-        //if (low < 0) {
-            //low = 0;
-        //}
-        //if (hi > tokenTypes.length) {
-            //hi = tokenTypes.length - 1;
-        //}
-        //for (int i = low; i <= hi; i++) {
-            //tokenTypes[i] = TOKEN_WHITE;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:49.138 -0400", hash_original_method = "CCF6D4E2D65BDFCC5D3A11ED629A7633", hash_generated_method = "D771BE83CC2CECAC2C457D2D8EA1A207")
     public void wordChars(int low, int hi) {
         addTaint(hi);
@@ -660,25 +674,25 @@ for(int i = low;i <= hi;i++)
     if(low < 0)        
         {
             low = 0;
-        } //End block
+        } 
     if(hi > tokenTypes.length)        
         {
             hi = tokenTypes.length - 1;
-        } //End block
+        } 
 for(int i = low;i <= hi;i++)
         {
             tokenTypes[i] |= TOKEN_WORD;
-        } //End block
-        // ---------- Original Method ----------
-        //if (low < 0) {
-            //low = 0;
-        //}
-        //if (hi > tokenTypes.length) {
-            //hi = tokenTypes.length - 1;
-        //}
-        //for (int i = low; i <= hi; i++) {
-            //tokenTypes[i] |= TOKEN_WORD;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.database;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,37 +16,38 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.349 -0400", hash_original_method = "896C9D78E64EAD9D50DC29D09D68C65A", hash_generated_method = "896C9D78E64EAD9D50DC29D09D68C65A")
     public DefaultDatabaseErrorHandler ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:16.350 -0400", hash_original_method = "4074EC86E696A918C28D96A3FA80513A", hash_generated_method = "9593A125A57B67579C3D7F63B84CA212")
     public void onCorruption(SQLiteDatabase dbObj) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(dbObj.getTaint());
     if(!dbObj.isOpen())        
         {
             deleteDatabaseFile(dbObj.getPath());
             return;
-        } //End block
+        } 
         List<Pair<String, String>> attachedDbs = null;
         try 
         {
             try 
             {
                 attachedDbs = dbObj.getAttachedDbs();
-            } //End block
+            } 
             catch (SQLiteException e)
             {
-            } //End block
+            } 
             try 
             {
                 dbObj.close();
-            } //End block
+            } 
             catch (SQLiteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
     if(attachedDbs != null)            
@@ -54,15 +55,15 @@ public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
 for(Pair<String, String> p : attachedDbs)
                 {
                     deleteDatabaseFile(p.second);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 deleteDatabaseFile(dbObj.getPath());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -72,24 +73,24 @@ for(Pair<String, String> p : attachedDbs)
     if(fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0)        
         {
             return;
-        } //End block
+        } 
         try 
         {
             new File(fileName).delete();
-        } //End block
+        } 
         catch (Exception e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (fileName.equalsIgnoreCase(":memory:") || fileName.trim().length() == 0) {
-            //return;
-        //}
-        //Log.e(TAG, "deleting the database file: " + fileName);
-        //try {
-            //new File(fileName).delete();
-        //} catch (Exception e) {
-            //Log.w(TAG, "delete failed: " + e.getMessage());
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     

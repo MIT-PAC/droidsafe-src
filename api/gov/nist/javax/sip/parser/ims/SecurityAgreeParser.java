@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class SecurityAgreeParser extends HeaderParser {
     public  SecurityAgreeParser(String security) {
         super(security);
         addTaint(security.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class SecurityAgreeParser extends HeaderParser {
     protected  SecurityAgreeParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -40,22 +40,22 @@ public class SecurityAgreeParser extends HeaderParser {
         {
             NameValue nv = this.nameValue('=');
             header.setParameter(nv);
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parseParameter");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //header.setParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
+            
+                
+        
     }
 
     
@@ -66,17 +66,17 @@ public class SecurityAgreeParser extends HeaderParser {
     if(header.getClass().isInstance(new SecurityClient()))        
         {
             list = new SecurityClientList();
-        } //End block
+        } 
         else
     if(header.getClass().isInstance(new SecurityServer()))        
         {
             list = new SecurityServerList();
-        } //End block
+        } 
         else
     if(header.getClass().isInstance(new SecurityVerify()))        
         {
             list = new SecurityVerifyList();
-        } //End block
+        } 
         else
         {
 SIPHeaderList var540C13E9E156B687226421B24F2DF178_417713938 =         null;
@@ -95,7 +95,7 @@ SIPHeaderList var540C13E9E156B687226421B24F2DF178_417713938 =         null;
 SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_922793288 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_922793288.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_922793288;
-        } //End block
+        } 
         else
     if(la == ';')        
         this.lexer.match(';');
@@ -117,40 +117,40 @@ SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_922793288 =             list;
     if(header.getClass().isInstance(new SecurityClient()))                    
                     {
                         header = new SecurityClient();
-                    } //End block
+                    } 
                     else
     if(header.getClass().isInstance(new SecurityServer()))                    
                     {
                         header = new SecurityServer();
-                    } //End block
+                    } 
                     else
     if(header.getClass().isInstance(new SecurityVerify()))                    
                     {
                         header = new SecurityVerify();
-                    } //End block
+                    } 
                     this.lexer.match(',');
                     this.lexer.SPorHT();
                     lexer.match(TokenTypes.ID);
                     type = lexer.getNextToken();
                     header.setSecurityMechanism(type.getTokenValue());
-                } //End block
+                } 
                 this.lexer.SPorHT();
     if(lexer.lookAhead(0) == ';')                
                 this.lexer.match(';');
                 this.lexer.SPorHT();
-            } //End block
+            } 
             list.add(header);
 SIPHeaderList varED12C351C2E8CA4F85F097DDC7E77B4D_1438813774 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_1438813774.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_1438813774;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             ex.addTaint(taint);
             throw ex;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

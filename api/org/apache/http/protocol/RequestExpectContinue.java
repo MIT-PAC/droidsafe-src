@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class RequestExpectContinue implements HttpRequestInterceptor {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.995 -0400", hash_original_method = "6FB86855078200C1DA7E1696137BDEB8", hash_generated_method = "D8D48DC6FB0C5155B811101DF979F44F")
     public  RequestExpectContinue() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ public class RequestExpectContinue implements HttpRequestInterceptor {
             IllegalArgumentException varF07DEF4BA25028D1DB51C0BA629AF0B4_1285503060 = new IllegalArgumentException("HTTP request may not be null");
             varF07DEF4BA25028D1DB51C0BA629AF0B4_1285503060.addTaint(taint);
             throw varF07DEF4BA25028D1DB51C0BA629AF0B4_1285503060;
-        } //End block
+        } 
     if(request instanceof HttpEntityEnclosingRequest)        
         {
             HttpEntity entity = ((HttpEntityEnclosingRequest)request).getEntity();
@@ -43,23 +43,23 @@ public class RequestExpectContinue implements HttpRequestInterceptor {
                         && !ver.lessEquals(HttpVersion.HTTP_1_0))                
                 {
                     request.addHeader(HTTP.EXPECT_DIRECTIVE, HTTP.EXPECT_CONTINUE);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (request == null) {
-            //throw new IllegalArgumentException("HTTP request may not be null");
-        //}
-        //if (request instanceof HttpEntityEnclosingRequest) {
-            //HttpEntity entity = ((HttpEntityEnclosingRequest)request).getEntity();
-            //if (entity != null && entity.getContentLength() != 0) { 
-                //ProtocolVersion ver = request.getRequestLine().getProtocolVersion();
-                //if (HttpProtocolParams.useExpectContinue(request.getParams()) 
-                        //&& !ver.lessEquals(HttpVersion.HTTP_1_0)) {
-                    //request.addHeader(HTTP.EXPECT_DIRECTIVE, HTTP.EXPECT_CONTINUE);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                        
+                    
+                
+            
+        
     }
 
     

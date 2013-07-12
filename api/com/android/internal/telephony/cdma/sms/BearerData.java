@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -123,7 +123,7 @@ public final class BearerData {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.476 -0400", hash_original_method = "035CB3DD1AE9F589077AA91F91422CE0", hash_generated_method = "035CB3DD1AE9F589077AA91F91422CE0")
     public BearerData ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -164,8 +164,8 @@ public final class BearerData {
 String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString();
         varF4CF030572656354ACFDF83FEE21D7A6_539990258.addTaint(taint);
         return varF4CF030572656354ACFDF83FEE21D7A6_539990258;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -223,7 +223,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
     }
 
     
-        private static byte[] encode7bitAscii(String msg, boolean force) throws CodingException {
+        @DSModeled(DSC.SPEC)
+    private static byte[] encode7bitAscii(String msg, boolean force) throws CodingException {
         try {
             BitwiseOutputStream outStream = new BitwiseOutputStream(msg.length());
             int msgLen = msg.length();
@@ -634,7 +635,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
     }
 
     
-        private static String decodeUtf16(byte[] data, int offset, int numFields) throws CodingException {
+        @DSModeled(DSC.SPEC)
+    private static String decodeUtf16(byte[] data, int offset, int numFields) throws CodingException {
         int padding = offset % 2;
         numFields -= (offset + padding) / 2;
         try {
@@ -645,7 +647,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
     }
 
     
-        private static String decode7bitAscii(byte[] data, int offset, int numFields) throws CodingException {
+        @DSModeled(DSC.SPEC)
+    private static String decode7bitAscii(byte[] data, int offset, int numFields) throws CodingException {
         try {
             offset *= 8;
             StringBuffer strBuf = new StringBuffer(numFields);
@@ -676,7 +679,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
     }
 
     
-        private static String decode7bitGsm(byte[] data, int offset, int numFields) throws CodingException {
+        @DSModeled(DSC.SPEC)
+    private static String decode7bitGsm(byte[] data, int offset, int numFields) throws CodingException {
         int offsetBits = offset * 8;
         int offsetSeptets = (offsetBits + 6) / 7;
         numFields -= offsetSeptets;
@@ -699,7 +703,8 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
     }
 
     
-        private static void decodeUserDataPayload(UserData userData, boolean hasUserDataHeader) throws CodingException {
+        @DSModeled(DSC.SPEC)
+    private static void decodeUserDataPayload(UserData userData, boolean hasUserDataHeader) throws CodingException {
         int offset = 0;
         if (hasUserDataHeader) {
             int udhLen = userData.payload[0] & 0x00FF;
@@ -1293,7 +1298,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.486 -0400", hash_original_method = "227CB08289E9E58D2E1A786B0B8104B3", hash_generated_method = "8C18566B3367C0FEDF5A52BA15A777A6")
         public  TimeStamp() {
             super(TimeZone.getDefault().getID());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1336,17 +1341,17 @@ String varF4CF030572656354ACFDF83FEE21D7A6_539990258 =         builder.toString(
 String varF4CF030572656354ACFDF83FEE21D7A6_785684426 =             builder.toString();
             varF4CF030572656354ACFDF83FEE21D7A6_785684426.addTaint(taint);
             return varF4CF030572656354ACFDF83FEE21D7A6_785684426;
-            // ---------- Original Method ----------
-            //StringBuilder builder = new StringBuilder();
-            //builder.append("TimeStamp ");
-            //builder.append("{ year=" + year);
-            //builder.append(", month=" + month);
-            //builder.append(", day=" + monthDay);
-            //builder.append(", hour=" + hour);
-            //builder.append(", minute=" + minute);
-            //builder.append(", second=" + second);
-            //builder.append(" }");
-            //return builder.toString();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1360,7 +1365,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_785684426 =             builder.toStr
         public  CodingException(String s) {
             super(s);
             addTaint(s.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1379,7 +1384,7 @@ String varF4CF030572656354ACFDF83FEE21D7A6_785684426 =             builder.toStr
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.487 -0400", hash_original_method = "7E9DFC757F4277B439A8F1AFF7D9B860", hash_generated_method = "7E9DFC757F4277B439A8F1AFF7D9B860")
         public Gsm7bitCodingResult ()
         {
-            //Synthesized constructor
+            
         }
 
 

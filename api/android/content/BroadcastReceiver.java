@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public abstract class BroadcastReceiver {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.168 -0400", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "4949473B0E069ABC52AE38A1EB5EC2B1")
     public  BroadcastReceiver() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,13 +38,14 @@ public abstract class BroadcastReceiver {
 PendingResult varB5053E025797B3BF768F5C37934C244D_614416928 =         res;
         varB5053E025797B3BF768F5C37934C244D_614416928.addTaint(taint);
         return varB5053E025797B3BF768F5C37934C244D_614416928;
-        // ---------- Original Method ----------
-        //PendingResult res = mPendingResult;
-        //mPendingResult = null;
-        //return res;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.171 -0400", hash_original_method = "891D062EE6B5DF300B0D5F817EBA802C", hash_generated_method = "AA2A5E2A0F2DE833ACB97A78D9DBEE0A")
     public IBinder peekService(Context myContext, Intent service) {
         addTaint(service.getTaint());
@@ -56,23 +57,23 @@ PendingResult varB5053E025797B3BF768F5C37934C244D_614416928 =         res;
             service.setAllowFds(false);
             binder = am.peekService(service, service.resolveTypeIfNeeded(
                     myContext.getContentResolver()));
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
 IBinder varE3C074C8A98249A08331B334269AEB91_1973532220 =         binder;
         varE3C074C8A98249A08331B334269AEB91_1973532220.addTaint(taint);
         return varE3C074C8A98249A08331B334269AEB91_1973532220;
-        // ---------- Original Method ----------
-        //IActivityManager am = ActivityManagerNative.getDefault();
-        //IBinder binder = null;
-        //try {
-            //service.setAllowFds(false);
-            //binder = am.peekService(service, service.resolveTypeIfNeeded(
-                    //myContext.getContentResolver()));
-        //} catch (RemoteException e) {
-        //}
-        //return binder;
+        
+        
+        
+        
+            
+            
+                    
+        
+        
+        
     }
 
     
@@ -80,9 +81,9 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1973532220 =         binder;
     public final void setResultCode(int code) {
         checkSynchronousHint();
         mPendingResult.mResultCode = code;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultCode = code;
+        
+        
+        
     }
 
     
@@ -91,8 +92,8 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1973532220 =         binder;
         int var2B2BA4CA037129453C2092D8613C9F0D_757303258 = (mPendingResult != null ? mPendingResult.mResultCode : 0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324523320 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1324523320;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mResultCode : 0;
+        
+        
     }
 
     
@@ -100,9 +101,9 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1973532220 =         binder;
     public final void setResultData(String data) {
         checkSynchronousHint();
         mPendingResult.mResultData = data;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultData = data;
+        
+        
+        
     }
 
     
@@ -111,8 +112,8 @@ IBinder varE3C074C8A98249A08331B334269AEB91_1973532220 =         binder;
 String var6A28DDDD6F2A36E80C7DF082C1A737CB_1018902120 =         mPendingResult != null ? mPendingResult.mResultData : null;
         var6A28DDDD6F2A36E80C7DF082C1A737CB_1018902120.addTaint(taint);
         return var6A28DDDD6F2A36E80C7DF082C1A737CB_1018902120;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mResultData : null;
+        
+        
     }
 
     
@@ -120,9 +121,9 @@ String var6A28DDDD6F2A36E80C7DF082C1A737CB_1018902120 =         mPendingResult !
     public final void setResultExtras(Bundle extras) {
         checkSynchronousHint();
         mPendingResult.mResultExtras = extras;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultExtras = extras;
+        
+        
+        
     }
 
     
@@ -134,7 +135,7 @@ String var6A28DDDD6F2A36E80C7DF082C1A737CB_1018902120 =         mPendingResult !
 Bundle var540C13E9E156B687226421B24F2DF178_331679129 =             null;
             var540C13E9E156B687226421B24F2DF178_331679129.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_331679129;
-        } //End block
+        } 
         Bundle e = mPendingResult.mResultExtras;
     if(!makeMap)        
         {
@@ -147,14 +148,14 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2008015823 =         e;
 Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
         var6BFFBFA2F1D556BA80433C2335198CE9_1505566534.addTaint(taint);
         return var6BFFBFA2F1D556BA80433C2335198CE9_1505566534;
-        // ---------- Original Method ----------
-        //if (mPendingResult == null) {
-            //return null;
-        //}
-        //Bundle e = mPendingResult.mResultExtras;
-        //if (!makeMap) return e;
-        //if (e == null) mPendingResult.mResultExtras = e = new Bundle();
-        //return e;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -164,11 +165,11 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
         mPendingResult.mResultCode = code;
         mPendingResult.mResultData = data;
         mPendingResult.mResultExtras = extras;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mResultCode = code;
-        //mPendingResult.mResultData = data;
-        //mPendingResult.mResultExtras = extras;
+        
+        
+        
+        
+        
     }
 
     
@@ -177,8 +178,8 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
         boolean var52C3658BA601DC218244C3815749219A_484297388 = (mPendingResult != null ? mPendingResult.mAbortBroadcast : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1842651010 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1842651010;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mAbortBroadcast : false;
+        
+        
     }
 
     
@@ -186,9 +187,9 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
     public final void abortBroadcast() {
         checkSynchronousHint();
         mPendingResult.mAbortBroadcast = true;
-        // ---------- Original Method ----------
-        //checkSynchronousHint();
-        //mPendingResult.mAbortBroadcast = true;
+        
+        
+        
     }
 
     
@@ -197,11 +198,11 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
     if(mPendingResult != null)        
         {
             mPendingResult.mAbortBroadcast = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingResult != null) {
-            //mPendingResult.mAbortBroadcast = false;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -210,8 +211,8 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
         boolean varE1622B765B214B5C9D5BBE9448B09A07_1061822123 = (mPendingResult != null ? mPendingResult.mOrderedHint : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_170088778 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_170088778;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mOrderedHint : false;
+        
+        
     }
 
     
@@ -220,23 +221,23 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
         boolean var45A355815E07CFCC76BFC8EF62D962F5_1797553943 = (mPendingResult != null ? mPendingResult.mInitialStickyHint : false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1313306384 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1313306384;
-        // ---------- Original Method ----------
-        //return mPendingResult != null ? mPendingResult.mInitialStickyHint : false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.182 -0400", hash_original_method = "68B6314C0DA1E37C298D89B55CAE3400", hash_generated_method = "69D814F3B32F84B57634F91799811317")
     public final void setOrderedHint(boolean isOrdered) {
         addTaint(isOrdered);
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.183 -0400", hash_original_method = "D4C333B718143025A27C15902000FB77", hash_generated_method = "D9AD103DE2626E233CF20E2D5E772BFB")
     public final void setPendingResult(PendingResult result) {
         mPendingResult = result;
-        // ---------- Original Method ----------
-        //mPendingResult = result;
+        
+        
     }
 
     
@@ -245,16 +246,16 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1505566534 =         e;
 PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingResult;
         varFDA66089EEC27D31589A7C2426B1144F_1123548236.addTaint(taint);
         return varFDA66089EEC27D31589A7C2426B1144F_1123548236;
-        // ---------- Original Method ----------
-        //return mPendingResult;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.184 -0400", hash_original_method = "A942596201048EAFD951F2DD414301FD", hash_generated_method = "AE10474DE2420C2D522388046B0DF067")
     public final void setDebugUnregister(boolean debug) {
         mDebugUnregister = debug;
-        // ---------- Original Method ----------
-        //mDebugUnregister = debug;
+        
+        
     }
 
     
@@ -263,8 +264,8 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
         boolean var531E6956D9AF6ECA54301749A881CFAD_2053094689 = (mDebugUnregister);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_148328894 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_148328894;
-        // ---------- Original Method ----------
-        //return mDebugUnregister;
+        
+        
     }
 
     
@@ -275,25 +276,25 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
             IllegalStateException varA46F5C53644BC71E9397C965D29AAAEC_1753588202 = new IllegalStateException("Call while result is not pending");
             varA46F5C53644BC71E9397C965D29AAAEC_1753588202.addTaint(taint);
             throw varA46F5C53644BC71E9397C965D29AAAEC_1753588202;
-        } //End block
+        } 
     if(mPendingResult.mOrderedHint || mPendingResult.mInitialStickyHint)        
         {
             return;
-        } //End block
+        } 
         RuntimeException e = new RuntimeException(
                 "BroadcastReceiver trying to return result during a non-ordered broadcast");
         e.fillInStackTrace();
-        // ---------- Original Method ----------
-        //if (mPendingResult == null) {
-            //throw new IllegalStateException("Call while result is not pending");
-        //}
-        //if (mPendingResult.mOrderedHint || mPendingResult.mInitialStickyHint) {
-            //return;
-        //}
-        //RuntimeException e = new RuntimeException(
-                //"BroadcastReceiver trying to return result during a non-ordered broadcast");
-        //e.fillInStackTrace();
-        //Log.e("BroadcastReceiver", e.getMessage(), e);
+        
+        
+            
+        
+        
+            
+        
+        
+                
+        
+        
     }
 
     
@@ -336,14 +337,14 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
             mOrderedHint = ordered;
             mInitialStickyHint = sticky;
             mToken = token;
-            // ---------- Original Method ----------
-            //mResultCode = resultCode;
-            //mResultData = resultData;
-            //mResultExtras = resultExtras;
-            //mType = type;
-            //mOrderedHint = ordered;
-            //mInitialStickyHint = sticky;
-            //mToken = token;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -351,9 +352,9 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
         public final void setResultCode(int code) {
             checkSynchronousHint();
             mResultCode = code;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultCode = code;
+            
+            
+            
         }
 
         
@@ -362,8 +363,8 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
             int varE5CED19E692744D577EC9F38B767773F_1966460375 = (mResultCode);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1565983023 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1565983023;
-            // ---------- Original Method ----------
-            //return mResultCode;
+            
+            
         }
 
         
@@ -371,9 +372,9 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
         public final void setResultData(String data) {
             checkSynchronousHint();
             mResultData = data;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultData = data;
+            
+            
+            
         }
 
         
@@ -382,8 +383,8 @@ PendingResult varFDA66089EEC27D31589A7C2426B1144F_1123548236 =         mPendingR
 String var7AF81C367EA4623980C8741236739982_1142549106 =             mResultData;
             var7AF81C367EA4623980C8741236739982_1142549106.addTaint(taint);
             return var7AF81C367EA4623980C8741236739982_1142549106;
-            // ---------- Original Method ----------
-            //return mResultData;
+            
+            
         }
 
         
@@ -391,9 +392,9 @@ String var7AF81C367EA4623980C8741236739982_1142549106 =             mResultData;
         public final void setResultExtras(Bundle extras) {
             checkSynchronousHint();
             mResultExtras = extras;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultExtras = extras;
+            
+            
+            
         }
 
         
@@ -412,11 +413,11 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_1868941141 =             e;
 Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
             var6BFFBFA2F1D556BA80433C2335198CE9_2002139819.addTaint(taint);
             return var6BFFBFA2F1D556BA80433C2335198CE9_2002139819;
-            // ---------- Original Method ----------
-            //Bundle e = mResultExtras;
-            //if (!makeMap) return e;
-            //if (e == null) mResultExtras = e = new Bundle();
-            //return e;
+            
+            
+            
+            
+            
         }
 
         
@@ -426,11 +427,11 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
             mResultCode = code;
             mResultData = data;
             mResultExtras = extras;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mResultCode = code;
-            //mResultData = data;
-            //mResultExtras = extras;
+            
+            
+            
+            
+            
         }
 
         
@@ -439,8 +440,8 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
             boolean var9D0CE3E2384F7D542D6BE0E686CC1587_913603544 = (mAbortBroadcast);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1505801688 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1505801688;
-            // ---------- Original Method ----------
-            //return mAbortBroadcast;
+            
+            
         }
 
         
@@ -448,17 +449,17 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
         public final void abortBroadcast() {
             checkSynchronousHint();
             mAbortBroadcast = true;
-            // ---------- Original Method ----------
-            //checkSynchronousHint();
-            //mAbortBroadcast = true;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.214 -0400", hash_original_method = "D4C82CDA8EB6714DAE416B0884FCBC85", hash_generated_method = "6C1AABD9192E1E0A43D3F6EB36BA7FB9")
         public final void clearAbortBroadcast() {
             mAbortBroadcast = false;
-            // ---------- Original Method ----------
-            //mAbortBroadcast = false;
+            
+            
         }
 
         
@@ -474,40 +475,41 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
             @Override
             public void run() {
     if(ActivityThread.DEBUG_BROADCAST){ }                sendFinished(mgr);
-                // ---------- Original Method ----------
-                //if (ActivityThread.DEBUG_BROADCAST) Slog.i(ActivityThread.TAG,
-                                    //"Finishing broadcast after work to component " + mToken);
-                //sendFinished(mgr);
+                
+                
+                                    
+                
             }
 });
-                } //End block
+                } 
                 else
                 {
     if(ActivityThread.DEBUG_BROADCAST){ }                    sendFinished(mgr);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(mOrderedHint && mType != TYPE_UNREGISTERED)            
             {
     if(ActivityThread.DEBUG_BROADCAST){ }                final IActivityManager mgr = ActivityManagerNative.getDefault();
                 sendFinished(mgr);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:08.215 -0400", hash_original_method = "09CFE321AB9E3444E3559F2B522AB2BE", hash_generated_method = "F089507397C23DBABECD9B2914B0838D")
         public void setExtrasClassLoader(ClassLoader cl) {
             addTaint(cl.getTaint());
     if(mResultExtras != null)            
             {
                 mResultExtras.setClassLoader(cl);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mResultExtras != null) {
-                //mResultExtras.setClassLoader(cl);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -521,47 +523,47 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
                     IllegalStateException var837E39E2EF22E9FDB9F1F742200C5639_818243006 = new IllegalStateException("Broadcast already finished");
                     var837E39E2EF22E9FDB9F1F742200C5639_818243006.addTaint(taint);
                     throw var837E39E2EF22E9FDB9F1F742200C5639_818243006;
-                } //End block
+                } 
                 mFinished = true;
                 try 
                 {
     if(mResultExtras != null)                    
                     {
                         mResultExtras.setAllowFds(false);
-                    } //End block
+                    } 
     if(mOrderedHint)                    
                     {
                         am.finishReceiver(mToken, mResultCode, mResultData, mResultExtras,
                                 mAbortBroadcast);
-                    } //End block
+                    } 
                     else
                     {
                         am.finishReceiver(mToken, 0, null, null, false);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RemoteException ex)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (this) {
-                //if (mFinished) {
-                    //throw new IllegalStateException("Broadcast already finished");
-                //}
-                //mFinished = true;
-                //try {
-                    //if (mResultExtras != null) {
-                        //mResultExtras.setAllowFds(false);
-                    //}
-                    //if (mOrderedHint) {
-                        //am.finishReceiver(mToken, mResultCode, mResultData, mResultExtras,
-                                //mAbortBroadcast);
-                    //} else {
-                        //am.finishReceiver(mToken, 0, null, null, false);
-                    //}
-                //} catch (RemoteException ex) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                
+                
+                
+                    
+                        
+                    
+                    
+                        
+                                
+                    
+                        
+                    
+                
+                
+            
         }
 
         
@@ -570,18 +572,18 @@ Bundle var6BFFBFA2F1D556BA80433C2335198CE9_2002139819 =             e;
     if(mOrderedHint || mInitialStickyHint)            
             {
                 return;
-            } //End block
+            } 
             RuntimeException e = new RuntimeException(
                     "BroadcastReceiver trying to return result during a non-ordered broadcast");
             e.fillInStackTrace();
-            // ---------- Original Method ----------
-            //if (mOrderedHint || mInitialStickyHint) {
-                //return;
-            //}
-            //RuntimeException e = new RuntimeException(
-                    //"BroadcastReceiver trying to return result during a non-ordered broadcast");
-            //e.fillInStackTrace();
-            //Log.e("BroadcastReceiver", e.getMessage(), e);
+            
+            
+                
+            
+            
+                    
+            
+            
         }
 
         

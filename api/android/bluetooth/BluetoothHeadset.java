@@ -1,6 +1,6 @@
 package android.bluetooth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,7 +34,7 @@ public final class BluetoothHeadset implements BluetoothProfile {
     private ServiceConnection mConnection = new ServiceConnection() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.026 -0400", hash_original_method = "49B1367FF57AEC89B6CC00CC921EF188", hash_generated_method = "532E4A3B79937596CBCD7192F81D6D7F")
         public void onServiceConnected(ComponentName className, IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(service.getTaint());
             addTaint(className.getTaint());
     if(DBG)            
@@ -43,19 +43,19 @@ public final class BluetoothHeadset implements BluetoothProfile {
     if(mServiceListener != null)            
             {
                 mServiceListener.onServiceConnected(BluetoothProfile.HEADSET, BluetoothHeadset.this);
-            } //End block
-            // ---------- Original Method ----------
-            //if (DBG) Log.d(TAG, "Proxy object connected");
-            //mService = IBluetoothHeadset.Stub.asInterface(service);
-            //if (mServiceListener != null) {
-                //mServiceListener.onServiceConnected(BluetoothProfile.HEADSET, BluetoothHeadset.this);
-            //}
+            } 
+            
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.028 -0400", hash_original_method = "5E9993D21DC5F46D871DD6D0C9DF0475", hash_generated_method = "7DBE42B6E64652795380B3C13EBF01B1")
         public void onServiceDisconnected(ComponentName className) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(className.getTaint());
     if(DBG)            
             Log.d(TAG, "Proxy object disconnected");
@@ -63,13 +63,13 @@ public final class BluetoothHeadset implements BluetoothProfile {
     if(mServiceListener != null)            
             {
                 mServiceListener.onServiceDisconnected(BluetoothProfile.HEADSET);
-            } //End block
-            // ---------- Original Method ----------
-            //if (DBG) Log.d(TAG, "Proxy object disconnected");
-            //mService = null;
-            //if (mServiceListener != null) {
-                //mServiceListener.onServiceDisconnected(BluetoothProfile.HEADSET);
-            //}
+            } 
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -82,14 +82,14 @@ public final class BluetoothHeadset implements BluetoothProfile {
         mAdapter = BluetoothAdapter.getDefaultAdapter();
     if(!context.bindService(new Intent(IBluetoothHeadset.class.getName()), mConnection, 0))        
         {
-        } //End block
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mServiceListener = l;
-        //mAdapter = BluetoothAdapter.getDefaultAdapter();
-        //if (!context.bindService(new Intent(IBluetoothHeadset.class.getName()), mConnection, 0)) {
-            //Log.e(TAG, "Could not bind to Bluetooth Headset Service");
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -101,15 +101,15 @@ public final class BluetoothHeadset implements BluetoothProfile {
         {
             mContext.unbindService(mConnection);
             mConnection = null;
-        } //End block
+        } 
         mServiceListener = null;
-        // ---------- Original Method ----------
-        //if (DBG) log("close()");
-        //if (mConnection != null) {
-            //mContext.unbindService(mConnection);
-            //mConnection = null;
-        //}
-        //mServiceListener = null;
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -126,30 +126,30 @@ public final class BluetoothHeadset implements BluetoothProfile {
                 boolean varEBACDF479EAFFE2AD53D5370B5C3FBBE_790492916 = (mService.connect(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_483945597 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_483945597;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_148986716 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298422293 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298422293;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_1527892487 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971171679 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_971171679;
-        // ---------- Original Method ----------
-        //if (DBG) log("connect(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.connect(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -166,30 +166,30 @@ public final class BluetoothHeadset implements BluetoothProfile {
                 boolean var42FFDFE107D001E4DD32E59464767CFF_1939198596 = (mService.disconnect(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1286897950 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1286897950;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_1152327721 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2060258297 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2060258297;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_656496801 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116144765 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_116144765;
-        // ---------- Original Method ----------
-        //if (DBG) log("disconnect(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.disconnect(device);
-            //} catch (RemoteException e) {
-              //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-              //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+              
+              
+            
+        
+        
+        
     }
 
     
@@ -204,29 +204,29 @@ public final class BluetoothHeadset implements BluetoothProfile {
 List<BluetoothDevice> var0CBC70B0F206DDA9ED876FF389D40D78_1637320394 =                 mService.getConnectedDevices();
                 var0CBC70B0F206DDA9ED876FF389D40D78_1637320394.addTaint(taint);
                 return var0CBC70B0F206DDA9ED876FF389D40D78_1637320394;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1040884727 =                 new ArrayList<BluetoothDevice>();
                 var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1040884727.addTaint(taint);
                 return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1040884727;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1332390242 =         new ArrayList<BluetoothDevice>();
         var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1332390242.addTaint(taint);
         return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1332390242;
-        // ---------- Original Method ----------
-        //if (DBG) log("getConnectedDevices()");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getConnectedDevices();
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -242,29 +242,29 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1040884727 =          
 List<BluetoothDevice> varD888D9FBE2025148D0FB51CF8CEE87E5_1510561895 =                 mService.getDevicesMatchingConnectionStates(states);
                 varD888D9FBE2025148D0FB51CF8CEE87E5_1510561895.addTaint(taint);
                 return varD888D9FBE2025148D0FB51CF8CEE87E5_1510561895;
-            } //End block
+            } 
             catch (RemoteException e)
             {
 List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =                 new ArrayList<BluetoothDevice>();
                 var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840.addTaint(taint);
                 return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1788659153 =         new ArrayList<BluetoothDevice>();
         var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1788659153.addTaint(taint);
         return var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1788659153;
-        // ---------- Original Method ----------
-        //if (DBG) log("getDevicesMatchingStates()");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.getDevicesMatchingConnectionStates(states);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return new ArrayList<BluetoothDevice>();
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return new ArrayList<BluetoothDevice>();
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -281,30 +281,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 int var8DA78526B41CCAC0FE35CC7431643446_757590783 = (mService.getConnectionState(device));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1919095997 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1919095997;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 int var6DC267D6C0363C5B94F222673460F45F_2032018110 = (BluetoothProfile.STATE_DISCONNECTED);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_356030762 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_356030762;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        int var6DC267D6C0363C5B94F222673460F45F_379948754 = (BluetoothProfile.STATE_DISCONNECTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1412966590 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1412966590;
-        // ---------- Original Method ----------
-        //if (DBG) log("getConnectionState(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.getConnectionState(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return BluetoothProfile.STATE_DISCONNECTED;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return BluetoothProfile.STATE_DISCONNECTED;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -323,40 +323,40 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var68934A3E9455FA72420237EB05902327_1167304036 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_606589469 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_606589469;
-            } //End block
+            } 
             try 
             {
                 boolean varC080112B655E626AEC73393AE044B4DD_1829761699 = (mService.setPriority(device, priority));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_562779935 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_562779935;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_890088799 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1463374542 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1463374542;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_1740177310 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_860378280 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_860378280;
-        // ---------- Original Method ----------
-        //if (DBG) log("setPriority(" + device + ", " + priority + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //if (priority != BluetoothProfile.PRIORITY_OFF &&
-                //priority != BluetoothProfile.PRIORITY_ON) {
-              //return false;
-            //}
-            //try {
-                //return mService.setPriority(device, priority);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return false;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+              
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -373,30 +373,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 int var989DD7E44FB699D3F65CF049678ECBF2_945957874 = (mService.getPriority(device));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_987314405 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_987314405;
-            } //End block
+            } 
             catch (RemoteException e)
             {
                 int var3FE1174696877420FC87F195627E2B08_2073025084 = (PRIORITY_OFF);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602231782 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_602231782;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        int var3FE1174696877420FC87F195627E2B08_1603865892 = (PRIORITY_OFF);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_888264251 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_888264251;
-        // ---------- Original Method ----------
-        //if (DBG) log("getPriority(" + device + ")");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.getPriority(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, Log.getStackTraceString(new Throwable()));
-                //return PRIORITY_OFF;
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return PRIORITY_OFF;
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -413,26 +413,26 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var2E6278F99540BCA7BB6D7FB7EDBA4B95_269124278 = (mService.startVoiceRecognition(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1760133495 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1760133495;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_882683223 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1186067362 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1186067362;
-        // ---------- Original Method ----------
-        //if (DBG) log("startVoiceRecognition()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.startVoiceRecognition(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -449,26 +449,26 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var3E7D8B85DCC3BFD70D55B81AD1DA2A5A_428033573 = (mService.stopVoiceRecognition(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_320956935 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_320956935;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_2066701550 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526451919 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526451919;
-        // ---------- Original Method ----------
-        //if (DBG) log("stopVoiceRecognition()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.stopVoiceRecognition(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -485,26 +485,26 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean varAB65A4ED5379193BE2DD7328F35729EC_124307073 = (mService.isAudioConnected(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_159532561 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_159532561;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        boolean var68934A3E9455FA72420237EB05902327_1929434764 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81321079 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_81321079;
-        // ---------- Original Method ----------
-        //if (DBG) log("isAudioConnected()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-              //return mService.isAudioConnected(device);
-            //} catch (RemoteException e) {
-              //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return false;
+        
+        
+        
+            
+            
+              
+            
+              
+            
+        
+        
+        
     }
 
     
@@ -521,26 +521,26 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 int var7863C8B87099F4AC407F33ED733ED7D1_1913751189 = (mService.getBatteryUsageHint(device));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261098509 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261098509;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(mService == null){ }        int var6BB61E3B7BCE0931DA574D19D1D82C88_701657716 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367708778 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_367708778;
-        // ---------- Original Method ----------
-        //if (DBG) log("getBatteryUsageHint()");
-        //if (mService != null && isEnabled() &&
-            //isValidDevice(device)) {
-            //try {
-                //return mService.getBatteryUsageHint(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG,  Log.getStackTraceString(new Throwable()));
-            //}
-        //}
-        //if (mService == null) Log.w(TAG, "Proxy not attached to service");
-        //return -1;
+        
+        
+        
+            
+            
+                
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -561,30 +561,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var8F612F355507F6BF9B63952A68F95EFA_218869867 = (mService.cancelConnectThread());
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1501427133 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1501427133;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1697297309 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_579521953 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_579521953;
-        // ---------- Original Method ----------
-        //if (DBG) log("cancelConnectThread");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.cancelConnectThread();
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -600,30 +600,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean varF9C28B6E1AE85E729C6653EF3E879483_152117360 = (mService.acceptIncomingConnect(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1458815454 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1458815454;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1066579769 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045202418 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1045202418;
-        // ---------- Original Method ----------
-        //if (DBG) log("acceptIncomingConnect");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.acceptIncomingConnect(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -639,30 +639,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var9F587C777B124F841E17D9332B80F45D_2788677 = (mService.createIncomingConnect(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1530135115 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1530135115;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1833561775 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_278987777 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_278987777;
-        // ---------- Original Method ----------
-        //if (DBG) log("createIncomingConnect");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.createIncomingConnect(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -678,30 +678,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var36ABF51603D76C34EF0882E468415E22_1330374371 = (mService.rejectIncomingConnect(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_800477816 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_800477816;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1738728677 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656113616 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656113616;
-        // ---------- Original Method ----------
-        //if (DBG) log("rejectIncomingConnect");
-        //if (mService != null) {
-            //try {
-                //return mService.rejectIncomingConnect(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -717,30 +717,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var80E81716EE61B25591D10CB023BDFE66_2139208211 = (mService.connectHeadsetInternal(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298607191 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298607191;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1981197377 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1394874502 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1394874502;
-        // ---------- Original Method ----------
-        //if (DBG) log("connectHeadsetInternal");
-        //if (mService != null && isEnabled()) {
-            //try {
-                //return mService.connectHeadsetInternal(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -756,30 +756,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var83077D59398C4B52710A7457DD863D92_1889978480 = (mService.disconnectHeadsetInternal(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1476278304 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1476278304;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_200660164 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1584486002 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1584486002;
-        // ---------- Original Method ----------
-        //if (DBG) log("disconnectHeadsetInternal");
-        //if (mService != null && !isDisabled()) {
-            //try {
-                 //return mService.disconnectHeadsetInternal(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                 
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -796,30 +796,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean varBF88569449B60A1ACD0300E088CD75B8_1164300086 = (mService.setAudioState(device, state));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_72036773 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_72036773;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_365109565 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_713338546 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_713338546;
-        // ---------- Original Method ----------
-        //if (DBG) log("setAudioState");
-        //if (mService != null && !isDisabled()) {
-            //try {
-                //return mService.setAudioState(device, state);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -835,30 +835,30 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 int var0479FBBCDD1F5B972572050DA4E69457_1586899400 = (mService.getAudioState(device));
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078598117 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2078598117;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         int var16ABE844BBE5415279E6F507178331F3_1624325043 = (BluetoothHeadset.STATE_AUDIO_DISCONNECTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194535623 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194535623;
-        // ---------- Original Method ----------
-        //if (DBG) log("getAudioState");
-        //if (mService != null && !isDisabled()) {
-            //try {
-                //return mService.getAudioState(device);
-            //} catch (RemoteException e) {Log.e(TAG, e.toString());}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return BluetoothHeadset.STATE_AUDIO_DISCONNECTED;
+        
+        
+        
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -874,32 +874,32 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var85C40956CD68A2208AA5DAC2B51BA147_1244661225 = (mService.startScoUsingVirtualVoiceCall(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1368805436 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1368805436;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2026745553 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1948013252 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1948013252;
-        // ---------- Original Method ----------
-        //if (DBG) log("startScoUsingVirtualVoiceCall()");
-        //if (mService != null && isEnabled() && isValidDevice(device)) {
-            //try {
-                //return mService.startScoUsingVirtualVoiceCall(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -915,32 +915,32 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
                 boolean var758ADF01BA34BA245EB8EA65B10A7BE8_1001334192 = (mService.stopScoUsingVirtualVoiceCall(device));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1700284016 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1700284016;
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(DBG)            
             Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1859521326 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129507014 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_129507014;
-        // ---------- Original Method ----------
-        //if (DBG) log("stopScoUsingVirtualVoiceCall()");
-        //if (mService != null && isEnabled() && isValidDevice(device)) {
-            //try {
-                //return mService.stopScoUsingVirtualVoiceCall(device);
-            //} catch (RemoteException e) {
-                //Log.e(TAG, e.toString());
-            //}
-        //} else {
-            //Log.w(TAG, "Proxy not attached to service");
-            //if (DBG) Log.d(TAG, Log.getStackTraceString(new Throwable()));
-        //}
-        //return false;
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -955,9 +955,9 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
         boolean var68934A3E9455FA72420237EB05902327_2131323307 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1136871304 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1136871304;
-        // ---------- Original Method ----------
-        //if (mAdapter.getState() == BluetoothAdapter.STATE_ON) return true;
-        //return false;
+        
+        
+        
     }
 
     
@@ -972,9 +972,9 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
         boolean var68934A3E9455FA72420237EB05902327_1300450313 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1840978969 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1840978969;
-        // ---------- Original Method ----------
-        //if (mAdapter.getState() == BluetoothAdapter.STATE_OFF) return true;
-        //return false;
+        
+        
+        
     }
 
     
@@ -996,10 +996,10 @@ List<BluetoothDevice> var0DD13883ABBA5DF8AB8CAFEE38A3B82C_1495564840 =          
         boolean var68934A3E9455FA72420237EB05902327_2077925434 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622866112 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_622866112;
-        // ---------- Original Method ----------
-        //if (device == null) return false;
-        //if (BluetoothAdapter.checkBluetoothAddress(device.getAddress())) return true;
-        //return false;
+        
+        
+        
+        
     }
 
     

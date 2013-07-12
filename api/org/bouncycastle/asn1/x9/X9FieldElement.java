@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x9;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,8 +19,8 @@ public class X9FieldElement extends ASN1Encodable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.521 -0400", hash_original_method = "F44590D2DC1CB9A850DEED8AA932C508", hash_generated_method = "B40DD49217D53D4CC78C975F7729E462")
     public  X9FieldElement(ECFieldElement f) {
         this.f = f;
-        // ---------- Original Method ----------
-        //this.f = f;
+        
+        
     }
 
     
@@ -29,7 +29,7 @@ public class X9FieldElement extends ASN1Encodable {
         this(new ECFieldElement.Fp(p, new BigInteger(1, s.getOctets())));
         addTaint(s.getTaint());
         addTaint(p.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -41,17 +41,18 @@ public class X9FieldElement extends ASN1Encodable {
         addTaint(k2);
         addTaint(k1);
         addTaint(m);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.523 -0400", hash_original_method = "8A2CB601358E90D44574A6BC9E09C2FF", hash_generated_method = "C36D55C074F17EED2DB904D4810C1BAC")
     public ECFieldElement getValue() {
 ECFieldElement varABE3CFB53FE4A79F34CB25BC80BFD6E2_908103644 =         f;
         varABE3CFB53FE4A79F34CB25BC80BFD6E2_908103644.addTaint(taint);
         return varABE3CFB53FE4A79F34CB25BC80BFD6E2_908103644;
-        // ---------- Original Method ----------
-        //return f;
+        
+        
     }
 
     
@@ -62,10 +63,10 @@ ECFieldElement varABE3CFB53FE4A79F34CB25BC80BFD6E2_908103644 =         f;
 DERObject var9AD43AE54838BC9671AB5E61A9BEAF35_615690386 =         new DEROctetString(paddedBigInteger);
         var9AD43AE54838BC9671AB5E61A9BEAF35_615690386.addTaint(taint);
         return var9AD43AE54838BC9671AB5E61A9BEAF35_615690386;
-        // ---------- Original Method ----------
-        //int byteCount = converter.getByteLength(f);
-        //byte[] paddedBigInteger = converter.integerToBytes(f.toBigInteger(), byteCount);
-        //return new DEROctetString(paddedBigInteger);
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -63,7 +63,7 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
         addTaint(groupLayout);
         addTaint(groupData.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -86,7 +86,7 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
         addTaint(expandedGroupLayout);
         addTaint(groupData.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -108,18 +108,18 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
         mChildFrom = childFrom;
         mChildTo = childTo;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        // ---------- Original Method ----------
-        //mGroupData = groupData;
-        //mExpandedGroupLayout = expandedGroupLayout;
-        //mCollapsedGroupLayout = collapsedGroupLayout;
-        //mGroupFrom = groupFrom;
-        //mGroupTo = groupTo;
-        //mChildData = childData;
-        //mChildLayout = childLayout;
-        //mLastChildLayout = lastChildLayout;
-        //mChildFrom = childFrom;
-        //mChildTo = childTo;
-        //mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -130,11 +130,12 @@ public class SimpleExpandableListAdapter extends BaseExpandableListAdapter {
 Object varF4E472F530EEA6342931FA947EA4E3DB_1630149624 =         mChildData.get(groupPosition).get(childPosition);
         varF4E472F530EEA6342931FA947EA4E3DB_1630149624.addTaint(taint);
         return varF4E472F530EEA6342931FA947EA4E3DB_1630149624;
-        // ---------- Original Method ----------
-        //return mChildData.get(groupPosition).get(childPosition);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.595 -0400", hash_original_method = "D97177086C567E768212D7EB3B556195", hash_generated_method = "102C3190E8E01E2AA9CA385F1EF69B86")
     public long getChildId(int groupPosition, int childPosition) {
         addTaint(childPosition);
@@ -142,8 +143,8 @@ Object varF4E472F530EEA6342931FA947EA4E3DB_1630149624 =         mChildData.get(g
         long var84D3B89E96B7ED6301A311E22EC81097_1672031128 = (childPosition);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1640108838 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1640108838;
-        // ---------- Original Method ----------
-        //return childPosition;
+        
+        
     }
 
     
@@ -159,24 +160,24 @@ Object varF4E472F530EEA6342931FA947EA4E3DB_1630149624 =         mChildData.get(g
     if(convertView == null)        
         {
             v = newChildView(isLastChild, parent);
-        } //End block
+        } 
         else
         {
             v = convertView;
-        } //End block
+        } 
         bindView(v, mChildData.get(groupPosition).get(childPosition), mChildFrom, mChildTo);
 View var6DC76BC51820DD65E8396280E884AA78_853191126 =         v;
         var6DC76BC51820DD65E8396280E884AA78_853191126.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_853191126;
-        // ---------- Original Method ----------
-        //View v;
-        //if (convertView == null) {
-            //v = newChildView(isLastChild, parent);
-        //} else {
-            //v = convertView;
-        //}
-        //bindView(v, mChildData.get(groupPosition).get(childPosition), mChildFrom, mChildTo);
-        //return v;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -187,8 +188,8 @@ View var6DC76BC51820DD65E8396280E884AA78_853191126 =         v;
 View varE89DA9D9E61A89C376400D709F3C6A62_1516319127 =         mInflater.inflate((isLastChild) ? mLastChildLayout : mChildLayout, parent, false);
         varE89DA9D9E61A89C376400D709F3C6A62_1516319127.addTaint(taint);
         return varE89DA9D9E61A89C376400D709F3C6A62_1516319127;
-        // ---------- Original Method ----------
-        //return mInflater.inflate((isLastChild) ? mLastChildLayout : mChildLayout, parent, false);
+        
+        
     }
 
     
@@ -205,16 +206,16 @@ for(int i = 0;i < len;i++)
     if(v != null)            
             {
                 v.setText((String)data.get(from[i]));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int len = to.length;
-        //for (int i = 0; i < len; i++) {
-            //TextView v = (TextView)view.findViewById(to[i]);
-            //if (v != null) {
-                //v.setText((String)data.get(from[i]));
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -224,8 +225,8 @@ for(int i = 0;i < len;i++)
         int varBC42FEB3B9BBFFF4B151382DA91DDCB5_1131978886 = (mChildData.get(groupPosition).size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896630329 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1896630329;
-        // ---------- Original Method ----------
-        //return mChildData.get(groupPosition).size();
+        
+        
     }
 
     
@@ -235,8 +236,8 @@ for(int i = 0;i < len;i++)
 Object varFB97261B2587C339E611EC0290582245_574721243 =         mGroupData.get(groupPosition);
         varFB97261B2587C339E611EC0290582245_574721243.addTaint(taint);
         return varFB97261B2587C339E611EC0290582245_574721243;
-        // ---------- Original Method ----------
-        //return mGroupData.get(groupPosition);
+        
+        
     }
 
     
@@ -245,19 +246,20 @@ Object varFB97261B2587C339E611EC0290582245_574721243 =         mGroupData.get(gr
         int varC6B62FA0B1852F78AF644C60F1A00840_894800416 = (mGroupData.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1374969896 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1374969896;
-        // ---------- Original Method ----------
-        //return mGroupData.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.598 -0400", hash_original_method = "F50F0A33E6E1377DC0B6921910BA68AA", hash_generated_method = "C2318CDAB44E709A757BA1457F10BB63")
     public long getGroupId(int groupPosition) {
         addTaint(groupPosition);
         long var9C6117705CE34CB15E85C3B060C9B3C1_992381989 = (groupPosition);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_609783687 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_609783687;
-        // ---------- Original Method ----------
-        //return groupPosition;
+        
+        
     }
 
     
@@ -272,24 +274,24 @@ Object varFB97261B2587C339E611EC0290582245_574721243 =         mGroupData.get(gr
     if(convertView == null)        
         {
             v = newGroupView(isExpanded, parent);
-        } //End block
+        } 
         else
         {
             v = convertView;
-        } //End block
+        } 
         bindView(v, mGroupData.get(groupPosition), mGroupFrom, mGroupTo);
 View var6DC76BC51820DD65E8396280E884AA78_2054455674 =         v;
         var6DC76BC51820DD65E8396280E884AA78_2054455674.addTaint(taint);
         return var6DC76BC51820DD65E8396280E884AA78_2054455674;
-        // ---------- Original Method ----------
-        //View v;
-        //if (convertView == null) {
-            //v = newGroupView(isExpanded, parent);
-        //} else {
-            //v = convertView;
-        //}
-        //bindView(v, mGroupData.get(groupPosition), mGroupFrom, mGroupTo);
-        //return v;
+        
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -301,12 +303,13 @@ View varF23ED6A15665B35A3ACCEE938622D385_361442666 =         mInflater.inflate((
                 parent, false);
         varF23ED6A15665B35A3ACCEE938622D385_361442666.addTaint(taint);
         return varF23ED6A15665B35A3ACCEE938622D385_361442666;
-        // ---------- Original Method ----------
-        //return mInflater.inflate((isExpanded) ? mExpandedGroupLayout : mCollapsedGroupLayout,
-                //parent, false);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.599 -0400", hash_original_method = "03906FE5F79D1C16D6358EAB518B811D", hash_generated_method = "BDFE47E85630762BC2CAB18732A7A308")
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         addTaint(childPosition);
@@ -314,18 +317,19 @@ View varF23ED6A15665B35A3ACCEE938622D385_361442666 =         mInflater.inflate((
         boolean varB326B5062B2F0E69046810717534CB09_1163837163 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928852196 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_928852196;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.600 -0400", hash_original_method = "047E07C1992C7400A48E08BF432AD584", hash_generated_method = "9AFDC67B1D633070C0BCD76AD18936A7")
     public boolean hasStableIds() {
         boolean varB326B5062B2F0E69046810717534CB09_1441366311 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1001674905 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1001674905;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     

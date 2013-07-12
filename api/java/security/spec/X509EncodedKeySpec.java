@@ -1,6 +1,6 @@
 package java.security.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class X509EncodedKeySpec extends EncodedKeySpec {
     public  X509EncodedKeySpec(byte[] encodedKey) {
         super(encodedKey);
         addTaint(encodedKey[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,8 +20,8 @@ public class X509EncodedKeySpec extends EncodedKeySpec {
         byte[] varE852F609BBA3F241A4F96363DE8BC6BE_285430535 = (super.getEncoded());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1400679346 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1400679346;
-        // ---------- Original Method ----------
-        //return super.getEncoded();
+        
+        
     }
 
     
@@ -30,8 +30,8 @@ public class X509EncodedKeySpec extends EncodedKeySpec {
 String varF820115C876B7F160DE375988A3E1CA1_1368980140 =         "X.509";
         varF820115C876B7F160DE375988A3E1CA1_1368980140.addTaint(taint);
         return varF820115C876B7F160DE375988A3E1CA1_1368980140;
-        // ---------- Original Method ----------
-        //return "X.509";
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.graphics.drawable;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,8 +52,8 @@ public class BitmapDrawable extends Drawable {
     @Deprecated
     public  BitmapDrawable() {
         mBitmapState = new BitmapState((Bitmap) null);
-        // ---------- Original Method ----------
-        //mBitmapState = new BitmapState((Bitmap) null);
+        
+        
     }
 
     
@@ -63,9 +63,9 @@ public class BitmapDrawable extends Drawable {
         addTaint(res.getTaint());
         mBitmapState = new BitmapState((Bitmap) null);
         mBitmapState.mTargetDensity = mTargetDensity;
-        // ---------- Original Method ----------
-        //mBitmapState = new BitmapState((Bitmap) null);
-        //mBitmapState.mTargetDensity = mTargetDensity;
+        
+        
+        
     }
 
     
@@ -74,7 +74,7 @@ public class BitmapDrawable extends Drawable {
     public  BitmapDrawable(Bitmap bitmap) {
         this(new BitmapState(bitmap), null);
         addTaint(bitmap.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -84,8 +84,8 @@ public class BitmapDrawable extends Drawable {
         addTaint(bitmap.getTaint());
         addTaint(res.getTaint());
         mBitmapState.mTargetDensity = mTargetDensity;
-        // ---------- Original Method ----------
-        //mBitmapState.mTargetDensity = mTargetDensity;
+        
+        
     }
 
     
@@ -97,11 +97,11 @@ public class BitmapDrawable extends Drawable {
     if(mBitmap == null)        
         {
             android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + filepath);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBitmap == null) {
-            //android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + filepath);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -115,12 +115,12 @@ public class BitmapDrawable extends Drawable {
     if(mBitmap == null)        
         {
             android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + filepath);
-        } //End block
-        // ---------- Original Method ----------
-        //mBitmapState.mTargetDensity = mTargetDensity;
-        //if (mBitmap == null) {
-            //android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + filepath);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -132,11 +132,11 @@ public class BitmapDrawable extends Drawable {
     if(mBitmap == null)        
         {
             android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + is);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBitmap == null) {
-            //android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + is);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -150,12 +150,12 @@ public class BitmapDrawable extends Drawable {
     if(mBitmap == null)        
         {
             android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + is);
-        } //End block
-        // ---------- Original Method ----------
-        //mBitmapState.mTargetDensity = mTargetDensity;
-        //if (mBitmap == null) {
-            //android.util.Log.w("BitmapDrawable", "BitmapDrawable cannot decode " + is);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -165,20 +165,20 @@ public class BitmapDrawable extends Drawable {
     if(res != null)        
         {
             mTargetDensity = res.getDisplayMetrics().densityDpi;
-        } //End block
+        } 
         else
         {
             mTargetDensity = state.mTargetDensity;
-        } //End block
+        } 
         setBitmap(state != null ? state.mBitmap : null);
-        // ---------- Original Method ----------
-        //mBitmapState = state;
-        //if (res != null) {
-            //mTargetDensity = res.getDisplayMetrics().densityDpi;
-        //} else {
-            //mTargetDensity = state.mTargetDensity;
-        //}
-        //setBitmap(state != null ? state.mBitmap : null);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -187,8 +187,8 @@ public class BitmapDrawable extends Drawable {
 Paint varE3E65144F7E831421DA6CC787BBC597C_1798716530 =         mBitmapState.mPaint;
         varE3E65144F7E831421DA6CC787BBC597C_1798716530.addTaint(taint);
         return varE3E65144F7E831421DA6CC787BBC597C_1798716530;
-        // ---------- Original Method ----------
-        //return mBitmapState.mPaint;
+        
+        
     }
 
     
@@ -197,21 +197,23 @@ Paint varE3E65144F7E831421DA6CC787BBC597C_1798716530 =         mBitmapState.mPai
 Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160 =         mBitmap;
         var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160.addTaint(taint);
         return var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160;
-        // ---------- Original Method ----------
-        //return mBitmap;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.621 -0400", hash_original_method = "BD13D47BACD5F22B3F18803E2B331415", hash_generated_method = "5BD547052F6BE282E7B4F0BFF461A99A")
     private void computeBitmapSize() {
         mBitmapWidth = mBitmap.getScaledWidth(mTargetDensity);
         mBitmapHeight = mBitmap.getScaledHeight(mTargetDensity);
-        // ---------- Original Method ----------
-        //mBitmapWidth = mBitmap.getScaledWidth(mTargetDensity);
-        //mBitmapHeight = mBitmap.getScaledHeight(mTargetDensity);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.621 -0400", hash_original_method = "5A8B316E5E7A06983942607FAB994128", hash_generated_method = "FAC645F6B1147F59BBC47A9751C86933")
     private void setBitmap(Bitmap bitmap) {
     if(bitmap != mBitmap)        
@@ -220,44 +222,47 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160 =         mBitmap;
     if(bitmap != null)            
             {
                 computeBitmapSize();
-            } //End block
+            } 
             else
             {
                 mBitmapWidth = mBitmapHeight = -1;
-            } //End block
+            } 
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //if (bitmap != mBitmap) {
-            //mBitmap = bitmap;
-            //if (bitmap != null) {
-                //computeBitmapSize();
-            //} else {
-                //mBitmapWidth = mBitmapHeight = -1;
-            //}
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.622 -0400", hash_original_method = "82585E992AABF5984A06ED90552A1C77", hash_generated_method = "08ADEC9348B823ADA440A2B50003FC7E")
     public void setTargetDensity(Canvas canvas) {
         addTaint(canvas.getTaint());
         setTargetDensity(canvas.getDensity());
-        // ---------- Original Method ----------
-        //setTargetDensity(canvas.getDensity());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.622 -0400", hash_original_method = "4AE49AE83EF2F62C9A584A758B5178F3", hash_generated_method = "A780DDFCC4CBE80D7EFC83D56CFDF67F")
     public void setTargetDensity(DisplayMetrics metrics) {
         addTaint(metrics.getTaint());
         setTargetDensity(metrics.densityDpi);
-        // ---------- Original Method ----------
-        //setTargetDensity(metrics.densityDpi);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.623 -0400", hash_original_method = "A17595DAE1AE36756FF8FF6EEBB23DC0", hash_generated_method = "BAA55B2CE1AB01E63F69C3EACC446F44")
     public void setTargetDensity(int density) {
     if(mTargetDensity != density)        
@@ -266,30 +271,32 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160 =         mBitmap;
     if(mBitmap != null)            
             {
                 computeBitmapSize();
-            } //End block
+            } 
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTargetDensity != density) {
-            //mTargetDensity = density == 0 ? DisplayMetrics.DENSITY_DEFAULT : density;
-            //if (mBitmap != null) {
-                //computeBitmapSize();
-            //}
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.623 -0400", hash_original_method = "35E95FC787F9F24A49C5DE1ED0297F4C", hash_generated_method = "5464C78F867D49DCF0DA1280FCA28B17")
     public int getGravity() {
         int varAC1B497EA644683625E1592BCC420E70_1088563413 = (mBitmapState.mGravity);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006996592 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2006996592;
-        // ---------- Original Method ----------
-        //return mBitmapState.mGravity;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.624 -0400", hash_original_method = "4FFB5FF85BF6BE29F34E4951AEB6D83F", hash_generated_method = "4990407CF9ED1404EE61CF8CAFF9F273")
     public void setGravity(int gravity) {
     if(mBitmapState.mGravity != gravity)        
@@ -297,77 +304,83 @@ Bitmap var3AE2FA0FD35BCE2BB296A9C2B523C9FC_1222742160 =         mBitmap;
             mBitmapState.mGravity = gravity;
             mApplyGravity = true;
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mBitmapState.mGravity != gravity) {
-            //mBitmapState.mGravity = gravity;
-            //mApplyGravity = true;
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.624 -0400", hash_original_method = "A6A7F02FCC6854A1D6F789226FBA84D5", hash_generated_method = "FDB48E3CB0AEF7BEC72E3587CE056080")
     public void setAntiAlias(boolean aa) {
         addTaint(aa);
         mBitmapState.mPaint.setAntiAlias(aa);
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mBitmapState.mPaint.setAntiAlias(aa);
-        //invalidateSelf();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.625 -0400", hash_original_method = "79F41E9E1F5486CC4586236A9EB22FE0", hash_generated_method = "EA50CFAF9A3655479F733C2E485F5B20")
     @Override
     public void setFilterBitmap(boolean filter) {
         addTaint(filter);
         mBitmapState.mPaint.setFilterBitmap(filter);
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mBitmapState.mPaint.setFilterBitmap(filter);
-        //invalidateSelf();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.625 -0400", hash_original_method = "FC203784F21362ACF19CD453633052FE", hash_generated_method = "1FEF8C5682A4E65A1BA40DA090FD2DD6")
     @Override
     public void setDither(boolean dither) {
         addTaint(dither);
         mBitmapState.mPaint.setDither(dither);
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mBitmapState.mPaint.setDither(dither);
-        //invalidateSelf();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.625 -0400", hash_original_method = "8C03C626370DF89EB681D1D91A4CB25A", hash_generated_method = "AC1AA89EA54FF900E2894FED925FF019")
     public Shader.TileMode getTileModeX() {
 Shader.TileMode var8A0DDC40CE3A669DB6E8ED93A5D53143_1009486631 =         mBitmapState.mTileModeX;
         var8A0DDC40CE3A669DB6E8ED93A5D53143_1009486631.addTaint(taint);
         return var8A0DDC40CE3A669DB6E8ED93A5D53143_1009486631;
-        // ---------- Original Method ----------
-        //return mBitmapState.mTileModeX;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.626 -0400", hash_original_method = "C4F6E36EB6EDDD2C280548D4CD537229", hash_generated_method = "7E0979A198C24E4E0639033239D56D7A")
     public Shader.TileMode getTileModeY() {
 Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmapState.mTileModeY;
         var20C17428E24ACD541E1A3941B269BCFC_1801635636.addTaint(taint);
         return var20C17428E24ACD541E1A3941B269BCFC_1801635636;
-        // ---------- Original Method ----------
-        //return mBitmapState.mTileModeY;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.627 -0400", hash_original_method = "856CFED7038AD7D83A692D422DD3B90C", hash_generated_method = "D7EB833378A78EEB251B687D6A418614")
     public void setTileModeX(Shader.TileMode mode) {
         addTaint(mode.getTaint());
         setTileModeXY(mode, mBitmapState.mTileModeY);
-        // ---------- Original Method ----------
-        //setTileModeXY(mode, mBitmapState.mTileModeY);
+        
+        
     }
 
     
@@ -375,11 +388,12 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmap
     public final void setTileModeY(Shader.TileMode mode) {
         addTaint(mode.getTaint());
         setTileModeXY(mBitmapState.mTileModeX, mode);
-        // ---------- Original Method ----------
-        //setTileModeXY(mBitmapState.mTileModeX, mode);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.629 -0400", hash_original_method = "ADEC19A1E439C619635E588D2B7F4415", hash_generated_method = "FEC60FA57D9721BBB1E91CD6B2A83F5F")
     public void setTileModeXY(Shader.TileMode xmode, Shader.TileMode ymode) {
         addTaint(ymode.getTaint());
@@ -391,42 +405,45 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmap
             state.mTileModeY = ymode;
             state.mRebuildShader = true;
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //final BitmapState state = mBitmapState;
-        //if (state.mTileModeX != xmode || state.mTileModeY != ymode) {
-            //state.mTileModeX = xmode;
-            //state.mTileModeY = ymode;
-            //state.mRebuildShader = true;
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.629 -0400", hash_original_method = "10D38B42FB036E8B57E4A209AB7F4ADC", hash_generated_method = "13FE008A27BCE9225C79E24649AAF7D0")
     @Override
     public int getChangingConfigurations() {
         int var3FEDC0452C3DBDEBD33B7D15B3692B25_320191890 = (super.getChangingConfigurations() | mBitmapState.mChangingConfigurations);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923572587 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923572587;
-        // ---------- Original Method ----------
-        //return super.getChangingConfigurations() | mBitmapState.mChangingConfigurations;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.630 -0400", hash_original_method = "43A5F38374D847F9AEDDDDB09459070C", hash_generated_method = "4C719EE6B6EF151AB2ABE8E40AB0AC81")
     @Override
     protected void onBoundsChange(Rect bounds) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(bounds.getTaint());
         super.onBoundsChange(bounds);
         mApplyGravity = true;
-        // ---------- Original Method ----------
-        //super.onBoundsChange(bounds);
-        //mApplyGravity = true;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.631 -0400", hash_original_method = "6FA1B7BCBB056D9C6C12415C137DE76D", hash_generated_method = "8ABD2040214BD4F752B8F3FAF33F477D")
     @Override
     public void draw(Canvas canvas) {
@@ -442,16 +459,16 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmap
     if(tmx == null && tmy == null)                
                 {
                     state.mPaint.setShader(null);
-                } //End block
+                } 
                 else
                 {
                     state.mPaint.setShader(new BitmapShader(bitmap,
                             tmx == null ? Shader.TileMode.CLAMP : tmx,
                             tmy == null ? Shader.TileMode.CLAMP : tmy));
-                } //End block
+                } 
                 state.mRebuildShader = false;
                 copyBounds(mDstRect);
-            } //End block
+            } 
             Shader shader = state.mPaint.getShader();
     if(shader == null)            
             {
@@ -461,24 +478,25 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmap
                     Gravity.apply(state.mGravity, mBitmapWidth, mBitmapHeight,
                             getBounds(), mDstRect, layoutDirection);
                     mApplyGravity = false;
-                } //End block
+                } 
                 canvas.drawBitmap(bitmap, null, mDstRect, state.mPaint);
-            } //End block
+            } 
             else
             {
     if(mApplyGravity)                
                 {
                     copyBounds(mDstRect);
                     mApplyGravity = false;
-                } //End block
+                } 
                 canvas.drawRect(mDstRect, state.mPaint);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.632 -0400", hash_original_method = "49CE66D09454E056E2AD494EF2DD30A3", hash_generated_method = "91CAF86F01D69BF321FD7132A16F8D2A")
     @Override
     public void setAlpha(int alpha) {
@@ -488,28 +506,30 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmap
         {
             mBitmapState.mPaint.setAlpha(alpha);
             invalidateSelf();
-        } //End block
-        // ---------- Original Method ----------
-        //int oldAlpha = mBitmapState.mPaint.getAlpha();
-        //if (alpha != oldAlpha) {
-            //mBitmapState.mPaint.setAlpha(alpha);
-            //invalidateSelf();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.633 -0400", hash_original_method = "F79C881D02962F781494A97AA0D9D98A", hash_generated_method = "1B97F5953B8EC21C266369A4AD2517A7")
     @Override
     public void setColorFilter(ColorFilter cf) {
         addTaint(cf.getTaint());
         mBitmapState.mPaint.setColorFilter(cf);
         invalidateSelf();
-        // ---------- Original Method ----------
-        //mBitmapState.mPaint.setColorFilter(cf);
-        //invalidateSelf();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.634 -0400", hash_original_method = "12F43AAD192527EE14BD9EA92E6F05B8", hash_generated_method = "91A6CF0AB6E028FCAC5005035CDB013C")
     @Override
     public Drawable mutate() {
@@ -517,19 +537,20 @@ Shader.TileMode var20C17428E24ACD541E1A3941B269BCFC_1801635636 =         mBitmap
         {
             mBitmapState = new BitmapState(mBitmapState);
             mMutated = true;
-        } //End block
+        } 
 Drawable var72A74007B2BE62B849F475C7BDA4658B_1312445158 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1312445158.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1312445158;
-        // ---------- Original Method ----------
-        //if (!mMutated && super.mutate() == this) {
-            //mBitmapState = new BitmapState(mBitmapState);
-            //mMutated = true;
-        //}
-        //return this;
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.636 -0400", hash_original_method = "C7B53A4BB10177C8F005B36E9252EFF2", hash_generated_method = "866F0008BE1353BEF452A9E74C99CA18")
     @Override
     public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs) throws XmlPullParserException, IOException {
@@ -545,7 +566,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1312445158 =         this;
                     ": <bitmap> requires a valid src attribute");
             var1601E3160C46A96655701F0CD188D346_1138955470.addTaint(taint);
             throw var1601E3160C46A96655701F0CD188D346_1138955470;
-        } //End block
+        } 
         final Bitmap bitmap = BitmapFactory.decodeResource(r, id);
     if(bitmap == null)        
         {
@@ -553,7 +574,7 @@ Drawable var72A74007B2BE62B849F475C7BDA4658B_1312445158 =         this;
                     ": <bitmap> requires a valid src attribute");
             var1601E3160C46A96655701F0CD188D346_95921230.addTaint(taint);
             throw var1601E3160C46A96655701F0CD188D346_95921230;
-        } //End block
+        } 
         mBitmapState.mBitmap = bitmap;
         setBitmap(bitmap);
         setTargetDensity(r.getDisplayMetrics());
@@ -579,35 +600,38 @@ switch(tileMode){
             setTileModeXY(Shader.TileMode.MIRROR, Shader.TileMode.MIRROR);
             break;
 }
-        } //End block
+        } 
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.637 -0400", hash_original_method = "6DB114FB8E950C38C4587167EE2392DA", hash_generated_method = "E940B0EAACB158EFC7BB2A5418BB75D9")
     @Override
     public int getIntrinsicWidth() {
         int varDE6A0ABB3CA1313B4F7BDFF407B4A18B_812767657 = (mBitmapWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_297319419 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_297319419;
-        // ---------- Original Method ----------
-        //return mBitmapWidth;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.638 -0400", hash_original_method = "391FEC77F059693D96A6B7B3AE926494", hash_generated_method = "28BF95AAFAE58C32D16E9C2AE5D33A21")
     @Override
     public int getIntrinsicHeight() {
         int varEE573FC7FF36074270F8BF43556DFB4C_73103787 = (mBitmapHeight);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1622391932 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1622391932;
-        // ---------- Original Method ----------
-        //return mBitmapHeight;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.639 -0400", hash_original_method = "9571905A182C10BB0B86009E34DE8EF4", hash_generated_method = "48F43F4B9BF8FC5E9755C113B1B4979E")
     @Override
     public int getOpacity() {
@@ -616,19 +640,19 @@ switch(tileMode){
             int var26C79996E92FCFBDC98A49C80BC91AD0_1434194118 = (PixelFormat.TRANSLUCENT);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573664650 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_573664650;
-        } //End block
+        } 
         Bitmap bm = mBitmap;
         int varE8E91935D3E850230416366BB42F953B_2099352410 = ((bm == null || bm.hasAlpha() || mBitmapState.mPaint.getAlpha() < 255) ?
                 PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2076216569 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2076216569;
-        // ---------- Original Method ----------
-        //if (mBitmapState.mGravity != Gravity.FILL) {
-            //return PixelFormat.TRANSLUCENT;
-        //}
-        //Bitmap bm = mBitmap;
-        //return (bm == null || bm.hasAlpha() || mBitmapState.mPaint.getAlpha() < 255) ?
-                //PixelFormat.TRANSLUCENT : PixelFormat.OPAQUE;
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -639,9 +663,9 @@ switch(tileMode){
 ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapState;
         var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668.addTaint(taint);
         return var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668;
-        // ---------- Original Method ----------
-        //mBitmapState.mChangingConfigurations = getChangingConfigurations();
-        //return mBitmapState;
+        
+        
+        
     }
 
     
@@ -674,8 +698,8 @@ ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapSt
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.641 -0400", hash_original_method = "80003A9E2431B1DF8C6F7DBC005B3BC9", hash_generated_method = "A9BB708F42AA8B8426AFD5B8BA3AC518")
           BitmapState(Bitmap bitmap) {
             mBitmap = bitmap;
-            // ---------- Original Method ----------
-            //mBitmap = bitmap;
+            
+            
         }
 
         
@@ -689,14 +713,14 @@ ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapSt
             mTargetDensity = bitmapState.mTargetDensity;
             mPaint = new Paint(bitmapState.mPaint);
             mRebuildShader = bitmapState.mRebuildShader;
-            // ---------- Original Method ----------
-            //mChangingConfigurations = bitmapState.mChangingConfigurations;
-            //mGravity = bitmapState.mGravity;
-            //mTileModeX = bitmapState.mTileModeX;
-            //mTileModeY = bitmapState.mTileModeY;
-            //mTargetDensity = bitmapState.mTargetDensity;
-            //mPaint = new Paint(bitmapState.mPaint);
-            //mRebuildShader = bitmapState.mRebuildShader;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -706,8 +730,8 @@ ConstantState var3E67C407BBCC4D42D5C5CECC6362B9A7_1380033668 =         mBitmapSt
 Drawable var5E1084F28333265ABFA76FF86F056B51_479098243 =             new BitmapDrawable(this, null);
             var5E1084F28333265ABFA76FF86F056B51_479098243.addTaint(taint);
             return var5E1084F28333265ABFA76FF86F056B51_479098243;
-            // ---------- Original Method ----------
-            //return new BitmapDrawable(this, null);
+            
+            
         }
 
         
@@ -718,19 +742,20 @@ Drawable var5E1084F28333265ABFA76FF86F056B51_479098243 =             new BitmapD
 Drawable var63524157975F655BCEF229267EA3374D_2117085723 =             new BitmapDrawable(this, res);
             var63524157975F655BCEF229267EA3374D_2117085723.addTaint(taint);
             return var63524157975F655BCEF229267EA3374D_2117085723;
-            // ---------- Original Method ----------
-            //return new BitmapDrawable(this, res);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:19.643 -0400", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "D59AFF166059FA61ADD1F00A77E309CA")
         @Override
         public int getChangingConfigurations() {
             int var276E0645C4E2084773D0EB8C5576428C_1815398053 = (mChangingConfigurations);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1764231197 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1764231197;
-            // ---------- Original Method ----------
-            //return mChangingConfigurations;
+            
+            
         }
 
         

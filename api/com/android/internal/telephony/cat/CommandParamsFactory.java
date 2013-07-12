@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,9 +30,9 @@ class CommandParamsFactory extends Handler {
     private  CommandParamsFactory(RilMessageDecoder caller, IccFileHandler fh) {
         mCaller = caller;
         mIconLoader = IconLoader.getInstance(this, fh);
-        // ---------- Original Method ----------
-        //mCaller = caller;
-        //mIconLoader = IconLoader.getInstance(this, fh);
+        
+        
+        
     }
 
     
@@ -61,30 +61,30 @@ class CommandParamsFactory extends Handler {
                 try 
                 {
                     cmdDet = ValueParser.retrieveCommandDetails(ctlvCmdDet);
-                } //End block
+                } 
                 catch (ResultException e)
                 {
                     CatLog.d(this, "Failed to procees command details");
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 CommandDetails var0060BCF683BA9945E92A4949C9036F93_444356099 =         cmdDet;
         var0060BCF683BA9945E92A4949C9036F93_444356099.addTaint(taint);
         return var0060BCF683BA9945E92A4949C9036F93_444356099;
-        // ---------- Original Method ----------
-        //CommandDetails cmdDet = null;
-        //if (ctlvs != null) {
-            //ComprehensionTlv ctlvCmdDet = searchForTag(
-                    //ComprehensionTlvTag.COMMAND_DETAILS, ctlvs);
-            //if (ctlvCmdDet != null) {
-                //try {
-                    //cmdDet = ValueParser.retrieveCommandDetails(ctlvCmdDet);
-                //} catch (ResultException e) {
-                    //CatLog.d(this, "Failed to procees command details");
-                //}
-            //}
-        //}
-        //return cmdDet;
+        
+        
+        
+            
+                    
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
     }
 
     
@@ -94,14 +94,14 @@ CommandDetails var0060BCF683BA9945E92A4949C9036F93_444356099 =         cmdDet;
     if(berTlv == null)        
         {
             return;
-        } //End block
+        } 
         mCmdParams = null;
         mIconLoadState = LOAD_NO_ICON;
     if(berTlv.getTag() != BerTlv.BER_PROACTIVE_COMMAND_TAG)        
         {
             sendCmdParams(ResultCode.CMD_TYPE_NOT_UNDERSTOOD);
             return;
-        } //End block
+        } 
         boolean cmdPending = false;
         List<ComprehensionTlv> ctlvs = berTlv.getComprehensionTlvs();
         CommandDetails cmdDet = processCommandDetails(ctlvs);
@@ -109,7 +109,7 @@ CommandDetails var0060BCF683BA9945E92A4949C9036F93_444356099 =         cmdDet;
         {
             sendCmdParams(ResultCode.CMD_TYPE_NOT_UNDERSTOOD);
             return;
-        } //End block
+        } 
         AppInterface.CommandType cmdType = AppInterface.CommandType
                 .fromInt(cmdDet.typeOfCommand);
     if(cmdType == null)        
@@ -117,7 +117,7 @@ CommandDetails var0060BCF683BA9945E92A4949C9036F93_444356099 =         cmdDet;
             mCmdParams = new CommandParams(cmdDet);
             sendCmdParams(ResultCode.BEYOND_TERMINAL_CAPABILITY);
             return;
-        } //End block
+        } 
         try 
         {
 switch(cmdType){
@@ -166,19 +166,19 @@ switch(cmdType){
             sendCmdParams(ResultCode.BEYOND_TERMINAL_CAPABILITY);
             return;
 }
-        } //End block
+        } 
         catch (ResultException e)
         {
             mCmdParams = new CommandParams(cmdDet);
             sendCmdParams(e.result());
             return;
-        } //End block
+        } 
     if(!cmdPending)        
         {
             sendCmdParams(ResultCode.OK);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -191,12 +191,12 @@ switch(msg.what){
         sendCmdParams(setIcons(msg.obj));
         break;
 }
-        // ---------- Original Method ----------
-        //switch (msg.what) {
-        //case MSG_ID_LOAD_ICON_DONE:
-            //sendCmdParams(setIcons(msg.obj));
-            //break;
-        //}
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -210,7 +210,7 @@ switch(msg.what){
 ResultCode var87EEAE495D4A3BC9CF91C0B3CBE766B8_1870084386 =             ResultCode.PRFRMD_ICON_NOT_DISPLAYED;
             var87EEAE495D4A3BC9CF91C0B3CBE766B8_1870084386.addTaint(taint);
             return var87EEAE495D4A3BC9CF91C0B3CBE766B8_1870084386;
-        } //End block
+        } 
 switch(mIconLoadState){
         case LOAD_SINGLE_ICON:
         mCmdParams.setIcon((Bitmap) data);
@@ -220,29 +220,29 @@ switch(mIconLoadState){
 for(Bitmap icon : icons)
         {
             mCmdParams.setIcon(icon);
-        } //End block
+        } 
         break;
 }ResultCode var7FF95A55B911283F2CCD032C57FAC8EE_234472729 =         ResultCode.OK;
         var7FF95A55B911283F2CCD032C57FAC8EE_234472729.addTaint(taint);
         return var7FF95A55B911283F2CCD032C57FAC8EE_234472729;
-        // ---------- Original Method ----------
-        //Bitmap[] icons = null;
-        //int iconIndex = 0;
-        //if (data == null) {
-            //return ResultCode.PRFRMD_ICON_NOT_DISPLAYED;
-        //}
-        //switch(mIconLoadState) {
-        //case LOAD_SINGLE_ICON:
-            //mCmdParams.setIcon((Bitmap) data);
-            //break;
-        //case LOAD_MULTI_ICONS:
-            //icons = (Bitmap[]) data;
-            //for (Bitmap icon : icons) {
-                //mCmdParams.setIcon(icon);
-            //}
-            //break;
-        //}
-        //return ResultCode.OK;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -250,8 +250,8 @@ for(Bitmap icon : icons)
     private void sendCmdParams(ResultCode resCode) {
         addTaint(resCode.getTaint());
         mCaller.sendMsgParamsDecoded(resCode, mCmdParams);
-        // ---------- Original Method ----------
-        //mCaller.sendMsgParamsDecoded(resCode, mCmdParams);
+        
+        
     }
 
     
@@ -264,9 +264,9 @@ for(Bitmap icon : icons)
 ComprehensionTlv var855E5E8990508B7B35052B665B493CE9_687928398 =         searchForNextTag(tag, iter);
         var855E5E8990508B7B35052B665B493CE9_687928398.addTaint(taint);
         return var855E5E8990508B7B35052B665B493CE9_687928398;
-        // ---------- Original Method ----------
-        //Iterator<ComprehensionTlv> iter = ctlvs.iterator();
-        //return searchForNextTag(tag, iter);
+        
+        
+        
     }
 
     
@@ -285,20 +285,20 @@ ComprehensionTlv var855E5E8990508B7B35052B665B493CE9_687928398 =         searchF
 ComprehensionTlv varD3767E0B0CB0AACF1A8FB652E179ED5D_1035618413 =                 ctlv;
                 varD3767E0B0CB0AACF1A8FB652E179ED5D_1035618413.addTaint(taint);
                 return varD3767E0B0CB0AACF1A8FB652E179ED5D_1035618413;
-            } //End block
-        } //End block
+            } 
+        } 
 ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
         var540C13E9E156B687226421B24F2DF178_1525317845.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1525317845;
-        // ---------- Original Method ----------
-        //int tagValue = tag.value();
-        //while (iter.hasNext()) {
-            //ComprehensionTlv ctlv = iter.next();
-            //if (ctlv.getTag() == tagValue) {
-                //return ctlv;
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -314,29 +314,29 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
     if(ctlv != null)        
         {
             textMsg.text = ValueParser.retrieveTextString(ctlv);
-        } //End block
+        } 
     if(textMsg.text == null)        
         {
             ResultException var6E8D14BE611E67DFA023E650FC522377_2060170850 = new ResultException(ResultCode.CMD_DATA_NOT_UNDERSTOOD);
             var6E8D14BE611E67DFA023E650FC522377_2060170850.addTaint(taint);
             throw var6E8D14BE611E67DFA023E650FC522377_2060170850;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.IMMEDIATE_RESPONSE, ctlvs);
     if(ctlv != null)        
         {
             textMsg.responseNeeded = false;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
     if(ctlv != null)        
         {
             iconId = ValueParser.retrieveIconId(ctlv);
             textMsg.iconSelfExplanatory = iconId.selfExplanatory;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.DURATION, ctlvs);
     if(ctlv != null)        
         {
             textMsg.duration = ValueParser.retrieveDuration(ctlv);
-        } //End block
+        } 
         textMsg.isHighPriority = (cmdDet.commandQualifier & 0x01) != 0;
         textMsg.userClear = (cmdDet.commandQualifier & 0x80) != 0;
         mCmdParams = new DisplayTextParams(cmdDet, textMsg);
@@ -348,12 +348,12 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
             boolean varB326B5062B2F0E69046810717534CB09_240280711 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_357511614 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_357511614;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_982058811 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1731288461 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1731288461;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -369,7 +369,7 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
     if(ctlv != null)        
         {
             textMsg.text = ValueParser.retrieveTextString(ctlv);
-        } //End block
+        } 
     if(textMsg.text != null)        
         {
             ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
@@ -377,8 +377,8 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
             {
                 iconId = ValueParser.retrieveIconId(ctlv);
                 textMsg.iconSelfExplanatory = iconId.selfExplanatory;
-            } //End block
-        } //End block
+            } 
+        } 
         mCmdParams = new DisplayTextParams(cmdDet, textMsg);
     if(iconId != null)        
         {
@@ -388,12 +388,12 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
             boolean varB326B5062B2F0E69046810717534CB09_1516348895 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_198008014 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_198008014;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_171925996 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_751585820 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_751585820;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -409,23 +409,23 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
     if(ctlv != null)        
         {
             input.text = ValueParser.retrieveTextString(ctlv);
-        } //End block
+        } 
         else
         {
             ResultException var6CA5E47869237D539D80DDEFF8BE49EC_1207364437 = new ResultException(ResultCode.REQUIRED_VALUES_MISSING);
             var6CA5E47869237D539D80DDEFF8BE49EC_1207364437.addTaint(taint);
             throw var6CA5E47869237D539D80DDEFF8BE49EC_1207364437;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
     if(ctlv != null)        
         {
             iconId = ValueParser.retrieveIconId(ctlv);
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.DURATION, ctlvs);
     if(ctlv != null)        
         {
             input.duration = ValueParser.retrieveDuration(ctlv);
-        } //End block
+        } 
         input.minLen = 1;
         input.maxLen = 1;
         input.digitOnly = (cmdDet.commandQualifier & 0x01) == 0;
@@ -442,12 +442,12 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
             boolean varB326B5062B2F0E69046810717534CB09_1742671243 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1785472853 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1785472853;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1354654536 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_195283322 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_195283322;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -463,13 +463,13 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
     if(ctlv != null)        
         {
             input.text = ValueParser.retrieveTextString(ctlv);
-        } //End block
+        } 
         else
         {
             ResultException var6CA5E47869237D539D80DDEFF8BE49EC_905002978 = new ResultException(ResultCode.REQUIRED_VALUES_MISSING);
             var6CA5E47869237D539D80DDEFF8BE49EC_905002978.addTaint(taint);
             throw var6CA5E47869237D539D80DDEFF8BE49EC_905002978;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.RESPONSE_LENGTH, ctlvs);
     if(ctlv != null)        
         {
@@ -479,30 +479,30 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
                 int valueIndex = ctlv.getValueIndex();
                 input.minLen = rawValue[valueIndex] & 0xff;
                 input.maxLen = rawValue[valueIndex + 1] & 0xff;
-            } //End block
+            } 
             catch (IndexOutOfBoundsException e)
             {
                 ResultException var6E8D14BE611E67DFA023E650FC522377_822754822 = new ResultException(ResultCode.CMD_DATA_NOT_UNDERSTOOD);
                 var6E8D14BE611E67DFA023E650FC522377_822754822.addTaint(taint);
                 throw var6E8D14BE611E67DFA023E650FC522377_822754822;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             ResultException var6CA5E47869237D539D80DDEFF8BE49EC_1654380521 = new ResultException(ResultCode.REQUIRED_VALUES_MISSING);
             var6CA5E47869237D539D80DDEFF8BE49EC_1654380521.addTaint(taint);
             throw var6CA5E47869237D539D80DDEFF8BE49EC_1654380521;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.DEFAULT_TEXT, ctlvs);
     if(ctlv != null)        
         {
             input.defaultText = ValueParser.retrieveTextString(ctlv);
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
     if(ctlv != null)        
         {
             iconId = ValueParser.retrieveIconId(ctlv);
-        } //End block
+        } 
         input.digitOnly = (cmdDet.commandQualifier & 0x01) == 0;
         input.ucs2 = (cmdDet.commandQualifier & 0x02) != 0;
         input.echo = (cmdDet.commandQualifier & 0x04) == 0;
@@ -517,12 +517,12 @@ ComprehensionTlv var540C13E9E156B687226421B24F2DF178_1525317845 =         null;
             boolean varB326B5062B2F0E69046810717534CB09_111570566 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1766861957 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1766861957;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_264566419 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897691227 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897691227;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -541,17 +541,17 @@ switch(cmdDet.commandQualifier){
 }        boolean var68934A3E9455FA72420237EB05902327_183165228 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1917558366 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1917558366;
-        // ---------- Original Method ----------
-        //CatLog.d(this, "process Refresh");
-        //switch (cmdDet.commandQualifier) {
-        //case REFRESH_NAA_INIT_AND_FULL_FILE_CHANGE:
-        //case REFRESH_NAA_INIT_AND_FILE_CHANGE:
-        //case REFRESH_NAA_INIT:
-        //case REFRESH_UICC_RESET:
-            //mCmdParams = new DisplayTextParams(cmdDet, null);
-            //break;
-        //}
-        //return false;
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -569,7 +569,7 @@ switch(cmdDet.commandQualifier){
     if(ctlv != null)        
         {
             menu.title = ValueParser.retrieveAlphaId(ctlv);
-        } //End block
+        } 
         while
 (true)        
         {
@@ -577,49 +577,49 @@ switch(cmdDet.commandQualifier){
     if(ctlv != null)            
             {
                 menu.items.add(ValueParser.retrieveItem(ctlv));
-            } //End block
+            } 
             else
             {
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
     if(menu.items.size() == 0)        
         {
             ResultException var6CA5E47869237D539D80DDEFF8BE49EC_1616535956 = new ResultException(ResultCode.REQUIRED_VALUES_MISSING);
             var6CA5E47869237D539D80DDEFF8BE49EC_1616535956.addTaint(taint);
             throw var6CA5E47869237D539D80DDEFF8BE49EC_1616535956;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ITEM_ID, ctlvs);
     if(ctlv != null)        
         {
             menu.defaultItem = ValueParser.retrieveItemId(ctlv) - 1;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
     if(ctlv != null)        
         {
             mIconLoadState = LOAD_SINGLE_ICON;
             titleIconId = ValueParser.retrieveIconId(ctlv);
             menu.titleIconSelfExplanatory = titleIconId.selfExplanatory;
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ITEM_ICON_ID_LIST, ctlvs);
     if(ctlv != null)        
         {
             mIconLoadState = LOAD_MULTI_ICONS;
             itemsIconId = ValueParser.retrieveItemsIconId(ctlv);
             menu.itemsIconSelfExplanatory = itemsIconId.selfExplanatory;
-        } //End block
+        } 
         boolean presentTypeSpecified = (cmdDet.commandQualifier & 0x01) != 0;
     if(presentTypeSpecified)        
         {
     if((cmdDet.commandQualifier & 0x02) == 0)            
             {
                 menu.presentationType = PresentationType.DATA_VALUES;
-            } //End block
+            } 
             else
             {
                 menu.presentationType = PresentationType.NAVIGATION_OPTIONS;
-            } //End block
-        } //End block
+            } 
+        } 
         menu.softKeyPreferred = (cmdDet.commandQualifier & 0x04) != 0;
         menu.helpAvailable = (cmdDet.commandQualifier & 0x80) != 0;
         mCmdParams = new SelectItemParams(cmdDet, menu, titleIconId != null);
@@ -640,15 +640,15 @@ switch(mIconLoadState){
             recordNumbers[0] = titleIconId.recordNumber;
             System.arraycopy(itemsIconId.recordNumbers, 0, recordNumbers,
                         1, itemsIconId.recordNumbers.length);
-        } //End block
+        } 
         mIconLoader.loadIcons(recordNumbers, this
                     .obtainMessage(MSG_ID_LOAD_ICON_DONE));
         break;
 }        boolean varB326B5062B2F0E69046810717534CB09_1230167704 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1367839527 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1367839527;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -667,7 +667,7 @@ switch(mIconLoadState){
         {
             iconId = ValueParser.retrieveIconId(ctlv);
             textMsg.iconSelfExplanatory = iconId.selfExplanatory;
-        } //End block
+        } 
         textMsg.responseNeeded = false;
         mCmdParams = new DisplayTextParams(cmdDet, textMsg);
     if(iconId != null)        
@@ -678,12 +678,12 @@ switch(mIconLoadState){
             boolean varB326B5062B2F0E69046810717534CB09_1989812417 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116531474 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_116531474;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1160381935 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033690857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033690857;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -696,9 +696,9 @@ switch(mIconLoadState){
         boolean varB326B5062B2F0E69046810717534CB09_277887862 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_649255223 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_649255223;
-        // ---------- Original Method ----------
-        //CatLog.d(this, "process SetUpEventList");
-        //return true;
+        
+        
+        
     }
 
     
@@ -722,19 +722,19 @@ switch(mIconLoadState){
                 {
                     url = GsmAlphabet.gsm8BitUnpackedToString(rawValue,
                             valueIndex, valueLen);
-                } //End block
+                } 
                 else
                 {
                     url = null;
-                } //End block
-            } //End block
+                } 
+            } 
             catch (IndexOutOfBoundsException e)
             {
                 ResultException var6E8D14BE611E67DFA023E650FC522377_1369763619 = new ResultException(ResultCode.CMD_DATA_NOT_UNDERSTOOD);
                 var6E8D14BE611E67DFA023E650FC522377_1369763619.addTaint(taint);
                 throw var6E8D14BE611E67DFA023E650FC522377_1369763619;
-            } //End block
-        } //End block
+            } 
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ALPHA_ID, ctlvs);
         confirmMsg.text = ValueParser.retrieveAlphaId(ctlv);
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
@@ -742,7 +742,7 @@ switch(mIconLoadState){
         {
             iconId = ValueParser.retrieveIconId(ctlv);
             confirmMsg.iconSelfExplanatory = iconId.selfExplanatory;
-        } //End block
+        } 
         LaunchBrowserMode mode;
 switch(cmdDet.commandQualifier){
         case 0x00:
@@ -764,12 +764,12 @@ switch(cmdDet.commandQualifier){
             boolean varB326B5062B2F0E69046810717534CB09_1175367752 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1178094210 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1178094210;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1911784629 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1407093043 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1407093043;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -793,32 +793,32 @@ switch(cmdDet.commandQualifier){
                     int valueIndex = ctlv.getValueIndex();
                     int toneVal = rawValue[valueIndex];
                     tone = Tone.fromInt(toneVal);
-                } //End block
+                } 
                 catch (IndexOutOfBoundsException e)
                 {
                     ResultException var6E8D14BE611E67DFA023E650FC522377_196610950 = new ResultException(
                             ResultCode.CMD_DATA_NOT_UNDERSTOOD);
                     var6E8D14BE611E67DFA023E650FC522377_196610950.addTaint(taint);
                     throw var6E8D14BE611E67DFA023E650FC522377_196610950;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ALPHA_ID, ctlvs);
     if(ctlv != null)        
         {
             textMsg.text = ValueParser.retrieveAlphaId(ctlv);
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.DURATION, ctlvs);
     if(ctlv != null)        
         {
             duration = ValueParser.retrieveDuration(ctlv);
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
     if(ctlv != null)        
         {
             iconId = ValueParser.retrieveIconId(ctlv);
             textMsg.iconSelfExplanatory = iconId.selfExplanatory;
-        } //End block
+        } 
         boolean vibrate = (cmdDet.commandQualifier & 0x01) != 0x00;
         textMsg.responseNeeded = false;
         mCmdParams = new PlayToneParams(cmdDet, textMsg, tone, duration, vibrate);
@@ -830,12 +830,12 @@ switch(cmdDet.commandQualifier){
             boolean varB326B5062B2F0E69046810717534CB09_2106016931 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_704427007 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_704427007;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_185017880 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_182619334 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_182619334;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -857,18 +857,18 @@ switch(cmdDet.commandQualifier){
         {
             confirmIconId = ValueParser.retrieveIconId(ctlv);
             confirmMsg.iconSelfExplanatory = confirmIconId.selfExplanatory;
-        } //End block
+        } 
         ctlv = searchForNextTag(ComprehensionTlvTag.ALPHA_ID, iter);
     if(ctlv != null)        
         {
             callMsg.text = ValueParser.retrieveAlphaId(ctlv);
-        } //End block
+        } 
         ctlv = searchForTag(ComprehensionTlvTag.ICON_ID, ctlvs);
     if(ctlv != null)        
         {
             callIconId = ValueParser.retrieveIconId(ctlv);
             callMsg.iconSelfExplanatory = callIconId.selfExplanatory;
-        } //End block
+        } 
         mCmdParams = new CallSetupParams(cmdDet, confirmMsg, callMsg);
     if(confirmIconId != null || callIconId != null)        
         {
@@ -883,12 +883,12 @@ switch(cmdDet.commandQualifier){
             boolean varB326B5062B2F0E69046810717534CB09_1640781048 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1538369203 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1538369203;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_596285978 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1815601454 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1815601454;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -914,23 +914,23 @@ switch(cmdDet.commandQualifier){
 }        boolean var68934A3E9455FA72420237EB05902327_658671895 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_725578380 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_725578380;
-        // ---------- Original Method ----------
-        //CatLog.d(this, "process ProvideLocalInfo");
-        //switch (cmdDet.commandQualifier) {
-            //case DTTZ_SETTING:
-                //CatLog.d(this, "PLI [DTTZ_SETTING]");
-                //mCmdParams = new CommandParams(cmdDet);
-                //break;
-            //case LANGUAGE_SETTING:
-                //CatLog.d(this, "PLI [LANGUAGE_SETTING]");
-                //mCmdParams = new CommandParams(cmdDet);
-                //break;
-            //default:
-                //CatLog.d(this, "PLI[" + cmdDet.commandQualifier + "] Command Not Supported");
-                //mCmdParams = new CommandParams(cmdDet);
-                //throw new ResultException(ResultCode.BEYOND_TERMINAL_CAPABILITY);
-        //}
-        //return false;
+        
+        
+        
+            
+                
+                
+                
+            
+                
+                
+                
+            
+                
+                
+                
+        
+        
     }
 
     

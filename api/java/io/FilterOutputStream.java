@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,8 +15,8 @@ public class FilterOutputStream extends OutputStream {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.709 -0400", hash_original_method = "970F937F317FD0AE06FB76477C0F6F62", hash_generated_method = "F989161D9880425FAE37888895ADB2DD")
     public  FilterOutputStream(OutputStream out) {
         this.out = out;
-        // ---------- Original Method ----------
-        //this.out = out;
+        
+        
     }
 
     
@@ -27,43 +27,43 @@ public class FilterOutputStream extends OutputStream {
         try 
         {
             flush();
-        } //End block
+        } 
         catch (Throwable e)
         {
             thrown = e;
-        } //End block
+        } 
         try 
         {
             out.close();
-        } //End block
+        } 
         catch (Throwable e)
         {
     if(thrown == null)            
             {
                 thrown = e;
-            } //End block
-        } //End block
+            } 
+        } 
     if(thrown != null)        
         {
             SneakyThrow.sneakyThrow(thrown);
-        } //End block
-        // ---------- Original Method ----------
-        //Throwable thrown = null;
-        //try {
-            //flush();
-        //} catch (Throwable e) {
-            //thrown = e;
-        //}
-        //try {
-            //out.close();
-        //} catch (Throwable e) {
-            //if (thrown == null) {
-                //thrown = e;
-            //}
-        //}
-        //if (thrown != null) {
-            //SneakyThrow.sneakyThrow(thrown);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+        
+            
+        
+            
+                
+            
+        
+        
+            
+        
     }
 
     
@@ -71,8 +71,8 @@ public class FilterOutputStream extends OutputStream {
     @Override
     public void flush() throws IOException {
         out.flush();
-        // ---------- Original Method ----------
-        //out.flush();
+        
+        
     }
 
     
@@ -86,12 +86,12 @@ public class FilterOutputStream extends OutputStream {
 for(int i = 0;i < length;i++)
         {
             write(buffer[offset + i]);
-        } //End block
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, length);
-        //for (int i = 0; i < length; i++) {
-            //write(buffer[offset + i]);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -100,8 +100,8 @@ for(int i = 0;i < length;i++)
     public void write(int oneByte) throws IOException {
         addTaint(oneByte);
         out.write(oneByte);
-        // ---------- Original Method ----------
-        //out.write(oneByte);
+        
+        
     }
 
     

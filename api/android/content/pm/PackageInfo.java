@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -71,7 +71,7 @@ public class PackageInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.906 -0400", hash_original_method = "28FD03AD36E70CA65DC12DAEBF4BAB2B", hash_generated_method = "2F8FDFAA3E5302C1D2777402917BDB61")
     public  PackageInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -86,7 +86,7 @@ public class PackageInfo implements Parcelable {
     if(hasApp != 0)        
         {
             applicationInfo = ApplicationInfo.CREATOR.createFromParcel(source);
-        } //End block
+        } 
         firstInstallTime = source.readLong();
         lastUpdateTime = source.readLong();
         gids = source.createIntArray();
@@ -101,11 +101,12 @@ public class PackageInfo implements Parcelable {
         configPreferences = source.createTypedArray(ConfigurationInfo.CREATOR);
         reqFeatures = source.createTypedArray(FeatureInfo.CREATOR);
         installLocation = source.readInt();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.910 -0400", hash_original_method = "F32D243E2D05219891E68C55116B54A4", hash_generated_method = "6B6AD6A04C4725D252D02EEB76DAD860")
     public String toString() {
 String var9D4D38907310CF3324EC3BF27408EE69_600079348 =         "PackageInfo{"
@@ -113,23 +114,25 @@ String var9D4D38907310CF3324EC3BF27408EE69_600079348 =         "PackageInfo{"
             + " " + packageName + "}";
         var9D4D38907310CF3324EC3BF27408EE69_600079348.addTaint(taint);
         return var9D4D38907310CF3324EC3BF27408EE69_600079348;
-        // ---------- Original Method ----------
-        //return "PackageInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + packageName + "}";
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.910 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "6988CFFA1AFA48DBD3A67BC18288A3BD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1027821987 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_404775872 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_404775872;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:12.911 -0400", hash_original_method = "F276E90711C385BB34A836DEED976429", hash_generated_method = "7A486A0EA4ABCE82D358DC1E71E364C1")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);
@@ -143,11 +146,11 @@ String var9D4D38907310CF3324EC3BF27408EE69_600079348 =         "PackageInfo{"
         {
             dest.writeInt(1);
             applicationInfo.writeToParcel(dest, parcelableFlags);
-        } //End block
+        } 
         else
         {
             dest.writeInt(0);
-        } //End block
+        } 
         dest.writeLong(firstInstallTime);
         dest.writeLong(lastUpdateTime);
         dest.writeIntArray(gids);
@@ -162,8 +165,8 @@ String var9D4D38907310CF3324EC3BF27408EE69_600079348 =         "PackageInfo{"
         dest.writeTypedArray(configPreferences, parcelableFlags);
         dest.writeTypedArray(reqFeatures, parcelableFlags);
         dest.writeInt(installLocation);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -191,12 +194,12 @@ String var9D4D38907310CF3324EC3BF27408EE69_600079348 =         "PackageInfo{"
             return new PackageInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public PackageInfo createFromParcel(Parcel source) {
             return new PackageInfo(source);
         }
     
-    // orphaned legacy method
+    
     public PackageInfo[] newArray(int size) {
             return new PackageInfo[size];
         }

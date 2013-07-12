@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,8 +23,8 @@ public class UsimDataDownloadHandler extends Handler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:28.910 -0400", hash_original_method = "2BD8C1E6CB98C9A3BA971F52113C7C15", hash_generated_method = "6253F0A4A1A3E88DC85C7C8CF860EEA2")
     public  UsimDataDownloadHandler(CommandsInterface commandsInterface) {
         mCI = commandsInterface;
-        // ---------- Original Method ----------
-        //mCI = commandsInterface;
+        
+        
     }
 
     
@@ -36,20 +36,20 @@ public class UsimDataDownloadHandler extends Handler {
             int var4C0737507AD994723C875A6D0646D112_330003604 = (Activity.RESULT_OK);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1369437100 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1369437100;
-        } //End block
+        } 
         else
         {
             int varFCC16322707A95E5743FED9CA64177EC_556904359 = (Intents.RESULT_SMS_GENERIC_ERROR);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_282175506 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_282175506;
-        } //End block
-        // ---------- Original Method ----------
-        //if (sendMessage(obtainMessage(EVENT_START_DATA_DOWNLOAD, smsMessage))) {
-            //return Activity.RESULT_OK;  
-        //} else {
-            //Log.e(TAG, "startDataDownload failed to send message to start data download.");
-            //return Intents.RESULT_SMS_GENERIC_ERROR;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -70,7 +70,7 @@ public class UsimDataDownloadHandler extends Handler {
     if(bodyLength > 127)        
         {
             envelope[index++] = (byte) 0x81;
-        } //End block
+        } 
         envelope[index++] = (byte) bodyLength;
         envelope[index++] = (byte) (0x80 | ComprehensionTlvTag.DEVICE_IDENTITIES.value());
         envelope[index++] = (byte) 2;
@@ -82,12 +82,12 @@ public class UsimDataDownloadHandler extends Handler {
             envelope[index++] = (byte) scAddressLength;
             System.arraycopy(pdu, 1, envelope, index, scAddressLength);
             index += scAddressLength;
-        } //End block
+        } 
         envelope[index++] = (byte) (0x80 | ComprehensionTlvTag.SMS_TPDU.value());
     if(tpduLength > 127)        
         {
             envelope[index++] = (byte) 0x81;
-        } //End block
+        } 
         envelope[index++] = (byte) tpduLength;
         System.arraycopy(pdu, tpduIndex, envelope, index, tpduLength);
         index += tpduLength;
@@ -95,16 +95,17 @@ public class UsimDataDownloadHandler extends Handler {
         {
             acknowledgeSmsWithError(CommandsInterface.GSM_SMS_FAIL_CAUSE_UNSPECIFIED_ERROR);
             return;
-        } //End block
+        } 
         String encodedEnvelope = IccUtils.bytesToHexString(envelope);
         mCI.sendEnvelopeWithStatus(encodedEnvelope, obtainMessage(
                 EVENT_SEND_ENVELOPE_RESPONSE, new int[]{ dcs, pid }));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
-        private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
+        @DSModeled(DSC.SAFE)
+    private static int getEnvelopeBodyLength(int scAddressLength, int tpduLength) {
         int length = tpduLength + 5;
         length += (tpduLength > 127 ? 2 : 1);
         if (scAddressLength != 0) {
@@ -126,36 +127,36 @@ public class UsimDataDownloadHandler extends Handler {
         {
             Log.d(TAG, "USIM data download succeeded: " + response.toString());
             success = true;
-        } //End block
+        } 
         else
     if(sw1 == 0x93 && sw2 == 0x00)        
         {
             acknowledgeSmsWithError(CommandsInterface.GSM_SMS_FAIL_CAUSE_USIM_APP_TOOLKIT_BUSY);
             return;
-        } //End block
+        } 
         else
     if(sw1 == 0x62 || sw1 == 0x63)        
         {
             success = false;
-        } //End block
+        } 
         else
         {
             success = false;
-        } //End block
+        } 
         byte[] responseBytes = response.payload;
     if(responseBytes == null || responseBytes.length == 0)        
         {
     if(success)            
             {
                 mCI.acknowledgeLastIncomingGsmSms(true, 0, null);
-            } //End block
+            } 
             else
             {
                 acknowledgeSmsWithError(
                         CommandsInterface.GSM_SMS_FAIL_CAUSE_USIM_DATA_DOWNLOAD_ERROR);
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         byte[] smsAckPdu;
         int index = 0;
     if(success)        
@@ -163,7 +164,7 @@ public class UsimDataDownloadHandler extends Handler {
             smsAckPdu = new byte[responseBytes.length + 5];
             smsAckPdu[index++] = 0x00;
             smsAckPdu[index++] = 0x07;
-        } //End block
+        } 
         else
         {
             smsAckPdu = new byte[responseBytes.length + 6];
@@ -171,23 +172,23 @@ public class UsimDataDownloadHandler extends Handler {
             smsAckPdu[index++] = (byte)
                     CommandsInterface.GSM_SMS_FAIL_CAUSE_USIM_DATA_DOWNLOAD_ERROR;
             smsAckPdu[index++] = 0x07;
-        } //End block
+        } 
         smsAckPdu[index++] = (byte) pid;
         smsAckPdu[index++] = (byte) dcs;
     if(is7bitDcs(dcs))        
         {
             int septetCount = responseBytes.length * 8 / 7;
             smsAckPdu[index++] = (byte) septetCount;
-        } //End block
+        } 
         else
         {
             smsAckPdu[index++] = (byte) responseBytes.length;
-        } //End block
+        } 
         System.arraycopy(responseBytes, 0, smsAckPdu, index, responseBytes.length);
         mCI.acknowledgeIncomingGsmSmsWithPdu(success,
                 IccUtils.bytesToHexString(smsAckPdu), null);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -195,12 +196,13 @@ public class UsimDataDownloadHandler extends Handler {
     private void acknowledgeSmsWithError(int cause) {
         addTaint(cause);
         mCI.acknowledgeLastIncomingGsmSms(false, cause, null);
-        // ---------- Original Method ----------
-        //mCI.acknowledgeLastIncomingGsmSms(false, cause, null);
+        
+        
     }
 
     
-        private static boolean is7bitDcs(int dcs) {
+        @DSModeled(DSC.SAFE)
+    private static boolean is7bitDcs(int dcs) {
         return ((dcs & 0x8C) == 0x00) || ((dcs & 0xF4) == 0xF0);
     }
 
@@ -220,14 +222,14 @@ switch(msg.what){
             acknowledgeSmsWithError(
                             CommandsInterface.GSM_SMS_FAIL_CAUSE_USIM_DATA_DOWNLOAD_ERROR);
             return;
-        } //End block
+        } 
         int[] dcsPid = (int[]) ar.userObj;
         sendSmsAckForEnvelopeResponse((IccIoResult) ar.result, dcsPid[0], dcsPid[1]);
         break;
         default:
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,24 +23,24 @@ public class VerifierInfo implements Parcelable {
             IllegalArgumentException varFF6190EF0E0E6C3A9D34F6FD43CD8DE4_1498457143 = new IllegalArgumentException("packageName must not be null or empty");
             varFF6190EF0E0E6C3A9D34F6FD43CD8DE4_1498457143.addTaint(taint);
             throw varFF6190EF0E0E6C3A9D34F6FD43CD8DE4_1498457143;
-        } //End block
+        } 
         else
     if(publicKey == null)        
         {
             IllegalArgumentException varCAF1F0A35716EA1405F16973B546B3C5_1413667451 = new IllegalArgumentException("publicKey must not be null");
             varCAF1F0A35716EA1405F16973B546B3C5_1413667451.addTaint(taint);
             throw varCAF1F0A35716EA1405F16973B546B3C5_1413667451;
-        } //End block
+        } 
         this.packageName = packageName;
         this.publicKey = publicKey;
-        // ---------- Original Method ----------
-        //if (packageName == null || packageName.length() == 0) {
-            //throw new IllegalArgumentException("packageName must not be null or empty");
-        //} else if (publicKey == null) {
-            //throw new IllegalArgumentException("publicKey must not be null");
-        //}
-        //this.packageName = packageName;
-        //this.publicKey = publicKey;
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -48,20 +48,21 @@ public class VerifierInfo implements Parcelable {
     private  VerifierInfo(Parcel source) {
         packageName = source.readString();
         publicKey = (PublicKey) source.readSerializable();
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //publicKey = (PublicKey) source.readSerializable();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.529 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "CA02035BC227D430568EA48DEC11ADEC")
     @Override
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_327907656 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_361748194 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_361748194;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -72,9 +73,9 @@ public class VerifierInfo implements Parcelable {
         addTaint(dest.getTaint());
         dest.writeString(packageName);
         dest.writeSerializable(publicKey);
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeSerializable(publicKey);
+        
+        
+        
     }
 
     
@@ -90,12 +91,12 @@ public class VerifierInfo implements Parcelable {
             return new VerifierInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public VerifierInfo createFromParcel(Parcel source) {
             return new VerifierInfo(source);
         }
     
-    // orphaned legacy method
+    
     public VerifierInfo[] newArray(int size) {
             return new VerifierInfo[size];
         }

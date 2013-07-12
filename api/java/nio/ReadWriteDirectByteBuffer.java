@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ final class ReadWriteDirectByteBuffer extends DirectByteBuffer {
       ReadWriteDirectByteBuffer(int capacity) {
         super(MemoryBlock.allocate(capacity), capacity, 0);
         addTaint(capacity);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ final class ReadWriteDirectByteBuffer extends DirectByteBuffer {
         super(MemoryBlock.wrapFromJni(address, capacity), capacity, 0);
         addTaint(capacity);
         addTaint(address);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,7 +32,7 @@ final class ReadWriteDirectByteBuffer extends DirectByteBuffer {
         addTaint(offset);
         addTaint(capacity);
         addTaint(block.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -52,8 +52,8 @@ final class ReadWriteDirectByteBuffer extends DirectByteBuffer {
 ByteBuffer var714A9DFD2E7945C29F120BE1B2CB47FA_78430939 =         ReadOnlyDirectByteBuffer.copy(this, mark);
         var714A9DFD2E7945C29F120BE1B2CB47FA_78430939.addTaint(taint);
         return var714A9DFD2E7945C29F120BE1B2CB47FA_78430939;
-        // ---------- Original Method ----------
-        //return ReadOnlyDirectByteBuffer.copy(this, mark);
+        
+        
     }
 
     
@@ -67,12 +67,12 @@ ByteBuffer var714A9DFD2E7945C29F120BE1B2CB47FA_78430939 =         ReadOnlyDirect
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1797271017 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1797271017.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1797271017;
-        // ---------- Original Method ----------
-        //Memory.memmove(this, 0, this, position, remaining());
-        //position = limit - position;
-        //limit = capacity;
-        //mark = UNSET_MARK;
-        //return this;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -82,19 +82,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1797271017 =         this;
 ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_450775086 =         copy(this, mark);
         var6ED4708F04CD11720ECFFDBFD927116F_450775086.addTaint(taint);
         return var6ED4708F04CD11720ECFFDBFD927116F_450775086;
-        // ---------- Original Method ----------
-        //return copy(this, mark);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.075 -0400", hash_original_method = "19E9B6B291778F8D7BAF6F9BA6FE7EDF", hash_generated_method = "90797DFA61554814F3288FD3E0AE8712")
     @Override
     public boolean isReadOnly() {
         boolean var68934A3E9455FA72420237EB05902327_412783853 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1555872997 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1555872997;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -107,17 +108,17 @@ ByteBuffer var6ED4708F04CD11720ECFFDBFD927116F_450775086 =         copy(this, ma
             BufferOverflowException var773478A23217201B18B531915D367F31_292849547 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_292849547.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_292849547;
-        } //End block
+        } 
         this.block.pokeByte(offset + position++, value);
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_718019908 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_718019908.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_718019908;
-        // ---------- Original Method ----------
-        //if (position == limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeByte(offset + position++, value);
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -131,10 +132,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_718019908 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1213423683 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1213423683.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1213423683;
-        // ---------- Original Method ----------
-        //checkIndex(index);
-        //this.block.pokeByte(offset + index, value);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -150,11 +151,11 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1213423683 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1934808971.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1934808971;
-        // ---------- Original Method ----------
-        //checkPutBounds(1, src.length, srcOffset, byteCount);
-        //this.block.pokeByteArray(offset + position, src, srcOffset, byteCount);
-        //position += byteCount;
-        //return this;
+        
+        
+        
+        
+        
     }
 
     
@@ -166,10 +167,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         int byteCount = checkPutBounds(SizeOf.CHAR, src.length, srcOffset, charCount);
         this.block.pokeCharArray(offset + position, src, srcOffset, charCount, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //int byteCount = checkPutBounds(SizeOf.CHAR, src.length, srcOffset, charCount);
-        //this.block.pokeCharArray(offset + position, src, srcOffset, charCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -181,10 +182,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         int byteCount = checkPutBounds(SizeOf.DOUBLE, src.length, srcOffset, doubleCount);
         this.block.pokeDoubleArray(offset + position, src, srcOffset, doubleCount, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //int byteCount = checkPutBounds(SizeOf.DOUBLE, src.length, srcOffset, doubleCount);
-        //this.block.pokeDoubleArray(offset + position, src, srcOffset, doubleCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -196,10 +197,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         int byteCount = checkPutBounds(SizeOf.FLOAT, src.length, srcOffset, floatCount);
         this.block.pokeFloatArray(offset + position, src, srcOffset, floatCount, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //int byteCount = checkPutBounds(SizeOf.FLOAT, src.length, srcOffset, floatCount);
-        //this.block.pokeFloatArray(offset + position, src, srcOffset, floatCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -211,10 +212,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         int byteCount = checkPutBounds(SizeOf.INT, src.length, srcOffset, intCount);
         this.block.pokeIntArray(offset + position, src, srcOffset, intCount, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //int byteCount = checkPutBounds(SizeOf.INT, src.length, srcOffset, intCount);
-        //this.block.pokeIntArray(offset + position, src, srcOffset, intCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -226,10 +227,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         int byteCount = checkPutBounds(SizeOf.LONG, src.length, srcOffset, longCount);
         this.block.pokeLongArray(offset + position, src, srcOffset, longCount, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //int byteCount = checkPutBounds(SizeOf.LONG, src.length, srcOffset, longCount);
-        //this.block.pokeLongArray(offset + position, src, srcOffset, longCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -241,10 +242,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
         int byteCount = checkPutBounds(SizeOf.SHORT, src.length, srcOffset, shortCount);
         this.block.pokeShortArray(offset + position, src, srcOffset, shortCount, order.needsSwap);
         position += byteCount;
-        // ---------- Original Method ----------
-        //int byteCount = checkPutBounds(SizeOf.SHORT, src.length, srcOffset, shortCount);
-        //this.block.pokeShortArray(offset + position, src, srcOffset, shortCount, order.needsSwap);
-        //position += byteCount;
+        
+        
+        
+        
     }
 
     
@@ -258,20 +259,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1934808971 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_760436299 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_760436299.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_760436299;
-        } //End block
+        } 
         this.block.pokeShort(offset + position, (short) value, order);
         position = newPosition;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1315917855 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1315917855.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1315917855;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.CHAR;
-        //if (newPosition > limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeShort(offset + position, (short) value, order);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -285,10 +286,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1315917855 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1287806197 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1287806197.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1287806197;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.CHAR);
-        //this.block.pokeShort(offset + index, (short) value, order);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -302,20 +303,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1287806197 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_684839337 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_684839337.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_684839337;
-        } //End block
+        } 
         this.block.pokeLong(offset + position, Double.doubleToRawLongBits(value), order);
         position = newPosition;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_563402395 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_563402395.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_563402395;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.DOUBLE;
-        //if (newPosition > limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeLong(offset + position, Double.doubleToRawLongBits(value), order);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -329,10 +330,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_563402395 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1811148824 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1811148824.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1811148824;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.DOUBLE);
-        //this.block.pokeLong(offset + index, Double.doubleToRawLongBits(value), order);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -346,20 +347,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1811148824 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_178449602 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_178449602.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_178449602;
-        } //End block
+        } 
         this.block.pokeInt(offset + position, Float.floatToRawIntBits(value), order);
         position = newPosition;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_456328033 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_456328033.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_456328033;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.FLOAT;
-        //if (newPosition > limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeInt(offset + position, Float.floatToRawIntBits(value), order);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -373,10 +374,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_456328033 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1534542677 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1534542677.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1534542677;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.FLOAT);
-        //this.block.pokeInt(offset + index, Float.floatToRawIntBits(value), order);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -390,20 +391,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1534542677 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_1118980543 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1118980543.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1118980543;
-        } //End block
+        } 
         this.block.pokeInt(offset + position, value, order);
         position = newPosition;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1831086124 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1831086124.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1831086124;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.INT;
-        //if (newPosition > limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeInt(offset + position, value, order);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -417,10 +418,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1831086124 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_957162746 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_957162746.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_957162746;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.INT);
-        //this.block.pokeInt(offset + index, value, order);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -434,20 +435,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_957162746 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_1651683964 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_1651683964.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_1651683964;
-        } //End block
+        } 
         this.block.pokeLong(offset + position, value, order);
         position = newPosition;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_595417263 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_595417263.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_595417263;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.LONG;
-        //if (newPosition > limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeLong(offset + position, value, order);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -461,10 +462,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_595417263 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1657302816 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1657302816.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1657302816;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.LONG);
-        //this.block.pokeLong(offset + index, value, order);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -478,20 +479,20 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1657302816 =         this;
             BufferOverflowException var773478A23217201B18B531915D367F31_14804482 = new BufferOverflowException();
             var773478A23217201B18B531915D367F31_14804482.addTaint(taint);
             throw var773478A23217201B18B531915D367F31_14804482;
-        } //End block
+        } 
         this.block.pokeShort(offset + position, value, order);
         position = newPosition;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1185377339 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1185377339.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1185377339;
-        // ---------- Original Method ----------
-        //int newPosition = position + SizeOf.SHORT;
-        //if (newPosition > limit) {
-            //throw new BufferOverflowException();
-        //}
-        //this.block.pokeShort(offset + position, value, order);
-        //position = newPosition;
-        //return this;
+        
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -505,10 +506,10 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_1185377339 =         this;
 ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_883451551 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_883451551.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_883451551;
-        // ---------- Original Method ----------
-        //checkIndex(index, SizeOf.SHORT);
-        //this.block.pokeShort(offset + index, value, order);
-        //return this;
+        
+        
+        
+        
     }
 
     
@@ -518,8 +519,8 @@ ByteBuffer var72A74007B2BE62B849F475C7BDA4658B_883451551 =         this;
 ByteBuffer var0F2E98598D64ED8F01A29053D96965F6_1625689682 =         new ReadWriteDirectByteBuffer(block, remaining(), offset + position);
         var0F2E98598D64ED8F01A29053D96965F6_1625689682.addTaint(taint);
         return var0F2E98598D64ED8F01A29053D96965F6_1625689682;
-        // ---------- Original Method ----------
-        //return new ReadWriteDirectByteBuffer(block, remaining(), offset + position);
+        
+        
     }
 
     

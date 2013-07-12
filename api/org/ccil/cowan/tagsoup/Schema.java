@@ -1,6 +1,6 @@
 package org.ccil.cowan.tagsoup;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,7 +26,7 @@ public abstract class Schema {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.370 -0400", hash_original_method = "D0D844E899EF8830D95ED807F7DF602A", hash_generated_method = "D0D844E899EF8830D95ED807F7DF602A")
     public Schema ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -40,20 +40,21 @@ public abstract class Schema {
         theElementTypes.put(name.toLowerCase(), e);
     if(memberOf == M_ROOT)        
         theRoot = e;
-        // ---------- Original Method ----------
-        //ElementType e = new ElementType(name, model, memberOf, flags, this);
-        //theElementTypes.put(name.toLowerCase(), e);
-        //if (memberOf == M_ROOT) theRoot = e;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.371 -0400", hash_original_method = "7A084406CC3B18F733E08ECB30CF0A86", hash_generated_method = "9EF99A1D5B0DE9712886E7BC81737116")
     public ElementType rootElementType() {
 ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
         var9B2C0E9B65FBA794527A7E48FC1AA146_736984401.addTaint(taint);
         return var9B2C0E9B65FBA794527A7E48FC1AA146_736984401;
-        // ---------- Original Method ----------
-        //return theRoot;
+        
+        
     }
 
     
@@ -72,16 +73,16 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
 				elemName);
             var5BA7B3E6E2902601401BFB9D4A97E73F_536126504.addTaint(taint);
             throw var5BA7B3E6E2902601401BFB9D4A97E73F_536126504;
-        } //End block
+        } 
         e.setAttribute(attrName, type, value);
-        // ---------- Original Method ----------
-        //ElementType e = getElementType(elemName);
-        //if (e == null) {
-			//throw new Error("Attribute " + attrName +
-				//" specified for unknown element type " +
-				//elemName);
-			//}
-        //e.setAttribute(attrName, type, value);
+        
+        
+        
+			
+				
+				
+			
+        
     }
 
     
@@ -96,24 +97,24 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
             Error var51D825AF6A3F667C30D54D0217DEFAF1_1197614642 = new Error("No child " + name + " for parent " + parentName);
             var51D825AF6A3F667C30D54D0217DEFAF1_1197614642.addTaint(taint);
             throw var51D825AF6A3F667C30D54D0217DEFAF1_1197614642;
-        } //End block
+        } 
     if(parent == null)        
         {
             Error var8DEB0F27D2E5DF7645ADE361831D7479_170010295 = new Error("No parent " + parentName + " for child " + name);
             var8DEB0F27D2E5DF7645ADE361831D7479_170010295.addTaint(taint);
             throw var8DEB0F27D2E5DF7645ADE361831D7479_170010295;
-        } //End block
+        } 
         child.setParent(parent);
-        // ---------- Original Method ----------
-        //ElementType child = getElementType(name);
-        //ElementType parent = getElementType(parentName);
-        //if (child == null) {
-			//throw new Error("No child " + name + " for parent " + parentName);
-			//}
-        //if (parent == null) {
-			//throw new Error("No parent " + parentName + " for child " + name);
-			//}
-        //child.setParent(parent);
+        
+        
+        
+        
+			
+			
+        
+			
+			
+        
     }
 
     
@@ -122,8 +123,8 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
         addTaint(value);
         addTaint(name.getTaint());
         theEntities.put(name, new Integer(value));
-        // ---------- Original Method ----------
-        //theEntities.put(name, new Integer(value));
+        
+        
     }
 
     
@@ -133,8 +134,8 @@ ElementType var9B2C0E9B65FBA794527A7E48FC1AA146_736984401 =         theRoot;
 ElementType varCF5D2F602097A6A5D759EF35ED655804_544160767 =         (ElementType)(theElementTypes.get(name.toLowerCase()));
         varCF5D2F602097A6A5D759EF35ED655804_544160767.addTaint(taint);
         return varCF5D2F602097A6A5D759EF35ED655804_544160767;
-        // ---------- Original Method ----------
-        //return (ElementType)(theElementTypes.get(name.toLowerCase()));
+        
+        
     }
 
     
@@ -151,46 +152,50 @@ ElementType varCF5D2F602097A6A5D759EF35ED655804_544160767 =         (ElementType
         int var8840ECF1EC2008637062B0463AFB3CF5_1201903200 = (ch.intValue());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_384528032 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_384528032;
-        // ---------- Original Method ----------
-        //Integer ch = (Integer)theEntities.get(name);
-        //if (ch == null) return 0;
-        //return ch.intValue();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.373 -0400", hash_original_method = "1798242D281A34B11A86AFDBABA0D18C", hash_generated_method = "A3EE87B30E6B8288EB7C0D885E4FF879")
     public String getURI() {
 String varD120E2446EDC758A0B021B80981B542D_2103243884 =         theURI;
         varD120E2446EDC758A0B021B80981B542D_2103243884.addTaint(taint);
         return varD120E2446EDC758A0B021B80981B542D_2103243884;
-        // ---------- Original Method ----------
-        //return theURI;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.373 -0400", hash_original_method = "ED82F113C378B68FF5FAC6A19F5F47F3", hash_generated_method = "1E1AEDF1C4E1E1497FE536D680872AD6")
     public String getPrefix() {
 String var330006D651A016EFE5B589E8B0D40363_1503881595 =         thePrefix;
         var330006D651A016EFE5B589E8B0D40363_1503881595.addTaint(taint);
         return var330006D651A016EFE5B589E8B0D40363_1503881595;
-        // ---------- Original Method ----------
-        //return thePrefix;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.374 -0400", hash_original_method = "234E680F6FA8586452A8BF7CCF48759A", hash_generated_method = "69EEF406ACDC114BD475EB03C2469E2B")
     public void setURI(String uri) {
         theURI = uri;
-        // ---------- Original Method ----------
-        //theURI = uri;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:43.374 -0400", hash_original_method = "4CEDB742D62DCBE17383ACF000150A0B", hash_generated_method = "A94536348B3AA801BFBCDF0F0F6703FC")
     public void setPrefix(String prefix) {
         thePrefix = prefix;
-        // ---------- Original Method ----------
-        //thePrefix = prefix;
+        
+        
     }
 
     

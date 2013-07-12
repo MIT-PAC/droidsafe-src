@@ -1,6 +1,6 @@
 package android.support.v4.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ class EdgeEffectCompatIcs {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:40.568 -0400", hash_original_method = "2ED7C9E04D60E9925816E3B452B1FB7F", hash_generated_method = "2ED7C9E04D60E9925816E3B452B1FB7F")
     public EdgeEffectCompatIcs ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -38,14 +38,14 @@ class EdgeEffectCompatIcs {
 
     
         public static boolean onPull(Object edgeEffect, float deltaDistance) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         ((EdgeEffect) edgeEffect).onPull(deltaDistance);
         return true;
     }
 
     
         public static boolean onRelease(Object edgeEffect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         EdgeEffect eff = (EdgeEffect) edgeEffect;
         eff.onRelease();
         return eff.isFinished();
@@ -53,7 +53,7 @@ class EdgeEffectCompatIcs {
 
     
         public static boolean onAbsorb(Object edgeEffect, int velocity) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         ((EdgeEffect) edgeEffect).onAbsorb(velocity);
         return true;
     }

@@ -1,6 +1,6 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,15 +23,15 @@ public class WordIterator implements Selection.PositionIterator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.084 -0400", hash_original_method = "AB8CC8AEC36CC88806001A57825CD492", hash_generated_method = "F6A3B701594167B73AD57D2CAA166CCE")
     public  WordIterator() {
         this(Locale.getDefault());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:47.084 -0400", hash_original_method = "2A66FD73F959B53947CB4E0B8EDD927F", hash_generated_method = "947127AB01A128D57F4F13C6D40967B8")
     public  WordIterator(Locale locale) {
         mIterator = BreakIterator.getWordInstance(locale);
-        // ---------- Original Method ----------
-        //mIterator = BreakIterator.getWordInstance(locale);
+        
+        
     }
 
     
@@ -43,21 +43,21 @@ public class WordIterator implements Selection.PositionIterator {
     if(charSequence instanceof SpannableStringBuilder)        
         {
             mString = ((SpannableStringBuilder) charSequence).substring(mOffsetShift, windowEnd);
-        } //End block
+        } 
         else
         {
             mString = charSequence.subSequence(mOffsetShift, windowEnd).toString();
-        } //End block
+        } 
         mIterator.setText(mString);
-        // ---------- Original Method ----------
-        //mOffsetShift = Math.max(0, start - WINDOW_WIDTH);
-        //final int windowEnd = Math.min(charSequence.length(), end + WINDOW_WIDTH);
-        //if (charSequence instanceof SpannableStringBuilder) {
-            //mString = ((SpannableStringBuilder) charSequence).substring(mOffsetShift, windowEnd);
-        //} else {
-            //mString = charSequence.subSequence(mOffsetShift, windowEnd).toString();
-        //}
-        //mIterator.setText(mString);
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -73,26 +73,26 @@ public class WordIterator implements Selection.PositionIterator {
                     int var114C01BA41DAA73483AF8C93FD9104CB_1717646799 = (BreakIterator.DONE);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568757905 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1568757905;
-                } //End block
+                } 
     if(isOnLetterOrDigit(shiftedOffset))                
                 {
                     int varA3EF7399AB14AAE9F4A10BE42FB12D91_882346635 = (shiftedOffset + mOffsetShift);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448974603 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1448974603;
-                } //End block
-            } //End block
+                } 
+            } 
 } while (true);
-        // ---------- Original Method ----------
-        //int shiftedOffset = offset - mOffsetShift;
-        //do {
-            //shiftedOffset = mIterator.preceding(shiftedOffset);
-            //if (shiftedOffset == BreakIterator.DONE) {
-                //return BreakIterator.DONE;
-            //}
-            //if (isOnLetterOrDigit(shiftedOffset)) {
-                //return shiftedOffset + mOffsetShift;
-            //}
-        //} while (true);
+        
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -108,26 +108,26 @@ public class WordIterator implements Selection.PositionIterator {
                     int var114C01BA41DAA73483AF8C93FD9104CB_979488829 = (BreakIterator.DONE);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100109462 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2100109462;
-                } //End block
+                } 
     if(isAfterLetterOrDigit(shiftedOffset))                
                 {
                     int varA3EF7399AB14AAE9F4A10BE42FB12D91_804049755 = (shiftedOffset + mOffsetShift);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126666904 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2126666904;
-                } //End block
-            } //End block
+                } 
+            } 
 } while (true);
-        // ---------- Original Method ----------
-        //int shiftedOffset = offset - mOffsetShift;
-        //do {
-            //shiftedOffset = mIterator.following(shiftedOffset);
-            //if (shiftedOffset == BreakIterator.DONE) {
-                //return BreakIterator.DONE;
-            //}
-            //if (isAfterLetterOrDigit(shiftedOffset)) {
-                //return shiftedOffset + mOffsetShift;
-            //}
-        //} while (true);
+        
+        
+        
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
@@ -143,14 +143,14 @@ public class WordIterator implements Selection.PositionIterator {
                 int varA3EF7399AB14AAE9F4A10BE42FB12D91_110641110 = (shiftedOffset + mOffsetShift);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_459808141 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_459808141;
-            } //End block
+            } 
             else
             {
                 int var0BC96385F29279814E25F6E0AEAF80F4_156534517 = (mIterator.preceding(shiftedOffset) + mOffsetShift);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_683611389 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_683611389;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(isAfterLetterOrDigit(shiftedOffset))            
@@ -158,26 +158,26 @@ public class WordIterator implements Selection.PositionIterator {
                 int var0BC96385F29279814E25F6E0AEAF80F4_1400908006 = (mIterator.preceding(shiftedOffset) + mOffsetShift);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784779306 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1784779306;
-            } //End block
-        } //End block
+            } 
+        } 
         int var114C01BA41DAA73483AF8C93FD9104CB_1580544431 = (BreakIterator.DONE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006946190 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1006946190;
-        // ---------- Original Method ----------
-        //final int shiftedOffset = offset - mOffsetShift;
-        //checkOffsetIsValid(shiftedOffset);
-        //if (isOnLetterOrDigit(shiftedOffset)) {
-            //if (mIterator.isBoundary(shiftedOffset)) {
-                //return shiftedOffset + mOffsetShift;
-            //} else {
-                //return mIterator.preceding(shiftedOffset) + mOffsetShift;
-            //}
-        //} else {
-            //if (isAfterLetterOrDigit(shiftedOffset)) {
-                //return mIterator.preceding(shiftedOffset) + mOffsetShift;
-            //}
-        //}
-        //return BreakIterator.DONE;
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -193,14 +193,14 @@ public class WordIterator implements Selection.PositionIterator {
                 int varA3EF7399AB14AAE9F4A10BE42FB12D91_663132190 = (shiftedOffset + mOffsetShift);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730889154 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_730889154;
-            } //End block
+            } 
             else
             {
                 int var52A222CF5C026FC84D25E95888DC21A7_582389 = (mIterator.following(shiftedOffset) + mOffsetShift);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209650109 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1209650109;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(isOnLetterOrDigit(shiftedOffset))            
@@ -208,26 +208,26 @@ public class WordIterator implements Selection.PositionIterator {
                 int var52A222CF5C026FC84D25E95888DC21A7_1950460910 = (mIterator.following(shiftedOffset) + mOffsetShift);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129019493 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_129019493;
-            } //End block
-        } //End block
+            } 
+        } 
         int var114C01BA41DAA73483AF8C93FD9104CB_1609889484 = (BreakIterator.DONE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315321937 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_315321937;
-        // ---------- Original Method ----------
-        //final int shiftedOffset = offset - mOffsetShift;
-        //checkOffsetIsValid(shiftedOffset);
-        //if (isAfterLetterOrDigit(shiftedOffset)) {
-            //if (mIterator.isBoundary(shiftedOffset)) {
-                //return shiftedOffset + mOffsetShift;
-            //} else {
-                //return mIterator.following(shiftedOffset) + mOffsetShift;
-            //}
-        //} else {
-            //if (isOnLetterOrDigit(shiftedOffset)) {
-                //return mIterator.following(shiftedOffset) + mOffsetShift;
-            //}
-        //}
-        //return BreakIterator.DONE;
+        
+        
+        
+        
+            
+                
+            
+                
+            
+        
+            
+                
+            
+        
+        
     }
 
     
@@ -243,16 +243,16 @@ public class WordIterator implements Selection.PositionIterator {
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_753352838 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_753352838;
             }
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_560603786 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1323124227 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1323124227;
-        // ---------- Original Method ----------
-        //if (shiftedOffset >= 1 && shiftedOffset <= mString.length()) {
-            //final int codePoint = mString.codePointBefore(shiftedOffset);
-            //if (Character.isLetterOrDigit(codePoint)) return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -268,16 +268,16 @@ public class WordIterator implements Selection.PositionIterator {
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_572539576 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_572539576;
             }
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1676103544 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026538688 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026538688;
-        // ---------- Original Method ----------
-        //if (shiftedOffset >= 0 && shiftedOffset < mString.length()) {
-            //final int codePoint = mString.codePointAt(shiftedOffset);
-            //if (Character.isLetterOrDigit(codePoint)) return true;
-        //}
-        //return false;
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -291,13 +291,13 @@ public class WordIterator implements Selection.PositionIterator {
                     "]");
             var3DB8604E77FFD6EC4892940FFC67C204_1522036359.addTaint(taint);
             throw var3DB8604E77FFD6EC4892940FFC67C204_1522036359;
-        } //End block
-        // ---------- Original Method ----------
-        //if (shiftedOffset < 0 || shiftedOffset > mString.length()) {
-            //throw new IllegalArgumentException("Invalid offset: " + (shiftedOffset + mOffsetShift) +
-                    //". Valid range is [" + mOffsetShift + ", " + (mString.length() + mOffsetShift) +
-                    //"]");
-        //}
+        } 
+        
+        
+            
+                    
+                    
+        
     }
 
     

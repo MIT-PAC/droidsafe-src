@@ -1,6 +1,6 @@
 package org.bouncycastle.util.encoders;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,34 +21,35 @@ public class HexEncoder implements Encoder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.761 -0400", hash_original_method = "E555776B59F5150257DBB59B34D3D923", hash_generated_method = "7737B06D97A40AC486E2D8BE989DC087")
     public  HexEncoder() {
         initialiseDecodingTable();
-        // ---------- Original Method ----------
-        //initialiseDecodingTable();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.762 -0400", hash_original_method = "7253B636544E47F410015D46451276E0", hash_generated_method = "C89997037354336FB875A889DB6A4DC5")
     protected void initialiseDecodingTable() {
 for(int i = 0;i < encodingTable.length;i++)
         {
             decodingTable[encodingTable[i]] = (byte)i;
-        } //End block
+        } 
         decodingTable['A'] = decodingTable['a'];
         decodingTable['B'] = decodingTable['b'];
         decodingTable['C'] = decodingTable['c'];
         decodingTable['D'] = decodingTable['d'];
         decodingTable['E'] = decodingTable['e'];
         decodingTable['F'] = decodingTable['f'];
-        // ---------- Original Method ----------
-        //for (int i = 0; i < encodingTable.length; i++)
-        //{
-            //decodingTable[encodingTable[i]] = (byte)i;
-        //}
-        //decodingTable['A'] = decodingTable['a'];
-        //decodingTable['B'] = decodingTable['b'];
-        //decodingTable['C'] = decodingTable['c'];
-        //decodingTable['D'] = decodingTable['d'];
-        //decodingTable['E'] = decodingTable['e'];
-        //decodingTable['F'] = decodingTable['f'];
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -67,21 +68,22 @@ for(int i = off;i < (off + length);i++)
             int v = data[i] & 0xff;
             out.write(encodingTable[(v >>> 4)]);
             out.write(encodingTable[v & 0xf]);
-        } //End block
+        } 
         int var49E1420DFAE7A1905EA8E340CD939C15_800998546 = (length * 2);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1136626855 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1136626855;
-        // ---------- Original Method ----------
-        //for (int i = off; i < (off + length); i++)
-        //{
-            //int    v = data[i] & 0xff;
-            //out.write(encodingTable[(v >>> 4)]);
-            //out.write(encodingTable[v & 0xf]);
-        //}
-        //return length * 2;
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:22.763 -0400", hash_original_method = "1B2A7D609CA1F47FC87AA118398B5C86", hash_generated_method = "DAB3FDC942AFE59B38CB22EB191AADD8")
     private boolean ignore(
         char    c) {
@@ -89,8 +91,8 @@ for(int i = off;i < (off + length);i++)
         boolean var0813D1039B08197476EB8CFDC63ADF39_871225170 = ((c == '\n' || c =='\r' || c == '\t' || c == ' '));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1164917697 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1164917697;
-        // ---------- Original Method ----------
-        //return (c == '\n' || c =='\r' || c == '\t' || c == ' ');
+        
+        
     }
 
     
@@ -114,9 +116,9 @@ for(int i = off;i < (off + length);i++)
     if(!ignore((char)data[end - 1]))            
             {
                 break;
-            } //End block
+            } 
             end--;
-        } //End block
+        } 
         int i = off;
         while
 (i < end)        
@@ -125,49 +127,49 @@ for(int i = off;i < (off + length);i++)
 (i < end && ignore((char)data[i]))            
             {
                 i++;
-            } //End block
+            } 
             b1 = decodingTable[data[i++]];
             while
 (i < end && ignore((char)data[i]))            
             {
                 i++;
-            } //End block
+            } 
             b2 = decodingTable[data[i++]];
             out.write((b1 << 4) | b2);
             outLen++;
-        } //End block
+        } 
         int var504BA8911EA515F30CAFCF90C1129E92_1533310235 = (outLen);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83141632 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_83141632;
-        // ---------- Original Method ----------
-        //byte    b1, b2;
-        //int     outLen = 0;
-        //int     end = off + length;
-        //while (end > off)
-        //{
-            //if (!ignore((char)data[end - 1]))
-            //{
-                //break;
-            //}
-            //end--;
-        //}
-        //int i = off;
-        //while (i < end)
-        //{
-            //while (i < end && ignore((char)data[i]))
-            //{
-                //i++;
-            //}
-            //b1 = decodingTable[data[i++]];
-            //while (i < end && ignore((char)data[i]))
-            //{
-                //i++;
-            //}
-            //b2 = decodingTable[data[i++]];
-            //out.write((b1 << 4) | b2);
-            //outLen++;
-        //}
-        //return outLen;
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -187,9 +189,9 @@ for(int i = off;i < (off + length);i++)
     if(!ignore(data.charAt(end - 1)))            
             {
                 break;
-            } //End block
+            } 
             end--;
-        } //End block
+        } 
         int i = 0;
         while
 (i < end)        
@@ -198,49 +200,49 @@ for(int i = off;i < (off + length);i++)
 (i < end && ignore(data.charAt(i)))            
             {
                 i++;
-            } //End block
+            } 
             b1 = decodingTable[data.charAt(i++)];
             while
 (i < end && ignore(data.charAt(i)))            
             {
                 i++;
-            } //End block
+            } 
             b2 = decodingTable[data.charAt(i++)];
             out.write((b1 << 4) | b2);
             length++;
-        } //End block
+        } 
         int var2FA47F7C65FEC19CC163B195725E3844_1709471449 = (length);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106402760 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1106402760;
-        // ---------- Original Method ----------
-        //byte    b1, b2;
-        //int     length = 0;
-        //int     end = data.length();
-        //while (end > 0)
-        //{
-            //if (!ignore(data.charAt(end - 1)))
-            //{
-                //break;
-            //}
-            //end--;
-        //}
-        //int i = 0;
-        //while (i < end)
-        //{
-            //while (i < end && ignore(data.charAt(i)))
-            //{
-                //i++;
-            //}
-            //b1 = decodingTable[data.charAt(i++)];
-            //while (i < end && ignore(data.charAt(i)))
-            //{
-                //i++;
-            //}
-            //b2 = decodingTable[data.charAt(i++)];
-            //out.write((b1 << 4) | b2);
-            //length++;
-        //}
-        //return length;
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+        
+            
+            
+                
+            
+            
+            
+            
+                
+            
+            
+            
+            
+        
+        
     }
 
     

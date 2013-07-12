@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.438 -0400", hash_original_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C", hash_generated_method = "E5D5EDFEB9DFD5F75BF9F31254D7292C")
     public BasicHeaderValueParser ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -46,13 +46,13 @@ public class BasicHeaderValueParser implements HeaderValueParser {
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1056691174 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1056691174.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1056691174;
-        } //End block
+        } 
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1732714165 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1732714165.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1732714165;
-        } //End block
+        } 
         List elements = new ArrayList();
         while
 (!cursor.atEnd())        
@@ -61,28 +61,28 @@ public class BasicHeaderValueParser implements HeaderValueParser {
     if(!(element.getName().length() == 0 && element.getValue() == null))            
             {
                 elements.add(element);
-            } //End block
-        } //End block
+            } 
+        } 
 HeaderElement[] var554A6F34E30C47381133FE125CCC4AC2_1123467989 =         (HeaderElement[])
             elements.toArray(new HeaderElement[elements.size()]);
         var554A6F34E30C47381133FE125CCC4AC2_1123467989.addTaint(taint);
         return var554A6F34E30C47381133FE125CCC4AC2_1123467989;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Char array buffer may not be null");
-        //}
-        //if (cursor == null) {
-            //throw new IllegalArgumentException("Parser cursor may not be null");
-        //}
-        //List elements = new ArrayList();
-        //while (!cursor.atEnd()) {
-            //HeaderElement element = parseHeaderElement(buffer, cursor);
-            //if (!(element.getName().length() == 0 && element.getValue() == null)) {
-                //elements.add(element);
-            //}
-        //}
-        //return (HeaderElement[])
-            //elements.toArray(new HeaderElement[elements.size()]);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+            
     }
 
     
@@ -111,13 +111,13 @@ HeaderElement[] var554A6F34E30C47381133FE125CCC4AC2_1123467989 =         (Header
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1528107494 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1528107494.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1528107494;
-        } //End block
+        } 
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2054828878 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2054828878.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_2054828878;
-        } //End block
+        } 
         NameValuePair nvp = parseNameValuePair(buffer, cursor);
         NameValuePair[] params = null;
     if(!cursor.atEnd())        
@@ -126,27 +126,27 @@ HeaderElement[] var554A6F34E30C47381133FE125CCC4AC2_1123467989 =         (Header
     if(ch != ELEM_DELIMITER)            
             {
                 params = parseParameters(buffer, cursor);
-            } //End block
-        } //End block
+            } 
+        } 
 HeaderElement varB465087E72E60C51FEF16EFDDEB3D72D_902617318 =         createHeaderElement(nvp.getName(), nvp.getValue(), params);
         varB465087E72E60C51FEF16EFDDEB3D72D_902617318.addTaint(taint);
         return varB465087E72E60C51FEF16EFDDEB3D72D_902617318;
-        // ---------- Original Method ----------
-        //if (buffer == null) {
-            //throw new IllegalArgumentException("Char array buffer may not be null");
-        //}
-        //if (cursor == null) {
-            //throw new IllegalArgumentException("Parser cursor may not be null");
-        //}
-        //NameValuePair nvp = parseNameValuePair(buffer, cursor);
-        //NameValuePair[] params = null;
-        //if (!cursor.atEnd()) {
-            //char ch = buffer.charAt(cursor.getPos() - 1); 
-            //if (ch != ELEM_DELIMITER) {
-                //params = parseParameters(buffer, cursor);
-            //}
-        //}
-        //return createHeaderElement(nvp.getName(), nvp.getValue(), params);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -161,8 +161,8 @@ HeaderElement varB465087E72E60C51FEF16EFDDEB3D72D_902617318 =         createHead
 HeaderElement var7F31DAC00D84C92DB3DA09B50D518202_1785161156 =         new BasicHeaderElement(name, value, params);
         var7F31DAC00D84C92DB3DA09B50D518202_1785161156.addTaint(taint);
         return var7F31DAC00D84C92DB3DA09B50D518202_1785161156;
-        // ---------- Original Method ----------
-        //return new BasicHeaderElement(name, value, params);
+        
+        
     }
 
     
@@ -191,13 +191,13 @@ HeaderElement var7F31DAC00D84C92DB3DA09B50D518202_1785161156 =         new Basic
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1143511747 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1143511747.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1143511747;
-        } //End block
+        } 
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1541530221 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1541530221.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_1541530221;
-        } //End block
+        } 
         int pos = cursor.getPos();
         int indexTo = cursor.getUpperBound();
         while
@@ -207,19 +207,19 @@ HeaderElement var7F31DAC00D84C92DB3DA09B50D518202_1785161156 =         new Basic
     if(HTTP.isWhitespace(ch))            
             {
                 pos++;
-            } //End block
+            } 
             else
             {
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
         cursor.updatePos(pos);
     if(cursor.atEnd())        
         {
 NameValuePair[] varF868564B236F065D2537C0B779B34247_1314670501 =             new NameValuePair[] {};
             varF868564B236F065D2537C0B779B34247_1314670501.addTaint(taint);
             return varF868564B236F065D2537C0B779B34247_1314670501;
-        } //End block
+        } 
         List params = new ArrayList();
         while
 (!cursor.atEnd())        
@@ -230,14 +230,14 @@ NameValuePair[] varF868564B236F065D2537C0B779B34247_1314670501 =             new
     if(ch == ELEM_DELIMITER)            
             {
                 break;
-            } //End block
-        } //End block
+            } 
+        } 
 NameValuePair[] var775797A1DB981CCD7D6A3DE99C60A910_62724930 =         (NameValuePair[])
             params.toArray(new NameValuePair[params.size()]);
         var775797A1DB981CCD7D6A3DE99C60A910_62724930.addTaint(taint);
         return var775797A1DB981CCD7D6A3DE99C60A910_62724930;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -264,8 +264,8 @@ NameValuePair[] var775797A1DB981CCD7D6A3DE99C60A910_62724930 =         (NameValu
 NameValuePair var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693 =         parseNameValuePair(buffer, cursor, ALL_DELIMITERS);
         var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693.addTaint(taint);
         return var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693;
-        // ---------- Original Method ----------
-        //return parseNameValuePair(buffer, cursor, ALL_DELIMITERS);
+        
+        
     }
 
     
@@ -293,13 +293,13 @@ NameValuePair var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693 =         parseName
             IllegalArgumentException var11B13FD12A76A3F0F811AB9F5E5EE296_1285142262 = new IllegalArgumentException("Char array buffer may not be null");
             var11B13FD12A76A3F0F811AB9F5E5EE296_1285142262.addTaint(taint);
             throw var11B13FD12A76A3F0F811AB9F5E5EE296_1285142262;
-        } //End block
+        } 
     if(cursor == null)        
         {
             IllegalArgumentException var1CF5CFA2B773BDACC8F8C4F50D3A40A5_230225145 = new IllegalArgumentException("Parser cursor may not be null");
             var1CF5CFA2B773BDACC8F8C4F50D3A40A5_230225145.addTaint(taint);
             throw var1CF5CFA2B773BDACC8F8C4F50D3A40A5_230225145;
-        } //End block
+        } 
         boolean terminated = false;
         int pos = cursor.getPos();
         int indexFrom = cursor.getPos();
@@ -312,31 +312,31 @@ NameValuePair var318CCD15B7AA3EEEC3B989AEA01F0945_1126920693 =         parseName
     if(ch == '=')            
             {
                 break;
-            } //End block
+            } 
     if(isOneOf(ch, delimiters))            
             {
                 terminated = true;
                 break;
-            } //End block
+            } 
             pos++;
-        } //End block
+        } 
     if(pos == indexTo)        
         {
             terminated = true;
             name = buffer.substringTrimmed(indexFrom, indexTo);
-        } //End block
+        } 
         else
         {
             name = buffer.substringTrimmed(indexFrom, pos);
             pos++;
-        } //End block
+        } 
     if(terminated)        
         {
             cursor.updatePos(pos);
 NameValuePair var936EB01DC49F9DC5803D5D6826C1E111_1550293743 =             createNameValuePair(name, null);
             var936EB01DC49F9DC5803D5D6826C1E111_1550293743.addTaint(taint);
             return var936EB01DC49F9DC5803D5D6826C1E111_1550293743;
-        } //End block
+        } 
         String value = null;
         int i1 = pos;
         boolean qouted = false;
@@ -348,51 +348,51 @@ NameValuePair var936EB01DC49F9DC5803D5D6826C1E111_1550293743 =             creat
     if(ch == '"' && !escaped)            
             {
                 qouted = !qouted;
-            } //End block
+            } 
     if(!qouted && !escaped && isOneOf(ch, delimiters))            
             {
                 terminated = true;
                 break;
-            } //End block
+            } 
     if(escaped)            
             {
                 escaped = false;
-            } //End block
+            } 
             else
             {
                 escaped = qouted && ch == '\\';
-            } //End block
+            } 
             pos++;
-        } //End block
+        } 
         int i2 = pos;
         while
 (i1 < i2 && (HTTP.isWhitespace(buffer.charAt(i1))))        
         {
             i1++;
-        } //End block
+        } 
         while
 ((i2 > i1) && (HTTP.isWhitespace(buffer.charAt(i2 - 1))))        
         {
             i2--;
-        } //End block
+        } 
     if(((i2 - i1) >= 2) 
             && (buffer.charAt(i1) == '"') 
             && (buffer.charAt(i2 - 1) == '"'))        
         {
             i1++;
             i2--;
-        } //End block
+        } 
         value = buffer.substring(i1, i2);
     if(terminated)        
         {
             pos++;
-        } //End block
+        } 
         cursor.updatePos(pos);
 NameValuePair varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466 =         createNameValuePair(name, value);
         varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466.addTaint(taint);
         return varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -403,8 +403,8 @@ NameValuePair varC334BCF85B9429A14AC7E9CE58B8CEBB_1607842466 =         createNam
 NameValuePair varF2851DDA9B912670ED8070D224835E50_861601639 =         new BasicNameValuePair(name, value);
         varF2851DDA9B912670ED8070D224835E50_861601639.addTaint(taint);
         return varF2851DDA9B912670ED8070D224835E50_861601639;
-        // ---------- Original Method ----------
-        //return new BasicNameValuePair(name, value);
+        
+        
     }
 
     

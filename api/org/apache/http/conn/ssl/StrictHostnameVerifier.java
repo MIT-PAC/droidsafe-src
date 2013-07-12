@@ -1,6 +1,6 @@
 package org.apache.http.conn.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class StrictHostnameVerifier extends AbstractVerifier {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.758 -0400", hash_original_method = "09E0CCDA5973A156C5A0868BB4EDD28E", hash_generated_method = "09E0CCDA5973A156C5A0868BB4EDD28E")
     public StrictHostnameVerifier ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -24,8 +24,8 @@ public class StrictHostnameVerifier extends AbstractVerifier {
         addTaint(cns[0].getTaint());
         addTaint(host.getTaint());
         verify(host, cns, subjectAlts, true);
-        // ---------- Original Method ----------
-        //verify(host, cns, subjectAlts, true);
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ public class StrictHostnameVerifier extends AbstractVerifier {
 String var2EA7D4FCD810EDFA63B859E28834610B_791706142 =         "STRICT";
         var2EA7D4FCD810EDFA63B859E28834610B_791706142.addTaint(taint);
         return var2EA7D4FCD810EDFA63B859E28834610B_791706142;
-        // ---------- Original Method ----------
-        //return "STRICT";
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class PlainServerSocketImpl extends PlainSocketImpl {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.986 -0400", hash_original_method = "CB92FA37CCF842A0A29D6A265F149C47", hash_generated_method = "B39DF470BED074E64F0FF7F3AC8F71B2")
     public  PlainServerSocketImpl() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class PlainServerSocketImpl extends PlainSocketImpl {
     public  PlainServerSocketImpl(FileDescriptor fd) {
         super(fd);
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,12 +33,12 @@ public class PlainServerSocketImpl extends PlainSocketImpl {
     if(isStreaming)        
         {
             setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
-        } //End block
-        // ---------- Original Method ----------
-        //super.create(isStreaming);
-        //if (isStreaming) {
-            //setOption(SocketOptions.SO_REUSEADDR, Boolean.TRUE);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,9 +19,9 @@ public class Duration implements Parcelable {
     public  Duration(int timeInterval, TimeUnit timeUnit) {
         this.timeInterval = timeInterval;
         this.timeUnit = timeUnit;
-        // ---------- Original Method ----------
-        //this.timeInterval = timeInterval;
-        //this.timeUnit = timeUnit;
+        
+        
+        
     }
 
     
@@ -29,9 +29,9 @@ public class Duration implements Parcelable {
     private  Duration(Parcel in) {
         timeInterval = in.readInt();
         timeUnit = TimeUnit.values()[in.readInt()];
-        // ---------- Original Method ----------
-        //timeInterval = in.readInt();
-        //timeUnit = TimeUnit.values()[in.readInt()];
+        
+        
+        
     }
 
     
@@ -41,19 +41,20 @@ public class Duration implements Parcelable {
         addTaint(dest.getTaint());
         dest.writeInt(timeInterval);
         dest.writeInt(timeUnit.ordinal());
-        // ---------- Original Method ----------
-        //dest.writeInt(timeInterval);
-        //dest.writeInt(timeUnit.ordinal());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.156 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "F3F54F2746E79E9CD3A3D89491912EDB")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_731260690 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136045391 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_136045391;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -65,6 +66,7 @@ public class Duration implements Parcelable {
         TimeUnit(int value) {
             mValue = value;
         }
+        @DSModeled(DSC.SAFE)
         public int value() {
             return mValue;
         }

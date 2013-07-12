@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,8 +21,8 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
     public  PAccessNetworkInfo() {
         super(PAccessNetworkInfoHeader.NAME);
         parameters.setSeparator(SEMICOLON);
-        // ---------- Original Method ----------
-        //parameters.setSeparator(SEMICOLON);
+        
+        
     }
 
     
@@ -31,8 +31,8 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
         this();
         addTaint(accessTypeVal.getTaint());
         setAccessType(accessTypeVal);
-        // ---------- Original Method ----------
-        //setAccessType(accessTypeVal);
+        
+        
     }
 
     
@@ -47,22 +47,23 @@ public class PAccessNetworkInfo extends ParametersHeader implements PAccessNetwo
         throw varC04CF5D9AD3BD8261BA02B62BA142947_659600365;
         }
         this.accessType = accessTypeVal;
-        // ---------- Original Method ----------
-        //if (accessTypeVal == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setAccessType(), the accessType parameter is null.");
-        //this.accessType = accessTypeVal;
+        
+        
+            
+                    
+                            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.827 -0400", hash_original_method = "7B5E071ADED3A6B6E006FB21C0442CF7", hash_generated_method = "021A03C9018E6BA232F8D6091D44DBA0")
     public String getAccessType() {
 String var13839985BF7A2123F9C538846603D7DA_1384926364 =         accessType;
         var13839985BF7A2123F9C538846603D7DA_1384926364.addTaint(taint);
         return var13839985BF7A2123F9C538846603D7DA_1384926364;
-        // ---------- Original Method ----------
-        //return accessType;
+        
+        
     }
 
     
@@ -78,12 +79,12 @@ String var13839985BF7A2123F9C538846603D7DA_1384926364 =         accessType;
         throw varFF8AA56D7D55F1B17FB0AD2ABCAABD51_703009549;
         }
         setParameter(ParameterNamesIms.CGI_3GPP, cgi);
-        // ---------- Original Method ----------
-        //if (cgi == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setCGI3GPP(), the cgi parameter is null.");
-        //setParameter(ParameterNamesIms.CGI_3GPP, cgi);
+        
+        
+            
+                    
+                            
+        
     }
 
     
@@ -92,8 +93,8 @@ String var13839985BF7A2123F9C538846603D7DA_1384926364 =         accessType;
 String var3812EB68A035524A86CF47B940DCA391_1776316939 =         getParameter(ParameterNamesIms.CGI_3GPP);
         var3812EB68A035524A86CF47B940DCA391_1776316939.addTaint(taint);
         return var3812EB68A035524A86CF47B940DCA391_1776316939;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.CGI_3GPP);
+        
+        
     }
 
     
@@ -109,12 +110,12 @@ String var3812EB68A035524A86CF47B940DCA391_1776316939 =         getParameter(Par
         throw varCEFC84FAAD9C65938851144DF0556B69_1799282524;
         }
         setParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP, utranCellID);
-        // ---------- Original Method ----------
-        //if (utranCellID == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setUtranCellID3GPP(), the utranCellID parameter is null.");
-        //setParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP, utranCellID);
+        
+        
+            
+                    
+                            
+        
     }
 
     
@@ -123,8 +124,8 @@ String var3812EB68A035524A86CF47B940DCA391_1776316939 =         getParameter(Par
 String varB7D6779487FCB9E7AA24DA0384F3987E_1913598541 =         getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
         varB7D6779487FCB9E7AA24DA0384F3987E_1913598541.addTaint(taint);
         return varB7D6779487FCB9E7AA24DA0384F3987E_1913598541;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.UTRAN_CELL_ID_3GPP);
+        
+        
     }
 
     
@@ -140,12 +141,12 @@ String varB7D6779487FCB9E7AA24DA0384F3987E_1913598541 =         getParameter(Par
         throw var49921CC09DD0ECDA1653AA98E0FD4ACE_61469395;
         }
         setParameter(ParameterNamesIms.DSL_LOCATION, dslLocation);
-        // ---------- Original Method ----------
-        //if (dslLocation == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setDSLLocation(), the dslLocation parameter is null.");
-        //setParameter(ParameterNamesIms.DSL_LOCATION, dslLocation);
+        
+        
+            
+                    
+                            
+        
     }
 
     
@@ -154,8 +155,8 @@ String varB7D6779487FCB9E7AA24DA0384F3987E_1913598541 =         getParameter(Par
 String var56319797F5EE3CFB62504C9DF7482837_1711982524 =         getParameter(ParameterNamesIms.DSL_LOCATION);
         var56319797F5EE3CFB62504C9DF7482837_1711982524.addTaint(taint);
         return var56319797F5EE3CFB62504C9DF7482837_1711982524;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.DSL_LOCATION);
+        
+        
     }
 
     
@@ -171,12 +172,12 @@ String var56319797F5EE3CFB62504C9DF7482837_1711982524 =         getParameter(Par
         throw varF8B399B00306EE66DFB63411E177853E_2011676616;
         }
         setParameter(ParameterNamesIms.CI_3GPP2, ci3Gpp2);
-        // ---------- Original Method ----------
-        //if (ci3Gpp2 == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setCI3GPP2(), the ci3Gpp2 parameter is null.");
-        //setParameter(ParameterNamesIms.CI_3GPP2, ci3Gpp2);
+        
+        
+            
+                    
+                            
+        
     }
 
     
@@ -185,8 +186,8 @@ String var56319797F5EE3CFB62504C9DF7482837_1711982524 =         getParameter(Par
 String varCE2F991713F6651BF4DC93FE5785DC00_1716415306 =         getParameter(ParameterNamesIms.CI_3GPP2);
         varCE2F991713F6651BF4DC93FE5785DC00_1716415306.addTaint(taint);
         return varCE2F991713F6651BF4DC93FE5785DC00_1716415306;
-        // ---------- Original Method ----------
-        //return getParameter(ParameterNamesIms.CI_3GPP2);
+        
+        
     }
 
     
@@ -202,27 +203,27 @@ String varCE2F991713F6651BF4DC93FE5785DC00_1716415306 =         getParameter(Par
             try 
             {
                 super.setQuotedParameter(name, value.toString());
-            } //End block
+            } 
             catch (ParseException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             super.setParameter(name, value);
-        } //End block
-        // ---------- Original Method ----------
-        //if (name.equalsIgnoreCase(ParameterNamesIms.CGI_3GPP)
-                //|| name.equalsIgnoreCase(ParameterNamesIms.UTRAN_CELL_ID_3GPP)
-                //|| name.equalsIgnoreCase(ParameterNamesIms.DSL_LOCATION)
-                //|| name.equalsIgnoreCase(ParameterNamesIms.CI_3GPP2)) {
-            //try {
-                //super.setQuotedParameter(name, value.toString());
-            //} catch (ParseException e) {
-            //}
-        //} else {
-            //super.setParameter(name, value);
-        //}
+        } 
+        
+        
+                
+                
+                
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -237,22 +238,23 @@ String varCE2F991713F6651BF4DC93FE5785DC00_1716415306 =         getParameter(Par
         throw varF558C1AA21B67DD3E64E317BB4572F9C_2130091970;
         }
         this.extendAccessInfo = extendAccessInfo;
-        // ---------- Original Method ----------
-        //if (extendAccessInfo == null)
-            //throw new NullPointerException(
-                    //"JAIN-SIP Exception, "
-                            //+ "P-Access-Network-Info, setExtendAccessInfo(), the extendAccessInfo parameter is null.");
-        //this.extendAccessInfo = extendAccessInfo;
+        
+        
+            
+                    
+                            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:37.832 -0400", hash_original_method = "1DDCE9F900020BBCC56ECC227A2A793D", hash_generated_method = "74BE9EEBE3F53A740417743C42649AC7")
     public Object getExtensionAccessInfo() {
 Object var92A160837D8EF0168F11ECE20849458E_225445937 =         this.extendAccessInfo;
         var92A160837D8EF0168F11ECE20849458E_225445937.addTaint(taint);
         return var92A160837D8EF0168F11ECE20849458E_225445937;
-        // ---------- Original Method ----------
-        //return this.extendAccessInfo;
+        
+        
     }
 
     
@@ -264,27 +266,27 @@ Object var92A160837D8EF0168F11ECE20849458E_225445937 =         this.extendAccess
     if(!parameters.isEmpty())        
         {
             encoding.append(SEMICOLON + SP + this.parameters.encode());
-        } //End block
+        } 
     if(getExtensionAccessInfo() != null)        
         {
             encoding.append(SEMICOLON + SP
                     + getExtensionAccessInfo().toString());
-        } //End block
+        } 
 String varD48A745DC29A29C7851286E6A426D0D0_595276141 =         encoding.toString();
         varD48A745DC29A29C7851286E6A426D0D0_595276141.addTaint(taint);
         return varD48A745DC29A29C7851286E6A426D0D0_595276141;
-        // ---------- Original Method ----------
-        //StringBuffer encoding = new StringBuffer();
-        //if (getAccessType() != null)
-            //encoding.append(getAccessType());
-        //if (!parameters.isEmpty()) {
-            //encoding.append(SEMICOLON + SP + this.parameters.encode());
-        //}
-        //if (getExtensionAccessInfo() != null) {
-            //encoding.append(SEMICOLON + SP
-                    //+ getExtensionAccessInfo().toString());
-        //}
-        //return encoding.toString();
+        
+        
+        
+            
+        
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -294,8 +296,8 @@ String varD48A745DC29A29C7851286E6A426D0D0_595276141 =         encoding.toString
         ParseException varADC68F4409F245E41BA5DDA0F06CA1BA_80660645 = new ParseException(value, 0);
         varADC68F4409F245E41BA5DDA0F06CA1BA_80660645.addTaint(taint);
         throw varADC68F4409F245E41BA5DDA0F06CA1BA_80660645;
-        // ---------- Original Method ----------
-        //throw new ParseException(value, 0);
+        
+        
     }
 
     
@@ -305,8 +307,8 @@ String varD48A745DC29A29C7851286E6A426D0D0_595276141 =         encoding.toString
         boolean varA5C91BB804C246CD67D472AD4B719C56_65279966 = ((other instanceof PAccessNetworkInfoHeader) && super.equals(other));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_789189099 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_789189099;
-        // ---------- Original Method ----------
-        //return (other instanceof PAccessNetworkInfoHeader) && super.equals(other);
+        
+        
     }
 
     
@@ -316,9 +318,9 @@ String varD48A745DC29A29C7851286E6A426D0D0_595276141 =         encoding.toString
 Object varF9E19AD6135C970F387F77C6F3DE4477_269887174 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_269887174.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_269887174;
-        // ---------- Original Method ----------
-        //PAccessNetworkInfo retval = (PAccessNetworkInfo) super.clone();
-        //return retval;
+        
+        
+        
     }
 
     

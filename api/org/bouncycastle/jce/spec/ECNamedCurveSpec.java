@@ -1,6 +1,6 @@
 package org.bouncycastle.jce.spec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,8 +27,8 @@ public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
         addTaint(g.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -43,8 +43,8 @@ public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
         addTaint(g.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -61,8 +61,8 @@ public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
         addTaint(g.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -79,8 +79,8 @@ public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
         addTaint(g.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -99,8 +99,8 @@ public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
         addTaint(g.getTaint());
         addTaint(curve.getTaint());
         this.name = name;
-        // ---------- Original Method ----------
-        //this.name = name;
+        
+        
     }
 
     
@@ -135,13 +135,14 @@ public class ECNamedCurveSpec extends java.security.spec.ECParameterSpec {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.718 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "9B03B5DA4F8BD173B700252DF0C57E2D")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1826123813 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_1826123813.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_1826123813;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     

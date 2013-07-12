@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,14 +30,14 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
         try 
         {
             mGetter = propertyHolder.getMethod(getterName, (Class<?>[])null);
-        } //End block
+        } 
         catch (NoSuchMethodException e)
         {
             getterName = PREFIX_IS + capitalizedName;
             try 
             {
                 mGetter = propertyHolder.getMethod(getterName, (Class<?>[])null);
-            } //End block
+            } 
             catch (NoSuchMethodException e1)
             {
                 try 
@@ -50,18 +50,18 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
                                 "does not match Property type (" + valueType + ")");
                         var89739AF27078F6CF291E82A821220B64_1773208073.addTaint(taint);
                         throw var89739AF27078F6CF291E82A821220B64_1773208073;
-                    } //End block
+                    } 
                     return;
-                } //End block
+                } 
                 catch (NoSuchFieldException e2)
                 {
                     NoSuchPropertyException var858E788E5B1503FF62C58AD5D2C7E476_367665286 = new NoSuchPropertyException("No accessor method or field found for"
                             + " property with name " + name);
                     var858E788E5B1503FF62C58AD5D2C7E476_367665286.addTaint(taint);
                     throw var858E788E5B1503FF62C58AD5D2C7E476_367665286;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         Class getterType = mGetter.getReturnType();
     if(!typesMatch(valueType, getterType))        
         {
@@ -69,17 +69,17 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
                     "does not match Property type (" + valueType + ")");
             varEA57993FAB212A9EB3D78132E76DB573_1258559282.addTaint(taint);
             throw varEA57993FAB212A9EB3D78132E76DB573_1258559282;
-        } //End block
+        } 
         String setterName = PREFIX_SET + capitalizedName;
         try 
         {
             mSetter = propertyHolder.getMethod(setterName, getterType);
-        } //End block
+        } 
         catch (NoSuchMethodException ignored)
         {
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -101,16 +101,16 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
                         (getterType == char.class && valueType == Character.class));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1897435496 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1897435496;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_403520319 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2132985899 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2132985899;
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1680301828 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1983024837 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1983024837;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -124,58 +124,58 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
             try 
             {
                 mSetter.invoke(object, value);
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_1262174682 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_1262174682.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_1262174682;
-            } //End block
+            } 
             catch (InvocationTargetException e)
             {
                 RuntimeException var21A9144EB1856059FE4C4B9FF95E6F43_1322203866 = new RuntimeException(e.getCause());
                 var21A9144EB1856059FE4C4B9FF95E6F43_1322203866.addTaint(taint);
                 throw var21A9144EB1856059FE4C4B9FF95E6F43_1322203866;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(mField != null)        
         {
             try 
             {
                 mField.set(object, value);
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_1346433135 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_1346433135.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_1346433135;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             UnsupportedOperationException var7C18E98A72208702C7C0661FD2550E26_1317381738 = new UnsupportedOperationException("Property " + getName() +" is read-only");
             var7C18E98A72208702C7C0661FD2550E26_1317381738.addTaint(taint);
             throw var7C18E98A72208702C7C0661FD2550E26_1317381738;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSetter != null) {
-            //try {
-                //mSetter.invoke(object, value);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //} catch (InvocationTargetException e) {
-                //throw new RuntimeException(e.getCause());
-            //}
-        //} else if (mField != null) {
-            //try {
-                //mField.set(object, value);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //}
-        //} else {
-            //throw new UnsupportedOperationException("Property " + getName() +" is read-only");
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -190,20 +190,20 @@ class ReflectiveProperty<T, V> extends Property<T, V> {
 V var6F170D17107151FFB1EB230D5CB4817D_185544340 =                 (V) mGetter.invoke(object, (Object[])null);
                 var6F170D17107151FFB1EB230D5CB4817D_185544340.addTaint(taint);
                 return var6F170D17107151FFB1EB230D5CB4817D_185544340;
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_1975972058 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_1975972058.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_1975972058;
-            } //End block
+            } 
             catch (InvocationTargetException e)
             {
                 RuntimeException var21A9144EB1856059FE4C4B9FF95E6F43_1307336171 = new RuntimeException(e.getCause());
                 var21A9144EB1856059FE4C4B9FF95E6F43_1307336171.addTaint(taint);
                 throw var21A9144EB1856059FE4C4B9FF95E6F43_1307336171;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(mField != null)        
         {
@@ -212,45 +212,46 @@ V var6F170D17107151FFB1EB230D5CB4817D_185544340 =                 (V) mGetter.in
 V varE396095FB568A116FDE56C12F3E74C0A_1336768383 =                 (V) mField.get(object);
                 varE396095FB568A116FDE56C12F3E74C0A_1336768383.addTaint(taint);
                 return varE396095FB568A116FDE56C12F3E74C0A_1336768383;
-            } //End block
+            } 
             catch (IllegalAccessException e)
             {
                 AssertionError varA81442E36297E737EB908877E58260E8_972153670 = new AssertionError();
                 varA81442E36297E737EB908877E58260E8_972153670.addTaint(taint);
                 throw varA81442E36297E737EB908877E58260E8_972153670;
-            } //End block
-        } //End block
+            } 
+        } 
         AssertionError varA81442E36297E737EB908877E58260E8_1995393566 = new AssertionError();
         varA81442E36297E737EB908877E58260E8_1995393566.addTaint(taint);
         throw varA81442E36297E737EB908877E58260E8_1995393566;
-        // ---------- Original Method ----------
-        //if (mGetter != null) {
-            //try {
-                //return (V) mGetter.invoke(object, (Object[])null);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //} catch (InvocationTargetException e) {
-                //throw new RuntimeException(e.getCause());
-            //}
-        //} else if (mField != null) {
-            //try {
-                //return (V) mField.get(object);
-            //} catch (IllegalAccessException e) {
-                //throw new AssertionError();
-            //}
-        //}
-        //throw new AssertionError();
+        
+        
+            
+                
+            
+                
+            
+                
+            
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.203 -0400", hash_original_method = "176D77E232A76459A0F514B7F2AA65DB", hash_generated_method = "6D3FB7659584CE31C0E753556C93A188")
     @Override
     public boolean isReadOnly() {
         boolean var0CD26F59E51E95187630282130E31EE1_1856391403 = ((mSetter == null && mField == null));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_303079719 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_303079719;
-        // ---------- Original Method ----------
-        //return (mSetter == null && mField == null);
+        
+        
     }
 
     

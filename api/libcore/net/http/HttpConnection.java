@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -67,40 +67,41 @@ for(int i = 0;i < addresses.length;i++)
                 socketCandidate.connect(
                         new InetSocketAddress(addresses[i], config.socketPort), connectTimeout);
                 break;
-            } //End block
+            } 
             catch (IOException e)
             {
     if(i == addresses.length - 1)                
                 {
                     e.addTaint(taint);
                     throw e;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         this.socket = socketCandidate;
-        // ---------- Original Method ----------
-        //this.address = config;
-        //Socket socketCandidate = null;
-        //InetAddress[] addresses = InetAddress.getAllByName(config.socketHost);
-        //for (int i = 0; i < addresses.length; i++) {
-            //socketCandidate = (config.proxy != null && config.proxy.type() != Proxy.Type.HTTP)
-                    //? new Socket(config.proxy)
-                    //: new Socket();
-            //try {
-                //socketCandidate.connect(
-                        //new InetSocketAddress(addresses[i], config.socketPort), connectTimeout);
-                //break;
-            //} catch (IOException e) {
-                //if (i == addresses.length - 1) {
-                    //throw e;
-                //}
-            //}
-        //}
-        //this.socket = socketCandidate;
+        
+        
+        
+        
+        
+            
+                    
+                    
+            
+                
+                        
+                
+            
+                
+                    
+                
+            
+        
+        
     }
 
     
-        public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunnel,
+        @DSModeled(DSC.SPEC)
+    public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunnel,
             int connectTimeout) throws IOException {
         if (proxy != null) {
             Address address = (proxy.type() == Proxy.Type.DIRECT)
@@ -135,13 +136,13 @@ for(int i = 0;i < addresses.length;i++)
         IoUtils.closeQuietly(outputStream);
         IoUtils.closeQuietly(inputStream);
         IoUtils.closeQuietly(socket);
-        // ---------- Original Method ----------
-        //IoUtils.closeQuietly(sslOutputStream);
-        //IoUtils.closeQuietly(sslInputStream);
-        //IoUtils.closeQuietly(sslSocket);
-        //IoUtils.closeQuietly(outputStream);
-        //IoUtils.closeQuietly(inputStream);
-        //IoUtils.closeQuietly(socket);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -149,8 +150,8 @@ for(int i = 0;i < addresses.length;i++)
     public void setSoTimeout(int readTimeout) throws SocketException {
         addTaint(readTimeout);
         socket.setSoTimeout(readTimeout);
-        // ---------- Original Method ----------
-        //socket.setSoTimeout(readTimeout);
+        
+        
     }
 
     
@@ -161,29 +162,29 @@ for(int i = 0;i < addresses.length;i++)
     if(sslOutputStream == null)            
             {
                 sslOutputStream = sslSocket.getOutputStream();
-            } //End block
+            } 
 OutputStream var7B5142EB61F03E732FF06E13D3F423AA_1673138871 =             sslOutputStream;
             var7B5142EB61F03E732FF06E13D3F423AA_1673138871.addTaint(taint);
             return var7B5142EB61F03E732FF06E13D3F423AA_1673138871;
-        } //End block
+        } 
         else
     if(outputStream == null)        
         {
             outputStream = socket.getOutputStream();
-        } //End block
+        } 
 OutputStream var864D919353B9AF56DB2472A4EBA3E730_1137061226 =         outputStream;
         var864D919353B9AF56DB2472A4EBA3E730_1137061226.addTaint(taint);
         return var864D919353B9AF56DB2472A4EBA3E730_1137061226;
-        // ---------- Original Method ----------
-        //if (sslSocket != null) {
-            //if (sslOutputStream == null) {
-                //sslOutputStream = sslSocket.getOutputStream();
-            //}
-            //return sslOutputStream;
-        //} else if(outputStream == null) {
-            //outputStream = socket.getOutputStream();
-        //}
-        //return outputStream;
+        
+        
+            
+                
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -194,11 +195,11 @@ OutputStream var864D919353B9AF56DB2472A4EBA3E730_1137061226 =         outputStre
     if(sslInputStream == null)            
             {
                 sslInputStream = sslSocket.getInputStream();
-            } //End block
+            } 
 InputStream var07CB6F88FDC48DE9052B515D7A2AE8F3_1582222208 =             sslInputStream;
             var07CB6F88FDC48DE9052B515D7A2AE8F3_1582222208.addTaint(taint);
             return var07CB6F88FDC48DE9052B515D7A2AE8F3_1582222208;
-        } //End block
+        } 
         else
     if(inputStream == null)        
         {
@@ -206,43 +207,45 @@ InputStream var07CB6F88FDC48DE9052B515D7A2AE8F3_1582222208 =             sslInpu
             inputStream = address.requiresTunnel
                     ? socket.getInputStream()
                     : new BufferedInputStream(socket.getInputStream(), bufferSize);
-        } //End block
+        } 
 InputStream var6D6AA0B6E97941129A02DB042FF8CF68_447948005 =         inputStream;
         var6D6AA0B6E97941129A02DB042FF8CF68_447948005.addTaint(taint);
         return var6D6AA0B6E97941129A02DB042FF8CF68_447948005;
-        // ---------- Original Method ----------
-        //if (sslSocket != null) {
-            //if (sslInputStream == null) {
-                //sslInputStream = sslSocket.getInputStream();
-            //}
-            //return sslInputStream;
-        //} else if (inputStream == null) {
-            //int bufferSize = 128;
-            //inputStream = address.requiresTunnel
-                    //? socket.getInputStream()
-                    //: new BufferedInputStream(socket.getInputStream(), bufferSize);
-        //}
-        //return inputStream;
+        
+        
+            
+                
+            
+            
+        
+            
+            
+                    
+                    
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.168 -0400", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "41FBE1BA04C0F533B97B2C0DD56A880D")
     protected Socket getSocket() {
 Socket varC212647F359587E811E8677EDC2BCF85_693779556 =         sslSocket != null ? sslSocket : socket;
         varC212647F359587E811E8677EDC2BCF85_693779556.addTaint(taint);
         return varC212647F359587E811E8677EDC2BCF85_693779556;
-        // ---------- Original Method ----------
-        //return sslSocket != null ? sslSocket : socket;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.168 -0400", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "ECE67E5792974A73E05CADACA98BE7DE")
     public Address getAddress() {
 Address var814577DDD37BAFB17E08CBEFDB411BAE_1855245961 =         address;
         var814577DDD37BAFB17E08CBEFDB411BAE_1855245961.addTaint(taint);
         return var814577DDD37BAFB17E08CBEFDB411BAE_1855245961;
-        // ---------- Original Method ----------
-        //return address;
+        
+        
     }
 
     
@@ -257,27 +260,28 @@ Address var814577DDD37BAFB17E08CBEFDB411BAE_1855245961 =         address;
             openSslSocket.setEnabledCompressionMethods(new String[] { "ZLIB"});
             openSslSocket.setUseSessionTickets(true);
             openSslSocket.setHostname(address.socketHost);
-        } //End block
+        } 
         else
         {
             unverifiedSocket.setEnabledProtocols(new String [] { "SSLv3" });
-        } //End block
+        } 
         unverifiedSocket.startHandshake();
-        // ---------- Original Method ----------
-        //unverifiedSocket = (SSLSocket) sslSocketFactory.createSocket(socket,
-                //address.uriHost, address.uriPort, true );
-        //if (tlsTolerant && unverifiedSocket instanceof OpenSSLSocketImpl) {
-            //OpenSSLSocketImpl openSslSocket = (OpenSSLSocketImpl) unverifiedSocket;
-            //openSslSocket.setEnabledCompressionMethods(new String[] { "ZLIB"});
-            //openSslSocket.setUseSessionTickets(true);
-            //openSslSocket.setHostname(address.socketHost);
-        //} else {
-            //unverifiedSocket.setEnabledProtocols(new String [] { "SSLv3" });
-        //}
-        //unverifiedSocket.startHandshake();
+        
+        
+                
+        
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.169 -0400", hash_original_method = "E313A7AB78F75EDB07568DFA09A3BF60", hash_generated_method = "6F29BBD3E8946A567E2AF8E4251A40E4")
     public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier) throws IOException {
         addTaint(hostnameVerifier.getTaint());
@@ -286,27 +290,28 @@ Address var814577DDD37BAFB17E08CBEFDB411BAE_1855245961 =         address;
             IOException var5BFC50F4CD50FCD50287EBAE7E101E24_1259581331 = new IOException("Hostname '" + address.uriHost + "' was not verified");
             var5BFC50F4CD50FCD50287EBAE7E101E24_1259581331.addTaint(taint);
             throw var5BFC50F4CD50FCD50287EBAE7E101E24_1259581331;
-        } //End block
+        } 
         sslSocket = unverifiedSocket;
 SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_378070476 =         sslSocket;
         var483A6DFBDF2AF13A3CF8A0177BC684A5_378070476.addTaint(taint);
         return var483A6DFBDF2AF13A3CF8A0177BC684A5_378070476;
-        // ---------- Original Method ----------
-        //if (!hostnameVerifier.verify(address.uriHost, unverifiedSocket.getSession())) {
-            //throw new IOException("Hostname '" + address.uriHost + "' was not verified");
-        //}
-        //sslSocket = unverifiedSocket;
-        //return sslSocket;
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.170 -0400", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "4374FBD1BB6F222C062C373C3808ACD6")
     public SSLSocket getSecureSocketIfConnected() {
 SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
         var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812.addTaint(taint);
         return var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812;
-        // ---------- Original Method ----------
-        //return sslSocket;
+        
+        
     }
 
     
@@ -317,14 +322,14 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
             boolean varB326B5062B2F0E69046810717534CB09_1810236191 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1449401000 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1449401000;
-        } //End block
+        } 
         InputStream in = getInputStream();
     if(in.available() > 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_771575099 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1342461397 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1342461397;
-        } //End block
+        } 
         Socket socket = getSocket();
         int soTimeout = socket.getSoTimeout();
         try 
@@ -338,53 +343,53 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
                 boolean var68934A3E9455FA72420237EB05902327_1986094501 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2123485500 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2123485500;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_707789161 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696070719 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_696070719;
-        } //End block
+        } 
         catch (SocketTimeoutException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1429470718 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244981334 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_244981334;
-        } //End block
+        } 
         catch (IOException e)
         {
             boolean varB326B5062B2F0E69046810717534CB09_1777105181 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695645378 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695645378;
-        } //End block
+        } 
         finally 
         {
             socket.setSoTimeout(soTimeout);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isEligibleForRecycling()) {
-            //return true;
-        //}
-        //InputStream in = getInputStream();
-        //if (in.available() > 0) {
-            //return false;
-        //}
-        //Socket socket = getSocket();
-        //int soTimeout = socket.getSoTimeout();
-        //try {
-            //socket.setSoTimeout(1);
-            //in.mark(1);
-            //int byteRead = in.read();
-            //if (byteRead != -1) {
-                //in.reset();
-                //return false;
-            //}
-            //return true; 
-        //} catch (SocketTimeoutException e) {
-            //return false; 
-        //} catch (IOException e) {
-            //return true; 
-        //} finally {
-            //socket.setSoTimeout(soTimeout);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
+        
+            
+            
+            
+            
+                
+                
+            
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -395,10 +400,10 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
                 && !socket.isOutputShutdown());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2074295671 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2074295671;
-        // ---------- Original Method ----------
-        //return !socket.isClosed()
-                //&& !socket.isInputShutdown()
-                //&& !socket.isOutputShutdown();
+        
+        
+                
+                
     }
 
     
@@ -430,13 +435,13 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
             this.uriPort = uri.getEffectivePort();
             this.socketHost = uriHost;
             this.socketPort = uriPort;
-            // ---------- Original Method ----------
-            //this.proxy = null;
-            //this.requiresTunnel = false;
-            //this.uriHost = uri.getHost();
-            //this.uriPort = uri.getEffectivePort();
-            //this.socketHost = uriHost;
-            //this.socketPort = uriPort;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -453,33 +458,34 @@ SSLSocket var483A6DFBDF2AF13A3CF8A0177BC684A5_643544812 =         sslSocket;
                         + proxyAddress.getClass());
                 var1F52054C8BC1E59292A12BEABE1E9089_1137587571.addTaint(taint);
                 throw var1F52054C8BC1E59292A12BEABE1E9089_1137587571;
-            } //End block
+            } 
             InetSocketAddress proxySocketAddress = (InetSocketAddress) proxyAddress;
             this.socketHost = proxySocketAddress.getHostName();
             this.socketPort = proxySocketAddress.getPort();
-            // ---------- Original Method ----------
-            //this.proxy = proxy;
-            //this.requiresTunnel = requiresTunnel;
-            //this.uriHost = uri.getHost();
-            //this.uriPort = uri.getEffectivePort();
-            //SocketAddress proxyAddress = proxy.address();
-            //if (!(proxyAddress instanceof InetSocketAddress)) {
-                //throw new IllegalArgumentException("Proxy.address() is not an InetSocketAddress: "
-                        //+ proxyAddress.getClass());
-            //}
-            //InetSocketAddress proxySocketAddress = (InetSocketAddress) proxyAddress;
-            //this.socketHost = proxySocketAddress.getHostName();
-            //this.socketPort = proxySocketAddress.getPort();
+            
+            
+            
+            
+            
+            
+            
+                
+                        
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.174 -0400", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "3FC7B383839AE6742611A69BBF2EE404")
         public Proxy getProxy() {
 Proxy var60FC9F22F7E863EBFD33B2ADB8462743_173573983 =             proxy;
             var60FC9F22F7E863EBFD33B2ADB8462743_173573983.addTaint(taint);
             return var60FC9F22F7E863EBFD33B2ADB8462743_173573983;
-            // ---------- Original Method ----------
-            //return proxy;
+            
+            
         }
 
         
@@ -496,19 +502,19 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_173573983 =             proxy;
                         && this.requiresTunnel == that.requiresTunnel);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_383930358 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_383930358;
-            } //End block
+            } 
             boolean var68934A3E9455FA72420237EB05902327_1284661527 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_762301129 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_762301129;
-            // ---------- Original Method ----------
-            //if (other instanceof Address) {
-                //Address that = (Address) other;
-                //return Objects.equal(this.proxy, that.proxy)
-                        //&& this.uriHost.equals(that.uriHost)
-                        //&& this.uriPort == that.uriPort
-                        //&& this.requiresTunnel == that.requiresTunnel;
-            //}
-            //return false;
+            
+            
+                
+                
+                        
+                        
+                        
+            
+            
         }
 
         
@@ -523,13 +529,13 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_173573983 =             proxy;
             int varB4A88417B3D0170D754C647C30B7216A_382678924 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590318792 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_590318792;
-            // ---------- Original Method ----------
-            //int result = 17;
-            //result = 31 * result + uriHost.hashCode();
-            //result = 31 * result + uriPort;
-            //result = 31 * result + (proxy != null ? proxy.hashCode() : 0);
-            //result = 31 * result + (requiresTunnel ? 1 : 0);
-            //return result;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -539,8 +545,8 @@ Proxy var60FC9F22F7E863EBFD33B2ADB8462743_173573983 =             proxy;
 HttpConnection var15B1551A9B509FD6847E854F6B8CB9B1_1001603007 =             new HttpConnection(this, connectTimeout);
             var15B1551A9B509FD6847E854F6B8CB9B1_1001603007.addTaint(taint);
             return var15B1551A9B509FD6847E854F6B8CB9B1_1001603007;
-            // ---------- Original Method ----------
-            //return new HttpConnection(this, connectTimeout);
+            
+            
         }
 
         

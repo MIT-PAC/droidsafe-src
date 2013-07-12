@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,7 +48,7 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     public  ZoomButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,7 +57,7 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,71 +69,72 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
         addTaint(context.getTaint());
         mHandler = new Handler();
         setOnLongClickListener(this);
-        // ---------- Original Method ----------
-        //mHandler = new Handler();
-        //setOnLongClickListener(this);
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.123 -0400", hash_original_method = "6BCA096FD56C8C78BA7791883B013378", hash_generated_method = "14353E0D94FC6CE296C71F3B92D71BFF")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
     if((event.getAction() == MotionEvent.ACTION_CANCEL)
                 || (event.getAction() == MotionEvent.ACTION_UP))        
         {
             mIsInLongpress = false;
-        } //End block
+        } 
         boolean varB07EB30996A92905DCA4C49613CBAF5F_64570894 = (super.onTouchEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1955857489 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1955857489;
-        // ---------- Original Method ----------
-        //if ((event.getAction() == MotionEvent.ACTION_CANCEL)
-                //|| (event.getAction() == MotionEvent.ACTION_UP)) {
-            //mIsInLongpress = false;
-        //}
-        //return super.onTouchEvent(event);
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.124 -0400", hash_original_method = "DEDF5C76C1376B1670A66754E8A8EB41", hash_generated_method = "D68C36E9625129F28B8BB01C9B1C450E")
     public void setZoomSpeed(long speed) {
         mZoomSpeed = speed;
-        // ---------- Original Method ----------
-        //mZoomSpeed = speed;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.124 -0400", hash_original_method = "26BCB5A69421DEBA679FF4C8B6DA9672", hash_generated_method = "F704277BF55763B7A7C4220E169D240A")
     public boolean onLongClick(View v) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(v.getTaint());
         mIsInLongpress = true;
         mHandler.post(mRunnable);
         boolean varB326B5062B2F0E69046810717534CB09_978501874 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_552051375 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_552051375;
-        // ---------- Original Method ----------
-        //mIsInLongpress = true;
-        //mHandler.post(mRunnable);
-        //return true;
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.125 -0400", hash_original_method = "BFA7CE14F9602D57E8995DEC9C69E7C5", hash_generated_method = "86ABFD5D51AAC2969D6DCA84789290F3")
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         addTaint(keyCode);
         mIsInLongpress = false;
         boolean varAD33E8F21A74B923C1A24761EAF2F4A9_568593671 = (super.onKeyUp(keyCode, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1668205239 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1668205239;
-        // ---------- Original Method ----------
-        //mIsInLongpress = false;
-        //return super.onKeyUp(keyCode, event);
+        
+        
+        
     }
 
     
@@ -144,13 +145,13 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
     if(!enabled)        
         {
             setPressed(false);
-        } //End block
+        } 
         super.setEnabled(enabled);
-        // ---------- Original Method ----------
-        //if (!enabled) {
-            //setPressed(false);
-        //}
-        //super.setEnabled(enabled);
+        
+        
+            
+        
+        
     }
 
     
@@ -163,9 +164,9 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
         boolean var38F03C1502A28A0A57FCF126EB46E15F_509941889 = (super.dispatchUnhandledMove(focused, direction));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548802990 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548802990;
-        // ---------- Original Method ----------
-        //clearFocus();
-        //return super.dispatchUnhandledMove(focused, direction);
+        
+        
+        
     }
 
     

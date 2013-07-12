@@ -1,6 +1,6 @@
 package org.apache.http.impl.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,7 +20,7 @@ public abstract class AuthSchemeBase implements AuthScheme {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.096 -0400", hash_original_method = "7082ED5A83D0EFFA08BB77E1EC0EBD1E", hash_generated_method = "0AE5056767E4146DFC6F431C6B92E16B")
     public  AuthSchemeBase() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,30 +32,30 @@ public abstract class AuthSchemeBase implements AuthScheme {
             IllegalArgumentException var655E57DE77F969F763516260E292795B_1506695045 = new IllegalArgumentException("Header may not be null");
             var655E57DE77F969F763516260E292795B_1506695045.addTaint(taint);
             throw var655E57DE77F969F763516260E292795B_1506695045;
-        } //End block
+        } 
         String authheader = header.getName();
     if(authheader.equalsIgnoreCase(AUTH.WWW_AUTH))        
         {
             this.proxy = false;
-        } //End block
+        } 
         else
     if(authheader.equalsIgnoreCase(AUTH.PROXY_AUTH))        
         {
             this.proxy = true;
-        } //End block
+        } 
         else
         {
             MalformedChallengeException varE6D8B5DE8CD72B409B9E0AC22A5316F9_1072795465 = new MalformedChallengeException("Unexpected header name: " + authheader);
             varE6D8B5DE8CD72B409B9E0AC22A5316F9_1072795465.addTaint(taint);
             throw varE6D8B5DE8CD72B409B9E0AC22A5316F9_1072795465;
-        } //End block
+        } 
         CharArrayBuffer buffer;
         int pos;
     if(header instanceof FormattedHeader)        
         {
             buffer = ((FormattedHeader) header).getBuffer();
             pos = ((FormattedHeader) header).getValuePos();
-        } //End block
+        } 
         else
         {
             String s = header.getValue();
@@ -64,22 +64,22 @@ public abstract class AuthSchemeBase implements AuthScheme {
                 MalformedChallengeException var7F2BB44ACA42A76F5E79899908E75392_622802740 = new MalformedChallengeException("Header value is null");
                 var7F2BB44ACA42A76F5E79899908E75392_622802740.addTaint(taint);
                 throw var7F2BB44ACA42A76F5E79899908E75392_622802740;
-            } //End block
+            } 
             buffer = new CharArrayBuffer(s.length());
             buffer.append(s);
             pos = 0;
-        } //End block
+        } 
         while
 (pos < buffer.length() && HTTP.isWhitespace(buffer.charAt(pos)))        
         {
             pos++;
-        } //End block
+        } 
         int beginIndex = pos;
         while
 (pos < buffer.length() && !HTTP.isWhitespace(buffer.charAt(pos)))        
         {
             pos++;
-        } //End block
+        } 
         int endIndex = pos;
         String s = buffer.substring(beginIndex, endIndex);
     if(!s.equalsIgnoreCase(getSchemeName()))        
@@ -87,10 +87,10 @@ public abstract class AuthSchemeBase implements AuthScheme {
             MalformedChallengeException varC286765E94B92B0BD8B4C84A6DF93210_928851454 = new MalformedChallengeException("Invalid scheme identifier: " + s);
             varC286765E94B92B0BD8B4C84A6DF93210_928851454.addTaint(taint);
             throw varC286765E94B92B0BD8B4C84A6DF93210_928851454;
-        } //End block
+        } 
         parseChallenge(buffer, pos, buffer.length());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -98,13 +98,14 @@ public abstract class AuthSchemeBase implements AuthScheme {
             CharArrayBuffer buffer, int pos, int len) throws MalformedChallengeException;
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.099 -0400", hash_original_method = "268F84420EF1E9954B4C291A99275A1C", hash_generated_method = "744324C8C62ECA0A7E68F43E0460614D")
     public boolean isProxy() {
         boolean var8D85537F0BC6D0E5E9FAD030D5A879CA_1057904560 = (this.proxy);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1389265919 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1389265919;
-        // ---------- Original Method ----------
-        //return this.proxy;
+        
+        
     }
 
     

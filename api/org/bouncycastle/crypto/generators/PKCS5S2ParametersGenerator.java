@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.generators;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.294 -0400", hash_original_method = "B69BB14B43B673ED175B53A442E5BA52", hash_generated_method = "8185A6FBD8116F10F37B5ADDD415EEE5")
     public  PKCS5S2ParametersGenerator() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,7 +43,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
     if(S != null)        
         {
             hMac.update(S, 0, S.length);
-        } //End block
+        } 
         hMac.update(iBuf, 0, iBuf.length);
         hMac.doFinal(state, 0);
         System.arraycopy(state, 0, out, outOff, state.length);
@@ -52,7 +52,7 @@ public class PKCS5S2ParametersGenerator extends PBEParametersGenerator {
             IllegalArgumentException var1150C80F28A9EBB77BA6F63784E89D3E_983767506 = new IllegalArgumentException("iteration count must be at least 1.");
             var1150C80F28A9EBB77BA6F63784E89D3E_983767506.addTaint(taint);
             throw var1150C80F28A9EBB77BA6F63784E89D3E_983767506;
-        } //End block
+        } 
 for(int count = 1;count < c;count++)
         {
             hMac.init(param);
@@ -61,36 +61,37 @@ for(int count = 1;count < c;count++)
 for(int j = 0;j != state.length;j++)
             {
                 out[outOff + j] ^= state[j];
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //byte[]              state = new byte[hMac.getMacSize()];
-        //CipherParameters    param = new KeyParameter(P);
-        //hMac.init(param);
-        //if (S != null)
-        //{
-            //hMac.update(S, 0, S.length);
-        //}
-        //hMac.update(iBuf, 0, iBuf.length);
-        //hMac.doFinal(state, 0);
-        //System.arraycopy(state, 0, out, outOff, state.length);
-        //if (c == 0)
-        //{
-            //throw new IllegalArgumentException("iteration count must be at least 1.");
-        //}
-        //for (int count = 1; count < c; count++)
-        //{
-            //hMac.init(param);
-            //hMac.update(state, 0, state.length);
-            //hMac.doFinal(state, 0);
-            //for (int j = 0; j != state.length; j++)
-            //{
-                //out[outOff + j] ^= state[j];
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.297 -0400", hash_original_method = "D84C49C513A1760CAD87960E0D89CE0E", hash_generated_method = "E2A65E3E9FB0C770A72FEFD274A338E4")
     private void intToOctet(
         byte[]  buf,
@@ -101,11 +102,11 @@ for(int j = 0;j != state.length;j++)
         buf[1] = (byte)(i >>> 16);
         buf[2] = (byte)(i >>> 8);
         buf[3] = (byte)i;
-        // ---------- Original Method ----------
-        //buf[0] = (byte)(i >>> 24);
-        //buf[1] = (byte)(i >>> 16);
-        //buf[2] = (byte)(i >>> 8);
-        //buf[3] = (byte)i;
+        
+        
+        
+        
+        
     }
 
     
@@ -121,21 +122,21 @@ for(int i = 1;i <= l;i++)
         {
             intToOctet(iBuf, i);
             F(password, salt, iterationCount, iBuf, out, (i - 1) * hLen);
-        } //End block
+        } 
         byte[] varC68271A63DDBC431C307BEB7D2918275_1235286239 = (out);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_195582840 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_195582840;
-        // ---------- Original Method ----------
-        //int     hLen = hMac.getMacSize();
-        //int     l = (dkLen + hLen - 1) / hLen;
-        //byte[]  iBuf = new byte[4];
-        //byte[]  out = new byte[l * hLen];
-        //for (int i = 1; i <= l; i++)
-        //{
-            //intToOctet(iBuf, i);
-            //F(password, salt, iterationCount, iBuf, out, (i - 1) * hLen);
-        //}
-        //return out;
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -148,10 +149,10 @@ for(int i = 1;i <= l;i++)
 CipherParameters var6D94FE6EDC09D11F0842CB9C3B01FB06_1451765987 =         new KeyParameter(dKey, 0, keySize);
         var6D94FE6EDC09D11F0842CB9C3B01FB06_1451765987.addTaint(taint);
         return var6D94FE6EDC09D11F0842CB9C3B01FB06_1451765987;
-        // ---------- Original Method ----------
-        //keySize = keySize / 8;
-        //byte[]  dKey = generateDerivedKey(keySize);
-        //return new KeyParameter(dKey, 0, keySize);
+        
+        
+        
+        
     }
 
     
@@ -167,11 +168,11 @@ CipherParameters var6D94FE6EDC09D11F0842CB9C3B01FB06_1451765987 =         new Ke
 CipherParameters var03ABCD9D26B2AC8C264C443A6B20AF1A_690779047 =         new ParametersWithIV(new KeyParameter(dKey, 0, keySize), dKey, keySize, ivSize);
         var03ABCD9D26B2AC8C264C443A6B20AF1A_690779047.addTaint(taint);
         return var03ABCD9D26B2AC8C264C443A6B20AF1A_690779047;
-        // ---------- Original Method ----------
-        //keySize = keySize / 8;
-        //ivSize = ivSize / 8;
-        //byte[]  dKey = generateDerivedKey(keySize + ivSize);
-        //return new ParametersWithIV(new KeyParameter(dKey, 0, keySize), dKey, keySize, ivSize);
+        
+        
+        
+        
+        
     }
 
     
@@ -182,8 +183,8 @@ CipherParameters var03ABCD9D26B2AC8C264C443A6B20AF1A_690779047 =         new Par
 CipherParameters var9505286CD610A91174FF03781FA2DA54_1793678384 =         generateDerivedParameters(keySize);
         var9505286CD610A91174FF03781FA2DA54_1793678384.addTaint(taint);
         return var9505286CD610A91174FF03781FA2DA54_1793678384;
-        // ---------- Original Method ----------
-        //return generateDerivedParameters(keySize);
+        
+        
     }
 
     

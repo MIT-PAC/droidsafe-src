@@ -1,6 +1,6 @@
 package java.nio;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -71,24 +71,24 @@ final class SelectorImpl extends AbstractSelector {
             IoUtils.setBlocking(wakeupIn, false);
             pollFds.add(new StructPollfd());
             setPollFd(0, wakeupIn, POLLIN, null);
-        } //End block
+        } 
         catch (ErrnoException errnoException)
         {
             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_850281378 = errnoException.rethrowAsIOException();
             var533DBF3F7D78874DC97ED285C3BC3B22_850281378.addTaint(taint);
             throw var533DBF3F7D78874DC97ED285C3BC3B22_850281378;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //FileDescriptor[] pipeFds = Libcore.os.pipe();
-            //wakeupIn = pipeFds[0];
-            //wakeupOut = pipeFds[1];
-            //IoUtils.setBlocking(wakeupIn, false);
-            //pollFds.add(new StructPollfd());
-            //setPollFd(0, wakeupIn, POLLIN, null);
-        //} catch (ErrnoException errnoException) {
-            //throw errnoException.rethrowAsIOException();
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -108,24 +108,24 @@ final class SelectorImpl extends AbstractSelector {
 for(SelectionKey sk : mutableKeys)
                     {
                         deregister((AbstractSelectionKey) sk);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //wakeup();
-        //synchronized (this) {
-            //synchronized (unmodifiableKeys) {
-                //synchronized (selectedKeys) {
-                    //IoUtils.close(wakeupIn);
-                    //IoUtils.close(wakeupOut);
-                    //doCancel();
-                    //for (SelectionKey sk : mutableKeys) {
-                        //deregister((AbstractSelectionKey) sk);
-                    //}
-                //}
-            //}
-        //}
+                    } 
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+                    
+                    
+                    
+                    
+                        
+                    
+                
+            
+        
     }
 
     
@@ -141,7 +141,7 @@ for(SelectionKey sk : mutableKeys)
             IllegalSelectorException varA988BB20ADD0DC658BE68F9A5362E806_1852100615 = new IllegalSelectorException();
             varA988BB20ADD0DC658BE68F9A5362E806_1852100615.addTaint(taint);
             throw varA988BB20ADD0DC658BE68F9A5362E806_1852100615;
-        } //End block
+        } 
         synchronized
 (this)        {
             synchronized
@@ -153,21 +153,21 @@ for(SelectionKey sk : mutableKeys)
 SelectionKey var4F9CDD7F2704ACF6152924C37B86941A_1863938183 =                 selectionKey;
                 var4F9CDD7F2704ACF6152924C37B86941A_1863938183.addTaint(taint);
                 return var4F9CDD7F2704ACF6152924C37B86941A_1863938183;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!provider().equals(channel.provider())) {
-            //throw new IllegalSelectorException();
-        //}
-        //synchronized (this) {
-            //synchronized (unmodifiableKeys) {
-                //SelectionKeyImpl selectionKey = new SelectionKeyImpl(channel, operations,
-                        //attachment, this);
-                //mutableKeys.add(selectionKey);
-                //ensurePollFdsCapacity();
-                //return selectionKey;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+            
+                
+                        
+                
+                
+                
+            
+        
     }
 
     
@@ -178,9 +178,9 @@ SelectionKey var4F9CDD7F2704ACF6152924C37B86941A_1863938183 =                 se
 Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmodifiableKeys;
         varE297A0460B7287415A581826D165DD43_2019360523.addTaint(taint);
         return varE297A0460B7287415A581826D165DD43_2019360523;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //return unmodifiableKeys;
+        
+        
+        
     }
 
     
@@ -191,25 +191,27 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
             ClosedSelectorException varA7F8757A661402ADD77C64CBC6015103_501848141 = new ClosedSelectorException();
             varA7F8757A661402ADD77C64CBC6015103_501848141.addTaint(taint);
             throw varA7F8757A661402ADD77C64CBC6015103_501848141;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isOpen()) {
-            //throw new ClosedSelectorException();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.244 -0400", hash_original_method = "0F4ACBA61BED328D03506D362DC34EE4", hash_generated_method = "238561D63C5BE98F178302B166B51BB4")
     @Override
     public int select() throws IOException {
         int var3ACA056F0F9F97AB4732FD27F29A9127_1188495450 = (selectInternal(-1));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399412731 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_399412731;
-        // ---------- Original Method ----------
-        //return selectInternal(-1);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.245 -0400", hash_original_method = "38CB8C7854E3817F0A25B22A5C37D9C3", hash_generated_method = "0C942A91D8773EA6F343A0D30A1A3C5C")
     @Override
     public int select(long timeout) throws IOException {
@@ -219,15 +221,15 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1902619348 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1902619348.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1902619348;
-        } //End block
+        } 
         int var794100697C784F731F6EA977C2846181_1522243628 = (selectInternal((timeout == 0) ? -1 : timeout));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1275526820 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1275526820;
-        // ---------- Original Method ----------
-        //if (timeout < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //return selectInternal((timeout == 0) ? -1 : timeout);
+        
+        
+            
+        
+        
     }
 
     
@@ -237,8 +239,8 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
         int var5611EC62D1E37E168CF6DB481DD252DF_270944065 = (selectInternal(0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396324633 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396324633;
-        // ---------- Original Method ----------
-        //return selectInternal(0);
+        
+        
     }
 
     
@@ -257,42 +259,42 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
                     synchronized
 (keysLock)                    {
                         preparePollFds();
-                    } //End block
+                    } 
                     int rc;
                     try 
                     {
     if(isBlock)                        
                         {
                             begin();
-                        } //End block
+                        } 
                         try 
                         {
                             rc = Libcore.os.poll(pollFds.array(), (int) timeout);
-                        } //End block
+                        } 
                         catch (ErrnoException errnoException)
                         {
                             java.io.IOException var533DBF3F7D78874DC97ED285C3BC3B22_1713401656 = errnoException.rethrowAsIOException();
                             var533DBF3F7D78874DC97ED285C3BC3B22_1713401656.addTaint(taint);
                             throw var533DBF3F7D78874DC97ED285C3BC3B22_1713401656;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     finally 
                     {
     if(isBlock)                        
                         {
                             end();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     int readyCount = (rc > 0) ? processPollFds() : 0;
                     readyCount -= doCancel();
                     int varD7662A05551DC308495E8EB1B372825A_252301316 = (readyCount);
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707757533 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1707757533;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -306,14 +308,15 @@ Set<SelectionKey> varE297A0460B7287415A581826D165DD43_2019360523 =         unmod
         pollFd.fd = fd;
         pollFd.events = (short) events;
         pollFd.userData = object;
-        // ---------- Original Method ----------
-        //StructPollfd pollFd = pollFds.get(i);
-        //pollFd.fd = fd;
-        //pollFd.events = (short) events;
-        //pollFd.userData = object;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.268 -0400", hash_original_method = "C2C79FE5727E3E67D8033155BDE5FA42", hash_generated_method = "0239ABC7D1648C3C8AD66B2BB6D18196")
     private void preparePollFds() {
         int i = 1;
@@ -324,48 +327,50 @@ for(SelectionKeyImpl key : mutableKeys)
     if(((OP_ACCEPT | OP_READ) & interestOps) != 0)            
             {
                 eventMask |= POLLIN;
-            } //End block
+            } 
     if(((OP_CONNECT | OP_WRITE) & interestOps) != 0)            
             {
                 eventMask |= POLLOUT;
-            } //End block
+            } 
     if(eventMask != 0)            
             {
                 setPollFd(i++, ((FileDescriptorChannel) key.channel()).getFD(), eventMask, key);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int i = 1;
-        //for (SelectionKeyImpl key : mutableKeys) {
-            //int interestOps = key.interestOpsNoCheck();
-            //short eventMask = 0;
-            //if (((OP_ACCEPT | OP_READ) & interestOps) != 0) {
-                //eventMask |= POLLIN;
-            //}
-            //if (((OP_CONNECT | OP_WRITE) & interestOps) != 0) {
-                //eventMask |= POLLOUT;
-            //}
-            //if (eventMask != 0) {
-                //setPollFd(i++, ((FileDescriptorChannel) key.channel()).getFD(), eventMask, key);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.268 -0400", hash_original_method = "561794DF92118E00B9893BD515660DDC", hash_generated_method = "9C36A453C6F6647C691C85BECA480CFE")
     private void ensurePollFdsCapacity() {
         while
 (pollFds.size() < mutableKeys.size() + 1)        
         {
             pollFds.add(new StructPollfd());
-        } //End block
-        // ---------- Original Method ----------
-        //while (pollFds.size() < mutableKeys.size() + 1) {
-            //pollFds.add(new StructPollfd());
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.270 -0400", hash_original_method = "5DC934A1F65A8C13AADF3FD37642D2BD", hash_generated_method = "8300F361DCB52FE2D0178AA2B45A5A3F")
     private int processPollFds() throws IOException {
     if(pollFds.get(0).revents == POLLIN)        
@@ -374,8 +379,8 @@ for(SelectionKeyImpl key : mutableKeys)
             while
 (IoBridge.read(wakeupIn, buffer, 0, 1) > 0)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         int readyKeyCount = 0;
 for(int i = 1;i < pollFds.size();++i)
         {
@@ -383,11 +388,11 @@ for(int i = 1;i < pollFds.size();++i)
     if(pollFd.revents == 0)            
             {
                 continue;
-            } //End block
+            } 
     if(pollFd.fd == null)            
             {
                 break;
-            } //End block
+            } 
             SelectionKeyImpl key = (SelectionKeyImpl) pollFd.userData;
             pollFd.fd = null;
             pollFd.userData = null;
@@ -396,19 +401,19 @@ for(int i = 1;i < pollFds.size();++i)
     if((pollFd.revents & POLLIN) != 0)            
             {
                 selectedOp = ops & (OP_ACCEPT | OP_READ);
-            } //End block
+            } 
             else
     if((pollFd.revents & POLLOUT) != 0)            
             {
     if(key.isConnected())                
                 {
                     selectedOp = ops & OP_WRITE;
-                } //End block
+                } 
                 else
                 {
                     selectedOp = ops & OP_CONNECT;
-                } //End block
-            } //End block
+                } 
+            } 
     if(selectedOp != 0)            
             {
                 boolean wasSelected = mutableSelectedKeys.contains(key);
@@ -416,21 +421,21 @@ for(int i = 1;i < pollFds.size();++i)
                 {
                     key.setReadyOps(key.readyOps() | selectedOp);
                     ++readyKeyCount;
-                } //End block
+                } 
                 else
     if(!wasSelected)                
                 {
                     key.setReadyOps(selectedOp);
                     mutableSelectedKeys.add(key);
                     ++readyKeyCount;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int varD5B4E54470B2177FDDFB63AB47B62A38_1620697806 = (readyKeyCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1360884023 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1360884023;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -441,9 +446,9 @@ for(int i = 1;i < pollFds.size();++i)
 Set<SelectionKey> varD4515E6E6CFA065CDA39E787B1F4334B_771629127 =         selectedKeys;
         varD4515E6E6CFA065CDA39E787B1F4334B_771629127.addTaint(taint);
         return varD4515E6E6CFA065CDA39E787B1F4334B_771629127;
-        // ---------- Original Method ----------
-        //checkClosed();
-        //return selectedKeys;
+        
+        
+        
     }
 
     
@@ -462,30 +467,30 @@ for(SelectionKey currentKey : cancelledKeys)
     if(mutableSelectedKeys.remove(currentKey))                    
                     {
                         deselected++;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 cancelledKeys.clear();
-            } //End block
-        } //End block
+            } 
+        } 
         int var4B58344620E1135E0EBB235B8686828A_1654721758 = (deselected);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_416695973 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_416695973;
-        // ---------- Original Method ----------
-        //int deselected = 0;
-        //Set<SelectionKey> cancelledKeys = cancelledKeys();
-        //synchronized (cancelledKeys) {
-            //if (cancelledKeys.size() > 0) {
-                //for (SelectionKey currentKey : cancelledKeys) {
-                    //mutableKeys.remove(currentKey);
-                    //deregister((AbstractSelectionKey) currentKey);
-                    //if (mutableSelectedKeys.remove(currentKey)) {
-                        //deselected++;
-                    //}
-                //}
-                //cancelledKeys.clear();
-            //}
-        //}
-        //return deselected;
+        
+        
+        
+        
+            
+                
+                    
+                    
+                    
+                        
+                    
+                
+                
+            
+        
+        
     }
 
     
@@ -495,19 +500,19 @@ for(SelectionKey currentKey : cancelledKeys)
         try 
         {
             Libcore.os.write(wakeupOut, new byte[] { 1 }, 0, 1);
-        } //End block
+        } 
         catch (ErrnoException ignored)
         {
-        } //End block
+        } 
 Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1451014659.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1451014659;
-        // ---------- Original Method ----------
-        //try {
-            //Libcore.os.write(wakeupOut, new byte[] { 1 }, 0, 1);
-        //} catch (ErrnoException ignored) {
-        //}
-        //return this;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -519,8 +524,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.272 -0400", hash_original_method = "62B3F0681944A36B1514E173BA40D640", hash_generated_method = "24D039260CAE976729B60C3FC4D09830")
           UnaddableSet(Set<E> set) {
             this.set = set;
-            // ---------- Original Method ----------
-            //this.set = set;
+            
+            
         }
 
         
@@ -531,8 +536,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             boolean varD09302992C43151231B741B6CCC9F445_1423567770 = (set.equals(object));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120559725 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_120559725;
-            // ---------- Original Method ----------
-            //return set.equals(object);
+            
+            
         }
 
         
@@ -542,8 +547,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             int varEB2ECC48AB1A8B015D6D672DC48B8DC4_428798053 = (set.hashCode());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733798258 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1733798258;
-            // ---------- Original Method ----------
-            //return set.hashCode();
+            
+            
         }
 
         
@@ -553,8 +558,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_79454978 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_79454978.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_79454978;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
@@ -564,16 +569,16 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_332104707 = new UnsupportedOperationException();
             var81FA7E299EEE7F062EBFBEEF08B0464D_332104707.addTaint(taint);
             throw var81FA7E299EEE7F062EBFBEEF08B0464D_332104707;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.275 -0400", hash_original_method = "3FA453B9F7C92A0D7DD94260C67D9514", hash_generated_method = "10CF0C52087B2BD183B302B8BEE1DA86")
         public void clear() {
             set.clear();
-            // ---------- Original Method ----------
-            //set.clear();
+            
+            
         }
 
         
@@ -583,8 +588,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             boolean var23679C1C5586286BA5F568BFFB1B9E25_1035777572 = (set.contains(object));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_274725896 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_274725896;
-            // ---------- Original Method ----------
-            //return set.contains(object);
+            
+            
         }
 
         
@@ -594,8 +599,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             boolean varB832275728841535AC926024BCEC145F_1220234701 = (set.containsAll(c));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1691646545 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1691646545;
-            // ---------- Original Method ----------
-            //return set.containsAll(c);
+            
+            
         }
 
         
@@ -604,8 +609,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
             boolean var08EDAD7A98754E14B01D22C183E68FB5_857461218 = (set.isEmpty());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1145988005 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1145988005;
-            // ---------- Original Method ----------
-            //return set.isEmpty();
+            
+            
         }
 
         
@@ -614,8 +619,8 @@ Selector var72A74007B2BE62B849F475C7BDA4658B_1451014659 =         this;
 Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163 =             set.iterator();
             var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163.addTaint(taint);
             return var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163;
-            // ---------- Original Method ----------
-            //return set.iterator();
+            
+            
         }
 
         
@@ -625,8 +630,8 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163 =             set.ite
             boolean var72E39E1DF9CC73C527F9C7BDAC6B612C_1842666562 = (set.remove(object));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1229546104 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1229546104;
-            // ---------- Original Method ----------
-            //return set.remove(object);
+            
+            
         }
 
         
@@ -636,8 +641,8 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163 =             set.ite
             boolean var32B1AF55F57B58331E9EFAC1095A1A6C_927850845 = (set.removeAll(c));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2117602093 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2117602093;
-            // ---------- Original Method ----------
-            //return set.removeAll(c);
+            
+            
         }
 
         
@@ -647,8 +652,8 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163 =             set.ite
             boolean varF4736845F3B97EDCDFB67BDFB56448BA_366072413 = (set.retainAll(c));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1333798734 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1333798734;
-            // ---------- Original Method ----------
-            //return set.retainAll(c);
+            
+            
         }
 
         
@@ -657,8 +662,8 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163 =             set.ite
             int varC11C5BB059CE54FB66F4294B0D28BA2A_1393482101 = (set.size());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570418708 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570418708;
-            // ---------- Original Method ----------
-            //return set.size();
+            
+            
         }
 
         
@@ -667,8 +672,8 @@ Iterator<E> var8F246CA48C5D8CF09BCA9BB23A08E21D_2015743163 =             set.ite
 Object[] varDC748A26B5BB4C3F420CE5782606A6AD_167495555 =             set.toArray();
             varDC748A26B5BB4C3F420CE5782606A6AD_167495555.addTaint(taint);
             return varDC748A26B5BB4C3F420CE5782606A6AD_167495555;
-            // ---------- Original Method ----------
-            //return set.toArray();
+            
+            
         }
 
         
@@ -678,8 +683,8 @@ Object[] varDC748A26B5BB4C3F420CE5782606A6AD_167495555 =             set.toArray
 T[] varBD37699932362128D1DCA08F9CDDCC12_66582927 =             set.toArray(a);
             varBD37699932362128D1DCA08F9CDDCC12_66582927.addTaint(taint);
             return varBD37699932362128D1DCA08F9CDDCC12_66582927;
-            // ---------- Original Method ----------
-            //return set.toArray(a);
+            
+            
         }
 
         

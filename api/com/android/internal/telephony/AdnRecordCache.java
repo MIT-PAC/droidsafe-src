@@ -1,6 +1,6 @@
 package com.android.internal.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ public final class AdnRecordCache extends Handler implements IccConstants {
     public  AdnRecordCache(PhoneBase phone) {
         this.phone = phone;
         mUsimPhoneBookManager = new UsimPhoneBookManager(phone, this);
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //mUsimPhoneBookManager = new UsimPhoneBookManager(phone, this);
+        
+        
+        
     }
 
     
@@ -46,11 +46,11 @@ public final class AdnRecordCache extends Handler implements IccConstants {
         mUsimPhoneBookManager.reset();
         clearWaiters();
         clearUserWriters();
-        // ---------- Original Method ----------
-        //adnLikeFiles.clear();
-        //mUsimPhoneBookManager.reset();
-        //clearWaiters();
-        //clearUserWriters();
+        
+        
+        
+        
+        
     }
 
     
@@ -62,16 +62,16 @@ for(int i = 0;i < size;i++)
             ArrayList<Message> waiters = adnLikeWaiters.valueAt(i);
             AsyncResult ar = new AsyncResult(null, null, new RuntimeException("AdnCache reset"));
             notifyWaiters(waiters, ar);
-        } //End block
+        } 
         adnLikeWaiters.clear();
-        // ---------- Original Method ----------
-        //int size = adnLikeWaiters.size();
-        //for (int i = 0; i < size; i++) {
-            //ArrayList<Message> waiters = adnLikeWaiters.valueAt(i);
-            //AsyncResult ar = new AsyncResult(null, null, new RuntimeException("AdnCache reset"));
-            //notifyWaiters(waiters, ar);
-        //}
-        //adnLikeWaiters.clear();
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -81,14 +81,14 @@ for(int i = 0;i < size;i++)
 for(int i = 0;i < size;i++)
         {
             sendErrorResponse(userWriteResponse.valueAt(i), "AdnCace reset");
-        } //End block
+        } 
         userWriteResponse.clear();
-        // ---------- Original Method ----------
-        //int size = userWriteResponse.size();
-        //for (int i = 0; i < size; i++) {
-            //sendErrorResponse(userWriteResponse.valueAt(i), "AdnCace reset");
-        //}
-        //userWriteResponse.clear();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -98,11 +98,12 @@ for(int i = 0;i < size;i++)
 ArrayList<AdnRecord> var3D961DBCF8C551D2B336F2C2F608BD6B_1962589484 =         adnLikeFiles.get(efid);
         var3D961DBCF8C551D2B336F2C2F608BD6B_1962589484.addTaint(taint);
         return var3D961DBCF8C551D2B336F2C2F608BD6B_1962589484;
-        // ---------- Original Method ----------
-        //return adnLikeFiles.get(efid);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.702 -0400", hash_original_method = "0198A12501638F8F5669817EF7B81F42", hash_generated_method = "4750BB12034F98EDF4770777EB0989CC")
      int extensionEfForEf(int efid) {
         addTaint(efid);
@@ -136,19 +137,20 @@ switch(efid){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_264596020 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_264596020;
 }
-        // ---------- Original Method ----------
-        //switch (efid) {
-            //case EF_MBDN: return EF_EXT6;
-            //case EF_ADN: return EF_EXT1;
-            //case EF_SDN: return EF_EXT3;
-            //case EF_FDN: return EF_EXT2;
-            //case EF_MSISDN: return EF_EXT1;
-            //case EF_PBR: return 0; 
-            //default: return -1;
-        //}
+        
+        
+            
+            
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.703 -0400", hash_original_method = "A626AB07A72819AA36869010FF1E4126", hash_generated_method = "D11595183DEC425F7EA8A3F2C9D7DC8C")
     private void sendErrorResponse(Message response, String errString) {
         addTaint(errString.getTaint());
@@ -158,13 +160,13 @@ switch(efid){
             Exception e = new RuntimeException(errString);
             AsyncResult.forMessage(response).exception = e;
             response.sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        //if (response != null) {
-            //Exception e = new RuntimeException(errString);
-            //AsyncResult.forMessage(response).exception = e;
-            //response.sendToTarget();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -181,32 +183,32 @@ switch(efid){
         {
             sendErrorResponse(response, "EF is not known ADN-like EF:" + efid);
             return;
-        } //End block
+        } 
         Message pendingResponse = userWriteResponse.get(efid);
     if(pendingResponse != null)        
         {
             sendErrorResponse(response, "Have pending update for EF:" + efid);
             return;
-        } //End block
+        } 
         userWriteResponse.put(efid, response);
         new AdnRecordLoader(phone).updateEF(adn, efid, extensionEF,
                 recordIndex, pin2,
                 obtainMessage(EVENT_UPDATE_ADN_DONE, efid, recordIndex, adn));
-        // ---------- Original Method ----------
-        //int extensionEF = extensionEfForEf(efid);
-        //if (extensionEF < 0) {
-            //sendErrorResponse(response, "EF is not known ADN-like EF:" + efid);
-            //return;
-        //}
-        //Message pendingResponse = userWriteResponse.get(efid);
-        //if (pendingResponse != null) {
-            //sendErrorResponse(response, "Have pending update for EF:" + efid);
-            //return;
-        //}
-        //userWriteResponse.put(efid, response);
-        //new AdnRecordLoader(phone).updateEF(adn, efid, extensionEF,
-                //recordIndex, pin2,
-                //obtainMessage(EVENT_UPDATE_ADN_DONE, efid, recordIndex, adn));
+        
+        
+        
+            
+            
+        
+        
+        
+            
+            
+        
+        
+        
+                
+                
     }
 
     
@@ -224,21 +226,21 @@ switch(efid){
         {
             sendErrorResponse(response, "EF is not known ADN-like EF:" + efid);
             return;
-        } //End block
+        } 
         ArrayList<AdnRecord> oldAdnList;
     if(efid == EF_PBR)        
         {
             oldAdnList = mUsimPhoneBookManager.loadEfFilesFromUsim();
-        } //End block
+        } 
         else
         {
             oldAdnList = getRecordsIfLoaded(efid);
-        } //End block
+        } 
     if(oldAdnList == null)        
         {
             sendErrorResponse(response, "Adn list not exist for EF:" + efid);
             return;
-        } //End block
+        } 
         int index = -1;
         int count = 1;
 for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
@@ -247,14 +249,14 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
             {
                 index = count;
                 break;
-            } //End block
+            } 
             count++;
-        } //End block
+        } 
     if(index == -1)        
         {
             sendErrorResponse(response, "Adn record don't exist for " + oldAdn);
             return;
-        } //End block
+        } 
     if(efid == EF_PBR)        
         {
             AdnRecord foundAdn = oldAdnList.get(index-1);
@@ -264,19 +266,19 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
             newAdn.efid = efid;
             newAdn.extRecord = extensionEF;
             newAdn.recordNumber = index;
-        } //End block
+        } 
         Message pendingResponse = userWriteResponse.get(efid);
     if(pendingResponse != null)        
         {
             sendErrorResponse(response, "Have pending update for EF:" + efid);
             return;
-        } //End block
+        } 
         userWriteResponse.put(efid, response);
         new AdnRecordLoader(phone).updateEF(newAdn, efid, extensionEF,
                 index, pin2,
                 obtainMessage(EVENT_UPDATE_ADN_DONE, efid, index, newAdn));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -290,26 +292,26 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
     if(efid == EF_PBR)        
         {
             result = mUsimPhoneBookManager.loadEfFilesFromUsim();
-        } //End block
+        } 
         else
         {
             result = getRecordsIfLoaded(efid);
-        } //End block
+        } 
     if(result != null)        
         {
     if(response != null)            
             {
                 AsyncResult.forMessage(response).result = result;
                 response.sendToTarget();
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         waiters = adnLikeWaiters.get(efid);
     if(waiters != null)        
         {
             waiters.add(response);
             return;
-        } //End block
+        } 
         waiters = new ArrayList<Message>();
         waiters.add(response);
         adnLikeWaiters.put(efid, waiters);
@@ -320,13 +322,13 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
                 AsyncResult.forMessage(response).exception
                     = new RuntimeException("EF is not known ADN-like EF:" + efid);
                 response.sendToTarget();
-            } //End block
+            } 
             return;
-        } //End block
+        } 
         new AdnRecordLoader(phone).loadAllFromEF(efid, extensionEf,
             obtainMessage(EVENT_LOAD_ALL_ADN_LIKE_DONE, efid, 0));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -337,22 +339,22 @@ for(Iterator<AdnRecord> it = oldAdnList.iterator();it.hasNext();)
     if(waiters == null)        
         {
             return;
-        } //End block
+        } 
 for(int i = 0, s = waiters.size();i < s;i++)
         {
             Message waiter = waiters.get(i);
             AsyncResult.forMessage(waiter, ar.result, ar.exception);
             waiter.sendToTarget();
-        } //End block
-        // ---------- Original Method ----------
-        //if (waiters == null) {
-            //return;
-        //}
-        //for (int i = 0, s = waiters.size() ; i < s ; i++) {
-            //Message waiter = waiters.get(i);
-            //AsyncResult.forMessage(waiter, ar.result, ar.exception);
-            //waiter.sendToTarget();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -371,7 +373,7 @@ switch(msg.what){
     if(ar.exception == null)        
         {
             adnLikeFiles.put(efid, (ArrayList<AdnRecord>) ar.result);
-        } //End block
+        } 
         notifyWaiters(waiters, ar);
         break;
         case EVENT_UPDATE_ADN_DONE:
@@ -383,15 +385,15 @@ switch(msg.what){
         {
             adnLikeFiles.get(efid).set(index - 1, adn);
             mUsimPhoneBookManager.invalidateCache();
-        } //End block
+        } 
         Message response = userWriteResponse.get(efid);
         userWriteResponse.delete(efid);
         AsyncResult.forMessage(response, null, ar.exception);
         response.sendToTarget();
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

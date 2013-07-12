@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,9 +23,9 @@ public class KeyCharacterMap {
     private  KeyCharacterMap(int deviceId, int ptr) {
         mDeviceId = deviceId;
         mPtr = ptr;
-        // ---------- Original Method ----------
-        //mDeviceId = deviceId;
-        //mPtr = ptr;
+        
+        
+        
     }
 
     
@@ -98,12 +98,12 @@ public class KeyCharacterMap {
         {
             nativeDispose(mPtr);
             mPtr = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPtr != 0) {
-            //nativeDispose(mPtr);
-            //mPtr = 0;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -142,22 +142,22 @@ public class KeyCharacterMap {
             int var1D78DC8ED51214E518B5114FE24490AE_1248040290 = (map);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_725868952 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_725868952;
-        } //End block
+        } 
         else
         {
             int varD88FC6EDF21EA464D35FF76288B84103_1063505161 = (ch);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_316236118 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_316236118;
-        } //End block
-        // ---------- Original Method ----------
-        //metaState = KeyEvent.normalizeMetaState(metaState);
-        //char ch = nativeGetCharacter(mPtr, keyCode, metaState);
-        //int map = COMBINING.get(ch);
-        //if (map != 0) {
-            //return map;
-        //} else {
-            //return ch;
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -172,17 +172,17 @@ public class KeyCharacterMap {
             IllegalArgumentException varF5B79A92D760E1E269BA2911416DEABE_555564696 = new IllegalArgumentException("fallbackAction must not be null");
             varF5B79A92D760E1E269BA2911416DEABE_555564696.addTaint(taint);
             throw varF5B79A92D760E1E269BA2911416DEABE_555564696;
-        } //End block
+        } 
         metaState = KeyEvent.normalizeMetaState(metaState);
         boolean var6E87C291588DE4530E1F232DD6995297_235090181 = (nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1410043196 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1410043196;
-        // ---------- Original Method ----------
-        //if (outFallbackAction == null) {
-            //throw new IllegalArgumentException("fallbackAction must not be null");
-        //}
-        //metaState = KeyEvent.normalizeMetaState(metaState);
-        //return nativeGetFallbackAction(mPtr, keyCode, metaState, outFallbackAction);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -192,8 +192,8 @@ public class KeyCharacterMap {
         char varA39D211F3F94EDD9AD628D0C897175C1_1442725089 = (nativeGetNumber(mPtr, keyCode));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_565893055 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_565893055;
-        // ---------- Original Method ----------
-        //return nativeGetNumber(mPtr, keyCode);
+        
+        
     }
 
     
@@ -204,8 +204,8 @@ public class KeyCharacterMap {
         char varB8B12CF0B8DCF6F431196B88BC628FD1_1329610524 = (getMatch(keyCode, chars, 0));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1599303529 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1599303529;
-        // ---------- Original Method ----------
-        //return getMatch(keyCode, chars, 0);
+        
+        
     }
 
     
@@ -219,17 +219,17 @@ public class KeyCharacterMap {
             IllegalArgumentException var8CF09A239C905E82E0D256E47F66A8ED_711742764 = new IllegalArgumentException("chars must not be null.");
             var8CF09A239C905E82E0D256E47F66A8ED_711742764.addTaint(taint);
             throw var8CF09A239C905E82E0D256E47F66A8ED_711742764;
-        } //End block
+        } 
         metaState = KeyEvent.normalizeMetaState(metaState);
         char var62941DB1A2A5A1B1998DB8878CD831EB_1094710560 = (nativeGetMatch(mPtr, keyCode, chars, metaState));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_626650964 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_626650964;
-        // ---------- Original Method ----------
-        //if (chars == null) {
-            //throw new IllegalArgumentException("chars must not be null.");
-        //}
-        //metaState = KeyEvent.normalizeMetaState(metaState);
-        //return nativeGetMatch(mPtr, keyCode, chars, metaState);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -239,8 +239,8 @@ public class KeyCharacterMap {
         char var4AD6F12FFBB43B2B671593A86008DD25_2034867799 = (nativeGetDisplayLabel(mPtr, keyCode));
                 char varA87DEB01C5F539E6BDA34829C8EF2368_428491015 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_428491015;
-        // ---------- Original Method ----------
-        //return nativeGetDisplayLabel(mPtr, keyCode);
+        
+        
     }
 
     
@@ -260,14 +260,14 @@ public class KeyCharacterMap {
                     "results.meta.length must be >= " + KeyData.META_LENGTH);
             var68C7E33B70497456E20E9836CE4F36C1_195185011.addTaint(taint);
             throw var68C7E33B70497456E20E9836CE4F36C1_195185011;
-        } //End block
+        } 
         char displayLabel = nativeGetDisplayLabel(mPtr, keyCode);
     if(displayLabel == 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_2115022087 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1825572895 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1825572895;
-        } //End block
+        } 
         results.displayLabel = displayLabel;
         results.number = nativeGetNumber(mPtr, keyCode);
         results.meta[0] = nativeGetCharacter(mPtr, keyCode, 0);
@@ -278,23 +278,23 @@ public class KeyCharacterMap {
         boolean varB326B5062B2F0E69046810717534CB09_1161536591 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2026873715 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2026873715;
-        // ---------- Original Method ----------
-        //if (results.meta.length < KeyData.META_LENGTH) {
-            //throw new IndexOutOfBoundsException(
-                    //"results.meta.length must be >= " + KeyData.META_LENGTH);
-        //}
-        //char displayLabel = nativeGetDisplayLabel(mPtr, keyCode);
-        //if (displayLabel == 0) {
-            //return false;
-        //}
-        //results.displayLabel = displayLabel;
-        //results.number = nativeGetNumber(mPtr, keyCode);
-        //results.meta[0] = nativeGetCharacter(mPtr, keyCode, 0);
-        //results.meta[1] = nativeGetCharacter(mPtr, keyCode, KeyEvent.META_SHIFT_ON);
-        //results.meta[2] = nativeGetCharacter(mPtr, keyCode, KeyEvent.META_ALT_ON);
-        //results.meta[3] = nativeGetCharacter(mPtr, keyCode,
-                //KeyEvent.META_ALT_ON | KeyEvent.META_SHIFT_ON);
-        //return true;
+        
+        
+            
+                    
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -306,15 +306,15 @@ public class KeyCharacterMap {
             IllegalArgumentException var8CF09A239C905E82E0D256E47F66A8ED_92786878 = new IllegalArgumentException("chars must not be null.");
             var8CF09A239C905E82E0D256E47F66A8ED_92786878.addTaint(taint);
             throw var8CF09A239C905E82E0D256E47F66A8ED_92786878;
-        } //End block
+        } 
 KeyEvent[] var0EB192E6A07BB74E888C92ABABF624BA_1972626591 =         nativeGetEvents(mPtr, mDeviceId, chars);
         var0EB192E6A07BB74E888C92ABABF624BA_1972626591.addTaint(taint);
         return var0EB192E6A07BB74E888C92ABABF624BA_1972626591;
-        // ---------- Original Method ----------
-        //if (chars == null) {
-            //throw new IllegalArgumentException("chars must not be null.");
-        //}
-        //return nativeGetEvents(mPtr, mDeviceId, chars);
+        
+        
+            
+        
+        
     }
 
     
@@ -336,19 +336,19 @@ switch(type){
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2067579703 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2067579703;
 }
-        // ---------- Original Method ----------
-        //int type = Character.getType(nativeGetDisplayLabel(mPtr, keyCode));
-        //switch (type)
-        //{
-            //case Character.SPACE_SEPARATOR:
-            //case Character.LINE_SEPARATOR:
-            //case Character.PARAGRAPH_SEPARATOR:
-            //case Character.CONTROL:
-            //case Character.FORMAT:
-                //return false;
-            //default:
-                //return true;
-        //}
+        
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+                
+        
     }
 
     
@@ -357,8 +357,8 @@ switch(type){
         int var6D0B683DA2C7CB23EE9E1D7849BBCF30_2092561245 = (nativeGetKeyboardType(mPtr));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960448235 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_960448235;
-        // ---------- Original Method ----------
-        //return nativeGetKeyboardType(mPtr);
+        
+        
     }
 
     
@@ -375,14 +375,14 @@ switch(getKeyboardType()){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701890968 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_701890968;
 }
-        // ---------- Original Method ----------
-        //switch (getKeyboardType()) {
-            //case FULL:
-            //case SPECIAL_FUNCTION:
-                //return MODIFIER_BEHAVIOR_CHORDED;
-            //default:
-                //return MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED;
-        //}
+        
+        
+            
+            
+                
+            
+                
+        
     }
 
     
@@ -419,7 +419,7 @@ switch(getKeyboardType()){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.000 -0400", hash_original_method = "AA20F851FEA58DFB4FCE42162FC7E15E", hash_generated_method = "AA20F851FEA58DFB4FCE42162FC7E15E")
         public KeyData ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -436,7 +436,7 @@ switch(getKeyboardType()){
         public  UnavailableException(String msg) {
             super(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -455,7 +455,7 @@ switch(getKeyboardType()){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:50.000 -0400", hash_original_method = "789B682B3FBE45C1858DC98A8C26817D", hash_generated_method = "789B682B3FBE45C1858DC98A8C26817D")
         public FallbackAction ()
         {
-            //Synthesized constructor
+            
         }
 
 

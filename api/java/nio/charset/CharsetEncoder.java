@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -45,7 +45,7 @@ public abstract class CharsetEncoder {
         addTaint(maxBytesPerChar);
         addTaint(averageBytesPerChar);
         addTaint(cs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -56,7 +56,7 @@ public abstract class CharsetEncoder {
         addTaint(maxBytesPerChar);
         addTaint(averageBytesPerChar);
         addTaint(cs.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,13 +68,13 @@ public abstract class CharsetEncoder {
             IllegalArgumentException var0F46B615CA4C53B650385A8806CFA290_1092146222 = new IllegalArgumentException("averageBytesPerChar and maxBytesPerChar must both be positive");
             var0F46B615CA4C53B650385A8806CFA290_1092146222.addTaint(taint);
             throw var0F46B615CA4C53B650385A8806CFA290_1092146222;
-        } //End block
+        } 
     if(averageBytesPerChar > maxBytesPerChar)        
         {
             IllegalArgumentException varDD092DA2499E95CF681D1C7FD7004B27_448917534 = new IllegalArgumentException("averageBytesPerChar is greater than maxBytesPerChar");
             varDD092DA2499E95CF681D1C7FD7004B27_448917534.addTaint(taint);
             throw varDD092DA2499E95CF681D1C7FD7004B27_448917534;
-        } //End block
+        } 
         this.cs = cs;
         this.averageBytesPerChar = averageBytesPerChar;
         this.maxBytesPerChar = maxBytesPerChar;
@@ -84,29 +84,29 @@ public abstract class CharsetEncoder {
     if(trusted)        
         {
             this.replacementBytes = replacement;
-        } //End block
+        } 
         else
         {
             replaceWith(replacement);
-        } //End block
-        // ---------- Original Method ----------
-        //if (averageBytesPerChar <= 0 || maxBytesPerChar <= 0) {
-            //throw new IllegalArgumentException("averageBytesPerChar and maxBytesPerChar must both be positive");
-        //}
-        //if (averageBytesPerChar > maxBytesPerChar) {
-            //throw new IllegalArgumentException("averageBytesPerChar is greater than maxBytesPerChar");
-        //}
-        //this.cs = cs;
-        //this.averageBytesPerChar = averageBytesPerChar;
-        //this.maxBytesPerChar = maxBytesPerChar;
-        //status = INIT;
-        //malformedInputAction = CodingErrorAction.REPORT;
-        //unmappableCharacterAction = CodingErrorAction.REPORT;
-        //if (trusted) {
-            //this.replacementBytes = replacement;
-        //} else {
-            //replaceWith(replacement);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -115,8 +115,8 @@ public abstract class CharsetEncoder {
         float var692DC57502FA0F1ADE68D2F2AECF7494_657374348 = (averageBytesPerChar);
                 float var546ADE640B6EDFBC8A086EF31347E768_1093290269 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1093290269;
-        // ---------- Original Method ----------
-        //return averageBytesPerChar;
+        
+        
     }
 
     
@@ -126,8 +126,8 @@ public abstract class CharsetEncoder {
         boolean var4551CB427266BC59F214535A4C542E3A_1469359006 = (implCanEncode(CharBuffer.wrap(new char[] { c })));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_975605427 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_975605427;
-        // ---------- Original Method ----------
-        //return implCanEncode(CharBuffer.wrap(new char[] { c }));
+        
+        
     }
 
     
@@ -137,13 +137,13 @@ public abstract class CharsetEncoder {
     if(status == FLUSH || status == INIT)        
         {
             status = READY;
-        } //End block
+        } 
     if(status != READY)        
         {
             IllegalStateException var2233C5742D45B8FB0E83D181222C3962_793827674 = new IllegalStateException("encoding already in progress");
             var2233C5742D45B8FB0E83D181222C3962_793827674.addTaint(taint);
             throw var2233C5742D45B8FB0E83D181222C3962_793827674;
-        } //End block
+        } 
         CodingErrorAction malformBak = malformedInputAction;
         CodingErrorAction unmapBak = unmappableCharacterAction;
         onMalformedInput(CodingErrorAction.REPORT);
@@ -152,38 +152,38 @@ public abstract class CharsetEncoder {
         try 
         {
             this.encode(cb);
-        } //End block
+        } 
         catch (CharacterCodingException e)
         {
             result = false;
-        } //End block
+        } 
         onMalformedInput(malformBak);
         onUnmappableCharacter(unmapBak);
         reset();
         boolean varB4A88417B3D0170D754C647C30B7216A_1253418769 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_793397595 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_793397595;
-        // ---------- Original Method ----------
-        //if (status == FLUSH || status == INIT) {
-            //status = READY;
-        //}
-        //if (status != READY) {
-            //throw new IllegalStateException("encoding already in progress");
-        //}
-        //CodingErrorAction malformBak = malformedInputAction;
-        //CodingErrorAction unmapBak = unmappableCharacterAction;
-        //onMalformedInput(CodingErrorAction.REPORT);
-        //onUnmappableCharacter(CodingErrorAction.REPORT);
-        //boolean result = true;
-        //try {
-            //this.encode(cb);
-        //} catch (CharacterCodingException e) {
-            //result = false;
-        //}
-        //onMalformedInput(malformBak);
-        //onUnmappableCharacter(unmapBak);
-        //reset();
-        //return result;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -194,22 +194,22 @@ public abstract class CharsetEncoder {
     if(sequence instanceof CharBuffer)        
         {
             cb = ((CharBuffer) sequence).duplicate();
-        } //End block
+        } 
         else
         {
             cb = CharBuffer.wrap(sequence);
-        } //End block
+        } 
         boolean var54464B6948BCB027723D6B8DDEB0E7FC_443784006 = (implCanEncode(cb));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2013099438 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2013099438;
-        // ---------- Original Method ----------
-        //CharBuffer cb;
-        //if (sequence instanceof CharBuffer) {
-            //cb = ((CharBuffer) sequence).duplicate();
-        //} else {
-            //cb = CharBuffer.wrap(sequence);
-        //}
-        //return implCanEncode(cb);
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -218,8 +218,8 @@ public abstract class CharsetEncoder {
 Charset varE661418CFE0D2CECDB5DF6FE0739403D_1624791366 =         cs;
         varE661418CFE0D2CECDB5DF6FE0739403D_1624791366.addTaint(taint);
         return varE661418CFE0D2CECDB5DF6FE0739403D_1624791366;
-        // ---------- Original Method ----------
-        //return cs;
+        
+        
     }
 
     
@@ -231,7 +231,7 @@ Charset varE661418CFE0D2CECDB5DF6FE0739403D_1624791366 =         cs;
 ByteBuffer var93152E1B6A1AB0EFBC2AC9286CE0E021_1035004091 =             ByteBuffer.allocate(0);
             var93152E1B6A1AB0EFBC2AC9286CE0E021_1035004091.addTaint(taint);
             return var93152E1B6A1AB0EFBC2AC9286CE0E021_1035004091;
-        } //End block
+        } 
         reset();
         int length = (int) (in.remaining() * averageBytesPerChar);
         ByteBuffer output = ByteBuffer.allocate(length);
@@ -243,15 +243,15 @@ ByteBuffer var93152E1B6A1AB0EFBC2AC9286CE0E021_1035004091 =             ByteBuff
     if(result==CoderResult.UNDERFLOW)            
             {
                 break;
-            } //End block
+            } 
             else
     if(result==CoderResult.OVERFLOW)            
             {
                 output = allocateMore(output);
                 continue;
-            } //End block
+            } 
             checkCoderResult(result);
-        } //End block
+        } 
         result = encode(in, output, true);
         checkCoderResult(result);
         while
@@ -262,13 +262,13 @@ ByteBuffer var93152E1B6A1AB0EFBC2AC9286CE0E021_1035004091 =             ByteBuff
             {
                 output.flip();
                 break;
-            } //End block
+            } 
             else
     if(result==CoderResult.OVERFLOW)            
             {
                 output = allocateMore(output);
                 continue;
-            } //End block
+            } 
             checkCoderResult(result);
             output.flip();
     if(result.isMalformed())            
@@ -276,23 +276,23 @@ ByteBuffer var93152E1B6A1AB0EFBC2AC9286CE0E021_1035004091 =             ByteBuff
                 MalformedInputException var8FA4E56DDF9AB0C4EE65F8C493EF8A64_1839683923 = new MalformedInputException(result.length());
                 var8FA4E56DDF9AB0C4EE65F8C493EF8A64_1839683923.addTaint(taint);
                 throw var8FA4E56DDF9AB0C4EE65F8C493EF8A64_1839683923;
-            } //End block
+            } 
             else
     if(result.isUnmappable())            
             {
                 UnmappableCharacterException var6421AD8EFB043FAF5135AEE922347817_2122968339 = new UnmappableCharacterException(result.length());
                 var6421AD8EFB043FAF5135AEE922347817_2122968339.addTaint(taint);
                 throw var6421AD8EFB043FAF5135AEE922347817_2122968339;
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         status = READY;
         finished = true;
 ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_1415944897 =         output;
         varEB0B99CD62B23D2DD9E149CA2A9860B9_1415944897.addTaint(taint);
         return varEB0B99CD62B23D2DD9E149CA2A9860B9_1415944897;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -304,20 +304,20 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_1415944897 =         output;
             MalformedInputException var8FA4E56DDF9AB0C4EE65F8C493EF8A64_1860481123 = new MalformedInputException(result.length());
             var8FA4E56DDF9AB0C4EE65F8C493EF8A64_1860481123.addTaint(taint);
             throw var8FA4E56DDF9AB0C4EE65F8C493EF8A64_1860481123;
-        } //End block
+        } 
         else
     if(unmappableCharacterAction == CodingErrorAction.REPORT && result.isUnmappable())        
         {
             UnmappableCharacterException var6421AD8EFB043FAF5135AEE922347817_270564985 = new UnmappableCharacterException(result.length());
             var6421AD8EFB043FAF5135AEE922347817_270564985.addTaint(taint);
             throw var6421AD8EFB043FAF5135AEE922347817_270564985;
-        } //End block
-        // ---------- Original Method ----------
-        //if (malformedInputAction == CodingErrorAction.REPORT && result.isMalformed() ) {
-            //throw new MalformedInputException(result.length());
-        //} else if (unmappableCharacterAction == CodingErrorAction.REPORT && result.isUnmappable()) {
-            //throw new UnmappableCharacterException(result.length());
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -329,21 +329,21 @@ ByteBuffer varEB0B99CD62B23D2DD9E149CA2A9860B9_1415944897 =         output;
 ByteBuffer var775DDCE7026DA2EEE84D7C6654D118C9_673805355 =             ByteBuffer.allocate(1);
             var775DDCE7026DA2EEE84D7C6654D118C9_673805355.addTaint(taint);
             return var775DDCE7026DA2EEE84D7C6654D118C9_673805355;
-        } //End block
+        } 
         ByteBuffer result = ByteBuffer.allocate(output.capacity() * 2);
         output.flip();
         result.put(output);
 ByteBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_680099106 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_680099106.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_680099106;
-        // ---------- Original Method ----------
-        //if (output.capacity() == 0) {
-            //return ByteBuffer.allocate(1);
-        //}
-        //ByteBuffer result = ByteBuffer.allocate(output.capacity() * 2);
-        //output.flip();
-        //result.put(output);
-        //return result;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -356,13 +356,13 @@ ByteBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_680099106 =         result;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1258223949 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1258223949.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1258223949;
-        } //End block
+        } 
     if((status == FLUSH) || (!endOfInput && status == END))        
         {
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_926799700 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_926799700.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_926799700;
-        } //End block
+        } 
         CoderResult result;
         while
 (true)        
@@ -370,19 +370,19 @@ ByteBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_680099106 =         result;
             try 
             {
                 result = encodeLoop(in, out);
-            } //End block
+            } 
             catch (BufferOverflowException e)
             {
                 CoderMalfunctionError var8EAD6035EB0BDDFDBCD21E6489E2B914_1778080252 = new CoderMalfunctionError(e);
                 var8EAD6035EB0BDDFDBCD21E6489E2B914_1778080252.addTaint(taint);
                 throw var8EAD6035EB0BDDFDBCD21E6489E2B914_1778080252;
-            } //End block
+            } 
             catch (BufferUnderflowException e)
             {
                 CoderMalfunctionError var8EAD6035EB0BDDFDBCD21E6489E2B914_154196972 = new CoderMalfunctionError(e);
                 var8EAD6035EB0BDDFDBCD21E6489E2B914_154196972.addTaint(taint);
                 throw var8EAD6035EB0BDDFDBCD21E6489E2B914_154196972;
-            } //End block
+            } 
     if(result==CoderResult.UNDERFLOW)            
             {
                 status = endOfInput ? END : ONGOING;
@@ -392,21 +392,21 @@ ByteBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_680099106 =         result;
     if(remaining > 0)                    
                     {
                         result = CoderResult.malformedForLength(remaining);
-                    } //End block
+                    } 
                     else
                     {
 CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_1574376344 =                         result;
                         varDC838461EE2FA0CA4C9BBB70A15456B0_1574376344.addTaint(taint);
                         return varDC838461EE2FA0CA4C9BBB70A15456B0_1574376344;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
 CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_843292872 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_843292872.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_843292872;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(result==CoderResult.OVERFLOW)            
             {
@@ -414,12 +414,12 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_843292872 =                     
 CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_640389959 =                 result;
                 varDC838461EE2FA0CA4C9BBB70A15456B0_640389959.addTaint(taint);
                 return varDC838461EE2FA0CA4C9BBB70A15456B0_640389959;
-            } //End block
+            } 
             CodingErrorAction action = malformedInputAction;
     if(result.isUnmappable())            
             {
                 action = unmappableCharacterAction;
-            } //End block
+            } 
     if(action == CodingErrorAction.REPLACE)            
             {
     if(out.remaining() < replacementBytes.length)                
@@ -427,9 +427,9 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_640389959 =                 resu
 CoderResult varABB0206BF3597B3CDE0E8CB2CF4DF79C_1932805200 =                     CoderResult.OVERFLOW;
                     varABB0206BF3597B3CDE0E8CB2CF4DF79C_1932805200.addTaint(taint);
                     return varABB0206BF3597B3CDE0E8CB2CF4DF79C_1932805200;
-                } //End block
+                } 
                 out.put(replacementBytes);
-            } //End block
+            } 
             else
             {
     if(action != CodingErrorAction.IGNORE)                
@@ -437,12 +437,12 @@ CoderResult varABB0206BF3597B3CDE0E8CB2CF4DF79C_1932805200 =                    
 CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_1500579812 =                     result;
                     varDC838461EE2FA0CA4C9BBB70A15456B0_1500579812.addTaint(taint);
                     return varDC838461EE2FA0CA4C9BBB70A15456B0_1500579812;
-                } //End block
-            } //End block
+                } 
+            } 
             in.position(in.position() + result.length());
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -457,62 +457,67 @@ CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_1500579812 =                    
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_791951556 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_791951556.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_791951556;
-        } //End block
+        } 
         CoderResult result = implFlush(out);
     if(result == CoderResult.UNDERFLOW)        
         {
             status = FLUSH;
-        } //End block
+        } 
 CoderResult varDC838461EE2FA0CA4C9BBB70A15456B0_1306401638 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1306401638.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1306401638;
-        // ---------- Original Method ----------
-        //if (status != END && status != READY) {
-            //throw new IllegalStateException();
-        //}
-        //CoderResult result = implFlush(out);
-        //if (result == CoderResult.UNDERFLOW) {
-            //status = FLUSH;
-        //}
-        //return result;
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.836 -0400", hash_original_method = "A9BF2BD565E7966B3C6B16D11959F2CA", hash_generated_method = "3C88571D6DC14D39828C907D93DFB2C2")
     protected CoderResult implFlush(ByteBuffer out) {
         addTaint(out.getTaint());
 CoderResult var4757652C33DAD6EF5B43FF5968DA807C_1949978256 =         CoderResult.UNDERFLOW;
         var4757652C33DAD6EF5B43FF5968DA807C_1949978256.addTaint(taint);
         return var4757652C33DAD6EF5B43FF5968DA807C_1949978256;
-        // ---------- Original Method ----------
-        //return CoderResult.UNDERFLOW;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.836 -0400", hash_original_method = "E03D9D5B6C40FD58B1EEECF43C9BC127", hash_generated_method = "C3493E75D383B088DEBB94344366E9DE")
     protected void implOnMalformedInput(CodingErrorAction newAction) {
         addTaint(newAction.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.837 -0400", hash_original_method = "33D941D09604A3F698502AE892B2B2F1", hash_generated_method = "4B30141303236D37DE62574A267B9AF0")
     protected void implOnUnmappableCharacter(CodingErrorAction newAction) {
         addTaint(newAction.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.837 -0400", hash_original_method = "BBBD9A68869312EDB40CCAE9146777D7", hash_generated_method = "C9C5333A73F363FD625EC04BC5CF9C82")
     protected void implReplaceWith(byte[] newReplacement) {
         addTaint(newReplacement[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.837 -0400", hash_original_method = "B1E265ECD4B779BE3343E27B901DC354", hash_generated_method = "2A58666B59F850117B41A249C7AD97D2")
     protected void implReset() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -524,33 +529,34 @@ CoderResult var4757652C33DAD6EF5B43FF5968DA807C_1949978256 =         CoderResult
             decoder = cs.newDecoder();
             decoder.onMalformedInput(CodingErrorAction.REPORT);
             decoder.onUnmappableCharacter(CodingErrorAction.REPORT);
-        } //End block
+        } 
         ByteBuffer in = ByteBuffer.wrap(replacement);
         CharBuffer out = CharBuffer.allocate((int) (replacement.length * decoder.maxCharsPerByte()));
         CoderResult result = decoder.decode(in, out, true);
         boolean var3C30AC09DC2A255CE917B1E9442FEDC1_1081697824 = (!result.isError());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_601087997 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_601087997;
-        // ---------- Original Method ----------
-        //if (decoder == null) {
-            //decoder = cs.newDecoder();
-            //decoder.onMalformedInput(CodingErrorAction.REPORT);
-            //decoder.onUnmappableCharacter(CodingErrorAction.REPORT);
-        //}
-        //ByteBuffer in = ByteBuffer.wrap(replacement);
-        //CharBuffer out = CharBuffer.allocate((int) (replacement.length * decoder.maxCharsPerByte()));
-        //CoderResult result = decoder.decode(in, out, true);
-        //return !result.isError();
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.838 -0400", hash_original_method = "14FFD5293B4145E0D4BC6D81F9598816", hash_generated_method = "3BA92B90CC65F905BCAC9B7B86FE1B83")
     public CodingErrorAction malformedInputAction() {
 CodingErrorAction var84571F1E1ACF9C5432CDAA5F78A66531_1079943060 =         malformedInputAction;
         var84571F1E1ACF9C5432CDAA5F78A66531_1079943060.addTaint(taint);
         return var84571F1E1ACF9C5432CDAA5F78A66531_1079943060;
-        // ---------- Original Method ----------
-        //return malformedInputAction;
+        
+        
     }
 
     
@@ -559,56 +565,56 @@ CodingErrorAction var84571F1E1ACF9C5432CDAA5F78A66531_1079943060 =         malfo
         float varC6086AD8B30BBFB38F0CCB4A5C59689F_596413215 = (maxBytesPerChar);
                 float var546ADE640B6EDFBC8A086EF31347E768_956653600 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_956653600;
-        // ---------- Original Method ----------
-        //return maxBytesPerChar;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.839 -0400", hash_original_method = "9AA0403DB22EF3A510B565026DCE2424", hash_generated_method = "63C02AED933F99E7B4680C1D78F604C6")
     public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(newAction == null)        
         {
             IllegalArgumentException var0F3670EF1C09F47E316E2640B340CF8A_1599497638 = new IllegalArgumentException("newAction == null");
             var0F3670EF1C09F47E316E2640B340CF8A_1599497638.addTaint(taint);
             throw var0F3670EF1C09F47E316E2640B340CF8A_1599497638;
-        } //End block
+        } 
         malformedInputAction = newAction;
         implOnMalformedInput(newAction);
 CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_814150527 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_814150527.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_814150527;
-        // ---------- Original Method ----------
-        //if (newAction == null) {
-            //throw new IllegalArgumentException("newAction == null");
-        //}
-        //malformedInputAction = newAction;
-        //implOnMalformedInput(newAction);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.840 -0400", hash_original_method = "8F9E9A5BA6AED0663F62AB88ADE1A1B8", hash_generated_method = "8D98D2191D59ED0D42F0D3454459F3AC")
     public final CharsetEncoder onUnmappableCharacter(CodingErrorAction newAction) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(newAction == null)        
         {
             IllegalArgumentException var0F3670EF1C09F47E316E2640B340CF8A_2059709319 = new IllegalArgumentException("newAction == null");
             var0F3670EF1C09F47E316E2640B340CF8A_2059709319.addTaint(taint);
             throw var0F3670EF1C09F47E316E2640B340CF8A_2059709319;
-        } //End block
+        } 
         unmappableCharacterAction = newAction;
         implOnUnmappableCharacter(newAction);
 CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_726268621 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_726268621.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_726268621;
-        // ---------- Original Method ----------
-        //if (newAction == null) {
-            //throw new IllegalArgumentException("newAction == null");
-        //}
-        //unmappableCharacterAction = newAction;
-        //implOnUnmappableCharacter(newAction);
-        //return this;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -617,8 +623,8 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_726268621 =         this;
         byte[] varF9CC17F581C3F36A520F3F5943689734_441754559 = (replacementBytes);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1193385700 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1193385700;
-        // ---------- Original Method ----------
-        //return replacementBytes;
+        
+        
     }
 
     
@@ -629,48 +635,48 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_726268621 =         this;
             IllegalArgumentException varDF52115D206E0F02FB9C53979C024970_22489716 = new IllegalArgumentException("replacement == null");
             varDF52115D206E0F02FB9C53979C024970_22489716.addTaint(taint);
             throw varDF52115D206E0F02FB9C53979C024970_22489716;
-        } //End block
+        } 
     if(replacement.length == 0)        
         {
             IllegalArgumentException var058B11E07A12DF2F2E9FE4E0B3D0458F_1125251596 = new IllegalArgumentException("replacement.length == 0");
             var058B11E07A12DF2F2E9FE4E0B3D0458F_1125251596.addTaint(taint);
             throw var058B11E07A12DF2F2E9FE4E0B3D0458F_1125251596;
-        } //End block
+        } 
     if(replacement.length > maxBytesPerChar())        
         {
             IllegalArgumentException var9D0D08533E730034369EB5AC94D840BB_1892551825 = new IllegalArgumentException("replacement length > maxBytesPerChar: " +
                     replacement.length + " > " + maxBytesPerChar());
             var9D0D08533E730034369EB5AC94D840BB_1892551825.addTaint(taint);
             throw var9D0D08533E730034369EB5AC94D840BB_1892551825;
-        } //End block
+        } 
     if(!isLegalReplacement(replacement))        
         {
             IllegalArgumentException var3D1B7EC98CE5C7B0F8C601E2578C32FA_1085385176 = new IllegalArgumentException("bad replacement: " + Arrays.toString(replacement));
             var3D1B7EC98CE5C7B0F8C601E2578C32FA_1085385176.addTaint(taint);
             throw var3D1B7EC98CE5C7B0F8C601E2578C32FA_1085385176;
-        } //End block
+        } 
         this.replacementBytes = replacement;
         implReplaceWith(replacementBytes);
 CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_1093172079 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1093172079.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1093172079;
-        // ---------- Original Method ----------
-        //if (replacement == null) {
-            //throw new IllegalArgumentException("replacement == null");
-        //}
-        //if (replacement.length == 0) {
-            //throw new IllegalArgumentException("replacement.length == 0");
-        //}
-        //if (replacement.length > maxBytesPerChar()) {
-            //throw new IllegalArgumentException("replacement length > maxBytesPerChar: " +
-                    //replacement.length + " > " + maxBytesPerChar());
-        //}
-        //if (!isLegalReplacement(replacement)) {
-            //throw new IllegalArgumentException("bad replacement: " + Arrays.toString(replacement));
-        //}
-        //this.replacementBytes = replacement;
-        //implReplaceWith(replacementBytes);
-        //return this;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -681,20 +687,21 @@ CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_1093172079 =         this;
 CharsetEncoder var72A74007B2BE62B849F475C7BDA4658B_7242016 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_7242016.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_7242016;
-        // ---------- Original Method ----------
-        //status = INIT;
-        //implReset();
-        //return this;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.842 -0400", hash_original_method = "01254405DC3888434A269A87FF2AF4FB", hash_generated_method = "992FCC03D32521224C58815BD6D2BBCE")
     public CodingErrorAction unmappableCharacterAction() {
 CodingErrorAction varD37AD0A7D4A43E25B855A6935DCC834A_837181810 =         unmappableCharacterAction;
         varD37AD0A7D4A43E25B855A6935DCC834A_837181810.addTaint(taint);
         return varD37AD0A7D4A43E25B855A6935DCC834A_837181810;
-        // ---------- Original Method ----------
-        //return unmappableCharacterAction;
+        
+        
     }
 
     

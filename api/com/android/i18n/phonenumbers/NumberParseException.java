@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,19 +18,20 @@ public class NumberParseException extends Exception {
         super(message);
         this.message = message;
         this.errorType = errorType;
-        // ---------- Original Method ----------
-        //this.message = message;
-        //this.errorType = errorType;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:14.423 -0400", hash_original_method = "D589126B13584B530A9FB2F071914799", hash_generated_method = "56108EC99249D9264E5EE1C2E5761ACE")
     public ErrorType getErrorType() {
 ErrorType var5A5A63BBE4A031A8D09DACEEAC4789E0_1243480726 =         errorType;
         var5A5A63BBE4A031A8D09DACEEAC4789E0_1243480726.addTaint(taint);
         return var5A5A63BBE4A031A8D09DACEEAC4789E0_1243480726;
-        // ---------- Original Method ----------
-        //return errorType;
+        
+        
     }
 
     
@@ -40,8 +41,8 @@ ErrorType var5A5A63BBE4A031A8D09DACEEAC4789E0_1243480726 =         errorType;
 String varB31E1C29748E3ED94F8E603CD6A25C02_727789877 =         "Error type: " + errorType + ". " + message;
         varB31E1C29748E3ED94F8E603CD6A25C02_727789877.addTaint(taint);
         return varB31E1C29748E3ED94F8E603CD6A25C02_727789877;
-        // ---------- Original Method ----------
-        //return "Error type: " + errorType + ". " + message;
+        
+        
     }
 
     

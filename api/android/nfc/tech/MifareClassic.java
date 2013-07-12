@@ -1,6 +1,6 @@
 package android.nfc.tech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -76,8 +76,8 @@ switch(a.getSak()){
         varFFE52C29C2E8B2FABC3C722855C1BF37_561709903.addTaint(taint);
         throw varFFE52C29C2E8B2FABC3C722855C1BF37_561709903;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -91,36 +91,40 @@ switch(a.getSak()){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.886 -0400", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "A667DCBC73FED35F11D37C39E574B6E6")
     public int getType() {
         int var3462A1A18A0EE070E8953CCF1DD788C0_901162241 = (mType);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1873685122 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1873685122;
-        // ---------- Original Method ----------
-        //return mType;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.887 -0400", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "5090EE07AAC2B264E59518A065326E8A")
     public int getSize() {
         int var27DFA0EFE73BCB065533443A05E9DEE4_514172713 = (mSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382624685 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382624685;
-        // ---------- Original Method ----------
-        //return mSize;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.887 -0400", hash_original_method = "571F1D61EE68738D4B1083BD48C02876", hash_generated_method = "18A54E0B445B226A2B88F974CF41EE8B")
     public boolean isEmulated() {
         boolean var70A0825F7C8424D762F96A4610B5A4E1_1308601508 = (mIsEmulated);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1434976431 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1434976431;
-        // ---------- Original Method ----------
-        //return mIsEmulated;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.888 -0400", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "F5156EFBE03AB5CE043C7FFA48B57511")
     public int getSectorCount() {
 switch(mSize){
@@ -145,29 +149,30 @@ switch(mSize){
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1263416658 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1263416658;
 }
-        // ---------- Original Method ----------
-        //switch (mSize) {
-        //case SIZE_1K:
-            //return 16;
-        //case SIZE_2K:
-            //return 32;
-        //case SIZE_4K:
-            //return 40;
-        //case SIZE_MINI:
-            //return 5;
-        //default:
-            //return 0;
-        //}
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.888 -0400", hash_original_method = "94025DFC316C8F4CE80BFCF15B00E224", hash_generated_method = "F8B5F59E747EC435AA628507BB23B0B1")
     public int getBlockCount() {
         int var113D873C42A5D92E1679C450278154BF_1491802679 = (mSize / BLOCK_SIZE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1322659335 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1322659335;
-        // ---------- Original Method ----------
-        //return mSize / BLOCK_SIZE;
+        
+        
     }
 
     
@@ -180,20 +185,20 @@ switch(mSize){
             int varA87FF679A2F3E71D9181A67B7542122C_684012490 = (4);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140453951 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_140453951;
-        } //End block
+        } 
         else
         {
             int varC74D97B01EAE257E44AA9D5BADE97BAF_138922441 = (16);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_276891854 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_276891854;
-        } //End block
-        // ---------- Original Method ----------
-        //validateSector(sectorIndex);
-        //if (sectorIndex < 32) {
-            //return 4;
-        //} else {
-            //return 16;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -206,23 +211,24 @@ switch(mSize){
             int var0015FE85A31D4CBD4804C5ED179A7867_1298035491 = (blockIndex / 4);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887975683 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_887975683;
-        } //End block
+        } 
         else
         {
             int varB23432549961640CAF87951035F1E1F0_1652479833 = (32 + (blockIndex - 32 * 4) / 16);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109042420 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2109042420;
-        } //End block
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //if (blockIndex < 32 * 4) {
-            //return blockIndex / 4;
-        //} else {
-            //return 32 + (blockIndex - 32 * 4) / 16;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.891 -0400", hash_original_method = "9D4F0360D229F71B4914DA14E59850F0", hash_generated_method = "5706CCFA39B1C977A1D90B3B03050CBC")
     public int sectorToBlock(int sectorIndex) {
         addTaint(sectorIndex);
@@ -231,19 +237,19 @@ switch(mSize){
             int var136421ED6951E9BB95FB381D03527187_847189557 = (sectorIndex * 4);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317067379 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_317067379;
-        } //End block
+        } 
         else
         {
             int varA4B180D9D27D6B3BCAF06B1197A9E8BF_1820166597 = (32 * 4 + (sectorIndex - 32) * 16);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497979004 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_497979004;
-        } //End block
-        // ---------- Original Method ----------
-        //if (sectorIndex < 32) {
-            //return sectorIndex * 4;
-        //} else {
-            //return 32 * 4 + (sectorIndex - 32) * 16;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -254,8 +260,8 @@ switch(mSize){
         boolean var5BF5E05162BABE5DBE45048BE905ABBA_63217354 = (authenticate(sectorIndex, key, true));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1045562364 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1045562364;
-        // ---------- Original Method ----------
-        //return authenticate(sectorIndex, key, true);
+        
+        
     }
 
     
@@ -266,8 +272,8 @@ switch(mSize){
         boolean var66A4C56497054A57701BBBB567B4841D_2070277848 = (authenticate(sectorIndex, key, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1472998691 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1472998691;
-        // ---------- Original Method ----------
-        //return authenticate(sectorIndex, key, false);
+        
+        
     }
 
     
@@ -282,11 +288,11 @@ switch(mSize){
     if(keyA)        
         {
             cmd[0] = 0x60;
-        } //End block
+        } 
         else
         {
             cmd[0] = 0x61;
-        } //End block
+        } 
         cmd[1] = (byte) sectorToBlock(sector);
         byte[] uid = getTag().getId();
         System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
@@ -298,41 +304,41 @@ switch(mSize){
                 boolean varB326B5062B2F0E69046810717534CB09_1157610555 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_342969788 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_342969788;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (TagLostException e)
         {
             e.addTaint(taint);
             throw e;
-        } //End block
+        } 
         catch (IOException e)
         {
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_11923327 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81196088 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_81196088;
-        // ---------- Original Method ----------
-        //validateSector(sector);
-        //checkConnected();
-        //byte[] cmd = new byte[12];
-        //if (keyA) {
-            //cmd[0] = 0x60; 
-        //} else {
-            //cmd[0] = 0x61; 
-        //}
-        //cmd[1] = (byte) sectorToBlock(sector);
-        //byte[] uid = getTag().getId();
-        //System.arraycopy(uid, uid.length - 4, cmd, 2, 4);
-        //System.arraycopy(key, 0, cmd, 6, 6);
-        //try {
-            //if (transceive(cmd, false) != null) {
-                //return true;
-            //}
-        //} catch (TagLostException e) {
-            //throw e;
-        //} catch (IOException e) {
-        //}
-        //return false;
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -345,11 +351,11 @@ switch(mSize){
         byte[] var8E202568BEDD06F864FDA8E60E6C3088_308433522 = (transceive(cmd, false));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1523005028 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1523005028;
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { 0x30, (byte) blockIndex };
-        //return transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
@@ -364,23 +370,23 @@ switch(mSize){
             IllegalArgumentException var07B10BE9B977BFFA5B3348AF3692E843_353715361 = new IllegalArgumentException("must write 16-bytes");
             var07B10BE9B977BFFA5B3348AF3692E843_353715361.addTaint(taint);
             throw var07B10BE9B977BFFA5B3348AF3692E843_353715361;
-        } //End block
+        } 
         byte[] cmd = new byte[data.length + 2];
         cmd[0] = (byte) 0xA0;
         cmd[1] = (byte) blockIndex;
         System.arraycopy(data, 0, cmd, 2, data.length);
         transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //if (data.length != 16) {
-            //throw new IllegalArgumentException("must write 16-bytes");
-        //}
-        //byte[] cmd = new byte[data.length + 2];
-        //cmd[0] = (byte) 0xA0;
-        //cmd[1] = (byte) blockIndex;
-        //System.arraycopy(data, 0, cmd, 2, data.length);
-        //transceive(cmd, false);
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -397,16 +403,16 @@ switch(mSize){
         cmd.put( (byte) blockIndex );
         cmd.putInt(value);
         transceive(cmd.array(), false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //validateValueOperand(value);
-        //checkConnected();
-        //ByteBuffer cmd = ByteBuffer.allocate(6);
-        //cmd.order(ByteOrder.LITTLE_ENDIAN);
-        //cmd.put( (byte) 0xC1 );
-        //cmd.put( (byte) blockIndex );
-        //cmd.putInt(value);
-        //transceive(cmd.array(), false);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -423,16 +429,16 @@ switch(mSize){
         cmd.put( (byte) blockIndex );
         cmd.putInt(value);
         transceive(cmd.array(), false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //validateValueOperand(value);
-        //checkConnected();
-        //ByteBuffer cmd = ByteBuffer.allocate(6);
-        //cmd.order(ByteOrder.LITTLE_ENDIAN);
-        //cmd.put( (byte) 0xC0 );
-        //cmd.put( (byte) blockIndex );
-        //cmd.putInt(value);
-        //transceive(cmd.array(), false);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -443,11 +449,11 @@ switch(mSize){
         checkConnected();
         byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
         transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { (byte) 0xB0, (byte) blockIndex };
-        //transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
@@ -458,11 +464,11 @@ switch(mSize){
         checkConnected();
         byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
         transceive(cmd, false);
-        // ---------- Original Method ----------
-        //validateBlock(blockIndex);
-        //checkConnected();
-        //byte[] cmd = { (byte) 0xC2, (byte) blockIndex };
-        //transceive(cmd, false);
+        
+        
+        
+        
+        
     }
 
     
@@ -472,8 +478,8 @@ switch(mSize){
         byte[] varEE32C696607EBC614D9A30134ACB1AE3_1502511445 = (transceive(data, true));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_83540548 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_83540548;
-        // ---------- Original Method ----------
-        //return transceive(data, true);
+        
+        
     }
 
     
@@ -482,8 +488,8 @@ switch(mSize){
         int var534FE261D7083B235B3B010A14A83EE1_1220487400 = (getMaxTransceiveLengthInternal());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261412213 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_261412213;
-        // ---------- Original Method ----------
-        //return getMaxTransceiveLengthInternal();
+        
+        
     }
 
     
@@ -498,20 +504,20 @@ switch(mSize){
                 IllegalArgumentException varDB68BEF11A046B44BA82450BD6BDD1ED_1358685445 = new IllegalArgumentException("The supplied timeout is not valid");
                 varDB68BEF11A046B44BA82450BD6BDD1ED_1358685445.addTaint(taint);
                 throw varDB68BEF11A046B44BA82450BD6BDD1ED_1358685445;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //int err = mTag.getTagService().setTimeout(TagTechnology.MIFARE_CLASSIC, timeout);
-            //if (err != ErrorCodes.SUCCESS) {
-                //throw new IllegalArgumentException("The supplied timeout is not valid");
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -522,20 +528,20 @@ switch(mSize){
             int varBD614B0B67E6D92251E0598487623CAE_2131366606 = (mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_777462097 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_777462097;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             int varCFCD208495D565EF66E7DFF9F98764DA_479334507 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043995304 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043995304;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mTag.getTagService().getTimeout(TagTechnology.MIFARE_CLASSIC);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "NFC service dead", e);
-            //return 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.speech;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -56,21 +56,21 @@ switch(msg.what){
             handleChangeListener((RecognitionListener) msg.obj);
             break;
 }
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case MSG_START:
-                    //handleStartListening((Intent) msg.obj);
-                    //break;
-                //case MSG_STOP:
-                    //handleStopMessage();
-                    //break;
-                //case MSG_CANCEL:
-                    //handleCancelMessage();
-                    //break;
-                //case MSG_CHANGE_LISTENER:
-                    //handleChangeListener((RecognitionListener) msg.obj);
-                    //break;
-            //}
+            
+            
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+                
+                    
+                    
+            
         }
 
         
@@ -86,9 +86,9 @@ switch(msg.what){
     private  SpeechRecognizer(final Context context, final ComponentName serviceComponent) {
         mContext = context;
         mServiceComponent = serviceComponent;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mServiceComponent = serviceComponent;
+        
+        
+        
     }
 
     
@@ -119,9 +119,9 @@ switch(msg.what){
         addTaint(listener.getTaint());
         checkIsCalledFromMainThread();
         putMessage(Message.obtain(mHandler, MSG_CHANGE_LISTENER, listener));
-        // ---------- Original Method ----------
-        //checkIsCalledFromMainThread();
-        //putMessage(Message.obtain(mHandler, MSG_CHANGE_LISTENER, listener));
+        
+        
+        
     }
 
     
@@ -133,7 +133,7 @@ switch(msg.what){
             IllegalArgumentException var21E73D2FF142A80D13A72EB34DF276CD_68189139 = new IllegalArgumentException("intent must not be null");
             var21E73D2FF142A80D13A72EB34DF276CD_68189139.addTaint(taint);
             throw var21E73D2FF142A80D13A72EB34DF276CD_68189139;
-        } //End block
+        } 
         checkIsCalledFromMainThread();
     if(mConnection == null)        
         {
@@ -147,24 +147,24 @@ switch(msg.what){
                 {
                     mListener.onError(ERROR_CLIENT);
                     return;
-                } //End block
+                } 
                 serviceIntent.setComponent(ComponentName.unflattenFromString(serviceComponent));
-            } //End block
+            } 
             else
             {
                 serviceIntent.setComponent(mServiceComponent);
-            } //End block
+            } 
     if(!mContext.bindService(serviceIntent, mConnection, Context.BIND_AUTO_CREATE))            
             {
                 mConnection = null;
                 mService = null;
                 mListener.onError(ERROR_CLIENT);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         putMessage(Message.obtain(mHandler, MSG_START, recognizerIntent));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -172,9 +172,9 @@ switch(msg.what){
     public void stopListening() {
         checkIsCalledFromMainThread();
         putMessage(Message.obtain(mHandler, MSG_STOP));
-        // ---------- Original Method ----------
-        //checkIsCalledFromMainThread();
-        //putMessage(Message.obtain(mHandler, MSG_STOP));
+        
+        
+        
     }
 
     
@@ -182,13 +182,14 @@ switch(msg.what){
     public void cancel() {
         checkIsCalledFromMainThread();
         putMessage(Message.obtain(mHandler, MSG_CANCEL));
-        // ---------- Original Method ----------
-        //checkIsCalledFromMainThread();
-        //putMessage(Message.obtain(mHandler, MSG_CANCEL));
+        
+        
+        
     }
 
     
-        private static void checkIsCalledFromMainThread() {
+        @DSModeled(DSC.SPEC)
+    private static void checkIsCalledFromMainThread() {
         if (Looper.myLooper() != Looper.getMainLooper()) {
             throw new RuntimeException(
                     "SpeechRecognizer should be used only from the application's main thread");
@@ -196,117 +197,122 @@ switch(msg.what){
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.233 -0400", hash_original_method = "BD5701E8DF0BF25E7CB3736533848F1A", hash_generated_method = "A5A5569C94AE4A1C397AFB5586BE1123")
     private void putMessage(Message msg) {
         addTaint(msg.getTaint());
     if(mService == null)        
         {
             mPendingTasks.offer(msg);
-        } //End block
+        } 
         else
         {
             mHandler.sendMessage(msg);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mService == null) {
-            //mPendingTasks.offer(msg);
-        //} else {
-            //mHandler.sendMessage(msg);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.234 -0400", hash_original_method = "02FE733144FE02DDB0F8182E4A142CB0", hash_generated_method = "FF63DA8C334E4FB067088B55607641B1")
     private void handleStartListening(Intent recognizerIntent) {
         addTaint(recognizerIntent.getTaint());
     if(!checkOpenConnection())        
         {
             return;
-        } //End block
+        } 
         try 
         {
             mService.startListening(recognizerIntent, mListener);
     if(DBG)            
             Log.d(TAG, "service start listening command succeded");
-        } //End block
+        } 
         catch (final RemoteException e)
         {
             mListener.onError(ERROR_CLIENT);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkOpenConnection()) {
-            //return;
-        //}
-        //try {
-            //mService.startListening(recognizerIntent, mListener);
-            //if (DBG) Log.d(TAG, "service start listening command succeded");
-        //} catch (final RemoteException e) {
-            //Log.e(TAG, "startListening() failed", e);
-            //mListener.onError(ERROR_CLIENT);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.234 -0400", hash_original_method = "B90CA3721E1A91D945B72975FC03EB82", hash_generated_method = "868DDBE8C65BCA2AD55F5E98FB3717E1")
     private void handleStopMessage() {
     if(!checkOpenConnection())        
         {
             return;
-        } //End block
+        } 
         try 
         {
             mService.stopListening(mListener);
     if(DBG)            
             Log.d(TAG, "service stop listening command succeded");
-        } //End block
+        } 
         catch (final RemoteException e)
         {
             mListener.onError(ERROR_CLIENT);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkOpenConnection()) {
-            //return;
-        //}
-        //try {
-            //mService.stopListening(mListener);
-            //if (DBG) Log.d(TAG, "service stop listening command succeded");
-        //} catch (final RemoteException e) {
-            //Log.e(TAG, "stopListening() failed", e);
-            //mListener.onError(ERROR_CLIENT);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.235 -0400", hash_original_method = "5E81A38D35A2865AC1654F506B5D7265", hash_generated_method = "BB5BF4B051B1FF448EF63E92CA1AB6C1")
     private void handleCancelMessage() {
     if(!checkOpenConnection())        
         {
             return;
-        } //End block
+        } 
         try 
         {
             mService.cancel(mListener);
     if(DBG)            
             Log.d(TAG, "service cancel command succeded");
-        } //End block
+        } 
         catch (final RemoteException e)
         {
             mListener.onError(ERROR_CLIENT);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!checkOpenConnection()) {
-            //return;
-        //}
-        //try {
-            //mService.cancel(mListener);
-            //if (DBG) Log.d(TAG, "service cancel command succeded");
-        //} catch (final RemoteException e) {
-            //Log.e(TAG, "cancel() failed", e);
-            //mListener.onError(ERROR_CLIENT);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.236 -0400", hash_original_method = "325935BA5701514064BC283979E7156C", hash_generated_method = "0122175C2027EE2FA85E78A2A8084061")
     private boolean checkOpenConnection() {
     if(mService != null)        
@@ -314,18 +320,18 @@ switch(msg.what){
             boolean varB326B5062B2F0E69046810717534CB09_1868353354 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_166634603 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_166634603;
-        } //End block
+        } 
         mListener.onError(ERROR_CLIENT);
         boolean var68934A3E9455FA72420237EB05902327_793419505 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235771001 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_235771001;
-        // ---------- Original Method ----------
-        //if (mService != null) {
-            //return true;
-        //}
-        //mListener.onError(ERROR_CLIENT);
-        //Log.e(TAG, "not connected to the recognition service");
-        //return false;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -334,30 +340,31 @@ switch(msg.what){
     if(DBG)        
         Log.d(TAG, "handleChangeListener, listener=" + listener);
         mListener.mInternalListener = listener;
-        // ---------- Original Method ----------
-        //if (DBG) Log.d(TAG, "handleChangeListener, listener=" + listener);
-        //mListener.mInternalListener = listener;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.238 -0400", hash_original_method = "B539A3FDAD7DAFC2710B42A201C294A5", hash_generated_method = "DC94C10E74AC8EABFF4D6BA6CA2867D1")
     public void destroy() {
     if(mConnection != null)        
         {
             mContext.unbindService(mConnection);
-        } //End block
+        } 
         mPendingTasks.clear();
         mService = null;
         mConnection = null;
         mListener.mInternalListener = null;
-        // ---------- Original Method ----------
-        //if (mConnection != null) {
-            //mContext.unbindService(mConnection);
-        //}
-        //mPendingTasks.clear();
-        //mService = null;
-        //mConnection = null;
-        //mListener.mInternalListener = null;
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -366,13 +373,13 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.238 -0400", hash_original_method = "4879E6D30CC79D00A25F9B445CF68B6E", hash_generated_method = "4879E6D30CC79D00A25F9B445CF68B6E")
         public Connection ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.239 -0400", hash_original_method = "A482946B66588C02F73749F3E3304B88", hash_generated_method = "5E4548CB5E969C50AAE15E6C04B39ECD")
         public void onServiceConnected(final ComponentName name, final IBinder service) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(service.getTaint());
             addTaint(name.getTaint());
             mService = IRecognitionService.Stub.asInterface(service);
@@ -382,30 +389,30 @@ switch(msg.what){
 (!mPendingTasks.isEmpty())            
             {
                 mHandler.sendMessage(mPendingTasks.poll());
-            } //End block
-            // ---------- Original Method ----------
-            //mService = IRecognitionService.Stub.asInterface(service);
-            //if (DBG) Log.d(TAG, "onServiceConnected - Success");
-            //while (!mPendingTasks.isEmpty()) {
-                //mHandler.sendMessage(mPendingTasks.poll());
-            //}
+            } 
+            
+            
+            
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.240 -0400", hash_original_method = "C567EEB0F8B99E207D7273B6531D37A6", hash_generated_method = "061E2D9F4054FAFE762FBD30FE305D63")
         public void onServiceDisconnected(final ComponentName name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(name.getTaint());
             mService = null;
             mConnection = null;
             mPendingTasks.clear();
     if(DBG)            
             Log.d(TAG, "onServiceDisconnected - Success");
-            // ---------- Original Method ----------
-            //mService = null;
-            //mConnection = null;
-            //mPendingTasks.clear();
-            //if (DBG) Log.d(TAG, "onServiceDisconnected - Success");
+            
+            
+            
+            
+            
         }
 
         
@@ -427,7 +434,7 @@ switch(msg.what){
     if(mInternalListener == null)                
                 {
                     return;
-                } //End block
+                } 
 switch(msg.what){
                 case MSG_BEGINNING_OF_SPEECH:
                 mInternalListener.onBeginningOfSpeech();
@@ -457,8 +464,8 @@ switch(msg.what){
                 mInternalListener.onEvent(msg.arg1, (Bundle) msg.obj);
                 break;
 }
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -467,98 +474,98 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.242 -0400", hash_original_method = "D42AE1ED85DAFEE14D68B1100A6F596C", hash_generated_method = "D42AE1ED85DAFEE14D68B1100A6F596C")
         public InternalListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.243 -0400", hash_original_method = "423C75D37126FCE97656F1DAA5EC9589", hash_generated_method = "4E86798820D6846FF74D13277248EEBA")
         public void onBeginningOfSpeech() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mInternalHandler, MSG_BEGINNING_OF_SPEECH).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_BEGINNING_OF_SPEECH).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.244 -0400", hash_original_method = "440BB1FF5EAB849BC7B5A9B2BDE64DB2", hash_generated_method = "CAC8DBC23909E24C9C3D7347DE9B28C2")
         public void onBufferReceived(final byte[] buffer) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(buffer[0]);
             Message.obtain(mInternalHandler, MSG_BUFFER_RECEIVED, buffer).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_BUFFER_RECEIVED, buffer).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.245 -0400", hash_original_method = "78B5B45C0B4077521FF630307A7DFD84", hash_generated_method = "84E18819D7026D401E26F94C624E3D33")
         public void onEndOfSpeech() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             Message.obtain(mInternalHandler, MSG_END_OF_SPEECH).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_END_OF_SPEECH).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.245 -0400", hash_original_method = "CDA9EADD6A32A4BE8DEC4FA3CB4F1C0E", hash_generated_method = "7E3EFA2370ECDD3C0D12CF75AEAEC351")
         public void onError(final int error) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(error);
             Message.obtain(mInternalHandler, MSG_ERROR, error).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_ERROR, error).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.246 -0400", hash_original_method = "0C389EBFAF23D698D1F945955A407FE0", hash_generated_method = "BFFDD63DE77D7E66C6A0F4EAF116A3B8")
         public void onReadyForSpeech(final Bundle noiseParams) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(noiseParams.getTaint());
             Message.obtain(mInternalHandler, MSG_READY_FOR_SPEECH, noiseParams).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_READY_FOR_SPEECH, noiseParams).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.246 -0400", hash_original_method = "8043547C41CBEFDF0358507EB3CBC735", hash_generated_method = "2176066BE06B7031A59079C9030164EA")
         public void onResults(final Bundle results) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(results.getTaint());
             Message.obtain(mInternalHandler, MSG_RESULTS, results).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_RESULTS, results).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.247 -0400", hash_original_method = "C5DE23D2E0A0C48DF7B3AD991D3BAED9", hash_generated_method = "9380C1C213AB590DD959020027F97D2A")
         public void onPartialResults(final Bundle results) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(results.getTaint());
             Message.obtain(mInternalHandler, MSG_PARTIAL_RESULTS, results).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_PARTIAL_RESULTS, results).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.248 -0400", hash_original_method = "43DC9B01076C33DA1437F3B2E9FFAD9F", hash_generated_method = "06129008681238DFAD89813EA6863554")
         public void onRmsChanged(final float rmsdB) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(rmsdB);
             Message.obtain(mInternalHandler, MSG_RMS_CHANGED, rmsdB).sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_RMS_CHANGED, rmsdB).sendToTarget();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:37.248 -0400", hash_original_method = "F710C1EACA55C27505200F22B187965E", hash_generated_method = "A4B041F745134671AA3A71DC35FA4C5E")
         public void onEvent(final int eventType, final Bundle params) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(params.getTaint());
             addTaint(eventType);
             Message.obtain(mInternalHandler, MSG_ON_EVENT, eventType, eventType, params)
                     .sendToTarget();
-            // ---------- Original Method ----------
-            //Message.obtain(mInternalHandler, MSG_ON_EVENT, eventType, eventType, params)
-                    //.sendToTarget();
+            
+            
+                    
         }
 
         

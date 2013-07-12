@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class SecurityVerifyList extends SIPHeaderList<SecurityVerify> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.217 -0400", hash_original_method = "BB5D31C764D6B5DBD9562757DE1BE4AB", hash_generated_method = "F095E831F1F6EEA6D531EE4D2FD13812")
     public  SecurityVerifyList() {
         super(SecurityVerify.class, SecurityVerifyHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,9 +22,9 @@ public class SecurityVerifyList extends SIPHeaderList<SecurityVerify> {
 Object varF627329B9209466293A1BF71D9AF7B2B_709784744 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_709784744.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_709784744;
-        // ---------- Original Method ----------
-        //SecurityVerifyList retval = new SecurityVerifyList();
-        //return retval.clonehlist(this.hlist);
+        
+        
+        
     }
 
     

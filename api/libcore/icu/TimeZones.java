@@ -1,6 +1,6 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public final class TimeZones {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.309 -0400", hash_original_method = "A05C4975F009B050E4723CBEC63CF03D", hash_generated_method = "A3706FB06655BF7A8E96F021B21E6A98")
     private  TimeZones() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -69,7 +69,7 @@ public final class TimeZones {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.310 -0400", hash_original_method = "8CBB117BE999E006B1D5CB712A559541", hash_generated_method = "5B341770CB1D4B88A6CBDF9D4F397CBB")
         public  ZoneStringsCache() {
             super(availableTimeZones.length);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -91,18 +91,18 @@ public final class TimeZones {
 String[][] varDC838461EE2FA0CA4C9BBB70A15456B0_717399683 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_717399683.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_717399683;
-            // ---------- Original Method ----------
-            //long start, nativeStart;
-            //start = nativeStart = System.currentTimeMillis();
-            //String[][] result = getZoneStringsImpl(locale.toString(), availableTimeZones);
-            //long nativeEnd = System.currentTimeMillis();
-            //internStrings(result);
-            //long end = System.currentTimeMillis();
-            //long duration = end - start;
-            //long nativeDuration = nativeEnd - nativeStart;
-            //System.logI("Loaded time zone names for " + locale + " in " + duration + "ms" +
-                    //" (" + nativeDuration + "ms in ICU)");
-            //return result;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+            
         }
 
         
@@ -118,25 +118,25 @@ for(int j = 1;j < NAME_COUNT;++j)
     if(nonDuplicate == null)                    
                     {
                         internTable.put(original, original);
-                    } //End block
+                    } 
                     else
                     {
                         result[i][j] = nonDuplicate;
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //for (int i = 0; i < result.length; ++i) {
-                //for (int j = 1; j < NAME_COUNT; ++j) {
-                    //String original = result[i][j];
-                    //String nonDuplicate = internTable.get(original);
-                    //if (nonDuplicate == null) {
-                        //internTable.put(original, original);
-                    //} else {
-                        //result[i][j] = nonDuplicate;
-                    //}
-                //}
-            //}
+                    } 
+                } 
+            } 
+            
+            
+                
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                
+            
         }
 
         

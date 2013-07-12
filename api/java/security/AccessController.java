@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public final class AccessController {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:52.921 -0400", hash_original_method = "933F644DAAB02DBBD976309C952EDFF1", hash_generated_method = "413E2414F33FF227172B34BB7BB4830A")
     private  AccessController() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -49,7 +49,8 @@ public final class AccessController {
     }
 
     
-        public static void checkPermission(Permission permission) throws AccessControlException {
+        @DSModeled(DSC.SAFE)
+    public static void checkPermission(Permission permission) throws AccessControlException {
     }
 
     

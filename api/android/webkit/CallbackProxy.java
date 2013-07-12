@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -72,82 +72,90 @@ class CallbackProxy extends Handler {
         mContext = context;
         mWebView = w;
         mBackForwardList = new WebBackForwardList(this);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mWebView = w;
-        //mBackForwardList = new WebBackForwardList(this);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.427 -0400", hash_original_method = "94198B28324F8EDCEFD396927CFF12D2", hash_generated_method = "DE4F5106C007BE6F57AC8D71C62F1D2E")
     public void setWebViewClient(WebViewClient client) {
         mWebViewClient = client;
-        // ---------- Original Method ----------
-        //mWebViewClient = client;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.428 -0400", hash_original_method = "F1A871AF9A3B10055BFFA9DC06A940C2", hash_generated_method = "A1074CFECF048523D83A686A6A831F9D")
     public WebViewClient getWebViewClient() {
 WebViewClient var219327D82738A9B3892C77985DEA01B6_655279684 =         mWebViewClient;
         var219327D82738A9B3892C77985DEA01B6_655279684.addTaint(taint);
         return var219327D82738A9B3892C77985DEA01B6_655279684;
-        // ---------- Original Method ----------
-        //return mWebViewClient;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.428 -0400", hash_original_method = "92EB7E506A2EF4886CBEC1480289BCB6", hash_generated_method = "4C169B04C3730379147B383EFDBF5622")
     public void setWebChromeClient(WebChromeClient client) {
         mWebChromeClient = client;
-        // ---------- Original Method ----------
-        //mWebChromeClient = client;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.428 -0400", hash_original_method = "578C7E32D2B540B07E657C95C84E837C", hash_generated_method = "692EF137032618DF11218CDA6EBEC90D")
     public WebChromeClient getWebChromeClient() {
 WebChromeClient varA4A83CCFC474F74A3297D64921EA0D20_591228518 =         mWebChromeClient;
         varA4A83CCFC474F74A3297D64921EA0D20_591228518.addTaint(taint);
         return varA4A83CCFC474F74A3297D64921EA0D20_591228518;
-        // ---------- Original Method ----------
-        //return mWebChromeClient;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "36DD14932709DFA3D074F96EC9039EDA", hash_generated_method = "C93408E62641713A784F45E96AAF15BB")
     public void setDownloadListener(DownloadListener client) {
         mDownloadListener = client;
-        // ---------- Original Method ----------
-        //mDownloadListener = client;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "2A97B39171573BABF631C9DB7E378DC9", hash_generated_method = "DC83E5EE53C7ADAE81A0F57821D65D36")
     public WebBackForwardList getBackForwardList() {
 WebBackForwardList var1C240D885C886394EFD8991BF7723702_2065109024 =         mBackForwardList;
         var1C240D885C886394EFD8991BF7723702_2065109024.addTaint(taint);
         return var1C240D885C886394EFD8991BF7723702_2065109024;
-        // ---------- Original Method ----------
-        //return mBackForwardList;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "69271AEE54C61C015B6B50CD212FE110", hash_generated_method = "13A4BC55EE14A943E04C92B28D85EE99")
      void setWebBackForwardListClient(WebBackForwardListClient client) {
         mWebBackForwardListClient = client;
-        // ---------- Original Method ----------
-        //mWebBackForwardListClient = client;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.429 -0400", hash_original_method = "32023A06CFA84B93B3A0030ADE6E4A41", hash_generated_method = "26EB847B6630F7A8A0CE0615A91BAC18")
      WebBackForwardListClient getWebBackForwardListClient() {
 WebBackForwardListClient varFDD512ADED96794B21F9708300A9CF6B_1310232261 =         mWebBackForwardListClient;
         varFDD512ADED96794B21F9708300A9CF6B_1310232261.addTaint(taint);
         return varFDD512ADED96794B21F9708300A9CF6B_1310232261;
-        // ---------- Original Method ----------
-        //return mWebBackForwardListClient;
+        
+        
     }
 
     
@@ -159,13 +167,13 @@ WebBackForwardListClient varFDD512ADED96794B21F9708300A9CF6B_1310232261 =       
             boolean var68934A3E9455FA72420237EB05902327_227137907 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1260647850 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1260647850;
-        } //End block
+        } 
         boolean override = false;
     if(mWebViewClient != null)        
         {
             override = mWebViewClient.shouldOverrideUrlLoading(mWebView,
                     overrideUrl);
-        } //End block
+        } 
         else
         {
             Intent intent = new Intent(Intent.ACTION_VIEW,
@@ -177,16 +185,16 @@ WebBackForwardListClient varFDD512ADED96794B21F9708300A9CF6B_1310232261 =       
             {
                 mContext.startActivity(intent);
                 override = true;
-            } //End block
+            } 
             catch (ActivityNotFoundException ex)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varE3B3F56615D1E5F2608D2F1130A7EF54_246679073 = (override);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1628101607 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1628101607;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -198,15 +206,15 @@ WebBackForwardListClient varFDD512ADED96794B21F9708300A9CF6B_1310232261 =       
             boolean varA184D23C528E36D606A8EBD0FAA17368_2057814186 = (mWebViewClient.shouldOverrideKeyEvent(mWebView, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_518349827 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_518349827;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1355577904 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_928088097 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_928088097;
-        // ---------- Original Method ----------
-        //if (mWebViewClient != null) {
-            //return mWebViewClient.shouldOverrideKeyEvent(mWebView, event);
-        //}
-        //return false;
+        
+        
+            
+        
+        
     }
 
     
@@ -221,7 +229,7 @@ switch(msg.what){
     if(mWebViewClient != null)        
         {
             mWebViewClient.onPageStarted(mWebView, startedUrl, (Bitmap) msg.obj);
-        } //End block
+        } 
         break;
         case PAGE_FINISHED:
         String finishedUrl = (String) msg.obj;
@@ -229,27 +237,27 @@ switch(msg.what){
     if(mWebViewClient != null)        
         {
             mWebViewClient.onPageFinished(mWebView, finishedUrl);
-        } //End block
+        } 
         break;
         case RECEIVED_ICON:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.onReceivedIcon(mWebView, (Bitmap) msg.obj);
-        } //End block
+        } 
         break;
         case RECEIVED_TOUCH_ICON_URL:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.onReceivedTouchIconUrl(mWebView,
                             (String) msg.obj, msg.arg1 == 1);
-        } //End block
+        } 
         break;
         case RECEIVED_TITLE:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.onReceivedTitle(mWebView,
                             (String) msg.obj);
-        } //End block
+        } 
         break;
         case REPORT_ERROR:
     if(mWebViewClient != null)        
@@ -259,7 +267,7 @@ switch(msg.what){
             final String failUrl = msg.getData().getString("failingUrl");
             mWebViewClient.onReceivedError(mWebView, reasonCode,
                             description, failUrl);
-        } //End block
+        } 
         break;
         case RESEND_POST_DATA:
         Message resend = (Message) msg.getData().getParcelable("resend");
@@ -268,11 +276,11 @@ switch(msg.what){
         {
             mWebViewClient.onFormResubmission(mWebView, dontResend,
                             resend);
-        } //End block
+        } 
         else
         {
             dontResend.sendToTarget();
-        } //End block
+        } 
         break;
         case OVERRIDE_URL:
         String overrideUrl = msg.getData().getString("url");
@@ -282,7 +290,7 @@ switch(msg.what){
 (this)        {
             result.setResult(override);
             notify();
-        } //End block
+        } 
         break;
         case AUTH_REQUEST:
     if(mWebViewClient != null)        
@@ -292,7 +300,7 @@ switch(msg.what){
             String realm = msg.getData().getString("realm");
             mWebViewClient.onReceivedHttpAuthRequest(mWebView, handler,
                             host, realm);
-        } //End block
+        } 
         break;
         case SSL_ERROR:
     if(mWebViewClient != null)        
@@ -301,14 +309,14 @@ switch(msg.what){
             mWebViewClient.onReceivedSslError(mWebView,
                             (SslErrorHandler) map.get("handler"),
                             (SslError) map.get("error"));
-        } //End block
+        } 
         break;
         case PROCEEDED_AFTER_SSL_ERROR:
     if(mWebViewClient != null)        
         {
             mWebViewClient.onProceededAfterSslError(mWebView,
                             (SslError) msg.obj);
-        } //End block
+        } 
         break;
         case CLIENT_CERT_REQUEST:
     if(mWebViewClient != null)        
@@ -317,7 +325,7 @@ switch(msg.what){
             mWebViewClient.onReceivedClientCertRequest(mWebView,
                             (ClientCertRequestHandler) map.get("handler"),
                             (String) map.get("host_and_port"));
-        } //End block
+        } 
         break;
         case PROGRESS:
         synchronized
@@ -326,22 +334,22 @@ switch(msg.what){
             {
                 mWebChromeClient.onProgressChanged(mWebView,
                                 mLatestProgress);
-            } //End block
+            } 
             mProgressUpdatePending = false;
-        } //End block
+        } 
         break;
         case UPDATE_VISITED:
     if(mWebViewClient != null)        
         {
             mWebViewClient.doUpdateVisitedHistory(mWebView,
                             (String) msg.obj, msg.arg1 != 0);
-        } //End block
+        } 
         break;
         case LOAD_RESOURCE:
     if(mWebViewClient != null)        
         {
             mWebViewClient.onLoadResource(mWebView, (String) msg.obj);
-        } //End block
+        } 
         break;
         case DOWNLOAD_FILE:
     if(mDownloadListener != null)        
@@ -353,7 +361,7 @@ switch(msg.what){
             Long contentLength = msg.getData().getLong("contentLength");
             mDownloadListener.onDownloadStart(url, userAgent,
                             contentDisposition, mimetype, contentLength);
-        } //End block
+        } 
         break;
         case CREATE_WINDOW:
     if(mWebChromeClient != null)        
@@ -365,22 +373,22 @@ switch(msg.what){
                 synchronized
 (this)                {
                     notify();
-                } //End block
-            } //End block
+                } 
+            } 
             mWebView.dismissZoomControl();
-        } //End block
+        } 
         break;
         case REQUEST_FOCUS:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.onRequestFocus(mWebView);
-        } //End block
+        } 
         break;
         case CLOSE_WINDOW:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.onCloseWindow((WebView) msg.obj);
-        } //End block
+        } 
         break;
         case SAVE_PASSWORD:
         Bundle bundle = msg.getData();
@@ -393,15 +401,15 @@ switch(msg.what){
             synchronized
 (this)            {
                 notify();
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case ASYNC_KEYEVENTS:
     if(mWebViewClient != null)        
         {
             mWebViewClient.onUnhandledKeyEvent(mWebView,
                             (KeyEvent) msg.obj);
-        } //End block
+        } 
         break;
         case EXCEEDED_DATABASE_QUOTA:
     if(mWebChromeClient != null)        
@@ -416,7 +424,7 @@ switch(msg.what){
             mWebChromeClient.onExceededDatabaseQuota(url,
                             databaseIdentifier, currentQuota, estimatedSize,
                             totalUsedQuota, quotaUpdater);
-        } //End block
+        } 
         break;
         case REACHED_APPCACHE_MAXSIZE:
     if(mWebChromeClient != null)        
@@ -427,7 +435,7 @@ switch(msg.what){
             WebStorage.QuotaUpdater quotaUpdater = (WebStorage.QuotaUpdater) map.get("quotaUpdater");
             mWebChromeClient.onReachedMaxAppCacheSize(spaceNeeded,
                             totalUsedQuota, quotaUpdater);
-        } //End block
+        } 
         break;
         case GEOLOCATION_PERMISSIONS_SHOW_PROMPT:
     if(mWebChromeClient != null)        
@@ -438,13 +446,13 @@ switch(msg.what){
                             map.get("callback");
             mWebChromeClient.onGeolocationPermissionsShowPrompt(origin,
                             callback);
-        } //End block
+        } 
         break;
         case GEOLOCATION_PERMISSIONS_HIDE_PROMPT:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.onGeolocationPermissionsHidePrompt();
-        } //End block
+        } 
         break;
         case JS_ALERT:
     if(mWebChromeClient != null)        
@@ -460,7 +468,7 @@ switch(msg.what){
                     res.cancel();
                     res.setReady();
                     break;
-                } //End block
+                } 
                 new AlertDialog.Builder(mContext)
                                 .setTitle(getJsDialogTitle(url))
                                 .setMessage(message)
@@ -470,12 +478,12 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(which);
             addTaint(dialog.getTaint());
             res.confirm();
-            // ---------- Original Method ----------
-            //res.confirm();
+            
+            
         }
 })
                                 .setOnCancelListener(
@@ -483,17 +491,17 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.432 -0400", hash_original_method = "B1C3BAB04B07B0569E11AD7C29C844EB", hash_generated_method = "9FDF055D2C79806716337003609F7298")
         public void onCancel(
                                                     DialogInterface dialog) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(dialog.getTaint());
             res.cancel();
-            // ---------- Original Method ----------
-            //res.cancel();
+            
+            
         }
 })
                                 .show();
-            } //End block
+            } 
             res.setReady();
-        } //End block
+        } 
         break;
         case JS_CONFIRM:
     if(mWebChromeClient != null)        
@@ -509,7 +517,7 @@ switch(msg.what){
                     res.cancel();
                     res.setReady();
                     break;
-                } //End block
+                } 
                 new AlertDialog.Builder(mContext)
                                 .setTitle(getJsDialogTitle(url))
                                 .setMessage(message)
@@ -519,12 +527,12 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(which);
             addTaint(dialog.getTaint());
             res.confirm();
-            // ---------- Original Method ----------
-            //res.confirm();
+            
+            
         }
 })
                                 .setNegativeButton(R.string.cancel,
@@ -533,12 +541,12 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(which);
             addTaint(dialog.getTaint());
             res.cancel();
-            // ---------- Original Method ----------
-            //res.cancel();
+            
+            
         }
 })
                                 .setOnCancelListener(
@@ -546,17 +554,17 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.435 -0400", hash_original_method = "B1C3BAB04B07B0569E11AD7C29C844EB", hash_generated_method = "9FDF055D2C79806716337003609F7298")
         public void onCancel(
                                                     DialogInterface dialog) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(dialog.getTaint());
             res.cancel();
-            // ---------- Original Method ----------
-            //res.cancel();
+            
+            
         }
 })
                                 .show();
-            } //End block
+            } 
             res.setReady();
-        } //End block
+        } 
         break;
         case JS_PROMPT:
     if(mWebChromeClient != null)        
@@ -573,7 +581,7 @@ switch(msg.what){
                     res.cancel();
                     res.setReady();
                     break;
-                } //End block
+                } 
                 final LayoutInflater factory = LayoutInflater
                                 .from(mContext);
                 final View view = factory.inflate(R.layout.js_prompt,
@@ -592,14 +600,14 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int whichButton) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(whichButton);
             addTaint(dialog.getTaint());
             res.confirm(v.getText()
                                                         .toString());
-            // ---------- Original Method ----------
-            //res.confirm(v.getText()
-                                                        //.toString());
+            
+            
+                                                        
         }
 })
                                 .setNegativeButton(R.string.cancel,
@@ -608,12 +616,12 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int whichButton) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(whichButton);
             addTaint(dialog.getTaint());
             res.cancel();
-            // ---------- Original Method ----------
-            //res.cancel();
+            
+            
         }
 })
                                 .setOnCancelListener(
@@ -621,17 +629,17 @@ switch(msg.what){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.437 -0400", hash_original_method = "B1C3BAB04B07B0569E11AD7C29C844EB", hash_generated_method = "9FDF055D2C79806716337003609F7298")
         public void onCancel(
                                                     DialogInterface dialog) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(dialog.getTaint());
             res.cancel();
-            // ---------- Original Method ----------
-            //res.cancel();
+            
+            
         }
 })
                                 .show();
-            } //End block
+            } 
             res.setReady();
-        } //End block
+        } 
         break;
         case JS_UNLOAD:
     if(mWebChromeClient != null)        
@@ -647,7 +655,7 @@ switch(msg.what){
                     res.cancel();
                     res.setReady();
                     break;
-                } //End block
+                } 
                 final String m = mContext.getString(
                                 R.string.js_dialog_before_unload, message);
                 new AlertDialog.Builder(mContext)
@@ -658,12 +666,12 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(which);
             addTaint(dialog.getTaint());
             res.confirm();
-            // ---------- Original Method ----------
-            //res.confirm();
+            
+            
         }
 })
                                 .setNegativeButton(R.string.cancel,
@@ -672,18 +680,18 @@ switch(msg.what){
         public void onClick(
                                                     DialogInterface dialog,
                                                     int which) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(which);
             addTaint(dialog.getTaint());
             res.cancel();
-            // ---------- Original Method ----------
-            //res.cancel();
+            
+            
         }
 })
                                 .show();
-            } //End block
+            } 
             res.setReady();
-        } //End block
+        } 
         break;
         case JS_TIMEOUT:
     if(mWebChromeClient != null)        
@@ -692,13 +700,13 @@ switch(msg.what){
     if(mWebChromeClient.onJsTimeout())            
             {
                 res.confirm();
-            } //End block
+            } 
             else
             {
                 res.cancel();
-            } //End block
+            } 
             res.setReady();
-        } //End block
+        } 
         break;
         case RECEIVED_CERTIFICATE:
         mWebView.setCertificate((SslCertificate) msg.obj);
@@ -707,14 +715,14 @@ switch(msg.what){
         synchronized
 (this)        {
             notify();
-        } //End block
+        } 
         break;
         case SCALE_CHANGED:
     if(mWebViewClient != null)        
         {
             mWebViewClient.onScaleChanged(mWebView, msg.getData()
                             .getFloat("old"), msg.getData().getFloat("new"));
-        } //End block
+        } 
         break;
         case SWITCH_OUT_HISTORY:
         mWebView.switchOutDrawHistory();
@@ -723,7 +731,7 @@ switch(msg.what){
     if(mWebChromeClient == null)        
         {
             break;
-        } //End block
+        } 
         String message = msg.getData().getString("message");
         String sourceID = msg.getData().getString("sourceID");
         int lineNumber = msg.getData().getInt("lineNumber");
@@ -732,7 +740,7 @@ switch(msg.what){
     if(msgLevel < 0 || msgLevel >= numberOfMessageLevels)        
         {
             msgLevel = 0;
-        } //End block
+        } 
         ConsoleMessage.MessageLevel messageLevel = ConsoleMessage.MessageLevel.values()[msgLevel];
     if(!mWebChromeClient.onConsoleMessage(new ConsoleMessage(message, sourceID,
                         lineNumber, messageLevel)))        
@@ -752,34 +760,34 @@ switch(messageLevel){
             Log.d(logTag, logMessage);
             break;
 }
-        } //End block
+        } 
         break;
         case GET_VISITED_HISTORY:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.getVisitedHistory((ValueCallback<String[]>)msg.obj);
-        } //End block
+        } 
         break;
         case OPEN_FILE_CHOOSER:
     if(mWebChromeClient != null)        
         {
             UploadFileMessageData data = (UploadFileMessageData)msg.obj;
             mWebChromeClient.openFileChooser(data.getUploadFile(), data.getAcceptType());
-        } //End block
+        } 
         break;
         case ADD_HISTORY_ITEM:
     if(mWebBackForwardListClient != null)        
         {
             mWebBackForwardListClient.onNewHistoryItem(
                             (WebHistoryItem) msg.obj);
-        } //End block
+        } 
         break;
         case HISTORY_INDEX_CHANGED:
     if(mWebBackForwardListClient != null)        
         {
             mWebBackForwardListClient.onIndexChanged(
                             (WebHistoryItem) msg.obj, msg.arg1);
-        } //End block
+        } 
         break;
         case AUTH_CREDENTIALS:
         {
@@ -790,12 +798,12 @@ switch(messageLevel){
             mWebView.setHttpAuthUsernamePassword(
                         host, realm, username, password);
             break;
-        } //End block
+        } 
         case SET_INSTALLABLE_WEBAPP:
     if(mWebChromeClient != null)        
         {
             mWebChromeClient.setInstallableWebApp();
-        } //End block
+        } 
         break;
         case NOTIFY_SEARCHBOX_LISTENERS:
         {
@@ -803,7 +811,7 @@ switch(messageLevel){
             @SuppressWarnings("unchecked") List<String> suggestions = (List<String>) msg.obj;
             searchBox.handleSuggestions(msg.getData().getString("query"), suggestions);
             break;
-        } //End block
+        } 
         case AUTO_LOGIN:
         {
     if(mWebViewClient != null)            
@@ -813,16 +821,16 @@ switch(messageLevel){
                 String args = msg.getData().getString("args");
                 mWebViewClient.onReceivedLoginRequest(mWebView, realm,
                             account, args);
-            } //End block
+            } 
             break;
-        } //End block
+        } 
         case SEARCHBOX_IS_SUPPORTED_CALLBACK:
         {
             SearchBoxImpl searchBox = (SearchBoxImpl) mWebView.getSearchBox();
             Boolean supported = (Boolean) msg.obj;
             searchBox.handleIsSupportedCallback(supported);
             break;
-        } //End block
+        } 
         case SEARCHBOX_DISPATCH_COMPLETE_CALLBACK:
         {
             SearchBoxImpl searchBox = (SearchBoxImpl) mWebView.getSearchBox();
@@ -830,28 +838,29 @@ switch(messageLevel){
             searchBox.handleDispatchCompleteCallback(msg.getData().getString("function"),
                         msg.getData().getInt("id"), success);
             break;
-        } //End block
+        } 
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.448 -0400", hash_original_method = "F4FA55F4EB9CE414FB8C02AF96B11745", hash_generated_method = "E381422A41272317901F7F3449B1221F")
     public int getProgress() {
         int var2696E4DA487A70C034C78C6D39EE32D1_1309453443 = (mLatestProgress);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090251163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2090251163;
-        // ---------- Original Method ----------
-        //return mLatestProgress;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.448 -0400", hash_original_method = "ADEA75F6BB5426452E05F86965232852", hash_generated_method = "1E917B7774EEA475E723DB7EC0CF755D")
      void switchOutDrawHistory() {
         sendMessage(obtainMessage(SWITCH_OUT_HISTORY));
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(SWITCH_OUT_HISTORY));
+        
+        
     }
 
     
@@ -862,7 +871,7 @@ switch(messageLevel){
     if(URLUtil.isDataUrl(url))        
         {
             title = mContext.getString(R.string.js_dialog_title_default);
-        } //End block
+        } 
         else
         {
             try 
@@ -870,33 +879,33 @@ switch(messageLevel){
                 URL aUrl = new URL(url);
                 title = mContext.getString(R.string.js_dialog_title,
                         aUrl.getProtocol() + "://" + aUrl.getHost());
-            } //End block
+            } 
             catch (MalformedURLException ex)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
         varCD126D34DD1576383395AEE5945E9C28_1347079167.addTaint(taint);
         return varCD126D34DD1576383395AEE5945E9C28_1347079167;
-        // ---------- Original Method ----------
-        //String title = url;
-        //if (URLUtil.isDataUrl(url)) {
-            //title = mContext.getString(R.string.js_dialog_title_default);
-        //} else {
-            //try {
-                //URL aUrl = new URL(url);
-                //title = mContext.getString(R.string.js_dialog_title,
-                        //aUrl.getProtocol() + "://" + aUrl.getHost());
-            //} catch (MalformedURLException ex) {
-            //}
-        //}
-        //return title;
+        
+        
+        
+            
+        
+            
+                
+                
+                        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.450 -0400", hash_original_method = "FEA38F8F6B5615AC736396CA90380013", hash_generated_method = "CFBAA498130B0F26025309735A74A8AF")
     public void onPageStarted(String url, Bitmap favicon) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(favicon.getTaint());
         addTaint(url.getTaint());
     if(PERF_PROBE)        
@@ -904,27 +913,27 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
             mWebCoreThreadTime = SystemClock.currentThreadTimeMillis();
             mWebCoreIdleTime = 0;
             Network.getInstance(mContext).startTiming();
-        } //End block
+        } 
         Message msg = obtainMessage(PAGE_STARTED);
         msg.obj = favicon;
         msg.getData().putString("url", url);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (PERF_PROBE) {
-            //mWebCoreThreadTime = SystemClock.currentThreadTimeMillis();
-            //mWebCoreIdleTime = 0;
-            //Network.getInstance(mContext).startTiming();
-        //}
-        //Message msg = obtainMessage(PAGE_STARTED);
-        //msg.obj = favicon;
-        //msg.getData().putString("url", url);
-        //sendMessage(msg);
+        
+        
+            
+            
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.451 -0400", hash_original_method = "0C202F92443A2E2B58845ECCCDAD23DA", hash_generated_method = "ADAE2C8838B39F33B9BC504C52C25EF6")
     public void onPageFinished(String url) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(url.getTaint());
     if(PERF_PROBE)        
         {
@@ -932,84 +941,87 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
                     (SystemClock.currentThreadTimeMillis() - mWebCoreThreadTime)
                     + " ms and idled " + mWebCoreIdleTime + " ms");
             Network.getInstance(mContext).stopTiming();
-        } //End block
+        } 
         Message msg = obtainMessage(PAGE_FINISHED, url);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (PERF_PROBE) {
-            //Log.d("WebCore", "WebCore thread used " +
-                    //(SystemClock.currentThreadTimeMillis() - mWebCoreThreadTime)
-                    //+ " ms and idled " + mWebCoreIdleTime + " ms");
-            //Network.getInstance(mContext).stopTiming();
-        //}
-        //Message msg = obtainMessage(PAGE_FINISHED, url);
-        //sendMessage(msg);
+        
+        
+            
+                    
+                    
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.451 -0400", hash_original_method = "CAA94892A4D7B008F19D8BD2AD9FB2D3", hash_generated_method = "C0809B9CEB0B717846126AD99662E3B1")
     public void onTooManyRedirects(Message cancelMsg, Message continueMsg) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(continueMsg.getTaint());
         addTaint(cancelMsg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.451 -0400", hash_original_method = "E5C6F1F12DEE48235072B52E91052ED8", hash_generated_method = "D945CDC7D58363B3C3FADA67CB453973")
     public void onReceivedError(int errorCode, String description,
             String failingUrl) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(failingUrl.getTaint());
         addTaint(description.getTaint());
         addTaint(errorCode);
     if(mWebViewClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(REPORT_ERROR);
         msg.arg1 = errorCode;
         msg.getData().putString("description", description);
         msg.getData().putString("failingUrl", failingUrl);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(REPORT_ERROR);
-        //msg.arg1 = errorCode;
-        //msg.getData().putString("description", description);
-        //msg.getData().putString("failingUrl", failingUrl);
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.452 -0400", hash_original_method = "5E30734A74D85B2FEB399A04359A0FF5", hash_generated_method = "65DDC04AC43181BB68163679D7F82159")
     public void onFormResubmission(Message dontResend,
             Message resend) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(resend.getTaint());
         addTaint(dontResend.getTaint());
     if(mWebViewClient == null)        
         {
             dontResend.sendToTarget();
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(RESEND_POST_DATA);
         Bundle bundle = msg.getData();
         bundle.putParcelable("resend", resend);
         bundle.putParcelable("dontResend", dontResend);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //dontResend.sendToTarget();
-            //return;
-        //}
-        //Message msg = obtainMessage(RESEND_POST_DATA);
-        //Bundle bundle = msg.getData();
-        //bundle.putParcelable("resend", resend);
-        //bundle.putParcelable("dontResend", dontResend);
-        //sendMessage(msg);
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1026,36 +1038,37 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varDF1546B25C6AF6BCCFD4248C40C166AB_986297210 = (res.getResult().booleanValue());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1695950165 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1695950165;
-        // ---------- Original Method ----------
-        //ResultTransport<Boolean> res = new ResultTransport<Boolean>(false);
-        //Message msg = obtainMessage(OVERRIDE_URL);
-        //msg.getData().putString("url", url);
-        //msg.obj = res;
-        //synchronized (this) {
-            //sendMessage(msg);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG, "Caught exception while waiting for overrideUrl");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return res.getResult().booleanValue();
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.453 -0400", hash_original_method = "4FA57A455CA03EC6D649ED38E4E56F01", hash_generated_method = "454878E772B11580DD3FCF39931D1F74")
     public void onReceivedHttpAuthRequest(HttpAuthHandler handler,
             String hostName, String realmName) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(realmName.getTaint());
         addTaint(hostName.getTaint());
         addTaint(handler.getTaint());
@@ -1063,114 +1076,117 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
         {
             handler.cancel();
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(AUTH_REQUEST, handler);
         msg.getData().putString("host", hostName);
         msg.getData().putString("realm", realmName);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //handler.cancel();
-            //return;
-        //}
-        //Message msg = obtainMessage(AUTH_REQUEST, handler);
-        //msg.getData().putString("host", hostName);
-        //msg.getData().putString("realm", realmName);
-        //sendMessage(msg);
+        
+        
+            
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.453 -0400", hash_original_method = "8BC2AAF24BCB58C98055A520D9453CBA", hash_generated_method = "65108861E9D48F0E27E664564DE50635")
     public void onReceivedSslError(SslErrorHandler handler, SslError error) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(error.getTaint());
         addTaint(handler.getTaint());
     if(mWebViewClient == null)        
         {
             handler.cancel();
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(SSL_ERROR);
         HashMap<String, Object> map = new HashMap();
         map.put("handler", handler);
         map.put("error", error);
         msg.obj = map;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //handler.cancel();
-            //return;
-        //}
-        //Message msg = obtainMessage(SSL_ERROR);
-        //HashMap<String, Object> map = new HashMap();
-        //map.put("handler", handler);
-        //map.put("error", error);
-        //msg.obj = map;
-        //sendMessage(msg);
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.454 -0400", hash_original_method = "024A377297E93EBA7DF0A134D94D78F7", hash_generated_method = "534AB0D5ABAEAA528E2215D88054A2E6")
     public void onProceededAfterSslError(SslError error) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(error.getTaint());
     if(mWebViewClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(PROCEEDED_AFTER_SSL_ERROR);
         msg.obj = error;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(PROCEEDED_AFTER_SSL_ERROR);
-        //msg.obj = error;
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.454 -0400", hash_original_method = "86B49DF771A8EEA4B9DCFCD28BAACF5B", hash_generated_method = "FC7CB539E70C72771C32EEC72C3D0E46")
     public void onReceivedClientCertRequest(ClientCertRequestHandler handler, String host_and_port) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(host_and_port.getTaint());
         addTaint(handler.getTaint());
     if(mWebViewClient == null)        
         {
             handler.cancel();
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(CLIENT_CERT_REQUEST);
         HashMap<String, Object> map = new HashMap();
         map.put("handler", handler);
         map.put("host_and_port", host_and_port);
         msg.obj = map;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //handler.cancel();
-            //return;
-        //}
-        //Message msg = obtainMessage(CLIENT_CERT_REQUEST);
-        //HashMap<String, Object> map = new HashMap();
-        //map.put("handler", handler);
-        //map.put("host_and_port", host_and_port);
-        //msg.obj = map;
-        //sendMessage(msg);
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.454 -0400", hash_original_method = "39DDC3E15586955BE54A8DF95CFEEEEF", hash_generated_method = "C39C2E5178C612849536978728DF0F2F")
     public void onReceivedCertificate(SslCertificate certificate) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(certificate.getTaint());
         sendMessage(obtainMessage(RECEIVED_CERTIFICATE, certificate));
-        // ---------- Original Method ----------
-        //sendMessage(obtainMessage(RECEIVED_CERTIFICATE, certificate));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.454 -0400", hash_original_method = "1419AC91B69314146C4F39503A4D545B", hash_generated_method = "BA71C6009B65DC8F60C5E57397F22DC3")
     public void doUpdateVisitedHistory(String url, boolean isReload) {
         addTaint(isReload);
@@ -1178,13 +1194,13 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
     if(mWebViewClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(UPDATE_VISITED, isReload ? 1 : 0, 0, url));
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(UPDATE_VISITED, isReload ? 1 : 0, 0, url));
+        
+        
+            
+        
+        
     }
 
     
@@ -1196,104 +1212,107 @@ String varCD126D34DD1576383395AEE5945E9C28_1347079167 =         title;
 WebResourceResponse var540C13E9E156B687226421B24F2DF178_1192751099 =             null;
             var540C13E9E156B687226421B24F2DF178_1192751099.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1192751099;
-        } //End block
+        } 
         WebResourceResponse r = mWebViewClient.shouldInterceptRequest(mWebView, url);
     if(r == null)        
         {
             sendMessage(obtainMessage(LOAD_RESOURCE, url));
-        } //End block
+        } 
 WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
         var4C1F3C86A0E56B6E375080F5F710547E_100226977.addTaint(taint);
         return var4C1F3C86A0E56B6E375080F5F710547E_100226977;
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return null;
-        //}
-        //WebResourceResponse r =
-                //mWebViewClient.shouldInterceptRequest(mWebView, url);
-        //if (r == null) {
-            //sendMessage(obtainMessage(LOAD_RESOURCE, url));
-        //}
-        //return r;
+        
+        
+            
+        
+        
+                
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.455 -0400", hash_original_method = "AE6FAC3658CBE746F7970ADD50E1DD7A", hash_generated_method = "D31D3097E056B5FA7CBB8E40932FD9EF")
     public void onUnhandledKeyEvent(KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
     if(mWebViewClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(ASYNC_KEYEVENTS, event));
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(ASYNC_KEYEVENTS, event));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.455 -0400", hash_original_method = "32F0A585D03AD391628455766053FDEF", hash_generated_method = "842FEA5E2981E8A19F932454811C0BD3")
     public void onScaleChanged(float oldScale, float newScale) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newScale);
         addTaint(oldScale);
     if(mWebViewClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(SCALE_CHANGED);
         Bundle bundle = msg.getData();
         bundle.putFloat("old", oldScale);
         bundle.putFloat("new", newScale);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(SCALE_CHANGED);
-        //Bundle bundle = msg.getData();
-        //bundle.putFloat("old", oldScale);
-        //bundle.putFloat("new", newScale);
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.456 -0400", hash_original_method = "96CFDF49B56568DC278F123893B1481C", hash_generated_method = "9BB96589F62C0923C2A031B23FD02F39")
      void onReceivedLoginRequest(String realm, String account, String args) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(args.getTaint());
         addTaint(account.getTaint());
         addTaint(realm.getTaint());
     if(mWebViewClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(AUTO_LOGIN);
         Bundle bundle = msg.getData();
         bundle.putString("realm", realm);
         bundle.putString("account", account);
         bundle.putString("args", args);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebViewClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(AUTO_LOGIN);
-        //Bundle bundle = msg.getData();
-        //bundle.putString("realm", realm);
-        //bundle.putString("account", account);
-        //bundle.putString("args", args);
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.456 -0400", hash_original_method = "757A7F1755FBEFCF499F2AF609552311", hash_generated_method = "1E61071F3E5CD1441F04F2854D2984C2")
     public boolean onDownloadStart(String url, String userAgent,
             String contentDisposition, String mimetype, long contentLength) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(contentLength);
         addTaint(mimetype.getTaint());
         addTaint(contentDisposition.getTaint());
@@ -1304,7 +1323,7 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
             boolean var68934A3E9455FA72420237EB05902327_478848700 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_206717902 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_206717902;
-        } //End block
+        } 
         Message msg = obtainMessage(DOWNLOAD_FILE);
         Bundle bundle = msg.getData();
         bundle.putString("url", url);
@@ -1316,26 +1335,26 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
         boolean varB326B5062B2F0E69046810717534CB09_1406704768 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_446134714 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_446134714;
-        // ---------- Original Method ----------
-        //if (mDownloadListener == null) {
-            //return false;
-        //}
-        //Message msg = obtainMessage(DOWNLOAD_FILE);
-        //Bundle bundle = msg.getData();
-        //bundle.putString("url", url);
-        //bundle.putString("userAgent", userAgent);
-        //bundle.putString("mimetype", mimetype);
-        //bundle.putLong("contentLength", contentLength);
-        //bundle.putString("contentDisposition", contentDisposition);
-        //sendMessage(msg);
-        //return true;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.457 -0400", hash_original_method = "E36C2E9038F101EB831B9776820C94AF", hash_generated_method = "386523F4A2531136ED8498C1A71F8E13")
     public boolean onSavePassword(String schemePlusHost, String username,
             String password, Message resumeMsg) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(resumeMsg.getTaint());
         addTaint(password.getTaint());
         addTaint(username.getTaint());
@@ -1343,7 +1362,7 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
     if(DebugFlags.CALLBACK_PROXY)        
         {
             junit.framework.Assert.assertNull(resumeMsg);
-        } //End block
+        } 
         resumeMsg = obtainMessage(NOTIFY);
         Message msg = obtainMessage(SAVE_PASSWORD, resumeMsg);
         Bundle bundle = msg.getData();
@@ -1356,42 +1375,42 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_404882337 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1446568992 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1446568992;
-        // ---------- Original Method ----------
-        //if (DebugFlags.CALLBACK_PROXY) {
-            //junit.framework.Assert.assertNull(resumeMsg);
-        //}
-        //resumeMsg = obtainMessage(NOTIFY);
-        //Message msg = obtainMessage(SAVE_PASSWORD, resumeMsg);
-        //Bundle bundle = msg.getData();
-        //bundle.putString("host", schemePlusHost);
-        //bundle.putString("username", username);
-        //bundle.putString("password", password);
-        //synchronized (this) {
-            //sendMessage(msg);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG,
-                        //"Caught exception while waiting for onSavePassword");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                        
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.457 -0400", hash_original_method = "FE09891259ADB46761F758E0F5C88D74", hash_generated_method = "685DCC0577C599ACC25B05A3D2680181")
     public void onReceivedHttpAuthCredentials(String host, String realm,
             String username, String password) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(password.getTaint());
         addTaint(username.getTaint());
         addTaint(realm.getTaint());
@@ -1402,53 +1421,54 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
         msg.getData().putString("username", username);
         msg.getData().putString("password", password);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(AUTH_CREDENTIALS);
-        //msg.getData().putString("host", host);
-        //msg.getData().putString("realm", realm);
-        //msg.getData().putString("username", username);
-        //msg.getData().putString("password", password);
-        //sendMessage(msg);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.458 -0400", hash_original_method = "7D23376057076E49A1BAAD127CCE1E2E", hash_generated_method = "88F5FCBF394DBBC81563104135377A97")
     public void onProgressChanged(int newProgress) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         synchronized
 (this)        {
     if(mLatestProgress == newProgress)            
             {
                 return;
-            } //End block
+            } 
             mLatestProgress = newProgress;
     if(mWebChromeClient == null)            
             {
                 return;
-            } //End block
+            } 
     if(!mProgressUpdatePending)            
             {
                 sendEmptyMessage(PROGRESS);
                 mProgressUpdatePending = true;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (this) {
-            //if (mLatestProgress == newProgress) {
-                //return;
-            //}
-            //mLatestProgress = newProgress;
-            //if (mWebChromeClient == null) {
-                //return;
-            //}
-            //if (!mProgressUpdatePending) {
-                //sendEmptyMessage(PROGRESS);
-                //mProgressUpdatePending = true;
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+            
+                
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.458 -0400", hash_original_method = "B29F2764BB6A56E843DFC7CBC2F6C034", hash_generated_method = "20F500B19C9F10947F5CC595D793AE61")
     public BrowserFrame createWindow(boolean dialog, boolean userGesture) {
         addTaint(userGesture);
@@ -1458,7 +1478,7 @@ WebResourceResponse var4C1F3C86A0E56B6E375080F5F710547E_100226977 =         r;
 BrowserFrame var540C13E9E156B687226421B24F2DF178_1592384123 =             null;
             var540C13E9E156B687226421B24F2DF178_1592384123.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1592384123;
-        } //End block
+        } 
         WebView.WebViewTransport transport = mWebView.new WebViewTransport();
         final Message msg = obtainMessage(NOTIFY);
         msg.obj = transport;
@@ -1469,11 +1489,11 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_1592384123 =             null;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         WebView w = transport.getWebView();
     if(w != null)        
         {
@@ -1484,130 +1504,136 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_1592384123 =             null;
 BrowserFrame varB5C22104BD5B0F349A1E0CAA7A3E7517_1464047454 =                 core.getBrowserFrame();
                 varB5C22104BD5B0F349A1E0CAA7A3E7517_1464047454.addTaint(taint);
                 return varB5C22104BD5B0F349A1E0CAA7A3E7517_1464047454;
-            } //End block
-        } //End block
+            } 
+        } 
 BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
         var540C13E9E156B687226421B24F2DF178_687980717.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_687980717;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.459 -0400", hash_original_method = "08655C1DEC40A72DA93F91A66B628CEC", hash_generated_method = "2E75BA126814F868313BF019EE0A11D0")
     public void onRequestFocus() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         sendEmptyMessage(REQUEST_FOCUS);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //sendEmptyMessage(REQUEST_FOCUS);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.459 -0400", hash_original_method = "6FD913BE3AA43F9AAEFF1CB8B9D39A33", hash_generated_method = "E24EEF1CE11ED62624D8C076675BC0F1")
     public void onCloseWindow(WebView window) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(window.getTaint());
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(CLOSE_WINDOW, window));
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(CLOSE_WINDOW, window));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.459 -0400", hash_original_method = "F08C9B8424214ACDF6DD6A6D99BF0681", hash_generated_method = "0FC76FCD9CD9FF11D31F0C62D4AE8681")
     public void onReceivedIcon(Bitmap icon) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(icon.getTaint());
         WebHistoryItem i = mBackForwardList.getCurrentItem();
     if(i != null)        
         {
             i.setFavicon(icon);
-        } //End block
+        } 
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(RECEIVED_ICON, icon));
-        // ---------- Original Method ----------
-        //WebHistoryItem i = mBackForwardList.getCurrentItem();
-        //if (i != null) {
-            //i.setFavicon(icon);
-        //}
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(RECEIVED_ICON, icon));
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.460 -0400", hash_original_method = "F0350B43E0ECCB1BDA5D312CA7F06F8A", hash_generated_method = "1327EC36DA83E0AF893DF4E175241E7F")
      void onReceivedTouchIconUrl(String url, boolean precomposed) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(precomposed);
         addTaint(url.getTaint());
         WebHistoryItem i = mBackForwardList.getCurrentItem();
     if(i != null)        
         {
             i.setTouchIconUrl(url, precomposed);
-        } //End block
+        } 
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(RECEIVED_TOUCH_ICON_URL,
                 precomposed ? 1 : 0, 0, url));
-        // ---------- Original Method ----------
-        //WebHistoryItem i = mBackForwardList.getCurrentItem();
-        //if (i != null) {
-            //i.setTouchIconUrl(url, precomposed);
-        //}
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(RECEIVED_TOUCH_ICON_URL,
-                //precomposed ? 1 : 0, 0, url));
+        
+        
+        
+            
+        
+        
+            
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.461 -0400", hash_original_method = "91CD241BD0413BEA62EE65C753144C77", hash_generated_method = "6D29343564A2541A49EE8398A00A6849")
     public void onReceivedTitle(String title) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(title.getTaint());
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(RECEIVED_TITLE, title));
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(RECEIVED_TITLE, title));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.461 -0400", hash_original_method = "7099C31F609DFFDBC7FE4DB990C0E80D", hash_generated_method = "E31FD8B6479C2570C0E96067422C6DB8")
     public void onJsAlert(String url, String message) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(message.getTaint());
         addTaint(url.getTaint());
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         JsResult result = new JsResult(this, false);
         Message alert = obtainMessage(JS_ALERT, result);
         alert.getData().putString("message", message);
@@ -1618,34 +1644,34 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //JsResult result = new JsResult(this, false);
-        //Message alert = obtainMessage(JS_ALERT, result);
-        //alert.getData().putString("message", message);
-        //alert.getData().putString("url", url);
-        //synchronized (this) {
-            //sendMessage(alert);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG, "Caught exception while waiting for jsAlert");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.462 -0400", hash_original_method = "043F4DC8C3BE16DF648461B096D08CDF", hash_generated_method = "FA5D59C96D8E16531C427415E4D2A8A1")
     public boolean onJsConfirm(String url, String message) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(message.getTaint());
         addTaint(url.getTaint());
     if(mWebChromeClient == null)        
@@ -1653,7 +1679,7 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
             boolean var68934A3E9455FA72420237EB05902327_774155962 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1413772380 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1413772380;
-        } //End block
+        } 
         JsResult result = new JsResult(this, false);
         Message confirm = obtainMessage(JS_CONFIRM, result);
         confirm.getData().putString("message", message);
@@ -1664,38 +1690,38 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var8F25EF0C481497C3C0F9585128B5BF1F_1269526752 = (result.getResult());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645576747 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_645576747;
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return false;
-        //}
-        //JsResult result = new JsResult(this, false);
-        //Message confirm = obtainMessage(JS_CONFIRM, result);
-        //confirm.getData().putString("message", message);
-        //confirm.getData().putString("url", url);
-        //synchronized (this) {
-            //sendMessage(confirm);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG, "Caught exception while waiting for jsConfirm");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return result.getResult();
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.463 -0400", hash_original_method = "994C85F742AA26A8662DEB752BD55192", hash_generated_method = "F03594ABF73EFFD7CBE86C44FD47F2CF")
     public String onJsPrompt(String url, String message, String defaultValue) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(defaultValue.getTaint());
         addTaint(message.getTaint());
         addTaint(url.getTaint());
@@ -1704,7 +1730,7 @@ BrowserFrame var540C13E9E156B687226421B24F2DF178_687980717 =         null;
 String var540C13E9E156B687226421B24F2DF178_1665605889 =             null;
             var540C13E9E156B687226421B24F2DF178_1665605889.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1665605889;
-        } //End block
+        } 
         JsPromptResult result = new JsPromptResult(this);
         Message prompt = obtainMessage(JS_PROMPT, result);
         prompt.getData().putString("message", message);
@@ -1716,39 +1742,39 @@ String var540C13E9E156B687226421B24F2DF178_1665605889 =             null;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringResult();
         var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988.addTaint(taint);
         return var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988;
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return null;
-        //}
-        //JsPromptResult result = new JsPromptResult(this);
-        //Message prompt = obtainMessage(JS_PROMPT, result);
-        //prompt.getData().putString("message", message);
-        //prompt.getData().putString("default", defaultValue);
-        //prompt.getData().putString("url", url);
-        //synchronized (this) {
-            //sendMessage(prompt);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG, "Caught exception while waiting for jsPrompt");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return result.getStringResult();
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.463 -0400", hash_original_method = "C62C6CDF3925B75D5791E39530CD4D60", hash_generated_method = "8B27F90A8FE0AC8AA94B20E1342AD325")
     public boolean onJsBeforeUnload(String url, String message) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(message.getTaint());
         addTaint(url.getTaint());
     if(mWebChromeClient == null)        
@@ -1756,7 +1782,7 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
             boolean varB326B5062B2F0E69046810717534CB09_1119915578 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_795403570 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_795403570;
-        } //End block
+        } 
         JsResult result = new JsResult(this, true);
         Message confirm = obtainMessage(JS_UNLOAD, result);
         confirm.getData().putString("message", message);
@@ -1767,32 +1793,32 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var8F25EF0C481497C3C0F9585128B5BF1F_1665212631 = (result.getResult());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_295637110 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_295637110;
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return true;
-        //}
-        //JsResult result = new JsResult(this, true);
-        //Message confirm = obtainMessage(JS_UNLOAD, result);
-        //confirm.getData().putString("message", message);
-        //confirm.getData().putString("url", url);
-        //synchronized (this) {
-            //sendMessage(confirm);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG, "Caught exception while waiting for jsUnload");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return result.getResult();
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -1801,7 +1827,7 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
             String url, String databaseIdentifier, long currentQuota,
             long estimatedSize, long totalUsedQuota,
             WebStorage.QuotaUpdater quotaUpdater) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(quotaUpdater.getTaint());
         addTaint(totalUsedQuota);
         addTaint(estimatedSize);
@@ -1812,7 +1838,7 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
         {
             quotaUpdater.updateQuota(currentQuota);
             return;
-        } //End block
+        } 
         Message exceededQuota = obtainMessage(EXCEEDED_DATABASE_QUOTA);
         HashMap<String, Object> map = new HashMap();
         map.put("databaseIdentifier", databaseIdentifier);
@@ -1823,28 +1849,28 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
         map.put("quotaUpdater", quotaUpdater);
         exceededQuota.obj = map;
         sendMessage(exceededQuota);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //quotaUpdater.updateQuota(currentQuota);
-            //return;
-        //}
-        //Message exceededQuota = obtainMessage(EXCEEDED_DATABASE_QUOTA);
-        //HashMap<String, Object> map = new HashMap();
-        //map.put("databaseIdentifier", databaseIdentifier);
-        //map.put("url", url);
-        //map.put("currentQuota", currentQuota);
-        //map.put("estimatedSize", estimatedSize);
-        //map.put("totalUsedQuota", totalUsedQuota);
-        //map.put("quotaUpdater", quotaUpdater);
-        //exceededQuota.obj = map;
-        //sendMessage(exceededQuota);
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.465 -0400", hash_original_method = "6FEDE2ECE3E4B773BADE3DEA30808B9D", hash_generated_method = "9C95392AAD5C30738282EDE34ED7B4D3")
     public void onReachedMaxAppCacheSize(long spaceNeeded,
             long totalUsedQuota, WebStorage.QuotaUpdater quotaUpdater) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(quotaUpdater.getTaint());
         addTaint(totalUsedQuota);
         addTaint(spaceNeeded);
@@ -1852,7 +1878,7 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
         {
             quotaUpdater.updateQuota(0);
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(REACHED_APPCACHE_MAXSIZE);
         HashMap<String, Object> map = new HashMap();
         map.put("spaceNeeded", spaceNeeded);
@@ -1860,66 +1886,66 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
         map.put("quotaUpdater", quotaUpdater);
         msg.obj = map;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //quotaUpdater.updateQuota(0);
-            //return;
-        //}
-        //Message msg = obtainMessage(REACHED_APPCACHE_MAXSIZE);
-        //HashMap<String, Object> map = new HashMap();
-        //map.put("spaceNeeded", spaceNeeded);
-        //map.put("totalUsedQuota", totalUsedQuota);
-        //map.put("quotaUpdater", quotaUpdater);
-        //msg.obj = map;
-        //sendMessage(msg);
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.466 -0400", hash_original_method = "26533187FD051756DFC2CF1CEE3F806F", hash_generated_method = "EE8D3F6B2F5FC8DC2D3B1E208D82B016")
     public void onGeolocationPermissionsShowPrompt(String origin,
             GeolocationPermissions.Callback callback) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(callback.getTaint());
         addTaint(origin.getTaint());
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         Message showMessage = obtainMessage(GEOLOCATION_PERMISSIONS_SHOW_PROMPT);
         HashMap<String, Object> map = new HashMap();
         map.put("origin", origin);
         map.put("callback", callback);
         showMessage.obj = map;
         sendMessage(showMessage);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //Message showMessage =
-                //obtainMessage(GEOLOCATION_PERMISSIONS_SHOW_PROMPT);
-        //HashMap<String, Object> map = new HashMap();
-        //map.put("origin", origin);
-        //map.put("callback", callback);
-        //showMessage.obj = map;
-        //sendMessage(showMessage);
+        
+        
+            
+        
+        
+                
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.466 -0400", hash_original_method = "9C25F80E0E6C6F6C487DBDD3AFCBA4E7", hash_generated_method = "9A0E49491849C21E3D11BB7370A84677")
     public void onGeolocationPermissionsHidePrompt() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         Message hideMessage = obtainMessage(GEOLOCATION_PERMISSIONS_HIDE_PROMPT);
         sendMessage(hideMessage);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //Message hideMessage = obtainMessage(GEOLOCATION_PERMISSIONS_HIDE_PROMPT);
-        //sendMessage(hideMessage);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -1932,35 +1958,35 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(ADD_MESSAGE_TO_CONSOLE);
         msg.getData().putString("message", message);
         msg.getData().putString("sourceID", sourceID);
         msg.getData().putInt("lineNumber", lineNumber);
         msg.getData().putInt("msgLevel", msgLevel);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(ADD_MESSAGE_TO_CONSOLE);
-        //msg.getData().putString("message", message);
-        //msg.getData().putString("sourceID", sourceID);
-        //msg.getData().putInt("lineNumber", lineNumber);
-        //msg.getData().putInt("msgLevel", msgLevel);
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.468 -0400", hash_original_method = "288C2B13F2CEF8B24515719050488B19", hash_generated_method = "7CEF8C59B69C0317EA816D09841B1AED")
     public boolean onJsTimeout() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mWebChromeClient == null)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_715827772 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_901201577 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_901201577;
-        } //End block
+        } 
         JsResult result = new JsResult(this, true);
         Message timeout = obtainMessage(JS_TIMEOUT, result);
         synchronized
@@ -1969,30 +1995,30 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var8F25EF0C481497C3C0F9585128B5BF1F_1120398973 = (result.getResult());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2033917791 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2033917791;
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return true;
-        //}
-        //JsResult result = new JsResult(this, true);
-        //Message timeout = obtainMessage(JS_TIMEOUT, result);
-        //synchronized (this) {
-            //sendMessage(timeout);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG, "Caught exception while waiting for jsUnload");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return result.getResult();
+        
+        
+            
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -2002,20 +2028,21 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(GET_VISITED_HISTORY);
         msg.obj = callback;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(GET_VISITED_HISTORY);
-        //msg.obj = callback;
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.469 -0400", hash_original_method = "FE04684AB3D72B8C190BB2063ADDA47F", hash_generated_method = "4575AF2110D3731C2665A96C54B0FE5F")
      Uri openFileChooser(String acceptType) {
         addTaint(acceptType.getTaint());
@@ -2024,7 +2051,7 @@ String var578B1A496AD41AC51C5FB6A8B2FFD5FE_48729988 =         result.getStringRe
 Uri var540C13E9E156B687226421B24F2DF178_2089340726 =             null;
             var540C13E9E156B687226421B24F2DF178_2089340726.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2089340726;
-        } //End block
+        } 
         Message myMessage = obtainMessage(OPEN_FILE_CHOOSER);
         UploadFile uploadFile = new UploadFile();
         UploadFileMessageData data = new UploadFileMessageData(uploadFile, acceptType);
@@ -2035,72 +2062,72 @@ Uri var540C13E9E156B687226421B24F2DF178_2089340726 =             null;
             try 
             {
                 wait();
-            } //End block
+            } 
             catch (InterruptedException e)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 Uri varE22FFCE020DE18FB2CC526226D95C1A9_605172029 =         uploadFile.getResult();
         varE22FFCE020DE18FB2CC526226D95C1A9_605172029.addTaint(taint);
         return varE22FFCE020DE18FB2CC526226D95C1A9_605172029;
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return null;
-        //}
-        //Message myMessage = obtainMessage(OPEN_FILE_CHOOSER);
-        //UploadFile uploadFile = new UploadFile();
-        //UploadFileMessageData data = new UploadFileMessageData(uploadFile, acceptType);
-        //myMessage.obj = data;
-        //synchronized (this) {
-            //sendMessage(myMessage);
-            //try {
-                //wait();
-            //} catch (InterruptedException e) {
-                //Log.e(LOGTAG,
-                        //"Caught exception while waiting for openFileChooser");
-                //Log.e(LOGTAG, Log.getStackTraceString(e));
-            //}
-        //}
-        //return uploadFile.getResult();
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+                
+                        
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.470 -0400", hash_original_method = "047BE1D111CE2C04D81802E658F23AB3", hash_generated_method = "690B75F32AF69E3940688CCFE96335C3")
      void onNewHistoryItem(WebHistoryItem item) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(item.getTaint());
     if(mWebBackForwardListClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(ADD_HISTORY_ITEM, item);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebBackForwardListClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(ADD_HISTORY_ITEM, item);
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.470 -0400", hash_original_method = "895FE5553DA6237DB0B5BAA6BAF66947", hash_generated_method = "5DF454C3A01EADCA53CDDF5E49C15DFC")
      void onIndexChanged(WebHistoryItem item, int index) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(index);
         addTaint(item.getTaint());
     if(mWebBackForwardListClient == null)        
         {
             return;
-        } //End block
+        } 
         Message msg = obtainMessage(HISTORY_INDEX_CHANGED, index, 0, item);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //if (mWebBackForwardListClient == null) {
-            //return;
-        //}
-        //Message msg = obtainMessage(HISTORY_INDEX_CHANGED, index, 0, item);
-        //sendMessage(msg);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -2109,60 +2136,61 @@ Uri varE22FFCE020DE18FB2CC526226D95C1A9_605172029 =         uploadFile.getResult
     if(mWebChromeClient == null)        
         {
             return;
-        } //End block
+        } 
         sendMessage(obtainMessage(SET_INSTALLABLE_WEBAPP));
-        // ---------- Original Method ----------
-        //if (mWebChromeClient == null) {
-            //return;
-        //}
-        //sendMessage(obtainMessage(SET_INSTALLABLE_WEBAPP));
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.471 -0400", hash_original_method = "8DF8998B34FE58BC5486ECCDB22BE44D", hash_generated_method = "4B9EC302578FA7D71770AD1E5B9306FC")
      boolean canShowAlertDialog() {
         boolean varE37B05B01B9AB47E90E647D8F707F405_175125664 = (mContext instanceof Activity);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_655967270 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_655967270;
-        // ---------- Original Method ----------
-        //return mContext instanceof Activity;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.471 -0400", hash_original_method = "C20FB9F0C31604564B2DC30DE7E0C643", hash_generated_method = "ADCAE33715EB0CFF33A6E0C25E15B09F")
      void onSearchboxSuggestionsReceived(String query, List<String> suggestions) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(suggestions.getTaint());
         addTaint(query.getTaint());
         Message msg = obtainMessage(NOTIFY_SEARCHBOX_LISTENERS);
         msg.obj = suggestions;
         msg.getData().putString("query", query);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(NOTIFY_SEARCHBOX_LISTENERS);
-        //msg.obj = suggestions;
-        //msg.getData().putString("query", query);
-        //sendMessage(msg);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.471 -0400", hash_original_method = "350C274DFDDA43015C8C93D9651125A1", hash_generated_method = "4496BB7DBB04A8A177CD523CA66157E3")
      void onIsSupportedCallback(boolean isSupported) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(isSupported);
         Message msg = obtainMessage(SEARCHBOX_IS_SUPPORTED_CALLBACK);
         msg.obj = new Boolean(isSupported);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(SEARCHBOX_IS_SUPPORTED_CALLBACK);
-        //msg.obj = new Boolean(isSupported);
-        //sendMessage(msg);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.472 -0400", hash_original_method = "18679CF45F0FBF6C3076A4EAE4B01ADE", hash_generated_method = "9E4BB6D379001E8E95AA01C3991863BE")
      void onSearchboxDispatchCompleteCallback(String function, int id, boolean success) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(success);
         addTaint(id);
         addTaint(function.getTaint());
@@ -2171,12 +2199,12 @@ Uri varE22FFCE020DE18FB2CC526226D95C1A9_605172029 =         uploadFile.getResult
         msg.getData().putString("function", function);
         msg.getData().putInt("id", id);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(SEARCHBOX_DISPATCH_COMPLETE_CALLBACK);
-        //msg.obj = Boolean.valueOf(success);
-        //msg.getData().putString("function", function);
-        //msg.getData().putInt("id", id);
-        //sendMessage(msg);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -2188,16 +2216,16 @@ Uri varE22FFCE020DE18FB2CC526226D95C1A9_605172029 =         uploadFile.getResult
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.472 -0400", hash_original_method = "DD22213D197BC89445531F8496343FB8", hash_generated_method = "9633A2A2899E61CCB3453D5B3B8F2949")
         public  ResultTransport(E defaultResult) {
             mResult = defaultResult;
-            // ---------- Original Method ----------
-            //mResult = defaultResult;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.472 -0400", hash_original_method = "23B0DB25EF15209B12B4D98F75BC4826", hash_generated_method = "1CC67B1DE228486A08B2C64A649EF681")
         public synchronized void setResult(E result) {
             mResult = result;
-            // ---------- Original Method ----------
-            //mResult = result;
+            
+            
         }
 
         
@@ -2206,8 +2234,8 @@ Uri varE22FFCE020DE18FB2CC526226D95C1A9_605172029 =         uploadFile.getResult
 E var8EC17D26103D23643357521909BC2C9A_827145609 =             mResult;
             var8EC17D26103D23643357521909BC2C9A_827145609.addTaint(taint);
             return var8EC17D26103D23643357521909BC2C9A_827145609;
-            // ---------- Original Method ----------
-            //return mResult;
+            
+            
         }
 
         
@@ -2227,29 +2255,31 @@ E var8EC17D26103D23643357521909BC2C9A_827145609 =             mResult;
         public  UploadFileMessageData(UploadFile uploadFile, String acceptType) {
             mCallback = uploadFile;
             mAcceptType = acceptType;
-            // ---------- Original Method ----------
-            //mCallback = uploadFile;
-            //mAcceptType = acceptType;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.473 -0400", hash_original_method = "9D48109A15DDC7CFDE503C879117A387", hash_generated_method = "ACA9ED584FDE1599AD91F03B39554C7B")
         public UploadFile getUploadFile() {
 UploadFile var31075088B2A2E9D45AA9874A2DA07598_1294945971 =             mCallback;
             var31075088B2A2E9D45AA9874A2DA07598_1294945971.addTaint(taint);
             return var31075088B2A2E9D45AA9874A2DA07598_1294945971;
-            // ---------- Original Method ----------
-            //return mCallback;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "EE5645A876B8829341B5E714F10E353A", hash_generated_method = "6A2115586F0902A55FCA46CB9D23E06D")
         public String getAcceptType() {
 String varE3A067C89E54BBE0AE977695F4311BA7_498917960 =             mAcceptType;
             varE3A067C89E54BBE0AE977695F4311BA7_498917960.addTaint(taint);
             return varE3A067C89E54BBE0AE977695F4311BA7_498917960;
-            // ---------- Original Method ----------
-            //return mAcceptType;
+            
+            
         }
 
         
@@ -2265,33 +2295,35 @@ String varE3A067C89E54BBE0AE977695F4311BA7_498917960 =             mAcceptType;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "CA5F2E6F07869C80D280CD39F96B8098", hash_generated_method = "CA5F2E6F07869C80D280CD39F96B8098")
         public UploadFile ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "4E719BBCA95A35A86F37F83B7E6AA557", hash_generated_method = "DA348449E4089428CF2AC95B16237996")
         public void onReceiveValue(Uri value) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             mValue = value;
             synchronized
 (CallbackProxy.this)            {
                 CallbackProxy.this.notify();
-            } //End block
-            // ---------- Original Method ----------
-            //mValue = value;
-            //synchronized (CallbackProxy.this) {
-                //CallbackProxy.this.notify();
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.474 -0400", hash_original_method = "546BF3EDB8840D5BF09D8B66103FFEC6", hash_generated_method = "675168D93DE189131E9720DC82BE2BA6")
         public Uri getResult() {
 Uri varD1FEA3F5EE4618A9C3646312F018E4AC_394999930 =             mValue;
             varD1FEA3F5EE4618A9C3646312F018E4AC_394999930.addTaint(taint);
             return varD1FEA3F5EE4618A9C3646312F018E4AC_394999930;
-            // ---------- Original Method ----------
-            //return mValue;
+            
+            
         }
 
         

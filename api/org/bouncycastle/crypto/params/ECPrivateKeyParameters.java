@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,18 +18,19 @@ public class ECPrivateKeyParameters extends ECKeyParameters {
         super(true, params);
         addTaint(params.getTaint());
         this.d = d;
-        // ---------- Original Method ----------
-        //this.d = d;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.562 -0400", hash_original_method = "B5E3561B233EAECFFADA1FA5EF03DD9A", hash_generated_method = "3737E7505ACAF9A8152926B32DF3EF17")
     public BigInteger getD() {
 BigInteger varBE245B24E7ED509FDFAAA6CD39E35D89_1821606250 =         d;
         varBE245B24E7ED509FDFAAA6CD39E35D89_1821606250.addTaint(taint);
         return varBE245B24E7ED509FDFAAA6CD39E35D89_1821606250;
-        // ---------- Original Method ----------
-        //return d;
+        
+        
     }
 
     

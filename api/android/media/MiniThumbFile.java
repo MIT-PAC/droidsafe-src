@@ -1,6 +1,6 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,9 +34,9 @@ public class MiniThumbFile {
     public  MiniThumbFile(Uri uri) {
         mUri = uri;
         mBuffer = ByteBuffer.allocateDirect(BYTES_PER_MINTHUMB);
-        // ---------- Original Method ----------
-        //mUri = uri;
-        //mBuffer = ByteBuffer.allocateDirect(BYTES_PER_MINTHUMB);
+        
+        
+        
     }
 
     
@@ -48,7 +48,8 @@ public class MiniThumbFile {
     }
 
     
-        public static synchronized MiniThumbFile instance(Uri uri) {
+        @DSModeled(DSC.SPEC)
+    public static synchronized MiniThumbFile instance(Uri uri) {
         String type = uri.getPathSegments().get(1);
         MiniThumbFile file = sThumbFiles.get(type);
         if (file == null) {
@@ -68,11 +69,11 @@ public class MiniThumbFile {
 String var2C0F3AB1B0D21A590BACE6375CC48A8C_511962157 =         directoryName + "/.thumbdata" + version + "-" + mUri.hashCode();
         var2C0F3AB1B0D21A590BACE6375CC48A8C_511962157.addTaint(taint);
         return var2C0F3AB1B0D21A590BACE6375CC48A8C_511962157;
-        // ---------- Original Method ----------
-        //String directoryName =
-                //Environment.getExternalStorageDirectory().toString()
-                //+ "/DCIM/.thumbnails";
-        //return directoryName + "/.thumbdata" + version + "-" + mUri.hashCode();
+        
+        
+                
+                
+        
     }
 
     
@@ -85,20 +86,20 @@ String var2C0F3AB1B0D21A590BACE6375CC48A8C_511962157 =         directoryName + "
             try 
             {
                 oldFile.delete();
-            } //End block
+            } 
             catch (SecurityException ex)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //String oldPath = randomAccessFilePath(MINI_THUMB_DATA_FILE_VERSION - 1);
-        //File oldFile = new File(oldPath);
-        //if (oldFile.exists()) {
-            //try {
-                //oldFile.delete();
-            //} catch (SecurityException ex) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -113,33 +114,33 @@ String var2C0F3AB1B0D21A590BACE6375CC48A8C_511962157 =         directoryName + "
             {
     if(!directory.mkdirs())                
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             File f = new File(path);
             try 
             {
                 mMiniThumbFile = new RandomAccessFile(f, "rw");
-            } //End block
+            } 
             catch (IOException ex)
             {
                 try 
                 {
                     mMiniThumbFile = new RandomAccessFile(f, "r");
-                } //End block
+                } 
                 catch (IOException ex2)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
     if(mMiniThumbFile != null)            
             {
                 mChannel = mMiniThumbFile.getChannel();
-            } //End block
-        } //End block
+            } 
+        } 
 RandomAccessFile var1F0510D6271C21B4187DB92369D83034_620550647 =         mMiniThumbFile;
         var1F0510D6271C21B4187DB92369D83034_620550647.addTaint(taint);
         return var1F0510D6271C21B4187DB92369D83034_620550647;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -151,19 +152,19 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_620550647 =         mMiniTh
             {
                 mMiniThumbFile.close();
                 mMiniThumbFile = null;
-            } //End block
+            } 
             catch (IOException ex)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mMiniThumbFile != null) {
-            //try {
-                //mMiniThumbFile.close();
-                //mMiniThumbFile = null;
-            //} catch (IOException ex) {
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -188,32 +189,32 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_620550647 =         mMiniTh
                         long var00F7E8AE2FDB978A6568A2BB56443028_1645843756 = (mBuffer.getLong());
                                                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1336864822 = getTaintLong();
                         return var0F5264038205EDFB1AC05FBB0E8C5E94_1336864822;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (IOException ex)
             {
-            } //End block
+            } 
             catch (RuntimeException ex)
             {
-            } //End block
+            } 
             finally 
             {
                 try 
                 {
     if(lock != null)                    
                     lock.release();
-                } //End block
+                } 
                 catch (IOException ex)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         long varCFCD208495D565EF66E7DFF9F98764DA_1031497860 = (0);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_177361156 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_177361156;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -234,7 +235,7 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_620550647 =         mMiniTh
     if(data.length > BYTES_PER_MINTHUMB - HEADER_SIZE)                
                 {
                     return;
-                } //End block
+                } 
                 mBuffer.clear();
                 mBuffer.put((byte) 1);
                 mBuffer.putLong(magic);
@@ -243,29 +244,29 @@ RandomAccessFile var1F0510D6271C21B4187DB92369D83034_620550647 =         mMiniTh
                 mBuffer.flip();
                 lock = mChannel.lock(pos, BYTES_PER_MINTHUMB, false);
                 mChannel.write(mBuffer, pos);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException ex)
         {
             ex.addTaint(taint);
             throw ex;
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
-        } //End block
+        } 
         finally 
         {
             try 
             {
     if(lock != null)                
                 lock.release();
-            } //End block
+            } 
             catch (IOException ex)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     @DSOverride
@@ -299,31 +300,31 @@ byte [] var540C13E9E156B687226421B24F2DF178_980742372 =         null;
 byte [] var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150 =                     data;
                     var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150.addTaint(taint);
                     return var0C8B2C9585EB05DD9CD70726CF8CBC07_1955523150;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (IOException ex)
         {
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
-        } //End block
+        } 
         finally 
         {
             try 
             {
     if(lock != null)                
                 lock.release();
-            } //End block
+            } 
             catch (IOException ex)
             {
-            } //End block
-        } //End block
+            } 
+        } 
 byte [] var540C13E9E156B687226421B24F2DF178_1109737605 =         null;
         var540C13E9E156B687226421B24F2DF178_1109737605.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1109737605;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

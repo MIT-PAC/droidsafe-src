@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class ASN1GeneralizedTime extends DERGeneralizedTime {
       ASN1GeneralizedTime(byte[] bytes) {
         super(bytes);
         addTaint(bytes[0]);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class ASN1GeneralizedTime extends DERGeneralizedTime {
     public  ASN1GeneralizedTime(Date time) {
         super(time);
         addTaint(time.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,7 +28,7 @@ public class ASN1GeneralizedTime extends DERGeneralizedTime {
     public  ASN1GeneralizedTime(String time) {
         super(time);
         addTaint(time.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

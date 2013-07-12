@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class DERNull extends ASN1Null {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.092 -0400", hash_original_method = "99B54E5156DA58D37DF99A37E5693124", hash_generated_method = "4766F3DC44E05384E805FB26F1BF2111")
     protected  DERNull() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -19,8 +19,8 @@ public class DERNull extends ASN1Null {
         DEROutputStream  out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(NULL, zeroBytes);
-        // ---------- Original Method ----------
-        //out.writeEncoded(NULL, zeroBytes);
+        
+        
     }
 
     

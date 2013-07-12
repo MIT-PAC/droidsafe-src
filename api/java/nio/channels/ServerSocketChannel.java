@@ -1,6 +1,6 @@
 package java.nio.channels;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
     protected  ServerSocketChannel(SelectorProvider selectorProvider) {
         super(selectorProvider);
         addTaint(selectorProvider.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -30,8 +30,8 @@ public abstract class ServerSocketChannel extends AbstractSelectableChannel {
         int var883006640E005F2ED2474E2EA921343D_1209496141 = (SelectionKey.OP_ACCEPT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1241792529 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1241792529;
-        // ---------- Original Method ----------
-        //return SelectionKey.OP_ACCEPT;
+        
+        
     }
 
     

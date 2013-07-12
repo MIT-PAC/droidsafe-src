@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class BasicHttpContext implements HttpContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.849 -0400", hash_original_method = "7A4905790D001081AE9E7E7092B16556", hash_generated_method = "B3C58EE05EB2DAD95672DF798CE06022")
     public  BasicHttpContext() {
         this(null);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,8 +26,8 @@ public class BasicHttpContext implements HttpContext {
     public  BasicHttpContext(final HttpContext parentContext) {
         super();
         this.parentContext = parentContext;
-        // ---------- Original Method ----------
-        //this.parentContext = parentContext;
+        
+        
     }
 
     
@@ -39,31 +39,31 @@ public class BasicHttpContext implements HttpContext {
             IllegalArgumentException var13FBCB15CD042AA2AF7E715F4F86FACE_1738695403 = new IllegalArgumentException("Id may not be null");
             var13FBCB15CD042AA2AF7E715F4F86FACE_1738695403.addTaint(taint);
             throw var13FBCB15CD042AA2AF7E715F4F86FACE_1738695403;
-        } //End block
+        } 
         Object obj = null;
     if(this.map != null)        
         {
             obj = this.map.get(id);
-        } //End block
+        } 
     if(obj == null && this.parentContext != null)        
         {
             obj = this.parentContext.getAttribute(id);
-        } //End block
+        } 
 Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_1738279305 =         obj;
         var2FDE1120F80AA4E8798ECDBDB1C0E85C_1738279305.addTaint(taint);
         return var2FDE1120F80AA4E8798ECDBDB1C0E85C_1738279305;
-        // ---------- Original Method ----------
-        //if (id == null) {
-            //throw new IllegalArgumentException("Id may not be null");
-        //}
-        //Object obj = null;
-        //if (this.map != null) {
-            //obj = this.map.get(id);
-        //}
-        //if (obj == null && this.parentContext != null) {
-            //obj = this.parentContext.getAttribute(id);
-        //}
-        //return obj;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -76,20 +76,20 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_1738279305 =         obj;
             IllegalArgumentException var13FBCB15CD042AA2AF7E715F4F86FACE_1957496647 = new IllegalArgumentException("Id may not be null");
             var13FBCB15CD042AA2AF7E715F4F86FACE_1957496647.addTaint(taint);
             throw var13FBCB15CD042AA2AF7E715F4F86FACE_1957496647;
-        } //End block
+        } 
     if(this.map == null)        
         {
             this.map = new HashMap();
-        } //End block
+        } 
         this.map.put(id, obj);
-        // ---------- Original Method ----------
-        //if (id == null) {
-            //throw new IllegalArgumentException("Id may not be null");
-        //}
-        //if (this.map == null) {
-            //this.map = new HashMap();
-        //}
-        //this.map.put(id, obj);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -101,28 +101,28 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_1738279305 =         obj;
             IllegalArgumentException var13FBCB15CD042AA2AF7E715F4F86FACE_545309391 = new IllegalArgumentException("Id may not be null");
             var13FBCB15CD042AA2AF7E715F4F86FACE_545309391.addTaint(taint);
             throw var13FBCB15CD042AA2AF7E715F4F86FACE_545309391;
-        } //End block
+        } 
     if(this.map != null)        
         {
 Object varA35C08B2512A001A56088846D8851B60_42313221 =             this.map.remove(id);
             varA35C08B2512A001A56088846D8851B60_42313221.addTaint(taint);
             return varA35C08B2512A001A56088846D8851B60_42313221;
-        } //End block
+        } 
         else
         {
 Object var540C13E9E156B687226421B24F2DF178_1587546056 =             null;
             var540C13E9E156B687226421B24F2DF178_1587546056.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1587546056;
-        } //End block
-        // ---------- Original Method ----------
-        //if (id == null) {
-            //throw new IllegalArgumentException("Id may not be null");
-        //}
-        //if (this.map != null) {
-            //return this.map.remove(id);
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     

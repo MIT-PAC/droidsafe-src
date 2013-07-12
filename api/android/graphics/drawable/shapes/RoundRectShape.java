@@ -1,6 +1,6 @@
 package android.graphics.drawable.shapes;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,53 +34,55 @@ public class RoundRectShape extends RectShape {
             ArrayIndexOutOfBoundsException var8E9EFB62FA44DFF932FD8F4A104B3011_1227019666 = new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
             var8E9EFB62FA44DFF932FD8F4A104B3011_1227019666.addTaint(taint);
             throw var8E9EFB62FA44DFF932FD8F4A104B3011_1227019666;
-        } //End block
+        } 
     if(innerRadii != null && innerRadii.length < 8)        
         {
             ArrayIndexOutOfBoundsException varEA92C32A253067335B2FC46E6E2144DE_1641832609 = new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
             varEA92C32A253067335B2FC46E6E2144DE_1641832609.addTaint(taint);
             throw varEA92C32A253067335B2FC46E6E2144DE_1641832609;
-        } //End block
+        } 
         mOuterRadii = outerRadii;
         mInset = inset;
         mInnerRadii = innerRadii;
     if(inset != null)        
         {
             mInnerRect = new RectF();
-        } //End block
+        } 
         mPath = new Path();
-        // ---------- Original Method ----------
-        //if (outerRadii != null && outerRadii.length < 8) {
-            //throw new ArrayIndexOutOfBoundsException("outer radii must have >= 8 values");
-        //}
-        //if (innerRadii != null && innerRadii.length < 8) {
-            //throw new ArrayIndexOutOfBoundsException("inner radii must have >= 8 values");
-        //}
-        //mOuterRadii = outerRadii;
-        //mInset = inset;
-        //mInnerRadii = innerRadii;
-        //if (inset != null) {
-            //mInnerRect = new RectF();
-        //}
-        //mPath = new Path();
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.890 -0400", hash_original_method = "2040FB3810CEA26BCA97DD1BCDDED3AB", hash_generated_method = "5A8E3A9F0731F4E763FCC10657835012")
     @Override
     public void draw(Canvas canvas, Paint paint) {
         addTaint(paint.getTaint());
         addTaint(canvas.getTaint());
         canvas.drawPath(mPath, paint);
-        // ---------- Original Method ----------
-        //canvas.drawPath(mPath, paint);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.890 -0400", hash_original_method = "76E13F34AD3978846D0DA3AA18C0FAE1", hash_generated_method = "735F9B12D406D8A9FFB85CD16A55E733")
     @Override
     protected void onResize(float w, float h) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(h);
         addTaint(w);
         super.onResize(w, h);
@@ -89,11 +91,11 @@ public class RoundRectShape extends RectShape {
     if(mOuterRadii != null)        
         {
             mPath.addRoundRect(r, mOuterRadii, Path.Direction.CW);
-        } //End block
+        } 
         else
         {
             mPath.addRect(r, Path.Direction.CW);
-        } //End block
+        } 
     if(mInnerRect != null)        
         {
             mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
@@ -103,36 +105,37 @@ public class RoundRectShape extends RectShape {
     if(mInnerRadii != null)                
                 {
                     mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
-                } //End block
+                } 
                 else
                 {
                     mPath.addRect(mInnerRect, Path.Direction.CCW);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.onResize(w, h);
-        //RectF r = rect();
-        //mPath.reset();
-        //if (mOuterRadii != null) {
-            //mPath.addRoundRect(r, mOuterRadii, Path.Direction.CW);
-        //} else {
-            //mPath.addRect(r, Path.Direction.CW);
-        //}
-        //if (mInnerRect != null) {
-            //mInnerRect.set(r.left + mInset.left, r.top + mInset.top,
-                           //r.right - mInset.right, r.bottom - mInset.bottom);
-            //if (mInnerRect.width() < w && mInnerRect.height() < h) {
-                //if (mInnerRadii != null) {
-                    //mPath.addRoundRect(mInnerRect, mInnerRadii, Path.Direction.CCW);
-                //} else {
-                    //mPath.addRect(mInnerRect, Path.Direction.CCW);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+            
+                           
+            
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:20.891 -0400", hash_original_method = "C8F54F0C5741E48CA334E7AB381892D2", hash_generated_method = "1FBD5A284A46A5247A946486E8EDB55D")
     @Override
     public RoundRectShape clone() throws CloneNotSupportedException {
@@ -145,14 +148,14 @@ public class RoundRectShape extends RectShape {
 RoundRectShape var1E03F90B1057A29F071E0E1A1AD4365B_726902994 =         shape;
         var1E03F90B1057A29F071E0E1A1AD4365B_726902994.addTaint(taint);
         return var1E03F90B1057A29F071E0E1A1AD4365B_726902994;
-        // ---------- Original Method ----------
-        //RoundRectShape shape = (RoundRectShape) super.clone();
-        //shape.mOuterRadii = mOuterRadii != null ? mOuterRadii.clone() : null;
-        //shape.mInnerRadii = mInnerRadii != null ? mInnerRadii.clone() : null;
-        //shape.mInset = new RectF(mInset);
-        //shape.mInnerRect = new RectF(mInnerRect);
-        //shape.mPath = new Path(mPath);
-        //return shape;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

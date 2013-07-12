@@ -1,6 +1,6 @@
 package libcore.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,11 +16,12 @@ public final class MimeUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:15.994 -0400", hash_original_method = "4573469ED61E6670894E512E558CEEE0", hash_generated_method = "A4660306B18E6B2B3A8E8D9DE7F28302")
     private  MimeUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        private static void add(String mimeType, String extension) {
+        @DSModeled(DSC.SPEC)
+    private static void add(String mimeType, String extension) {
         if (!mimeTypeToExtensionMap.containsKey(mimeType)) {
             mimeTypeToExtensionMap.put(mimeType, extension);
         }

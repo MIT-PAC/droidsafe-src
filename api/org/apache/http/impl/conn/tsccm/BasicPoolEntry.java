@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,13 +27,13 @@ public class BasicPoolEntry extends AbstractPoolEntry {
             IllegalArgumentException varFD744275F02EFC64909CB4CC194944E5_148899958 = new IllegalArgumentException("HTTP route may not be null");
             varFD744275F02EFC64909CB4CC194944E5_148899958.addTaint(taint);
             throw varFD744275F02EFC64909CB4CC194944E5_148899958;
-        } //End block
+        } 
         this.reference = new BasicPoolEntryRef(this, queue);
-        // ---------- Original Method ----------
-        //if (route == null) {
-            //throw new IllegalArgumentException("HTTP route may not be null");
-        //}
-        //this.reference = new BasicPoolEntryRef(this, queue);
+        
+        
+            
+        
+        
     }
 
     
@@ -42,8 +42,8 @@ public class BasicPoolEntry extends AbstractPoolEntry {
 OperatedClientConnection var5BFA9F3364143AB41D8297B301DBEBFA_826042886 =         super.connection;
         var5BFA9F3364143AB41D8297B301DBEBFA_826042886.addTaint(taint);
         return var5BFA9F3364143AB41D8297B301DBEBFA_826042886;
-        // ---------- Original Method ----------
-        //return super.connection;
+        
+        
     }
 
     
@@ -52,8 +52,8 @@ OperatedClientConnection var5BFA9F3364143AB41D8297B301DBEBFA_826042886 =        
 HttpRoute varC5F10401C07B57E7F878A1A1BA05EB57_2102075438 =         super.route;
         varC5F10401C07B57E7F878A1A1BA05EB57_2102075438.addTaint(taint);
         return varC5F10401C07B57E7F878A1A1BA05EB57_2102075438;
-        // ---------- Original Method ----------
-        //return super.route;
+        
+        
     }
 
     
@@ -62,8 +62,8 @@ HttpRoute varC5F10401C07B57E7F878A1A1BA05EB57_2102075438 =         super.route;
 BasicPoolEntryRef var29BAF2A5D8FE5ED926C67F1F68BB834A_247399253 =         this.reference;
         var29BAF2A5D8FE5ED926C67F1F68BB834A_247399253.addTaint(taint);
         return var29BAF2A5D8FE5ED926C67F1F68BB834A_247399253;
-        // ---------- Original Method ----------
-        //return this.reference;
+        
+        
     }
 
     

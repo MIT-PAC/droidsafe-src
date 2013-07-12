@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,7 +34,7 @@ public final class ViewTreeObserver {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.741 -0400", hash_original_method = "CC9985AE6D7058390B2C51E91CCE49A3", hash_generated_method = "5739F6075FCB84039D6115D26517DF4C")
       ViewTreeObserver() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,59 +45,59 @@ public final class ViewTreeObserver {
     if(mOnGlobalFocusListeners != null)            
             {
                 mOnGlobalFocusListeners.addAll(observer.mOnGlobalFocusListeners);
-            } //End block
+            } 
             else
             {
                 mOnGlobalFocusListeners = observer.mOnGlobalFocusListeners;
-            } //End block
-        } //End block
+            } 
+        } 
     if(observer.mOnGlobalLayoutListeners != null)        
         {
     if(mOnGlobalLayoutListeners != null)            
             {
                 mOnGlobalLayoutListeners.addAll(observer.mOnGlobalLayoutListeners);
-            } //End block
+            } 
             else
             {
                 mOnGlobalLayoutListeners = observer.mOnGlobalLayoutListeners;
-            } //End block
-        } //End block
+            } 
+        } 
     if(observer.mOnPreDrawListeners != null)        
         {
     if(mOnPreDrawListeners != null)            
             {
                 mOnPreDrawListeners.addAll(observer.mOnPreDrawListeners);
-            } //End block
+            } 
             else
             {
                 mOnPreDrawListeners = observer.mOnPreDrawListeners;
-            } //End block
-        } //End block
+            } 
+        } 
     if(observer.mOnTouchModeChangeListeners != null)        
         {
     if(mOnTouchModeChangeListeners != null)            
             {
                 mOnTouchModeChangeListeners.addAll(observer.mOnTouchModeChangeListeners);
-            } //End block
+            } 
             else
             {
                 mOnTouchModeChangeListeners = observer.mOnTouchModeChangeListeners;
-            } //End block
-        } //End block
+            } 
+        } 
     if(observer.mOnComputeInternalInsetsListeners != null)        
         {
     if(mOnComputeInternalInsetsListeners != null)            
             {
                 mOnComputeInternalInsetsListeners.addAll(observer.mOnComputeInternalInsetsListeners);
-            } //End block
+            } 
             else
             {
                 mOnComputeInternalInsetsListeners = observer.mOnComputeInternalInsetsListeners;
-            } //End block
-        } //End block
+            } 
+        } 
         observer.kill();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -108,14 +108,14 @@ public final class ViewTreeObserver {
     if(mOnGlobalFocusListeners == null)        
         {
             mOnGlobalFocusListeners = new CopyOnWriteArrayList<OnGlobalFocusChangeListener>();
-        } //End block
+        } 
         mOnGlobalFocusListeners.add(listener);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalFocusListeners == null) {
-            //mOnGlobalFocusListeners = new CopyOnWriteArrayList<OnGlobalFocusChangeListener>();
-        //}
-        //mOnGlobalFocusListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -126,14 +126,14 @@ public final class ViewTreeObserver {
     if(mOnGlobalFocusListeners == null)        
         {
             return;
-        } //End block
+        } 
         mOnGlobalFocusListeners.remove(victim);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalFocusListeners == null) {
-            //return;
-        //}
-        //mOnGlobalFocusListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -144,14 +144,14 @@ public final class ViewTreeObserver {
     if(mOnGlobalLayoutListeners == null)        
         {
             mOnGlobalLayoutListeners = new CopyOnWriteArrayList<OnGlobalLayoutListener>();
-        } //End block
+        } 
         mOnGlobalLayoutListeners.add(listener);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalLayoutListeners == null) {
-            //mOnGlobalLayoutListeners = new CopyOnWriteArrayList<OnGlobalLayoutListener>();
-        //}
-        //mOnGlobalLayoutListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -162,14 +162,14 @@ public final class ViewTreeObserver {
     if(mOnGlobalLayoutListeners == null)        
         {
             return;
-        } //End block
+        } 
         mOnGlobalLayoutListeners.remove(victim);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnGlobalLayoutListeners == null) {
-            //return;
-        //}
-        //mOnGlobalLayoutListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -180,14 +180,14 @@ public final class ViewTreeObserver {
     if(mOnPreDrawListeners == null)        
         {
             mOnPreDrawListeners = new ArrayList<OnPreDrawListener>();
-        } //End block
+        } 
         mOnPreDrawListeners.add(listener);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnPreDrawListeners == null) {
-            //mOnPreDrawListeners = new ArrayList<OnPreDrawListener>();
-        //}
-        //mOnPreDrawListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -198,14 +198,14 @@ public final class ViewTreeObserver {
     if(mOnPreDrawListeners == null)        
         {
             return;
-        } //End block
+        } 
         mOnPreDrawListeners.remove(victim);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnPreDrawListeners == null) {
-            //return;
-        //}
-        //mOnPreDrawListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -216,14 +216,14 @@ public final class ViewTreeObserver {
     if(mOnScrollChangedListeners == null)        
         {
             mOnScrollChangedListeners = new CopyOnWriteArrayList<OnScrollChangedListener>();
-        } //End block
+        } 
         mOnScrollChangedListeners.add(listener);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnScrollChangedListeners == null) {
-            //mOnScrollChangedListeners = new CopyOnWriteArrayList<OnScrollChangedListener>();
-        //}
-        //mOnScrollChangedListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -234,14 +234,14 @@ public final class ViewTreeObserver {
     if(mOnScrollChangedListeners == null)        
         {
             return;
-        } //End block
+        } 
         mOnScrollChangedListeners.remove(victim);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnScrollChangedListeners == null) {
-            //return;
-        //}
-        //mOnScrollChangedListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -252,14 +252,14 @@ public final class ViewTreeObserver {
     if(mOnTouchModeChangeListeners == null)        
         {
             mOnTouchModeChangeListeners = new CopyOnWriteArrayList<OnTouchModeChangeListener>();
-        } //End block
+        } 
         mOnTouchModeChangeListeners.add(listener);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnTouchModeChangeListeners == null) {
-            //mOnTouchModeChangeListeners = new CopyOnWriteArrayList<OnTouchModeChangeListener>();
-        //}
-        //mOnTouchModeChangeListeners.add(listener);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -270,14 +270,14 @@ public final class ViewTreeObserver {
     if(mOnTouchModeChangeListeners == null)        
         {
             return;
-        } //End block
+        } 
         mOnTouchModeChangeListeners.remove(victim);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnTouchModeChangeListeners == null) {
-            //return;
-        //}
-        //mOnTouchModeChangeListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -289,15 +289,15 @@ public final class ViewTreeObserver {
         {
             mOnComputeInternalInsetsListeners =
                     new CopyOnWriteArrayList<OnComputeInternalInsetsListener>();
-        } //End block
+        } 
         mOnComputeInternalInsetsListeners.add(listener);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnComputeInternalInsetsListeners == null) {
-            //mOnComputeInternalInsetsListeners =
-                    //new CopyOnWriteArrayList<OnComputeInternalInsetsListener>();
-        //}
-        //mOnComputeInternalInsetsListeners.add(listener);
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -308,14 +308,14 @@ public final class ViewTreeObserver {
     if(mOnComputeInternalInsetsListeners == null)        
         {
             return;
-        } //End block
+        } 
         mOnComputeInternalInsetsListeners.remove(victim);
-        // ---------- Original Method ----------
-        //checkIsAlive();
-        //if (mOnComputeInternalInsetsListeners == null) {
-            //return;
-        //}
-        //mOnComputeInternalInsetsListeners.remove(victim);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -327,30 +327,32 @@ public final class ViewTreeObserver {
                     + "getViewTreeObserver() again");
             varB733061FC4333142380D0C2AE2F117CC_1176456829.addTaint(taint);
             throw varB733061FC4333142380D0C2AE2F117CC_1176456829;
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mAlive) {
-            //throw new IllegalStateException("This ViewTreeObserver is not alive, call "
-                    //+ "getViewTreeObserver() again");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.749 -0400", hash_original_method = "8E102E0046F857D94D6EB92859BCA09E", hash_generated_method = "6757A31BD2D65C07684C1D1B9A740BD1")
     public boolean isAlive() {
         boolean varD5ADB51FA651F2BDB10432197B9FBD03_824580910 = (mAlive);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_810991076 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_810991076;
-        // ---------- Original Method ----------
-        //return mAlive;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.749 -0400", hash_original_method = "CE15D88AAF79A195F4E8949632256817", hash_generated_method = "ADAC88CFF01E50F749BE8EE5F2A18844")
     private void kill() {
         mAlive = false;
-        // ---------- Original Method ----------
-        //mAlive = false;
+        
+        
     }
 
     
@@ -364,15 +366,15 @@ public final class ViewTreeObserver {
 for(OnGlobalFocusChangeListener listener : listeners)
             {
                 listener.onGlobalFocusChanged(oldFocus, newFocus);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnGlobalFocusChangeListener> listeners = mOnGlobalFocusListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnGlobalFocusChangeListener listener : listeners) {
-                //listener.onGlobalFocusChanged(oldFocus, newFocus);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -384,15 +386,15 @@ for(OnGlobalFocusChangeListener listener : listeners)
 for(OnGlobalLayoutListener listener : listeners)
             {
                 listener.onGlobalLayout();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnGlobalLayoutListener> listeners = mOnGlobalLayoutListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnGlobalLayoutListener listener : listeners) {
-                //listener.onGlobalLayout();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -406,22 +408,22 @@ for(OnGlobalLayoutListener listener : listeners)
 for(int i = 0;i < numListeners;++i)
             {
                 cancelDraw |= !(listeners.get(i).onPreDraw());
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var3FB5CD885FE486F533BAF6ACA8DC5700_1411735561 = (cancelDraw);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467983845 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467983845;
-        // ---------- Original Method ----------
-        //boolean cancelDraw = false;
-        //if (mOnPreDrawListeners != null && mOnPreDrawListeners.size() > 0) {
-            //final ArrayList<OnPreDrawListener> listeners =
-                    //(ArrayList<OnPreDrawListener>) mOnPreDrawListeners.clone();
-            //int numListeners = listeners.size();
-            //for (int i = 0; i < numListeners; ++i) {
-                //cancelDraw |= !(listeners.get(i).onPreDraw());
-            //}
-        //}
-        //return cancelDraw;
+        
+        
+        
+            
+                    
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -434,16 +436,16 @@ for(int i = 0;i < numListeners;++i)
 for(OnTouchModeChangeListener listener : listeners)
             {
                 listener.onTouchModeChanged(inTouchMode);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnTouchModeChangeListener> listeners =
-                //mOnTouchModeChangeListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnTouchModeChangeListener listener : listeners) {
-                //listener.onTouchModeChanged(inTouchMode);
-            //}
-        //}
+            } 
+        } 
+        
+        
+                
+        
+            
+                
+            
+        
     }
 
     
@@ -455,15 +457,15 @@ for(OnTouchModeChangeListener listener : listeners)
 for(OnScrollChangedListener listener : listeners)
             {
                 listener.onScrollChanged();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnScrollChangedListener> listeners = mOnScrollChangedListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnScrollChangedListener listener : listeners) {
-                //listener.onScrollChanged();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -473,10 +475,10 @@ for(OnScrollChangedListener listener : listeners)
         boolean varF719817FFCF79D951E7B9023876E5F4C_1166162447 = ((listeners != null && listeners.size() > 0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1308803481 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1308803481;
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnComputeInternalInsetsListener> listeners =
-                //mOnComputeInternalInsetsListeners;
-        //return (listeners != null && listeners.size() > 0);
+        
+        
+                
+        
     }
 
     
@@ -489,16 +491,16 @@ for(OnScrollChangedListener listener : listeners)
 for(OnComputeInternalInsetsListener listener : listeners)
             {
                 listener.onComputeInternalInsets(inoutInfo);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final CopyOnWriteArrayList<OnComputeInternalInsetsListener> listeners =
-                //mOnComputeInternalInsetsListeners;
-        //if (listeners != null && listeners.size() > 0) {
-            //for (OnComputeInternalInsetsListener listener : listeners) {
-                //listener.onComputeInternalInsets(inoutInfo);
-            //}
-        //}
+            } 
+        } 
+        
+        
+                
+        
+            
+                
+            
+        
     }
 
     
@@ -519,25 +521,27 @@ for(OnComputeInternalInsetsListener listener : listeners)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.753 -0400", hash_original_method = "892C39758A803740C8313A0D5A4EBBE8", hash_generated_method = "892C39758A803740C8313A0D5A4EBBE8")
         public InternalInsetsInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.754 -0400", hash_original_method = "01F6FFADBD331B04D5C349DCEDD59961", hash_generated_method = "8DEE7B19E2DFEBD717CC580FD498B385")
         public void setTouchableInsets(int val) {
             mTouchableInsets = val;
-            // ---------- Original Method ----------
-            //mTouchableInsets = val;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.754 -0400", hash_original_method = "22281D8629688FB4A664F43EE105A786", hash_generated_method = "6EE76A7B1A05E9211C9FB994484392FE")
         public int getTouchableInsets() {
             int var81F903742DA4C92623CAE8BEAA067BDE_1966316786 = (mTouchableInsets);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1551312606 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1551312606;
-            // ---------- Original Method ----------
-            //return mTouchableInsets;
+            
+            
         }
 
         
@@ -547,11 +551,11 @@ for(OnComputeInternalInsetsListener listener : listeners)
             visibleInsets.setEmpty();
             touchableRegion.setEmpty();
             mTouchableInsets = TOUCHABLE_INSETS_FRAME;
-            // ---------- Original Method ----------
-            //contentInsets.setEmpty();
-            //visibleInsets.setEmpty();
-            //touchableRegion.setEmpty();
-            //mTouchableInsets = TOUCHABLE_INSETS_FRAME;
+            
+            
+            
+            
+            
         }
 
         
@@ -566,55 +570,55 @@ for(OnComputeInternalInsetsListener listener : listeners)
                     boolean var68934A3E9455FA72420237EB05902327_204994610 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1012737623 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1012737623;
-                } //End block
+                } 
                 InternalInsetsInfo other = (InternalInsetsInfo)o;
     if(mTouchableInsets != other.mTouchableInsets)                
                 {
                     boolean var68934A3E9455FA72420237EB05902327_1150691996 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_118483992 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_118483992;
-                } //End block
+                } 
     if(!contentInsets.equals(other.contentInsets))                
                 {
                     boolean var68934A3E9455FA72420237EB05902327_1341226671 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_892701308 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_892701308;
-                } //End block
+                } 
     if(!visibleInsets.equals(other.visibleInsets))                
                 {
                     boolean var68934A3E9455FA72420237EB05902327_806445126 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_575987915 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_575987915;
-                } //End block
+                } 
                 boolean var6E3EC6374F730B50962418E9FB8FF8D1_579529524 = (touchableRegion.equals(other.touchableRegion));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1119053461 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1119053461;
-            } //End block
+            } 
             catch (ClassCastException e)
             {
                 boolean var68934A3E9455FA72420237EB05902327_509545079 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1430435651 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1430435651;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //if (o == null) {
-                    //return false;
-                //}
-                //InternalInsetsInfo other = (InternalInsetsInfo)o;
-                //if (mTouchableInsets != other.mTouchableInsets) {
-                    //return false;
-                //}
-                //if (!contentInsets.equals(other.contentInsets)) {
-                    //return false;
-                //}
-                //if (!visibleInsets.equals(other.visibleInsets)) {
-                    //return false;
-                //}
-                //return touchableRegion.equals(other.touchableRegion);
-            //} catch (ClassCastException e) {
-                //return false;
-            //}
+            } 
+            
+            
+                
+                    
+                
+                
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -624,11 +628,11 @@ for(OnComputeInternalInsetsListener listener : listeners)
             visibleInsets.set(other.visibleInsets);
             touchableRegion.set(other.touchableRegion);
             mTouchableInsets = other.mTouchableInsets;
-            // ---------- Original Method ----------
-            //contentInsets.set(other.contentInsets);
-            //visibleInsets.set(other.visibleInsets);
-            //touchableRegion.set(other.touchableRegion);
-            //mTouchableInsets = other.mTouchableInsets;
+            
+            
+            
+            
+            
         }
 
         

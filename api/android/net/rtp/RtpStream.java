@@ -1,6 +1,6 @@
 package android.net.rtp;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -33,12 +33,13 @@ public class RtpStream {
       RtpStream(InetAddress address) throws SocketException {
         mLocalPort = create(address.getHostAddress());
         mLocalAddress = address;
-        // ---------- Original Method ----------
-        //mLocalPort = create(address.getHostAddress());
-        //mLocalAddress = address;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.885 -0400", hash_original_method = "215B56CAD65C08D01C00FD356B52B803", hash_generated_method = "EDA68830C7B726A3E6D47BEC3460045D")
     private int create(String address) throws SocketException {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_135081246 = getTaintInt();
@@ -46,63 +47,69 @@ public class RtpStream {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.885 -0400", hash_original_method = "F28BFDFF195309DBD86E5144551EE7AD", hash_generated_method = "C5BF0614B30C3C9F7D86C44E81748C38")
     public InetAddress getLocalAddress() {
 InetAddress var0DE78938B7096FC280D64DC6179FFCE7_1175069340 =         mLocalAddress;
         var0DE78938B7096FC280D64DC6179FFCE7_1175069340.addTaint(taint);
         return var0DE78938B7096FC280D64DC6179FFCE7_1175069340;
-        // ---------- Original Method ----------
-        //return mLocalAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.885 -0400", hash_original_method = "7C31E9E70AC59EA03FD32B04D9A6DCA9", hash_generated_method = "CED3A865CB22D6D006BE5134208E625E")
     public int getLocalPort() {
         int var8AA7B8C7AB1C5C520C43F0E33D5A33C0_1330235902 = (mLocalPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1363047728 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1363047728;
-        // ---------- Original Method ----------
-        //return mLocalPort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.886 -0400", hash_original_method = "DA9171B440EA3ADB706340063F8102C7", hash_generated_method = "2BA542FEF0C6088678762F45B5FEDC27")
     public InetAddress getRemoteAddress() {
 InetAddress var8198FF43BDFDB16D148611CAF8ACB717_614500500 =         mRemoteAddress;
         var8198FF43BDFDB16D148611CAF8ACB717_614500500.addTaint(taint);
         return var8198FF43BDFDB16D148611CAF8ACB717_614500500;
-        // ---------- Original Method ----------
-        //return mRemoteAddress;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.886 -0400", hash_original_method = "B0A2085CD61C2E0240384F40F555D7FA", hash_generated_method = "C8822C95D7D1AF7E014BA801FF7F0365")
     public int getRemotePort() {
         int var9DDD4EB2DEE1BD50DC1F09A91A5CAC33_1655343265 = (mRemotePort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_483747887 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_483747887;
-        // ---------- Original Method ----------
-        //return mRemotePort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.886 -0400", hash_original_method = "4ACBB08C3FA83B75B554974AB7F8953B", hash_generated_method = "F87B67ECCCA395F742D9B29550EF8BBC")
     public boolean isBusy() {
         boolean var68934A3E9455FA72420237EB05902327_681374162 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1864949089 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1864949089;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.886 -0400", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "013C2762F80BD827E96093AC44126497")
     public int getMode() {
         int varC5AB706852158521E9D44BF62A49B1C9_34961738 = (mMode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613311204 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_613311204;
-        // ---------- Original Method ----------
-        //return mMode;
+        
+        
     }
 
     
@@ -113,22 +120,22 @@ InetAddress var8198FF43BDFDB16D148611CAF8ACB717_614500500 =         mRemoteAddre
             IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_1618118415 = new IllegalStateException("Busy");
             varEB02D49C7F66BF6343EB56DDF1963715_1618118415.addTaint(taint);
             throw varEB02D49C7F66BF6343EB56DDF1963715_1618118415;
-        } //End block
+        } 
     if(mode < 0 || mode > MODE_LAST)        
         {
             IllegalArgumentException varAED0A43B1A76B4B03E1EFA392603C665_683986756 = new IllegalArgumentException("Invalid mode");
             varAED0A43B1A76B4B03E1EFA392603C665_683986756.addTaint(taint);
             throw varAED0A43B1A76B4B03E1EFA392603C665_683986756;
-        } //End block
+        } 
         mMode = mode;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (mode < 0 || mode > MODE_LAST) {
-            //throw new IllegalArgumentException("Invalid mode");
-        //}
-        //mMode = mode;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -139,38 +146,39 @@ InetAddress var8198FF43BDFDB16D148611CAF8ACB717_614500500 =         mRemoteAddre
             IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_396038920 = new IllegalStateException("Busy");
             varEB02D49C7F66BF6343EB56DDF1963715_396038920.addTaint(taint);
             throw varEB02D49C7F66BF6343EB56DDF1963715_396038920;
-        } //End block
+        } 
     if(!(address instanceof Inet4Address && mLocalAddress instanceof Inet4Address) &&
                 !(address instanceof Inet6Address && mLocalAddress instanceof Inet6Address))        
         {
             IllegalArgumentException var7F7C1549CB312419D87D92DA30AF590C_1970958999 = new IllegalArgumentException("Unsupported address");
             var7F7C1549CB312419D87D92DA30AF590C_1970958999.addTaint(taint);
             throw var7F7C1549CB312419D87D92DA30AF590C_1970958999;
-        } //End block
+        } 
     if(port < 0 || port > 65535)        
         {
             IllegalArgumentException var9073C749711388E37E25A77B53FC1D1F_1595463330 = new IllegalArgumentException("Invalid port");
             var9073C749711388E37E25A77B53FC1D1F_1595463330.addTaint(taint);
             throw var9073C749711388E37E25A77B53FC1D1F_1595463330;
-        } //End block
+        } 
         mRemoteAddress = address;
         mRemotePort = port;
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //if (!(address instanceof Inet4Address && mLocalAddress instanceof Inet4Address) &&
-                //!(address instanceof Inet6Address && mLocalAddress instanceof Inet6Address)) {
-            //throw new IllegalArgumentException("Unsupported address");
-        //}
-        //if (port < 0 || port > 65535) {
-            //throw new IllegalArgumentException("Invalid port");
-        //}
-        //mRemoteAddress = address;
-        //mRemotePort = port;
+        
+        
+            
+        
+        
+                
+            
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.888 -0400", hash_original_method = "CADBAA67E59C58F3A263DE6FDC241D82", hash_generated_method = "D7F878855543CA01BD0FBE5B4E1112B5")
     synchronized int dup() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1180993453 = getTaintInt();
@@ -185,16 +193,17 @@ InetAddress var8198FF43BDFDB16D148611CAF8ACB717_614500500 =         mRemoteAddre
             IllegalStateException varEB02D49C7F66BF6343EB56DDF1963715_2022071711 = new IllegalStateException("Busy");
             varEB02D49C7F66BF6343EB56DDF1963715_2022071711.addTaint(taint);
             throw varEB02D49C7F66BF6343EB56DDF1963715_2022071711;
-        } //End block
+        } 
         close();
-        // ---------- Original Method ----------
-        //if (isBusy()) {
-            //throw new IllegalStateException("Busy");
-        //}
-        //close();
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.889 -0400", hash_original_method = "D50D7BA65C2BEB3EB436584B5735F108", hash_generated_method = "9DCF3C990963C60F39E50E126C7A13BB")
     private synchronized void close() {
     }
@@ -205,9 +214,9 @@ InetAddress var8198FF43BDFDB16D148611CAF8ACB717_614500500 =         mRemoteAddre
     protected void finalize() throws Throwable {
         close();
         super.finalize();
-        // ---------- Original Method ----------
-        //close();
-        //super.finalize();
+        
+        
+        
     }
 
     

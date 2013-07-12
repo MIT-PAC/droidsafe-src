@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,7 +29,7 @@ public final class StrictMode {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.749 -0400", hash_original_method = "E3867A4A77A9B912C067B4B7EB14B6CB", hash_generated_method = "4A3827557D89D96B907E9813E3C5AC14")
     private  StrictMode() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -286,7 +286,8 @@ public final class StrictMode {
     }
 
     
-        public static VmPolicy getVmPolicy() {
+        @DSModeled(DSC.SAFE)
+    public static VmPolicy getVmPolicy() {
         synchronized (StrictMode.class) {
             return sVmPolicy;
         }
@@ -305,30 +306,32 @@ public final class StrictMode {
     }
 
     
-        public static boolean vmSqliteObjectLeaksEnabled() {
+        @DSModeled(DSC.SAFE)
+    public static boolean vmSqliteObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CURSOR_LEAKS) != 0;
     }
 
     
-        public static boolean vmClosableObjectLeaksEnabled() {
+        @DSModeled(DSC.SAFE)
+    public static boolean vmClosableObjectLeaksEnabled() {
         return (sVmPolicyMask & DETECT_VM_CLOSABLE_LEAKS) != 0;
     }
 
     
         public static void onSqliteObjectLeaked(String message, Throwable originStack) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         onVmPolicyViolation(message, originStack);
     }
 
     
         public static void onWebViewMethodCalledOnWrongThread(Throwable originStack) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         onVmPolicyViolation(null, originStack);
     }
 
     
         public static void onVmPolicyViolation(String message, Throwable originStack) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final boolean penaltyDropbox = (sVmPolicyMask & PENALTY_DROPBOX) != 0;
         final boolean penaltyDeath = (sVmPolicyMask & PENALTY_DEATH) != 0;
         final boolean penaltyLog = (sVmPolicyMask & PENALTY_LOG) != 0;
@@ -537,8 +540,8 @@ public final class StrictMode {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.754 -0400", hash_original_method = "B0AC15ACB9093249F94C953D0A842CAE", hash_generated_method = "CD2B4FBA33571E2F2EF5D0491C95A1F6")
         private  ThreadPolicy(int mask) {
             this.mask = mask;
-            // ---------- Original Method ----------
-            //this.mask = mask;
+            
+            
         }
 
         
@@ -548,8 +551,8 @@ public final class StrictMode {
 String varEA020F0794DC249B4DFA91451430514A_436758770 =             "[StrictMode.ThreadPolicy; mask=" + mask + "]";
             varEA020F0794DC249B4DFA91451430514A_436758770.addTaint(taint);
             return varEA020F0794DC249B4DFA91451430514A_436758770;
-            // ---------- Original Method ----------
-            //return "[StrictMode.ThreadPolicy; mask=" + mask + "]";
+            
+            
         }
 
         
@@ -561,16 +564,16 @@ String varEA020F0794DC249B4DFA91451430514A_436758770 =             "[StrictMode.
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.754 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "C4A90307B6990541B60C2B86DCD4B526")
             public  Builder() {
                 mMask = 0;
-                // ---------- Original Method ----------
-                //mMask = 0;
+                
+                
             }
 
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.754 -0400", hash_original_method = "2270BC971D9C4F82FBD51366B809A76A", hash_generated_method = "631C274E04C6C0B7E08BF52CFE1C0EDE")
             public  Builder(ThreadPolicy policy) {
                 mMask = policy.mask;
-                // ---------- Original Method ----------
-                //mMask = policy.mask;
+                
+                
             }
 
             
@@ -579,8 +582,8 @@ String varEA020F0794DC249B4DFA91451430514A_436758770 =             "[StrictMode.
 Builder varF8028DE273C96D9B4307CF88AD033CC0_2002413715 =                 enable(ALL_THREAD_DETECT_BITS);
                 varF8028DE273C96D9B4307CF88AD033CC0_2002413715.addTaint(taint);
                 return varF8028DE273C96D9B4307CF88AD033CC0_2002413715;
-                // ---------- Original Method ----------
-                //return enable(ALL_THREAD_DETECT_BITS);
+                
+                
             }
 
             
@@ -589,8 +592,8 @@ Builder varF8028DE273C96D9B4307CF88AD033CC0_2002413715 =                 enable(
 Builder var127B5FA52E24BFBDE16E8DA40A786827_139351565 =                 disable(ALL_THREAD_DETECT_BITS);
                 var127B5FA52E24BFBDE16E8DA40A786827_139351565.addTaint(taint);
                 return var127B5FA52E24BFBDE16E8DA40A786827_139351565;
-                // ---------- Original Method ----------
-                //return disable(ALL_THREAD_DETECT_BITS);
+                
+                
             }
 
             
@@ -599,8 +602,8 @@ Builder var127B5FA52E24BFBDE16E8DA40A786827_139351565 =                 disable(
 Builder var060B56A9EE6E877186348768E1026203_1115183657 =                 enable(DETECT_NETWORK);
                 var060B56A9EE6E877186348768E1026203_1115183657.addTaint(taint);
                 return var060B56A9EE6E877186348768E1026203_1115183657;
-                // ---------- Original Method ----------
-                //return enable(DETECT_NETWORK);
+                
+                
             }
 
             
@@ -609,8 +612,8 @@ Builder var060B56A9EE6E877186348768E1026203_1115183657 =                 enable(
 Builder var11897196A9FAF00B1E55698E6825D150_1441599221 =                 disable(DETECT_NETWORK);
                 var11897196A9FAF00B1E55698E6825D150_1441599221.addTaint(taint);
                 return var11897196A9FAF00B1E55698E6825D150_1441599221;
-                // ---------- Original Method ----------
-                //return disable(DETECT_NETWORK);
+                
+                
             }
 
             
@@ -619,8 +622,8 @@ Builder var11897196A9FAF00B1E55698E6825D150_1441599221 =                 disable
 Builder var3F063EB9BA6514A4587A93DCF87C0A3F_823326896 =                 enable(DETECT_DISK_READ);
                 var3F063EB9BA6514A4587A93DCF87C0A3F_823326896.addTaint(taint);
                 return var3F063EB9BA6514A4587A93DCF87C0A3F_823326896;
-                // ---------- Original Method ----------
-                //return enable(DETECT_DISK_READ);
+                
+                
             }
 
             
@@ -629,8 +632,8 @@ Builder var3F063EB9BA6514A4587A93DCF87C0A3F_823326896 =                 enable(D
 Builder var12A35DDA5597598C86F385006473D33F_1421380790 =                 disable(DETECT_DISK_READ);
                 var12A35DDA5597598C86F385006473D33F_1421380790.addTaint(taint);
                 return var12A35DDA5597598C86F385006473D33F_1421380790;
-                // ---------- Original Method ----------
-                //return disable(DETECT_DISK_READ);
+                
+                
             }
 
             
@@ -639,8 +642,8 @@ Builder var12A35DDA5597598C86F385006473D33F_1421380790 =                 disable
 Builder varB551A65CDB5E9D4D674BF0E51A845100_471126441 =                 enable(DETECT_CUSTOM);
                 varB551A65CDB5E9D4D674BF0E51A845100_471126441.addTaint(taint);
                 return varB551A65CDB5E9D4D674BF0E51A845100_471126441;
-                // ---------- Original Method ----------
-                //return enable(DETECT_CUSTOM);
+                
+                
             }
 
             
@@ -649,8 +652,8 @@ Builder varB551A65CDB5E9D4D674BF0E51A845100_471126441 =                 enable(D
 Builder varB551A65CDB5E9D4D674BF0E51A845100_445171756 =                 enable(DETECT_CUSTOM);
                 varB551A65CDB5E9D4D674BF0E51A845100_445171756.addTaint(taint);
                 return varB551A65CDB5E9D4D674BF0E51A845100_445171756;
-                // ---------- Original Method ----------
-                //return enable(DETECT_CUSTOM);
+                
+                
             }
 
             
@@ -659,8 +662,8 @@ Builder varB551A65CDB5E9D4D674BF0E51A845100_445171756 =                 enable(D
 Builder varDD77C3520ED2D64CC1AB70214F6E6110_1153325144 =                 enable(DETECT_DISK_WRITE);
                 varDD77C3520ED2D64CC1AB70214F6E6110_1153325144.addTaint(taint);
                 return varDD77C3520ED2D64CC1AB70214F6E6110_1153325144;
-                // ---------- Original Method ----------
-                //return enable(DETECT_DISK_WRITE);
+                
+                
             }
 
             
@@ -669,8 +672,8 @@ Builder varDD77C3520ED2D64CC1AB70214F6E6110_1153325144 =                 enable(
 Builder var24EE8F4D13A53650B5D44898DCAA4E34_2105712535 =                 disable(DETECT_DISK_WRITE);
                 var24EE8F4D13A53650B5D44898DCAA4E34_2105712535.addTaint(taint);
                 return var24EE8F4D13A53650B5D44898DCAA4E34_2105712535;
-                // ---------- Original Method ----------
-                //return disable(DETECT_DISK_WRITE);
+                
+                
             }
 
             
@@ -679,8 +682,8 @@ Builder var24EE8F4D13A53650B5D44898DCAA4E34_2105712535 =                 disable
 Builder var4FB3EC1CFDBDC4DC0249B9B2B8BFFEAB_2061671131 =                 enable(PENALTY_DIALOG);
                 var4FB3EC1CFDBDC4DC0249B9B2B8BFFEAB_2061671131.addTaint(taint);
                 return var4FB3EC1CFDBDC4DC0249B9B2B8BFFEAB_2061671131;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_DIALOG);
+                
+                
             }
 
             
@@ -689,8 +692,8 @@ Builder var4FB3EC1CFDBDC4DC0249B9B2B8BFFEAB_2061671131 =                 enable(
 Builder var6F115A07D237A33880541F25719D67B0_1976546836 =                 enable(PENALTY_DEATH);
                 var6F115A07D237A33880541F25719D67B0_1976546836.addTaint(taint);
                 return var6F115A07D237A33880541F25719D67B0_1976546836;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_DEATH);
+                
+                
             }
 
             
@@ -699,8 +702,8 @@ Builder var6F115A07D237A33880541F25719D67B0_1976546836 =                 enable(
 Builder var4D622F4AC95636106DBB9B4371461C0F_2044915870 =                 enable(PENALTY_DEATH_ON_NETWORK);
                 var4D622F4AC95636106DBB9B4371461C0F_2044915870.addTaint(taint);
                 return var4D622F4AC95636106DBB9B4371461C0F_2044915870;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_DEATH_ON_NETWORK);
+                
+                
             }
 
             
@@ -709,8 +712,8 @@ Builder var4D622F4AC95636106DBB9B4371461C0F_2044915870 =                 enable(
 Builder var7AEBB7BE9C233214B8A8E14BB80D42F5_1599487160 =                 enable(PENALTY_FLASH);
                 var7AEBB7BE9C233214B8A8E14BB80D42F5_1599487160.addTaint(taint);
                 return var7AEBB7BE9C233214B8A8E14BB80D42F5_1599487160;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_FLASH);
+                
+                
             }
 
             
@@ -719,8 +722,8 @@ Builder var7AEBB7BE9C233214B8A8E14BB80D42F5_1599487160 =                 enable(
 Builder var7C46BCB224406F4BC478971CF4360D87_677476205 =                 enable(PENALTY_LOG);
                 var7C46BCB224406F4BC478971CF4360D87_677476205.addTaint(taint);
                 return var7C46BCB224406F4BC478971CF4360D87_677476205;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_LOG);
+                
+                
             }
 
             
@@ -729,32 +732,34 @@ Builder var7C46BCB224406F4BC478971CF4360D87_677476205 =                 enable(P
 Builder varC3126CEB2524227BCB28FCD226FE486C_1370772932 =                 enable(PENALTY_DROPBOX);
                 varC3126CEB2524227BCB28FCD226FE486C_1370772932.addTaint(taint);
                 return varC3126CEB2524227BCB28FCD226FE486C_1370772932;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_DROPBOX);
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.756 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "23BDA50DEA6073A82EDAABD855CCBD64")
             private Builder enable(int bit) {
                 mMask |= bit;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1870995108 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1870995108.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1870995108;
-                // ---------- Original Method ----------
-                //mMask |= bit;
-                //return this;
+                
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.756 -0400", hash_original_method = "DD377E4C338D3B09C11C3D4D7DFD99D3", hash_generated_method = "2B3963DB776ED03D4D2CEFD5DA3C06A9")
             private Builder disable(int bit) {
                 mMask &= ~bit;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1515071389 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1515071389.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1515071389;
-                // ---------- Original Method ----------
-                //mMask &= ~bit;
-                //return this;
+                
+                
+                
             }
 
             
@@ -765,17 +770,17 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1515071389 =                 this;
                               PENALTY_DROPBOX | PENALTY_DIALOG)) == 0)                
                 {
                     penaltyLog();
-                } //End block
+                } 
 ThreadPolicy varEBA1A0201E5503996C968AF363927B41_304204156 =                 new ThreadPolicy(mMask);
                 varEBA1A0201E5503996C968AF363927B41_304204156.addTaint(taint);
                 return varEBA1A0201E5503996C968AF363927B41_304204156;
-                // ---------- Original Method ----------
-                //if (mMask != 0 &&
-                    //(mMask & (PENALTY_DEATH | PENALTY_LOG |
-                              //PENALTY_DROPBOX | PENALTY_DIALOG)) == 0) {
-                    //penaltyLog();
-                //}
-                //return new ThreadPolicy(mMask);
+                
+                
+                    
+                              
+                    
+                
+                
             }
 
             
@@ -805,15 +810,15 @@ ThreadPolicy varEBA1A0201E5503996C968AF363927B41_304204156 =                 new
                 NullPointerException var7477CAB079CA09E117BDAE6A2F278039_1610914367 = new NullPointerException("classInstanceLimit == null");
                 var7477CAB079CA09E117BDAE6A2F278039_1610914367.addTaint(taint);
                 throw var7477CAB079CA09E117BDAE6A2F278039_1610914367;
-            } //End block
+            } 
             this.mask = mask;
             this.classInstanceLimit = classInstanceLimit;
-            // ---------- Original Method ----------
-            //if (classInstanceLimit == null) {
-                //throw new NullPointerException("classInstanceLimit == null");
-            //}
-            //this.mask = mask;
-            //this.classInstanceLimit = classInstanceLimit;
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -823,8 +828,8 @@ ThreadPolicy varEBA1A0201E5503996C968AF363927B41_304204156 =                 new
 String var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958 =             "[StrictMode.VmPolicy; mask=" + mask + "]";
             var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958.addTaint(taint);
             return var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958;
-            // ---------- Original Method ----------
-            //return "[StrictMode.VmPolicy; mask=" + mask + "]";
+            
+            
         }
 
         
@@ -842,8 +847,8 @@ String var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958 =             "[StrictMode
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.758 -0400", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "C4A90307B6990541B60C2B86DCD4B526")
             public  Builder() {
                 mMask = 0;
-                // ---------- Original Method ----------
-                //mMask = 0;
+                
+                
             }
 
             
@@ -852,10 +857,10 @@ String var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958 =             "[StrictMode
                 mMask = base.mask;
                 mClassInstanceLimitNeedCow = true;
                 mClassInstanceLimit = base.classInstanceLimit;
-                // ---------- Original Method ----------
-                //mMask = base.mask;
-                //mClassInstanceLimitNeedCow = true;
-                //mClassInstanceLimit = base.classInstanceLimit;
+                
+                
+                
+                
             }
 
             
@@ -868,7 +873,7 @@ String var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958 =             "[StrictMode
                     NullPointerException varEC8722BB6331CF6DCBF064C77DE13ACE_715809818 = new NullPointerException("klass == null");
                     varEC8722BB6331CF6DCBF064C77DE13ACE_715809818.addTaint(taint);
                     throw varEC8722BB6331CF6DCBF064C77DE13ACE_715809818;
-                } //End block
+                } 
     if(mClassInstanceLimitNeedCow)                
                 {
     if(mClassInstanceLimit.containsKey(klass) &&
@@ -877,22 +882,22 @@ String var1CA5F32371B0F7CE34D9E4113B1966E8_1548700958 =             "[StrictMode
 Builder var72A74007B2BE62B849F475C7BDA4658B_689742696 =                         this;
                         var72A74007B2BE62B849F475C7BDA4658B_689742696.addTaint(taint);
                         return var72A74007B2BE62B849F475C7BDA4658B_689742696;
-                    } //End block
+                    } 
                     mClassInstanceLimitNeedCow = false;
                     mClassInstanceLimit = (HashMap<Class, Integer>) mClassInstanceLimit.clone();
-                } //End block
+                } 
                 else
     if(mClassInstanceLimit == null)                
                 {
                     mClassInstanceLimit = new HashMap<Class, Integer>();
-                } //End block
+                } 
                 mMask |= DETECT_VM_INSTANCE_LEAKS;
                 mClassInstanceLimit.put(klass, instanceLimit);
 Builder var72A74007B2BE62B849F475C7BDA4658B_1068704652 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_1068704652.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_1068704652;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -901,8 +906,8 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1068704652 =                 this;
 Builder var8524FF6E5F58BD95313BDC3DEBCA1C6C_2092471340 =                 enable(DETECT_VM_ACTIVITY_LEAKS);
                 var8524FF6E5F58BD95313BDC3DEBCA1C6C_2092471340.addTaint(taint);
                 return var8524FF6E5F58BD95313BDC3DEBCA1C6C_2092471340;
-                // ---------- Original Method ----------
-                //return enable(DETECT_VM_ACTIVITY_LEAKS);
+                
+                
             }
 
             
@@ -912,9 +917,9 @@ Builder var1CCC29012BEF03C8B2CAA346F1691BB7_1161272831 =                 enable(
                         DETECT_VM_CURSOR_LEAKS | DETECT_VM_CLOSABLE_LEAKS);
                 var1CCC29012BEF03C8B2CAA346F1691BB7_1161272831.addTaint(taint);
                 return var1CCC29012BEF03C8B2CAA346F1691BB7_1161272831;
-                // ---------- Original Method ----------
-                //return enable(DETECT_VM_ACTIVITY_LEAKS |
-                        //DETECT_VM_CURSOR_LEAKS | DETECT_VM_CLOSABLE_LEAKS);
+                
+                
+                        
             }
 
             
@@ -923,8 +928,8 @@ Builder var1CCC29012BEF03C8B2CAA346F1691BB7_1161272831 =                 enable(
 Builder var299E070569B7903CA6AB30AF17C33B96_2044411417 =                 enable(DETECT_VM_CURSOR_LEAKS);
                 var299E070569B7903CA6AB30AF17C33B96_2044411417.addTaint(taint);
                 return var299E070569B7903CA6AB30AF17C33B96_2044411417;
-                // ---------- Original Method ----------
-                //return enable(DETECT_VM_CURSOR_LEAKS);
+                
+                
             }
 
             
@@ -933,8 +938,8 @@ Builder var299E070569B7903CA6AB30AF17C33B96_2044411417 =                 enable(
 Builder var97E97BCCFDD5CCC88D830C9545A76C50_1822998060 =                 enable(DETECT_VM_CLOSABLE_LEAKS);
                 var97E97BCCFDD5CCC88D830C9545A76C50_1822998060.addTaint(taint);
                 return var97E97BCCFDD5CCC88D830C9545A76C50_1822998060;
-                // ---------- Original Method ----------
-                //return enable(DETECT_VM_CLOSABLE_LEAKS);
+                
+                
             }
 
             
@@ -943,8 +948,8 @@ Builder var97E97BCCFDD5CCC88D830C9545A76C50_1822998060 =                 enable(
 Builder var6F115A07D237A33880541F25719D67B0_411204916 =                 enable(PENALTY_DEATH);
                 var6F115A07D237A33880541F25719D67B0_411204916.addTaint(taint);
                 return var6F115A07D237A33880541F25719D67B0_411204916;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_DEATH);
+                
+                
             }
 
             
@@ -953,8 +958,8 @@ Builder var6F115A07D237A33880541F25719D67B0_411204916 =                 enable(P
 Builder var7C46BCB224406F4BC478971CF4360D87_235284325 =                 enable(PENALTY_LOG);
                 var7C46BCB224406F4BC478971CF4360D87_235284325.addTaint(taint);
                 return var7C46BCB224406F4BC478971CF4360D87_235284325;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_LOG);
+                
+                
             }
 
             
@@ -963,20 +968,21 @@ Builder var7C46BCB224406F4BC478971CF4360D87_235284325 =                 enable(P
 Builder varC3126CEB2524227BCB28FCD226FE486C_1979389971 =                 enable(PENALTY_DROPBOX);
                 varC3126CEB2524227BCB28FCD226FE486C_1979389971.addTaint(taint);
                 return varC3126CEB2524227BCB28FCD226FE486C_1979389971;
-                // ---------- Original Method ----------
-                //return enable(PENALTY_DROPBOX);
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.759 -0400", hash_original_method = "450902735A2D953DC54C05378B49DC09", hash_generated_method = "FE53EC53892673EDC515A853EC4EB3BD")
             private Builder enable(int bit) {
                 mMask |= bit;
 Builder var72A74007B2BE62B849F475C7BDA4658B_733656729 =                 this;
                 var72A74007B2BE62B849F475C7BDA4658B_733656729.addTaint(taint);
                 return var72A74007B2BE62B849F475C7BDA4658B_733656729;
-                // ---------- Original Method ----------
-                //mMask |= bit;
-                //return this;
+                
+                
+                
             }
 
             
@@ -987,19 +993,19 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_733656729 =                 this;
                               PENALTY_DROPBOX | PENALTY_DIALOG)) == 0)                
                 {
                     penaltyLog();
-                } //End block
+                } 
 VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmPolicy(mMask,
                         mClassInstanceLimit != null ? mClassInstanceLimit : EMPTY_CLASS_LIMIT_MAP);
                 varE95CDCB511F5178776413479725D337E_158192551.addTaint(taint);
                 return varE95CDCB511F5178776413479725D337E_158192551;
-                // ---------- Original Method ----------
-                //if (mMask != 0 &&
-                    //(mMask & (PENALTY_DEATH | PENALTY_LOG |
-                              //PENALTY_DROPBOX | PENALTY_DIALOG)) == 0) {
-                    //penaltyLog();
-                //}
-                //return new VmPolicy(mMask,
-                        //mClassInstanceLimit != null ? mClassInstanceLimit : EMPTY_CLASS_LIMIT_MAP);
+                
+                
+                    
+                              
+                    
+                
+                
+                        
             }
 
             
@@ -1022,7 +1028,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
             addTaint(message.getTaint());
             addTaint(policyViolated);
             addTaint(policyState);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1036,7 +1042,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
         public  StrictModeNetworkViolation(int policyMask) {
             super(policyMask, DETECT_NETWORK, null);
             addTaint(policyMask);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1050,7 +1056,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
         public  StrictModeDiskReadViolation(int policyMask) {
             super(policyMask, DETECT_DISK_READ, null);
             addTaint(policyMask);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1064,7 +1070,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
         public  StrictModeDiskWriteViolation(int policyMask) {
             super(policyMask, DETECT_DISK_WRITE, null);
             addTaint(policyMask);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1079,7 +1085,7 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
             super(policyMask, DETECT_CUSTOM, name);
             addTaint(name.getTaint());
             addTaint(policyMask);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1098,8 +1104,8 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.761 -0400", hash_original_method = "56B73F441F57B7F1580692BF8D8E5ECB", hash_generated_method = "D44A205806718F04E37473DFF9A09152")
         public  AndroidBlockGuardPolicy(final int policyMask) {
             mPolicyMask = policyMask;
-            // ---------- Original Method ----------
-            //mPolicyMask = policyMask;
+            
+            
         }
 
         
@@ -1109,144 +1115,146 @@ VmPolicy varE95CDCB511F5178776413479725D337E_158192551 =                 new VmP
 String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlockGuardPolicy; mPolicyMask=" + mPolicyMask;
             var88FE0C10C841ADC188489DE26D480D44_627181642.addTaint(taint);
             return var88FE0C10C841ADC188489DE26D480D44_627181642;
-            // ---------- Original Method ----------
-            //return "AndroidBlockGuardPolicy; mPolicyMask=" + mPolicyMask;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.762 -0400", hash_original_method = "BDAE35F9BC36FEF12DCB9013D520032B", hash_generated_method = "D6CF7CB69791B833B941866D698A17AD")
         public int getPolicyMask() {
             int var762A5B3087E77BD4ABEEF3C3AF201E66_782472847 = (mPolicyMask);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_982965628 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_982965628;
-            // ---------- Original Method ----------
-            //return mPolicyMask;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.762 -0400", hash_original_method = "0D85458AC3FF96FC22E8C3819C12EFAB", hash_generated_method = "939C668F45930394A597ACFF2F9393D0")
         public void onWriteToDisk() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
     if((mPolicyMask & DETECT_DISK_WRITE) == 0)            
             {
                 return;
-            } //End block
+            } 
     if(tooManyViolationsThisLoop())            
             {
                 return;
-            } //End block
+            } 
             BlockGuard.BlockGuardPolicyException e = new StrictModeDiskWriteViolation(mPolicyMask);
             e.fillInStackTrace();
             startHandlingViolationException(e);
-            // ---------- Original Method ----------
-            //if ((mPolicyMask & DETECT_DISK_WRITE) == 0) {
-                //return;
-            //}
-            //if (tooManyViolationsThisLoop()) {
-                //return;
-            //}
-            //BlockGuard.BlockGuardPolicyException e = new StrictModeDiskWriteViolation(mPolicyMask);
-            //e.fillInStackTrace();
-            //startHandlingViolationException(e);
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.762 -0400", hash_original_method = "B44201BA71724735A91DD4F1FF43D337", hash_generated_method = "FCC973E5F8E6D63A696BD074ABCD0B15")
          void onCustomSlowCall(String name) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(name.getTaint());
     if((mPolicyMask & DETECT_CUSTOM) == 0)            
             {
                 return;
-            } //End block
+            } 
     if(tooManyViolationsThisLoop())            
             {
                 return;
-            } //End block
+            } 
             BlockGuard.BlockGuardPolicyException e = new StrictModeCustomViolation(mPolicyMask, name);
             e.fillInStackTrace();
             startHandlingViolationException(e);
-            // ---------- Original Method ----------
-            //if ((mPolicyMask & DETECT_CUSTOM) == 0) {
-                //return;
-            //}
-            //if (tooManyViolationsThisLoop()) {
-                //return;
-            //}
-            //BlockGuard.BlockGuardPolicyException e = new StrictModeCustomViolation(mPolicyMask, name);
-            //e.fillInStackTrace();
-            //startHandlingViolationException(e);
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.762 -0400", hash_original_method = "DC9910586B30548E82E107CFA3542EA2", hash_generated_method = "642E6787E527A9CDB18531D1EA1315C7")
         public void onReadFromDisk() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
     if((mPolicyMask & DETECT_DISK_READ) == 0)            
             {
                 return;
-            } //End block
+            } 
     if(tooManyViolationsThisLoop())            
             {
                 return;
-            } //End block
+            } 
             BlockGuard.BlockGuardPolicyException e = new StrictModeDiskReadViolation(mPolicyMask);
             e.fillInStackTrace();
             startHandlingViolationException(e);
-            // ---------- Original Method ----------
-            //if ((mPolicyMask & DETECT_DISK_READ) == 0) {
-                //return;
-            //}
-            //if (tooManyViolationsThisLoop()) {
-                //return;
-            //}
-            //BlockGuard.BlockGuardPolicyException e = new StrictModeDiskReadViolation(mPolicyMask);
-            //e.fillInStackTrace();
-            //startHandlingViolationException(e);
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.762 -0400", hash_original_method = "D41EA35CCA984A26E96A9AAEEE4BCF1E", hash_generated_method = "F684ED19A28D521C3FF6F51166C9E532")
         public void onNetwork() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
     if((mPolicyMask & DETECT_NETWORK) == 0)            
             {
                 return;
-            } //End block
+            } 
     if((mPolicyMask & PENALTY_DEATH_ON_NETWORK) != 0)            
             {
                 NetworkOnMainThreadException varA37BA107317F3E6381657CE477C8D261_504966475 = new NetworkOnMainThreadException();
                 varA37BA107317F3E6381657CE477C8D261_504966475.addTaint(taint);
                 throw varA37BA107317F3E6381657CE477C8D261_504966475;
-            } //End block
+            } 
     if(tooManyViolationsThisLoop())            
             {
                 return;
-            } //End block
+            } 
             BlockGuard.BlockGuardPolicyException e = new StrictModeNetworkViolation(mPolicyMask);
             e.fillInStackTrace();
             startHandlingViolationException(e);
-            // ---------- Original Method ----------
-            //if ((mPolicyMask & DETECT_NETWORK) == 0) {
-                //return;
-            //}
-            //if ((mPolicyMask & PENALTY_DEATH_ON_NETWORK) != 0) {
-                //throw new NetworkOnMainThreadException();
-            //}
-            //if (tooManyViolationsThisLoop()) {
-                //return;
-            //}
-            //BlockGuard.BlockGuardPolicyException e = new StrictModeNetworkViolation(mPolicyMask);
-            //e.fillInStackTrace();
-            //startHandlingViolationException(e);
+            
+            
+                
+            
+            
+                
+            
+            
+                
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.763 -0400", hash_original_method = "A35D2E9A8AD0B9C28C9280D1C3956061", hash_generated_method = "6D9513DC2646B63D96CE73E109E46A70")
         public void setPolicyMask(int policyMask) {
             mPolicyMask = policyMask;
-            // ---------- Original Method ----------
-            //mPolicyMask = policyMask;
+            
+            
         }
 
         
@@ -1256,10 +1264,10 @@ String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlock
             final ViolationInfo info = new ViolationInfo(e, e.getPolicy());
             info.violationUptimeMillis = SystemClock.uptimeMillis();
             handleViolationWithTimingAttempt(info);
-            // ---------- Original Method ----------
-            //final ViolationInfo info = new ViolationInfo(e, e.getPolicy());
-            //info.violationUptimeMillis = SystemClock.uptimeMillis();
-            //handleViolationWithTimingAttempt(info);
+            
+            
+            
+            
         }
 
         
@@ -1273,17 +1281,17 @@ String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlock
                 info.durationMillis = -1;
                 handleViolation(info);
                 return;
-            } //End block
+            } 
             final ArrayList<ViolationInfo> records = violationsBeingTimed.get();
     if(records.size() >= MAX_OFFENSES_PER_LOOP)            
             {
                 return;
-            } //End block
+            } 
             records.add(info);
     if(records.size() > 1)            
             {
                 return;
-            } //End block
+            } 
             final IWindowManager windowManager = (info.policy & PENALTY_FLASH) != 0 ?
                     sWindowManager.get() : null;
     if(windowManager != null)            
@@ -1291,11 +1299,11 @@ String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlock
                 try 
                 {
                     windowManager.showStrictModeViolation(true);
-                } //End block
+                } 
                 catch (RemoteException unused)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             threadHandler.get().post(new Runnable() {            
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.763 -0400", hash_original_method = "13A73E46BCAE9FB3F25E0C7CB59DBB78", hash_generated_method = "CC200B3D14D759E46EE269E659AE6050")
             public void run() {
@@ -1305,11 +1313,11 @@ String var88FE0C10C841ADC188489DE26D480D44_627181642 =             "AndroidBlock
                     try 
                     {
                         windowManager.showStrictModeViolation(false);
-                    } //End block
+                    } 
                     catch (RemoteException unused)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
 for(int n = 0;n < records.size();++n)
                 {
                     ViolationInfo v = records.get(n);
@@ -1317,28 +1325,28 @@ for(int n = 0;n < records.size();++n)
                     v.durationMillis =
                                     (int) (loopFinishTime - v.violationUptimeMillis);
                     handleViolation(v);
-                } //End block
+                } 
                 records.clear();
-                // ---------- Original Method ----------
-                //long loopFinishTime = SystemClock.uptimeMillis();
-                //if (windowManager != null) {
-                            //try {
-                                //windowManager.showStrictModeViolation(false);
-                            //} catch (RemoteException unused) {
-                            //}
-                        //}
-                //for (int n = 0; n < records.size(); ++n) {
-                            //ViolationInfo v = records.get(n);
-                            //v.violationNumThisLoop = n + 1;
-                            //v.durationMillis =
-                                    //(int) (loopFinishTime - v.violationUptimeMillis);
-                            //handleViolation(v);
-                        //}
-                //records.clear();
+                
+                
+                
+                            
+                                
+                            
+                            
+                        
+                
+                            
+                            
+                            
+                                    
+                            
+                        
+                
             }
 });
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1349,7 +1357,7 @@ for(int n = 0;n < records.size();++n)
             {
                 Log.wtf(TAG, "unexpected null stacktrace");
                 return;
-            } //End block
+            } 
     if(LOG_V)            
             Log.d(TAG, "handleViolation; policy=" + info.policy);
     if((info.policy & PENALTY_GATHER) != 0)            
@@ -1359,28 +1367,28 @@ for(int n = 0;n < records.size();++n)
                 {
                     violations = new ArrayList<ViolationInfo>(1);
                     gatheredViolations.set(violations);
-                } //End block
+                } 
                 else
     if(violations.size() >= 5)                
                 {
                     return;
-                } //End block
+                } 
 for(ViolationInfo previous : violations)
                 {
     if(info.crashInfo.stackTrace.equals(previous.crashInfo.stackTrace))                    
                     {
                         return;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 violations.add(info);
                 return;
-            } //End block
+            } 
             Integer crashFingerprint = info.hashCode();
             long lastViolationTime = 0;
     if(mLastViolationTime.containsKey(crashFingerprint))            
             {
                 lastViolationTime = mLastViolationTime.get(crashFingerprint);
-            } //End block
+            } 
             long now = SystemClock.uptimeMillis();
             mLastViolationTime.put(crashFingerprint, now);
             long timeSinceLastViolationMillis = lastViolationTime == 0 ?
@@ -1392,22 +1400,22 @@ for(ViolationInfo previous : violations)
                 {
                     Log.d(TAG, "StrictMode policy violation; ~duration=" +
                           info.durationMillis + " ms: " + info.crashInfo.stackTrace);
-                } //End block
+                } 
                 else
                 {
                     Log.d(TAG, "StrictMode policy violation: " + info.crashInfo.stackTrace);
-                } //End block
-            } //End block
+                } 
+            } 
             int violationMaskSubset = 0;
     if((info.policy & PENALTY_DIALOG) != 0 &&
                 timeSinceLastViolationMillis > MIN_DIALOG_INTERVAL_MS)            
             {
                 violationMaskSubset |= PENALTY_DIALOG;
-            } //End block
+            } 
     if((info.policy & PENALTY_DROPBOX) != 0 && lastViolationTime == 0)            
             {
                 violationMaskSubset |= PENALTY_DROPBOX;
-            } //End block
+            } 
     if(violationMaskSubset != 0)            
             {
                 int violationBit = parseViolationFromMessage(info.crashInfo.exceptionMessage);
@@ -1418,7 +1426,7 @@ for(ViolationInfo previous : violations)
                 {
                     dropboxViolationAsync(violationMaskSubset, info);
                     return;
-                } //End block
+                } 
                 try 
                 {
                     setThreadPolicyMask(0);
@@ -1426,21 +1434,21 @@ for(ViolationInfo previous : violations)
                         RuntimeInit.getApplicationObject(),
                         violationMaskSubset,
                         info);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
+                } 
                 finally 
                 {
                     setThreadPolicyMask(savedPolicyMask);
-                } //End block
-            } //End block
+                } 
+            } 
     if((info.policy & PENALTY_DEATH) != 0)            
             {
                 executeDeathPenalty(info);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1453,7 +1461,7 @@ for(ViolationInfo previous : violations)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.765 -0400", hash_original_method = "E7772DF8591E8A95C00A24C3A7BC9385", hash_generated_method = "E7772DF8591E8A95C00A24C3A7BC9385")
         public AndroidCloseGuardReporter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1462,8 +1470,8 @@ for(ViolationInfo previous : violations)
             addTaint(allocationSite.getTaint());
             addTaint(message.getTaint());
             onVmPolicyViolation(message, allocationSite);
-            // ---------- Original Method ----------
-            //onVmPolicyViolation(message, allocationSite);
+            
+            
         }
 
         
@@ -1476,7 +1484,7 @@ for(ViolationInfo previous : violations)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.765 -0400", hash_original_method = "9318B319D2DE8ECE742465D2C7D8840B", hash_generated_method = "9318B319D2DE8ECE742465D2C7D8840B")
         public LogStackTrace ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1504,16 +1512,16 @@ for(ViolationInfo previous : violations)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.765 -0400", hash_original_method = "858C7F08B86E9ABCC5108174CEDFA974", hash_generated_method = "46A08256E701EE28F27EFDCC6EA7A311")
           Span(ThreadSpanState threadState) {
             mContainerState = threadState;
-            // ---------- Original Method ----------
-            //mContainerState = threadState;
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.766 -0400", hash_original_method = "35ECB8DB5D2E2401D23EA00A0B49C3B0", hash_generated_method = "9BA85CCA4EAE21C800E5947B396A9A75")
         protected  Span() {
             mContainerState = null;
-            // ---------- Original Method ----------
-            //mContainerState = null;
+            
+            
         }
 
         
@@ -1525,19 +1533,19 @@ for(ViolationInfo previous : violations)
     if(mName == null)                
                 {
                     return;
-                } //End block
+                } 
     if(mPrev != null)                
                 {
                     mPrev.mNext = mNext;
-                } //End block
+                } 
     if(mNext != null)                
                 {
                     mNext.mPrev = mPrev;
-                } //End block
+                } 
     if(state.mActiveHead == this)                
                 {
                     state.mActiveHead = mNext;
-                } //End block
+                } 
                 state.mActiveSize--;
     if(LOG_V)                
                 Log.d(TAG, "Span finished=" + mName + "; size=" + state.mActiveSize);
@@ -1550,10 +1558,10 @@ for(ViolationInfo previous : violations)
                     this.mNext = state.mFreeListHead;
                     state.mFreeListHead = this;
                     state.mFreeListSize++;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -1578,7 +1586,7 @@ for(ViolationInfo previous : violations)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:33.766 -0400", hash_original_method = "897FCF469D672A73C45810344D5B48A8", hash_generated_method = "897FCF469D672A73C45810344D5B48A8")
         public ThreadSpanState ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1619,9 +1627,9 @@ for(ViolationInfo previous : violations)
         public  ViolationInfo() {
             crashInfo = null;
             policy = 0;
-            // ---------- Original Method ----------
-            //crashInfo = null;
-            //policy = 0;
+            
+            
+            
         }
 
         
@@ -1635,19 +1643,19 @@ for(ViolationInfo previous : violations)
     if(broadcastIntent != null)            
             {
                 broadcastIntentAction = broadcastIntent.getAction();
-            } //End block
+            } 
             ThreadSpanState state = sThisThreadSpanState.get();
     if(tr instanceof InstanceCountViolation)            
             {
                 this.numInstances = ((InstanceCountViolation) tr).mInstances;
-            } //End block
+            } 
             synchronized
 (state)            {
                 int spanActiveCount = state.mActiveSize;
     if(spanActiveCount > MAX_SPAN_TAGS)                
                 {
                     spanActiveCount = MAX_SPAN_TAGS;
-                } //End block
+                } 
     if(spanActiveCount != 0)                
                 {
                     this.tags = new String[spanActiveCount];
@@ -1659,11 +1667,11 @@ for(ViolationInfo previous : violations)
                         this.tags[index] = iter.mName;
                         index++;
                         iter = iter.mNext;
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -1671,7 +1679,7 @@ for(ViolationInfo previous : violations)
         public  ViolationInfo(Parcel in) {
             this(in, false);
             addTaint(in.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1683,11 +1691,11 @@ for(ViolationInfo previous : violations)
     if(unsetGatheringBit)            
             {
                 policy = rawPolicy & ~PENALTY_GATHER;
-            } //End block
+            } 
             else
             {
                 policy = rawPolicy;
-            } //End block
+            } 
             durationMillis = in.readInt();
             violationNumThisLoop = in.readInt();
             numAnimationsRunning = in.readInt();
@@ -1695,21 +1703,21 @@ for(ViolationInfo previous : violations)
             numInstances = in.readLong();
             broadcastIntentAction = in.readString();
             tags = in.readStringArray();
-            // ---------- Original Method ----------
-            //crashInfo = new ApplicationErrorReport.CrashInfo(in);
-            //int rawPolicy = in.readInt();
-            //if (unsetGatheringBit) {
-                //policy = rawPolicy & ~PENALTY_GATHER;
-            //} else {
-                //policy = rawPolicy;
-            //}
-            //durationMillis = in.readInt();
-            //violationNumThisLoop = in.readInt();
-            //numAnimationsRunning = in.readInt();
-            //violationUptimeMillis = in.readLong();
-            //numInstances = in.readLong();
-            //broadcastIntentAction = in.readString();
-            //tags = in.readStringArray();
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1721,36 +1729,36 @@ for(ViolationInfo previous : violations)
     if(numAnimationsRunning != 0)            
             {
                 result *= 37;
-            } //End block
+            } 
     if(broadcastIntentAction != null)            
             {
                 result = 37 * result + broadcastIntentAction.hashCode();
-            } //End block
+            } 
     if(tags != null)            
             {
 for(String tag : tags)
                 {
                     result = 37 * result + tag.hashCode();
-                } //End block
-            } //End block
+                } 
+            } 
             int varB4A88417B3D0170D754C647C30B7216A_193196896 = (result);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918552623 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_918552623;
-            // ---------- Original Method ----------
-            //int result = 17;
-            //result = 37 * result + crashInfo.stackTrace.hashCode();
-            //if (numAnimationsRunning != 0) {
-                //result *= 37;
-            //}
-            //if (broadcastIntentAction != null) {
-                //result = 37 * result + broadcastIntentAction.hashCode();
-            //}
-            //if (tags != null) {
-                //for (String tag : tags) {
-                    //result = 37 * result + tag.hashCode();
-                //}
-            //}
-            //return result;
+            
+            
+            
+            
+                
+            
+            
+                
+            
+            
+                
+                    
+                
+            
+            
         }
 
         
@@ -1767,16 +1775,16 @@ for(String tag : tags)
             dest.writeLong(numInstances);
             dest.writeString(broadcastIntentAction);
             dest.writeStringArray(tags);
-            // ---------- Original Method ----------
-            //crashInfo.writeToParcel(dest, flags);
-            //dest.writeInt(policy);
-            //dest.writeInt(durationMillis);
-            //dest.writeInt(violationNumThisLoop);
-            //dest.writeInt(numAnimationsRunning);
-            //dest.writeLong(violationUptimeMillis);
-            //dest.writeLong(numInstances);
-            //dest.writeString(broadcastIntentAction);
-            //dest.writeStringArray(tags);
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1789,34 +1797,34 @@ for(String tag : tags)
     if(durationMillis != -1)            
             {
                 pw.println(prefix + "durationMillis: " + durationMillis);
-            } //End block
+            } 
     if(numInstances != -1)            
             {
                 pw.println(prefix + "numInstances: " + numInstances);
-            } //End block
+            } 
     if(violationNumThisLoop != 0)            
             {
                 pw.println(prefix + "violationNumThisLoop: " + violationNumThisLoop);
-            } //End block
+            } 
     if(numAnimationsRunning != 0)            
             {
                 pw.println(prefix + "numAnimationsRunning: " + numAnimationsRunning);
-            } //End block
+            } 
             pw.println(prefix + "violationUptimeMillis: " + violationUptimeMillis);
     if(broadcastIntentAction != null)            
             {
                 pw.println(prefix + "broadcastIntentAction: " + broadcastIntentAction);
-            } //End block
+            } 
     if(tags != null)            
             {
                 int index = 0;
 for(String tag : tags)
                 {
                     pw.println(prefix + "tag[" + (index++) + "]: " + tag);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -1842,11 +1850,11 @@ for(String tag : tags)
             mClass = klass;
             mInstances = instances;
             mLimit = limit;
-            // ---------- Original Method ----------
-            //setStackTrace(FAKE_STACK);
-            //mClass = klass;
-            //mInstances = instances;
-            //mLimit = limit;
+            
+            
+            
+            
+            
         }
 
         
@@ -1873,14 +1881,14 @@ for(String tag : tags)
                 final Integer value = sInstanceCounts.get(mKlass);
                 final int newValue = value != null ? value + 1 : 1;
                 sInstanceCounts.put(mKlass, newValue);
-            } //End block
-            // ---------- Original Method ----------
-            //mKlass = instance.getClass();
-            //synchronized (sInstanceCounts) {
-                //final Integer value = sInstanceCounts.get(mKlass);
-                //final int newValue = value != null ? value + 1 : 1;
-                //sInstanceCounts.put(mKlass, newValue);
-            //}
+            } 
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -1898,34 +1906,34 @@ for(String tag : tags)
     if(newValue > 0)                        
                         {
                             sInstanceCounts.put(mKlass, newValue);
-                        } //End block
+                        } 
                         else
                         {
                             sInstanceCounts.remove(mKlass);
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
                 super.finalize();
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //synchronized (sInstanceCounts) {
-                    //final Integer value = sInstanceCounts.get(mKlass);
-                    //if (value != null) {
-                        //final int newValue = value - 1;
-                        //if (newValue > 0) {
-                            //sInstanceCounts.put(mKlass, newValue);
-                        //} else {
-                            //sInstanceCounts.remove(mKlass);
-                        //}
-                    //}
-                //}
-            //} finally {
-                //super.finalize();
-            //}
+            } 
+            
+            
+                
+                    
+                    
+                        
+                        
+                            
+                        
+                            
+                        
+                    
+                
+            
+                
+            
         }
 
         

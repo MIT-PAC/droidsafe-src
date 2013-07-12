@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class InReplyToParser extends HeaderParser {
     public  InReplyToParser(String inReplyTo) {
         super(inReplyTo);
         addTaint(inReplyTo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class InReplyToParser extends HeaderParser {
     protected  InReplyToParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,11 +48,11 @@ public class InReplyToParser extends HeaderParser {
                     Token secToken = lexer.getNextToken();
                     inReplyTo.setCallId(
                         token.getTokenValue() + "@" + secToken.getTokenValue());
-                } //End block
+                } 
                 else
                 {
                     inReplyTo.setCallId(token.getTokenValue());
-                } //End block
+                } 
                 this.lexer.SPorHT();
                 list.add(inReplyTo);
                 while
@@ -72,25 +72,25 @@ public class InReplyToParser extends HeaderParser {
                             token.getTokenValue()
                                 + "@"
                                 + secToken.getTokenValue());
-                    } //End block
+                    } 
                     else
                     {
                         inReplyTo.setCallId(token.getTokenValue());
-                    } //End block
+                    } 
                     list.add(inReplyTo);
-                } //End block
-            } //End block
+                } 
+            } 
 SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_705151226 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_705151226.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_705151226;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("InReplyToParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

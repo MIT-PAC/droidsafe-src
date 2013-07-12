@@ -1,6 +1,6 @@
 package dalvik.bytecode;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public final class OpcodeInfo {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.577 -0400", hash_original_method = "A83DC80DE6B8698A045EDE141AC37084", hash_generated_method = "36AF5AEEB9531D085255128C80F8AD6C")
     private  OpcodeInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     

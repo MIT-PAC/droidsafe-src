@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -31,10 +31,10 @@ public class CertificateFactory {
         this.provider = provider;
         this.type = type;
         this.spiImpl = certFacSpi;
-        // ---------- Original Method ----------
-        //this.provider = provider;
-        //this.type = type;
-        //this.spiImpl = certFacSpi;
+        
+        
+        
+        
     }
 
     
@@ -87,8 +87,8 @@ public class CertificateFactory {
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1399065265 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_1399065265.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_1399065265;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -97,8 +97,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_1399065265 =         provider;
 String varC5B9F25B4EEAD3E8E2C33F9429204397_1911071621 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_1911071621.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_1911071621;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
@@ -108,8 +108,8 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_1911071621 =         type;
 Certificate var9F9D4B573DBE5D77E046560951546040_1481940148 =         spiImpl.engineGenerateCertificate(inStream);
         var9F9D4B573DBE5D77E046560951546040_1481940148.addTaint(taint);
         return var9F9D4B573DBE5D77E046560951546040_1481940148;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertificate(inStream);
+        
+        
     }
 
     
@@ -118,8 +118,8 @@ Certificate var9F9D4B573DBE5D77E046560951546040_1481940148 =         spiImpl.eng
 Iterator<String> var6B27921EA9F87AED9ACC12772C0D7430_1432898254 =         spiImpl.engineGetCertPathEncodings();
         var6B27921EA9F87AED9ACC12772C0D7430_1432898254.addTaint(taint);
         return var6B27921EA9F87AED9ACC12772C0D7430_1432898254;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGetCertPathEncodings();
+        
+        
     }
 
     
@@ -132,16 +132,16 @@ Iterator<String> var6B27921EA9F87AED9ACC12772C0D7430_1432898254 =         spiImp
             CertificateException var3EA95212AA505588821FB2A800B429BB_376822806 = new CertificateException("There are no CertPath encodings");
             var3EA95212AA505588821FB2A800B429BB_376822806.addTaint(taint);
             throw var3EA95212AA505588821FB2A800B429BB_376822806;
-        } //End block
+        } 
 CertPath varBDCFDEACCD25CA979BA744B7C1536D27_689098717 =         spiImpl.engineGenerateCertPath(inStream, it.next());
         varBDCFDEACCD25CA979BA744B7C1536D27_689098717.addTaint(taint);
         return varBDCFDEACCD25CA979BA744B7C1536D27_689098717;
-        // ---------- Original Method ----------
-        //Iterator<String> it = getCertPathEncodings();
-        //if (!it.hasNext()) {
-            //throw new CertificateException("There are no CertPath encodings");
-        //}
-        //return spiImpl.engineGenerateCertPath(inStream, it.next());
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -152,8 +152,8 @@ CertPath varBDCFDEACCD25CA979BA744B7C1536D27_689098717 =         spiImpl.engineG
 CertPath var228E9CE69491ED7827223E0008579F48_1107304655 =         spiImpl.engineGenerateCertPath(inStream, encoding);
         var228E9CE69491ED7827223E0008579F48_1107304655.addTaint(taint);
         return var228E9CE69491ED7827223E0008579F48_1107304655;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertPath(inStream, encoding);
+        
+        
     }
 
     
@@ -163,8 +163,8 @@ CertPath var228E9CE69491ED7827223E0008579F48_1107304655 =         spiImpl.engine
 CertPath varA72F36A352F789B87B191E0E9CE9E911_266960480 =         spiImpl.engineGenerateCertPath(certificates);
         varA72F36A352F789B87B191E0E9CE9E911_266960480.addTaint(taint);
         return varA72F36A352F789B87B191E0E9CE9E911_266960480;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertPath(certificates);
+        
+        
     }
 
     
@@ -174,8 +174,8 @@ CertPath varA72F36A352F789B87B191E0E9CE9E911_266960480 =         spiImpl.engineG
 Collection<? extends Certificate> var93F857E0ABFD39144F430F52BB4EC83F_707838947 =         spiImpl.engineGenerateCertificates(inStream);
         var93F857E0ABFD39144F430F52BB4EC83F_707838947.addTaint(taint);
         return var93F857E0ABFD39144F430F52BB4EC83F_707838947;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCertificates(inStream);
+        
+        
     }
 
     
@@ -185,8 +185,8 @@ Collection<? extends Certificate> var93F857E0ABFD39144F430F52BB4EC83F_707838947 
 CRL var1223BE834767CB6064751A594C1B891F_1411807153 =         spiImpl.engineGenerateCRL(inStream);
         var1223BE834767CB6064751A594C1B891F_1411807153.addTaint(taint);
         return var1223BE834767CB6064751A594C1B891F_1411807153;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCRL(inStream);
+        
+        
     }
 
     
@@ -196,8 +196,8 @@ CRL var1223BE834767CB6064751A594C1B891F_1411807153 =         spiImpl.engineGener
 Collection<? extends CRL> varD257CDECBBA0CF8F47B41179978125E2_43255335 =         spiImpl.engineGenerateCRLs(inStream);
         varD257CDECBBA0CF8F47B41179978125E2_43255335.addTaint(taint);
         return varD257CDECBBA0CF8F47B41179978125E2_43255335;
-        // ---------- Original Method ----------
-        //return spiImpl.engineGenerateCRLs(inStream);
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.lang;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,7 +28,7 @@ public abstract class ClassLoader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.596 -0400", hash_original_method = "8E76514466172FE6741D8A4C6661DD70", hash_generated_method = "67B78B96E18A8A3E4D98CDB649E9B64A")
     protected  ClassLoader() {
         this(getSystemClassLoader(), false);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -36,7 +36,7 @@ public abstract class ClassLoader {
     protected  ClassLoader(ClassLoader parentLoader) {
         this(parentLoader, false);
         addTaint(parentLoader.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,28 +48,31 @@ public abstract class ClassLoader {
             NullPointerException varA8F208BE8D874C4854367E2A744501F0_1042742814 = new NullPointerException("Parent ClassLoader may not be null");
             varA8F208BE8D874C4854367E2A744501F0_1042742814.addTaint(taint);
             throw varA8F208BE8D874C4854367E2A744501F0_1042742814;
-        } //End block
+        } 
         parent = parentLoader;
-        // ---------- Original Method ----------
-        //if (parentLoader == null && !nullAllowed) {
-            //throw new NullPointerException("Parent ClassLoader may not be null");
-        //}
-        //parent = parentLoader;
+        
+        
+            
+        
+        
     }
 
     
-        private static ClassLoader createSystemClassLoader() {
+        @DSModeled(DSC.BAN)
+    private static ClassLoader createSystemClassLoader() {
         String classPath = System.getProperty("java.class.path", ".");
         return new PathClassLoader(classPath, BootClassLoader.getInstance());
     }
 
     
-        public static ClassLoader getSystemClassLoader() {
+        @DSModeled(DSC.BAN)
+    public static ClassLoader getSystemClassLoader() {
         return SystemClassLoader.loader;
     }
 
     
-        public static URL getSystemResource(String resName) {
+        @DSModeled(DSC.SPEC)
+    public static URL getSystemResource(String resName) {
         return SystemClassLoader.loader.getResource(resName);
     }
 
@@ -93,8 +96,8 @@ public abstract class ClassLoader {
 Class<?> varB33E976EBACF0537AC1530CEFCC02978_1209449933 =         VMClassLoader.defineClass(this, classRep, offset, length);
         varB33E976EBACF0537AC1530CEFCC02978_1209449933.addTaint(taint);
         return varB33E976EBACF0537AC1530CEFCC02978_1209449933;
-        // ---------- Original Method ----------
-        //return VMClassLoader.defineClass(this, classRep, offset, length);
+        
+        
     }
 
     
@@ -107,8 +110,8 @@ Class<?> varB33E976EBACF0537AC1530CEFCC02978_1209449933 =         VMClassLoader.
 Class<?> varC66541EE24E1609F3FC3648586C5ABBF_1245939987 =         defineClass(className, classRep, offset, length, null);
         varC66541EE24E1609F3FC3648586C5ABBF_1245939987.addTaint(taint);
         return varC66541EE24E1609F3FC3648586C5ABBF_1245939987;
-        // ---------- Original Method ----------
-        //return defineClass(className, classRep, offset, length, null);
+        
+        
     }
 
     
@@ -123,8 +126,8 @@ Class<?> varC66541EE24E1609F3FC3648586C5ABBF_1245939987 =         defineClass(cl
 Class<?> varD58860CD1B743EF3A60CDDB2136F0016_1953596102 =         VMClassLoader.defineClass(this, className, classRep, offset, length);
         varD58860CD1B743EF3A60CDDB2136F0016_1953596102.addTaint(taint);
         return varD58860CD1B743EF3A60CDDB2136F0016_1953596102;
-        // ---------- Original Method ----------
-        //return VMClassLoader.defineClass(this, className, classRep, offset, length);
+        
+        
     }
 
     
@@ -139,10 +142,10 @@ Class<?> varD58860CD1B743EF3A60CDDB2136F0016_1953596102 =         VMClassLoader.
 Class<?> varF16E0AF58C9D8813D6BD96651FAEEFAF_184906700 =         defineClass(name, temp, 0, temp.length, protectionDomain);
         varF16E0AF58C9D8813D6BD96651FAEEFAF_184906700.addTaint(taint);
         return varF16E0AF58C9D8813D6BD96651FAEEFAF_184906700;
-        // ---------- Original Method ----------
-        //byte[] temp = new byte[b.remaining()];
-        //b.get(temp);
-        //return defineClass(name, temp, 0, temp.length, protectionDomain);
+        
+        
+        
+        
     }
 
     
@@ -152,8 +155,8 @@ Class<?> varF16E0AF58C9D8813D6BD96651FAEEFAF_184906700 =         defineClass(nam
         ClassNotFoundException var861A229D206F1BEB1A241D25B0C809D0_1668825465 = new ClassNotFoundException(className);
         var861A229D206F1BEB1A241D25B0C809D0_1668825465.addTaint(taint);
         throw var861A229D206F1BEB1A241D25B0C809D0_1668825465;
-        // ---------- Original Method ----------
-        //throw new ClassNotFoundException(className);
+        
+        
     }
 
     
@@ -168,13 +171,13 @@ Class<?> varF16E0AF58C9D8813D6BD96651FAEEFAF_184906700 =         defineClass(nam
 Class<?> var08F628993F2409C453589DD76ED38AF1_245203470 =         VMClassLoader.findLoadedClass(loader, className);
         var08F628993F2409C453589DD76ED38AF1_245203470.addTaint(taint);
         return var08F628993F2409C453589DD76ED38AF1_245203470;
-        // ---------- Original Method ----------
-        //ClassLoader loader;
-        //if (this == BootClassLoader.getInstance())
-            //loader = null;
-        //else
-            //loader = this;
-        //return VMClassLoader.findLoadedClass(loader, className);
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -184,8 +187,8 @@ Class<?> var08F628993F2409C453589DD76ED38AF1_245203470 =         VMClassLoader.f
 Class<?> varE1EC1A949B64F2720C6EA4CFB815BC24_1804139513 =         Class.forName(className, false, getSystemClassLoader());
         varE1EC1A949B64F2720C6EA4CFB815BC24_1804139513.addTaint(taint);
         return varE1EC1A949B64F2720C6EA4CFB815BC24_1804139513;
-        // ---------- Original Method ----------
-        //return Class.forName(className, false, getSystemClassLoader());
+        
+        
     }
 
     
@@ -194,11 +197,12 @@ Class<?> varE1EC1A949B64F2720C6EA4CFB815BC24_1804139513 =         Class.forName(
 ClassLoader var0F49909EA73F8892C338E4DCA6EB9906_1195237125 =         parent;
         var0F49909EA73F8892C338E4DCA6EB9906_1195237125.addTaint(taint);
         return var0F49909EA73F8892C338E4DCA6EB9906_1195237125;
-        // ---------- Original Method ----------
-        //return parent;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.604 -0400", hash_original_method = "51B198FC24245E471F59AEE285D4917F", hash_generated_method = "CECE844AF9C808F64D0873C7E1C415FE")
     public URL getResource(String resName) {
         addTaint(resName.getTaint());
@@ -206,16 +210,16 @@ ClassLoader var0F49909EA73F8892C338E4DCA6EB9906_1195237125 =         parent;
     if(resource == null)        
         {
             resource = findResource(resName);
-        } //End block
+        } 
 URL var43E8B6A4B99FCF378B49FF1E374C713F_329364047 =         resource;
         var43E8B6A4B99FCF378B49FF1E374C713F_329364047.addTaint(taint);
         return var43E8B6A4B99FCF378B49FF1E374C713F_329364047;
-        // ---------- Original Method ----------
-        //URL resource = parent.getResource(resName);
-        //if (resource == null) {
-            //resource = findResource(resName);
-        //}
-        //return resource;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -228,10 +232,10 @@ URL var43E8B6A4B99FCF378B49FF1E374C713F_329364047 =         resource;
 Enumeration<URL> var29FC63E53C593F544CA2665302A605B4_1527483834 =         new TwoEnumerationsInOne(first, second);
         var29FC63E53C593F544CA2665302A605B4_1527483834.addTaint(taint);
         return var29FC63E53C593F544CA2665302A605B4_1527483834;
-        // ---------- Original Method ----------
-        //Enumeration first = parent.getResources(resName);
-        //Enumeration second = findResources(resName);
-        //return new TwoEnumerationsInOne(first, second);
+        
+        
+        
+        
     }
 
     
@@ -246,23 +250,23 @@ Enumeration<URL> var29FC63E53C593F544CA2665302A605B4_1527483834 =         new Tw
 InputStream var98AE6A59F8B94FA975B52B24770F9849_2124642287 =                 url.openStream();
                 var98AE6A59F8B94FA975B52B24770F9849_2124642287.addTaint(taint);
                 return var98AE6A59F8B94FA975B52B24770F9849_2124642287;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (IOException ex)
         {
-        } //End block
+        } 
 InputStream var540C13E9E156B687226421B24F2DF178_755125460 =         null;
         var540C13E9E156B687226421B24F2DF178_755125460.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_755125460;
-        // ---------- Original Method ----------
-        //try {
-            //URL url = getResource(resName);
-            //if (url != null) {
-                //return url.openStream();
-            //}
-        //} catch (IOException ex) {
-        //}
-        //return null;
+        
+        
+            
+            
+                
+            
+        
+        
+        
     }
 
     
@@ -272,8 +276,8 @@ InputStream var540C13E9E156B687226421B24F2DF178_755125460 =         null;
 Class<?> varDABA5CC5243A82A517BB6B8B0E854144_1299015595 =         loadClass(className, false);
         varDABA5CC5243A82A517BB6B8B0E854144_1299015595.addTaint(taint);
         return varDABA5CC5243A82A517BB6B8B0E854144_1299015595;
-        // ---------- Original Method ----------
-        //return loadClass(className, false);
+        
+        
     }
 
     
@@ -287,48 +291,49 @@ Class<?> varDABA5CC5243A82A517BB6B8B0E854144_1299015595 =         loadClass(clas
             try 
             {
                 clazz = parent.loadClass(className, false);
-            } //End block
+            } 
             catch (ClassNotFoundException e)
             {
-            } //End block
+            } 
     if(clazz == null)            
             {
                 clazz = findClass(className);
-            } //End block
-        } //End block
+            } 
+        } 
 Class<?> var3E303968598B6EE307EE3739CE40F332_28882605 =         clazz;
         var3E303968598B6EE307EE3739CE40F332_28882605.addTaint(taint);
         return var3E303968598B6EE307EE3739CE40F332_28882605;
-        // ---------- Original Method ----------
-        //Class<?> clazz = findLoadedClass(className);
-        //if (clazz == null) {
-            //try {
-                //clazz = parent.loadClass(className, false);
-            //} catch (ClassNotFoundException e) {
-            //}
-            //if (clazz == null) {
-                //clazz = findClass(className);
-            //}
-        //}
-        //return clazz;
+        
+        
+        
+            
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.607 -0400", hash_original_method = "87395C94E1724A33A91DB9FA52BA76C0", hash_generated_method = "AECD55F08AE837F29C8894737A42DAA1")
     protected final void resolveClass(Class<?> clazz) {
         addTaint(clazz.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.608 -0400", hash_original_method = "A0771382989D9347D13AB7091421D08A", hash_generated_method = "1CB27274ED18D703A862F9C9163EA0A9")
     protected URL findResource(String resName) {
         addTaint(resName.getTaint());
 URL var540C13E9E156B687226421B24F2DF178_1336698461 =         null;
         var540C13E9E156B687226421B24F2DF178_1336698461.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1336698461;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -341,19 +346,20 @@ URL var540C13E9E156B687226421B24F2DF178_1336698461 =         null;
 Enumeration<URL> var89A53E363F514214E6187D5546BEF542_1771682539 =         Collections.emptyEnumeration();
         var89A53E363F514214E6187D5546BEF542_1771682539.addTaint(taint);
         return var89A53E363F514214E6187D5546BEF542_1771682539;
-        // ---------- Original Method ----------
-        //return Collections.emptyEnumeration();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.609 -0400", hash_original_method = "77218157254CA1D97E6FAA91981AFD35", hash_generated_method = "2DEFCE6F1025ED443BBC52991FB20A41")
     protected String findLibrary(String libName) {
         addTaint(libName.getTaint());
 String var540C13E9E156B687226421B24F2DF178_1445340025 =         null;
         var540C13E9E156B687226421B24F2DF178_1445340025.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1445340025;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -365,11 +371,11 @@ String var540C13E9E156B687226421B24F2DF178_1445340025 =         null;
 Package var879C3D82B4E204184FBD062358C07A11_1523831789 =             packages.get(name);
             var879C3D82B4E204184FBD062358C07A11_1523831789.addTaint(taint);
             return var879C3D82B4E204184FBD062358C07A11_1523831789;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (packages) {
-            //return packages.get(name);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -383,17 +389,18 @@ Package var879C3D82B4E204184FBD062358C07A11_1523831789 =             packages.ge
 Package[] varDC838461EE2FA0CA4C9BBB70A15456B0_693663483 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_693663483.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_693663483;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (packages) {
-            //Collection<Package> col = packages.values();
-            //Package[] result = new Package[col.size()];
-            //col.toArray(result);
-            //return result;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.611 -0400", hash_original_method = "A43EE12FE4CCED7FFCD5E4E6E6B7450E", hash_generated_method = "983BBF82F735698678F7B678B7BA3426")
     protected Package definePackage(String name, String specTitle, String specVersion,
             String specVendor, String implTitle, String implVersion, String implVendor, URL sealBase) throws IllegalArgumentException {
@@ -412,24 +419,24 @@ Package[] varDC838461EE2FA0CA4C9BBB70A15456B0_693663483 =             result;
                 IllegalArgumentException varCA42C2364F842AAB3D2FD395654AD60B_683455684 = new IllegalArgumentException("Package " + name + " already defined");
                 varCA42C2364F842AAB3D2FD395654AD60B_683455684.addTaint(taint);
                 throw varCA42C2364F842AAB3D2FD395654AD60B_683455684;
-            } //End block
+            } 
             Package newPackage = new Package(name, specTitle, specVersion, specVendor, implTitle,
                     implVersion, implVendor, sealBase);
             packages.put(name, newPackage);
 Package var92B96FE3853575A1658E3A697814623E_507196017 =             newPackage;
             var92B96FE3853575A1658E3A697814623E_507196017.addTaint(taint);
             return var92B96FE3853575A1658E3A697814623E_507196017;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (packages) {
-            //if (packages.containsKey(name)) {
-                //throw new IllegalArgumentException("Package " + name + " already defined");
-            //}
-            //Package newPackage = new Package(name, specTitle, specVersion, specVendor, implTitle,
-                    //implVersion, implVendor, sealBase);
-            //packages.put(name, newPackage);
-            //return newPackage;
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                    
+            
+            
+        
     }
 
     
@@ -437,36 +444,40 @@ Package var92B96FE3853575A1658E3A697814623E_507196017 =             newPackage;
     protected final void setSigners(Class<?> c, Object[] signers) {
         addTaint(signers[0].getTaint());
         addTaint(c.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.612 -0400", hash_original_method = "0651223F404879984496AF2BE37D7C48", hash_generated_method = "EA5217413AE835D5CED61CD6DE9A91CD")
     public void setClassAssertionStatus(String cname, boolean enable) {
         addTaint(enable);
         addTaint(cname.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.612 -0400", hash_original_method = "2F6CF0A6D7DAAB50984CC8577E0B6ED7", hash_generated_method = "3DE3E7E60AEB1F9BEF6D653D204DF308")
     public void setPackageAssertionStatus(String pname, boolean enable) {
         addTaint(enable);
         addTaint(pname.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.612 -0400", hash_original_method = "F3C67BF009E262C5EF85B89EAEA54A8D", hash_generated_method = "9CCCF9B831F31B11857410609390EEBD")
     public void setDefaultAssertionStatus(boolean enable) {
         addTaint(enable);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.613 -0400", hash_original_method = "0F2B38C73B2795A58A5B8AC7764225D2", hash_generated_method = "E762A3660EF9111F915B372BD46E7E77")
     public void clearAssertionStatus() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -475,7 +486,7 @@ Package var92B96FE3853575A1658E3A697814623E_507196017 =             newPackage;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.613 -0400", hash_original_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D", hash_generated_method = "5CAD2AFC0F0FA3887E4002E77FFD0C7D")
         public SystemClassLoader ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -500,9 +511,9 @@ class TwoEnumerationsInOne implements Enumeration<URL> {
     public  TwoEnumerationsInOne(Enumeration<URL> first, Enumeration<URL> second) {
         this.first = first;
         this.second = second;
-        // ---------- Original Method ----------
-        //this.first = first;
-        //this.second = second;
+        
+        
+        
     }
 
     
@@ -511,11 +522,12 @@ class TwoEnumerationsInOne implements Enumeration<URL> {
         boolean varFA7BD4A162C8C063F79F4353F346F180_2064136674 = (first.hasMoreElements() || second.hasMoreElements());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_214385704 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_214385704;
-        // ---------- Original Method ----------
-        //return first.hasMoreElements() || second.hasMoreElements();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.616 -0400", hash_original_method = "CE040DB5C31CF9231E1B46430147AEAF", hash_generated_method = "949D087A7B545F0ECE206C2F769CE7C6")
     public URL nextElement() {
     if(first.hasMoreElements())        
@@ -523,19 +535,19 @@ class TwoEnumerationsInOne implements Enumeration<URL> {
 URL varCE149CD2B39378A9F0645DD813764AEF_806438437 =             first.nextElement();
             varCE149CD2B39378A9F0645DD813764AEF_806438437.addTaint(taint);
             return varCE149CD2B39378A9F0645DD813764AEF_806438437;
-        } //End block
+        } 
         else
         {
 URL varF709D8EE1609F973FA2C794DF46727C9_1790158978 =             second.nextElement();
             varF709D8EE1609F973FA2C794DF46727C9_1790158978.addTaint(taint);
             return varF709D8EE1609F973FA2C794DF46727C9_1790158978;
-        } //End block
-        // ---------- Original Method ----------
-        //if (first.hasMoreElements()) {
-            //return first.nextElement();
-        //} else {
-            //return second.nextElement();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -546,11 +558,12 @@ class BootClassLoader extends ClassLoader {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.616 -0400", hash_original_method = "D3F85B3CE9250DAE48A2E24200FC3763", hash_generated_method = "9B3A59F55A35519AA35E648BA04DC88C")
     public  BootClassLoader() {
         super(null, true);
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static synchronized BootClassLoader getInstance() {
+        @DSModeled(DSC.BAN)
+    public static synchronized BootClassLoader getInstance() {
         if (instance == null) {
             instance = new BootClassLoader();
         }
@@ -565,11 +578,12 @@ class BootClassLoader extends ClassLoader {
 Class<?> var3395E90E7215A3CC7F30E04EE174D39F_199356679 =         VMClassLoader.loadClass(name, false);
         var3395E90E7215A3CC7F30E04EE174D39F_199356679.addTaint(taint);
         return var3395E90E7215A3CC7F30E04EE174D39F_199356679;
-        // ---------- Original Method ----------
-        //return VMClassLoader.loadClass(name, false);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.617 -0400", hash_original_method = "917FC7483F620F58EBF15901F64E5CCB", hash_generated_method = "7F1F5E6BA0B545F558F59A05826ACD93")
     @Override
     protected URL findResource(String name) {
@@ -577,8 +591,8 @@ Class<?> var3395E90E7215A3CC7F30E04EE174D39F_199356679 =         VMClassLoader.l
 URL var7466CD68AA25041A670649C7835F7FDA_929805500 =         VMClassLoader.getResource(name);
         var7466CD68AA25041A670649C7835F7FDA_929805500.addTaint(taint);
         return var7466CD68AA25041A670649C7835F7FDA_929805500;
-        // ---------- Original Method ----------
-        //return VMClassLoader.getResource(name);
+        
+        
     }
 
     
@@ -590,8 +604,8 @@ URL var7466CD68AA25041A670649C7835F7FDA_929805500 =         VMClassLoader.getRes
 Enumeration<URL> varD9496F4FD0571E4317562BDABA22F744_1531455920 =         Collections.enumeration(VMClassLoader.getResources(resName));
         varD9496F4FD0571E4317562BDABA22F744_1531455920.addTaint(taint);
         return varD9496F4FD0571E4317562BDABA22F744_1531455920;
-        // ---------- Original Method ----------
-        //return Collections.enumeration(VMClassLoader.getResources(resName));
+        
+        
     }
 
     
@@ -608,30 +622,31 @@ Enumeration<URL> varD9496F4FD0571E4317562BDABA22F744_1531455920 =         Collec
                 {
                     pack = definePackage(name, "Unknown", "0.0", "Unknown", "Unknown", "0.0",
                             "Unknown", null);
-                } //End block
+                } 
 Package var92767E2A4BD8914A1F39CCFB211BAF92_205733102 =                 pack;
                 var92767E2A4BD8914A1F39CCFB211BAF92_205733102.addTaint(taint);
                 return var92767E2A4BD8914A1F39CCFB211BAF92_205733102;
-            } //End block
-        } //End block
+            } 
+        } 
 Package var540C13E9E156B687226421B24F2DF178_1653663344 =         null;
         var540C13E9E156B687226421B24F2DF178_1653663344.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1653663344;
-        // ---------- Original Method ----------
-        //if (name != null && !name.isEmpty()) {
-            //synchronized (this) {
-                //Package pack = super.getPackage(name);
-                //if (pack == null) {
-                    //pack = definePackage(name, "Unknown", "0.0", "Unknown", "Unknown", "0.0",
-                            //"Unknown", null);
-                //}
-                //return pack;
-            //}
-        //}
-        //return null;
+        
+        
+            
+                
+                
+                    
+                            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:44.619 -0400", hash_original_method = "7C22470B48203835E4FECF5A2AF64904", hash_generated_method = "40F1F9E4ADEB810A43E88E6B0678C0CF")
     @Override
     public URL getResource(String resName) {
@@ -639,8 +654,8 @@ Package var540C13E9E156B687226421B24F2DF178_1653663344 =         null;
 URL var5AA152384FEC6ED20C323D9BD1349753_1777574107 =         findResource(resName);
         var5AA152384FEC6ED20C323D9BD1349753_1777574107.addTaint(taint);
         return var5AA152384FEC6ED20C323D9BD1349753_1777574107;
-        // ---------- Original Method ----------
-        //return findResource(resName);
+        
+        
     }
 
     
@@ -653,16 +668,16 @@ URL var5AA152384FEC6ED20C323D9BD1349753_1777574107 =         findResource(resNam
     if(clazz == null)        
         {
             clazz = findClass(className);
-        } //End block
+        } 
 Class<?> var3E303968598B6EE307EE3739CE40F332_624439334 =         clazz;
         var3E303968598B6EE307EE3739CE40F332_624439334.addTaint(taint);
         return var3E303968598B6EE307EE3739CE40F332_624439334;
-        // ---------- Original Method ----------
-        //Class<?> clazz = findLoadedClass(className);
-        //if (clazz == null) {
-            //clazz = findClass(className);
-        //}
-        //return clazz;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -673,8 +688,8 @@ Class<?> var3E303968598B6EE307EE3739CE40F332_624439334 =         clazz;
 Enumeration<URL> var8CFFF96B92B65C73171B114D63463E37_1485526422 =         findResources(resName);
         var8CFFF96B92B65C73171B114D63463E37_1485526422.addTaint(taint);
         return var8CFFF96B92B65C73171B114D63463E37_1485526422;
-        // ---------- Original Method ----------
-        //return findResources(resName);
+        
+        
     }
 
     

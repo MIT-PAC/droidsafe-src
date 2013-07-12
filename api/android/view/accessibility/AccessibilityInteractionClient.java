@@ -1,6 +1,6 @@
 package android.view.accessibility;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,7 +44,7 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.113 -0400", hash_original_method = "974B96BB2B096535DAB8082291151E7A", hash_generated_method = "974B96BB2B096535DAB8082291151E7A")
     public AccessibilityInteractionClient ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -64,12 +64,12 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
 (mInstanceLock)        {
             mSameThreadMessage = message;
             mInstanceLock.notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //mSameThreadMessage = message;
-            //mInstanceLock.notifyAll();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -96,26 +96,26 @@ public final class AccessibilityInteractionClient extends IAccessibilityInteract
 AccessibilityNodeInfo var43CF3338FDBA93597A9562D3166E9DC4_492983180 =                     info;
                     var43CF3338FDBA93597A9562D3166E9DC4_492983180.addTaint(taint);
                     return var43CF3338FDBA93597A9562D3166E9DC4_492983180;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(DEBUG)                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException re)
         {
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
 AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_936259179 =         null;
         var540C13E9E156B687226421B24F2DF178_936259179.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_936259179;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -140,26 +140,26 @@ AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_936259179 =         nu
 AccessibilityNodeInfo var43CF3338FDBA93597A9562D3166E9DC4_605153264 =                     info;
                     var43CF3338FDBA93597A9562D3166E9DC4_605153264.addTaint(taint);
                     return var43CF3338FDBA93597A9562D3166E9DC4_605153264;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(DEBUG)                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException re)
         {
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
 AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_374704672 =         null;
         var540C13E9E156B687226421B24F2DF178_374704672.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_374704672;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -184,26 +184,26 @@ AccessibilityNodeInfo var540C13E9E156B687226421B24F2DF178_374704672 =         nu
 List<AccessibilityNodeInfo> var856335B33F20D10100490622F4E3620B_2052351277 =                     infos;
                     var856335B33F20D10100490622F4E3620B_2052351277.addTaint(taint);
                     return var856335B33F20D10100490622F4E3620B_2052351277;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(DEBUG)                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException re)
         {
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
 List<AccessibilityNodeInfo> var540C13E9E156B687226421B24F2DF178_139503798 =         null;
         var540C13E9E156B687226421B24F2DF178_139503798.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_139503798;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -231,26 +231,26 @@ List<AccessibilityNodeInfo> var540C13E9E156B687226421B24F2DF178_139503798 =     
 List<AccessibilityNodeInfo> var856335B33F20D10100490622F4E3620B_1806670474 =                     infos;
                     var856335B33F20D10100490622F4E3620B_1806670474.addTaint(taint);
                     return var856335B33F20D10100490622F4E3620B_1806670474;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(DEBUG)                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException re)
         {
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
 List<AccessibilityNodeInfo> varB803AB532741AA7D5C2F301CCDDD25F2_595587260 =         Collections.emptyList();
         varB803AB532741AA7D5C2F301CCDDD25F2_595587260.addTaint(taint);
         return varB803AB532741AA7D5C2F301CCDDD25F2_595587260;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -275,26 +275,26 @@ List<AccessibilityNodeInfo> varB803AB532741AA7D5C2F301CCDDD25F2_595587260 =     
                     boolean varC1E1ADF04C1563A5F6A95329CE3AC979_1227457821 = (getPerformAccessibilityActionResult(interactionId));
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_501192938 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_501192938;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(DEBUG)                
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (RemoteException re)
         {
     if(DEBUG)            
             {
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1255443245 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_721118510 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_721118510;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -309,14 +309,14 @@ List<AccessibilityNodeInfo> varB803AB532741AA7D5C2F301CCDDD25F2_595587260 =     
 AccessibilityNodeInfo varDC838461EE2FA0CA4C9BBB70A15456B0_1111532767 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1111532767.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1111532767;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //final boolean success = waitForResultTimedLocked(interactionId);
-            //AccessibilityNodeInfo result = success ? mFindAccessibilityNodeInfoResult : null;
-            //clearResultLocked();
-            //return result;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -329,17 +329,17 @@ AccessibilityNodeInfo varDC838461EE2FA0CA4C9BBB70A15456B0_1111532767 =          
             {
                 mFindAccessibilityNodeInfoResult = info;
                 mInteractionId = interactionId;
-            } //End block
+            } 
             mInstanceLock.notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (interactionId > mInteractionId) {
-                //mFindAccessibilityNodeInfoResult = info;
-                //mInteractionId = interactionId;
-            //}
-            //mInstanceLock.notifyAll();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -355,14 +355,14 @@ AccessibilityNodeInfo varDC838461EE2FA0CA4C9BBB70A15456B0_1111532767 =          
 List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //final boolean success = waitForResultTimedLocked(interactionId);
-            //List<AccessibilityNodeInfo> result = success ? mFindAccessibilityNodeInfosResult : null;
-            //clearResultLocked();
-            //return result;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -375,17 +375,17 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
             {
                 mFindAccessibilityNodeInfosResult = infos;
                 mInteractionId = interactionId;
-            } //End block
+            } 
             mInstanceLock.notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (interactionId > mInteractionId) {
-                //mFindAccessibilityNodeInfosResult = infos;
-                //mInteractionId = interactionId;
-            //}
-            //mInstanceLock.notifyAll();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -400,14 +400,14 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
             boolean varB4A88417B3D0170D754C647C30B7216A_1214430894 = (result);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1298711954 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1298711954;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //final boolean success = waitForResultTimedLocked(interactionId);
-            //final boolean result = success ? mPerformAccessibilityActionResult : false;
-            //clearResultLocked();
-            //return result;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -419,31 +419,32 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
             {
                 mPerformAccessibilityActionResult = succeeded;
                 mInteractionId = interactionId;
-            } //End block
+            } 
             mInstanceLock.notifyAll();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //if (interactionId > mInteractionId) {
-                //mPerformAccessibilityActionResult = succeeded;
-                //mInteractionId = interactionId;
-            //}
-            //mInstanceLock.notifyAll();
-        //}
+        } 
+        
+        
+            
+                
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.121 -0400", hash_original_method = "903092ED2C38BF649D61CAF92AAF4DF4", hash_generated_method = "B091948D31507164528E2CB3A01B1509")
     private void clearResultLocked() {
         mInteractionId = -1;
         mFindAccessibilityNodeInfoResult = null;
         mFindAccessibilityNodeInfosResult = null;
         mPerformAccessibilityActionResult = false;
-        // ---------- Original Method ----------
-        //mInteractionId = -1;
-        //mFindAccessibilityNodeInfoResult = null;
-        //mFindAccessibilityNodeInfosResult = null;
-        //mPerformAccessibilityActionResult = false;
+        
+        
+        
+        
+        
     }
 
     
@@ -461,19 +462,19 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
     if(sameProcessMessage != null)                
                 {
                     sameProcessMessage.getTarget().handleMessage(sameProcessMessage);
-                } //End block
+                } 
     if(mInteractionId == interactionId)                
                 {
                     boolean varB326B5062B2F0E69046810717534CB09_521657450 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1350565486 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1350565486;
-                } //End block
+                } 
     if(mInteractionId > interactionId)                
                 {
                     boolean var68934A3E9455FA72420237EB05902327_202452189 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2065143013 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2065143013;
-                } //End block
+                } 
                 final long elapsedTimeMillis = SystemClock.uptimeMillis() - startTimeMillis;
                 waitTimeMillis = TIMEOUT_INTERACTION_MILLIS - elapsedTimeMillis;
     if(waitTimeMillis <= 0)                
@@ -481,15 +482,15 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
                     boolean var68934A3E9455FA72420237EB05902327_1389844569 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912664861 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912664861;
-                } //End block
+                } 
                 mInstanceLock.wait(waitTimeMillis);
-            } //End block
+            } 
             catch (InterruptedException ie)
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -500,7 +501,7 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
     if(scale == 1.0f)        
         {
             return;
-        } //End block
+        } 
         Rect bounds = mTempBounds;
         info.getBoundsInParent(bounds);
         bounds.scale(scale);
@@ -508,17 +509,17 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
         info.getBoundsInScreen(bounds);
         bounds.scale(scale);
         info.setBoundsInScreen(bounds);
-        // ---------- Original Method ----------
-        //if (scale == 1.0f) {
-            //return;
-        //}
-        //Rect bounds = mTempBounds;
-        //info.getBoundsInParent(bounds);
-        //bounds.scale(scale);
-        //info.setBoundsInParent(bounds);
-        //info.getBoundsInScreen(bounds);
-        //bounds.scale(scale);
-        //info.setBoundsInScreen(bounds);
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -533,13 +534,13 @@ List<AccessibilityNodeInfo> varDC838461EE2FA0CA4C9BBB70A15456B0_1645280189 =    
             applyCompatibilityScaleIfNeeded(info, windowScale);
             info.setConnectionId(connectionId);
             info.setSealed(true);
-        } //End block
-        // ---------- Original Method ----------
-        //if (info != null) {
-            //applyCompatibilityScaleIfNeeded(info, windowScale);
-            //info.setConnectionId(connectionId);
-            //info.setSealed(true);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -556,19 +557,20 @@ for(int i = 0;i < infosCount;i++)
             {
                 AccessibilityNodeInfo info = infos.get(i);
                 finalizeAccessibilityNodeInfo(info, connectionId, windowScale);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (infos != null) {
-            //final int infosCount = infos.size();
-            //for (int i = 0; i < infosCount; i++) {
-                //AccessibilityNodeInfo info = infos.get(i);
-                //finalizeAccessibilityNodeInfo(info, connectionId, windowScale);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:55.125 -0400", hash_original_method = "44FB956257430D3824804A6F98AEDC24", hash_generated_method = "2CEFC81F4C56AE7493F0289BF89C7226")
     private Message getSameProcessMessageAndClear() {
         synchronized
@@ -578,13 +580,13 @@ for(int i = 0;i < infosCount;i++)
 Message varDC838461EE2FA0CA4C9BBB70A15456B0_1646958414 =             result;
             varDC838461EE2FA0CA4C9BBB70A15456B0_1646958414.addTaint(taint);
             return varDC838461EE2FA0CA4C9BBB70A15456B0_1646958414;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mInstanceLock) {
-            //Message result = mSameThreadMessage;
-            //mSameThreadMessage = null;
-            //return result;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -596,11 +598,11 @@ Message varDC838461EE2FA0CA4C9BBB70A15456B0_1646958414 =             result;
 IAccessibilityServiceConnection var98465E8A99225005A9A34F617F286736_774848334 =             sConnectionCache.get(connectionId);
             var98465E8A99225005A9A34F617F286736_774848334.addTaint(taint);
             return var98465E8A99225005A9A34F617F286736_774848334;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sConnectionCache) {
-            //return sConnectionCache.get(connectionId);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -611,11 +613,11 @@ IAccessibilityServiceConnection var98465E8A99225005A9A34F617F286736_774848334 = 
         synchronized
 (sConnectionCache)        {
             sConnectionCache.put(connectionId, connection);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sConnectionCache) {
-            //sConnectionCache.put(connectionId, connection);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -625,11 +627,11 @@ IAccessibilityServiceConnection var98465E8A99225005A9A34F617F286736_774848334 = 
         synchronized
 (sConnectionCache)        {
             sConnectionCache.remove(connectionId);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (sConnectionCache) {
-            //sConnectionCache.remove(connectionId);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

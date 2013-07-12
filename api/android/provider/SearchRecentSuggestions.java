@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -35,20 +35,20 @@ public class SearchRecentSuggestions {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_905153999 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_905153999.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_905153999;
-        } //End block
+        } 
         mTwoLineDisplay = (0 != (mode & SearchRecentSuggestionsProvider.DATABASE_MODE_2LINES));
         mContext = context;
         mAuthority = new String(authority);
         mSuggestionsUri = Uri.parse("content://" + mAuthority + "/suggestions");
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(authority) ||
-                //((mode & SearchRecentSuggestionsProvider.DATABASE_MODE_QUERIES) == 0)) {
-            //throw new IllegalArgumentException();
-        //}
-        //mTwoLineDisplay = (0 != (mode & SearchRecentSuggestionsProvider.DATABASE_MODE_2LINES));
-        //mContext = context;
-        //mAuthority = new String(authority);
-        //mSuggestionsUri = Uri.parse("content://" + mAuthority + "/suggestions");
+        
+        
+                
+            
+        
+        
+        
+        
+        
     }
 
     
@@ -59,38 +59,38 @@ public class SearchRecentSuggestions {
     if(TextUtils.isEmpty(queryString))        
         {
             return;
-        } //End block
+        } 
     if(!mTwoLineDisplay && !TextUtils.isEmpty(line2))        
         {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_397939953 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_397939953.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_397939953;
-        } //End block
+        } 
         new Thread("saveRecentQuery") {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.486 -0400", hash_original_method = "37361BD815F5FBC7B1A0E9F475B6E93E", hash_generated_method = "90166BB735A77A535840B0E240FF56FA")
         @Override
         public void run() {
             saveRecentQueryBlocking(queryString, line2);
             sWritesInProgress.release();
-            // ---------- Original Method ----------
-            //saveRecentQueryBlocking(queryString, line2);
-            //sWritesInProgress.release();
+            
+            
+            
         }
 }.start();
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(queryString)) {
-            //return;
-        //}
-        //if (!mTwoLineDisplay && !TextUtils.isEmpty(line2)) {
-            //throw new IllegalArgumentException();
-        //}
-        //new Thread("saveRecentQuery") {
-            //@Override
-            //public void run() {
-                //saveRecentQueryBlocking(queryString, line2);
-                //sWritesInProgress.release();
-            //}
-        //}.start();
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -99,12 +99,12 @@ public class SearchRecentSuggestions {
         do {
             {
                 sWritesInProgress.acquireUninterruptibly();
-            } //End block
+            } 
 } while (sWritesInProgress.availablePermits() > 0);
-        // ---------- Original Method ----------
-        //do {
-            //sWritesInProgress.acquireUninterruptibly();
-        //} while (sWritesInProgress.availablePermits() > 0);
+        
+        
+            
+        
     }
 
     
@@ -121,31 +121,31 @@ public class SearchRecentSuggestions {
     if(mTwoLineDisplay)            
             {
                 values.put(SuggestionColumns.DISPLAY2, line2);
-            } //End block
+            } 
             values.put(SuggestionColumns.QUERY, queryString);
             values.put(SuggestionColumns.DATE, now);
             cr.insert(mSuggestionsUri, values);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
-        } //End block
+        } 
         truncateHistory(cr, MAX_HISTORY_COUNT);
-        // ---------- Original Method ----------
-        //ContentResolver cr = mContext.getContentResolver();
-        //long now = System.currentTimeMillis();
-        //try {
-            //ContentValues values = new ContentValues();
-            //values.put(SuggestionColumns.DISPLAY1, queryString);
-            //if (mTwoLineDisplay) {
-                //values.put(SuggestionColumns.DISPLAY2, line2);
-            //}
-            //values.put(SuggestionColumns.QUERY, queryString);
-            //values.put(SuggestionColumns.DATE, now);
-            //cr.insert(mSuggestionsUri, values);
-        //} catch (RuntimeException e) {
-            //Log.e(LOG_TAG, "saveRecentQuery", e);
-        //}
-        //truncateHistory(cr, MAX_HISTORY_COUNT);
+        
+        
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -153,9 +153,9 @@ public class SearchRecentSuggestions {
     public void clearHistory() {
         ContentResolver cr = mContext.getContentResolver();
         truncateHistory(cr, 0);
-        // ---------- Original Method ----------
-        //ContentResolver cr = mContext.getContentResolver();
-        //truncateHistory(cr, 0);
+        
+        
+        
     }
 
     
@@ -168,7 +168,7 @@ public class SearchRecentSuggestions {
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_786456988 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_786456988.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_786456988;
-        } //End block
+        } 
         try 
         {
             String selection = null;
@@ -178,28 +178,28 @@ public class SearchRecentSuggestions {
                         "(SELECT _id FROM suggestions" +
                         " ORDER BY " + SuggestionColumns.DATE + " DESC" +
                         " LIMIT -1 OFFSET " + String.valueOf(maxEntries) + ")";
-            } //End block
+            } 
             cr.delete(mSuggestionsUri, selection, null);
-        } //End block
+        } 
         catch (RuntimeException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (maxEntries < 0) {
-            //throw new IllegalArgumentException();
-        //}
-        //try {
-            //String selection = null;
-            //if (maxEntries > 0) {
-                //selection = "_id IN " +
-                        //"(SELECT _id FROM suggestions" +
-                        //" ORDER BY " + SuggestionColumns.DATE + " DESC" +
-                        //" LIMIT -1 OFFSET " + String.valueOf(maxEntries) + ")";
-            //}
-            //cr.delete(mSuggestionsUri, selection, null);
-        //} catch (RuntimeException e) {
-            //Log.e(LOG_TAG, "truncateHistory", e);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                        
+                        
+                        
+            
+            
+        
+            
+        
     }
 
     
@@ -208,7 +208,7 @@ public class SearchRecentSuggestions {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.489 -0400", hash_original_method = "BB858C1043D81D8CD66DDE6CA07AE15D", hash_generated_method = "BB858C1043D81D8CD66DDE6CA07AE15D")
         public SuggestionColumns ()
         {
-            //Synthesized constructor
+            
         }
 
 

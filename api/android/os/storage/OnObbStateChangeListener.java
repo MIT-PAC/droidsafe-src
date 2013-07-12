@@ -1,6 +1,6 @@
 package android.os.storage;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,16 +10,17 @@ public abstract class OnObbStateChangeListener {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.060 -0400", hash_original_method = "67C83AF74DC57D0B71995A60795CAB4A", hash_generated_method = "67C83AF74DC57D0B71995A60795CAB4A")
     public OnObbStateChangeListener ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.060 -0400", hash_original_method = "8D4DBCB92EE624B36C1D9B80653BEEEA", hash_generated_method = "AA43678FAEC2ACDFD9A300895FFFA28F")
     public void onObbStateChange(String path, int state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state);
         addTaint(path.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

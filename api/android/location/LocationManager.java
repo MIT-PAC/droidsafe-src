@@ -1,6 +1,6 @@
 package android.location;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,8 +37,8 @@ public class LocationManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.430 -0400", hash_original_method = "1755E60A5AAD43AA8D18158DFDE91956", hash_generated_method = "2E87374DE599AAD38A38C4273DFE7501")
     public  LocationManager(ILocationManager service) {
         mService = service;
-        // ---------- Original Method ----------
-        //mService = service;
+        
+        
     }
 
     
@@ -59,19 +59,19 @@ public class LocationManager {
 LocationProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_512513322 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_512513322.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_512513322;
-        // ---------- Original Method ----------
-        //DummyLocationProvider provider =
-            //new DummyLocationProvider(name, mService);
-        //provider.setRequiresNetwork(info.getBoolean("network"));
-        //provider.setRequiresSatellite(info.getBoolean("satellite"));
-        //provider.setRequiresCell(info.getBoolean("cell"));
-        //provider.setHasMonetaryCost(info.getBoolean("cost"));
-        //provider.setSupportsAltitude(info.getBoolean("altitude"));
-        //provider.setSupportsSpeed(info.getBoolean("speed"));
-        //provider.setSupportsBearing(info.getBoolean("bearing"));
-        //provider.setPowerRequirement(info.getInt("power"));
-        //provider.setAccuracy(info.getInt("accuracy"));
-        //return provider;
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -80,29 +80,29 @@ LocationProvider varC1EB7B12CCABB27D431E5B91E5FF9ECB_512513322 =         provide
     if(false)        
         {
             Log.d(TAG, "getAllProviders");
-        } //End block
+        } 
         try 
         {
 List<String> var8F05184B04C79079625D0D845BCD2D2B_1564968213 =             mService.getAllProviders();
             var8F05184B04C79079625D0D845BCD2D2B_1564968213.addTaint(taint);
             return var8F05184B04C79079625D0D845BCD2D2B_1564968213;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
+        } 
 List<String> var540C13E9E156B687226421B24F2DF178_2016064815 =         null;
         var540C13E9E156B687226421B24F2DF178_2016064815.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2016064815;
-        // ---------- Original Method ----------
-        //if (false) {
-            //Log.d(TAG, "getAllProviders");
-        //}
-        //try {
-            //return mService.getAllProviders();
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getAllProviders: RemoteException", ex);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -114,20 +114,20 @@ List<String> var540C13E9E156B687226421B24F2DF178_2016064815 =         null;
 List<String> var1814699AB3EBC0A36A6E6D7894EACDDE_361102360 =             mService.getProviders(null, enabledOnly);
             var1814699AB3EBC0A36A6E6D7894EACDDE_361102360.addTaint(taint);
             return var1814699AB3EBC0A36A6E6D7894EACDDE_361102360;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
+        } 
 List<String> var540C13E9E156B687226421B24F2DF178_1505991678 =         null;
         var540C13E9E156B687226421B24F2DF178_1505991678.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1505991678;
-        // ---------- Original Method ----------
-        //try {
-            //return mService.getProviders(null, enabledOnly);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getProviders: RemoteException", ex);
-        //}
-        //return null;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -139,7 +139,7 @@ List<String> var540C13E9E156B687226421B24F2DF178_1505991678 =         null;
             IllegalArgumentException varF15D181B466A7CB11A2B97401D2E8520_1638710700 = new IllegalArgumentException("name==null");
             varF15D181B466A7CB11A2B97401D2E8520_1638710700.addTaint(taint);
             throw varF15D181B466A7CB11A2B97401D2E8520_1638710700;
-        } //End block
+        } 
         try 
         {
             Bundle info = mService.getProviderInfo(name);
@@ -148,31 +148,31 @@ List<String> var540C13E9E156B687226421B24F2DF178_1505991678 =         null;
 LocationProvider var540C13E9E156B687226421B24F2DF178_300671212 =                 null;
                 var540C13E9E156B687226421B24F2DF178_300671212.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_300671212;
-            } //End block
+            } 
 LocationProvider var75766B94E411138F2572F277B04DC19A_129734883 =             createProvider(name, info);
             var75766B94E411138F2572F277B04DC19A_129734883.addTaint(taint);
             return var75766B94E411138F2572F277B04DC19A_129734883;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
+        } 
 LocationProvider var540C13E9E156B687226421B24F2DF178_11436435 =         null;
         var540C13E9E156B687226421B24F2DF178_11436435.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_11436435;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("name==null");
-        //}
-        //try {
-            //Bundle info = mService.getProviderInfo(name);
-            //if (info == null) {
-                //return null;
-            //}
-            //return createProvider(name, info);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getProvider: RemoteException", ex);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+            
+                
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -185,29 +185,29 @@ LocationProvider var540C13E9E156B687226421B24F2DF178_11436435 =         null;
             IllegalArgumentException varD3D4F40C13681232B432D0335FB0E944_722623985 = new IllegalArgumentException("criteria==null");
             varD3D4F40C13681232B432D0335FB0E944_722623985.addTaint(taint);
             throw varD3D4F40C13681232B432D0335FB0E944_722623985;
-        } //End block
+        } 
         try 
         {
 List<String> var03CBF3D3FC4216DE34B5A7CE16E25B23_403452898 =             mService.getProviders(criteria, enabledOnly);
             var03CBF3D3FC4216DE34B5A7CE16E25B23_403452898.addTaint(taint);
             return var03CBF3D3FC4216DE34B5A7CE16E25B23_403452898;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
+        } 
 List<String> var540C13E9E156B687226421B24F2DF178_750302741 =         null;
         var540C13E9E156B687226421B24F2DF178_750302741.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_750302741;
-        // ---------- Original Method ----------
-        //if (criteria == null) {
-            //throw new IllegalArgumentException("criteria==null");
-        //}
-        //try {
-            //return mService.getProviders(criteria, enabledOnly);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getProviders: RemoteException", ex);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -220,29 +220,29 @@ List<String> var540C13E9E156B687226421B24F2DF178_750302741 =         null;
             IllegalArgumentException varD3D4F40C13681232B432D0335FB0E944_95818778 = new IllegalArgumentException("criteria==null");
             varD3D4F40C13681232B432D0335FB0E944_95818778.addTaint(taint);
             throw varD3D4F40C13681232B432D0335FB0E944_95818778;
-        } //End block
+        } 
         try 
         {
 String var3B09553E785870666C2E0A4FEECF373B_1905312066 =             mService.getBestProvider(criteria, enabledOnly);
             var3B09553E785870666C2E0A4FEECF373B_1905312066.addTaint(taint);
             return var3B09553E785870666C2E0A4FEECF373B_1905312066;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
         var540C13E9E156B687226421B24F2DF178_1341900950.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1341900950;
-        // ---------- Original Method ----------
-        //if (criteria == null) {
-            //throw new IllegalArgumentException("criteria==null");
-        //}
-        //try {
-            //return mService.getBestProvider(criteria, enabledOnly);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getBestProvider: RemoteException", ex);
-        //}
-        //return null;
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -258,22 +258,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_1429484819 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_1429484819.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_1429484819;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var7043C6EA473A5549851069BB129512CC_1711253466 = new IllegalArgumentException("listener==null");
             var7043C6EA473A5549851069BB129512CC_1711253466.addTaint(taint);
             throw var7043C6EA473A5549851069BB129512CC_1711253466;
-        } //End block
+        } 
         _requestLocationUpdates(provider, null, minTime, minDistance, false, listener, null);
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener==null");
-        //}
-        //_requestLocationUpdates(provider, null, minTime, minDistance, false, listener, null);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -291,22 +291,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_1061796092 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_1061796092.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_1061796092;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var7043C6EA473A5549851069BB129512CC_919736294 = new IllegalArgumentException("listener==null");
             var7043C6EA473A5549851069BB129512CC_919736294.addTaint(taint);
             throw var7043C6EA473A5549851069BB129512CC_919736294;
-        } //End block
+        } 
         _requestLocationUpdates(provider, null, minTime, minDistance, false, listener, looper);
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener==null");
-        //}
-        //_requestLocationUpdates(provider, null, minTime, minDistance, false, listener, looper);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -323,22 +323,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException varD3D4F40C13681232B432D0335FB0E944_420393276 = new IllegalArgumentException("criteria==null");
             varD3D4F40C13681232B432D0335FB0E944_420393276.addTaint(taint);
             throw varD3D4F40C13681232B432D0335FB0E944_420393276;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var7043C6EA473A5549851069BB129512CC_136198381 = new IllegalArgumentException("listener==null");
             var7043C6EA473A5549851069BB129512CC_136198381.addTaint(taint);
             throw var7043C6EA473A5549851069BB129512CC_136198381;
-        } //End block
+        } 
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, listener, looper);
-        // ---------- Original Method ----------
-        //if (criteria == null) {
-            //throw new IllegalArgumentException("criteria==null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener==null");
-        //}
-        //_requestLocationUpdates(null, criteria, minTime, minDistance, false, listener, looper);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -355,11 +355,11 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
     if(minTime < 0L)        
         {
             minTime = 0L;
-        } //End block
+        } 
     if(minDistance < 0.0f)        
         {
             minDistance = 0.0f;
-        } //End block
+        } 
         try 
         {
             synchronized
@@ -368,33 +368,33 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
     if(transport == null)                
                 {
                     transport = new ListenerTransport(listener, looper);
-                } //End block
+                } 
                 mListeners.put(listener, transport);
                 mService.requestLocationUpdates(provider, criteria, minTime, minDistance, singleShot, transport);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (minTime < 0L) {
-            //minTime = 0L;
-        //}
-        //if (minDistance < 0.0f) {
-            //minDistance = 0.0f;
-        //}
-        //try {
-            //synchronized (mListeners) {
-                //ListenerTransport transport = mListeners.get(listener);
-                //if (transport == null) {
-                    //transport = new ListenerTransport(listener, looper);
-                //}
-                //mListeners.put(listener, transport);
-                //mService.requestLocationUpdates(provider, criteria, minTime, minDistance, singleShot, transport);
-            //}
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "requestLocationUpdates: DeadObjectException", ex);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                
+                
+                    
+                
+                
+                
+            
+        
+            
+        
     }
 
     
@@ -410,22 +410,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_95395117 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_95395117.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_95395117;
-        } //End block
+        } 
     if(intent == null)        
         {
             IllegalArgumentException var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1367670257 = new IllegalArgumentException("intent==null");
             var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1367670257.addTaint(taint);
             throw var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1367670257;
-        } //End block
+        } 
         _requestLocationUpdates(provider, null, minTime, minDistance, false, intent);
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //if (intent == null) {
-            //throw new IllegalArgumentException("intent==null");
-        //}
-        //_requestLocationUpdates(provider, null, minTime, minDistance, false, intent);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -440,22 +440,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException varD3D4F40C13681232B432D0335FB0E944_487700604 = new IllegalArgumentException("criteria==null");
             varD3D4F40C13681232B432D0335FB0E944_487700604.addTaint(taint);
             throw varD3D4F40C13681232B432D0335FB0E944_487700604;
-        } //End block
+        } 
     if(intent == null)        
         {
             IllegalArgumentException var3AB8E7FC8BA32C0031AF65BB60BCBA3B_58377110 = new IllegalArgumentException("intent==null");
             var3AB8E7FC8BA32C0031AF65BB60BCBA3B_58377110.addTaint(taint);
             throw var3AB8E7FC8BA32C0031AF65BB60BCBA3B_58377110;
-        } //End block
+        } 
         _requestLocationUpdates(null, criteria, minTime, minDistance, false, intent);
-        // ---------- Original Method ----------
-        //if (criteria == null) {
-            //throw new IllegalArgumentException("criteria==null");
-        //}
-        //if (intent == null) {
-            //throw new IllegalArgumentException("intent==null");
-        //}
-        //_requestLocationUpdates(null, criteria, minTime, minDistance, false, intent);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -471,30 +471,30 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
     if(minTime < 0L)        
         {
             minTime = 0L;
-        } //End block
+        } 
     if(minDistance < 0.0f)        
         {
             minDistance = 0.0f;
-        } //End block
+        } 
         try 
         {
             mService.requestLocationUpdatesPI(provider, criteria, minTime, minDistance, singleShot, intent);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (minTime < 0L) {
-            //minTime = 0L;
-        //}
-        //if (minDistance < 0.0f) {
-            //minDistance = 0.0f;
-        //}
-        //try {
-            //mService.requestLocationUpdatesPI(provider, criteria, minTime, minDistance, singleShot, intent);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "requestLocationUpdates: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -508,22 +508,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_1352838346 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_1352838346.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_1352838346;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var7043C6EA473A5549851069BB129512CC_1616300491 = new IllegalArgumentException("listener==null");
             var7043C6EA473A5549851069BB129512CC_1616300491.addTaint(taint);
             throw var7043C6EA473A5549851069BB129512CC_1616300491;
-        } //End block
+        } 
         _requestLocationUpdates(provider, null, 0L, 0.0f, true, listener, looper);
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener==null");
-        //}
-        //_requestLocationUpdates(provider, null, 0L, 0.0f, true, listener, looper);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -537,22 +537,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException varD3D4F40C13681232B432D0335FB0E944_1452453892 = new IllegalArgumentException("criteria==null");
             varD3D4F40C13681232B432D0335FB0E944_1452453892.addTaint(taint);
             throw varD3D4F40C13681232B432D0335FB0E944_1452453892;
-        } //End block
+        } 
     if(listener == null)        
         {
             IllegalArgumentException var7043C6EA473A5549851069BB129512CC_813087199 = new IllegalArgumentException("listener==null");
             var7043C6EA473A5549851069BB129512CC_813087199.addTaint(taint);
             throw var7043C6EA473A5549851069BB129512CC_813087199;
-        } //End block
+        } 
         _requestLocationUpdates(null, criteria, 0L, 0.0f, true, listener, looper);
-        // ---------- Original Method ----------
-        //if (criteria == null) {
-            //throw new IllegalArgumentException("criteria==null");
-        //}
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener==null");
-        //}
-        //_requestLocationUpdates(null, criteria, 0L, 0.0f, true, listener, looper);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -565,22 +565,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_1748166446 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_1748166446.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_1748166446;
-        } //End block
+        } 
     if(intent == null)        
         {
             IllegalArgumentException var3AB8E7FC8BA32C0031AF65BB60BCBA3B_941350491 = new IllegalArgumentException("intent==null");
             var3AB8E7FC8BA32C0031AF65BB60BCBA3B_941350491.addTaint(taint);
             throw var3AB8E7FC8BA32C0031AF65BB60BCBA3B_941350491;
-        } //End block
+        } 
         _requestLocationUpdates(provider, null, 0L, 0.0f, true, intent);
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //if (intent == null) {
-            //throw new IllegalArgumentException("intent==null");
-        //}
-        //_requestLocationUpdates(provider, null, 0L, 0.0f, true, intent);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -593,22 +593,22 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException varD3D4F40C13681232B432D0335FB0E944_1389288035 = new IllegalArgumentException("criteria==null");
             varD3D4F40C13681232B432D0335FB0E944_1389288035.addTaint(taint);
             throw varD3D4F40C13681232B432D0335FB0E944_1389288035;
-        } //End block
+        } 
     if(intent == null)        
         {
             IllegalArgumentException var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1060046981 = new IllegalArgumentException("intent==null");
             var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1060046981.addTaint(taint);
             throw var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1060046981;
-        } //End block
+        } 
         _requestLocationUpdates(null, criteria, 0L, 0.0f, true, intent);
-        // ---------- Original Method ----------
-        //if (criteria == null) {
-            //throw new IllegalArgumentException("criteria==null");
-        //}
-        //if (intent == null) {
-            //throw new IllegalArgumentException("intent==null");
-        //}
-        //_requestLocationUpdates(null, criteria, 0L, 0.0f, true, intent);
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -620,37 +620,37 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var7043C6EA473A5549851069BB129512CC_481518687 = new IllegalArgumentException("listener==null");
             var7043C6EA473A5549851069BB129512CC_481518687.addTaint(taint);
             throw var7043C6EA473A5549851069BB129512CC_481518687;
-        } //End block
+        } 
     if(false)        
         {
             Log.d(TAG, "removeUpdates: listener = " + listener);
-        } //End block
+        } 
         try 
         {
             ListenerTransport transport = mListeners.remove(listener);
     if(transport != null)            
             {
                 mService.removeUpdates(transport);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (listener == null) {
-            //throw new IllegalArgumentException("listener==null");
-        //}
-        //if (false) {
-            //Log.d(TAG, "removeUpdates: listener = " + listener);
-        //}
-        //try {
-            //ListenerTransport transport = mListeners.remove(listener);
-            //if (transport != null) {
-                //mService.removeUpdates(transport);
-            //}
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "removeUpdates: DeadObjectException", ex);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -662,30 +662,30 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1838186095 = new IllegalArgumentException("intent==null");
             var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1838186095.addTaint(taint);
             throw var3AB8E7FC8BA32C0031AF65BB60BCBA3B_1838186095;
-        } //End block
+        } 
     if(false)        
         {
             Log.d(TAG, "removeUpdates: intent = " + intent);
-        } //End block
+        } 
         try 
         {
             mService.removeUpdatesPI(intent);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (intent == null) {
-            //throw new IllegalArgumentException("intent==null");
-        //}
-        //if (false) {
-            //Log.d(TAG, "removeUpdates: intent = " + intent);
-        //}
-        //try {
-            //mService.removeUpdatesPI(intent);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "removeUpdates: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -703,28 +703,28 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
                 ", longitude = " + longitude + ", radius = " + radius +
                 ", expiration = " + expiration +
                 ", intent = " + intent);
-        } //End block
+        } 
         try 
         {
             mService.addProximityAlert(latitude, longitude, radius,
                                        expiration, intent);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (false) {
-            //Log.d(TAG, "addProximityAlert: latitude = " + latitude +
-                //", longitude = " + longitude + ", radius = " + radius +
-                //", expiration = " + expiration +
-                //", intent = " + intent);
-        //}
-        //try {
-            //mService.addProximityAlert(latitude, longitude, radius,
-                                       //expiration, intent);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "addProximityAlert: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+                
+                
+                
+        
+        
+            
+                                       
+        
+            
+        
     }
 
     
@@ -734,23 +734,23 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
     if(false)        
         {
             Log.d(TAG, "removeProximityAlert: intent = " + intent);
-        } //End block
+        } 
         try 
         {
             mService.removeProximityAlert(intent);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (false) {
-            //Log.d(TAG, "removeProximityAlert: intent = " + intent);
-        //}
-        //try {
-            //mService.removeProximityAlert(intent);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "removeProximityAlert: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -762,29 +762,29 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_299031173 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_299031173.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_299031173;
-        } //End block
+        } 
         try 
         {
             boolean var2A2AA02B230E677DCE91C6E05A45AE75_547676332 = (mService.isProviderEnabled(provider));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_628670090 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_628670090;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
             boolean var68934A3E9455FA72420237EB05902327_148778819 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625349318 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_625349318;
-        } //End block
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //try {
-            //return mService.isProviderEnabled(provider);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "isProviderEnabled: RemoteException", ex);
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -796,29 +796,29 @@ String var540C13E9E156B687226421B24F2DF178_1341900950 =         null;
             IllegalArgumentException var3740E938BA9AB726EFDC662393650C35_1015338202 = new IllegalArgumentException("provider==null");
             var3740E938BA9AB726EFDC662393650C35_1015338202.addTaint(taint);
             throw var3740E938BA9AB726EFDC662393650C35_1015338202;
-        } //End block
+        } 
         try 
         {
 Location var94D744E5CB62D5F61288405519195D94_1858116800 =             mService.getLastKnownLocation(provider);
             var94D744E5CB62D5F61288405519195D94_1858116800.addTaint(taint);
             return var94D744E5CB62D5F61288405519195D94_1858116800;
-        } //End block
+        } 
         catch (RemoteException ex)
         {
 Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
             var540C13E9E156B687226421B24F2DF178_741102978.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_741102978;
-        } //End block
-        // ---------- Original Method ----------
-        //if (provider == null) {
-            //throw new IllegalArgumentException("provider==null");
-        //}
-        //try {
-            //return mService.getLastKnownLocation(provider);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "getLastKnowLocation: RemoteException", ex);
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -841,18 +841,18 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
             mService.addTestProvider(name, requiresNetwork, requiresSatellite, requiresCell,
                 hasMonetaryCost, supportsAltitude, supportsSpeed, supportsBearing, powerRequirement,
                 accuracy);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.addTestProvider(name, requiresNetwork, requiresSatellite, requiresCell,
-                //hasMonetaryCost, supportsAltitude, supportsSpeed, supportsBearing, powerRequirement,
-                //accuracy);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "addTestProvider: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+                
+                
+        
+            
+        
     }
 
     
@@ -862,16 +862,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.removeTestProvider(provider);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.removeTestProvider(provider);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "removeTestProvider: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -882,16 +882,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.setTestProviderLocation(provider, loc);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setTestProviderLocation(provider, loc);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "setTestProviderLocation: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -901,16 +901,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.clearTestProviderLocation(provider);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.clearTestProviderLocation(provider);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "clearTestProviderLocation: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -921,16 +921,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.setTestProviderEnabled(provider, enabled);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setTestProviderEnabled(provider, enabled);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "setTestProviderEnabled: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -940,16 +940,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.clearTestProviderEnabled(provider);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.clearTestProviderEnabled(provider);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "clearTestProviderEnabled: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -962,16 +962,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.setTestProviderStatus(provider, status, extras, updateTime);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.setTestProviderStatus(provider, status, extras, updateTime);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "setTestProviderStatus: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -981,16 +981,16 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
         try 
         {
             mService.clearTestProviderStatus(provider);
-        } //End block
+        } 
         catch (RemoteException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //mService.clearTestProviderStatus(provider);
-        //} catch (RemoteException ex) {
-            //Log.e(TAG, "clearTestProviderStatus: RemoteException", ex);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1003,7 +1003,7 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
             boolean varB326B5062B2F0E69046810717534CB09_943557825 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_590734053 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_590734053;
-        } //End block
+        } 
         try 
         {
             GpsStatusListenerTransport transport = new GpsStatusListenerTransport(listener);
@@ -1011,31 +1011,31 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
     if(result)            
             {
                 mGpsStatusListeners.put(listener, transport);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             result = false;
-        } //End block
+        } 
         boolean varB4A88417B3D0170D754C647C30B7216A_1476130395 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1589106970 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1589106970;
-        // ---------- Original Method ----------
-        //boolean result;
-        //if (mGpsStatusListeners.get(listener) != null) {
-            //return true;
-        //}
-        //try {
-            //GpsStatusListenerTransport transport = new GpsStatusListenerTransport(listener);
-            //result = mService.addGpsStatusListener(transport);
-            //if (result) {
-                //mGpsStatusListeners.put(listener, transport);
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in registerGpsStatusListener: ", e);
-            //result = false;
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -1048,20 +1048,20 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
     if(transport != null)            
             {
                 mService.removeGpsStatusListener(transport);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //GpsStatusListenerTransport transport = mGpsStatusListeners.remove(listener);
-            //if (transport != null) {
-                //mService.removeGpsStatusListener(transport);
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in unregisterGpsStatusListener: ", e);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1074,7 +1074,7 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
             boolean varB326B5062B2F0E69046810717534CB09_934846254 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1705569507 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1705569507;
-        } //End block
+        } 
         try 
         {
             GpsStatusListenerTransport transport = new GpsStatusListenerTransport(listener);
@@ -1082,31 +1082,31 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
     if(result)            
             {
                 mNmeaListeners.put(listener, transport);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
             result = false;
-        } //End block
+        } 
         boolean varB4A88417B3D0170D754C647C30B7216A_118521993 = (result);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_922690298 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_922690298;
-        // ---------- Original Method ----------
-        //boolean result;
-        //if (mNmeaListeners.get(listener) != null) {
-            //return true;
-        //}
-        //try {
-            //GpsStatusListenerTransport transport = new GpsStatusListenerTransport(listener);
-            //result = mService.addGpsStatusListener(transport);
-            //if (result) {
-                //mNmeaListeners.put(listener, transport);
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in registerGpsStatusListener: ", e);
-            //result = false;
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -1119,20 +1119,20 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
     if(transport != null)            
             {
                 mService.removeGpsStatusListener(transport);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //GpsStatusListenerTransport transport = mNmeaListeners.remove(listener);
-            //if (transport != null) {
-                //mService.removeGpsStatusListener(transport);
-            //}
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in unregisterGpsStatusListener: ", e);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1142,17 +1142,17 @@ Location var540C13E9E156B687226421B24F2DF178_741102978 =             null;
     if(status == null)        
         {
             status = new GpsStatus();
-        } //End block
+        } 
         status.setStatus(mGpsStatus);
 GpsStatus var62D3D5D442782C1992154E821A40FA75_447250679 =         status;
         var62D3D5D442782C1992154E821A40FA75_447250679.addTaint(taint);
         return var62D3D5D442782C1992154E821A40FA75_447250679;
-        // ---------- Original Method ----------
-        //if (status == null) {
-            //status = new GpsStatus();
-       //}
-        //status.setStatus(mGpsStatus);
-        //return status;
+        
+        
+            
+       
+        
+        
     }
 
     
@@ -1166,20 +1166,20 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_447250679 =         status;
             boolean var084E25188FDAC5368E5B559C2E044FF7_144837185 = (mService.sendExtraCommand(provider, command, extras));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_700433156 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_700433156;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1334544358 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1738143301 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1738143301;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.sendExtraCommand(provider, command, extras);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in sendExtraCommand: ", e);
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1192,20 +1192,20 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_447250679 =         status;
             boolean varFF109F67D44047D08F856E3EE6A94888_1430079667 = (mService.sendNiResponse(notifId, userResponse));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_134989651 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_134989651;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_2030914048 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1542956608 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1542956608;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return mService.sendNiResponse(notifId, userResponse);
-        //} catch (RemoteException e) {
-            //Log.e(TAG, "RemoteException in sendNiResponse: ", e);
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
     }
 
     
@@ -1228,11 +1228,11 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_447250679 =         status;
             public void handleMessage(Message msg) {
                 addTaint(msg.getTaint());
                 _handleMessage(msg);
-                // ---------- Original Method ----------
-                //_handleMessage(msg);
+                
+                
             }
 };
-            } //End block
+            } 
             else
             {
                 mListenerHandler = new Handler(looper) {            
@@ -1241,50 +1241,50 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_447250679 =         status;
             public void handleMessage(Message msg) {
                 addTaint(msg.getTaint());
                 _handleMessage(msg);
-                // ---------- Original Method ----------
-                //_handleMessage(msg);
+                
+                
             }
 };
-            } //End block
-            // ---------- Original Method ----------
-            //mListener = listener;
-            //if (looper == null) {
-                //mListenerHandler = new Handler() {
-                    //@Override
-                    //public void handleMessage(Message msg) {
-                        //_handleMessage(msg);
-                    //}
-                //};
-            //} else {
-                //mListenerHandler = new Handler(looper) {
-                    //@Override
-                    //public void handleMessage(Message msg) {
-                        //_handleMessage(msg);
-                    //}
-                //};
-            //}
+            } 
+            
+            
+            
+                
+                    
+                    
+                        
+                    
+                
+            
+                
+                    
+                    
+                        
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.458 -0400", hash_original_method = "A17E439126795FFA0E8C33868ED647C4", hash_generated_method = "373A4637FE7597C2709F21CB18D6F182")
         public void onLocationChanged(Location location) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(location.getTaint());
             Message msg = Message.obtain();
             msg.what = TYPE_LOCATION_CHANGED;
             msg.obj = location;
             mListenerHandler.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Message msg = Message.obtain();
-            //msg.what = TYPE_LOCATION_CHANGED;
-            //msg.obj = location;
-            //mListenerHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.459 -0400", hash_original_method = "BF8F7C90ADE4983F5319C798EB4A7E9F", hash_generated_method = "083C901E323FDDADFE053B8000ADE8D1")
         public void onStatusChanged(String provider, int status, Bundle extras) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(extras.getTaint());
             addTaint(status);
             addTaint(provider.getTaint());
@@ -1296,52 +1296,52 @@ GpsStatus var62D3D5D442782C1992154E821A40FA75_447250679 =         status;
     if(extras != null)            
             {
                 b.putBundle("extras", extras);
-            } //End block
+            } 
             msg.obj = b;
             mListenerHandler.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Message msg = Message.obtain();
-            //msg.what = TYPE_STATUS_CHANGED;
-            //Bundle b = new Bundle();
-            //b.putString("provider", provider);
-            //b.putInt("status", status);
-            //if (extras != null) {
-                //b.putBundle("extras", extras);
-            //}
-            //msg.obj = b;
-            //mListenerHandler.sendMessage(msg);
+            
+            
+            
+            
+            
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.459 -0400", hash_original_method = "812D643BCDC2A4502FF3E1F391BA3BAF", hash_generated_method = "725ABBEFB45083351BB2BEA3889FA9CD")
         public void onProviderEnabled(String provider) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(provider.getTaint());
             Message msg = Message.obtain();
             msg.what = TYPE_PROVIDER_ENABLED;
             msg.obj = provider;
             mListenerHandler.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Message msg = Message.obtain();
-            //msg.what = TYPE_PROVIDER_ENABLED;
-            //msg.obj = provider;
-            //mListenerHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.460 -0400", hash_original_method = "E15FA24A6514F29CC56145BCCEFEF320", hash_generated_method = "A5BEF2B3B4DDD1BF0C8C30B6570A5460")
         public void onProviderDisabled(String provider) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(provider.getTaint());
             Message msg = Message.obtain();
             msg.what = TYPE_PROVIDER_DISABLED;
             msg.obj = provider;
             mListenerHandler.sendMessage(msg);
-            // ---------- Original Method ----------
-            //Message msg = Message.obtain();
-            //msg.what = TYPE_PROVIDER_DISABLED;
-            //msg.obj = provider;
-            //mListenerHandler.sendMessage(msg);
+            
+            
+            
+            
+            
         }
 
         
@@ -1369,12 +1369,12 @@ switch(msg.what){
 }            try 
             {
                 mService.locationCallbackFinished(this);
-            } //End block
+            } 
             catch (RemoteException e)
             {
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1453,9 +1453,9 @@ switch(msg.what){
           GpsStatusListenerTransport(GpsStatus.Listener listener) {
             mListener = listener;
             mNmeaListener = null;
-            // ---------- Original Method ----------
-            //mListener = listener;
-            //mNmeaListener = null;
+            
+            
+            
         }
 
         
@@ -1464,52 +1464,52 @@ switch(msg.what){
             mNmeaListener = listener;
             mListener = null;
             mNmeaBuffer = new ArrayList<Nmea>();
-            // ---------- Original Method ----------
-            //mNmeaListener = listener;
-            //mListener = null;
-            //mNmeaBuffer = new ArrayList<Nmea>();
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.462 -0400", hash_original_method = "03DD372B4F74F556A5CFC2950F002742", hash_generated_method = "EA299A85CCF224B3DE48BF56ACD52F67")
         public void onGpsStarted() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
     if(mListener != null)            
             {
                 Message msg = Message.obtain();
                 msg.what = GpsStatus.GPS_EVENT_STARTED;
                 mGpsHandler.sendMessage(msg);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //Message msg = Message.obtain();
-                //msg.what = GpsStatus.GPS_EVENT_STARTED;
-                //mGpsHandler.sendMessage(msg);
-            //}
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.462 -0400", hash_original_method = "30C4A680AA9F7AF81E647400DEBA508E", hash_generated_method = "621E18683864DAB5C335FEE34B88D737")
         public void onGpsStopped() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
     if(mListener != null)            
             {
                 Message msg = Message.obtain();
                 msg.what = GpsStatus.GPS_EVENT_STOPPED;
                 mGpsHandler.sendMessage(msg);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //Message msg = Message.obtain();
-                //msg.what = GpsStatus.GPS_EVENT_STOPPED;
-                //mGpsHandler.sendMessage(msg);
-            //}
+            } 
+            
+            
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.463 -0400", hash_original_method = "E5DFF9ED39044E57371BE0E746E84457", hash_generated_method = "B236AE554935F09EA49455EE63390EE9")
         public void onFirstFix(int ttff) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(ttff);
     if(mListener != null)            
             {
@@ -1517,14 +1517,14 @@ switch(msg.what){
                 Message msg = Message.obtain();
                 msg.what = GpsStatus.GPS_EVENT_FIRST_FIX;
                 mGpsHandler.sendMessage(msg);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //mGpsStatus.setTimeToFirstFix(ttff);
-                //Message msg = Message.obtain();
-                //msg.what = GpsStatus.GPS_EVENT_FIRST_FIX;
-                //mGpsHandler.sendMessage(msg);
-            //}
+            } 
+            
+            
+                
+                
+                
+                
+            
         }
 
         
@@ -1532,7 +1532,7 @@ switch(msg.what){
         public void onSvStatusChanged(int svCount, int[] prns, float[] snrs,
                 float[] elevations, float[] azimuths, int ephemerisMask,
                 int almanacMask, int usedInFixMask) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(usedInFixMask);
             addTaint(almanacMask);
             addTaint(ephemerisMask);
@@ -1549,22 +1549,22 @@ switch(msg.what){
                 msg.what = GpsStatus.GPS_EVENT_SATELLITE_STATUS;
                 mGpsHandler.removeMessages(GpsStatus.GPS_EVENT_SATELLITE_STATUS);
                 mGpsHandler.sendMessage(msg);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mListener != null) {
-                //mGpsStatus.setStatus(svCount, prns, snrs, elevations, azimuths,
-                        //ephemerisMask, almanacMask, usedInFixMask);
-                //Message msg = Message.obtain();
-                //msg.what = GpsStatus.GPS_EVENT_SATELLITE_STATUS;
-                //mGpsHandler.removeMessages(GpsStatus.GPS_EVENT_SATELLITE_STATUS);
-                //mGpsHandler.sendMessage(msg);
-            //}
+            } 
+            
+            
+                
+                        
+                
+                
+                
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:23.464 -0400", hash_original_method = "D97F778C22B6B561834B5A8A67FE2F57", hash_generated_method = "992A67D64037BEEF35715BB67D0356A4")
         public void onNmeaReceived(long timestamp, String nmea) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(nmea.getTaint());
             addTaint(timestamp);
     if(mNmeaListener != null)            
@@ -1572,22 +1572,22 @@ switch(msg.what){
                 synchronized
 (mNmeaBuffer)                {
                     mNmeaBuffer.add(new Nmea(timestamp, nmea));
-                } //End block
+                } 
                 Message msg = Message.obtain();
                 msg.what = NMEA_RECEIVED;
                 mGpsHandler.removeMessages(NMEA_RECEIVED);
                 mGpsHandler.sendMessage(msg);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mNmeaListener != null) {
-                //synchronized (mNmeaBuffer) {
-                    //mNmeaBuffer.add(new Nmea(timestamp, nmea));
-                //}
-                //Message msg = Message.obtain();
-                //msg.what = NMEA_RECEIVED;
-                //mGpsHandler.removeMessages(NMEA_RECEIVED);
-                //mGpsHandler.sendMessage(msg);
-            //}
+            } 
+            
+            
+                
+                    
+                
+                
+                
+                
+                
+            
         }
 
         
@@ -1603,9 +1603,9 @@ switch(msg.what){
               Nmea(long timestamp, String nmea) {
                 mTimestamp = timestamp;
                 mNmea = nmea;
-                // ---------- Original Method ----------
-                //mTimestamp = timestamp;
-                //mNmea = nmea;
+                
+                
+                
             }
 
             

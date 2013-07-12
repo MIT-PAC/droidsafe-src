@@ -1,6 +1,6 @@
 package android.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,8 +32,8 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.919 -0400", hash_original_method = "94F554AA12869316A649B35CDD2C48B7", hash_generated_method = "7133F8D8ECAF77EA1D7A82265BA8BB74")
     public  ApplicationThreadNative() {
         attachInterface(this, descriptor);
-        // ---------- Original Method ----------
-        //attachInterface(this, descriptor);
+        
+        
     }
 
     
@@ -50,10 +50,11 @@ public abstract class ApplicationThreadNative extends Binder implements IApplica
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.932 -0400", hash_original_method = "B17DF3ED953946DC6FB6C3E82DF1C3B7", hash_generated_method = "3A1547BF2B499BFBA0133EB6B6A316C5")
     @Override
     public boolean onTransact(int code, Parcel data, Parcel reply, int flags) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(flags);
         addTaint(reply.getTaint());
         addTaint(data.getTaint());
@@ -70,7 +71,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1813513142 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1374006121 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1374006121;
-        } //End block
+        } 
         case SCHEDULE_STOP_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -81,7 +82,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_540055023 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918079661 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918079661;
-        } //End block
+        } 
         case SCHEDULE_WINDOW_VISIBILITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -91,7 +92,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_2006903076 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656752071 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656752071;
-        } //End block
+        } 
         case SCHEDULE_SLEEPING_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -101,7 +102,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1373308984 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1383479921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1383479921;
-        } //End block
+        } 
         case SCHEDULE_RESUME_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -111,7 +112,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1888579037 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1816318488 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1816318488;
-        } //End block
+        } 
         case SCHEDULE_SEND_RESULT_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -121,7 +122,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_805335173 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1747428367 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1747428367;
-        } //End block
+        } 
         case SCHEDULE_LAUNCH_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -145,7 +146,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1346517954 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_39283231 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_39283231;
-        } //End block
+        } 
         case SCHEDULE_RELAUNCH_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -158,12 +159,12 @@ switch(code){
     if(data.readInt() != 0)            
             {
                 config = Configuration.CREATOR.createFromParcel(data);
-            } //End block
+            } 
             scheduleRelaunchActivity(b, ri, pi, configChanges, notResumed, config);
             boolean varB326B5062B2F0E69046810717534CB09_174788538 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2024492556 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2024492556;
-        } //End block
+        } 
         case SCHEDULE_NEW_INTENT_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -173,7 +174,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1525792745 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_927736367 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_927736367;
-        } //End block
+        } 
         case SCHEDULE_FINISH_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -184,7 +185,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1705238571 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302482104 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_302482104;
-        } //End block
+        } 
         case SCHEDULE_RECEIVER_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -200,7 +201,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_550470639 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1874949001 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1874949001;
-        } //End block
+        } 
         case SCHEDULE_CREATE_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -211,7 +212,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_488601541 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_621730309 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_621730309;
-        } //End block
+        } 
         case SCHEDULE_BIND_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -222,7 +223,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1698408700 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526722601 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1526722601;
-        } //End block
+        } 
         case SCHEDULE_UNBIND_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -232,7 +233,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1679323015 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1840525186 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1840525186;
-        } //End block
+        } 
         case SCHEDULE_SERVICE_ARGS_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -244,16 +245,16 @@ switch(code){
     if(data.readInt() != 0)            
             {
                 args = Intent.CREATOR.createFromParcel(data);
-            } //End block
+            } 
             else
             {
                 args = null;
-            } //End block
+            } 
             scheduleServiceArgs(token, taskRemoved, startId, fl, args);
             boolean varB326B5062B2F0E69046810717534CB09_2009249082 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064741902 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064741902;
-        } //End block
+        } 
         case SCHEDULE_STOP_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -262,7 +263,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_859891058 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1927252935 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1927252935;
-        } //End block
+        } 
         case BIND_APPLICATION_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -292,7 +293,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_2027827550 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1664690572 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1664690572;
-        } //End block
+        } 
         case SCHEDULE_EXIT_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -300,7 +301,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_552809501 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_835397266 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_835397266;
-        } //End block
+        } 
         case SCHEDULE_SUICIDE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -308,7 +309,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_641829103 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734301639 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_734301639;
-        } //End block
+        } 
         case REQUEST_THUMBNAIL_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -317,7 +318,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_297151244 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_381256508 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_381256508;
-        } //End block
+        } 
         case SCHEDULE_CONFIGURATION_CHANGED_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -326,7 +327,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_777049886 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_477590300 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_477590300;
-        } //End block
+        } 
         case UPDATE_TIME_ZONE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -334,7 +335,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1824721491 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594664 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1170594664;
-        } //End block
+        } 
         case CLEAR_DNS_CACHE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -342,7 +343,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1405663444 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2122499497 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2122499497;
-        } //End block
+        } 
         case SET_HTTP_PROXY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -353,7 +354,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1573380378 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1919559351 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1919559351;
-        } //End block
+        } 
         case PROCESS_IN_BACKGROUND_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -361,7 +362,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1702385086 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1092663038 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1092663038;
-        } //End block
+        } 
         case DUMP_SERVICE_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -374,15 +375,15 @@ switch(code){
                 try 
                 {
                     fd.close();
-                } //End block
+                } 
                 catch (IOException e)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_250872056 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_235806472 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_235806472;
-        } //End block
+        } 
         case SCHEDULE_REGISTERED_RECEIVER_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -399,14 +400,14 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1582118107 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2596754 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2596754;
-        } //End block
+        } 
         case SCHEDULE_LOW_MEMORY_TRANSACTION:
         {
             scheduleLowMemory();
             boolean varB326B5062B2F0E69046810717534CB09_229737774 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2050492748 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2050492748;
-        } //End block
+        } 
         case SCHEDULE_ACTIVITY_CONFIGURATION_CHANGED_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -415,7 +416,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1666440374 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1387977090 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1387977090;
-        } //End block
+        } 
         case PROFILER_CONTROL_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -428,7 +429,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1943365114 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1081645652 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1081645652;
-        } //End block
+        } 
         case SET_SCHEDULING_GROUP_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -437,7 +438,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1636445012 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_242962758 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_242962758;
-        } //End block
+        } 
         case SCHEDULE_CREATE_BACKUP_AGENT_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -448,7 +449,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1808199517 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_779011999 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_779011999;
-        } //End block
+        } 
         case SCHEDULE_DESTROY_BACKUP_AGENT_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -458,7 +459,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1484299709 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1023536593 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1023536593;
-        } //End block
+        } 
         case GET_MEMORY_INFO_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -469,7 +470,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1655709300 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1689396698 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1689396698;
-        } //End block
+        } 
         case DISPATCH_PACKAGE_BROADCAST_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -479,7 +480,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_392614938 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1432241704 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1432241704;
-        } //End block
+        } 
         case SCHEDULE_CRASH_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -488,7 +489,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1589290544 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_799102538 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_799102538;
-        } //End block
+        } 
         case DUMP_HEAP_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -500,7 +501,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_283653282 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051718500 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051718500;
-        } //End block
+        } 
         case DUMP_ACTIVITY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -514,15 +515,15 @@ switch(code){
                 try 
                 {
                     fd.close();
-                } //End block
+                } 
                 catch (IOException e)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1633412525 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_144299623 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_144299623;
-        } //End block
+        } 
         case SET_CORE_SETTINGS_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -531,7 +532,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_1469090832 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1124390374 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1124390374;
-        } //End block
+        } 
         case UPDATE_PACKAGE_COMPATIBILITY_INFO_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -541,7 +542,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_780608582 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_111726084 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_111726084;
-        } //End block
+        } 
         case SCHEDULE_TRIM_MEMORY_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -550,7 +551,7 @@ switch(code){
             boolean varB326B5062B2F0E69046810717534CB09_246042872 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_229978163 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_229978163;
-        } //End block
+        } 
         case DUMP_MEM_INFO_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -564,24 +565,24 @@ switch(code){
                 try 
                 {
                     mi = dumpMemInfo(fd.getFileDescriptor(), checkin, all, args);
-                } //End block
+                } 
                 finally 
                 {
                     try 
                     {
                         fd.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             reply.writeNoException();
             mi.writeToParcel(reply, 0);
             boolean varB326B5062B2F0E69046810717534CB09_211314177 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1507630279 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1507630279;
-        } //End block
+        } 
         case DUMP_GFX_INFO_TRANSACTION:
         {
             data.enforceInterface(IApplicationThread.descriptor);
@@ -592,38 +593,39 @@ switch(code){
                 try 
                 {
                     dumpGfxInfo(fd.getFileDescriptor(), args);
-                } //End block
+                } 
                 finally 
                 {
                     try 
                     {
                         fd.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             reply.writeNoException();
             boolean varB326B5062B2F0E69046810717534CB09_1437245847 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_432039328 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_432039328;
-        } //End block
+        } 
 }        boolean var3B3A841664B2F7D5B8C0C4B7B8E31E3B_347104668 = (super.onTransact(code, data, reply, flags));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_836564250 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_836564250;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.936 -0400", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "CD240EABD7443743B265B3EEDADDC579")
     public IBinder asBinder() {
 IBinder var72A74007B2BE62B849F475C7BDA4658B_572818306 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_572818306.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_572818306;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -637,8 +639,8 @@ class ApplicationThreadProxy implements IApplicationThread {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.937 -0400", hash_original_method = "08B50EC8A0FF95C7A679215C14C2E347", hash_generated_method = "07C34BD386C4B1EE3B5CAAFB7C484EE0")
     public  ApplicationThreadProxy(IBinder remote) {
         mRemote = remote;
-        // ---------- Original Method ----------
-        //mRemote = remote;
+        
+        
     }
 
     
@@ -647,8 +649,8 @@ class ApplicationThreadProxy implements IApplicationThread {
 IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         varF4936CA84F7841A48B466C9D273BE2EB_134814242.addTaint(taint);
         return varF4936CA84F7841A48B466C9D273BE2EB_134814242;
-        // ---------- Original Method ----------
-        //return mRemote;
+        
+        
     }
 
     
@@ -668,16 +670,16 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_PAUSE_ACTIVITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(finished ? 1 : 0);
-        //data.writeInt(userLeaving ? 1 :0);
-        //data.writeInt(configChanges);
-        //mRemote.transact(SCHEDULE_PAUSE_ACTIVITY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -695,15 +697,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_STOP_ACTIVITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(showWindow ? 1 : 0);
-        //data.writeInt(configChanges);
-        //mRemote.transact(SCHEDULE_STOP_ACTIVITY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -719,14 +721,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_WINDOW_VISIBILITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(showWindow ? 1 : 0);
-        //mRemote.transact(SCHEDULE_WINDOW_VISIBILITY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -742,14 +744,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_SLEEPING_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(sleeping ? 1 : 0);
-        //mRemote.transact(SCHEDULE_SLEEPING_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -764,14 +766,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_RESUME_ACTIVITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(isForward ? 1 : 0);
-        //mRemote.transact(SCHEDULE_RESUME_ACTIVITY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -786,14 +788,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_SEND_RESULT_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeTypedList(results);
-        //mRemote.transact(SCHEDULE_SEND_RESULT_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -835,17 +837,17 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         {
             data.writeInt(1);
             profileFd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } //End block
+        } 
         else
         {
             data.writeInt(0);
-        } //End block
+        } 
         data.writeInt(autoStopProfiler ? 1 : 0);
         mRemote.transact(SCHEDULE_LAUNCH_ACTIVITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -870,31 +872,31 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         {
             data.writeInt(1);
             config.writeToParcel(data, 0);
-        } //End block
+        } 
         else
         {
             data.writeInt(0);
-        } //End block
+        } 
         mRemote.transact(SCHEDULE_RELAUNCH_ACTIVITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeTypedList(pendingResults);
-        //data.writeTypedList(pendingNewIntents);
-        //data.writeInt(configChanges);
-        //data.writeInt(notResumed ? 1 : 0);
-        //if (config != null) {
-            //data.writeInt(1);
-            //config.writeToParcel(data, 0);
-        //} else {
-            //data.writeInt(0);
-        //}
-        //mRemote.transact(SCHEDULE_RELAUNCH_ACTIVITY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -909,14 +911,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_NEW_INTENT_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeTypedList(intents);
-        //data.writeStrongBinder(token);
-        //mRemote.transact(SCHEDULE_NEW_INTENT_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -934,15 +936,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_FINISH_ACTIVITY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(finishing ? 1 : 0);
-        //data.writeInt(configChanges);
-        //mRemote.transact(SCHEDULE_FINISH_ACTIVITY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -969,19 +971,19 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_RECEIVER_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //intent.writeToParcel(data, 0);
-        //info.writeToParcel(data, 0);
-        //compatInfo.writeToParcel(data, 0);
-        //data.writeInt(resultCode);
-        //data.writeString(resultData);
-        //data.writeBundle(map);
-        //data.writeInt(sync ? 1 : 0);
-        //mRemote.transact(SCHEDULE_RECEIVER_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -999,15 +1001,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_CREATE_BACKUP_AGENT_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //app.writeToParcel(data, 0);
-        //compatInfo.writeToParcel(data, 0);
-        //data.writeInt(backupMode);
-        //mRemote.transact(SCHEDULE_CREATE_BACKUP_AGENT_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1023,14 +1025,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_DESTROY_BACKUP_AGENT_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //app.writeToParcel(data, 0);
-        //compatInfo.writeToParcel(data, 0);
-        //mRemote.transact(SCHEDULE_DESTROY_BACKUP_AGENT_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1048,15 +1050,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_CREATE_SERVICE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //info.writeToParcel(data, 0);
-        //compatInfo.writeToParcel(data, 0);
-        //mRemote.transact(SCHEDULE_CREATE_SERVICE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1073,15 +1075,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_BIND_SERVICE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //intent.writeToParcel(data, 0);
-        //data.writeInt(rebind ? 1 : 0);
-        //mRemote.transact(SCHEDULE_BIND_SERVICE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1096,14 +1098,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_UNBIND_SERVICE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //intent.writeToParcel(data, 0);
-        //mRemote.transact(SCHEDULE_UNBIND_SERVICE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1125,30 +1127,30 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         {
             data.writeInt(1);
             args.writeToParcel(data, 0);
-        } //End block
+        } 
         else
         {
             data.writeInt(0);
-        } //End block
+        } 
         mRemote.transact(SCHEDULE_SERVICE_ARGS_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //data.writeInt(taskRemoved ? 1 : 0);
-        //data.writeInt(startId);
-        //data.writeInt(flags);
-        //if (args != null) {
-            //data.writeInt(1);
-            //args.writeToParcel(data, 0);
-        //} else {
-            //data.writeInt(0);
-        //}
-        //mRemote.transact(SCHEDULE_SERVICE_ARGS_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -1161,13 +1163,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_STOP_SERVICE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //mRemote.transact(SCHEDULE_STOP_SERVICE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1202,22 +1204,22 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
     if(testName == null)        
         {
             data.writeInt(0);
-        } //End block
+        } 
         else
         {
             data.writeInt(1);
             testName.writeToParcel(data, 0);
-        } //End block
+        } 
         data.writeString(profileName);
     if(profileFd != null)        
         {
             data.writeInt(1);
             profileFd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } //End block
+        } 
         else
         {
             data.writeInt(0);
-        } //End block
+        } 
         data.writeInt(autoStopProfiler ? 1 : 0);
         data.writeBundle(testArgs);
         data.writeStrongInterface(testWatcher);
@@ -1231,8 +1233,8 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(BIND_APPLICATION_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1243,12 +1245,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_EXIT_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(SCHEDULE_EXIT_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1259,12 +1261,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_SUICIDE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(SCHEDULE_SUICIDE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1277,13 +1279,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(REQUEST_THUMBNAIL_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //mRemote.transact(REQUEST_THUMBNAIL_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1296,13 +1298,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_CONFIGURATION_CHANGED_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //config.writeToParcel(data, 0);
-        //mRemote.transact(SCHEDULE_CONFIGURATION_CHANGED_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1313,12 +1315,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(UPDATE_TIME_ZONE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(UPDATE_TIME_ZONE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1329,12 +1331,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(CLEAR_DNS_CACHE_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(CLEAR_DNS_CACHE_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1350,14 +1352,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeString(exclList);
         mRemote.transact(SET_HTTP_PROXY_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeString(proxy);
-        //data.writeString(port);
-        //data.writeString(exclList);
-        //mRemote.transact(SET_HTTP_PROXY_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1368,12 +1370,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(PROCESS_IN_BACKGROUND_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(PROCESS_IN_BACKGROUND_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1389,17 +1391,18 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeStringArray(args);
         mRemote.transact(DUMP_SERVICE_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeFileDescriptor(fd);
-        //data.writeStrongBinder(token);
-        //data.writeStringArray(args);
-        //mRemote.transact(DUMP_SERVICE_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:00.984 -0400", hash_original_method = "D0D9D13B7AFC8143680190DFDB1E27B8", hash_generated_method = "2D22A40D153506A0338036F565216D19")
     public void scheduleRegisteredReceiver(IIntentReceiver receiver, Intent intent,
             int resultCode, String dataStr, Bundle extras, boolean ordered, boolean sticky) throws RemoteException {
@@ -1422,19 +1425,19 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_REGISTERED_RECEIVER_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(receiver.asBinder());
-        //intent.writeToParcel(data, 0);
-        //data.writeInt(resultCode);
-        //data.writeString(dataStr);
-        //data.writeBundle(extras);
-        //data.writeInt(ordered ? 1 : 0);
-        //data.writeInt(sticky ? 1 : 0);
-        //mRemote.transact(SCHEDULE_REGISTERED_RECEIVER_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1445,12 +1448,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_LOW_MEMORY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(SCHEDULE_LOW_MEMORY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1464,13 +1467,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_ACTIVITY_CONFIGURATION_CHANGED_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeStrongBinder(token);
-        //mRemote.transact(SCHEDULE_ACTIVITY_CONFIGURATION_CHANGED_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1490,29 +1493,29 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         {
             data.writeInt(1);
             fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } //End block
+        } 
         else
         {
             data.writeInt(0);
-        } //End block
+        } 
         mRemote.transact(PROFILER_CONTROL_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeInt(start ? 1 : 0);
-        //data.writeInt(profileType);
-        //data.writeString(path);
-        //if (fd != null) {
-            //data.writeInt(1);
-            //fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        //} else {
-            //data.writeInt(0);
-        //}
-        //mRemote.transact(PROFILER_CONTROL_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -1525,13 +1528,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SET_SCHEDULING_GROUP_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeInt(group);
-        //mRemote.transact(SET_SCHEDULING_GROUP_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1546,15 +1549,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         outInfo.readFromParcel(reply);
         data.recycle();
         reply.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //mRemote.transact(GET_MEMORY_INFO_TRANSACTION, data, reply, 0);
-        //reply.readException();
-        //outInfo.readFromParcel(reply);
-        //data.recycle();
-        //reply.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1569,14 +1572,14 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(DISPATCH_PACKAGE_BROADCAST_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeInt(cmd);
-        //data.writeStringArray(packages);
-        //mRemote.transact(DISPATCH_PACKAGE_BROADCAST_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1589,13 +1592,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         mRemote.transact(SCHEDULE_CRASH_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeString(msg);
-        //mRemote.transact(SCHEDULE_CRASH_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+                
+        
     }
 
     
@@ -1613,28 +1616,28 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         {
             data.writeInt(1);
             fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        } //End block
+        } 
         else
         {
             data.writeInt(0);
-        } //End block
+        } 
         mRemote.transact(DUMP_HEAP_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeInt(managed ? 1 : 0);
-        //data.writeString(path);
-        //if (fd != null) {
-            //data.writeInt(1);
-            //fd.writeToParcel(data, Parcelable.PARCELABLE_WRITE_RETURN_VALUE);
-        //} else {
-            //data.writeInt(0);
-        //}
-        //mRemote.transact(DUMP_HEAP_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -1652,15 +1655,15 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeStringArray(args);
         mRemote.transact(DUMP_ACTIVITY_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeFileDescriptor(fd);
-        //data.writeStrongBinder(token);
-        //data.writeString(prefix);
-        //data.writeStringArray(args);
-        //mRemote.transact(DUMP_ACTIVITY_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1671,11 +1674,11 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeInterfaceToken(IApplicationThread.descriptor);
         data.writeBundle(coreSettings);
         mRemote.transact(SET_CORE_SETTINGS_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeBundle(coreSettings);
-        //mRemote.transact(SET_CORE_SETTINGS_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
+        
+        
+        
+        
+        
     }
 
     
@@ -1689,13 +1692,13 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         info.writeToParcel(data, 0);
         mRemote.transact(UPDATE_PACKAGE_COMPATIBILITY_INFO_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeString(pkg);
-        //info.writeToParcel(data, 0);
-        //mRemote.transact(UPDATE_PACKAGE_COMPATIBILITY_INFO_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
+        
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -1707,12 +1710,12 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
         data.writeInt(level);
         mRemote.transact(SCHEDULE_TRIM_MEMORY_TRANSACTION, data, null,
                 IBinder.FLAG_ONEWAY);
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeInt(level);
-        //mRemote.transact(SCHEDULE_TRIM_MEMORY_TRANSACTION, data, null,
-                //IBinder.FLAG_ONEWAY);
+        
+        
+        
+        
+        
+                
     }
 
     
@@ -1739,21 +1742,21 @@ IBinder varF4936CA84F7841A48B466C9D273BE2EB_134814242 =         mRemote;
 Debug.MemoryInfo var43CF3338FDBA93597A9562D3166E9DC4_879596471 =         info;
         var43CF3338FDBA93597A9562D3166E9DC4_879596471.addTaint(taint);
         return var43CF3338FDBA93597A9562D3166E9DC4_879596471;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeFileDescriptor(fd);
-        //data.writeInt(checkin ? 1 : 0);
-        //data.writeInt(all ? 1 : 0);
-        //data.writeStringArray(args);
-        //mRemote.transact(DUMP_MEM_INFO_TRANSACTION, data, reply, 0);
-        //reply.readException();
-        //Debug.MemoryInfo info = new Debug.MemoryInfo();
-        //info.readFromParcel(reply);
-        //data.recycle();
-        //reply.recycle();
-        //return info;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1767,13 +1770,13 @@ Debug.MemoryInfo var43CF3338FDBA93597A9562D3166E9DC4_879596471 =         info;
         data.writeStringArray(args);
         mRemote.transact(DUMP_GFX_INFO_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
         data.recycle();
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //data.writeInterfaceToken(IApplicationThread.descriptor);
-        //data.writeFileDescriptor(fd);
-        //data.writeStringArray(args);
-        //mRemote.transact(DUMP_GFX_INFO_TRANSACTION, data, null, IBinder.FLAG_ONEWAY);
-        //data.recycle();
+        
+        
+        
+        
+        
+        
+        
     }
 
     

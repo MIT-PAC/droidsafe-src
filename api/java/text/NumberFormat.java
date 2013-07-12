@@ -1,6 +1,6 @@
 package java.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -38,21 +38,23 @@ public abstract class NumberFormat extends Format {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.775 -0400", hash_original_method = "AC8E136DE5A642003A57BDCF52FB755A", hash_generated_method = "4471CB6ABEB340D260FD4A286AE4BB26")
     protected  NumberFormat() {
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.776 -0400", hash_original_method = "323EA29B58059AEF6BA9ED0328A60A9B", hash_generated_method = "F7FC3CBFD95D08ED2F3874319FB76629")
     @Override
     public Object clone() {
 Object var46F3A0D86742C1D6E099C2B166941A33_1242819101 =         super.clone();
         var46F3A0D86742C1D6E099C2B166941A33_1242819101.addTaint(taint);
         return var46F3A0D86742C1D6E099C2B166941A33_1242819101;
-        // ---------- Original Method ----------
-        //return super.clone();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.776 -0400", hash_original_method = "CF2A5131022F3DE945450C291D454139", hash_generated_method = "77393B1A1211DDF238A4D5F38E184969")
     @Override
     public boolean equals(Object object) {
@@ -62,13 +64,13 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1242819101 =         super.clone();
             boolean varB326B5062B2F0E69046810717534CB09_1888159371 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247910096 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247910096;
-        } //End block
+        } 
     if(!(object instanceof NumberFormat))        
         {
             boolean var68934A3E9455FA72420237EB05902327_734055538 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1278142405 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1278142405;
-        } //End block
+        } 
         NumberFormat obj = (NumberFormat) object;
         boolean varCAB3FEED026BECE04342C398C2249A2C_665199964 = (groupingUsed == obj.groupingUsed
                 && parseIntegerOnly == obj.parseIntegerOnly
@@ -78,20 +80,20 @@ Object var46F3A0D86742C1D6E099C2B166941A33_1242819101 =         super.clone();
                 && minimumIntegerDigits == obj.minimumIntegerDigits);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_606631256 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_606631256;
-        // ---------- Original Method ----------
-        //if (object == this) {
-            //return true;
-        //}
-        //if (!(object instanceof NumberFormat)) {
-            //return false;
-        //}
-        //NumberFormat obj = (NumberFormat) object;
-        //return groupingUsed == obj.groupingUsed
-                //&& parseIntegerOnly == obj.parseIntegerOnly
-                //&& maximumFractionDigits == obj.maximumFractionDigits
-                //&& maximumIntegerDigits == obj.maximumIntegerDigits
-                //&& minimumFractionDigits == obj.minimumFractionDigits
-                //&& minimumIntegerDigits == obj.minimumIntegerDigits;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+                
+                
+                
+                
     }
 
     
@@ -102,9 +104,9 @@ String varF88CDDD2DC5E468EB7C82E265CB6073D_93635301 =         format(value, new 
                 .toString();
         varF88CDDD2DC5E468EB7C82E265CB6073D_93635301.addTaint(taint);
         return varF88CDDD2DC5E468EB7C82E265CB6073D_93635301;
-        // ---------- Original Method ----------
-        //return format(value, new StringBuffer(), new FieldPosition(0))
-                //.toString();
+        
+        
+                
     }
 
     
@@ -118,15 +120,16 @@ String varF88CDDD2DC5E468EB7C82E265CB6073D_131393463 =         format(value, new
                 .toString();
         varF88CDDD2DC5E468EB7C82E265CB6073D_131393463.addTaint(taint);
         return varF88CDDD2DC5E468EB7C82E265CB6073D_131393463;
-        // ---------- Original Method ----------
-        //return format(value, new StringBuffer(), new FieldPosition(0))
-                //.toString();
+        
+        
+                
     }
 
     
     public abstract StringBuffer format(long value, StringBuffer buffer, FieldPosition field);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.778 -0400", hash_original_method = "294F85583D2E74BD6D7B73B5CBA517EA", hash_generated_method = "7159F849520E29493FA04AC05E8610EE")
     @Override
     public StringBuffer format(Object object, StringBuffer buffer, FieldPosition field) {
@@ -141,7 +144,7 @@ String varF88CDDD2DC5E468EB7C82E265CB6073D_131393463 =         format(value, new
 StringBuffer var7D41C9F15D36B95537E7614BA2643F28_1087467784 =             format(lv, buffer, field);
             var7D41C9F15D36B95537E7614BA2643F28_1087467784.addTaint(taint);
             return var7D41C9F15D36B95537E7614BA2643F28_1087467784;
-        } //End block
+        } 
         else
     if(object instanceof Number)        
         {
@@ -149,36 +152,38 @@ StringBuffer var7D41C9F15D36B95537E7614BA2643F28_1087467784 =             format
 StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format(dv, buffer, field);
             var202EA03A910D5AF7841539AA60745D42_1857962777.addTaint(taint);
             return var202EA03A910D5AF7841539AA60745D42_1857962777;
-        } //End block
+        } 
         IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1276703011 = new IllegalArgumentException();
         var5783EF97022AA508B74A1E3EA38534AF_1276703011.addTaint(taint);
         throw var5783EF97022AA508B74A1E3EA38534AF_1276703011;
-        // ---------- Original Method ----------
-        //if (object instanceof Byte || object instanceof Short || object instanceof Integer ||
-                //object instanceof Long ||
-                //(object instanceof BigInteger && ((BigInteger) object).bitLength() < 64)) {
-            //long lv = ((Number) object).longValue();
-            //return format(lv, buffer, field);
-        //} else if (object instanceof Number) {
-            //double dv = ((Number) object).doubleValue();
-            //return format(dv, buffer, field);
-        //}
-        //throw new IllegalArgumentException();
+        
+        
+                
+                
+            
+            
+        
+            
+            
+        
+        
     }
 
     
-        public static Locale[] getAvailableLocales() {
+        @DSModeled(DSC.SAFE)
+    public static Locale[] getAvailableLocales() {
         return ICU.getAvailableNumberFormatLocales();
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.779 -0400", hash_original_method = "B4D372C49661A5E03C88F7CDA081E3AF", hash_generated_method = "C636EFD27D8C3E0AD0948D719E4A0F17")
     public Currency getCurrency() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1353160496 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1353160496.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1353160496;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -187,7 +192,8 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
     }
 
     
-        public static NumberFormat getCurrencyInstance(Locale locale) {
+        @DSModeled(DSC.SAFE)
+    public static NumberFormat getCurrencyInstance(Locale locale) {
         return getInstance(LocaleData.get(locale).currencyPattern, locale);
     }
 
@@ -197,7 +203,8 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
     }
 
     
-        public static NumberFormat getIntegerInstance(Locale locale) {
+        @DSModeled(DSC.SAFE)
+    public static NumberFormat getIntegerInstance(Locale locale) {
         NumberFormat result = getInstance(LocaleData.get(locale).integerPattern, locale);
         result.setParseIntegerOnly(true);
         return result;
@@ -209,53 +216,59 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
     }
 
     
-        public static NumberFormat getInstance(Locale locale) {
+        @DSModeled(DSC.SAFE)
+    public static NumberFormat getInstance(Locale locale) {
         return getNumberInstance(locale);
     }
 
     
-        private static NumberFormat getInstance(String pattern, Locale locale) {
+        @DSModeled(DSC.SAFE)
+    private static NumberFormat getInstance(String pattern, Locale locale) {
         return new DecimalFormat(pattern, locale);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.781 -0400", hash_original_method = "E813DF8258936A130B114EAEAD95EDA2", hash_generated_method = "7D4667AA458D6C493A1F4B2CC55395B1")
     public int getMaximumFractionDigits() {
         int var10F0E6C7BE31F95C6A0F542E05A9A4BD_32039089 = (maximumFractionDigits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949666536 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_949666536;
-        // ---------- Original Method ----------
-        //return maximumFractionDigits;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.781 -0400", hash_original_method = "78A0327FC665D89694C44AF144F747A0", hash_generated_method = "0E2284ED1C274EA2DDB9324A4A04F681")
     public int getMaximumIntegerDigits() {
         int var293F9D432700CC93984672059B4DA864_1540814837 = (maximumIntegerDigits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2062057337 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2062057337;
-        // ---------- Original Method ----------
-        //return maximumIntegerDigits;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.781 -0400", hash_original_method = "357B48579C639D091425919515E6A5BC", hash_generated_method = "8FCC3CF8C20DC63C6AF7A886528742AA")
     public int getMinimumFractionDigits() {
         int varF9AA0906C75D99181B6EAB63872FD123_1833715146 = (minimumFractionDigits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1000569992 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1000569992;
-        // ---------- Original Method ----------
-        //return minimumFractionDigits;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.782 -0400", hash_original_method = "F5C90064F0CFBE4D6C8C4DDC2FA4814C", hash_generated_method = "BD6332E874779346A1C1233A67539A44")
     public int getMinimumIntegerDigits() {
         int varDF86785DCD59223752DEFF04D20ECC4D_1491882137 = (minimumIntegerDigits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236446434 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1236446434;
-        // ---------- Original Method ----------
-        //return minimumIntegerDigits;
+        
+        
     }
 
     
@@ -264,7 +277,8 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
     }
 
     
-        public static NumberFormat getNumberInstance(Locale locale) {
+        @DSModeled(DSC.SAFE)
+    public static NumberFormat getNumberInstance(Locale locale) {
         return getInstance(LocaleData.get(locale).numberPattern, locale);
     }
 
@@ -274,11 +288,13 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
     }
 
     
-        public static NumberFormat getPercentInstance(Locale locale) {
+        @DSModeled(DSC.SAFE)
+    public static NumberFormat getPercentInstance(Locale locale) {
         return getInstance(LocaleData.get(locale).percentPattern, locale);
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.783 -0400", hash_original_method = "BA195880AA858EB457E0D875FED9F2CD", hash_generated_method = "F15AFA45981670079CBDBC87473040A7")
     @Override
     public int hashCode() {
@@ -287,33 +303,36 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
                 + minimumFractionDigits + minimumIntegerDigits);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1340645930 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1340645930;
-        // ---------- Original Method ----------
-        //return (groupingUsed ? 1231 : 1237) + (parseIntegerOnly ? 1231 : 1237)
-                //+ maximumFractionDigits + maximumIntegerDigits
-                //+ minimumFractionDigits + minimumIntegerDigits;
+        
+        
+                
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.783 -0400", hash_original_method = "4D5DDA7520229906D909C6D4DE03887B", hash_generated_method = "CD63C4D910C30C02C28E75979EB3E230")
     public boolean isGroupingUsed() {
         boolean varCDAA5EE168BC255A098368F4ECB84995_1150273808 = (groupingUsed);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1471292859 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1471292859;
-        // ---------- Original Method ----------
-        //return groupingUsed;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.784 -0400", hash_original_method = "2C7184F183FABEE99D4475D92EBC3629", hash_generated_method = "A3FBFEFA32B66137C87FBD9F9B540AE5")
     public boolean isParseIntegerOnly() {
         boolean varBF0833897E55D6350D293E954F371DCF_967225418 = (parseIntegerOnly);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_219322043 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_219322043;
-        // ---------- Original Method ----------
-        //return parseIntegerOnly;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.784 -0400", hash_original_method = "FE3646B6613636F305FFC18B8FD2F859", hash_generated_method = "A640E780A5EE7FA9BD9E4BFA118772F9")
     public Number parse(String string) throws ParseException {
         addTaint(string.getTaint());
@@ -324,17 +343,17 @@ StringBuffer var202EA03A910D5AF7841539AA60745D42_1857962777 =             format
             ParseException var62056DC5161B0C47056FBF0E6AE7EEE9_734091186 = new ParseException("Unparseable number: \"" + string + "\"", pos.getErrorIndex());
             var62056DC5161B0C47056FBF0E6AE7EEE9_734091186.addTaint(taint);
             throw var62056DC5161B0C47056FBF0E6AE7EEE9_734091186;
-        } //End block
+        } 
 Number var63E80DF571E08DAA47BEFBF0BD0EEBAD_1665363434 =         number;
         var63E80DF571E08DAA47BEFBF0BD0EEBAD_1665363434.addTaint(taint);
         return var63E80DF571E08DAA47BEFBF0BD0EEBAD_1665363434;
-        // ---------- Original Method ----------
-        //ParsePosition pos = new ParsePosition(0);
-        //Number number = parse(string, pos);
-        //if (pos.getIndex() == 0) {
-            //throw new ParseException("Unparseable number: \"" + string + "\"", pos.getErrorIndex());
-        //}
-        //return number;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -351,118 +370,126 @@ Number var63E80DF571E08DAA47BEFBF0BD0EEBAD_1665363434 =         number;
             NullPointerException varC93DC96FB426FA0ED36AE39789A8AD97_936992956 = new NullPointerException("position is null");
             varC93DC96FB426FA0ED36AE39789A8AD97_936992956.addTaint(taint);
             throw varC93DC96FB426FA0ED36AE39789A8AD97_936992956;
-        } //End block
+        } 
         try 
         {
 Object var0D84F404ADD0A115F77E7D80294D92BC_1534734117 =             parse(string, position);
             var0D84F404ADD0A115F77E7D80294D92BC_1534734117.addTaint(taint);
             return var0D84F404ADD0A115F77E7D80294D92BC_1534734117;
-        } //End block
+        } 
         catch (Exception e)
         {
 Object var540C13E9E156B687226421B24F2DF178_584008294 =             null;
             var540C13E9E156B687226421B24F2DF178_584008294.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_584008294;
-        } //End block
-        // ---------- Original Method ----------
-        //if (position == null) {
-            //throw new NullPointerException("position is null");
-        //}
-        //try {
-            //return parse(string, position);
-        //} catch (Exception e) {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.785 -0400", hash_original_method = "840FE994670C453CCC1032B9649CFF03", hash_generated_method = "2BB15DA9B5BCEB2620BFD05B4942E727")
     public void setCurrency(Currency currency) {
         addTaint(currency.getTaint());
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2038164351 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2038164351.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2038164351;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.786 -0400", hash_original_method = "A7E1435E673E29B6F1D0E28A7EA1B8E8", hash_generated_method = "579E547AED141F13B97721B484886296")
     public void setGroupingUsed(boolean value) {
         groupingUsed = value;
-        // ---------- Original Method ----------
-        //groupingUsed = value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.786 -0400", hash_original_method = "8D829B5D993AE8CFC3165307650DC45D", hash_generated_method = "0F73F9AD293F0B883B7EF1A12B6D8BAF")
     public void setMaximumFractionDigits(int value) {
         maximumFractionDigits = value < 0 ? 0 : value;
     if(maximumFractionDigits < minimumFractionDigits)        
         {
             minimumFractionDigits = maximumFractionDigits;
-        } //End block
-        // ---------- Original Method ----------
-        //maximumFractionDigits = value < 0 ? 0 : value;
-        //if (maximumFractionDigits < minimumFractionDigits) {
-            //minimumFractionDigits = maximumFractionDigits;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.787 -0400", hash_original_method = "21B8BEFD42232423658838BAC20C84FE", hash_generated_method = "0F2958F2FB5144D5733B7401E7DFEF0E")
     public void setMaximumIntegerDigits(int value) {
         maximumIntegerDigits = value < 0 ? 0 : value;
     if(maximumIntegerDigits < minimumIntegerDigits)        
         {
             minimumIntegerDigits = maximumIntegerDigits;
-        } //End block
-        // ---------- Original Method ----------
-        //maximumIntegerDigits = value < 0 ? 0 : value;
-        //if (maximumIntegerDigits < minimumIntegerDigits) {
-            //minimumIntegerDigits = maximumIntegerDigits;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.788 -0400", hash_original_method = "2004D453A285EC62847C50B61DD7CBAF", hash_generated_method = "7878C503CB7380108E556CFC1933EBB7")
     public void setMinimumFractionDigits(int value) {
         minimumFractionDigits = value < 0 ? 0 : value;
     if(maximumFractionDigits < minimumFractionDigits)        
         {
             maximumFractionDigits = minimumFractionDigits;
-        } //End block
-        // ---------- Original Method ----------
-        //minimumFractionDigits = value < 0 ? 0 : value;
-        //if (maximumFractionDigits < minimumFractionDigits) {
-            //maximumFractionDigits = minimumFractionDigits;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.788 -0400", hash_original_method = "6D62345156926236ED68DA3CBABDD448", hash_generated_method = "632F3CE28FCA32FF6FD79B0CE4EA603C")
     public void setMinimumIntegerDigits(int value) {
         minimumIntegerDigits = value < 0 ? 0 : value;
     if(maximumIntegerDigits < minimumIntegerDigits)        
         {
             maximumIntegerDigits = minimumIntegerDigits;
-        } //End block
-        // ---------- Original Method ----------
-        //minimumIntegerDigits = value < 0 ? 0 : value;
-        //if (maximumIntegerDigits < minimumIntegerDigits) {
-            //maximumIntegerDigits = minimumIntegerDigits;
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.789 -0400", hash_original_method = "7914BBF7EC4F88E69DC0254980E5E100", hash_generated_method = "17744EC5A610FD6FB76060138790E549")
     public void setParseIntegerOnly(boolean value) {
         parseIntegerOnly = value;
-        // ---------- Original Method ----------
-        //parseIntegerOnly = value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.789 -0400", hash_original_method = "615BDCCE0F576CE8071CDC67AB896544", hash_generated_method = "778D992F1E3770A728E7A4A19FAA1F57")
     private void writeObject(ObjectOutputStream stream) throws IOException {
         addTaint(stream.getTaint());
@@ -486,11 +513,12 @@ Object var540C13E9E156B687226421B24F2DF178_584008294 =             null;
         fields.put("parseIntegerOnly", parseIntegerOnly);
         fields.put("serialVersionOnStream", 1);
         stream.writeFields();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.791 -0400", hash_original_method = "7CE1B061AB7260929E58BDEF36BC550E", hash_generated_method = "40E7D47C8812E3F33208CB94125F7775")
     private void readObject(ObjectInputStream stream) throws IOException,
             ClassNotFoundException {
@@ -504,51 +532,53 @@ Object var540C13E9E156B687226421B24F2DF178_584008294 =             null;
             maximumIntegerDigits = fields.get("maxIntegerDigits", (byte) 40);
             minimumFractionDigits = fields.get("minFractionDigits", (byte) 0);
             minimumIntegerDigits = fields.get("minIntegerDigits", (byte) 1);
-        } //End block
+        } 
         else
         {
             maximumFractionDigits = fields.get("maximumFractionDigits", 3);
             maximumIntegerDigits = fields.get("maximumIntegerDigits", 40);
             minimumFractionDigits = fields.get("minimumFractionDigits", 0);
             minimumIntegerDigits = fields.get("minimumIntegerDigits", 1);
-        } //End block
+        } 
     if(minimumIntegerDigits > maximumIntegerDigits
                 || minimumFractionDigits > maximumFractionDigits)        
         {
             InvalidObjectException var1A21B15B7E27B5D29FF8A008E035AADA_131928378 = new InvalidObjectException("min digits greater than max digits");
             var1A21B15B7E27B5D29FF8A008E035AADA_131928378.addTaint(taint);
             throw var1A21B15B7E27B5D29FF8A008E035AADA_131928378;
-        } //End block
+        } 
     if(minimumIntegerDigits < 0 || maximumIntegerDigits < 0
                 || minimumFractionDigits < 0 || maximumFractionDigits < 0)        
         {
             InvalidObjectException varBE9CAB3F7C17B180A0FD8CC2FE978B42_1878661416 = new InvalidObjectException("min or max digits negative");
             varBE9CAB3F7C17B180A0FD8CC2FE978B42_1878661416.addTaint(taint);
             throw varBE9CAB3F7C17B180A0FD8CC2FE978B42_1878661416;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.792 -0400", hash_original_method = "E6FF1C57537669874BDF42CE722EB942", hash_generated_method = "9A1E8751FFB3F3624442A250B1FFD4DB")
     public RoundingMode getRoundingMode() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_58645904 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_58645904.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_58645904;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:54.792 -0400", hash_original_method = "0C28590135419FD8FADCC2330801FC90", hash_generated_method = "033E7D90985F3853C7A34C82066A2797")
     public void setRoundingMode(RoundingMode roundingMode) {
         addTaint(roundingMode.getTaint());
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1224210746 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1224210746.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1224210746;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -558,7 +588,7 @@ Object var540C13E9E156B687226421B24F2DF178_584008294 =             null;
         protected  Field(String fieldName) {
             super(fieldName);
             addTaint(fieldName.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

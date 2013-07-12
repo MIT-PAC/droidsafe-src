@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ class ByteArrayBuilder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.078 -0400", hash_original_method = "4B643343F90EB2A0E25A848B20B29FC2", hash_generated_method = "585D3F9A7DBBC98189950DBD22ABFA56")
     public  ByteArrayBuilder() {
         mChunks = new LinkedList<Chunk>();
-        // ---------- Original Method ----------
-        //mChunks = new LinkedList<Chunk>();
+        
+        
     }
 
     
@@ -35,7 +35,7 @@ class ByteArrayBuilder {
             {
                 c = obtainChunk(length);
                 mChunks.addLast(c);
-            } //End block
+            } 
             else
             {
                 c = mChunks.getLast();
@@ -43,33 +43,33 @@ class ByteArrayBuilder {
                 {
                     c = obtainChunk(length);
                     mChunks.addLast(c);
-                } //End block
-            } //End block
+                } 
+            } 
             int amount = Math.min(length, c.mArray.length - c.mLength);
             System.arraycopy(array, offset, c.mArray, c.mLength, amount);
             c.mLength += amount;
             length -= amount;
             offset += amount;
-        } //End block
-        // ---------- Original Method ----------
-        //while (length > 0) {
-            //Chunk c = null;
-            //if (mChunks.isEmpty()) {
-                //c = obtainChunk(length);
-                //mChunks.addLast(c);
-            //} else {
-                //c = mChunks.getLast();
-                //if (c.mLength == c.mArray.length) {
-                    //c = obtainChunk(length);
-                    //mChunks.addLast(c);
-                //}
-            //}
-            //int amount = Math.min(length, c.mArray.length - c.mLength);
-            //System.arraycopy(array, offset, c.mArray, c.mLength, amount);
-            //c.mLength += amount;
-            //length -= amount;
-            //offset += amount;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+            
+                
+                
+                    
+                    
+                
+            
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -84,9 +84,9 @@ Chunk var540C13E9E156B687226421B24F2DF178_744375286 =         null;
 Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirst();
         varC2D728EB19718E4BE6488369DA087CF3_352114399.addTaint(taint);
         return varC2D728EB19718E4BE6488369DA087CF3_352114399;
-        // ---------- Original Method ----------
-        //if (mChunks.isEmpty()) return null;
-        //return mChunks.removeFirst();
+        
+        
+        
     }
 
     
@@ -95,8 +95,8 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirs
         boolean varE85C4ADB4BA58A94A981B77BD2E5382D_657338303 = (mChunks.isEmpty());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_165791753 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_165791753;
-        // ---------- Original Method ----------
-        //return mChunks.isEmpty();
+        
+        
     }
 
     
@@ -109,18 +109,18 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirs
         {
             Chunk c = it.next();
             total += c.mLength;
-        } //End block
+        } 
         int varFBB44B4487415B134BCE9C790A27FE5E_230212358 = (total);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414890789 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1414890789;
-        // ---------- Original Method ----------
-        //int total = 0;
-        //ListIterator<Chunk> it = mChunks.listIterator(0);
-        //while (it.hasNext()) {
-            //Chunk c = it.next();
-            //total += c.mLength;
-        //}
-        //return total;
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -132,13 +132,13 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirs
         {
             c.release();
             c = getFirstChunk();
-        } //End block
-        // ---------- Original Method ----------
-        //Chunk c = getFirstChunk();
-        //while (c != null) {
-            //c.release();
-            //c = getFirstChunk();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -151,27 +151,28 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirs
     if(entry == null)            
             {
                 break;
-            } //End block
+            } 
             sPool.remove(entry);
-        } //End block
-        // ---------- Original Method ----------
-        //while (true) {
-            //SoftReference<Chunk> entry = (SoftReference<Chunk>) sQueue.poll();
-            //if (entry == null) {
-                //break;
-            //}
-            //sPool.remove(entry);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.080 -0400", hash_original_method = "823F243F1FE2DDA7035072AD49FCCD96", hash_generated_method = "97409C3981FDC451175FE28FED7F4BF6")
     private Chunk obtainChunk(int length) {
         addTaint(length);
     if(length < DEFAULT_CAPACITY)        
         {
             length = DEFAULT_CAPACITY;
-        } //End block
+        } 
         synchronized
 (sPool)        {
             processPoolLocked();
@@ -183,26 +184,26 @@ Chunk varC2D728EB19718E4BE6488369DA087CF3_352114399 =         mChunks.removeFirs
 Chunk var807FB10045EE51C06BDB74744A6714DF_1372657964 =                     c;
                     var807FB10045EE51C06BDB74744A6714DF_1372657964.addTaint(taint);
                     return var807FB10045EE51C06BDB74744A6714DF_1372657964;
-                } //End block
-            } //End block
+                } 
+            } 
 Chunk var25D655AA1A429AC271EAF4DC65CAF319_1311283694 =             new Chunk(length);
             var25D655AA1A429AC271EAF4DC65CAF319_1311283694.addTaint(taint);
             return var25D655AA1A429AC271EAF4DC65CAF319_1311283694;
-        } //End block
-        // ---------- Original Method ----------
-        //if (length < DEFAULT_CAPACITY) {
-            //length = DEFAULT_CAPACITY;
-        //}
-        //synchronized (sPool) {
-            //processPoolLocked();
-            //if (!sPool.isEmpty()) {
-                //Chunk c = sPool.removeFirst().get();
-                //if (c != null) {
-                    //return c;
-                //}
-            //}
-            //return new Chunk(length);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+            
+        
     }
 
     
@@ -218,9 +219,9 @@ Chunk var25D655AA1A429AC271EAF4DC65CAF319_1311283694 =             new Chunk(len
         public  Chunk(int length) {
             mArray = new byte[length];
             mLength = 0;
-            // ---------- Original Method ----------
-            //mArray = new byte[length];
-            //mLength = 0;
+            
+            
+            
         }
 
         
@@ -231,13 +232,13 @@ Chunk var25D655AA1A429AC271EAF4DC65CAF319_1311283694 =             new Chunk(len
 (sPool)            {
                 sPool.offer(new SoftReference<Chunk>(this, sQueue));
                 sPool.notifyAll();
-            } //End block
-            // ---------- Original Method ----------
-            //mLength = 0;
-            //synchronized (sPool) {
-                //sPool.offer(new SoftReference<Chunk>(this, sQueue));
-                //sPool.notifyAll();
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         

@@ -1,6 +1,6 @@
 package com.android.internal.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -72,22 +72,22 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         mTabLayout = createTabLayout();
         addView(mTabLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
-        // ---------- Original Method ----------
-        //setHorizontalScrollBarEnabled(false);
-        //TypedArray a = getContext().obtainStyledAttributes(null, R.styleable.ActionBar,
-                //com.android.internal.R.attr.actionBarStyle, 0);
-        //setContentHeight(a.getLayoutDimension(R.styleable.ActionBar_height, 0));
-        //a.recycle();
-        //mTabLayout = createTabLayout();
-        //addView(mTabLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                //ViewGroup.LayoutParams.MATCH_PARENT));
+        
+        
+        
+                
+        
+        
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.151 -0400", hash_original_method = "3098621744ABB84E77F43010FB80D748", hash_generated_method = "48D5566EBD5655AD9C851CC6959E879C")
     @Override
     public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         final int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         final boolean lockedExpanded = widthMode == MeasureSpec.EXACTLY;
@@ -99,16 +99,16 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     if(childCount > 2)            
             {
                 mMaxTabWidth = (int) (MeasureSpec.getSize(widthMeasureSpec) * 0.4f);
-            } //End block
+            } 
             else
             {
                 mMaxTabWidth = MeasureSpec.getSize(widthMeasureSpec) / 2;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mMaxTabWidth = -1;
-        } //End block
+        } 
         heightMeasureSpec = MeasureSpec.makeMeasureSpec(mContentHeight, MeasureSpec.EXACTLY);
         final boolean canCollapse = !lockedExpanded && mAllowCollapse;
     if(canCollapse)        
@@ -117,25 +117,25 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     if(mTabLayout.getMeasuredWidth() > MeasureSpec.getSize(widthMeasureSpec))            
             {
                 performCollapse();
-            } //End block
+            } 
             else
             {
                 performExpand();
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             performExpand();
-        } //End block
+        } 
         final int oldWidth = getMeasuredWidth();
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         final int newWidth = getMeasuredWidth();
     if(lockedExpanded && oldWidth != newWidth)        
         {
             setTabSelected(mSelectedTabIndex);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -144,16 +144,17 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         boolean var76D4844CC4C69129F4F1CDCDA535CE01_2065808293 = (mTabSpinner != null && mTabSpinner.getParent() == this);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2077621637 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2077621637;
-        // ---------- Original Method ----------
-        //return mTabSpinner != null && mTabSpinner.getParent() == this;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.153 -0400", hash_original_method = "E654067D8A391E646F927D11468DA221", hash_generated_method = "3CC7274A44B95F0704BA216FDB666531")
     public void setAllowCollapse(boolean allowCollapse) {
         mAllowCollapse = allowCollapse;
-        // ---------- Original Method ----------
-        //mAllowCollapse = allowCollapse;
+        
+        
     }
 
     
@@ -164,36 +165,36 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     if(mTabSpinner == null)        
         {
             mTabSpinner = createSpinner();
-        } //End block
+        } 
         removeView(mTabLayout);
         addView(mTabSpinner, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.MATCH_PARENT));
     if(mTabSpinner.getAdapter() == null)        
         {
             mTabSpinner.setAdapter(new TabAdapter());
-        } //End block
+        } 
     if(mTabSelector != null)        
         {
             removeCallbacks(mTabSelector);
             mTabSelector = null;
-        } //End block
+        } 
         mTabSpinner.setSelection(mSelectedTabIndex);
-        // ---------- Original Method ----------
-        //if (isCollapsed()) return;
-        //if (mTabSpinner == null) {
-            //mTabSpinner = createSpinner();
-        //}
-        //removeView(mTabLayout);
-        //addView(mTabSpinner, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                //ViewGroup.LayoutParams.MATCH_PARENT));
-        //if (mTabSpinner.getAdapter() == null) {
-            //mTabSpinner.setAdapter(new TabAdapter());
-        //}
-        //if (mTabSelector != null) {
-            //removeCallbacks(mTabSelector);
-            //mTabSelector = null;
-        //}
-        //mTabSpinner.setSelection(mSelectedTabIndex);
+        
+        
+        
+            
+        
+        
+        
+                
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -212,13 +213,13 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         boolean var68934A3E9455FA72420237EB05902327_1013441349 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_246665390 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_246665390;
-        // ---------- Original Method ----------
-        //if (!isCollapsed()) return false;
-        //removeView(mTabSpinner);
-        //addView(mTabLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                //ViewGroup.LayoutParams.MATCH_PARENT));
-        //setTabSelected(mTabSpinner.getSelectedItemPosition());
-        //return false;
+        
+        
+        
+        
+                
+        
+        
     }
 
     
@@ -234,19 +235,19 @@ for(int i = 0;i < tabCount;i++)
     if(isSelected)            
             {
                 animateToTab(position);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mSelectedTabIndex = position;
-        //final int tabCount = mTabLayout.getChildCount();
-        //for (int i = 0; i < tabCount; i++) {
-            //final View child = mTabLayout.getChildAt(i);
-            //final boolean isSelected = i == position;
-            //child.setSelected(isSelected);
-            //if (isSelected) {
-                //animateToTab(position);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -254,9 +255,9 @@ for(int i = 0;i < tabCount;i++)
     public void setContentHeight(int contentHeight) {
         mContentHeight = contentHeight;
         requestLayout();
-        // ---------- Original Method ----------
-        //mContentHeight = contentHeight;
-        //requestLayout();
+        
+        
+        
     }
 
     
@@ -270,13 +271,13 @@ for(int i = 0;i < tabCount;i++)
 LinearLayout var696580C41E2E1D1E00E87A5731979420_1820578746 =         tabLayout;
         var696580C41E2E1D1E00E87A5731979420_1820578746.addTaint(taint);
         return var696580C41E2E1D1E00E87A5731979420_1820578746;
-        // ---------- Original Method ----------
-        //final LinearLayout tabLayout = new LinearLayout(getContext(), null,
-                //com.android.internal.R.attr.actionBarTabBarStyle);
-        //tabLayout.setMeasureWithLargestChildEnabled(true);
-        //tabLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                //LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        //return tabLayout;
+        
+        
+                
+        
+        
+                
+        
     }
 
     
@@ -290,32 +291,32 @@ LinearLayout var696580C41E2E1D1E00E87A5731979420_1820578746 =         tabLayout;
 Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189 =         spinner;
         var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189.addTaint(taint);
         return var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189;
-        // ---------- Original Method ----------
-        //final Spinner spinner = new Spinner(getContext(), null,
-                //com.android.internal.R.attr.actionDropDownStyle);
-        //spinner.setLayoutParams(new LinearLayout.LayoutParams(
-                //LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        //spinner.setOnItemSelectedListener(this);
-        //return spinner;
+        
+        
+                
+        
+                
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.156 -0400", hash_original_method = "DD246DFC5FD99F8FA7C3003D550B61F7", hash_generated_method = "F7DEA7DCC5DE05423EA8EB7E14EFAE9F")
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(newConfig.getTaint());
         super.onConfigurationChanged(newConfig);
         TypedArray a = getContext().obtainStyledAttributes(null, R.styleable.ActionBar,
                 com.android.internal.R.attr.actionBarStyle, 0);
         setContentHeight(a.getLayoutDimension(R.styleable.ActionBar_height, 0));
         a.recycle();
-        // ---------- Original Method ----------
-        //super.onConfigurationChanged(newConfig);
-        //TypedArray a = getContext().obtainStyledAttributes(null, R.styleable.ActionBar,
-                //com.android.internal.R.attr.actionBarStyle, 0);
-        //setContentHeight(a.getLayoutDimension(R.styleable.ActionBar_height, 0));
-        //a.recycle();
+        
+        
+        
+                
+        
+        
     }
 
     
@@ -325,19 +326,19 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189 =         spinner;
     if(mVisibilityAnim != null)        
         {
             mVisibilityAnim.cancel();
-        } //End block
+        } 
     if(visibility == VISIBLE)        
         {
     if(getVisibility() != VISIBLE)            
             {
                 setAlpha(0);
-            } //End block
+            } 
             ObjectAnimator anim = ObjectAnimator.ofFloat(this, "alpha", 1);
             anim.setDuration(FADE_DURATION);
             anim.setInterpolator(sAlphaInterpolator);
             anim.addListener(mVisAnimListener.withFinalVisibility(visibility));
             anim.start();
-        } //End block
+        } 
         else
         {
             ObjectAnimator anim = ObjectAnimator.ofFloat(this, "alpha", 0);
@@ -345,27 +346,27 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189 =         spinner;
             anim.setInterpolator(sAlphaInterpolator);
             anim.addListener(mVisAnimListener.withFinalVisibility(visibility));
             anim.start();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mVisibilityAnim != null) {
-            //mVisibilityAnim.cancel();
-        //}
-        //if (visibility == VISIBLE) {
-            //if (getVisibility() != VISIBLE) {
-                //setAlpha(0);
-            //}
-            //ObjectAnimator anim = ObjectAnimator.ofFloat(this, "alpha", 1);
-            //anim.setDuration(FADE_DURATION);
-            //anim.setInterpolator(sAlphaInterpolator);
-            //anim.addListener(mVisAnimListener.withFinalVisibility(visibility));
-            //anim.start();
-        //} else {
-            //ObjectAnimator anim = ObjectAnimator.ofFloat(this, "alpha", 0);
-            //anim.setDuration(FADE_DURATION);
-            //anim.setInterpolator(sAlphaInterpolator);
-            //anim.addListener(mVisAnimListener.withFinalVisibility(visibility));
-            //anim.start();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+                
+            
+            
+            
+            
+            
+            
+        
+            
+            
+            
+            
+            
+        
     }
 
     
@@ -376,67 +377,67 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189 =         spinner;
     if(mTabSelector != null)        
         {
             removeCallbacks(mTabSelector);
-        } //End block
+        } 
         mTabSelector = new Runnable() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.157 -0400", hash_original_method = "624465A8A4FF7840574C164453105D67", hash_generated_method = "7302E1286720D09F48E93DAD199B6162")
         public void run() {
             final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
             smoothScrollTo(scrollPos, 0);
             mTabSelector = null;
-            // ---------- Original Method ----------
-            //final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
-            //smoothScrollTo(scrollPos, 0);
-            //mTabSelector = null;
+            
+            
+            
+            
         }
 };
         post(mTabSelector);
-        // ---------- Original Method ----------
-        //final View tabView = mTabLayout.getChildAt(position);
-        //if (mTabSelector != null) {
-            //removeCallbacks(mTabSelector);
-        //}
-        //mTabSelector = new Runnable() {
-            //public void run() {
-                //final int scrollPos = tabView.getLeft() - (getWidth() - tabView.getWidth()) / 2;
-                //smoothScrollTo(scrollPos, 0);
-                //mTabSelector = null;
-            //}
-        //};
-        //post(mTabSelector);
+        
+        
+        
+            
+        
+        
+            
+                
+                
+                
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.157 -0400", hash_original_method = "887CFA274A392DE8385671362C9964CB", hash_generated_method = "4870A0AD27208DC28880E7226D22BA0B")
     @Override
     public void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
     if(mTabSelector != null)        
         {
             post(mTabSelector);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //if (mTabSelector != null) {
-            //post(mTabSelector);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.158 -0400", hash_original_method = "18C292ABA374873141A21AD02D4712CF", hash_generated_method = "6F9B351DAAD82762AA79AA47F94E4907")
     @Override
     public void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
     if(mTabSelector != null)        
         {
             removeCallbacks(mTabSelector);
-        } //End block
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //if (mTabSelector != null) {
-            //removeCallbacks(mTabSelector);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -450,33 +451,33 @@ Spinner var2854793BD8388CA4EEEEFC36B3E6FEC7_1561522189 =         spinner;
             tabView.setBackgroundDrawable(null);
             tabView.setLayoutParams(new ListView.LayoutParams(ListView.LayoutParams.MATCH_PARENT,
                     mContentHeight));
-        } //End block
+        } 
         else
         {
             tabView.setFocusable(true);
     if(mTabClickListener == null)            
             {
                 mTabClickListener = new TabClickListener();
-            } //End block
+            } 
             tabView.setOnClickListener(mTabClickListener);
-        } //End block
+        } 
 TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
         var3D62EBAA544A23B03589BCB47B1A928C_195755370.addTaint(taint);
         return var3D62EBAA544A23B03589BCB47B1A928C_195755370;
-        // ---------- Original Method ----------
-        //final TabView tabView = new TabView(getContext(), tab, forAdapter);
-        //if (forAdapter) {
-            //tabView.setBackgroundDrawable(null);
-            //tabView.setLayoutParams(new ListView.LayoutParams(ListView.LayoutParams.MATCH_PARENT,
-                    //mContentHeight));
-        //} else {
-            //tabView.setFocusable(true);
-            //if (mTabClickListener == null) {
-                //mTabClickListener = new TabClickListener();
-            //}
-            //tabView.setOnClickListener(mTabClickListener);
-        //}
-        //return tabView;
+        
+        
+        
+            
+            
+                    
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -490,28 +491,28 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(mTabSpinner != null)        
         {
             ((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        } //End block
+        } 
     if(setSelected)        
         {
             tabView.setSelected(true);
-        } //End block
+        } 
     if(mAllowCollapse)        
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //TabView tabView = createTabView(tab, false);
-        //mTabLayout.addView(tabView, new LinearLayout.LayoutParams(0,
-                //LayoutParams.MATCH_PARENT, 1));
-        //if (mTabSpinner != null) {
-            //((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        //}
-        //if (setSelected) {
-            //tabView.setSelected(true);
-        //}
-        //if (mAllowCollapse) {
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+                
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -526,28 +527,28 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(mTabSpinner != null)        
         {
             ((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        } //End block
+        } 
     if(setSelected)        
         {
             tabView.setSelected(true);
-        } //End block
+        } 
     if(mAllowCollapse)        
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final TabView tabView = createTabView(tab, false);
-        //mTabLayout.addView(tabView, position, new LinearLayout.LayoutParams(
-                //0, LayoutParams.MATCH_PARENT, 1));
-        //if (mTabSpinner != null) {
-            //((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        //}
-        //if (setSelected) {
-            //tabView.setSelected(true);
-        //}
-        //if (mAllowCollapse) {
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+                
+        
+            
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -558,19 +559,19 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(mTabSpinner != null)        
         {
             ((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        } //End block
+        } 
     if(mAllowCollapse)        
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //((TabView) mTabLayout.getChildAt(position)).update();
-        //if (mTabSpinner != null) {
-            //((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        //}
-        //if (mAllowCollapse) {
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -581,19 +582,19 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(mTabSpinner != null)        
         {
             ((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        } //End block
+        } 
     if(mAllowCollapse)        
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //mTabLayout.removeViewAt(position);
-        //if (mTabSpinner != null) {
-            //((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        //}
-        //if (mAllowCollapse) {
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -603,44 +604,44 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(mTabSpinner != null)        
         {
             ((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        } //End block
+        } 
     if(mAllowCollapse)        
         {
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //mTabLayout.removeAllViews();
-        //if (mTabSpinner != null) {
-            //((TabAdapter) mTabSpinner.getAdapter()).notifyDataSetChanged();
-        //}
-        //if (mAllowCollapse) {
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.161 -0400", hash_original_method = "1E807444FE245168D5D160AA45CB2236", hash_generated_method = "9779246FC5A66267DE3957B61AD31C11")
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(id);
         addTaint(position);
         addTaint(view.getTaint());
         addTaint(parent.getTaint());
         TabView tabView = (TabView) view;
         tabView.getTab().select();
-        // ---------- Original Method ----------
-        //TabView tabView = (TabView) view;
-        //tabView.getTab().select();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.161 -0400", hash_original_method = "ABAE53FB2582432DFD925A1EB74EEC53", hash_generated_method = "62984736880CAC76A8EB431CC994B1B9")
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(parent.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -667,14 +668,14 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(forList)            
             {
                 setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
-            } //End block
+            } 
             update();
-            // ---------- Original Method ----------
-            //mTab = tab;
-            //if (forList) {
-                //setGravity(Gravity.LEFT | Gravity.CENTER_VERTICAL);
-            //}
-            //update();
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -682,16 +683,16 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
         public void bindTab(ActionBar.Tab tab) {
             mTab = tab;
             update();
-            // ---------- Original Method ----------
-            //mTab = tab;
-            //update();
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.162 -0400", hash_original_method = "FFA211085DE297C0E0EC5011B4DE8B57", hash_generated_method = "1575432F06A2685F4AEF33E5862A5FAA")
         @Override
         public void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(heightMeasureSpec);
             addTaint(widthMeasureSpec);
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
@@ -699,13 +700,13 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
             {
                 super.onMeasure(MeasureSpec.makeMeasureSpec(mMaxTabWidth, MeasureSpec.EXACTLY),
                         heightMeasureSpec);
-            } //End block
-            // ---------- Original Method ----------
-            //super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-            //if (mMaxTabWidth > 0 && getMeasuredWidth() > mMaxTabWidth) {
-                //super.onMeasure(MeasureSpec.makeMeasureSpec(mMaxTabWidth, MeasureSpec.EXACTLY),
-                        //heightMeasureSpec);
-            //}
+            } 
+            
+            
+            
+                
+                        
+            
         }
 
         
@@ -721,7 +722,7 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
     if(customParent != null)                    
                     ((ViewGroup) customParent).removeView(custom);
                     addView(custom);
-                } //End block
+                } 
                 mCustomView = custom;
     if(mTextView != null)                
                 mTextView.setVisibility(GONE);
@@ -729,15 +730,15 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
                 {
                     mIconView.setVisibility(GONE);
                     mIconView.setImageDrawable(null);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(mCustomView != null)                
                 {
                     removeView(mCustomView);
                     mCustomView = null;
-                } //End block
+                } 
                 final Drawable icon = tab.getIcon();
                 final CharSequence text = tab.getText();
     if(icon != null)                
@@ -751,16 +752,16 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
                         iconView.setLayoutParams(lp);
                         addView(iconView, 0);
                         mIconView = iconView;
-                    } //End block
+                    } 
                     mIconView.setImageDrawable(icon);
                     mIconView.setVisibility(VISIBLE);
-                } //End block
+                } 
                 else
     if(mIconView != null)                
                 {
                     mIconView.setVisibility(GONE);
                     mIconView.setImageDrawable(null);
-                } //End block
+                } 
     if(text != null)                
                 {
     if(mTextView == null)                    
@@ -774,33 +775,34 @@ TabView var3D62EBAA544A23B03589BCB47B1A928C_195755370 =         tabView;
                         textView.setLayoutParams(lp);
                         addView(textView);
                         mTextView = textView;
-                    } //End block
+                    } 
                     mTextView.setText(text);
                     mTextView.setVisibility(VISIBLE);
-                } //End block
+                } 
                 else
     if(mTextView != null)                
                 {
                     mTextView.setVisibility(GONE);
                     mTextView.setText(null);
-                } //End block
+                } 
     if(mIconView != null)                
                 {
                     mIconView.setContentDescription(tab.getContentDescription());
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.165 -0400", hash_original_method = "8ACD8C7DACBB258E07DA374214A46BC1", hash_generated_method = "F6B979CC36578F1A1FB8211A9615142D")
         public ActionBar.Tab getTab() {
 ActionBar.Tab var2863D7221C8303E9575E533B393C6A71_820832582 =             mTab;
             var2863D7221C8303E9575E533B393C6A71_820832582.addTaint(taint);
             return var2863D7221C8303E9575E533B393C6A71_820832582;
-            // ---------- Original Method ----------
-            //return mTab;
+            
+            
         }
 
         
@@ -813,7 +815,7 @@ ActionBar.Tab var2863D7221C8303E9575E533B393C6A71_820832582 =             mTab;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.165 -0400", hash_original_method = "D47CBC6CCDC74B210F03E0CA569B23D5", hash_generated_method = "D47CBC6CCDC74B210F03E0CA569B23D5")
         public TabAdapter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -823,8 +825,8 @@ ActionBar.Tab var2863D7221C8303E9575E533B393C6A71_820832582 =             mTab;
             int var2438AF16E60CE2C4D8064387150CE17E_807826200 = (mTabLayout.getChildCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596189107 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1596189107;
-            // ---------- Original Method ----------
-            //return mTabLayout.getChildCount();
+            
+            
         }
 
         
@@ -835,11 +837,12 @@ ActionBar.Tab var2863D7221C8303E9575E533B393C6A71_820832582 =             mTab;
 Object varF69A319077C91E2F587183FB5AB81B22_416573857 =             ((TabView) mTabLayout.getChildAt(position)).getTab();
             varF69A319077C91E2F587183FB5AB81B22_416573857.addTaint(taint);
             return varF69A319077C91E2F587183FB5AB81B22_416573857;
-            // ---------- Original Method ----------
-            //return ((TabView) mTabLayout.getChildAt(position)).getTab();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.166 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "52231501772BCAF05C12438E34D36261")
         @Override
         public long getItemId(int position) {
@@ -847,8 +850,8 @@ Object varF69A319077C91E2F587183FB5AB81B22_416573857 =             ((TabView) mT
             long var4757FE07FD492A8BE0EA6A760D683D6E_1028579619 = (position);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1619213470 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1619213470;
-            // ---------- Original Method ----------
-            //return position;
+            
+            
         }
 
         
@@ -861,21 +864,21 @@ Object varF69A319077C91E2F587183FB5AB81B22_416573857 =             ((TabView) mT
     if(convertView == null)            
             {
                 convertView = createTabView((ActionBar.Tab) getItem(position), true);
-            } //End block
+            } 
             else
             {
                 ((TabView) convertView).bindTab((ActionBar.Tab) getItem(position));
-            } //End block
+            } 
 View var78FE9B874BBEC69B62B43EE963245978_1491303291 =             convertView;
             var78FE9B874BBEC69B62B43EE963245978_1491303291.addTaint(taint);
             return var78FE9B874BBEC69B62B43EE963245978_1491303291;
-            // ---------- Original Method ----------
-            //if (convertView == null) {
-                //convertView = createTabView((ActionBar.Tab) getItem(position), true);
-            //} else {
-                //((TabView) convertView).bindTab((ActionBar.Tab) getItem(position));
-            //}
-            //return convertView;
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -888,13 +891,13 @@ View var78FE9B874BBEC69B62B43EE963245978_1491303291 =             convertView;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.167 -0400", hash_original_method = "4AA29A9A1E8E979F0176DF66C5E11348", hash_generated_method = "4AA29A9A1E8E979F0176DF66C5E11348")
         public TabClickListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.167 -0400", hash_original_method = "024B6ED45DE6B4C8643F8BD12AD99CDA", hash_generated_method = "D67179FD0F0ACCCFACD8524687C99C82")
         public void onClick(View view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
             TabView tabView = (TabView) view;
             tabView.getTab().select();
@@ -903,15 +906,15 @@ for(int i = 0;i < tabCount;i++)
             {
                 final View child = mTabLayout.getChildAt(i);
                 child.setSelected(child == view);
-            } //End block
-            // ---------- Original Method ----------
-            //TabView tabView = (TabView) view;
-            //tabView.getTab().select();
-            //final int tabCount = mTabLayout.getChildCount();
-            //for (int i = 0; i < tabCount; i++) {
-                //final View child = mTabLayout.getChildAt(i);
-                //child.setSelected(child == view);
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -930,70 +933,73 @@ for(int i = 0;i < tabCount;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.167 -0400", hash_original_method = "80D34182BA082FA1C0AC7FE2CE12E2A6", hash_generated_method = "80D34182BA082FA1C0AC7FE2CE12E2A6")
         public VisibilityAnimListener ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.168 -0400", hash_original_method = "42B0250930D53F64D6DEADC73C3EFBBA", hash_generated_method = "6788A6B1A7C531B82013BD58D9340B38")
         public VisibilityAnimListener withFinalVisibility(int visibility) {
             mFinalVisibility = visibility;
 VisibilityAnimListener var72A74007B2BE62B849F475C7BDA4658B_1346593657 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1346593657.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1346593657;
-            // ---------- Original Method ----------
-            //mFinalVisibility = visibility;
-            //return this;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.168 -0400", hash_original_method = "9145E12DF11688F9DD8CB4C23A0F2F13", hash_generated_method = "43A419CBA987813FF6A97459EB9F4822")
         @Override
         public void onAnimationStart(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
             setVisibility(VISIBLE);
             mVisibilityAnim = animation;
             mCanceled = false;
-            // ---------- Original Method ----------
-            //setVisibility(VISIBLE);
-            //mVisibilityAnim = animation;
-            //mCanceled = false;
+            
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.168 -0400", hash_original_method = "FCD0A8E872EDB46A2BFC14B31FFA43CC", hash_generated_method = "C73DC9668778EC41E6A37E2B557B70D1")
         @Override
         public void onAnimationEnd(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
     if(mCanceled)            
             return;
             mVisibilityAnim = null;
             setVisibility(mFinalVisibility);
-            // ---------- Original Method ----------
-            //if (mCanceled) return;
-            //mVisibilityAnim = null;
-            //setVisibility(mFinalVisibility);
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.168 -0400", hash_original_method = "2F84891C5ED8AB616225A7D641700DEA", hash_generated_method = "8F11757114E12F8DD42F47845FC47878")
         @Override
         public void onAnimationCancel(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
             mCanceled = true;
-            // ---------- Original Method ----------
-            //mCanceled = true;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:32.169 -0400", hash_original_method = "FA58700A4888ED9E658B43737D17A966", hash_generated_method = "4BE2C3EAC3B10B8BD5CE86F0E3077935")
         @Override
         public void onAnimationRepeat(Animator animation) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(animation.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

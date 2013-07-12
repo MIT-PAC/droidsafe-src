@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,17 +53,17 @@ public abstract class CountDownTimer {
     public  CountDownTimer(long millisInFuture, long countDownInterval) {
         mMillisInFuture = millisInFuture;
         mCountdownInterval = countDownInterval;
-        // ---------- Original Method ----------
-        //mMillisInFuture = millisInFuture;
-        //mCountdownInterval = countDownInterval;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.064 -0400", hash_original_method = "668A5D3225CBBDE8895EF9129976DF1D", hash_generated_method = "CA4F31EEB98095DD1785A84FC0B8E1C5")
     public final void cancel() {
         mHandler.removeMessages(MSG);
-        // ---------- Original Method ----------
-        //mHandler.removeMessages(MSG);
+        
+        
     }
 
     
@@ -75,20 +75,20 @@ public abstract class CountDownTimer {
 CountDownTimer var72A74007B2BE62B849F475C7BDA4658B_370161430 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_370161430.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_370161430;
-        } //End block
+        } 
         mStopTimeInFuture = SystemClock.elapsedRealtime() + mMillisInFuture;
         mHandler.sendMessage(mHandler.obtainMessage(MSG));
 CountDownTimer var72A74007B2BE62B849F475C7BDA4658B_1682755737 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1682755737.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1682755737;
-        // ---------- Original Method ----------
-        //if (mMillisInFuture <= 0) {
-            //onFinish();
-            //return this;
-        //}
-        //mStopTimeInFuture = SystemClock.elapsedRealtime() + mMillisInFuture;
-        //mHandler.sendMessage(mHandler.obtainMessage(MSG));
-        //return this;
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package com.android.i18n.phonenumbers;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -82,10 +82,10 @@ public class AsYouTypeFormatter {
         defaultCountry = regionCode;
         currentMetaData = getMetadataForRegion(defaultCountry);
         defaultMetaData = currentMetaData;
-        // ---------- Original Method ----------
-        //defaultCountry = regionCode;
-        //currentMetaData = getMetadataForRegion(defaultCountry);
-        //defaultMetaData = currentMetaData;
+        
+        
+        
+        
     }
 
     
@@ -100,18 +100,18 @@ public class AsYouTypeFormatter {
 PhoneMetadata varDD4984A0B7A246C66EA6810C1C4348D7_1718853221 =             metadata;
             varDD4984A0B7A246C66EA6810C1C4348D7_1718853221.addTaint(taint);
             return varDD4984A0B7A246C66EA6810C1C4348D7_1718853221;
-        } //End block
+        } 
 PhoneMetadata varFBEA0CBA6FC02D2747A4C6810F21686A_1441391134 =         EMPTY_METADATA;
         varFBEA0CBA6FC02D2747A4C6810F21686A_1441391134.addTaint(taint);
         return varFBEA0CBA6FC02D2747A4C6810F21686A_1441391134;
-        // ---------- Original Method ----------
-        //int countryCallingCode = phoneUtil.getCountryCodeForRegion(regionCode);
-        //String mainCountry = phoneUtil.getRegionCodeForCountryCode(countryCallingCode);
-        //PhoneMetadata metadata = phoneUtil.getMetadataForRegion(mainCountry);
-        //if (metadata != null) {
-      //return metadata;
-    //}
-        //return EMPTY_METADATA;
+        
+        
+        
+        
+        
+      
+    
+        
     }
 
     
@@ -128,40 +128,40 @@ PhoneMetadata varFBEA0CBA6FC02D2747A4C6810F21686A_1441391134 =         EMPTY_MET
                 boolean var68934A3E9455FA72420237EB05902327_1413026769 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1048661487 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1048661487;
-            } //End block
+            } 
     if(createFormattingTemplate(numberFormat))            
             {
                 currentFormattingPattern = pattern;
                 boolean varB326B5062B2F0E69046810717534CB09_1130055690 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_663902956 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_663902956;
-            } //End block
+            } 
             else
             {
                 it.remove();
-            } //End block
-        } //End block
+            } 
+        } 
         ableToFormat = false;
         boolean var68934A3E9455FA72420237EB05902327_1003923602 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627750903 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_627750903;
-        // ---------- Original Method ----------
-        //Iterator<NumberFormat> it = possibleFormats.iterator();
-        //while (it.hasNext()) {
-      //NumberFormat numberFormat = it.next();
-      //String pattern = numberFormat.getPattern();
-      //if (currentFormattingPattern.equals(pattern)) {
-        //return false;
-      //}
-      //if (createFormattingTemplate(numberFormat)) {
-        //currentFormattingPattern = pattern;
-        //return true;
-      //} else {  
-        //it.remove();
-      //}
-    //}
-        //ableToFormat = false;
-        //return false;
+        
+        
+        
+      
+      
+      
+        
+      
+      
+        
+        
+      
+        
+      
+    
+        
+        
     }
 
     
@@ -176,20 +176,20 @@ for(NumberFormat format : formatList)
     if(isFormatEligible(format.getFormat()))            
             {
                 possibleFormats.add(format);
-            } //End block
-        } //End block
+            } 
+        } 
         narrowDownPossibleFormats(leadingThreeDigits);
-        // ---------- Original Method ----------
-        //List<NumberFormat> formatList =
-        //(isInternationalFormatting && currentMetaData.intlNumberFormatSize() > 0)
-        //? currentMetaData.intlNumberFormats()
-        //: currentMetaData.numberFormats();
-        //for (NumberFormat format : formatList) {
-      //if (isFormatEligible(format.getFormat())) {
-        //possibleFormats.add(format);
-      //}
-    //}
-        //narrowDownPossibleFormats(leadingThreeDigits);
+        
+        
+        
+        
+        
+        
+      
+        
+      
+    
+        
     }
 
     
@@ -199,8 +199,8 @@ for(NumberFormat format : formatList)
         boolean varB3190CE6520D441E523F03940FE5C969_1596806942 = (ELIGIBLE_FORMAT_PATTERN.matcher(format).matches());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1467055523 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1467055523;
-        // ---------- Original Method ----------
-        //return ELIGIBLE_FORMAT_PATTERN.matcher(format).matches();
+        
+        
     }
 
     
@@ -221,24 +221,24 @@ for(NumberFormat format : formatList)
     if(!m.lookingAt())                
                 {
                     it.remove();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int indexOfLeadingDigitsPattern = leadingDigits.length() - MIN_LEADING_DIGITS_LENGTH;
-        //Iterator<NumberFormat> it = possibleFormats.iterator();
-        //while (it.hasNext()) {
-      //NumberFormat format = it.next();
-      //if (format.leadingDigitsPatternSize() > indexOfLeadingDigitsPattern) {
-        //Pattern leadingDigitsPattern =
-            //regexCache.getPatternForRegex(
-                //format.getLeadingDigitsPattern(indexOfLeadingDigitsPattern));
-        //Matcher m = leadingDigitsPattern.matcher(leadingDigits);
-        //if (!m.lookingAt()) {
-          //it.remove();
-        //}
-      //} 
-    //}
+                } 
+            } 
+        } 
+        
+        
+        
+        
+      
+      
+        
+            
+                
+        
+        
+          
+        
+      
+    
     }
 
     
@@ -251,7 +251,7 @@ for(NumberFormat format : formatList)
             boolean var68934A3E9455FA72420237EB05902327_857071553 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1711435506 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1711435506;
-        } //End block
+        } 
         numberPattern = CHARACTER_CLASS_PATTERN.matcher(numberPattern).replaceAll("\\\\d");
         numberPattern = STANDALONE_DIGIT_PATTERN.matcher(numberPattern).replaceAll("\\\\d");
         formattingTemplate.setLength(0);
@@ -262,24 +262,24 @@ for(NumberFormat format : formatList)
             boolean varB326B5062B2F0E69046810717534CB09_606407465 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1071338293 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1071338293;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_310771857 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_446897134 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_446897134;
-        // ---------- Original Method ----------
-        //String numberPattern = format.getPattern();
-        //if (numberPattern.indexOf('|') != -1) {
-      //return false;
-    //}
-        //numberPattern = CHARACTER_CLASS_PATTERN.matcher(numberPattern).replaceAll("\\\\d");
-        //numberPattern = STANDALONE_DIGIT_PATTERN.matcher(numberPattern).replaceAll("\\\\d");
-        //formattingTemplate.setLength(0);
-        //String tempTemplate = getFormattingTemplate(numberPattern, format.getFormat());
-        //if (tempTemplate.length() > 0) {
-      //formattingTemplate.append(tempTemplate);
-      //return true;
-    //}
-        //return false;
+        
+        
+        
+      
+    
+        
+        
+        
+        
+        
+      
+      
+    
+        
     }
 
     
@@ -296,23 +296,23 @@ for(NumberFormat format : formatList)
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_650014558 =             "";
             var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_650014558.addTaint(taint);
             return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_650014558;
-        } //End block
+        } 
         String template = aPhoneNumber.replaceAll(numberPattern, numberFormat);
         template = template.replaceAll("9", digitPlaceholder);
 String var09CEB08BD4344BF0DF3CD0571C30EE3D_814084833 =         template;
         var09CEB08BD4344BF0DF3CD0571C30EE3D_814084833.addTaint(taint);
         return var09CEB08BD4344BF0DF3CD0571C30EE3D_814084833;
-        // ---------- Original Method ----------
-        //String longestPhoneNumber = "999999999999999";
-        //Matcher m = regexCache.getPatternForRegex(numberPattern).matcher(longestPhoneNumber);
-        //m.find();
-        //String aPhoneNumber = m.group();
-        //if (aPhoneNumber.length() < nationalNumber.length()) {
-      //return "";
-    //}
-        //String template = aPhoneNumber.replaceAll(numberPattern, numberFormat);
-        //template = template.replaceAll("9", digitPlaceholder);
-        //return template;
+        
+        
+        
+        
+        
+        
+      
+    
+        
+        
+        
     }
 
     
@@ -335,25 +335,25 @@ String var09CEB08BD4344BF0DF3CD0571C30EE3D_814084833 =         template;
     if(!currentMetaData.equals(defaultMetaData))        
         {
             currentMetaData = getMetadataForRegion(defaultCountry);
-        } //End block
-        // ---------- Original Method ----------
-        //currentOutput = "";
-        //accruedInput.setLength(0);
-        //accruedInputWithoutFormatting.setLength(0);
-        //formattingTemplate.setLength(0);
-        //lastMatchPosition = 0;
-        //currentFormattingPattern = "";
-        //prefixBeforeNationalNumber.setLength(0);
-        //nationalNumber.setLength(0);
-        //ableToFormat = true;
-        //positionToRemember = 0;
-        //originalPosition = 0;
-        //isInternationalFormatting = false;
-        //isExpectingCountryCallingCode = false;
-        //possibleFormats.clear();
-        //if (!currentMetaData.equals(defaultMetaData)) {
-      //currentMetaData = getMetadataForRegion(defaultCountry);
-    //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+      
+    
     }
 
     
@@ -363,9 +363,9 @@ String var09CEB08BD4344BF0DF3CD0571C30EE3D_814084833 =         template;
 String var6D28BBF6C3B5B42D7B24DF7C977E5CFB_1175589888 =         currentOutput;
         var6D28BBF6C3B5B42D7B24DF7C977E5CFB_1175589888.addTaint(taint);
         return var6D28BBF6C3B5B42D7B24DF7C977E5CFB_1175589888;
-        // ---------- Original Method ----------
-        //currentOutput = inputDigitWithOptionToRememberPosition(nextChar, false);
-        //return currentOutput;
+        
+        
+        
     }
 
     
@@ -375,9 +375,9 @@ String var6D28BBF6C3B5B42D7B24DF7C977E5CFB_1175589888 =         currentOutput;
 String var6D28BBF6C3B5B42D7B24DF7C977E5CFB_973222714 =         currentOutput;
         var6D28BBF6C3B5B42D7B24DF7C977E5CFB_973222714.addTaint(taint);
         return var6D28BBF6C3B5B42D7B24DF7C977E5CFB_973222714;
-        // ---------- Original Method ----------
-        //currentOutput = inputDigitWithOptionToRememberPosition(nextChar, true);
-        //return currentOutput;
+        
+        
+        
     }
 
     
@@ -390,17 +390,17 @@ String var6D28BBF6C3B5B42D7B24DF7C977E5CFB_973222714 =         currentOutput;
     if(rememberPosition)        
         {
             originalPosition = accruedInput.length();
-        } //End block
+        } 
     if(!isDigitOrLeadingPlusSign(nextChar))        
         {
             ableToFormat = false;
-        } //End block
+        } 
     if(!ableToFormat)        
         {
 String var5DA4F23BDAFA099675D0A84B89FB971F_1303481570 =             accruedInput.toString();
             var5DA4F23BDAFA099675D0A84B89FB971F_1303481570.addTaint(taint);
             return var5DA4F23BDAFA099675D0A84B89FB971F_1303481570;
-        } //End block
+        } 
         nextChar = normalizeAndAccrueDigitsAndPlusSign(nextChar, rememberPosition);
 switch(accruedInputWithoutFormatting.length()){
         case 0:
@@ -413,14 +413,14 @@ String var5DA4F23BDAFA099675D0A84B89FB971F_1839587608 =         accruedInput.toS
     if(attemptToExtractIdd())        
         {
             isExpectingCountryCallingCode = true;
-        } //End block
+        } 
         else
         {
             removeNationalPrefixFromNationalNumber();
 String var6E079CFAB6A3F75F2D894571ED8C37B5_1739928573 =             attemptToChooseFormattingPattern();
             var6E079CFAB6A3F75F2D894571ED8C37B5_1739928573.addTaint(taint);
             return var6E079CFAB6A3F75F2D894571ED8C37B5_1739928573;
-        } //End block
+        } 
         case 4:
         case 5:
     if(isExpectingCountryCallingCode)        
@@ -428,11 +428,11 @@ String var6E079CFAB6A3F75F2D894571ED8C37B5_1739928573 =             attemptToCho
     if(attemptToExtractCountryCallingCode())            
             {
                 isExpectingCountryCallingCode = false;
-            } //End block
+            } 
 String varC50A07DAEE4370E981DA39BFDFC4411F_733165513 =             prefixBeforeNationalNumber + nationalNumber.toString();
             varC50A07DAEE4370E981DA39BFDFC4411F_733165513.addTaint(taint);
             return varC50A07DAEE4370E981DA39BFDFC4411F_733165513;
-        } //End block
+        } 
         case 6:
     if(isExpectingCountryCallingCode && !attemptToExtractCountryCallingCode())        
         {
@@ -440,7 +440,7 @@ String varC50A07DAEE4370E981DA39BFDFC4411F_733165513 =             prefixBeforeN
 String var5DA4F23BDAFA099675D0A84B89FB971F_131151870 =             accruedInput.toString();
             var5DA4F23BDAFA099675D0A84B89FB971F_131151870.addTaint(taint);
             return var5DA4F23BDAFA099675D0A84B89FB971F_131151870;
-        } //End block
+        } 
         default:
     if(possibleFormats.size() > 0)        
         {
@@ -451,29 +451,29 @@ String var5DA4F23BDAFA099675D0A84B89FB971F_131151870 =             accruedInput.
 String varEDFF1D0B1BD24FE7D8CDDCD8E673E22D_1325666583 =                 formattedNumber;
                 varEDFF1D0B1BD24FE7D8CDDCD8E673E22D_1325666583.addTaint(taint);
                 return varEDFF1D0B1BD24FE7D8CDDCD8E673E22D_1325666583;
-            } //End block
+            } 
             narrowDownPossibleFormats(nationalNumber.toString());
     if(maybeCreateNewTemplate())            
             {
 String varDEEDA02C42BAE77FE1A00F9B7037448A_2109635287 =                 inputAccruedNationalNumber();
                 varDEEDA02C42BAE77FE1A00F9B7037448A_2109635287.addTaint(taint);
                 return varDEEDA02C42BAE77FE1A00F9B7037448A_2109635287;
-            } //End block
+            } 
 String varCA4068B6CC598939A01C31B3884B5E64_2017652406 =             ableToFormat
              ? prefixBeforeNationalNumber + tempNationalNumber
              : accruedInput.toString();
             varCA4068B6CC598939A01C31B3884B5E64_2017652406.addTaint(taint);
             return varCA4068B6CC598939A01C31B3884B5E64_2017652406;
-        } //End block
+        } 
         else
         {
 String var6E079CFAB6A3F75F2D894571ED8C37B5_924718248 =             attemptToChooseFormattingPattern();
             var6E079CFAB6A3F75F2D894571ED8C37B5_924718248.addTaint(taint);
             return var6E079CFAB6A3F75F2D894571ED8C37B5_924718248;
-        } //End block
+        } 
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -485,10 +485,10 @@ String var6E079CFAB6A3F75F2D894571ED8C37B5_924718248 =             attemptToChoo
          PhoneNumberUtil.PLUS_CHARS_PATTERN.matcher(Character.toString(nextChar)).matches()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331227439 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_331227439;
-        // ---------- Original Method ----------
-        //return Character.isDigit(nextChar) ||
-        //(accruedInput.length() == 1 &&
-         //PhoneNumberUtil.PLUS_CHARS_PATTERN.matcher(Character.toString(nextChar)).matches());
+        
+        
+        
+         
     }
 
     
@@ -503,20 +503,20 @@ for(NumberFormat numFormat : possibleFormats)
 String var8FB010F2567C912DF075A24A1D74303B_898259915 =                 prefixBeforeNationalNumber + formattedNumber;
                 var8FB010F2567C912DF075A24A1D74303B_898259915.addTaint(taint);
                 return var8FB010F2567C912DF075A24A1D74303B_898259915;
-            } //End block
-        } //End block
+            } 
+        } 
 String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1702033346 =         "";
         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1702033346.addTaint(taint);
         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1702033346;
-        // ---------- Original Method ----------
-        //for (NumberFormat numFormat : possibleFormats) {
-      //Matcher m = regexCache.getPatternForRegex(numFormat.getPattern()).matcher(nationalNumber);
-      //if (m.matches()) {
-        //String formattedNumber = m.replaceAll(numFormat.getFormat());
-        //return prefixBeforeNationalNumber + formattedNumber;
-      //}
-    //}
-        //return "";
+        
+        
+      
+      
+        
+        
+      
+    
+        
     }
 
     
@@ -527,7 +527,7 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1702033346 =         "";
             int var7C0104DD00C05197CB4A03324766B975_1377919659 = (originalPosition);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117986968 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2117986968;
-        } //End block
+        } 
         int accruedInputIndex = 0;
         int currentOutputIndex = 0;
         while
@@ -537,25 +537,25 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1702033346 =         "";
           currentOutput.charAt(currentOutputIndex))            
             {
                 accruedInputIndex++;
-            } //End block
+            } 
             currentOutputIndex++;
-        } //End block
+        } 
         int var443014F47B3770CBE17B057B5FFBD072_294684655 = (currentOutputIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420322000 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_420322000;
-        // ---------- Original Method ----------
-        //if (!ableToFormat) {
-      //return originalPosition;
-    //}
-        //int accruedInputIndex = 0, currentOutputIndex = 0;
-        //while (accruedInputIndex < positionToRemember && currentOutputIndex < currentOutput.length()) {
-      //if (accruedInputWithoutFormatting.charAt(accruedInputIndex) ==
-          //currentOutput.charAt(currentOutputIndex)) {
-        //accruedInputIndex++;
-      //}
-      //currentOutputIndex++;
-    //}
-        //return currentOutputIndex;
+        
+        
+      
+    
+        
+        
+      
+          
+        
+      
+      
+    
+        
     }
 
     
@@ -568,21 +568,21 @@ String var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1702033346 =         "";
 String varDEEDA02C42BAE77FE1A00F9B7037448A_9899456 =             inputAccruedNationalNumber();
             varDEEDA02C42BAE77FE1A00F9B7037448A_9899456.addTaint(taint);
             return varDEEDA02C42BAE77FE1A00F9B7037448A_9899456;
-        } //End block
+        } 
         else
         {
 String varC50A07DAEE4370E981DA39BFDFC4411F_142181550 =             prefixBeforeNationalNumber + nationalNumber.toString();
             varC50A07DAEE4370E981DA39BFDFC4411F_142181550.addTaint(taint);
             return varC50A07DAEE4370E981DA39BFDFC4411F_142181550;
-        } //End block
-        // ---------- Original Method ----------
-        //if (nationalNumber.length() >= MIN_LEADING_DIGITS_LENGTH) {
-      //getAvailableFormats(nationalNumber.substring(0, MIN_LEADING_DIGITS_LENGTH));
-      //maybeCreateNewTemplate();
-      //return inputAccruedNationalNumber();
-    //} else {
-      //return prefixBeforeNationalNumber + nationalNumber.toString();
-    //}
+        } 
+        
+        
+      
+      
+      
+    
+      
+    
     }
 
     
@@ -595,32 +595,32 @@ String varC50A07DAEE4370E981DA39BFDFC4411F_142181550 =             prefixBeforeN
 for(int i = 0;i < lengthOfNationalNumber;i++)
             {
                 tempNationalNumber = inputDigitHelper(nationalNumber.charAt(i));
-            } //End block
+            } 
 String varCA4068B6CC598939A01C31B3884B5E64_844401419 =             ableToFormat
           ? prefixBeforeNationalNumber + tempNationalNumber
           : accruedInput.toString();
             varCA4068B6CC598939A01C31B3884B5E64_844401419.addTaint(taint);
             return varCA4068B6CC598939A01C31B3884B5E64_844401419;
-        } //End block
+        } 
         else
         {
 String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeNationalNumber.toString();
             var59EDF629DC029F16882F612A4FB211C0_475888047.addTaint(taint);
             return var59EDF629DC029F16882F612A4FB211C0_475888047;
-        } //End block
-        // ---------- Original Method ----------
-        //int lengthOfNationalNumber = nationalNumber.length();
-        //if (lengthOfNationalNumber > 0) {
-      //String tempNationalNumber = "";
-      //for (int i = 0; i < lengthOfNationalNumber; i++) {
-        //tempNationalNumber = inputDigitHelper(nationalNumber.charAt(i));
-      //}
-      //return ableToFormat
-          //? prefixBeforeNationalNumber + tempNationalNumber
-          //: accruedInput.toString();
-    //} else {
-      //return prefixBeforeNationalNumber.toString();
-    //}
+        } 
+        
+        
+        
+      
+      
+        
+      
+      
+          
+          
+    
+      
+    
     }
 
     
@@ -632,7 +632,7 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
             startOfNationalNumber = 1;
             prefixBeforeNationalNumber.append("1 ");
             isInternationalFormatting = true;
-        } //End block
+        } 
         else
     if(currentMetaData.hasNationalPrefix())        
         {
@@ -643,26 +643,26 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
                 isInternationalFormatting = true;
                 startOfNationalNumber = m.end();
                 prefixBeforeNationalNumber.append(nationalNumber.substring(0, startOfNationalNumber));
-            } //End block
-        } //End block
+            } 
+        } 
         nationalNumber.delete(0, startOfNationalNumber);
-        // ---------- Original Method ----------
-        //int startOfNationalNumber = 0;
-        //if (currentMetaData.getCountryCode() == 1 && nationalNumber.charAt(0) == '1') {
-      //startOfNationalNumber = 1;
-      //prefixBeforeNationalNumber.append("1 ");
-      //isInternationalFormatting = true;
-    //} else if (currentMetaData.hasNationalPrefix()) {
-      //Pattern nationalPrefixForParsing =
-        //regexCache.getPatternForRegex(currentMetaData.getNationalPrefixForParsing());
-      //Matcher m = nationalPrefixForParsing.matcher(nationalNumber);
-      //if (m.lookingAt()) {
-        //isInternationalFormatting = true;
-        //startOfNationalNumber = m.end();
-        //prefixBeforeNationalNumber.append(nationalNumber.substring(0, startOfNationalNumber));
-      //}
-    //}
-        //nationalNumber.delete(0, startOfNationalNumber);
+        
+        
+        
+      
+      
+      
+    
+      
+        
+      
+      
+        
+        
+        
+      
+    
+        
     }
 
     
@@ -682,16 +682,16 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
     if(accruedInputWithoutFormatting.charAt(0) != PhoneNumberUtil.PLUS_SIGN)            
             {
                 prefixBeforeNationalNumber.append(" ");
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_448080662 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1144570624 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1144570624;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_472537122 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1442724758 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1442724758;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -702,7 +702,7 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
             boolean var68934A3E9455FA72420237EB05902327_1942535891 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1807248956 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1807248956;
-        } //End block
+        } 
         StringBuilder numberWithoutCountryCallingCode = new StringBuilder();
         int countryCode = phoneUtil.extractCountryCode(nationalNumber, numberWithoutCountryCallingCode);
     if(countryCode == 0)        
@@ -710,37 +710,37 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
             boolean var68934A3E9455FA72420237EB05902327_284526356 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1119722758 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1119722758;
-        } //End block
+        } 
         nationalNumber.setLength(0);
         nationalNumber.append(numberWithoutCountryCallingCode);
         String newRegionCode = phoneUtil.getRegionCodeForCountryCode(countryCode);
     if(!newRegionCode.equals(defaultCountry))        
         {
             currentMetaData = getMetadataForRegion(newRegionCode);
-        } //End block
+        } 
         String countryCodeString = Integer.toString(countryCode);
         prefixBeforeNationalNumber.append(countryCodeString).append(" ");
         boolean varB326B5062B2F0E69046810717534CB09_1667975984 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120741573 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_120741573;
-        // ---------- Original Method ----------
-        //if (nationalNumber.length() == 0) {
-      //return false;
-    //}
-        //StringBuilder numberWithoutCountryCallingCode = new StringBuilder();
-        //int countryCode = phoneUtil.extractCountryCode(nationalNumber, numberWithoutCountryCallingCode);
-        //if (countryCode == 0) {
-      //return false;
-    //}
-        //nationalNumber.setLength(0);
-        //nationalNumber.append(numberWithoutCountryCallingCode);
-        //String newRegionCode = phoneUtil.getRegionCodeForCountryCode(countryCode);
-        //if (!newRegionCode.equals(defaultCountry)) {
-      //currentMetaData = getMetadataForRegion(newRegionCode);
-    //}
-        //String countryCodeString = Integer.toString(countryCode);
-        //prefixBeforeNationalNumber.append(countryCodeString).append(" ");
-        //return true;
+        
+        
+      
+    
+        
+        
+        
+      
+    
+        
+        
+        
+        
+      
+    
+        
+        
+        
     }
 
     
@@ -753,36 +753,36 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
         {
             normalizedChar = nextChar;
             accruedInputWithoutFormatting.append(nextChar);
-        } //End block
+        } 
         else
         {
             int radix = 10;
             normalizedChar = Character.forDigit(Character.digit(nextChar, radix), radix);
             accruedInputWithoutFormatting.append(normalizedChar);
             nationalNumber.append(normalizedChar);
-        } //End block
+        } 
     if(rememberPosition)        
         {
             positionToRemember = accruedInputWithoutFormatting.length();
-        } //End block
+        } 
         char var4F8B2A2448B711D54608AA9E10E12663_911521796 = (normalizedChar);
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1502309990 = getTaintChar();
         return varA87DEB01C5F539E6BDA34829C8EF2368_1502309990;
-        // ---------- Original Method ----------
-        //char normalizedChar;
-        //if (nextChar == PhoneNumberUtil.PLUS_SIGN) {
-      //normalizedChar = nextChar;
-      //accruedInputWithoutFormatting.append(nextChar);
-    //} else {
-      //int radix = 10;
-      //normalizedChar = Character.forDigit(Character.digit(nextChar, radix), radix);
-      //accruedInputWithoutFormatting.append(normalizedChar);
-      //nationalNumber.append(normalizedChar);
-    //}
-        //if (rememberPosition) {
-      //positionToRemember = accruedInputWithoutFormatting.length();
-    //}
-        //return normalizedChar;
+        
+        
+        
+      
+      
+    
+      
+      
+      
+      
+    
+        
+      
+    
+        
     }
 
     
@@ -798,32 +798,32 @@ String var59EDF629DC029F16882F612A4FB211C0_475888047 =             prefixBeforeN
 String var69F07413ED8015BA8F9A54A3B788140A_1738520620 =             formattingTemplate.substring(0, lastMatchPosition + 1);
             var69F07413ED8015BA8F9A54A3B788140A_1738520620.addTaint(taint);
             return var69F07413ED8015BA8F9A54A3B788140A_1738520620;
-        } //End block
+        } 
         else
         {
     if(possibleFormats.size() == 1)            
             {
                 ableToFormat = false;
-            } //End block
+            } 
             currentFormattingPattern = "";
 String var5DA4F23BDAFA099675D0A84B89FB971F_1295492066 =             accruedInput.toString();
             var5DA4F23BDAFA099675D0A84B89FB971F_1295492066.addTaint(taint);
             return var5DA4F23BDAFA099675D0A84B89FB971F_1295492066;
-        } //End block
-        // ---------- Original Method ----------
-        //Matcher digitMatcher = digitPattern.matcher(formattingTemplate);
-        //if (digitMatcher.find(lastMatchPosition)) {
-      //String tempTemplate = digitMatcher.replaceFirst(Character.toString(nextChar));
-      //formattingTemplate.replace(0, tempTemplate.length(), tempTemplate);
-      //lastMatchPosition = digitMatcher.start();
-      //return formattingTemplate.substring(0, lastMatchPosition + 1);
-    //} else {
-      //if (possibleFormats.size() == 1) {
-        //ableToFormat = false;
-      //}  
-      //currentFormattingPattern = "";
-      //return accruedInput.toString();
-    //}
+        } 
+        
+        
+        
+      
+      
+      
+      
+    
+      
+        
+      
+      
+      
+    
     }
 
     

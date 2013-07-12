@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -59,7 +59,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                 logger.println("  block size: " + block_size);
                 logger.println("  IV size:" + iv_size);
                 logger.println("  key size: " + key_size);
-            } //End block
+            } 
             byte[] clientRandom = session.clientRandom;
             byte[] serverRandom = session.serverRandom;
             byte[] key_block = new byte[2*hash_size + 2*key_size + 2*iv_size];
@@ -86,7 +86,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
     if(logger != null)                
                 {
                     logger.println("ConnectionStateSSLv3: is_exportable");
-                } //End block
+                } 
                 MessageDigest md5 = MessageDigest.getInstance("MD5");
                 md5.update(client_key);
                 md5.update(clientRandom);
@@ -105,8 +105,8 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                     md5.update(serverRandom);
                     md5.update(clientRandom);
                     serverIV = new IvParameterSpec(md5.digest(), 0, iv_size);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(block_size != 0)            
             {
@@ -114,7 +114,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                         2*hash_size+2*key_size, iv_size);
                 serverIV = new IvParameterSpec(key_block,
                         2*hash_size+2*key_size+iv_size, iv_size);
-            } //End block
+            } 
     if(logger != null)            
             {
                 logger.println("is exportable: "+is_exportabe);
@@ -138,17 +138,17 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                     logger.print(clientIV.getIV());
                     logger.println("server_iv");
                     logger.print(serverIV.getIV());
-                } //End block
+                } 
                 else
                 {
                     logger.println("no IV.");
-                } //End block
-            } //End block
+                } 
+            } 
     if(algName == null)            
             {
                 encCipher = new NullCipher();
                 decCipher = new NullCipher();
-            } //End block
+            } 
             else
             {
                 encCipher = Cipher.getInstance(algName);
@@ -161,7 +161,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                     decCipher.init(Cipher.DECRYPT_MODE,
                                    new SecretKeySpec(server_key, 0, key_size, algName),
                                    serverIV);
-                } //End block
+                } 
                 else
                 {
                     encCipher.init(Cipher.ENCRYPT_MODE,
@@ -170,30 +170,30 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                     decCipher.init(Cipher.DECRYPT_MODE,
                                    new SecretKeySpec(client_key, 0, key_size, algName),
                                    clientIV);
-                } //End block
-            } //End block
+                } 
+            } 
             messageDigest = MessageDigest.getInstance(hashName);
     if(is_client)            
             {
                 mac_write_secret = client_mac_secret;
                 mac_read_secret = server_mac_secret;
-            } //End block
+            } 
             else
             {
                 mac_write_secret = server_mac_secret;
                 mac_read_secret = client_mac_secret;
-            } //End block
+            } 
     if(hashName.equals("MD5"))            
             {
                 pad_1 = SSLv3Constants.MD5pad1;
                 pad_2 = SSLv3Constants.MD5pad2;
-            } //End block
+            } 
             else
             {
                 pad_1 = SSLv3Constants.SHApad1;
                 pad_2 = SSLv3Constants.SHApad2;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (Exception e)
         {
             e.printStackTrace();
@@ -202,9 +202,9 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                         "Error during computation of security parameters"));
             var886399C6341AEABBC45DD13CCAF5571B_1856978375.addTaint(taint);
             throw var886399C6341AEABBC45DD13CCAF5571B_1856978375;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -237,7 +237,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
             {
                 Arrays.fill(res, content_mac_length-1,
                         res.length, (byte) (padding_length));
-            } //End block
+            } 
     if(logger != null)            
             {
                 logger.println("SSLRecordProtocol.encrypt: "
@@ -246,14 +246,14 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                                 +padding_length+"]:"
                             : "GenericStreamCipher:"));
                 logger.print(res);
-            } //End block
+            } 
             byte[] rez = new byte[encCipher.getOutputSize(res.length)];
             encCipher.update(res, 0, res.length, rez);
             incSequenceNumber(write_seq_num);
             byte[] varD33BC499CA0ACD0CDF659B4AD190DCEC_250415288 = (rez);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_161050852 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_161050852;
-        } //End block
+        } 
         catch (GeneralSecurityException e)
         {
             e.printStackTrace();
@@ -261,9 +261,9 @@ public class ConnectionStateSSLv3 extends ConnectionState {
                     new SSLProtocolException("Error during the encryption"));
             var73EB725A695601E67DA15B6BA3118BBA_1109855226.addTaint(taint);
             throw var73EB725A695601E67DA15B6BA3118BBA_1109855226;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -289,14 +289,14 @@ for(int i=0;i<padding_length;i++)
                                 "Received message has bad padding"));
                     var92834CD3795640470A2BA84DE19F568D_181181627.addTaint(taint);
                     throw var92834CD3795640470A2BA84DE19F568D_181181627;
-                } //End block
-            } //End block
+                } 
+            } 
             content = new byte[data.length - hash_size - padding_length - 1];
-        } //End block
+        } 
         else
         {
             content = new byte[data.length - hash_size];
-        } //End block
+        } 
         byte[] mac_value;
         mac_material_part[0] = type;
         mac_material_part[1] = (byte) ((0x00FF00 & content.length) >> 8);
@@ -317,7 +317,7 @@ for(int i=0;i<padding_length;i++)
             logger.print(data);
             logger.println("Expected mac value:");
             logger.print(mac_value);
-        } //End block
+        } 
 for(int i=0;i<hash_size;i++)
         {
     if(mac_value[i] != data[i+content.length])            
@@ -326,15 +326,15 @@ for(int i=0;i<hash_size;i++)
                         new SSLProtocolException("Bad record MAC"));
                 var8DEAD6D6B22176DE990E0F77D252D32C_1497121935.addTaint(taint);
                 throw var8DEAD6D6B22176DE990E0F77D252D32C_1497121935;
-            } //End block
-        } //End block
+            } 
+        } 
         System.arraycopy(data, 0, content, 0, content.length);
         incSequenceNumber(read_seq_num);
         byte[] var9A0364B9E99BB480DD25E1F0284C8555_141217313 = (content);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1757322363 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1757322363;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -344,10 +344,10 @@ for(int i=0;i<hash_size;i++)
         Arrays.fill(mac_write_secret, (byte) 0);
         Arrays.fill(mac_read_secret, (byte) 0);
         super.shutdown();
-        // ---------- Original Method ----------
-        //Arrays.fill(mac_write_secret, (byte) 0);
-        //Arrays.fill(mac_read_secret, (byte) 0);
-        //super.shutdown();
+        
+        
+        
+        
     }
 
     

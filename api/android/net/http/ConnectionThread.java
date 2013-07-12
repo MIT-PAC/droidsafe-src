@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -49,27 +49,28 @@ class ConnectionThread extends Thread {
         mId = id;
         mConnectionManager = connectionManager;
         mRequestFeeder = requestFeeder;
-        // ---------- Original Method ----------
-        //mContext = context;
-        //setName("http" + id);
-        //mId = id;
-        //mConnectionManager = connectionManager;
-        //mRequestFeeder = requestFeeder;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.045 -0400", hash_original_method = "A5666AE0946DEF68E8FF606C0FDBCF6D", hash_generated_method = "675E9DAA678FFBEB722D5811FBE321FA")
      void requestStop() {
         synchronized
 (mRequestFeeder)        {
             mRunning = false;
             mRequestFeeder.notify();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mRequestFeeder) {
-            //mRunning = false;
-            //mRequestFeeder.notify();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -86,7 +87,7 @@ class ConnectionThread extends Thread {
     if(mCurrentThreadTime == -1)            
             {
                 mCurrentThreadTime = SystemClock.currentThreadTimeMillis();
-            } //End block
+            } 
             Request request;
             request = mRequestFeeder.getRequest();
     if(request == null)            
@@ -99,18 +100,18 @@ class ConnectionThread extends Thread {
                     try 
                     {
                         mRequestFeeder.wait();
-                    } //End block
+                    } 
                     catch (InterruptedException e)
                     {
-                    } //End block
+                    } 
                     mWaiting = false;
     if(mCurrentThreadTime != 0)                    
                     {
                         mCurrentThreadTime = SystemClock
                                 .currentThreadTimeMillis();
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
     if(HttpLog.LOGV)                
@@ -124,26 +125,27 @@ class ConnectionThread extends Thread {
     if(!mConnectionManager.recycleConnection(mConnection))                    
                     {
                         mConnection.closeConnection();
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     mConnection.closeConnection();
-                } //End block
+                } 
                 mConnection = null;
     if(mCurrentThreadTime > 0)                
                 {
                     long start = mCurrentThreadTime;
                     mCurrentThreadTime = SystemClock.currentThreadTimeMillis();
                     mTotalThreadTime += mCurrentThreadTime - start;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.047 -0400", hash_original_method = "E5691DA5C4D558B8174DB10F2BE5CF59", hash_generated_method = "404E008F71741DAEF6B475E0834C6375")
     public synchronized String toString() {
         String con = mConnection == null ? "" : mConnection.toString();
@@ -151,10 +153,10 @@ class ConnectionThread extends Thread {
 String var98F50121D64DEEC996C69F99D7531F87_1079496413 =         "cid " + mId + " " + active + " "  + con;
         var98F50121D64DEEC996C69F99D7531F87_1079496413.addTaint(taint);
         return var98F50121D64DEEC996C69F99D7531F87_1079496413;
-        // ---------- Original Method ----------
-        //String con = mConnection == null ? "" : mConnection.toString();
-        //String active = mWaiting ? "w" : "a";
-        //return "cid " + mId + " " + active + " "  + con;
+        
+        
+        
+        
     }
 
     

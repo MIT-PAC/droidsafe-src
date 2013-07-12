@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,20 +18,21 @@ final class ByteArray {
       ByteArray(byte[] bytes) {
         this.bytes = bytes;
         this.hashCode = Arrays.hashCode(bytes);
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
-        //this.hashCode = Arrays.hashCode(bytes);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.054 -0400", hash_original_method = "8BA9483852C95CF52834EFFEFBE67C86", hash_generated_method = "430EF9B03C35F9178F8797C221807D6F")
     @Override
     public int hashCode() {
         int var550D1CC054A1B23A411DDDA46FD64811_207682733 = (hashCode);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86870110 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_86870110;
-        // ---------- Original Method ----------
-        //return hashCode;
+        
+        
     }
 
     
@@ -44,17 +45,17 @@ final class ByteArray {
             boolean var68934A3E9455FA72420237EB05902327_779122487 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_474095164 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_474095164;
-        } //End block
+        } 
         ByteArray lhs = (ByteArray) o;
         boolean varC42C0B8A6C0E3F37AE1E1C08C2B94CE9_1759214599 = (Arrays.equals(bytes, lhs.bytes));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244615613 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_244615613;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ByteArray)) {
-            //return false;
-        //}
-        //ByteArray lhs = (ByteArray) o;
-        //return Arrays.equals(bytes, lhs.bytes);
+        
+        
+            
+        
+        
+        
     }
 
     

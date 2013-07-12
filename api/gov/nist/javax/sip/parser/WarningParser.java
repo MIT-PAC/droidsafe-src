@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class WarningParser extends HeaderParser {
     public  WarningParser(String warning) {
         super(warning);
         addTaint(warning.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -23,7 +23,7 @@ public class WarningParser extends HeaderParser {
     protected  WarningParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,19 +46,19 @@ public class WarningParser extends HeaderParser {
                 {
                     int code = Integer.parseInt(token.getTokenValue());
                     warning.setCode(code);
-                } //End block
+                } 
                 catch (NumberFormatException ex)
                 {
                     java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1296742253 = createParseException(ex.getMessage());
                     varB8C80F72F95BF6A850D07F4EC5726C09_1296742253.addTaint(taint);
                     throw varB8C80F72F95BF6A850D07F4EC5726C09_1296742253;
-                } //End block
+                } 
                 catch (InvalidArgumentException ex)
                 {
                     java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_296487068 = createParseException(ex.getMessage());
                     varB8C80F72F95BF6A850D07F4EC5726C09_296487068.addTaint(taint);
                     throw varB8C80F72F95BF6A850D07F4EC5726C09_296487068;
-                } //End block
+                } 
                 this.lexer.SPorHT();
                 this.lexer.match(TokenTypes.ID);
                 token = lexer.getNextToken();
@@ -69,11 +69,11 @@ public class WarningParser extends HeaderParser {
                     Token token2 = lexer.getNextToken();
                     warning.setAgent(token.getTokenValue() + ":"
                             + token2.getTokenValue());
-                } //End block
+                } 
                 else
                 {
                     warning.setAgent(token.getTokenValue());
-                } //End block
+                } 
                 this.lexer.SPorHT();
                 String text = this.lexer.quotedString();
                 warning.setText(text);
@@ -91,19 +91,19 @@ public class WarningParser extends HeaderParser {
                     {
                         int code = Integer.parseInt(tok.getTokenValue());
                         warning.setCode(code);
-                    } //End block
+                    } 
                     catch (NumberFormatException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_1671084187 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_1671084187.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_1671084187;
-                    } //End block
+                    } 
                     catch (InvalidArgumentException ex)
                     {
                         java.text.ParseException varB8C80F72F95BF6A850D07F4EC5726C09_734159658 = createParseException(ex.getMessage());
                         varB8C80F72F95BF6A850D07F4EC5726C09_734159658.addTaint(taint);
                         throw varB8C80F72F95BF6A850D07F4EC5726C09_734159658;
-                    } //End block
+                    } 
                     this.lexer.SPorHT();
                     this.lexer.match(TokenTypes.ID);
                     tok = lexer.getNextToken();
@@ -114,29 +114,29 @@ public class WarningParser extends HeaderParser {
                         Token token2 = lexer.getNextToken();
                         warning.setAgent(tok.getTokenValue() + ":"
                                 + token2.getTokenValue());
-                    } //End block
+                    } 
                     else
                     {
                         warning.setAgent(tok.getTokenValue());
-                    } //End block
+                    } 
                     this.lexer.SPorHT();
                     text = this.lexer.quotedString();
                     warning.setText(text);
                     this.lexer.SPorHT();
                     warningList.add(warning);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("WarningParser.parse");
-        } //End block
+        } 
 SIPHeader var42F0E3ACF43E718FBD7FE1AF4BC220BA_442801622 =         warningList;
         var42F0E3ACF43E718FBD7FE1AF4BC220BA_442801622.addTaint(taint);
         return var42F0E3ACF43E718FBD7FE1AF4BC220BA_442801622;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

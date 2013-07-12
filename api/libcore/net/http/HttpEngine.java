@@ -1,6 +1,6 @@
 package libcore.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -110,25 +110,25 @@ public class HttpEngine {
         try 
         {
             uri = policy.getURL().toURILenient();
-        } //End block
+        } 
         catch (URISyntaxException e)
         {
             IOException var0AFB0468CE17165C7EF7344B3E18B39B_1072318207 = new IOException(e);
             var0AFB0468CE17165C7EF7344B3E18B39B_1072318207.addTaint(taint);
             throw var0AFB0468CE17165C7EF7344B3E18B39B_1072318207;
-        } //End block
+        } 
         this.requestHeaders = new RequestHeaders(uri, new RawHeaders(requestHeaders));
-        // ---------- Original Method ----------
-        //this.policy = policy;
-        //this.method = method;
-        //this.connection = connection;
-        //this.requestBodyOut = requestBodyOut;
-        //try {
-            //uri = policy.getURL().toURILenient();
-        //} catch (URISyntaxException e) {
-            //throw new IOException(e);
-        //}
-        //this.requestHeaders = new RequestHeaders(uri, new RawHeaders(requestHeaders));
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -137,36 +137,36 @@ public class HttpEngine {
     if(responseSource != null)        
         {
             return;
-        } //End block
+        } 
         prepareRawRequestHeaders();
         initResponseSource();
     if(responseCache instanceof HttpResponseCache)        
         {
             ((HttpResponseCache) responseCache).trackResponse(responseSource);
-        } //End block
+        } 
     if(requestHeaders.isOnlyIfCached() && responseSource.requiresConnection())        
         {
     if(responseSource == ResponseSource.CONDITIONAL_CACHE)            
             {
                 IoUtils.closeQuietly(cachedResponseBody);
-            } //End block
+            } 
             this.responseSource = ResponseSource.CACHE;
             this.cacheResponse = BAD_GATEWAY_RESPONSE;
             RawHeaders rawResponseHeaders = RawHeaders.fromMultimap(cacheResponse.getHeaders());
             setResponse(new ResponseHeaders(uri, rawResponseHeaders), cacheResponse.getBody());
-        } //End block
+        } 
     if(responseSource.requiresConnection())        
         {
             sendSocketRequest();
-        } //End block
+        } 
         else
     if(connection != null)        
         {
             HttpConnectionPool.INSTANCE.recycle(connection);
             connection = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -176,13 +176,13 @@ public class HttpEngine {
     if(!policy.getUseCaches() || responseCache == null)        
         {
             return;
-        } //End block
+        } 
         CacheResponse candidate = responseCache.get(uri, method,
                 requestHeaders.getHeaders().toMultimap());
     if(candidate == null)        
         {
             return;
-        } //End block
+        } 
         Map<String, List<String>> responseHeadersMap = candidate.getHeaders();
         cachedResponseBody = candidate.getBody();
     if(!acceptCacheResponseType(candidate)
@@ -191,7 +191,7 @@ public class HttpEngine {
         {
             IoUtils.closeQuietly(cachedResponseBody);
             return;
-        } //End block
+        } 
         RawHeaders rawResponseHeaders = RawHeaders.fromMultimap(responseHeadersMap);
         cachedResponseHeaders = new ResponseHeaders(uri, rawResponseHeaders);
         long now = System.currentTimeMillis();
@@ -200,25 +200,25 @@ public class HttpEngine {
         {
             this.cacheResponse = candidate;
             setResponse(cachedResponseHeaders, cachedResponseBody);
-        } //End block
+        } 
         else
     if(responseSource == ResponseSource.CONDITIONAL_CACHE)        
         {
             this.cacheResponse = candidate;
-        } //End block
+        } 
         else
     if(responseSource == ResponseSource.NETWORK)        
         {
             IoUtils.closeQuietly(cachedResponseBody);
-        } //End block
+        } 
         else
         {
             AssertionError varA81442E36297E737EB908877E58260E8_880044384 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_880044384.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_880044384;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -227,33 +227,33 @@ public class HttpEngine {
     if(connection == null)        
         {
             connect();
-        } //End block
+        } 
     if(socketOut != null || requestOut != null || socketIn != null)        
         {
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_568711898 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_568711898.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_568711898;
-        } //End block
+        } 
         socketOut = connection.getOutputStream();
         requestOut = socketOut;
         socketIn = connection.getInputStream();
     if(hasRequestBody())        
         {
             initRequestBodyOut();
-        } //End block
-        // ---------- Original Method ----------
-        //if (connection == null) {
-            //connect();
-        //}
-        //if (socketOut != null || requestOut != null || socketIn != null) {
-            //throw new IllegalStateException();
-        //}
-        //socketOut = connection.getOutputStream();
-        //requestOut = socketOut;
-        //socketIn = connection.getInputStream();
-        //if (hasRequestBody()) {
-            //initRequestBodyOut();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -262,11 +262,11 @@ public class HttpEngine {
     if(connection == null)        
         {
             connection = openSocketConnection();
-        } //End block
-        // ---------- Original Method ----------
-        //if (connection == null) {
-            //connection = openSocketConnection();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -278,20 +278,20 @@ public class HttpEngine {
     if(proxy != null)        
         {
             policy.setProxy(proxy);
-        } //End block
+        } 
         result.setSoTimeout(policy.getReadTimeout());
 HttpConnection varDC838461EE2FA0CA4C9BBB70A15456B0_8088906 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_8088906.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_8088906;
-        // ---------- Original Method ----------
-        //HttpConnection result = HttpConnection.connect(
-                //uri, policy.getProxy(), requiresTunnel(), policy.getConnectTimeout());
-        //Proxy proxy = result.getAddress().getProxy();
-        //if (proxy != null) {
-            //policy.setProxy(proxy);
-        //}
-        //result.setSoTimeout(policy.getReadTimeout());
-        //return result;
+        
+        
+                
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -304,46 +304,46 @@ HttpConnection varDC838461EE2FA0CA4C9BBB70A15456B0_8088906 =         result;
     if(chunkLength == -1)            
             {
                 chunkLength = DEFAULT_CHUNK_LENGTH;
-            } //End block
-        } //End block
+            } 
+        } 
     if(socketOut == null)        
         {
             IllegalStateException varE127A39FD6F2C7433080153C389658F8_698886019 = new IllegalStateException("No socket to write to; was a POST cached?");
             varE127A39FD6F2C7433080153C389658F8_698886019.addTaint(taint);
             throw varE127A39FD6F2C7433080153C389658F8_698886019;
-        } //End block
+        } 
     if(httpMinorVersion == 0)        
         {
             sendChunked = false;
-        } //End block
+        } 
         int fixedContentLength = policy.getFixedContentLength();
     if(requestBodyOut != null)        
         {
-        } //End block
+        } 
         else
     if(fixedContentLength != -1)        
         {
             writeRequestHeaders(fixedContentLength);
             requestBodyOut = new FixedLengthOutputStream(requestOut, fixedContentLength);
-        } //End block
+        } 
         else
     if(sendChunked)        
         {
             writeRequestHeaders(-1);
             requestBodyOut = new ChunkedOutputStream(requestOut, chunkLength);
-        } //End block
+        } 
         else
     if(requestHeaders.getContentLength() != -1)        
         {
             writeRequestHeaders(requestHeaders.getContentLength());
             requestBodyOut = new RetryableOutputStream(requestHeaders.getContentLength());
-        } //End block
+        } 
         else
         {
             requestBodyOut = new RetryableOutputStream();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -355,32 +355,33 @@ HttpConnection varDC838461EE2FA0CA4C9BBB70A15456B0_8088906 =         result;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_36502780 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_36502780.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_36502780;
-        } //End block
+        } 
         this.responseHeaders = headers;
         this.httpMinorVersion = responseHeaders.getHeaders().getHttpMinorVersion();
     if(body != null)        
         {
             initContentStream(body);
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.responseBodyIn != null) {
-            //throw new IllegalStateException();
-        //}
-        //this.responseHeaders = headers;
-        //this.httpMinorVersion = responseHeaders.getHeaders().getHttpMinorVersion();
-        //if (body != null) {
-            //initContentStream(body);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.288 -0400", hash_original_method = "A2A25877F13CAB8F3B2570F0DD573D04", hash_generated_method = "863AE80409E810917F173217431030C8")
     private boolean hasRequestBody() {
         boolean var7BF322D53CABE151F96748E495E6F498_2129723469 = (method == POST || method == PUT);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1889087076 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1889087076;
-        // ---------- Original Method ----------
-        //return method == POST || method == PUT;
+        
+        
     }
 
     
@@ -391,15 +392,15 @@ HttpConnection varDC838461EE2FA0CA4C9BBB70A15456B0_8088906 =         result;
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_129459214 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_129459214.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_129459214;
-        } //End block
+        } 
 OutputStream var9DC46B2BACB0B01C659B74CD62B00382_620483990 =         requestBodyOut;
         var9DC46B2BACB0B01C659B74CD62B00382_620483990.addTaint(taint);
         return var9DC46B2BACB0B01C659B74CD62B00382_620483990;
-        // ---------- Original Method ----------
-        //if (responseSource == null) {
-            //throw new IllegalStateException();
-        //}
-        //return requestBodyOut;
+        
+        
+            
+        
+        
     }
 
     
@@ -408,8 +409,8 @@ OutputStream var9DC46B2BACB0B01C659B74CD62B00382_620483990 =         requestBody
         boolean var1E9A7D6C9864EED2DD7331E4D534613E_979714728 = (responseHeaders != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954051423 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954051423;
-        // ---------- Original Method ----------
-        //return responseHeaders != null;
+        
+        
     }
 
     
@@ -418,8 +419,8 @@ OutputStream var9DC46B2BACB0B01C659B74CD62B00382_620483990 =         requestBody
 RequestHeaders var865DB0B8CD374F1022AF1F2AA435EB1D_1076301780 =         requestHeaders;
         var865DB0B8CD374F1022AF1F2AA435EB1D_1076301780.addTaint(taint);
         return var865DB0B8CD374F1022AF1F2AA435EB1D_1076301780;
-        // ---------- Original Method ----------
-        //return requestHeaders;
+        
+        
     }
 
     
@@ -430,15 +431,15 @@ RequestHeaders var865DB0B8CD374F1022AF1F2AA435EB1D_1076301780 =         requestH
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_56809789 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_56809789.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_56809789;
-        } //End block
+        } 
 ResponseHeaders var028B03401730B4B2430034F8F93178D6_1873342641 =         responseHeaders;
         var028B03401730B4B2430034F8F93178D6_1873342641.addTaint(taint);
         return var028B03401730B4B2430034F8F93178D6_1873342641;
-        // ---------- Original Method ----------
-        //if (responseHeaders == null) {
-            //throw new IllegalStateException();
-        //}
-        //return responseHeaders;
+        
+        
+            
+        
+        
     }
 
     
@@ -449,15 +450,15 @@ ResponseHeaders var028B03401730B4B2430034F8F93178D6_1873342641 =         respons
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_2029249725 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_2029249725.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_2029249725;
-        } //End block
+        } 
         int var1D38D2E5D714633D7016AA7186B7C917_1299535101 = (responseHeaders.getHeaders().getResponseCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_398543088 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_398543088;
-        // ---------- Original Method ----------
-        //if (responseHeaders == null) {
-            //throw new IllegalStateException();
-        //}
-        //return responseHeaders.getHeaders().getResponseCode();
+        
+        
+            
+        
+        
     }
 
     
@@ -468,15 +469,15 @@ ResponseHeaders var028B03401730B4B2430034F8F93178D6_1873342641 =         respons
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_629409649 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_629409649.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_629409649;
-        } //End block
+        } 
 InputStream var32C44555E939E90398BD43EABC877C1F_597859180 =         responseBodyIn;
         var32C44555E939E90398BD43EABC877C1F_597859180.addTaint(taint);
         return var32C44555E939E90398BD43EABC877C1F_597859180;
-        // ---------- Original Method ----------
-        //if (responseHeaders == null) {
-            //throw new IllegalStateException();
-        //}
-        //return responseBodyIn;
+        
+        
+            
+        
+        
     }
 
     
@@ -487,15 +488,15 @@ InputStream var32C44555E939E90398BD43EABC877C1F_597859180 =         responseBody
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_1768325679 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_1768325679.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_1768325679;
-        } //End block
+        } 
 CacheResponse varABFB30EDCA8832B555B64AC56016D834_1207653961 =         cacheResponse;
         varABFB30EDCA8832B555B64AC56016D834_1207653961.addTaint(taint);
         return varABFB30EDCA8832B555B64AC56016D834_1207653961;
-        // ---------- Original Method ----------
-        //if (responseHeaders == null) {
-            //throw new IllegalStateException();
-        //}
-        //return cacheResponse;
+        
+        
+            
+        
+        
     }
 
     
@@ -504,19 +505,20 @@ CacheResponse varABFB30EDCA8832B555B64AC56016D834_1207653961 =         cacheResp
 HttpConnection var9911BB1C5F1522C1630847C40E8BC67E_680380749 =         connection;
         var9911BB1C5F1522C1630847C40E8BC67E_680380749.addTaint(taint);
         return var9911BB1C5F1522C1630847C40E8BC67E_680380749;
-        // ---------- Original Method ----------
-        //return connection;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.291 -0400", hash_original_method = "A7591895A9BC485B929D9D45A1C9BC76", hash_generated_method = "5E58FC8B2B60D9247D69B43246E5938F")
     protected boolean acceptCacheResponseType(CacheResponse cacheResponse) {
         addTaint(cacheResponse.getTaint());
         boolean varB326B5062B2F0E69046810717534CB09_39621496 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2057705860 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2057705860;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -525,30 +527,31 @@ HttpConnection var9911BB1C5F1522C1630847C40E8BC67E_680380749 =         connectio
     if(!policy.getUseCaches() || responseCache == null)        
         {
             return;
-        } //End block
+        } 
     if(!responseHeaders.isCacheable(requestHeaders))        
         {
             return;
-        } //End block
+        } 
         cacheRequest = responseCache.put(uri, getHttpConnectionToCache());
-        // ---------- Original Method ----------
-        //if (!policy.getUseCaches() || responseCache == null) {
-            //return;
-        //}
-        //if (!responseHeaders.isCacheable(requestHeaders)) {
-            //return;
-        //}
-        //cacheRequest = responseCache.put(uri, getHttpConnectionToCache());
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.292 -0400", hash_original_method = "CA4844B1B3E4576C0EA18E04D34BB6CE", hash_generated_method = "1D0ED8B19D3FE2F501F85DDA956BD0B3")
     protected HttpURLConnection getHttpConnectionToCache() {
 HttpURLConnection var2938A9ABA11B2DDD5ADB24059ADA8326_330933119 =         policy;
         var2938A9ABA11B2DDD5ADB24059ADA8326_330933119.addTaint(taint);
         return var2938A9ABA11B2DDD5ADB24059ADA8326_330933119;
-        // ---------- Original Method ----------
-        //return policy;
+        
+        
     }
 
     
@@ -559,13 +562,13 @@ HttpURLConnection var2938A9ABA11B2DDD5ADB24059ADA8326_330933119 =         policy
         {
             HttpConnectionPool.INSTANCE.recycle(connection);
             connection = null;
-        } //End block
-        // ---------- Original Method ----------
-        //automaticallyReleaseConnectionToPool = true;
-        //if (connection != null && connectionReleased) {
-            //HttpConnectionPool.INSTANCE.recycle(connection);
-            //connection = null;
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -575,47 +578,47 @@ HttpURLConnection var2938A9ABA11B2DDD5ADB24059ADA8326_330933119 =         policy
     if(responseBodyIn == cachedResponseBody)        
         {
             IoUtils.closeQuietly(responseBodyIn);
-        } //End block
+        } 
     if(!connectionReleased && connection != null)        
         {
             connectionReleased = true;
     if(requestBodyOut != null && !requestBodyOut.closed)            
             {
                 reusable = false;
-            } //End block
+            } 
     if(hasConnectionCloseHeader())            
             {
                 reusable = false;
-            } //End block
+            } 
     if(responseBodyIn instanceof UnknownLengthHttpInputStream)            
             {
                 reusable = false;
-            } //End block
+            } 
     if(reusable && responseBodyIn != null)            
             {
                 try 
                 {
                     Streams.skipAll(responseBodyIn);
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     reusable = false;
-                } //End block
-            } //End block
+                } 
+            } 
     if(!reusable)            
             {
                 connection.closeSocketAndStreams();
                 connection = null;
-            } //End block
+            } 
             else
     if(automaticallyReleaseConnectionToPool)            
             {
                 HttpConnectionPool.INSTANCE.recycle(connection);
                 connection = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -625,18 +628,18 @@ HttpURLConnection var2938A9ABA11B2DDD5ADB24059ADA8326_330933119 =         policy
         {
             responseHeaders.stripContentEncoding();
             responseBodyIn = new GZIPInputStream(transferStream);
-        } //End block
+        } 
         else
         {
             responseBodyIn = transferStream;
-        } //End block
-        // ---------- Original Method ----------
-        //if (transparentGzip && responseHeaders.isContentEncodingGzip()) {
-            //responseHeaders.stripContentEncoding();
-            //responseBodyIn = new GZIPInputStream(transferStream);
-        //} else {
-            //responseBodyIn = transferStream;
-        //}
+        } 
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -647,35 +650,35 @@ HttpURLConnection var2938A9ABA11B2DDD5ADB24059ADA8326_330933119 =         policy
 InputStream varD4DA5D12471E107E08025939F8ECE54C_2062824023 =             new FixedLengthInputStream(socketIn, cacheRequest, this, 0);
             varD4DA5D12471E107E08025939F8ECE54C_2062824023.addTaint(taint);
             return varD4DA5D12471E107E08025939F8ECE54C_2062824023;
-        } //End block
+        } 
     if(responseHeaders.isChunked())        
         {
 InputStream var96AA5673A64CAABFA4727C17C63F498B_869189186 =             new ChunkedInputStream(socketIn, cacheRequest, this);
             var96AA5673A64CAABFA4727C17C63F498B_869189186.addTaint(taint);
             return var96AA5673A64CAABFA4727C17C63F498B_869189186;
-        } //End block
+        } 
     if(responseHeaders.getContentLength() != -1)        
         {
 InputStream var98822C7C607BC835C446A1B22D9F0684_863108762 =             new FixedLengthInputStream(socketIn, cacheRequest, this,
                     responseHeaders.getContentLength());
             var98822C7C607BC835C446A1B22D9F0684_863108762.addTaint(taint);
             return var98822C7C607BC835C446A1B22D9F0684_863108762;
-        } //End block
+        } 
 InputStream var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022 =         new UnknownLengthHttpInputStream(socketIn, cacheRequest, this);
         var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022.addTaint(taint);
         return var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022;
-        // ---------- Original Method ----------
-        //if (!hasResponseBody()) {
-            //return new FixedLengthInputStream(socketIn, cacheRequest, this, 0);
-        //}
-        //if (responseHeaders.isChunked()) {
-            //return new ChunkedInputStream(socketIn, cacheRequest, this);
-        //}
-        //if (responseHeaders.getContentLength() != -1) {
-            //return new FixedLengthInputStream(socketIn, cacheRequest, this,
-                    //responseHeaders.getContentLength());
-        //}
-        //return new UnknownLengthHttpInputStream(socketIn, cacheRequest, this);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -687,17 +690,17 @@ InputStream var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022 =         new UnknownL
                 headers = new RawHeaders();
                 headers.setStatusLine(Streams.readAsciiLine(socketIn));
                 readHeaders(headers);
-            } //End block
+            } 
 } while (headers.getResponseCode() == HTTP_CONTINUE);
         setResponse(new ResponseHeaders(uri, headers), null);
-        // ---------- Original Method ----------
-        //RawHeaders headers;
-        //do {
-            //headers = new RawHeaders();
-            //headers.setStatusLine(Streams.readAsciiLine(socketIn));
-            //readHeaders(headers);
-        //} while (headers.getResponseCode() == HTTP_CONTINUE);
-        //setResponse(new ResponseHeaders(uri, headers), null);
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -713,37 +716,37 @@ InputStream var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022 =         new UnknownL
             boolean varB326B5062B2F0E69046810717534CB09_816456223 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1371488237 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1371488237;
-        } //End block
+        } 
     if(responseHeaders.getContentLength() != -1 || responseHeaders.isChunked())        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1555781508 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1839840845 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1839840845;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_824430253 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392338584 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392338584;
-        // ---------- Original Method ----------
-        //int responseCode = responseHeaders.getHeaders().getResponseCode();
-        //if (method != HEAD
-                //&& method != CONNECT
-                //&& (responseCode < HTTP_CONTINUE || responseCode >= 200)
-                //&& responseCode != HttpURLConnectionImpl.HTTP_NO_CONTENT
-                //&& responseCode != HttpURLConnectionImpl.HTTP_NOT_MODIFIED) {
-            //return true;
-        //}
-        //if (responseHeaders.getContentLength() != -1 || responseHeaders.isChunked()) {
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+                
+                
+                
+                
+            
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.297 -0400", hash_original_method = "017F163869C61C64FB5708C2B3013CCB", hash_generated_method = "F672A3A361C8D11DFA099C224F5A5D25")
     final void readTrailers() throws IOException {
         readHeaders(responseHeaders.getHeaders());
-        // ---------- Original Method ----------
-        //readHeaders(responseHeaders.getHeaders());
+        
+        
     }
 
     
@@ -755,21 +758,21 @@ InputStream var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022 =         new UnknownL
 (!(line = Streams.readAsciiLine(socketIn)).isEmpty())        
         {
             headers.addLine(line);
-        } //End block
+        } 
         CookieHandler cookieHandler = CookieHandler.getDefault();
     if(cookieHandler != null)        
         {
             cookieHandler.put(uri, headers.toMultimap());
-        } //End block
-        // ---------- Original Method ----------
-        //String line;
-        //while (!(line = Streams.readAsciiLine(socketIn)).isEmpty()) {
-            //headers.addLine(line);
-        //}
-        //CookieHandler cookieHandler = CookieHandler.getDefault();
-        //if (cookieHandler != null) {
-            //cookieHandler.put(uri, headers.toMultimap());
-        //}
+        } 
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -780,26 +783,26 @@ InputStream var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022 =         new UnknownL
             IllegalStateException varC311A989A119B96A6232C22ABFE87C25_2034617181 = new IllegalStateException();
             varC311A989A119B96A6232C22ABFE87C25_2034617181.addTaint(taint);
             throw varC311A989A119B96A6232C22ABFE87C25_2034617181;
-        } //End block
+        } 
         RawHeaders headersToSend = getNetworkRequestHeaders();
         byte[] bytes = headersToSend.toHeaderString().getBytes(Charsets.ISO_8859_1);
     if(contentLength != -1 && bytes.length + contentLength <= MAX_REQUEST_BUFFER_LENGTH)        
         {
             requestOut = new BufferedOutputStream(socketOut, bytes.length + contentLength);
-        } //End block
+        } 
         sentRequestMillis = System.currentTimeMillis();
         requestOut.write(bytes);
-        // ---------- Original Method ----------
-        //if (sentRequestMillis != -1) {
-            //throw new IllegalStateException();
-        //}
-        //RawHeaders headersToSend = getNetworkRequestHeaders();
-        //byte[] bytes = headersToSend.toHeaderString().getBytes(Charsets.ISO_8859_1);
-        //if (contentLength != -1 && bytes.length + contentLength <= MAX_REQUEST_BUFFER_LENGTH) {
-            //requestOut = new BufferedOutputStream(socketOut, bytes.length + contentLength);
-        //}
-        //sentRequestMillis = System.currentTimeMillis();
-        //requestOut.write(bytes);
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -810,33 +813,33 @@ InputStream var57DE3C7FFFE9F62D1BD7BCCB2F749217_407998022 =         new UnknownL
     if(fixedContentLength != -1)        
         {
             requestHeaders.setContentLength(fixedContentLength);
-        } //End block
+        } 
         else
     if(sendChunked)        
         {
             requestHeaders.setChunked();
-        } //End block
+        } 
         else
     if(requestBodyOut instanceof RetryableOutputStream)        
         {
             int contentLength = ((RetryableOutputStream) requestBodyOut).contentLength();
             requestHeaders.setContentLength(contentLength);
-        } //End block
+        } 
 RawHeaders var519CFA10080DFE28BEEEB2CBF346A2C7_1245092529 =         requestHeaders.getHeaders();
         var519CFA10080DFE28BEEEB2CBF346A2C7_1245092529.addTaint(taint);
         return var519CFA10080DFE28BEEEB2CBF346A2C7_1245092529;
-        // ---------- Original Method ----------
-        //requestHeaders.getHeaders().setStatusLine(getRequestLine());
-        //int fixedContentLength = policy.getFixedContentLength();
-        //if (fixedContentLength != -1) {
-            //requestHeaders.setContentLength(fixedContentLength);
-        //} else if (sendChunked) {
-            //requestHeaders.setChunked();
-        //} else if (requestBodyOut instanceof RetryableOutputStream) {
-            //int contentLength = ((RetryableOutputStream) requestBodyOut).contentLength();
-            //requestHeaders.setContentLength(contentLength);
-        //}
-        //return requestHeaders.getHeaders();
+        
+        
+        
+        
+            
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -846,37 +849,37 @@ RawHeaders var519CFA10080DFE28BEEEB2CBF346A2C7_1245092529 =         requestHeade
     if(requestHeaders.getUserAgent() == null)        
         {
             requestHeaders.setUserAgent(getDefaultUserAgent());
-        } //End block
+        } 
     if(requestHeaders.getHost() == null)        
         {
             requestHeaders.setHost(getOriginAddress(policy.getURL()));
-        } //End block
+        } 
     if(httpMinorVersion > 0 && requestHeaders.getConnection() == null)        
         {
             requestHeaders.setConnection("Keep-Alive");
-        } //End block
+        } 
     if(requestHeaders.getAcceptEncoding() == null)        
         {
             transparentGzip = true;
             requestHeaders.setAcceptEncoding("gzip");
-        } //End block
+        } 
     if(hasRequestBody() && requestHeaders.getContentType() == null)        
         {
             requestHeaders.setContentType("application/x-www-form-urlencoded");
-        } //End block
+        } 
         long ifModifiedSince = policy.getIfModifiedSince();
     if(ifModifiedSince != 0)        
         {
             requestHeaders.setIfModifiedSince(new Date(ifModifiedSince));
-        } //End block
+        } 
         CookieHandler cookieHandler = CookieHandler.getDefault();
     if(cookieHandler != null)        
         {
             requestHeaders.addCookies(
                     cookieHandler.get(uri, requestHeaders.getHeaders().toMultimap()));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -886,9 +889,9 @@ RawHeaders var519CFA10080DFE28BEEEB2CBF346A2C7_1245092529 =         requestHeade
 String var354790A4CDCD0E4790130001D198CEE6_1598873662 =         method + " " + requestString() + " " + protocol;
         var354790A4CDCD0E4790130001D198CEE6_1598873662.addTaint(taint);
         return var354790A4CDCD0E4790130001D198CEE6_1598873662;
-        // ---------- Original Method ----------
-        //String protocol = (httpMinorVersion == 0) ? "HTTP/1.0" : "HTTP/1.1";
-        //return method + " " + requestString() + " " + protocol;
+        
+        
+        
     }
 
     
@@ -900,36 +903,36 @@ String var354790A4CDCD0E4790130001D198CEE6_1598873662 =         method + " " + r
 String var6F1AA6A20537DBEE6EBCEC4D599BD4C1_1402795662 =             url.toString();
             var6F1AA6A20537DBEE6EBCEC4D599BD4C1_1402795662.addTaint(taint);
             return var6F1AA6A20537DBEE6EBCEC4D599BD4C1_1402795662;
-        } //End block
+        } 
         else
         {
             String fileOnly = url.getFile();
     if(fileOnly == null)            
             {
                 fileOnly = "/";
-            } //End block
+            } 
             else
     if(!fileOnly.startsWith("/"))            
             {
                 fileOnly = "/" + fileOnly;
-            } //End block
+            } 
 String var8F11DF4CD82F23DA56825A33AFAD48E3_1182824229 =             fileOnly;
             var8F11DF4CD82F23DA56825A33AFAD48E3_1182824229.addTaint(taint);
             return var8F11DF4CD82F23DA56825A33AFAD48E3_1182824229;
-        } //End block
-        // ---------- Original Method ----------
-        //URL url = policy.getURL();
-        //if (includeAuthorityInRequestLine()) {
-            //return url.toString();
-        //} else {
-            //String fileOnly = url.getFile();
-            //if (fileOnly == null) {
-                //fileOnly = "/";
-            //} else if (!fileOnly.startsWith("/")) {
-                //fileOnly = "/" + fileOnly;
-            //}
-            //return fileOnly;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+            
+                
+            
+                
+            
+            
+        
     }
 
     
@@ -938,8 +941,8 @@ String var8F11DF4CD82F23DA56825A33AFAD48E3_1182824229 =             fileOnly;
         boolean var7A8C17F3484750D3A640DBB738A600A2_1033743315 = (policy.usingProxy());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_911794768 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_911794768;
-        // ---------- Original Method ----------
-        //return policy.usingProxy();
+        
+        
     }
 
     
@@ -949,9 +952,9 @@ String var8F11DF4CD82F23DA56825A33AFAD48E3_1182824229 =             fileOnly;
 String var168860BF941C60021F0D3FD4053F3575_783580296 =         agent != null ? agent : ("Java" + System.getProperty("java.version"));
         var168860BF941C60021F0D3FD4053F3575_783580296.addTaint(taint);
         return var168860BF941C60021F0D3FD4053F3575_783580296;
-        // ---------- Original Method ----------
-        //String agent = System.getProperty("http.agent");
-        //return agent != null ? agent : ("Java" + System.getProperty("java.version"));
+        
+        
+        
     }
 
     
@@ -961,9 +964,9 @@ String var168860BF941C60021F0D3FD4053F3575_783580296 =         agent != null ? a
                 || requestHeaders.hasConnectionClose());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_93185114 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_93185114;
-        // ---------- Original Method ----------
-        //return (responseHeaders != null && responseHeaders.hasConnectionClose())
-                //|| requestHeaders.hasConnectionClose();
+        
+        
+                
     }
 
     
@@ -975,27 +978,28 @@ String var168860BF941C60021F0D3FD4053F3575_783580296 =         agent != null ? a
     if(port > 0 && port != policy.getDefaultPort())        
         {
             result = result + ":" + port;
-        } //End block
+        } 
 String varDC838461EE2FA0CA4C9BBB70A15456B0_642911945 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_642911945.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_642911945;
-        // ---------- Original Method ----------
-        //int port = url.getPort();
-        //String result = url.getHost();
-        //if (port > 0 && port != policy.getDefaultPort()) {
-            //result = result + ":" + port;
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:16.302 -0400", hash_original_method = "E79001B5362EC94E0060C3FC14A22DCF", hash_generated_method = "984D1F8FE088A4C6DC645B68D998D284")
     protected boolean requiresTunnel() {
         boolean var68934A3E9455FA72420237EB05902327_1929221616 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_403303058 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_403303058;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -1004,32 +1008,32 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_642911945 =         result;
     if(hasResponse())        
         {
             return;
-        } //End block
+        } 
     if(responseSource == null)        
         {
             IllegalStateException var0DD186E17D5EDC68102F66A69CB92EE1_1545947769 = new IllegalStateException("readResponse() without sendRequest()");
             var0DD186E17D5EDC68102F66A69CB92EE1_1545947769.addTaint(taint);
             throw var0DD186E17D5EDC68102F66A69CB92EE1_1545947769;
-        } //End block
+        } 
     if(!responseSource.requiresConnection())        
         {
             return;
-        } //End block
+        } 
     if(sentRequestMillis == -1)        
         {
             int contentLength = requestBodyOut instanceof RetryableOutputStream
                     ? ((RetryableOutputStream) requestBodyOut).contentLength()
                     : -1;
             writeRequestHeaders(contentLength);
-        } //End block
+        } 
     if(requestBodyOut != null)        
         {
             requestBodyOut.close();
     if(requestBodyOut instanceof RetryableOutputStream)            
             {
                 ((RetryableOutputStream) requestBodyOut).writeToSocket(requestOut);
-            } //End block
-        } //End block
+            } 
+        } 
         requestOut.flush();
         requestOut = socketOut;
         readResponseHeaders();
@@ -1041,23 +1045,23 @@ String varDC838461EE2FA0CA4C9BBB70A15456B0_642911945 =         result;
     if(responseCache instanceof HttpResponseCache)                
                 {
                     ((HttpResponseCache) responseCache).trackConditionalCacheHit();
-                } //End block
+                } 
                 release(true);
                 setResponse(cachedResponseHeaders.combine(responseHeaders), cachedResponseBody);
                 return;
-            } //End block
+            } 
             else
             {
                 IoUtils.closeQuietly(cachedResponseBody);
-            } //End block
-        } //End block
+            } 
+        } 
     if(hasResponseBody())        
         {
             maybeCache();
-        } //End block
+        } 
         initContentStream(getTransferStream());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

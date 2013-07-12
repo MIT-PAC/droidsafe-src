@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.address;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:34.972 -0400", hash_original_method = "5EAE66D49E862BAEE0E410CA69871D83", hash_generated_method = "BC48FF6852307C189B528CA214114244")
     public  AddressFactoryImpl() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,8 +21,8 @@ public class AddressFactoryImpl implements javax.sip.address.AddressFactory {
 javax.sip.address.Address var010B70F9E3862AD442F9F51590223FC7_1431192484 =         new AddressImpl();
         var010B70F9E3862AD442F9F51590223FC7_1431192484.addTaint(taint);
         return var010B70F9E3862AD442F9F51590223FC7_1431192484;
-        // ---------- Original Method ----------
-        //return new AddressImpl();
+        
+        
     }
 
     
@@ -45,14 +45,14 @@ javax.sip.address.Address var010B70F9E3862AD442F9F51590223FC7_1431192484 =      
 javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1273424340 =         addressImpl;
         var546B74671DF65029CA2047A13F764E1A_1273424340.addTaint(taint);
         return var546B74671DF65029CA2047A13F764E1A_1273424340;
-        // ---------- Original Method ----------
-        //if (uri == null)
-            //throw new NullPointerException("null  URI");
-        //AddressImpl addressImpl = new AddressImpl();
-        //if (displayName != null)
-            //addressImpl.setDisplayName(displayName);
-        //addressImpl.setURI(uri);
-        //return addressImpl;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -72,23 +72,23 @@ javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1273424340 =      
 javax.sip.address.SipURI var3775DD8192C4A09F6897FA3E13EAEC38_1406373261 =             (SipURI) sipUri;
             var3775DD8192C4A09F6897FA3E13EAEC38_1406373261.addTaint(taint);
             return var3775DD8192C4A09F6897FA3E13EAEC38_1406373261;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             ParseException var21D65009E368EF6F303875AAD856F1DB_1915924374 = new ParseException(ex.getMessage(), 0);
             var21D65009E368EF6F303875AAD856F1DB_1915924374.addTaint(taint);
             throw var21D65009E368EF6F303875AAD856F1DB_1915924374;
-        } //End block
-        // ---------- Original Method ----------
-        //if (uri == null)
-            //throw new NullPointerException("null URI");
-        //try {
-            //StringMsgParser smp = new StringMsgParser();
-            //SipUri sipUri = smp.parseSIPUrl(uri);
-            //return (SipURI) sipUri;
-        //} catch (ParseException ex) {
-            //throw new ParseException(ex.getMessage(), 0);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -107,7 +107,7 @@ javax.sip.address.SipURI var3775DD8192C4A09F6897FA3E13EAEC38_1406373261 =       
         {
             uriString.append(user);
             uriString.append("@");
-        } //End block
+        } 
     if(host.indexOf(':') != host.lastIndexOf(':')
             && host.trim().charAt(0) != '[')        
         host = '[' + host + ']';
@@ -119,32 +119,32 @@ javax.sip.address.SipURI var3775DD8192C4A09F6897FA3E13EAEC38_1406373261 =       
 javax.sip.address.SipURI var2D27E8522206398314ED10B3D3A16811_184480544 =             sipUri;
             var2D27E8522206398314ED10B3D3A16811_184480544.addTaint(taint);
             return var2D27E8522206398314ED10B3D3A16811_184480544;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             ParseException var21D65009E368EF6F303875AAD856F1DB_1030763436 = new ParseException(ex.getMessage(), 0);
             var21D65009E368EF6F303875AAD856F1DB_1030763436.addTaint(taint);
             throw var21D65009E368EF6F303875AAD856F1DB_1030763436;
-        } //End block
-        // ---------- Original Method ----------
-        //if (host == null)
-            //throw new NullPointerException("null host");
-        //StringBuffer uriString = new StringBuffer("sip:");
-        //if (user != null) {
-            //uriString.append(user);
-            //uriString.append("@");
-        //}
-        //if (host.indexOf(':') != host.lastIndexOf(':')
-            //&& host.trim().charAt(0) != '[')
-            //host = '[' + host + ']';
-        //uriString.append(host);
-        //StringMsgParser smp = new StringMsgParser();
-        //try {
-            //SipUri sipUri = smp.parseSIPUrl(uriString.toString());
-            //return sipUri;
-        //} catch (ParseException ex) {
-            //throw new ParseException(ex.getMessage(), 0);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
+        
+            
+            
+        
+        
+        
+            
+            
+        
+            
+        
     }
 
     
@@ -165,24 +165,24 @@ javax.sip.address.SipURI var2D27E8522206398314ED10B3D3A16811_184480544 =        
 javax.sip.address.TelURL varF8A4163C88152127E4816DEA07C7EB20_1361010559 =             (TelURL) timp;
             varF8A4163C88152127E4816DEA07C7EB20_1361010559.addTaint(taint);
             return varF8A4163C88152127E4816DEA07C7EB20_1361010559;
-        } //End block
+        } 
         catch (ParseException ex)
         {
             ParseException var21D65009E368EF6F303875AAD856F1DB_653815981 = new ParseException(ex.getMessage(), 0);
             var21D65009E368EF6F303875AAD856F1DB_653815981.addTaint(taint);
             throw var21D65009E368EF6F303875AAD856F1DB_653815981;
-        } //End block
-        // ---------- Original Method ----------
-        //if (uri == null)
-            //throw new NullPointerException("null url");
-        //String telUrl = "tel:" + uri;
-        //try {
-            //StringMsgParser smp = new StringMsgParser();
-            //TelURLImpl timp = (TelURLImpl) smp.parseUrl(telUrl);
-            //return (TelURL) timp;
-        //} catch (ParseException ex) {
-            //throw new ParseException(ex.getMessage(), 0);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+        
+            
+        
     }
 
     
@@ -200,12 +200,12 @@ javax.sip.address.TelURL varF8A4163C88152127E4816DEA07C7EB20_1361010559 =       
 javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1670492938 =         addressImpl;
         var546B74671DF65029CA2047A13F764E1A_1670492938.addTaint(taint);
         return var546B74671DF65029CA2047A13F764E1A_1670492938;
-        // ---------- Original Method ----------
-        //if (uri == null)
-            //throw new NullPointerException("null address");
-        //AddressImpl addressImpl = new AddressImpl();
-        //addressImpl.setURI(uri);
-        //return addressImpl;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -228,28 +228,28 @@ javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1670492938 =      
 javax.sip.address.Address var546B74671DF65029CA2047A13F764E1A_1706731790 =             addressImpl;
             var546B74671DF65029CA2047A13F764E1A_1706731790.addTaint(taint);
             return var546B74671DF65029CA2047A13F764E1A_1706731790;
-        } //End block
+        } 
         else
         {
             StringMsgParser smp = new StringMsgParser();
 javax.sip.address.Address var1787EF378EF1BC952CDDC5A12DE28236_1786205412 =             smp.parseAddress(address);
             var1787EF378EF1BC952CDDC5A12DE28236_1786205412.addTaint(taint);
             return var1787EF378EF1BC952CDDC5A12DE28236_1786205412;
-        } //End block
-        // ---------- Original Method ----------
-        //if (address == null)
-            //throw new NullPointerException("null address");
-        //if (address.equals("*")) {
-            //AddressImpl addressImpl = new AddressImpl();
-            //addressImpl.setAddressType(AddressImpl.WILD_CARD);
-            //SipURI uri = new SipUri();
-            //uri.setUser("*");
-            //addressImpl.setURI( uri );
-            //return addressImpl;
-        //} else {
-            //StringMsgParser smp = new StringMsgParser();
-            //return smp.parseAddress(address);
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+            
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -277,33 +277,33 @@ javax.sip.address.Address var1787EF378EF1BC952CDDC5A12DE28236_1786205412 =      
 javax.sip.address.URI var50FBB4223FBDFAE492653F801DFE2923_2132825803 =                 (javax.sip.address.URI) urlParser.sipURL(true);
                 var50FBB4223FBDFAE492653F801DFE2923_2132825803.addTaint(taint);
                 return var50FBB4223FBDFAE492653F801DFE2923_2132825803;
-            } //End block
+            } 
             else
     if(scheme.equalsIgnoreCase("sips"))            
             {
 javax.sip.address.URI var50FBB4223FBDFAE492653F801DFE2923_2101981785 =                 (javax.sip.address.URI) urlParser.sipURL(true);
                 var50FBB4223FBDFAE492653F801DFE2923_2101981785.addTaint(taint);
                 return var50FBB4223FBDFAE492653F801DFE2923_2101981785;
-            } //End block
+            } 
             else
     if(scheme.equalsIgnoreCase("tel"))            
             {
 javax.sip.address.URI varD306A6305D09D74991CE6B3C9C464A94_1608536290 =                 (javax.sip.address.URI) urlParser.telURL(true);
                 varD306A6305D09D74991CE6B3C9C464A94_1608536290.addTaint(taint);
                 return varD306A6305D09D74991CE6B3C9C464A94_1608536290;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ParseException ex)
         {
             ParseException var21D65009E368EF6F303875AAD856F1DB_1219068058 = new ParseException(ex.getMessage(), 0);
             var21D65009E368EF6F303875AAD856F1DB_1219068058.addTaint(taint);
             throw var21D65009E368EF6F303875AAD856F1DB_1219068058;
-        } //End block
+        } 
 javax.sip.address.URI varCC505F770BF08B03C031A33F12373928_362758589 =         new gov.nist.javax.sip.address.GenericURI(uri);
         varCC505F770BF08B03C031A33F12373928_362758589.addTaint(taint);
         return varCC505F770BF08B03C031A33F12373928_362758589;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

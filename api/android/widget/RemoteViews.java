@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,11 +57,11 @@ public class RemoteViews implements Parcelable, Filter {
         mLayoutId = layoutId;
         mMemoryUsageCounter = new MemoryUsageCounter();
         recalculateMemoryUsage();
-        // ---------- Original Method ----------
-        //mPackage = packageName;
-        //mLayoutId = layoutId;
-        //mMemoryUsageCounter = new MemoryUsageCounter();
-        //recalculateMemoryUsage();
+        
+        
+        
+        
+        
     }
 
     
@@ -110,12 +110,12 @@ switch(tag){
                 var18F3965C1BB9FAE60EB4AD1DBA08EF2F_1653152720.addTaint(taint);
                 throw var18F3965C1BB9FAE60EB4AD1DBA08EF2F_1653152720;
 }
-            } //End block
-        } //End block
+            } 
+        } 
         mMemoryUsageCounter = new MemoryUsageCounter();
         recalculateMemoryUsage();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -126,46 +126,49 @@ switch(tag){
     if(mActions != null)        
         {
             that.mActions = (ArrayList<Action>)mActions.clone();
-        } //End block
+        } 
         that.recalculateMemoryUsage();
 RemoteViews varF9965B73D80F3C31BC4764828F08696D_608117871 =         that;
         varF9965B73D80F3C31BC4764828F08696D_608117871.addTaint(taint);
         return varF9965B73D80F3C31BC4764828F08696D_608117871;
-        // ---------- Original Method ----------
-        //final RemoteViews that = new RemoteViews(mPackage, mLayoutId);
-        //if (mActions != null) {
-            //that.mActions = (ArrayList<Action>)mActions.clone();
-        //}
-        //that.recalculateMemoryUsage();
-        //return that;
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.695 -0400", hash_original_method = "D6B19F05A1BF219922EA06A43EF822A3", hash_generated_method = "AB11E6DC624CBF5C7D73630F54549ADA")
     public String getPackage() {
 String varD0D543EB218BC9E16C17B23C08BC19C7_1080025883 =         mPackage;
         varD0D543EB218BC9E16C17B23C08BC19C7_1080025883.addTaint(taint);
         return varD0D543EB218BC9E16C17B23C08BC19C7_1080025883;
-        // ---------- Original Method ----------
-        //return mPackage;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.695 -0400", hash_original_method = "613C00C60CA896BC5001BD5561015459", hash_generated_method = "547966D8D331A8689250645CD2D3CC6C")
     public int getLayoutId() {
         int var143EA7733FD06F80DE8D3B366855A342_1243786878 = (mLayoutId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1065652215 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1065652215;
-        // ---------- Original Method ----------
-        //return mLayoutId;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.695 -0400", hash_original_method = "B2E01CE5E210E0306AAEDD7A25572B15", hash_generated_method = "C504A5E5F8CCD8C6A31C201D44889892")
      void setIsWidgetCollectionChild(boolean isWidgetCollectionChild) {
         mIsWidgetCollectionChild = isWidgetCollectionChild;
-        // ---------- Original Method ----------
-        //mIsWidgetCollectionChild = isWidgetCollectionChild;
+        
+        
     }
 
     
@@ -178,16 +181,16 @@ String varD0D543EB218BC9E16C17B23C08BC19C7_1080025883 =         mPackage;
 for(int i= 0;i < count;++i)
             {
                 mActions.get(i).updateMemoryUsageEstimate(mMemoryUsageCounter);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //mMemoryUsageCounter.clear();
-        //if (mActions != null) {
-            //final int count = mActions.size();
-            //for (int i= 0; i < count; ++i) {
-                //mActions.get(i).updateMemoryUsageEstimate(mMemoryUsageCounter);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -196,8 +199,8 @@ for(int i= 0;i < count;++i)
         int var5636738054CB1447726DCC68F6EB720D_403291261 = (mMemoryUsageCounter.getBitmapHeapMemoryUsage());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591501347 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_591501347;
-        // ---------- Original Method ----------
-        //return mMemoryUsageCounter.getBitmapHeapMemoryUsage();
+        
+        
     }
 
     
@@ -207,15 +210,15 @@ for(int i= 0;i < count;++i)
     if(mActions == null)        
         {
             mActions = new ArrayList<Action>();
-        } //End block
+        } 
         mActions.add(a);
         a.updateMemoryUsageEstimate(mMemoryUsageCounter);
-        // ---------- Original Method ----------
-        //if (mActions == null) {
-            //mActions = new ArrayList<Action>();
-        //}
-        //mActions.add(a);
-        //a.updateMemoryUsageEstimate(mMemoryUsageCounter);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -224,8 +227,8 @@ for(int i= 0;i < count;++i)
         addTaint(nestedView.getTaint());
         addTaint(viewId);
         addAction(new ViewGroupAction(viewId, nestedView));
-        // ---------- Original Method ----------
-        //addAction(new ViewGroupAction(viewId, nestedView));
+        
+        
     }
 
     
@@ -233,8 +236,8 @@ for(int i= 0;i < count;++i)
     public void removeAllViews(int viewId) {
         addTaint(viewId);
         addAction(new ViewGroupAction(viewId, null));
-        // ---------- Original Method ----------
-        //addAction(new ViewGroupAction(viewId, null));
+        
+        
     }
 
     
@@ -242,8 +245,8 @@ for(int i= 0;i < count;++i)
     public void showNext(int viewId) {
         addTaint(viewId);
         addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionActionWithoutParams(viewId, "showNext"));
+        
+        
     }
 
     
@@ -251,8 +254,8 @@ for(int i= 0;i < count;++i)
     public void showPrevious(int viewId) {
         addTaint(viewId);
         addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionActionWithoutParams(viewId, "showPrevious"));
+        
+        
     }
 
     
@@ -261,8 +264,8 @@ for(int i= 0;i < count;++i)
         addTaint(childIndex);
         addTaint(viewId);
         setInt(viewId, "setDisplayedChild", childIndex);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setDisplayedChild", childIndex);
+        
+        
     }
 
     
@@ -271,8 +274,8 @@ for(int i= 0;i < count;++i)
         addTaint(visibility);
         addTaint(viewId);
         setInt(viewId, "setVisibility", visibility);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setVisibility", visibility);
+        
+        
     }
 
     
@@ -281,8 +284,8 @@ for(int i= 0;i < count;++i)
         addTaint(text.getTaint());
         addTaint(viewId);
         setCharSequence(viewId, "setText", text);
-        // ---------- Original Method ----------
-        //setCharSequence(viewId, "setText", text);
+        
+        
     }
 
     
@@ -291,18 +294,19 @@ for(int i= 0;i < count;++i)
         addTaint(srcId);
         addTaint(viewId);
         setInt(viewId, "setImageResource", srcId);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setImageResource", srcId);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.698 -0400", hash_original_method = "433DFD276FBB02E0D7A2B8DA3B0F08D8", hash_generated_method = "A214AC9C0996343A91C0F5E76CBAA841")
     public void setImageViewUri(int viewId, Uri uri) {
         addTaint(uri.getTaint());
         addTaint(viewId);
         setUri(viewId, "setImageURI", uri);
-        // ---------- Original Method ----------
-        //setUri(viewId, "setImageURI", uri);
+        
+        
     }
 
     
@@ -311,8 +315,8 @@ for(int i= 0;i < count;++i)
         addTaint(bitmap.getTaint());
         addTaint(viewId);
         setBitmap(viewId, "setImageBitmap", bitmap);
-        // ---------- Original Method ----------
-        //setBitmap(viewId, "setImageBitmap", bitmap);
+        
+        
     }
 
     
@@ -321,8 +325,8 @@ for(int i= 0;i < count;++i)
         addTaint(emptyViewId);
         addTaint(viewId);
         addAction(new SetEmptyView(viewId, emptyViewId));
-        // ---------- Original Method ----------
-        //addAction(new SetEmptyView(viewId, emptyViewId));
+        
+        
     }
 
     
@@ -335,10 +339,10 @@ for(int i= 0;i < count;++i)
         setLong(viewId, "setBase", base);
         setString(viewId, "setFormat", format);
         setBoolean(viewId, "setStarted", started);
-        // ---------- Original Method ----------
-        //setLong(viewId, "setBase", base);
-        //setString(viewId, "setFormat", format);
-        //setBoolean(viewId, "setStarted", started);
+        
+        
+        
+        
     }
 
     
@@ -354,13 +358,13 @@ for(int i= 0;i < count;++i)
         {
             setInt(viewId, "setMax", max);
             setInt(viewId, "setProgress", progress);
-        } //End block
-        // ---------- Original Method ----------
-        //setBoolean(viewId, "setIndeterminate", indeterminate);
-        //if (!indeterminate) {
-            //setInt(viewId, "setMax", max);
-            //setInt(viewId, "setProgress", progress);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -369,8 +373,8 @@ for(int i= 0;i < count;++i)
         addTaint(pendingIntent.getTaint());
         addTaint(viewId);
         addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
-        // ---------- Original Method ----------
-        //addAction(new SetOnClickPendingIntent(viewId, pendingIntent));
+        
+        
     }
 
     
@@ -379,18 +383,19 @@ for(int i= 0;i < count;++i)
         addTaint(pendingIntentTemplate.getTaint());
         addTaint(viewId);
         addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
-        // ---------- Original Method ----------
-        //addAction(new SetPendingIntentTemplate(viewId, pendingIntentTemplate));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.699 -0400", hash_original_method = "899E714C9944265097024FA544BB7AC2", hash_generated_method = "443FD951F7768975D580B14FB92E9F9D")
     public void setOnClickFillInIntent(int viewId, Intent fillInIntent) {
         addTaint(fillInIntent.getTaint());
         addTaint(viewId);
         addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
-        // ---------- Original Method ----------
-        //addAction(new SetOnClickFillInIntent(viewId, fillInIntent));
+        
+        
     }
 
     
@@ -405,9 +410,9 @@ for(int i= 0;i < count;++i)
         addTaint(viewId);
         addAction(new SetDrawableParameters(viewId, targetBackground, alpha,
                 colorFilter, mode, level));
-        // ---------- Original Method ----------
-        //addAction(new SetDrawableParameters(viewId, targetBackground, alpha,
-                //colorFilter, mode, level));
+        
+        
+                
     }
 
     
@@ -416,11 +421,12 @@ for(int i= 0;i < count;++i)
         addTaint(color);
         addTaint(viewId);
         setInt(viewId, "setTextColor", color);
-        // ---------- Original Method ----------
-        //setInt(viewId, "setTextColor", color);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.699 -0400", hash_original_method = "F3196C5DB537F18A0B70CAAF74A09A0A", hash_generated_method = "7BA5642C25529CE983AA71D42830C192")
     @Deprecated
     public void setRemoteAdapter(int appWidgetId, int viewId, Intent intent) {
@@ -428,18 +434,19 @@ for(int i= 0;i < count;++i)
         addTaint(viewId);
         addTaint(appWidgetId);
         setRemoteAdapter(viewId, intent);
-        // ---------- Original Method ----------
-        //setRemoteAdapter(viewId, intent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.700 -0400", hash_original_method = "9F000F17F0336123DB5D1DD3E4F67BE6", hash_generated_method = "20BE7F1E719B3AD314419FA046E7DC4A")
     public void setRemoteAdapter(int viewId, Intent intent) {
         addTaint(intent.getTaint());
         addTaint(viewId);
         addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
-        // ---------- Original Method ----------
-        //addAction(new SetRemoteViewsAdapterIntent(viewId, intent));
+        
+        
     }
 
     
@@ -448,8 +455,8 @@ for(int i= 0;i < count;++i)
         addTaint(position);
         addTaint(viewId);
         setInt(viewId, "smoothScrollToPosition", position);
-        // ---------- Original Method ----------
-        //setInt(viewId, "smoothScrollToPosition", position);
+        
+        
     }
 
     
@@ -458,8 +465,8 @@ for(int i= 0;i < count;++i)
         addTaint(offset);
         addTaint(viewId);
         setInt(viewId, "smoothScrollByOffset", offset);
-        // ---------- Original Method ----------
-        //setInt(viewId, "smoothScrollByOffset", offset);
+        
+        
     }
 
     
@@ -469,8 +476,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BOOLEAN, value));
+        
+        
     }
 
     
@@ -480,8 +487,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BYTE, value));
+        
+        
     }
 
     
@@ -491,8 +498,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.SHORT, value));
+        
+        
     }
 
     
@@ -502,8 +509,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INT, value));
+        
+        
     }
 
     
@@ -513,8 +520,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.LONG, value));
+        
+        
     }
 
     
@@ -524,8 +531,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.FLOAT, value));
+        
+        
     }
 
     
@@ -535,8 +542,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.DOUBLE, value));
+        
+        
     }
 
     
@@ -546,8 +553,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR, value));
+        
+        
     }
 
     
@@ -557,8 +564,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.STRING, value));
+        
+        
     }
 
     
@@ -568,19 +575,20 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.CHAR_SEQUENCE, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.701 -0400", hash_original_method = "33EE202B45F16FA5012E7C802B1E1162", hash_generated_method = "A8B80A8412E3D4F82C72D8EC50F3976E")
     public void setUri(int viewId, String methodName, Uri value) {
         addTaint(value.getTaint());
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.URI, value));
+        
+        
     }
 
     
@@ -590,8 +598,8 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BITMAP, value));
+        
+        
     }
 
     
@@ -601,19 +609,20 @@ for(int i= 0;i < count;++i)
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.BUNDLE, value));
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.701 -0400", hash_original_method = "1536FDACAD3B90F5944D61240D2247D6", hash_generated_method = "E7890A3CCB40E6A03DC49D0997111D88")
     public void setIntent(int viewId, String methodName, Intent value) {
         addTaint(value.getTaint());
         addTaint(methodName.getTaint());
         addTaint(viewId);
         addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
-        // ---------- Original Method ----------
-        //addAction(new ReflectionAction(viewId, methodName, ReflectionAction.INTENT, value));
+        
+        
     }
 
     
@@ -622,8 +631,8 @@ for(int i= 0;i < count;++i)
         addTaint(contentDescription.getTaint());
         addTaint(viewId);
         setCharSequence(viewId, "setContentDescription", contentDescription);
-        // ---------- Original Method ----------
-        //setCharSequence(viewId, "setContentDescription", contentDescription);
+        
+        
     }
 
     
@@ -642,16 +651,16 @@ for(int i= 0;i < count;++i)
 View varDC838461EE2FA0CA4C9BBB70A15456B0_748157610 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_748157610.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_748157610;
-        // ---------- Original Method ----------
-        //View result;
-        //Context c = prepareContext(context);
-        //LayoutInflater inflater = (LayoutInflater)
-                //c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //inflater = inflater.cloneInContext(c);
-        //inflater.setFilter(this);
-        //result = inflater.inflate(mLayoutId, parent, false);
-        //performApply(result, parent);
-        //return result;
+        
+        
+        
+        
+                
+        
+        
+        
+        
+        
     }
 
     
@@ -661,9 +670,9 @@ View varDC838461EE2FA0CA4C9BBB70A15456B0_748157610 =         result;
         addTaint(context.getTaint());
         prepareContext(context);
         performApply(v, (ViewGroup) v.getParent());
-        // ---------- Original Method ----------
-        //prepareContext(context);
-        //performApply(v, (ViewGroup) v.getParent());
+        
+        
+        
     }
 
     
@@ -678,16 +687,16 @@ for(int i = 0;i < count;i++)
             {
                 Action a = mActions.get(i);
                 a.apply(v, parent);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mActions != null) {
-            //final int count = mActions.size();
-            //for (int i = 0; i < count; i++) {
-                //Action a = mActions.get(i);
-                //a.apply(v, parent);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+        
     }
 
     
@@ -701,55 +710,56 @@ for(int i = 0;i < count;i++)
             try 
             {
                 c = context.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-            } //End block
+            } 
             catch (NameNotFoundException e)
             {
                 c = context;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             c = context;
-        } //End block
+        } 
 Context var807FB10045EE51C06BDB74744A6714DF_1573408397 =         c;
         var807FB10045EE51C06BDB74744A6714DF_1573408397.addTaint(taint);
         return var807FB10045EE51C06BDB74744A6714DF_1573408397;
-        // ---------- Original Method ----------
-        //Context c;
-        //String packageName = mPackage;
-        //if (packageName != null) {
-            //try {
-                //c = context.createPackageContext(packageName, Context.CONTEXT_RESTRICTED);
-            //} catch (NameNotFoundException e) {
-                //Log.e(LOG_TAG, "Package name " + packageName + " not found");
-                //c = context;
-            //}
-        //} else {
-            //c = context;
-        //}
-        //return c;
+        
+        
+        
+        
+            
+                
+            
+                
+                
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.702 -0400", hash_original_method = "02A046D25F4E9D374E474E21F6366163", hash_generated_method = "2AC4A5261B1C829B7896C4C83F48B7A0")
     public boolean onLoadClass(Class clazz) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(clazz.getTaint());
         boolean var150E6783CEAB2778A42882A1500631E2_1979438129 = (clazz.isAnnotationPresent(RemoteView.class));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192093319 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_192093319;
-        // ---------- Original Method ----------
-        //return clazz.isAnnotationPresent(RemoteView.class);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.703 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "C2B5C7078C85F582376FFA02ED2921BD")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1732139106 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1813689256 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1813689256;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -764,32 +774,32 @@ Context var807FB10045EE51C06BDB74744A6714DF_1573408397 =         c;
     if(mActions != null)        
         {
             count = mActions.size();
-        } //End block
+        } 
         else
         {
             count = 0;
-        } //End block
+        } 
         dest.writeInt(count);
 for(int i=0;i<count;i++)
         {
             Action a = mActions.get(i);
             a.writeToParcel(dest, 0);
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeString(mPackage);
-        //dest.writeInt(mLayoutId);
-        //dest.writeInt(mIsWidgetCollectionChild ? 1 : 0);
-        //int count;
-        //if (mActions != null) {
-            //count = mActions.size();
-        //} else {
-            //count = 0;
-        //}
-        //dest.writeInt(count);
-        //for (int i=0; i<count; i++) {
-            //Action a = mActions.get(i);
-            //a.writeToParcel(dest, 0);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -799,7 +809,7 @@ for(int i=0;i<count;i++)
         public  ActionException(Exception ex) {
             super(ex);
             addTaint(ex.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -807,7 +817,7 @@ for(int i=0;i<count;i++)
         public  ActionException(String message) {
             super(message);
             addTaint(message.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -820,32 +830,35 @@ for(int i=0;i<count;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.703 -0400", hash_original_method = "6EEA56B449227AEBD2AEF88874F9C864", hash_generated_method = "6EEA56B449227AEBD2AEF88874F9C864")
         public Action ()
         {
-            //Synthesized constructor
+            
         }
 
 
         public abstract void apply(View root, ViewGroup rootParent) throws ActionException;
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.704 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "DB069259F8D53E119C2DB062CB2B8A2A")
         public int describeContents() {
             int varCFCD208495D565EF66E7DFF9F98764DA_1722423250 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522907395 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1522907395;
-            // ---------- Original Method ----------
-            //return 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.704 -0400", hash_original_method = "F71AEDBFF608C755FB28C9D45BA8F347", hash_generated_method = "9A7E1CFD3CC84E49A82E0C1CD56BAC36")
         public void updateMemoryUsageEstimate(MemoryUsageCounter counter) {
             addTaint(counter.getTaint());
             return;
-            // ---------- Original Method ----------
-            //return;
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.704 -0400", hash_original_method = "18203BE61B7EF9CD6501BEC6EAEF8812", hash_generated_method = "387334943AA0FBF6331A76AA58BC8696")
         protected boolean startIntentSafely(Context context, PendingIntent pendingIntent,
                 Intent fillInIntent) {
@@ -858,14 +871,14 @@ for(int i=0;i<count;i++)
                         pendingIntent.getIntentSender(), fillInIntent,
                         Intent.FLAG_ACTIVITY_NEW_TASK,
                         Intent.FLAG_ACTIVITY_NEW_TASK, 0);
-            } //End block
+            } 
             catch (IntentSender.SendIntentException e)
             {
                 android.util.Log.e(LOG_TAG, "Cannot send pending intent: ", e);
                 boolean var68934A3E9455FA72420237EB05902327_897750396 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2103426958 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2103426958;
-            } //End block
+            } 
             catch (Exception e)
             {
                 android.util.Log.e(LOG_TAG, "Cannot send pending intent due to " +
@@ -873,25 +886,25 @@ for(int i=0;i<count;i++)
                 boolean var68934A3E9455FA72420237EB05902327_1126413562 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1795511772 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1795511772;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1362285527 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1390923673 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1390923673;
-            // ---------- Original Method ----------
-            //try {
-                //context.startIntentSender(
-                        //pendingIntent.getIntentSender(), fillInIntent,
-                        //Intent.FLAG_ACTIVITY_NEW_TASK,
-                        //Intent.FLAG_ACTIVITY_NEW_TASK, 0);
-            //} catch (IntentSender.SendIntentException e) {
-                //android.util.Log.e(LOG_TAG, "Cannot send pending intent: ", e);
-                //return false;
-            //} catch (Exception e) {
-                //android.util.Log.e(LOG_TAG, "Cannot send pending intent due to " +
-                        //"unknown exception: ", e);
-                //return false;
-            //}
-            //return true;
+            
+            
+                
+                        
+                        
+                        
+            
+                
+                
+            
+                
+                        
+                
+            
+            
         }
 
         
@@ -911,9 +924,9 @@ for(int i=0;i<count;i++)
           SetEmptyView(int viewId, int emptyViewId) {
             this.viewId = viewId;
             this.emptyViewId = emptyViewId;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.emptyViewId = emptyViewId;
+            
+            
+            
         }
 
         
@@ -921,9 +934,9 @@ for(int i=0;i<count;i++)
           SetEmptyView(Parcel in) {
             this.viewId = in.readInt();
             this.emptyViewId = in.readInt();
-            // ---------- Original Method ----------
-            //this.viewId = in.readInt();
-            //this.emptyViewId = in.readInt();
+            
+            
+            
         }
 
         
@@ -934,10 +947,10 @@ for(int i=0;i<count;i++)
             out.writeInt(TAG);
             out.writeInt(this.viewId);
             out.writeInt(this.emptyViewId);
-            // ---------- Original Method ----------
-            //out.writeInt(TAG);
-            //out.writeInt(this.viewId);
-            //out.writeInt(this.emptyViewId);
+            
+            
+            
+            
         }
 
         
@@ -954,13 +967,13 @@ for(int i=0;i<count;i++)
     if(emptyView == null)            
             return;
             adapterView.setEmptyView(emptyView);
-            // ---------- Original Method ----------
-            //final View view = root.findViewById(viewId);
-            //if (!(view instanceof AdapterView<?>)) return;
-            //AdapterView<?> adapterView = (AdapterView<?>) view;
-            //final View emptyView = root.findViewById(emptyViewId);
-            //if (emptyView == null) return;
-            //adapterView.setEmptyView(emptyView);
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -983,9 +996,9 @@ for(int i=0;i<count;i++)
         public  SetOnClickFillInIntent(int id, Intent fillInIntent) {
             this.viewId = id;
             this.fillInIntent = fillInIntent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.fillInIntent = fillInIntent;
+            
+            
+            
         }
 
         
@@ -993,9 +1006,9 @@ for(int i=0;i<count;i++)
         public  SetOnClickFillInIntent(Parcel parcel) {
             viewId = parcel.readInt();
             fillInIntent = Intent.CREATOR.createFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //fillInIntent = Intent.CREATOR.createFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1006,10 +1019,10 @@ for(int i=0;i<count;i++)
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             fillInIntent.writeToParcel(dest, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //fillInIntent.writeToParcel(dest, 0 );
+            
+            
+            
+            
         }
 
         
@@ -1024,11 +1037,11 @@ for(int i=0;i<count;i++)
     if(!mIsWidgetCollectionChild)            
             {
                 return;
-            } //End block
+            } 
     if(target == root)            
             {
                 target.setTagInternal(com.android.internal.R.id.fillInIntent, fillInIntent);
-            } //End block
+            } 
             else
     if(target != null && fillInIntent != null)            
             {
@@ -1063,16 +1076,16 @@ for(int i=0;i<count;i++)
                     }
                 };
                 target.setOnClickListener(listener);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.706 -0400", hash_original_field = "D91A2B10EDD4F80880F9239AF8DAACE6", hash_generated_field = "257D5F310A82D1AE988E43617C7394F4")
 
         public final static int TAG = 9;
-        // orphaned legacy method
+        
         public void onClick(View v) {
                         View parent = (View) v.getParent();
                         while (!(parent instanceof AdapterView<?>)
@@ -1118,9 +1131,9 @@ for(int i=0;i<count;i++)
         public  SetPendingIntentTemplate(int id, PendingIntent pendingIntentTemplate) {
             this.viewId = id;
             this.pendingIntentTemplate = pendingIntentTemplate;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.pendingIntentTemplate = pendingIntentTemplate;
+            
+            
+            
         }
 
         
@@ -1128,9 +1141,9 @@ for(int i=0;i<count;i++)
         public  SetPendingIntentTemplate(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //pendingIntentTemplate = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1141,10 +1154,10 @@ for(int i=0;i<count;i++)
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             pendingIntentTemplate.writeToParcel(dest, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //pendingIntentTemplate.writeToParcel(dest, 0 );
+            
+            
+            
+            
         }
 
         
@@ -1195,20 +1208,20 @@ for(int i=0;i<count;i++)
                 };
                 av.setOnItemClickListener(listener);
                 av.setTag(pendingIntentTemplate);
-            } //End block
+            } 
             else
             {
                 return;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.707 -0400", hash_original_field = "6065CCBD64FD6BA819686C609CBF3FA3", hash_generated_field = "999B6A111CF47CD01BFB86C10E0DFDAF")
 
         public final static int TAG = 8;
-        // orphaned legacy method
+        
         public void onItemClick(AdapterView<?> parent, View view,
                             int position, long id) {
                         if (view instanceof ViewGroup) {
@@ -1258,9 +1271,9 @@ for(int i=0;i<count;i++)
         public  SetRemoteViewsAdapterIntent(int id, Intent intent) {
             this.viewId = id;
             this.intent = intent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.intent = intent;
+            
+            
+            
         }
 
         
@@ -1268,9 +1281,9 @@ for(int i=0;i<count;i++)
         public  SetRemoteViewsAdapterIntent(Parcel parcel) {
             viewId = parcel.readInt();
             intent = Intent.CREATOR.createFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //intent = Intent.CREATOR.createFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1281,10 +1294,10 @@ for(int i=0;i<count;i++)
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             intent.writeToParcel(dest, flags);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //intent.writeToParcel(dest, flags);
+            
+            
+            
+            
         }
 
         
@@ -1299,26 +1312,26 @@ for(int i=0;i<count;i++)
     if(!(rootParent instanceof AppWidgetHostView))            
             {
                 return;
-            } //End block
+            } 
     if(!(target instanceof AbsListView) && !(target instanceof AdapterViewAnimator))            
             {
                 return;
-            } //End block
+            } 
             AppWidgetHostView host = (AppWidgetHostView) rootParent;
             intent.putExtra(EXTRA_REMOTEADAPTER_APPWIDGET_ID, host.getAppWidgetId());
     if(target instanceof AbsListView)            
             {
                 AbsListView v = (AbsListView) target;
                 v.setRemoteViewsAdapter(intent);
-            } //End block
+            } 
             else
     if(target instanceof AdapterViewAnimator)            
             {
                 AdapterViewAnimator v = (AdapterViewAnimator) target;
                 v.setRemoteViewsAdapter(intent);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1341,9 +1354,9 @@ for(int i=0;i<count;i++)
         public  SetOnClickPendingIntent(int id, PendingIntent pendingIntent) {
             this.viewId = id;
             this.pendingIntent = pendingIntent;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.pendingIntent = pendingIntent;
+            
+            
+            
         }
 
         
@@ -1351,9 +1364,9 @@ for(int i=0;i<count;i++)
         public  SetOnClickPendingIntent(Parcel parcel) {
             viewId = parcel.readInt();
             pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //pendingIntent = PendingIntent.readPendingIntentOrNullFromParcel(parcel);
+            
+            
+            
         }
 
         
@@ -1364,10 +1377,10 @@ for(int i=0;i<count;i++)
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             pendingIntent.writeToParcel(dest, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //pendingIntent.writeToParcel(dest, 0 );
+            
+            
+            
+            
         }
 
         
@@ -1381,7 +1394,7 @@ for(int i=0;i<count;i++)
             return;
     if(mIsWidgetCollectionChild)            
             {
-            } //End block
+            } 
     if(target != null && pendingIntent != null)            
             {
                 OnClickListener listener = new OnClickListener() {
@@ -1401,16 +1414,16 @@ for(int i=0;i<count;i++)
                     }
                 };
                 target.setOnClickListener(listener);
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.709 -0400", hash_original_field = "300A66DF77BAB65489ADB988403DB41B", hash_generated_field = "993712AACA5BFFF68C7775B3C6B7EE8B")
 
         public final static int TAG = 1;
-        // orphaned legacy method
+        
         public void onClick(View v) {
                         final float appScale = v.getContext().getResources()
                                 .getCompatibilityInfo().applicationScale;
@@ -1459,13 +1472,13 @@ for(int i=0;i<count;i++)
             this.colorFilter = colorFilter;
             this.filterMode = mode;
             this.level = level;
-            // ---------- Original Method ----------
-            //this.viewId = id;
-            //this.targetBackground = targetBackground;
-            //this.alpha = alpha;
-            //this.colorFilter = colorFilter;
-            //this.filterMode = mode;
-            //this.level = level;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -1479,24 +1492,24 @@ for(int i=0;i<count;i++)
     if(hasMode)            
             {
                 filterMode = PorterDuff.Mode.valueOf(parcel.readString());
-            } //End block
+            } 
             else
             {
                 filterMode = null;
-            } //End block
+            } 
             level = parcel.readInt();
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //targetBackground = parcel.readInt() != 0;
-            //alpha = parcel.readInt();
-            //colorFilter = parcel.readInt();
-            //boolean hasMode = parcel.readInt() != 0;
-            //if (hasMode) {
-                //filterMode = PorterDuff.Mode.valueOf(parcel.readString());
-            //} else {
-                //filterMode = null;
-            //}
-            //level = parcel.readInt();
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
         }
 
         
@@ -1513,25 +1526,25 @@ for(int i=0;i<count;i++)
             {
                 dest.writeInt(1);
                 dest.writeString(filterMode.toString());
-            } //End block
+            } 
             else
             {
                 dest.writeInt(0);
-            } //End block
+            } 
             dest.writeInt(level);
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //dest.writeInt(targetBackground ? 1 : 0);
-            //dest.writeInt(alpha);
-            //dest.writeInt(colorFilter);
-            //if (filterMode != null) {
-                //dest.writeInt(1);
-                //dest.writeString(filterMode.toString());
-            //} else {
-                //dest.writeInt(0);
-            //}
-            //dest.writeInt(level);
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+                
+            
+            
         }
 
         
@@ -1547,30 +1560,30 @@ for(int i=0;i<count;i++)
     if(targetBackground)            
             {
                 targetDrawable = target.getBackground();
-            } //End block
+            } 
             else
     if(target instanceof ImageView)            
             {
                 ImageView imageView = (ImageView) target;
                 targetDrawable = imageView.getDrawable();
-            } //End block
+            } 
     if(targetDrawable != null)            
             {
     if(alpha != -1)                
                 {
                     targetDrawable.setAlpha(alpha);
-                } //End block
+                } 
     if(colorFilter != -1 && filterMode != null)                
                 {
                     targetDrawable.setColorFilter(colorFilter, filterMode);
-                } //End block
+                } 
     if(level != -1)                
                 {
                     targetDrawable.setLevel(level);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -1593,9 +1606,9 @@ for(int i=0;i<count;i++)
           ReflectionActionWithoutParams(int viewId, String methodName) {
             this.viewId = viewId;
             this.methodName = methodName;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.methodName = methodName;
+            
+            
+            
         }
 
         
@@ -1603,9 +1616,9 @@ for(int i=0;i<count;i++)
           ReflectionActionWithoutParams(Parcel in) {
             this.viewId = in.readInt();
             this.methodName = in.readString();
-            // ---------- Original Method ----------
-            //this.viewId = in.readInt();
-            //this.methodName = in.readString();
+            
+            
+            
         }
 
         
@@ -1616,10 +1629,10 @@ for(int i=0;i<count;i++)
             out.writeInt(TAG);
             out.writeInt(this.viewId);
             out.writeString(this.methodName);
-            // ---------- Original Method ----------
-            //out.writeInt(TAG);
-            //out.writeInt(this.viewId);
-            //out.writeString(this.methodName);
+            
+            
+            
+            
         }
 
         
@@ -1636,14 +1649,14 @@ for(int i=0;i<count;i++)
             try 
             {
                 method = klass.getMethod(this.methodName);
-            } //End block
+            } 
             catch (NoSuchMethodException ex)
             {
                 ActionException var4B00E49A1579916E9F08BB92921F0D8C_769977692 = new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "()");
                 var4B00E49A1579916E9F08BB92921F0D8C_769977692.addTaint(taint);
                 throw var4B00E49A1579916E9F08BB92921F0D8C_769977692;
-            } //End block
+            } 
     if(!method.isAnnotationPresent(RemotableViewMethod.class))            
             {
                 ActionException var3FAD6D28944E0ECE936A4662B03FAA31_238010134 = new ActionException("view: " + klass.getName()
@@ -1651,24 +1664,24 @@ for(int i=0;i<count;i++)
                         + this.methodName + "()");
                 var3FAD6D28944E0ECE936A4662B03FAA31_238010134.addTaint(taint);
                 throw var3FAD6D28944E0ECE936A4662B03FAA31_238010134;
-            } //End block
+            } 
             try 
             {
     if(false)                
                 {
                     Log.d("RemoteViews", "view: " + klass.getName() + " calling method: "
                         + this.methodName + "()");
-                } //End block
+                } 
                 method.invoke(view);
-            } //End block
+            } 
             catch (Exception ex)
             {
                 ActionException varC7C4CAC5C184D6A69E916B4E5066D46F_424272708 = new ActionException(ex);
                 varC7C4CAC5C184D6A69E916B4E5066D46F_424272708.addTaint(taint);
                 throw varC7C4CAC5C184D6A69E916B4E5066D46F_424272708;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1699,11 +1712,11 @@ for(int i=0;i<count;i++)
             this.methodName = methodName;
             this.type = type;
             this.value = value;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.methodName = methodName;
-            //this.type = type;
-            //this.value = value;
+            
+            
+            
+            
+            
         }
 
         
@@ -1716,7 +1729,7 @@ for(int i=0;i<count;i++)
             {
                 Log.d("RemoteViews", "read viewId=0x" + Integer.toHexString(this.viewId)
                         + " methodName=" + this.methodName + " type=" + this.type);
-            } //End block
+            } 
 switch(this.type){
             case BOOLEAN:
             this.value = in.readInt() != 0;
@@ -1763,8 +1776,8 @@ switch(this.type){
             default:
             break;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1780,7 +1793,7 @@ switch(this.type){
             {
                 Log.d("RemoteViews", "write viewId=0x" + Integer.toHexString(this.viewId)
                         + " methodName=" + this.methodName + " type=" + this.type);
-            } //End block
+            } 
 switch(this.type){
             case BOOLEAN:
             out.writeInt((Boolean) this.value ? 1 : 0);
@@ -1827,11 +1840,12 @@ switch(this.type){
             default:
             break;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.720 -0400", hash_original_method = "E66E0BF97844CCF37DCED039A425AFDA", hash_generated_method = "6CA5FE05A88159D9613461A7BA47E257")
         private Class getParameterType() {
 switch(this.type){
@@ -1896,8 +1910,8 @@ Class var540C13E9E156B687226421B24F2DF178_253280334 =             null;
             var540C13E9E156B687226421B24F2DF178_253280334.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_253280334;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1915,20 +1929,20 @@ Class var540C13E9E156B687226421B24F2DF178_253280334 =             null;
                 ActionException var24C6C16C84E933689E566B3D0088DB60_1389199245 = new ActionException("bad type: " + this.type);
                 var24C6C16C84E933689E566B3D0088DB60_1389199245.addTaint(taint);
                 throw var24C6C16C84E933689E566B3D0088DB60_1389199245;
-            } //End block
+            } 
             Class klass = view.getClass();
             Method method;
             try 
             {
                 method = klass.getMethod(this.methodName, getParameterType());
-            } //End block
+            } 
             catch (NoSuchMethodException ex)
             {
                 ActionException var3C7F213007E369444B0A211FA382B9BB_1943240684 = new ActionException("view: " + klass.getName() + " doesn't have method: "
                         + this.methodName + "(" + param.getName() + ")");
                 var3C7F213007E369444B0A211FA382B9BB_1943240684.addTaint(taint);
                 throw var3C7F213007E369444B0A211FA382B9BB_1943240684;
-            } //End block
+            } 
     if(!method.isAnnotationPresent(RemotableViewMethod.class))            
             {
                 ActionException var8A089883897B44FBECF7ACEC7A046E2A_515641446 = new ActionException("view: " + klass.getName()
@@ -1936,7 +1950,7 @@ Class var540C13E9E156B687226421B24F2DF178_253280334 =             null;
                         + this.methodName + "(" + param.getName() + ")");
                 var8A089883897B44FBECF7ACEC7A046E2A_515641446.addTaint(taint);
                 throw var8A089883897B44FBECF7ACEC7A046E2A_515641446;
-            } //End block
+            } 
             try 
             {
     if(false)                
@@ -1944,17 +1958,17 @@ Class var540C13E9E156B687226421B24F2DF178_253280334 =             null;
                     Log.d("RemoteViews", "view: " + klass.getName() + " calling method: "
                         + this.methodName + "(" + param.getName() + ") with "
                         + (this.value == null ? "null" : this.value.getClass().getName()));
-                } //End block
+                } 
                 method.invoke(view, this.value);
-            } //End block
+            } 
             catch (Exception ex)
             {
                 ActionException varC7C4CAC5C184D6A69E916B4E5066D46F_96297314 = new ActionException(ex);
                 varC7C4CAC5C184D6A69E916B4E5066D46F_96297314.addTaint(taint);
                 throw varC7C4CAC5C184D6A69E916B4E5066D46F_96297314;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1983,15 +1997,15 @@ switch(c){
                     bpp = 4;
                     break;
 }
-                } //End block
+                } 
                 counter.bitmapIncrement(b.getWidth() * b.getHeight() * bpp);
-            } //End block
+            } 
             break;
             default:
             break;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -2056,9 +2070,9 @@ switch(c){
         public  ViewGroupAction(int viewId, RemoteViews nestedViews) {
             this.viewId = viewId;
             this.nestedViews = nestedViews;
-            // ---------- Original Method ----------
-            //this.viewId = viewId;
-            //this.nestedViews = nestedViews;
+            
+            
+            
         }
 
         
@@ -2066,9 +2080,9 @@ switch(c){
         public  ViewGroupAction(Parcel parcel) {
             viewId = parcel.readInt();
             nestedViews = parcel.readParcelable(null);
-            // ---------- Original Method ----------
-            //viewId = parcel.readInt();
-            //nestedViews = parcel.readParcelable(null);
+            
+            
+            
         }
 
         
@@ -2079,10 +2093,10 @@ switch(c){
             dest.writeInt(TAG);
             dest.writeInt(viewId);
             dest.writeParcelable(nestedViews, 0 );
-            // ---------- Original Method ----------
-            //dest.writeInt(TAG);
-            //dest.writeInt(viewId);
-            //dest.writeParcelable(nestedViews, 0 );
+            
+            
+            
+            
         }
 
         
@@ -2098,20 +2112,20 @@ switch(c){
     if(nestedViews != null)            
             {
                 target.addView(nestedViews.apply(context, target));
-            } //End block
+            } 
             else
             {
                 target.removeAllViews();
-            } //End block
-            // ---------- Original Method ----------
-            //final Context context = root.getContext();
-            //final ViewGroup target = (ViewGroup) root.findViewById(viewId);
-            //if (target == null) return;
-            //if (nestedViews != null) {
-                //target.addView(nestedViews.apply(context, target));
-            //} else {
-                //target.removeAllViews();
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -2122,11 +2136,11 @@ switch(c){
     if(nestedViews != null)            
             {
                 counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
-            } //End block
-            // ---------- Original Method ----------
-            //if (nestedViews != null) {
-                //counter.bitmapIncrement(nestedViews.estimateBitmapMemoryUsage());
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -2145,33 +2159,36 @@ switch(c){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.723 -0400", hash_original_method = "35D450C627251B011B80F5473DD04513", hash_generated_method = "35D450C627251B011B80F5473DD04513")
         public MemoryUsageCounter ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.724 -0400", hash_original_method = "F68FB7282799CC52F4314E5E47499FED", hash_generated_method = "980B3E80527B474B5039262E61BD9D48")
         public void clear() {
             mBitmapHeapMemoryUsage = 0;
-            // ---------- Original Method ----------
-            //mBitmapHeapMemoryUsage = 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.724 -0400", hash_original_method = "9C864F7ABFEE7832A18F21C728CCE23F", hash_generated_method = "583FD2D740DF0E423E81CC172F08A31C")
         public void bitmapIncrement(int numBytes) {
             mBitmapHeapMemoryUsage += numBytes;
-            // ---------- Original Method ----------
-            //mBitmapHeapMemoryUsage += numBytes;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.727 -0400", hash_original_method = "F4B214FD82765971EA3822C02AABA16F", hash_generated_method = "6294F6EE3EEB9808CE98D466DD2522A8")
         public int getBitmapHeapMemoryUsage() {
             int varC36FDDE1E5252D085B64B1B7ADEDAD8C_365752627 = (mBitmapHeapMemoryUsage);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_528235119 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_528235119;
-            // ---------- Original Method ----------
-            //return mBitmapHeapMemoryUsage;
+            
+            
         }
 
         
@@ -2199,12 +2216,12 @@ switch(c){
             return new RemoteViews[size];
         }
     };
-    // orphaned legacy method
+    
     public RemoteViews createFromParcel(Parcel parcel) {
             return new RemoteViews(parcel);
         }
     
-    // orphaned legacy method
+    
     public RemoteViews[] newArray(int size) {
             return new RemoteViews[size];
         }

@@ -1,6 +1,6 @@
 package android.accounts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -23,24 +23,24 @@ public class Account implements Parcelable {
             IllegalArgumentException var6C8A93341707787C8F70B85C82F20B22_1529590629 = new IllegalArgumentException("the name must not be empty: " + name);
             var6C8A93341707787C8F70B85C82F20B22_1529590629.addTaint(taint);
             throw var6C8A93341707787C8F70B85C82F20B22_1529590629;
-        } //End block
+        } 
     if(TextUtils.isEmpty(type))        
         {
             IllegalArgumentException var40EC9147D99C18302F989138A88ED599_2065224195 = new IllegalArgumentException("the type must not be empty: " + type);
             var40EC9147D99C18302F989138A88ED599_2065224195.addTaint(taint);
             throw var40EC9147D99C18302F989138A88ED599_2065224195;
-        } //End block
+        } 
         this.name = name;
         this.type = type;
-        // ---------- Original Method ----------
-        //if (TextUtils.isEmpty(name)) {
-            //throw new IllegalArgumentException("the name must not be empty: " + name);
-        //}
-        //if (TextUtils.isEmpty(type)) {
-            //throw new IllegalArgumentException("the type must not be empty: " + type);
-        //}
-        //this.name = name;
-        //this.type = type;
+        
+        
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -48,9 +48,9 @@ public class Account implements Parcelable {
     public  Account(Parcel in) {
         this.name = in.readString();
         this.type = in.readString();
-        // ---------- Original Method ----------
-        //this.name = in.readString();
-        //this.type = in.readString();
+        
+        
+        
     }
 
     
@@ -73,11 +73,11 @@ public class Account implements Parcelable {
         boolean var75B77C281F1EB419B1DD564900207EE6_184764674 = (name.equals(other.name) && type.equals(other.type));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1017754857 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1017754857;
-        // ---------- Original Method ----------
-        //if (o == this) return true;
-        //if (!(o instanceof Account)) return false;
-        //final Account other = (Account)o;
-        //return name.equals(other.name) && type.equals(other.type);
+        
+        
+        
+        
+        
     }
 
     
@@ -89,21 +89,22 @@ public class Account implements Parcelable {
         int varB4A88417B3D0170D754C647C30B7216A_1327755862 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368815369 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_368815369;
-        // ---------- Original Method ----------
-        //int result = 17;
-        //result = 31 * result + name.hashCode();
-        //result = 31 * result + type.hashCode();
-        //return result;
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:31.152 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "84E4EC676B9CDAC54EF17868080C2AA3")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1169370924 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510048195 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1510048195;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -113,9 +114,9 @@ public class Account implements Parcelable {
         addTaint(dest.getTaint());
         dest.writeString(name);
         dest.writeString(type);
-        // ---------- Original Method ----------
-        //dest.writeString(name);
-        //dest.writeString(type);
+        
+        
+        
     }
 
     
@@ -124,8 +125,8 @@ public class Account implements Parcelable {
 String var88C3A4BDB947BCD23BACD4E0029C901F_1000356310 =         "Account {name=" + name + ", type=" + type + "}";
         var88C3A4BDB947BCD23BACD4E0029C901F_1000356310.addTaint(taint);
         return var88C3A4BDB947BCD23BACD4E0029C901F_1000356310;
-        // ---------- Original Method ----------
-        //return "Account {name=" + name + ", type=" + type + "}";
+        
+        
     }
 
     
@@ -140,12 +141,12 @@ String var88C3A4BDB947BCD23BACD4E0029C901F_1000356310 =         "Account {name="
             return new Account[size];
         }
     };
-    // orphaned legacy method
+    
     public Account createFromParcel(Parcel source) {
             return new Account(source);
         }
     
-    // orphaned legacy method
+    
     public Account[] newArray(int size) {
             return new Account[size];
         }

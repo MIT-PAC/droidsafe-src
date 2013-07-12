@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class BERSequence extends DERSequence {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.811 -0400", hash_original_method = "0D9B441EA6B4B8E8347B85C87EDD1299", hash_generated_method = "38F8802BC4E63A6F40E9106AA50F9EE8")
     public  BERSequence() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -20,7 +20,7 @@ public class BERSequence extends DERSequence {
         DEREncodable    obj) {
         super(obj);
         addTaint(obj.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class BERSequence extends DERSequence {
         ASN1EncodableVector   v) {
         super(v);
         addTaint(v.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,31 +46,31 @@ public class BERSequence extends DERSequence {
 (e.hasMoreElements())            
             {
                 out.writeObject(e.nextElement());
-            } //End block
+            } 
             out.write(0x00);
             out.write(0x00);
-        } //End block
+        } 
         else
         {
             super.encode(out);
-        } //End block
-        // ---------- Original Method ----------
-        //if (out instanceof ASN1OutputStream || out instanceof BEROutputStream)
-        //{
-            //out.write(SEQUENCE | CONSTRUCTED);
-            //out.write(0x80);
-            //Enumeration e = getObjects();
-            //while (e.hasMoreElements())
-            //{
-                //out.writeObject(e.nextElement());
-            //}
-            //out.write(0x00);
-            //out.write(0x00);
-        //}
-        //else
-        //{
-            //super.encode(out);
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+            
+                
+            
+            
+            
+        
+        
+        
+            
+        
     }
 
     

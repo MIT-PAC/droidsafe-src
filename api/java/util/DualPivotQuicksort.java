@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ final class DualPivotQuicksort {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:03.230 -0400", hash_original_method = "7D881BD1A8E4D4C26C8DF479B09D2287", hash_generated_method = "9C971A81550C1F38D789FED4E5A30339")
     private  DualPivotQuicksort() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -829,7 +829,8 @@ final class DualPivotQuicksort {
     }
 
     
-        private static int findAnyZero(float[] a, int low, int high) {
+        @DSModeled(DSC.SAFE)
+    private static int findAnyZero(float[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             float middleValue = a[middle];
@@ -1021,7 +1022,8 @@ final class DualPivotQuicksort {
     }
 
     
-        private static int findAnyZero(double[] a, int low, int high) {
+        @DSModeled(DSC.SAFE)
+    private static int findAnyZero(double[] a, int low, int high) {
         while (true) {
             int middle = (low + high) >>> 1;
             double middleValue = a[middle];

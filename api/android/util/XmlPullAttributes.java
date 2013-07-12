@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,8 +16,8 @@ class XmlPullAttributes implements AttributeSet {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.481 -0400", hash_original_method = "46700DF76961858760F1F54A77DCF120", hash_generated_method = "9596B1361EACD78292EF670433107D82")
     public  XmlPullAttributes(XmlPullParser parser) {
         mParser = parser;
-        // ---------- Original Method ----------
-        //mParser = parser;
+        
+        
     }
 
     
@@ -26,8 +26,8 @@ class XmlPullAttributes implements AttributeSet {
         int var4A6D3039205D454979F4204E3D71ACF5_366363643 = (mParser.getAttributeCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1558237716 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1558237716;
-        // ---------- Original Method ----------
-        //return mParser.getAttributeCount();
+        
+        
     }
 
     
@@ -37,8 +37,8 @@ class XmlPullAttributes implements AttributeSet {
 String varF5672C26923E2F45F96CB3B67BAAA038_306612029 =         mParser.getAttributeName(index);
         varF5672C26923E2F45F96CB3B67BAAA038_306612029.addTaint(taint);
         return varF5672C26923E2F45F96CB3B67BAAA038_306612029;
-        // ---------- Original Method ----------
-        //return mParser.getAttributeName(index);
+        
+        
     }
 
     
@@ -48,8 +48,8 @@ String varF5672C26923E2F45F96CB3B67BAAA038_306612029 =         mParser.getAttrib
 String var59EDCB0BCEB8C287722A2D6BDEEBA88E_1784942807 =         mParser.getAttributeValue(index);
         var59EDCB0BCEB8C287722A2D6BDEEBA88E_1784942807.addTaint(taint);
         return var59EDCB0BCEB8C287722A2D6BDEEBA88E_1784942807;
-        // ---------- Original Method ----------
-        //return mParser.getAttributeValue(index);
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ String var59EDCB0BCEB8C287722A2D6BDEEBA88E_1784942807 =         mParser.getAttri
 String var25E6A9EF046C0193A13410F438672137_1566997583 =         mParser.getAttributeValue(namespace, name);
         var25E6A9EF046C0193A13410F438672137_1566997583.addTaint(taint);
         return var25E6A9EF046C0193A13410F438672137_1566997583;
-        // ---------- Original Method ----------
-        //return mParser.getAttributeValue(namespace, name);
+        
+        
     }
 
     
@@ -70,19 +70,20 @@ String var25E6A9EF046C0193A13410F438672137_1566997583 =         mParser.getAttri
 String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPositionDescription();
         var0CAF51F9DBF27494419FBD21322156ED_1297979630.addTaint(taint);
         return var0CAF51F9DBF27494419FBD21322156ED_1297979630;
-        // ---------- Original Method ----------
-        //return mParser.getPositionDescription();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.483 -0400", hash_original_method = "367A5DCA84F3DB949AE42F70B52DA04A", hash_generated_method = "3BD8A206112429E6892273E0ADE5C7D5")
     public int getAttributeNameResource(int index) {
         addTaint(index);
         int varCFCD208495D565EF66E7DFF9F98764DA_1875641050 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670598931 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_670598931;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -97,9 +98,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(namespace, attribute), options, defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085955377 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2085955377;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToList(
-            //getAttributeValue(namespace, attribute), options, defaultValue);
+        
+        
+            
     }
 
     
@@ -113,9 +114,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(namespace, attribute), defaultValue));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1819259687 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1819259687;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToBoolean(
-            //getAttributeValue(namespace, attribute), defaultValue);
+        
+        
+            
     }
 
     
@@ -129,9 +130,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(namespace, attribute), defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484181219 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_484181219;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToInt(
-            //getAttributeValue(namespace, attribute), defaultValue);
+        
+        
+            
     }
 
     
@@ -145,9 +146,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(namespace, attribute), defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155984237 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1155984237;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToInt(
-            //getAttributeValue(namespace, attribute), defaultValue);
+        
+        
+            
     }
 
     
@@ -161,9 +162,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(namespace, attribute), defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348047027 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_348047027;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToUnsignedInt(
-            //getAttributeValue(namespace, attribute), defaultValue);
+        
+        
+            
     }
 
     
@@ -179,16 +180,16 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             float varC895301DE2F78953F2C82FE15543D719_391197658 = (Float.parseFloat(s));
                         float var546ADE640B6EDFBC8A086EF31347E768_1865639206 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1865639206;
-        } //End block
+        } 
         float var16830A58E1E33A4163524366BA7B701B_545312820 = (defaultValue);
                 float var546ADE640B6EDFBC8A086EF31347E768_1351828896 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1351828896;
-        // ---------- Original Method ----------
-        //String s = getAttributeValue(namespace, attribute);
-        //if (s != null) {
-            //return Float.parseFloat(s);
-        //}
-        //return defaultValue;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -202,9 +203,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(index), options, defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173833933 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_173833933;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToList(
-            //getAttributeValue(index), options, defaultValue);
+        
+        
+            
     }
 
     
@@ -216,9 +217,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(index), defaultValue));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_178556487 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_178556487;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToBoolean(
-            //getAttributeValue(index), defaultValue);
+        
+        
+            
     }
 
     
@@ -230,9 +231,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(index), defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609418905 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_609418905;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToInt(
-            //getAttributeValue(index), defaultValue);
+        
+        
+            
     }
 
     
@@ -244,9 +245,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(index), defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331863832 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1331863832;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToInt(
-            //getAttributeValue(index), defaultValue);
+        
+        
+            
     }
 
     
@@ -258,9 +259,9 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             getAttributeValue(index), defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710267454 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_710267454;
-        // ---------- Original Method ----------
-        //return XmlUtils.convertValueToUnsignedInt(
-            //getAttributeValue(index), defaultValue);
+        
+        
+            
     }
 
     
@@ -274,16 +275,16 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
             float varC895301DE2F78953F2C82FE15543D719_528409454 = (Float.parseFloat(s));
                         float var546ADE640B6EDFBC8A086EF31347E768_1999136515 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1999136515;
-        } //End block
+        } 
         float var16830A58E1E33A4163524366BA7B701B_1045194054 = (defaultValue);
                 float var546ADE640B6EDFBC8A086EF31347E768_363998193 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_363998193;
-        // ---------- Original Method ----------
-        //String s = getAttributeValue(index);
-        //if (s != null) {
-            //return Float.parseFloat(s);
-        //}
-        //return defaultValue;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -292,8 +293,8 @@ String var0CAF51F9DBF27494419FBD21322156ED_1297979630 =         mParser.getPosit
 String varA4BFF0A08B5991425453CC5F81821C8F_349106982 =         getAttributeValue(null, "id");
         varA4BFF0A08B5991425453CC5F81821C8F_349106982.addTaint(taint);
         return varA4BFF0A08B5991425453CC5F81821C8F_349106982;
-        // ---------- Original Method ----------
-        //return getAttributeValue(null, "id");
+        
+        
     }
 
     
@@ -302,8 +303,8 @@ String varA4BFF0A08B5991425453CC5F81821C8F_349106982 =         getAttributeValue
 String varE16E70835600F1AEF3E518ED615E409D_103444761 =         getAttributeValue(null, "class");
         varE16E70835600F1AEF3E518ED615E409D_103444761.addTaint(taint);
         return varE16E70835600F1AEF3E518ED615E409D_103444761;
-        // ---------- Original Method ----------
-        //return getAttributeValue(null, "class");
+        
+        
     }
 
     
@@ -313,8 +314,8 @@ String varE16E70835600F1AEF3E518ED615E409D_103444761 =         getAttributeValue
         int varCD137CD47DD67CEDD2FB3C345949E98D_1297100996 = (getAttributeResourceValue(null, "id", defaultValue));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1974730564 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1974730564;
-        // ---------- Original Method ----------
-        //return getAttributeResourceValue(null, "id", defaultValue);
+        
+        
     }
 
     
@@ -323,8 +324,8 @@ String varE16E70835600F1AEF3E518ED615E409D_103444761 =         getAttributeValue
         int var76395DB4CC2974D505F0D3330E7FF713_2050213364 = (getAttributeResourceValue(null, "style", 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_514848822 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_514848822;
-        // ---------- Original Method ----------
-        //return getAttributeResourceValue(null, "style", 0);
+        
+        
     }
 
     

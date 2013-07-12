@@ -1,6 +1,6 @@
 package libcore.icu;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -124,7 +124,7 @@ public final class LocaleData {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:14.549 -0400", hash_original_method = "CFFFBB83D5CAB96B8DF6F8A1F3FD834E", hash_generated_method = "D26C45D435D79556A74DEBD6612FAA64")
     private  LocaleData() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -211,163 +211,164 @@ String var5A6DE645536F723A5172C7B3F4462C9F_1424969000 =         "LocaleData[" +
                 "percentPattern=" + percentPattern + "]";
         var5A6DE645536F723A5172C7B3F4462C9F_1424969000.addTaint(taint);
         return var5A6DE645536F723A5172C7B3F4462C9F_1424969000;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:14.563 -0400", hash_original_method = "97F8929D36249A9101B1710A2B088C68", hash_generated_method = "661A5D0F5903D7BE6EB7261ACD81ADE1")
     private void overrideWithDataFrom(LocaleData overrides) {
     if(overrides.firstDayOfWeek != null)        
         {
             firstDayOfWeek = overrides.firstDayOfWeek;
-        } //End block
+        } 
     if(overrides.minimalDaysInFirstWeek != null)        
         {
             minimalDaysInFirstWeek = overrides.minimalDaysInFirstWeek;
-        } //End block
+        } 
     if(overrides.amPm != null)        
         {
             amPm = overrides.amPm;
-        } //End block
+        } 
     if(overrides.eras != null)        
         {
             eras = overrides.eras;
-        } //End block
+        } 
     if(overrides.longMonthNames != null)        
         {
             longMonthNames = overrides.longMonthNames;
-        } //End block
+        } 
     if(overrides.shortMonthNames != null)        
         {
             shortMonthNames = overrides.shortMonthNames;
-        } //End block
+        } 
     if(overrides.longStandAloneMonthNames != null)        
         {
             longStandAloneMonthNames = overrides.longStandAloneMonthNames;
-        } //End block
+        } 
     if(overrides.shortStandAloneMonthNames != null)        
         {
             shortStandAloneMonthNames = overrides.shortStandAloneMonthNames;
-        } //End block
+        } 
     if(overrides.longWeekdayNames != null)        
         {
             longWeekdayNames = overrides.longWeekdayNames;
-        } //End block
+        } 
     if(overrides.shortWeekdayNames != null)        
         {
             shortWeekdayNames = overrides.shortWeekdayNames;
-        } //End block
+        } 
     if(overrides.longStandAloneWeekdayNames != null)        
         {
             longStandAloneWeekdayNames = overrides.longStandAloneWeekdayNames;
-        } //End block
+        } 
     if(overrides.shortStandAloneWeekdayNames != null)        
         {
             shortStandAloneWeekdayNames = overrides.shortStandAloneWeekdayNames;
-        } //End block
+        } 
     if(overrides.fullTimeFormat != null)        
         {
             fullTimeFormat = overrides.fullTimeFormat;
-        } //End block
+        } 
     if(overrides.longTimeFormat != null)        
         {
             longTimeFormat = overrides.longTimeFormat;
-        } //End block
+        } 
     if(overrides.mediumTimeFormat != null)        
         {
             mediumTimeFormat = overrides.mediumTimeFormat;
-        } //End block
+        } 
     if(overrides.shortTimeFormat != null)        
         {
             shortTimeFormat = overrides.shortTimeFormat;
-        } //End block
+        } 
     if(overrides.fullDateFormat != null)        
         {
             fullDateFormat = overrides.fullDateFormat;
-        } //End block
+        } 
     if(overrides.longDateFormat != null)        
         {
             longDateFormat = overrides.longDateFormat;
-        } //End block
+        } 
     if(overrides.mediumDateFormat != null)        
         {
             mediumDateFormat = overrides.mediumDateFormat;
-        } //End block
+        } 
     if(overrides.shortDateFormat != null)        
         {
             shortDateFormat = overrides.shortDateFormat;
-        } //End block
+        } 
     if(overrides.zeroDigit != '\0')        
         {
             zeroDigit = overrides.zeroDigit;
-        } //End block
+        } 
     if(overrides.decimalSeparator != '\0')        
         {
             decimalSeparator = overrides.decimalSeparator;
-        } //End block
+        } 
     if(overrides.groupingSeparator != '\0')        
         {
             groupingSeparator = overrides.groupingSeparator;
-        } //End block
+        } 
     if(overrides.patternSeparator != '\0')        
         {
             patternSeparator = overrides.patternSeparator;
-        } //End block
+        } 
     if(overrides.percent != '\0')        
         {
             percent = overrides.percent;
-        } //End block
+        } 
     if(overrides.perMill != '\0')        
         {
             perMill = overrides.perMill;
-        } //End block
+        } 
     if(overrides.monetarySeparator != '\0')        
         {
             monetarySeparator = overrides.monetarySeparator;
-        } //End block
+        } 
     if(overrides.minusSign != '\0')        
         {
             minusSign = overrides.minusSign;
-        } //End block
+        } 
     if(overrides.exponentSeparator != null)        
         {
             exponentSeparator = overrides.exponentSeparator;
-        } //End block
+        } 
     if(overrides.NaN != null)        
         {
             NaN = overrides.NaN;
-        } //End block
+        } 
     if(overrides.infinity != null)        
         {
             infinity = overrides.infinity;
-        } //End block
+        } 
     if(overrides.currencySymbol != null)        
         {
             currencySymbol = overrides.currencySymbol;
-        } //End block
+        } 
     if(overrides.internationalCurrencySymbol != null)        
         {
             internationalCurrencySymbol = overrides.internationalCurrencySymbol;
-        } //End block
+        } 
     if(overrides.numberPattern != null)        
         {
             numberPattern = overrides.numberPattern;
-        } //End block
+        } 
     if(overrides.integerPattern != null)        
         {
             integerPattern = overrides.integerPattern;
-        } //End block
+        } 
     if(overrides.currencyPattern != null)        
         {
             currencyPattern = overrides.currencyPattern;
-        } //End block
+        } 
     if(overrides.percentPattern != null)        
         {
             percentPattern = overrides.percentPattern;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -394,18 +395,18 @@ String var4634C217D946CAB44464F86454585E44_121196786 =         fullDateFormat;
 }        AssertionError varA81442E36297E737EB908877E58260E8_1439529129 = new AssertionError();
         varA81442E36297E737EB908877E58260E8_1439529129.addTaint(taint);
         throw varA81442E36297E737EB908877E58260E8_1439529129;
-        // ---------- Original Method ----------
-        //switch (style) {
-        //case DateFormat.SHORT:
-            //return shortDateFormat;
-        //case DateFormat.MEDIUM:
-            //return mediumDateFormat;
-        //case DateFormat.LONG:
-            //return longDateFormat;
-        //case DateFormat.FULL:
-            //return fullDateFormat;
-        //}
-        //throw new AssertionError();
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -432,18 +433,18 @@ String var47A9C88E8999743CB5904718E9A01273_1451392576 =         fullTimeFormat;
 }        AssertionError varA81442E36297E737EB908877E58260E8_7493434 = new AssertionError();
         varA81442E36297E737EB908877E58260E8_7493434.addTaint(taint);
         throw varA81442E36297E737EB908877E58260E8_7493434;
-        // ---------- Original Method ----------
-        //switch (style) {
-        //case DateFormat.SHORT:
-            //return shortTimeFormat;
-        //case DateFormat.MEDIUM:
-            //return mediumTimeFormat;
-        //case DateFormat.LONG:
-            //return longTimeFormat;
-        //case DateFormat.FULL:
-            //return fullTimeFormat;
-        //}
-        //throw new AssertionError();
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+        
+        
     }
 
     

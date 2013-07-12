@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ class HistoricalCharsetNames {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:40.745 -0400", hash_original_method = "CF7EE4F2AE73DFA7F7185F7E1C545121", hash_generated_method = "CF7EE4F2AE73DFA7F7185F7E1C545121")
     public HistoricalCharsetNames ()
     {
-        //Synthesized constructor
+        
     }
 
 

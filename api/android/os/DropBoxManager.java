@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,16 +22,16 @@ public class DropBoxManager {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.200 -0400", hash_original_method = "04B0A4DBB2EAE135AA112A8CAA9647B1", hash_generated_method = "56807A840D421C3846696C198899DDB8")
     public  DropBoxManager(IDropBoxManagerService service) {
         mService = service;
-        // ---------- Original Method ----------
-        //mService = service;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.200 -0400", hash_original_method = "E688A3A6CCC118BEDB51FAABD6872F4D", hash_generated_method = "1D2825C63C164429C45D67692FE8B561")
     protected  DropBoxManager() {
         mService = null;
-        // ---------- Original Method ----------
-        //mService = null;
+        
+        
     }
 
     
@@ -42,12 +42,12 @@ public class DropBoxManager {
         try 
         {
             mService.add(new Entry(tag, 0, data));
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //try { mService.add(new Entry(tag, 0, data)); } catch (RemoteException e) {}
+        } 
+        
+        
     }
 
     
@@ -65,13 +65,13 @@ public class DropBoxManager {
         try 
         {
             mService.add(new Entry(tag, 0, data, flags));
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (data == null) throw new NullPointerException("data == null");
-        //try { mService.add(new Entry(tag, 0, data, flags)); } catch (RemoteException e) {}
+        } 
+        
+        
+        
     }
 
     
@@ -90,23 +90,23 @@ public class DropBoxManager {
         try 
         {
             mService.add(entry);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
         finally 
         {
             entry.close();
-        } //End block
-        // ---------- Original Method ----------
-        //if (file == null) throw new NullPointerException("file == null");
-        //Entry entry = new Entry(tag, 0, file, flags);
-        //try {
-            //mService.add(entry);
-        //} catch (RemoteException e) {
-        //} finally {
-            //entry.close();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+        
     }
 
     
@@ -118,15 +118,15 @@ public class DropBoxManager {
             boolean var1F15D573D13DB13668AD61D7F6DD4BF7_20662735 = (mService.isTagEnabled(tag));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_456454960 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_456454960;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1827813514 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1508844952 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1508844952;
-        } //End block
-        // ---------- Original Method ----------
-        //try { return mService.isTagEnabled(tag); } catch (RemoteException e) { return false; }
+        } 
+        
+        
     }
 
     
@@ -139,15 +139,15 @@ public class DropBoxManager {
 Entry varC35DB0DF9A7A1174D79EA076F0F0C7C9_12967008 =             mService.getNextEntry(tag, msec);
             varC35DB0DF9A7A1174D79EA076F0F0C7C9_12967008.addTaint(taint);
             return varC35DB0DF9A7A1174D79EA076F0F0C7C9_12967008;
-        } //End block
+        } 
         catch (RemoteException e)
         {
 Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
             var540C13E9E156B687226421B24F2DF178_1372150256.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1372150256;
-        } //End block
-        // ---------- Original Method ----------
-        //try { return mService.getNextEntry(tag, msec); } catch (RemoteException e) { return null; }
+        } 
+        
+        
     }
 
     
@@ -181,13 +181,13 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
             mData = null;
             mFileDescriptor = null;
             mFlags = IS_EMPTY;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = null;
-            //mFileDescriptor = null;
-            //mFlags = IS_EMPTY;
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -210,14 +210,14 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
             mData = text.getBytes();
             mFileDescriptor = null;
             mFlags = IS_TEXT;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if (text == null) throw new NullPointerException("text == null");
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = text.getBytes();
-            //mFileDescriptor = null;
-            //mFlags = IS_TEXT;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -234,22 +234,22 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
                 IllegalArgumentException varF750588A09C5E75412D313969A5EB532_811301085 = new IllegalArgumentException("Bad flags: " + flags);
                 varF750588A09C5E75412D313969A5EB532_811301085.addTaint(taint);
                 throw varF750588A09C5E75412D313969A5EB532_811301085;
-            } //End block
+            } 
             mTag = tag;
             mTimeMillis = millis;
             mData = data;
             mFileDescriptor = null;
             mFlags = flags;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if (((flags & IS_EMPTY) != 0) != (data == null)) {
-                //throw new IllegalArgumentException("Bad flags: " + flags);
-            //}
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = data;
-            //mFileDescriptor = null;
-            //mFlags = flags;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -266,22 +266,22 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
                 IllegalArgumentException varF750588A09C5E75412D313969A5EB532_1489518872 = new IllegalArgumentException("Bad flags: " + flags);
                 varF750588A09C5E75412D313969A5EB532_1489518872.addTaint(taint);
                 throw varF750588A09C5E75412D313969A5EB532_1489518872;
-            } //End block
+            } 
             mTag = tag;
             mTimeMillis = millis;
             mData = null;
             mFileDescriptor = data;
             mFlags = flags;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if (((flags & IS_EMPTY) != 0) != (data == null)) {
-                //throw new IllegalArgumentException("Bad flags: " + flags);
-            //}
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = null;
-            //mFileDescriptor = data;
-            //mFlags = flags;
+            
+            
+            
+                
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -304,14 +304,14 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
             mData = null;
             mFileDescriptor = ParcelFileDescriptor.open(data, ParcelFileDescriptor.MODE_READ_ONLY);
             mFlags = flags;
-            // ---------- Original Method ----------
-            //if (tag == null) throw new NullPointerException("tag == null");
-            //if ((flags & IS_EMPTY) != 0) throw new IllegalArgumentException("Bad flags: " + flags);
-            //mTag = tag;
-            //mTimeMillis = millis;
-            //mData = null;
-            //mFileDescriptor = ParcelFileDescriptor.open(data, ParcelFileDescriptor.MODE_READ_ONLY);
-            //mFlags = flags;
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -321,42 +321,45 @@ Entry var540C13E9E156B687226421B24F2DF178_1372150256 =             null;
             {
     if(mFileDescriptor != null)                
                 mFileDescriptor.close();
-            } //End block
+            } 
             catch (IOException e)
             {
-            } //End block
-            // ---------- Original Method ----------
-            //try { if (mFileDescriptor != null) mFileDescriptor.close(); } catch (IOException e) { }
+            } 
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.209 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "868108BCF2B3ED8B53C734EF95AA272E")
         public String getTag() {
 String varD6A25044F8E609F6CD67330C1523D33D_1654044854 =             mTag;
             varD6A25044F8E609F6CD67330C1523D33D_1654044854.addTaint(taint);
             return varD6A25044F8E609F6CD67330C1523D33D_1654044854;
-            // ---------- Original Method ----------
-            //return mTag;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.210 -0400", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "EC780417A3301212D4E29C66C293370F")
         public long getTimeMillis() {
             long var6F3BEB4D53F7C410F1DAD4C6334EE882_316394933 = (mTimeMillis);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_1709978103 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_1709978103;
-            // ---------- Original Method ----------
-            //return mTimeMillis;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.210 -0400", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "4E8CBFDDAAF75983731ECE55CB81777C")
         public int getFlags() {
             int varB715A5FBEBA48B733FCB394E91827C12_657377187 = (mFlags & ~IS_GZIPPED);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072825890 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1072825890;
-            // ---------- Original Method ----------
-            //return mFlags & ~IS_GZIPPED;
+            
+            
         }
 
         
@@ -392,47 +395,47 @@ String var540C13E9E156B687226421B24F2DF178_950384183 =                 null;
 (n >= 0 && (readBytes += n) < maxBytes)                
                 {
                     n = is.read(buf, readBytes, maxBytes - readBytes);
-                } //End block
+                } 
 String varFFBEAD4F1BFF86616DF19DD0736D251E_1840088264 =                 new String(buf, 0, readBytes);
                 varFFBEAD4F1BFF86616DF19DD0736D251E_1840088264.addTaint(taint);
                 return varFFBEAD4F1BFF86616DF19DD0736D251E_1840088264;
-            } //End block
+            } 
             catch (IOException e)
             {
 String var540C13E9E156B687226421B24F2DF178_276251482 =                 null;
                 var540C13E9E156B687226421B24F2DF178_276251482.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_276251482;
-            } //End block
+            } 
             finally 
             {
                 try 
                 {
     if(is != null)                    
                     is.close();
-                } //End block
+                } 
                 catch (IOException e)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if ((mFlags & IS_TEXT) == 0) return null;
-            //if (mData != null) return new String(mData, 0, Math.min(maxBytes, mData.length));
-            //InputStream is = null;
-            //try {
-                //is = getInputStream();
-                //if (is == null) return null;
-                //byte[] buf = new byte[maxBytes];
-                //int readBytes = 0;
-                //int n = 0;
-                //while (n >= 0 && (readBytes += n) < maxBytes) {
-                    //n = is.read(buf, readBytes, maxBytes - readBytes);
-                //}
-                //return new String(buf, 0, readBytes);
-            //} catch (IOException e) {
-                //return null;
-            //} finally {
-                //try { if (is != null) is.close(); } catch (IOException e) {}
-            //}
+                } 
+            } 
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                
+                
+                    
+                
+                
+            
+                
+            
+                
+            
         }
 
         
@@ -442,41 +445,42 @@ String var540C13E9E156B687226421B24F2DF178_276251482 =                 null;
     if(mData != null)            
             {
                 is = new ByteArrayInputStream(mData);
-            } //End block
+            } 
             else
     if(mFileDescriptor != null)            
             {
                 is = new ParcelFileDescriptor.AutoCloseInputStream(mFileDescriptor);
-            } //End block
+            } 
             else
             {
 InputStream var540C13E9E156B687226421B24F2DF178_193359422 =                 null;
                 var540C13E9E156B687226421B24F2DF178_193359422.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_193359422;
-            } //End block
+            } 
 InputStream varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588 =             (mFlags & IS_GZIPPED) != 0 ? new GZIPInputStream(is) : is;
             varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588.addTaint(taint);
             return varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588;
-            // ---------- Original Method ----------
-            //InputStream is;
-            //if (mData != null) {
-                //is = new ByteArrayInputStream(mData);
-            //} else if (mFileDescriptor != null) {
-                //is = new ParcelFileDescriptor.AutoCloseInputStream(mFileDescriptor);
-            //} else {
-                //return null;
-            //}
-            //return (mFlags & IS_GZIPPED) != 0 ? new GZIPInputStream(is) : is;
+            
+            
+            
+                
+            
+                
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:32.212 -0400", hash_original_method = "CE12D992AD97C7CB4D92B660FD5831CC", hash_generated_method = "C30CCC2295D7CCEC8AB0B49F1E910F6E")
         public int describeContents() {
             int varCFD07FB51B103FA0811B00D763E3B42D_1152763449 = (mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732837310 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_732837310;
-            // ---------- Original Method ----------
-            //return mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0;
+            
+            
         }
 
         
@@ -490,22 +494,22 @@ InputStream varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588 =             (mFlags
             {
                 out.writeInt(mFlags & ~HAS_BYTE_ARRAY);
                 mFileDescriptor.writeToParcel(out, flags);
-            } //End block
+            } 
             else
             {
                 out.writeInt(mFlags | HAS_BYTE_ARRAY);
                 out.writeByteArray(mData);
-            } //End block
-            // ---------- Original Method ----------
-            //out.writeString(mTag);
-            //out.writeLong(mTimeMillis);
-            //if (mFileDescriptor != null) {
-                //out.writeInt(mFlags & ~HAS_BYTE_ARRAY);  
-                //mFileDescriptor.writeToParcel(out, flags);
-            //} else {
-                //out.writeInt(mFlags | HAS_BYTE_ARRAY);
-                //out.writeByteArray(mData);
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -524,7 +528,7 @@ InputStream varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588 =             (mFlags
                 }
             }
         };
-        // orphaned legacy method
+        
         public Entry createFromParcel(Parcel in) {
                 String tag = in.readString();
                 long millis = in.readLong();
@@ -536,7 +540,7 @@ InputStream varE0596AA8DDE6DE71669BCED4AEBB387A_1978124588 =             (mFlags
                 }
             }
         
-        // orphaned legacy method
+        
         public Entry[] newArray(int size) { return new Entry[size]; }
         
     }

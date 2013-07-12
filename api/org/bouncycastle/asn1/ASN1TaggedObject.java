@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -27,10 +27,10 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
         this.explicit = true;
         this.tagNo = tagNo;
         this.obj = obj;
-        // ---------- Original Method ----------
-        //this.explicit = true;
-        //this.tagNo = tagNo;
-        //this.obj = obj;
+        
+        
+        
+        
     }
 
     
@@ -42,24 +42,24 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     if(obj instanceof ASN1Choice)        
         {
             this.explicit = true;
-        } //End block
+        } 
         else
         {
             this.explicit = explicit;
-        } //End block
+        } 
         this.tagNo = tagNo;
         this.obj = obj;
-        // ---------- Original Method ----------
-        //if (obj instanceof ASN1Choice)
-        //{
-            //this.explicit = true;
-        //}
-        //else
-        //{
-            //this.explicit = explicit;
-        //}
-        //this.tagNo = tagNo;
-        //this.obj = obj;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -93,14 +93,14 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
             boolean var68934A3E9455FA72420237EB05902327_618653033 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_66194918 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_66194918;
-        } //End block
+        } 
         ASN1TaggedObject other = (ASN1TaggedObject)o;
     if(tagNo != other.tagNo || empty != other.empty || explicit != other.explicit)        
         {
             boolean var68934A3E9455FA72420237EB05902327_774630914 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_818364688 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_818364688;
-        } //End block
+        } 
     if(obj == null)        
         {
     if(other.obj != null)            
@@ -108,8 +108,8 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
                 boolean var68934A3E9455FA72420237EB05902327_1781513890 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_748288726 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_748288726;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(!(obj.getDERObject().equals(other.obj.getDERObject())))            
@@ -117,36 +117,36 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
                 boolean var68934A3E9455FA72420237EB05902327_56097485 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1534625665 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1534625665;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1216176437 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1265051185 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1265051185;
-        // ---------- Original Method ----------
-        //if (!(o instanceof ASN1TaggedObject))
-        //{
-            //return false;
-        //}
-        //ASN1TaggedObject other = (ASN1TaggedObject)o;
-        //if (tagNo != other.tagNo || empty != other.empty || explicit != other.explicit)
-        //{
-            //return false;
-        //}
-        //if(obj == null)
-        //{
-            //if (other.obj != null)
-            //{
-                //return false;
-            //}
-        //}
-        //else
-        //{
-            //if (!(obj.getDERObject().equals(other.obj.getDERObject())))
-            //{
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -156,47 +156,50 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
     if(obj != null)        
         {
             code ^= obj.hashCode();
-        } //End block
+        } 
         int varC13367945D5D4C91047B3B50234AA7AB_2137126456 = (code);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641713193 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1641713193;
-        // ---------- Original Method ----------
-        //int code = tagNo;
-        //if (obj != null)
-        //{
-            //code ^= obj.hashCode();
-        //}
-        //return code;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.767 -0400", hash_original_method = "CB42AFB8AF1DB9A93243A50229C66A0D", hash_generated_method = "B1A1027EF7B0F431825F0B0DFDA35A67")
     public int getTagNo() {
         int var5725D710258369113D712F6D4ABF6730_1823030249 = (tagNo);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_377679827 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_377679827;
-        // ---------- Original Method ----------
-        //return tagNo;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.768 -0400", hash_original_method = "AF6534B2BC536C6B2446F0C361A4EC15", hash_generated_method = "6D4AABB4D9C8538C52537AAB2D35A57E")
     public boolean isExplicit() {
         boolean varE2A3307DD8A12A0B820132B2C1C27819_1264277310 = (explicit);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2113671719 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2113671719;
-        // ---------- Original Method ----------
-        //return explicit;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.769 -0400", hash_original_method = "A3A283EA275283949A16122176F95537", hash_generated_method = "CF611EADFBAA4D9D7614D159E9CCC9AC")
     public boolean isEmpty() {
         boolean varA2E4822A98337283E39F7B60ACF85EC9_832320839 = (empty);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1754806719 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1754806719;
-        // ---------- Original Method ----------
-        //return empty;
+        
+        
     }
 
     
@@ -207,16 +210,16 @@ public abstract class ASN1TaggedObject extends ASN1Object implements ASN1TaggedO
 DERObject var23A4222CF5292FF705C5DA2A104D1850_1113373120 =             obj.getDERObject();
             var23A4222CF5292FF705C5DA2A104D1850_1113373120.addTaint(taint);
             return var23A4222CF5292FF705C5DA2A104D1850_1113373120;
-        } //End block
+        } 
 DERObject var540C13E9E156B687226421B24F2DF178_1409160162 =         null;
         var540C13E9E156B687226421B24F2DF178_1409160162.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1409160162;
-        // ---------- Original Method ----------
-        //if (obj != null)
-        //{
-            //return obj.getDERObject();
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -244,25 +247,25 @@ DEREncodable varBD62BAA67427D1C13A0898EAAD77920C_797936256 =         ASN1OctetSt
 DEREncodable var63D6E0ED18B2DCD697AD4DA88AE04A3A_1352356018 =             getObject();
             var63D6E0ED18B2DCD697AD4DA88AE04A3A_1352356018.addTaint(taint);
             return var63D6E0ED18B2DCD697AD4DA88AE04A3A_1352356018;
-        } //End block
+        } 
         RuntimeException var0F0AECC06703C00CA3D5496CE88A4347_540171058 = new RuntimeException("implicit tagging not implemented for tag: " + tag);
         var0F0AECC06703C00CA3D5496CE88A4347_540171058.addTaint(taint);
         throw var0F0AECC06703C00CA3D5496CE88A4347_540171058;
-        // ---------- Original Method ----------
-        //switch (tag)
-        //{
-        //case DERTags.SET:
-            //return ASN1Set.getInstance(this, isExplicit).parser();
-        //case DERTags.SEQUENCE:
-            //return ASN1Sequence.getInstance(this, isExplicit).parser();
-        //case DERTags.OCTET_STRING:
-            //return ASN1OctetString.getInstance(this, isExplicit).parser();
-        //}
-        //if (isExplicit)
-        //{
-            //return getObject();
-        //}
-        //throw new RuntimeException("implicit tagging not implemented for tag: " + tag);
+        
+        
+        
+        
+            
+        
+            
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -271,8 +274,8 @@ DEREncodable var63D6E0ED18B2DCD697AD4DA88AE04A3A_1352356018 =             getObj
 DERObject var637323B1C4EE7CAF17B2CD40E14254B5_94608418 =         this.getDERObject();
         var637323B1C4EE7CAF17B2CD40E14254B5_94608418.addTaint(taint);
         return var637323B1C4EE7CAF17B2CD40E14254B5_94608418;
-        // ---------- Original Method ----------
-        //return this.getDERObject();
+        
+        
     }
 
     
@@ -285,8 +288,8 @@ DERObject var637323B1C4EE7CAF17B2CD40E14254B5_94608418 =         this.getDERObje
 String varD4481D92D04117EB9AC946380B8C587E_470716193 =         "[" + tagNo + "]" + obj;
         varD4481D92D04117EB9AC946380B8C587E_470716193.addTaint(taint);
         return varD4481D92D04117EB9AC946380B8C587E_470716193;
-        // ---------- Original Method ----------
-        //return "[" + tagNo + "]" + obj;
+        
+        
     }
 
     

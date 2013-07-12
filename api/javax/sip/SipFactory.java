@@ -1,6 +1,6 @@
 package javax.sip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class SipFactory {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.283 -0400", hash_original_method = "310FD6F79BE3873A4CC6341AA537481F", hash_generated_method = "8EE8B7CE3FF369FB663AE49D47AA71E3")
     private  SipFactory() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,11 +32,12 @@ public class SipFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.284 -0400", hash_original_method = "4674ABC43EF2CEE4F0AE8B5BE63244D8", hash_generated_method = "1563E944C31091A298AF7AA59469E4FE")
     public synchronized void resetFactory() {
         mNameSipStackMap.clear();
-        // ---------- Original Method ----------
-        //mNameSipStackMap.clear();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:20.285 -0400", hash_original_method = "46ABB390CF7D9D4CDAF3E704A7985B1B", hash_generated_method = "371DE14694E31FB9B3B13865AB150E98")
     public synchronized SipStack createSipStack(Properties properties) throws PeerUnavailableException {
         addTaint(properties.getTaint());
@@ -50,8 +51,8 @@ public class SipFactory {
                         STACK_NAME_PROP + " property not found");
                 var8E8896BE5BB95599FB6403E563010A92_893344380.addTaint(taint);
                 throw var8E8896BE5BB95599FB6403E563010A92_893344380;
-            } //End block
-        } //End block
+            } 
+        } 
         SipStack sipStack = mNameSipStackMap.get(name);
     if(sipStack == null)        
         {
@@ -63,21 +64,21 @@ public class SipFactory {
                         .asSubclass(SipStack.class)
                         .getConstructor(new Class[] {Properties.class})
                         .newInstance(new Object[] {properties});
-            } //End block
+            } 
             catch (Exception e)
             {
                 PeerUnavailableException varB4B1F8BF26990A35C3130FDDD6F84EA1_941180237 = new PeerUnavailableException(
                         "Failed to initiate " + implClassName, e);
                 varB4B1F8BF26990A35C3130FDDD6F84EA1_941180237.addTaint(taint);
                 throw varB4B1F8BF26990A35C3130FDDD6F84EA1_941180237;
-            } //End block
+            } 
             mNameSipStackMap.put(name, sipStack);
-        } //End block
+        } 
 SipStack var0FC1F21ED47F4C0C48881B0DAF112A16_1347803189 =         sipStack;
         var0FC1F21ED47F4C0C48881B0DAF112A16_1347803189.addTaint(taint);
         return var0FC1F21ED47F4C0C48881B0DAF112A16_1347803189;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -88,7 +89,7 @@ SipStack var0FC1F21ED47F4C0C48881B0DAF112A16_1347803189 =         sipStack;
 AddressFactory var562E421D95FD4411AB15911AADE81CA6_882091724 =             new gov.nist.javax.sip.address.AddressFactoryImpl();
             var562E421D95FD4411AB15911AADE81CA6_882091724.addTaint(taint);
             return var562E421D95FD4411AB15911AADE81CA6_882091724;
-        } //End block
+        } 
         catch (Exception e)
         {
     if(e instanceof PeerUnavailableException)            
@@ -96,26 +97,26 @@ AddressFactory var562E421D95FD4411AB15911AADE81CA6_882091724 =             new g
                 PeerUnavailableException var8AD0B7A7B75CEB7D544732B36B4BF06C_653177171 = (PeerUnavailableException) e;
                 var8AD0B7A7B75CEB7D544732B36B4BF06C_653177171.addTaint(taint);
                 throw var8AD0B7A7B75CEB7D544732B36B4BF06C_653177171;
-            } //End block
+            } 
             else
             {
                 PeerUnavailableException var396F214AE68FED43EE07EE6DA855C7B8_930510712 = new PeerUnavailableException(
                         "Failed to create AddressFactory", e);
                 var396F214AE68FED43EE07EE6DA855C7B8_930510712.addTaint(taint);
                 throw var396F214AE68FED43EE07EE6DA855C7B8_930510712;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return new gov.nist.javax.sip.address.AddressFactoryImpl();
-        //} catch (Exception e) {
-            //if (e instanceof PeerUnavailableException) {
-                //throw (PeerUnavailableException) e;
-            //} else {
-                //throw new PeerUnavailableException(
-                        //"Failed to create AddressFactory", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+                
+            
+                
+                        
+            
+        
     }
 
     
@@ -126,7 +127,7 @@ AddressFactory var562E421D95FD4411AB15911AADE81CA6_882091724 =             new g
 HeaderFactory varAC192C4527CC0F586B5A80B1EFE715DE_1506505426 =             new gov.nist.javax.sip.header.HeaderFactoryImpl();
             varAC192C4527CC0F586B5A80B1EFE715DE_1506505426.addTaint(taint);
             return varAC192C4527CC0F586B5A80B1EFE715DE_1506505426;
-        } //End block
+        } 
         catch (Exception e)
         {
     if(e instanceof PeerUnavailableException)            
@@ -134,26 +135,26 @@ HeaderFactory varAC192C4527CC0F586B5A80B1EFE715DE_1506505426 =             new g
                 PeerUnavailableException var8AD0B7A7B75CEB7D544732B36B4BF06C_1482796589 = (PeerUnavailableException) e;
                 var8AD0B7A7B75CEB7D544732B36B4BF06C_1482796589.addTaint(taint);
                 throw var8AD0B7A7B75CEB7D544732B36B4BF06C_1482796589;
-            } //End block
+            } 
             else
             {
                 PeerUnavailableException varDDD394FB2667ABC128691B7DAD32ECB0_1489620489 = new PeerUnavailableException(
                         "Failed to create HeaderFactory", e);
                 varDDD394FB2667ABC128691B7DAD32ECB0_1489620489.addTaint(taint);
                 throw varDDD394FB2667ABC128691B7DAD32ECB0_1489620489;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return new gov.nist.javax.sip.header.HeaderFactoryImpl();
-        //} catch (Exception e) {
-            //if (e instanceof PeerUnavailableException) {
-                //throw (PeerUnavailableException) e;
-            //} else {
-                //throw new PeerUnavailableException(
-                        //"Failed to create HeaderFactory", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+                
+            
+                
+                        
+            
+        
     }
 
     
@@ -164,7 +165,7 @@ HeaderFactory varAC192C4527CC0F586B5A80B1EFE715DE_1506505426 =             new g
 MessageFactory varACD0A6CE063FAEC9BCD99F0E9CE1CEC0_1523206167 =             new gov.nist.javax.sip.message.MessageFactoryImpl();
             varACD0A6CE063FAEC9BCD99F0E9CE1CEC0_1523206167.addTaint(taint);
             return varACD0A6CE063FAEC9BCD99F0E9CE1CEC0_1523206167;
-        } //End block
+        } 
         catch (Exception e)
         {
     if(e instanceof PeerUnavailableException)            
@@ -172,26 +173,26 @@ MessageFactory varACD0A6CE063FAEC9BCD99F0E9CE1CEC0_1523206167 =             new 
                 PeerUnavailableException var8AD0B7A7B75CEB7D544732B36B4BF06C_831360476 = (PeerUnavailableException) e;
                 var8AD0B7A7B75CEB7D544732B36B4BF06C_831360476.addTaint(taint);
                 throw var8AD0B7A7B75CEB7D544732B36B4BF06C_831360476;
-            } //End block
+            } 
             else
             {
                 PeerUnavailableException var86BF01E245BEF996D4705E1061808349_252739786 = new PeerUnavailableException(
                         "Failed to create MessageFactory", e);
                 var86BF01E245BEF996D4705E1061808349_252739786.addTaint(taint);
                 throw var86BF01E245BEF996D4705E1061808349_252739786;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return new gov.nist.javax.sip.message.MessageFactoryImpl();
-        //} catch (Exception e) {
-            //if (e instanceof PeerUnavailableException) {
-                //throw (PeerUnavailableException) e;
-            //} else {
-                //throw new PeerUnavailableException(
-                        //"Failed to create MessageFactory", e);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+                
+            
+                
+                        
+            
+        
     }
 
     

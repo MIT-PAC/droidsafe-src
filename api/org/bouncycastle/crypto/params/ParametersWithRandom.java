@@ -1,6 +1,6 @@
 package org.bouncycastle.crypto.params;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ public class ParametersWithRandom implements CipherParameters {
         SecureRandom        random) {
         this.random = random;
         this.parameters = parameters;
-        // ---------- Original Method ----------
-        //this.random = random;
-        //this.parameters = parameters;
+        
+        
+        
     }
 
     
@@ -32,27 +32,29 @@ public class ParametersWithRandom implements CipherParameters {
         CipherParameters    parameters) {
         this(parameters, new SecureRandom());
         addTaint(parameters.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.379 -0400", hash_original_method = "4043DCC08234105D51A7E8CF51216DB5", hash_generated_method = "34BE5E69F6D9429F9B9AD8AB0E85D92D")
     public SecureRandom getRandom() {
 SecureRandom var891A210E71DB8175751C941BFF722D69_901886146 =         random;
         var891A210E71DB8175751C941BFF722D69_901886146.addTaint(taint);
         return var891A210E71DB8175751C941BFF722D69_901886146;
-        // ---------- Original Method ----------
-        //return random;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:41.379 -0400", hash_original_method = "4D76F2EFD1EF9C1CA864824F06254E67", hash_generated_method = "E8D965ECE166777FBE2E1B19CDBA4567")
     public CipherParameters getParameters() {
 CipherParameters var3CB0A38B794BDEDADB1F50256E0AE35B_2105458941 =         parameters;
         var3CB0A38B794BDEDADB1F50256E0AE35B_2105458941.addTaint(taint);
         return var3CB0A38B794BDEDADB1F50256E0AE35B_2105458941;
-        // ---------- Original Method ----------
-        //return parameters;
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -98,7 +98,7 @@ public class LinearLayout extends ViewGroup {
     public  LinearLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -107,7 +107,7 @@ public class LinearLayout extends ViewGroup {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -123,17 +123,17 @@ public class LinearLayout extends ViewGroup {
     if(index >= 0)        
         {
             setOrientation(index);
-        } //End block
+        } 
         index = a.getInt(com.android.internal.R.styleable.LinearLayout_gravity, -1);
     if(index >= 0)        
         {
             setGravity(index);
-        } //End block
+        } 
         boolean baselineAligned = a.getBoolean(R.styleable.LinearLayout_baselineAligned, true);
     if(!baselineAligned)        
         {
             setBaselineAligned(baselineAligned);
-        } //End block
+        } 
         mWeightSum = a.getFloat(R.styleable.LinearLayout_weightSum, -1.0f);
         mBaselineAlignedChildIndex =
                 a.getInt(com.android.internal.R.styleable.LinearLayout_baselineAlignedChildIndex, -1);
@@ -142,8 +142,8 @@ public class LinearLayout extends ViewGroup {
         mShowDividers = a.getInt(R.styleable.LinearLayout_showDividers, SHOW_DIVIDER_NONE);
         mDividerPadding = a.getDimensionPixelSize(R.styleable.LinearLayout_dividerPadding, 0);
         a.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -152,34 +152,36 @@ public class LinearLayout extends ViewGroup {
     if(showDividers != mShowDividers)        
         {
             requestLayout();
-        } //End block
+        } 
         mShowDividers = showDividers;
-        // ---------- Original Method ----------
-        //if (showDividers != mShowDividers) {
-            //requestLayout();
-        //}
-        //mShowDividers = showDividers;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.343 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "FB39164DDD584A49B27A896FF6C75B09")
     @Override
     public boolean shouldDelayChildPressedState() {
         boolean var68934A3E9455FA72420237EB05902327_125297238 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1463825164 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1463825164;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.344 -0400", hash_original_method = "81C750B99B14EF38CA21D36808CD7086", hash_generated_method = "A427781F26005B5885C79401FB15912E")
     public int getShowDividers() {
         int var570DF19833C5FFBC7225A5E90145E2AD_1813740512 = (mShowDividers);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_508851102 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_508851102;
-        // ---------- Original Method ----------
-        //return mShowDividers;
+        
+        
     }
 
     
@@ -188,94 +190,98 @@ public class LinearLayout extends ViewGroup {
     if(divider == mDivider)        
         {
             return;
-        } //End block
+        } 
         mDivider = divider;
     if(divider != null)        
         {
             mDividerWidth = divider.getIntrinsicWidth();
             mDividerHeight = divider.getIntrinsicHeight();
-        } //End block
+        } 
         else
         {
             mDividerWidth = 0;
             mDividerHeight = 0;
-        } //End block
+        } 
         setWillNotDraw(divider == null);
         requestLayout();
-        // ---------- Original Method ----------
-        //if (divider == mDivider) {
-            //return;
-        //}
-        //mDivider = divider;
-        //if (divider != null) {
-            //mDividerWidth = divider.getIntrinsicWidth();
-            //mDividerHeight = divider.getIntrinsicHeight();
-        //} else {
-            //mDividerWidth = 0;
-            //mDividerHeight = 0;
-        //}
-        //setWillNotDraw(divider == null);
-        //requestLayout();
+        
+        
+            
+        
+        
+        
+            
+            
+        
+            
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.345 -0400", hash_original_method = "E2E4F4C3D603F5F2D62C3F5CBAFDCC06", hash_generated_method = "21B19108F063ADDE197FAB8209A2015F")
     public void setDividerPadding(int padding) {
         mDividerPadding = padding;
-        // ---------- Original Method ----------
-        //mDividerPadding = padding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.345 -0400", hash_original_method = "2F70F7AA30D3819DCD53286185A1CA49", hash_generated_method = "332F230F2E6C7256EBA2225C57DE109B")
     public int getDividerPadding() {
         int var009CC63A514E465A3A03D8B8E546A1D2_743750504 = (mDividerPadding);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770201911 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_770201911;
-        // ---------- Original Method ----------
-        //return mDividerPadding;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.345 -0400", hash_original_method = "4DCD95C01B6B6891D72266EBA61909DF", hash_generated_method = "72A856A5553A2C36D015D991DD1CA41C")
     public int getDividerWidth() {
         int var2CFB9EB3B0B1B519D9DE96130629CD90_246453337 = (mDividerWidth);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656306324 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1656306324;
-        // ---------- Original Method ----------
-        //return mDividerWidth;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.345 -0400", hash_original_method = "4D234859DAD3D7D2BD3ABC15BDBCF93C", hash_generated_method = "7D984BD009131C8D48CBEC98ADBFAC87")
     @Override
     protected void onDraw(Canvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
     if(mDivider == null)        
         {
             return;
-        } //End block
+        } 
     if(mOrientation == VERTICAL)        
         {
             drawDividersVertical(canvas);
-        } //End block
+        } 
         else
         {
             drawDividersHorizontal(canvas);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mDivider == null) {
-            //return;
-        //}
-        //if (mOrientation == VERTICAL) {
-            //drawDividersVertical(canvas);
-        //} else {
-            //drawDividersHorizontal(canvas);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.346 -0400", hash_original_method = "6F9B50C05500D3423B595FD6EF29F0C0", hash_generated_method = "15F074BFC7758753A85099824D599A72")
      void drawDividersVertical(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -290,9 +296,9 @@ for(int i = 0;i < count;i++)
                     final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                     final int top = child.getTop() - lp.topMargin;
                     drawHorizontalDivider(canvas, top);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(hasDividerBeforeChildAt(count))        
         {
             final View child = getVirtualChildAt(count - 1);
@@ -300,19 +306,20 @@ for(int i = 0;i < count;i++)
     if(child == null)            
             {
                 bottom = getHeight() - getPaddingBottom() - mDividerHeight;
-            } //End block
+            } 
             else
             {
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                 bottom = child.getBottom() + lp.bottomMargin;
-            } //End block
+            } 
             drawHorizontalDivider(canvas, bottom);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.347 -0400", hash_original_method = "86833A485E8343AB391A7321B35B1538", hash_generated_method = "9DCC6ED1D6359D1869F6BF398DE1CC50")
      void drawDividersHorizontal(Canvas canvas) {
         addTaint(canvas.getTaint());
@@ -327,9 +334,9 @@ for(int i = 0;i < count;i++)
                     final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                     final int left = child.getLeft() - lp.leftMargin;
                     drawVerticalDivider(canvas, left);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(hasDividerBeforeChildAt(count))        
         {
             final View child = getVirtualChildAt(count - 1);
@@ -337,19 +344,20 @@ for(int i = 0;i < count;i++)
     if(child == null)            
             {
                 right = getWidth() - getPaddingRight() - mDividerWidth;
-            } //End block
+            } 
             else
             {
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                 right = child.getRight() + lp.rightMargin;
-            } //End block
+            } 
             drawVerticalDivider(canvas, right);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.347 -0400", hash_original_method = "B34FB2DB2BC7F90A8C4BCDC4C5D2422E", hash_generated_method = "997FA67DAA7C4828D6949F265C63B0D9")
      void drawHorizontalDivider(Canvas canvas, int top) {
         addTaint(top);
@@ -357,13 +365,14 @@ for(int i = 0;i < count;i++)
         mDivider.setBounds(getPaddingLeft() + mDividerPadding, top,
                 getWidth() - getPaddingRight() - mDividerPadding, top + mDividerHeight);
         mDivider.draw(canvas);
-        // ---------- Original Method ----------
-        //mDivider.setBounds(getPaddingLeft() + mDividerPadding, top,
-                //getWidth() - getPaddingRight() - mDividerPadding, top + mDividerHeight);
-        //mDivider.draw(canvas);
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.348 -0400", hash_original_method = "230D2DD24F19D940DC30A0FCA2C380AD", hash_generated_method = "CA65736D232DD051018F52FAFA16E8D0")
      void drawVerticalDivider(Canvas canvas, int left) {
         addTaint(left);
@@ -371,48 +380,52 @@ for(int i = 0;i < count;i++)
         mDivider.setBounds(left, getPaddingTop() + mDividerPadding,
                 left + mDividerWidth, getHeight() - getPaddingBottom() - mDividerPadding);
         mDivider.draw(canvas);
-        // ---------- Original Method ----------
-        //mDivider.setBounds(left, getPaddingTop() + mDividerPadding,
-                //left + mDividerWidth, getHeight() - getPaddingBottom() - mDividerPadding);
-        //mDivider.draw(canvas);
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.348 -0400", hash_original_method = "F54465AC5542CF519D3902E7BAEA3188", hash_generated_method = "038A203A7B5F4F189D6D7E232A13D0DA")
     public boolean isBaselineAligned() {
         boolean var94134467590407890F5FDF30E2B51BBA_1426432400 = (mBaselineAligned);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1474507476 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1474507476;
-        // ---------- Original Method ----------
-        //return mBaselineAligned;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.348 -0400", hash_original_method = "8643C35E200A9ECC6F4D083B3C632ADD", hash_generated_method = "F5B36677A19813656057576482BE895F")
     @android.view.RemotableViewMethod
     public void setBaselineAligned(boolean baselineAligned) {
         mBaselineAligned = baselineAligned;
-        // ---------- Original Method ----------
-        //mBaselineAligned = baselineAligned;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.349 -0400", hash_original_method = "49EB4E4C3BC63D2BEAA8F5D24053BB96", hash_generated_method = "AB4F42A202AB5D47D2E8985F77E7687A")
     public boolean isMeasureWithLargestChildEnabled() {
         boolean var0C8E174FC05FB87AC9CC0DB60A352BB7_769363621 = (mUseLargestChild);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_360344302 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_360344302;
-        // ---------- Original Method ----------
-        //return mUseLargestChild;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.349 -0400", hash_original_method = "55BFE46AC305D5ECEC6F564C443E4CAB", hash_generated_method = "F0D8B5D04B16B58DE2D6932713E4CAD4")
     @android.view.RemotableViewMethod
     public void setMeasureWithLargestChildEnabled(boolean enabled) {
         mUseLargestChild = enabled;
-        // ---------- Original Method ----------
-        //mUseLargestChild = enabled;
+        
+        
     }
 
     
@@ -424,14 +437,14 @@ for(int i = 0;i < count;i++)
             int var304F84E20A7DBE8F7236867526CDC85A_1355571722 = (super.getBaseline());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351692950 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_351692950;
-        } //End block
+        } 
     if(getChildCount() <= mBaselineAlignedChildIndex)        
         {
             RuntimeException varFEFE770BD7BDB06C5E9392176132839F_997658502 = new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
                     + "set to an index that is out of bounds.");
             varFEFE770BD7BDB06C5E9392176132839F_997658502.addTaint(taint);
             throw varFEFE770BD7BDB06C5E9392176132839F_997658502;
-        } //End block
+        } 
         final View child = getChildAt(mBaselineAlignedChildIndex);
         final int childBaseline = child.getBaseline();
     if(childBaseline == -1)        
@@ -441,12 +454,12 @@ for(int i = 0;i < count;i++)
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1040435260 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721333559 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1721333559;
-            } //End block
+            } 
             RuntimeException varF6D0012B58E45442C5864C67D24ACFF3_1923904996 = new RuntimeException("mBaselineAlignedChildIndex of LinearLayout "
                     + "points to a View that doesn't know how to get its baseline.");
             varF6D0012B58E45442C5864C67D24ACFF3_1923904996.addTaint(taint);
             throw varF6D0012B58E45442C5864C67D24ACFF3_1923904996;
-        } //End block
+        } 
         int childTop = mBaselineChildTop;
     if(mOrientation == VERTICAL)        
         {
@@ -462,24 +475,25 @@ switch(majorGravity){
                                mTotalLength) / 2;
                 break;
 }
-            } //End block
-        } //End block
+            } 
+        } 
         LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
         int var44411C6AC081710EF5DA192FAEBC73DC_256698783 = (childTop + lp.topMargin + childBaseline);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884501085 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1884501085;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.350 -0400", hash_original_method = "90F550BFDC49A6587A7A8440E339A132", hash_generated_method = "94F7AF81FD65DB4B9CB38787DEF5D604")
     public int getBaselineAlignedChildIndex() {
         int varBB7128E3942208616EA854B374A737D2_1368027513 = (mBaselineAlignedChildIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390455478 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_390455478;
-        // ---------- Original Method ----------
-        //return mBaselineAlignedChildIndex;
+        
+        
     }
 
     
@@ -492,14 +506,14 @@ switch(majorGravity){
                     + "of range (0, " + getChildCount() + ")");
             var730FFC68678AECB993C773913A813872_105958805.addTaint(taint);
             throw var730FFC68678AECB993C773913A813872_105958805;
-        } //End block
+        } 
         mBaselineAlignedChildIndex = i;
-        // ---------- Original Method ----------
-        //if ((i < 0) || (i >= getChildCount())) {
-            //throw new IllegalArgumentException("base aligned child index out "
-                    //+ "of range (0, " + getChildCount() + ")");
-        //}
-        //mBaselineAlignedChildIndex = i;
+        
+        
+            
+                    
+        
+        
     }
 
     
@@ -509,8 +523,8 @@ switch(majorGravity){
 View varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075 =         getChildAt(index);
         varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075.addTaint(taint);
         return varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075;
-        // ---------- Original Method ----------
-        //return getChildAt(index);
+        
+        
     }
 
     
@@ -519,18 +533,19 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075 =         getChildAt(index);
         int var9B10B38940134F290E8A5D1B402D3360_133387294 = (getChildCount());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_477048992 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_477048992;
-        // ---------- Original Method ----------
-        //return getChildCount();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.351 -0400", hash_original_method = "131E7E20664E8B649BC33F0915A0DE0D", hash_generated_method = "14BAC3BE6453C12438624A00B2BC7F01")
     public float getWeightSum() {
         float var0B41BD4353E911E2EC90D6CA263443B7_1911961503 = (mWeightSum);
                 float var546ADE640B6EDFBC8A086EF31347E768_1414285432 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1414285432;
-        // ---------- Original Method ----------
-        //return mWeightSum;
+        
+        
     }
 
     
@@ -538,31 +553,31 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075 =         getChildAt(index);
     @android.view.RemotableViewMethod
     public void setWeightSum(float weightSum) {
         mWeightSum = Math.max(0.0f, weightSum);
-        // ---------- Original Method ----------
-        //mWeightSum = Math.max(0.0f, weightSum);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.352 -0400", hash_original_method = "3F3B158F407FDE6BDDE91ED473E376D3", hash_generated_method = "38D57F229EDBAF022EF059A47EA4C0DB")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
     if(mOrientation == VERTICAL)        
         {
             measureVertical(widthMeasureSpec, heightMeasureSpec);
-        } //End block
+        } 
         else
         {
             measureHorizontal(widthMeasureSpec, heightMeasureSpec);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOrientation == VERTICAL) {
-            //measureVertical(widthMeasureSpec, heightMeasureSpec);
-        //} else {
-            //measureHorizontal(widthMeasureSpec, heightMeasureSpec);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -574,14 +589,14 @@ View varEB5FB2D1E3F8D0183D7A20330A95FD1E_337656075 =         getChildAt(index);
             boolean varF41BB1477049D31D1F4DCB9684F87CAF_1474134250 = ((mShowDividers & SHOW_DIVIDER_BEGINNING) != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_644803629 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_644803629;
-        } //End block
+        } 
         else
     if(childIndex == getChildCount())        
         {
             boolean var4A9B9AEEC047C1383E0DB657BFBE6D55_2112659255 = ((mShowDividers & SHOW_DIVIDER_END) != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1064446102 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1064446102;
-        } //End block
+        } 
         else
     if((mShowDividers & SHOW_DIVIDER_MIDDLE) != 0)        
         {
@@ -592,31 +607,31 @@ for(int i = childIndex - 1;i >= 0;i--)
                 {
                     hasVisibleViewBefore = true;
                     break;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varD7B8F5363C26224A72C670D772A5097C_1269855362 = (hasVisibleViewBefore);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_734963749 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_734963749;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1848620940 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_338300546 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_338300546;
-        // ---------- Original Method ----------
-        //if (childIndex == 0) {
-            //return (mShowDividers & SHOW_DIVIDER_BEGINNING) != 0;
-        //} else if (childIndex == getChildCount()) {
-            //return (mShowDividers & SHOW_DIVIDER_END) != 0;
-        //} else if ((mShowDividers & SHOW_DIVIDER_MIDDLE) != 0) {
-            //boolean hasVisibleViewBefore = false;
-            //for (int i = childIndex - 1; i >= 0; i--) {
-                //if (getChildAt(i).getVisibility() != GONE) {
-                    //hasVisibleViewBefore = true;
-                    //break;
-                //}
-            //}
-            //return hasVisibleViewBefore;
-        //}
-        //return false;
+        
+        
+            
+        
+            
+        
+            
+            
+                
+                    
+                    
+                
+            
+            
+        
+        
     }
 
     
@@ -645,23 +660,23 @@ for(int i = 0;i < count;++i)
             {
                 mTotalLength += measureNullChild(i);
                 continue;
-            } //End block
+            } 
     if(child.getVisibility() == View.GONE)            
             {
                 i += getChildrenSkipCount(child, i);
                 continue;
-            } //End block
+            } 
     if(hasDividerBeforeChildAt(i))            
             {
                 mTotalLength += mDividerHeight;
-            } //End block
+            } 
             LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
             totalWeight += lp.weight;
     if(heightMode == MeasureSpec.EXACTLY && lp.height == 0 && lp.weight > 0)            
             {
                 final int totalLength = mTotalLength;
                 mTotalLength = Math.max(totalLength, totalLength + lp.topMargin + lp.bottomMargin);
-            } //End block
+            } 
             else
             {
                 int oldHeight = Integer.MIN_VALUE;
@@ -669,14 +684,14 @@ for(int i = 0;i < count;++i)
                 {
                     oldHeight = 0;
                     lp.height = LayoutParams.WRAP_CONTENT;
-                } //End block
+                } 
                 measureChildBeforeLayout(
                        child, i, widthMeasureSpec, 0, heightMeasureSpec,
                        totalWeight == 0 ? mTotalLength : 0);
     if(oldHeight != Integer.MIN_VALUE)                
                 {
                     lp.height = oldHeight;
-                } //End block
+                } 
                 final int childHeight = child.getMeasuredHeight();
                 final int totalLength = mTotalLength;
                 mTotalLength = Math.max(totalLength, totalLength + childHeight + lp.topMargin +
@@ -684,12 +699,12 @@ for(int i = 0;i < count;++i)
     if(useLargestChild)                
                 {
                     largestChildHeight = Math.max(childHeight, largestChildHeight);
-                } //End block
-            } //End block
+                } 
+            } 
     if((baselineChildIndex >= 0) && (baselineChildIndex == i + 1))            
             {
                 mBaselineChildTop = mTotalLength;
-            } //End block
+            } 
     if(i < baselineChildIndex && lp.weight > 0)            
             {
                 RuntimeException var8793DA4BC4BCAFD95C7429C6DFCF0E29_609179905 = new RuntimeException("A child of LinearLayout with index "
@@ -698,13 +713,13 @@ for(int i = 0;i < count;++i)
                         + "mBaselineAlignedChildIndex.");
                 var8793DA4BC4BCAFD95C7429C6DFCF0E29_609179905.addTaint(taint);
                 throw var8793DA4BC4BCAFD95C7429C6DFCF0E29_609179905;
-            } //End block
+            } 
             boolean matchWidthLocally = false;
     if(widthMode != MeasureSpec.EXACTLY && lp.width == LayoutParams.MATCH_PARENT)            
             {
                 matchWidth = true;
                 matchWidthLocally = true;
-            } //End block
+            } 
             final int margin = lp.leftMargin + lp.rightMargin;
             final int measuredWidth = child.getMeasuredWidth() + margin;
             maxWidth = Math.max(maxWidth, measuredWidth);
@@ -714,18 +729,18 @@ for(int i = 0;i < count;++i)
             {
                 weightedMaxWidth = Math.max(weightedMaxWidth,
                         matchWidthLocally ? margin : measuredWidth);
-            } //End block
+            } 
             else
             {
                 alternativeMaxWidth = Math.max(alternativeMaxWidth,
                         matchWidthLocally ? margin : measuredWidth);
-            } //End block
+            } 
             i += getChildrenSkipCount(child, i);
-        } //End block
+        } 
     if(mTotalLength > 0 && hasDividerBeforeChildAt(count))        
         {
             mTotalLength += mDividerHeight;
-        } //End block
+        } 
     if(useLargestChild &&
                 (heightMode == MeasureSpec.AT_MOST || heightMode == MeasureSpec.UNSPECIFIED))        
         {
@@ -737,19 +752,19 @@ for(int i = 0;i < count;++i)
                 {
                     mTotalLength += measureNullChild(i);
                     continue;
-                } //End block
+                } 
     if(child.getVisibility() == GONE)                
                 {
                     i += getChildrenSkipCount(child, i);
                     continue;
-                } //End block
+                } 
                 final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams)
                         child.getLayoutParams();
                 final int totalLength = mTotalLength;
                 mTotalLength = Math.max(totalLength, totalLength + largestChildHeight +
                         lp.topMargin + lp.bottomMargin + getNextLocationOffset(child));
-            } //End block
-        } //End block
+            } 
+        } 
         mTotalLength += mPaddingTop + mPaddingBottom;
         int heightSize = mTotalLength;
         heightSize = Math.max(heightSize, getSuggestedMinimumHeight());
@@ -766,7 +781,7 @@ for(int i = 0;i < count;++i)
     if(child.getVisibility() == View.GONE)                
                 {
                     continue;
-                } //End block
+                } 
                 LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
                 float childExtra = lp.weight;
     if(childExtra > 0)                
@@ -783,19 +798,19 @@ for(int i = 0;i < count;++i)
     if(childHeight < 0)                        
                         {
                             childHeight = 0;
-                        } //End block
+                        } 
                         child.measure(childWidthMeasureSpec,
                                 MeasureSpec.makeMeasureSpec(childHeight, MeasureSpec.EXACTLY));
-                    } //End block
+                    } 
                     else
                     {
                         child.measure(childWidthMeasureSpec,
                                 MeasureSpec.makeMeasureSpec(share > 0 ? share : 0,
                                         MeasureSpec.EXACTLY));
-                    } //End block
+                    } 
                     childState = combineMeasuredStates(childState, child.getMeasuredState()
                             & (MEASURED_STATE_MASK>>MEASURED_HEIGHT_STATE_SHIFT));
-                } //End block
+                } 
                 final int margin = lp.leftMargin + lp.rightMargin;
                 final int measuredWidth = child.getMeasuredWidth() + margin;
                 maxWidth = Math.max(maxWidth, measuredWidth);
@@ -807,9 +822,9 @@ for(int i = 0;i < count;++i)
                 final int totalLength = mTotalLength;
                 mTotalLength = Math.max(totalLength, totalLength + child.getMeasuredHeight() +
                         lp.topMargin + lp.bottomMargin + getNextLocationOffset(child));
-            } //End block
+            } 
             mTotalLength += mPaddingTop + mPaddingBottom;
-        } //End block
+        } 
         else
         {
             alternativeMaxWidth = Math.max(alternativeMaxWidth,
@@ -822,7 +837,7 @@ for(int i = 0;i < count;i++)
     if(child == null || child.getVisibility() == View.GONE)                    
                     {
                         continue;
-                    } //End block
+                    } 
                     final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
                     float childExtra = lp.weight;
     if(childExtra > 0)                    
@@ -832,14 +847,14 @@ for(int i = 0;i < count;i++)
                                         MeasureSpec.EXACTLY),
                                 MeasureSpec.makeMeasureSpec(largestChildHeight,
                                         MeasureSpec.EXACTLY));
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(!allFillParent && widthMode != MeasureSpec.EXACTLY)        
         {
             maxWidth = alternativeMaxWidth;
-        } //End block
+        } 
         maxWidth += mPaddingLeft + mPaddingRight;
         maxWidth = Math.max(maxWidth, getSuggestedMinimumWidth());
         setMeasuredDimension(resolveSizeAndState(maxWidth, widthMeasureSpec, childState),
@@ -847,9 +862,9 @@ for(int i = 0;i < count;i++)
     if(matchWidth)        
         {
             forceUniformWidth(count, heightMeasureSpec);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -871,24 +886,24 @@ for(int i = 0;i< count;++i)
                     lp.height = child.getMeasuredHeight();
                     measureChildWithMargins(child, uniformMeasureSpec, 0, heightMeasureSpec, 0);
                     lp.height = oldHeight;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredWidth(),
-                //MeasureSpec.EXACTLY);
-        //for (int i = 0; i< count; ++i) {
-           //final View child = getVirtualChildAt(i);
-           //if (child.getVisibility() != GONE) { 
-               //LinearLayout.LayoutParams lp = ((LinearLayout.LayoutParams)child.getLayoutParams());
-               //if (lp.width == LayoutParams.MATCH_PARENT) {
-                   //int oldHeight = lp.height;
-                   //lp.height = child.getMeasuredHeight();
-                   //measureChildWithMargins(child, uniformMeasureSpec, 0, heightMeasureSpec, 0);
-                   //lp.height = oldHeight;
-               //}
-           //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+                
+        
+           
+           
+               
+               
+                   
+                   
+                   
+                   
+               
+           
+        
     }
 
     
@@ -911,7 +926,7 @@ for(int i = 0;i< count;++i)
         {
             mMaxAscent = new int[VERTICAL_GRAVITY_COUNT];
             mMaxDescent = new int[VERTICAL_GRAVITY_COUNT];
-        } //End block
+        } 
         final int[] maxAscent = mMaxAscent;
         final int[] maxDescent = mMaxDescent;
         maxAscent[0] = maxAscent[1] = maxAscent[2] = maxAscent[3] = -1;
@@ -927,16 +942,16 @@ for(int i = 0;i < count;++i)
             {
                 mTotalLength += measureNullChild(i);
                 continue;
-            } //End block
+            } 
     if(child.getVisibility() == GONE)            
             {
                 i += getChildrenSkipCount(child, i);
                 continue;
-            } //End block
+            } 
     if(hasDividerBeforeChildAt(i))            
             {
                 mTotalLength += mDividerWidth;
-            } //End block
+            } 
             final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams)
                     child.getLayoutParams();
             totalWeight += lp.weight;
@@ -945,19 +960,19 @@ for(int i = 0;i < count;++i)
     if(isExactly)                
                 {
                     mTotalLength += lp.leftMargin + lp.rightMargin;
-                } //End block
+                } 
                 else
                 {
                     final int totalLength = mTotalLength;
                     mTotalLength = Math.max(totalLength, totalLength +
                             lp.leftMargin + lp.rightMargin);
-                } //End block
+                } 
     if(baselineAligned)                
                 {
                     final int freeSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
                     child.measure(freeSpec, freeSpec);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 int oldWidth = Integer.MIN_VALUE;
@@ -965,37 +980,37 @@ for(int i = 0;i < count;++i)
                 {
                     oldWidth = 0;
                     lp.width = LayoutParams.WRAP_CONTENT;
-                } //End block
+                } 
                 measureChildBeforeLayout(child, i, widthMeasureSpec,
                         totalWeight == 0 ? mTotalLength : 0,
                         heightMeasureSpec, 0);
     if(oldWidth != Integer.MIN_VALUE)                
                 {
                     lp.width = oldWidth;
-                } //End block
+                } 
                 final int childWidth = child.getMeasuredWidth();
     if(isExactly)                
                 {
                     mTotalLength += childWidth + lp.leftMargin + lp.rightMargin +
                             getNextLocationOffset(child);
-                } //End block
+                } 
                 else
                 {
                     final int totalLength = mTotalLength;
                     mTotalLength = Math.max(totalLength, totalLength + childWidth + lp.leftMargin +
                            lp.rightMargin + getNextLocationOffset(child));
-                } //End block
+                } 
     if(useLargestChild)                
                 {
                     largestChildWidth = Math.max(childWidth, largestChildWidth);
-                } //End block
-            } //End block
+                } 
+            } 
             boolean matchHeightLocally = false;
     if(heightMode != MeasureSpec.EXACTLY && lp.height == LayoutParams.MATCH_PARENT)            
             {
                 matchHeight = true;
                 matchHeightLocally = true;
-            } //End block
+            } 
             final int margin = lp.topMargin + lp.bottomMargin;
             final int childHeight = child.getMeasuredHeight() + margin;
             childState = combineMeasuredStates(childState, child.getMeasuredState());
@@ -1010,26 +1025,26 @@ for(int i = 0;i < count;++i)
                             & ~Gravity.AXIS_SPECIFIED) >> 1;
                     maxAscent[index] = Math.max(maxAscent[index], childBaseline);
                     maxDescent[index] = Math.max(maxDescent[index], childHeight - childBaseline);
-                } //End block
-            } //End block
+                } 
+            } 
             maxHeight = Math.max(maxHeight, childHeight);
             allFillParent = allFillParent && lp.height == LayoutParams.MATCH_PARENT;
     if(lp.weight > 0)            
             {
                 weightedMaxHeight = Math.max(weightedMaxHeight,
                         matchHeightLocally ? margin : childHeight);
-            } //End block
+            } 
             else
             {
                 alternativeMaxHeight = Math.max(alternativeMaxHeight,
                         matchHeightLocally ? margin : childHeight);
-            } //End block
+            } 
             i += getChildrenSkipCount(child, i);
-        } //End block
+        } 
     if(mTotalLength > 0 && hasDividerBeforeChildAt(count))        
         {
             mTotalLength += mDividerWidth;
-        } //End block
+        } 
     if(maxAscent[INDEX_TOP] != -1 ||
                 maxAscent[INDEX_CENTER_VERTICAL] != -1 ||
                 maxAscent[INDEX_BOTTOM] != -1 ||
@@ -1042,7 +1057,7 @@ for(int i = 0;i < count;++i)
                     Math.max(maxDescent[INDEX_CENTER_VERTICAL],
                     Math.max(maxDescent[INDEX_TOP], maxDescent[INDEX_BOTTOM])));
             maxHeight = Math.max(maxHeight, ascent + descent);
-        } //End block
+        } 
     if(useLargestChild &&
                 (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.UNSPECIFIED))        
         {
@@ -1054,27 +1069,27 @@ for(int i = 0;i < count;++i)
                 {
                     mTotalLength += measureNullChild(i);
                     continue;
-                } //End block
+                } 
     if(child.getVisibility() == GONE)                
                 {
                     i += getChildrenSkipCount(child, i);
                     continue;
-                } //End block
+                } 
                 final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams)
                         child.getLayoutParams();
     if(isExactly)                
                 {
                     mTotalLength += largestChildWidth + lp.leftMargin + lp.rightMargin +
                             getNextLocationOffset(child);
-                } //End block
+                } 
                 else
                 {
                     final int totalLength = mTotalLength;
                     mTotalLength = Math.max(totalLength, totalLength + largestChildWidth +
                             lp.leftMargin + lp.rightMargin + getNextLocationOffset(child));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mTotalLength += mPaddingLeft + mPaddingRight;
         int widthSize = mTotalLength;
         widthSize = Math.max(widthSize, getSuggestedMinimumWidth());
@@ -1094,7 +1109,7 @@ for(int i = 0;i < count;++i)
     if(child == null || child.getVisibility() == View.GONE)                
                 {
                     continue;
-                } //End block
+                } 
                 final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
                 float childExtra = lp.weight;
     if(childExtra > 0)                
@@ -1112,31 +1127,31 @@ for(int i = 0;i < count;++i)
     if(childWidth < 0)                        
                         {
                             childWidth = 0;
-                        } //End block
+                        } 
                         child.measure(
                             MeasureSpec.makeMeasureSpec(childWidth, MeasureSpec.EXACTLY),
                             childHeightMeasureSpec);
-                    } //End block
+                    } 
                     else
                     {
                         child.measure(MeasureSpec.makeMeasureSpec(
                                 share > 0 ? share : 0, MeasureSpec.EXACTLY),
                                 childHeightMeasureSpec);
-                    } //End block
+                    } 
                     childState = combineMeasuredStates(childState,
                             child.getMeasuredState() & MEASURED_STATE_MASK);
-                } //End block
+                } 
     if(isExactly)                
                 {
                     mTotalLength += child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin +
                             getNextLocationOffset(child);
-                } //End block
+                } 
                 else
                 {
                     final int totalLength = mTotalLength;
                     mTotalLength = Math.max(totalLength, totalLength + child.getMeasuredWidth() +
                             lp.leftMargin + lp.rightMargin + getNextLocationOffset(child));
-                } //End block
+                } 
                 boolean matchHeightLocally = heightMode != MeasureSpec.EXACTLY &&
                         lp.height == LayoutParams.MATCH_PARENT;
                 final int margin = lp.topMargin + lp .bottomMargin;
@@ -1157,9 +1172,9 @@ for(int i = 0;i < count;++i)
                         maxAscent[index] = Math.max(maxAscent[index], childBaseline);
                         maxDescent[index] = Math.max(maxDescent[index],
                                 childHeight - childBaseline);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             mTotalLength += mPaddingLeft + mPaddingRight;
     if(maxAscent[INDEX_TOP] != -1 ||
                     maxAscent[INDEX_CENTER_VERTICAL] != -1 ||
@@ -1173,8 +1188,8 @@ for(int i = 0;i < count;++i)
                         Math.max(maxDescent[INDEX_CENTER_VERTICAL],
                         Math.max(maxDescent[INDEX_TOP], maxDescent[INDEX_BOTTOM])));
                 maxHeight = Math.max(maxHeight, ascent + descent);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             alternativeMaxHeight = Math.max(alternativeMaxHeight, weightedMaxHeight);
@@ -1186,7 +1201,7 @@ for(int i = 0;i < count;i++)
     if(child == null || child.getVisibility() == View.GONE)                    
                     {
                         continue;
-                    } //End block
+                    } 
                     final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
                     float childExtra = lp.weight;
     if(childExtra > 0)                    
@@ -1195,14 +1210,14 @@ for(int i = 0;i < count;i++)
                                 MeasureSpec.makeMeasureSpec(largestChildWidth, MeasureSpec.EXACTLY),
                                 MeasureSpec.makeMeasureSpec(child.getMeasuredHeight(),
                                         MeasureSpec.EXACTLY));
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(!allFillParent && heightMode != MeasureSpec.EXACTLY)        
         {
             maxHeight = alternativeMaxHeight;
-        } //End block
+        } 
         maxHeight += mPaddingTop + mPaddingBottom;
         maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());
         setMeasuredDimension(widthSizeAndState | (childState&MEASURED_STATE_MASK),
@@ -1211,9 +1226,9 @@ for(int i = 0;i < count;i++)
     if(matchHeight)        
         {
             forceUniformHeight(count, widthMeasureSpec);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1235,27 +1250,28 @@ for(int i = 0;i < count;++i)
                     lp.width = child.getMeasuredWidth();
                     measureChildWithMargins(child, widthMeasureSpec, 0, uniformMeasureSpec, 0);
                     lp.width = oldWidth;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int uniformMeasureSpec = MeasureSpec.makeMeasureSpec(getMeasuredHeight(),
-                //MeasureSpec.EXACTLY);
-        //for (int i = 0; i < count; ++i) {
-           //final View child = getVirtualChildAt(i);
-           //if (child.getVisibility() != GONE) { 
-               //LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) child.getLayoutParams();
-               //if (lp.height == LayoutParams.MATCH_PARENT) {
-                   //int oldWidth = lp.width;
-                   //lp.width = child.getMeasuredWidth();
-                   //measureChildWithMargins(child, widthMeasureSpec, 0, uniformMeasureSpec, 0);
-                   //lp.width = oldWidth;
-               //}
-           //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+                
+        
+           
+           
+               
+               
+                   
+                   
+                   
+                   
+               
+           
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.384 -0400", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "BACF97EC16DA963ED054E7A9CA2EBBB4")
      int getChildrenSkipCount(View child, int index) {
         addTaint(index);
@@ -1263,19 +1279,20 @@ for(int i = 0;i < count;++i)
         int varCFCD208495D565EF66E7DFF9F98764DA_1343273198 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848799535 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1848799535;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.385 -0400", hash_original_method = "0C791DFCDA5E7DFE7963EF393BDBDA11", hash_generated_method = "71C12321D1CF6970316031567A479A56")
      int measureNullChild(int childIndex) {
         addTaint(childIndex);
         int varCFCD208495D565EF66E7DFF9F98764DA_1227080938 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838838573 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_838838573;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -1291,38 +1308,40 @@ for(int i = 0;i < count;++i)
         addTaint(child.getTaint());
         measureChildWithMargins(child, widthMeasureSpec, totalWidth,
                 heightMeasureSpec, totalHeight);
-        // ---------- Original Method ----------
-        //measureChildWithMargins(child, widthMeasureSpec, totalWidth,
-                //heightMeasureSpec, totalHeight);
+        
+        
+                
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.386 -0400", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "F3230835FFD89737DD373E112382A5F0")
      int getLocationOffset(View child) {
         addTaint(child.getTaint());
         int varCFCD208495D565EF66E7DFF9F98764DA_249352959 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781792213 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_781792213;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.386 -0400", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "2A7CDE0E46D110C53CD74E486A9E96E5")
      int getNextLocationOffset(View child) {
         addTaint(child.getTaint());
         int varCFCD208495D565EF66E7DFF9F98764DA_1631298927 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857372896 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1857372896;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.386 -0400", hash_original_method = "38617BD257A07AF46AAF702E88FA7138", hash_generated_method = "B3E7499C806C69C5A24D37B8FEFE1CCB")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -1331,17 +1350,17 @@ for(int i = 0;i < count;++i)
     if(mOrientation == VERTICAL)        
         {
             layoutVertical();
-        } //End block
+        } 
         else
         {
             layoutHorizontal();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOrientation == VERTICAL) {
-            //layoutVertical();
-        //} else {
-            //layoutHorizontal();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1373,7 +1392,7 @@ switch(majorGravity){
     if(child == null)            
             {
                 childTop += measureNullChild(i);
-            } //End block
+            } 
             else
     if(child.getVisibility() != GONE)            
             {
@@ -1384,7 +1403,7 @@ switch(majorGravity){
     if(gravity < 0)                
                 {
                     gravity = minorGravity;
-                } //End block
+                } 
                 final int layoutDirection = getResolvedLayoutDirection();
                 final int absoluteGravity = Gravity.getAbsoluteGravity(gravity, layoutDirection);
 switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
@@ -1402,16 +1421,16 @@ switch(absoluteGravity & Gravity.HORIZONTAL_GRAVITY_MASK){
 }    if(hasDividerBeforeChildAt(i))                
                 {
                     childTop += mDividerHeight;
-                } //End block
+                } 
                 childTop += lp.topMargin;
                 setChildFrame(child, childLeft, childTop + getLocationOffset(child),
                         childWidth, childHeight);
                 childTop += childHeight + lp.bottomMargin + getNextLocationOffset(child);
                 i += getChildrenSkipCount(child, i);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1448,7 +1467,7 @@ switch(Gravity.getAbsoluteGravity(majorGravity, layoutDirection)){
         {
             start = count - 1;
             dir = -1;
-        } //End block
+        } 
 for(int i = 0;i < count;i++)
         {
             int childIndex = start + dir * i;
@@ -1456,7 +1475,7 @@ for(int i = 0;i < count;i++)
     if(child == null)            
             {
                 childLeft += measureNullChild(childIndex);
-            } //End block
+            } 
             else
     if(child.getVisibility() != GONE)            
             {
@@ -1467,19 +1486,19 @@ for(int i = 0;i < count;i++)
     if(baselineAligned && lp.height != LayoutParams.MATCH_PARENT)                
                 {
                     childBaseline = child.getBaseline();
-                } //End block
+                } 
                 int gravity = lp.gravity;
     if(gravity < 0)                
                 {
                     gravity = minorGravity;
-                } //End block
+                } 
 switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
                 case Gravity.TOP:
                 childTop = paddingTop + lp.topMargin;
     if(childBaseline != -1)                
                 {
                     childTop += maxAscent[INDEX_TOP] - childBaseline;
-                } //End block
+                } 
                 break;
                 case Gravity.CENTER_VERTICAL:
                 childTop = paddingTop + ((childSpace - childHeight) / 2)
@@ -1491,7 +1510,7 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
                 {
                     int descent = child.getMeasuredHeight() - childBaseline;
                     childTop -= (maxDescent[INDEX_BOTTOM] - descent);
-                } //End block
+                } 
                 break;
                 default:
                 childTop = paddingTop;
@@ -1499,17 +1518,17 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
 }    if(hasDividerBeforeChildAt(childIndex))                
                 {
                     childLeft += mDividerWidth;
-                } //End block
+                } 
                 childLeft += lp.leftMargin;
                 setChildFrame(child, childLeft + getLocationOffset(child), childTop,
                         childWidth, childHeight);
                 childLeft += childWidth + lp.rightMargin +
                         getNextLocationOffset(child);
                 i += getChildrenSkipCount(child, childIndex);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -1521,8 +1540,8 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
         addTaint(left);
         addTaint(child.getTaint());
         child.layout(left, top, left + width, top + height);
-        // ---------- Original Method ----------
-        //child.layout(left, top, left + width, top + height);
+        
+        
     }
 
     
@@ -1532,22 +1551,23 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
         {
             mOrientation = orientation;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOrientation != orientation) {
-            //mOrientation = orientation;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.395 -0400", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "34E701BA95802C9A57DFFADE19A79854")
     public int getOrientation() {
         int var7EA67827B94D10D1A4B368659EA63B71_1286509691 = (mOrientation);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298236533 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_298236533;
-        // ---------- Original Method ----------
-        //return mOrientation;
+        
+        
     }
 
     
@@ -1559,25 +1579,25 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
     if((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0)            
             {
                 gravity |= Gravity.START;
-            } //End block
+            } 
     if((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0)            
             {
                 gravity |= Gravity.TOP;
-            } //End block
+            } 
             mGravity = gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mGravity != gravity) {
-            //if ((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.START;
-            //}
-            //if ((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.TOP;
-            //}
-            //mGravity = gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -1590,13 +1610,13 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
         {
             mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -1609,13 +1629,13 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
         {
             mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -1626,8 +1646,8 @@ switch(gravity & Gravity.VERTICAL_GRAVITY_MASK){
 LayoutParams var9E4D4AC4EFBD8BC1CA35BC67B09179A3_736049850 =         new LinearLayout.LayoutParams(getContext(), attrs);
         var9E4D4AC4EFBD8BC1CA35BC67B09179A3_736049850.addTaint(taint);
         return var9E4D4AC4EFBD8BC1CA35BC67B09179A3_736049850;
-        // ---------- Original Method ----------
-        //return new LinearLayout.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
@@ -1639,24 +1659,24 @@ LayoutParams var9E4D4AC4EFBD8BC1CA35BC67B09179A3_736049850 =         new LinearL
 LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_2033029187 =             new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
             var65BA47367D3E2EC837A3E887EEE5A3B3_2033029187.addTaint(taint);
             return var65BA47367D3E2EC837A3E887EEE5A3B3_2033029187;
-        } //End block
+        } 
         else
     if(mOrientation == VERTICAL)        
         {
 LayoutParams var091E483F65886435822B90D76F95575E_1362023936 =             new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
             var091E483F65886435822B90D76F95575E_1362023936.addTaint(taint);
             return var091E483F65886435822B90D76F95575E_1362023936;
-        } //End block
+        } 
 LayoutParams var540C13E9E156B687226421B24F2DF178_1781687435 =         null;
         var540C13E9E156B687226421B24F2DF178_1781687435.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1781687435;
-        // ---------- Original Method ----------
-        //if (mOrientation == HORIZONTAL) {
-            //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-        //} else if (mOrientation == VERTICAL) {
-            //return new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        //}
-        //return null;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -1667,11 +1687,12 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_1781687435 =         null;
 LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new LayoutParams(p);
         varB945D213E5036F8DDF9B40811234DF64_1677272845.addTaint(taint);
         return varB945D213E5036F8DDF9B40811234DF64_1677272845;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.399 -0400", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "024CE284246F8AF30239D14FAC6BD043")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -1679,8 +1700,8 @@ LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new Layout
         boolean varE8A4E84A234E624ABC8A2C80DBE89514_1301407125 = (p instanceof LinearLayout.LayoutParams);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_530788827 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_530788827;
-        // ---------- Original Method ----------
-        //return p instanceof LinearLayout.LayoutParams;
+        
+        
     }
 
     
@@ -1716,12 +1737,12 @@ LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new Layout
             weight = a.getFloat(com.android.internal.R.styleable.LinearLayout_Layout_layout_weight, 0);
             gravity = a.getInt(com.android.internal.R.styleable.LinearLayout_Layout_layout_gravity, -1);
             a.recycle();
-            // ---------- Original Method ----------
-            //TypedArray a =
-                    //c.obtainStyledAttributes(attrs, com.android.internal.R.styleable.LinearLayout_Layout);
-            //weight = a.getFloat(com.android.internal.R.styleable.LinearLayout_Layout_layout_weight, 0);
-            //gravity = a.getInt(com.android.internal.R.styleable.LinearLayout_Layout_layout_gravity, -1);
-            //a.recycle();
+            
+            
+                    
+            
+            
+            
         }
 
         
@@ -1731,8 +1752,8 @@ LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new Layout
             addTaint(height);
             addTaint(width);
             weight = 0;
-            // ---------- Original Method ----------
-            //weight = 0;
+            
+            
         }
 
         
@@ -1742,8 +1763,8 @@ LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new Layout
             addTaint(height);
             addTaint(width);
             this.weight = weight;
-            // ---------- Original Method ----------
-            //this.weight = weight;
+            
+            
         }
 
         
@@ -1751,7 +1772,7 @@ LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new Layout
         public  LayoutParams(ViewGroup.LayoutParams p) {
             super(p);
             addTaint(p.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1759,10 +1780,11 @@ LayoutParams varB945D213E5036F8DDF9B40811234DF64_1677272845 =         new Layout
         public  LayoutParams(MarginLayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:07.401 -0400", hash_original_method = "09BB09F623D63D4B2B1AF033D2D5C9B4", hash_generated_method = "7ADA730E9EA9F229222332AEC9283891")
         @Override
         public String debug(String output) {
@@ -1771,9 +1793,9 @@ String var0F74E9E8D3216F29D376253899D0B9EB_2083434176 =             output + "Li
                     ", height=" + sizeToString(height) + " weight=" + weight +  "}";
             var0F74E9E8D3216F29D376253899D0B9EB_2083434176.addTaint(taint);
             return var0F74E9E8D3216F29D376253899D0B9EB_2083434176;
-            // ---------- Original Method ----------
-            //return output + "LinearLayout.LayoutParams={width=" + sizeToString(width) +
-                    //", height=" + sizeToString(height) + " weight=" + weight +  "}";
+            
+            
+                    
         }
 
         

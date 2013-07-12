@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,46 +24,49 @@ public final class Validity {
     public  Validity(Date notBefore, Date notAfter) {
         this.notBefore = notBefore;
         this.notAfter = notAfter;
-        // ---------- Original Method ----------
-        //this.notBefore = notBefore;
-        //this.notAfter = notAfter;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.486 -0400", hash_original_method = "CB2A2B3C356F1AD47950BB2253ACA4BD", hash_generated_method = "7514E8AFE084508CB731B99177F409D1")
     public Date getNotBefore() {
 Date varA538B0CD17616FA44CA9B918B38CAEAC_1132879262 =         notBefore;
         varA538B0CD17616FA44CA9B918B38CAEAC_1132879262.addTaint(taint);
         return varA538B0CD17616FA44CA9B918B38CAEAC_1132879262;
-        // ---------- Original Method ----------
-        //return notBefore;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.486 -0400", hash_original_method = "9EADF7E1E76408811693CE379F621727", hash_generated_method = "008D4BC2BE63AE3039379B5C6E749D76")
     public Date getNotAfter() {
 Date varE84253AB2AD08AA2E1E3A8582D622350_557948567 =         notAfter;
         varE84253AB2AD08AA2E1E3A8582D622350_557948567.addTaint(taint);
         return varE84253AB2AD08AA2E1E3A8582D622350_557948567;
-        // ---------- Original Method ----------
-        //return notAfter;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.487 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "9E40B244AF9DC6E85969B56A334C8E9B")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_877559390 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1841466427 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1841466427;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     

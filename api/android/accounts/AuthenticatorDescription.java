@@ -1,6 +1,6 @@
 package android.accounts;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -52,16 +52,16 @@ public class AuthenticatorDescription implements Parcelable {
         this.smallIconId = smallIconId;
         this.accountPreferencesId = prefId;
         this.customTokens = customTokens;
-        // ---------- Original Method ----------
-        //if (type == null) throw new IllegalArgumentException("type cannot be null");
-        //if (packageName == null) throw new IllegalArgumentException("packageName cannot be null");
-        //this.type = type;
-        //this.packageName = packageName;
-        //this.labelId = labelId;
-        //this.iconId = iconId;
-        //this.smallIconId = smallIconId;
-        //this.accountPreferencesId = prefId;
-        //this.customTokens = customTokens;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -75,7 +75,7 @@ public class AuthenticatorDescription implements Parcelable {
         addTaint(labelId);
         addTaint(packageName.getTaint());
         addTaint(type.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -88,14 +88,14 @@ public class AuthenticatorDescription implements Parcelable {
         this.smallIconId = 0;
         this.accountPreferencesId = 0;
         this.customTokens = false;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.packageName = null;
-        //this.labelId = 0;
-        //this.iconId = 0;
-        //this.smallIconId = 0;
-        //this.accountPreferencesId = 0;
-        //this.customTokens = false;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -108,14 +108,14 @@ public class AuthenticatorDescription implements Parcelable {
         this.smallIconId = source.readInt();
         this.accountPreferencesId = source.readInt();
         this.customTokens = source.readByte() == 1;
-        // ---------- Original Method ----------
-        //this.type = source.readString();
-        //this.packageName = source.readString();
-        //this.labelId = source.readInt();
-        //this.iconId = source.readInt();
-        //this.smallIconId = source.readInt();
-        //this.accountPreferencesId = source.readInt();
-        //this.customTokens = source.readByte() == 1;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -125,13 +125,14 @@ public class AuthenticatorDescription implements Parcelable {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:46:32.176 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "BB9373B5D6E9FFEA2D09B7D325C705F7")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_2039973022 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937111111 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_937111111;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -140,8 +141,8 @@ public class AuthenticatorDescription implements Parcelable {
         int var1234BA14D219990AD59276F9D4AC0644_332145182 = (type.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_346973562 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_346973562;
-        // ---------- Original Method ----------
-        //return type.hashCode();
+        
+        
     }
 
     
@@ -164,11 +165,11 @@ public class AuthenticatorDescription implements Parcelable {
         boolean var1BB01DECE8CDE2A5B4D38B04F82A9F11_1093255957 = (type.equals(other.type));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_964892150 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_964892150;
-        // ---------- Original Method ----------
-        //if (o == this) return true;
-        //if (!(o instanceof AuthenticatorDescription)) return false;
-        //final AuthenticatorDescription other = (AuthenticatorDescription) o;
-        //return type.equals(other.type);
+        
+        
+        
+        
+        
     }
 
     
@@ -177,8 +178,8 @@ public class AuthenticatorDescription implements Parcelable {
 String var645F2244FF2137377AF0777536CDDC2B_854911660 =         "AuthenticatorDescription {type=" + type + "}";
         var645F2244FF2137377AF0777536CDDC2B_854911660.addTaint(taint);
         return var645F2244FF2137377AF0777536CDDC2B_854911660;
-        // ---------- Original Method ----------
-        //return "AuthenticatorDescription {type=" + type + "}";
+        
+        
     }
 
     
@@ -193,14 +194,14 @@ String var645F2244FF2137377AF0777536CDDC2B_854911660 =         "AuthenticatorDes
         dest.writeInt(smallIconId);
         dest.writeInt(accountPreferencesId);
         dest.writeByte((byte) (customTokens ? 1 : 0));
-        // ---------- Original Method ----------
-        //dest.writeString(type);
-        //dest.writeString(packageName);
-        //dest.writeInt(labelId);
-        //dest.writeInt(iconId);
-        //dest.writeInt(smallIconId);
-        //dest.writeInt(accountPreferencesId);
-        //dest.writeByte((byte) (customTokens ? 1 : 0));
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -218,12 +219,12 @@ String var645F2244FF2137377AF0777536CDDC2B_854911660 =         "AuthenticatorDes
             return new AuthenticatorDescription[size];
         }
     };
-    // orphaned legacy method
+    
     public AuthenticatorDescription createFromParcel(Parcel source) {
             return new AuthenticatorDescription(source);
         }
     
-    // orphaned legacy method
+    
     public AuthenticatorDescription[] newArray(int size) {
             return new AuthenticatorDescription[size];
         }

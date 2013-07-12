@@ -1,6 +1,6 @@
 package android.support.v4.app;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,19 +24,20 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.895 -0400", hash_original_method = "0907AC653AA851CA26FCA5C2C0476634", hash_generated_method = "B527D72706B763A256C0CF54E42D3B10")
     public  FragmentPagerAdapter(FragmentManager fm) {
         mFragmentManager = fm;
-        // ---------- Original Method ----------
-        //mFragmentManager = fm;
+        
+        
     }
 
     
     public abstract Fragment getItem(int position);
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.896 -0400", hash_original_method = "40E78EFA38F0994EA71F26DADE781C52", hash_generated_method = "369CD737611E25F82302A46324A3B366")
     @Override
     public void startUpdate(ViewGroup container) {
         addTaint(container.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -48,30 +49,30 @@ public abstract class FragmentPagerAdapter extends PagerAdapter {
     if(mCurTransaction == null)        
         {
             mCurTransaction = mFragmentManager.beginTransaction();
-        } //End block
+        } 
         final long itemId = getItemId(position);
         String name = makeFragmentName(container.getId(), itemId);
         Fragment fragment = mFragmentManager.findFragmentByTag(name);
     if(fragment != null)        
         {
     if(DEBUG){ }            mCurTransaction.attach(fragment);
-        } //End block
+        } 
         else
         {
             fragment = getItem(position);
     if(DEBUG){ }            mCurTransaction.add(container.getId(), fragment,
                     makeFragmentName(container.getId(), itemId));
-        } //End block
+        } 
     if(fragment != mCurrentPrimaryItem)        
         {
             fragment.setMenuVisibility(false);
             fragment.setUserVisibleHint(false);
-        } //End block
+        } 
 Object varD266FB1A901BB0D9A16D45416C785B25_683036394 =         fragment;
         varD266FB1A901BB0D9A16D45416C785B25_683036394.addTaint(taint);
         return varD266FB1A901BB0D9A16D45416C785B25_683036394;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -84,15 +85,15 @@ Object varD266FB1A901BB0D9A16D45416C785B25_683036394 =         fragment;
     if(mCurTransaction == null)        
         {
             mCurTransaction = mFragmentManager.beginTransaction();
-        } //End block
+        } 
     if(DEBUG){ }        mCurTransaction.detach((Fragment)object);
-        // ---------- Original Method ----------
-        //if (mCurTransaction == null) {
-            //mCurTransaction = mFragmentManager.beginTransaction();
-        //}
-        //if (DEBUG) Log.v(TAG, "Detaching item #" + getItemId(position) + ": f=" + object
-                //+ " v=" + ((Fragment)object).getView());
-        //mCurTransaction.detach((Fragment)object);
+        
+        
+            
+        
+        
+                
+        
     }
 
     
@@ -109,27 +110,27 @@ Object varD266FB1A901BB0D9A16D45416C785B25_683036394 =         fragment;
             {
                 mCurrentPrimaryItem.setMenuVisibility(false);
                 mCurrentPrimaryItem.setUserVisibleHint(false);
-            } //End block
+            } 
     if(fragment != null)            
             {
                 fragment.setMenuVisibility(true);
                 fragment.setUserVisibleHint(true);
-            } //End block
+            } 
             mCurrentPrimaryItem = fragment;
-        } //End block
-        // ---------- Original Method ----------
-        //Fragment fragment = (Fragment)object;
-        //if (fragment != mCurrentPrimaryItem) {
-            //if (mCurrentPrimaryItem != null) {
-                //mCurrentPrimaryItem.setMenuVisibility(false);
-                //mCurrentPrimaryItem.setUserVisibleHint(false);
-            //}
-            //if (fragment != null) {
-                //fragment.setMenuVisibility(true);
-                //fragment.setUserVisibleHint(true);
-            //}
-            //mCurrentPrimaryItem = fragment;
-        //}
+        } 
+        
+        
+        
+            
+                
+                
+            
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -142,13 +143,13 @@ Object varD266FB1A901BB0D9A16D45416C785B25_683036394 =         fragment;
             mCurTransaction.commitAllowingStateLoss();
             mCurTransaction = null;
             mFragmentManager.executePendingTransactions();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurTransaction != null) {
-            //mCurTransaction.commitAllowingStateLoss();
-            //mCurTransaction = null;
-            //mFragmentManager.executePendingTransactions();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -160,28 +161,30 @@ Object varD266FB1A901BB0D9A16D45416C785B25_683036394 =         fragment;
         boolean var8AF204D556CE31A8DE13D08D2B417ADF_2122274836 = (((Fragment)object).getView() == view);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2086851735 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2086851735;
-        // ---------- Original Method ----------
-        //return ((Fragment)object).getView() == view;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.901 -0400", hash_original_method = "9C10790C9B509FF6855ECD7BB4443BBC", hash_generated_method = "F0B9971CDF77A62C317D2F906D7E04EB")
     @Override
     public Parcelable saveState() {
 Parcelable var540C13E9E156B687226421B24F2DF178_719975481 =         null;
         var540C13E9E156B687226421B24F2DF178_719975481.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_719975481;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:38.901 -0400", hash_original_method = "17638DDA6DE27E971DE60A544D06348C", hash_generated_method = "1B90B7F57B52791DD352BA00AFEEB83C")
     @Override
     public void restoreState(Parcelable state, ClassLoader loader) {
         addTaint(loader.getTaint());
         addTaint(state.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -191,8 +194,8 @@ Parcelable var540C13E9E156B687226421B24F2DF178_719975481 =         null;
         long var4757FE07FD492A8BE0EA6A760D683D6E_81002821 = (position);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1142128510 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1142128510;
-        // ---------- Original Method ----------
-        //return position;
+        
+        
     }
 
     

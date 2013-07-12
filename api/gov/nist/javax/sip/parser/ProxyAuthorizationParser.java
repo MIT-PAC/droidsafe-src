@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class ProxyAuthorizationParser extends ChallengeParser {
     public  ProxyAuthorizationParser(String proxyAuthorization) {
         super(proxyAuthorization);
         addTaint(proxyAuthorization.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,7 +21,7 @@ public class ProxyAuthorizationParser extends ChallengeParser {
     protected  ProxyAuthorizationParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -33,11 +33,11 @@ public class ProxyAuthorizationParser extends ChallengeParser {
 SIPHeader var4099AE2502A0C7554C07AA80DE221214_136736614 =         proxyAuth;
         var4099AE2502A0C7554C07AA80DE221214_136736614.addTaint(taint);
         return var4099AE2502A0C7554C07AA80DE221214_136736614;
-        // ---------- Original Method ----------
-        //headerName(TokenTypes.PROXY_AUTHORIZATION);
-        //ProxyAuthorization proxyAuth = new ProxyAuthorization();
-        //super.parse(proxyAuth);
-        //return proxyAuth;
+        
+        
+        
+        
+        
     }
 
     

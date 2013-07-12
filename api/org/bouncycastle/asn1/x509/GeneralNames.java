@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,8 +20,8 @@ public class GeneralNames extends ASN1Encodable {
         GeneralName  name) {
         addTaint(name.getTaint());
         this.names = new GeneralName[] { name };
-        // ---------- Original Method ----------
-        //this.names = new GeneralName[] { name };
+        
+        
     }
 
     
@@ -32,13 +32,13 @@ public class GeneralNames extends ASN1Encodable {
 for(int i = 0;i != seq.size();i++)
         {
             names[i] = GeneralName.getInstance(seq.getObjectAt(i));
-        } //End block
-        // ---------- Original Method ----------
-        //this.names = new GeneralName[seq.size()];
-        //for (int i = 0; i != seq.size(); i++)
-        //{
-            //names[i] = GeneralName.getInstance(seq.getObjectAt(i));
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -70,10 +70,10 @@ for(int i = 0;i != seq.size();i++)
 GeneralName[] var3F12A0424932F6B5155AA6C49B63FE6E_297255891 =         tmp;
         var3F12A0424932F6B5155AA6C49B63FE6E_297255891.addTaint(taint);
         return var3F12A0424932F6B5155AA6C49B63FE6E_297255891;
-        // ---------- Original Method ----------
-        //GeneralName[] tmp = new GeneralName[names.length];
-        //System.arraycopy(names, 0, tmp, 0, names.length);
-        //return tmp;
+        
+        
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ GeneralName[] var3F12A0424932F6B5155AA6C49B63FE6E_297255891 =         tmp;
 DERObject varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780 =         new DERSequence(names);
         varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780.addTaint(taint);
         return varFA028EE8512E8E6D5C4DBDCDB27CF46F_91400780;
-        // ---------- Original Method ----------
-        //return new DERSequence(names);
+        
+        
     }
 
     
@@ -98,22 +98,22 @@ for(int i = 0;i != names.length;i++)
             buf.append("    ");
             buf.append(names[i]);
             buf.append(sep);
-        } //End block
+        } 
 String var4FC680801218E6372BC708D6FA44AE60_1406346281 =         buf.toString();
         var4FC680801218E6372BC708D6FA44AE60_1406346281.addTaint(taint);
         return var4FC680801218E6372BC708D6FA44AE60_1406346281;
-        // ---------- Original Method ----------
-        //StringBuffer  buf = new StringBuffer();
-        //String        sep = System.getProperty("line.separator");
-        //buf.append("GeneralNames:");
-        //buf.append(sep);
-        //for (int i = 0; i != names.length; i++)
-        //{
-            //buf.append("    ");
-            //buf.append(names[i]);
-            //buf.append(sep);
-        //}
-        //return buf.toString();
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     

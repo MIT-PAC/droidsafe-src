@@ -1,6 +1,6 @@
 package android.text;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -30,12 +30,12 @@ class PackedObjectVector<E> {
         mRowGapStart = 0;
         mRowGapLength = mRows;
         mValues = new Object[mRows * mColumns];
-        // ---------- Original Method ----------
-        //mColumns = columns;
-        //mRows = ArrayUtils.idealIntArraySize(0) / mColumns;
-        //mRowGapStart = 0;
-        //mRowGapLength = mRows;
-        //mValues = new Object[mRows * mColumns];
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -49,11 +49,11 @@ class PackedObjectVector<E> {
 E var1003C6094065F51E703D3FC5DD353D7E_2028946821 =         (E) value;
         var1003C6094065F51E703D3FC5DD353D7E_2028946821.addTaint(taint);
         return var1003C6094065F51E703D3FC5DD353D7E_2028946821;
-        // ---------- Original Method ----------
-        //if (row >= mRowGapStart)
-            //row += mRowGapLength;
-        //Object value = mValues[row * mColumns + column];
-        //return (E) value;
+        
+        
+            
+        
+        
     }
 
     
@@ -62,10 +62,10 @@ E var1003C6094065F51E703D3FC5DD353D7E_2028946821 =         (E) value;
     if(row >= mRowGapStart)        
         row += mRowGapLength;
         mValues[row * mColumns + column] = value;
-        // ---------- Original Method ----------
-        //if (row >= mRowGapStart)
-            //row += mRowGapLength;
-        //mValues[row * mColumns + column] = value;
+        
+        
+            
+        
     }
 
     
@@ -84,18 +84,18 @@ for(int i = 0;i < mColumns;i++)
         else
 for(int i = 0;i < mColumns;i++)
         setValue(row, i, values[i]);
-        // ---------- Original Method ----------
-        //moveRowGapTo(row);
-        //if (mRowGapLength == 0)
-            //growBuffer();
-        //mRowGapStart++;
-        //mRowGapLength--;
-        //if (values == null)
-            //for (int i = 0; i < mColumns; i++)
-                //setValue(row, i, null);
-        //else
-            //for (int i = 0; i < mColumns; i++)
-                //setValue(row, i, values[i]);
+        
+        
+        
+            
+        
+        
+        
+            
+                
+        
+            
+                
     }
 
     
@@ -107,34 +107,36 @@ for(int i = 0;i < mColumns;i++)
         mRowGapLength += count;
     if(mRowGapLength > size() * 2)        
         {
-        } //End block
-        // ---------- Original Method ----------
-        //moveRowGapTo(row + count);
-        //mRowGapStart -= count;
-        //mRowGapLength += count;
-        //if (mRowGapLength > size() * 2)
-        //{
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.325 -0400", hash_original_method = "A7F055B05F3BF0E7B9EF67A5904EF45B", hash_generated_method = "B406F0AC07FB02825EC3BF1FA9AFDA26")
     public int size() {
         int var60FCE0CE49C68973BD6EAD5B2D3866D1_1459357090 = (mRows - mRowGapLength);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1300615712 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1300615712;
-        // ---------- Original Method ----------
-        //return mRows - mRowGapLength;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.326 -0400", hash_original_method = "00C81AD9ACCD847707085D62472884FD", hash_generated_method = "4590DCB26BDEB902D87D1F061EC74E7E")
     public int width() {
         int var11C985F30142FD30ACDDFE7CD3BD4A9B_1432516555 = (mColumns);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428719218 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_428719218;
-        // ---------- Original Method ----------
-        //return mColumns;
+        
+        
     }
 
     
@@ -149,19 +151,20 @@ for(int i = 0;i < mColumns;i++)
         mRowGapLength += newsize - mRows;
         mRows = newsize;
         mValues = newvalues;
-        // ---------- Original Method ----------
-        //int newsize = size() + 1;
-        //newsize = ArrayUtils.idealIntArraySize(newsize * mColumns) / mColumns;
-        //Object[] newvalues = new Object[newsize * mColumns];
-        //int after = mRows - (mRowGapStart + mRowGapLength);
-        //System.arraycopy(mValues, 0, newvalues, 0, mColumns * mRowGapStart);
-        //System.arraycopy(mValues, (mRows - after) * mColumns, newvalues, (newsize - after) * mColumns, after * mColumns);
-        //mRowGapLength += newsize - mRows;
-        //mRows = newsize;
-        //mValues = newvalues;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:44.330 -0400", hash_original_method = "31F6FBDDD7D0FB1F20A58E1CEB067332", hash_generated_method = "5FE94BC6192458A151DB187330779CB5")
     private void moveRowGapTo(int where) {
     if(where == mRowGapStart)        
@@ -176,9 +179,9 @@ for(int j = 0;j < mColumns;j++)
                 {
                     Object val = mValues[i * mColumns + j];
                     mValues[destrow * mColumns + j] = val;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             int moving = mRowGapStart - where;
@@ -189,12 +192,12 @@ for(int j = 0;j < mColumns;j++)
                 {
                     Object val = mValues[i * mColumns + j];
                     mValues[destrow * mColumns + j] = val;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mRowGapStart = where;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -209,24 +212,24 @@ for(int j = 0;j < mColumns;j++)
                 System.out.print(val + " ");
                 else
                 System.out.print("(" + val + ") ");
-            } //End block
+            } 
             System.out.print(" << \n");
-        } //End block
+        } 
         System.out.print("-----\n\n");
-        // ---------- Original Method ----------
-        //for (int i = 0; i < mRows; i++)
-        //{
-            //for (int j = 0; j < mColumns; j++)
-            //{
-                //Object val = mValues[i * mColumns + j];
-                //if (i < mRowGapStart || i >= mRowGapStart + mRowGapLength)
-                    //System.out.print(val + " ");
-                //else
-                    //System.out.print("(" + val + ") ");
-            //}
-            //System.out.print(" << \n");
-        //}
-        //System.out.print("-----\n\n");
+        
+        
+        
+            
+            
+                
+                
+                    
+                
+                    
+            
+            
+        
+        
     }
 
     

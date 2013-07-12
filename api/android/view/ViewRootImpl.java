@@ -1,6 +1,6 @@
 package android.view;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -549,8 +549,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     if(lt == null)            
             {
                 lt = new LatencyTimer(100, 1000);
-            } //End block
-        } //End block
+            } 
+        } 
         getWindowSession(context.getMainLooper());
         mThread = Thread.currentThread();
         mLocation = new WindowLeaked(null);
@@ -580,8 +580,8 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
         mFallbackEventHandler = PolicyManager.makeNewFallbackEventHandler(context);
         mProfileRendering = Boolean.parseBoolean(
                 SystemProperties.get(PROPERTY_PROFILE_RENDERING, "false"));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -617,11 +617,12 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.467 -0400", hash_original_method = "CC8B7F3C56C4BD3E79E20E40E6BC7183", hash_generated_method = "B1C47515DF4380EC2E00EEA4CF22D73A")
     public void profile() {
         mProfile = true;
-        // ---------- Original Method ----------
-        //mProfile = true;
+        
+        
     }
 
     
@@ -654,14 +655,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     {
                         mSurfaceHolder = new TakenSurfaceHolder();
                         mSurfaceHolder.setFormat(PixelFormat.UNKNOWN);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 CompatibilityInfo compatibilityInfo = mCompatibilityInfo.get();
                 mTranslator = compatibilityInfo.getTranslator();
     if(mSurfaceHolder == null)                
                 {
                     enableHardwareAcceleration(attrs);
-                } //End block
+                } 
                 boolean restore = false;
     if(mTranslator != null)                
                 {
@@ -669,14 +670,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     restore = true;
                     attrs.backup();
                     mTranslator.translateWindowLayout(attrs);
-                } //End block
+                } 
     if(DEBUG_LAYOUT)                
                 Log.d(TAG, "WindowLayout in setView:" + attrs);
     if(!compatibilityInfo.supportsScreen())                
                 {
                     attrs.flags |= WindowManager.LayoutParams.FLAG_COMPATIBLE_WINDOW;
                     mLastInCompatMode = true;
-                } //End block
+                } 
                 mSoftInputMode = attrs.softInputMode;
                 mWindowAttributesChanged = true;
                 mWindowAttributesChangesFlag = WindowManager.LayoutParams.EVERYTHING_CHANGED;
@@ -688,7 +689,7 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                 {
                     mAttachInfo.mPanelParentWindowToken
                             = panelParentView.getApplicationWindowToken();
-                } //End block
+                } 
                 mAdded = true;
                 int res;
                 requestLayout();
@@ -696,14 +697,14 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                         & WindowManager.LayoutParams.INPUT_FEATURE_NO_INPUT_CHANNEL) == 0)                
                 {
                     mInputChannel = new InputChannel();
-                } //End block
+                } 
                 try 
                 {
                     mOrigWindowType = mWindowAttributes.type;
                     res = sWindowSession.add(mWindow, mSeq, mWindowAttributes,
                             getHostVisibility(), mAttachInfo.mContentInsets,
                             mInputChannel);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
                     mAdded = false;
@@ -715,18 +716,18 @@ public final class ViewRootImpl extends Handler implements ViewParent, View.Atta
                     RuntimeException var9C55015CD947593623EA98690096C9BE_944429024 = new RuntimeException("Adding window failed", e);
                     var9C55015CD947593623EA98690096C9BE_944429024.addTaint(taint);
                     throw var9C55015CD947593623EA98690096C9BE_944429024;
-                } //End block
+                } 
                 finally 
                 {
     if(restore)                    
                     {
                         attrs.restore();
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(mTranslator != null)                
                 {
                     mTranslator.translateRectInScreenToAppWindow(mAttachInfo.mContentInsets);
-                } //End block
+                } 
                 mPendingContentInsets.set(mAttachInfo.mContentInsets);
                 mPendingVisibleInsets.set(0, 0, 0, 0);
     if(DEBUG_LAYOUT){ }    if(res < WindowManagerImpl.ADD_OKAY)                
@@ -780,36 +781,36 @@ switch(res){
                         "Unable to add window -- unknown error code " + res);
                     varAD663AE041B17675C9531B3148A585C8_1044101761.addTaint(taint);
                     throw varAD663AE041B17675C9531B3148A585C8_1044101761;
-                } //End block
+                } 
     if(view instanceof RootViewSurfaceTaker)                
                 {
                     mInputQueueCallback =
                         ((RootViewSurfaceTaker)view).willYouTakeTheInputQueue();
-                } //End block
+                } 
     if(mInputChannel != null)                
                 {
     if(mInputQueueCallback != null)                    
                     {
                         mInputQueue = new InputQueue(mInputChannel);
                         mInputQueueCallback.onInputQueueCreated(mInputQueue);
-                    } //End block
+                    } 
                     else
                     {
                         InputQueue.registerInputChannel(mInputChannel, mInputHandler,
                                 Looper.myQueue());
-                    } //End block
-                } //End block
+                    } 
+                } 
                 view.assignParent(this);
                 mAddedTouchMode = (res&WindowManagerImpl.ADD_FLAG_IN_TOUCH_MODE) != 0;
                 mAppVisible = (res&WindowManagerImpl.ADD_FLAG_APP_VISIBLE) != 0;
     if(mAccessibilityManager.isEnabled())                
                 {
                     mAccessibilityInteractionConnectionManager.ensureConnection();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -820,16 +821,16 @@ switch(res){
     if(mAttachInfo.mHardwareRenderer.isEnabled())            
             {
                 mAttachInfo.mHardwareRenderer.destroyLayers(mView);
-            } //End block
+            } 
             mAttachInfo.mHardwareRenderer.destroy(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAttachInfo.mHardwareRenderer != null) {
-            //if (mAttachInfo.mHardwareRenderer.isEnabled()) {
-                //mAttachInfo.mHardwareRenderer.destroyLayers(mView);
-            //}
-            //mAttachInfo.mHardwareRenderer.destroy(false);
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+        
     }
 
     
@@ -839,12 +840,12 @@ switch(res){
         {
             mAttachInfo.mHardwareRenderer.destroyHardwareResources(mView);
             mAttachInfo.mHardwareRenderer.destroy(false);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAttachInfo.mHardwareRenderer != null) {
-            //mAttachInfo.mHardwareRenderer.destroyHardwareResources(mView);
-            //mAttachInfo.mHardwareRenderer.destroy(false);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -856,28 +857,28 @@ switch(res){
                     mAttachInfo.mHardwareRenderer.isEnabled())            
             {
                 HardwareRenderer.trimMemory(ComponentCallbacks2.TRIM_MEMORY_MODERATE);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(mAttachInfo.mHardwareRenderer != null &&
                     mAttachInfo.mHardwareRenderer.isEnabled())            
             {
                 mAttachInfo.mHardwareRenderer.destroyLayers(mView);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mThread != Thread.currentThread()) {
-            //if (mAttachInfo.mHardwareRenderer != null &&
-                    //mAttachInfo.mHardwareRenderer.isEnabled()) {
-                //HardwareRenderer.trimMemory(ComponentCallbacks2.TRIM_MEMORY_MODERATE);
-            //}
-        //} else {
-            //if (mAttachInfo.mHardwareRenderer != null &&
-                    //mAttachInfo.mHardwareRenderer.isEnabled()) {
-                //mAttachInfo.mHardwareRenderer.destroyLayers(mView);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                    
+                
+            
+        
+            
+                    
+                
+            
+        
     }
 
     
@@ -894,7 +895,7 @@ switch(res){
     if(!HardwareRenderer.isAvailable())            
             {
                 return;
-            } //End block
+            } 
             final boolean fakeHwAccelerated = (attrs.privateFlags &
                     WindowManager.LayoutParams.PRIVATE_FLAG_FAKE_HARDWARE_ACCELERATED) != 0;
             final boolean forceHwAccelerated = (attrs.privateFlags &
@@ -906,34 +907,35 @@ switch(res){
                         && Looper.getMainLooper() != Looper.myLooper())                
                 {
                     return;
-                } //End block
+                } 
                 final boolean translucent = attrs.format != PixelFormat.OPAQUE;
     if(mAttachInfo.mHardwareRenderer != null)                
                 {
                     mAttachInfo.mHardwareRenderer.destroy(true);
-                } //End block
+                } 
                 mAttachInfo.mHardwareRenderer = HardwareRenderer.createGlRenderer(2, translucent);
                 mAttachInfo.mHardwareAccelerated = mAttachInfo.mHardwareAccelerationRequested
                         = mAttachInfo.mHardwareRenderer != null;
-            } //End block
+            } 
             else
     if(fakeHwAccelerated)            
             {
                 mAttachInfo.mHardwareAccelerationRequested = true;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.471 -0400", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "FF8F325142FA2BE4D794937C0F177569")
     public View getView() {
 View var2A050D4EA4182130A6C1E6806618CCD0_610946782 =         mView;
         var2A050D4EA4182130A6C1E6806618CCD0_610946782.addTaint(taint);
         return var2A050D4EA4182130A6C1E6806618CCD0_610946782;
-        // ---------- Original Method ----------
-        //return mView;
+        
+        
     }
 
     
@@ -942,8 +944,8 @@ View var2A050D4EA4182130A6C1E6806618CCD0_610946782 =         mView;
 WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
         varC67D9EAB8F8C7974312627C3F915A447_2044355073.addTaint(taint);
         return varC67D9EAB8F8C7974312627C3F915A447_2044355073;
-        // ---------- Original Method ----------
-        //return mLocation;
+        
+        
     }
 
     
@@ -960,7 +962,7 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
             {
                 mSoftInputMode = attrs.softInputMode;
                 requestLayout();
-            } //End block
+            } 
     if((attrs.softInputMode&WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST)
                     == WindowManager.LayoutParams.SOFT_INPUT_ADJUST_UNSPECIFIED)            
             {
@@ -968,12 +970,12 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
                         & ~WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST)
                         | (oldSoftInputMode
                                 & WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST);
-            } //End block
+            } 
             mWindowAttributesChanged = true;
             scheduleTraversals();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -983,12 +985,12 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
         {
             mAppVisible = visible;
             scheduleTraversals();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAppVisible != visible) {
-            //mAppVisible = visible;
-            //scheduleTraversals();
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -997,10 +999,10 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
         mNewSurfaceNeeded = true;
         mFullRedrawNeeded = true;
         scheduleTraversals();
-        // ---------- Original Method ----------
-        //mNewSurfaceNeeded = true;
-        //mFullRedrawNeeded = true;
-        //scheduleTraversals();
+        
+        
+        
+        
     }
 
     
@@ -1009,20 +1011,21 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
         checkThread();
         mLayoutRequested = true;
         scheduleTraversals();
-        // ---------- Original Method ----------
-        //checkThread();
-        //mLayoutRequested = true;
-        //scheduleTraversals();
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.473 -0400", hash_original_method = "13F945759D2C310C5D0BB68B6FB1E2B8", hash_generated_method = "65D6237F92BC54CE20BA33405E7C0BBF")
     public boolean isLayoutRequested() {
         boolean varED91C157C05E401358FF44C4420F25D8_1874152311 = (mLayoutRequested);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1392657999 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1392657999;
-        // ---------- Original Method ----------
-        //return mLayoutRequested;
+        
+        
     }
 
     
@@ -1035,7 +1038,7 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
         {
             invalidate();
             return;
-        } //End block
+        } 
     if(mCurScrollY != 0 || mTranslator != null)        
         {
             mTempRect.set(dirty);
@@ -1043,28 +1046,28 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
     if(mCurScrollY != 0)            
             {
                 dirty.offset(0, -mCurScrollY);
-            } //End block
+            } 
     if(mTranslator != null)            
             {
                 mTranslator.translateRectInAppWindowToScreen(dirty);
-            } //End block
+            } 
     if(mAttachInfo.mScalingRequired)            
             {
                 dirty.inset(-1, -1);
-            } //End block
-        } //End block
+            } 
+        } 
     if(!mDirty.isEmpty() && !mDirty.contains(dirty))        
         {
             mAttachInfo.mSetIgnoreDirtyState = true;
             mAttachInfo.mIgnoreDirtyState = true;
-        } //End block
+        } 
         mDirty.union(dirty);
     if(!mWillDrawSoon)        
         {
             scheduleTraversals();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1072,9 +1075,9 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
      void invalidate() {
         mDirty.set(0, 0, mWidth, mHeight);
         scheduleTraversals();
-        // ---------- Original Method ----------
-        //mDirty.set(0, 0, mWidth, mHeight);
-        //scheduleTraversals();
+        
+        
+        
     }
 
     
@@ -1086,25 +1089,26 @@ WindowLeaked varC67D9EAB8F8C7974312627C3F915A447_2044355073 =         mLocation;
     if(!stopped)            
             {
                 scheduleTraversals();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mStopped != stopped) {
-            //mStopped = stopped;
-            //if (!stopped) {
-                //scheduleTraversals();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.474 -0400", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "31B839FB3B1B61F57A8EA96B05E0D4BC")
     public ViewParent getParent() {
 ViewParent var540C13E9E156B687226421B24F2DF178_685362550 =         null;
         var540C13E9E156B687226421B24F2DF178_685362550.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_685362550;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -1116,9 +1120,9 @@ ViewParent var540C13E9E156B687226421B24F2DF178_685362550 =         null;
 ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
         var540C13E9E156B687226421B24F2DF178_154170577.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_154170577;
-        // ---------- Original Method ----------
-        //invalidateChild(null, dirty);
-        //return null;
+        
+        
+        
     }
 
     
@@ -1132,22 +1136,23 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
             RuntimeException varD1413D319D7061CD26EC06ED620B9159_1057546020 = new RuntimeException("child is not mine, honest!");
             varD1413D319D7061CD26EC06ED620B9159_1057546020.addTaint(taint);
             throw varD1413D319D7061CD26EC06ED620B9159_1057546020;
-        } //End block
+        } 
         boolean var5356EFD4322D66EEA5CE14A788F5B8B5_1811056755 = (r.intersect(0, 0, mWidth, mHeight));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1212495699 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1212495699;
-        // ---------- Original Method ----------
-        //if (child != mView) {
-            //throw new RuntimeException("child is not mine, honest!");
-        //}
-        //return r.intersect(0, 0, mWidth, mHeight);
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.474 -0400", hash_original_method = "57451ED91AC07EA69FA21499971D2B45", hash_generated_method = "AC406F6D5A6EF83824A653E030726C19")
     public void bringChildToFront(View child) {
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1162,20 +1167,20 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
                 Log.d(TAG, "Latency: Scheduled traversal, it has been "
                         + ((now - mLastTraversalFinishedTimeNanos) * 0.000001f)
                         + "ms since the last traversal finished.");
-            } //End block
+            } 
             sendEmptyMessage(DO_TRAVERSAL);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mTraversalScheduled) {
-            //mTraversalScheduled = true;
-            //if (ViewDebug.DEBUG_LATENCY && mLastTraversalFinishedTimeNanos != 0) {
-                //final long now = System.nanoTime();
-                //Log.d(TAG, "Latency: Scheduled traversal, it has been "
-                        //+ ((now - mLastTraversalFinishedTimeNanos) * 0.000001f)
-                        //+ "ms since the last traversal finished.");
-            //}
-            //sendEmptyMessage(DO_TRAVERSAL);
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+                        
+                        
+            
+            
+        
     }
 
     
@@ -1185,12 +1190,12 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
         {
             mTraversalScheduled = false;
             removeMessages(DO_TRAVERSAL);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mTraversalScheduled) {
-            //mTraversalScheduled = false;
-            //removeMessages(DO_TRAVERSAL);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1199,8 +1204,8 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
         int var142814C4BB818D867C7CF9854AA79FA8_2065375988 = (mAppVisible ? mView.getVisibility() : View.GONE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047494673 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1047494673;
-        // ---------- Original Method ----------
-        //return mAppVisible ? mView.getVisibility() : View.GONE;
+        
+        
     }
 
     
@@ -1210,12 +1215,12 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
         {
             mResizeBuffer.destroy();
             mResizeBuffer = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mResizeBuffer != null) {
-            //mResizeBuffer.destroy();
-            //mResizeBuffer = null;
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1227,16 +1232,16 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(mPendingTransitions == null)            
             {
                 mPendingTransitions = new ArrayList<LayoutTransition>();
-            } //End block
+            } 
             mPendingTransitions.add(transition);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mPendingTransitions == null || !mPendingTransitions.contains(transition)) {
-            //if (mPendingTransitions == null) {
-                 //mPendingTransitions = new ArrayList<LayoutTransition>();
-            //}
-            //mPendingTransitions.add(transition);
-        //}
+        } 
+        
+        
+            
+                 
+            
+            
+        
     }
 
     
@@ -1253,18 +1258,18 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(outOfOrder)            
             {
                 removeMessages(PROCESS_INPUT_EVENTS);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //while (mPendingInputEvents != null) {
-            //handleMessage(mPendingInputEvents.mMessage);
-            //InputEventMessage tmpMessage = mPendingInputEvents;
-            //mPendingInputEvents = mPendingInputEvents.mNext;
-            //tmpMessage.recycle();
-            //if (outOfOrder) {
-                //removeMessages(PROCESS_INPUT_EVENTS);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -1277,7 +1282,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
             System.out.println("======================================");
             System.out.println("performTraversals");
             host.debug();
-        } //End block
+        } 
     if(host == null || !mAdded)        
         return;
         mTraversalScheduled = false;
@@ -1301,7 +1306,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
             mWindowAttributesChanged = false;
             surfaceChanged = true;
             params = lp;
-        } //End block
+        } 
         CompatibilityInfo compatibilityInfo = mCompatibilityInfo.get();
     if(compatibilityInfo.supportsScreen() == mLastInCompatMode)        
         {
@@ -1312,13 +1317,13 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
             {
                 params.flags &= ~WindowManager.LayoutParams.FLAG_COMPATIBLE_WINDOW;
                 mLastInCompatMode = false;
-            } //End block
+            } 
             else
             {
                 params.flags |= WindowManager.LayoutParams.FLAG_COMPATIBLE_WINDOW;
                 mLastInCompatMode = true;
-            } //End block
-        } //End block
+            } 
+        } 
         mWindowAttributesChangesFlag = 0;
         Rect frame = mWinFrame;
     if(mFirst)        
@@ -1332,13 +1337,13 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
                 disp.getRealSize(size);
                 desiredWindowWidth = size.x;
                 desiredWindowHeight = size.y;
-            } //End block
+            } 
             else
             {
                 DisplayMetrics packageMetrics = mView.getContext().getResources().getDisplayMetrics();
                 desiredWindowWidth = packageMetrics.widthPixels;
                 desiredWindowHeight = packageMetrics.heightPixels;
-            } //End block
+            } 
             attachInfo.mSurface = mSurface;
             attachInfo.mUse32BitDrawingCache = true;
             attachInfo.mHasWindowFocus = false;
@@ -1350,7 +1355,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
             mLastConfiguration.setTo(host.getResources().getConfiguration());
             host.dispatchAttachedToWindow(attachInfo, 0);
             host.fitSystemWindows(mAttachInfo.mContentInsets);
-        } //End block
+        } 
         else
         {
             desiredWindowWidth = frame.width();
@@ -1360,8 +1365,8 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(DEBUG_ORIENTATION){ }                fullRedrawNeeded = true;
                 mLayoutRequested = true;
                 windowSizeMayChange = true;
-            } //End block
-        } //End block
+            } 
+        } 
     if(viewVisibilityChanged)        
         {
             attachInfo.mWindowVisibility = viewVisibility;
@@ -1369,12 +1374,12 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(viewVisibility != View.VISIBLE || mNewSurfaceNeeded)            
             {
                 destroyHardwareResources();
-            } //End block
+            } 
     if(viewVisibility == View.GONE)            
             {
                 mHasHadWindowFocus = false;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean insetsChanged = false;
     if(mLayoutRequested && !mStopped)        
         {
@@ -1384,18 +1389,18 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
             {
                 mAttachInfo.mInTouchMode = !mAddedTouchMode;
                 ensureTouchModeLocally(mAddedTouchMode);
-            } //End block
+            } 
             else
             {
     if(!mPendingContentInsets.equals(mAttachInfo.mContentInsets))                
                 {
                     insetsChanged = true;
-                } //End block
+                } 
     if(!mPendingVisibleInsets.equals(mAttachInfo.mVisibleInsets))                
                 {
                     mAttachInfo.mVisibleInsets.set(mPendingVisibleInsets);
     if(DEBUG_LAYOUT){ }
-                } //End block
+                } 
     if(lp.width == ViewGroup.LayoutParams.WRAP_CONTENT
                         || lp.height == ViewGroup.LayoutParams.WRAP_CONTENT)                
                 {
@@ -1407,15 +1412,15 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
                         disp.getRealSize(size);
                         desiredWindowWidth = size.x;
                         desiredWindowHeight = size.y;
-                    } //End block
+                    } 
                     else
                     {
                         DisplayMetrics packageMetrics = res.getDisplayMetrics();
                         desiredWindowWidth = packageMetrics.widthPixels;
                         desiredWindowHeight = packageMetrics.heightPixels;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(DEBUG_ORIENTATION || DEBUG_LAYOUT){ }            boolean goodMeasure = false;
     if(lp.width == ViewGroup.LayoutParams.WRAP_CONTENT)            
             {
@@ -1425,7 +1430,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(mTmpValue.type == TypedValue.TYPE_DIMENSION)                
                 {
                     baseSize = (int)mTmpValue.getDimension(packageMetrics);
-                } //End block
+                } 
     if(DEBUG_DIALOG){ }    if(baseSize != 0 && desiredWindowWidth > baseSize)                
                 {
                     childWidthMeasureSpec = getRootMeasureSpec(baseSize, lp.width);
@@ -1434,7 +1439,7 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(DEBUG_DIALOG){ }    if((host.getMeasuredWidthAndState()&View.MEASURED_STATE_TOO_SMALL) == 0)                    
                     {
                         goodMeasure = true;
-                    } //End block
+                    } 
                     else
                     {
                         baseSize = (baseSize+desiredWindowWidth)/2;
@@ -1443,10 +1448,10 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(DEBUG_DIALOG){ }    if((host.getMeasuredWidthAndState()&View.MEASURED_STATE_TOO_SMALL) == 0)                        
                         {
     if(DEBUG_DIALOG){ }                            goodMeasure = true;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
     if(!goodMeasure)            
             {
                 childWidthMeasureSpec = getRootMeasureSpec(desiredWindowWidth, lp.width);
@@ -1455,15 +1460,15 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
     if(mWidth != host.getMeasuredWidth() || mHeight != host.getMeasuredHeight())                
                 {
                     windowSizeMayChange = true;
-                } //End block
-            } //End block
+                } 
+            } 
     if(DBG)            
             {
                 System.out.println("======================================");
                 System.out.println("performTraversals -- after measure");
                 host.debug();
-            } //End block
-        } //End block
+            } 
+        } 
     if(attachInfo.mRecomputeGlobalAttributes && host.mAttachInfo != null)        
         {
             attachInfo.mRecomputeGlobalAttributes = false;
@@ -1479,13 +1484,13 @@ ViewParent var540C13E9E156B687226421B24F2DF178_154170577 =         null;
                     || attachInfo.mHasSystemUiListeners != oldHasSystemUiListeners)            
             {
                 params = lp;
-            } //End block
-        } //End block
+            } 
+        } 
     if(attachInfo.mForceReportNewAttributes)        
         {
             attachInfo.mForceReportNewAttributes = false;
             params = lp;
-        } //End block
+        } 
     if(mFirst || attachInfo.mViewVisibilityChanged)        
         {
             attachInfo.mViewVisibilityChanged = false;
@@ -1499,12 +1504,12 @@ for(int i=0;i<N;i++)
     if(attachInfo.mScrollContainers.get(i).isShown())                    
                     {
                         resizeMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(resizeMode == 0)                
                 {
                     resizeMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN;
-                } //End block
+                } 
     if((lp.softInputMode &
                         WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST) != resizeMode)                
                 {
@@ -1512,16 +1517,16 @@ for(int i=0;i<N;i++)
                             ~WindowManager.LayoutParams.SOFT_INPUT_MASK_ADJUST) |
                             resizeMode;
                     params = lp;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(params != null && (host.mPrivateFlags & View.REQUEST_TRANSPARENT_REGIONS) != 0)        
         {
     if(!PixelFormat.formatHasAlpha(params.format))            
             {
                 params.format = PixelFormat.TRANSLUCENT;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean windowShouldResize = mLayoutRequested && windowSizeMayChange
             && ((mWidth != host.getMeasuredWidth() || mHeight != host.getMeasuredHeight())
                 || (lp.width == ViewGroup.LayoutParams.WRAP_CONTENT &&
@@ -1537,12 +1542,12 @@ for(int i=0;i<N;i++)
     if(viewVisibility == View.VISIBLE)            
             {
                 insetsPending = computesInternalInsets && (mFirst || viewVisibilityChanged);
-            } //End block
+            } 
     if(mSurfaceHolder != null)            
             {
                 mSurfaceHolder.mSurfaceLock.lock();
                 mDrawingAllowed = true;
-            } //End block
+            } 
             boolean hwInitialized = false;
             boolean contentInsetsChanged = false;
             boolean visibleInsetsChanged;
@@ -1556,24 +1561,24 @@ for(int i=0;i<N;i++)
     if(attachInfo.mKeepScreenOn)                    
                     {
                         params.flags |= WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON;
-                    } //End block
+                    } 
                     params.subtreeSystemUiVisibility = attachInfo.mSystemUiVisibility;
                     params.hasSystemUiListeners = attachInfo.mHasSystemUiListeners;
-                } //End block
+                } 
     if(DEBUG_LAYOUT)                
                 {
-                } //End block
+                } 
                 final int surfaceGenerationId = mSurface.getGenerationId();
                 relayoutResult = relayoutWindow(params, viewVisibility, insetsPending);
     if(params != null)                
                 {
                     params.flags = fl;
-                } //End block
+                } 
     if(DEBUG_LAYOUT){ }    if(mPendingConfiguration.seq != 0)                
                 {
     if(DEBUG_CONFIGURATION){ }                    updateConfiguration(mPendingConfiguration, !mFirst);
                     mPendingConfiguration.seq = 0;
-                } //End block
+                } 
                 contentInsetsChanged = !mPendingContentInsets.equals(
                         mAttachInfo.mContentInsets);
                 visibleInsetsChanged = !mPendingVisibleInsets.equals(
@@ -1598,13 +1603,13 @@ for(int i=0;i<N;i++)
                             {
                                 mResizeBuffer = mAttachInfo.mHardwareRenderer.createHardwareLayer(
                                         mWidth, mHeight, false);
-                            } //End block
+                            } 
                             else
     if(mResizeBuffer.getWidth() != mWidth ||
                                     mResizeBuffer.getHeight() != mHeight)                            
                             {
                                 mResizeBuffer.resize(mWidth, mHeight);
-                            } //End block
+                            } 
                             layerCanvas = mResizeBuffer.start(hwRendererCanvas);
                             layerCanvas.setViewport(mWidth, mHeight);
                             layerCanvas.onPreDraw(null);
@@ -1617,32 +1622,32 @@ for(int i=0;i<N;i++)
                             {
                                 yoff = mScroller.getCurrY();
                                 mScroller.abortAnimation();
-                            } //End block
+                            } 
                             else
                             {
                                 yoff = mScrollY;
-                            } //End block
+                            } 
                             layerCanvas.translate(0, -yoff);
     if(mTranslator != null)                            
                             {
                                 mTranslator.translateCanvas(layerCanvas);
-                            } //End block
+                            } 
                             mView.draw(layerCanvas);
                             mResizeBufferStartTime = SystemClock.uptimeMillis();
                             mResizeBufferDuration = mView.getResources().getInteger(
                                     com.android.internal.R.integer.config_mediumAnimTime);
                             completed = true;
                             layerCanvas.restoreToCount(restoreCount);
-                        } //End block
+                        } 
                         catch (OutOfMemoryError e)
                         {
-                        } //End block
+                        } 
                         finally 
                         {
     if(layerCanvas != null)                            
                             {
                                 layerCanvas.onPostDraw();
-                            } //End block
+                            } 
     if(mResizeBuffer != null)                            
                             {
                                 mResizeBuffer.end(hwRendererCanvas);
@@ -1650,19 +1655,19 @@ for(int i=0;i<N;i++)
                                 {
                                     mResizeBuffer.destroy();
                                     mResizeBuffer = null;
-                                } //End block
-                            } //End block
-                        } //End block
-                    } //End block
+                                } 
+                            } 
+                        } 
+                    } 
                     mAttachInfo.mContentInsets.set(mPendingContentInsets);
                     host.fitSystemWindows(mAttachInfo.mContentInsets);
     if(DEBUG_LAYOUT){ }
-                } //End block
+                } 
     if(visibleInsetsChanged)                
                 {
                     mAttachInfo.mVisibleInsets.set(mPendingVisibleInsets);
     if(DEBUG_LAYOUT){ }
-                } //End block
+                } 
     if(!hadSurface)                
                 {
     if(mSurface.isValid())                    
@@ -1675,7 +1680,7 @@ for(int i=0;i<N;i++)
                             try 
                             {
                                 hwInitialized = mAttachInfo.mHardwareRenderer.initialize(mHolder);
-                            } //End block
+                            } 
                             catch (Surface.OutOfResourcesException e)
                             {
                                 try 
@@ -1683,17 +1688,17 @@ for(int i=0;i<N;i++)
     if(!sWindowSession.outOfMemory(mWindow))                                    
                                     {
                                         Process.killProcess(Process.myPid());
-                                    } //End block
-                                } //End block
+                                    } 
+                                } 
                                 catch (RemoteException ex)
                                 {
-                                } //End block
+                                } 
                                 mLayoutRequested = true;
                                 return;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 else
     if(!mSurface.isValid())                
                 {
@@ -1702,14 +1707,14 @@ for(int i=0;i<N;i++)
     if(mScroller != null)                    
                     {
                         mScroller.abortAnimation();
-                    } //End block
+                    } 
                     disposeResizeBuffer();
     if(mAttachInfo.mHardwareRenderer != null &&
                             mAttachInfo.mHardwareRenderer.isEnabled())                    
                     {
                         mAttachInfo.mHardwareRenderer.destroy(true);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(surfaceGenerationId != mSurface.getGenerationId() &&
                         mSurfaceHolder == null && mAttachInfo.mHardwareRenderer != null)                
@@ -1718,7 +1723,7 @@ for(int i=0;i<N;i++)
                     try 
                     {
                         mAttachInfo.mHardwareRenderer.updateSurface(mHolder);
-                    } //End block
+                    } 
                     catch (Surface.OutOfResourcesException e)
                     {
                         try 
@@ -1726,19 +1731,19 @@ for(int i=0;i<N;i++)
     if(!sWindowSession.outOfMemory(mWindow))                            
                             {
                                 Process.killProcess(Process.myPid());
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         catch (RemoteException ex)
                         {
-                        } //End block
+                        } 
                         mLayoutRequested = true;
                         return;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             catch (RemoteException e)
             {
-            } //End block
+            } 
     if(DEBUG_ORIENTATION){ }            attachInfo.mWindowLeft = frame.left;
             attachInfo.mWindowTop = frame.top;
             mWidth = frame.width();
@@ -1748,7 +1753,7 @@ for(int i=0;i<N;i++)
     if(mSurface.isValid())                
                 {
                     mSurfaceHolder.mSurface = mSurface;
-                } //End block
+                } 
                 mSurfaceHolder.setSurfaceFrameSize(mWidth, mHeight);
                 mSurfaceHolder.mSurfaceLock.unlock();
     if(mSurface.isValid())                
@@ -1764,10 +1769,10 @@ for(int i=0;i<N;i++)
 for(SurfaceHolder.Callback c : callbacks)
                             {
                                 c.surfaceCreated(mSurfaceHolder);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         surfaceChanged = true;
-                    } //End block
+                    } 
     if(surfaceChanged)                    
                     {
                         mSurfaceHolderCallback.surfaceChanged(mSurfaceHolder,
@@ -1779,11 +1784,11 @@ for(SurfaceHolder.Callback c : callbacks)
                             {
                                 c.surfaceChanged(mSurfaceHolder, lp.format,
                                         mWidth, mHeight);
-                            } //End block
-                        } //End block
-                    } //End block
+                            } 
+                        } 
+                    } 
                     mIsCreating = false;
-                } //End block
+                } 
                 else
     if(hadSurface)                
                 {
@@ -1795,19 +1800,19 @@ for(SurfaceHolder.Callback c : callbacks)
 for(SurfaceHolder.Callback c : callbacks)
                         {
                             c.surfaceDestroyed(mSurfaceHolder);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     mSurfaceHolder.mSurfaceLock.lock();
                     try 
                     {
                         mSurfaceHolder.mSurface = new Surface();
-                    } //End block
+                    } 
                     finally 
                     {
                         mSurfaceHolder.mSurfaceLock.unlock();
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(mAttachInfo.mHardwareRenderer != null &&
                     mAttachInfo.mHardwareRenderer.isEnabled())            
             {
@@ -1819,9 +1824,9 @@ for(SurfaceHolder.Callback c : callbacks)
     if(!hwInitialized)                    
                     {
                         mAttachInfo.mHardwareRenderer.invalidate(mHolder);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(!mStopped)            
             {
                 boolean focusChangedDueToTouchMode = ensureTouchModeLocally(
@@ -1841,22 +1846,22 @@ for(SurfaceHolder.Callback c : callbacks)
                         childWidthMeasureSpec = MeasureSpec.makeMeasureSpec(width,
                                 MeasureSpec.EXACTLY);
                         measureAgain = true;
-                    } //End block
+                    } 
     if(lp.verticalWeight > 0.0f)                    
                     {
                         height += (int) ((mHeight - height) * lp.verticalWeight);
                         childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(height,
                                 MeasureSpec.EXACTLY);
                         measureAgain = true;
-                    } //End block
+                    } 
     if(measureAgain)                    
                     {
     if(DEBUG_LAYOUT){ }                        host.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-                    } //End block
+                    } 
                     mLayoutRequested = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         final boolean didLayout = mLayoutRequested && !mStopped;
         boolean triggerGlobalLayoutListener = didLayout
                 || attachInfo.mRecomputeGlobalAttributes;
@@ -1868,7 +1873,7 @@ for(SurfaceHolder.Callback c : callbacks)
     if(ViewDebug.DEBUG_PROFILE_LAYOUT)            
             {
                 startTime = SystemClock.elapsedRealtime();
-            } //End block
+            } 
             host.layout(0, 0, host.getMeasuredWidth(), host.getMeasuredHeight());
     if(false && ViewDebug.consistencyCheckEnabled)            
             {
@@ -1879,12 +1884,12 @@ for(SurfaceHolder.Callback c : callbacks)
                             + ViewDebug.CONSISTENCY_LOG_TAG + " for more infomation.");
                     var68DC24C0F422438B24EC99F1121C3DC1_1838236487.addTaint(taint);
                     throw var68DC24C0F422438B24EC99F1121C3DC1_1838236487;
-                } //End block
-            } //End block
+                } 
+            } 
     if(ViewDebug.DEBUG_PROFILE_LAYOUT)            
             {
                 EventLog.writeEvent(60001, SystemClock.elapsedRealtime() - startTime);
-            } //End block
+            } 
     if((host.mPrivateFlags & View.REQUEST_TRANSPARENT_REGIONS) != 0)            
             {
                 host.getLocationInWindow(mTmpLocation);
@@ -1895,26 +1900,26 @@ for(SurfaceHolder.Callback c : callbacks)
     if(mTranslator != null)                
                 {
                     mTranslator.translateRegionInWindowToScreen(mTransparentRegion);
-                } //End block
+                } 
     if(!mTransparentRegion.equals(mPreviousTransparentRegion))                
                 {
                     mPreviousTransparentRegion.set(mTransparentRegion);
                     try 
                     {
                         sWindowSession.setTransparentRegion(mWindow, mTransparentRegion);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(DBG)            
             {
                 System.out.println("======================================");
                 System.out.println("performTraversals -- after setFrame");
                 host.debug();
-            } //End block
-        } //End block
+            } 
+        } 
     if(triggerGlobalLayoutListener)        
         {
             attachInfo.mRecomputeGlobalAttributes = false;
@@ -1922,8 +1927,8 @@ for(SurfaceHolder.Callback c : callbacks)
     if(AccessibilityManager.getInstance(host.mContext).isEnabled())            
             {
                 postSendWindowContentChangedCallback();
-            } //End block
-        } //End block
+            } 
+        } 
     if(computesInternalInsets)        
         {
             final ViewTreeObserver.InternalInsetsInfo insets = attachInfo.mGivenInternalInsets;
@@ -1940,23 +1945,23 @@ for(SurfaceHolder.Callback c : callbacks)
                     contentInsets = mTranslator.getTranslatedContentInsets(insets.contentInsets);
                     visibleInsets = mTranslator.getTranslatedVisibleInsets(insets.visibleInsets);
                     touchableRegion = mTranslator.getTranslatedTouchableArea(insets.touchableRegion);
-                } //End block
+                } 
                 else
                 {
                     contentInsets = insets.contentInsets;
                     visibleInsets = insets.visibleInsets;
                     touchableRegion = insets.touchableRegion;
-                } //End block
+                } 
                 try 
                 {
                     sWindowSession.setInsets(mWindow, insets.mTouchableInsets,
                             contentInsets, visibleInsets, touchableRegion);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(mFirst)        
         {
     if(DEBUG_INPUT_RESIZE){ }    if(mView != null)            
@@ -1966,14 +1971,14 @@ for(SurfaceHolder.Callback c : callbacks)
                     mView.requestFocus(View.FOCUS_FORWARD);
                     mFocusedView = mRealFocusedView = mView.findFocus();
     if(DEBUG_INPUT_RESIZE){ }
-                } //End block
+                } 
                 else
                 {
                     mRealFocusedView = mView.findFocus();
     if(DEBUG_INPUT_RESIZE){ }
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mFirst = false;
         mWillDrawSoon = false;
         mNewSurfaceNeeded = false;
@@ -1992,9 +1997,9 @@ for(SurfaceHolder.Callback c : callbacks)
                     imm.onWindowFocus(mView, mView.findFocus(),
                             mWindowAttributes.softInputMode,
                             !mHasHadWindowFocus, mWindowAttributes.flags);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean cancelDraw = attachInfo.mTreeObserver.dispatchOnPreDraw() ||
                 viewVisibility != View.VISIBLE;
     if(!cancelDraw && !newSurface)        
@@ -2004,26 +2009,26 @@ for(SurfaceHolder.Callback c : callbacks)
 for(int i = 0;i < mPendingTransitions.size();++i)
                 {
                     mPendingTransitions.get(i).startChangingAnimations();
-                } //End block
+                } 
                 mPendingTransitions.clear();
-            } //End block
+            } 
             mFullRedrawNeeded = false;
             long drawStartTime;
     if(ViewDebug.DEBUG_LATENCY)            
             {
                 drawStartTime = System.nanoTime();
-            } //End block
+            } 
             draw(fullRedrawNeeded);
     if(ViewDebug.DEBUG_LATENCY)            
             {
                 mLastDrawDurationNanos = System.nanoTime() - drawStartTime;
-            } //End block
+            } 
     if((relayoutResult&WindowManagerImpl.RELAYOUT_RES_FIRST_TIME) != 0
                     || mReportNextDraw)            
             {
     if(LOCAL_LOGV)                
                 {
-                } //End block
+                } 
                 mReportNextDraw = false;
     if(mSurfaceHolder != null && mSurface.isValid())                
                 {
@@ -2037,19 +2042,19 @@ for(SurfaceHolder.Callback c : callbacks)
                             {
                                 ((SurfaceHolder.Callback2)c).surfaceRedrawNeeded(
                                         mSurfaceHolder);
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
+                            } 
+                        } 
+                    } 
+                } 
                 try 
                 {
                     sWindowSession.finishDrawing(mWindow);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
     if(mPendingTransitions != null && mPendingTransitions.size() > 0)            
@@ -2057,27 +2062,28 @@ for(SurfaceHolder.Callback c : callbacks)
 for(int i = 0;i < mPendingTransitions.size();++i)
                 {
                     mPendingTransitions.get(i).endChangingAnimations();
-                } //End block
+                } 
                 mPendingTransitions.clear();
-            } //End block
+            } 
     if((relayoutResult&WindowManagerImpl.RELAYOUT_RES_FIRST_TIME) != 0)            
             {
                 mReportNextDraw = true;
-            } //End block
+            } 
     if(fullRedrawNeeded)            
             {
                 mFullRedrawNeeded = true;
-            } //End block
+            } 
     if(viewVisibility == View.VISIBLE)            
             {
                 scheduleTraversals();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.490 -0400", hash_original_method = "365202E212CCFCA6F73CFA951F572330", hash_generated_method = "97332D9A2B1208107AE761D2933E7039")
     public void requestTransparentRegion(View child) {
         addTaint(child.getTaint());
@@ -2088,15 +2094,15 @@ for(int i = 0;i < mPendingTransitions.size();++i)
             mWindowAttributesChanged = true;
             mWindowAttributesChangesFlag = 0;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mView == child) {
-            //mView.mPrivateFlags |= View.REQUEST_TRANSPARENT_REGIONS;
-            //mWindowAttributesChanged = true;
-            //mWindowAttributesChangesFlag = 0;
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -2118,47 +2124,47 @@ switch(rootDimension){
 }        int var4DBE2C778E19A82616066A0A1C1DBEC9_1108165988 = (measureSpec);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749907027 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_749907027;
-        // ---------- Original Method ----------
-        //int measureSpec;
-        //switch (rootDimension) {
-        //case ViewGroup.LayoutParams.MATCH_PARENT:
-            //measureSpec = MeasureSpec.makeMeasureSpec(windowSize, MeasureSpec.EXACTLY);
-            //break;
-        //case ViewGroup.LayoutParams.WRAP_CONTENT:
-            //measureSpec = MeasureSpec.makeMeasureSpec(windowSize, MeasureSpec.AT_MOST);
-            //break;
-        //default:
-            //measureSpec = MeasureSpec.makeMeasureSpec(rootDimension, MeasureSpec.EXACTLY);
-            //break;
-        //}
-        //return measureSpec;
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.490 -0400", hash_original_method = "40FADC477E8B2549BFFAC38F5B19946C", hash_generated_method = "6FAD1092DFFF46E02505F777F43C3DDC")
     public void onHardwarePreDraw(HardwareCanvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
         canvas.translate(0, -mHardwareYOffset);
-        // ---------- Original Method ----------
-        //canvas.translate(0, -mHardwareYOffset);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.490 -0400", hash_original_method = "0640B89EE45E5EFA4DD1A520BD523415", hash_generated_method = "4E6169D850D97A2E2FD694BE2EC6A9E5")
     public void onHardwarePostDraw(HardwareCanvas canvas) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(canvas.getTaint());
     if(mResizeBuffer != null)        
         {
             mResizePaint.setAlpha(mResizeAlpha);
             canvas.drawHardwareLayer(mResizeBuffer, 0.0f, mHardwareYOffset, mResizePaint);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mResizeBuffer != null) {
-            //mResizePaint.setAlpha(mResizeAlpha);
-            //canvas.drawHardwareLayer(mResizeBuffer, 0.0f, mHardwareYOffset, mResizePaint);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -2171,15 +2177,15 @@ switch(rootDimension){
     if(displayList != null)            
             {
                 mAttachInfo.mHardwareCanvas.outputDisplayList(displayList);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAttachInfo != null && mAttachInfo.mHardwareCanvas != null) {
-            //DisplayList displayList = view.getDisplayList();
-            //if (displayList != null) {
-                //mAttachInfo.mHardwareCanvas.outputDisplayList(displayList);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -2204,48 +2210,48 @@ switch(rootDimension){
             public void run() {
                 mDirty.set(0, 0, mWidth, mHeight);
                 scheduleTraversals();
-                // ---------- Original Method ----------
-                //mDirty.set(0, 0, mWidth, mHeight);
-                //scheduleTraversals();
+                
+                
+                
             }
 });
                 try 
                 {
                     Thread.sleep(15);
-                } //End block
+                } 
                 catch (InterruptedException e)
                 {
                     Log.d(TAG, "Exiting profiling thread");
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //Log.d(TAG, "Starting profiling thread");
-            //while (mRenderProfilingEnabled) {
-                            //mAttachInfo.mHandler.post(new Runnable() {
-                                //@Override
-                                //public void run() {
-                                    //mDirty.set(0, 0, mWidth, mHeight);
-                                    //scheduleTraversals();
-                                //}
-                            //});
-                            //try {
-                                //Thread.sleep(15);
-                            //} catch (InterruptedException e) {
-                                //Log.d(TAG, "Exiting profiling thread");
-                            //}                            
-                        //}
+                } 
+            } 
+            
+            
+            
+                            
+                                
+                                
+                                    
+                                    
+                                
+                            
+                            
+                                
+                            
+                                
+                            
+                        
         }
 }, "Rendering Profiler");
                 mRenderProfiler.start();
-            } //End block
+            } 
             else
             {
                 mRenderProfiler.interrupt();
                 mRenderProfiler = null;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -2256,7 +2262,7 @@ switch(rootDimension){
         {
             mFpsStartTime = mFpsPrevTime = nowTime;
             mFpsNumFrames = 0;
-        } //End block
+        } 
         else
         {
             ++mFpsNumFrames;
@@ -2269,30 +2275,31 @@ switch(rootDimension){
                 float fps = (float) mFpsNumFrames * 1000 / totalTime;
                 mFpsStartTime = nowTime;
                 mFpsNumFrames = 0;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //long nowTime = System.currentTimeMillis();
-        //if (mFpsStartTime < 0) {
-            //mFpsStartTime = mFpsPrevTime = nowTime;
-            //mFpsNumFrames = 0;
-        //} else {
-            //++mFpsNumFrames;
-            //String thisHash = Integer.toHexString(System.identityHashCode(this));
-            //long frameTime = nowTime - mFpsPrevTime;
-            //long totalTime = nowTime - mFpsStartTime;
-            //Log.v(TAG, "0x" + thisHash + "\tFrame time:\t" + frameTime);
-            //mFpsPrevTime = nowTime;
-            //if (totalTime > 1000) {
-                //float fps = (float) mFpsNumFrames * 1000 / totalTime;
-                //Log.v(TAG, "0x" + thisHash + "\tFPS:\t" + fps);
-                //mFpsStartTime = nowTime;
-                //mFpsNumFrames = 0;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+        
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.497 -0400", hash_original_method = "E37EF3DCFB26F629DB3873EE57113F2D", hash_generated_method = "585D4D7435DF39014F722DB595521D0D")
     private void draw(boolean fullRedrawNeeded) {
         addTaint(fullRedrawNeeded);
@@ -2300,11 +2307,11 @@ switch(rootDimension){
     if(surface == null || !surface.isValid())        
         {
             return;
-        } //End block
+        } 
     if(DEBUG_FPS)        
         {
             trackFPS();
-        } //End block
+        } 
     if(!sFirstDrawComplete)        
         {
             synchronized
@@ -2314,30 +2321,30 @@ switch(rootDimension){
 for(int i = 0;i< count;i++)
                 {
                     post(sFirstDrawHandlers.get(i));
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         scrollToRectOrFocus(null, false);
     if(mAttachInfo.mViewScrollChanged)        
         {
             mAttachInfo.mViewScrollChanged = false;
             mAttachInfo.mTreeObserver.dispatchOnScrollChanged();
-        } //End block
+        } 
         int yoff;
         boolean animating = mScroller != null && mScroller.computeScrollOffset();
     if(animating)        
         {
             yoff = mScroller.getCurrY();
-        } //End block
+        } 
         else
         {
             yoff = mScrollY;
-        } //End block
+        } 
     if(mCurScrollY != yoff)        
         {
             mCurScrollY = yoff;
             fullRedrawNeeded = true;
-        } //End block
+        } 
         float appScale = mAttachInfo.mApplicationScale;
         boolean scalingRequired = mAttachInfo.mScalingRequired;
         int resizeAlpha = 0;
@@ -2350,12 +2357,12 @@ for(int i = 0;i< count;i++)
                 amt = mResizeInterpolator.getInterpolation(amt);
                 animating = true;
                 resizeAlpha = 255 - (int)(amt*255);
-            } //End block
+            } 
             else
             {
                 disposeResizeBuffer();
-            } //End block
-        } //End block
+            } 
+        } 
         Rect dirty = mDirty;
     if(mSurfaceHolder != null)        
         {
@@ -2365,16 +2372,16 @@ for(int i = 0;i< count;i++)
     if(mScroller != null)                
                 {
                     mScroller.abortAnimation();
-                } //End block
+                } 
                 disposeResizeBuffer();
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(fullRedrawNeeded)        
         {
             mAttachInfo.mIgnoreDirtyState = true;
             dirty.set(0, 0, (int) (mWidth * appScale + 0.5f), (int) (mHeight * appScale + 0.5f));
-        } //End block
+        } 
     if(mAttachInfo.mHardwareRenderer != null && mAttachInfo.mHardwareRenderer.isEnabled())        
         {
     if(!dirty.isEmpty() || mIsAnimating)            
@@ -2390,22 +2397,22 @@ for(int i = 0;i< count;i++)
     if(animating)                
                 {
                     currentDirty = null;
-                } //End block
+                } 
     if(mAttachInfo.mHardwareRenderer.draw(mView, mAttachInfo, this, currentDirty))                
                 {
                     mPreviousDirty.set(0, 0, mWidth, mHeight);
-                } //End block
-            } //End block
+                } 
+            } 
     if(animating)            
             {
                 mFullRedrawNeeded = true;
                 scheduleTraversals();
-            } //End block
+            } 
             return;
-        } //End block
+        } 
     if(DEBUG_ORIENTATION || DEBUG_DRAW)        
         {
-        } //End block
+        } 
     if(!dirty.isEmpty() || mIsAnimating)        
         {
             Canvas canvas;
@@ -2419,7 +2426,7 @@ for(int i = 0;i< count;i++)
     if(ViewDebug.DEBUG_LATENCY)                
                 {
                     lockCanvasStartTime = System.nanoTime();
-                } //End block
+                } 
                 canvas = surface.lockCanvas(dirty);
     if(ViewDebug.DEBUG_LATENCY)                
                 {
@@ -2427,14 +2434,14 @@ for(int i = 0;i< count;i++)
                     Log.d(TAG, "Latency: Spent "
                             + ((now - lockCanvasStartTime) * 0.000001f)
                             + "ms waiting for surface.lockCanvas()");
-                } //End block
+                } 
     if(left != dirty.left || top != dirty.top || right != dirty.right ||
                         bottom != dirty.bottom)                
                 {
                     mAttachInfo.mIgnoreDirtyState = true;
-                } //End block
+                } 
                 canvas.setDensity(mDensity);
-            } //End block
+            } 
             catch (Surface.OutOfResourcesException e)
             {
                 try 
@@ -2442,19 +2449,19 @@ for(int i = 0;i< count;i++)
     if(!sWindowSession.outOfMemory(mWindow))                    
                     {
                         Process.killProcess(Process.myPid());
-                    } //End block
-                } //End block
+                    } 
+                } 
                 catch (RemoteException ex)
                 {
-                } //End block
+                } 
                 mLayoutRequested = true;
                 return;
-            } //End block
+            } 
             catch (IllegalArgumentException e)
             {
                 mLayoutRequested = true;
                 return;
-            } //End block
+            } 
             try 
             {
     if(!dirty.isEmpty() || mIsAnimating)                
@@ -2462,15 +2469,15 @@ for(int i = 0;i< count;i++)
                     long startTime = 0L;
     if(DEBUG_ORIENTATION || DEBUG_DRAW)                    
                     {
-                    } //End block
+                    } 
     if(ViewDebug.DEBUG_PROFILE_DRAWING)                    
                     {
                         startTime = SystemClock.elapsedRealtime();
-                    } //End block
+                    } 
     if(!canvas.isOpaque() || yoff != 0)                    
                     {
                         canvas.drawColor(0, PorterDuff.Mode.CLEAR);
-                    } //End block
+                    } 
                     dirty.setEmpty();
                     mIsAnimating = false;
                     mAttachInfo.mDrawingTime = SystemClock.uptimeMillis();
@@ -2478,54 +2485,55 @@ for(int i = 0;i< count;i++)
     if(DEBUG_DRAW)                    
                     {
                         Context cxt = mView.getContext();
-                    } //End block
+                    } 
                     try 
                     {
                         canvas.translate(0, -yoff);
     if(mTranslator != null)                        
                         {
                             mTranslator.translateCanvas(canvas);
-                        } //End block
+                        } 
                         canvas.setScreenDensity(scalingRequired
                                 ? DisplayMetrics.DENSITY_DEVICE : 0);
                         mAttachInfo.mSetIgnoreDirtyState = false;
                         mView.draw(canvas);
-                    } //End block
+                    } 
                     finally 
                     {
     if(!mAttachInfo.mSetIgnoreDirtyState)                        
                         {
                             mAttachInfo.mIgnoreDirtyState = false;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(false && ViewDebug.consistencyCheckEnabled)                    
                     {
                         mView.dispatchConsistencyCheck(ViewDebug.CONSISTENCY_DRAWING);
-                    } //End block
+                    } 
     if(ViewDebug.DEBUG_PROFILE_DRAWING)                    
                     {
                         EventLog.writeEvent(60000, SystemClock.elapsedRealtime() - startTime);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             finally 
             {
                 surface.unlockCanvasAndPost(canvas);
-            } //End block
-        } //End block
+            } 
+        } 
     if(LOCAL_LOGV)        
         {
-        } //End block
+        } 
     if(animating)        
         {
             mFullRedrawNeeded = true;
             scheduleTraversals();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.500 -0400", hash_original_method = "FAD7953F436A3C038802D5DE07F19E9E", hash_generated_method = "0B46C9EBD4715D2261FD4F9815CBF368")
      boolean scrollToRectOrFocus(Rect rectangle, boolean immediate) {
         addTaint(immediate);
@@ -2546,16 +2554,16 @@ for(int i = 0;i< count;i++)
                 boolean var68934A3E9455FA72420237EB05902327_894546814 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1811788033 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1811788033;
-            } //End block
+            } 
     if(focus != mLastScrolledFocus)            
             {
                 rectangle = null;
-            } //End block
+            } 
     if(DEBUG_INPUT_RESIZE){ }    if(focus == mLastScrolledFocus && !mScrollMayChange
                     && rectangle == null)            
             {
     if(DEBUG_INPUT_RESIZE){ }
-            } //End block
+            } 
             else
     if(focus != null)            
             {
@@ -2570,27 +2578,27 @@ for(int i = 0;i< count;i++)
                         {
                             ((ViewGroup) mView).offsetDescendantRectToMyCoords(
                                     focus, mTempRect);
-                        } //End block
+                        } 
     if(DEBUG_INPUT_RESIZE){ }
-                    } //End block
+                    } 
                     else
                     {
                         mTempRect.set(rectangle);
     if(DEBUG_INPUT_RESIZE){ }
-                    } //End block
+                    } 
     if(mTempRect.intersect(mVisRect))                    
                     {
     if(DEBUG_INPUT_RESIZE){ }    if(mTempRect.height() >
                                 (mView.getHeight()-vi.top-vi.bottom))                        
                         {
     if(DEBUG_INPUT_RESIZE){ }
-                        } //End block
+                        } 
                         else
     if((mTempRect.top-scrollY) < vi.top)                        
                         {
                             scrollY -= vi.top - (mTempRect.top-scrollY);
     if(DEBUG_INPUT_RESIZE){ }
-                        } //End block
+                        } 
                         else
     if((mTempRect.bottom-scrollY)
                                 > (mView.getHeight()-vi.bottom))                        
@@ -2598,12 +2606,12 @@ for(int i = 0;i< count;i++)
                             scrollY += (mTempRect.bottom-scrollY)
                                     - (mView.getHeight()-vi.bottom);
     if(DEBUG_INPUT_RESIZE){ }
-                        } //End block
+                        } 
                         handled = true;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(scrollY != mScrollY)        
         {
     if(DEBUG_INPUT_RESIZE){ }    if(!immediate && mResizeBuffer == null)            
@@ -2611,21 +2619,21 @@ for(int i = 0;i< count;i++)
     if(mScroller == null)                
                 {
                     mScroller = new Scroller(mView.getContext());
-                } //End block
+                } 
                 mScroller.startScroll(0, mScrollY, 0, scrollY-mScrollY);
-            } //End block
+            } 
             else
     if(mScroller != null)            
             {
                 mScroller.abortAnimation();
-            } //End block
+            } 
             mScrollY = scrollY;
-        } //End block
+        } 
         boolean var98F0599AF776A1FE4101C199A40EEB8F_584218475 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1936558844 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1936558844;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2637,18 +2645,18 @@ for(int i = 0;i< count;i++)
         {
             mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(mFocusedView, focused);
             scheduleTraversals();
-        } //End block
+        } 
         mFocusedView = mRealFocusedView = focused;
     if(DEBUG_INPUT_RESIZE){ }
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mFocusedView != focused) {
-            //mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(mFocusedView, focused);
-            //scheduleTraversals();
-        //}
-        //mFocusedView = mRealFocusedView = focused;
-        //if (DEBUG_INPUT_RESIZE) Log.v(TAG, "Request child focus: focus now "
-                //+ mFocusedView);
+        
+        
+        
+            
+            
+        
+        
+        
+                
     }
 
     
@@ -2663,25 +2671,25 @@ for(int i = 0;i< count;i++)
     if(!mView.requestFocus(View.FOCUS_FORWARD))            
             {
                 mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(oldFocus, null);
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(oldFocus != null)        
         {
             mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(oldFocus, null);
-        } //End block
-        // ---------- Original Method ----------
-        //checkThread();
-        //View oldFocus = mFocusedView;
-        //if (DEBUG_INPUT_RESIZE) Log.v(TAG, "Clearing child focus");
-        //mFocusedView = mRealFocusedView = null;
-        //if (mView != null && !mView.hasFocus()) {
-            //if (!mView.requestFocus(View.FOCUS_FORWARD)) {
-                //mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(oldFocus, null);
-            //}
-        //} else if (oldFocus != null) {
-            //mAttachInfo.mTreeObserver.dispatchOnGlobalFocusChange(oldFocus, null);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -2694,7 +2702,7 @@ for(int i = 0;i< count;i++)
     if(!mView.hasFocus())            
             {
                 v.requestFocus();
-            } //End block
+            } 
             else
             {
                 mFocusedView = mView.findFocus();
@@ -2704,25 +2712,25 @@ for(int i = 0;i< count;i++)
     if(descendantsHaveDibsOnFocus && isViewDescendantOf(v, mFocusedView))                
                 {
                     v.requestFocus();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mView != null) {
-            //if (!mView.hasFocus()) {
-                //v.requestFocus();
-            //} else {
-                //mFocusedView = mView.findFocus();
-                //boolean descendantsHaveDibsOnFocus =
-                        //(mFocusedView instanceof ViewGroup) &&
-                            //(((ViewGroup) mFocusedView).getDescendantFocusability() ==
-                                    //ViewGroup.FOCUS_AFTER_DESCENDANTS);
-                //if (descendantsHaveDibsOnFocus && isViewDescendantOf(v, mFocusedView)) {
-                    //v.requestFocus();
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+        
+            
+                
+            
+                
+                
+                        
+                            
+                                    
+                
+                    
+                
+            
+        
     }
 
     
@@ -2736,19 +2744,20 @@ for(int i = 0;i< count;i++)
     if(!mWillDrawSoon)            
             {
                 scheduleTraversals();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (mView == child) {
-            //mAttachInfo.mRecomputeGlobalAttributes = true;
-            //if (!mWillDrawSoon) {
-                //scheduleTraversals();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.505 -0400", hash_original_method = "59E93FB376BDE71F69616A2B01BFF0AF", hash_generated_method = "7A315E1F9F609BE89A389E9106B36598")
      void dispatchDetachedFromWindow() {
     if(mView != null && mView.mAttachInfo != null)        
@@ -2757,9 +2766,9 @@ for(int i = 0;i< count;i++)
                     mAttachInfo.mHardwareRenderer.isEnabled())            
             {
                 mAttachInfo.mHardwareRenderer.validate();
-            } //End block
+            } 
             mView.dispatchDetachedFromWindow();
-        } //End block
+        } 
         mAccessibilityInteractionConnectionManager.ensureNoConnection();
         mAccessibilityManager.removeAccessibilityStateChangeListener(
                 mAccessibilityInteractionConnectionManager);
@@ -2774,26 +2783,26 @@ for(int i = 0;i< count;i++)
             mInputQueueCallback.onInputQueueDestroyed(mInputQueue);
             mInputQueueCallback = null;
             mInputQueue = null;
-        } //End block
+        } 
         else
     if(mInputChannel != null)        
         {
             InputQueue.unregisterInputChannel(mInputChannel);
-        } //End block
+        } 
         try 
         {
             sWindowSession.remove(mWindow);
-        } //End block
+        } 
         catch (RemoteException e)
         {
-        } //End block
+        } 
     if(mInputChannel != null)        
         {
             mInputChannel.dispose();
             mInputChannel = null;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -2806,14 +2815,14 @@ for(int i = 0;i< count;i++)
         {
             config = new Configuration(config);
             ci.applyToConfiguration(config);
-        } //End block
+        } 
         synchronized
 (sConfigCallbacks)        {
 for(int i=sConfigCallbacks.size()-1;i>=0;i--)
             {
                 sConfigCallbacks.get(i).onConfigurationChanged(config);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mView != null)        
         {
             config = mView.getResources().getConfiguration();
@@ -2821,10 +2830,10 @@ for(int i=sConfigCallbacks.size()-1;i>=0;i--)
             {
                 mLastConfiguration.setTo(config);
                 mView.dispatchConfigurationChanged(config);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -2957,8 +2966,8 @@ String varEAAFDC5A38F2A528C77C90424EDC1794_1743842245 =         "PROCESS_INPUT_E
 }String var1EF09E984C26996A9E64B724864BFE50_291214858 =         super.getMessageName(message);
         var1EF09E984C26996A9E64B724864BFE50_291214858.addTaint(taint);
         return var1EF09E984C26996A9E64B724864BFE50_291214858;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -2978,13 +2987,13 @@ switch(msg.what){
     if(mProfile)        
         {
             Debug.startMethodTracing("ViewAncestor");
-        } //End block
+        } 
         long traversalStartTime;
     if(ViewDebug.DEBUG_LATENCY)        
         {
             traversalStartTime = System.nanoTime();
             mLastDrawDurationNanos = 0;
-        } //End block
+        } 
         performTraversals();
     if(ViewDebug.DEBUG_LATENCY)        
         {
@@ -2995,12 +3004,12 @@ switch(msg.what){
                         + (mLastDrawDurationNanos * 0.000001f)
                         + "ms of that time in draw()");
             mLastTraversalFinishedTimeNanos = now;
-        } //End block
+        } 
     if(mProfile)        
         {
             Debug.stopMethodTracing();
             mProfile = false;
-        } //End block
+        } 
         break;
         case FINISHED_EVENT:
         handleFinishedEvent(msg.arg1, msg.arg2 != 0);
@@ -3034,7 +3043,7 @@ switch(msg.what){
                     && ((ResizedInfo)msg.obj).newConfig == null)        
         {
             break;
-        } //End block
+        } 
         case RESIZED_REPORT:
     if(mAdded)        
         {
@@ -3042,7 +3051,7 @@ switch(msg.what){
     if(config != null)            
             {
                 updateConfiguration(config, false);
-            } //End block
+            } 
             mWinFrame.left = 0;
             mWinFrame.right = msg.arg1;
             mWinFrame.top = 0;
@@ -3052,13 +3061,13 @@ switch(msg.what){
     if(msg.what == RESIZED_REPORT)            
             {
                 mReportNextDraw = true;
-            } //End block
+            } 
     if(mView != null)            
             {
                 forceLayout(mView);
-            } //End block
+            } 
             requestLayout();
-        } //End block
+        } 
         break;
         case WINDOW_FOCUS_CHANGED:
         {
@@ -3079,7 +3088,7 @@ switch(msg.what){
                         {
                             mAttachInfo.mHardwareRenderer.initializeIfNeeded(mWidth, mHeight,
                                     mAttachInfo, mHolder);
-                        } //End block
+                        } 
                         catch (Surface.OutOfResourcesException e)
                         {
                             try 
@@ -3087,16 +3096,16 @@ switch(msg.what){
     if(!sWindowSession.outOfMemory(mWindow))                                
                                 {
                                     Process.killProcess(Process.myPid());
-                                } //End block
-                            } //End block
+                                } 
+                            } 
                             catch (RemoteException ex)
                             {
-                            } //End block
+                            } 
                             sendMessageDelayed(obtainMessage(msg.what, msg.arg1, msg.arg2), 500);
                             return;
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 mLastWasImTarget = WindowManager.LayoutParams
                         .mayUseInputMethod(mWindowAttributes.flags);
                 InputMethodManager imm = InputMethodManager.peekInstance();
@@ -3105,10 +3114,10 @@ switch(msg.what){
     if(hasWindowFocus && imm != null && mLastWasImTarget)                    
                     {
                         imm.startGettingWindowFocus(mView);
-                    } //End block
+                    } 
                     mAttachInfo.mKeyDispatchState.reset();
                     mView.dispatchWindowFocusChanged(hasWindowFocus);
-                } //End block
+                } 
     if(hasWindowFocus)                
                 {
     if(imm != null && mLastWasImTarget)                    
@@ -3116,20 +3125,20 @@ switch(msg.what){
                         imm.onWindowFocus(mView, mView.findFocus(),
                                 mWindowAttributes.softInputMode,
                                 !mHasHadWindowFocus, mWindowAttributes.flags);
-                    } //End block
+                    } 
                     mWindowAttributes.softInputMode &=
                             ~WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION;
                     ((WindowManager.LayoutParams)mView.getLayoutParams())
                             .softInputMode &=
                                 ~WindowManager.LayoutParams.SOFT_INPUT_IS_FORWARD_NAVIGATION;
                     mHasHadWindowFocus = true;
-                } //End block
+                } 
     if(hasWindowFocus && mView != null)                
                 {
                     sendAccessibilityEvents();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         break;
         case DIE:
         doDie();
@@ -3140,9 +3149,9 @@ switch(msg.what){
     if((event.getFlags()&KeyEvent.FLAG_FROM_SYSTEM) != 0)            
             {
                 event = KeyEvent.changeFlags(event, event.getFlags() & ~KeyEvent.FLAG_FROM_SYSTEM);
-            } //End block
+            } 
             deliverKeyEventPostIme((KeyEvent)msg.obj, false);
-        } //End block
+        } 
         break;
         case FINISH_INPUT_CONNECTION:
         {
@@ -3150,8 +3159,8 @@ switch(msg.what){
     if(imm != null)            
             {
                 imm.reportFinishInputConnection((InputConnection)msg.obj);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case CHECK_FOCUS:
         {
@@ -3159,16 +3168,16 @@ switch(msg.what){
     if(imm != null)            
             {
                 imm.checkFocus();
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case CLOSE_SYSTEM_DIALOGS:
         {
     if(mView != null)            
             {
                 mView.onCloseSystemDialogs((String)msg.obj);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case DISPATCH_DRAG_EVENT:
         case DISPATCH_DRAG_LOCATION_EVENT:
@@ -3176,12 +3185,12 @@ switch(msg.what){
             DragEvent event = (DragEvent)msg.obj;
             event.mLocalState = mLocalDragState;
             handleDragEvent(event);
-        } //End block
+        } 
         break;
         case DISPATCH_SYSTEM_UI_VISIBILITY:
         {
             handleDispatchSystemUiVisibilityChanged((SystemUiVisibilityInfo)msg.obj);
-        } //End block
+        } 
         break;
         case UPDATE_CONFIGURATION:
         {
@@ -3189,9 +3198,9 @@ switch(msg.what){
     if(config.isOtherSeqNewer(mLastConfiguration))            
             {
                 config = mLastConfiguration;
-            } //End block
+            } 
             updateConfiguration(config, false);
-        } //End block
+        } 
         break;
         case DO_FIND_ACCESSIBLITY_NODE_INFO_BY_ACCESSIBILITY_ID:
         {
@@ -3199,8 +3208,8 @@ switch(msg.what){
             {
                 getAccessibilityInteractionController()
                     .findAccessibilityNodeInfoByAccessibilityIdUiThread(msg);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case DO_PERFORM_ACCESSIBILITY_ACTION:
         {
@@ -3208,8 +3217,8 @@ switch(msg.what){
             {
                 getAccessibilityInteractionController()
                     .perfromAccessibilityActionUiThread(msg);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_ID:
         {
@@ -3217,8 +3226,8 @@ switch(msg.what){
             {
                 getAccessibilityInteractionController()
                     .findAccessibilityNodeInfoByViewIdUiThread(msg);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
         case DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_TEXT:
         {
@@ -3226,12 +3235,12 @@ switch(msg.what){
             {
                 getAccessibilityInteractionController()
                     .findAccessibilityNodeInfosByViewTextUiThread(msg);
-            } //End block
-        } //End block
+            } 
+        } 
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3239,25 +3248,25 @@ switch(msg.what){
     private void startInputEvent(InputQueue.FinishedCallback finishedCallback) {
     if(mFinishedCallback != null)        
         {
-        } //End block
+        } 
     if(ViewDebug.DEBUG_LATENCY)        
         {
             mInputEventReceiveTimeNanos = System.nanoTime();
             mInputEventDeliverTimeNanos = 0;
             mInputEventDeliverPostImeTimeNanos = 0;
-        } //End block
+        } 
         mFinishedCallback = finishedCallback;
-        // ---------- Original Method ----------
-        //if (mFinishedCallback != null) {
-            //Slog.w(TAG, "Received a new input event from the input queue but there is "
-                    //+ "already an unfinished input event in progress.");
-        //}
-        //if (ViewDebug.DEBUG_LATENCY) {
-            //mInputEventReceiveTimeNanos = System.nanoTime();
-            //mInputEventDeliverTimeNanos = 0;
-            //mInputEventDeliverPostImeTimeNanos = 0;
-        //}
-        //mFinishedCallback = finishedCallback;
+        
+        
+            
+                    
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -3268,7 +3277,7 @@ switch(msg.what){
     if(LOCAL_LOGV){ }    if(mFinishedCallback == null)        
         {
             return;
-        } //End block
+        } 
     if(ViewDebug.DEBUG_LATENCY)        
         {
             final long now = System.nanoTime();
@@ -3282,7 +3291,7 @@ switch(msg.what){
                 final KeyEvent keyEvent = (KeyEvent)event;
                 msg.append("key event, action=");
                 msg.append(KeyEvent.actionToString(keyEvent.getAction()));
-            } //End block
+            } 
             else
             {
                 final MotionEvent motionEvent = (MotionEvent)event;
@@ -3290,7 +3299,7 @@ switch(msg.what){
                 msg.append(MotionEvent.actionToString(motionEvent.getAction()));
                 msg.append(", historySize=");
                 msg.append(motionEvent.getHistorySize());
-            } //End block
+            } 
             msg.append(", handled=");
             msg.append(handled);
             msg.append(", received at +");
@@ -3299,21 +3308,21 @@ switch(msg.what){
             {
                 msg.append("ms, delivered at +");
                 msg.append((mInputEventDeliverTimeNanos - eventTime) * 0.000001f);
-            } //End block
+            } 
     if(mInputEventDeliverPostImeTimeNanos != 0)            
             {
                 msg.append("ms, delivered post IME at +");
                 msg.append((mInputEventDeliverPostImeTimeNanos - eventTime) * 0.000001f);
-            } //End block
+            } 
             msg.append("ms, finished at +");
             msg.append((now - eventTime) * 0.000001f);
             msg.append("ms.");
             Log.d(TAG, msg.toString());
-        } //End block
+        } 
         mFinishedCallback.finished(handled);
         mFinishedCallback = null;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3332,26 +3341,26 @@ switch(msg.what){
         try 
         {
             sWindowSession.setInTouchMode(inTouchMode);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_1134726950 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_1134726950.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_1134726950;
-        } //End block
+        } 
         boolean var692F86F152C1BB12AD00082FEF0077B6_636230174 = (ensureTouchModeLocally(inTouchMode));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_863009205 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_863009205;
-        // ---------- Original Method ----------
-        //if (DBG) Log.d("touchmode", "ensureTouchMode(" + inTouchMode + "), current "
-                //+ "touch mode is " + mAttachInfo.mInTouchMode);
-        //if (mAttachInfo.mInTouchMode == inTouchMode) return false;
-        //try {
-            //sWindowSession.setInTouchMode(inTouchMode);
-        //} catch (RemoteException e) {
-            //throw new RuntimeException(e);
-        //}
-        //return ensureTouchModeLocally(inTouchMode);
+        
+        
+                
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -3371,13 +3380,13 @@ switch(msg.what){
         boolean var3E54BAA8A577DB05DFA85553795907C5_1814215699 = ((inTouchMode) ? enterTouchMode() : leaveTouchMode());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1129757994 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1129757994;
-        // ---------- Original Method ----------
-        //if (DBG) Log.d("touchmode", "ensureTouchModeLocally(" + inTouchMode + "), current "
-                //+ "touch mode is " + mAttachInfo.mInTouchMode);
-        //if (mAttachInfo.mInTouchMode == inTouchMode) return false;
-        //mAttachInfo.mInTouchMode = inTouchMode;
-        //mAttachInfo.mTreeObserver.dispatchOnTouchModeChanged(inTouchMode);
-        //return (inTouchMode) ? enterTouchMode() : leaveTouchMode();
+        
+        
+                
+        
+        
+        
+        
     }
 
     
@@ -3396,7 +3405,7 @@ switch(msg.what){
                         boolean var0774C92D79374772E4B5929C9059B10C_93099759 = (ancestorToTakeFocus.requestFocus());
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1710733288 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1710733288;
-                    } //End block
+                    } 
                     else
                     {
                         mView.unFocus();
@@ -3405,15 +3414,15 @@ switch(msg.what){
                         boolean varB326B5062B2F0E69046810717534CB09_154473812 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_785753325 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_785753325;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1900307721 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1809620788 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1809620788;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3431,36 +3440,36 @@ switch(msg.what){
 ViewGroup varFBFA1772B797F5D46A0D81B60844AE87_76257712 =                 vgParent;
                 varFBFA1772B797F5D46A0D81B60844AE87_76257712.addTaint(taint);
                 return varFBFA1772B797F5D46A0D81B60844AE87_76257712;
-            } //End block
+            } 
     if(vgParent.isRootNamespace())            
             {
 ViewGroup var540C13E9E156B687226421B24F2DF178_1210838839 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1210838839.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1210838839;
-            } //End block
+            } 
             else
             {
                 parent = vgParent.getParent();
-            } //End block
-        } //End block
+            } 
+        } 
 ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
         var540C13E9E156B687226421B24F2DF178_1728460618.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1728460618;
-        // ---------- Original Method ----------
-        //ViewParent parent = focused.getParent();
-        //while (parent instanceof ViewGroup) {
-            //final ViewGroup vgParent = (ViewGroup) parent;
-            //if (vgParent.getDescendantFocusability() == ViewGroup.FOCUS_AFTER_DESCENDANTS
-                    //&& vgParent.isFocusableInTouchMode()) {
-                //return vgParent;
-            //}
-            //if (vgParent.isRootNamespace()) {
-                //return null;
-            //} else {
-                //parent = vgParent.getParent();
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                    
+                
+            
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -3476,7 +3485,7 @@ ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
                     boolean var68934A3E9455FA72420237EB05902327_274664899 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_244802901 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_244802901;
-                } //End block
+                } 
                 else
     if(((ViewGroup)mFocusedView).getDescendantFocusability() !=
                         ViewGroup.FOCUS_AFTER_DESCENDANTS)                
@@ -3484,36 +3493,36 @@ ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
                     boolean var68934A3E9455FA72420237EB05902327_1081701064 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_160910407 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_160910407;
-                } //End block
-            } //End block
+                } 
+            } 
             final View focused = focusSearch(null, View.FOCUS_DOWN);
     if(focused != null)            
             {
                 boolean var44B53D67AEDFAC9AEC4E3B30D3006E9C_452337835 = (focused.requestFocus(View.FOCUS_DOWN));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1980569690 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1980569690;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1509204774 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1161118175 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1161118175;
-        // ---------- Original Method ----------
-        //if (mView != null) {
-            //if (mView.hasFocus()) {
-                //mFocusedView = mView.findFocus();
-                //if (!(mFocusedView instanceof ViewGroup)) {
-                    //return false;
-                //} else if (((ViewGroup)mFocusedView).getDescendantFocusability() !=
-                        //ViewGroup.FOCUS_AFTER_DESCENDANTS) {
-                    //return false;
-                //}
-            //}
-            //final View focused = focusSearch(null, View.FOCUS_DOWN);
-            //if (focused != null) {
-                //return focused.requestFocus(View.FOCUS_DOWN);
-            //}
-        //}
-        //return false;
+        
+        
+            
+                
+                
+                    
+                
+                        
+                    
+                
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -3523,59 +3532,59 @@ ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
     if(ViewDebug.DEBUG_LATENCY)        
         {
             mInputEventDeliverTimeNanos = System.nanoTime();
-        } //End block
+        } 
         final boolean isTouchEvent = event.isTouchEvent();
     if(mInputEventConsistencyVerifier != null)        
         {
     if(isTouchEvent)            
             {
                 mInputEventConsistencyVerifier.onTouchEvent(event, 0);
-            } //End block
+            } 
             else
             {
                 mInputEventConsistencyVerifier.onGenericMotionEvent(event, 0);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mView == null || !mAdded)        
         {
             finishMotionEvent(event, sendDone, false);
             return;
-        } //End block
+        } 
     if(mTranslator != null)        
         {
             mTranslator.translateEventInScreenToAppWindow(event);
-        } //End block
+        } 
         final int action = event.getAction();
     if(action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_SCROLL)        
         {
             ensureTouchMode(true);
-        } //End block
+        } 
     if(mCurScrollY != 0)        
         {
             event.offsetLocation(0, mCurScrollY);
-        } //End block
+        } 
     if(MEASURE_LATENCY)        
         {
             lt.sample("A Dispatching PointerEvents", System.nanoTime() - event.getEventTimeNano());
-        } //End block
+        } 
     if(isTouchEvent)        
         {
             mLastTouchPoint.x = event.getRawX();
             mLastTouchPoint.y = event.getRawY();
-        } //End block
+        } 
         boolean handled = mView.dispatchPointerEvent(event);
     if(MEASURE_LATENCY)        
         {
             lt.sample("B Dispatched PointerEvents ", System.nanoTime() - event.getEventTimeNano());
-        } //End block
+        } 
     if(handled)        
         {
             finishMotionEvent(event, sendDone, true);
             return;
-        } //End block
+        } 
         finishMotionEvent(event, sendDone, false);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3588,23 +3597,23 @@ ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
     if(sendDone)        
         {
             finishInputEvent(event, handled);
-        } //End block
+        } 
     if(LOCAL_LOGV || WATCH_POINTER)        
         {
     if((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0)            
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //event.recycle();
-        //if (sendDone) {
-            //finishInputEvent(event, handled);
-        //}
-        //if (LOCAL_LOGV || WATCH_POINTER) {
-            //if ((event.getSource() & InputDevice.SOURCE_CLASS_POINTER) != 0) {
-                //Log.i(TAG, "Done dispatching!");
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -3615,23 +3624,23 @@ ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
     if(ViewDebug.DEBUG_LATENCY)        
         {
             mInputEventDeliverTimeNanos = System.nanoTime();
-        } //End block
+        } 
     if(DEBUG_TRACKBALL){ }    if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onTrackballEvent(event, 0);
-        } //End block
+        } 
     if(mView == null || !mAdded)        
         {
             finishMotionEvent(event, sendDone, false);
             return;
-        } //End block
+        } 
     if(mView.dispatchTrackballEvent(event))        
         {
             ensureTouchMode(false);
             finishMotionEvent(event, sendDone, true);
             mLastTrackballTime = Integer.MIN_VALUE;
             return;
-        } //End block
+        } 
         final TrackballAxis x = mTrackballAxisX;
         final TrackballAxis y = mTrackballAxisY;
         long curTime = SystemClock.uptimeMillis();
@@ -3640,7 +3649,7 @@ ViewGroup var540C13E9E156B687226421B24F2DF178_1728460618 =         null;
             x.reset(0);
             y.reset(0);
             mLastTrackballTime = curTime;
-        } //End block
+        } 
         final int action = event.getAction();
         final int metaState = event.getMetaState();
 switch(action){
@@ -3674,8 +3683,8 @@ switch(action){
                         : KeyEvent.KEYCODE_DPAD_LEFT;
                 accel = x.acceleration;
                 y.reset(2);
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(yOff > 0)        
         {
@@ -3686,8 +3695,8 @@ switch(action){
                         : KeyEvent.KEYCODE_DPAD_UP;
                 accel = y.acceleration;
                 x.reset(2);
-            } //End block
-        } //End block
+            } 
+        } 
     if(keycode != 0)        
         {
     if(movement < 0)            
@@ -3701,7 +3710,7 @@ switch(action){
                         KeyEvent.ACTION_MULTIPLE, keycode, repeatCount, metaState,
                         KeyCharacterMap.VIRTUAL_KEYBOARD, 0, KeyEvent.FLAG_FALLBACK,
                         InputDevice.SOURCE_KEYBOARD), false);
-            } //End block
+            } 
             while
 (movement > 0)            
             {
@@ -3715,12 +3724,12 @@ switch(action){
                         KeyEvent.ACTION_UP, keycode, 0, metaState,
                         KeyCharacterMap.VIRTUAL_KEYBOARD, 0, KeyEvent.FLAG_FALLBACK,
                         InputDevice.SOURCE_KEYBOARD), false);
-            } //End block
+            } 
             mLastTrackballTime = curTime;
-        } //End block
+        } 
         finishMotionEvent(event, sendDone, true);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -3731,11 +3740,11 @@ switch(action){
     if(ViewDebug.DEBUG_LATENCY)        
         {
             mInputEventDeliverTimeNanos = System.nanoTime();
-        } //End block
+        } 
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onGenericMotionEvent(event, 0);
-        } //End block
+        } 
         final int source = event.getSource();
         final boolean isJoystick = (source & InputDevice.SOURCE_CLASS_JOYSTICK) != 0;
     if(mView == null || !mAdded)        
@@ -3743,30 +3752,30 @@ switch(action){
     if(isJoystick)            
             {
                 updateJoystickDirection(event, false);
-            } //End block
+            } 
             finishMotionEvent(event, sendDone, false);
             return;
-        } //End block
+        } 
     if(mView.dispatchGenericMotionEvent(event))        
         {
     if(isJoystick)            
             {
                 updateJoystickDirection(event, false);
-            } //End block
+            } 
             finishMotionEvent(event, sendDone, true);
             return;
-        } //End block
+        } 
     if(isJoystick)        
         {
             updateJoystickDirection(event, true);
             finishMotionEvent(event, sendDone, true);
-        } //End block
+        } 
         else
         {
             finishMotionEvent(event, sendDone, false);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -3782,12 +3791,12 @@ switch(action){
     if(xDirection == 0)        
         {
             xDirection = joystickAxisValueToDirection(event.getX());
-        } //End block
+        } 
         int yDirection = joystickAxisValueToDirection(event.getAxisValue(MotionEvent.AXIS_HAT_Y));
     if(yDirection == 0)        
         {
             yDirection = joystickAxisValueToDirection(event.getY());
-        } //End block
+        } 
     if(xDirection != mLastJoystickXDirection)        
         {
     if(mLastJoystickXKeyCode != 0)            
@@ -3796,7 +3805,7 @@ switch(action){
                         KeyEvent.ACTION_UP, mLastJoystickXKeyCode, 0, metaState,
                         deviceId, 0, KeyEvent.FLAG_FALLBACK, source), false);
                 mLastJoystickXKeyCode = 0;
-            } //End block
+            } 
             mLastJoystickXDirection = xDirection;
     if(xDirection != 0 && synthesizeNewKeys)            
             {
@@ -3805,8 +3814,8 @@ switch(action){
                 deliverKeyEvent(new KeyEvent(time, time,
                         KeyEvent.ACTION_DOWN, mLastJoystickXKeyCode, 0, metaState,
                         deviceId, 0, KeyEvent.FLAG_FALLBACK, source), false);
-            } //End block
-        } //End block
+            } 
+        } 
     if(yDirection != mLastJoystickYDirection)        
         {
     if(mLastJoystickYKeyCode != 0)            
@@ -3815,7 +3824,7 @@ switch(action){
                         KeyEvent.ACTION_UP, mLastJoystickYKeyCode, 0, metaState,
                         deviceId, 0, KeyEvent.FLAG_FALLBACK, source), false);
                 mLastJoystickYKeyCode = 0;
-            } //End block
+            } 
             mLastJoystickYDirection = yDirection;
     if(yDirection != 0 && synthesizeNewKeys)            
             {
@@ -3824,14 +3833,15 @@ switch(action){
                 deliverKeyEvent(new KeyEvent(time, time,
                         KeyEvent.ACTION_DOWN, mLastJoystickYKeyCode, 0, metaState,
                         deviceId, 0, KeyEvent.FLAG_FALLBACK, source), false);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
-        private static int joystickAxisValueToDirection(float value) {
+        @DSModeled(DSC.SAFE)
+    private static int joystickAxisValueToDirection(float value) {
         if (value >= 0.5f) {
             return 1;
         } else if (value <= -0.5f) {
@@ -3875,55 +3885,55 @@ switch(action){
             boolean var68934A3E9455FA72420237EB05902327_1099403936 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1421623107 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1421623107;
-        } //End block
+        } 
         final int action = event.getAction();
     if(action != KeyEvent.ACTION_DOWN && action != KeyEvent.ACTION_MULTIPLE)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1994060026 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1103180580 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1103180580;
-        } //End block
+        } 
     if((event.getFlags() & KeyEvent.FLAG_KEEP_TOUCH_MODE) != 0)        
         {
             boolean var68934A3E9455FA72420237EB05902327_637303651 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1462198686 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1462198686;
-        } //End block
+        } 
     if(isNavigationKey(event))        
         {
             boolean varB2FDA8E224E054879B524CA3016FAB75_304571970 = (ensureTouchMode(false));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1081936712 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1081936712;
-        } //End block
+        } 
     if(isTypingKey(event))        
         {
             ensureTouchMode(false);
             boolean var68934A3E9455FA72420237EB05902327_1559658055 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1180953921 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1180953921;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1681644019 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_44635958 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_44635958;
-        // ---------- Original Method ----------
-        //if (!mAttachInfo.mInTouchMode) {
-            //return false;
-        //}
-        //final int action = event.getAction();
-        //if (action != KeyEvent.ACTION_DOWN && action != KeyEvent.ACTION_MULTIPLE) {
-            //return false;
-        //}
-        //if ((event.getFlags() & KeyEvent.FLAG_KEEP_TOUCH_MODE) != 0) {
-            //return false;
-        //}
-        //if (isNavigationKey(event)) {
-            //return ensureTouchMode(false);
-        //}
-        //if (isTypingKey(event)) {
-            //ensureTouchMode(false);
-            //return false;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -3939,12 +3949,12 @@ switch(action){
         int var4A57C27C5ABAE20AEB59D3FA44331F63_1251278158 = (sendDone ? seq : -seq);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013818270 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2013818270;
-        // ---------- Original Method ----------
-        //int seq = mPendingEventSeq+1;
-        //if (seq < 0) seq = 0;
-        //mPendingEventSeq = seq;
-        //mPendingEvents.put(seq, event);
-        //return sendDone ? seq : -seq;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -3957,17 +3967,17 @@ switch(action){
     if(event != null)        
         {
             mPendingEvents.remove(seq);
-        } //End block
+        } 
 Object var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337 =         event;
         var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337.addTaint(taint);
         return var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337;
-        // ---------- Original Method ----------
-        //if (seq < 0) seq = -seq;
-        //Object event = mPendingEvents.get(seq);
-        //if (event != null) {
-            //mPendingEvents.remove(seq);
-        //}
-        //return event;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -3978,21 +3988,21 @@ Object var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337 =         event;
     if(ViewDebug.DEBUG_LATENCY)        
         {
             mInputEventDeliverTimeNanos = System.nanoTime();
-        } //End block
+        } 
     if(mInputEventConsistencyVerifier != null)        
         {
             mInputEventConsistencyVerifier.onKeyEvent(event, 0);
-        } //End block
+        } 
     if(mView == null || !mAdded)        
         {
             finishKeyEvent(event, sendDone, false);
             return;
-        } //End block
+        } 
     if(LOCAL_LOGV){ }    if(mView.dispatchKeyEventPreIme(event))        
         {
             finishKeyEvent(event, sendDone, true);
             return;
-        } //End block
+        } 
     if(mLastWasImTarget)        
         {
             InputMethodManager imm = InputMethodManager.peekInstance();
@@ -4001,11 +4011,11 @@ Object var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337 =         event;
                 int seq = enqueuePendingEvent(event, sendDone);
     if(DEBUG_IMF){ }                imm.dispatchKeyEvent(mView.getContext(), seq, event, mInputMethodCallback);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
         deliverKeyEventPostIme(event, sendDone);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4020,24 +4030,24 @@ Object var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337 =         event;
     if(handled)            
             {
                 finishKeyEvent(event, sendDone, true);
-            } //End block
+            } 
             else
             {
                 deliverKeyEventPostIme(event, sendDone);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //final KeyEvent event = (KeyEvent)retrievePendingEvent(seq);
-        //if (DEBUG_IMF) Log.v(TAG, "IME finished event: seq=" + seq
-                //+ " handled=" + handled + " event=" + event);
-        //if (event != null) {
-            //final boolean sendDone = seq >= 0;
-            //if (handled) {
-                //finishKeyEvent(event, sendDone, true);
-            //} else {
-                //deliverKeyEventPostIme(event, sendDone);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+                
+        
+            
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -4048,23 +4058,23 @@ Object var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337 =         event;
     if(ViewDebug.DEBUG_LATENCY)        
         {
             mInputEventDeliverPostImeTimeNanos = System.nanoTime();
-        } //End block
+        } 
     if(mView == null || !mAdded)        
         {
             finishKeyEvent(event, sendDone, false);
             return;
-        } //End block
+        } 
     if(checkForLeavingTouchModeAndConsume(event))        
         {
             finishKeyEvent(event, sendDone, true);
             return;
-        } //End block
+        } 
         mFallbackEventHandler.preDispatchKeyEvent(event);
     if(mView.dispatchKeyEvent(event))        
         {
             finishKeyEvent(event, sendDone, true);
             return;
-        } //End block
+        } 
     if(event.getAction() == KeyEvent.ACTION_DOWN
                 && event.isCtrlPressed()
                 && event.getRepeatCount() == 0
@@ -4074,13 +4084,13 @@ Object var3162E7A4A1E5D72F1058A9B39A6A8738_1990838337 =         event;
             {
                 finishKeyEvent(event, sendDone, true);
                 return;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mFallbackEventHandler.dispatchKeyEvent(event))        
         {
             finishKeyEvent(event, sendDone, true);
             return;
-        } //End block
+        } 
     if(event.getAction() == KeyEvent.ACTION_DOWN)        
         {
             int direction = 0;
@@ -4089,36 +4099,36 @@ switch(event.getKeyCode()){
     if(event.hasNoModifiers())            
             {
                 direction = View.FOCUS_LEFT;
-            } //End block
+            } 
             break;
             case KeyEvent.KEYCODE_DPAD_RIGHT:
     if(event.hasNoModifiers())            
             {
                 direction = View.FOCUS_RIGHT;
-            } //End block
+            } 
             break;
             case KeyEvent.KEYCODE_DPAD_UP:
     if(event.hasNoModifiers())            
             {
                 direction = View.FOCUS_UP;
-            } //End block
+            } 
             break;
             case KeyEvent.KEYCODE_DPAD_DOWN:
     if(event.hasNoModifiers())            
             {
                 direction = View.FOCUS_DOWN;
-            } //End block
+            } 
             break;
             case KeyEvent.KEYCODE_TAB:
     if(event.hasNoModifiers())            
             {
                 direction = View.FOCUS_FORWARD;
-            } //End block
+            } 
             else
     if(event.hasModifiers(KeyEvent.META_SHIFT_ON))            
             {
                 direction = View.FOCUS_BACKWARD;
-            } //End block
+            } 
             break;
 }    if(direction != 0)            
             {
@@ -4135,26 +4145,26 @@ switch(event.getKeyCode()){
                                     focused, mTempRect);
                             ((ViewGroup) mView).offsetRectIntoDescendantCoords(
                                     v, mTempRect);
-                        } //End block
+                        } 
     if(v.requestFocus(direction, mTempRect))                        
                         {
                             playSoundEffect(
                                     SoundEffectConstants.getContantForFocusDirection(direction));
                             finishKeyEvent(event, sendDone, true);
                             return;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
     if(mView.dispatchUnhandledMove(focused, direction))                    
                     {
                         finishKeyEvent(event, sendDone, true);
                         return;
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         finishKeyEvent(event, sendDone, false);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4166,19 +4176,20 @@ switch(event.getKeyCode()){
     if(sendDone)        
         {
             finishInputEvent(event, handled);
-        } //End block
-        // ---------- Original Method ----------
-        //if (sendDone) {
-            //finishInputEvent(event, handled);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.574 -0400", hash_original_method = "0FF9C383AA2E451EDBB7C2A5CA6E3F80", hash_generated_method = "12BE574BF3F1201CE287FC107D86E1D9")
      void setLocalDragState(Object obj) {
         mLocalDragState = obj;
-        // ---------- Original Method ----------
-        //mLocalDragState = obj;
+        
+        
     }
 
     
@@ -4190,32 +4201,32 @@ switch(event.getKeyCode()){
     if(what == DragEvent.ACTION_DRAG_EXITED)            
             {
                 mView.dispatchDragEvent(event);
-            } //End block
+            } 
             else
             {
     if(what == DragEvent.ACTION_DRAG_STARTED)                
                 {
                     mCurrentDragView = null;
                     mDragDescription = event.mClipDescription;
-                } //End block
+                } 
                 else
                 {
                     event.mClipDescription = mDragDescription;
-                } //End block
+                } 
     if((what == DragEvent.ACTION_DRAG_LOCATION) || (what == DragEvent.ACTION_DROP))                
                 {
                     mDragPoint.set(event.mX, event.mY);
     if(mTranslator != null)                    
                     {
                         mTranslator.translatePointInScreenToAppWindow(mDragPoint);
-                    } //End block
+                    } 
     if(mCurScrollY != 0)                    
                     {
                         mDragPoint.offset(0, mCurScrollY);
-                    } //End block
+                    } 
                     event.mX = mDragPoint.x;
                     event.mY = mDragPoint.y;
-                } //End block
+                } 
                 final View prevDragView = mCurrentDragView;
                 boolean result = mView.dispatchDragEvent(event);
     if(prevDragView != mCurrentDragView)                
@@ -4225,36 +4236,36 @@ switch(event.getKeyCode()){
     if(prevDragView != null)                        
                         {
                             sWindowSession.dragRecipientExited(mWindow);
-                        } //End block
+                        } 
     if(mCurrentDragView != null)                        
                         {
                             sWindowSession.dragRecipientEntered(mWindow);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(what == DragEvent.ACTION_DROP)                
                 {
                     mDragDescription = null;
                     try 
                     {
                         sWindowSession.reportDropResult(mWindow, result);
-                    } //End block
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
     if(what == DragEvent.ACTION_DRAG_ENDED)                
                 {
                     setLocalDragState(null);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         event.recycle();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4265,7 +4276,7 @@ switch(event.getKeyCode()){
             mSeq = args.seq;
             mAttachInfo.mForceReportNewAttributes = true;
             scheduleTraversals();
-        } //End block
+        } 
     if(mView == null)        
         return;
     if(args.localChanges != 0)        
@@ -4275,54 +4286,56 @@ switch(event.getKeyCode()){
                 mAttachInfo.mSystemUiVisibility =
                         (mAttachInfo.mSystemUiVisibility&~args.localChanges)
                         | (args.localValue&args.localChanges);
-            } //End block
+            } 
             mView.updateLocalSystemUiVisibility(args.localValue, args.localChanges);
             mAttachInfo.mRecomputeGlobalAttributes = true;
             scheduleTraversals();
-        } //End block
+        } 
         mView.dispatchSystemUiVisibilityChanged(args.globalVisibility);
-        // ---------- Original Method ----------
-        //if (mSeq != args.seq) {
-            //mSeq = args.seq;
-            //mAttachInfo.mForceReportNewAttributes = true;
-            //scheduleTraversals();            
-        //}
-        //if (mView == null) return;
-        //if (args.localChanges != 0) {
-            //if (mAttachInfo != null) {
-                //mAttachInfo.mSystemUiVisibility =
-                        //(mAttachInfo.mSystemUiVisibility&~args.localChanges)
-                        //| (args.localValue&args.localChanges);
-            //}
-            //mView.updateLocalSystemUiVisibility(args.localValue, args.localChanges);
-            //mAttachInfo.mRecomputeGlobalAttributes = true;
-            //scheduleTraversals();            
-        //}
-        //mView.dispatchSystemUiVisibilityChanged(args.globalVisibility);
+        
+        
+            
+            
+            
+        
+        
+        
+            
+                
+                        
+                        
+            
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.578 -0400", hash_original_method = "45F97324DFA9B47BC7B47DB7731173BB", hash_generated_method = "F7D135282A84C18BFAB0A383940A6AD0")
     public void getLastTouchPoint(Point outLocation) {
         addTaint(outLocation.getTaint());
         outLocation.x = (int) mLastTouchPoint.x;
         outLocation.y = (int) mLastTouchPoint.y;
-        // ---------- Original Method ----------
-        //outLocation.x = (int) mLastTouchPoint.x;
-        //outLocation.y = (int) mLastTouchPoint.y;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.579 -0400", hash_original_method = "D8987F1AD41DCFCEC13505B3421C8BB0", hash_generated_method = "B392F31E1E7E2ED94E90253AA3169A62")
     public void setDragFocus(View newDragTarget) {
     if(mCurrentDragView != newDragTarget)        
         {
             mCurrentDragView = newDragTarget;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentDragView != newDragTarget) {
-            //mCurrentDragView = newDragTarget;
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -4333,22 +4346,22 @@ switch(event.getKeyCode()){
             IllegalStateException var4AF1A1BD4019F01CC40A68C2B07DA69B_2087424646 = new IllegalStateException("getAudioManager called when there is no mView");
             var4AF1A1BD4019F01CC40A68C2B07DA69B_2087424646.addTaint(taint);
             throw var4AF1A1BD4019F01CC40A68C2B07DA69B_2087424646;
-        } //End block
+        } 
     if(mAudioManager == null)        
         {
             mAudioManager = (AudioManager) mView.getContext().getSystemService(Context.AUDIO_SERVICE);
-        } //End block
+        } 
 AudioManager var226F0E2B00577D32190D246C077B27CF_910992927 =         mAudioManager;
         var226F0E2B00577D32190D246C077B27CF_910992927.addTaint(taint);
         return var226F0E2B00577D32190D246C077B27CF_910992927;
-        // ---------- Original Method ----------
-        //if (mView == null) {
-            //throw new IllegalStateException("getAudioManager called when there is no mView");
-        //}
-        //if (mAudioManager == null) {
-            //mAudioManager = (AudioManager) mView.getContext().getSystemService(Context.AUDIO_SERVICE);
-        //}
-        //return mAudioManager;
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -4360,23 +4373,23 @@ AudioManager var226F0E2B00577D32190D246C077B27CF_910992927 =         mAudioManag
                     + " called when there is no mView");
             var8CD49EA6E9981691C922697F1E3ED63A_1671991626.addTaint(taint);
             throw var8CD49EA6E9981691C922697F1E3ED63A_1671991626;
-        } //End block
+        } 
     if(mAccessibilityInteractionController == null)        
         {
             mAccessibilityInteractionController = new AccessibilityInteractionController();
-        } //End block
+        } 
 AccessibilityInteractionController var3AAD98268BEDCAFD4454ABEB3DE43C55_232844773 =         mAccessibilityInteractionController;
         var3AAD98268BEDCAFD4454ABEB3DE43C55_232844773.addTaint(taint);
         return var3AAD98268BEDCAFD4454ABEB3DE43C55_232844773;
-        // ---------- Original Method ----------
-        //if (mView == null) {
-            //throw new IllegalStateException("getAccessibilityInteractionController"
-                    //+ " called when there is no mView");
-        //}
-        //if (mAccessibilityInteractionController == null) {
-            //mAccessibilityInteractionController = new AccessibilityInteractionController();
-        //}
-        //return mAccessibilityInteractionController;
+        
+        
+            
+                    
+        
+        
+            
+        
+        
     }
 
     
@@ -4393,20 +4406,20 @@ AccessibilityInteractionController var3AAD98268BEDCAFD4454ABEB3DE43C55_232844773
             restore = true;
             params.backup();
             mTranslator.translateWindowLayout(params);
-        } //End block
+        } 
     if(params != null)        
         {
     if(DBG)            
             Log.d(TAG, "WindowLayout in layoutWindow:" + params);
-        } //End block
+        } 
         mPendingConfiguration.seq = 0;
     if(params != null && mOrigWindowType != params.type)        
         {
     if(mTargetSdkVersion < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH)            
             {
                 params.type = mOrigWindowType;
-            } //End block
-        } //End block
+            } 
+        } 
         int relayoutResult = sWindowSession.relayout(
                 mWindow, mSeq, params,
                 (int) (mView.getMeasuredWidth() * appScale + 0.5f),
@@ -4417,21 +4430,22 @@ AccessibilityInteractionController var3AAD98268BEDCAFD4454ABEB3DE43C55_232844773
     if(restore)        
         {
             params.restore();
-        } //End block
+        } 
     if(mTranslator != null)        
         {
             mTranslator.translateRectInScreenToAppWinFrame(mWinFrame);
             mTranslator.translateRectInScreenToAppWindow(mPendingContentInsets);
             mTranslator.translateRectInScreenToAppWindow(mPendingVisibleInsets);
-        } //End block
+        } 
         int varFBA83592868FAAEDC2F5A83BBD7572C0_971358472 = (relayoutResult);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_967065004 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_967065004;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.581 -0400", hash_original_method = "15B8C68C65C02C1955DF774990289073", hash_generated_method = "2E3807A2EAFBF5FD94EB17CBAF1FEF11")
     public void playSoundEffect(int effectId) {
         addTaint(effectId);
@@ -4461,13 +4475,13 @@ switch(effectId){
             var61246FE41259C7688FFFCAF7A0EEB648_178896698.addTaint(taint);
             throw var61246FE41259C7688FFFCAF7A0EEB648_178896698;
 }
-        } //End block
+        } 
         catch (IllegalStateException e)
         {
             e.printStackTrace();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -4480,19 +4494,19 @@ switch(effectId){
             boolean var9198E76E1AA7457086DD428D5CB0156B_155239433 = (sWindowSession.performHapticFeedback(mWindow, effectId, always));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1477875529 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1477875529;
-        } //End block
+        } 
         catch (RemoteException e)
         {
             boolean var68934A3E9455FA72420237EB05902327_1368194764 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_169321266 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_169321266;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return sWindowSession.performHapticFeedback(mWindow, effectId, always);
-        //} catch (RemoteException e) {
-            //return false;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -4506,24 +4520,24 @@ switch(effectId){
 View var540C13E9E156B687226421B24F2DF178_657970368 =             null;
             var540C13E9E156B687226421B24F2DF178_657970368.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_657970368;
-        } //End block
+        } 
 View var8AF06A933C5FFD7CDE18ACE3D58088CE_848736908 =         FocusFinder.getInstance().findNextFocus((ViewGroup) mView, focused, direction);
         var8AF06A933C5FFD7CDE18ACE3D58088CE_848736908.addTaint(taint);
         return var8AF06A933C5FFD7CDE18ACE3D58088CE_848736908;
-        // ---------- Original Method ----------
-        //checkThread();
-        //if (!(mView instanceof ViewGroup)) {
-            //return null;
-        //}
-        //return FocusFinder.getInstance().findNextFocus((ViewGroup) mView, focused, direction);
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.581 -0400", hash_original_method = "5C67D040EE10672AA68B296434D2F63D", hash_generated_method = "265CF6F642B6AAE7F0DC95CDCBD015E9")
     public void debug() {
         mView.debug();
-        // ---------- Original Method ----------
-        //mView.debug();
+        
+        
     }
 
     
@@ -4534,17 +4548,17 @@ View var8AF06A933C5FFD7CDE18ACE3D58088CE_848736908 =         FocusFinder.getInst
     if(mView != null)        
         {
             getGfxInfo(mView, info);
-        } //End block
+        } 
         else
         {
             info[0] = info[1] = 0;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mView != null) {
-            //getGfxInfo(mView, info);
-        //} else {
-            //info[0] = info[1] = 0;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -4557,7 +4571,7 @@ View var8AF06A933C5FFD7CDE18ACE3D58088CE_848736908 =         FocusFinder.getInst
     if(displayList != null)        
         {
             info[1] += displayList.getSize();
-        } //End block
+        } 
     if(view instanceof ViewGroup)        
         {
             ViewGroup group = (ViewGroup) view;
@@ -4565,21 +4579,21 @@ View var8AF06A933C5FFD7CDE18ACE3D58088CE_848736908 =         FocusFinder.getInst
 for(int i = 0;i < count;i++)
             {
                 getGfxInfo(group.getChildAt(i), info);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //DisplayList displayList = view.mDisplayList;
-        //info[0]++;
-        //if (displayList != null) {
-            //info[1] += displayList.getSize();
-        //}
-        //if (view instanceof ViewGroup) {
-            //ViewGroup group = (ViewGroup) view;
-            //int count = group.getChildCount();
-            //for (int i = 0; i < count; i++) {
-                //getGfxInfo(group.getChildAt(i), info);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -4589,17 +4603,17 @@ for(int i = 0;i < count;i++)
     if(immediate)        
         {
             doDie();
-        } //End block
+        } 
         else
         {
             sendEmptyMessage(DIE);
-        } //End block
-        // ---------- Original Method ----------
-        //if (immediate) {
-            //doDie();
-        //} else {
-            //sendEmptyMessage(DIE);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -4612,7 +4626,7 @@ for(int i = 0;i < count;i++)
             {
                 mAdded = false;
                 dispatchDetachedFromWindow();
-            } //End block
+            } 
     if(mAdded && !mFirst)            
             {
                 destroyHardwareRenderer();
@@ -4626,17 +4640,17 @@ for(int i = 0;i < count;i++)
                                 & WindowManagerImpl.RELAYOUT_RES_FIRST_TIME) != 0)                        
                         {
                             sWindowSession.finishDrawing(mWindow);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     catch (RemoteException e)
                     {
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mSurface.release();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -4645,9 +4659,9 @@ for(int i = 0;i < count;i++)
         addTaint(config.getTaint());
         Message msg = obtainMessage(UPDATE_CONFIGURATION, config);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(UPDATE_CONFIGURATION, config);
-        //sendMessage(msg);
+        
+        
+        
     }
 
     
@@ -4658,13 +4672,13 @@ for(int i = 0;i < count;i++)
             mAttachInfo.mHardwareRenderer.destroy(true);
             mAttachInfo.mHardwareRenderer = null;
             mAttachInfo.mHardwareAccelerated = false;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAttachInfo.mHardwareRenderer != null) {
-            //mAttachInfo.mHardwareRenderer.destroy(true);
-            //mAttachInfo.mHardwareRenderer = null;
-            //mAttachInfo.mHardwareAccelerated = false;
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -4676,11 +4690,11 @@ for(int i = 0;i < count;i++)
         msg.arg1 = seq;
         msg.arg2 = handled ? 1 : 0;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(FINISHED_EVENT);
-        //msg.arg1 = seq;
-        //msg.arg2 = handled ? 1 : 0;
-        //sendMessage(msg);
+        
+        
+        
+        
+        
     }
 
     
@@ -4700,7 +4714,7 @@ for(int i = 0;i < count;i++)
             mTranslator.translateRectInScreenToAppWindow(visibleInsets);
             w *= mTranslator.applicationInvertedScale;
             h *= mTranslator.applicationInvertedScale;
-        } //End block
+        } 
         msg.arg1 = w;
         msg.arg2 = h;
         ResizedInfo ri = new ResizedInfo();
@@ -4709,8 +4723,8 @@ for(int i = 0;i < count;i++)
         ri.newConfig = newConfig;
         msg.obj = ri;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -4722,7 +4736,7 @@ for(int i = 0;i < count;i++)
     if(mPendingInputEvents == null)        
         {
             mPendingInputEvents = inputMessage;
-        } //End block
+        } 
         else
         {
             InputEventMessage currMessage = mPendingInputEvents;
@@ -4730,22 +4744,22 @@ for(int i = 0;i < count;i++)
 (currMessage.mNext != null)            
             {
                 currMessage = currMessage.mNext;
-            } //End block
+            } 
             currMessage.mNext = inputMessage;
-        } //End block
+        } 
         sendEmptyMessageAtTime(PROCESS_INPUT_EVENTS, when);
-        // ---------- Original Method ----------
-        //InputEventMessage inputMessage = InputEventMessage.obtain(msg);
-        //if (mPendingInputEvents == null) {
-            //mPendingInputEvents = inputMessage;
-        //} else {
-            //InputEventMessage currMessage = mPendingInputEvents;
-            //while (currMessage.mNext != null) {
-                //currMessage = currMessage.mNext;
-            //}
-            //currMessage.mNext = inputMessage;
-        //}
-        //sendEmptyMessageAtTime(PROCESS_INPUT_EVENTS, when);
+        
+        
+        
+            
+        
+            
+            
+                
+            
+            
+        
+        
     }
 
     
@@ -4753,8 +4767,8 @@ for(int i = 0;i < count;i++)
     public void dispatchKey(KeyEvent event) {
         addTaint(event.getTaint());
         dispatchKey(event, false);
-        // ---------- Original Method ----------
-        //dispatchKey(event, false);
+        
+        
     }
 
     
@@ -4773,27 +4787,27 @@ for(int i = 0;i < count;i++)
                 debug();
     if(DBG)                
                 Log.d("keydisp", "===================================================");
-            } //End block
-        } //End block
+            } 
+        } 
         Message msg = obtainMessage(DISPATCH_KEY);
         msg.obj = event;
         msg.arg1 = sendDone ? 1 : 0;
     if(LOCAL_LOGV){ }        enqueueInputEvent(msg, event.getEventTime());
-        // ---------- Original Method ----------
-        //if (false && event.getAction() == KeyEvent.ACTION_DOWN) {
-            //if (event.getKeyCode() == KeyEvent.KEYCODE_CAMERA) {
-                //if (DBG) Log.d("keydisp", "===================================================");
-                //if (DBG) Log.d("keydisp", "Focused view Hierarchy is:");
-                //debug();
-                //if (DBG) Log.d("keydisp", "===================================================");
-            //}
-        //}
-        //Message msg = obtainMessage(DISPATCH_KEY);
-        //msg.obj = event;
-        //msg.arg1 = sendDone ? 1 : 0;
-        //if (LOCAL_LOGV) Log.v(
-            //TAG, "sending key " + event + " to " + mView);
-        //enqueueInputEvent(msg, event.getEventTime());
+        
+        
+            
+                
+                
+                
+                
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -4805,25 +4819,25 @@ for(int i = 0;i < count;i++)
     if((source & InputDevice.SOURCE_CLASS_POINTER) != 0)        
         {
             dispatchPointer(event, sendDone);
-        } //End block
+        } 
         else
     if((source & InputDevice.SOURCE_CLASS_TRACKBALL) != 0)        
         {
             dispatchTrackball(event, sendDone);
-        } //End block
+        } 
         else
         {
             dispatchGenericMotion(event, sendDone);
-        } //End block
-        // ---------- Original Method ----------
-        //int source = event.getSource();
-        //if ((source & InputDevice.SOURCE_CLASS_POINTER) != 0) {
-            //dispatchPointer(event, sendDone);
-        //} else if ((source & InputDevice.SOURCE_CLASS_TRACKBALL) != 0) {
-            //dispatchTrackball(event, sendDone);
-        //} else {
-            //dispatchGenericMotion(event, sendDone);
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+            
+        
     }
 
     
@@ -4835,11 +4849,11 @@ for(int i = 0;i < count;i++)
         msg.obj = event;
         msg.arg1 = sendDone ? 1 : 0;
         enqueueInputEvent(msg, event.getEventTime());
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(DISPATCH_POINTER);
-        //msg.obj = event;
-        //msg.arg1 = sendDone ? 1 : 0;
-        //enqueueInputEvent(msg, event.getEventTime());
+        
+        
+        
+        
+        
     }
 
     
@@ -4851,11 +4865,11 @@ for(int i = 0;i < count;i++)
         msg.obj = event;
         msg.arg1 = sendDone ? 1 : 0;
         enqueueInputEvent(msg, event.getEventTime());
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(DISPATCH_TRACKBALL);
-        //msg.obj = event;
-        //msg.arg1 = sendDone ? 1 : 0;
-        //enqueueInputEvent(msg, event.getEventTime());
+        
+        
+        
+        
+        
     }
 
     
@@ -4867,11 +4881,11 @@ for(int i = 0;i < count;i++)
         msg.obj = event;
         msg.arg1 = sendDone ? 1 : 0;
         enqueueInputEvent(msg, event.getEventTime());
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(DISPATCH_GENERIC_MOTION);
-        //msg.obj = event;
-        //msg.arg1 = sendDone ? 1 : 0;
-        //enqueueInputEvent(msg, event.getEventTime());
+        
+        
+        
+        
+        
     }
 
     
@@ -4881,10 +4895,10 @@ for(int i = 0;i < count;i++)
         Message msg = obtainMessage(DISPATCH_APP_VISIBILITY);
         msg.arg1 = visible ? 1 : 0;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(DISPATCH_APP_VISIBILITY);
-        //msg.arg1 = visible ? 1 : 0;
-        //sendMessage(msg);
+        
+        
+        
+        
     }
 
     
@@ -4892,9 +4906,9 @@ for(int i = 0;i < count;i++)
     public void dispatchGetNewSurface() {
         Message msg = obtainMessage(DISPATCH_GET_NEW_SURFACE);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = obtainMessage(DISPATCH_GET_NEW_SURFACE);
-        //sendMessage(msg);
+        
+        
+        
     }
 
     
@@ -4907,12 +4921,12 @@ for(int i = 0;i < count;i++)
         msg.arg1 = hasFocus ? 1 : 0;
         msg.arg2 = inTouchMode ? 1 : 0;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = WINDOW_FOCUS_CHANGED;
-        //msg.arg1 = hasFocus ? 1 : 0;
-        //msg.arg2 = inTouchMode ? 1 : 0;
-        //sendMessage(msg);
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -4923,11 +4937,11 @@ for(int i = 0;i < count;i++)
         msg.what = CLOSE_SYSTEM_DIALOGS;
         msg.obj = reason;
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //Message msg = Message.obtain();
-        //msg.what = CLOSE_SYSTEM_DIALOGS;
-        //msg.obj = reason;
-        //sendMessage(msg);
+        
+        
+        
+        
+        
     }
 
     
@@ -4939,23 +4953,23 @@ for(int i = 0;i < count;i++)
         {
             what = DISPATCH_DRAG_LOCATION_EVENT;
             removeMessages(what);
-        } //End block
+        } 
         else
         {
             what = DISPATCH_DRAG_EVENT;
-        } //End block
+        } 
         Message msg = obtainMessage(what, event);
         sendMessage(msg);
-        // ---------- Original Method ----------
-        //final int what;
-        //if (event.getAction() == DragEvent.ACTION_DRAG_LOCATION) {
-            //what = DISPATCH_DRAG_LOCATION_EVENT;
-            //removeMessages(what);
-        //} else {
-            //what = DISPATCH_DRAG_EVENT;
-        //}
-        //Message msg = obtainMessage(what, event);
-        //sendMessage(msg);
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -4972,13 +4986,13 @@ for(int i = 0;i < count;i++)
         args.localValue = localValue;
         args.localChanges = localChanges;
         sendMessage(obtainMessage(DISPATCH_SYSTEM_UI_VISIBILITY, args));
-        // ---------- Original Method ----------
-        //SystemUiVisibilityInfo args = new SystemUiVisibilityInfo();
-        //args.seq = seq;
-        //args.globalVisibility = globalVisibility;
-        //args.localValue = localValue;
-        //args.localChanges = localChanges;
-        //sendMessage(obtainMessage(DISPATCH_SYSTEM_UI_VISIBILITY, args));
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -4987,22 +5001,22 @@ for(int i = 0;i < count;i++)
     if(!mAccessibilityManager.isEnabled())        
         {
             return;
-        } //End block
+        } 
         mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
         View focusedView = mView.findFocus();
     if(focusedView != null && focusedView != mView)        
         {
             focusedView.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED);
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mAccessibilityManager.isEnabled()) {
-            //return;
-        //}
-        //mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
-        //View focusedView = mView.findFocus();
-        //if (focusedView != null && focusedView != mView) {
-            //focusedView.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_FOCUSED);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -5012,23 +5026,23 @@ for(int i = 0;i < count;i++)
         {
             mSendWindowContentChangedAccessibilityEvent =
                 new SendWindowContentChangedAccessibilityEvent();
-        } //End block
+        } 
     if(!mSendWindowContentChangedAccessibilityEvent.mIsPending)        
         {
             mSendWindowContentChangedAccessibilityEvent.mIsPending = true;
             postDelayed(mSendWindowContentChangedAccessibilityEvent,
                     ViewConfiguration.getSendRecurringAccessibilityEventsInterval());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSendWindowContentChangedAccessibilityEvent == null) {
-            //mSendWindowContentChangedAccessibilityEvent =
-                //new SendWindowContentChangedAccessibilityEvent();
-        //}
-        //if (!mSendWindowContentChangedAccessibilityEvent.mIsPending) {
-            //mSendWindowContentChangedAccessibilityEvent.mIsPending = true;
-            //postDelayed(mSendWindowContentChangedAccessibilityEvent,
-                    //ViewConfiguration.getSendRecurringAccessibilityEventsInterval());
-        //}
+        } 
+        
+        
+            
+                
+        
+        
+            
+            
+                    
+        
     }
 
     
@@ -5037,25 +5051,27 @@ for(int i = 0;i < count;i++)
     if(mSendWindowContentChangedAccessibilityEvent != null)        
         {
             removeCallbacks(mSendWindowContentChangedAccessibilityEvent);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSendWindowContentChangedAccessibilityEvent != null) {
-            //removeCallbacks(mSendWindowContentChangedAccessibilityEvent);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.593 -0400", hash_original_method = "3A017950A97502A630256434B0EBF7E8", hash_generated_method = "EAC01684F6849E905A2DA691896BCF6F")
     public boolean showContextMenuForChild(View originalView) {
         addTaint(originalView.getTaint());
         boolean var68934A3E9455FA72420237EB05902327_1561478064 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1135754089 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1135754089;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.593 -0400", hash_original_method = "492AE6A9C9C6F2F7E659E19901E3E487", hash_generated_method = "8642328FEF2A768322C5CE18DB2A235E")
     public ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback) {
         addTaint(callback.getTaint());
@@ -5063,22 +5079,24 @@ for(int i = 0;i < count;i++)
 ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         var540C13E9E156B687226421B24F2DF178_98364453.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_98364453;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.595 -0400", hash_original_method = "FB735C9133B887C07751FC797F168B65", hash_generated_method = "A7DA1CFB4829C8E1B84DF1FFE066706B")
     public void createContextMenu(ContextMenu menu) {
         addTaint(menu.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.595 -0400", hash_original_method = "C40FC95C25B6655ACCA9227D471DC892", hash_generated_method = "FB4FD2CE39B9A19ED55CF997B56E8AAD")
     public void childDrawableStateChanged(View child) {
         addTaint(child.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -5091,17 +5109,17 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
             boolean var68934A3E9455FA72420237EB05902327_1148302368 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1434566961 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1434566961;
-        } //End block
+        } 
         mAccessibilityManager.sendAccessibilityEvent(event);
         boolean varB326B5062B2F0E69046810717534CB09_1993924343 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1359581836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1359581836;
-        // ---------- Original Method ----------
-        //if (mView == null) {
-            //return false;
-        //}
-        //mAccessibilityManager.sendAccessibilityEvent(event);
-        //return true;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -5113,19 +5131,20 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                     "Only the original thread that created a view hierarchy can touch its views.");
             var31F1BA0AEAB9B7C2E91B74470CBD7375_420769684.addTaint(taint);
             throw var31F1BA0AEAB9B7C2E91B74470CBD7375_420769684;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mThread != Thread.currentThread()) {
-            //throw new CalledFromWrongThreadException(
-                    //"Only the original thread that created a view hierarchy can touch its views.");
-        //}
+        } 
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.596 -0400", hash_original_method = "F9834E22E1AF22274F19B27CD50E21E5", hash_generated_method = "8C6445ECC283015C0E55FA20D0DB11D5")
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {
         addTaint(disallowIntercept);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -5138,8 +5157,8 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         boolean var342440852E7643230B9A793CC2DC5299_1958065327 = (scrollToRectOrFocus(rectangle, immediate));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_141513812 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_141513812;
-        // ---------- Original Method ----------
-        //return scrollToRectOrFocus(rectangle, immediate);
+        
+        
     }
 
     
@@ -5168,7 +5187,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.596 -0400", hash_original_method = "50B840B7E2FD8E0275C71397DAD0B09A", hash_generated_method = "50B840B7E2FD8E0275C71397DAD0B09A")
         public ResizedInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5193,7 +5212,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.598 -0400", hash_original_method = "A01B0E4A631704C3007E2CC2ECBBD6C3", hash_generated_method = "A01B0E4A631704C3007E2CC2ECBBD6C3")
         public SystemUiVisibilityInfo ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5213,9 +5232,9 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         private  InputEventMessage(Message m) {
             mMessage = m;
             mNext = null;
-            // ---------- Original Method ----------
-            //mMessage = m;
-            //mNext = null;
+            
+            
+            
         }
 
         
@@ -5244,17 +5263,17 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                     mNext = sPool;
                     sPool = this;
                     sPoolSize++;
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //mMessage.recycle();
-            //synchronized (sPoolSync) {
-                //if (sPoolSize < MAX_POOL_SIZE) {
-                    //mNext = sPool;
-                    //sPool = this;
-                    //sPoolSize++;
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+                
+                    
+                    
+                    
+                
+            
         }
 
         
@@ -5279,27 +5298,29 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.599 -0400", hash_original_method = "C250C7CF3696759C39C0C66232FB4E2F", hash_generated_method = "C250C7CF3696759C39C0C66232FB4E2F")
         public TakenSurfaceHolder ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.599 -0400", hash_original_method = "93900AD5EB4A5A0D65615E175C2FC0CA", hash_generated_method = "CA53BDBBBE9178A19E1116673E210757")
         @Override
         public boolean onAllowLockCanvas() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             boolean var0822D4118140B9899091B78395995296_2056276409 = (mDrawingAllowed);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1071223372 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1071223372;
-            // ---------- Original Method ----------
-            //return mDrawingAllowed;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.599 -0400", hash_original_method = "CAFD67152D224915C2628F6ACAAF5E06", hash_generated_method = "769E8A917A2AE0CACCF50C3D308C76DF")
         @Override
         public void onRelayoutContainer() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
-            // ---------- Original Method ----------
+            
+            
         }
 
         
@@ -5307,8 +5328,8 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         public void setFormat(int format) {
             addTaint(format);
             ((RootViewSurfaceTaker)mView).setSurfaceFormat(format);
-            // ---------- Original Method ----------
-            //((RootViewSurfaceTaker)mView).setSurfaceFormat(format);
+            
+            
         }
 
         
@@ -5316,30 +5337,32 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         public void setType(int type) {
             addTaint(type);
             ((RootViewSurfaceTaker)mView).setSurfaceType(type);
-            // ---------- Original Method ----------
-            //((RootViewSurfaceTaker)mView).setSurfaceType(type);
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.602 -0400", hash_original_method = "65C8D4CF87AA6164C88CB73B7231A722", hash_generated_method = "0E71E4CA8F1AB00774C36F6E15BFB7BA")
         @Override
         public void onUpdateSurface() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             IllegalStateException varD8DEC26EB0EDEE2D9D45FECC8727EF4E_675448737 = new IllegalStateException("Shouldn't be here");
             varD8DEC26EB0EDEE2D9D45FECC8727EF4E_675448737.addTaint(taint);
             throw varD8DEC26EB0EDEE2D9D45FECC8727EF4E_675448737;
-            // ---------- Original Method ----------
-            //throw new IllegalStateException("Shouldn't be here");
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.602 -0400", hash_original_method = "FBEC596A43003FDD0C674BF719352967", hash_generated_method = "7AF7FE503FF68913C77607510BF76E3F")
         public boolean isCreating() {
             boolean var0E2361D9DC5F8ED2D80C3189D2E3EE01_161328998 = (mIsCreating);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1430126971 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1430126971;
-            // ---------- Original Method ----------
-            //return mIsCreating;
+            
+            
         }
 
         
@@ -5352,9 +5375,9 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                     "Currently only support sizing from layout");
             var77744EB20207222815B0FC830B0B88DF_1815172698.addTaint(taint);
             throw var77744EB20207222815B0FC830B0B88DF_1815172698;
-            // ---------- Original Method ----------
-            //throw new UnsupportedOperationException(
-                    //"Currently only support sizing from layout");
+            
+            
+                    
         }
 
         
@@ -5362,8 +5385,8 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         public void setKeepScreenOn(boolean screenOn) {
             addTaint(screenOn);
             ((RootViewSurfaceTaker)mView).setSurfaceKeepScreenOn(screenOn);
-            // ---------- Original Method ----------
-            //((RootViewSurfaceTaker)mView).setSurfaceKeepScreenOn(screenOn);
+            
+            
         }
 
         
@@ -5379,8 +5402,8 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.602 -0400", hash_original_method = "54191F901FEF749694D67ED7BF80E958", hash_generated_method = "94B33F5DBF40614378A9EE46EF7CB527")
         public  InputMethodCallback(ViewRootImpl viewAncestor) {
             mViewAncestor = new WeakReference<ViewRootImpl>(viewAncestor);
-            // ---------- Original Method ----------
-            //mViewAncestor = new WeakReference<ViewRootImpl>(viewAncestor);
+            
+            
         }
 
         
@@ -5392,19 +5415,20 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(viewAncestor != null)            
             {
                 viewAncestor.dispatchFinishedEvent(seq, handled);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchFinishedEvent(seq, handled);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.605 -0400", hash_original_method = "93549AC7AA704598E881A2A0D800AB4C", hash_generated_method = "B59F51822D7ED309BAF5863A034576FE")
         public void sessionCreated(IInputMethodSession session) {
             addTaint(session.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -5420,8 +5444,8 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.606 -0400", hash_original_method = "D1CF0E60435976F2AA38BD5BC7DA8E27", hash_generated_method = "B0B8B7CF155794D34CA9E098CB8D485B")
           W(ViewRootImpl viewAncestor) {
             mViewAncestor = new WeakReference<ViewRootImpl>(viewAncestor);
-            // ---------- Original Method ----------
-            //mViewAncestor = new WeakReference<ViewRootImpl>(viewAncestor);
+            
+            
         }
 
         
@@ -5439,13 +5463,13 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
             {
                 viewAncestor.dispatchResized(w, h, coveredInsets, visibleInsets, reportDraw,
                         newConfig);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchResized(w, h, coveredInsets, visibleInsets, reportDraw,
-                        //newConfig);
-            //}
+            } 
+            
+            
+            
+                
+                        
+            
         }
 
         
@@ -5456,12 +5480,12 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(viewAncestor != null)            
             {
                 viewAncestor.dispatchAppVisibility(visible);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchAppVisibility(visible);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -5471,12 +5495,12 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(viewAncestor != null)            
             {
                 viewAncestor.dispatchGetNewSurface();
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchGetNewSurface();
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -5488,12 +5512,12 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(viewAncestor != null)            
             {
                 viewAncestor.windowFocusChanged(hasFocus, inTouchMode);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.windowFocusChanged(hasFocus, inTouchMode);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -5507,6 +5531,7 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.609 -0400", hash_original_method = "BAC64B61AF453BEA5AB28D214B8FF7C5", hash_generated_method = "72B45C9DB8C34B89E28E48E10C825FAA")
         public void executeCommand(String command, String parameters, ParcelFileDescriptor out) {
             addTaint(out.getTaint());
@@ -5526,17 +5551,17 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                                 + ", uid=" + Binder.getCallingUid());
                         varA2EB9AF33004BF7F05931B044B6301F2_692965009.addTaint(taint);
                         throw varA2EB9AF33004BF7F05931B044B6301F2_692965009;
-                    } //End block
+                    } 
                     OutputStream clientStream = null;
                     try 
                     {
                         clientStream = new ParcelFileDescriptor.AutoCloseOutputStream(out);
                         ViewDebug.dispatchCommand(view, command, parameters, clientStream);
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
                         e.printStackTrace();
-                    } //End block
+                    } 
                     finally 
                     {
     if(clientStream != null)                        
@@ -5544,17 +5569,17 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                             try 
                             {
                                 clientStream.close();
-                            } //End block
+                            } 
                             catch (IOException e)
                             {
                                 e.printStackTrace();
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                            } 
+                        } 
+                    } 
+                } 
+            } 
+            
+            
         }
 
         
@@ -5565,12 +5590,12 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(viewAncestor != null)            
             {
                 viewAncestor.dispatchCloseSystemDialogs(reason);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchCloseSystemDialogs(reason);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -5587,18 +5612,18 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                 try 
                 {
                     sWindowSession.wallpaperOffsetsComplete(asBinder());
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (sync) {
-                //try {
-                    //sWindowSession.wallpaperOffsetsComplete(asBinder());
-                //} catch (RemoteException e) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -5616,18 +5641,18 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                 try 
                 {
                     sWindowSession.wallpaperCommandComplete(asBinder(), null);
-                } //End block
+                } 
                 catch (RemoteException e)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //if (sync) {
-                //try {
-                    //sWindowSession.wallpaperCommandComplete(asBinder(), null);
-                //} catch (RemoteException e) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -5638,12 +5663,12 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(viewAncestor != null)            
             {
                 viewAncestor.dispatchDragEvent(event);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchDragEvent(event);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -5659,13 +5684,13 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
             {
                 viewAncestor.dispatchSystemUiVisibilityChanged(seq, globalVisibility,
                         localValue, localChanges);
-            } //End block
-            // ---------- Original Method ----------
-            //final ViewRootImpl viewAncestor = mViewAncestor.get();
-            //if (viewAncestor != null) {
-                //viewAncestor.dispatchSystemUiVisibilityChanged(seq, globalVisibility,
-                        //localValue, localChanges);
-            //}
+            } 
+            
+            
+            
+                
+                        
+            
         }
 
         
@@ -5699,10 +5724,11 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.612 -0400", hash_original_method = "D5D0F3DD2FCFEEF1D3847F5A318F142A", hash_generated_method = "D5D0F3DD2FCFEEF1D3847F5A318F142A")
         public TrackballAxis ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.613 -0400", hash_original_method = "A6304CADA1EF057D91BA6FF70064FCCC", hash_generated_method = "94AD87BF947D2DA6B9302A4900B6F256")
          void reset(int _step) {
             position = 0;
@@ -5710,12 +5736,12 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
             lastMoveTime = 0;
             step = _step;
             dir = 0;
-            // ---------- Original Method ----------
-            //position = 0;
-            //acceleration = 1;
-            //lastMoveTime = 0;
-            //step = _step;
-            //dir = 0;
+            
+            
+            
+            
+            
+            
         }
 
         
@@ -5732,9 +5758,9 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                     step = 0;
                     acceleration = 1;
                     lastMoveTime = 0;
-                } //End block
+                } 
                 dir = 1;
-            } //End block
+            } 
             else
     if(off < 0)            
             {
@@ -5745,13 +5771,13 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
                     step = 0;
                     acceleration = 1;
                     lastMoveTime = 0;
-                } //End block
+                } 
                 dir = -1;
-            } //End block
+            } 
             else
             {
                 normTime = 0;
-            } //End block
+            } 
     if(normTime > 0)            
             {
                 long delta = time - lastMoveTime;
@@ -5763,21 +5789,21 @@ ActionMode var540C13E9E156B687226421B24F2DF178_98364453 =         null;
     if(scale > 1)                    
                     acc *= scale;
     if(DEBUG_TRACKBALL){ }                    acceleration = acc < MAX_ACCELERATION ? acc : MAX_ACCELERATION;
-                } //End block
+                } 
                 else
                 {
                     float scale = (delta-normTime) * ACCEL_MOVE_SCALING_FACTOR;
     if(scale > 1)                    
                     acc /= scale;
     if(DEBUG_TRACKBALL){ }                    acceleration = acc > 1 ? acc : 1;
-                } //End block
-            } //End block
+                } 
+            } 
             position += off;
             float var6083644206F817C352812C556C17968C_516045248 = ((absPosition = Math.abs(position)));
                         float var546ADE640B6EDFBC8A086EF31347E768_1311273098 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1311273098;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -5796,7 +5822,7 @@ switch(step){
                         int var74BCC1E0384A916F56360C649F543F3A_1081879312 = (movement);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_160890852 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_160890852;
-                    } //End block
+                    } 
                     movement += dir;
                     nonAccelMovement += dir;
                     step = 1;
@@ -5807,7 +5833,7 @@ switch(step){
                         int var74BCC1E0384A916F56360C649F543F3A_288108432 = (movement);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166964130 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166964130;
-                    } //End block
+                    } 
                     movement += dir;
                     nonAccelMovement += dir;
                     position += dir > 0 ? -2 : 2;
@@ -5820,7 +5846,7 @@ switch(step){
                         int var74BCC1E0384A916F56360C649F543F3A_1483929607 = (movement);
                                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1615302728 = getTaintInt();
                         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1615302728;
-                    } //End block
+                    } 
                     movement += dir;
                     position += dir >= 0 ? -1 : 1;
                     absPosition = Math.abs(position);
@@ -5829,10 +5855,10 @@ switch(step){
                     acceleration = acc < MAX_ACCELERATION ? acc : acceleration;
                     break;
 }
-                } //End block
+                } 
 } while (true);
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -5855,7 +5881,7 @@ switch(step){
         public  CalledFromWrongThreadException(String msg) {
             super(msg);
             addTaint(msg.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -5871,7 +5897,7 @@ switch(step){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.619 -0400", hash_original_method = "9D853D73EE638AB90ACD5CD9573763A9", hash_generated_method = "9D853D73EE638AB90ACD5CD9573763A9")
         public RunQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -5879,8 +5905,8 @@ switch(step){
          void post(Runnable action) {
             addTaint(action.getTaint());
             postDelayed(action, 0);
-            // ---------- Original Method ----------
-            //postDelayed(action, 0);
+            
+            
         }
 
         
@@ -5894,14 +5920,14 @@ switch(step){
             synchronized
 (mActions)            {
                 mActions.add(handlerAction);
-            } //End block
-            // ---------- Original Method ----------
-            //HandlerAction handlerAction = new HandlerAction();
-            //handlerAction.action = action;
-            //handlerAction.delay = delayMillis;
-            //synchronized (mActions) {
-                //mActions.add(handlerAction);
-            //}
+            } 
+            
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -5916,16 +5942,16 @@ switch(step){
                 while
 (actions.remove(handlerAction))                
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //final HandlerAction handlerAction = new HandlerAction();
-            //handlerAction.action = action;
-            //synchronized (mActions) {
-                //final ArrayList<HandlerAction> actions = mActions;
-                //while (actions.remove(handlerAction)) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+            
+                
+                
+                
+            
         }
 
         
@@ -5940,19 +5966,19 @@ for(int i = 0;i < count;i++)
                 {
                     final HandlerAction handlerAction = actions.get(i);
                     handler.postDelayed(handlerAction.action, handlerAction.delay);
-                } //End block
+                } 
                 actions.clear();
-            } //End block
-            // ---------- Original Method ----------
-            //synchronized (mActions) {
-                //final ArrayList<HandlerAction> actions = mActions;
-                //final int count = actions.size();
-                //for (int i = 0; i < count; i++) {
-                    //final HandlerAction handlerAction = actions.get(i);
-                    //handler.postDelayed(handlerAction.action, handlerAction.delay);
-                //}
-                //actions.clear();
-            //}
+            } 
+            
+            
+                
+                
+                
+                    
+                    
+                
+                
+            
         }
 
         
@@ -5967,7 +5993,7 @@ for(int i = 0;i < count;i++)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.622 -0400", hash_original_method = "30472C53850B994B9A76B3EFD24AA1BA", hash_generated_method = "30472C53850B994B9A76B3EFD24AA1BA")
             public HandlerAction ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -5991,11 +6017,11 @@ for(int i = 0;i < count;i++)
                 boolean varD63B39472A91826C5CC2997C8A84997B_909734735 = (!(action != null ? !action.equals(that.action) : that.action != null));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696198959 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_696198959;
-                // ---------- Original Method ----------
-                //if (this == o) return true;
-                //if (o == null || getClass() != o.getClass()) return false;
-                //HandlerAction that = (HandlerAction) o;
-                //return !(action != null ? !action.equals(that.action) : that.action != null);
+                
+                
+                
+                
+                
             }
 
             
@@ -6007,10 +6033,10 @@ for(int i = 0;i < count;i++)
                 int varB4A88417B3D0170D754C647C30B7216A_1598267151 = (result);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1043312503 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1043312503;
-                // ---------- Original Method ----------
-                //int result = action != null ? action.hashCode() : 0;
-                //result = 31 * result + (int) (delay ^ (delay >>> 32));
-                //return result;
+                
+                
+                
+                
             }
 
             
@@ -6027,28 +6053,28 @@ for(int i = 0;i < count;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.623 -0400", hash_original_method = "B130C22D2DF300A6E0FC543B73826678", hash_generated_method = "B130C22D2DF300A6E0FC543B73826678")
         public AccessibilityInteractionConnectionManager ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.623 -0400", hash_original_method = "8A20E0BF76F2FE3CB2E135C12DE9692E", hash_generated_method = "03B280CA9C8F15D4FA876E8A24AE578A")
         public void onAccessibilityStateChanged(boolean enabled) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(enabled);
     if(enabled)            
             {
                 ensureConnection();
-            } //End block
+            } 
             else
             {
                 ensureNoConnection();
-            } //End block
-            // ---------- Original Method ----------
-            //if (enabled) {
-                //ensureConnection();
-            //} else {
-                //ensureNoConnection();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -6060,14 +6086,14 @@ for(int i = 0;i < count;i++)
                 mAttachInfo.mAccessibilityWindowId =
                     mAccessibilityManager.addAccessibilityInteractionConnection(mWindow,
                             new AccessibilityInteractionConnection(ViewRootImpl.this));
-            } //End block
-            // ---------- Original Method ----------
-            //final boolean registered = mAttachInfo.mAccessibilityWindowId != View.NO_ID;
-            //if (!registered) {
-                //mAttachInfo.mAccessibilityWindowId =
-                    //mAccessibilityManager.addAccessibilityInteractionConnection(mWindow,
-                            //new AccessibilityInteractionConnection(ViewRootImpl.this));
-            //}
+            } 
+            
+            
+            
+                
+                    
+                            
+            
         }
 
         
@@ -6078,13 +6104,13 @@ for(int i = 0;i < count;i++)
             {
                 mAttachInfo.mAccessibilityWindowId = View.NO_ID;
                 mAccessibilityManager.removeAccessibilityInteractionConnection(mWindow);
-            } //End block
-            // ---------- Original Method ----------
-            //final boolean registered = mAttachInfo.mAccessibilityWindowId != View.NO_ID;
-            //if (registered) {
-                //mAttachInfo.mAccessibilityWindowId = View.NO_ID;
-                //mAccessibilityManager.removeAccessibilityInteractionConnection(mWindow);
-            //}
+            } 
+            
+            
+            
+                
+                
+            
         }
 
         
@@ -6100,8 +6126,8 @@ for(int i = 0;i < count;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.642 -0400", hash_original_method = "D539A7CCB822AF3CDF20BB7941121D94", hash_generated_method = "3B1B370109F8D6C40FF65F8AD31BE9A1")
           AccessibilityInteractionConnection(ViewRootImpl viewAncestor) {
             mRootImpl = new WeakReference<ViewRootImpl>(viewAncestor);
-            // ---------- Original Method ----------
-            //mRootImpl = new WeakReference<ViewRootImpl>(viewAncestor);
+            
+            
         }
 
         
@@ -6120,14 +6146,14 @@ for(int i = 0;i < count;i++)
                 viewRootImpl.getAccessibilityInteractionController()
                     .findAccessibilityNodeInfoByAccessibilityIdClientThread(accessibilityId,
                         interactionId, callback, interrogatingPid, interrogatingTid);
-            } //End block
-            // ---------- Original Method ----------
-            //ViewRootImpl viewRootImpl = mRootImpl.get();
-            //if (viewRootImpl != null) {
-                //viewRootImpl.getAccessibilityInteractionController()
-                    //.findAccessibilityNodeInfoByAccessibilityIdClientThread(accessibilityId,
-                        //interactionId, callback, interrogatingPid, interrogatingTid);
-            //}
+            } 
+            
+            
+            
+                
+                    
+                        
+            
         }
 
         
@@ -6147,14 +6173,14 @@ for(int i = 0;i < count;i++)
                 viewRootImpl.getAccessibilityInteractionController()
                     .performAccessibilityActionClientThread(accessibilityId, action, interactionId,
                             callback, interogatingPid, interrogatingTid);
-            } //End block
-            // ---------- Original Method ----------
-            //ViewRootImpl viewRootImpl = mRootImpl.get();
-            //if (viewRootImpl != null) {
-                //viewRootImpl.getAccessibilityInteractionController()
-                    //.performAccessibilityActionClientThread(accessibilityId, action, interactionId,
-                            //callback, interogatingPid, interrogatingTid);
-            //}
+            } 
+            
+            
+            
+                
+                    
+                            
+            
         }
 
         
@@ -6173,14 +6199,14 @@ for(int i = 0;i < count;i++)
                 viewRootImpl.getAccessibilityInteractionController()
                     .findAccessibilityNodeInfoByViewIdClientThread(viewId, interactionId, callback,
                             interrogatingPid, interrogatingTid);
-            } //End block
-            // ---------- Original Method ----------
-            //ViewRootImpl viewRootImpl = mRootImpl.get();
-            //if (viewRootImpl != null) {
-                //viewRootImpl.getAccessibilityInteractionController()
-                    //.findAccessibilityNodeInfoByViewIdClientThread(viewId, interactionId, callback,
-                            //interrogatingPid, interrogatingTid);
-            //}
+            } 
+            
+            
+            
+                
+                    
+                            
+            
         }
 
         
@@ -6200,14 +6226,14 @@ for(int i = 0;i < count;i++)
                 viewRootImpl.getAccessibilityInteractionController()
                     .findAccessibilityNodeInfosByViewTextClientThread(text, accessibilityId,
                             interactionId, callback, interrogatingPid, interrogatingTid);
-            } //End block
-            // ---------- Original Method ----------
-            //ViewRootImpl viewRootImpl = mRootImpl.get();
-            //if (viewRootImpl != null) {
-                //viewRootImpl.getAccessibilityInteractionController()
-                    //.findAccessibilityNodeInfosByViewTextClientThread(text, accessibilityId,
-                            //interactionId, callback, interrogatingPid, interrogatingTid);
-            //}
+            } 
+            
+            
+            
+                
+                    
+                            
+            
         }
 
         
@@ -6240,7 +6266,7 @@ for(int i = 0;i < count;i++)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.643 -0400", hash_original_method = "AB87C85D23FC0F804AE52922F865B9CD", hash_generated_method = "AB87C85D23FC0F804AE52922F865B9CD")
         public AccessibilityInteractionController ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -6263,24 +6289,24 @@ for(int i = 0;i < count;i++)
             {
                 message.setTarget(ViewRootImpl.this);
                 AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            } //End block
+            } 
             else
             {
                 sendMessage(message);
-            } //End block
-            // ---------- Original Method ----------
-            //Message message = Message.obtain();
-            //message.what = DO_FIND_ACCESSIBLITY_NODE_INFO_BY_ACCESSIBILITY_ID;
-            //message.arg1 = accessibilityId;
-            //message.arg2 = interactionId;
-            //message.obj = callback;
-            //if (interrogatingPid == Process.myPid()
-                    //&& interrogatingTid == Looper.getMainLooper().getThread().getId()) {
-                //message.setTarget(ViewRootImpl.this);
-                //AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            //} else {
-                //sendMessage(message);
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -6297,35 +6323,35 @@ for(int i = 0;i < count;i++)
     if(target != null)                
                 {
                     info = target.createAccessibilityNodeInfo();
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 try 
                 {
                     callback.setFindAccessibilityNodeInfoResult(info, interactionId);
-                } //End block
+                } 
                 catch (RemoteException re)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //final int accessibilityId = message.arg1;
-            //final int interactionId = message.arg2;
-            //final IAccessibilityInteractionConnectionCallback callback =
-                //(IAccessibilityInteractionConnectionCallback) message.obj;
-            //AccessibilityNodeInfo info = null;
-            //try {
-                //View target = findViewByAccessibilityId(accessibilityId);
-                //if (target != null) {
-                    //info = target.createAccessibilityNodeInfo();
-                //}
-            //} finally {
-                //try {
-                    //callback.setFindAccessibilityNodeInfoResult(info, interactionId);
-                //} catch (RemoteException re) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+            
+                
+            
+            
+                
+                
+                    
+                
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -6348,24 +6374,24 @@ for(int i = 0;i < count;i++)
             {
                 message.setTarget(ViewRootImpl.this);
                 AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            } //End block
+            } 
             else
             {
                 sendMessage(message);
-            } //End block
-            // ---------- Original Method ----------
-            //Message message = Message.obtain();
-            //message.what = DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_ID;
-            //message.arg1 = viewId;
-            //message.arg2 = interactionId;
-            //message.obj = callback;
-            //if (interrogatingPid == Process.myPid()
-                    //&& interrogatingTid == Looper.getMainLooper().getThread().getId()) {
-                //message.setTarget(ViewRootImpl.this);
-                //AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            //} else {
-                //sendMessage(message);
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -6383,36 +6409,36 @@ for(int i = 0;i < count;i++)
     if(target != null && target.getVisibility() == View.VISIBLE)                
                 {
                     info = target.createAccessibilityNodeInfo();
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 try 
                 {
                     callback.setFindAccessibilityNodeInfoResult(info, interactionId);
-                } //End block
+                } 
                 catch (RemoteException re)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //final int viewId = message.arg1;
-            //final int interactionId = message.arg2;
-            //final IAccessibilityInteractionConnectionCallback callback =
-                //(IAccessibilityInteractionConnectionCallback) message.obj;
-            //AccessibilityNodeInfo info = null;
-            //try {
-                //View root = ViewRootImpl.this.mView;
-                //View target = root.findViewById(viewId);
-                //if (target != null && target.getVisibility() == View.VISIBLE) {
-                    //info = target.createAccessibilityNodeInfo();
-                //}
-            //} finally {
-                //try {
-                    //callback.setFindAccessibilityNodeInfoResult(info, interactionId);
-                //} catch (RemoteException re) {
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+            
+                
+            
+            
+                
+                
+                
+                    
+                
+            
+                
+                    
+                
+                
+            
         }
 
         
@@ -6440,27 +6466,27 @@ for(int i = 0;i < count;i++)
             {
                 message.setTarget(ViewRootImpl.this);
                 AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            } //End block
+            } 
             else
             {
                 sendMessage(message);
-            } //End block
-            // ---------- Original Method ----------
-            //Message message = Message.obtain();
-            //message.what = DO_FIND_ACCESSIBLITY_NODE_INFO_BY_VIEW_TEXT;
-            //SomeArgs args = mPool.acquire();
-            //args.arg1 = text;
-            //args.argi1 = accessibilityViewId;
-            //args.argi2 = interactionId;
-            //args.arg2 = callback;
-            //message.obj = args;
-            //if (interrogatingPid == Process.myPid()
-                    //&& interrogatingTid == Looper.getMainLooper().getThread().getId()) {
-                //message.setTarget(ViewRootImpl.this);
-                //AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            //} else {
-                //sendMessage(message);
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -6482,21 +6508,21 @@ for(int i = 0;i < count;i++)
     if(accessibilityViewId != View.NO_ID)                
                 {
                     root = findViewByAccessibilityId(accessibilityViewId);
-                } //End block
+                } 
                 else
                 {
                     root = ViewRootImpl.this.mView;
-                } //End block
+                } 
     if(root == null || root.getVisibility() != View.VISIBLE)                
                 {
                     return;
-                } //End block
+                } 
                 root.findViewsWithText(foundViews, text, View.FIND_VIEWS_WITH_TEXT
                         | View.FIND_VIEWS_WITH_CONTENT_DESCRIPTION);
     if(foundViews.isEmpty())                
                 {
                     return;
-                } //End block
+                } 
                 infos = mTempAccessibilityNodeInfoList;
                 infos.clear();
                 final int viewCount = foundViews.size();
@@ -6506,21 +6532,21 @@ for(int i = 0;i < viewCount;i++)
     if(foundView.getVisibility() == View.VISIBLE)                    
                     {
                         infos.add(foundView.createAccessibilityNodeInfo());
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             finally 
             {
                 try 
                 {
                     callback.setFindAccessibilityNodeInfosResult(infos, interactionId);
-                } //End block
+                } 
                 catch (RemoteException re)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -6547,27 +6573,27 @@ for(int i = 0;i < viewCount;i++)
             {
                 message.setTarget(ViewRootImpl.this);
                 AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            } //End block
+            } 
             else
             {
                 sendMessage(message);
-            } //End block
-            // ---------- Original Method ----------
-            //Message message = Message.obtain();
-            //message.what = DO_PERFORM_ACCESSIBILITY_ACTION;
-            //SomeArgs args = mPool.acquire();
-            //args.argi1 = accessibilityId;
-            //args.argi2 = action;
-            //args.argi3 = interactionId;
-            //args.arg1 = callback;
-            //message.obj = args;
-            //if (interogatingPid == Process.myPid()
-                    //&& interrogatingTid == Looper.getMainLooper().getThread().getId()) {
-                //message.setTarget(ViewRootImpl.this);
-                //AccessibilityInteractionClient.getInstance().setSameThreadMessage(message);
-            //} else {
-                //sendMessage(message);
-            //}
+            } 
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -6587,37 +6613,37 @@ switch(action){
                 case AccessibilityNodeInfo.ACTION_FOCUS:
                 {
                     succeeded = performActionFocus(accessibilityId);
-                } //End block
+                } 
                 break;
                 case AccessibilityNodeInfo.ACTION_CLEAR_FOCUS:
                 {
                     succeeded = performActionClearFocus(accessibilityId);
-                } //End block
+                } 
                 break;
                 case AccessibilityNodeInfo.ACTION_SELECT:
                 {
                     succeeded = performActionSelect(accessibilityId);
-                } //End block
+                } 
                 break;
                 case AccessibilityNodeInfo.ACTION_CLEAR_SELECTION:
                 {
                     succeeded = performActionClearSelection(accessibilityId);
-                } //End block
+                } 
                 break;
 }
-            } //End block
+            } 
             finally 
             {
                 try 
                 {
                     callback.setPerformAccessibilityActionResult(succeeded, interactionId);
-                } //End block
+                } 
                 catch (RemoteException re)
                 {
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+            
+            
         }
 
         
@@ -6630,18 +6656,18 @@ switch(action){
                 boolean var68934A3E9455FA72420237EB05902327_813085744 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_192018250 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_192018250;
-            } //End block
+            } 
             ensureTouchMode(false);
             boolean var9B0BCCDFA6520FE87D90E781D98F88CB_1391479223 = (target.requestFocus());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_820012155 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_820012155;
-            // ---------- Original Method ----------
-            //View target = findViewByAccessibilityId(accessibilityId);
-            //if (target == null || target.getVisibility() != View.VISIBLE) {
-                //return false;
-            //}
-            //ensureTouchMode(false);
-            //return target.requestFocus();
+            
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -6654,27 +6680,27 @@ switch(action){
                 boolean var68934A3E9455FA72420237EB05902327_1417147464 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1227701746 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1227701746;
-            } //End block
+            } 
     if(!target.isFocused())            
             {
                 boolean var68934A3E9455FA72420237EB05902327_951582297 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2002767469 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2002767469;
-            } //End block
+            } 
             target.clearFocus();
             boolean var997EF5D3AFAC3534DDA1029D1CBDB41D_1214807150 = (!target.isFocused());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1478658817 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1478658817;
-            // ---------- Original Method ----------
-            //View target = findViewByAccessibilityId(accessibilityId);
-            //if (target == null || target.getVisibility() != View.VISIBLE) {
-                //return false;
-            //}
-            //if (!target.isFocused()) {
-                //return false;
-            //}
-            //target.clearFocus();
-            //return !target.isFocused();
+            
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -6687,27 +6713,27 @@ switch(action){
                 boolean var68934A3E9455FA72420237EB05902327_1101551124 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913123142 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913123142;
-            } //End block
+            } 
     if(target.isSelected())            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1832048793 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1575478695 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1575478695;
-            } //End block
+            } 
             target.setSelected(true);
             boolean var17C54E64DF78CAC09E89999E75A4523F_1245485342 = (target.isSelected());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1004314973 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1004314973;
-            // ---------- Original Method ----------
-            //View target = findViewByAccessibilityId(accessibilityId);
-            //if (target == null || target.getVisibility() != View.VISIBLE) {
-                //return false;
-            //}
-            //if (target.isSelected()) {
-                //return false;
-            //}
-            //target.setSelected(true);
-            //return target.isSelected();
+            
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -6720,27 +6746,27 @@ switch(action){
                 boolean var68934A3E9455FA72420237EB05902327_878842176 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_47791315 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_47791315;
-            } //End block
+            } 
     if(!target.isSelected())            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1981856951 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1154726560 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1154726560;
-            } //End block
+            } 
             target.setSelected(false);
             boolean var3429767672DCF8500B2A7598DBF0FF10_398673194 = (!target.isSelected());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1070546256 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1070546256;
-            // ---------- Original Method ----------
-            //View target = findViewByAccessibilityId(accessibilityId);
-            //if (target == null || target.getVisibility() != View.VISIBLE) {
-                //return false;
-            //}
-            //if (!target.isSelected()) {
-                //return false;
-            //}
-            //target.setSelected(false);
-            //return !target.isSelected();
+            
+            
+            
+                
+            
+            
+                
+            
+            
+            
         }
 
         
@@ -6753,27 +6779,27 @@ switch(action){
 View var540C13E9E156B687226421B24F2DF178_1216254543 =                 null;
                 var540C13E9E156B687226421B24F2DF178_1216254543.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_1216254543;
-            } //End block
+            } 
             View foundView = root.findViewByAccessibilityId(accessibilityId);
     if(foundView != null && foundView.getVisibility() != View.VISIBLE)            
             {
 View var540C13E9E156B687226421B24F2DF178_108758289 =                 null;
                 var540C13E9E156B687226421B24F2DF178_108758289.addTaint(taint);
                 return var540C13E9E156B687226421B24F2DF178_108758289;
-            } //End block
+            } 
 View varC924E529DE927E973A786678D4C8F00A_797570612 =             foundView;
             varC924E529DE927E973A786678D4C8F00A_797570612.addTaint(taint);
             return varC924E529DE927E973A786678D4C8F00A_797570612;
-            // ---------- Original Method ----------
-            //View root = ViewRootImpl.this.mView;
-            //if (root == null) {
-                //return null;
-            //}
-            //View foundView = root.findViewByAccessibilityId(accessibilityId);
-            //if (foundView != null && foundView.getVisibility() != View.VISIBLE) {
-                //return null;
-            //}
-            //return foundView;
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -6803,46 +6829,51 @@ View varC924E529DE927E973A786678D4C8F00A_797570612 =             foundView;
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.656 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
             public SomeArgs ()
             {
-                //Synthesized constructor
+                
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.656 -0400", hash_original_method = "BEE0522D727ED0DB1FBC81A3E3B176C5", hash_generated_method = "5681AEC7341B3AEE38DB36D49985B162")
             public SomeArgs getNextPoolable() {
 SomeArgs varA29C6A1F0F29A0F3732076BE541D5DCD_513550962 =                 mNext;
                 varA29C6A1F0F29A0F3732076BE541D5DCD_513550962.addTaint(taint);
                 return varA29C6A1F0F29A0F3732076BE541D5DCD_513550962;
-                // ---------- Original Method ----------
-                //return mNext;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.656 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "8D7A9E5A34F5E3FE65E475DABE004338")
             public boolean isPooled() {
                 boolean var224D05F4261498DA1D9DF38424832532_2024799848 = (mIsPooled);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_675310185 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_675310185;
-                // ---------- Original Method ----------
-                //return mIsPooled;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.656 -0400", hash_original_method = "B595989EA0DDF2662B95D2584CF9AF77", hash_generated_method = "F4A2EC156C0A86672F5B936336F0364D")
             public void setNextPoolable(SomeArgs args) {
                 mNext = args;
-                // ---------- Original Method ----------
-                //mNext = args;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.656 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
-                // ---------- Original Method ----------
-                //mIsPooled = isPooled;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.657 -0400", hash_original_method = "95D0476EAE9CBD3221945617281C6DDB", hash_generated_method = "316EB695B735DFEA458AF811F180A884")
             private void clear() {
                 arg1 = null;
@@ -6850,12 +6881,12 @@ SomeArgs varA29C6A1F0F29A0F3732076BE541D5DCD_513550962 =                 mNext;
                 argi1 = 0;
                 argi2 = 0;
                 argi3 = 0;
-                // ---------- Original Method ----------
-                //arg1 = null;
-                //arg2 = null;
-                //argi1 = 0;
-                //argi2 = 0;
-                //argi3 = 0;
+                
+                
+                
+                
+                
+                
             }
 
             
@@ -6878,7 +6909,7 @@ SomeArgs varA29C6A1F0F29A0F3732076BE541D5DCD_513550962 =                 mNext;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:54.657 -0400", hash_original_method = "22B280316CE346FC3EE6EA7A3C31108C", hash_generated_method = "22B280316CE346FC3EE6EA7A3C31108C")
         public SendWindowContentChangedAccessibilityEvent ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -6888,12 +6919,12 @@ SomeArgs varA29C6A1F0F29A0F3732076BE541D5DCD_513550962 =                 mNext;
             {
                 mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
                 mIsPending = false;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mView != null) {
-                //mView.sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED);
-                //mIsPending = false;
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         

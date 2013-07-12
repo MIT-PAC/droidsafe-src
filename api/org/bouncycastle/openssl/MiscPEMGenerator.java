@@ -1,6 +1,6 @@
 package org.bouncycastle.openssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -63,8 +63,8 @@ public class MiscPEMGenerator implements PemObjectGenerator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.205 -0400", hash_original_method = "C02D6ACBF889CF35766B7871B784307D", hash_generated_method = "2850ED16A7B9528D560ED52741366F34")
     public  MiscPEMGenerator(Object o) {
         this.obj = o;
-        // ---------- Original Method ----------
-        //this.obj = o;
+        
+        
     }
 
     
@@ -80,12 +80,12 @@ public class MiscPEMGenerator implements PemObjectGenerator {
         this.password = password;
         this.random = random;
         this.provider = provider;
-        // ---------- Original Method ----------
-        //this.obj = obj;
-        //this.algorithm = algorithm;
-        //this.password = password;
-        //this.random = random;
-        //this.provider = provider;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -108,24 +108,25 @@ public class MiscPEMGenerator implements PemObjectGenerator {
                 NoSuchProviderException varD4FD1BAEDE90D1A20C4A64680E596441_1676077272 = new NoSuchProviderException("cannot find provider: " + provider);
                 varD4FD1BAEDE90D1A20C4A64680E596441_1676077272.addTaint(taint);
                 throw varD4FD1BAEDE90D1A20C4A64680E596441_1676077272;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //this.obj = obj;
-        //this.algorithm = algorithm;
-        //this.password = password;
-        //this.random = random;
-        //if (provider != null)
-        //{
-            //this.provider = Security.getProvider(provider);
-            //if (this.provider == null)
-            //{
-                //throw new NoSuchProviderException("cannot find provider: " + provider);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:42.211 -0400", hash_original_method = "BB771E0C3864CDE92E08322A05A8C925", hash_generated_method = "46785912F2365383770D7E64C0D03B4F")
     private PemObject createPemObject(Object o) throws IOException {
         addTaint(o.getTaint());
@@ -136,27 +137,27 @@ public class MiscPEMGenerator implements PemObjectGenerator {
 PemObject var0557F2A4B2A9CA2E0F4664FCB0094582_357748354 =             (PemObject)o;
             var0557F2A4B2A9CA2E0F4664FCB0094582_357748354.addTaint(taint);
             return var0557F2A4B2A9CA2E0F4664FCB0094582_357748354;
-        } //End block
+        } 
     if(o instanceof PemObjectGenerator)        
         {
 PemObject var6335C0C6CD56F8EACF5115120B4E7904_43828943 =             ((PemObjectGenerator)o).generate();
             var6335C0C6CD56F8EACF5115120B4E7904_43828943.addTaint(taint);
             return var6335C0C6CD56F8EACF5115120B4E7904_43828943;
-        } //End block
+        } 
     if(o instanceof X509Certificate)        
         {
             type = "CERTIFICATE";
             try 
             {
                 encoding = ((X509Certificate)o).getEncoded();
-            } //End block
+            } 
             catch (CertificateEncodingException e)
             {
                 PemGenerationException var2C3917E8F4F5D0753E6044900336438C_1662816833 = new PemGenerationException("Cannot encode object: " + e.toString());
                 var2C3917E8F4F5D0753E6044900336438C_1662816833.addTaint(taint);
                 throw var2C3917E8F4F5D0753E6044900336438C_1662816833;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(o instanceof X509CRL)        
         {
@@ -164,21 +165,21 @@ PemObject var6335C0C6CD56F8EACF5115120B4E7904_43828943 =             ((PemObject
             try 
             {
                 encoding = ((X509CRL)o).getEncoded();
-            } //End block
+            } 
             catch (CRLException e)
             {
                 PemGenerationException var2C3917E8F4F5D0753E6044900336438C_493292005 = new PemGenerationException("Cannot encode object: " + e.toString());
                 var2C3917E8F4F5D0753E6044900336438C_493292005.addTaint(taint);
                 throw var2C3917E8F4F5D0753E6044900336438C_493292005;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(o instanceof KeyPair)        
         {
 PemObject var6839675AF7579D1BFF8565C3DA62C7A3_1904644107 =             createPemObject(((KeyPair)o).getPrivate());
             var6839675AF7579D1BFF8565C3DA62C7A3_1904644107.addTaint(taint);
             return var6839675AF7579D1BFF8565C3DA62C7A3_1904644107;
-        } //End block
+        } 
         else
     if(o instanceof PrivateKey)        
         {
@@ -188,7 +189,7 @@ PemObject var6839675AF7579D1BFF8565C3DA62C7A3_1904644107 =             createPem
             {
                 type = "RSA PRIVATE KEY";
                 encoding = info.getPrivateKey().getEncoded();
-            } //End block
+            } 
             else
     if(o instanceof DSAPrivateKey)            
             {
@@ -204,55 +205,55 @@ PemObject var6839675AF7579D1BFF8565C3DA62C7A3_1904644107 =             createPem
                 v.add(new DERInteger(y));
                 v.add(new DERInteger(x));
                 encoding = new DERSequence(v).getEncoded();
-            } //End block
+            } 
             else
     if(((PrivateKey)o).getAlgorithm().equals("ECDSA"))            
             {
                 type = "EC PRIVATE KEY";
                 encoding = info.getPrivateKey().getEncoded();
-            } //End block
+            } 
             else
             {
                 IOException var1DD6EC4C93116E7BD72BA1ABFC4BA583_1404904359 = new IOException("Cannot identify private key");
                 var1DD6EC4C93116E7BD72BA1ABFC4BA583_1404904359.addTaint(taint);
                 throw var1DD6EC4C93116E7BD72BA1ABFC4BA583_1404904359;
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(o instanceof PublicKey)        
         {
             type = "PUBLIC KEY";
             encoding = ((PublicKey)o).getEncoded();
-        } //End block
+        } 
         else
     if(o instanceof X509AttributeCertificate)        
         {
             type = "ATTRIBUTE CERTIFICATE";
             encoding = ((X509V2AttributeCertificate)o).getEncoded();
-        } //End block
+        } 
         else
     if(o instanceof PKCS10CertificationRequest)        
         {
             type = "CERTIFICATE REQUEST";
             encoding = ((PKCS10CertificationRequest)o).getEncoded();
-        } //End block
+        } 
         else
     if(o instanceof ContentInfo)        
         {
             type = "PKCS7";
             encoding = ((ContentInfo)o).getEncoded();
-        } //End block
+        } 
         else
         {
             PemGenerationException varA78F3BDB76DCA3CBAF9349AF4912018E_363291416 = new PemGenerationException("unknown object passed - can't encode.");
             varA78F3BDB76DCA3CBAF9349AF4912018E_363291416.addTaint(taint);
             throw varA78F3BDB76DCA3CBAF9349AF4912018E_363291416;
-        } //End block
+        } 
 PemObject var8F3B58E96848E0C08AAC47F156725822_1788023165 =         new PemObject(type, encoding);
         var8F3B58E96848E0C08AAC47F156725822_1788023165.addTaint(taint);
         return var8F3B58E96848E0C08AAC47F156725822_1788023165;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -264,18 +265,18 @@ PemObject var8F3B58E96848E0C08AAC47F156725822_1788023165 =         new PemObject
 for(int i = 0;i != bytes.length;i++)
         {
             chars[i] = (char)bytes[i];
-        } //End block
+        } 
 String var300818D7D4F603E5F4346D4E090224B6_1434307510 =         new String(chars);
         var300818D7D4F603E5F4346D4E090224B6_1434307510.addTaint(taint);
         return var300818D7D4F603E5F4346D4E090224B6_1434307510;
-        // ---------- Original Method ----------
-        //bytes = Hex.encode(bytes);
-        //char[] chars = new char[bytes.length];
-        //for (int i = 0; i != bytes.length; i++)
-        //{
-            //chars[i] = (char)bytes[i];
-        //}
-        //return new String(chars);
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -294,7 +295,7 @@ String var300818D7D4F603E5F4346D4E090224B6_1434307510 =         new String(chars
 PemObject var4A07F0B3B8987EC3B88B5CDF52242DDE_1414100939 =             createPemObject(((KeyPair)obj).getPrivate(), algorithm, password, random);
             var4A07F0B3B8987EC3B88B5CDF52242DDE_1414100939.addTaint(taint);
             return var4A07F0B3B8987EC3B88B5CDF52242DDE_1414100939;
-        } //End block
+        } 
         String type = null;
         byte[] keyData = null;
     if(obj instanceof RSAPrivateCrtKey)        
@@ -311,7 +312,7 @@ PemObject var4A07F0B3B8987EC3B88B5CDF52242DDE_1414100939 =             createPem
                 k.getPrimeExponentQ(),
                 k.getCrtCoefficient());
             keyData = keyStruct.getEncoded();
-        } //End block
+        } 
         else
     if(obj instanceof DSAPrivateKey)        
         {
@@ -328,25 +329,25 @@ PemObject var4A07F0B3B8987EC3B88B5CDF52242DDE_1414100939 =             createPem
             v.add(new DERInteger(y));
             v.add(new DERInteger(x));
             keyData = new DERSequence(v).getEncoded();
-        } //End block
+        } 
         else
     if(obj instanceof PrivateKey && "ECDSA".equals(((PrivateKey)obj).getAlgorithm()))        
         {
             type = "EC PRIVATE KEY";
             PrivateKeyInfo privInfo = PrivateKeyInfo.getInstance(ASN1Object.fromByteArray(((PrivateKey)obj).getEncoded()));
             keyData = privInfo.getPrivateKey().getEncoded();
-        } //End block
+        } 
     if(type == null || keyData == null)        
         {
             IllegalArgumentException var021E0AFEDC0B104C3DF8251384FB5750_38521236 = new IllegalArgumentException("Object type not supported: " + obj.getClass().getName());
             var021E0AFEDC0B104C3DF8251384FB5750_38521236.addTaint(taint);
             throw var021E0AFEDC0B104C3DF8251384FB5750_38521236;
-        } //End block
+        } 
         String dekAlgName = Strings.toUpperCase(algorithm);
     if(dekAlgName.equals("DESEDE"))        
         {
             dekAlgName = "DES-EDE3-CBC";
-        } //End block
+        } 
         int ivLength = dekAlgName.startsWith("AES-") ? 16 : 8;
         byte[] iv = new byte[ivLength];
         random.nextBytes(iv);
@@ -357,8 +358,8 @@ PemObject var4A07F0B3B8987EC3B88B5CDF52242DDE_1414100939 =             createPem
 PemObject var79A72CD62B537839C32B7D798B57EB9A_2045118461 =         new PemObject(type, headers, encData);
         var79A72CD62B537839C32B7D798B57EB9A_2045118461.addTaint(taint);
         return var79A72CD62B537839C32B7D798B57EB9A_2045118461;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -371,30 +372,30 @@ PemObject var79A72CD62B537839C32B7D798B57EB9A_2045118461 =         new PemObject
 PemObject var0D425B93EA0F5CFC7CE482DC18F6A7D9_834031453 =                 createPemObject(obj, algorithm, password, random);
                 var0D425B93EA0F5CFC7CE482DC18F6A7D9_834031453.addTaint(taint);
                 return var0D425B93EA0F5CFC7CE482DC18F6A7D9_834031453;
-            } //End block
+            } 
 PemObject var91CB8476853FA00A57326519F50A2259_373193359 =             createPemObject(obj);
             var91CB8476853FA00A57326519F50A2259_373193359.addTaint(taint);
             return var91CB8476853FA00A57326519F50A2259_373193359;
-        } //End block
+        } 
         catch (IOException e)
         {
             PemGenerationException var5DA133951ACB92A3B1BFF8614E877F26_884442722 = new PemGenerationException("encoding exception: " + e.getMessage(), e);
             var5DA133951ACB92A3B1BFF8614E877F26_884442722.addTaint(taint);
             throw var5DA133951ACB92A3B1BFF8614E877F26_884442722;
-        } //End block
-        // ---------- Original Method ----------
-        //try
-        //{
-            //if (algorithm != null)
-            //{
-                //return createPemObject(obj, algorithm, password, random);
-            //}
-            //return createPemObject(obj);
-        //}
-        //catch (IOException e)
-        //{
-            //throw new PemGenerationException("encoding exception: " + e.getMessage(), e);
-        //}
+        } 
+        
+        
+        
+            
+            
+                
+            
+            
+        
+        
+        
+            
+        
     }
 
     

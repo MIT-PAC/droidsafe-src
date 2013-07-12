@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -75,13 +75,13 @@ public class OpenSSLSessionImpl implements SSLSession {
         this.peerHost = peerHost;
         this.peerPort = peerPort;
         this.sessionContext = sessionContext;
-        // ---------- Original Method ----------
-        //this.sslSessionNativePointer = sslSessionNativePointer;
-        //this.localCertificates = localCertificates;
-        //this.peerCertificates = peerCertificates;
-        //this.peerHost = peerHost;
-        //this.peerPort = peerPort;
-        //this.sessionContext = sessionContext;
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -106,11 +106,11 @@ public class OpenSSLSessionImpl implements SSLSession {
             IOException varFA6EBDDF30FE6825E0AD960CD2C6C03C_2138946621 = new IOException("Invalid session data");
             varFA6EBDDF30FE6825E0AD960CD2C6C03C_2138946621.addTaint(taint);
             throw varFA6EBDDF30FE6825E0AD960CD2C6C03C_2138946621;
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.sslSessionNativePointer == 0) {
-            //throw new IOException("Invalid session data");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -119,23 +119,23 @@ public class OpenSSLSessionImpl implements SSLSession {
     if(id == null)        
         {
             resetId();
-        } //End block
+        } 
         byte[] varB80BB7740288FDA1F201890375A60C8F_2134679013 = (id);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_732080394 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_732080394;
-        // ---------- Original Method ----------
-        //if (id == null) {
-            //resetId();
-        //}
-        //return id;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.251 -0400", hash_original_method = "57B02BE93AE841112E3F3B64D0EF8580", hash_generated_method = "3A40234A24A17A498837F8630547C44C")
      void resetId() {
         id = NativeCrypto.SSL_SESSION_session_id(sslSessionNativePointer);
-        // ---------- Original Method ----------
-        //id = NativeCrypto.SSL_SESSION_session_id(sslSessionNativePointer);
+        
+        
     }
 
     
@@ -144,8 +144,8 @@ public class OpenSSLSessionImpl implements SSLSession {
         byte[] var75494793557DCCA3169151D8314E9D4E_1989616323 = (NativeCrypto.i2d_SSL_SESSION(sslSessionNativePointer));
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1315405571 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1315405571;
-        // ---------- Original Method ----------
-        //return NativeCrypto.i2d_SSL_SESSION(sslSessionNativePointer);
+        
+        
     }
 
     
@@ -154,15 +154,15 @@ public class OpenSSLSessionImpl implements SSLSession {
     if(creationTime == 0)        
         {
             creationTime = NativeCrypto.SSL_SESSION_get_time(sslSessionNativePointer);
-        } //End block
+        } 
         long var8799ECF12F308B9267E84384F8C130BF_216682657 = (creationTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1549062492 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1549062492;
-        // ---------- Original Method ----------
-        //if (creationTime == 0) {
-            //creationTime = NativeCrypto.SSL_SESSION_get_time(sslSessionNativePointer);
-        //}
-        //return creationTime;
+        
+        
+            
+        
+        
     }
 
     
@@ -171,28 +171,30 @@ public class OpenSSLSessionImpl implements SSLSession {
         long varFFDF44C8D9CCB39514B4C2A610D3B3B8_1292532856 = ((lastAccessedTime == 0) ? getCreationTime() : lastAccessedTime);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2003570050 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2003570050;
-        // ---------- Original Method ----------
-        //return (lastAccessedTime == 0) ? getCreationTime() : lastAccessedTime;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.253 -0400", hash_original_method = "A8B8393BBD8B21276043F8F436BCE41F", hash_generated_method = "0EDEBCF643E8E2AD62BDD81E84E75957")
     public int getApplicationBufferSize() {
         int var241C2B32F58EBF2C562C0D8BE125FE0C_1131598253 = (SSLRecordProtocol.MAX_DATA_LENGTH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429226417 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429226417;
-        // ---------- Original Method ----------
-        //return SSLRecordProtocol.MAX_DATA_LENGTH;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.253 -0400", hash_original_method = "D48FD6D531D6586277314A5CB11C610B", hash_generated_method = "756B7F7D9E44A6E376DCE312AEF88F34")
     public int getPacketBufferSize() {
         int varC83B5DF623EDEFDB0686BE40106F81D9_875950615 = (SSLRecordProtocol.MAX_SSL_PACKET_SIZE);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1535840717 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1535840717;
-        // ---------- Original Method ----------
-        //return SSLRecordProtocol.MAX_SSL_PACKET_SIZE;
+        
+        
     }
 
     
@@ -203,29 +205,30 @@ public class OpenSSLSessionImpl implements SSLSession {
 Principal var8766F23B953392F7F4017C72F2D2F8A5_988226729 =             localCertificates[0].getSubjectX500Principal();
             var8766F23B953392F7F4017C72F2D2F8A5_988226729.addTaint(taint);
             return var8766F23B953392F7F4017C72F2D2F8A5_988226729;
-        } //End block
+        } 
         else
         {
 Principal var540C13E9E156B687226421B24F2DF178_437209678 =             null;
             var540C13E9E156B687226421B24F2DF178_437209678.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_437209678;
-        } //End block
-        // ---------- Original Method ----------
-        //if (localCertificates != null && localCertificates.length > 0) {
-            //return localCertificates[0].getSubjectX500Principal();
-        //} else {
-            //return null;
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.254 -0400", hash_original_method = "00176E7E524F828990985588910F48EC", hash_generated_method = "76329BC2C12B78A354A27235F589CF2F")
     public Certificate[] getLocalCertificates() {
 Certificate[] var4C5AE20413882C8DD1DF3FE09B18641D_1320236458 =         localCertificates;
         var4C5AE20413882C8DD1DF3FE09B18641D_1320236458.addTaint(taint);
         return var4C5AE20413882C8DD1DF3FE09B18641D_1320236458;
-        // ---------- Original Method ----------
-        //return localCertificates;
+        
+        
     }
 
     
@@ -236,17 +239,17 @@ Certificate[] var4C5AE20413882C8DD1DF3FE09B18641D_1320236458 =         localCert
     if(result == null)        
         {
             peerCertificateChain = result = createPeerCertificateChain();
-        } //End block
+        } 
 javax.security.cert.X509Certificate[] varDC838461EE2FA0CA4C9BBB70A15456B0_743246483 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_743246483.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_743246483;
-        // ---------- Original Method ----------
-        //checkPeerCertificatesPresent();
-        //javax.security.cert.X509Certificate[] result = peerCertificateChain;
-        //if (result == null) {
-            //peerCertificateChain = result = createPeerCertificateChain();
-        //}
-        //return result;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -259,39 +262,40 @@ for(int i = 0;i < peerCertificates.length;i++)
             {
                 byte[] encoded = peerCertificates[i].getEncoded();
                 chain[i] = javax.security.cert.X509Certificate.getInstance(encoded);
-            } //End block
+            } 
 javax.security.cert.X509Certificate[] var96007A05DC9437D4696083FF3089928F_219434039 =             chain;
             var96007A05DC9437D4696083FF3089928F_219434039.addTaint(taint);
             return var96007A05DC9437D4696083FF3089928F_219434039;
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             SSLPeerUnverifiedException exception = new SSLPeerUnverifiedException(e.getMessage());
             exception.initCause(exception);
             exception.addTaint(taint);
             throw exception;
-        } //End block
+        } 
         catch (CertificateException e)
         {
             SSLPeerUnverifiedException exception = new SSLPeerUnverifiedException(e.getMessage());
             exception.initCause(exception);
             exception.addTaint(taint);
             throw exception;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.255 -0400", hash_original_method = "6F2F2196C2B5F66BDE334D0180ADBF68", hash_generated_method = "02846BAE9C5B9169F9F394144AED9D35")
     public Certificate[] getPeerCertificates() throws SSLPeerUnverifiedException {
         checkPeerCertificatesPresent();
 Certificate[] varF937CE92F117196F80CD35B09BCDC7EA_24730958 =         peerCertificates;
         varF937CE92F117196F80CD35B09BCDC7EA_24730958.addTaint(taint);
         return varF937CE92F117196F80CD35B09BCDC7EA_24730958;
-        // ---------- Original Method ----------
-        //checkPeerCertificatesPresent();
-        //return peerCertificates;
+        
+        
+        
     }
 
     
@@ -302,11 +306,11 @@ Certificate[] varF937CE92F117196F80CD35B09BCDC7EA_24730958 =         peerCertifi
             SSLPeerUnverifiedException var126CC9F057BAE0A6AE94F8070A58C903_385315772 = new SSLPeerUnverifiedException("No peer certificates");
             var126CC9F057BAE0A6AE94F8070A58C903_385315772.addTaint(taint);
             throw var126CC9F057BAE0A6AE94F8070A58C903_385315772;
-        } //End block
-        // ---------- Original Method ----------
-        //if (peerCertificates == null || peerCertificates.length == 0) {
-            //throw new SSLPeerUnverifiedException("No peer certificates");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -316,32 +320,35 @@ Certificate[] varF937CE92F117196F80CD35B09BCDC7EA_24730958 =         peerCertifi
 Principal var9A28761194D2D1E856FBE408F69063AC_1306783912 =         peerCertificates[0].getSubjectX500Principal();
         var9A28761194D2D1E856FBE408F69063AC_1306783912.addTaint(taint);
         return var9A28761194D2D1E856FBE408F69063AC_1306783912;
-        // ---------- Original Method ----------
-        //checkPeerCertificatesPresent();
-        //return peerCertificates[0].getSubjectX500Principal();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.256 -0400", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "D1E04AFEFFE111723EF58D5137E205C6")
     public String getPeerHost() {
 String varFEF815055C97D4B621404BF729E85DA2_297024508 =         peerHost;
         varFEF815055C97D4B621404BF729E85DA2_297024508.addTaint(taint);
         return varFEF815055C97D4B621404BF729E85DA2_297024508;
-        // ---------- Original Method ----------
-        //return peerHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.256 -0400", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "742F91FDDB907887236DFC693ABDF6C3")
     public int getPeerPort() {
         int varBBD5741C4F9994864582D25DD194C4DE_1825477253 = (peerPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1093667850 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1093667850;
-        // ---------- Original Method ----------
-        //return peerPort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.257 -0400", hash_original_method = "232543257EF0615A8C98189B2944DDF8", hash_generated_method = "BDAD3065A1167DEB8F78C33D9C6C2436")
     public String getCipherSuite() {
     if(cipherSuite == null)        
@@ -351,40 +358,42 @@ String varFEF815055C97D4B621404BF729E85DA2_297024508 =         peerHost;
     if(cipherSuite == null)            
             {
                 cipherSuite = name;
-            } //End block
-        } //End block
+            } 
+        } 
 String var40C8215E3932EC890F412FE48280D7DD_1544627024 =         cipherSuite;
         var40C8215E3932EC890F412FE48280D7DD_1544627024.addTaint(taint);
         return var40C8215E3932EC890F412FE48280D7DD_1544627024;
-        // ---------- Original Method ----------
-        //if (cipherSuite == null) {
-            //String name = NativeCrypto.SSL_SESSION_cipher(sslSessionNativePointer);
-            //cipherSuite = NativeCrypto.OPENSSL_TO_STANDARD_CIPHER_SUITES.get(name);
-            //if (cipherSuite == null) {
-                //cipherSuite = name;
-            //}
-        //}
-        //return cipherSuite;
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.257 -0400", hash_original_method = "DC690D466354C337179157E9ED46DB27", hash_generated_method = "32D86A67EE1196209621057B2EDBA641")
     public String getProtocol() {
     if(protocol == null)        
         {
             protocol = NativeCrypto.SSL_SESSION_get_version(sslSessionNativePointer);
-        } //End block
+        } 
 String varDD56EE388A0FA5696BF9686AC14D2DB9_426157750 =         protocol;
         varDD56EE388A0FA5696BF9686AC14D2DB9_426157750.addTaint(taint);
         return varDD56EE388A0FA5696BF9686AC14D2DB9_426157750;
-        // ---------- Original Method ----------
-        //if (protocol == null) {
-            //protocol = NativeCrypto.SSL_SESSION_get_version(sslSessionNativePointer);
-        //}
-        //return protocol;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.258 -0400", hash_original_method = "968671DF82E2AA12BC31F552097867FE", hash_generated_method = "3BE52BFADC0FD287E1BBD467181C45AD")
     public String getCompressionMethod() {
     if(compressionMethod == null)        
@@ -392,30 +401,32 @@ String varDD56EE388A0FA5696BF9686AC14D2DB9_426157750 =         protocol;
             compressionMethod
                     = NativeCrypto.SSL_SESSION_compress_meth(sessionContext.sslCtxNativePointer,
                                                              sslSessionNativePointer);
-        } //End block
+        } 
 String varA8A635525C57E9F2D9CABEB3024E7192_1291776449 =         compressionMethod;
         varA8A635525C57E9F2D9CABEB3024E7192_1291776449.addTaint(taint);
         return varA8A635525C57E9F2D9CABEB3024E7192_1291776449;
-        // ---------- Original Method ----------
-        //if (compressionMethod == null) {
-            //compressionMethod
-                    //= NativeCrypto.SSL_SESSION_compress_meth(sessionContext.sslCtxNativePointer,
-                                                             //sslSessionNativePointer);
-        //}
-        //return compressionMethod;
+        
+        
+            
+                    
+                                                             
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.258 -0400", hash_original_method = "6C1FB28F6F59303D04A80E546963567A", hash_generated_method = "ECAF77913DC169DFC2F936E626FF03F3")
     public SSLSessionContext getSessionContext() {
 SSLSessionContext var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568 =         sessionContext;
         var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568.addTaint(taint);
         return var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568;
-        // ---------- Original Method ----------
-        //return sessionContext;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.259 -0400", hash_original_method = "8D23F85B43098BFBC0CC2E7E59C1A10A", hash_generated_method = "D780E72AD5A1B76AE1F75628AD53820A")
     public boolean isValid() {
         SSLSessionContext context = sessionContext;
@@ -426,30 +437,31 @@ SSLSessionContext var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568 =         sessi
                     < System.currentTimeMillis())        
         {
             isValid = false;
-        } //End block
+        } 
         boolean varCE74825B5A01C99B06AF231DE0BD667D_1656680066 = (isValid);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1629877456 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1629877456;
-        // ---------- Original Method ----------
-        //SSLSessionContext context = sessionContext;
-        //if (isValid
-                //&& context != null
-                //&& context.getSessionTimeout() != 0
-                //&& getCreationTime() + (context.getSessionTimeout() * 1000)
-                    //< System.currentTimeMillis()) {
-            //isValid = false;
-        //}
-        //return isValid;
+        
+        
+        
+                
+                
+                
+                    
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.259 -0400", hash_original_method = "9CCB74C876B98AB8C259B415A5496084", hash_generated_method = "D973F2208FD25A513B4A2BF5A3AECE34")
     public void invalidate() {
         isValid = false;
         sessionContext = null;
-        // ---------- Original Method ----------
-        //isValid = false;
-        //sessionContext = null;
+        
+        
+        
     }
 
     
@@ -461,15 +473,15 @@ SSLSessionContext var4CDF9BEB60CDBB66FE106B31ECF12ED3_2097577568 =         sessi
             IllegalArgumentException var6DECD338B4ADF738B2F3D7F9B2BA118C_1556603917 = new IllegalArgumentException("name == null");
             var6DECD338B4ADF738B2F3D7F9B2BA118C_1556603917.addTaint(taint);
             throw var6DECD338B4ADF738B2F3D7F9B2BA118C_1556603917;
-        } //End block
+        } 
 Object var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1389887226 =         values.get(name);
         var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1389887226.addTaint(taint);
         return var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1389887226;
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("name == null");
-        //}
-        //return values.get(name);
+        
+        
+            
+        
+        
     }
 
     
@@ -478,8 +490,8 @@ Object var6DAEDF94ADFD5EF7FEDE28F5B58DA162_1389887226 =         values.get(name)
 String[] var8EC09F25808BADEED53BE05F8E91790F_784848668 =         values.keySet().toArray(new String[values.size()]);
         var8EC09F25808BADEED53BE05F8E91790F_784848668.addTaint(taint);
         return var8EC09F25808BADEED53BE05F8E91790F_784848668;
-        // ---------- Original Method ----------
-        //return values.keySet().toArray(new String[values.size()]);
+        
+        
     }
 
     
@@ -492,31 +504,31 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_784848668 =         values.keySet()
             IllegalArgumentException var8B2F8D7AAF6CA4AD931494119DFBFE29_44699778 = new IllegalArgumentException("name == null || value == null");
             var8B2F8D7AAF6CA4AD931494119DFBFE29_44699778.addTaint(taint);
             throw var8B2F8D7AAF6CA4AD931494119DFBFE29_44699778;
-        } //End block
+        } 
         Object old = values.put(name, value);
     if(value instanceof SSLSessionBindingListener)        
         {
             ((SSLSessionBindingListener) value)
                     .valueBound(new SSLSessionBindingEvent(this, name));
-        } //End block
+        } 
     if(old instanceof SSLSessionBindingListener)        
         {
             ((SSLSessionBindingListener) old)
                     .valueUnbound(new SSLSessionBindingEvent(this, name));
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null || value == null) {
-            //throw new IllegalArgumentException("name == null || value == null");
-        //}
-        //Object old = values.put(name, value);
-        //if (value instanceof SSLSessionBindingListener) {
-            //((SSLSessionBindingListener) value)
-                    //.valueBound(new SSLSessionBindingEvent(this, name));
-        //}
-        //if (old instanceof SSLSessionBindingListener) {
-            //((SSLSessionBindingListener) old)
-                    //.valueUnbound(new SSLSessionBindingEvent(this, name));
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+                    
+        
+        
+            
+                    
+        
     }
 
     
@@ -528,22 +540,22 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_784848668 =         values.keySet()
             IllegalArgumentException var6DECD338B4ADF738B2F3D7F9B2BA118C_1313215786 = new IllegalArgumentException("name == null");
             var6DECD338B4ADF738B2F3D7F9B2BA118C_1313215786.addTaint(taint);
             throw var6DECD338B4ADF738B2F3D7F9B2BA118C_1313215786;
-        } //End block
+        } 
         Object old = values.remove(name);
     if(old instanceof SSLSessionBindingListener)        
         {
             SSLSessionBindingListener listener = (SSLSessionBindingListener) old;
             listener.valueUnbound(new SSLSessionBindingEvent(this, name));
-        } //End block
-        // ---------- Original Method ----------
-        //if (name == null) {
-            //throw new IllegalArgumentException("name == null");
-        //}
-        //Object old = values.remove(name);
-        //if (old instanceof SSLSessionBindingListener) {
-            //SSLSessionBindingListener listener = (SSLSessionBindingListener) old;
-            //listener.valueUnbound(new SSLSessionBindingEvent(this, name));
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -553,17 +565,17 @@ String[] var8EC09F25808BADEED53BE05F8E91790F_784848668 =         values.keySet()
         try 
         {
             NativeCrypto.SSL_SESSION_free(sslSessionNativePointer);
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //NativeCrypto.SSL_SESSION_free(sslSessionNativePointer);
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class Xml {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.463 -0400", hash_original_method = "6C88D7BAFDCBAE4F23C5F1A45165C3FD", hash_generated_method = "2C6DE3496EE724680E95E9E6CED96C9B")
     public  Xml() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,7 +68,8 @@ public class Xml {
     }
 
     
-        public static XmlSerializer newSerializer() {
+        @DSModeled(DSC.SPEC)
+    public static XmlSerializer newSerializer() {
         try {
             return XmlSerializerFactory.instance.newSerializer();
         } catch (XmlPullParserException e) {
@@ -101,7 +102,7 @@ public class Xml {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.466 -0400", hash_original_method = "C9EFF15750F86CC83530A41F4DEECEE2", hash_generated_method = "C9EFF15750F86CC83530A41F4DEECEE2")
         public XmlSerializerFactory ()
         {
-            //Synthesized constructor
+            
         }
 
 

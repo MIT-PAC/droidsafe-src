@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -26,10 +26,10 @@ public class WebBackForwardList implements Cloneable, Serializable {
         mCurrentIndex = -1;
         mArray = new ArrayList<WebHistoryItem>();
         mCallbackProxy = proxy;
-        // ---------- Original Method ----------
-        //mCurrentIndex = -1;
-        //mArray = new ArrayList<WebHistoryItem>();
-        //mCallbackProxy = proxy;
+        
+        
+        
+        
     }
 
     
@@ -38,18 +38,19 @@ public class WebBackForwardList implements Cloneable, Serializable {
 WebHistoryItem var2F460A70B42FEDF7C169E372B218C579_1976468095 =         getItemAtIndex(mCurrentIndex);
         var2F460A70B42FEDF7C169E372B218C579_1976468095.addTaint(taint);
         return var2F460A70B42FEDF7C169E372B218C579_1976468095;
-        // ---------- Original Method ----------
-        //return getItemAtIndex(mCurrentIndex);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.390 -0400", hash_original_method = "2A2A2AA161DBB8DEEC2045188BE5DE03", hash_generated_method = "20BAAC25D0EBBC17CF8764B43847977B")
     public synchronized int getCurrentIndex() {
         int var11F35ED6948C3740873B941C47BA8C27_1456224441 = (mCurrentIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570781181 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1570781181;
-        // ---------- Original Method ----------
-        //return mCurrentIndex;
+        
+        
     }
 
     
@@ -61,15 +62,15 @@ WebHistoryItem var2F460A70B42FEDF7C169E372B218C579_1976468095 =         getItemA
 WebHistoryItem var540C13E9E156B687226421B24F2DF178_182309850 =             null;
             var540C13E9E156B687226421B24F2DF178_182309850.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_182309850;
-        } //End block
+        } 
 WebHistoryItem varDDBCB502A256E36ED75BFBF3E3E9916A_824329844 =         mArray.get(index);
         varDDBCB502A256E36ED75BFBF3E3E9916A_824329844.addTaint(taint);
         return varDDBCB502A256E36ED75BFBF3E3E9916A_824329844;
-        // ---------- Original Method ----------
-        //if (index < 0 || index >= getSize()) {
-            //return null;
-        //}
-        //return mArray.get(index);
+        
+        
+            
+        
+        
     }
 
     
@@ -78,26 +79,28 @@ WebHistoryItem varDDBCB502A256E36ED75BFBF3E3E9916A_824329844 =         mArray.ge
         int var09B3B0655913A7D2FE658AF63313F205_506532117 = (mArray.size());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1262273827 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1262273827;
-        // ---------- Original Method ----------
-        //return mArray.size();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.391 -0400", hash_original_method = "7F0DA21FF2FDC3954DD60BB35F4D7E5E", hash_generated_method = "FD3EA87E0200D54A51503BD7F9A0EE2C")
     synchronized void setClearPending() {
         mClearPending = true;
-        // ---------- Original Method ----------
-        //mClearPending = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:59.391 -0400", hash_original_method = "18F3D3D2A3274FA9BAB45BC52054A870", hash_generated_method = "948347FD1B39762D3CBFDA93BE6EF6FE")
     synchronized boolean getClearPending() {
         boolean var78C6471919B09528C81DBDC9ECC0E774_1401136702 = (mClearPending);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1056725353 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1056725353;
-        // ---------- Original Method ----------
-        //return mClearPending;
+        
+        
     }
 
     
@@ -112,26 +115,26 @@ WebHistoryItem varDDBCB502A256E36ED75BFBF3E3E9916A_824329844 =         mArray.ge
 for(int i = size - 1;i >= newPos;i--)
             {
                 final WebHistoryItem h = mArray.remove(i);
-            } //End block
-        } //End block
+            } 
+        } 
         mArray.add(item);
     if(mCallbackProxy != null)        
         {
             mCallbackProxy.onNewHistoryItem(item);
-        } //End block
-        // ---------- Original Method ----------
-        //++mCurrentIndex;
-        //final int size = mArray.size();
-        //final int newPos = mCurrentIndex;
-        //if (newPos != size) {
-            //for (int i = size - 1; i >= newPos; i--) {
-                //final WebHistoryItem h = mArray.remove(i);
-            //}
-        //}
-        //mArray.add(item);
-        //if (mCallbackProxy != null) {
-            //mCallbackProxy.onNewHistoryItem(item);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+                
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -142,11 +145,11 @@ for(int i = size - 1;i >= newPos;i--)
         mCurrentIndex = -1;
         nativeClose(nativeFrame);
         mClearPending = false;
-        // ---------- Original Method ----------
-        //mArray.clear();
-        //mCurrentIndex = -1;
-        //nativeClose(nativeFrame);
-        //mClearPending = false;
+        
+        
+        
+        
+        
     }
 
     
@@ -158,15 +161,15 @@ for(int i = size - 1;i >= newPos;i--)
             AssertionError varA81442E36297E737EB908877E58260E8_421130759 = new AssertionError();
             varA81442E36297E737EB908877E58260E8_421130759.addTaint(taint);
             throw varA81442E36297E737EB908877E58260E8_421130759;
-        } //End block
+        } 
         final WebHistoryItem h = mArray.remove(index);
         mCurrentIndex--;
-        // ---------- Original Method ----------
-        //if (DebugFlags.WEB_BACK_FORWARD_LIST && (index != 0)) {
-            //throw new AssertionError();
-        //}
-        //final WebHistoryItem h = mArray.remove(index);
-        //mCurrentIndex--;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -179,30 +182,30 @@ for(int i = size - 1;i >= newPos;i--)
 WebBackForwardList var792FD495AAD83D144D2F19BF9BB22987_1768176477 =             l;
             var792FD495AAD83D144D2F19BF9BB22987_1768176477.addTaint(taint);
             return var792FD495AAD83D144D2F19BF9BB22987_1768176477;
-        } //End block
+        } 
         l.mCurrentIndex = mCurrentIndex;
         int size = getSize();
         l.mArray = new ArrayList<WebHistoryItem>(size);
 for(int i = 0;i < size;i++)
         {
             l.mArray.add(mArray.get(i).clone());
-        } //End block
+        } 
 WebBackForwardList var792FD495AAD83D144D2F19BF9BB22987_1489973602 =         l;
         var792FD495AAD83D144D2F19BF9BB22987_1489973602.addTaint(taint);
         return var792FD495AAD83D144D2F19BF9BB22987_1489973602;
-        // ---------- Original Method ----------
-        //WebBackForwardList l = new WebBackForwardList(null);
-        //if (mClearPending) {
-            //l.addHistoryItem(getCurrentItem());
-            //return l;
-        //}
-        //l.mCurrentIndex = mCurrentIndex;
-        //int size = getSize();
-        //l.mArray = new ArrayList<WebHistoryItem>(size);
-        //for (int i = 0; i < size; i++) {
-            //l.mArray.add(mArray.get(i).clone());
-        //}
-        //return l;
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -212,12 +215,12 @@ WebBackForwardList var792FD495AAD83D144D2F19BF9BB22987_1489973602 =         l;
     if(mCallbackProxy != null)        
         {
             mCallbackProxy.onIndexChanged(getItemAtIndex(newIndex), newIndex);
-        } //End block
-        // ---------- Original Method ----------
-        //mCurrentIndex = newIndex;
-        //if (mCallbackProxy != null) {
-            //mCallbackProxy.onIndexChanged(getItemAtIndex(newIndex), newIndex);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     

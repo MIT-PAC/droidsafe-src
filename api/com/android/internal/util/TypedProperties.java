@@ -1,6 +1,6 @@
 package com.android.internal.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class TypedProperties extends HashMap<String, Object> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:29.957 -0400", hash_original_method = "ECB16241B0AB765E13051ACDAE33A02C", hash_generated_method = "B248ACEE9001880DCCB88F00DD01C611")
     public  TypedProperties() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -215,8 +215,8 @@ public class TypedProperties extends HashMap<String, Object> {
     public void load(Reader r) throws IOException {
         addTaint(r.getTaint());
         parse(r, this);
-        // ---------- Original Method ----------
-        //parse(r, this);
+        
+        
     }
 
     
@@ -230,16 +230,16 @@ public class TypedProperties extends HashMap<String, Object> {
 Object var540C13E9E156B687226421B24F2DF178_1468541273 =             null;
             var540C13E9E156B687226421B24F2DF178_1468541273.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1468541273;
-        } //End block
+        } 
 Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
         varAF280DA2BC37D8BE783D8499160168DE_1459184988.addTaint(taint);
         return varAF280DA2BC37D8BE783D8499160168DE_1459184988;
-        // ---------- Original Method ----------
-        //Object value = super.get(key);
-        //if (value == NULL_STRING) {
-            //return null;
-        //}
-        //return value;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -253,25 +253,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             boolean var4ED9407630EB1000C0F6B63842DEFA7D_1310237414 = (def);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1026384525 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1026384525;
-        } //End block
+        } 
     if(value instanceof Boolean)        
         {
             boolean varBC26109FD0D926BA548E7B8E99E609D9_4312216 = (((Boolean)value).booleanValue());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_865886975 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_865886975;
-        } //End block
+        } 
         TypeException var805FC76681DEDC2E36CC0BB21EC1A30E_1098188743 = new TypeException(property, value, "boolean");
         var805FC76681DEDC2E36CC0BB21EC1A30E_1098188743.addTaint(taint);
         throw var805FC76681DEDC2E36CC0BB21EC1A30E_1098188743;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Boolean) {
-            //return ((Boolean)value).booleanValue();
-        //}
-        //throw new TypeException(property, value, "boolean");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -285,25 +285,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             byte var4ED9407630EB1000C0F6B63842DEFA7D_379125462 = (def);
                         byte var40EA57D3EE3C07BF1C102B466E1C3091_1941934932 = getTaintByte();
             return var40EA57D3EE3C07BF1C102B466E1C3091_1941934932;
-        } //End block
+        } 
     if(value instanceof Byte)        
         {
             byte var35348045D56C47B658DEA945656F8AB7_1899853726 = (((Byte)value).byteValue());
                         byte var40EA57D3EE3C07BF1C102B466E1C3091_524977587 = getTaintByte();
             return var40EA57D3EE3C07BF1C102B466E1C3091_524977587;
-        } //End block
+        } 
         TypeException varFA332DAFF3AC9BC520CDDB2CC83F6468_727646304 = new TypeException(property, value, "byte");
         varFA332DAFF3AC9BC520CDDB2CC83F6468_727646304.addTaint(taint);
         throw varFA332DAFF3AC9BC520CDDB2CC83F6468_727646304;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Byte) {
-            //return ((Byte)value).byteValue();
-        //}
-        //throw new TypeException(property, value, "byte");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -317,25 +317,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             short var4ED9407630EB1000C0F6B63842DEFA7D_2143566727 = (def);
                         short var4F09DAA9D95BCB166A302407A0E0BABE_1384266092 = getTaintShort();
             return var4F09DAA9D95BCB166A302407A0E0BABE_1384266092;
-        } //End block
+        } 
     if(value instanceof Short)        
         {
             short varBC17CBC160D99E82160E3FB34D373031_332908911 = (((Short)value).shortValue());
                         short var4F09DAA9D95BCB166A302407A0E0BABE_1516739332 = getTaintShort();
             return var4F09DAA9D95BCB166A302407A0E0BABE_1516739332;
-        } //End block
+        } 
         TypeException varC16218961456E8C504AD0F5969DBBA4E_173234992 = new TypeException(property, value, "short");
         varC16218961456E8C504AD0F5969DBBA4E_173234992.addTaint(taint);
         throw varC16218961456E8C504AD0F5969DBBA4E_173234992;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Short) {
-            //return ((Short)value).shortValue();
-        //}
-        //throw new TypeException(property, value, "short");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -349,25 +349,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             int var4ED9407630EB1000C0F6B63842DEFA7D_284237089 = (def);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074263208 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1074263208;
-        } //End block
+        } 
     if(value instanceof Integer)        
         {
             int varC887A84560F2A8EFD700BC80AB572403_865067166 = (((Integer)value).intValue());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802249119 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_802249119;
-        } //End block
+        } 
         TypeException varD6080985D485A0D220638E1A1D7F8E6B_1099453733 = new TypeException(property, value, "int");
         varD6080985D485A0D220638E1A1D7F8E6B_1099453733.addTaint(taint);
         throw varD6080985D485A0D220638E1A1D7F8E6B_1099453733;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Integer) {
-            //return ((Integer)value).intValue();
-        //}
-        //throw new TypeException(property, value, "int");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -381,25 +381,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             long var4ED9407630EB1000C0F6B63842DEFA7D_179647119 = (def);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_608880805 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_608880805;
-        } //End block
+        } 
     if(value instanceof Long)        
         {
             long var6A7295A730E93D60401BA7C11CED8342_957734010 = (((Long)value).longValue());
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_487390166 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_487390166;
-        } //End block
+        } 
         TypeException var70EE1BF703E76CCF216D91244CD5D8EB_2056826536 = new TypeException(property, value, "long");
         var70EE1BF703E76CCF216D91244CD5D8EB_2056826536.addTaint(taint);
         throw var70EE1BF703E76CCF216D91244CD5D8EB_2056826536;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Long) {
-            //return ((Long)value).longValue();
-        //}
-        //throw new TypeException(property, value, "long");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -413,25 +413,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             float var4ED9407630EB1000C0F6B63842DEFA7D_1229306893 = (def);
                         float var546ADE640B6EDFBC8A086EF31347E768_1026250897 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1026250897;
-        } //End block
+        } 
     if(value instanceof Float)        
         {
             float var86A11069791AE9DD813EDB7FB244EF59_1143232504 = (((Float)value).floatValue());
                         float var546ADE640B6EDFBC8A086EF31347E768_1072443225 = getTaintFloat();
             return var546ADE640B6EDFBC8A086EF31347E768_1072443225;
-        } //End block
+        } 
         TypeException varF6F8A1C3A685815745BED356E7A54870_1764074532 = new TypeException(property, value, "float");
         varF6F8A1C3A685815745BED356E7A54870_1764074532.addTaint(taint);
         throw varF6F8A1C3A685815745BED356E7A54870_1764074532;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Float) {
-            //return ((Float)value).floatValue();
-        //}
-        //throw new TypeException(property, value, "float");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -445,25 +445,25 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
             double var4ED9407630EB1000C0F6B63842DEFA7D_586935553 = (def);
                         double varE8CD7DA078A86726031AD64F35F5A6C0_441175209 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_441175209;
-        } //End block
+        } 
     if(value instanceof Double)        
         {
             double var7B9B10BAB0658D50E2E730FEA63F2E53_403368577 = (((Double)value).doubleValue());
                         double varE8CD7DA078A86726031AD64F35F5A6C0_603614562 = getTaintDouble();
             return varE8CD7DA078A86726031AD64F35F5A6C0_603614562;
-        } //End block
+        } 
         TypeException var01C5E7F897D5B2010CD911DD5902A148_314484927 = new TypeException(property, value, "double");
         var01C5E7F897D5B2010CD911DD5902A148_314484927.addTaint(taint);
         throw var01C5E7F897D5B2010CD911DD5902A148_314484927;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value instanceof Double) {
-            //return ((Double)value).doubleValue();
-        //}
-        //throw new TypeException(property, value, "double");
+        
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -477,34 +477,34 @@ Object varAF280DA2BC37D8BE783D8499160168DE_1459184988 =         value;
 String var9EA315D7588BA8DB5A3E312497990346_221001801 =             def;
             var9EA315D7588BA8DB5A3E312497990346_221001801.addTaint(taint);
             return var9EA315D7588BA8DB5A3E312497990346_221001801;
-        } //End block
+        } 
     if(value == NULL_STRING)        
         {
 String var540C13E9E156B687226421B24F2DF178_1022692318 =             null;
             var540C13E9E156B687226421B24F2DF178_1022692318.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1022692318;
-        } //End block
+        } 
         else
     if(value instanceof String)        
         {
 String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value;
             var39E2DC4C41DC437ADA614281BF13F76E_447698670.addTaint(taint);
             return var39E2DC4C41DC437ADA614281BF13F76E_447698670;
-        } //End block
+        } 
         TypeException varF6E7BAB97C0421CD0B5E979DA1F90E27_433036969 = new TypeException(property, value, "string");
         varF6E7BAB97C0421CD0B5E979DA1F90E27_433036969.addTaint(taint);
         throw varF6E7BAB97C0421CD0B5E979DA1F90E27_433036969;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return def;
-        //}
-        //if (value == NULL_STRING) {
-            //return null;
-        //} else if (value instanceof String) {
-            //return (String)value;
-        //}
-        //throw new TypeException(property, value, "string");
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -514,8 +514,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         boolean var529988CA16C5F5802282EAD0E30C140A_932554756 = (getBoolean(property, false));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_489441126 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_489441126;
-        // ---------- Original Method ----------
-        //return getBoolean(property, false);
+        
+        
     }
 
     
@@ -525,8 +525,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         byte varC9B8276C3E1D7595B77771EE3F0087F0_147352362 = (getByte(property, (byte)0));
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_2108101505 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_2108101505;
-        // ---------- Original Method ----------
-        //return getByte(property, (byte)0);
+        
+        
     }
 
     
@@ -536,8 +536,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         short var4B052920E7CCC9197C31F3A2450C4E1C_3380518 = (getShort(property, (short)0));
                 short var4F09DAA9D95BCB166A302407A0E0BABE_163947035 = getTaintShort();
         return var4F09DAA9D95BCB166A302407A0E0BABE_163947035;
-        // ---------- Original Method ----------
-        //return getShort(property, (short)0);
+        
+        
     }
 
     
@@ -547,8 +547,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         int var86D5DBE0AC915FEAEA96C1A01E1FA9EE_114544575 = (getInt(property, 0));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_442736980 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_442736980;
-        // ---------- Original Method ----------
-        //return getInt(property, 0);
+        
+        
     }
 
     
@@ -558,8 +558,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         long varE66401AC426032A8470C9A94550AD9F3_910791570 = (getLong(property, 0L));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1939989898 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1939989898;
-        // ---------- Original Method ----------
-        //return getLong(property, 0L);
+        
+        
     }
 
     
@@ -569,8 +569,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         float var0D7442006E3760390B764A317DB2FEE7_887283120 = (getFloat(property, 0.0f));
                 float var546ADE640B6EDFBC8A086EF31347E768_1144299857 = getTaintFloat();
         return var546ADE640B6EDFBC8A086EF31347E768_1144299857;
-        // ---------- Original Method ----------
-        //return getFloat(property, 0.0f);
+        
+        
     }
 
     
@@ -580,8 +580,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
         double var2B9ADFF79C4BD15579BD19CD22C6939C_1387079151 = (getDouble(property, 0.0));
                 double varE8CD7DA078A86726031AD64F35F5A6C0_738517695 = getTaintDouble();
         return varE8CD7DA078A86726031AD64F35F5A6C0_738517695;
-        // ---------- Original Method ----------
-        //return getDouble(property, 0.0);
+        
+        
     }
 
     
@@ -591,8 +591,8 @@ String var39E2DC4C41DC437ADA614281BF13F76E_447698670 =             (String)value
 String var7A5DD373B6F6A93BF1E779B195389AB3_859114418 =         getString(property, "");
         var7A5DD373B6F6A93BF1E779B195389AB3_859114418.addTaint(taint);
         return var7A5DD373B6F6A93BF1E779B195389AB3_859114418;
-        // ---------- Original Method ----------
-        //return getString(property, "");
+        
+        
     }
 
     
@@ -605,34 +605,34 @@ String var7A5DD373B6F6A93BF1E779B195389AB3_859114418 =         getString(propert
             int varE3B52244A591230772525EE907D6F277_2093567123 = (STRING_NOT_SET);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334403873 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1334403873;
-        } //End block
+        } 
     if(value == NULL_STRING)        
         {
             int var54E9B3628DE5BAA0D9FC0A2268227499_1986688458 = (STRING_NULL);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712855096 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1712855096;
-        } //End block
+        } 
         else
     if(value instanceof String)        
         {
             int var12D656F886AA19C138EA79FB0A61AE8D_704241693 = (STRING_SET);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003361922 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1003361922;
-        } //End block
+        } 
         int varF5D0E3DA79184C510C9C08B8BA755031_807726476 = (STRING_TYPE_MISMATCH);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664078247 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_664078247;
-        // ---------- Original Method ----------
-        //Object value = super.get(property);
-        //if (value == null) {
-            //return STRING_NOT_SET;
-        //}
-        //if (value == NULL_STRING) {
-            //return STRING_NULL;
-        //} else if (value instanceof String) {
-            //return STRING_SET;
-        //}
-        //return STRING_TYPE_MISMATCH;
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -643,7 +643,7 @@ String var7A5DD373B6F6A93BF1E779B195389AB3_859114418 =         getString(propert
             super("expected " + expected + ", saw " + state.toString());
             addTaint(expected.getTaint());
             addTaint(state.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -660,7 +660,7 @@ String var7A5DD373B6F6A93BF1E779B195389AB3_859114418 =         getString(propert
             addTaint(requestedType.getTaint());
             addTaint(value.getTaint());
             addTaint(property.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         

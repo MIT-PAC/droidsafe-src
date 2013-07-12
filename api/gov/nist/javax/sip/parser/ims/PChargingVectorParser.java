@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
     public  PChargingVectorParser(String chargingVector) {
         super(chargingVector);
         addTaint(chargingVector.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,7 +27,7 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
     protected  PChargingVectorParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,13 +51,13 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
                     break;
                     this.lexer.match(';');
                     this.lexer.SPorHT();
-                } //End block
-            } //End block
+                } 
+            } 
             catch (ParseException ex)
             {
                 ex.addTaint(taint);
                 throw ex;
-            } //End block
+            } 
             super.parse(chargingVector);
     if(chargingVector.getParameter(ParameterNamesIms.ICID_VALUE) == null)            
             {
@@ -68,14 +68,14 @@ public class PChargingVectorParser extends ParametersParser implements TokenType
 SIPHeader var14792F8596B417D3663D3E76C47F07C6_1014989586 =             chargingVector;
             var14792F8596B417D3663D3E76C47F07C6_1014989586.addTaint(taint);
             return var14792F8596B417D3663D3E76C47F07C6_1014989586;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -88,22 +88,22 @@ SIPHeader var14792F8596B417D3663D3E76C47F07C6_1014989586 =             chargingV
         {
             NameValue nv = this.nameValue('=');
             chargingVector.setParameter(nv);
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("parseParameter");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("parseParameter");
-        //try {
-            //NameValue nv = this.nameValue('=');
-            //chargingVector.setParameter(nv);
-        //} finally {
-            //if (debug)
-                //dbg_leave("parseParameter");
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+        
+            
+                
+        
     }
 
     

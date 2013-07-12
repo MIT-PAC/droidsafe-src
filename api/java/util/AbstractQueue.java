@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.262 -0400", hash_original_method = "898E1AC4CE228AED7FA804DCD29D86E1", hash_generated_method = "BA28E44BB32CE28A4E02FA17DE6E4457")
     protected  AbstractQueue() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,11 +28,11 @@ public abstract class AbstractQueue<E> extends AbstractCollection<E> implements 
         varA33CF04882B88437ABCEE84817862B41_684251516.addTaint(taint);
         throw varA33CF04882B88437ABCEE84817862B41_684251516;
         }
-        // ---------- Original Method ----------
-        //if (offer(e))
-            //return true;
-        //else
-            //throw new IllegalStateException("Queue full");
+        
+        
+            
+        
+            
     }
 
     
@@ -51,12 +51,12 @@ E varEA5659DA512DECF23E6D37EE8060D074_1680548635 =         x;
         var28D00AB599969908D71F102AF992D49A_1361394719.addTaint(taint);
         throw var28D00AB599969908D71F102AF992D49A_1361394719;
         }
-        // ---------- Original Method ----------
-        //E x = poll();
-        //if (x != null)
-            //return x;
-        //else
-            //throw new NoSuchElementException();
+        
+        
+        
+            
+        
+            
     }
 
     
@@ -75,23 +75,24 @@ E varEA5659DA512DECF23E6D37EE8060D074_1529907421 =         x;
         var28D00AB599969908D71F102AF992D49A_1974619464.addTaint(taint);
         throw var28D00AB599969908D71F102AF992D49A_1974619464;
         }
-        // ---------- Original Method ----------
-        //E x = peek();
-        //if (x != null)
-            //return x;
-        //else
-            //throw new NoSuchElementException();
+        
+        
+        
+            
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.264 -0400", hash_original_method = "01DAFC6C5F0E6FF4922B6201FE3DA7B9", hash_generated_method = "80F296E9F7E3230003391D844A959F3A")
     public void clear() {
         while
 (poll() != null)        
         ;
-        // ---------- Original Method ----------
-        //while (poll() != null)
-            //;
+        
+        
+            
     }
 
     
@@ -117,16 +118,16 @@ for(E e : c)
         boolean var9AE73C65F418E6F79CEB4F0E4A4B98D5_548001205 = (modified);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_750517312 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_750517312;
-        // ---------- Original Method ----------
-        //if (c == null)
-            //throw new NullPointerException();
-        //if (c == this)
-            //throw new IllegalArgumentException();
-        //boolean modified = false;
-        //for (E e : c)
-            //if (add(e))
-                //modified = true;
-        //return modified;
+        
+        
+            
+        
+            
+        
+        
+            
+                
+        
     }
 
     

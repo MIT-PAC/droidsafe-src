@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -68,7 +68,7 @@ public class RelativeLayout extends ViewGroup {
     public  RelativeLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -78,8 +78,8 @@ public class RelativeLayout extends ViewGroup {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
         initFromAttributes(context, attrs);
-        // ---------- Original Method ----------
-        //initFromAttributes(context, attrs);
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ public class RelativeLayout extends ViewGroup {
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
         initFromAttributes(context, attrs);
-        // ---------- Original Method ----------
-        //initFromAttributes(context, attrs);
+        
+        
     }
 
     
@@ -103,31 +103,33 @@ public class RelativeLayout extends ViewGroup {
         mIgnoreGravity = a.getResourceId(R.styleable.RelativeLayout_ignoreGravity, View.NO_ID);
         mGravity = a.getInt(R.styleable.RelativeLayout_gravity, mGravity);
         a.recycle();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RelativeLayout);
-        //mIgnoreGravity = a.getResourceId(R.styleable.RelativeLayout_ignoreGravity, View.NO_ID);
-        //mGravity = a.getInt(R.styleable.RelativeLayout_gravity, mGravity);
-        //a.recycle();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.434 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "E1B51716BCE9A0C6359188D250797BE4")
     @Override
     public boolean shouldDelayChildPressedState() {
         boolean var68934A3E9455FA72420237EB05902327_19039985 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1469520244 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1469520244;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.434 -0400", hash_original_method = "4B00B99E3D4A35B389EB4D3ED9BF824A", hash_generated_method = "2B6D5ACAF56866BE8DAC45848378F798")
     @android.view.RemotableViewMethod
     public void setIgnoreGravity(int viewId) {
         mIgnoreGravity = viewId;
-        // ---------- Original Method ----------
-        //mIgnoreGravity = viewId;
+        
+        
     }
 
     
@@ -139,25 +141,25 @@ public class RelativeLayout extends ViewGroup {
     if((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0)            
             {
                 gravity |= Gravity.START;
-            } //End block
+            } 
     if((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0)            
             {
                 gravity |= Gravity.TOP;
-            } //End block
+            } 
             mGravity = gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mGravity != gravity) {
-            //if ((gravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.START;
-            //}
-            //if ((gravity & Gravity.VERTICAL_GRAVITY_MASK) == 0) {
-                //gravity |= Gravity.TOP;
-            //}
-            //mGravity = gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+            
+                
+            
+            
+                
+            
+            
+            
+        
     }
 
     
@@ -170,13 +172,13 @@ public class RelativeLayout extends ViewGroup {
         {
             mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final int gravity = horizontalGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -189,13 +191,13 @@ public class RelativeLayout extends ViewGroup {
         {
             mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
             requestLayout();
-        } //End block
-        // ---------- Original Method ----------
-        //final int gravity = verticalGravity & Gravity.VERTICAL_GRAVITY_MASK;
-        //if ((mGravity & Gravity.VERTICAL_GRAVITY_MASK) != gravity) {
-            //mGravity = (mGravity & ~Gravity.VERTICAL_GRAVITY_MASK) | gravity;
-            //requestLayout();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -205,8 +207,8 @@ public class RelativeLayout extends ViewGroup {
         int var0D37D647B8BFB516A3C7BB5F06B87282_754990584 = (mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404839039 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1404839039;
-        // ---------- Original Method ----------
-        //return mBaselineView != null ? mBaselineView.getBaseline() : super.getBaseline();
+        
+        
     }
 
     
@@ -215,9 +217,9 @@ public class RelativeLayout extends ViewGroup {
     public void requestLayout() {
         super.requestLayout();
         mDirtyHierarchy = true;
-        // ---------- Original Method ----------
-        //super.requestLayout();
-        //mDirtyHierarchy = true;
+        
+        
+        
     }
 
     
@@ -234,14 +236,14 @@ for(int i = 0;i < count;i++)
         {
             final View child = getChildAt(i);
             graph.add(child);
-        } //End block
+        } 
     if(DEBUG_GRAPH)        
         {
             d(LOG_TAG, "=== Sorted vertical children");
             graph.log(getResources(), ABOVE, BELOW, ALIGN_BASELINE, ALIGN_TOP, ALIGN_BOTTOM);
             d(LOG_TAG, "=== Sorted horizontal children");
             graph.log(getResources(), LEFT_OF, RIGHT_OF, ALIGN_LEFT, ALIGN_RIGHT);
-        } //End block
+        } 
         graph.getSortedViews(mSortedVerticalChildren, ABOVE, BELOW, ALIGN_BASELINE,
                 ALIGN_TOP, ALIGN_BOTTOM);
         graph.getSortedViews(mSortedHorizontalChildren, LEFT_OF, RIGHT_OF, ALIGN_LEFT, ALIGN_RIGHT);
@@ -251,29 +253,29 @@ for(int i = 0;i < count;i++)
 for(View view : mSortedVerticalChildren)
             {
                 DependencyGraph.printViewId(getResources(), view);
-            } //End block
+            } 
             d(LOG_TAG, "=== Ordered list of horizontal children");
 for(View view : mSortedHorizontalChildren)
             {
                 DependencyGraph.printViewId(getResources(), view);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.443 -0400", hash_original_method = "E2AF18A4E301BF9A8D0B175790671ACC", hash_generated_method = "BDEDAD25BEA0644821B0E6BC1C296147")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
     if(mDirtyHierarchy)        
         {
             mDirtyHierarchy = false;
             sortChildren();
-        } //End block
+        } 
         int myWidth = -1;
         int myHeight = -1;
         int width = 0;
@@ -285,19 +287,19 @@ for(View view : mSortedHorizontalChildren)
     if(widthMode != MeasureSpec.UNSPECIFIED)        
         {
             myWidth = widthSize;
-        } //End block
+        } 
     if(heightMode != MeasureSpec.UNSPECIFIED)        
         {
             myHeight = heightSize;
-        } //End block
+        } 
     if(widthMode == MeasureSpec.EXACTLY)        
         {
             width = myWidth;
-        } //End block
+        } 
     if(heightMode == MeasureSpec.EXACTLY)        
         {
             height = myHeight;
-        } //End block
+        } 
         mHasBaselineAlignedChild = false;
         View ignore = null;
         int gravity = mGravity & Gravity.RELATIVE_HORIZONTAL_GRAVITY_MASK;
@@ -313,7 +315,7 @@ for(View view : mSortedHorizontalChildren)
     if((horizontalGravity || verticalGravity) && mIgnoreGravity != View.NO_ID)        
         {
             ignore = findViewById(mIgnoreGravity);
-        } //End block
+        } 
         final boolean isWrapContentWidth = widthMode != MeasureSpec.EXACTLY;
         final boolean isWrapContentHeight = heightMode != MeasureSpec.EXACTLY;
         View[] views = mSortedHorizontalChildren;
@@ -329,9 +331,9 @@ for(int i = 0;i < count;i++)
     if(positionChildHorizontal(child, params, myWidth, isWrapContentWidth))                
                 {
                     offsetHorizontalAxis = true;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         views = mSortedVerticalChildren;
         count = views.length;
 for(int i = 0;i < count;i++)
@@ -345,27 +347,27 @@ for(int i = 0;i < count;i++)
     if(positionChildVertical(child, params, myHeight, isWrapContentHeight))                
                 {
                     offsetVerticalAxis = true;
-                } //End block
+                } 
     if(isWrapContentWidth)                
                 {
                     width = Math.max(width, params.mRight);
-                } //End block
+                } 
     if(isWrapContentHeight)                
                 {
                     height = Math.max(height, params.mBottom);
-                } //End block
+                } 
     if(child != ignore || verticalGravity)                
                 {
                     left = Math.min(left, params.mLeft - params.leftMargin);
                     top = Math.min(top, params.mTop - params.topMargin);
-                } //End block
+                } 
     if(child != ignore || horizontalGravity)                
                 {
                     right = Math.max(right, params.mRight + params.rightMargin);
                     bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(mHasBaselineAlignedChild)        
         {
 for(int i = 0;i < count;i++)
@@ -379,22 +381,22 @@ for(int i = 0;i < count;i++)
                     {
                         left = Math.min(left, params.mLeft - params.leftMargin);
                         top = Math.min(top, params.mTop - params.topMargin);
-                    } //End block
+                    } 
     if(child != ignore || horizontalGravity)                    
                     {
                         right = Math.max(right, params.mRight + params.rightMargin);
                         bottom = Math.max(bottom, params.mBottom + params.bottomMargin);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
     if(isWrapContentWidth)        
         {
             width += mPaddingRight;
     if(mLayoutParams.width >= 0)            
             {
                 width = Math.max(width, mLayoutParams.width);
-            } //End block
+            } 
             width = Math.max(width, getSuggestedMinimumWidth());
             width = resolveSize(width, widthMeasureSpec);
     if(offsetHorizontalAxis)            
@@ -409,25 +411,25 @@ for(int i = 0;i < count;i++)
     if(rules[CENTER_IN_PARENT] != 0 || rules[CENTER_HORIZONTAL] != 0)                        
                         {
                             centerHorizontal(child, params, width);
-                        } //End block
+                        } 
                         else
     if(rules[ALIGN_PARENT_RIGHT] != 0)                        
                         {
                             final int childWidth = child.getMeasuredWidth();
                             params.mLeft = width - mPaddingRight - childWidth;
                             params.mRight = params.mLeft + childWidth;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
     if(isWrapContentHeight)        
         {
             height += mPaddingBottom;
     if(mLayoutParams.height >= 0)            
             {
                 height = Math.max(height, mLayoutParams.height);
-            } //End block
+            } 
             height = Math.max(height, getSuggestedMinimumHeight());
             height = resolveSize(height, heightMeasureSpec);
     if(offsetVerticalAxis)            
@@ -442,18 +444,18 @@ for(int i = 0;i < count;i++)
     if(rules[CENTER_IN_PARENT] != 0 || rules[CENTER_VERTICAL] != 0)                        
                         {
                             centerVertical(child, params, height);
-                        } //End block
+                        } 
                         else
     if(rules[ALIGN_PARENT_BOTTOM] != 0)                        
                         {
                             final int childHeight = child.getMeasuredHeight();
                             params.mTop = height - mPaddingBottom - childHeight;
                             params.mBottom = params.mTop + childHeight;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
     if(horizontalGravity || verticalGravity)        
         {
             final Rect selfBounds = mSelfBounds;
@@ -477,19 +479,19 @@ for(int i = 0;i < count;i++)
                         {
                             params.mLeft += horizontalOffset;
                             params.mRight += horizontalOffset;
-                        } //End block
+                        } 
     if(verticalGravity)                        
                         {
                             params.mTop += verticalOffset;
                             params.mBottom += verticalOffset;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         setMeasuredDimension(width, height);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -508,26 +510,26 @@ for(int i = 0;i < count;i++)
     if(baseline != -1)                
                 {
                     offset -= baseline;
-                } //End block
+                } 
                 int height = params.mBottom - params.mTop;
                 params.mTop = offset;
                 params.mBottom = params.mTop + height;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mBaselineView == null)        
         {
             mBaselineView = child;
-        } //End block
+        } 
         else
         {
             LayoutParams lp = (LayoutParams) mBaselineView.getLayoutParams();
     if(params.mTop < lp.mTop || (params.mTop == lp.mTop && params.mLeft < lp.mLeft))            
             {
                 mBaselineView = child;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -548,18 +550,18 @@ for(int i = 0;i < count;i++)
                 mPaddingTop, mPaddingBottom,
                 myHeight);
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                //params.mRight, params.width,
-                //params.leftMargin, params.rightMargin,
-                //mPaddingLeft, mPaddingRight,
-                //myWidth);
-        //int childHeightMeasureSpec = getChildMeasureSpec(params.mTop,
-                //params.mBottom, params.height,
-                //params.topMargin, params.bottomMargin,
-                //mPaddingTop, mPaddingBottom,
-                //myHeight);
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+        
+        
+                
+                
+                
+                
+        
+                
+                
+                
+                
+        
     }
 
     
@@ -578,25 +580,25 @@ for(int i = 0;i < count;i++)
     if(params.width == LayoutParams.MATCH_PARENT)        
         {
             childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
-        } //End block
+        } 
         else
         {
             childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
-        } //End block
+        } 
         child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
-        // ---------- Original Method ----------
-        //int childWidthMeasureSpec = getChildMeasureSpec(params.mLeft,
-                //params.mRight, params.width,
-                //params.leftMargin, params.rightMargin,
-                //mPaddingLeft, mPaddingRight,
-                //myWidth);
-        //int childHeightMeasureSpec;
-        //if (params.width == LayoutParams.MATCH_PARENT) {
-            //childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.EXACTLY);
-        //} else {
-            //childHeightMeasureSpec = MeasureSpec.makeMeasureSpec(myHeight, MeasureSpec.AT_MOST);
-        //}
-        //child.measure(childWidthMeasureSpec, childHeightMeasureSpec);
+        
+        
+                
+                
+                
+                
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -619,17 +621,17 @@ for(int i = 0;i < count;i++)
     if(tempStart < 0)        
         {
             tempStart = startPadding + startMargin;
-        } //End block
+        } 
     if(tempEnd < 0)        
         {
             tempEnd = mySize - endPadding - endMargin;
-        } //End block
+        } 
         int maxAvailable = tempEnd - tempStart;
     if(childStart >= 0 && childEnd >= 0)        
         {
             childSpecMode = MeasureSpec.EXACTLY;
             childSpecSize = maxAvailable;
-        } //End block
+        } 
         else
         {
     if(childSize >= 0)            
@@ -638,18 +640,18 @@ for(int i = 0;i < count;i++)
     if(maxAvailable >= 0)                
                 {
                     childSpecSize = Math.min(maxAvailable, childSize);
-                } //End block
+                } 
                 else
                 {
                     childSpecSize = childSize;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(childSize == LayoutParams.MATCH_PARENT)            
             {
                 childSpecMode = MeasureSpec.EXACTLY;
                 childSpecSize = maxAvailable;
-            } //End block
+            } 
             else
     if(childSize == LayoutParams.WRAP_CONTENT)            
             {
@@ -657,19 +659,19 @@ for(int i = 0;i < count;i++)
                 {
                     childSpecMode = MeasureSpec.AT_MOST;
                     childSpecSize = maxAvailable;
-                } //End block
+                } 
                 else
                 {
                     childSpecMode = MeasureSpec.UNSPECIFIED;
                     childSpecSize = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         int var841D81673E63494EF88D4D328E538547_410106340 = (MeasureSpec.makeMeasureSpec(childSpecSize, childSpecMode));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923983785 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_923983785;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -684,12 +686,12 @@ for(int i = 0;i < count;i++)
     if(params.mLeft < 0 && params.mRight >= 0)        
         {
             params.mLeft = params.mRight - child.getMeasuredWidth();
-        } //End block
+        } 
         else
     if(params.mLeft >= 0 && params.mRight < 0)        
         {
             params.mRight = params.mLeft + child.getMeasuredWidth();
-        } //End block
+        } 
         else
     if(params.mLeft < 0 && params.mRight < 0)        
         {
@@ -698,27 +700,27 @@ for(int i = 0;i < count;i++)
     if(!wrapContent)                
                 {
                     centerHorizontal(child, params, myWidth);
-                } //End block
+                } 
                 else
                 {
                     params.mLeft = mPaddingLeft + params.leftMargin;
                     params.mRight = params.mLeft + child.getMeasuredWidth();
-                } //End block
+                } 
                 boolean varB326B5062B2F0E69046810717534CB09_397936597 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1125885845 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1125885845;
-            } //End block
+            } 
             else
             {
                 params.mLeft = mPaddingLeft + params.leftMargin;
                 params.mRight = params.mLeft + child.getMeasuredWidth();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB673573F0221FD08A4A6A5EAF380DAD9_1045853329 = (rules[ALIGN_PARENT_RIGHT] != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246118803 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246118803;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -733,12 +735,12 @@ for(int i = 0;i < count;i++)
     if(params.mTop < 0 && params.mBottom >= 0)        
         {
             params.mTop = params.mBottom - child.getMeasuredHeight();
-        } //End block
+        } 
         else
     if(params.mTop >= 0 && params.mBottom < 0)        
         {
             params.mBottom = params.mTop + child.getMeasuredHeight();
-        } //End block
+        } 
         else
     if(params.mTop < 0 && params.mBottom < 0)        
         {
@@ -747,27 +749,27 @@ for(int i = 0;i < count;i++)
     if(!wrapContent)                
                 {
                     centerVertical(child, params, myHeight);
-                } //End block
+                } 
                 else
                 {
                     params.mTop = mPaddingTop + params.topMargin;
                     params.mBottom = params.mTop + child.getMeasuredHeight();
-                } //End block
+                } 
                 boolean varB326B5062B2F0E69046810717534CB09_391185814 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1108717881 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1108717881;
-            } //End block
+            } 
             else
             {
                 params.mTop = mPaddingTop + params.topMargin;
                 params.mBottom = params.mTop + child.getMeasuredHeight();
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var3D69162D9E6E2119B4912951E56A0158_490704555 = (rules[ALIGN_PARENT_BOTTOM] != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_129062705 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_129062705;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -784,71 +786,71 @@ for(int i = 0;i < count;i++)
         {
             childParams.mRight = anchorParams.mLeft - (anchorParams.leftMargin +
                     childParams.rightMargin);
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[LEFT_OF] != 0)        
         {
     if(myWidth >= 0)            
             {
                 childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
         anchorParams = getRelatedViewParams(rules, RIGHT_OF);
     if(anchorParams != null)        
         {
             childParams.mLeft = anchorParams.mRight + (anchorParams.rightMargin +
                     childParams.leftMargin);
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[RIGHT_OF] != 0)        
         {
             childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_LEFT);
     if(anchorParams != null)        
         {
             childParams.mLeft = anchorParams.mLeft + childParams.leftMargin;
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[ALIGN_LEFT] != 0)        
         {
             childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_RIGHT);
     if(anchorParams != null)        
         {
             childParams.mRight = anchorParams.mRight - childParams.rightMargin;
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[ALIGN_RIGHT] != 0)        
         {
     if(myWidth >= 0)            
             {
                 childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(0 != rules[ALIGN_PARENT_LEFT])        
         {
             childParams.mLeft = mPaddingLeft + childParams.leftMargin;
-        } //End block
+        } 
     if(0 != rules[ALIGN_PARENT_RIGHT])        
         {
     if(myWidth >= 0)            
             {
                 childParams.mRight = myWidth - mPaddingRight - childParams.rightMargin;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -865,75 +867,75 @@ for(int i = 0;i < count;i++)
         {
             childParams.mBottom = anchorParams.mTop - (anchorParams.topMargin +
                     childParams.bottomMargin);
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[ABOVE] != 0)        
         {
     if(myHeight >= 0)            
             {
                 childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
         anchorParams = getRelatedViewParams(rules, BELOW);
     if(anchorParams != null)        
         {
             childParams.mTop = anchorParams.mBottom + (anchorParams.bottomMargin +
                     childParams.topMargin);
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[BELOW] != 0)        
         {
             childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_TOP);
     if(anchorParams != null)        
         {
             childParams.mTop = anchorParams.mTop + childParams.topMargin;
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[ALIGN_TOP] != 0)        
         {
             childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
+        } 
         anchorParams = getRelatedViewParams(rules, ALIGN_BOTTOM);
     if(anchorParams != null)        
         {
             childParams.mBottom = anchorParams.mBottom - childParams.bottomMargin;
-        } //End block
+        } 
         else
     if(childParams.alignWithParent && rules[ALIGN_BOTTOM] != 0)        
         {
     if(myHeight >= 0)            
             {
                 childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(0 != rules[ALIGN_PARENT_TOP])        
         {
             childParams.mTop = mPaddingTop + childParams.topMargin;
-        } //End block
+        } 
     if(0 != rules[ALIGN_PARENT_BOTTOM])        
         {
     if(myHeight >= 0)            
             {
                 childParams.mBottom = myHeight - mPaddingBottom - childParams.bottomMargin;
-            } //End block
+            } 
             else
             {
-            } //End block
-        } //End block
+            } 
+        } 
     if(rules[ALIGN_BASELINE] != 0)        
         {
             mHasBaselineAlignedChild = true;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -964,29 +966,29 @@ View var540C13E9E156B687226421B24F2DF178_1645240794 =                 null;
                 return var540C13E9E156B687226421B24F2DF178_1645240794;
                 }
                 v = node.view;
-            } //End block
+            } 
 View var6DC76BC51820DD65E8396280E884AA78_1231029964 =             v;
             var6DC76BC51820DD65E8396280E884AA78_1231029964.addTaint(taint);
             return var6DC76BC51820DD65E8396280E884AA78_1231029964;
-        } //End block
+        } 
 View var540C13E9E156B687226421B24F2DF178_101883535 =         null;
         var540C13E9E156B687226421B24F2DF178_101883535.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_101883535;
-        // ---------- Original Method ----------
-        //int id = rules[relation];
-        //if (id != 0) {
-            //DependencyGraph.Node node = mGraph.mKeyNodes.get(id);
-            //if (node == null) return null;
-            //View v = node.view;
-            //while (v.getVisibility() == View.GONE) {
-                //rules = ((LayoutParams) v.getLayoutParams()).getRules();
-                //node = mGraph.mKeyNodes.get((rules[relation]));
-                //if (node == null) return null;
-                //v = node.view;
-            //}
-            //return v;
-        //}
-        //return null;
+        
+        
+        
+            
+            
+            
+            
+                
+                
+                
+                
+            
+            
+        
+        
     }
 
     
@@ -1003,20 +1005,20 @@ View var540C13E9E156B687226421B24F2DF178_101883535 =         null;
 LayoutParams var4F75FEDE55B6B9296B3E4730B56C07FA_570449750 =                 (LayoutParams) v.getLayoutParams();
                 var4F75FEDE55B6B9296B3E4730B56C07FA_570449750.addTaint(taint);
                 return var4F75FEDE55B6B9296B3E4730B56C07FA_570449750;
-            } //End block
-        } //End block
+            } 
+        } 
 LayoutParams var540C13E9E156B687226421B24F2DF178_610251376 =         null;
         var540C13E9E156B687226421B24F2DF178_610251376.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_610251376;
-        // ---------- Original Method ----------
-        //View v = getRelatedView(rules, relation);
-        //if (v != null) {
-            //ViewGroup.LayoutParams params = v.getLayoutParams();
-            //if (params instanceof LayoutParams) {
-                //return (LayoutParams) v.getLayoutParams();
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -1030,16 +1032,16 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_610251376 =         null;
             int var7FCFEB6AAC114A346B332FBF5A437229_1285830091 = (v.getBaseline());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798251711 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_798251711;
-        } //End block
+        } 
         int var6BB61E3B7BCE0931DA574D19D1D82C88_248668850 = (-1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_267872581 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_267872581;
-        // ---------- Original Method ----------
-        //View v = getRelatedView(rules, relation);
-        //if (v != null) {
-            //return v.getBaseline();
-        //}
-        //return -1;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1052,11 +1054,11 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_610251376 =         null;
         int left = (myWidth - childWidth) / 2;
         params.mLeft = left;
         params.mRight = left + childWidth;
-        // ---------- Original Method ----------
-        //int childWidth = child.getMeasuredWidth();
-        //int left = (myWidth - childWidth) / 2;
-        //params.mLeft = left;
-        //params.mRight = left + childWidth;
+        
+        
+        
+        
+        
     }
 
     
@@ -1069,18 +1071,18 @@ LayoutParams var540C13E9E156B687226421B24F2DF178_610251376 =         null;
         int top = (myHeight - childHeight) / 2;
         params.mTop = top;
         params.mBottom = top + childHeight;
-        // ---------- Original Method ----------
-        //int childHeight = child.getMeasuredHeight();
-        //int top = (myHeight - childHeight) / 2;
-        //params.mTop = top;
-        //params.mBottom = top + childHeight;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.464 -0400", hash_original_method = "05FEBBF616C51C2D421358B4A05D22CE", hash_generated_method = "C37C4D4DC4149051ED8D1DDED4A9A0A7")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -1094,18 +1096,18 @@ for(int i = 0;i < count;i++)
             {
                 RelativeLayout.LayoutParams st = (RelativeLayout.LayoutParams) child.getLayoutParams();
                 child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() != GONE) {
-                //RelativeLayout.LayoutParams st =
-                        //(RelativeLayout.LayoutParams) child.getLayoutParams();
-                //child.layout(st.mLeft, st.mTop, st.mRight, st.mBottom);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                        
+                
+            
+        
     }
 
     
@@ -1116,8 +1118,8 @@ for(int i = 0;i < count;i++)
 LayoutParams varE51DEBDDE107B67850345280552397D8_1749913811 =         new RelativeLayout.LayoutParams(getContext(), attrs);
         varE51DEBDDE107B67850345280552397D8_1749913811.addTaint(taint);
         return varE51DEBDDE107B67850345280552397D8_1749913811;
-        // ---------- Original Method ----------
-        //return new RelativeLayout.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
@@ -1127,11 +1129,12 @@ LayoutParams varE51DEBDDE107B67850345280552397D8_1749913811 =         new Relati
 ViewGroup.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_665959576 =         new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
         var65BA47367D3E2EC837A3E887EEE5A3B3_665959576.addTaint(taint);
         return var65BA47367D3E2EC837A3E887EEE5A3B3_665959576;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.465 -0400", hash_original_method = "7AAD3A1C062434D08215151012F2CF47", hash_generated_method = "CA3D604DFCEB69F897D36EF34E3DC6C3")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -1139,8 +1142,8 @@ ViewGroup.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_665959576 =         n
         boolean varED9D922FA4FD692BC43C4F5784245E8A_2093321595 = (p instanceof RelativeLayout.LayoutParams);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2104607791 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2104607791;
-        // ---------- Original Method ----------
-        //return p instanceof RelativeLayout.LayoutParams;
+        
+        
     }
 
     
@@ -1151,8 +1154,8 @@ ViewGroup.LayoutParams var65BA47367D3E2EC837A3E887EEE5A3B3_665959576 =         n
 ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1047573722 =         new LayoutParams(p);
         varB945D213E5036F8DDF9B40811234DF64_1047573722.addTaint(taint);
         return varB945D213E5036F8DDF9B40811234DF64_1047573722;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
@@ -1163,11 +1166,11 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1047573722 =         
     if(mTopToBottomLeftToRightSet == null)        
         {
             mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
-        } //End block
+        } 
 for(int i = 0, count = getChildCount();i < count;i++)
         {
             mTopToBottomLeftToRightSet.add(getChildAt(i));
-        } //End block
+        } 
 for(View view : mTopToBottomLeftToRightSet)
         {
     if(view.getVisibility() == View.VISIBLE
@@ -1177,28 +1180,28 @@ for(View view : mTopToBottomLeftToRightSet)
                 boolean varB326B5062B2F0E69046810717534CB09_830745177 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1889304630 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1889304630;
-            } //End block
-        } //End block
+            } 
+        } 
         mTopToBottomLeftToRightSet.clear();
         boolean var68934A3E9455FA72420237EB05902327_2118240298 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1450872301 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1450872301;
-        // ---------- Original Method ----------
-        //if (mTopToBottomLeftToRightSet == null) {
-            //mTopToBottomLeftToRightSet = new TreeSet<View>(new TopToBottomLeftToRightComparator());
-        //}
-        //for (int i = 0, count = getChildCount(); i < count; i++) {
-            //mTopToBottomLeftToRightSet.add(getChildAt(i));
-        //}
-        //for (View view : mTopToBottomLeftToRightSet) {
-            //if (view.getVisibility() == View.VISIBLE
-                    //&& view.dispatchPopulateAccessibilityEvent(event)) {
-                //mTopToBottomLeftToRightSet.clear();
-                //return true;
-            //}
-        //}
-        //mTopToBottomLeftToRightSet.clear();
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+                    
+                
+                
+            
+        
+        
+        
     }
 
     
@@ -1207,7 +1210,7 @@ for(View view : mTopToBottomLeftToRightSet)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.466 -0400", hash_original_method = "32220C1DAB888BE59E67ED1F2F5003D8", hash_generated_method = "32220C1DAB888BE59E67ED1F2F5003D8")
         public TopToBottomLeftToRightComparator ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1221,49 +1224,49 @@ for(View view : mTopToBottomLeftToRightSet)
                 int var52339E5B13F6409E1601B19630C31099_1727667971 = (topDifference);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_833012190 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_833012190;
-            } //End block
+            } 
             int leftDifference = first.getLeft() - second.getLeft();
     if(leftDifference != 0)            
             {
                 int varE2DF44AD014175AB04B6953418D21658_1836216626 = (leftDifference);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1288408669 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1288408669;
-            } //End block
+            } 
             int heightDiference = first.getHeight() - second.getHeight();
     if(heightDiference != 0)            
             {
                 int var172A2AAD27F156A9E1E968C6D3E450F2_2116811429 = (heightDiference);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42063395 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_42063395;
-            } //End block
+            } 
             int widthDiference = first.getWidth() - second.getWidth();
     if(widthDiference != 0)            
             {
                 int var3A93EFFEA3BE861302CB37CF192F6AAB_906523337 = (widthDiference);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240681812 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_240681812;
-            } //End block
+            } 
             int varCFCD208495D565EF66E7DFF9F98764DA_1741747544 = (0);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353883862 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1353883862;
-            // ---------- Original Method ----------
-            //int topDifference = first.getTop() - second.getTop();
-            //if (topDifference != 0) {
-                //return topDifference;
-            //}
-            //int leftDifference = first.getLeft() - second.getLeft();
-            //if (leftDifference != 0) {
-                //return leftDifference;
-            //}
-            //int heightDiference = first.getHeight() - second.getHeight();
-            //if (heightDiference != 0) {
-                //return heightDiference;
-            //}
-            //int widthDiference = first.getWidth() - second.getWidth();
-            //if (widthDiference != 0) {
-                //return widthDiference;
-            //}
-            //return 0;
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1376,10 +1379,10 @@ switch(attr){
                 rules[CENTER_VERTICAL] = a.getBoolean(attr, false) ? TRUE : 0;
                 break;
 }
-            } //End block
+            } 
             a.recycle();
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1388,7 +1391,7 @@ switch(attr){
             super(w, h);
             addTaint(h);
             addTaint(w);
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1396,7 +1399,7 @@ switch(attr){
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1404,7 +1407,7 @@ switch(attr){
         public  LayoutParams(ViewGroup.MarginLayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1416,35 +1419,38 @@ String var415ADF52E55102ED4321EF30FF1080EF_1780992422 =             output + "Vi
                     ", height=" + sizeToString(height) + " }";
             var415ADF52E55102ED4321EF30FF1080EF_1780992422.addTaint(taint);
             return var415ADF52E55102ED4321EF30FF1080EF_1780992422;
-            // ---------- Original Method ----------
-            //return output + "ViewGroup.LayoutParams={ width=" + sizeToString(width) +
-                    //", height=" + sizeToString(height) + " }";
+            
+            
+                    
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.471 -0400", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "93452E0A48B7041D6E93F6CB23E7C08D")
         public void addRule(int verb) {
             mRules[verb] = TRUE;
-            // ---------- Original Method ----------
-            //mRules[verb] = TRUE;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.471 -0400", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "15C34D41A65E9FA80EF1B69E592566CD")
         public void addRule(int verb, int anchor) {
             mRules[verb] = anchor;
-            // ---------- Original Method ----------
-            //mRules[verb] = anchor;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.472 -0400", hash_original_method = "42AF2398E9BA5CDF378E196E0674D4AF", hash_generated_method = "1144BB59F681DC26E78E734CAFDFADB5")
         public int[] getRules() {
             int[] varE219E87C8357C550D274AF6AD77D1221_491619492 = (mRules);
                         int[] varB4CCCA26F9DB9189C32F33E82D425CFB_719749813 = {getTaintInt()};
             return varB4CCCA26F9DB9189C32F33E82D425CFB_719749813;
-            // ---------- Original Method ----------
-            //return mRules;
+            
+            
         }
 
         
@@ -1466,7 +1472,7 @@ String var415ADF52E55102ED4321EF30FF1080EF_1780992422 =             output + "Vi
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.472 -0400", hash_original_method = "970FB9BC48F419CD4D1512AB366BD03A", hash_generated_method = "970FB9BC48F419CD4D1512AB366BD03A")
         public DependencyGraph ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1477,19 +1483,19 @@ String var415ADF52E55102ED4321EF30FF1080EF_1780992422 =             output + "Vi
 for(int i = 0;i < count;i++)
             {
                 nodes.get(i).release();
-            } //End block
+            } 
             nodes.clear();
             mKeyNodes.clear();
             mRoots.clear();
-            // ---------- Original Method ----------
-            //final ArrayList<Node> nodes = mNodes;
-            //final int count = nodes.size();
-            //for (int i = 0; i < count; i++) {
-                //nodes.get(i).release();
-            //}
-            //nodes.clear();
-            //mKeyNodes.clear();
-            //mRoots.clear();
+            
+            
+            
+            
+                
+            
+            
+            
+            
         }
 
         
@@ -1501,15 +1507,15 @@ for(int i = 0;i < count;i++)
     if(id != View.NO_ID)            
             {
                 mKeyNodes.put(id, node);
-            } //End block
+            } 
             mNodes.add(node);
-            // ---------- Original Method ----------
-            //final int id = view.getId();
-            //final Node node = Node.acquire(view);
-            //if (id != View.NO_ID) {
-                //mKeyNodes.put(id, node);
-            //}
-            //mNodes.add(node);
+            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1534,18 +1540,18 @@ for(Node dependent : dependents)
     if(dependencies.size() == 0)                    
                     {
                         roots.add(dependent);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(index < sorted.length)            
             {
                 IllegalStateException var04C5B0489467B0FD718C74CE5A26A97E_403807882 = new IllegalStateException("Circular dependencies cannot exist"
                         + " in RelativeLayout");
                 var04C5B0489467B0FD718C74CE5A26A97E_403807882.addTaint(taint);
                 throw var04C5B0489467B0FD718C74CE5A26A97E_403807882;
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1560,7 +1566,7 @@ for(int i = 0;i < count;i++)
                 final Node node = nodes.get(i);
                 node.dependents.clear();
                 node.dependencies.clear();
-            } //End block
+            } 
 for(int i = 0;i < count;i++)
             {
                 final Node node = nodes.get(i);
@@ -1576,12 +1582,12 @@ for(int j = 0;j < rulesCount;j++)
     if(dependency == null || dependency == node)                        
                         {
                             continue;
-                        } //End block
+                        } 
                         dependency.dependents.add(node);
                         node.dependencies.put(rule, dependency);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             final LinkedList<Node> roots = mRoots;
             roots.clear();
 for(int i = 0;i < count;i++)
@@ -1589,12 +1595,12 @@ for(int i = 0;i < count;i++)
                 final Node node = nodes.get(i);
     if(node.dependencies.size() == 0)                
                 roots.add(node);
-            } //End block
+            } 
 LinkedList<Node> var907D3440FEE061C7C9FFFCA83FCE83DE_730098152 =             roots;
             var907D3440FEE061C7C9FFFCA83FCE83DE_730098152.addTaint(taint);
             return var907D3440FEE061C7C9FFFCA83FCE83DE_730098152;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -1606,12 +1612,12 @@ LinkedList<Node> var907D3440FEE061C7C9FFFCA83FCE83DE_730098152 =             roo
 for(Node node : roots)
             {
                 printNode(resources, node);
-            } //End block
-            // ---------- Original Method ----------
-            //final LinkedList<Node> roots = findRoots(rules);
-            //for (Node node : roots) {
-                //printNode(resources, node);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -1680,43 +1686,47 @@ for(Node node : roots)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "4AE6680246A461A411C2DCFC3E5C235E", hash_generated_method = "4AE6680246A461A411C2DCFC3E5C235E")
             public Node ()
             {
-                //Synthesized constructor
+                
             }
 
 
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "A08BF9EBBE4B2747346D150314791002", hash_generated_method = "2FE07B58E0CD5DBB314046E4692100A0")
             public void setNextPoolable(Node element) {
                 mNext = element;
-                // ---------- Original Method ----------
-                //mNext = element;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "3B74D9DA1E659E0940912A17ED2BA31C", hash_generated_method = "C5E4CF79F8CE0E6F6D796878FDAEEDAC")
             public Node getNextPoolable() {
 Node varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520 =                 mNext;
                 varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520.addTaint(taint);
                 return varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520;
-                // ---------- Original Method ----------
-                //return mNext;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.478 -0400", hash_original_method = "4CB4F04617162A1F2BEBBAC63163A5FB", hash_generated_method = "E60D2BFBDF1CCA9957CACBE594B83140")
             public boolean isPooled() {
                 boolean var224D05F4261498DA1D9DF38424832532_1218349950 = (mIsPooled);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_740972531 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_740972531;
-                // ---------- Original Method ----------
-                //return mIsPooled;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.479 -0400", hash_original_method = "CCE0492C3FBB65D8A1644633FE9AA3DF", hash_generated_method = "31CEC37D69D770078DC2E4A0F4797B2A")
             public void setPooled(boolean isPooled) {
                 mIsPooled = isPooled;
-                // ---------- Original Method ----------
-                //mIsPooled = isPooled;
+                
+                
             }
 
             
@@ -1733,11 +1743,11 @@ Node varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520 =                 mNext;
                 dependents.clear();
                 dependencies.clear();
                 sPool.release(this);
-                // ---------- Original Method ----------
-                //view = null;
-                //dependents.clear();
-                //dependencies.clear();
-                //sPool.release(this);
+                
+                
+                
+                
+                
             }
 
             
@@ -1759,15 +1769,15 @@ Node varA29C6A1F0F29A0F3732076BE541D5DCD_1000718520 =                 mNext;
                         }
                     }, POOL_LIMIT)
             );
-            // orphaned legacy method
+            
             public void onReleased(Node element) {
                         }
             
-            // orphaned legacy method
+            
             public void onAcquired(Node element) {
                         }
             
-            // orphaned legacy method
+            
             public Node newInstance() {
                             return new Node();
                         }

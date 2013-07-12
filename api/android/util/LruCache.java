@@ -1,6 +1,6 @@
 package android.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -40,15 +40,15 @@ public class LruCache<K, V> {
             IllegalArgumentException var4544452255288BB771A9A259F8205DC3_710587320 = new IllegalArgumentException("maxSize <= 0");
             var4544452255288BB771A9A259F8205DC3_710587320.addTaint(taint);
             throw var4544452255288BB771A9A259F8205DC3_710587320;
-        } //End block
+        } 
         this.maxSize = maxSize;
         this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
-        // ---------- Original Method ----------
-        //if (maxSize <= 0) {
-            //throw new IllegalArgumentException("maxSize <= 0");
-        //}
-        //this.maxSize = maxSize;
-        //this.map = new LinkedHashMap<K, V>(0, 0.75f, true);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -59,7 +59,7 @@ public class LruCache<K, V> {
             NullPointerException var3408376C603A4BD36F703BF88588B8F4_603351582 = new NullPointerException("key == null");
             var3408376C603A4BD36F703BF88588B8F4_603351582.addTaint(taint);
             throw var3408376C603A4BD36F703BF88588B8F4_603351582;
-        } //End block
+        } 
         V mapValue;
         synchronized
 (this)        {
@@ -70,16 +70,16 @@ public class LruCache<K, V> {
 V varF8515BBCD094CE53DC4052C62BA3144D_897827886 =                 mapValue;
                 varF8515BBCD094CE53DC4052C62BA3144D_897827886.addTaint(taint);
                 return varF8515BBCD094CE53DC4052C62BA3144D_897827886;
-            } //End block
+            } 
             missCount++;
-        } //End block
+        } 
         V createdValue = create(key);
     if(createdValue == null)        
         {
 V var540C13E9E156B687226421B24F2DF178_1237457365 =             null;
             var540C13E9E156B687226421B24F2DF178_1237457365.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_1237457365;
-        } //End block
+        } 
         synchronized
 (this)        {
             createCount++;
@@ -87,28 +87,28 @@ V var540C13E9E156B687226421B24F2DF178_1237457365 =             null;
     if(mapValue != null)            
             {
                 map.put(key, mapValue);
-            } //End block
+            } 
             else
             {
                 size += safeSizeOf(key, createdValue);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mapValue != null)        
         {
             entryRemoved(false, key, createdValue, mapValue);
 V varF8515BBCD094CE53DC4052C62BA3144D_56664333 =             mapValue;
             varF8515BBCD094CE53DC4052C62BA3144D_56664333.addTaint(taint);
             return varF8515BBCD094CE53DC4052C62BA3144D_56664333;
-        } //End block
+        } 
         else
         {
             trimToSize(maxSize);
 V var887CC428FAE3E4113D67DDB6E0274549_759264550 =             createdValue;
             var887CC428FAE3E4113D67DDB6E0274549_759264550.addTaint(taint);
             return var887CC428FAE3E4113D67DDB6E0274549_759264550;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -119,7 +119,7 @@ V var887CC428FAE3E4113D67DDB6E0274549_759264550 =             createdValue;
             NullPointerException var1CDCE0A2CFC6A318D6FC14D56E7A9AFD_549541966 = new NullPointerException("key == null || value == null");
             var1CDCE0A2CFC6A318D6FC14D56E7A9AFD_549541966.addTaint(taint);
             throw var1CDCE0A2CFC6A318D6FC14D56E7A9AFD_549541966;
-        } //End block
+        } 
         V previous;
         synchronized
 (this)        {
@@ -129,34 +129,34 @@ V var887CC428FAE3E4113D67DDB6E0274549_759264550 =             createdValue;
     if(previous != null)            
             {
                 size -= safeSizeOf(key, previous);
-            } //End block
-        } //End block
+            } 
+        } 
     if(previous != null)        
         {
             entryRemoved(false, key, previous, value);
-        } //End block
+        } 
         trimToSize(maxSize);
 V varAE805301EF6917CE0CF0EF15720ADBE0_635316358 =         previous;
         varAE805301EF6917CE0CF0EF15720ADBE0_635316358.addTaint(taint);
         return varAE805301EF6917CE0CF0EF15720ADBE0_635316358;
-        // ---------- Original Method ----------
-        //if (key == null || value == null) {
-            //throw new NullPointerException("key == null || value == null");
-        //}
-        //V previous;
-        //synchronized (this) {
-            //putCount++;
-            //size += safeSizeOf(key, value);
-            //previous = map.put(key, value);
-            //if (previous != null) {
-                //size -= safeSizeOf(key, previous);
-            //}
-        //}
-        //if (previous != null) {
-            //entryRemoved(false, key, previous, value);
-        //}
-        //trimToSize(maxSize);
-        //return previous;
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+                
+            
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -176,26 +176,26 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_635316358 =         previous;
                             + ".sizeOf() is reporting inconsistent results!");
                     varEFA1EB63E20171257D59ACAB759ACF03_1407143480.addTaint(taint);
                     throw varEFA1EB63E20171257D59ACAB759ACF03_1407143480;
-                } //End block
+                } 
     if(size <= maxSize)                
                 {
                     break;
-                } //End block
+                } 
                 Map.Entry<K, V> toEvict = map.eldest();
     if(toEvict == null)                
                 {
                     break;
-                } //End block
+                } 
                 key = toEvict.getKey();
                 value = toEvict.getValue();
                 map.remove(key);
                 size -= safeSizeOf(key, value);
                 evictionCount++;
-            } //End block
+            } 
             entryRemoved(true, key, value, null);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -206,7 +206,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_635316358 =         previous;
             NullPointerException var3408376C603A4BD36F703BF88588B8F4_353394399 = new NullPointerException("key == null");
             var3408376C603A4BD36F703BF88588B8F4_353394399.addTaint(taint);
             throw var3408376C603A4BD36F703BF88588B8F4_353394399;
-        } //End block
+        } 
         V previous;
         synchronized
 (this)        {
@@ -214,30 +214,30 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_635316358 =         previous;
     if(previous != null)            
             {
                 size -= safeSizeOf(key, previous);
-            } //End block
-        } //End block
+            } 
+        } 
     if(previous != null)        
         {
             entryRemoved(false, key, previous, null);
-        } //End block
+        } 
 V varAE805301EF6917CE0CF0EF15720ADBE0_1031920708 =         previous;
         varAE805301EF6917CE0CF0EF15720ADBE0_1031920708.addTaint(taint);
         return varAE805301EF6917CE0CF0EF15720ADBE0_1031920708;
-        // ---------- Original Method ----------
-        //if (key == null) {
-            //throw new NullPointerException("key == null");
-        //}
-        //V previous;
-        //synchronized (this) {
-            //previous = map.remove(key);
-            //if (previous != null) {
-                //size -= safeSizeOf(key, previous);
-            //}
-        //}
-        //if (previous != null) {
-            //entryRemoved(false, key, previous, null);
-        //}
-        //return previous;
+        
+        
+            
+        
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -247,7 +247,7 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_1031920708 =         previous;
         addTaint(oldValue.getTaint());
         addTaint(key.getTaint());
         addTaint(evicted);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -257,8 +257,8 @@ V varAE805301EF6917CE0CF0EF15720ADBE0_1031920708 =         previous;
 V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         var540C13E9E156B687226421B24F2DF178_596008758.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_596008758;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -272,16 +272,16 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
             IllegalStateException var5797A9243A08E8E95BAA5059E55485D6_302800489 = new IllegalStateException("Negative size: " + key + "=" + value);
             var5797A9243A08E8E95BAA5059E55485D6_302800489.addTaint(taint);
             throw var5797A9243A08E8E95BAA5059E55485D6_302800489;
-        } //End block
+        } 
         int varB4A88417B3D0170D754C647C30B7216A_1699981396 = (result);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_586474202 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_586474202;
-        // ---------- Original Method ----------
-        //int result = sizeOf(key, value);
-        //if (result < 0) {
-            //throw new IllegalStateException("Negative size: " + key + "=" + value);
-        //}
-        //return result;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -292,16 +292,16 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int varC4CA4238A0B923820DCC509A6F75849B_477216717 = (1);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608487326 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1608487326;
-        // ---------- Original Method ----------
-        //return 1;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:48.047 -0400", hash_original_method = "D3EB145ED9D558FDF887F10175D8EBDF", hash_generated_method = "6852E1E415BA1B80059D4CFD58DC38F6")
     public final void evictAll() {
         trimToSize(-1);
-        // ---------- Original Method ----------
-        //trimToSize(-1);
+        
+        
     }
 
     
@@ -310,8 +310,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int varF7BD60B75B29D79B660A2859395C1A24_1194172121 = (size);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_138071787 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_138071787;
-        // ---------- Original Method ----------
-        //return size;
+        
+        
     }
 
     
@@ -320,8 +320,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int varB78E1120B12ABD7215D67324FE9476FF_807097426 = (maxSize);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085453067 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085453067;
-        // ---------- Original Method ----------
-        //return maxSize;
+        
+        
     }
 
     
@@ -330,8 +330,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int var5BBBCEBEEA805F9664B2979FBACE5699_468699841 = (hitCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225472163 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1225472163;
-        // ---------- Original Method ----------
-        //return hitCount;
+        
+        
     }
 
     
@@ -340,8 +340,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int var698B6BDB01E0C702797DD865E1B3FBBB_226052795 = (missCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_69461427 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_69461427;
-        // ---------- Original Method ----------
-        //return missCount;
+        
+        
     }
 
     
@@ -350,8 +350,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int var1EFE30A68A1999763186AA8A0FF431E2_1371575437 = (createCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_910072029 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_910072029;
-        // ---------- Original Method ----------
-        //return createCount;
+        
+        
     }
 
     
@@ -360,8 +360,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int varB5E773FF0DAA7AF2D35B09A2ACE97C38_176384242 = (putCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723388356 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1723388356;
-        // ---------- Original Method ----------
-        //return putCount;
+        
+        
     }
 
     
@@ -370,8 +370,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
         int var3E1471C5E3C695ABC459C18E113BDF6F_473334767 = (evictionCount);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029295677 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1029295677;
-        // ---------- Original Method ----------
-        //return evictionCount;
+        
+        
     }
 
     
@@ -380,8 +380,8 @@ V var540C13E9E156B687226421B24F2DF178_596008758 =         null;
 Map<K, V> var7CBA52F3D0FF67B0A6C8182187BA636E_89212500 =         new LinkedHashMap<K, V>(map);
         var7CBA52F3D0FF67B0A6C8182187BA636E_89212500.addTaint(taint);
         return var7CBA52F3D0FF67B0A6C8182187BA636E_89212500;
-        // ---------- Original Method ----------
-        //return new LinkedHashMap<K, V>(map);
+        
+        
     }
 
     
@@ -394,11 +394,11 @@ String var3613CB17148F5894DE67CC8125058E08_1685605264 =         String.format("L
                 maxSize, hitCount, missCount, hitPercent);
         var3613CB17148F5894DE67CC8125058E08_1685605264.addTaint(taint);
         return var3613CB17148F5894DE67CC8125058E08_1685605264;
-        // ---------- Original Method ----------
-        //int accesses = hitCount + missCount;
-        //int hitPercent = accesses != 0 ? (100 * hitCount / accesses) : 0;
-        //return String.format("LruCache[maxSize=%d,hits=%d,misses=%d,hitRate=%d%%]",
-                //maxSize, hitCount, missCount, hitPercent);
+        
+        
+        
+        
+                
     }
 
     

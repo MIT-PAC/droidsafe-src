@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1.sec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class AbsoluteLayout extends ViewGroup {
     public  AbsoluteLayout(Context context) {
         super(context);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class AbsoluteLayout extends ViewGroup {
         super(context, attrs);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,14 +37,14 @@ public class AbsoluteLayout extends ViewGroup {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.759 -0400", hash_original_method = "54761EA789A74CBDB221271FE56469B7", hash_generated_method = "F4756D8833F9797720DED6E768F6D696")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         int count = getChildCount();
@@ -63,16 +63,16 @@ for(int i = 0;i < count;i++)
                 childBottom = lp.y + child.getMeasuredHeight();
                 maxWidth = Math.max(maxWidth, childRight);
                 maxHeight = Math.max(maxHeight, childBottom);
-            } //End block
-        } //End block
+            } 
+        } 
         maxWidth += mPaddingLeft + mPaddingRight;
         maxHeight += mPaddingTop + mPaddingBottom;
         maxHeight = Math.max(maxHeight, getSuggestedMinimumHeight());
         maxWidth = Math.max(maxWidth, getSuggestedMinimumWidth());
         setMeasuredDimension(resolveSizeAndState(maxWidth, widthMeasureSpec, 0),
                 resolveSizeAndState(maxHeight, heightMeasureSpec, 0));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -82,8 +82,8 @@ for(int i = 0;i < count;i++)
 ViewGroup.LayoutParams varE0F391842319CCFCCDBAE9E91F4C08B4_1855623585 =         new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0, 0);
         varE0F391842319CCFCCDBAE9E91F4C08B4_1855623585.addTaint(taint);
         return varE0F391842319CCFCCDBAE9E91F4C08B4_1855623585;
-        // ---------- Original Method ----------
-        //return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0, 0);
+        
+        
     }
 
     
@@ -91,7 +91,7 @@ ViewGroup.LayoutParams varE0F391842319CCFCCDBAE9E91F4C08B4_1855623585 =         
     @Override
     protected void onLayout(boolean changed, int l, int t,
             int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -109,22 +109,22 @@ for(int i = 0;i < count;i++)
                 child.layout(childLeft, childTop,
                         childLeft + child.getMeasuredWidth(),
                         childTop + child.getMeasuredHeight());
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int count = getChildCount();
-        //for (int i = 0; i < count; i++) {
-            //View child = getChildAt(i);
-            //if (child.getVisibility() != GONE) {
-                //AbsoluteLayout.LayoutParams lp =
-                        //(AbsoluteLayout.LayoutParams) child.getLayoutParams();
-                //int childLeft = mPaddingLeft + lp.x;
-                //int childTop = mPaddingTop + lp.y;
-                //child.layout(childLeft, childTop,
-                        //childLeft + child.getMeasuredWidth(),
-                        //childTop + child.getMeasuredHeight());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+                        
+                
+                
+                
+                        
+                        
+            
+        
     }
 
     
@@ -135,11 +135,12 @@ for(int i = 0;i < count;i++)
 ViewGroup.LayoutParams varA9C1E0D45A20413F2EC8A49EDAEEEDFF_1224172833 =         new AbsoluteLayout.LayoutParams(getContext(), attrs);
         varA9C1E0D45A20413F2EC8A49EDAEEEDFF_1224172833.addTaint(taint);
         return varA9C1E0D45A20413F2EC8A49EDAEEEDFF_1224172833;
-        // ---------- Original Method ----------
-        //return new AbsoluteLayout.LayoutParams(getContext(), attrs);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.761 -0400", hash_original_method = "E121C7CF679CE7DED988221EA3AFEDE0", hash_generated_method = "66CADDE2C8641AB2B4F1FBBF6DD868C8")
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
@@ -147,8 +148,8 @@ ViewGroup.LayoutParams varA9C1E0D45A20413F2EC8A49EDAEEEDFF_1224172833 =         
         boolean varE00F6943BB0B0AE127C5146980BB2AE6_1150182837 = (p instanceof AbsoluteLayout.LayoutParams);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_119585726 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_119585726;
-        // ---------- Original Method ----------
-        //return p instanceof AbsoluteLayout.LayoutParams;
+        
+        
     }
 
     
@@ -159,19 +160,20 @@ ViewGroup.LayoutParams varA9C1E0D45A20413F2EC8A49EDAEEEDFF_1224172833 =         
 ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1340780962 =         new LayoutParams(p);
         varB945D213E5036F8DDF9B40811234DF64_1340780962.addTaint(taint);
         return varB945D213E5036F8DDF9B40811234DF64_1340780962;
-        // ---------- Original Method ----------
-        //return new LayoutParams(p);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:03.762 -0400", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "3F6EB9D4F1E319BC532186733BE36AC0")
     @Override
     public boolean shouldDelayChildPressedState() {
         boolean var68934A3E9455FA72420237EB05902327_738459866 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1110784551 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1110784551;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
@@ -190,9 +192,9 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1340780962 =         
             addTaint(width);
             this.x = x;
             this.y = y;
-            // ---------- Original Method ----------
-            //this.x = x;
-            //this.y = y;
+            
+            
+            
         }
 
         
@@ -208,14 +210,14 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1340780962 =         
             y = a.getDimensionPixelOffset(
                     com.android.internal.R.styleable.AbsoluteLayout_Layout_layout_y, 0);
             a.recycle();
-            // ---------- Original Method ----------
-            //TypedArray a = c.obtainStyledAttributes(attrs,
-                    //com.android.internal.R.styleable.AbsoluteLayout_Layout);
-            //x = a.getDimensionPixelOffset(
-                    //com.android.internal.R.styleable.AbsoluteLayout_Layout_layout_x, 0);
-            //y = a.getDimensionPixelOffset(
-                    //com.android.internal.R.styleable.AbsoluteLayout_Layout_layout_y, 0);
-            //a.recycle();
+            
+            
+                    
+            
+                    
+            
+                    
+            
         }
 
         
@@ -223,7 +225,7 @@ ViewGroup.LayoutParams varB945D213E5036F8DDF9B40811234DF64_1340780962 =         
         public  LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
             addTaint(source.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -236,10 +238,10 @@ String var6E0BCF7742B004AE33FE32F62E419CA0_181739986 =             output + "Abs
                     + " x=" + x + " y=" + y + "}";
             var6E0BCF7742B004AE33FE32F62E419CA0_181739986.addTaint(taint);
             return var6E0BCF7742B004AE33FE32F62E419CA0_181739986;
-            // ---------- Original Method ----------
-            //return output + "Absolute.LayoutParams={width="
-                    //+ sizeToString(width) + ", height=" + sizeToString(height)
-                    //+ " x=" + x + " y=" + y + "}";
+            
+            
+                    
+                    
         }
 
         

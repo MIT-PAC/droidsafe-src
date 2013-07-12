@@ -1,6 +1,6 @@
 package android.nfc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,31 +19,32 @@ public final class NfcManager {
         try 
         {
             adapter = NfcAdapter.getNfcAdapter(context);
-        } //End block
+        } 
         catch (UnsupportedOperationException e)
         {
             adapter = null;
-        } //End block
+        } 
         mAdapter = adapter;
-        // ---------- Original Method ----------
-        //NfcAdapter adapter;
-        //context = context.getApplicationContext();
-        //try {
-            //adapter = NfcAdapter.getNfcAdapter(context);
-        //} catch (UnsupportedOperationException e) {
-            //adapter = null;
-        //}
-        //mAdapter = adapter;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:29.696 -0400", hash_original_method = "4CC1396725247CE50C996383E5F907DD", hash_generated_method = "89DA0C0DDE0D424C0884AC83BE0A8E64")
     public NfcAdapter getDefaultAdapter() {
 NfcAdapter varD72668EDE5E63ADF9340F3D8A19FD205_423605964 =         mAdapter;
         varD72668EDE5E63ADF9340F3D8A19FD205_423605964.addTaint(taint);
         return varD72668EDE5E63ADF9340F3D8A19FD205_423605964;
-        // ---------- Original Method ----------
-        //return mAdapter;
+        
+        
     }
 
     

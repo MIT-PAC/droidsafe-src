@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,8 +17,8 @@ public class DERInteger extends ASN1Object {
     public  DERInteger(
         int         value) {
         bytes = BigInteger.valueOf(value).toByteArray();
-        // ---------- Original Method ----------
-        //bytes = BigInteger.valueOf(value).toByteArray();
+        
+        
     }
 
     
@@ -26,8 +26,8 @@ public class DERInteger extends ASN1Object {
     public  DERInteger(
         BigInteger   value) {
         bytes = value.toByteArray();
-        // ---------- Original Method ----------
-        //bytes = value.toByteArray();
+        
+        
     }
 
     
@@ -35,8 +35,8 @@ public class DERInteger extends ASN1Object {
     public  DERInteger(
         byte[]   bytes) {
         this.bytes = bytes;
-        // ---------- Original Method ----------
-        //this.bytes = bytes;
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class DERInteger extends ASN1Object {
 BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1751829227 =         new BigInteger(bytes);
         varE4C146659CDD6B837AD2066CCD33EC90_1751829227.addTaint(taint);
         return varE4C146659CDD6B837AD2066CCD33EC90_1751829227;
-        // ---------- Original Method ----------
-        //return new BigInteger(bytes);
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ BigInteger varE4C146659CDD6B837AD2066CCD33EC90_1751829227 =         new BigInteg
 BigInteger var7698F9817E45674D2D13D01E9A3007E4_121561974 =         new BigInteger(1, bytes);
         var7698F9817E45674D2D13D01E9A3007E4_121561974.addTaint(taint);
         return var7698F9817E45674D2D13D01E9A3007E4_121561974;
-        // ---------- Original Method ----------
-        //return new BigInteger(1, bytes);
+        
+        
     }
 
     
@@ -90,28 +90,29 @@ BigInteger var7698F9817E45674D2D13D01E9A3007E4_121561974 =         new BigIntege
         DEROutputStream out) throws IOException {
         addTaint(out.getTaint());
         out.writeEncoded(INTEGER, bytes);
-        // ---------- Original Method ----------
-        //out.writeEncoded(INTEGER, bytes);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.089 -0400", hash_original_method = "473F358B008FFCD851D487BD1750243E", hash_generated_method = "4CDD57FD11C0F60C153F5E3CDB73C119")
     public int hashCode() {
         int value = 0;
 for(int i = 0;i != bytes.length;i++)
         {
             value ^= (bytes[i] & 0xff) << (i % 4);
-        } //End block
+        } 
         int var2063C1608D6E0BAF80249C42E2BE5804_945546993 = (value);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491556682 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_491556682;
-        // ---------- Original Method ----------
-        //int     value = 0;
-        //for (int i = 0; i != bytes.length; i++)
-         //{
-             //value ^= (bytes[i] & 0xff) << (i % 4);
-         //}
-        //return value;
+        
+        
+        
+         
+             
+         
+        
     }
 
     
@@ -124,18 +125,18 @@ for(int i = 0;i != bytes.length;i++)
             boolean var68934A3E9455FA72420237EB05902327_1109887143 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1940968989 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1940968989;
-        } //End block
+        } 
         DERInteger other = (DERInteger)o;
         boolean varCEDE50EF1F8187EEE555CDE0434A8B05_15237552 = (Arrays.areEqual(bytes, other.bytes));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_20032862 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_20032862;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERInteger))
-        //{
-            //return false;
-        //}
-        //DERInteger other = (DERInteger)o;
-        //return Arrays.areEqual(bytes, other.bytes);
+        
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -144,8 +145,8 @@ for(int i = 0;i != bytes.length;i++)
 String var1D0CCDA7D64D5831623D6828115D6FF2_1183229672 =         getValue().toString();
         var1D0CCDA7D64D5831623D6828115D6FF2_1183229672.addTaint(taint);
         return var1D0CCDA7D64D5831623D6828115D6FF2_1183229672;
-        // ---------- Original Method ----------
-        //return getValue().toString();
+        
+        
     }
 
     

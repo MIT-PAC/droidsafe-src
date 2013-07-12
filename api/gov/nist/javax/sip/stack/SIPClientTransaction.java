@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.stack;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -89,22 +89,23 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
         {
             sipStack.getStackLogger().logDebug("Creating clientTransaction " + this);
             sipStack.getStackLogger().logStackTrace();
-        } //End block
+        } 
         this.sipDialogs = new ConcurrentHashMap();
-        // ---------- Original Method ----------
-        //setBranch(Utils.getInstance().generateBranchId());
-        //this.messageProcessor = newChannelToUse.messageProcessor;
-        //this.setEncapsulatedChannel(newChannelToUse);
-        //this.notifyOnRetransmit = false;
-        //this.timeoutIfStillInCallingState = false;
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug("Creating clientTransaction " + this);
-            //sipStack.getStackLogger().logStackTrace();
-        //}
-        //this.sipDialogs = new ConcurrentHashMap();
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.066 -0400", hash_original_method = "A499701B9B92E6B9F8BD35BBCEA7DB79", hash_generated_method = "81BDAC6E2EAD5181CA933DB4CA73C8DB")
     public void setResponseInterface(ServerResponseInterface newRespondTo) {
     if(sipStack.isLoggingEnabled())        
@@ -115,29 +116,30 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
             {
                 sipStack.getStackLogger().logStackTrace();
                 sipStack.getStackLogger().logDebug("WARNING -- setting to null!");
-            } //End block
-        } //End block
+            } 
+        } 
         respondTo = newRespondTo;
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug(
-                    //"Setting response interface for " + this + " to " + newRespondTo);
-            //if (newRespondTo == null) {
-                //sipStack.getStackLogger().logStackTrace();
-                //sipStack.getStackLogger().logDebug("WARNING -- setting to null!");
-            //}
-        //}
-        //respondTo = newRespondTo;
+        
+        
+            
+                    
+            
+                
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.067 -0400", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "4C91543A7C49DF18A4299B12AAA2A1C9")
     public MessageChannel getRequestChannel() {
 MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
         var72A74007B2BE62B849F475C7BDA4658B_1142558802.addTaint(taint);
         return var72A74007B2BE62B849F475C7BDA4658B_1142558802;
-        // ---------- Original Method ----------
-        //return this;
+        
+        
     }
 
     
@@ -161,12 +163,12 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                 transactionMatches = getBranch().equalsIgnoreCase(
                         ((Via) viaHeaders.getFirst()).getBranch())
                         && getMethod().equals(messageToTest.getCSeq().getMethod());
-            } //End block
+            } 
             else
             {
                 transactionMatches = getBranch().equals(messageToTest.getTransactionId());
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(!isTerminated())        
         {
@@ -178,28 +180,28 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                     {
                         transactionMatches = getOriginalRequest().getCSeq().getMethod().equals(
                                 messageToTest.getCSeq().getMethod());
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
     if(getBranch() != null)                
                 {
                     transactionMatches = getBranch().equalsIgnoreCase(
                             messageToTest.getTransactionId());
-                } //End block
+                } 
                 else
                 {
                     transactionMatches = getOriginalRequest().getTransactionId()
                             .equalsIgnoreCase(messageToTest.getTransactionId());
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         boolean var05E079BB3C0AA5EA1496AF660BBDEC18_523638485 = (transactionMatches);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1000610598 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1000610598;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -214,15 +216,15 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
             try 
             {
                 topVia.setBranch(getBranch());
-            } //End block
+            } 
             catch (java.text.ParseException ex)
             {
-            } //End block
+            } 
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug("Sending Message " + messageToSend);
                 sipStack.getStackLogger().logDebug("TransactionState " + this.getState());
-            } //End block
+            } 
     if(TransactionState.PROCEEDING == getState()
                     || TransactionState.CALLING == getState())            
             {
@@ -231,15 +233,15 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(isReliable())                    
                     {
                         this.setState(TransactionState.TERMINATED);
-                    } //End block
+                    } 
                     else
                     {
                         this.setState(TransactionState.COMPLETED);
-                    } //End block
+                    } 
                     super.sendMessage(transactionRequest);
                     return;
-                } //End block
-            } //End block
+                } 
+            } 
             try 
             {
                 lastRequest = transactionRequest;
@@ -249,45 +251,45 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(transactionRequest.getMethod().equals(Request.INVITE))                    
                     {
                         this.setState(TransactionState.CALLING);
-                    } //End block
+                    } 
                     else
     if(transactionRequest.getMethod().equals(Request.ACK))                    
                     {
                         this.setState(TransactionState.TERMINATED);
-                    } //End block
+                    } 
                     else
                     {
                         this.setState(TransactionState.TRYING);
-                    } //End block
+                    } 
     if(!isReliable())                    
                     {
                         enableRetransmissionTimer();
-                    } //End block
+                    } 
     if(isInviteTransaction())                    
                     {
                         enableTimeoutTimer(TIMER_B);
-                    } //End block
+                    } 
                     else
                     {
                         enableTimeoutTimer(TIMER_F);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 super.sendMessage(transactionRequest);
-            } //End block
+            } 
             catch (IOException e)
             {
                 this.setState(TransactionState.TERMINATED);
                 e.addTaint(taint);
                 throw e;
-            } //End block
-        } //End block
+            } 
+        } 
         finally 
         {
             this.isMapped = true;
             this.startTransactionTimer();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -304,14 +306,14 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                 && transactionResponse.getStatusCode() / 100 == 1)        
         {
             return;
-        } //End block
+        } 
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug(
                     "processing " + transactionResponse.getFirstLine() + "current state = "
                             + getState());
             sipStack.getStackLogger().logDebug("dialog = " + dialog);
-        } //End block
+        } 
         this.lastResponse = transactionResponse;
         try 
         {
@@ -319,16 +321,16 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
             inviteClientTransaction(transactionResponse, sourceChannel, dialog);
             else
             nonInviteClientTransaction(transactionResponse, sourceChannel, dialog);
-        } //End block
+        } 
         catch (IOException ex)
         {
     if(sipStack.isLoggingEnabled())            
             sipStack.getStackLogger().logException(ex);
             this.setState(TransactionState.TERMINATED);
             raiseErrorEvent(SIPTransactionErrorEvent.TRANSPORT_ERROR);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -349,34 +351,34 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(200 <= statusCode && statusCode <= 699)            
             {
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
+                } 
     if(!isReliable())                
                 {
                     this.setState(TransactionState.COMPLETED);
                     enableTimeoutTimer(TIMER_K);
-                } //End block
+                } 
                 else
                 {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
     if(TransactionState.PROCEEDING == this.getState())        
         {
@@ -385,47 +387,47 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(200 <= statusCode && statusCode <= 699)            
             {
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, sipDialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
+                } 
                 disableRetransmissionTimer();
                 disableTimeoutTimer();
     if(!isReliable())                
                 {
                     this.setState(TransactionState.COMPLETED);
                     enableTimeoutTimer(TIMER_K);
-                } //End block
+                } 
                 else
                 {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug(
                         " Not sending response to TU! " + getState());
-            } //End block
+            } 
             this.semRelease();
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -447,8 +449,8 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                                 dialog.getLastAckSent().getFromTag()))                
                 {
                     ackAlreadySent = true;
-                } //End block
-            } //End block
+                } 
+            } 
     if(dialog!= null && ackAlreadySent
                     && transactionResponse.getCSeq().getMethod().equals(dialog.getMethod()))            
             {
@@ -457,14 +459,14 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(sipStack.isLoggingEnabled())                    
                     sipStack.getStackLogger().logDebug("resending ACK");
                     dialog.resendAck();
-                } //End block
+                } 
                 catch (SipException ex)
                 {
-                } //End block
-            } //End block
+                } 
+            } 
             this.semRelease();
             return;
-        } //End block
+        } 
         else
     if(TransactionState.CALLING == this.getState())        
         {
@@ -478,8 +480,8 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(statusCode / 100 == 1)            
             {
@@ -491,43 +493,43 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(300 <= statusCode && statusCode <= 699)            
             {
                 try 
                 {
                     sendMessage((SIPRequest) createErrorAck());
-                } //End block
+                } 
                 catch (Exception ex)
                 {
                     sipStack.getStackLogger().logError(
                             "Unexpected Exception sending ACK -- sending error AcK ", ex);
-                } //End block
+                } 
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, dialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
+                } 
     if(this.getDialog() != null &&  ((SIPDialog)this.getDialog()).isBackToBackUserAgent())                
                 {
                     ((SIPDialog) this.getDialog()).releaseAckSem();
-                } //End block
+                } 
     if(!isReliable())                
                 {
                     this.setState(TransactionState.COMPLETED);
                     enableTimeoutTimer(TIMER_D);
-                } //End block
+                } 
                 else
                 {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
     if(TransactionState.PROCEEDING == this.getState())        
         {
@@ -536,12 +538,12 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, dialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(statusCode / 100 == 2)            
             {
@@ -549,44 +551,44 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(respondTo != null)                
                 {
                     respondTo.processResponse(transactionResponse, this, dialog);
-                } //End block
+                } 
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(300 <= statusCode && statusCode <= 699)            
             {
                 try 
                 {
                     sendMessage((SIPRequest) createErrorAck());
-                } //End block
+                } 
                 catch (Exception ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } //End block
+                } 
     if(this.getDialog() != null)                
                 {
                     ((SIPDialog) this.getDialog()).releaseAckSem();
-                } //End block
+                } 
     if(!isReliable())                
                 {
                     this.setState(TransactionState.COMPLETED);
                     this.enableTimeoutTimer(TIMER_D);
-                } //End block
+                } 
                 else
                 {
                     this.setState(TransactionState.TERMINATED);
-                } //End block
+                } 
     if(respondTo != null)                
                 respondTo.processResponse(transactionResponse, this, dialog);
                 else
                 {
                     this.semRelease();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
     if(TransactionState.COMPLETED == this.getState())        
         {
@@ -595,19 +597,19 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                 try 
                 {
                     sendMessage((SIPRequest) createErrorAck());
-                } //End block
+                } 
                 catch (Exception ex)
                 {
                     InternalErrorHandler.handleException(ex);
-                } //End block
+                } 
                 finally 
                 {
                     this.semRelease();
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -623,11 +625,11 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug("sendRequest() " + sipRequest);
-        } //End block
+        } 
         try 
         {
             sipRequest.checkHeaders();
-        } //End block
+        } 
         catch (ParseException ex)
         {
     if(sipStack.isLoggingEnabled())            
@@ -635,7 +637,7 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
             SipException var892635990475903AE5F007B5D011DC38_308191792 = new SipException(ex.getMessage());
             var892635990475903AE5F007B5D011DC38_308191792.addTaint(taint);
             throw var892635990475903AE5F007B5D011DC38_308191792;
-        } //End block
+        } 
     if(getMethod().equals(Request.SUBSCRIBE)
                 && sipRequest.getHeader(ExpiresHeader.NAME) == null)        
         {
@@ -643,7 +645,7 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
             sipStack.getStackLogger().logWarning(
                     "Expires header missing in outgoing subscribe --"
                             + " Notifier will assume implied value on event package");
-        } //End block
+        } 
         try 
         {
     if(this.getOriginalRequest().getMethod().equals(Request.CANCEL)
@@ -656,7 +658,7 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                     SipException var5623065BB8CB1B84B3235D801110D626_790747168 = new SipException("Could not find original tx to cancel. RFC 3261 9.1");
                     var5623065BB8CB1B84B3235D801110D626_790747168.addTaint(taint);
                     throw var5623065BB8CB1B84B3235D801110D626_790747168;
-                } //End block
+                } 
                 else
     if(ct.getState() == null)                
                 {
@@ -664,15 +666,15 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                             "State is null no provisional response yet -- cannot cancel RFC 3261 9.1");
                     varD384862B33895AC5BA03FBB252919FF0_1709478876.addTaint(taint);
                     throw varD384862B33895AC5BA03FBB252919FF0_1709478876;
-                } //End block
+                } 
                 else
     if(!ct.getMethod().equals(Request.INVITE))                
                 {
                     SipException var9A48AF195A96F4F65AFD0681AD6B8DFA_918608441 = new SipException("Cannot cancel non-invite requests RFC 3261 9.1");
                     var9A48AF195A96F4F65AFD0681AD6B8DFA_918608441.addTaint(taint);
                     throw var9A48AF195A96F4F65AFD0681AD6B8DFA_918608441;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(this.getOriginalRequest().getMethod().equals(Request.BYE)
                     || this.getOriginalRequest().getMethod().equals(Request.NOTIFY))            
@@ -686,8 +688,8 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                                     + " the provider -- Send the Request using the Dialog.sendRequest(transaction)");
                     var51DB0FE9536946D398FFD0021FFBD630_585071793.addTaint(taint);
                     throw var51DB0FE9536946D398FFD0021FFBD630_585071793;
-                } //End block
-            } //End block
+                } 
+            } 
     if(this.getMethod().equals(Request.INVITE))            
             {
                 SIPDialog dialog = this.getDefaultDialog();
@@ -698,21 +700,21 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                         SipException var6D42BBD9DCA679354CDF7F25AB3CB52B_1125633871 = new SipException ("Failed to take ACK semaphore");
                         var6D42BBD9DCA679354CDF7F25AB3CB52B_1125633871.addTaint(taint);
                         throw var6D42BBD9DCA679354CDF7F25AB3CB52B_1125633871;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             this.isMapped = true;
             this.sendMessage(sipRequest);
-        } //End block
+        } 
         catch (IOException ex)
         {
             this.setState(TransactionState.TERMINATED);
             SipException var9970C3F2D77AA08BF1A0FB59825D7A46_175794343 = new SipException("IO Error sending request", ex);
             var9970C3F2D77AA08BF1A0FB59825D7A46_175794343.addTaint(taint);
             throw var9970C3F2D77AA08BF1A0FB59825D7A46_175794343;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -737,20 +739,20 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                         try 
                         {
                             timeStamp.setTimeStamp(milisec);
-                        } //End block
+                        } 
                         catch (InvalidArgumentException ex)
                         {
                             InternalErrorHandler.handleException(ex);
-                        } //End block
+                        } 
                         lastRequest.setHeader(timeStamp);
-                    } //End block
+                    } 
                     super.sendMessage(lastRequest);
     if(this.notifyOnRetransmit)                    
                     {
                         TimeoutEvent txTimeout = new TimeoutEvent(this.getSipProvider(), this,
                                 Timeout.RETRANSMIT);
                         this.getSipProvider().handleEvent(txTimeout, this);
-                    } //End block
+                    } 
     if(this.timeoutIfStillInCallingState
                             && this.getState() == TransactionState.CALLING)                    
                     {
@@ -761,18 +763,18 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                                     this, Timeout.RETRANSMIT);
                             this.getSipProvider().handleEvent(timeoutEvent, this);
                             this.timeoutIfStillInCallingState = false;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         catch (IOException e)
         {
             this.raiseIOExceptionEvent();
             raiseErrorEvent(SIPTransactionErrorEvent.TRANSPORT_ERROR);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -792,8 +794,8 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                         .getOriginalRequest().getMethod()))                
                 {
                     dialog.delete();
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(dialog != null)            
             {
@@ -801,9 +803,9 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                         && dialog.isTerminatedOnBye())                
                 {
                     dialog.delete();
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(TransactionState.COMPLETED != this.getState())        
         {
             raiseErrorEvent(SIPTransactionErrorEvent.TIMEOUT_ERROR);
@@ -817,18 +819,19 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
                         && inviteTx.getDialog() != null)                
                 {
                     inviteTx.setState(TransactionState.TERMINATED);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             this.setState(TransactionState.TERMINATED);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.091 -0400", hash_original_method = "2914559B80386C20A981D1BD82B7352B", hash_generated_method = "7226DA9F18D476F0D7FE0169C37E014F")
     public Request createCancel() throws SipException {
         SIPRequest originalRequest = this.getOriginalRequest();
@@ -857,20 +860,20 @@ MessageChannel var72A74007B2BE62B849F475C7BDA4658B_1142558802 =         this;
 Request varACA153049E738A20BB5740684F6D8EF1_1642353904 =             cancelRequest;
             varACA153049E738A20BB5740684F6D8EF1_1642353904.addTaint(taint);
             return varACA153049E738A20BB5740684F6D8EF1_1642353904;
-        } //End block
-        // ---------- Original Method ----------
-        //SIPRequest originalRequest = this.getOriginalRequest();
-        //if (originalRequest == null)
-            //throw new SipException("Bad state " + getState());
-        //if (!originalRequest.getMethod().equals(Request.INVITE))
-            //throw new SipException("Only INIVTE may be cancelled");
-        //if (originalRequest.getMethod().equalsIgnoreCase(Request.ACK))
-            //throw new SipException("Cannot Cancel ACK!");
-        //else {
-            //SIPRequest cancelRequest = originalRequest.createCancelRequest();
-            //cancelRequest.setInviteTransaction(this);
-            //return cancelRequest;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -888,25 +891,25 @@ Request varACA153049E738A20BB5740684F6D8EF1_1642353904 =             cancelReque
             SipException var009E015AE15B853B2D4591E9AABA5E99_1857240044 = new SipException("Cannot ACK an ACK!");
             var009E015AE15B853B2D4591E9AABA5E99_1857240044.addTaint(taint);
             throw var009E015AE15B853B2D4591E9AABA5E99_1857240044;
-        } //End block
+        } 
         else
     if(lastResponse == null)        
         {
             SipException varD59D3207F7990DD4DAC24E65A1CE35E6_1107699290 = new SipException("bad Transaction state");
             varD59D3207F7990DD4DAC24E65A1CE35E6_1107699290.addTaint(taint);
             throw varD59D3207F7990DD4DAC24E65A1CE35E6_1107699290;
-        } //End block
+        } 
         else
     if(lastResponse.getStatusCode() < 200)        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
-            } //End block
+            } 
             SipException varD7CEAC34620F3EF85D7F67F88F42DD93_1152737622 = new SipException("Cannot ACK a provisional response!");
             varD7CEAC34620F3EF85D7F67F88F42DD93_1152737622.addTaint(taint);
             throw varD7CEAC34620F3EF85D7F67F88F42DD93_1152737622;
-        } //End block
+        } 
         SIPRequest ackRequest = originalRequest.createAckRequest((To) lastResponse.getTo());
         RecordRouteList recordRouteList = lastResponse.getRecordRouteHeaders();
     if(recordRouteList == null)        
@@ -918,11 +921,11 @@ Request varACA153049E738A20BB5740684F6D8EF1_1642353904 =             cancelReque
                 javax.sip.address.URI uri = (javax.sip.address.URI) contact.getAddress().getURI()
                         .clone();
                 ackRequest.setRequestURI(uri);
-            } //End block
+            } 
 Request var53E5C6F852A0BB73314408FE0ABC9A68_1570006350 =             ackRequest;
             var53E5C6F852A0BB73314408FE0ABC9A68_1570006350.addTaint(taint);
             return var53E5C6F852A0BB73314408FE0ABC9A68_1570006350;
-        } //End block
+        } 
         ackRequest.removeHeader(RouteHeader.NAME);
         RouteList routeList = new RouteList();
         ListIterator<RecordRoute> li = recordRouteList.listIterator(recordRouteList.size());
@@ -934,12 +937,12 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_1570006350 =             ackRequest;
             route.setAddress((AddressImpl) ((AddressImpl) rr.getAddress()).clone());
             route.setParameters((NameValueList) rr.getParameters().clone());
             routeList.add(route);
-        } //End block
+        } 
         Contact contact = null;
     if(lastResponse.getContactHeaders() != null)        
         {
             contact = (Contact) lastResponse.getContactHeaders().getFirst();
-        } //End block
+        } 
     if(!((SipURI) ((Route) routeList.getFirst()).getAddress().getURI()).hasLrParam())        
         {
             Route route = null;
@@ -947,7 +950,7 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_1570006350 =             ackRequest;
             {
                 route = new Route();
                 route.setAddress((AddressImpl) ((AddressImpl) (contact.getAddress())).clone());
-            } //End block
+            } 
             Route firstRoute = (Route) routeList.getFirst();
             routeList.removeFirst();
             javax.sip.address.URI uri = firstRoute.getAddress().getURI();
@@ -955,7 +958,7 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_1570006350 =             ackRequest;
     if(route != null)            
             routeList.add(route);
             ackRequest.addHeader(routeList);
-        } //End block
+        } 
         else
         {
     if(contact != null)            
@@ -964,13 +967,13 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_1570006350 =             ackRequest;
                         .clone();
                 ackRequest.setRequestURI(uri);
                 ackRequest.addHeader(routeList);
-            } //End block
-        } //End block
+            } 
+        } 
 Request var53E5C6F852A0BB73314408FE0ABC9A68_146420723 =         ackRequest;
         var53E5C6F852A0BB73314408FE0ABC9A68_146420723.addTaint(taint);
         return var53E5C6F852A0BB73314408FE0ABC9A68_146420723;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -988,95 +991,101 @@ Request var53E5C6F852A0BB73314408FE0ABC9A68_146420723 =         ackRequest;
             SipException var33C0B577B139AB1BF6F1006FA990B153_957290893 = new SipException("Can only ACK an INVITE!");
             var33C0B577B139AB1BF6F1006FA990B153_957290893.addTaint(taint);
             throw var33C0B577B139AB1BF6F1006FA990B153_957290893;
-        } //End block
+        } 
         else
     if(lastResponse == null)        
         {
             SipException varD59D3207F7990DD4DAC24E65A1CE35E6_783788986 = new SipException("bad Transaction state");
             varD59D3207F7990DD4DAC24E65A1CE35E6_783788986.addTaint(taint);
             throw varD59D3207F7990DD4DAC24E65A1CE35E6_783788986;
-        } //End block
+        } 
         else
     if(lastResponse.getStatusCode() < 200)        
         {
     if(sipStack.isLoggingEnabled())            
             {
                 sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
-            } //End block
+            } 
             SipException varD7CEAC34620F3EF85D7F67F88F42DD93_1348155516 = new SipException("Cannot ACK a provisional response!");
             varD7CEAC34620F3EF85D7F67F88F42DD93_1348155516.addTaint(taint);
             throw varD7CEAC34620F3EF85D7F67F88F42DD93_1348155516;
-        } //End block
+        } 
 Request varB1D621DACB597072EA649D0AC7D0DC3C_937818894 =         originalRequest.createErrorAck((To) lastResponse.getTo());
         varB1D621DACB597072EA649D0AC7D0DC3C_937818894.addTaint(taint);
         return varB1D621DACB597072EA649D0AC7D0DC3C_937818894;
-        // ---------- Original Method ----------
-        //SIPRequest originalRequest = this.getOriginalRequest();
-        //if (originalRequest == null)
-            //throw new SipException("bad state " + getState());
-        //if (!getMethod().equals(Request.INVITE)) {
-            //throw new SipException("Can only ACK an INVITE!");
-        //} else if (lastResponse == null) {
-            //throw new SipException("bad Transaction state");
-        //} else if (lastResponse.getStatusCode() < 200) {
-            //if (sipStack.isLoggingEnabled()) {
-                //sipStack.getStackLogger().logDebug("lastResponse = " + lastResponse);
-            //}
-            //throw new SipException("Cannot ACK a provisional response!");
-        //}
-        //return originalRequest.createErrorAck((To) lastResponse.getTo());
+        
+        
+        
+            
+        
+            
+        
+            
+        
+            
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.099 -0400", hash_original_method = "FADEF945106DA805CF02027B2BE28020", hash_generated_method = "F178A79F5020E3C9AEE90D08526F030A")
     protected void setViaPort(int port) {
         this.viaPort = port;
-        // ---------- Original Method ----------
-        //this.viaPort = port;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.100 -0400", hash_original_method = "0E538A29C97CB223EF1CD12A71C73074", hash_generated_method = "49F7B6C2EB4C3BA81CAAD6672E78455A")
     protected void setViaHost(String host) {
         this.viaHost = host;
-        // ---------- Original Method ----------
-        //this.viaHost = host;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.101 -0400", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "49F2742BDA860C79A6AA5C13D1872B22")
     public int getViaPort() {
         int varD43D0AD9254055D58B581E8CE6E033A9_1401385945 = (this.viaPort);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89671843 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_89671843;
-        // ---------- Original Method ----------
-        //return this.viaPort;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.101 -0400", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "8C823B2476B7CA20353AF8D93C46BC89")
     public String getViaHost() {
 String var5C49F2A6248841A6C8138BE7213E150E_630854032 =         this.viaHost;
         var5C49F2A6248841A6C8138BE7213E150E_630854032.addTaint(taint);
         return var5C49F2A6248841A6C8138BE7213E150E_630854032;
-        // ---------- Original Method ----------
-        //return this.viaHost;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.102 -0400", hash_original_method = "0750F8DA140E6BEE450B9743ACFD7E44", hash_generated_method = "1DA5E16F2C6E5397F6F66AF1CF8C3E6A")
     public Via getOutgoingViaHeader() {
 Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProcessor().getViaHeader();
         var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590.addTaint(taint);
         return var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590;
-        // ---------- Original Method ----------
-        //return this.getMessageProcessor().getViaHeader();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.102 -0400", hash_original_method = "B250DD181A3373E2CC04255377753F31", hash_generated_method = "6CCA103991603EF3F3C26F3C09E7F13D")
     public void clearState() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -1087,26 +1096,27 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
                 && (!getSIPStack().cacheClientConnections))        
         {
             this.collectionTime = TIMER_J;
-        } //End block
+        } 
     if(super.getState() != TransactionState.COMPLETED
                 && (newState == TransactionState.COMPLETED || newState == TransactionState.TERMINATED))        
         {
             sipStack.decrementActiveClientTransactionCount();
-        } //End block
+        } 
         super.setState(newState);
-        // ---------- Original Method ----------
-        //if (newState == TransactionState.TERMINATED && this.isReliable()
-                //&& (!getSIPStack().cacheClientConnections)) {
-            //this.collectionTime = TIMER_J;
-        //}
-        //if (super.getState() != TransactionState.COMPLETED
-                //&& (newState == TransactionState.COMPLETED || newState == TransactionState.TERMINATED)) {
-            //sipStack.decrementActiveClientTransactionCount();
-        //}
-        //super.setState(newState);
+        
+        
+                
+            
+        
+        
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.103 -0400", hash_original_method = "8AD9FEC5ADB8A6F1DFBB290459716C8C", hash_generated_method = "580BF89705E4BAF1556D75F00CF9DF2F")
     protected void startTransactionTimer() {
     if(this.transactionTimerStarted.compareAndSet(false, true))        
@@ -1115,26 +1125,28 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
     if(sipStack.getTimer() != null)            
             {
                 sipStack.getTimer().schedule(myTimer, BASE_TIMER_INTERVAL, BASE_TIMER_INTERVAL);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (this.transactionTimerStarted.compareAndSet(false, true)) {
-	        //TimerTask myTimer = new TransactionTimer();
-	        //if ( sipStack.getTimer() != null ) {
-	            //sipStack.getTimer().schedule(myTimer, BASE_TIMER_INTERVAL, BASE_TIMER_INTERVAL);
-	        //}
-        //}
+            } 
+        } 
+        
+        
+	        
+	        
+	            
+	        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.104 -0400", hash_original_method = "ACD8113ABC5B192A943EAFBD5656CA38", hash_generated_method = "9600A5B5EE9B39E2643E3ED4DD70BFBE")
     public void terminate() throws ObjectInUseException {
         this.setState(TransactionState.TERMINATED);
-        // ---------- Original Method ----------
-        //this.setState(TransactionState.TERMINATED);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.104 -0400", hash_original_method = "8BA63F6111F6111C9CE6504A86A67BA3", hash_generated_method = "E81B4DD9DF499238BEF55A39E5D4DF25")
     public boolean checkFromTag(SIPResponse sipResponse) {
         addTaint(sipResponse.getTaint());
@@ -1148,7 +1160,7 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
                 boolean var68934A3E9455FA72420237EB05902327_452375060 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1094306447 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1094306447;
-            } //End block
+            } 
     if(originalFromTag != null
                     && !originalFromTag.equalsIgnoreCase(sipResponse.getFrom().getTag()))            
             {
@@ -1157,27 +1169,27 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
                 boolean var68934A3E9455FA72420237EB05902327_1297845665 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_953560749 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_953560749;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1640487494 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1748968769 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1748968769;
-        // ---------- Original Method ----------
-        //String originalFromTag = ((SIPRequest) this.getRequest()).getFromTag();
-        //if (this.defaultDialog != null) {
-            //if (originalFromTag == null ^ sipResponse.getFrom().getTag() == null) {
-            	//if (sipStack.isLoggingEnabled())
-            		//sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
-                //return false;
-            //}
-            //if (originalFromTag != null
-                    //&& !originalFromTag.equalsIgnoreCase(sipResponse.getFrom().getTag())) {
-            	//if (sipStack.isLoggingEnabled())
-            		//sipStack.getStackLogger().logDebug("From tag mismatch -- dropping response");
-                //return false;
-            //}
-        //}
-        //return true;
+        
+        
+        
+            
+            	
+            		
+                
+            
+            
+                    
+            	
+            		
+                
+            
+        
+        
     }
 
     
@@ -1194,12 +1206,12 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
     if(ict != null)            
             {
                 dialog = ict.defaultDialog;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             dialog = this.getDialog(dialogId);
-        } //End block
+        } 
     if(dialog == null)        
         {
             int code = sipResponse.getStatusCode();
@@ -1223,7 +1235,7 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
                             {
                                 defaultDialog.setLastResponse(this, sipResponse);
                                 dialog = defaultDialog;
-                            } //End block
+                            } 
                             else
                             {
                                 dialog = sipStack.getDialog(dialogId);
@@ -1232,50 +1244,51 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
     if(defaultDialog.isAssigned())                                    
                                     {
                                         dialog = sipStack.createDialog(this, sipResponse);
-                                    } //End block
-                                } //End block
-                            } //End block
+                                    } 
+                                } 
+                            } 
     if(dialog != null)                            
                             {
                                 this.setDialog(dialog, dialog.getDialogId());
-                            } //End block
+                            } 
                             else
                             {
                                 sipStack.getStackLogger().logError("dialog is unexpectedly null",new NullPointerException());
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
                         {
                             RuntimeException var6755A7A7F32D8B6EF3BEF356B4AC67B6_624335313 = new RuntimeException("Response without from-tag");
                             var6755A7A7F32D8B6EF3BEF356B4AC67B6_624335313.addTaint(taint);
                             throw var6755A7A7F32D8B6EF3BEF356B4AC67B6_624335313;
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
     if(sipStack.isAutomaticDialogSupportEnabled)                        
                         {
                             dialog = sipStack.createDialog(this, sipResponse);
                             this.setDialog(dialog, dialog.getDialogId());
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                        } 
+                    } 
+                } 
+            } 
             else
             {
                 dialog = defaultDialog;
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             dialog.setLastResponse(this, sipResponse);
-        } //End block
+        } 
         this.processResponse(sipResponse, incomingChannel, dialog);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.109 -0400", hash_original_method = "A455A41B989A73F91883A443A89AF007", hash_generated_method = "03379E1FDBF0FBA344A96497417F6C4D")
     public Dialog getDialog() {
         Dialog retval = null;
@@ -1285,40 +1298,41 @@ Via var9A2F2EDE559A039B7F1EAC2CD02F6527_1068274590 =         this.getMessageProc
         {
             String dialogId = this.lastResponse.getDialogId(false);
             retval = (Dialog) getDialog(dialogId);
-        } //End block
+        } 
     if(retval == null)        
         {
             retval = (Dialog) this.defaultDialog;
-        } //End block
+        } 
     if(sipStack.isLoggingEnabled())        
         {
             sipStack.getStackLogger().logDebug(
                     " sipDialogs =  " + sipDialogs + " default dialog " + this.defaultDialog
                             + " retval " + retval);
-        } //End block
+        } 
 Dialog varF9E19AD6135C970F387F77C6F3DE4477_1975662560 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1975662560.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1975662560;
-        // ---------- Original Method ----------
-        //Dialog retval = null;
-        //if (this.lastResponse != null && this.lastResponse.getFromTag() != null
-                //&& this.lastResponse.getToTag() != null
-                //&& this.lastResponse.getStatusCode() != 100) {
-            //String dialogId = this.lastResponse.getDialogId(false);
-            //retval = (Dialog) getDialog(dialogId);
-        //}
-        //if (retval == null) {
-            //retval = (Dialog) this.defaultDialog;
-        //}
-        //if (sipStack.isLoggingEnabled()) {
-            //sipStack.getStackLogger().logDebug(
-                    //" sipDialogs =  " + sipDialogs + " default dialog " + this.defaultDialog
-                            //+ " retval " + retval);
-        //}
-        //return retval;
+        
+        
+        
+                
+                
+            
+            
+        
+        
+            
+        
+        
+            
+                    
+                            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.110 -0400", hash_original_method = "7CA3466B3B290C9233529520194EB8A2", hash_generated_method = "BCBCA9C5E02D30E8DD0182337BCD7EA5")
     public SIPDialog getDialog(String dialogId) {
         addTaint(dialogId.getTaint());
@@ -1326,12 +1340,13 @@ Dialog varF9E19AD6135C970F387F77C6F3DE4477_1975662560 =         retval;
 SIPDialog varF9E19AD6135C970F387F77C6F3DE4477_1140293123 =         retval;
         varF9E19AD6135C970F387F77C6F3DE4477_1140293123.addTaint(taint);
         return varF9E19AD6135C970F387F77C6F3DE4477_1140293123;
-        // ---------- Original Method ----------
-        //SIPDialog retval = (SIPDialog) this.sipDialogs.get(dialogId);
-        //return retval;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.112 -0400", hash_original_method = "9816411304542A0CA40176674DC457D1", hash_generated_method = "4AC0895193352FCBF75500EA243C9E0F")
     public void setDialog(SIPDialog sipDialog, String dialogId) {
         addTaint(dialogId.getTaint());
@@ -1345,93 +1360,99 @@ SIPDialog varF9E19AD6135C970F387F77C6F3DE4477_1140293123 =         retval;
             NullPointerException varDBD8AFDE5895AD4848FD81F119F093F5_1953674118 = new NullPointerException("bad dialog null");
             varDBD8AFDE5895AD4848FD81F119F093F5_1953674118.addTaint(taint);
             throw varDBD8AFDE5895AD4848FD81F119F093F5_1953674118;
-        } //End block
+        } 
     if(this.defaultDialog == null)        
         {
             this.defaultDialog = sipDialog;
     if(this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0)            
             {
                 this.getSIPStack().addForkedClientTransaction(this);
-            } //End block
-        } //End block
+            } 
+        } 
     if(dialogId != null && sipDialog.getDialogId() != null)        
         {
             this.sipDialogs.put(dialogId, sipDialog);
-        } //End block
-        // ---------- Original Method ----------
-        //if (sipStack.isLoggingEnabled())
-            //sipStack.getStackLogger().logDebug(
-                    //"setDialog: " + dialogId + "sipDialog = " + sipDialog);
-        //if (sipDialog == null) {
-        	//if (sipStack.isLoggingEnabled())
-        		//sipStack.getStackLogger().logError("NULL DIALOG!!");
-            //throw new NullPointerException("bad dialog null");
-        //}
-        //if (this.defaultDialog == null) {
-            //this.defaultDialog = sipDialog;
-            //if ( this.getMethod().equals(Request.INVITE) && this.getSIPStack().maxForkTime != 0) {
-                //this.getSIPStack().addForkedClientTransaction(this);
-            //}
-        //}
-        //if (dialogId != null && sipDialog.getDialogId() != null) {
-            //this.sipDialogs.put(dialogId, sipDialog);
-        //}
+        } 
+        
+        
+            
+                    
+        
+        	
+        		
+            
+        
+        
+            
+            
+                
+            
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.112 -0400", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "B6F0EEECAF49882C9F1428AC519ACE61")
     public SIPDialog getDefaultDialog() {
 SIPDialog var07DB6ED3B1EC8AA2EFC7D90D814BC07B_1424461629 =         this.defaultDialog;
         var07DB6ED3B1EC8AA2EFC7D90D814BC07B_1424461629.addTaint(taint);
         return var07DB6ED3B1EC8AA2EFC7D90D814BC07B_1424461629;
-        // ---------- Original Method ----------
-        //return this.defaultDialog;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.113 -0400", hash_original_method = "BBF8312DD6859DF11BA280D3CE71F333", hash_generated_method = "92C54DFEBE82A33476818E16370481AA")
     public void setNextHop(Hop hop) {
         this.nextHop = hop;
-        // ---------- Original Method ----------
-        //this.nextHop = hop;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.113 -0400", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "AE49BEEE15B5B0ACF595CA52F779798C")
     public Hop getNextHop() {
 Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731 =         nextHop;
         var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731.addTaint(taint);
         return var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731;
-        // ---------- Original Method ----------
-        //return nextHop;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.113 -0400", hash_original_method = "5A4A2DE6DA5EAFA8C9F9B9398CD98855", hash_generated_method = "77796E2667351045720A96FACE4561A1")
     public void setNotifyOnRetransmit(boolean notifyOnRetransmit) {
         this.notifyOnRetransmit = notifyOnRetransmit;
-        // ---------- Original Method ----------
-        //this.notifyOnRetransmit = notifyOnRetransmit;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.114 -0400", hash_original_method = "27ED93829BD70EC80C4ABB0868670759", hash_generated_method = "4EFDC1ACDA544FCAE44E17B51A2D5C56")
     public boolean isNotifyOnRetransmit() {
         boolean varA6A57E5FB85DB2354843F5CFC0F10126_453490194 = (notifyOnRetransmit);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_259613249 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_259613249;
-        // ---------- Original Method ----------
-        //return notifyOnRetransmit;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.114 -0400", hash_original_method = "E7190C5FA03F5363EA136DFEC0492C73", hash_generated_method = "A815816922C53FB5571D66EB4D353EEE")
     public void alertIfStillInCallingStateBy(int count) {
         this.timeoutIfStillInCallingState = true;
         this.callingStateTimeoutCount = count;
-        // ---------- Original Method ----------
-        //this.timeoutIfStillInCallingState = true;
-        //this.callingStateTimeoutCount = count;
+        
+        
+        
     }
 
     
@@ -1439,7 +1460,7 @@ Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731 =         nextHop;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:44.115 -0400", hash_original_method = "7764BAFD5C7951E95371726125E892CE", hash_generated_method = "33DB74724AFAD3CA3F59EFA77CA701E3")
         public  TransactionTimer() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1456,17 +1477,17 @@ Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731 =         nextHop;
                     sipStack.getStackLogger().logDebug(
                             "removing  = " + clientTransaction + " isReliable "
                                     + clientTransaction.isReliable());
-                } //End block
+                } 
                 sipStack.removeTransaction(clientTransaction);
                 try 
                 {
                     this.cancel();
-                } //End block
+                } 
                 catch (IllegalStateException ex)
                 {
     if(!sipStack.isAlive())                    
                     return;
-                } //End block
+                } 
     if((!sipStack.cacheClientConnections) && clientTransaction.isReliable())                
                 {
                     int newUseCount = --clientTransaction.getMessageChannel().useCount;
@@ -1475,8 +1496,8 @@ Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731 =         nextHop;
                         TimerTask myTimer = new LingerTimer();
                         sipStack.getTimer().schedule(myTimer,
                                 SIPTransactionStack.CONNECTION_LINGER_TIME * 1000);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
     if(sipStack.isLoggingEnabled() && clientTransaction.isReliable())                    
@@ -1484,15 +1505,15 @@ Hop var7E6D0C89CF2547AEC7B1741A7E613AB4_312760731 =         nextHop;
                         int useCount = clientTransaction.getMessageChannel().useCount;
     if(sipStack.isLoggingEnabled())                        
                         sipStack.getStackLogger().logDebug("Client Use Count = " + useCount);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             else
             {
                 clientTransaction.fireTimer();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         

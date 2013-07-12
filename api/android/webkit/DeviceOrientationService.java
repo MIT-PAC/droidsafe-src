@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -53,11 +53,11 @@ final class DeviceOrientationService implements SensorEventListener {
     public  DeviceOrientationService(DeviceMotionAndOrientationManager manager, Context context) {
         mManager = manager;
         mContext = context;
-        // ---------- Original Method ----------
-        //mManager = manager;
-        //assert(mManager != null);
-        //mContext = context;
-        //assert(mContext != null);
+        
+        
+        
+        
+        
     }
 
     
@@ -65,9 +65,9 @@ final class DeviceOrientationService implements SensorEventListener {
     public void start() {
         mIsRunning = true;
         registerForSensors();
-        // ---------- Original Method ----------
-        //mIsRunning = true;
-        //registerForSensors();
+        
+        
+        
     }
 
     
@@ -75,9 +75,9 @@ final class DeviceOrientationService implements SensorEventListener {
     public void stop() {
         mIsRunning = false;
         unregisterFromSensors();
-        // ---------- Original Method ----------
-        //mIsRunning = false;
-        //unregisterFromSensors();
+        
+        
+        
     }
 
     
@@ -86,11 +86,11 @@ final class DeviceOrientationService implements SensorEventListener {
     if(mIsRunning)        
         {
             unregisterFromSensors();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsRunning) {
-            //unregisterFromSensors();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -99,14 +99,15 @@ final class DeviceOrientationService implements SensorEventListener {
     if(mIsRunning)        
         {
             registerForSensors();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mIsRunning) {
-            //registerForSensors();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.929 -0400", hash_original_method = "C4E19FEB85A20B838CCD6120912B24F7", hash_generated_method = "A7E67A6E76B1F10B2C3579EEC8072463")
     private void sendErrorEvent() {
     if(mHaveSentErrorEvent)        
@@ -119,28 +120,28 @@ final class DeviceOrientationService implements SensorEventListener {
     if(mIsRunning)            
             {
                 mManager.onOrientationChange(null, null, null);
-            } //End block
-            // ---------- Original Method ----------
-            //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-            //if (mIsRunning) {
-                    //mManager.onOrientationChange(null, null, null);
-                //}
+            } 
+            
+            
+            
+                    
+                
         }
 });
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mHaveSentErrorEvent)
-            //return;
-        //mHaveSentErrorEvent = true;
-        //mHandler.post(new Runnable() {
-            //@Override
-            //public void run() {
-                //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-                //if (mIsRunning) {
-                    //mManager.onOrientationChange(null, null, null);
-                //}
-            //}
-        //});
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                
+            
+        
     }
 
     
@@ -149,20 +150,20 @@ final class DeviceOrientationService implements SensorEventListener {
     if(mHandler == null)        
         {
             mHandler = new Handler();
-        } //End block
+        } 
     if(!registerForAccelerometerSensor() || !registerForMagneticFieldSensor())        
         {
             unregisterFromSensors();
             sendErrorEvent();
-        } //End block
-        // ---------- Original Method ----------
-        //if (mHandler == null) {
-            //mHandler = new Handler();
-        //}
-        //if (!registerForAccelerometerSensor() || !registerForMagneticFieldSensor()) {
-            //unregisterFromSensors();
-            //sendErrorEvent();
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -171,13 +172,13 @@ final class DeviceOrientationService implements SensorEventListener {
     if(mGravityVector == null || mMagneticFieldVector == null)        
         {
             return;
-        } //End block
+        } 
         float[] deviceRotationMatrix = new float[9];
     if(!SensorManager.getRotationMatrix(
                 deviceRotationMatrix, null, mGravityVector, mMagneticFieldVector))        
         {
             return;
-        } //End block
+        } 
         float[] rotationAngles = new float[3];
         SensorManager.getOrientation(deviceRotationMatrix, rotationAngles);
         double alpha = Math.toDegrees(-rotationAngles[0]) - 90.0;
@@ -185,38 +186,38 @@ final class DeviceOrientationService implements SensorEventListener {
 (alpha < 0.0)        
         {
             alpha += 360.0;
-        } //End block
+        } 
         double beta = Math.toDegrees(-rotationAngles[1]);
         while
 (beta < -180.0)        
         {
             beta += 360.0;
-        } //End block
+        } 
         double gamma = Math.toDegrees(rotationAngles[2]);
         while
 (gamma < -90.0)        
         {
             gamma += 360.0;
-        } //End block
+        } 
         maybeSendChange(alpha, beta, gamma);
-        // ---------- Original Method ----------
-        //if (mGravityVector == null || mMagneticFieldVector == null) {
-            //return;
-        //}
-        //float[] deviceRotationMatrix = new float[9];
-        //if (!SensorManager.getRotationMatrix(
-                //deviceRotationMatrix, null, mGravityVector, mMagneticFieldVector)) {
-            //return;
-        //}
-        //float[] rotationAngles = new float[3];
-        //SensorManager.getOrientation(deviceRotationMatrix, rotationAngles);
-        //double alpha = Math.toDegrees(-rotationAngles[0]) - 90.0;
-        //while (alpha < 0.0) { alpha += 360.0; }
-        //double beta = Math.toDegrees(-rotationAngles[1]);
-        //while (beta < -180.0) { beta += 360.0; }
-        //double gamma = Math.toDegrees(rotationAngles[2]);
-        //while (gamma < -90.0) { gamma += 360.0; }
-        //maybeSendChange(alpha, beta, gamma);
+        
+        
+            
+        
+        
+        
+                
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -225,16 +226,16 @@ final class DeviceOrientationService implements SensorEventListener {
     if(mSensorManager == null)        
         {
             mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        } //End block
+        } 
 SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorManager;
         varAF949C78846D4F076444FE5DD86DE06F_625863409.addTaint(taint);
         return varAF949C78846D4F076444FE5DD86DE06F_625863409;
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mSensorManager == null) {
-            //mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
-        //}
-        //return mSensorManager;
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -246,18 +247,18 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
             boolean var68934A3E9455FA72420237EB05902327_821396564 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1984405047 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1984405047;
-        } //End block
+        } 
         boolean var320D0CCDEA6DF6796F8BA2DEE97A55AA_1722352746 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_591947194 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_591947194;
-        // ---------- Original Method ----------
-        //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_ACCELEROMETER);
-        //if (sensors.isEmpty()) {
-            //return false;
-        //}
-        //return getSensorManager().registerListener(
-                //this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler);
+        
+        
+        
+            
+        
+        
+                
     }
 
     
@@ -269,29 +270,30 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
             boolean var68934A3E9455FA72420237EB05902327_681508029 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1332331622 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1332331622;
-        } //End block
+        } 
         boolean var320D0CCDEA6DF6796F8BA2DEE97A55AA_1079349694 = (getSensorManager().registerListener(
                 this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1484481836 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1484481836;
-        // ---------- Original Method ----------
-        //List<Sensor> sensors = getSensorManager().getSensorList(Sensor.TYPE_MAGNETIC_FIELD);
-        //if (sensors.isEmpty()) {
-            //return false;
-        //}
-        //return getSensorManager().registerListener(
-                //this, sensors.get(0), SensorManager.SENSOR_DELAY_FASTEST, mHandler);
+        
+        
+        
+            
+        
+        
+                
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "3017DC11BC04FDEC5E6982352A18F2D7", hash_generated_method = "D951C525941C25B5CE19BA545AA9B4D8")
     private void unregisterFromSensors() {
         getSensorManager().unregisterListener(this);
-        // ---------- Original Method ----------
-        //getSensorManager().unregisterListener(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.932 -0400", hash_original_method = "B4ADD48907D203A526782697C56D84A1", hash_generated_method = "3C1A1EC0C343A6858CE51FA636390E27")
     private void maybeSendChange(double alpha, double beta, double gamma) {
     if(mAlpha == null || mBeta == null || mGamma == null
@@ -304,35 +306,36 @@ SensorManager varAF949C78846D4F076444FE5DD86DE06F_625863409 =         mSensorMan
             mGamma = gamma;
             mManager.onOrientationChange(mAlpha, mBeta, mGamma);
             mHaveSentErrorEvent = false;
-        } //End block
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
-        //if (mAlpha == null || mBeta == null || mGamma == null
-                //|| Math.abs(alpha - mAlpha) > DELTA_DEGRESS
-                //|| Math.abs(beta - mBeta) > DELTA_DEGRESS
-                //|| Math.abs(gamma - mGamma) > DELTA_DEGRESS) {
-            //mAlpha = alpha;
-            //mBeta = beta;
-            //mGamma = gamma;
-            //mManager.onOrientationChange(mAlpha, mBeta, mGamma);
-            //mHaveSentErrorEvent = false;
-        //}
+        } 
+        
+        
+        
+                
+                
+                
+            
+            
+            
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "2695E209DFB6DD433B7C6CE1A619CE79", hash_generated_method = "4B78C89890BD75034BFA745D6F3B71B4")
     public void onSensorChanged(SensorEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(!mIsRunning)        
         {
             return;
-        } //End block
+        } 
 switch(event.sensor.getType()){
         case Sensor.TYPE_ACCELEROMETER:
     if(mGravityVector == null)        
         {
             mGravityVector = new float[3];
-        } //End block
+        } 
         mGravityVector[0] = event.values[0];
         mGravityVector[1] = event.values[1];
         mGravityVector[2] = event.values[2];
@@ -342,7 +345,7 @@ switch(event.sensor.getType()){
     if(mMagneticFieldVector == null)        
         {
             mMagneticFieldVector = new float[3];
-        } //End block
+        } 
         mMagneticFieldVector[0] = event.values[0];
         mMagneticFieldVector[1] = event.values[1];
         mMagneticFieldVector[2] = event.values[2];
@@ -350,18 +353,18 @@ switch(event.sensor.getType()){
         break;
         default:
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.934 -0400", hash_original_method = "4C77A6863BACF480F39B2826F5CA663C", hash_generated_method = "3B735DACA44A7088C201CD04E68BCC26")
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(accuracy);
         addTaint(sensor.getTaint());
-        // ---------- Original Method ----------
-        //assert WebViewCore.THREAD_NAME.equals(Thread.currentThread().getName());
+        
+        
     }
 
     

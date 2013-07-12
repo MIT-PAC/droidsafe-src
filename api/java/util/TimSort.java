@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,19 +41,19 @@ class TimSort<T> {
                         len < 119151  ? 19 : 40);
         runBase = new int[stackLen];
         runLen = new int[stackLen];
-        // ---------- Original Method ----------
-        //this.a = a;
-        //this.c = c;
-        //int len = a.length;
-        //@SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"})
-        //T[] newArray = (T[]) new Object[len < 2 * INITIAL_TMP_STORAGE_LENGTH ?
-                                        //len >>> 1 : INITIAL_TMP_STORAGE_LENGTH];
-        //tmp = newArray;
-        //int stackLen = (len <    120  ?  5 :
-                        //len <   1542  ? 10 :
-                        //len < 119151  ? 19 : 40);
-        //runBase = new int[stackLen];
-        //runLen = new int[stackLen];
+        
+        
+        
+        
+        
+        
+                                        
+        
+        
+                        
+                        
+        
+        
     }
 
     
@@ -145,7 +145,8 @@ class TimSort<T> {
     }
 
     
-        private static void reverseRange(Object[] a, int lo, int hi) {
+        @DSModeled(DSC.SAFE)
+    private static void reverseRange(Object[] a, int lo, int hi) {
         hi--;
         while (lo < hi) {
             Object t = a[lo];
@@ -155,7 +156,8 @@ class TimSort<T> {
     }
 
     
-        private static int minRunLength(int n) {
+        @DSModeled(DSC.SAFE)
+    private static int minRunLength(int n) {
         if (DEBUG) assert n >= 0;
         int r = 0;
         while (n >= MIN_MERGE) {
@@ -166,15 +168,16 @@ class TimSort<T> {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:06.200 -0400", hash_original_method = "4FF06135DA529EA5945D38DB9DEC9B0E", hash_generated_method = "E03E6E0EE5B596D8BA339D7D8B426933")
     private void pushRun(int runBase, int runLen) {
         this.runBase[stackSize] = runBase;
         this.runLen[stackSize] = runLen;
         stackSize++;
-        // ---------- Original Method ----------
-        //this.runBase[stackSize] = runBase;
-        //this.runLen[stackSize] = runLen;
-        //stackSize++;
+        
+        
+        
+        
     }
 
     
@@ -189,30 +192,30 @@ class TimSort<T> {
     if(runLen[n - 1] < runLen[n + 1])                
                 n--;
                 mergeAt(n);
-            } //End block
+            } 
             else
     if(runLen[n] <= runLen[n + 1])            
             {
                 mergeAt(n);
-            } //End block
+            } 
             else
             {
                 break;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //while (stackSize > 1) {
-            //int n = stackSize - 2;
-            //if (n > 0 && runLen[n-1] <= runLen[n] + runLen[n+1]) {
-                //if (runLen[n - 1] < runLen[n + 1])
-                    //n--;
-                //mergeAt(n);
-            //} else if (runLen[n] <= runLen[n + 1]) {
-                //mergeAt(n);
-            //} else {
-                //break; 
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                    
+                
+            
+                
+            
+                
+            
+        
     }
 
     
@@ -225,14 +228,14 @@ class TimSort<T> {
     if(n > 0 && runLen[n - 1] < runLen[n + 1])            
             n--;
             mergeAt(n);
-        } //End block
-        // ---------- Original Method ----------
-        //while (stackSize > 1) {
-            //int n = stackSize - 2;
-            //if (n > 0 && runLen[n - 1] < runLen[n + 1])
-                //n--;
-            //mergeAt(n);
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+        
     }
 
     
@@ -247,7 +250,7 @@ class TimSort<T> {
         {
             runBase[i + 1] = runBase[i + 2];
             runLen[i + 1] = runLen[i + 2];
-        } //End block
+        } 
         stackSize--;
         int k = gallopRight(a[base2], a, base1, len1, 0, c);
     if(DEBUG){ }        base1 += k;
@@ -261,8 +264,8 @@ class TimSort<T> {
         mergeLo(base1, len1, base2, len2);
         else
         mergeHi(base1, len1, base2, len2);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -372,13 +375,13 @@ class TimSort<T> {
         {
             System.arraycopy(tmp, cursor1, a, dest, len1);
             return;
-        } //End block
+        } 
     if(len1 == 1)        
         {
             System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
             return;
-        } //End block
+        } 
         Comparator<? super T> c = this.c;
         int minGallop = this.minGallop;
     outer        :
@@ -396,7 +399,7 @@ class TimSort<T> {
                         count1 = 0;
     if(--len2 == 0)                        
                         break outer;
-                    } //End block
+                    } 
                     else
                     {
                         a[dest++] = tmp[cursor1++];
@@ -404,8 +407,8 @@ class TimSort<T> {
                         count2 = 0;
     if(--len1 == 1)                        
                         break outer;
-                    } //End block
-                } //End block
+                    } 
+                } 
 } while ((count1 | count2) < minGallop);
             do {
                 {
@@ -418,7 +421,7 @@ class TimSort<T> {
                         len1 -= count1;
     if(len1 <= 1)                        
                         break outer;
-                    } //End block
+                    } 
                     a[dest++] = a[cursor2++];
     if(--len2 == 0)                    
                     break outer;
@@ -431,23 +434,23 @@ class TimSort<T> {
                         len2 -= count2;
     if(len2 == 0)                        
                         break outer;
-                    } //End block
+                    } 
                     a[dest++] = tmp[cursor1++];
     if(--len1 == 1)                    
                     break outer;
                     minGallop--;
-                } //End block
+                } 
 } while (count1 >= MIN_GALLOP | count2 >= MIN_GALLOP);
     if(minGallop < 0)            
             minGallop = 0;
             minGallop += 2;
-        } //End block
+        } 
         this.minGallop = minGallop < 1 ? 1 : minGallop;
     if(len1 == 1)        
         {
     if(DEBUG){ }            System.arraycopy(a, cursor2, a, dest, len2);
             a[dest + len2] = tmp[cursor1];
-        } //End block
+        } 
         else
     if(len1 == 0)        
         {
@@ -455,13 +458,13 @@ class TimSort<T> {
                 "Comparison method violates its general contract!");
             var41FEEFC1D775C629D485FDC0BE07D5A2_606592286.addTaint(taint);
             throw var41FEEFC1D775C629D485FDC0BE07D5A2_606592286;
-        } //End block
+        } 
         else
         {
     if(DEBUG){ }    if(DEBUG){ }            System.arraycopy(tmp, cursor1, a, dest, len1);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -482,7 +485,7 @@ class TimSort<T> {
         {
             System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
             return;
-        } //End block
+        } 
     if(len2 == 1)        
         {
             dest -= len1;
@@ -490,7 +493,7 @@ class TimSort<T> {
             System.arraycopy(a, cursor1 + 1, a, dest + 1, len1);
             a[dest] = tmp[cursor2];
             return;
-        } //End block
+        } 
         Comparator<? super T> c = this.c;
         int minGallop = this.minGallop;
     outer        :
@@ -508,7 +511,7 @@ class TimSort<T> {
                         count2 = 0;
     if(--len1 == 0)                        
                         break outer;
-                    } //End block
+                    } 
                     else
                     {
                         a[dest--] = tmp[cursor2--];
@@ -516,8 +519,8 @@ class TimSort<T> {
                         count1 = 0;
     if(--len2 == 1)                        
                         break outer;
-                    } //End block
-                } //End block
+                    } 
+                } 
 } while ((count1 | count2) < minGallop);
             do {
                 {
@@ -530,7 +533,7 @@ class TimSort<T> {
                         System.arraycopy(a, cursor1 + 1, a, dest + 1, count1);
     if(len1 == 0)                        
                         break outer;
-                    } //End block
+                    } 
                     a[dest--] = tmp[cursor2--];
     if(--len2 == 1)                    
                     break outer;
@@ -543,17 +546,17 @@ class TimSort<T> {
                         System.arraycopy(tmp, cursor2 + 1, a, dest + 1, count2);
     if(len2 <= 1)                        
                         break outer;
-                    } //End block
+                    } 
                     a[dest--] = a[cursor1--];
     if(--len1 == 0)                    
                     break outer;
                     minGallop--;
-                } //End block
+                } 
 } while (count1 >= MIN_GALLOP | count2 >= MIN_GALLOP);
     if(minGallop < 0)            
             minGallop = 0;
             minGallop += 2;
-        } //End block
+        } 
         this.minGallop = minGallop < 1 ? 1 : minGallop;
     if(len2 == 1)        
         {
@@ -561,7 +564,7 @@ class TimSort<T> {
             cursor1 -= len1;
             System.arraycopy(a, cursor1 + 1, a, dest + 1, len1);
             a[dest] = tmp[cursor2];
-        } //End block
+        } 
         else
     if(len2 == 0)        
         {
@@ -569,13 +572,13 @@ class TimSort<T> {
                 "Comparison method violates its general contract!");
             var41FEEFC1D775C629D485FDC0BE07D5A2_432089427.addTaint(taint);
             throw var41FEEFC1D775C629D485FDC0BE07D5A2_432089427;
-        } //End block
+        } 
         else
         {
     if(DEBUG){ }    if(DEBUG){ }            System.arraycopy(tmp, 0, a, dest - (len2 - 1), len2);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -597,28 +600,28 @@ class TimSort<T> {
             newSize = Math.min(newSize, a.length >>> 1);
             @SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"}) T[] newArray = (T[]) new Object[newSize];
             tmp = newArray;
-        } //End block
+        } 
 T[] var3F12A0424932F6B5155AA6C49B63FE6E_1810338546 =         tmp;
         var3F12A0424932F6B5155AA6C49B63FE6E_1810338546.addTaint(taint);
         return var3F12A0424932F6B5155AA6C49B63FE6E_1810338546;
-        // ---------- Original Method ----------
-        //if (tmp.length < minCapacity) {
-            //int newSize = minCapacity;
-            //newSize |= newSize >> 1;
-            //newSize |= newSize >> 2;
-            //newSize |= newSize >> 4;
-            //newSize |= newSize >> 8;
-            //newSize |= newSize >> 16;
-            //newSize++;
-            //if (newSize < 0) 
-                //newSize = minCapacity;
-            //else
-                //newSize = Math.min(newSize, a.length >>> 1);
-            //@SuppressWarnings({"unchecked", "UnnecessaryLocalVariable"})
-            //T[] newArray = (T[]) new Object[newSize];
-            //tmp = newArray;
-        //}
-        //return tmp;
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+            
+            
+        
+        
     }
 
     

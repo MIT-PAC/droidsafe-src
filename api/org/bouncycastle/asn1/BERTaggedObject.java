@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class BERTaggedObject extends DERTaggedObject {
         super(tagNo, obj);
         addTaint(obj.getTaint());
         addTaint(tagNo);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -29,7 +29,7 @@ public class BERTaggedObject extends DERTaggedObject {
         addTaint(obj.getTaint());
         addTaint(tagNo);
         addTaint(explicit);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -38,7 +38,7 @@ public class BERTaggedObject extends DERTaggedObject {
         int             tagNo) {
         super(false, tagNo, new BERSequence());
         addTaint(tagNo);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -60,50 +60,50 @@ public class BERTaggedObject extends DERTaggedObject {
     if(obj instanceof BERConstructedOctetString)                        
                         {
                             e = ((BERConstructedOctetString)obj).getObjects();
-                        } //End block
+                        } 
                         else
                         {
                             ASN1OctetString octs = (ASN1OctetString)obj;
                             BERConstructedOctetString berO = new BERConstructedOctetString(octs.getOctets());
                             e = berO.getObjects();
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
     if(obj instanceof ASN1Sequence)                    
                     {
                         e = ((ASN1Sequence)obj).getObjects();
-                    } //End block
+                    } 
                     else
     if(obj instanceof ASN1Set)                    
                     {
                         e = ((ASN1Set)obj).getObjects();
-                    } //End block
+                    } 
                     else
                     {
                         RuntimeException var41BDC878CD450F8A941BC74FE9A368FD_2033865783 = new RuntimeException("not implemented: " + obj.getClass().getName());
                         var41BDC878CD450F8A941BC74FE9A368FD_2033865783.addTaint(taint);
                         throw var41BDC878CD450F8A941BC74FE9A368FD_2033865783;
-                    } //End block
+                    } 
                     while
 (e.hasMoreElements())                    
                     {
                         out.writeObject(e.nextElement());
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     out.writeObject(obj);
-                } //End block
-            } //End block
+                } 
+            } 
             out.write(0x00);
             out.write(0x00);
-        } //End block
+        } 
         else
         {
             super.encode(out);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

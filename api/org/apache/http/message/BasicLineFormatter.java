@@ -1,6 +1,6 @@
 package org.apache.http.message;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -16,7 +16,7 @@ public class BasicLineFormatter implements LineFormatter {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.538 -0400", hash_original_method = "8022E7B2B110A3478739271765EA4718", hash_generated_method = "8022E7B2B110A3478739271765EA4718")
     public BasicLineFormatter ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -26,21 +26,21 @@ public class BasicLineFormatter implements LineFormatter {
     if(buffer != null)        
         {
             buffer.clear();
-        } //End block
+        } 
         else
         {
             buffer = new CharArrayBuffer(64);
-        } //End block
+        } 
 CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1657427068 =         buffer;
         varE75BCB56CC6A0BCEED51BE38E1BB3F38_1657427068.addTaint(taint);
         return varE75BCB56CC6A0BCEED51BE38E1BB3F38_1657427068;
-        // ---------- Original Method ----------
-        //if (buffer != null) {
-            //buffer.clear();
-        //} else {
-            //buffer = new CharArrayBuffer(64);
-        //}
-        //return buffer;
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -63,17 +63,17 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1657427068 =         buffer;
                 ("Protocol version may not be null");
             varF737F3A2E71D18506546E7DDB6A73FE6_1717151125.addTaint(taint);
             throw varF737F3A2E71D18506546E7DDB6A73FE6_1717151125;
-        } //End block
+        } 
         CharArrayBuffer result = buffer;
         final int len = estimateProtocolVersionLen(version);
     if(result == null)        
         {
             result = new CharArrayBuffer(len);
-        } //End block
+        } 
         else
         {
             result.ensureCapacity(len);
-        } //End block
+        } 
         result.append(version.getProtocol());
         result.append('/');
         result.append(Integer.toString(version.getMajor()));
@@ -82,24 +82,24 @@ CharArrayBuffer varE75BCB56CC6A0BCEED51BE38E1BB3F38_1657427068 =         buffer;
 CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_109670696 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_109670696.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_109670696;
-        // ---------- Original Method ----------
-        //if (version == null) {
-            //throw new IllegalArgumentException
-                //("Protocol version may not be null");
-        //}
-        //CharArrayBuffer result = buffer;
-        //final int len = estimateProtocolVersionLen(version);
-        //if (result == null) {
-            //result = new CharArrayBuffer(len);
-        //} else {
-            //result.ensureCapacity(len);
-        //}
-        //result.append(version.getProtocol());
-        //result.append('/');
-        //result.append(Integer.toString(version.getMajor()));
-        //result.append('.');
-        //result.append(Integer.toString(version.getMinor()));
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -109,8 +109,8 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_109670696 =         result;
         int varF63604D5EC935185E5C11D3C268BAF12_637865928 = (version.getProtocol().length() + 4);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066342235 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066342235;
-        // ---------- Original Method ----------
-        //return version.getProtocol().length() + 4;
+        
+        
     }
 
     
@@ -133,20 +133,20 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_109670696 =         result;
                 ("Request line may not be null");
             var57E7C227464A845296BA51EE2C094FE3_1279540339.addTaint(taint);
             throw var57E7C227464A845296BA51EE2C094FE3_1279540339;
-        } //End block
+        } 
         CharArrayBuffer result = initBuffer(buffer);
         doFormatRequestLine(result, reqline);
 CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1094447659 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_1094447659.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_1094447659;
-        // ---------- Original Method ----------
-        //if (reqline == null) {
-            //throw new IllegalArgumentException
-                //("Request line may not be null");
-        //}
-        //CharArrayBuffer result = initBuffer(buffer);
-        //doFormatRequestLine(result, reqline);
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
@@ -165,17 +165,17 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1094447659 =         result;
         buffer.append(uri);
         buffer.append(' ');
         appendProtocolVersion(buffer, reqline.getProtocolVersion());
-        // ---------- Original Method ----------
-        //final String method = reqline.getMethod();
-        //final String uri    = reqline.getUri();
-        //int len = method.length() + 1 + uri.length() + 1 + 
-            //estimateProtocolVersionLen(reqline.getProtocolVersion());
-        //buffer.ensureCapacity(len);
-        //buffer.append(method);
-        //buffer.append(' ');
-        //buffer.append(uri);
-        //buffer.append(' ');
-        //appendProtocolVersion(buffer, reqline.getProtocolVersion());
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -198,20 +198,20 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_1094447659 =         result;
                 ("Status line may not be null");
             var1636A5AFF6F53BF0101E09315281948D_949917385.addTaint(taint);
             throw var1636A5AFF6F53BF0101E09315281948D_949917385;
-        } //End block
+        } 
         CharArrayBuffer result = initBuffer(buffer);
         doFormatStatusLine(result, statline);
 CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_810724400 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_810724400.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_810724400;
-        // ---------- Original Method ----------
-        //if (statline == null) {
-            //throw new IllegalArgumentException
-                //("Status line may not be null");
-        //}
-        //CharArrayBuffer result = initBuffer(buffer);
-        //doFormatStatusLine(result, statline);
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+        
     }
 
     
@@ -226,7 +226,7 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_810724400 =         result;
     if(reason != null)        
         {
             len += reason.length();
-        } //End block
+        } 
         buffer.ensureCapacity(len);
         appendProtocolVersion(buffer, statline.getProtocolVersion());
         buffer.append(' ');
@@ -235,22 +235,22 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_810724400 =         result;
     if(reason != null)        
         {
             buffer.append(reason);
-        } //End block
-        // ---------- Original Method ----------
-        //int len = estimateProtocolVersionLen(statline.getProtocolVersion())
-            //+ 1 + 3 + 1;
-        //final String reason = statline.getReasonPhrase();
-        //if (reason != null) {
-            //len += reason.length();
-        //}
-        //buffer.ensureCapacity(len);
-        //appendProtocolVersion(buffer, statline.getProtocolVersion());
-        //buffer.append(' ');
-        //buffer.append(Integer.toString(statline.getStatusCode()));
-        //buffer.append(' ');
-        //if (reason != null) {
-            //buffer.append(reason);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -273,33 +273,33 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_810724400 =         result;
                 ("Header may not be null");
             var655E57DE77F969F763516260E292795B_1374934609.addTaint(taint);
             throw var655E57DE77F969F763516260E292795B_1374934609;
-        } //End block
+        } 
         CharArrayBuffer result = null;
     if(header instanceof FormattedHeader)        
         {
             result = ((FormattedHeader)header).getBuffer();
-        } //End block
+        } 
         else
         {
             result = initBuffer(buffer);
             doFormatHeader(result, header);
-        } //End block
+        } 
 CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_423178919 =         result;
         varDC838461EE2FA0CA4C9BBB70A15456B0_423178919.addTaint(taint);
         return varDC838461EE2FA0CA4C9BBB70A15456B0_423178919;
-        // ---------- Original Method ----------
-        //if (header == null) {
-            //throw new IllegalArgumentException
-                //("Header may not be null");
-        //}
-        //CharArrayBuffer result = null;
-        //if (header instanceof FormattedHeader) {
-            //result = ((FormattedHeader)header).getBuffer();
-        //} else {
-            //result = initBuffer(buffer);
-            //doFormatHeader(result, header);
-        //}
-        //return result;
+        
+        
+            
+                
+        
+        
+        
+            
+        
+            
+            
+        
+        
     }
 
     
@@ -314,27 +314,27 @@ CharArrayBuffer varDC838461EE2FA0CA4C9BBB70A15456B0_423178919 =         result;
     if(value != null)        
         {
             len += value.length();
-        } //End block
+        } 
         buffer.ensureCapacity(len);
         buffer.append(name);
         buffer.append(": ");
     if(value != null)        
         {
             buffer.append(value);
-        } //End block
-        // ---------- Original Method ----------
-        //final String name = header.getName();
-        //final String value = header.getValue();
-        //int len = name.length() + 2;
-        //if (value != null) {
-            //len += value.length();
-        //}
-        //buffer.ensureCapacity(len);
-        //buffer.append(name);
-        //buffer.append(": ");
-        //if (value != null) {
-            //buffer.append(value);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.test;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -47,9 +47,9 @@ public class IsolatedContext extends ContextWrapper {
         addTaint(targetContext.getTaint());
         mResolver = resolver;
         mMockAccountManager = new MockAccountManager();
-        // ---------- Original Method ----------
-        //mResolver = resolver;
-        //mMockAccountManager = new MockAccountManager();
+        
+        
+        
     }
 
     
@@ -60,24 +60,26 @@ public class IsolatedContext extends ContextWrapper {
 List<Intent> varE605E6FF378E732B20AE622708ABD1E5_1756568544 =         intents;
         varE605E6FF378E732B20AE622708ABD1E5_1756568544.addTaint(taint);
         return varE605E6FF378E732B20AE622708ABD1E5_1756568544;
-        // ---------- Original Method ----------
-        //List<Intent> intents = mBroadcastIntents;
-        //mBroadcastIntents = Lists.newArrayList();
-        //return intents;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.113 -0400", hash_original_method = "DB3EFD57F21462C44953D7817E2D1D0B", hash_generated_method = "3AAF8260B2BF14316CCD5FA8AD16D4E3")
     @Override
     public ContentResolver getContentResolver() {
 ContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_961678017 =         mResolver;
         varAB109E9A06CD2C0031B0F4CF098EA9E9_961678017.addTaint(taint);
         return varAB109E9A06CD2C0031B0F4CF098EA9E9_961678017;
-        // ---------- Original Method ----------
-        //return mResolver;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.113 -0400", hash_original_method = "D151ADEF319006893C279FF639241601", hash_generated_method = "D5236996010CDE7957E1203B76F0C27B")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -87,54 +89,59 @@ ContentResolver varAB109E9A06CD2C0031B0F4CF098EA9E9_961678017 =         mResolve
         boolean var68934A3E9455FA72420237EB05902327_882733956 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_763856476 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_763856476;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.113 -0400", hash_original_method = "D63A733B99C939E3B044BECFC3A4F3E0", hash_generated_method = "3EAC4B92C3510F9EDB7B3BD91A74B6AB")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
 Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
         var540C13E9E156B687226421B24F2DF178_1458089441.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1458089441;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.114 -0400", hash_original_method = "5B78FE35E60043EEBC860B3845D6E056", hash_generated_method = "F3D4B94E17AF977F24D9B43015DBAC9F")
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
         addTaint(receiver.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.114 -0400", hash_original_method = "8D436BAC12DD3DE12E9B49520E96DCDA", hash_generated_method = "5C8ED5CBBE2966ACA64812CDF5F94AD0")
     @Override
     public void sendBroadcast(Intent intent) {
         addTaint(intent.getTaint());
         mBroadcastIntents.add(intent);
-        // ---------- Original Method ----------
-        //mBroadcastIntents.add(intent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.114 -0400", hash_original_method = "AE03E44313266CC18BE47C7921C18AFC", hash_generated_method = "5AFD2661FFA5F7D8AA1E3BDEF1B73C5E")
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission) {
         addTaint(receiverPermission.getTaint());
         addTaint(intent.getTaint());
         mBroadcastIntents.add(intent);
-        // ---------- Original Method ----------
-        //mBroadcastIntents.add(intent);
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.115 -0400", hash_original_method = "D4A194640702A8287472737CF0B51049", hash_generated_method = "21AEB8895021F99B810A6A0F6B1880B1")
     @Override
     public int checkUriPermission(
@@ -149,11 +156,12 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
         int var55413C6AD5414521A701E18298A1C877_1776976459 = (PackageManager.PERMISSION_GRANTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012677599 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2012677599;
-        // ---------- Original Method ----------
-        //return PackageManager.PERMISSION_GRANTED;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.115 -0400", hash_original_method = "D9147C12C0591AE2DF9A07380B6C581A", hash_generated_method = "C08FC206452BFAD68CD23B2153879AC3")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -164,8 +172,8 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
         int var55413C6AD5414521A701E18298A1C877_1348629057 = (PackageManager.PERMISSION_GRANTED);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194656416 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_194656416;
-        // ---------- Original Method ----------
-        //return PackageManager.PERMISSION_GRANTED;
+        
+        
     }
 
     
@@ -178,15 +186,15 @@ Intent var540C13E9E156B687226421B24F2DF178_1458089441 =         null;
 Object varA5D00F4EC5971D65BFD6627A28D168C7_350350066 =             mMockAccountManager;
             varA5D00F4EC5971D65BFD6627A28D168C7_350350066.addTaint(taint);
             return varA5D00F4EC5971D65BFD6627A28D168C7_350350066;
-        } //End block
+        } 
 Object var540C13E9E156B687226421B24F2DF178_2077497878 =         null;
         var540C13E9E156B687226421B24F2DF178_2077497878.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_2077497878;
-        // ---------- Original Method ----------
-        //if (Context.ACCOUNT_SERVICE.equals(name)) {
-            //return mMockAccountManager;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
@@ -196,8 +204,8 @@ Object var540C13E9E156B687226421B24F2DF178_2077497878 =         null;
 File varCDB4F0E70BC9453804DFE6CD3611F6BF_1236998301 =         new File("/dev/null");
         varCDB4F0E70BC9453804DFE6CD3611F6BF_1236998301.addTaint(taint);
         return varCDB4F0E70BC9453804DFE6CD3611F6BF_1236998301;
-        // ---------- Original Method ----------
-        //return new File("/dev/null");
+        
+        
     }
 
     
@@ -206,27 +214,29 @@ File varCDB4F0E70BC9453804DFE6CD3611F6BF_1236998301 =         new File("/dev/nul
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.116 -0400", hash_original_method = "F50A3FB8A5B88C0A2467EC0285F6EC49", hash_generated_method = "B682F1D4D506B92B6755DA9F25B8C9C2")
         public  MockAccountManager() {
             super(IsolatedContext.this, null , null );
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.117 -0400", hash_original_method = "CD3E43A96A9D76110323C3B9341CE036", hash_generated_method = "012C3EEEBEDE720FBB789686E20AD01E")
         public void addOnAccountsUpdatedListener(OnAccountsUpdateListener listener,
                 Handler handler, boolean updateImmediately) {
             addTaint(updateImmediately);
             addTaint(handler.getTaint());
             addTaint(listener.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.117 -0400", hash_original_method = "C22581F9BCE56EDC1300FA008A2943C3", hash_generated_method = "0B28FE5C70881498C4DB8E3E39535478")
         public Account[] getAccounts() {
 Account[] varF35A7B4D3EBC7623DF9EB3A949846B5B_1103712996 =             new Account[]{};
             varF35A7B4D3EBC7623DF9EB3A949846B5B_1103712996.addTaint(taint);
             return varF35A7B4D3EBC7623DF9EB3A949846B5B_1103712996;
-            // ---------- Original Method ----------
-            //return new Account[]{};
+            
+            
         }
 
         
@@ -241,11 +251,12 @@ Account[] varF35A7B4D3EBC7623DF9EB3A949846B5B_1103712996 =             new Accou
 AccountManagerFuture<Account[]> varA1C77EF2D49EC78A818761662FAD417E_1097970719 =             new MockAccountManagerFuture<Account[]>(new Account[0]);
             varA1C77EF2D49EC78A818761662FAD417E_1097970719.addTaint(taint);
             return varA1C77EF2D49EC78A818761662FAD417E_1097970719;
-            // ---------- Original Method ----------
-            //return new MockAccountManagerFuture<Account[]>(new Account[0]);
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.118 -0400", hash_original_method = "10417FE58833E3F01D4F5638C5F0722A", hash_generated_method = "AD1824DB575D1E9AD8C39118C69A8F5D")
         public String blockingGetAuthToken(Account account, String authTokenType,
                 boolean notifyAuthFailure) throws OperationCanceledException, IOException, AuthenticatorException {
@@ -255,8 +266,8 @@ AccountManagerFuture<Account[]> varA1C77EF2D49EC78A818761662FAD417E_1097970719 =
 String var540C13E9E156B687226421B24F2DF178_2034189897 =             null;
             var540C13E9E156B687226421B24F2DF178_2034189897.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_2034189897;
-            // ---------- Original Method ----------
-            //return null;
+            
+            
         }
 
         
@@ -268,39 +279,42 @@ String var540C13E9E156B687226421B24F2DF178_2034189897 =             null;
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.118 -0400", hash_original_method = "AEBC033D1847CD0EB76C1CD9E1AF95BB", hash_generated_method = "6116808AFB1EBF7DF132977043A5389D")
             public  MockAccountManagerFuture(T result) {
                 mResult = result;
-                // ---------- Original Method ----------
-                //mResult = result;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.119 -0400", hash_original_method = "E7E050BF43F9AAADC8EA5FB3113867CE", hash_generated_method = "A1B31A7096DB108DC5F107B871DF9C25")
             public boolean cancel(boolean mayInterruptIfRunning) {
                 addTaint(mayInterruptIfRunning);
                 boolean var68934A3E9455FA72420237EB05902327_1565081133 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1968280325 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1968280325;
-                // ---------- Original Method ----------
-                //return false;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.119 -0400", hash_original_method = "BCC8FFB68E7C7F6096B18A3AB81987E9", hash_generated_method = "FF8A35E84E889B6F4DDDEA3651E896D5")
             public boolean isCancelled() {
                 boolean var68934A3E9455FA72420237EB05902327_1387216205 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1679153752 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1679153752;
-                // ---------- Original Method ----------
-                //return false;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.119 -0400", hash_original_method = "2FACCCF2AE69DF9C18B4C967A20C9877", hash_generated_method = "4107BCA17685BC328D66D41955C2564E")
             public boolean isDone() {
                 boolean varB326B5062B2F0E69046810717534CB09_1646093526 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1496418651 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1496418651;
-                // ---------- Original Method ----------
-                //return true;
+                
+                
             }
 
             
@@ -309,8 +323,8 @@ String var540C13E9E156B687226421B24F2DF178_2034189897 =             null;
 T var8EC17D26103D23643357521909BC2C9A_226689116 =                 mResult;
                 var8EC17D26103D23643357521909BC2C9A_226689116.addTaint(taint);
                 return var8EC17D26103D23643357521909BC2C9A_226689116;
-                // ---------- Original Method ----------
-                //return mResult;
+                
+                
             }
 
             
@@ -321,8 +335,8 @@ T var8EC17D26103D23643357521909BC2C9A_226689116 =                 mResult;
 T var44439E072D0705F6FD67F017CB15DB77_320269073 =                 getResult();
                 var44439E072D0705F6FD67F017CB15DB77_320269073.addTaint(taint);
                 return var44439E072D0705F6FD67F017CB15DB77_320269073;
-                // ---------- Original Method ----------
-                //return getResult();
+                
+                
             }
 
             

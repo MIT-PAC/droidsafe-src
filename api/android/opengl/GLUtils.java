@@ -1,6 +1,6 @@
 package android.opengl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public final class GLUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.612 -0400", hash_original_method = "A98AAD2DCE964D3E8867B0B125C8757B", hash_generated_method = "602B8AFAFBDBCCEF4BCB5E24B6A14FC8")
     private  GLUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     

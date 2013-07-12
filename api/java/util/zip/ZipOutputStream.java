@@ -1,6 +1,6 @@
 package java.util.zip;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -50,7 +50,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     public  ZipOutputStream(OutputStream p1) {
         super(p1, new Deflater(Deflater.DEFAULT_COMPRESSION, true));
         addTaint(p1.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,14 +63,14 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             def.end();
             out.close();
             out = null;
-        } //End block
-        // ---------- Original Method ----------
-        //if (out != null) {
-            //finish();
-            //def.end();
-            //out.close();
-            //out = null;
-        //}
+        } 
+        
+        
+            
+            
+            
+            
+        
     }
 
     
@@ -80,11 +80,11 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     if(currentEntry == null)        
         {
             return;
-        } //End block
+        } 
     if(currentEntry.getMethod() == DEFLATED)        
         {
             super.finish();
-        } //End block
+        } 
     if(currentEntry.getMethod() == STORED)        
         {
     if(crc.getValue() != currentEntry.crc)            
@@ -92,14 +92,14 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
                 ZipException var5801A1671C74CAA3F440CFA906EB0647_1212640355 = new ZipException("CRC mismatch");
                 var5801A1671C74CAA3F440CFA906EB0647_1212640355.addTaint(taint);
                 throw var5801A1671C74CAA3F440CFA906EB0647_1212640355;
-            } //End block
+            } 
     if(currentEntry.size != crc.tbytes)            
             {
                 ZipException var0B43C0F4381198EAF33558883E27DC84_81239863 = new ZipException("Size mismatch");
                 var0B43C0F4381198EAF33558883E27DC84_81239863.addTaint(taint);
                 throw var0B43C0F4381198EAF33558883E27DC84_81239863;
-            } //End block
-        } //End block
+            } 
+        } 
         curOffset = LOCHDR;
     if(currentEntry.getMethod() != STORED)        
         {
@@ -108,7 +108,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             writeLong(out, currentEntry.crc = crc.getValue());
             writeLong(out, currentEntry.compressedSize = def.getTotalOut());
             writeLong(out, currentEntry.size = def.getTotalIn());
-        } //End block
+        } 
         int flags = currentEntry.getMethod() == STORED ? 0 : ZipFile.GPBF_DATA_DESCRIPTOR_FLAG;
         flags |= ZipFile.GPBF_UTF8_FLAG;
         writeLong(cDir, CENSIG);
@@ -123,30 +123,30 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
         {
             curOffset += writeLong(cDir, def.getTotalOut());
             writeLong(cDir, def.getTotalIn());
-        } //End block
+        } 
         else
         {
             curOffset += writeLong(cDir, crc.tbytes);
             writeLong(cDir, crc.tbytes);
-        } //End block
+        } 
         curOffset += writeShort(cDir, nameLength);
     if(currentEntry.extra != null)        
         {
             curOffset += writeShort(cDir, currentEntry.extra.length);
-        } //End block
+        } 
         else
         {
             writeShort(cDir, 0);
-        } //End block
+        } 
         String c;
     if((c = currentEntry.getComment()) != null)        
         {
             writeShort(cDir, c.length());
-        } //End block
+        } 
         else
         {
             writeShort(cDir, 0);
-        } //End block
+        } 
         writeShort(cDir, 0);
         writeShort(cDir, 0);
         writeLong(cDir, 0);
@@ -156,18 +156,18 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     if(currentEntry.extra != null)        
         {
             cDir.write(currentEntry.extra);
-        } //End block
+        } 
         offset += curOffset;
     if(c != null)        
         {
             cDir.write(c.getBytes());
-        } //End block
+        } 
         currentEntry = null;
         crc.reset();
         def.reset();
         done = false;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -179,21 +179,21 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             IOException var4E3F8A3DA623CEFCDEFE68AFA0DAB154_313051336 = new IOException("Stream is closed");
             var4E3F8A3DA623CEFCDEFE68AFA0DAB154_313051336.addTaint(taint);
             throw var4E3F8A3DA623CEFCDEFE68AFA0DAB154_313051336;
-        } //End block
+        } 
     if(cDir == null)        
         {
             return;
-        } //End block
+        } 
     if(entries.isEmpty())        
         {
             ZipException varFAED705AFA14B41755EC3F614BA7DF17_1862653323 = new ZipException("No entries");
             varFAED705AFA14B41755EC3F614BA7DF17_1862653323.addTaint(taint);
             throw varFAED705AFA14B41755EC3F614BA7DF17_1862653323;
-        } //End block
+        } 
     if(currentEntry != null)        
         {
             closeEntry();
-        } //End block
+        } 
         int cdirSize = cDir.size();
         writeLong(cDir, ENDSIG);
         writeShort(cDir, 0);
@@ -206,42 +206,42 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
         {
             writeShort(cDir, comment.length());
             cDir.write(comment.getBytes());
-        } //End block
+        } 
         else
         {
             writeShort(cDir, 0);
-        } //End block
+        } 
         out.write(cDir.toByteArray());
         cDir = null;
-        // ---------- Original Method ----------
-        //if (out == null) {
-            //throw new IOException("Stream is closed");
-        //}
-        //if (cDir == null) {
-            //return;
-        //}
-        //if (entries.isEmpty()) {
-            //throw new ZipException("No entries");
-        //}
-        //if (currentEntry != null) {
-            //closeEntry();
-        //}
-        //int cdirSize = cDir.size();
-        //writeLong(cDir, ENDSIG);
-        //writeShort(cDir, 0);
-        //writeShort(cDir, 0);
-        //writeShort(cDir, entries.size());
-        //writeShort(cDir, entries.size());
-        //writeLong(cDir, cdirSize);
-        //writeLong(cDir, offset);
-        //if (comment != null) {
-            //writeShort(cDir, comment.length());
-            //cDir.write(comment.getBytes());
-        //} else {
-            //writeShort(cDir, 0);
-        //}
-        //out.write(cDir.toByteArray());
-        //cDir = null;
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -250,7 +250,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     if(currentEntry != null)        
         {
             closeEntry();
-        } //End block
+        } 
     if(ze.getMethod() == STORED || (compressMethod == STORED && ze.getMethod() == -1))        
         {
     if(ze.crc == -1)            
@@ -258,27 +258,27 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
                 ZipException var5801A1671C74CAA3F440CFA906EB0647_850660120 = new ZipException("CRC mismatch");
                 var5801A1671C74CAA3F440CFA906EB0647_850660120.addTaint(taint);
                 throw var5801A1671C74CAA3F440CFA906EB0647_850660120;
-            } //End block
+            } 
     if(ze.size == -1 && ze.compressedSize == -1)            
             {
                 ZipException var0B43C0F4381198EAF33558883E27DC84_1512026616 = new ZipException("Size mismatch");
                 var0B43C0F4381198EAF33558883E27DC84_1512026616.addTaint(taint);
                 throw var0B43C0F4381198EAF33558883E27DC84_1512026616;
-            } //End block
+            } 
     if(ze.size != ze.compressedSize && ze.compressedSize != -1 && ze.size != -1)            
             {
                 ZipException var0B43C0F4381198EAF33558883E27DC84_50472076 = new ZipException("Size mismatch");
                 var0B43C0F4381198EAF33558883E27DC84_50472076.addTaint(taint);
                 throw var0B43C0F4381198EAF33558883E27DC84_50472076;
-            } //End block
-        } //End block
+            } 
+        } 
         checkClosed();
     if(entries.contains(ze.name))        
         {
             ZipException var74DC6BAD2DE6ECF9388F786A2BE54260_2076886206 = new ZipException("Entry already exists: " + ze.name);
             var74DC6BAD2DE6ECF9388F786A2BE54260_2076886206.addTaint(taint);
             throw var74DC6BAD2DE6ECF9388F786A2BE54260_2076886206;
-        } //End block
+        } 
         nameBytes = ze.name.getBytes(Charsets.UTF_8);
         nameLength = nameBytes.length;
     if(nameLength > 0xffff)        
@@ -286,14 +286,14 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             IllegalArgumentException var79CF5EFB8B9ACEF9A1263BDC7878E97B_1988093348 = new IllegalArgumentException("Name too long: " + nameLength + " UTF-8 bytes");
             var79CF5EFB8B9ACEF9A1263BDC7878E97B_1988093348.addTaint(taint);
             throw var79CF5EFB8B9ACEF9A1263BDC7878E97B_1988093348;
-        } //End block
+        } 
         def.setLevel(compressLevel);
         currentEntry = ze;
         entries.add(currentEntry.name);
     if(currentEntry.getMethod() == -1)        
         {
             currentEntry.setMethod(compressMethod);
-        } //End block
+        } 
         int flags = currentEntry.getMethod() == STORED ? 0 : ZipFile.GPBF_DATA_DESCRIPTOR_FLAG;
         flags |= ZipFile.GPBF_UTF8_FLAG;
         writeLong(out, LOCSIG);
@@ -303,7 +303,7 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     if(currentEntry.getTime() == -1)        
         {
             currentEntry.setTime(System.currentTimeMillis());
-        } //End block
+        } 
         writeShort(out, currentEntry.time);
         writeShort(out, currentEntry.modDate);
     if(currentEntry.getMethod() == STORED)        
@@ -311,38 +311,38 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     if(currentEntry.size == -1)            
             {
                 currentEntry.size = currentEntry.compressedSize;
-            } //End block
+            } 
             else
     if(currentEntry.compressedSize == -1)            
             {
                 currentEntry.compressedSize = currentEntry.size;
-            } //End block
+            } 
             writeLong(out, currentEntry.crc);
             writeLong(out, currentEntry.size);
             writeLong(out, currentEntry.size);
-        } //End block
+        } 
         else
         {
             writeLong(out, 0);
             writeLong(out, 0);
             writeLong(out, 0);
-        } //End block
+        } 
         writeShort(out, nameLength);
     if(currentEntry.extra != null)        
         {
             writeShort(out, currentEntry.extra.length);
-        } //End block
+        } 
         else
         {
             writeShort(out, 0);
-        } //End block
+        } 
         out.write(nameBytes);
     if(currentEntry.extra != null)        
         {
             out.write(currentEntry.extra);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -353,13 +353,13 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             IllegalArgumentException var97B9599BED78D60C8CE387F05581A040_753352986 = new IllegalArgumentException("Comment too long: " + comment.length() + " characters");
             var97B9599BED78D60C8CE387F05581A040_753352986.addTaint(taint);
             throw var97B9599BED78D60C8CE387F05581A040_753352986;
-        } //End block
+        } 
         this.comment = comment;
-        // ---------- Original Method ----------
-        //if (comment.length() > 0xFFFF) {
-            //throw new IllegalArgumentException("Comment too long: " + comment.length() + " characters");
-        //}
-        //this.comment = comment;
+        
+        
+            
+        
+        
     }
 
     
@@ -370,13 +370,13 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_948769889 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_948769889.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_948769889;
-        } //End block
+        } 
         compressLevel = level;
-        // ---------- Original Method ----------
-        //if (level < Deflater.DEFAULT_COMPRESSION || level > Deflater.BEST_COMPRESSION) {
-            //throw new IllegalArgumentException();
-        //}
-        //compressLevel = level;
+        
+        
+            
+        
+        
     }
 
     
@@ -387,13 +387,13 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1431319995 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_1431319995.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1431319995;
-        } //End block
+        } 
         compressMethod = method;
-        // ---------- Original Method ----------
-        //if (method != STORED && method != DEFLATED) {
-            //throw new IllegalArgumentException();
-        //}
-        //compressMethod = method;
+        
+        
+            
+        
+        
     }
 
     
@@ -408,12 +408,12 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
         long var865C0C0B4AB0E063E5CAA3387C1A8741_623132410 = (i);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_253705035 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_253705035;
-        // ---------- Original Method ----------
-        //os.write((int) (i & 0xFF));
-        //os.write((int) (i >> 8) & 0xFF);
-        //os.write((int) (i >> 16) & 0xFF);
-        //os.write((int) (i >> 24) & 0xFF);
-        //return i;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -426,10 +426,10 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
         int var865C0C0B4AB0E063E5CAA3387C1A8741_1646625771 = (i);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_492252024 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_492252024;
-        // ---------- Original Method ----------
-        //os.write(i & 0xFF);
-        //os.write((i >> 8) & 0xFF);
-        //return i;
+        
+        
+        
+        
     }
 
     
@@ -445,27 +445,27 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             ZipException var0CCF8A825234F729D7FF80919A068231_1656979232 = new ZipException("No active entry");
             var0CCF8A825234F729D7FF80919A068231_1656979232.addTaint(taint);
             throw var0CCF8A825234F729D7FF80919A068231_1656979232;
-        } //End block
+        } 
     if(currentEntry.getMethod() == STORED)        
         {
             out.write(buffer, offset, byteCount);
-        } //End block
+        } 
         else
         {
             super.write(buffer, offset, byteCount);
-        } //End block
+        } 
         crc.update(buffer, offset, byteCount);
-        // ---------- Original Method ----------
-        //Arrays.checkOffsetAndCount(buffer.length, offset, byteCount);
-        //if (currentEntry == null) {
-            //throw new ZipException("No active entry");
-        //}
-        //if (currentEntry.getMethod() == STORED) {
-            //out.write(buffer, offset, byteCount);
-        //} else {
-            //super.write(buffer, offset, byteCount);
-        //}
-        //crc.update(buffer, offset, byteCount);
+        
+        
+        
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
@@ -476,11 +476,11 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
             IOException var4E3F8A3DA623CEFCDEFE68AFA0DAB154_19725485 = new IOException("Stream is closed");
             var4E3F8A3DA623CEFCDEFE68AFA0DAB154_19725485.addTaint(taint);
             throw var4E3F8A3DA623CEFCDEFE68AFA0DAB154_19725485;
-        } //End block
-        // ---------- Original Method ----------
-        //if (cDir == null) {
-            //throw new IOException("Stream is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     

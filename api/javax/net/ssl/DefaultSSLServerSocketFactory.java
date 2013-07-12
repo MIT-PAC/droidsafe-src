@@ -1,6 +1,6 @@
 package javax.net.ssl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,30 +18,32 @@ class DefaultSSLServerSocketFactory extends SSLServerSocketFactory {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.561 -0400", hash_original_method = "75914460F849F70EB9C61E69E22A6D0F", hash_generated_method = "D44D9734EF6EA12716A4A51DD204BD62")
       DefaultSSLServerSocketFactory(String mes) {
         errMessage = mes;
-        // ---------- Original Method ----------
-        //errMessage = mes;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.561 -0400", hash_original_method = "12108FA96648EC8E1683C3067260A382", hash_generated_method = "8D704FD5C764FE8F3107699A9ED478D5")
     @Override
     public String[] getDefaultCipherSuites() {
 String[] var46F61E348BE3BFB8B0571B04F2FE2C80_1819630051 =         EmptyArray.STRING;
         var46F61E348BE3BFB8B0571B04F2FE2C80_1819630051.addTaint(taint);
         return var46F61E348BE3BFB8B0571B04F2FE2C80_1819630051;
-        // ---------- Original Method ----------
-        //return EmptyArray.STRING;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.561 -0400", hash_original_method = "02FB44E3332A242283DAD5FC179FF843", hash_generated_method = "1B2843C141E639106CF7FDDDB33252C4")
     @Override
     public String[] getSupportedCipherSuites() {
 String[] var46F61E348BE3BFB8B0571B04F2FE2C80_916179145 =         EmptyArray.STRING;
         var46F61E348BE3BFB8B0571B04F2FE2C80_916179145.addTaint(taint);
         return var46F61E348BE3BFB8B0571B04F2FE2C80_916179145;
-        // ---------- Original Method ----------
-        //return EmptyArray.STRING;
+        
+        
     }
 
     
@@ -52,8 +54,8 @@ String[] var46F61E348BE3BFB8B0571B04F2FE2C80_916179145 =         EmptyArray.STRI
         SocketException varEB339767C6BAA0A2146810EA7017633C_818158412 = new SocketException(errMessage);
         varEB339767C6BAA0A2146810EA7017633C_818158412.addTaint(taint);
         throw varEB339767C6BAA0A2146810EA7017633C_818158412;
-        // ---------- Original Method ----------
-        //throw new SocketException(errMessage);
+        
+        
     }
 
     
@@ -65,8 +67,8 @@ String[] var46F61E348BE3BFB8B0571B04F2FE2C80_916179145 =         EmptyArray.STRI
         SocketException varEB339767C6BAA0A2146810EA7017633C_1559481641 = new SocketException(errMessage);
         varEB339767C6BAA0A2146810EA7017633C_1559481641.addTaint(taint);
         throw varEB339767C6BAA0A2146810EA7017633C_1559481641;
-        // ---------- Original Method ----------
-        //throw new SocketException(errMessage);
+        
+        
     }
 
     
@@ -79,8 +81,8 @@ String[] var46F61E348BE3BFB8B0571B04F2FE2C80_916179145 =         EmptyArray.STRI
         SocketException varEB339767C6BAA0A2146810EA7017633C_1619410139 = new SocketException(errMessage);
         varEB339767C6BAA0A2146810EA7017633C_1619410139.addTaint(taint);
         throw varEB339767C6BAA0A2146810EA7017633C_1619410139;
-        // ---------- Original Method ----------
-        //throw new SocketException(errMessage);
+        
+        
     }
 
     

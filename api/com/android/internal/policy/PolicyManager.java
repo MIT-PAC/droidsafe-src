@@ -1,6 +1,6 @@
 package com.android.internal.policy;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,26 +15,30 @@ public final class PolicyManager {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.348 -0400", hash_original_method = "8280FBDEA727C0869187AB3F61DD27B1", hash_generated_method = "84C464024E5F34F099B0A60B3B8B9AAB")
     private  PolicyManager() {
-        // ---------- Original Method ----------
+        
     }
 
     
-        public static Window makeNewWindow(Context context) {
+        @DSModeled(DSC.BAN)
+    public static Window makeNewWindow(Context context) {
         return sPolicy.makeNewWindow(context);
     }
 
     
-        public static LayoutInflater makeNewLayoutInflater(Context context) {
+        @DSModeled(DSC.BAN)
+    public static LayoutInflater makeNewLayoutInflater(Context context) {
         return sPolicy.makeNewLayoutInflater(context);
     }
 
     
-        public static WindowManagerPolicy makeNewWindowManager() {
+        @DSModeled(DSC.BAN)
+    public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
     
-        public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
+        @DSModeled(DSC.BAN)
+    public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
         return sPolicy.makeNewFallbackEventHandler(context);
     }
 

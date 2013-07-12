@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cat;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ abstract class ResponseData {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.412 -0400", hash_original_method = "814762139FDC16047D72234D9356528B", hash_generated_method = "814762139FDC16047D72234D9356528B")
     public ResponseData ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -45,8 +45,8 @@ class SelectItemResponseData extends ResponseData {
     public  SelectItemResponseData(int id) {
         super();
         this.id = id;
-        // ---------- Original Method ----------
-        //this.id = id;
+        
+        
     }
 
     
@@ -58,11 +58,11 @@ class SelectItemResponseData extends ResponseData {
         buf.write(tag);
         buf.write(1);
         buf.write(id);
-        // ---------- Original Method ----------
-        //int tag = 0x80 | ComprehensionTlvTag.ITEM_ID.value();
-        //buf.write(tag);
-        //buf.write(1);
-        //buf.write(id);
+        
+        
+        
+        
+        
     }
 
     
@@ -92,11 +92,11 @@ class GetInkeyInputResponseData extends ResponseData {
         this.mIsPacked = packed;
         this.mInData = inData;
         this.mIsYesNo = false;
-        // ---------- Original Method ----------
-        //this.mIsUcs2 = ucs2;
-        //this.mIsPacked = packed;
-        //this.mInData = inData;
-        //this.mIsYesNo = false;
+        
+        
+        
+        
+        
     }
 
     
@@ -108,12 +108,12 @@ class GetInkeyInputResponseData extends ResponseData {
         this.mInData = "";
         this.mIsYesNo = true;
         this.mYesNoResponse = yesNoResponse;
-        // ---------- Original Method ----------
-        //this.mIsUcs2 = false;
-        //this.mIsPacked = false;
-        //this.mInData = "";
-        //this.mIsYesNo = true;
-        //this.mYesNoResponse = yesNoResponse;
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -124,7 +124,7 @@ class GetInkeyInputResponseData extends ResponseData {
     if(buf == null)        
         {
             return;
-        } //End block
+        } 
         int tag = 0x80 | ComprehensionTlvTag.TEXT_STRING.value();
         buf.write(tag);
         byte[] data;
@@ -132,7 +132,7 @@ class GetInkeyInputResponseData extends ResponseData {
         {
             data = new byte[1];
             data[0] = mYesNoResponse ? GET_INKEY_YES : GET_INKEY_NO;
-        } //End block
+        } 
         else
     if(mInData != null && mInData.length() > 0)        
         {
@@ -141,7 +141,7 @@ class GetInkeyInputResponseData extends ResponseData {
     if(mIsUcs2)                
                 {
                     data = mInData.getBytes("UTF-16");
-                } //End block
+                } 
                 else
     if(mIsPacked)                
                 {
@@ -150,45 +150,45 @@ class GetInkeyInputResponseData extends ResponseData {
                             .stringToGsm7BitPacked(mInData, 0, 0);
                     data = new byte[size];
                     System.arraycopy(tempData, 1, data, 0, size);
-                } //End block
+                } 
                 else
                 {
                     data = GsmAlphabet.stringToGsm8BitPacked(mInData);
-                } //End block
-            } //End block
+                } 
+            } 
             catch (UnsupportedEncodingException e)
             {
                 data = new byte[0];
-            } //End block
+            } 
             catch (EncodeException e)
             {
                 data = new byte[0];
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             data = new byte[0];
-        } //End block
+        } 
         writeLength(buf, data.length + 1);
     if(mIsUcs2)        
         {
             buf.write(0x08);
-        } //End block
+        } 
         else
     if(mIsPacked)        
         {
             buf.write(0x00);
-        } //End block
+        } 
         else
         {
             buf.write(0x04);
-        } //End block
+        } 
 for(byte b : data)
         {
             buf.write(b);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -209,11 +209,12 @@ class LanguageResponseData extends ResponseData {
     public  LanguageResponseData(String lang) {
         super();
         this.lang = lang;
-        // ---------- Original Method ----------
-        //this.lang = lang;
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:24.420 -0400", hash_original_method = "0658244A9E7567A9FE447A4F6CD905F4", hash_generated_method = "4DD6D439ACF035ECB43B356A4BE97C82")
     @Override
     public void format(ByteArrayOutputStream buf) {
@@ -221,40 +222,40 @@ class LanguageResponseData extends ResponseData {
     if(buf == null)        
         {
             return;
-        } //End block
+        } 
         int tag = 0x80 | ComprehensionTlvTag.LANGUAGE.value();
         buf.write(tag);
         byte[] data;
     if(lang != null && lang.length() > 0)        
         {
             data = GsmAlphabet.stringToGsm8BitPacked(lang);
-        } //End block
+        } 
         else
         {
             data = new byte[0];
-        } //End block
+        } 
         buf.write(data.length);
 for(byte b : data)
         {
             buf.write(b);
-        } //End block
-        // ---------- Original Method ----------
-        //if (buf == null) {
-            //return;
-        //}
-        //int tag = 0x80 | ComprehensionTlvTag.LANGUAGE.value();
-        //buf.write(tag);
-        //byte[] data;
-        //if (lang != null && lang.length() > 0) {
-            //data = GsmAlphabet.stringToGsm8BitPacked(lang);
-        //}
-        //else {
-            //data = new byte[0];
-        //}
-        //buf.write(data.length);
-        //for (byte b : data) {
-            //buf.write(b);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -269,8 +270,8 @@ class DTTZResponseData extends ResponseData {
     public  DTTZResponseData(Calendar cal) {
         super();
         calendar = cal;
-        // ---------- Original Method ----------
-        //calendar = cal;
+        
+        
     }
 
     
@@ -281,7 +282,7 @@ class DTTZResponseData extends ResponseData {
     if(buf == null)        
         {
             return;
-        } //End block
+        } 
         int tag = 0x80 | CommandType.PROVIDE_LOCAL_INFORMATION.value();
         buf.write(tag);
         byte[] data = new byte[8];
@@ -289,7 +290,7 @@ class DTTZResponseData extends ResponseData {
     if(calendar == null)        
         {
             calendar = Calendar.getInstance();
-        } //End block
+        } 
         data[1] = byteToBCD(calendar.get(java.util.Calendar.YEAR) % 100);
         data[2] = byteToBCD(calendar.get(java.util.Calendar.MONTH) + 1);
         data[3] = byteToBCD(calendar.get(java.util.Calendar.DATE));
@@ -300,19 +301,19 @@ class DTTZResponseData extends ResponseData {
     if(TextUtils.isEmpty(tz))        
         {
             data[7] = (byte) 0xFF;
-        } //End block
+        } 
         else
         {
             TimeZone zone = TimeZone.getTimeZone(tz);
             int zoneOffset = zone.getRawOffset() + zone.getDSTSavings();
             data[7] = getTZOffSetByte(zoneOffset);
-        } //End block
+        } 
 for(byte b : data)
         {
             buf.write(b);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -326,17 +327,17 @@ for(byte b : data)
             byte varCFCD208495D565EF66E7DFF9F98764DA_1448834412 = (0);
                         byte var40EA57D3EE3C07BF1C102B466E1C3091_1940649979 = getTaintByte();
             return var40EA57D3EE3C07BF1C102B466E1C3091_1940649979;
-        } //End block
+        } 
         byte var8C4E17D9A63FEDD9BDE42F898AFA6D50_1725812709 = ((byte) ((value / 10) | ((value % 10) << 4)));
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_47718312 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_47718312;
-        // ---------- Original Method ----------
-        //if (value < 0 && value > 99) {
-            //CatLog.d(this, "Err: byteToBCD conversion Value is " + value +
-                           //" Value has to be between 0 and 99");
-            //return 0;
-        //}
-        //return (byte) ((value / 10) | ((value % 10) << 4));
+        
+        
+            
+                           
+            
+        
+        
     }
 
     
@@ -350,12 +351,12 @@ for(byte b : data)
         byte var3F88E896D91080236C3DCE7DFF23DE22_2027228773 = (isNegative ?  (bcdVal |= 0x08) : bcdVal);
                 byte var40EA57D3EE3C07BF1C102B466E1C3091_308853846 = getTaintByte();
         return var40EA57D3EE3C07BF1C102B466E1C3091_308853846;
-        // ---------- Original Method ----------
-        //boolean isNegative = (offSetVal < 0);
-        //long tzOffset = offSetVal / (15 * 60 * 1000);
-        //tzOffset = (isNegative ? -1 : 1) * tzOffset;
-        //byte bcdVal = byteToBCD((int) tzOffset);
-        //return isNegative ?  (bcdVal |= 0x08) : bcdVal;
+        
+        
+        
+        
+        
+        
     }
 
     

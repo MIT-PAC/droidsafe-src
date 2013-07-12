@@ -1,6 +1,6 @@
 package android.text.method;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,31 +18,34 @@ public class SingleLineTransformationMethod extends ReplacementTransformationMet
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.932 -0400", hash_original_method = "D4568A7EAB6F00728EAF3C3E423FA0FE", hash_generated_method = "D4568A7EAB6F00728EAF3C3E423FA0FE")
     public SingleLineTransformationMethod ()
     {
-        //Synthesized constructor
+        
     }
 
 
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.932 -0400", hash_original_method = "64C6D73F3773427C2A2F245DBEBF22E0", hash_generated_method = "8116AFB2A008AEFD715C112BE33C4C3F")
     protected char[] getOriginal() {
         char[] varA87D5006E1DE1BFC07D5C56086AD20F1_1723900480 = (ORIGINAL);
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1541016096 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1541016096;
-        // ---------- Original Method ----------
-        //return ORIGINAL;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:46.932 -0400", hash_original_method = "44611EB51BD7B665366AA2036C731932", hash_generated_method = "779C3CC35D21E82470182DDB89DFE704")
     protected char[] getReplacement() {
         char[] varF4CC968AA79ED281D13413445DE24D82_227048702 = (REPLACEMENT);
                 char[] var50607924ABD4C17119BAF3A1CE41C0EC_1087283567 = {getTaintChar()};
         return var50607924ABD4C17119BAF3A1CE41C0EC_1087283567;
-        // ---------- Original Method ----------
-        //return REPLACEMENT;
+        
+        
     }
 
     
-        public static SingleLineTransformationMethod getInstance() {
+        @DSModeled(DSC.SAFE)
+    public static SingleLineTransformationMethod getInstance() {
         if (sInstance != null)
             return sInstance;
         sInstance = new SingleLineTransformationMethod();

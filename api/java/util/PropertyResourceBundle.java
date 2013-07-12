@@ -1,6 +1,6 @@
 package java.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,15 +21,15 @@ public class PropertyResourceBundle extends ResourceBundle {
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_433076017 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_433076017.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_433076017;
-        } //End block
+        } 
         resources = new Properties();
         resources.load(stream);
-        // ---------- Original Method ----------
-        //if (stream == null) {
-            //throw new NullPointerException();
-        //}
-        //resources = new Properties();
-        //resources.load(stream);
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -38,9 +38,9 @@ public class PropertyResourceBundle extends ResourceBundle {
         addTaint(reader.getTaint());
         resources = new Properties();
         resources.load(reader);
-        // ---------- Original Method ----------
-        //resources = new Properties();
-        //resources.load(reader);
+        
+        
+        
     }
 
     
@@ -49,8 +49,8 @@ public class PropertyResourceBundle extends ResourceBundle {
 Set<String> var0EAA476BE58006F42D4C65D603A3959B_20943247 =         resources.stringPropertyNames();
         var0EAA476BE58006F42D4C65D603A3959B_20943247.addTaint(taint);
         return var0EAA476BE58006F42D4C65D603A3959B_20943247;
-        // ---------- Original Method ----------
-        //return resources.stringPropertyNames();
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ Set<String> var0EAA476BE58006F42D4C65D603A3959B_20943247 =         resources.str
 Enumeration<String> varA865D04F5518808831D04C06BBF9E25E_1552242915 =         (Enumeration<String>) resources.propertyNames();
         varA865D04F5518808831D04C06BBF9E25E_1552242915.addTaint(taint);
         return varA865D04F5518808831D04C06BBF9E25E_1552242915;
-        // ---------- Original Method ----------
-        //return (Enumeration<String>) resources.propertyNames();
+        
+        
     }
 
     
@@ -73,7 +73,7 @@ Enumeration<String> varA865D04F5518808831D04C06BBF9E25E_1552242915 =         (En
 Enumeration<String> var6BDB3A965228957FB4A93D8CFE026B07_1828917257 =             getLocalKeys();
             var6BDB3A965228957FB4A93D8CFE026B07_1828917257.addTaint(taint);
             return var6BDB3A965228957FB4A93D8CFE026B07_1828917257;
-        } //End block
+        } 
 Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187 =         new Enumeration<String>() {        @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.467 -0400", hash_original_field = "86E09BF7152A875F2EB007DC9547307A", hash_generated_field = "975E55A4433F6ABC0D4D089A47474FE3")
         Enumeration<String> local = getLocalKeys();
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.467 -0400", hash_original_field = "57F37C14C65A377A117E2FA9BCD9E124", hash_generated_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9")
@@ -87,7 +87,7 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187 =         new 
                 boolean varB326B5062B2F0E69046810717534CB09_1241395090 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1872001220 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1872001220;
-            } //End block
+            } 
             while
 (pEnum.hasMoreElements())            
             {
@@ -98,23 +98,23 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187 =         new 
                     boolean varB326B5062B2F0E69046810717534CB09_1115586652 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1536334996 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_1536334996;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean var68934A3E9455FA72420237EB05902327_2002103439 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1842185429 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1842185429;
-            // ---------- Original Method ----------
-            //if (nextElement != null) {
-                    //return true;
-                //}
-            //while (pEnum.hasMoreElements()) {
-                    //String next = pEnum.nextElement();
-                    //if (!resources.containsKey(next)) {
-                        //nextElement = next;
-                        //return true;
-                    //}
-                //}
-            //return false;
+            
+            
+                    
+                
+            
+                    
+                    
+                        
+                        
+                    
+                
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.468 -0400", hash_original_method = "0C8D02D40B56817F2309824D8D7773D2", hash_generated_method = "C09F21E08A8340718F8F3E567C4E8293")
         public boolean hasMoreElements() {
@@ -123,15 +123,15 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187 =         new 
                 boolean varB326B5062B2F0E69046810717534CB09_1937281872 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2002591907 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2002591907;
-            } //End block
+            } 
             boolean var1B0169DB7518C68DDFF6F3046195CB57_1218597314 = (findNext());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1159946095 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1159946095;
-            // ---------- Original Method ----------
-            //if (local.hasMoreElements()) {
-                    //return true;
-                //}
-            //return findNext();
+            
+            
+                    
+                
+            
         }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.469 -0400", hash_original_method = "BE1AA467D8342A7EF3FB49068D3D4458", hash_generated_method = "24EE999573ECF2A755F77FB9EDB00185")
         public String nextElement() {
@@ -140,7 +140,7 @@ Enumeration<String> var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187 =         new 
 String varB945B0A7BBA20D33AF59AD34C191B850_463673979 =                 local.nextElement();
                 varB945B0A7BBA20D33AF59AD34C191B850_463673979.addTaint(taint);
                 return varB945B0A7BBA20D33AF59AD34C191B850_463673979;
-            } //End block
+            } 
     if(findNext())            
             {
                 String result = nextElement;
@@ -148,29 +148,30 @@ String varB945B0A7BBA20D33AF59AD34C191B850_463673979 =                 local.nex
 String varDC838461EE2FA0CA4C9BBB70A15456B0_853660897 =                 result;
                 varDC838461EE2FA0CA4C9BBB70A15456B0_853660897.addTaint(taint);
                 return varDC838461EE2FA0CA4C9BBB70A15456B0_853660897;
-            } //End block
+            } 
 String varC31A54EE9D4A2AA28C7FB87214BBE87B_30465780 =             pEnum.nextElement();
             varC31A54EE9D4A2AA28C7FB87214BBE87B_30465780.addTaint(taint);
             return varC31A54EE9D4A2AA28C7FB87214BBE87B_30465780;
-            // ---------- Original Method ----------
-            //if (local.hasMoreElements()) {
-                    //return local.nextElement();
-                //}
-            //if (findNext()) {
-                    //String result = nextElement;
-                    //nextElement = null;
-                    //return result;
-                //}
-            //return pEnum.nextElement();
+            
+            
+                    
+                
+            
+                    
+                    
+                    
+                
+            
         }
 };
         var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187.addTaint(taint);
         return var4CA9A63005EB1C17FE61CAE8215EBA5B_672783187;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:12.470 -0400", hash_original_method = "23544B256E22E0E7C2784DAFEBE5A56C", hash_generated_method = "9920EDE4B3ECE4BF7B1FE328112FD175")
     @Override
     public Object handleGetObject(String key) {
@@ -178,12 +179,12 @@ String varC31A54EE9D4A2AA28C7FB87214BBE87B_30465780 =             pEnum.nextElem
 Object varA4014D977EFFED8D43A4516F0A521C26_255694483 =         resources.get(key);
         varA4014D977EFFED8D43A4516F0A521C26_255694483.addTaint(taint);
         return varA4014D977EFFED8D43A4516F0A521C26_255694483;
-        // ---------- Original Method ----------
-        //return resources.get(key);
+        
+        
     }
 
     
-    // orphaned legacy method
+    
     public String nextElement() {
                 if (local.hasMoreElements()) {
                     return local.nextElement();
@@ -196,7 +197,7 @@ Object varA4014D977EFFED8D43A4516F0A521C26_255694483 =         resources.get(key
                 return pEnum.nextElement();
             }
     
-    // orphaned legacy method
+    
     private boolean findNext() {
                 if (nextElement != null) {
                     return true;
@@ -211,7 +212,7 @@ Object varA4014D977EFFED8D43A4516F0A521C26_255694483 =         resources.get(key
                 return false;
             }
     
-    // orphaned legacy method
+    
     public boolean hasMoreElements() {
                 if (local.hasMoreElements()) {
                     return true;
@@ -219,13 +220,13 @@ Object varA4014D977EFFED8D43A4516F0A521C26_255694483 =         resources.get(key
                 return findNext();
             }
     
-    // orphaned legacy field
+    
     Enumeration<String> local = getLocalKeys();
     
-    // orphaned legacy field
+    
     Enumeration<String> pEnum = parent.getKeys();
     
-    // orphaned legacy field
+    
     String nextElement;
     
 }

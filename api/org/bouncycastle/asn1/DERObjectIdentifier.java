@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -44,18 +44,18 @@ switch((int)value / 40){
                         objId.append('2');
                         value -= 80;
 }                        first = false;
-                    } //End block
+                    } 
                     objId.append('.');
                     objId.append(value);
                     value = 0;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
     if(bigValue == null)                
                 {
                     bigValue = BigInteger.valueOf(value);
-                } //End block
+                } 
                 bigValue = bigValue.shiftLeft(7);
                 bigValue = bigValue.or(BigInteger.valueOf(b & 0x7f));
     if((b & 0x80) == 0)                
@@ -64,12 +64,12 @@ switch((int)value / 40){
                     objId.append(bigValue);
                     bigValue = null;
                     value = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         this.identifier = objId.toString().intern();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -81,14 +81,14 @@ switch((int)value / 40){
             IllegalArgumentException varCBAE66EC9F9FD20AF7F9B1329CA95DA6_341283412 = new IllegalArgumentException("string " + identifier + " not an OID");
             varCBAE66EC9F9FD20AF7F9B1329CA95DA6_341283412.addTaint(taint);
             throw varCBAE66EC9F9FD20AF7F9B1329CA95DA6_341283412;
-        } //End block
+        } 
         this.identifier = identifier.intern();
-        // ---------- Original Method ----------
-        //if (!isValidIdentifier(identifier))
-        //{
-            //throw new IllegalArgumentException("string " + identifier + " not an OID");
-        //}
-        //this.identifier = identifier.intern();
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -117,13 +117,14 @@ switch((int)value / 40){
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.130 -0400", hash_original_method = "9387C33D0DE26CACBA5D2CF5AB6F5FB6", hash_generated_method = "5787045685227C34151F2F7D8AC190AE")
     public String getId() {
 String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
         var5778A82547164F0256F955B75BC8D996_2044378687.addTaint(taint);
         return var5778A82547164F0256F955B75BC8D996_2044378687;
-        // ---------- Original Method ----------
-        //return identifier;
+        
+        
     }
 
     
@@ -141,18 +142,18 @@ String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
         {
             fieldValue >>= 7;
             result[--pos] = (byte)((int)fieldValue & 0x7f | 0x80);
-        } //End block
+        } 
         out.write(result, pos, 9 - pos);
-        // ---------- Original Method ----------
-        //byte[] result = new byte[9];
-        //int pos = 8;
-        //result[pos] = (byte)((int)fieldValue & 0x7f);
-        //while (fieldValue >= (1L << 7))
-        //{
-            //fieldValue >>= 7;
-            //result[--pos] = (byte)((int)fieldValue & 0x7f | 0x80);
-        //}
-        //out.write(result, pos, 9 - pos);
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -166,7 +167,7 @@ String var5778A82547164F0256F955B75BC8D996_2044378687 =         identifier;
     if(byteCount == 0)        
         {
             out.write(0);
-        } //End block
+        } 
         else
         {
             BigInteger tmpValue = fieldValue;
@@ -175,28 +176,28 @@ for(int i = byteCount-1;i >= 0;i--)
             {
                 tmp[i] = (byte) ((tmpValue.intValue() & 0x7f) | 0x80);
                 tmpValue = tmpValue.shiftRight(7);
-            } //End block
+            } 
             tmp[byteCount-1] &= 0x7f;
             out.write(tmp);
-        } //End block
-        // ---------- Original Method ----------
-        //int byteCount = (fieldValue.bitLength()+6)/7;
-        //if (byteCount == 0) 
-        //{
-            //out.write(0);
-        //}  
-        //else 
-        //{
-            //BigInteger tmpValue = fieldValue;
-            //byte[] tmp = new byte[byteCount];
-            //for (int i = byteCount-1; i >= 0; i--) 
-            //{
-                //tmp[i] = (byte) ((tmpValue.intValue() & 0x7f) | 0x80);
-                //tmpValue = tmpValue.shiftRight(7); 
-            //}
-            //tmp[byteCount-1] &= 0x7f;
-            //out.write(tmp);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+            
+            
+            
+                
+                
+            
+            
+            
+        
     }
 
     
@@ -217,37 +218,37 @@ for(int i = byteCount-1;i >= 0;i--)
     if(token.length() < 18)            
             {
                 writeField(bOut, Long.parseLong(token));
-            } //End block
+            } 
             else
             {
                 writeField(bOut, new BigInteger(token));
-            } //End block
-        } //End block
+            } 
+        } 
         dOut.close();
         byte[] bytes = bOut.toByteArray();
         out.writeEncoded(OBJECT_IDENTIFIER, bytes);
-        // ---------- Original Method ----------
-        //OIDTokenizer            tok = new OIDTokenizer(identifier);
-        //ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
-        //DEROutputStream         dOut = new DEROutputStream(bOut);
-        //writeField(bOut, 
-                    //Integer.parseInt(tok.nextToken()) * 40
-                    //+ Integer.parseInt(tok.nextToken()));
-        //while (tok.hasMoreTokens())
-        //{
-            //String token = tok.nextToken();
-            //if (token.length() < 18) 
-            //{
-                //writeField(bOut, Long.parseLong(token));
-            //}
-            //else
-            //{
-                //writeField(bOut, new BigInteger(token));
-            //}
-        //}
-        //dOut.close();
-        //byte[]  bytes = bOut.toByteArray();
-        //out.writeEncoded(OBJECT_IDENTIFIER, bytes);
+        
+        
+        
+        
+        
+                    
+                    
+        
+        
+            
+            
+            
+                
+            
+            
+            
+                
+            
+        
+        
+        
+        
     }
 
     
@@ -256,8 +257,8 @@ for(int i = byteCount-1;i >= 0;i--)
         int var42FEDBF4FD5BE06E4875C69EBDEDAA3A_1249649829 = (identifier.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_423019013 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_423019013;
-        // ---------- Original Method ----------
-        //return identifier.hashCode();
+        
+        
     }
 
     
@@ -270,16 +271,16 @@ for(int i = byteCount-1;i >= 0;i--)
             boolean var68934A3E9455FA72420237EB05902327_2006344806 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_738567671 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_738567671;
-        } //End block
+        } 
         boolean var518E4A38B92A3DF0CC7A2D14E8AC4759_1466245467 = (identifier.equals(((DERObjectIdentifier)o).identifier));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_426519993 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_426519993;
-        // ---------- Original Method ----------
-        //if (!(o instanceof DERObjectIdentifier))
-        //{
-            //return false;
-        //}
-        //return identifier.equals(((DERObjectIdentifier)o).identifier);
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -288,8 +289,8 @@ for(int i = byteCount-1;i >= 0;i--)
 String var5B63C5E61AFD535DA7B77B7EF14D4A91_339248524 =         getId();
         var5B63C5E61AFD535DA7B77B7EF14D4A91_339248524.addTaint(taint);
         return var5B63C5E61AFD535DA7B77B7EF14D4A91_339248524;
-        // ---------- Original Method ----------
-        //return getId();
+        
+        
     }
 
     

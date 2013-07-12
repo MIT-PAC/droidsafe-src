@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class PRF {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:32.860 -0400", hash_original_method = "A5FFDA88D1812D20324981FB63A9C9B4", hash_generated_method = "A5FFDA88D1812D20324981FB63A9C9B4")
     public PRF ()
     {
-        //Synthesized constructor
+        
     }
 
 

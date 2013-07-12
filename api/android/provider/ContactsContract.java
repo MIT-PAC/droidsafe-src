@@ -1,6 +1,6 @@
 package android.provider;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,11 +41,12 @@ public final class ContactsContract {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.188 -0400", hash_original_method = "0E78EC66D3E46BD387B4E4A98C6CA3E4", hash_generated_method = "0E78EC66D3E46BD387B4E4A98C6CA3E4")
     public ContactsContract ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static boolean isProfileId(long id) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isProfileId(long id) {
         return id >= Profile.MIN_ID;
     }
 
@@ -134,7 +135,7 @@ public final class ContactsContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.189 -0400", hash_original_method = "130B4481E1D16F5CC0713072784D18C5", hash_generated_method = "130B4481E1D16F5CC0713072784D18C5")
         public Authorization ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -156,7 +157,7 @@ public final class ContactsContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.189 -0400", hash_original_method = "2E8FE94CA2E5C969DED3F5ED9F537560", hash_generated_method = "2E8FE94CA2E5C969DED3F5ED9F537560")
         public Preferences ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -186,7 +187,7 @@ public final class ContactsContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.190 -0400", hash_original_method = "C1FAFD7F8C25A27903905826E99B3CB4", hash_generated_method = "32027E1E1476A00A97D4C9A87338A0EE")
         private  Directory() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -279,7 +280,7 @@ public final class ContactsContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.191 -0400", hash_original_method = "C3CB9524AE86EE634A43E203167EAA5A", hash_generated_method = "7C56DAB1CC85D73593C30D4266013E44")
         private  SyncState() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -319,7 +320,7 @@ public final class ContactsContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.191 -0400", hash_original_method = "1AF1C4539078F536A57F5CC0E82C2CE1", hash_generated_method = "62C098D2F6555C9344B4BEE7E8733390")
         private  ProfileSyncState() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -360,7 +361,7 @@ public final class ContactsContract {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.192 -0400", hash_original_method = "CB1CFE8B6024EEF8B52112C6EF2CC42E", hash_generated_method = "CB1CFE8B6024EEF8B52112C6EF2CC42E")
         public ContactCounts ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -381,11 +382,12 @@ public final class ContactsContract {
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.192 -0400", hash_original_method = "F5E3085137E37D29F0F8CB3C296F1F57", hash_generated_method = "EBAB9AC2EF768DD752DA8373D9E74008")
         private  Contacts() {
-            // ---------- Original Method ----------
+            
         }
 
         
-                public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getLookupUri(ContentResolver resolver, Uri contactUri) {
             final Cursor c = resolver.query(contactUri, new String[] {
                     Contacts.LOOKUP_KEY, Contacts._ID
             }, null, null, null);
@@ -405,13 +407,15 @@ public final class ContactsContract {
         }
 
         
-                public static Uri getLookupUri(long contactId, String lookupKey) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getLookupUri(long contactId, String lookupKey) {
             return ContentUris.withAppendedId(Uri.withAppendedPath(Contacts.CONTENT_LOOKUP_URI,
                     lookupKey), contactId);
         }
 
         
-                public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri lookupContact(ContentResolver resolver, Uri lookupUri) {
             if (lookupUri == null) {
                 return null;
             }
@@ -439,7 +443,8 @@ public final class ContactsContract {
         }
 
         
-                public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
+                @DSModeled(DSC.SPEC)
+        public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri,
                 boolean preferHighres) {
             if (preferHighres) {
                 final Uri displayPhotoUri = Uri.withAppendedPath(contactUri,
@@ -476,7 +481,8 @@ public final class ContactsContract {
         }
 
         
-                public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
+                @DSModeled(DSC.SPEC)
+        public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
             return openContactPhotoInputStream(cr, contactUri, false);
         }
 
@@ -485,7 +491,7 @@ public final class ContactsContract {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.193 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             private  Data() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -500,7 +506,7 @@ public final class ContactsContract {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.193 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             private  Entity() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -521,7 +527,7 @@ public final class ContactsContract {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.193 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             private  StreamItems() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -536,7 +542,7 @@ public final class ContactsContract {
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.193 -0400", hash_original_method = "35E5891C5F5088704DD7A6D202E906B4", hash_generated_method = "466C7EBC7F53D00329A79C14605D9051")
             private  AggregationSuggestions() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -562,19 +568,20 @@ public final class ContactsContract {
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "02DE293B5727013333ED4AAA68C7342C", hash_generated_method = "02DE293B5727013333ED4AAA68C7342C")
                 public Builder ()
                 {
-                    //Synthesized constructor
+                    
                 }
 
 
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "9AAB1F7A5A7D8D5960972B4CBC4F52B3", hash_generated_method = "AEA3C98C0E042D44A6AC732F57092F63")
                 public Builder setContactId(long contactId) {
                     this.mContactId = contactId;
 Builder var72A74007B2BE62B849F475C7BDA4658B_1177451665 =                     this;
                     var72A74007B2BE62B849F475C7BDA4658B_1177451665.addTaint(taint);
                     return var72A74007B2BE62B849F475C7BDA4658B_1177451665;
-                    // ---------- Original Method ----------
-                    //this.mContactId = contactId;
-                    //return this;
+                    
+                    
+                    
                 }
 
                 
@@ -586,31 +593,33 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_1177451665 =                     thi
                     {
                         mKinds.add(kind);
                         mValues.add(value);
-                    } //End block
+                    } 
 Builder var72A74007B2BE62B849F475C7BDA4658B_859430777 =                     this;
                     var72A74007B2BE62B849F475C7BDA4658B_859430777.addTaint(taint);
                     return var72A74007B2BE62B849F475C7BDA4658B_859430777;
-                    // ---------- Original Method ----------
-                    //if (!TextUtils.isEmpty(value)) {
-                        //mKinds.add(kind);
-                        //mValues.add(value);
-                    //}
-                    //return this;
+                    
+                    
+                        
+                        
+                    
+                    
                 }
 
                 
+                @DSModeled(DSC.SAFE)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "C603E268BE9EB815AE093A2C036882D2", hash_generated_method = "B9A36D5A53365F047FC6F58855569959")
                 public Builder setLimit(int limit) {
                     mLimit = limit;
 Builder var72A74007B2BE62B849F475C7BDA4658B_983555315 =                     this;
                     var72A74007B2BE62B849F475C7BDA4658B_983555315.addTaint(taint);
                     return var72A74007B2BE62B849F475C7BDA4658B_983555315;
-                    // ---------- Original Method ----------
-                    //mLimit = limit;
-                    //return this;
+                    
+                    
+                    
                 }
 
                 
+                @DSModeled(DSC.SPEC)
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.194 -0400", hash_original_method = "CC75446D812A1F4BC170E31BF0668A44", hash_generated_method = "CBD620BDA8FAECD1CECAB454A6027959")
                 public Uri build() {
                     android.net.Uri.Builder builder = Contacts.CONTENT_URI.buildUpon();
@@ -619,27 +628,27 @@ Builder var72A74007B2BE62B849F475C7BDA4658B_983555315 =                     this
     if(mLimit != 0)                    
                     {
                         builder.appendQueryParameter("limit", String.valueOf(mLimit));
-                    } //End block
+                    } 
                     int count = mKinds.size();
 for(int i = 0;i < count;i++)
                     {
                         builder.appendQueryParameter("query", mKinds.get(i) + ":" + mValues.get(i));
-                    } //End block
+                    } 
 Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder.build();
                     varE8AA2F80EB061A3F728175D13D293A98_1951897406.addTaint(taint);
                     return varE8AA2F80EB061A3F728175D13D293A98_1951897406;
-                    // ---------- Original Method ----------
-                    //android.net.Uri.Builder builder = Contacts.CONTENT_URI.buildUpon();
-                    //builder.appendEncodedPath(String.valueOf(mContactId));
-                    //builder.appendPath(Contacts.AggregationSuggestions.CONTENT_DIRECTORY);
-                    //if (mLimit != 0) {
-                        //builder.appendQueryParameter("limit", String.valueOf(mLimit));
-                    //}
-                    //int count = mKinds.size();
-                    //for (int i = 0; i < count; i++) {
-                        //builder.appendQueryParameter("query", mKinds.get(i) + ":" + mValues.get(i));
-                    //}
-                    //return builder.build();
+                    
+                    
+                    
+                    
+                    
+                        
+                    
+                    
+                    
+                        
+                    
+                    
                 }
 
                 
@@ -670,7 +679,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.195 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             private  Photo() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -745,7 +754,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.196 -0400", hash_original_method = "B87424FB8F4DF05D98854CA5453341A1", hash_generated_method = "F0740920D8E660C3FAFA79C0F30FDA26")
         private  Profile() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -771,11 +780,12 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.196 -0400", hash_original_method = "6107CD4B76D912ACDA57642552743C0C", hash_generated_method = "005A36265C3975138432C36B012CB07D")
         private  RawContacts() {
-            // ---------- Original Method ----------
+            
         }
 
         
-                public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getContactLookupUri(ContentResolver resolver, Uri rawContactUri) {
             final Uri dataUri = Uri.withAppendedPath(rawContactUri, Data.CONTENT_DIRECTORY);
             final Cursor cursor = resolver.query(dataUri, new String[] {
                     RawContacts.CONTACT_ID, Contacts.LOOKUP_KEY
@@ -803,7 +813,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.196 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
             private  Data() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -818,7 +828,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.196 -0400", hash_original_method = "607EBA13DCD67902F3CEC6239F391768", hash_generated_method = "72BDB032AD922DE54B8D777470530676")
             private  Entity() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -836,7 +846,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.197 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
             private  StreamItems() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -851,7 +861,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.197 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
             private  DisplayPhoto() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -868,7 +878,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
             public  EntityIteratorImpl(Cursor cursor) {
                 super(cursor);
                 addTaint(cursor.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -900,7 +910,7 @@ Uri varE8AA2F80EB061A3F728175D13D293A98_1951897406 =                     builder
     if(rawContactId != cursor.getLong(columnRawContactId))                        
                         {
                             break;
-                        } //End block
+                        } 
                         cv = new ContentValues();
                         cv.put(Data._ID, cursor.getLong(cursor.getColumnIndexOrThrow(Entity.DATA_ID)));
                         DatabaseUtils.cursorStringToContentValuesIfPresent(cursor, cv,
@@ -933,15 +943,15 @@ switch(cursor.getType(columnIndex)){
                             varD48CE5DFBD7FDE642E5F22D9CA04E4DC_26246312.addTaint(taint);
                             throw varD48CE5DFBD7FDE642E5F22D9CA04E4DC_26246312;
 }
-                        } //End block
+                        } 
                         contact.addSubValue(ContactsContract.Data.CONTENT_URI, cv);
-                    } //End block
+                    } 
 } while (cursor.moveToNext());
 android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =                 contact;
                 var695F7F01550A7C9445656119C31590B1_141666954.addTaint(taint);
                 return var695F7F01550A7C9445656119C31590B1_141666954;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -1001,7 +1011,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.198 -0400", hash_original_method = "50B0D0B78D385E8C0BEE924F86CB84EC", hash_generated_method = "49F523F180DE7D539C580F6D11E59338")
         private  StreamItems() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1009,7 +1019,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.198 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
             private  StreamItemPhotos() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1054,7 +1064,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.199 -0400", hash_original_method = "52BE888A2784297EE4FE3818D09C55BC", hash_generated_method = "802E4A54077CF0761BF1353DB1940447")
         private  StreamItemPhotos() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1069,7 +1079,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.199 -0400", hash_original_method = "68B58AFB95B4CB9CF9AA43D4A8112325", hash_generated_method = "059107858AF90ED764E5882C1FCC748C")
         private  PhotoFiles() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1081,11 +1091,12 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.199 -0400", hash_original_method = "AE2AC52C1B086D07AB414F4634EAA37E", hash_generated_method = "68BBF991BD74A1EFA8A89E7D9D24A1BD")
         private  Data() {
-            // ---------- Original Method ----------
+            
         }
 
         
-                public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
+                @DSModeled(DSC.SPEC)
+        public static Uri getContactLookupUri(ContentResolver resolver, Uri dataUri) {
             final Cursor cursor = resolver.query(dataUri, new String[] {
                     RawContacts.CONTACT_ID, Contacts.LOOKUP_KEY
             }, null, null, null);
@@ -1117,7 +1128,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.199 -0400", hash_original_method = "F8C55B41037119D58D30171BDB7F39D2", hash_generated_method = "B8AC49C785E02A24876BA7954CC9671E")
         private  RawContactsEntity() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1146,7 +1157,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.200 -0400", hash_original_method = "D1B05D947AED4866E4130EF727A894C9", hash_generated_method = "CEF12FA719FCE0616B6F9109D727ED4D")
         private  PhoneLookup() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1168,7 +1179,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.200 -0400", hash_original_method = "5AF8C140309DC273491B33B4E92E1FA7", hash_generated_method = "F61E7CF0B8D56F58CA9C892D1715AD61")
         private  StatusUpdates() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1217,7 +1228,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.200 -0400", hash_original_method = "FECDF62B9774A3653EF2E5C629F7A49B", hash_generated_method = "FECDF62B9774A3653EF2E5C629F7A49B")
         public Presence ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1230,7 +1241,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.201 -0400", hash_original_method = "04F7D0EC16DDA5BE74B3F08104BE0CC7", hash_generated_method = "04F7D0EC16DDA5BE74B3F08104BE0CC7")
         public SearchSnippetColumns ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1251,7 +1262,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.201 -0400", hash_original_method = "3EB47618DCA126249F6622B558B44C8E", hash_generated_method = "17AE15FF7C1A5C629F88953C9F30A23B")
         private  CommonDataKinds() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1259,7 +1270,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.201 -0400", hash_original_method = "3FC3D91ED9F213084C3DE2075E5DC6AD", hash_generated_method = "CE1EF34405CD085F5E1F4B00ACF1AACC")
             private  StructuredName() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1307,7 +1318,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.202 -0400", hash_original_method = "C2B5C7987B903EB42CE1EDEA1961E0EA", hash_generated_method = "32E284B5312A7E0C5334C9B07602E0ED")
             private  Nickname() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1344,7 +1355,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.202 -0400", hash_original_method = "8C72E3409D1DFC404D9CBFEE30B178A0", hash_generated_method = "5D173D82F090B2D243AF646F29A6957E")
             private  Phone() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1488,7 +1499,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.204 -0400", hash_original_method = "4685E1971C120F244FF83B34E469953F", hash_generated_method = "AE4BB686E4A7B4068C4E01F323C0B09B")
             private  Email() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1558,7 +1569,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.204 -0400", hash_original_method = "C8D888449545672CEC46DD26E7BDDD9A", hash_generated_method = "6863A6EEFAC7C6659E60E563C7E51932")
             private  StructuredPostal() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1635,7 +1646,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.205 -0400", hash_original_method = "7F43853CDED9232ACA3765709B5C5CC7", hash_generated_method = "3D120A0520BAC27E9D81D0F0F88DB3FD")
             private  Im() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1743,7 +1754,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.207 -0400", hash_original_method = "DB9E0507E0CFF6D3A6878FC813F638FB", hash_generated_method = "24D678582F58DD0084445608A443E82F")
             private  Organization() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1808,7 +1819,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.207 -0400", hash_original_method = "AB820511C2318175DFB023ADDE00500D", hash_generated_method = "004DD1D842B963562C78785064E7989B")
             private  Relation() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1902,7 +1913,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.209 -0400", hash_original_method = "D3DDD15A13BA6EC1D9CD48C2CCCFE0B4", hash_generated_method = "F9069AC01DFBB6E335236591397070B2")
             private  Event() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1943,7 +1954,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.209 -0400", hash_original_method = "C03E3395BFF21729CC93322BBC7A82DE", hash_generated_method = "6353485435339DC025174C823A75D00F")
             private  Photo() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1964,7 +1975,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.209 -0400", hash_original_method = "EBAE52FCFF9289B17EA2262C75B6F6C0", hash_generated_method = "22ECB65A834798A58E72F146C908C2C8")
             private  Note() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -1982,7 +1993,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.210 -0400", hash_original_method = "9948141C64D53CA8E17E7FD2EBA08DA8", hash_generated_method = "428CD6B4AF8D64BBC7FE2E70673D8538")
             private  GroupMembership() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -2004,7 +2015,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.210 -0400", hash_original_method = "CC2DAF060546DD565E4193F5085BC2F2", hash_generated_method = "95610DE2A4CA3A3ED50311363B3F2A27")
             private  Website() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -2043,7 +2054,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.210 -0400", hash_original_method = "7307A74E42B27B76827D43357DA8B367", hash_generated_method = "EF707E530C2FC911E23A8D91CEFB5F2B")
             private  SipAddress() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -2091,7 +2102,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.212 -0400", hash_original_method = "CB97BE8665681C1FD82290A9CE03A1A5", hash_generated_method = "EAF95E91D3C42B1A473D86AA0DA890E2")
             private  Identity() {
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -2135,7 +2146,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.212 -0400", hash_original_method = "7BA2DC4B038FD72F399C633B1C4B5B34", hash_generated_method = "4AF005563E89F66C166EA0E603C46AC1")
         private  Groups() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2150,7 +2161,7 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
             public  EntityIteratorImpl(Cursor cursor) {
                 super(cursor);
                 addTaint(cursor.getTaint());
-                // ---------- Original Method ----------
+                
             }
 
             
@@ -2183,8 +2194,8 @@ android.content.Entity var695F7F01550A7C9445656119C31590B1_141666954 =          
 Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Entity(values);
                 var92EE06D7E20FFC20F10BCB97642B6634_1603475648.addTaint(taint);
                 return var92EE06D7E20FFC20F10BCB97642B6634_1603475648;
-                // ---------- Original Method ----------
-                // Original Method Too Long, Refer to Original Implementation
+                
+                
             }
 
             
@@ -2213,7 +2224,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.213 -0400", hash_original_method = "AEC5F5D30A84CFEC2D9D1903833FB78B", hash_generated_method = "ED7E5F4AC17489A373923084FD271B08")
         private  AggregationExceptions() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2254,7 +2265,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.214 -0400", hash_original_method = "E49204FD271E895B10D86A1AFEA21B04", hash_generated_method = "2C16D3C86A761A9DF5E58231442F813C")
         private  Settings() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2276,7 +2287,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.215 -0400", hash_original_method = "795A4A88B7E0FFCBF277CCA1899F11E6", hash_generated_method = "31F9DB0C46ADEE3AB9E7AC4FBB60BDC4")
         private  ProviderStatus() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2317,7 +2328,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.215 -0400", hash_original_method = "63E5D1CFF9704764CDDB806EEC1367A5", hash_generated_method = "63E5D1CFF9704764CDDB806EEC1367A5")
         public DataUsageFeedback ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2346,11 +2357,12 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.216 -0400", hash_original_method = "854DF4E0756DCBE90F5C7A53A4D83687", hash_generated_method = "854DF4E0756DCBE90F5C7A53A4D83687")
         public QuickContact ()
         {
-            //Synthesized constructor
+            
         }
 
 
-                public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
+                @DSModeled(DSC.SPEC)
+        public static void showQuickContact(Context context, View target, Uri lookupUri, int mode,
                 String[] excludeMimes) {
             final float appScale = context.getResources().getCompatibilityInfo().applicationScale;
             final int[] pos = new int[2];
@@ -2364,7 +2376,8 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         }
 
         
-                public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,
+                @DSModeled(DSC.SPEC)
+        public static void showQuickContact(Context context, Rect target, Uri lookupUri, int mode,
                 String[] excludeMimes) {
             final Intent intent = new Intent(ACTION_QUICK_CONTACT);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -2408,7 +2421,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.217 -0400", hash_original_method = "4DA607ACD5E6F502EC932EC179042892", hash_generated_method = "B2E13164C0532FB7A083C12460677DAB")
         private  DisplayPhoto() {
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -2434,7 +2447,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.217 -0400", hash_original_method = "1E952476DD941AF572EDA8AC50686906", hash_generated_method = "1E952476DD941AF572EDA8AC50686906")
         public Intents ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -2443,7 +2456,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.217 -0400", hash_original_method = "244D54B89BC2D5ABA32DBC8F28EE0809", hash_generated_method = "244D54B89BC2D5ABA32DBC8F28EE0809")
             public UI ()
             {
-                //Synthesized constructor
+                
             }
 
 
@@ -2499,7 +2512,7 @@ Entity var92EE06D7E20FFC20F10BCB97642B6634_1603475648 =                 new Enti
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:36.219 -0400", hash_original_method = "2A9E1DC472832B4765A0A21D09988277", hash_generated_method = "2A9E1DC472832B4765A0A21D09988277")
             public Insert ()
             {
-                //Synthesized constructor
+                
             }
 
 

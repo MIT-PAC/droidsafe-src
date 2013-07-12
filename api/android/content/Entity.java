@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,19 +22,20 @@ public final class Entity {
     public  Entity(ContentValues values) {
         mValues = values;
         mSubValues = new ArrayList<NamedContentValues>();
-        // ---------- Original Method ----------
-        //mValues = values;
-        //mSubValues = new ArrayList<NamedContentValues>();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.175 -0400", hash_original_method = "9F7798ADCC4D95B2412D7A9959C9D6A8", hash_generated_method = "818A84E4A21A1BB4D85D5CD5B2C8AE7E")
     public ContentValues getEntityValues() {
 ContentValues varC2D5F196132EC24FFA86AC8D1AA44E77_126425979 =         mValues;
         varC2D5F196132EC24FFA86AC8D1AA44E77_126425979.addTaint(taint);
         return varC2D5F196132EC24FFA86AC8D1AA44E77_126425979;
-        // ---------- Original Method ----------
-        //return mValues;
+        
+        
     }
 
     
@@ -43,18 +44,19 @@ ContentValues varC2D5F196132EC24FFA86AC8D1AA44E77_126425979 =         mValues;
 ArrayList<NamedContentValues> var5927EF407499F6B0E6446B9609227466_1847179897 =         mSubValues;
         var5927EF407499F6B0E6446B9609227466_1847179897.addTaint(taint);
         return var5927EF407499F6B0E6446B9609227466_1847179897;
-        // ---------- Original Method ----------
-        //return mSubValues;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:09.177 -0400", hash_original_method = "449CDF61C26C702D333F5FFE04D80FB4", hash_generated_method = "56706391E1CF37C4698B4A0787BEEBF1")
     public void addSubValue(Uri uri, ContentValues values) {
         addTaint(values.getTaint());
         addTaint(uri.getTaint());
         mSubValues.add(new Entity.NamedContentValues(uri, values));
-        // ---------- Original Method ----------
-        //mSubValues.add(new Entity.NamedContentValues(uri, values));
+        
+        
     }
 
     
@@ -66,18 +68,18 @@ for(Entity.NamedContentValues namedValue : getSubValues())
         {
             sb.append("\n  ").append(namedValue.uri);
             sb.append("\n  -> ").append(namedValue.values);
-        } //End block
+        } 
 String var2460B846747F8B22185AD8BE722266A5_784155251 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_784155251.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_784155251;
-        // ---------- Original Method ----------
-        //final StringBuilder sb = new StringBuilder();
-        //sb.append("Entity: ").append(getEntityValues());
-        //for (Entity.NamedContentValues namedValue : getSubValues()) {
-            //sb.append("\n  ").append(namedValue.uri);
-            //sb.append("\n  -> ").append(namedValue.values);
-        //}
-        //return sb.toString();
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -93,9 +95,9 @@ String var2460B846747F8B22185AD8BE722266A5_784155251 =         sb.toString();
         public  NamedContentValues(Uri uri, ContentValues values) {
             this.uri = uri;
             this.values = values;
-            // ---------- Original Method ----------
-            //this.uri = uri;
-            //this.values = values;
+            
+            
+            
         }
         
     }

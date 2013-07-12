@@ -1,6 +1,6 @@
 package android.telephony;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,8 +24,8 @@ public class SmsMessage {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:42.584 -0400", hash_original_method = "8785081C14DC1062450E96A46CF3DF25", hash_generated_method = "7A720F4140A5D3175262E2DF902BCE6A")
     private  SmsMessage(SmsMessageBase smb) {
         mWrappedSmsMessage = smb;
-        // ---------- Original Method ----------
-        //mWrappedSmsMessage = smb;
+        
+        
     }
 
     
@@ -57,7 +57,8 @@ public class SmsMessage {
     }
 
     
-        public static SmsMessage newFromParcel(Parcel p) {
+        @DSModeled(DSC.SPEC)
+    public static SmsMessage newFromParcel(Parcel p) {
         SmsMessageBase wrappedMessage =
                 com.android.internal.telephony.cdma.SmsMessage.newFromParcel(p);
         return new SmsMessage(wrappedMessage);
@@ -199,8 +200,8 @@ public class SmsMessage {
 String var925E36433672E3787EB66016D3EC0AE0_1046036553 =         mWrappedSmsMessage.getServiceCenterAddress();
         var925E36433672E3787EB66016D3EC0AE0_1046036553.addTaint(taint);
         return var925E36433672E3787EB66016D3EC0AE0_1046036553;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getServiceCenterAddress();
+        
+        
     }
 
     
@@ -209,8 +210,8 @@ String var925E36433672E3787EB66016D3EC0AE0_1046036553 =         mWrappedSmsMessa
 String var49AF36764A3915031147328D13EC74EE_2144509711 =         mWrappedSmsMessage.getOriginatingAddress();
         var49AF36764A3915031147328D13EC74EE_2144509711.addTaint(taint);
         return var49AF36764A3915031147328D13EC74EE_2144509711;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getOriginatingAddress();
+        
+        
     }
 
     
@@ -219,8 +220,8 @@ String var49AF36764A3915031147328D13EC74EE_2144509711 =         mWrappedSmsMessa
 String var396DE6F0D854D262064C40FA2AC292EB_258481307 =         mWrappedSmsMessage.getDisplayOriginatingAddress();
         var396DE6F0D854D262064C40FA2AC292EB_258481307.addTaint(taint);
         return var396DE6F0D854D262064C40FA2AC292EB_258481307;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getDisplayOriginatingAddress();
+        
+        
     }
 
     
@@ -229,8 +230,8 @@ String var396DE6F0D854D262064C40FA2AC292EB_258481307 =         mWrappedSmsMessag
 String var0E1B253B3A7C288458E5036AB1FC4915_1677302091 =         mWrappedSmsMessage.getMessageBody();
         var0E1B253B3A7C288458E5036AB1FC4915_1677302091.addTaint(taint);
         return var0E1B253B3A7C288458E5036AB1FC4915_1677302091;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getMessageBody();
+        
+        
     }
 
     
@@ -239,8 +240,8 @@ String var0E1B253B3A7C288458E5036AB1FC4915_1677302091 =         mWrappedSmsMessa
 MessageClass varFEC2C330D72D70FD4F363F58E2613062_600761964 =         mWrappedSmsMessage.getMessageClass();
         varFEC2C330D72D70FD4F363F58E2613062_600761964.addTaint(taint);
         return varFEC2C330D72D70FD4F363F58E2613062_600761964;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getMessageClass();
+        
+        
     }
 
     
@@ -249,8 +250,8 @@ MessageClass varFEC2C330D72D70FD4F363F58E2613062_600761964 =         mWrappedSms
 String var99CD2E836DDD081526689EFA5A3D13FD_20279878 =         mWrappedSmsMessage.getDisplayMessageBody();
         var99CD2E836DDD081526689EFA5A3D13FD_20279878.addTaint(taint);
         return var99CD2E836DDD081526689EFA5A3D13FD_20279878;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getDisplayMessageBody();
+        
+        
     }
 
     
@@ -259,8 +260,8 @@ String var99CD2E836DDD081526689EFA5A3D13FD_20279878 =         mWrappedSmsMessage
 String var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128 =         mWrappedSmsMessage.getPseudoSubject();
         var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128.addTaint(taint);
         return var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getPseudoSubject();
+        
+        
     }
 
     
@@ -269,8 +270,8 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128 =         mWrappedSmsMessa
         long var6092B16D96793A76A598DA9FEA7F3867_897050658 = (mWrappedSmsMessage.getTimestampMillis());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1940062890 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1940062890;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getTimestampMillis();
+        
+        
     }
 
     
@@ -279,8 +280,8 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128 =         mWrappedSmsMessa
         boolean var4E1F5C64E20847E31953992E560A1C78_1320747365 = (mWrappedSmsMessage.isEmail());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_464745705 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_464745705;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isEmail();
+        
+        
     }
 
     
@@ -289,8 +290,8 @@ String var678AD1F33CD9A4D7B1E9CB845197D6D6_1199834128 =         mWrappedSmsMessa
 String var67A1D8B8DD5E36D76DD3DF492B86B2D9_421842944 =         mWrappedSmsMessage.getEmailBody();
         var67A1D8B8DD5E36D76DD3DF492B86B2D9_421842944.addTaint(taint);
         return var67A1D8B8DD5E36D76DD3DF492B86B2D9_421842944;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getEmailBody();
+        
+        
     }
 
     
@@ -299,8 +300,8 @@ String var67A1D8B8DD5E36D76DD3DF492B86B2D9_421842944 =         mWrappedSmsMessag
 String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessage.getEmailFrom();
         var386E04FEBE237FE6A60C9EC9B5FDA847_696326798.addTaint(taint);
         return var386E04FEBE237FE6A60C9EC9B5FDA847_696326798;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getEmailFrom();
+        
+        
     }
 
     
@@ -309,8 +310,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         int varAD2233615CF88E8755DD6227D5F9F05E_1413272166 = (mWrappedSmsMessage.getProtocolIdentifier());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_941658242 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_941658242;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getProtocolIdentifier();
+        
+        
     }
 
     
@@ -319,8 +320,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean var06FECE350D4286FB19C9957C5A58184C_211578605 = (mWrappedSmsMessage.isReplace());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_123016426 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_123016426;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isReplace();
+        
+        
     }
 
     
@@ -329,8 +330,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean var2CB3BE886F81C8D84F89B7191B76A987_1850956486 = (mWrappedSmsMessage.isCphsMwiMessage());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1780569352 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1780569352;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isCphsMwiMessage();
+        
+        
     }
 
     
@@ -339,8 +340,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean var585E54B2A33AB110879B00E57A8DA3AC_951848242 = (mWrappedSmsMessage.isMWIClearMessage());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1196970684 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1196970684;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isMWIClearMessage();
+        
+        
     }
 
     
@@ -349,8 +350,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean varD5BCFAED004ACF905D1919AA002AA2D6_1285387868 = (mWrappedSmsMessage.isMWISetMessage());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1515611516 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1515611516;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isMWISetMessage();
+        
+        
     }
 
     
@@ -359,8 +360,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean varC52B74AF143B5C422B7F5834D68C697B_476782620 = (mWrappedSmsMessage.isMwiDontStore());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_526405308 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_526405308;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isMwiDontStore();
+        
+        
     }
 
     
@@ -369,8 +370,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         byte[] varAE688663295359FE46DD9965D5DEA56C_789467304 = (mWrappedSmsMessage.getUserData());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1258473094 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1258473094;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getUserData();
+        
+        
     }
 
     
@@ -379,8 +380,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         byte[] var6023B6186A54154A7A7D4B28633F6539_1131852732 = (mWrappedSmsMessage.getPdu());
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1787494476 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1787494476;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getPdu();
+        
+        
     }
 
     
@@ -390,8 +391,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         int var6705C6C34F6F35245059CF05D5A30A79_2009467649 = (mWrappedSmsMessage.getStatusOnIcc());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1845552129 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1845552129;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getStatusOnIcc();
+        
+        
     }
 
     
@@ -400,8 +401,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         int var6705C6C34F6F35245059CF05D5A30A79_433908151 = (mWrappedSmsMessage.getStatusOnIcc());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988325651 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1988325651;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getStatusOnIcc();
+        
+        
     }
 
     
@@ -411,8 +412,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         int var271A3E7297F00EC935218314ED9D7914_914990241 = (mWrappedSmsMessage.getIndexOnIcc());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1647856835 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1647856835;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getIndexOnIcc();
+        
+        
     }
 
     
@@ -421,8 +422,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         int var271A3E7297F00EC935218314ED9D7914_575069843 = (mWrappedSmsMessage.getIndexOnIcc());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1595635363 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1595635363;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getIndexOnIcc();
+        
+        
     }
 
     
@@ -431,8 +432,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         int varC7235C304F4004D9DB17AB9D2508C3F8_1959096248 = (mWrappedSmsMessage.getStatus());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706203620 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1706203620;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.getStatus();
+        
+        
     }
 
     
@@ -441,8 +442,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean varF6F4855214EC06155F20F1677431168C_1265675570 = (mWrappedSmsMessage.isStatusReportMessage());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1649576051 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1649576051;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isStatusReportMessage();
+        
+        
     }
 
     
@@ -451,8 +452,8 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         boolean varE830695720B1EA9A9595E946A69A7A07_1008332661 = (mWrappedSmsMessage.isReplyPathPresent());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2128207151 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2128207151;
-        // ---------- Original Method ----------
-        //return mWrappedSmsMessage.isReplyPathPresent();
+        
+        
     }
 
     
@@ -473,9 +474,9 @@ String var386E04FEBE237FE6A60C9EC9B5FDA847_696326798 =         mWrappedSmsMessag
         protected  SubmitPdu(SubmitPduBase spb) {
             this.encodedMessage = spb.encodedMessage;
             this.encodedScAddress = spb.encodedScAddress;
-            // ---------- Original Method ----------
-            //this.encodedMessage = spb.encodedMessage;
-            //this.encodedScAddress = spb.encodedScAddress;
+            
+            
+            
         }
 
         
@@ -487,11 +488,11 @@ String var7D8267AB38F2C416692BE7250E9741D6_73946129 =             "SubmitPdu: en
                     + Arrays.toString(encodedMessage);
             var7D8267AB38F2C416692BE7250E9741D6_73946129.addTaint(taint);
             return var7D8267AB38F2C416692BE7250E9741D6_73946129;
-            // ---------- Original Method ----------
-            //return "SubmitPdu: encodedScAddress = "
-                    //+ Arrays.toString(encodedScAddress)
-                    //+ ", encodedMessage = "
-                    //+ Arrays.toString(encodedMessage);
+            
+            
+                    
+                    
+                    
         }
 
         

@@ -1,6 +1,6 @@
 package org.apache.harmony.xnet.provider.jsse;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,22 +14,24 @@ public class ServerSessionContext extends AbstractSessionContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.517 -0400", hash_original_method = "9FA739694DBACEAA071D2AEDBA51A05E", hash_generated_method = "519FB45F9A385F0AC73A51E91875A433")
     public  ServerSessionContext() {
         super(100, 0);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.517 -0400", hash_original_method = "72569EA6711DBA1D81D9BBC862AD3D03", hash_generated_method = "98DC823E6DF5392957E496FAD00FA2DE")
     public void setPersistentCache(SSLServerSessionCache persistentCache) {
         this.persistentCache = persistentCache;
-        // ---------- Original Method ----------
-        //this.persistentCache = persistentCache;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:20.517 -0400", hash_original_method = "D4D4D8A9ED5E99BC7DD197F41DEEDD43", hash_generated_method = "16DEE84B347D7E24654B9D4FF767833A")
     protected void sessionRemoved(SSLSession session) {
         addTaint(session.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,7 +45,7 @@ public class ServerSessionContext extends AbstractSessionContext {
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1481517196 =             session;
             varD555E544A66E0F97DA6BCDE940E3E79C_1481517196.addTaint(taint);
             return varD555E544A66E0F97DA6BCDE940E3E79C_1481517196;
-        } //End block
+        } 
     if(persistentCache != null)        
         {
             byte[] data = persistentCache.getSessionData(sessionId);
@@ -56,28 +58,28 @@ SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1481517196 =             session;
 SSLSession varD555E544A66E0F97DA6BCDE940E3E79C_1971995557 =                     session;
                     varD555E544A66E0F97DA6BCDE940E3E79C_1971995557.addTaint(taint);
                     return varD555E544A66E0F97DA6BCDE940E3E79C_1971995557;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
 SSLSession var540C13E9E156B687226421B24F2DF178_705588826 =         null;
         var540C13E9E156B687226421B24F2DF178_705588826.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_705588826;
-        // ---------- Original Method ----------
-        //SSLSession session = super.getSession(sessionId);
-        //if (session != null) {
-            //return session;
-        //}
-        //if (persistentCache != null) {
-            //byte[] data = persistentCache.getSessionData(sessionId);
-            //if (data != null) {
-                //session = toSession(data, null, -1);
-                //if (session != null && session.isValid()) {
-                    //super.putSession(session);
-                    //return session;
-                //}
-            //}
-        //}
-        //return null;
+        
+        
+        
+            
+        
+        
+            
+            
+                
+                
+                    
+                    
+                
+            
+        
+        
     }
 
     
@@ -92,16 +94,16 @@ SSLSession var540C13E9E156B687226421B24F2DF178_705588826 =         null;
     if(data != null)            
             {
                 persistentCache.putSessionData(session, data);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //super.putSession(session);
-        //if (persistentCache != null) {
-            //byte[] data = toBytes(session);
-            //if (data != null) {
-                //persistentCache.putSessionData(session, data);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.io;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class BufferedWriter extends Writer {
     public  BufferedWriter(Writer out) {
         this(out, 8192);
         addTaint(out.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,15 +34,15 @@ public class BufferedWriter extends Writer {
             IllegalArgumentException var5AFB46BA040E4CEE38200888DC74991F_133823335 = new IllegalArgumentException("size <= 0");
             var5AFB46BA040E4CEE38200888DC74991F_133823335.addTaint(taint);
             throw var5AFB46BA040E4CEE38200888DC74991F_133823335;
-        } //End block
+        } 
         this.out = out;
         this.buf = new char[size];
-        // ---------- Original Method ----------
-        //if (size <= 0) {
-            //throw new IllegalArgumentException("size <= 0");
-        //}
-        //this.out = out;
-        //this.buf = new char[size];
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -54,58 +54,58 @@ public class BufferedWriter extends Writer {
     if(isClosed())            
             {
                 return;
-            } //End block
+            } 
             Throwable thrown = null;
             try 
             {
                 flushInternal();
-            } //End block
+            } 
             catch (Throwable e)
             {
                 thrown = e;
-            } //End block
+            } 
             buf = null;
             try 
             {
                 out.close();
-            } //End block
+            } 
             catch (Throwable e)
             {
     if(thrown == null)                
                 {
                     thrown = e;
-                } //End block
-            } //End block
+                } 
+            } 
             out = null;
     if(thrown != null)            
             {
                 SneakyThrow.sneakyThrow(thrown);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //if (isClosed()) {
-                //return;
-            //}
-            //Throwable thrown = null;
-            //try {
-                //flushInternal();
-            //} catch (Throwable e) {
-                //thrown = e;
-            //}
-            //buf = null;
-            //try {
-                //out.close();
-            //} catch (Throwable e) {
-                //if (thrown == null) {
-                    //thrown = e;
-                //}
-            //}
-            //out = null;
-            //if (thrown != null) {
-                //SneakyThrow.sneakyThrow(thrown);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+            
+            
+                
+            
+                
+            
+            
+            
+                
+            
+                
+                    
+                
+            
+            
+            
+                
+            
+        
     }
 
     
@@ -117,13 +117,13 @@ public class BufferedWriter extends Writer {
             checkNotClosed();
             flushInternal();
             out.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //flushInternal();
-            //out.flush();
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -134,11 +134,11 @@ public class BufferedWriter extends Writer {
             IOException var2274052E96CC2921AC28657447A07720_239944094 = new IOException("BufferedWriter is closed");
             var2274052E96CC2921AC28657447A07720_239944094.addTaint(taint);
             throw var2274052E96CC2921AC28657447A07720_239944094;
-        } //End block
-        // ---------- Original Method ----------
-        //if (isClosed()) {
-            //throw new IOException("BufferedWriter is closed");
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -147,31 +147,32 @@ public class BufferedWriter extends Writer {
     if(pos > 0)        
         {
             out.write(buf, 0, pos);
-        } //End block
+        } 
         pos = 0;
-        // ---------- Original Method ----------
-        //if (pos > 0) {
-            //out.write(buf, 0, pos);
-        //}
-        //pos = 0;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.356 -0400", hash_original_method = "65F785E5C7A072182DBDFA4385D9D27B", hash_generated_method = "92E20BCF8578C62CA3347C0BE7D72809")
     private boolean isClosed() {
         boolean varAE601444E7D588038E147A2CA548E6D7_1627718310 = (out == null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2058150428 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2058150428;
-        // ---------- Original Method ----------
-        //return out == null;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:39.357 -0400", hash_original_method = "2B3D7D602A7E63B6C09E849C2D681C65", hash_generated_method = "95268A8136CFE30ED36AA1BE72C081F8")
     public void newLine() throws IOException {
         write(System.lineSeparator());
-        // ---------- Original Method ----------
-        //write(System.lineSeparator());
+        
+        
     }
 
     
@@ -189,23 +190,23 @@ public class BufferedWriter extends Writer {
                 NullPointerException varD1F0B530B211C354FD4DD40207900970_1635346061 = new NullPointerException("buffer == null");
                 varD1F0B530B211C354FD4DD40207900970_1635346061.addTaint(taint);
                 throw varD1F0B530B211C354FD4DD40207900970_1635346061;
-            } //End block
+            } 
             Arrays.checkOffsetAndCount(cbuf.length, offset, count);
     if(pos == 0 && count >= this.buf.length)            
             {
                 out.write(cbuf, offset, count);
                 return;
-            } //End block
+            } 
             int available = this.buf.length - pos;
     if(count < available)            
             {
                 available = count;
-            } //End block
+            } 
     if(available > 0)            
             {
                 System.arraycopy(cbuf, offset, this.buf, pos, available);
                 pos += available;
-            } //End block
+            } 
     if(pos == this.buf.length)            
             {
                 out.write(this.buf, 0, this.buf.length);
@@ -218,14 +219,14 @@ public class BufferedWriter extends Writer {
                     {
                         out.write(cbuf, offset, available);
                         return;
-                    } //End block
+                    } 
                     System.arraycopy(cbuf, offset, this.buf, pos, available);
                     pos += available;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     
@@ -239,18 +240,18 @@ public class BufferedWriter extends Writer {
             {
                 out.write(buf, 0, buf.length);
                 pos = 0;
-            } //End block
+            } 
             buf[pos++] = (char) oneChar;
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (lock) {
-            //checkNotClosed();
-            //if (pos >= buf.length) {
-                //out.write(buf, 0, buf.length);
-                //pos = 0;
-            //}
-            //buf[pos++] = (char) oneChar;
-        //}
+        } 
+        
+        
+            
+            
+                
+                
+            
+            
+        
     }
 
     
@@ -266,30 +267,30 @@ public class BufferedWriter extends Writer {
     if(count <= 0)            
             {
                 return;
-            } //End block
+            } 
     if(offset < 0 || offset > str.length() - count)            
             {
                 StringIndexOutOfBoundsException varDD6466A465572C8C2EC4C6C733FC9AF8_1949696003 = new StringIndexOutOfBoundsException(str, offset, count);
                 varDD6466A465572C8C2EC4C6C733FC9AF8_1949696003.addTaint(taint);
                 throw varDD6466A465572C8C2EC4C6C733FC9AF8_1949696003;
-            } //End block
+            } 
     if(pos == 0 && count >= buf.length)            
             {
                 char[] chars = new char[count];
                 str.getChars(offset, offset + count, chars, 0);
                 out.write(chars, 0, count);
                 return;
-            } //End block
+            } 
             int available = buf.length - pos;
     if(count < available)            
             {
                 available = count;
-            } //End block
+            } 
     if(available > 0)            
             {
                 str.getChars(offset, offset + available, buf, pos);
                 pos += available;
-            } //End block
+            } 
     if(pos == buf.length)            
             {
                 out.write(this.buf, 0, this.buf.length);
@@ -304,14 +305,14 @@ public class BufferedWriter extends Writer {
                         str.getChars(offset, offset + available, chars, 0);
                         out.write(chars, 0, available);
                         return;
-                    } //End block
+                    } 
                     str.getChars(offset, offset + available, buf, pos);
                     pos += available;
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     

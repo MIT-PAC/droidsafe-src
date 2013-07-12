@@ -1,6 +1,6 @@
 package org.bouncycastle.asn1;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -12,7 +12,7 @@ public class DERSequence extends ASN1Sequence {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.177 -0400", hash_original_method = "B1D7F8D200E7560B8E505C8DEB6A735D", hash_generated_method = "DE383D98243C35C2EE2100E102854830")
     public  DERSequence() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,8 +21,8 @@ public class DERSequence extends ASN1Sequence {
         DEREncodable    obj) {
         addTaint(obj.getTaint());
         this.addObject(obj);
-        // ---------- Original Method ----------
-        //this.addObject(obj);
+        
+        
     }
 
     
@@ -33,12 +33,12 @@ public class DERSequence extends ASN1Sequence {
 for(int i = 0;i != v.size();i++)
         {
             this.addObject(v.get(i));
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i != v.size(); i++)
-        //{
-            //this.addObject(v.get(i));
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -49,12 +49,12 @@ for(int i = 0;i != v.size();i++)
 for(int i = 0;i != a.length;i++)
         {
             this.addObject(a[i]);
-        } //End block
-        // ---------- Original Method ----------
-        //for (int i = 0; i != a.length; i++)
-        //{
-            //this.addObject(a[i]);
-        //}
+        } 
+        
+        
+        
+            
+        
     }
 
     
@@ -70,22 +70,22 @@ for(int i = 0;i != a.length;i++)
         {
             Object obj = e.nextElement();
             dOut.writeObject(obj);
-        } //End block
+        } 
         dOut.close();
         byte[] bytes = bOut.toByteArray();
         out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
-        // ---------- Original Method ----------
-        //ByteArrayOutputStream   bOut = new ByteArrayOutputStream();
-        //DEROutputStream         dOut = new DEROutputStream(bOut);
-        //Enumeration             e = this.getObjects();
-        //while (e.hasMoreElements())
-        //{
-            //Object    obj = e.nextElement();
-            //dOut.writeObject(obj);
-        //}
-        //dOut.close();
-        //byte[]  bytes = bOut.toByteArray();
-        //out.writeEncoded(SEQUENCE | CONSTRUCTED, bytes);
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
     }
 
     

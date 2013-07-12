@@ -1,6 +1,6 @@
 package android.content.pm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.433 -0400", hash_original_method = "F8437ACFEC0EA098621A29EA36F6AD07", hash_generated_method = "EDCE9066F17AD3973393DCDC0BE762D3")
     public  ServiceInfo() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,9 +27,9 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         super(orig);
         permission = orig.permission;
         flags = orig.flags;
-        // ---------- Original Method ----------
-        //permission = orig.permission;
-        //flags = orig.flags;
+        
+        
+        
     }
 
     
@@ -38,12 +38,13 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         super(source);
         permission = source.readString();
         flags = source.readInt();
-        // ---------- Original Method ----------
-        //permission = source.readString();
-        //flags = source.readInt();
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.434 -0400", hash_original_method = "DA4A80B9AC3442B8DFBCD8315889AD94", hash_generated_method = "0AC23AB2DDBF37D9D456E8A515940FC8")
     public void dump(Printer pw, String prefix) {
         addTaint(prefix.getTaint());
@@ -51,13 +52,14 @@ public class ServiceInfo extends ComponentInfo implements Parcelable {
         super.dumpFront(pw, prefix);
         pw.println(prefix + "permission=" + permission);
         pw.println(prefix + "flags=0x" + Integer.toHexString(flags));
-        // ---------- Original Method ----------
-        //super.dumpFront(pw, prefix);
-        //pw.println(prefix + "permission=" + permission);
-        //pw.println(prefix + "flags=0x" + Integer.toHexString(flags));
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.435 -0400", hash_original_method = "59146AE4B3130A7BADEE9DF4447D4A3B", hash_generated_method = "A7B8DB52B053E82E7268D3DEBAD1E58C")
     public String toString() {
 String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
@@ -65,23 +67,25 @@ String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
             + " " + name + "}";
         var4EC24595A80F5D9095B74DE6B798A232_2018231761.addTaint(taint);
         return var4EC24595A80F5D9095B74DE6B798A232_2018231761;
-        // ---------- Original Method ----------
-        //return "ServiceInfo{"
-            //+ Integer.toHexString(System.identityHashCode(this))
-            //+ " " + name + "}";
+        
+        
+            
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.435 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "A439ECC93884B3455C21408F7BF75907")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1152261483 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043804723 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2043804723;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:14.436 -0400", hash_original_method = "0D65CECC76E553C003E9EF65F2ADA018", hash_generated_method = "CA4BA01953D84C6D9651F2189A6E24D6")
     public void writeToParcel(Parcel dest, int parcelableFlags) {
         addTaint(parcelableFlags);
@@ -89,10 +93,10 @@ String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
         super.writeToParcel(dest, parcelableFlags);
         dest.writeString(permission);
         dest.writeInt(flags);
-        // ---------- Original Method ----------
-        //super.writeToParcel(dest, parcelableFlags);
-        //dest.writeString(permission);
-        //dest.writeInt(flags);
+        
+        
+        
+        
     }
 
     
@@ -110,12 +114,12 @@ String var4EC24595A80F5D9095B74DE6B798A232_2018231761 =         "ServiceInfo{"
             return new ServiceInfo[size];
         }
     };
-    // orphaned legacy method
+    
     public ServiceInfo createFromParcel(Parcel source) {
             return new ServiceInfo(source);
         }
     
-    // orphaned legacy method
+    
     public ServiceInfo[] newArray(int size) {
             return new ServiceInfo[size];
         }

@@ -1,6 +1,6 @@
 package org.apache.http.impl.client;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,8 +18,8 @@ public class BasicCredentialsProvider implements CredentialsProvider {
     public  BasicCredentialsProvider() {
         super();
         this.credMap = new HashMap<AuthScope, Credentials>();
-        // ---------- Original Method ----------
-        //this.credMap = new HashMap<AuthScope, Credentials>();
+        
+        
     }
 
     
@@ -34,13 +34,13 @@ public class BasicCredentialsProvider implements CredentialsProvider {
             IllegalArgumentException varF3C54A3920ACABC473232E4B61A3EC9F_1363804195 = new IllegalArgumentException("Authentication scope may not be null");
             varF3C54A3920ACABC473232E4B61A3EC9F_1363804195.addTaint(taint);
             throw varF3C54A3920ACABC473232E4B61A3EC9F_1363804195;
-        } //End block
+        } 
         credMap.put(authscope, credentials);
-        // ---------- Original Method ----------
-        //if (authscope == null) {
-            //throw new IllegalArgumentException("Authentication scope may not be null");
-        //}
-        //credMap.put(authscope, credentials);
+        
+        
+            
+        
+        
     }
 
     
@@ -74,15 +74,15 @@ public class BasicCredentialsProvider implements CredentialsProvider {
             IllegalArgumentException varF3C54A3920ACABC473232E4B61A3EC9F_1692343487 = new IllegalArgumentException("Authentication scope may not be null");
             varF3C54A3920ACABC473232E4B61A3EC9F_1692343487.addTaint(taint);
             throw varF3C54A3920ACABC473232E4B61A3EC9F_1692343487;
-        } //End block
+        } 
 Credentials var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253 =         matchCredentials(this.credMap, authscope);
         var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253.addTaint(taint);
         return var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253;
-        // ---------- Original Method ----------
-        //if (authscope == null) {
-            //throw new IllegalArgumentException("Authentication scope may not be null");
-        //}
-        //return matchCredentials(this.credMap, authscope);
+        
+        
+            
+        
+        
     }
 
     
@@ -92,16 +92,16 @@ Credentials var9FEAE3DE7DACA4ACD3468E0C1D91FB57_447892253 =         matchCredent
 String var3ABE431499056EAEA366DD605462395E_2032166986 =         credMap.toString();
         var3ABE431499056EAEA366DD605462395E_2032166986.addTaint(taint);
         return var3ABE431499056EAEA366DD605462395E_2032166986;
-        // ---------- Original Method ----------
-        //return credMap.toString();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:35.322 -0400", hash_original_method = "B811CBD1AC15B296829E7D50AE8C3355", hash_generated_method = "F819287B754D53E25A1D3BFC60FCEF93")
     public synchronized void clear() {
         this.credMap.clear();
-        // ---------- Original Method ----------
-        //this.credMap.clear();
+        
+        
     }
 
     

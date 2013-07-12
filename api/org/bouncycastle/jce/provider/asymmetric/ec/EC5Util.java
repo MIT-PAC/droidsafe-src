@@ -1,6 +1,6 @@
 package org.bouncycastle.jce.provider.asymmetric.ec;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -20,11 +20,12 @@ public class EC5Util {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:21.676 -0400", hash_original_method = "11F174102611A1F3EFF98B0ED6DCCE74", hash_generated_method = "11F174102611A1F3EFF98B0ED6DCCE74")
     public EC5Util ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static EllipticCurve convertCurve(
+        @DSModeled(DSC.SPEC)
+    public static EllipticCurve convertCurve(
         ECCurve curve, 
         byte[]  seed) {
         if (curve instanceof ECCurve.Fp)

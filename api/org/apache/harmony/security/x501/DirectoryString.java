@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x501;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public final class DirectoryString {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:18.611 -0400", hash_original_method = "53F57E3BE98311F5CEA26B08849D5BFD", hash_generated_method = "53F57E3BE98311F5CEA26B08849D5BFD")
     public DirectoryString ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -35,13 +35,13 @@ public final class DirectoryString {
             return  object;
         }
     };
-    // orphaned legacy method
+    
     public int getIndex(java.lang.Object object) {
             return 1; 
             
         }
     
-    // orphaned legacy method
+    
     public Object getObjectToEncode(Object object) {
             return  object;
         }

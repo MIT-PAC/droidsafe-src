@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class SIPIfMatchParser extends HeaderParser {
     public  SIPIfMatchParser(String etag) {
         super(etag);
         addTaint(etag.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -22,7 +22,7 @@ public class SIPIfMatchParser extends HeaderParser {
     protected  SIPIfMatchParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -43,29 +43,29 @@ public class SIPIfMatchParser extends HeaderParser {
 SIPHeader var2AC239437004089F4FD3A73D32258A23_535331345 =             sipIfMatch;
             var2AC239437004089F4FD3A73D32258A23_535331345.addTaint(taint);
             return var2AC239437004089F4FD3A73D32258A23_535331345;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("SIPIfMatch.parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("SIPIfMatch.parse");
-        //SIPIfMatch sipIfMatch = new SIPIfMatch();
-        //try {
-            //headerName(TokenTypes.SIP_IF_MATCH);
-            //this.lexer.SPorHT();
-            //this.lexer.match(TokenTypes.ID);
-            //Token token = lexer.getNextToken();
-            //sipIfMatch.setETag(token.getTokenValue());
-            //this.lexer.SPorHT();
-            //this.lexer.match('\n');
-            //return sipIfMatch;
-        //} finally {
-            //if (debug)
-                //dbg_leave("SIPIfMatch.parse");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

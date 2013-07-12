@@ -1,6 +1,6 @@
 package org.apache.harmony.security.x509;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,40 +29,43 @@ public final class GeneralSubtree {
         this.base = base;
         this.minimum = minimum;
         this.maximum = maximum;
-        // ---------- Original Method ----------
-        //this.base = base;
-        //this.minimum = minimum;
-        //this.maximum = maximum;
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.095 -0400", hash_original_method = "FBC8A3DE80F48DE1891C2D6208F82433", hash_generated_method = "D9530CCC58ACE6097A47709178381022")
     public GeneralName getBase() {
 GeneralName var530A7BC087253E083043013B3EB0C6E6_1566743714 =         base;
         var530A7BC087253E083043013B3EB0C6E6_1566743714.addTaint(taint);
         return var530A7BC087253E083043013B3EB0C6E6_1566743714;
-        // ---------- Original Method ----------
-        //return base;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.095 -0400", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "7E69C300F2F853E82A7A42E35210A0F2")
     public byte[] getEncoded() {
     if(encoding == null)        
         {
             encoding = ASN1.encode(this);
-        } //End block
+        } 
         byte[] var84BEA1F0FD2CE16F7E562A9F06EF03D3_398433451 = (encoding);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1950947227 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1950947227;
-        // ---------- Original Method ----------
-        //if (encoding == null) {
-            //encoding = ASN1.encode(this);
-        //}
-        //return encoding;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:19.095 -0400", hash_original_method = "EBC343B993E4A537A05E52D600D1ECC2", hash_generated_method = "A2E3B8EE54F98950D43AE6AAB65594AC")
     public void dumpValue(StringBuilder sb, String prefix) {
         addTaint(prefix.getTaint());
@@ -73,16 +76,16 @@ GeneralName var530A7BC087253E083043013B3EB0C6E6_1566743714 =         base;
     if(maximum >= 0)        
         {
             sb.append(prefix).append("  maximum: ").append(maximum).append('\n');
-        } //End block
+        } 
         sb.append(prefix).append("]\n");
-        // ---------- Original Method ----------
-        //sb.append(prefix).append("General Subtree: [\n");
-        //sb.append(prefix).append("  base: ").append(base).append('\n');
-        //sb.append(prefix).append("  minimum: ").append(minimum).append('\n');
-        //if (maximum >= 0) {
-            //sb.append(prefix).append("  maximum: ").append(maximum).append('\n');
-        //}
-        //sb.append(prefix).append("]\n");
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     

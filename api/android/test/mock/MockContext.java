@@ -1,6 +1,6 @@
 package android.test.mock;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -37,7 +37,7 @@ public class MockContext extends Context {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.429 -0400", hash_original_method = "3BD432D7D653C5930EE983B863B99E4B", hash_generated_method = "3BD432D7D653C5930EE983B863B99E4B")
     public MockContext ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -47,8 +47,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1781309587 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1781309587.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1781309587;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -58,8 +58,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_301204751 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_301204751.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_301204751;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -69,8 +69,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_551293616 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_551293616.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_551293616;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2070892657 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2070892657.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2070892657;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -91,8 +91,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1343761715 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1343761715.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1343761715;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -102,8 +102,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1632601292 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1632601292.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1632601292;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -114,8 +114,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_338421987 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_338421987.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_338421987;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -125,19 +125,20 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_968808646 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_968808646.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_968808646;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.433 -0400", hash_original_method = "C51DF920D125BDAE90130F458F1F9388", hash_generated_method = "54499EE185511541EF870E8EAB8A02CF")
     @Override
     public ClassLoader getClassLoader() {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1247420927 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1247420927.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1247420927;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -147,8 +148,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1654714930 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1654714930.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1654714930;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -158,8 +159,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_755849485 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_755849485.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_755849485;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -169,8 +170,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_598986966 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_598986966.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_598986966;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -181,8 +182,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1235683317 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1235683317.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1235683317;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -192,8 +193,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1904220987 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1904220987.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1904220987;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -205,8 +206,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1141478410 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1141478410.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1141478410;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -217,8 +218,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2088280706 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2088280706.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2088280706;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -230,8 +231,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_187092130 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_187092130.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_187092130;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -242,8 +243,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1161531348 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1161531348.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1161531348;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -254,8 +255,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_795558897 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_795558897.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_795558897;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -265,8 +266,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_304414144 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_304414144.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_304414144;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -276,8 +277,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_535664811 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_535664811.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_535664811;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -288,8 +289,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1516535562 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1516535562.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1516535562;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -299,8 +300,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2037043397 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2037043397.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2037043397;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -310,8 +311,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_273597078 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_273597078.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_273597078;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -321,8 +322,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2063987370 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2063987370.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2063987370;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -334,8 +335,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1194194633 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1194194633.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1194194633;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -349,8 +350,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1441438 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1441438.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1441438;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -365,8 +366,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1880179320 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1880179320.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1880179320;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -377,8 +378,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_984069638 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_984069638.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_984069638;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -388,8 +389,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_426481690 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_426481690.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_426481690;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -400,8 +401,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_445944908 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_445944908.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_445944908;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -411,8 +412,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1933670070 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1933670070.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1933670070;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -422,8 +423,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_35425077 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_35425077.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_35425077;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -433,8 +434,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1554662114 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1554662114.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1554662114;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -444,8 +445,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1532496706 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1532496706.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1532496706;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -456,8 +457,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1847235625 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1847235625.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1847235625;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -468,8 +469,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1788728281 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1788728281.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1788728281;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -479,11 +480,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_461636595 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_461636595.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_461636595;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.447 -0400", hash_original_method = "10BBC39B201767C43F0FBBE296ABD273", hash_generated_method = "90575AB0DE7291D8EFE21336A8AB881C")
     @Override
     public void startActivity(Intent intent) {
@@ -491,8 +493,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_780023086 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_780023086.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_780023086;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -503,11 +505,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1548773713 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1548773713.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1548773713;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.448 -0400", hash_original_method = "70A0DB323D66E33A5F118512F09625C8", hash_generated_method = "9E4BF9804A80D98EB1914ED8B553E7C0")
     @Override
     public void startIntentSender(IntentSender intent,
@@ -520,11 +523,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_646176262 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_646176262.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_646176262;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.448 -0400", hash_original_method = "7E1C16471170CAC5D2A8AEA7AFD07DD1", hash_generated_method = "5B5FD54DCCEFC507619E3C76178AD4D8")
     @Override
     public void sendBroadcast(Intent intent) {
@@ -532,11 +536,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_371080992 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_371080992.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_371080992;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.448 -0400", hash_original_method = "4C3B301BF0F66FC6027023D458D4F5CD", hash_generated_method = "F88637FE5EE5DD95EA107061803A8D1B")
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
@@ -545,11 +550,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1449827686 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1449827686.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1449827686;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.449 -0400", hash_original_method = "53C9E33F6F3BF762F0C7AD2D83F8B880", hash_generated_method = "8D7D313D92A3B74832E500ACDCE554B2")
     @Override
     public void sendOrderedBroadcast(Intent intent,
@@ -559,11 +565,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_749000549 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_749000549.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_749000549;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.449 -0400", hash_original_method = "BD4D4F58A89D586949B717D061DAB18B", hash_generated_method = "DE50E140EA27588700893E5FDBB923CF")
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
@@ -579,11 +586,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1875497642 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1875497642.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1875497642;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.449 -0400", hash_original_method = "F1DE7775DB33185A5749E492B31FBC7D", hash_generated_method = "FC1285B61D4D1AA78ABF9B7379C578C0")
     @Override
     public void sendStickyBroadcast(Intent intent) {
@@ -591,11 +599,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1500132522 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1500132522.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1500132522;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.450 -0400", hash_original_method = "282E4DE5B4B9DE490016C7174B108592", hash_generated_method = "2B6179BA51007EDA9288FB49C929A9DE")
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
@@ -610,11 +619,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_185632706 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_185632706.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_185632706;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.450 -0400", hash_original_method = "171AE827F280EA82963EC0D862FF9728", hash_generated_method = "DFD443EF7CE6532E5AADD4561B199CD9")
     @Override
     public void removeStickyBroadcast(Intent intent) {
@@ -622,30 +632,32 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_128779704 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_128779704.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_128779704;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.451 -0400", hash_original_method = "0850381B9C1FC302FA99B7B33A5E73A3", hash_generated_method = "E779CD07402AA233AB100BEC23E49630")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(filter.getTaint());
         addTaint(receiver.getTaint());
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1820007204 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1820007204.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1820007204;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.451 -0400", hash_original_method = "38D46FC990EC0A671B9656203023C7E3", hash_generated_method = "547372CA60234C8FF4D14C9B4B01F154")
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
-        //DSFIXME: CODE0010: Possible callback registration function detected
+        
         addTaint(scheduler.getTaint());
         addTaint(broadcastPermission.getTaint());
         addTaint(filter.getTaint());
@@ -653,8 +665,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1525715586 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1525715586.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1525715586;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -665,11 +677,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1848550313 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1848550313.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1848550313;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.452 -0400", hash_original_method = "E1F1505B58131FB6B0B7748694608436", hash_generated_method = "BF63A599DE35BFF88F668CD1E511E289")
     @Override
     public ComponentName startService(Intent service) {
@@ -677,11 +690,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_361197026 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_361197026.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_361197026;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.452 -0400", hash_original_method = "6B730D00DB06298D95F2B7A23DAD395A", hash_generated_method = "0D174CF9BA536233FB0C2B4351637747")
     @Override
     public boolean stopService(Intent service) {
@@ -689,11 +703,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_542402747 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_542402747.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_542402747;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.453 -0400", hash_original_method = "BFAA291B41512300628CDA2B72A00114", hash_generated_method = "2656367E7C58DE5A92C37452CF2C7DDA")
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
@@ -703,8 +718,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_272843694 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_272843694.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_272843694;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -715,8 +730,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_430146902 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_430146902.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_430146902;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -730,8 +745,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_418931050 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_418931050.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_418931050;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -742,8 +757,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_957918331 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_957918331.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_957918331;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -756,8 +771,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1861556135 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1861556135.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1861556135;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -768,8 +783,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_249043356 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_249043356.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_249043356;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -780,8 +795,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1187661998 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1187661998.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1187661998;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -796,8 +811,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1996263366 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1996263366.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1996263366;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -809,8 +824,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1732948885 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1732948885.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1732948885;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -822,11 +837,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1504764699 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1504764699.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1504764699;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "CA3402270A11C945C3AA0E7919220352", hash_generated_method = "68AAB319A0CFC3836BE6E6970BC7AE33")
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
@@ -836,11 +852,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1788051116 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1788051116.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1788051116;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "A5567E6B8C539B68F363AE3EA825B3B1", hash_generated_method = "D7C126759A8C49CDB3F5E5A9D10DDCE9")
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
@@ -849,11 +866,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_482609694 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_482609694.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_482609694;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "01DA97890A1635A805E6ABA70EA7E1A2", hash_generated_method = "47658A541D2D8C9410407B0E30FB022A")
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
@@ -864,11 +882,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1624807229 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1624807229.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1624807229;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.456 -0400", hash_original_method = "0E91A21D8BB5EE13B32E9508DC980D04", hash_generated_method = "C1D112186B3FED14F139498C8EEE0B15")
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
@@ -877,11 +896,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_952451196 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_952451196.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_952451196;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.457 -0400", hash_original_method = "4E907F188543B6F68B290447CBA938FC", hash_generated_method = "E129AC93A68C1A77FA748B70006CBE10")
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
@@ -890,11 +910,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1110337104 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1110337104.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1110337104;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.457 -0400", hash_original_method = "10E5B81078B4D8C80FD1ADA81F59A293", hash_generated_method = "2B46110CE8120D0D7AA8D9989371954D")
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
@@ -908,11 +929,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1024137842 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1024137842.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1024137842;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.457 -0400", hash_original_method = "D6C517671FDE2208703A3C3A6D7AC623", hash_generated_method = "8D3C7973FBF8B5347C283574BA40AD5C")
     @Override
     public void enforceUriPermission(
@@ -925,11 +947,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_630179361 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_630179361.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_630179361;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.458 -0400", hash_original_method = "5404073C28217A8FED2D1029326FF0C1", hash_generated_method = "B6BE422CADAEEC604FF1C334E87FF547")
     @Override
     public void enforceCallingUriPermission(
@@ -940,11 +963,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_741705486 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_741705486.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_741705486;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.458 -0400", hash_original_method = "581596FE93D696843E16CDAA47A17F02", hash_generated_method = "A783A1E71D1B060029D11AEE11BEFD82")
     @Override
     public void enforceCallingOrSelfUriPermission(
@@ -955,11 +979,12 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_497184416 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_497184416.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_497184416;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:43.458 -0400", hash_original_method = "3F20BE4E74327552B96137FD3F126AED", hash_generated_method = "C70D5AECA789EDB4DF72CAF622232A92")
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
@@ -974,8 +999,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_2102098332 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_2102098332.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_2102098332;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -987,8 +1012,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_1951447671 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_1951447671.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_1951447671;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     
@@ -998,8 +1023,8 @@ public class MockContext extends Context {
         UnsupportedOperationException var81FA7E299EEE7F062EBFBEEF08B0464D_27820441 = new UnsupportedOperationException();
         var81FA7E299EEE7F062EBFBEEF08B0464D_27820441.addTaint(taint);
         throw var81FA7E299EEE7F062EBFBEEF08B0464D_27820441;
-        // ---------- Original Method ----------
-        //throw new UnsupportedOperationException();
+        
+        
     }
 
     

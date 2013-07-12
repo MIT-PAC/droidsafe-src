@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -145,7 +145,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     public  ActivityChooserView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -154,7 +154,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -191,19 +191,19 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.136 -0400", hash_original_method = "77B1463ED818B52DA8559320D8129DE8", hash_generated_method = "4823B6C5288EB5E4410B6C2B7971F9E9")
         @Override
         public void onChanged() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             super.onChanged();
             updateAppearance();
-            // ---------- Original Method ----------
-            //super.onChanged();
-            //updateAppearance();
+            
+            
+            
         }
 });
         Resources resources = context.getResources();
         mListPopupMaxWidth = Math.max(resources.getDisplayMetrics().widthPixels / 2,
               resources.getDimensionPixelSize(com.android.internal.R.dimen.config_prefDialogWidth));
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -215,13 +215,13 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         {
             dismissPopup();
             showPopup();
-        } //End block
-        // ---------- Original Method ----------
-        //mAdapter.setDataModel(dataModel);
-        //if (isShowingPopup()) {
-            //dismissPopup();
-            //showPopup();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -229,8 +229,8 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     public void setExpandActivityOverflowButtonDrawable(Drawable drawable) {
         addTaint(drawable.getTaint());
         mExpandActivityOverflowButtonImage.setImageDrawable(drawable);
-        // ---------- Original Method ----------
-        //mExpandActivityOverflowButtonImage.setImageDrawable(drawable);
+        
+        
     }
 
     
@@ -239,17 +239,18 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         addTaint(resourceId);
         CharSequence contentDescription = mContext.getString(resourceId);
         mExpandActivityOverflowButtonImage.setContentDescription(contentDescription);
-        // ---------- Original Method ----------
-        //CharSequence contentDescription = mContext.getString(resourceId);
-        //mExpandActivityOverflowButtonImage.setContentDescription(contentDescription);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.139 -0400", hash_original_method = "4EB99ACA5BA34A284707803087697EF8", hash_generated_method = "BB5F635A8854257C75F3E39227EB8F20")
     public void setProvider(ActionProvider provider) {
         mProvider = provider;
-        // ---------- Original Method ----------
-        //mProvider = provider;
+        
+        
     }
 
     
@@ -260,19 +261,19 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
             boolean var68934A3E9455FA72420237EB05902327_334035670 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_28037314 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_28037314;
-        } //End block
+        } 
         mIsSelectingDefaultActivity = false;
         showPopupUnchecked(mInitialActivityCount);
         boolean varB326B5062B2F0E69046810717534CB09_720068860 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1386688930 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1386688930;
-        // ---------- Original Method ----------
-        //if (isShowingPopup() || !mIsAttachedToWindow) {
-            //return false;
-        //}
-        //mIsSelectingDefaultActivity = false;
-        //showPopupUnchecked(mInitialActivityCount);
-        //return true;
+        
+        
+            
+        
+        
+        
+        
     }
 
     
@@ -284,7 +285,7 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
             IllegalStateException var381F80BF3C7DE0AAF04084C83CAA1E7B_164132418 = new IllegalStateException("No data model. Did you call #setDataModel?");
             var381F80BF3C7DE0AAF04084C83CAA1E7B_164132418.addTaint(taint);
             throw var381F80BF3C7DE0AAF04084C83CAA1E7B_164132418;
-        } //End block
+        } 
         getViewTreeObserver().addOnGlobalLayoutListener(mOnGlobalLayoutListener);
         final boolean defaultActivityButtonShown = mDefaultActivityButton.getVisibility() == VISIBLE;
         final int activityCount = mAdapter.getActivityCount();
@@ -294,35 +295,35 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         {
             mAdapter.setShowFooterView(true);
             mAdapter.setMaxActivityCount(maxActivityCount - 1);
-        } //End block
+        } 
         else
         {
             mAdapter.setShowFooterView(false);
             mAdapter.setMaxActivityCount(maxActivityCount);
-        } //End block
+        } 
         ListPopupWindow popupWindow = getListPopupWindow();
     if(!popupWindow.isShowing())        
         {
     if(mIsSelectingDefaultActivity || !defaultActivityButtonShown)            
             {
                 mAdapter.setShowDefaultActivity(true, defaultActivityButtonShown);
-            } //End block
+            } 
             else
             {
                 mAdapter.setShowDefaultActivity(false, false);
-            } //End block
+            } 
             final int contentWidth = Math.min(mAdapter.measureContentWidth(), mListPopupMaxWidth);
             popupWindow.setContentWidth(contentWidth);
             popupWindow.show();
     if(mProvider != null)            
             {
                 mProvider.subUiVisibilityChanged(true);
-            } //End block
+            } 
             popupWindow.getListView().setContentDescription(mContext.getString(
                     R.string.activitychooserview_choose_application));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -335,20 +336,20 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     if(viewTreeObserver.isAlive())            
             {
                 viewTreeObserver.removeGlobalOnLayoutListener(mOnGlobalLayoutListener);
-            } //End block
-        } //End block
+            } 
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_1165132323 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1323508299 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1323508299;
-        // ---------- Original Method ----------
-        //if (isShowingPopup()) {
-            //getListPopupWindow().dismiss();
-            //ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-            //if (viewTreeObserver.isAlive()) {
-                //viewTreeObserver.removeGlobalOnLayoutListener(mOnGlobalLayoutListener);
-            //}
-        //}
-        //return true;
+        
+        
+            
+            
+            
+                
+            
+        
+        
     }
 
     
@@ -357,66 +358,66 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         boolean varEC16F2AB0C513EEC2D6CFE9178BA04FC_1623340895 = (getListPopupWindow().isShowing());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1767071976 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1767071976;
-        // ---------- Original Method ----------
-        //return getListPopupWindow().isShowing();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.141 -0400", hash_original_method = "F599B3D6D046BF4212D64A5D6A7F3811", hash_generated_method = "80F844DCA2269B21B004557A74BA538B")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         ActivityChooserModel dataModel = mAdapter.getDataModel();
     if(dataModel != null)        
         {
             dataModel.registerObserver(mModelDataSetOberver);
-        } //End block
+        } 
         mIsAttachedToWindow = true;
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //ActivityChooserModel dataModel = mAdapter.getDataModel();
-        //if (dataModel != null) {
-            //dataModel.registerObserver(mModelDataSetOberver);
-        //}
-        //mIsAttachedToWindow = true;
+        
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.142 -0400", hash_original_method = "589218240FC22193C94953AC6574E4EA", hash_generated_method = "3375D32324F5A5C3AEFB3746012D7F22")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         ActivityChooserModel dataModel = mAdapter.getDataModel();
     if(dataModel != null)        
         {
             dataModel.unregisterObserver(mModelDataSetOberver);
-        } //End block
+        } 
         ViewTreeObserver viewTreeObserver = getViewTreeObserver();
     if(viewTreeObserver.isAlive())        
         {
             viewTreeObserver.removeGlobalOnLayoutListener(mOnGlobalLayoutListener);
-        } //End block
+        } 
         mIsAttachedToWindow = false;
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //ActivityChooserModel dataModel = mAdapter.getDataModel();
-        //if (dataModel != null) {
-            //dataModel.unregisterObserver(mModelDataSetOberver);
-        //}
-        //ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-        //if (viewTreeObserver.isAlive()) {
-            //viewTreeObserver.removeGlobalOnLayoutListener(mOnGlobalLayoutListener);
-        //}
-        //mIsAttachedToWindow = false;
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.142 -0400", hash_original_method = "77C33EEC897BED8B2A12DF2072C37646", hash_generated_method = "ACB91396960FFA3FA31CF15FE3E56C41")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         View child = mActivityChooserContent;
@@ -424,24 +425,24 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
         {
             heightMeasureSpec = MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec),
                     MeasureSpec.EXACTLY);
-        } //End block
+        } 
         measureChild(child, widthMeasureSpec, heightMeasureSpec);
         setMeasuredDimension(child.getMeasuredWidth(), child.getMeasuredHeight());
-        // ---------- Original Method ----------
-        //View child = mActivityChooserContent;
-        //if (mDefaultActivityButton.getVisibility() != VISIBLE) {
-            //heightMeasureSpec = MeasureSpec.makeMeasureSpec(MeasureSpec.getSize(heightMeasureSpec),
-                    //MeasureSpec.EXACTLY);
-        //}
-        //measureChild(child, widthMeasureSpec, heightMeasureSpec);
-        //setMeasuredDimension(child.getMeasuredWidth(), child.getMeasuredHeight());
+        
+        
+        
+            
+                    
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.143 -0400", hash_original_method = "C5A31C6F2FD14D87574B0913D4F6A2F2", hash_generated_method = "AECFA23BC7705187D8C8991F47325290")
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(bottom);
         addTaint(right);
         addTaint(top);
@@ -451,18 +452,18 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
     if(getListPopupWindow().isShowing())        
         {
             showPopupUnchecked(mAdapter.getMaxActivityCount());
-        } //End block
+        } 
         else
         {
             dismissPopup();
-        } //End block
-        // ---------- Original Method ----------
-        //mActivityChooserContent.layout(0, 0, right - left, bottom - top);
-        //if (getListPopupWindow().isShowing()) {
-            //showPopupUnchecked(mAdapter.getMaxActivityCount());
-        //} else {
-            //dismissPopup();
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -471,32 +472,35 @@ public class ActivityChooserView extends ViewGroup implements ActivityChooserMod
 ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1313562084 =         mAdapter.getDataModel();
         var508A9B88A601E27CB548DFF712F7BB82_1313562084.addTaint(taint);
         return var508A9B88A601E27CB548DFF712F7BB82_1313562084;
-        // ---------- Original Method ----------
-        //return mAdapter.getDataModel();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.144 -0400", hash_original_method = "3D692CC2129791FB098BE485AC739689", hash_generated_method = "AFEDE7910A1B37993DCCD6535D2798FB")
     public void setOnDismissListener(PopupWindow.OnDismissListener listener) {
         mOnDismissListener = listener;
-        // ---------- Original Method ----------
-        //mOnDismissListener = listener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.144 -0400", hash_original_method = "861F24EC23ECA4CA4EF104A377B2D34D", hash_generated_method = "706332B7EEAD1AE51173D975872ABB45")
     public void setInitialActivityCount(int itemCount) {
         mInitialActivityCount = itemCount;
-        // ---------- Original Method ----------
-        //mInitialActivityCount = itemCount;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.144 -0400", hash_original_method = "A16FFC5DB1EC302B931A83E3D5524FB1", hash_generated_method = "3AA11D7A925E1612E7FB383801FF727D")
     public void setDefaultActionButtonContentDescription(int resourceId) {
         mDefaultActionButtonContentDescription = resourceId;
-        // ---------- Original Method ----------
-        //mDefaultActionButtonContentDescription = resourceId;
+        
+        
     }
 
     
@@ -510,20 +514,20 @@ ActivityChooserModel var508A9B88A601E27CB548DFF712F7BB82_1313562084 =         mA
             mListPopupWindow.setModal(true);
             mListPopupWindow.setOnItemClickListener(mCallbacks);
             mListPopupWindow.setOnDismissListener(mCallbacks);
-        } //End block
+        } 
 ListPopupWindow varFECCF21D966B892F2BEC3B8FB195AB5E_591718605 =         mListPopupWindow;
         varFECCF21D966B892F2BEC3B8FB195AB5E_591718605.addTaint(taint);
         return varFECCF21D966B892F2BEC3B8FB195AB5E_591718605;
-        // ---------- Original Method ----------
-        //if (mListPopupWindow == null) {
-            //mListPopupWindow = new ListPopupWindow(getContext());
-            //mListPopupWindow.setAdapter(mAdapter);
-            //mListPopupWindow.setAnchorView(ActivityChooserView.this);
-            //mListPopupWindow.setModal(true);
-            //mListPopupWindow.setOnItemClickListener(mCallbacks);
-            //mListPopupWindow.setOnDismissListener(mCallbacks);
-        //}
-        //return mListPopupWindow;
+        
+        
+            
+            
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -532,11 +536,11 @@ ListPopupWindow varFECCF21D966B892F2BEC3B8FB195AB5E_591718605 =         mListPop
     if(mAdapter.getCount() > 0)        
         {
             mExpandActivityOverflowButton.setEnabled(true);
-        } //End block
+        } 
         else
         {
             mExpandActivityOverflowButton.setEnabled(false);
-        } //End block
+        } 
         final int activityCount = mAdapter.getActivityCount();
         final int historySize = mAdapter.getHistorySize();
     if(activityCount > 0 && historySize > 0)        
@@ -551,22 +555,22 @@ ListPopupWindow varFECCF21D966B892F2BEC3B8FB195AB5E_591718605 =         mListPop
                 String contentDescription = mContext.getString(
                         mDefaultActionButtonContentDescription, label);
                 mDefaultActivityButton.setContentDescription(contentDescription);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mDefaultActivityButton.setVisibility(View.GONE);
-        } //End block
+        } 
     if(mDefaultActivityButton.getVisibility() == VISIBLE)        
         {
             mActivityChooserContent.setBackgroundDrawable(mActivityChooserContentBackground);
-        } //End block
+        } 
         else
         {
             mActivityChooserContent.setBackgroundDrawable(null);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -575,13 +579,13 @@ ListPopupWindow varFECCF21D966B892F2BEC3B8FB195AB5E_591718605 =         mListPop
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.146 -0400", hash_original_method = "BBA4719757F5E3331C7832D116B199C8", hash_generated_method = "BBA4719757F5E3331C7832D116B199C8")
         public Callbacks ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.147 -0400", hash_original_method = "674D57987B8C667CB3D7FFB12FCDD905", hash_generated_method = "92DCC20D3BE580980BADDB5C64C3477B")
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(id);
             addTaint(position);
             addTaint(view.getTaint());
@@ -592,7 +596,7 @@ switch(itemViewType){
             case ActivityChooserViewAdapter.ITEM_VIEW_TYPE_FOOTER:
             {
                 showPopupUnchecked(ActivityChooserViewAdapter.MAX_ACTIVITY_COUNT_UNLIMITED);
-            } //End block
+            } 
             break;
             case ActivityChooserViewAdapter.ITEM_VIEW_TYPE_ACTIVITY:
             {
@@ -602,8 +606,8 @@ switch(itemViewType){
     if(position > 0)                    
                     {
                         mAdapter.getDataModel().setDefaultActivity(position);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     position = mAdapter.getShowDefaultActivity() ? position : position + 1;
@@ -611,23 +615,23 @@ switch(itemViewType){
     if(launchIntent != null)                    
                     {
                         mContext.startActivity(launchIntent);
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             break;
             default:
             IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_655093352 = new IllegalArgumentException();
             var5783EF97022AA508B74A1E3EA38534AF_655093352.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_655093352;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.148 -0400", hash_original_method = "B05554F780928527AD52A76E48C9B5FF", hash_generated_method = "94AFF13AE33782313477A296949EC59F")
         public void onClick(View view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
     if(view == mDefaultActivityButton)            
             {
@@ -638,42 +642,42 @@ switch(itemViewType){
     if(launchIntent != null)                
                 {
                     mContext.startActivity(launchIntent);
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(view == mExpandActivityOverflowButton)            
             {
                 mIsSelectingDefaultActivity = false;
                 showPopupUnchecked(mInitialActivityCount);
-            } //End block
+            } 
             else
             {
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_979173248 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_979173248.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_979173248;
-            } //End block
-            // ---------- Original Method ----------
-            //if (view == mDefaultActivityButton) {
-                //dismissPopup();
-                //ResolveInfo defaultActivity = mAdapter.getDefaultActivity();
-                //final int index = mAdapter.getDataModel().getActivityIndex(defaultActivity);
-                //Intent launchIntent = mAdapter.getDataModel().chooseActivity(index);
-                //if (launchIntent != null) {
-                    //mContext.startActivity(launchIntent);
-                //}
-            //} else if (view == mExpandActivityOverflowButton) {
-                //mIsSelectingDefaultActivity = false;
-                //showPopupUnchecked(mInitialActivityCount);
-            //} else {
-                //throw new IllegalArgumentException();
-            //}
+            } 
+            
+            
+                
+                
+                
+                
+                
+                    
+                
+            
+                
+                
+            
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.149 -0400", hash_original_method = "FB2F3C2103372446E9D5711FBCAD6598", hash_generated_method = "1AEB10D3FE86B0D0913893F3389CCDD7")
         @Override
         public boolean onLongClick(View view) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(view.getTaint());
     if(view == mDefaultActivityButton)            
             {
@@ -681,43 +685,43 @@ switch(itemViewType){
                 {
                     mIsSelectingDefaultActivity = true;
                     showPopupUnchecked(mInitialActivityCount);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 IllegalArgumentException var5783EF97022AA508B74A1E3EA38534AF_1794604333 = new IllegalArgumentException();
                 var5783EF97022AA508B74A1E3EA38534AF_1794604333.addTaint(taint);
                 throw var5783EF97022AA508B74A1E3EA38534AF_1794604333;
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1224681605 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1582930240 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1582930240;
-            // ---------- Original Method ----------
-            //if (view == mDefaultActivityButton) {
-                //if (mAdapter.getCount() > 0) {
-                    //mIsSelectingDefaultActivity = true;
-                    //showPopupUnchecked(mInitialActivityCount);
-                //}
-            //} else {
-                //throw new IllegalArgumentException();
-            //}
-            //return true;
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.150 -0400", hash_original_method = "D25064A646F02B95A775BA0461A79BFD", hash_generated_method = "46ED0B7F5EA113F94D2D7ED613CB2AF8")
         public void onDismiss() {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             notifyOnDismissListener();
     if(mProvider != null)            
             {
                 mProvider.subUiVisibilityChanged(false);
-            } //End block
-            // ---------- Original Method ----------
-            //notifyOnDismissListener();
-            //if (mProvider != null) {
-                //mProvider.subUiVisibilityChanged(false);
-            //}
+            } 
+            
+            
+            
+                
+            
         }
 
         
@@ -726,11 +730,11 @@ switch(itemViewType){
     if(mOnDismissListener != null)            
             {
                 mOnDismissListener.onDismiss();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mOnDismissListener != null) {
-                //mOnDismissListener.onDismiss();
-            //}
+            } 
+            
+            
+                
+            
         }
 
         
@@ -758,7 +762,7 @@ switch(itemViewType){
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.151 -0400", hash_original_method = "BA43971C492C1B02A22C4BF340770F66", hash_generated_method = "BA43971C492C1B02A22C4BF340770F66")
         public ActivityChooserViewAdapter ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -768,23 +772,23 @@ switch(itemViewType){
     if(oldDataModel != null && isShown())            
             {
                 oldDataModel.unregisterObserver(mModelDataSetOberver);
-            } //End block
+            } 
             mDataModel = dataModel;
     if(dataModel != null && isShown())            
             {
                 dataModel.registerObserver(mModelDataSetOberver);
-            } //End block
+            } 
             notifyDataSetChanged();
-            // ---------- Original Method ----------
-            //ActivityChooserModel oldDataModel = mAdapter.getDataModel();
-            //if (oldDataModel != null && isShown()) {
-                //oldDataModel.unregisterObserver(mModelDataSetOberver);
-            //}
-            //mDataModel = dataModel;
-            //if (dataModel != null && isShown()) {
-                //dataModel.registerObserver(mModelDataSetOberver);
-            //}
-            //notifyDataSetChanged();
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -797,30 +801,31 @@ switch(itemViewType){
                 int var090E59C041C1F1B726EAA49617ABA0B8_1877031943 = (ITEM_VIEW_TYPE_FOOTER);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_488682113 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_488682113;
-            } //End block
+            } 
             else
             {
                 int var3F2F5514832ADFBE8F4A45A97002694A_331197765 = (ITEM_VIEW_TYPE_ACTIVITY);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929310373 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_929310373;
-            } //End block
-            // ---------- Original Method ----------
-            //if (mShowFooterView && position == getCount() - 1) {
-                //return ITEM_VIEW_TYPE_FOOTER;
-            //} else {
-                //return ITEM_VIEW_TYPE_ACTIVITY;
-            //}
+            } 
+            
+            
+                
+            
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.153 -0400", hash_original_method = "A69A431394F21E5FD61198963B3D5202", hash_generated_method = "84982FCFB6CC7F15B19273AEE9F12DB6")
         @Override
         public int getViewTypeCount() {
             int var2EEB33B94A84BABEF12198758DB45587_707919680 = (ITEM_VIEW_TYPE_COUNT);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_625937171 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_625937171;
-            // ---------- Original Method ----------
-            //return ITEM_VIEW_TYPE_COUNT;
+            
+            
         }
 
         
@@ -831,26 +836,26 @@ switch(itemViewType){
     if(!mShowDefaultActivity && mDataModel.getDefaultActivity() != null)            
             {
                 activityCount--;
-            } //End block
+            } 
             count = Math.min(activityCount, mMaxActivityCount);
     if(mShowFooterView)            
             {
                 count++;
-            } //End block
+            } 
             int varE2942A04780E223B215EB8B663CF5353_747164030 = (count);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039639685 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1039639685;
-            // ---------- Original Method ----------
-            //int count = 0;
-            //int activityCount = mDataModel.getActivityCount();
-            //if (!mShowDefaultActivity && mDataModel.getDefaultActivity() != null) {
-                //activityCount--;
-            //}
-            //count = Math.min(activityCount, mMaxActivityCount);
-            //if (mShowFooterView) {
-                //count++;
-            //}
-            //return count;
+            
+            
+            
+            
+                
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -867,7 +872,7 @@ Object var540C13E9E156B687226421B24F2DF178_574419902 =             null;
     if(!mShowDefaultActivity && mDataModel.getDefaultActivity() != null)            
             {
                 position++;
-            } //End block
+            } 
 Object varFD4721BD12B3F49C4BC4EEF9814EA0E3_884571731 =             mDataModel.getActivity(position);
             varFD4721BD12B3F49C4BC4EEF9814EA0E3_884571731.addTaint(taint);
             return varFD4721BD12B3F49C4BC4EEF9814EA0E3_884571731;
@@ -876,30 +881,31 @@ Object varFD4721BD12B3F49C4BC4EEF9814EA0E3_884571731 =             mDataModel.ge
             var5783EF97022AA508B74A1E3EA38534AF_2001263591.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_2001263591;
 }
-            // ---------- Original Method ----------
-            //final int itemViewType = getItemViewType(position);
-            //switch (itemViewType) {
-                //case ITEM_VIEW_TYPE_FOOTER:
-                    //return null;
-                //case ITEM_VIEW_TYPE_ACTIVITY:
-                    //if (!mShowDefaultActivity && mDataModel.getDefaultActivity() != null) {
-                        //position++;
-                    //}
-                    //return mDataModel.getActivity(position);
-                //default:
-                    //throw new IllegalArgumentException();
-            //}
+            
+            
+            
+                
+                    
+                
+                    
+                        
+                    
+                    
+                
+                    
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.155 -0400", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "EDFBFC884945B284C55340C20846FB4E")
         public long getItemId(int position) {
             addTaint(position);
             long var4757FE07FD492A8BE0EA6A760D683D6E_155299191 = (position);
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_537880400 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_537880400;
-            // ---------- Original Method ----------
-            //return position;
+            
+            
         }
 
         
@@ -919,7 +925,7 @@ switch(itemViewType){
                 TextView titleView = (TextView) convertView.findViewById(R.id.title);
                 titleView.setText(mContext.getString(
                                 R.string.activity_chooser_view_see_all));
-            } //End block
+            } 
 View var78FE9B874BBEC69B62B43EE963245978_1348564267 =             convertView;
             var78FE9B874BBEC69B62B43EE963245978_1348564267.addTaint(taint);
             return var78FE9B874BBEC69B62B43EE963245978_1348564267;
@@ -928,7 +934,7 @@ View var78FE9B874BBEC69B62B43EE963245978_1348564267 =             convertView;
             {
                 convertView = LayoutInflater.from(getContext()).inflate(
                                 R.layout.activity_chooser_view_list_item, parent, false);
-            } //End block
+            } 
             PackageManager packageManager = mContext.getPackageManager();
             ImageView iconView = (ImageView) convertView.findViewById(R.id.icon);
             ResolveInfo activity = (ResolveInfo) getItem(position);
@@ -938,11 +944,11 @@ View var78FE9B874BBEC69B62B43EE963245978_1348564267 =             convertView;
     if(mShowDefaultActivity && position == 0 && mHighlightDefaultActivity)            
             {
                 convertView.setActivated(true);
-            } //End block
+            } 
             else
             {
                 convertView.setActivated(false);
-            } //End block
+            } 
 View var78FE9B874BBEC69B62B43EE963245978_147665692 =             convertView;
             var78FE9B874BBEC69B62B43EE963245978_147665692.addTaint(taint);
             return var78FE9B874BBEC69B62B43EE963245978_147665692;
@@ -951,8 +957,8 @@ View var78FE9B874BBEC69B62B43EE963245978_147665692 =             convertView;
             var5783EF97022AA508B74A1E3EA38534AF_1466901008.addTaint(taint);
             throw var5783EF97022AA508B74A1E3EA38534AF_1466901008;
 }
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -970,26 +976,26 @@ for(int i = 0;i < count;i++)
                 itemView = getView(i, itemView, null);
                 itemView.measure(widthMeasureSpec, heightMeasureSpec);
                 contentWidth = Math.max(contentWidth, itemView.getMeasuredWidth());
-            } //End block
+            } 
             mMaxActivityCount = oldMaxActivityCount;
             int var1BF07926F6538F21E562505C076C042A_619559935 = (contentWidth);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635226157 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1635226157;
-            // ---------- Original Method ----------
-            //final int oldMaxActivityCount = mMaxActivityCount;
-            //mMaxActivityCount = MAX_ACTIVITY_COUNT_UNLIMITED;
-            //int contentWidth = 0;
-            //View itemView = null;
-            //final int widthMeasureSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-            //final int heightMeasureSpec = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
-            //final int count = getCount();
-            //for (int i = 0; i < count; i++) {
-                //itemView = getView(i, itemView, null);
-                //itemView.measure(widthMeasureSpec, heightMeasureSpec);
-                //contentWidth = Math.max(contentWidth, itemView.getMeasuredWidth());
-            //}
-            //mMaxActivityCount = oldMaxActivityCount;
-            //return contentWidth;
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+                
+            
+            
+            
         }
 
         
@@ -999,12 +1005,12 @@ for(int i = 0;i < count;i++)
             {
                 mMaxActivityCount = maxActivityCount;
                 notifyDataSetChanged();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mMaxActivityCount != maxActivityCount) {
-                //mMaxActivityCount = maxActivityCount;
-                //notifyDataSetChanged();
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -1013,8 +1019,8 @@ for(int i = 0;i < count;i++)
 ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_727005548 =             mDataModel.getDefaultActivity();
             var3028A8C3A425EFE9B76ADB6DF57395EF_727005548.addTaint(taint);
             return var3028A8C3A425EFE9B76ADB6DF57395EF_727005548;
-            // ---------- Original Method ----------
-            //return mDataModel.getDefaultActivity();
+            
+            
         }
 
         
@@ -1024,12 +1030,12 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_727005548 =             mDataMod
             {
                 mShowFooterView = showFooterView;
                 notifyDataSetChanged();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mShowFooterView != showFooterView) {
-                //mShowFooterView = showFooterView;
-                //notifyDataSetChanged();
-            //}
+            } 
+            
+            
+                
+                
+            
         }
 
         
@@ -1038,8 +1044,8 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_727005548 =             mDataMod
             int var1FFE10EE2EA5D34DA20C4869D38B02A8_1991689947 = (mDataModel.getActivityCount());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_320494532 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_320494532;
-            // ---------- Original Method ----------
-            //return mDataModel.getActivityCount();
+            
+            
         }
 
         
@@ -1048,28 +1054,30 @@ ResolveInfo var3028A8C3A425EFE9B76ADB6DF57395EF_727005548 =             mDataMod
             int varFEC0E3CEAD274146B345CC3FB0E3750C_786244615 = (mDataModel.getHistorySize());
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_280417369 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_280417369;
-            // ---------- Original Method ----------
-            //return mDataModel.getHistorySize();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.158 -0400", hash_original_method = "3E4531A24528D01DAB939C9C71B2C3DE", hash_generated_method = "296D773E34282119D912C97C790CB5E5")
         public int getMaxActivityCount() {
             int varA17198F82E11562FD1D05379D0C79E84_1367355630 = (mMaxActivityCount);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288445431 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_288445431;
-            // ---------- Original Method ----------
-            //return mMaxActivityCount;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.158 -0400", hash_original_method = "5525C6AC91C9709046E305FD9A15863B", hash_generated_method = "B55CA5DD592B43301B8A7C3DBA4FC9D8")
         public ActivityChooserModel getDataModel() {
 ActivityChooserModel var782E6E6245C8EB180C46FAFCB220D82B_424804604 =             mDataModel;
             var782E6E6245C8EB180C46FAFCB220D82B_424804604.addTaint(taint);
             return var782E6E6245C8EB180C46FAFCB220D82B_424804604;
-            // ---------- Original Method ----------
-            //return mDataModel;
+            
+            
         }
 
         
@@ -1082,24 +1090,25 @@ ActivityChooserModel var782E6E6245C8EB180C46FAFCB220D82B_424804604 =            
                 mShowDefaultActivity = showDefaultActivity;
                 mHighlightDefaultActivity = highlightDefaultActivity;
                 notifyDataSetChanged();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mShowDefaultActivity != showDefaultActivity
-                    //|| mHighlightDefaultActivity != highlightDefaultActivity) {
-                //mShowDefaultActivity = showDefaultActivity;
-                //mHighlightDefaultActivity = highlightDefaultActivity;
-                //notifyDataSetChanged();
-            //}
+            } 
+            
+            
+                    
+                
+                
+                
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:04.159 -0400", hash_original_method = "1922E89BA39A7DE83F0D6E6EABDFE98E", hash_generated_method = "362F8775FCFFB476E1AFCC055F0795E1")
         public boolean getShowDefaultActivity() {
             boolean var87ABBEC987619D585AA0E13F787A82A2_200685495 = (mShowDefaultActivity);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_771547996 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_771547996;
-            // ---------- Original Method ----------
-            //return mShowDefaultActivity;
+            
+            
         }
 
         

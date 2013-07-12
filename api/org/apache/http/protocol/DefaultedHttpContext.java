@@ -1,6 +1,6 @@
 package org.apache.http.protocol;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,15 +21,15 @@ public final class DefaultedHttpContext implements HttpContext {
             IllegalArgumentException var313A469DAA78732DF88285478241413C_848023743 = new IllegalArgumentException("HTTP context may not be null");
             var313A469DAA78732DF88285478241413C_848023743.addTaint(taint);
             throw var313A469DAA78732DF88285478241413C_848023743;
-        } //End block
+        } 
         this.local = local;
         this.defaults = defaults;
-        // ---------- Original Method ----------
-        //if (local == null) {
-            //throw new IllegalArgumentException("HTTP context may not be null");
-        //}
-        //this.local = local;
-        //this.defaults = defaults;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -42,20 +42,20 @@ public final class DefaultedHttpContext implements HttpContext {
 Object varC79252184F2496367A47AE09C4AA2D30_1986097740 =             this.defaults.getAttribute(id);
             varC79252184F2496367A47AE09C4AA2D30_1986097740.addTaint(taint);
             return varC79252184F2496367A47AE09C4AA2D30_1986097740;
-        } //End block
+        } 
         else
         {
 Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_509916230 =             obj;
             var2FDE1120F80AA4E8798ECDBDB1C0E85C_509916230.addTaint(taint);
             return var2FDE1120F80AA4E8798ECDBDB1C0E85C_509916230;
-        } //End block
-        // ---------- Original Method ----------
-        //Object obj = this.local.getAttribute(id);
-        //if (obj == null) {
-            //return this.defaults.getAttribute(id);
-        //} else {
-            //return obj;
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -65,8 +65,8 @@ Object var2FDE1120F80AA4E8798ECDBDB1C0E85C_509916230 =             obj;
 Object var74888A1C7728062EE6A275D5DB131063_2011891457 =         this.local.removeAttribute(id);
         var74888A1C7728062EE6A275D5DB131063_2011891457.addTaint(taint);
         return var74888A1C7728062EE6A275D5DB131063_2011891457;
-        // ---------- Original Method ----------
-        //return this.local.removeAttribute(id);
+        
+        
     }
 
     
@@ -75,18 +75,19 @@ Object var74888A1C7728062EE6A275D5DB131063_2011891457 =         this.local.remov
         addTaint(obj.getTaint());
         addTaint(id.getTaint());
         this.local.setAttribute(id, obj);
-        // ---------- Original Method ----------
-        //this.local.setAttribute(id, obj);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:37.912 -0400", hash_original_method = "FA59965C12DF7B81C110308001A0693E", hash_generated_method = "964E882EF93C2D0F051CE05BF84833BB")
     public HttpContext getDefaults() {
 HttpContext var83675A281C45A942828F3DC842CC251B_549032922 =         this.defaults;
         var83675A281C45A942828F3DC842CC251B_549032922.addTaint(taint);
         return var83675A281C45A942828F3DC842CC251B_549032922;
-        // ---------- Original Method ----------
-        //return this.defaults;
+        
+        
     }
 
     

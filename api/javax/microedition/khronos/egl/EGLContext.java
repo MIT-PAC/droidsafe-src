@@ -1,6 +1,6 @@
 package javax.microedition.khronos.egl;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,11 +11,12 @@ public abstract class EGLContext {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:19.469 -0400", hash_original_method = "08AE013F5F70C27B6C3BCCA082C95AAF", hash_generated_method = "08AE013F5F70C27B6C3BCCA082C95AAF")
     public EGLContext ()
     {
-        //Synthesized constructor
+        
     }
 
 
-        public static EGL getEGL() {
+        @DSModeled(DSC.SAFE)
+    public static EGL getEGL() {
         return EGL_INSTANCE;
     }
 

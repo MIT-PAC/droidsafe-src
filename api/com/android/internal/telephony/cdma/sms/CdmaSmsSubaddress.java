@@ -1,6 +1,6 @@
 package com.android.internal.telephony.cdma.sms;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,7 +19,7 @@ public class CdmaSmsSubaddress {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:26.525 -0400", hash_original_method = "0379B9377023316E1EB178282421C9DE", hash_generated_method = "0379B9377023316E1EB178282421C9DE")
     public CdmaSmsSubaddress ()
     {
-        //Synthesized constructor
+        
     }
 
 

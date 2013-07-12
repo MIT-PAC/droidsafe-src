@@ -1,6 +1,6 @@
 package android.net.http;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -59,22 +59,23 @@ abstract class Connection {
         mRequestFeeder = requestFeeder;
         mCanPersist = false;
         mHttpContext = new BasicHttpContext(null);
-        // ---------- Original Method ----------
-        //mContext = context;
-        //mHost = host;
-        //mRequestFeeder = requestFeeder;
-        //mCanPersist = false;
-        //mHttpContext = new BasicHttpContext(null);
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.006 -0400", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "6D4FF7F457AB97BE08642F0B973F531C")
      HttpHost getHost() {
 HttpHost varE57614B151242FB69B92E61EEA287D33_155385716 =         mHost;
         varE57614B151242FB69B92E61EEA287D33_155385716.addTaint(taint);
         return varE57614B151242FB69B92E61EEA287D33_155385716;
-        // ---------- Original Method ----------
-        //return mHost;
+        
+        
     }
 
     
@@ -88,13 +89,14 @@ HttpHost varE57614B151242FB69B92E61EEA287D33_155385716 =         mHost;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.006 -0400", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "F03ACD64B63616DAFE4A39AA0F264CEE")
      SslCertificate getCertificate() {
 SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_367732284 =         mCertificate;
         varAD9FB3E799180A1D9497E2C35C2EA89C_367732284.addTaint(taint);
         return varAD9FB3E799180A1D9497E2C35C2EA89C_367732284;
-        // ---------- Original Method ----------
-        //return mCertificate;
+        
+        
     }
 
     
@@ -105,11 +107,11 @@ SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_367732284 =         mCertific
     if(HttpLog.LOGV)        
         HttpLog.v(
             "Connection.cancel(): connection closed " + mHost);
-        // ---------- Original Method ----------
-        //mActive = STATE_CANCEL_REQUESTED;
-        //closeConnection();
-        //if (HttpLog.LOGV) HttpLog.v(
-            //"Connection.cancel(): connection closed " + mHost);
+        
+        
+        
+        
+            
     }
 
     
@@ -135,12 +137,12 @@ SslCertificate varAD9FB3E799180A1D9497E2C35C2EA89C_367732284 =         mCertific
                 try 
                 {
                     Thread.sleep(100);
-                } //End block
+                } 
                 catch (InterruptedException x)
                 {
-                } //End block
+                } 
                 mActive = STATE_NORMAL;
-            } //End block
+            } 
 switch(state){
             case SEND:
             {
@@ -148,21 +150,21 @@ switch(state){
                 {
                     state = READ;
                     break;
-                } //End block
+                } 
     if(firstRequest == null)                
                 {
                     req = mRequestFeeder.getRequest(mHost);
-                } //End block
+                } 
                 else
                 {
                     req = firstRequest;
                     firstRequest = null;
-                } //End block
+                } 
     if(req == null)                
                 {
                     state = DRAIN;
                     break;
-                } //End block
+                } 
                 req.setConnection(this);
     if(req.mCancelled)                
                 {
@@ -172,7 +174,7 @@ switch(state){
                                 + req);
                     req.complete();
                     break;
-                } //End block
+                } 
     if(mHttpClientConnection == null ||
                         !mHttpClientConnection.isOpen())                
                 {
@@ -180,45 +182,45 @@ switch(state){
                     {
                         state = DONE;
                         break;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 req.mEventHandler.certificate(mCertificate);
                 try 
                 {
                     req.sendRequest(mHttpClientConnection);
-                } //End block
+                } 
                 catch (HttpException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR;
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 catch (IllegalStateException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
     if(exception != null)                
                 {
     if(httpFailure(req, error, exception) &&
                             !req.mCancelled)                    
                     {
                         pipe.addLast(req);
-                    } //End block
+                    } 
                     exception = null;
                     state = clearPipe(pipe) ? DONE : SEND;
                     minPipe = maxPipe = 1;
                     break;
-                } //End block
+                } 
                 pipe.addLast(req);
     if(!mCanPersist)                
                 state = READ;
                 break;
-            } //End block
+            } 
             case DRAIN:
             case READ:
             {
@@ -229,13 +231,13 @@ switch(state){
                 {
                     state = SEND;
                     break;
-                } //End block
+                } 
                 else
     if(pipeSize == 0)                
                 {
                     state = empty ? DONE : SEND;
                     break;
-                } //End block
+                } 
                 req = (Request)pipe.removeFirst();
     if(HttpLog.LOGV)                
                 HttpLog.v(
@@ -243,22 +245,22 @@ switch(state){
                 try 
                 {
                     req.readResponse(mHttpClientConnection);
-                } //End block
+                } 
                 catch (ParseException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 catch (IOException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
                 catch (IllegalStateException e)
                 {
                     exception = e;
                     error = EventHandler.ERROR_IO;
-                } //End block
+                } 
     if(exception != null)                
                 {
     if(httpFailure(req, error, exception) &&
@@ -266,10 +268,10 @@ switch(state){
                     {
                         req.reset();
                         pipe.addFirst(req);
-                    } //End block
+                    } 
                     exception = null;
                     mCanPersist = false;
-                } //End block
+                } 
     if(!mCanPersist)                
                 {
     if(HttpLog.LOGV)                    
@@ -281,13 +283,13 @@ switch(state){
                     clearPipe(pipe);
                     minPipe = maxPipe = 1;
                     state = SEND;
-                } //End block
+                } 
                 break;
-            } //End block
+            } 
 }
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -310,32 +312,33 @@ switch(state){
                         "clearPipe() adding back " + mHost + " " + tReq);
                 mRequestFeeder.requeueRequest(tReq);
                 empty = false;
-            } //End block
+            } 
     if(empty)            
             empty = !mRequestFeeder.haveRequest(mHost);
-        } //End block
+        } 
         boolean varA2E4822A98337283E39F7B60ACF85EC9_574118759 = (empty);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2010645136 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2010645136;
-        // ---------- Original Method ----------
-        //boolean empty = true;
-        //if (HttpLog.LOGV) HttpLog.v(
-                //"Connection.clearPipe(): clearing pipe " + pipe.size());
-        //synchronized (mRequestFeeder) {
-            //Request tReq;
-            //while (!pipe.isEmpty()) {
-                //tReq = (Request)pipe.removeLast();
-                //if (HttpLog.LOGV) HttpLog.v(
-                        //"clearPipe() adding back " + mHost + " " + tReq);
-                //mRequestFeeder.requeueRequest(tReq);
-                //empty = false;
-            //}
-            //if (empty) empty = !mRequestFeeder.haveRequest(mHost);
-        //}
-        //return empty;
+        
+        
+        
+                
+        
+            
+            
+                
+                
+                        
+                
+                
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.020 -0400", hash_original_method = "65B4C91B53E686F7A0B5A125142FC3C0", hash_generated_method = "5A918C08C8011B398AAEFDE3AF75676D")
     private boolean openHttpConnection(Request req) {
         long now = SystemClock.uptimeMillis();
@@ -350,22 +353,22 @@ switch(state){
                 mHttpClientConnection.setSocketTimeout(SOCKET_TIMEOUT);
                 mHttpContext.setAttribute(HTTP_CONNECTION,
                                           mHttpClientConnection);
-            } //End block
+            } 
             else
             {
                 req.mFailCount = RETRY_REQUEST_LIMIT;
                 boolean var68934A3E9455FA72420237EB05902327_1406540118 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_268664246 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_268664246;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (UnknownHostException e)
         {
     if(HttpLog.LOGV)            
             HttpLog.v("Failed to open connection");
             error = EventHandler.ERROR_LOOKUP;
             exception = e;
-        } //End block
+        } 
         catch (IllegalArgumentException e)
         {
     if(HttpLog.LOGV)            
@@ -373,14 +376,14 @@ switch(state){
             error = EventHandler.ERROR_CONNECT;
             req.mFailCount = RETRY_REQUEST_LIMIT;
             exception = e;
-        } //End block
+        } 
         catch (SSLConnectionClosedByUserException e)
         {
             req.mFailCount = RETRY_REQUEST_LIMIT;
             boolean var68934A3E9455FA72420237EB05902327_1930721326 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1137365838 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1137365838;
-        } //End block
+        } 
         catch (SSLHandshakeException e)
         {
             req.mFailCount = RETRY_REQUEST_LIMIT;
@@ -389,41 +392,41 @@ switch(state){
                     "SSL exception performing handshake");
             error = EventHandler.ERROR_FAILED_SSL_HANDSHAKE;
             exception = e;
-        } //End block
+        } 
         catch (IOException e)
         {
             error = EventHandler.ERROR_CONNECT;
             exception = e;
-        } //End block
+        } 
     if(HttpLog.LOGV)        
         {
             long now2 = SystemClock.uptimeMillis();
             HttpLog.v("Connection.openHttpConnection() " +
                       (now2 - now) + " " + mHost);
-        } //End block
+        } 
     if(error == EventHandler.OK)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_408440431 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1900846822 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1900846822;
-        } //End block
+        } 
         else
         {
     if(req.mFailCount < RETRY_REQUEST_LIMIT)            
             {
                 mRequestFeeder.requeueRequest(req);
                 req.mFailCount++;
-            } //End block
+            } 
             else
             {
                 httpFailure(req, error, exception);
-            } //End block
+            } 
             boolean varE165328C5759933C6EEA4282CD40EAB0_1969695715 = (error == EventHandler.OK);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_317289323 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_317289323;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -444,50 +447,51 @@ switch(state){
     if(errorId < 0)            
             {
                 error = ErrorStrings.getString(errorId, mContext);
-            } //End block
+            } 
             else
             {
                 Throwable cause = e.getCause();
                 error = cause != null ? cause.toString() : e.getMessage();
-            } //End block
+            } 
             req.mEventHandler.error(errorId, error);
             req.complete();
-        } //End block
+        } 
         closeConnection();
         mHttpContext.removeAttribute(HTTP_CONNECTION);
         boolean var2CB9DF9898E55FD0AD829DC202DDBD1C_73779121 = (ret);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_165609208 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_165609208;
-        // ---------- Original Method ----------
-        //boolean ret = true;
-        //if (HttpLog.LOGV) HttpLog.v(
-                //"httpFailure() ******* " + e + " count " + req.mFailCount +
-                //" " + mHost + " " + req.getUri());
-        //if (++req.mFailCount >= RETRY_REQUEST_LIMIT) {
-            //ret = false;
-            //String error;
-            //if (errorId < 0) {
-                //error = ErrorStrings.getString(errorId, mContext);
-            //} else {
-                //Throwable cause = e.getCause();
-                //error = cause != null ? cause.toString() : e.getMessage();
-            //}
-            //req.mEventHandler.error(errorId, error);
-            //req.complete();
-        //}
-        //closeConnection();
-        //mHttpContext.removeAttribute(HTTP_CONNECTION);
-        //return ret;
+        
+        
+        
+                
+                
+        
+            
+            
+            
+                
+            
+                
+                
+            
+            
+            
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.024 -0400", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "3FD76C3C4CC43F1D6F623679FD397F3C")
      HttpContext getHttpContext() {
 HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContext;
         var12C73152C7871DEFD35EAD04C5DEFC45_1254789813.addTaint(taint);
         return var12C73152C7871DEFD35EAD04C5DEFC45_1254789813;
-        // ---------- Original Method ----------
-        //return mHttpContext;
+        
+        
     }
 
     
@@ -515,69 +519,72 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContex
                     boolean var68934A3E9455FA72420237EB05902327_1384442140 = (false);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331129238 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_331129238;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
     if(connType == Headers.CONN_CLOSE)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1229845189 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1725989160 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1725989160;
-        } //End block
+        } 
         else
     if(connType == Headers.CONN_KEEP_ALIVE)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_95391717 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_15506865 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_15506865;
-        } //End block
+        } 
         boolean varD7433EC039027871EB92428F9FFCA1CC_901824148 = (!ver.lessEquals(HttpVersion.HTTP_1_0));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1127704635 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1127704635;
-        // ---------- Original Method ----------
-        //org.apache.http.HttpConnection conn = (org.apache.http.HttpConnection)
-            //context.getAttribute(ExecutionContext.HTTP_CONNECTION);
-        //if (conn != null && !conn.isOpen())
-            //return false;
-        //if (entity != null) {
-            //if (entity.getContentLength() < 0) {
-                //if (!entity.isChunked() || ver.lessEquals(HttpVersion.HTTP_1_0)) {
-                    //return false;
-                //}
-            //}
-        //}
-        //if (connType == Headers.CONN_CLOSE) {
-            //return false;
-        //} else if (connType == Headers.CONN_KEEP_ALIVE) {
-            //return true;
-        //}
-        //return !ver.lessEquals(HttpVersion.HTTP_1_0);
+        
+        
+            
+        
+            
+        
+            
+                
+                    
+                
+            
+        
+        
+            
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.025 -0400", hash_original_method = "30E271C8B4BA77F90D768E6DAD0368A8", hash_generated_method = "4D4E5718D6623C41E8E53EA293E55F7E")
      void setCanPersist(HttpEntity entity, ProtocolVersion ver, int connType) {
         mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
-        // ---------- Original Method ----------
-        //mCanPersist = keepAlive(entity, ver, connType, mHttpContext);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.026 -0400", hash_original_method = "948404D3184D15107ABD2526F5DFBFE0", hash_generated_method = "C987B1689B3761BB7765A463FADF77BA")
      void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
-        // ---------- Original Method ----------
-        //mCanPersist = canPersist;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.026 -0400", hash_original_method = "5B21A605E2B59BE630988FE4FC055560", hash_generated_method = "18A252F22535F913BDC1D84AE13CA7A5")
      boolean getCanPersist() {
         boolean var97A1B0DF7A8AAEB03A6EC2B31E06308F_189691752 = (mCanPersist);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1478788984 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1478788984;
-        // ---------- Original Method ----------
-        //return mCanPersist;
+        
+        
     }
 
     
@@ -595,11 +602,12 @@ HttpContext var12C73152C7871DEFD35EAD04C5DEFC45_1254789813 =         mHttpContex
 String varCB14F0A7BD5D5FF81E804E15C1A5E873_425450917 =         mHost.toString();
         varCB14F0A7BD5D5FF81E804E15C1A5E873_425450917.addTaint(taint);
         return varCB14F0A7BD5D5FF81E804E15C1A5E873_425450917;
-        // ---------- Original Method ----------
-        //return mHost.toString();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:27.027 -0400", hash_original_method = "ED2ED37A31E0A6859AF61C011936FDA1", hash_generated_method = "FA1681ECA3E166380AB92F3A16022CD6")
      byte[] getBuf() {
     if(mBuf == null)        
@@ -607,9 +615,9 @@ String varCB14F0A7BD5D5FF81E804E15C1A5E873_425450917 =         mHost.toString();
         byte[] varD8259507CE3049C660B2FFFC8043DC4C_1125806127 = (mBuf);
                 byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1261687364 = {getTaintByte()};
         return var2F9C81BC6E497382285CD6B7A7E33DE1_1261687364;
-        // ---------- Original Method ----------
-        //if (mBuf == null) mBuf = new byte[8192];
-        //return mBuf;
+        
+        
+        
     }
 
     

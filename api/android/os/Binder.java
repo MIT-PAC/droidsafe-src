@@ -1,6 +1,6 @@
 package android.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -32,18 +32,18 @@ public class Binder implements IBinder {
     if((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
                     (klass.getModifiers() & Modifier.STATIC) == 0)            
             {
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //init();
-        //if (FIND_POTENTIAL_LEAKS) {
-            //final Class<? extends Binder> klass = getClass();
-            //if ((klass.isAnonymousClass() || klass.isMemberClass() || klass.isLocalClass()) &&
-                    //(klass.getModifiers() & Modifier.STATIC) == 0) {
-                //Log.w(TAG, "The following Binder class should be static or leaks might occur: " +
-                    //klass.getCanonicalName());
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+            
+                    
+                
+                    
+            
+        
     }
 
     
@@ -87,43 +87,47 @@ public class Binder implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.874 -0400", hash_original_method = "FF7CD905415FB665DAB37EF33B177901", hash_generated_method = "5BF695834ED1F4897E138948DA6E35F1")
     public void attachInterface(IInterface owner, String descriptor) {
         mOwner = owner;
         mDescriptor = descriptor;
-        // ---------- Original Method ----------
-        //mOwner = owner;
-        //mDescriptor = descriptor;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.875 -0400", hash_original_method = "D3E904DAC6E3F35A0A15305E093649D7", hash_generated_method = "C653E9A874508059DAD8B890DB6201D7")
     public String getInterfaceDescriptor() {
 String var180132377E6787EAA700529A4FAEA05D_897792298 =         mDescriptor;
         var180132377E6787EAA700529A4FAEA05D_897792298.addTaint(taint);
         return var180132377E6787EAA700529A4FAEA05D_897792298;
-        // ---------- Original Method ----------
-        //return mDescriptor;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.875 -0400", hash_original_method = "A88E99F5157D576DA956A58D2E3E5765", hash_generated_method = "2FA1162E4538FFE65CDC25465B8A8D76")
     public boolean pingBinder() {
         boolean varB326B5062B2F0E69046810717534CB09_439025694 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_156007838 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_156007838;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.875 -0400", hash_original_method = "7D2EC13EC2CD5238366DCA3903BB993E", hash_generated_method = "1F5D8F7814A9F0618C13CDF0A1F0EC7E")
     public boolean isBinderAlive() {
         boolean varB326B5062B2F0E69046810717534CB09_611878087 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1669142714 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1669142714;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -135,22 +139,22 @@ String var180132377E6787EAA700529A4FAEA05D_897792298 =         mDescriptor;
 IInterface var5F2C684ADE383867ABA7E337213B9967_2051689246 =             mOwner;
             var5F2C684ADE383867ABA7E337213B9967_2051689246.addTaint(taint);
             return var5F2C684ADE383867ABA7E337213B9967_2051689246;
-        } //End block
+        } 
 IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
         var540C13E9E156B687226421B24F2DF178_1245817612.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1245817612;
-        // ---------- Original Method ----------
-        //if (mDescriptor.equals(descriptor)) {
-            //return mOwner;
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.876 -0400", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "03B050CEBF78DD84B28D8D9ECD8822E5")
     protected boolean onTransact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(flags);
         addTaint(reply.getTaint());
         addTaint(data.getTaint());
@@ -161,7 +165,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
             boolean varB326B5062B2F0E69046810717534CB09_822056056 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_98983528 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_98983528;
-        } //End block
+        } 
         else
     if(code == DUMP_TRANSACTION)        
         {
@@ -172,35 +176,35 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
                 try 
                 {
                     dump(fd.getFileDescriptor(), args);
-                } //End block
+                } 
                 finally 
                 {
                     try 
                     {
                         fd.close();
-                    } //End block
+                    } 
                     catch (IOException e)
                     {
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
     if(reply != null)            
             {
                 reply.writeNoException();
-            } //End block
+            } 
             else
             {
                 StrictMode.clearGatheredViolations();
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_455445751 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1726138530 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1726138530;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1549715337 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1837521687 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1837521687;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -213,19 +217,19 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
         try 
         {
             dump(fd, pw, args);
-        } //End block
+        } 
         finally 
         {
             pw.flush();
-        } //End block
-        // ---------- Original Method ----------
-        //FileOutputStream fout = new FileOutputStream(fd);
-        //PrintWriter pw = new PrintWriter(fout);
-        //try {
-            //dump(fd, pw, args);
-        //} finally {
-            //pw.flush();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -245,28 +249,29 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
             }
         };
         thr.start();
-        // ---------- Original Method ----------
-        //final FileOutputStream fout = new FileOutputStream(fd);
-        //final PrintWriter pw = new PrintWriter(fout);
-        //Thread thr = new Thread("Binder.dumpAsync") {
-            //public void run() {
-                //try {
-                    //dump(fd, pw, args);
-                //} finally {
-                    //pw.flush();
-                //}
-            //}
-        //};
-        //thr.start();
+        
+        
+        
+        
+            
+                
+                    
+                
+                    
+                
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.878 -0400", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "9AFAE328FE6D74207D92B4DA0CDEEBF6")
     protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
         addTaint(args[0].getTaint());
         addTaint(fout.getTaint());
         addTaint(fd.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -280,36 +285,38 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
     if(false){ }    if(data != null)        
         {
             data.setDataPosition(0);
-        } //End block
+        } 
         boolean r = onTransact(code, data, reply, flags);
     if(reply != null)        
         {
             reply.setDataPosition(0);
-        } //End block
+        } 
         boolean var4B43B0AEE35624CD95B910189B3DC231_1632033604 = (r);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2121608522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2121608522;
-        // ---------- Original Method ----------
-        //if (false) Log.v("Binder", "Transact: " + code + " to " + this);
-        //if (data != null) {
-            //data.setDataPosition(0);
-        //}
-        //boolean r = onTransact(code, data, reply, flags);
-        //if (reply != null) {
-            //reply.setDataPosition(0);
-        //}
-        //return r;
+        
+        
+        
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.879 -0400", hash_original_method = "5287A3990077935C24A2BD79FED1C6A1", hash_generated_method = "9BCAA9AAAC7F98FB3E9A06E4226FA444")
     public void linkToDeath(DeathRecipient recipient, int flags) {
         addTaint(flags);
         addTaint(recipient.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.879 -0400", hash_original_method = "1A3BA6E0CCE3FB8650C7F390300799F7", hash_generated_method = "7D1E0A7FAB4C10F5F6CA2C5BDB3C01D2")
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         addTaint(flags);
@@ -317,8 +324,8 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
         boolean varB326B5062B2F0E69046810717534CB09_321983130 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1656459514 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1656459514;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -327,17 +334,17 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
         try 
         {
             destroy();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //destroy();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -364,48 +371,48 @@ IInterface var540C13E9E156B687226421B24F2DF178_1245817612 =         null;
         try 
         {
             res = onTransact(code, data, reply, flags);
-        } //End block
+        } 
         catch (RemoteException e)
         {
             reply.writeException(e);
             res = true;
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             reply.writeException(e);
             res = true;
-        } //End block
+        } 
         catch (OutOfMemoryError e)
         {
             RuntimeException re = new RuntimeException("Out of memory", e);
             reply.writeException(re);
             res = true;
-        } //End block
+        } 
         reply.recycle();
         data.recycle();
         boolean var9B207167E5381C47682C6B4F58A623FB_1580408626 = (res);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803925435 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_803925435;
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain(dataObj);
-        //Parcel reply = Parcel.obtain(replyObj);
-        //boolean res;
-        //try {
-            //res = onTransact(code, data, reply, flags);
-        //} catch (RemoteException e) {
-            //reply.writeException(e);
-            //res = true;
-        //} catch (RuntimeException e) {
-            //reply.writeException(e);
-            //res = true;
-        //} catch (OutOfMemoryError e) {
-            //RuntimeException re = new RuntimeException("Out of memory", e);
-            //reply.writeException(re);
-            //res = true;
-        //}
-        //reply.recycle();
-        //data.recycle();
-        //return res;
+        
+        
+        
+        
+        
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+            
+        
+        
+        
+        
     }
 
     
@@ -431,11 +438,12 @@ final class BinderProxy implements IBinder {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.881 -0400", hash_original_method = "6F2DE2B0944C9F00778B80C418D11418", hash_generated_method = "25943465C34F7314EF91831B1A064961")
       BinderProxy() {
         mSelf = new WeakReference(this);
-        // ---------- Original Method ----------
-        //mSelf = new WeakReference(this);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.882 -0400", hash_original_method = "3AAC7144F281FBB542DFC7EF6106B5C9", hash_generated_method = "64E89F74F458EAF26E79EFE1B97C57EA")
     public boolean pingBinder() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1526295717 = getTaintBoolean();
@@ -443,6 +451,7 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.882 -0400", hash_original_method = "ACDA4E684B1D0EE78316DF741FE72AF5", hash_generated_method = "01B8FCD45C6D5DDE1B9E9DEAA6ECD400")
     public boolean isBinderAlive() {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_598157614 = getTaintBoolean();
@@ -450,14 +459,15 @@ final class BinderProxy implements IBinder {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.882 -0400", hash_original_method = "B707B72714522D5F23CBE8D4C77B554B", hash_generated_method = "26EA4ADB9A6E032F6416BD12B2A3C152")
     public IInterface queryLocalInterface(String descriptor) {
         addTaint(descriptor.getTaint());
 IInterface var540C13E9E156B687226421B24F2DF178_596551353 =         null;
         var540C13E9E156B687226421B24F2DF178_596551353.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_596551353;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
@@ -470,6 +480,7 @@ IInterface var540C13E9E156B687226421B24F2DF178_596551353 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.883 -0400", hash_original_method = "2DB55944420A41A5CEDC8BE2777F8B50", hash_generated_method = "8CA42B3B4C541C236AF8DA37B5CD71CE")
     public boolean transact(int code, Parcel data, Parcel reply,
             int flags) throws RemoteException {
@@ -478,11 +489,13 @@ IInterface var540C13E9E156B687226421B24F2DF178_596551353 =         null;
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.883 -0400", hash_original_method = "9A12D44BC0A4F3509826AD7E16FA0EA1", hash_generated_method = "DD1A10A47FDF07625AD61BD782250D7D")
     public void linkToDeath(DeathRecipient recipient, int flags) throws RemoteException {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:31.883 -0400", hash_original_method = "C682342F842ADE74AC6BCB96B6CECF17", hash_generated_method = "09B11EFC2A7F3842EFF72DEAAC1F65BA")
     public boolean unlinkToDeath(DeathRecipient recipient, int flags) {
         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1157736577 = getTaintBoolean();
@@ -502,24 +515,24 @@ IInterface var540C13E9E156B687226421B24F2DF178_596551353 =         null;
         {
             transact(DUMP_TRANSACTION, data, reply, 0);
             reply.readException();
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //data.writeFileDescriptor(fd);
-        //data.writeStringArray(args);
-        //try {
-            //transact(DUMP_TRANSACTION, data, reply, 0);
-            //reply.readException();
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -535,24 +548,24 @@ IInterface var540C13E9E156B687226421B24F2DF178_596551353 =         null;
         {
             transact(DUMP_TRANSACTION, data, reply, FLAG_ONEWAY);
             reply.readException();
-        } //End block
+        } 
         finally 
         {
             data.recycle();
             reply.recycle();
-        } //End block
-        // ---------- Original Method ----------
-        //Parcel data = Parcel.obtain();
-        //Parcel reply = Parcel.obtain();
-        //data.writeFileDescriptor(fd);
-        //data.writeStringArray(args);
-        //try {
-            //transact(DUMP_TRANSACTION, data, reply, FLAG_ONEWAY);
-            //reply.readException();
-        //} finally {
-            //data.recycle();
-            //reply.recycle();
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+        
+            
+            
+        
     }
 
     
@@ -562,17 +575,17 @@ IInterface var540C13E9E156B687226421B24F2DF178_596551353 =         null;
         try 
         {
             destroy();
-        } //End block
+        } 
         finally 
         {
             super.finalize();
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //destroy();
-        //} finally {
-            //super.finalize();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     

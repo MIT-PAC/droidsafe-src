@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -13,7 +13,7 @@ public class OrganizationParser extends HeaderParser {
     public  OrganizationParser(String organization) {
         super(organization);
         addTaint(organization.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,10 +21,11 @@ public class OrganizationParser extends HeaderParser {
     protected  OrganizationParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:40.932 -0400", hash_original_method = "FCDFEF7484AB928FBE1CF6D95D3DCFBA", hash_generated_method = "6A26863922CA4CF36289EC3283A7678E")
     public SIPHeader parse() throws ParseException {
     if(debug)        
@@ -40,27 +41,27 @@ public class OrganizationParser extends HeaderParser {
 SIPHeader var86B932A706B81240694A9B2D316B40FE_1132254350 =             organization;
             var86B932A706B81240694A9B2D316B40FE_1132254350.addTaint(taint);
             return var86B932A706B81240694A9B2D316B40FE_1132254350;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("OrganizationParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        //if (debug)
-            //dbg_enter("OrganizationParser.parse");
-        //Organization organization = new Organization();
-        //try {
-            //headerName(TokenTypes.ORGANIZATION);
-            //organization.setHeaderName(SIPHeaderNames.ORGANIZATION);
-            //this.lexer.SPorHT();
-            //String value = this.lexer.getRest();
-            //organization.setOrganization(value.trim());
-            //return organization;
-        //} finally {
-            //if (debug)
-                //dbg_leave("OrganizationParser.parse");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+            
+            
+            
+            
+            
+        
+            
+                
+        
     }
 
     

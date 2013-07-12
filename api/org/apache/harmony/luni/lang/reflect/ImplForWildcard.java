@@ -1,6 +1,6 @@
 package org.apache.harmony.luni.lang.reflect;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,9 +21,9 @@ public final class ImplForWildcard implements WildcardType {
     public  ImplForWildcard(ListOfTypes extendsBound, ListOfTypes superBound) {
         this.extendsBound = extendsBound;
         this.superBound = superBound;
-        // ---------- Original Method ----------
-        //this.extendsBound = extendsBound;
-        //this.superBound = superBound;
+        
+        
+        
     }
 
     
@@ -33,8 +33,8 @@ public final class ImplForWildcard implements WildcardType {
 Type[] var8E000A8FFB2D6EE4356348D63AD03C33_287919653 =         superBound.getResolvedTypes().clone();
         var8E000A8FFB2D6EE4356348D63AD03C33_287919653.addTaint(taint);
         return var8E000A8FFB2D6EE4356348D63AD03C33_287919653;
-        // ---------- Original Method ----------
-        //return superBound.getResolvedTypes().clone();
+        
+        
     }
 
     
@@ -44,8 +44,8 @@ Type[] var8E000A8FFB2D6EE4356348D63AD03C33_287919653 =         superBound.getRes
 Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getResolvedTypes().clone();
         var2FB75AED8F019A8332F7B6FA9015FCE6_52391413.addTaint(taint);
         return var2FB75AED8F019A8332F7B6FA9015FCE6_52391413;
-        // ---------- Original Method ----------
-        //return extendsBound.getResolvedTypes().clone();
+        
+        
     }
 
     
@@ -58,19 +58,19 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getRe
             boolean var68934A3E9455FA72420237EB05902327_1127437801 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1949882254 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1949882254;
-        } //End block
+        } 
         WildcardType that = (WildcardType) o;
         boolean var7F74412AACA7984A3FE6EB19D38617AF_1384403176 = (Arrays.equals(getLowerBounds(), that.getLowerBounds()) &&
                 Arrays.equals(getUpperBounds(), that.getUpperBounds()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_924695129 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_924695129;
-        // ---------- Original Method ----------
-        //if(!(o instanceof WildcardType)) {
-            //return false;
-        //}
-        //WildcardType that = (WildcardType) o;
-        //return Arrays.equals(getLowerBounds(), that.getLowerBounds()) &&
-                //Arrays.equals(getUpperBounds(), that.getUpperBounds());
+        
+        
+            
+        
+        
+        
+                
     }
 
     
@@ -81,9 +81,9 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getRe
                 Arrays.hashCode(getUpperBounds()));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394645746 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1394645746;
-        // ---------- Original Method ----------
-        //return 31 * Arrays.hashCode(getLowerBounds()) +
-                //Arrays.hashCode(getUpperBounds());
+        
+        
+                
     }
 
     
@@ -95,24 +95,24 @@ Type[] var2FB75AED8F019A8332F7B6FA9015FCE6_52391413 =         extendsBound.getRe
                 || extendsBound.length() > 1)        
         {
             sb.append(" extends ").append(extendsBound);
-        } //End block
+        } 
         else
     if(superBound.length() > 0)        
         {
             sb.append(" super ").append(superBound);
-        } //End block
+        } 
 String var2460B846747F8B22185AD8BE722266A5_738405886 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_738405886.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_738405886;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder("?");
-        //if ((extendsBound.length() == 1 && extendsBound.getResolvedTypes()[0] != Object.class)
-                //|| extendsBound.length() > 1) {
-            //sb.append(" extends ").append(extendsBound);
-        //} else if (superBound.length() > 0) {
-            //sb.append(" super ").append(superBound);
-        //}
-        //return sb.toString();
+        
+        
+        
+                
+            
+        
+            
+        
+        
     }
 
     

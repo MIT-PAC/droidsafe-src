@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.header.ims;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class PrivacyList extends SIPHeaderList<Privacy> {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:38.150 -0400", hash_original_method = "45F84AF986B8E1D18781B003920274BC", hash_generated_method = "1112F36E1D63D8A6DB0A3433FC13B944")
     public  PrivacyList() {
         super(Privacy.class, PrivacyHeader.NAME);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -21,9 +21,9 @@ public class PrivacyList extends SIPHeaderList<Privacy> {
 Object varF627329B9209466293A1BF71D9AF7B2B_50042725 =         retval.clonehlist(this.hlist);
         varF627329B9209466293A1BF71D9AF7B2B_50042725.addTaint(taint);
         return varF627329B9209466293A1BF71D9AF7B2B_50042725;
-        // ---------- Original Method ----------
-        //PrivacyList retval = new PrivacyList();
-        //return retval.clonehlist(this.hlist);
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -396,7 +396,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public  SearchView(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -431,17 +431,17 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         mQueryTextView.setOnFocusChangeListener(new OnFocusChangeListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.436 -0400", hash_original_method = "93DBFCC4F7C7F6082C428361FF73C717", hash_generated_method = "35BC3A2EE590A0CBA7725C5C7FE5697B")
         public void onFocusChange(View v, boolean hasFocus) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(hasFocus);
             addTaint(v.getTaint());
     if(mOnQueryTextFocusChangeListener != null)            
             {
                 mOnQueryTextFocusChangeListener.onFocusChange(SearchView.this, hasFocus);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mOnQueryTextFocusChangeListener != null) {
-                    //mOnQueryTextFocusChangeListener.onFocusChange(SearchView.this, hasFocus);
-                //}
+            } 
+            
+            
+                    
+                
         }
 });
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SearchView, 0, 0);
@@ -450,22 +450,22 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     if(maxWidth != -1)        
         {
             setMaxWidth(maxWidth);
-        } //End block
+        } 
         CharSequence queryHint = a.getText(R.styleable.SearchView_queryHint);
     if(!TextUtils.isEmpty(queryHint))        
         {
             setQueryHint(queryHint);
-        } //End block
+        } 
         int imeOptions = a.getInt(R.styleable.SearchView_imeOptions, -1);
     if(imeOptions != -1)        
         {
             setImeOptions(imeOptions);
-        } //End block
+        } 
         int inputType = a.getInt(R.styleable.SearchView_inputType, -1);
     if(inputType != -1)        
         {
             setInputType(inputType);
-        } //End block
+        } 
         a.recycle();
         boolean focusable = true;
         a = context.obtainStyledAttributes(attrs, R.styleable.View, 0, 0);
@@ -486,7 +486,7 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         @Override
         public void onLayoutChange(View v, int left, int top, int right, int bottom,
                         int oldLeft, int oldTop, int oldRight, int oldBottom) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(oldBottom);
             addTaint(oldRight);
             addTaint(oldTop);
@@ -497,15 +497,15 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
             addTaint(left);
             addTaint(v.getTaint());
             adjustDropDownSizeAndPosition();
-            // ---------- Original Method ----------
-            //adjustDropDownSizeAndPosition();
+            
+            
         }
 });
-        } //End block
+        } 
         updateViewsVisibility(mIconifiedByDefault);
         updateQueryHint();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -516,32 +516,33 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         {
             updateSearchAutoComplete();
             updateQueryHint();
-        } //End block
+        } 
         mVoiceButtonEnabled = hasVoiceSearch();
     if(mVoiceButtonEnabled)        
         {
             mQueryTextView.setPrivateImeOptions(IME_OPTION_NO_MICROPHONE);
-        } //End block
+        } 
         updateViewsVisibility(isIconified());
-        // ---------- Original Method ----------
-        //mSearchable = searchable;
-        //if (mSearchable != null) {
-            //updateSearchAutoComplete();
-            //updateQueryHint();
-        //}
-        //mVoiceButtonEnabled = hasVoiceSearch();
-        //if (mVoiceButtonEnabled) {
-            //mQueryTextView.setPrivateImeOptions(IME_OPTION_NO_MICROPHONE);
-        //}
-        //updateViewsVisibility(isIconified());
+        
+        
+        
+            
+            
+        
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.438 -0400", hash_original_method = "EBA44227BB74F0B08E6F1C70EA9AD0F7", hash_generated_method = "9F0ED82A7B1E8B7E54C4455D92283D55")
     public void setAppSearchData(Bundle appSearchData) {
         mAppSearchData = appSearchData;
-        // ---------- Original Method ----------
-        //mAppSearchData = appSearchData;
+        
+        
     }
 
     
@@ -549,8 +550,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setImeOptions(int imeOptions) {
         addTaint(imeOptions);
         mQueryTextView.setImeOptions(imeOptions);
-        // ---------- Original Method ----------
-        //mQueryTextView.setImeOptions(imeOptions);
+        
+        
     }
 
     
@@ -558,8 +559,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     public void setInputType(int inputType) {
         addTaint(inputType);
         mQueryTextView.setInputType(inputType);
-        // ---------- Original Method ----------
-        //mQueryTextView.setInputType(inputType);
+        
+        
     }
 
     
@@ -586,29 +587,29 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
     if(result)            
             {
                 updateViewsVisibility(false);
-            } //End block
+            } 
             boolean varB4A88417B3D0170D754C647C30B7216A_743661385 = (result);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1466762644 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1466762644;
-        } //End block
+        } 
         else
         {
             boolean var7099514E4AF279E1F75517A262FE9D78_465400454 = (super.requestFocus(direction, previouslyFocusedRect));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1913602312 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1913602312;
-        } //End block
-        // ---------- Original Method ----------
-        //if (mClearingFocus) return false;
-        //if (!isFocusable()) return false;
-        //if (!isIconified()) {
-            //boolean result = mQueryTextView.requestFocus(direction, previouslyFocusedRect);
-            //if (result) {
-                //updateViewsVisibility(false);
-            //}
-            //return result;
-        //} else {
-            //return super.requestFocus(direction, previouslyFocusedRect);
-        //}
+        } 
+        
+        
+        
+        
+            
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -620,52 +621,57 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
         super.clearFocus();
         mQueryTextView.clearFocus();
         mClearingFocus = false;
-        // ---------- Original Method ----------
-        //mClearingFocus = true;
-        //setImeVisibility(false);
-        //super.clearFocus();
-        //mQueryTextView.clearFocus();
-        //mClearingFocus = false;
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.440 -0400", hash_original_method = "5F51E4234BD6E41AFB4ED2E85F8CC1A5", hash_generated_method = "9ED055F823619F93416123D3D749DA22")
     public void setOnQueryTextListener(OnQueryTextListener listener) {
         mOnQueryChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnQueryChangeListener = listener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.440 -0400", hash_original_method = "5C0B64E237CFC180C92A60294DA35470", hash_generated_method = "53357DC670AF8DA5EBA61C8EACD2EFB0")
     public void setOnCloseListener(OnCloseListener listener) {
         mOnCloseListener = listener;
-        // ---------- Original Method ----------
-        //mOnCloseListener = listener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.441 -0400", hash_original_method = "2E189EEDC80EC67610C89143836C4DBB", hash_generated_method = "0E136A746D1DACCB2ECA5B20AA0683B2")
     public void setOnQueryTextFocusChangeListener(OnFocusChangeListener listener) {
         mOnQueryTextFocusChangeListener = listener;
-        // ---------- Original Method ----------
-        //mOnQueryTextFocusChangeListener = listener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.441 -0400", hash_original_method = "5242CF20D6A154AA5BAD996C3A14A890", hash_generated_method = "B2386EAE9CE311FF03E5CAA313730E12")
     public void setOnSuggestionListener(OnSuggestionListener listener) {
         mOnSuggestionListener = listener;
-        // ---------- Original Method ----------
-        //mOnSuggestionListener = listener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.441 -0400", hash_original_method = "AFFD80E7D30CC6B8E84DA9D0AC11DA43", hash_generated_method = "8D05E5C8F36ECC1939C7C9EC7679070B")
     public void setOnSearchClickListener(OnClickListener listener) {
         mOnSearchClickListener = listener;
-        // ---------- Original Method ----------
-        //mOnSearchClickListener = listener;
+        
+        
     }
 
     
@@ -674,8 +680,8 @@ public class SearchView extends LinearLayout implements CollapsibleActionView {
 CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryTextView.getText();
         var4161B58CB13C29FF4C751FF181305C25_1858371663.addTaint(taint);
         return var4161B58CB13C29FF4C751FF181305C25_1858371663;
-        // ---------- Original Method ----------
-        //return mQueryTextView.getText();
+        
+        
     }
 
     
@@ -687,20 +693,20 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
         {
             mQueryTextView.setSelection(query.length());
             mUserQuery = query;
-        } //End block
+        } 
     if(submit && !TextUtils.isEmpty(query))        
         {
             onSubmitQuery();
-        } //End block
-        // ---------- Original Method ----------
-        //mQueryTextView.setText(query);
-        //if (query != null) {
-            //mQueryTextView.setSelection(query.length());
-            //mUserQuery = query;
-        //}
-        //if (submit && !TextUtils.isEmpty(query)) {
-            //onSubmitQuery();
-        //}
+        } 
+        
+        
+        
+            
+            
+        
+        
+            
+        
     }
 
     
@@ -708,9 +714,9 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     public void setQueryHint(CharSequence hint) {
         mQueryHint = hint;
         updateQueryHint();
-        // ---------- Original Method ----------
-        //mQueryHint = hint;
-        //updateQueryHint();
+        
+        
+        
     }
 
     
@@ -721,21 +727,22 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
         mIconifiedByDefault = iconified;
         updateViewsVisibility(iconified);
         updateQueryHint();
-        // ---------- Original Method ----------
-        //if (mIconifiedByDefault == iconified) return;
-        //mIconifiedByDefault = iconified;
-        //updateViewsVisibility(iconified);
-        //updateQueryHint();
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "B0C72E24DA4703D19B476F7F5669A367", hash_generated_method = "9CBE6BA2DE9B3891D7055B1F8ECEF4E0")
     public boolean isIconfiedByDefault() {
         boolean var240C319CE9511A3C6618BAF616D6A95D_1143176365 = (mIconifiedByDefault);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_622401985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_622401985;
-        // ---------- Original Method ----------
-        //return mIconifiedByDefault;
+        
+        
     }
 
     
@@ -745,27 +752,28 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     if(iconify)        
         {
             onCloseClicked();
-        } //End block
+        } 
         else
         {
             onSearchClicked();
-        } //End block
-        // ---------- Original Method ----------
-        //if (iconify) {
-            //onCloseClicked();
-        //} else {
-            //onSearchClicked();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "844ED2B05054700D6A1A7C47A43DB3F5", hash_generated_method = "76E2B62A989FE612A747EE9303BC350C")
     public boolean isIconified() {
         boolean varE490012EE9B46FF826CCD5B3B6B214A9_1738277275 = (mIconified);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1201969769 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1201969769;
-        // ---------- Original Method ----------
-        //return mIconified;
+        
+        
     }
 
     
@@ -773,19 +781,20 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     public void setSubmitButtonEnabled(boolean enabled) {
         mSubmitButtonEnabled = enabled;
         updateViewsVisibility(isIconified());
-        // ---------- Original Method ----------
-        //mSubmitButtonEnabled = enabled;
-        //updateViewsVisibility(isIconified());
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "A8CFD3302CC6C1FBD45FF4B867C72D5B", hash_generated_method = "EE5D82E60175644DC60F9E4C9364FE67")
     public boolean isSubmitButtonEnabled() {
         boolean varF51306B58E2668509E9043E7735E1FA4_740332840 = (mSubmitButtonEnabled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1912298139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1912298139;
-        // ---------- Original Method ----------
-        //return mSubmitButtonEnabled;
+        
+        
     }
 
     
@@ -796,23 +805,24 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
         {
             ((SuggestionsAdapter) mSuggestionsAdapter).setQueryRefinement(
                     enable ? SuggestionsAdapter.REFINE_ALL : SuggestionsAdapter.REFINE_BY_ENTRY);
-        } //End block
-        // ---------- Original Method ----------
-        //mQueryRefinement = enable;
-        //if (mSuggestionsAdapter instanceof SuggestionsAdapter) {
-            //((SuggestionsAdapter) mSuggestionsAdapter).setQueryRefinement(
-                    //enable ? SuggestionsAdapter.REFINE_ALL : SuggestionsAdapter.REFINE_BY_ENTRY);
-        //}
+        } 
+        
+        
+        
+            
+                    
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.442 -0400", hash_original_method = "A374A24A58636548BF0B2ADA0B696601", hash_generated_method = "AC18FEB4189CD8AFB5F9B3CAB19D1B72")
     public boolean isQueryRefinementEnabled() {
         boolean var69EE6C3CFA8048276879EF4C552B5C72_2032352600 = (mQueryRefinement);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2084762990 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2084762990;
-        // ---------- Original Method ----------
-        //return mQueryRefinement;
+        
+        
     }
 
     
@@ -820,19 +830,20 @@ CharSequence var4161B58CB13C29FF4C751FF181305C25_1858371663 =         mQueryText
     public void setSuggestionsAdapter(CursorAdapter adapter) {
         mSuggestionsAdapter = adapter;
         mQueryTextView.setAdapter(mSuggestionsAdapter);
-        // ---------- Original Method ----------
-        //mSuggestionsAdapter = adapter;
-        //mQueryTextView.setAdapter(mSuggestionsAdapter);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.443 -0400", hash_original_method = "D43CFDAE734651DCDEBEEE22CB7FB2A7", hash_generated_method = "8BF46B62A65EBD81B1BEAEF5063F4A10")
     public CursorAdapter getSuggestionsAdapter() {
 CursorAdapter varC836E41B4405C7DA08B60A1F24129CF9_1824746280 =         mSuggestionsAdapter;
         varC836E41B4405C7DA08B60A1F24129CF9_1824746280.addTaint(taint);
         return varC836E41B4405C7DA08B60A1F24129CF9_1824746280;
-        // ---------- Original Method ----------
-        //return mSuggestionsAdapter;
+        
+        
     }
 
     
@@ -840,23 +851,23 @@ CursorAdapter varC836E41B4405C7DA08B60A1F24129CF9_1824746280 =         mSuggesti
     public void setMaxWidth(int maxpixels) {
         mMaxWidth = maxpixels;
         requestLayout();
-        // ---------- Original Method ----------
-        //mMaxWidth = maxpixels;
-        //requestLayout();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.443 -0400", hash_original_method = "455591DBA8980F8F128C9C99FA0F791A", hash_generated_method = "23E0D763BED8E6CB368C9241EABAED17")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
     if(isIconified())        
         {
             super.onMeasure(widthMeasureSpec, heightMeasureSpec);
             return;
-        } //End block
+        } 
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int width = MeasureSpec.getSize(widthMeasureSpec);
 switch(widthMode){
@@ -864,25 +875,25 @@ switch(widthMode){
     if(mMaxWidth > 0)        
         {
             width = Math.min(mMaxWidth, width);
-        } //End block
+        } 
         else
         {
             width = Math.min(getPreferredWidth(), width);
-        } //End block
+        } 
         break;
         case MeasureSpec.EXACTLY:
     if(mMaxWidth > 0)        
         {
             width = Math.min(mMaxWidth, width);
-        } //End block
+        } 
         break;
         case MeasureSpec.UNSPECIFIED:
         width = mMaxWidth > 0 ? mMaxWidth : getPreferredWidth();
         break;
 }        widthMode = MeasureSpec.EXACTLY;
         super.onMeasure(MeasureSpec.makeMeasureSpec(width, widthMode), heightMeasureSpec);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -892,9 +903,9 @@ switch(widthMode){
                 .getDimensionPixelSize(R.dimen.search_view_preferred_width));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947967797 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1947967797;
-        // ---------- Original Method ----------
-        //return getContext().getResources()
-                //.getDimensionPixelSize(R.dimen.search_view_preferred_width);
+        
+        
+                
     }
 
     
@@ -910,17 +921,17 @@ switch(widthMode){
         updateCloseButton();
         updateVoiceButton(!hasText);
         updateSubmitArea();
-        // ---------- Original Method ----------
-        //mIconified = collapsed;
-        //final int visCollapsed = collapsed ? VISIBLE : GONE;
-        //final boolean hasText = !TextUtils.isEmpty(mQueryTextView.getText());
-        //mSearchButton.setVisibility(visCollapsed);
-        //updateSubmitButton(hasText);
-        //mSearchEditFrame.setVisibility(collapsed ? GONE : VISIBLE);
-        //mSearchHintIcon.setVisibility(mIconifiedByDefault ? GONE : VISIBLE);
-        //updateCloseButton();
-        //updateVoiceButton(!hasText);
-        //updateSubmitArea();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -932,12 +943,12 @@ switch(widthMode){
     if(mSearchable.getVoiceSearchLaunchWebSearch())            
             {
                 testIntent = mVoiceWebSearchIntent;
-            } //End block
+            } 
             else
     if(mSearchable.getVoiceSearchLaunchRecognizer())            
             {
                 testIntent = mVoiceAppSearchIntent;
-            } //End block
+            } 
     if(testIntent != null)            
             {
                 ResolveInfo ri = getContext().getPackageManager().resolveActivity(testIntent,
@@ -945,26 +956,26 @@ switch(widthMode){
                 boolean var82E36C23D5002FD568E9E6BB87ACB5C6_16194170 = (ri != null);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_466364251 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_466364251;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_2143093575 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_301231049 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_301231049;
-        // ---------- Original Method ----------
-        //if (mSearchable != null && mSearchable.getVoiceSearchEnabled()) {
-            //Intent testIntent = null;
-            //if (mSearchable.getVoiceSearchLaunchWebSearch()) {
-                //testIntent = mVoiceWebSearchIntent;
-            //} else if (mSearchable.getVoiceSearchLaunchRecognizer()) {
-                //testIntent = mVoiceAppSearchIntent;
-            //}
-            //if (testIntent != null) {
-                //ResolveInfo ri = getContext().getPackageManager().resolveActivity(testIntent,
-                        //PackageManager.MATCH_DEFAULT_ONLY);
-                //return ri != null;
-            //}
-        //}
-        //return false;
+        
+        
+            
+            
+                
+            
+                
+            
+            
+                
+                        
+                
+            
+        
+        
     }
 
     
@@ -973,8 +984,8 @@ switch(widthMode){
         boolean varE9F0DE1C0B76C061A087B79ACBBBFDCB_262779808 = ((mSubmitButtonEnabled || mVoiceButtonEnabled) && !isIconified());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_36584373 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_36584373;
-        // ---------- Original Method ----------
-        //return (mSubmitButtonEnabled || mVoiceButtonEnabled) && !isIconified();
+        
+        
     }
 
     
@@ -986,15 +997,15 @@ switch(widthMode){
                 && (hasText || !mVoiceButtonEnabled))        
         {
             visibility = VISIBLE;
-        } //End block
+        } 
         mSubmitButton.setVisibility(visibility);
-        // ---------- Original Method ----------
-        //int visibility = GONE;
-        //if (mSubmitButtonEnabled && isSubmitAreaEnabled() && hasFocus()
-                //&& (hasText || !mVoiceButtonEnabled)) {
-            //visibility = VISIBLE;
-        //}
-        //mSubmitButton.setVisibility(visibility);
+        
+        
+        
+                
+            
+        
+        
     }
 
     
@@ -1006,16 +1017,16 @@ switch(widthMode){
                         || mVoiceButton.getVisibility() == VISIBLE))        
         {
             visibility = VISIBLE;
-        } //End block
+        } 
         mSubmitArea.setVisibility(visibility);
-        // ---------- Original Method ----------
-        //int visibility = GONE;
-        //if (isSubmitAreaEnabled()
-                //&& (mSubmitButton.getVisibility() == VISIBLE
-                        //|| mVoiceButton.getVisibility() == VISIBLE)) {
-            //visibility = VISIBLE;
-        //}
-        //mSubmitArea.setVisibility(visibility);
+        
+        
+        
+                
+                        
+            
+        
+        
     }
 
     
@@ -1025,19 +1036,19 @@ switch(widthMode){
         final boolean showClose = hasText || (mIconifiedByDefault && !mExpandedInActionView);
         mCloseButton.setVisibility(showClose ? VISIBLE : GONE);
         mCloseButton.getDrawable().setState(hasText ? ENABLED_STATE_SET : EMPTY_STATE_SET);
-        // ---------- Original Method ----------
-        //final boolean hasText = !TextUtils.isEmpty(mQueryTextView.getText());
-        //final boolean showClose = hasText || (mIconifiedByDefault && !mExpandedInActionView);
-        //mCloseButton.setVisibility(showClose ? VISIBLE : GONE);
-        //mCloseButton.getDrawable().setState(hasText ? ENABLED_STATE_SET : EMPTY_STATE_SET);
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.445 -0400", hash_original_method = "A19187F7BD510E54AC677DCF71153712", hash_generated_method = "E58D53BF8B2730472056F6D862C2F112")
     private void postUpdateFocusedState() {
         post(mUpdateDrawableStateRunnable);
-        // ---------- Original Method ----------
-        //post(mUpdateDrawableStateRunnable);
+        
+        
     }
 
     
@@ -1047,25 +1058,25 @@ switch(widthMode){
         mSearchPlate.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
         mSubmitArea.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
         invalidate();
-        // ---------- Original Method ----------
-        //boolean focused = mQueryTextView.hasFocus();
-        //mSearchPlate.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
-        //mSubmitArea.getBackground().setState(focused ? FOCUSED_STATE_SET : EMPTY_STATE_SET);
-        //invalidate();
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.445 -0400", hash_original_method = "466B44C18A399269336D5B13075B3DD5", hash_generated_method = "541E8F066DEA567D4C20FD5E338EC369")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         removeCallbacks(mUpdateDrawableStateRunnable);
         post(mReleaseCursorRunnable);
         super.onDetachedFromWindow();
-        // ---------- Original Method ----------
-        //removeCallbacks(mUpdateDrawableStateRunnable);
-        //post(mReleaseCursorRunnable);
-        //super.onDetachedFromWindow();
+        
+        
+        
+        
     }
 
     
@@ -1075,7 +1086,7 @@ switch(widthMode){
     if(visible)        
         {
             post(mShowImeRunnable);
-        } //End block
+        } 
         else
         {
             removeCallbacks(mShowImeRunnable);
@@ -1084,36 +1095,36 @@ switch(widthMode){
     if(imm != null)            
             {
                 imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (visible) {
-            //post(mShowImeRunnable);
-        //} else {
-            //removeCallbacks(mShowImeRunnable);
-            //InputMethodManager imm = (InputMethodManager)
-                    //getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-            //if (imm != null) {
-                //imm.hideSoftInputFromWindow(getWindowToken(), 0);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+        
+            
+            
+                    
+            
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.445 -0400", hash_original_method = "364D10214479FA13BFF6BDB192F3E0CD", hash_generated_method = "D1087538E73CB9ADE78F4C5C6B3A5CDB")
      void onQueryRefine(CharSequence queryText) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(queryText.getTaint());
         setQuery(queryText);
-        // ---------- Original Method ----------
-        //setQuery(queryText);
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.445 -0400", hash_original_method = "E2E8A56E8AA279DA8CFFA9FDDF535879", hash_generated_method = "3B060AF770A37D7DABF84EFA4B6E7497")
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         addTaint(keyCode);
     if(mSearchable == null)        
@@ -1121,7 +1132,7 @@ switch(widthMode){
             boolean var68934A3E9455FA72420237EB05902327_1083828864 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_468911611 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_468911611;
-        } //End block
+        } 
         SearchableInfo.ActionKeyInfo actionKey = mSearchable.findActionKey(keyCode);
     if((actionKey != null) && (actionKey.getQueryActionMsg() != null))        
         {
@@ -1130,21 +1141,21 @@ switch(widthMode){
             boolean varB326B5062B2F0E69046810717534CB09_1260344570 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1003253404 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1003253404;
-        } //End block
+        } 
         boolean var947F0C250323B9F4475E02588E9A9740_719433499 = (super.onKeyDown(keyCode, event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2106304712 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2106304712;
-        // ---------- Original Method ----------
-        //if (mSearchable == null) {
-            //return false;
-        //}
-        //SearchableInfo.ActionKeyInfo actionKey = mSearchable.findActionKey(keyCode);
-        //if ((actionKey != null) && (actionKey.getQueryActionMsg() != null)) {
-            //launchQuerySearch(keyCode, actionKey.getQueryActionMsg(), mQueryTextView.getText()
-                    //.toString());
-            //return true;
-        //}
-        //return super.onKeyDown(keyCode, event);
+        
+        
+            
+        
+        
+        
+            
+                    
+            
+        
+        
     }
 
     
@@ -1158,13 +1169,13 @@ switch(widthMode){
             boolean var68934A3E9455FA72420237EB05902327_1318588994 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1706812410 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1706812410;
-        } //End block
+        } 
     if(mSuggestionsAdapter == null)        
         {
             boolean var68934A3E9455FA72420237EB05902327_819177944 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2064922528 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2064922528;
-        } //End block
+        } 
     if(event.getAction() == KeyEvent.ACTION_DOWN && event.hasNoModifiers())        
         {
     if(keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_SEARCH
@@ -1174,7 +1185,7 @@ switch(widthMode){
                 boolean var63B764998048DFFC77D0C19B9215E0AB_1297554432 = (onItemClicked(position, KeyEvent.KEYCODE_UNKNOWN, null));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_299489717 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_299489717;
-            } //End block
+            } 
     if(keyCode == KeyEvent.KEYCODE_DPAD_LEFT || keyCode == KeyEvent.KEYCODE_DPAD_RIGHT)            
             {
                 int selPoint = (keyCode == KeyEvent.KEYCODE_DPAD_LEFT) ? 0 : mQueryTextView
@@ -1186,13 +1197,13 @@ switch(widthMode){
                 boolean varB326B5062B2F0E69046810717534CB09_1105024932 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_320958201 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_320958201;
-            } //End block
+            } 
     if(keyCode == KeyEvent.KEYCODE_DPAD_UP && 0 == mQueryTextView.getListSelection())            
             {
                 boolean var68934A3E9455FA72420237EB05902327_1471560206 = (false);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_839405220 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_839405220;
-            } //End block
+            } 
             SearchableInfo.ActionKeyInfo actionKey = mSearchable.findActionKey(keyCode);
     if((actionKey != null)
                     && ((actionKey.getSuggestActionMsg() != null) || (actionKey
@@ -1210,16 +1221,16 @@ switch(widthMode){
                             boolean varF716A8B12344019AD7C804FE05DA9905_1760201400 = (onItemClicked(position, keyCode, actionMsg));
                                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1187066518 = getTaintBoolean();
                             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1187066518;
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                        } 
+                    } 
+                } 
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_404811064 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_487401216 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_487401216;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1244,11 +1255,11 @@ switch(widthMode){
         int varCD80A69664CE0746D900F8403A3EB6B3_2089257318 = (outValue.resourceId);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410427074 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_410427074;
-        // ---------- Original Method ----------
-        //TypedValue outValue = new TypedValue();
-        //getContext().getTheme().resolveAttribute(com.android.internal.R.attr.searchViewSearchIcon,
-                //outValue, true);
-        //return outValue.resourceId;
+        
+        
+        
+                
+        
     }
 
     
@@ -1270,15 +1281,15 @@ CharSequence var05229D46C9F50D26451D3577D5D05DAF_816011250 =         hintText;
 CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
         varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907.addTaint(taint);
         return varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907;
-        // ---------- Original Method ----------
-        //if (!mIconifiedByDefault) return hintText;
-        //SpannableStringBuilder ssb = new SpannableStringBuilder("   ");
-        //ssb.append(hintText);
-        //Drawable searchIcon = getContext().getResources().getDrawable(getSearchIconId());
-        //int textSize = (int) (mQueryTextView.getTextSize() * 1.25);
-        //searchIcon.setBounds(0, 0, textSize, textSize);
-        //ssb.setSpan(new ImageSpan(searchIcon), 1, 2, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        //return ssb;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1287,7 +1298,7 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(mQueryHint != null)        
         {
             mQueryTextView.setHint(getDecoratedHint(mQueryHint));
-        } //End block
+        } 
         else
     if(mSearchable != null)        
         {
@@ -1296,31 +1307,31 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(hintId != 0)            
             {
                 hint = getContext().getString(hintId);
-            } //End block
+            } 
     if(hint != null)            
             {
                 mQueryTextView.setHint(getDecoratedHint(hint));
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             mQueryTextView.setHint(getDecoratedHint(""));
-        } //End block
-        // ---------- Original Method ----------
-        //if (mQueryHint != null) {
-            //mQueryTextView.setHint(getDecoratedHint(mQueryHint));
-        //} else if (mSearchable != null) {
-            //CharSequence hint = null;
-            //int hintId = mSearchable.getHintId();
-            //if (hintId != 0) {
-                //hint = getContext().getString(hintId);
-            //}
-            //if (hint != null) {
-                //mQueryTextView.setHint(getDecoratedHint(hint));
-            //}
-        //} else {
-            //mQueryTextView.setHint(getDecoratedHint(""));
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+            
+                
+            
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1336,13 +1347,13 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(mSearchable.getSuggestAuthority() != null)            
             {
                 inputType |= InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE;
-            } //End block
-        } //End block
+            } 
+        } 
         mQueryTextView.setInputType(inputType);
     if(mSuggestionsAdapter != null)        
         {
             mSuggestionsAdapter.changeCursor(null);
-        } //End block
+        } 
     if(mSearchable.getSuggestAuthority() != null)        
         {
             mSuggestionsAdapter = new SuggestionsAdapter(getContext(),
@@ -1351,9 +1362,9 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
             ((SuggestionsAdapter) mSuggestionsAdapter).setQueryRefinement(
                     mQueryRefinement ? SuggestionsAdapter.REFINE_ALL
                     : SuggestionsAdapter.REFINE_BY_ENTRY);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1365,15 +1376,15 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
         {
             visibility = VISIBLE;
             mSubmitButton.setVisibility(GONE);
-        } //End block
+        } 
         mVoiceButton.setVisibility(visibility);
-        // ---------- Original Method ----------
-        //int visibility = GONE;
-        //if (mVoiceButtonEnabled && !isIconified() && empty) {
-            //visibility = VISIBLE;
-            //mSubmitButton.setVisibility(GONE);
-        //}
-        //mVoiceButton.setVisibility(visibility);
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -1389,20 +1400,20 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(mOnQueryChangeListener != null && !TextUtils.equals(newText, mOldQueryText))        
         {
             mOnQueryChangeListener.onQueryTextChange(newText.toString());
-        } //End block
+        } 
         mOldQueryText = newText.toString();
-        // ---------- Original Method ----------
-        //CharSequence text = mQueryTextView.getText();
-        //mUserQuery = text;
-        //boolean hasText = !TextUtils.isEmpty(text);
-        //updateSubmitButton(hasText);
-        //updateVoiceButton(!hasText);
-        //updateCloseButton();
-        //updateSubmitArea();
-        //if (mOnQueryChangeListener != null && !TextUtils.equals(newText, mOldQueryText)) {
-            //mOnQueryChangeListener.onQueryTextChange(newText.toString());
-        //}
-        //mOldQueryText = newText.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1418,30 +1429,30 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
                 {
                     launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null, query.toString());
                     setImeVisibility(false);
-                } //End block
+                } 
                 dismissSuggestions();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //CharSequence query = mQueryTextView.getText();
-        //if (query != null && TextUtils.getTrimmedLength(query) > 0) {
-            //if (mOnQueryChangeListener == null
-                    //|| !mOnQueryChangeListener.onQueryTextSubmit(query.toString())) {
-                //if (mSearchable != null) {
-                    //launchQuerySearch(KeyEvent.KEYCODE_UNKNOWN, null, query.toString());
-                    //setImeVisibility(false);
-                //}
-                //dismissSuggestions();
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                    
+                
+                    
+                    
+                
+                
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.449 -0400", hash_original_method = "8D9A2C9AF67AD5F3EB2818A3F7453E73", hash_generated_method = "D7D68B4D8980045DB76C85CF1D652798")
     private void dismissSuggestions() {
         mQueryTextView.dismissDropDown();
-        // ---------- Original Method ----------
-        //mQueryTextView.dismissDropDown();
+        
+        
     }
 
     
@@ -1456,29 +1467,29 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
                 {
                     clearFocus();
                     updateViewsVisibility(true);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             mQueryTextView.setText("");
             mQueryTextView.requestFocus();
             setImeVisibility(true);
-        } //End block
-        // ---------- Original Method ----------
-        //CharSequence text = mQueryTextView.getText();
-        //if (TextUtils.isEmpty(text)) {
-            //if (mIconifiedByDefault) {
-                //if (mOnCloseListener == null || !mOnCloseListener.onClose()) {
-                    //clearFocus();
-                    //updateViewsVisibility(true);
-                //}
-            //}
-        //} else {
-            //mQueryTextView.setText("");
-            //mQueryTextView.requestFocus();
-            //setImeVisibility(true);
-        //}
+        } 
+        
+        
+        
+            
+                
+                    
+                    
+                
+            
+        
+            
+            
+            
+        
     }
 
     
@@ -1490,14 +1501,14 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(mOnSearchClickListener != null)        
         {
             mOnSearchClickListener.onClick(this);
-        } //End block
-        // ---------- Original Method ----------
-        //updateViewsVisibility(false);
-        //mQueryTextView.requestFocus();
-        //setImeVisibility(true);
-        //if (mOnSearchClickListener != null) {
-            //mOnSearchClickListener.onClick(this);
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -1506,7 +1517,7 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(mSearchable == null)        
         {
             return;
-        } //End block
+        } 
         SearchableInfo searchable = mSearchable;
         try 
         {
@@ -1515,90 +1526,90 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
                 Intent webSearchIntent = createVoiceWebSearchIntent(mVoiceWebSearchIntent,
                         searchable);
                 getContext().startActivity(webSearchIntent);
-            } //End block
+            } 
             else
     if(searchable.getVoiceSearchLaunchRecognizer())            
             {
                 Intent appSearchIntent = createVoiceAppSearchIntent(mVoiceAppSearchIntent,
                         searchable);
                 getContext().startActivity(appSearchIntent);
-            } //End block
-        } //End block
+            } 
+        } 
         catch (ActivityNotFoundException e)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (mSearchable == null) {
-            //return;
-        //}
-        //SearchableInfo searchable = mSearchable;
-        //try {
-            //if (searchable.getVoiceSearchLaunchWebSearch()) {
-                //Intent webSearchIntent = createVoiceWebSearchIntent(mVoiceWebSearchIntent,
-                        //searchable);
-                //getContext().startActivity(webSearchIntent);
-            //} else if (searchable.getVoiceSearchLaunchRecognizer()) {
-                //Intent appSearchIntent = createVoiceAppSearchIntent(mVoiceAppSearchIntent,
-                        //searchable);
-                //getContext().startActivity(appSearchIntent);
-            //}
-        //} catch (ActivityNotFoundException e) {
-            //Log.w(LOG_TAG, "Could not find voice search activity");
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+                
+                        
+                
+            
+                
+                        
+                
+            
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.450 -0400", hash_original_method = "4D3FC77D85FEC9D80C6560FAE74CDA60", hash_generated_method = "57549D10DB73BE10967D8EC344DCF0DB")
      void onTextFocusChanged() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         updateViewsVisibility(isIconified());
         postUpdateFocusedState();
     if(mQueryTextView.hasFocus())        
         {
             forceSuggestionQuery();
-        } //End block
-        // ---------- Original Method ----------
-        //updateViewsVisibility(isIconified());
-        //postUpdateFocusedState();
-        //if (mQueryTextView.hasFocus()) {
-            //forceSuggestionQuery();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.450 -0400", hash_original_method = "6BC34AF35099192BA7E60BCC11E3C756", hash_generated_method = "F312F39D5A9A10844FA0239A2329F3A9")
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(hasWindowFocus);
         super.onWindowFocusChanged(hasWindowFocus);
         postUpdateFocusedState();
-        // ---------- Original Method ----------
-        //super.onWindowFocusChanged(hasWindowFocus);
-        //postUpdateFocusedState();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.450 -0400", hash_original_method = "5D7477A3D9C6D568A19E621F4FAE5DD7", hash_generated_method = "657A76175C5C027E0A83AC8F0E70E279")
     @Override
     public void onActionViewCollapsed() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         clearFocus();
         updateViewsVisibility(true);
         mQueryTextView.setImeOptions(mCollapsedImeOptions);
         mExpandedInActionView = false;
-        // ---------- Original Method ----------
-        //clearFocus();
-        //updateViewsVisibility(true);
-        //mQueryTextView.setImeOptions(mCollapsedImeOptions);
-        //mExpandedInActionView = false;
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.450 -0400", hash_original_method = "F734C19BE6B7D5E142C7745125215DDF", hash_generated_method = "446B126DD2AC9E88B342ACDAE0ADBF97")
     @Override
     public void onActionViewExpanded() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(mExpandedInActionView)        
         return;
         mExpandedInActionView = true;
@@ -1606,13 +1617,13 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
         mQueryTextView.setImeOptions(mCollapsedImeOptions | EditorInfo.IME_FLAG_NO_FULLSCREEN);
         mQueryTextView.setText("");
         setIconified(false);
-        // ---------- Original Method ----------
-        //if (mExpandedInActionView) return;
-        //mExpandedInActionView = true;
-        //mCollapsedImeOptions = mQueryTextView.getImeOptions();
-        //mQueryTextView.setImeOptions(mCollapsedImeOptions | EditorInfo.IME_FLAG_NO_FULLSCREEN);
-        //mQueryTextView.setText("");
-        //setIconified(false);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1632,9 +1643,9 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
                     + anchorPadding);
             mQueryTextView.setDropDownWidth(mDropDownAnchor.getWidth() + dropDownPadding.left
                     + dropDownPadding.right + iconOffset - (anchorPadding));
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1652,19 +1663,19 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
             boolean varB326B5062B2F0E69046810717534CB09_1833135567 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_40629667 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_40629667;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_675531993 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_782192509 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_782192509;
-        // ---------- Original Method ----------
-        //if (mOnSuggestionListener == null
-                //|| !mOnSuggestionListener.onSuggestionClick(position)) {
-            //launchSuggestion(position, KeyEvent.KEYCODE_UNKNOWN, null);
-            //setImeVisibility(false);
-            //dismissSuggestions();
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+            
+            
+        
+        
     }
 
     
@@ -1678,17 +1689,17 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
             boolean varB326B5062B2F0E69046810717534CB09_563565295 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1299699326 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1299699326;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_722847000 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1989241139 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1989241139;
-        // ---------- Original Method ----------
-        //if (mOnSuggestionListener == null
-                //|| !mOnSuggestionListener.onSuggestionSelect(position)) {
-            //rewriteQueryFromSuggestion(position);
-            //return true;
-        //}
-        //return false;
+        
+        
+                
+            
+            
+        
+        
     }
 
     
@@ -1700,39 +1711,39 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(c == null)        
         {
             return;
-        } //End block
+        } 
     if(c.moveToPosition(position))        
         {
             CharSequence newQuery = mSuggestionsAdapter.convertToString(c);
     if(newQuery != null)            
             {
                 setQuery(newQuery);
-            } //End block
+            } 
             else
             {
                 setQuery(oldQuery);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             setQuery(oldQuery);
-        } //End block
-        // ---------- Original Method ----------
-        //CharSequence oldQuery = mQueryTextView.getText();
-        //Cursor c = mSuggestionsAdapter.getCursor();
-        //if (c == null) {
-            //return;
-        //}
-        //if (c.moveToPosition(position)) {
-            //CharSequence newQuery = mSuggestionsAdapter.convertToString(c);
-            //if (newQuery != null) {
-                //setQuery(newQuery);
-            //} else {
-                //setQuery(oldQuery);
-            //}
-        //} else {
-            //setQuery(oldQuery);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+                
+            
+                
+            
+        
+            
+        
     }
 
     
@@ -1749,44 +1760,45 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
             boolean varB326B5062B2F0E69046810717534CB09_1325825328 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1852948736 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1852948736;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_971999051 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1678620266 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1678620266;
-        // ---------- Original Method ----------
-        //Cursor c = mSuggestionsAdapter.getCursor();
-        //if ((c != null) && c.moveToPosition(position)) {
-            //Intent intent = createIntentFromSuggestion(c, actionKey, actionMsg);
-            //launchIntent(intent);
-            //return true;
-        //}
-        //return false;
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.451 -0400", hash_original_method = "B092F13CA13C6A372C37DCEFCF94B5BC", hash_generated_method = "18FF810E17310C3371DD05FA1EF81F7C")
     private void launchIntent(Intent intent) {
         addTaint(intent.getTaint());
     if(intent == null)        
         {
             return;
-        } //End block
+        } 
         try 
         {
             getContext().startActivity(intent);
-        } //End block
+        } 
         catch (RuntimeException ex)
         {
-        } //End block
-        // ---------- Original Method ----------
-        //if (intent == null) {
-            //return;
-        //}
-        //try {
-            //getContext().startActivity(intent);
-        //} catch (RuntimeException ex) {
-            //Log.e(LOG_TAG, "Failed launch activity: " + intent, ex);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -1795,9 +1807,9 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
         addTaint(query.getTaint());
         mQueryTextView.setText(query, true);
         mQueryTextView.setSelection(TextUtils.isEmpty(query) ? 0 : query.length());
-        // ---------- Original Method ----------
-        //mQueryTextView.setText(query, true);
-        //mQueryTextView.setSelection(TextUtils.isEmpty(query) ? 0 : query.length());
+        
+        
+        
     }
 
     
@@ -1809,13 +1821,14 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
         String action = Intent.ACTION_SEARCH;
         Intent intent = createIntent(action, null, null, query, actionKey, actionMsg);
         getContext().startActivity(intent);
-        // ---------- Original Method ----------
-        //String action = Intent.ACTION_SEARCH;
-        //Intent intent = createIntent(action, null, null, query, actionKey, actionMsg);
-        //getContext().startActivity(intent);
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.452 -0400", hash_original_method = "7931502AE551A2F220A0C85C1181EB09", hash_generated_method = "C38BEF0A5DE289AED71CF13EC3DBAB9E")
     private Intent createIntent(String action, Uri data, String extraData, String query,
             int actionKey, String actionMsg) {
@@ -1830,34 +1843,35 @@ CharSequence varB7541BF5224ED050F3AA81EEC9EC1EE6_645376907 =         ssb;
     if(data != null)        
         {
             intent.setData(data);
-        } //End block
+        } 
         intent.putExtra(SearchManager.USER_QUERY, mUserQuery);
     if(query != null)        
         {
             intent.putExtra(SearchManager.QUERY, query);
-        } //End block
+        } 
     if(extraData != null)        
         {
             intent.putExtra(SearchManager.EXTRA_DATA_KEY, extraData);
-        } //End block
+        } 
     if(mAppSearchData != null)        
         {
             intent.putExtra(SearchManager.APP_DATA, mAppSearchData);
-        } //End block
+        } 
     if(actionKey != KeyEvent.KEYCODE_UNKNOWN)        
         {
             intent.putExtra(SearchManager.ACTION_KEY, actionKey);
             intent.putExtra(SearchManager.ACTION_MSG, actionMsg);
-        } //End block
+        } 
         intent.setComponent(mSearchable.getSearchActivity());
 Intent var095937E5B36214360A2644916BF0E8DF_663309877 =         intent;
         var095937E5B36214360A2644916BF0E8DF_663309877.addTaint(taint);
         return var095937E5B36214360A2644916BF0E8DF_663309877;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.453 -0400", hash_original_method = "88ED2A4CD1E55FCB278985A3652D43A1", hash_generated_method = "CD512AE3D1035775329425CCAE675809")
     private Intent createVoiceWebSearchIntent(Intent baseIntent, SearchableInfo searchable) {
         addTaint(searchable.getTaint());
@@ -1869,15 +1883,16 @@ Intent var095937E5B36214360A2644916BF0E8DF_663309877 =         intent;
 Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_1510810421 =         voiceIntent;
         var9DA5CAE69AD9A8348DD309D3014AC2CA_1510810421.addTaint(taint);
         return var9DA5CAE69AD9A8348DD309D3014AC2CA_1510810421;
-        // ---------- Original Method ----------
-        //Intent voiceIntent = new Intent(baseIntent);
-        //ComponentName searchActivity = searchable.getSearchActivity();
-        //voiceIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, searchActivity == null ? null
-                //: searchActivity.flattenToShortString());
-        //return voiceIntent;
+        
+        
+        
+        
+                
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.454 -0400", hash_original_method = "7F7E8A56997E65BDFC7ADF14F1E923E9", hash_generated_method = "1B83F718760C7B8B4EC61452022AE0E9")
     private Intent createVoiceAppSearchIntent(Intent baseIntent, SearchableInfo searchable) {
         addTaint(searchable.getTaint());
@@ -1897,19 +1912,19 @@ Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_1510810421 =         voiceIntent;
     if(searchable.getVoiceLanguageModeId() != 0)        
         {
             languageModel = resources.getString(searchable.getVoiceLanguageModeId());
-        } //End block
+        } 
     if(searchable.getVoicePromptTextId() != 0)        
         {
             prompt = resources.getString(searchable.getVoicePromptTextId());
-        } //End block
+        } 
     if(searchable.getVoiceLanguageId() != 0)        
         {
             language = resources.getString(searchable.getVoiceLanguageId());
-        } //End block
+        } 
     if(searchable.getVoiceMaxResults() != 0)        
         {
             maxResults = searchable.getVoiceMaxResults();
-        } //End block
+        } 
         voiceIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, languageModel);
         voiceIntent.putExtra(RecognizerIntent.EXTRA_PROMPT, prompt);
         voiceIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, language);
@@ -1921,11 +1936,12 @@ Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_1510810421 =         voiceIntent;
 Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_220857374 =         voiceIntent;
         var9DA5CAE69AD9A8348DD309D3014AC2CA_220857374.addTaint(taint);
         return var9DA5CAE69AD9A8348DD309D3014AC2CA_220857374;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.455 -0400", hash_original_method = "830957C509294E2BDC3732D8A42E8F7A", hash_generated_method = "14A793609C50EE2A8A42969A160F1D3A")
     private Intent createIntentFromSuggestion(Cursor c, int actionKey, String actionMsg) {
         addTaint(actionMsg.getTaint());
@@ -1937,48 +1953,48 @@ Intent var9DA5CAE69AD9A8348DD309D3014AC2CA_220857374 =         voiceIntent;
     if(action == null)            
             {
                 action = mSearchable.getSuggestIntentAction();
-            } //End block
+            } 
     if(action == null)            
             {
                 action = Intent.ACTION_SEARCH;
-            } //End block
+            } 
             String data = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_DATA);
     if(data == null)            
             {
                 data = mSearchable.getSuggestIntentData();
-            } //End block
+            } 
     if(data != null)            
             {
                 String id = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID);
     if(id != null)                
                 {
                     data = data + "/" + Uri.encode(id);
-                } //End block
-            } //End block
+                } 
+            } 
             Uri dataUri = (data == null) ? null : Uri.parse(data);
             String query = getColumnString(c, SearchManager.SUGGEST_COLUMN_QUERY);
             String extraData = getColumnString(c, SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA);
 Intent varE35F359D165AC7F8F3391F4799F6DBB1_355524173 =             createIntent(action, dataUri, extraData, query, actionKey, actionMsg);
             varE35F359D165AC7F8F3391F4799F6DBB1_355524173.addTaint(taint);
             return varE35F359D165AC7F8F3391F4799F6DBB1_355524173;
-        } //End block
+        } 
         catch (RuntimeException e)
         {
             int rowNum;
             try 
             {
                 rowNum = c.getPosition();
-            } //End block
+            } 
             catch (RuntimeException e2)
             {
                 rowNum = -1;
-            } //End block
+            } 
 Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
             var540C13E9E156B687226421B24F2DF178_17962397.addTaint(taint);
             return var540C13E9E156B687226421B24F2DF178_17962397;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -1986,9 +2002,9 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
     private void forceSuggestionQuery() {
         mQueryTextView.doBeforeTextChanged();
         mQueryTextView.doAfterTextChanged();
-        // ---------- Original Method ----------
-        //mQueryTextView.doBeforeTextChanged();
-        //mQueryTextView.doAfterTextChanged();
+        
+        
+        
     }
 
     
@@ -2011,8 +2027,8 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
             super(context);
             addTaint(context.getTaint());
             mThreshold = getThreshold();
-            // ---------- Original Method ----------
-            //mThreshold = getThreshold();
+            
+            
         }
 
         
@@ -2022,8 +2038,8 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
             addTaint(attrs.getTaint());
             addTaint(context.getTaint());
             mThreshold = getThreshold();
-            // ---------- Original Method ----------
-            //mThreshold = getThreshold();
+            
+            
         }
 
         
@@ -2034,16 +2050,17 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
             addTaint(attrs.getTaint());
             addTaint(context.getTaint());
             mThreshold = getThreshold();
-            // ---------- Original Method ----------
-            //mThreshold = getThreshold();
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.457 -0400", hash_original_method = "BBDE2605DAB20A62DF5DDA8DAF1B33B9", hash_generated_method = "0D212706D2CE79F99D27416EE240A973")
          void setSearchView(SearchView searchView) {
             mSearchView = searchView;
-            // ---------- Original Method ----------
-            //mSearchView = searchView;
+            
+            
         }
 
         
@@ -2052,9 +2069,9 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
         public void setThreshold(int threshold) {
             super.setThreshold(threshold);
             mThreshold = threshold;
-            // ---------- Original Method ----------
-            //super.setThreshold(threshold);
-            //mThreshold = threshold;
+            
+            
+            
         }
 
         
@@ -2063,30 +2080,32 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
             boolean var0F796EE0E04360F3B8250FD6792C943E_1246936424 = (TextUtils.getTrimmedLength(getText()) == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1511609939 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1511609939;
-            // ---------- Original Method ----------
-            //return TextUtils.getTrimmedLength(getText()) == 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.458 -0400", hash_original_method = "04EDD552CD5932834AB8E3EAD2670FCB", hash_generated_method = "2E00CC1DC27537AD22A88B7817BCCBE4")
         @Override
         protected void replaceText(CharSequence text) {
             addTaint(text.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.458 -0400", hash_original_method = "BBB8F048947DA4F8E171ED984E24E3AE", hash_generated_method = "65E30508731680C780234FF5491E8384")
         @Override
         public void performCompletion() {
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.458 -0400", hash_original_method = "3777C1088ADE560024EE2C32D034B492", hash_generated_method = "1035DE14D5988B77196BC6F5A4269CF0")
         @Override
         public void onWindowFocusChanged(boolean hasWindowFocus) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(hasWindowFocus);
             super.onWindowFocusChanged(hasWindowFocus);
     if(hasWindowFocus && mSearchView.hasFocus() && getVisibility() == VISIBLE)            
@@ -2097,33 +2116,33 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
     if(isLandscapeMode(getContext()))                
                 {
                     ensureImeVisible(true);
-                } //End block
-            } //End block
-            // ---------- Original Method ----------
-            //super.onWindowFocusChanged(hasWindowFocus);
-            //if (hasWindowFocus && mSearchView.hasFocus() && getVisibility() == VISIBLE) {
-                //InputMethodManager inputManager = (InputMethodManager) getContext()
-                        //.getSystemService(Context.INPUT_METHOD_SERVICE);
-                //inputManager.showSoftInput(this, 0);
-                //if (isLandscapeMode(getContext())) {
-                    //ensureImeVisible(true);
-                //}
-            //}
+                } 
+            } 
+            
+            
+            
+                
+                        
+                
+                
+                    
+                
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.458 -0400", hash_original_method = "5F63BE621D8AAF87B5CC12EFB3AE40CE", hash_generated_method = "C1EA6C7BDBB5157DFAB67FE1484CC426")
         @Override
         protected void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(previouslyFocusedRect.getTaint());
             addTaint(direction);
             addTaint(focused);
             super.onFocusChanged(focused, direction, previouslyFocusedRect);
             mSearchView.onTextFocusChanged();
-            // ---------- Original Method ----------
-            //super.onFocusChanged(focused, direction, previouslyFocusedRect);
-            //mSearchView.onTextFocusChanged();
+            
+            
+            
         }
 
         
@@ -2133,15 +2152,15 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
             boolean var162B72EE579B604D46B00E836B96BA04_307049822 = (mThreshold <= 0 || super.enoughToFilter());
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_260377087 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_260377087;
-            // ---------- Original Method ----------
-            //return mThreshold <= 0 || super.enoughToFilter();
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.459 -0400", hash_original_method = "AB0021D21F9078098334FA1D38399275", hash_generated_method = "6B5E264D88BF5C59BC8A119CAF6F5A8E")
         @Override
         public boolean onKeyPreIme(int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(event.getTaint());
             addTaint(keyCode);
     if(keyCode == KeyEvent.KEYCODE_BACK)            
@@ -2152,11 +2171,11 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
     if(state != null)                    
                     {
                         state.startTracking(event, this);
-                    } //End block
+                    } 
                     boolean varB326B5062B2F0E69046810717534CB09_1743261316 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_573611011 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_573611011;
-                } //End block
+                } 
                 else
     if(event.getAction() == KeyEvent.ACTION_UP)                
                 {
@@ -2164,7 +2183,7 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
     if(state != null)                    
                     {
                         state.handleUpEvent(event);
-                    } //End block
+                    } 
     if(event.isTracking() && !event.isCanceled())                    
                     {
                         mSearchView.clearFocus();
@@ -2172,14 +2191,14 @@ Intent var540C13E9E156B687226421B24F2DF178_17962397 =             null;
                         boolean varB326B5062B2F0E69046810717534CB09_1634622667 = (true);
                                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_696957198 = getTaintBoolean();
                         return var84E2C64F38F78BA3EA5C905AB5A2DA27_696957198;
-                    } //End block
-                } //End block
-            } //End block
+                    } 
+                } 
+            } 
             boolean varD211DC142BF75E7E3C7CE1C752BD391A_394645818 = (super.onKeyPreIme(keyCode, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_972657472 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_972657472;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         

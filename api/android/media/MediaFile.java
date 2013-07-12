@@ -1,6 +1,6 @@
 package android.media;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -21,7 +21,7 @@ public class MediaFile {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:24.126 -0400", hash_original_method = "F8094BC7E14C0E050681E430B28230AD", hash_generated_method = "F8094BC7E14C0E050681E430B28230AD")
     public MediaFile ()
     {
-        //Synthesized constructor
+        
     }
 
 
@@ -65,7 +65,8 @@ public class MediaFile {
     }
 
     
-        public static boolean isAudioFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isAudioFileType(int fileType) {
         return ((fileType >= FIRST_AUDIO_FILE_TYPE &&
                 fileType <= LAST_AUDIO_FILE_TYPE) ||
                 (fileType >= FIRST_MIDI_FILE_TYPE &&
@@ -73,7 +74,8 @@ public class MediaFile {
     }
 
     
-        public static boolean isVideoFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isVideoFileType(int fileType) {
         return (fileType >= FIRST_VIDEO_FILE_TYPE &&
                 fileType <= LAST_VIDEO_FILE_TYPE)
             || (fileType >= FIRST_VIDEO_FILE_TYPE2 &&
@@ -81,19 +83,22 @@ public class MediaFile {
     }
 
     
-        public static boolean isImageFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isImageFileType(int fileType) {
         return (fileType >= FIRST_IMAGE_FILE_TYPE &&
                 fileType <= LAST_IMAGE_FILE_TYPE);
     }
 
     
-        public static boolean isPlayListFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isPlayListFileType(int fileType) {
         return (fileType >= FIRST_PLAYLIST_FILE_TYPE &&
                 fileType <= LAST_PLAYLIST_FILE_TYPE);
     }
 
     
-        public static boolean isDrmFileType(int fileType) {
+        @DSModeled(DSC.SAFE)
+    public static boolean isDrmFileType(int fileType) {
         return (fileType >= FIRST_DRM_FILE_TYPE &&
                 fileType <= LAST_DRM_FILE_TYPE);
     }
@@ -178,9 +183,9 @@ public class MediaFile {
           MediaFileType(int fileType, String mimeType) {
             this.fileType = fileType;
             this.mimeType = mimeType;
-            // ---------- Original Method ----------
-            //this.fileType = fileType;
-            //this.mimeType = mimeType;
+            
+            
+            
         }
 
         

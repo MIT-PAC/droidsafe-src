@@ -1,6 +1,6 @@
 package junit.framework;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,12 +19,13 @@ public class ComparisonFailure extends AssertionFailedError {
         addTaint(message.getTaint());
         fExpected= expected;
         fActual= actual;
-        // ---------- Original Method ----------
-        //fExpected= expected;
-        //fActual= actual;
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.183 -0400", hash_original_method = "1EFB8D5295B5347F7A8CE202919A7B5C", hash_generated_method = "0E1DC168268BB63CF1AF8ABE24A1EFE4")
     public String getMessage() {
     if(fExpected == null || fActual == null)        
@@ -39,21 +40,21 @@ for(;i < end;i++)
         {
     if(fExpected.charAt(i) != fActual.charAt(i))            
             break;
-        } //End block
+        } 
         int j = fExpected.length()-1;
         int k = fActual.length()-1;
 for(;k >= i && j >= i;k--,j--)
         {
     if(fExpected.charAt(j) != fActual.charAt(k))            
             break;
-        } //End block
+        } 
         String actual;
         String expected;
     if(j < i && k < i)        
         {
             expected= fExpected;
             actual= fActual;
-        } //End block
+        } 
         else
         {
             expected= fExpected.substring(i, j+1);
@@ -62,17 +63,17 @@ for(;k >= i && j >= i;k--,j--)
             {
                 expected= "..."+expected;
                 actual= "..."+actual;
-            } //End block
+            } 
     if(j < fExpected.length()-1)            
             expected= expected+"...";
     if(k < fActual.length()-1)            
             actual= actual+"...";
-        } //End block
+        } 
 String var1F5A835AA8B0791E81C10658E69A20BF_2053941880 =         Assert.format(super.getMessage(), expected, actual);
         var1F5A835AA8B0791E81C10658E69A20BF_2053941880.addTaint(taint);
         return var1F5A835AA8B0791E81C10658E69A20BF_2053941880;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     

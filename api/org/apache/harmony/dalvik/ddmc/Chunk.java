@@ -1,6 +1,6 @@
 package org.apache.harmony.dalvik.ddmc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -22,7 +22,7 @@ public class Chunk {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:28.034 -0400", hash_original_method = "6A535F879971D0788BB13E4964856994", hash_generated_method = "839E6F2CD1EA5EBDD2D384B79E8AB041")
     public  Chunk() {
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -32,11 +32,11 @@ public class Chunk {
         this.data = data;
         this.offset = offset;
         this.length = length;
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.data = data;
-        //this.offset = offset;
-        //this.length = length;
+        
+        
+        
+        
+        
     }
 
     
@@ -46,11 +46,11 @@ public class Chunk {
         this.data = buf.array();
         this.offset = buf.arrayOffset();
         this.length = buf.position();
-        // ---------- Original Method ----------
-        //this.type = type;
-        //this.data = buf.array();
-        //this.offset = buf.arrayOffset();
-        //this.length = buf.position();
+        
+        
+        
+        
+        
     }
 
     

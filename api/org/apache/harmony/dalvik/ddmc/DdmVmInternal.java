@@ -1,6 +1,6 @@
 package org.apache.harmony.dalvik.ddmc;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -9,7 +9,7 @@ public class DdmVmInternal {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:28.062 -0400", hash_original_method = "D0F76540C42EA165AE45A0473185E42C", hash_generated_method = "25D97099B63C10431BD47D09A2644BA5")
     private  DdmVmInternal() {
-        // ---------- Original Method ----------
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class RadioButton extends CompoundButton {
     public  RadioButton(Context context) {
         this(context, null);
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -24,7 +24,7 @@ public class RadioButton extends CompoundButton {
         this(context, attrs, com.android.internal.R.attr.radioButtonStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -34,7 +34,7 @@ public class RadioButton extends CompoundButton {
         addTaint(defStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -44,35 +44,35 @@ public class RadioButton extends CompoundButton {
     if(!isChecked())        
         {
             super.toggle();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isChecked()) {
-            //super.toggle();
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:09.116 -0400", hash_original_method = "800F92BFA9EDE937B28EAF651D664B90", hash_generated_method = "1777866A2F27E2BFC3BE9BB817580974")
     @Override
     public void onPopulateAccessibilityEvent(AccessibilityEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
         super.onPopulateAccessibilityEvent(event);
     if(isChecked())        
         {
             event.getText().add(mContext.getString(R.string.radiobutton_selected));
-        } //End block
+        } 
         else
         {
             event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-        } //End block
-        // ---------- Original Method ----------
-        //super.onPopulateAccessibilityEvent(event);
-        //if (isChecked()) {
-            //event.getText().add(mContext.getString(R.string.radiobutton_selected));
-        //} else {
-            //event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+        
     }
 
     

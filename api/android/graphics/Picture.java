@@ -1,6 +1,6 @@
 package android.graphics;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,7 +18,7 @@ public class Picture {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.717 -0400", hash_original_method = "2489F1714C6AB52D2B9965C8B69500DD", hash_generated_method = "63528B2E8ADC16DD1C04E65808C24AEE")
     public  Picture() {
         this(nativeConstructor(0));
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class Picture {
     public  Picture(Picture src) {
         this(nativeConstructor(src != null ? src.mNativePicture : 0));
         addTaint(src.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -37,13 +37,13 @@ public class Picture {
             RuntimeException varF1484B21EF4EE84F790184975238945B_1091199594 = new RuntimeException();
             varF1484B21EF4EE84F790184975238945B_1091199594.addTaint(taint);
             throw varF1484B21EF4EE84F790184975238945B_1091199594;
-        } //End block
+        } 
         mNativePicture = nativePicture;
-        // ---------- Original Method ----------
-        //if (nativePicture == 0) {
-            //throw new RuntimeException();
-        //}
-        //mNativePicture = nativePicture;
+        
+        
+            
+        
+        
     }
 
     
@@ -56,10 +56,10 @@ public class Picture {
 Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas;
         var1D97605435A680D4B9EC641401BFF9EE_1430995049.addTaint(taint);
         return var1D97605435A680D4B9EC641401BFF9EE_1430995049;
-        // ---------- Original Method ----------
-        //int ni = nativeBeginRecording(mNativePicture, width, height);
-        //mRecordingCanvas = new RecordingCanvas(this, ni);
-        //return mRecordingCanvas;
+        
+        
+        
+        
     }
 
     
@@ -69,15 +69,16 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
         {
             mRecordingCanvas = null;
             nativeEndRecording(mNativePicture);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mRecordingCanvas != null) {
-            //mRecordingCanvas = null;
-            //nativeEndRecording(mNativePicture);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.719 -0400", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "85E24EA39B1293CBD8BB3FEB1DB550AC")
     public int getWidth() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1893710660 = getTaintInt();
@@ -85,6 +86,7 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.719 -0400", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "5469A48855EF638B35A8D38628B25735")
     public int getHeight() {
         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_999429503 = getTaintInt();
@@ -98,13 +100,13 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
     if(mRecordingCanvas != null)        
         {
             endRecording();
-        } //End block
+        } 
         nativeDraw(canvas.mNativeCanvas, mNativePicture);
-        // ---------- Original Method ----------
-        //if (mRecordingCanvas != null) {
-            //endRecording();
-        //}
-        //nativeDraw(canvas.mNativeCanvas, mNativePicture);
+        
+        
+            
+        
+        
     }
 
     
@@ -122,30 +124,30 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
             NullPointerException var7338BC9F48D81FE0BBD6183F4014DCC4_361374864 = new NullPointerException();
             var7338BC9F48D81FE0BBD6183F4014DCC4_361374864.addTaint(taint);
             throw var7338BC9F48D81FE0BBD6183F4014DCC4_361374864;
-        } //End block
+        } 
     if(!nativeWriteToStream(mNativePicture, stream,
                              new byte[WORKING_STREAM_STORAGE]))        
         {
             RuntimeException varF1484B21EF4EE84F790184975238945B_1425502626 = new RuntimeException();
             varF1484B21EF4EE84F790184975238945B_1425502626.addTaint(taint);
             throw varF1484B21EF4EE84F790184975238945B_1425502626;
-        } //End block
-        // ---------- Original Method ----------
-        //if (stream == null) {
-            //throw new NullPointerException();
-        //}
-        //if (!nativeWriteToStream(mNativePicture, stream,
-                             //new byte[WORKING_STREAM_STORAGE])) {
-            //throw new RuntimeException();
-        //}
+        } 
+        
+        
+            
+        
+        
+                             
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:18.721 -0400", hash_original_method = "A9ACB715DF1E16C6B20EA656F0034A3C", hash_generated_method = "65406D5C08A00AE047C5B3642566D2E9")
     protected void finalize() throws Throwable {
         nativeDestructor(mNativePicture);
-        // ---------- Original Method ----------
-        //nativeDestructor(mNativePicture);
+        
+        
     }
 
     
@@ -154,8 +156,8 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
         int varEB3D0953DBC0B65EBA1482F45D0B169C_214208234 = (mNativePicture);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1537256125 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1537256125;
-        // ---------- Original Method ----------
-        //return mNativePicture;
+        
+        
     }
 
     
@@ -211,8 +213,8 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
             super(nativeCanvas);
             addTaint(nativeCanvas);
             mPicture = pict;
-            // ---------- Original Method ----------
-            //mPicture = pict;
+            
+            
         }
 
         
@@ -224,9 +226,9 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
                                 "Cannot call setBitmap on a picture canvas");
             var3EE550AF39B02FF8E426CCE34EA9A042_1988381390.addTaint(taint);
             throw var3EE550AF39B02FF8E426CCE34EA9A042_1988381390;
-            // ---------- Original Method ----------
-            //throw new RuntimeException(
-                                //"Cannot call setBitmap on a picture canvas");
+            
+            
+                                
         }
 
         
@@ -240,14 +242,14 @@ Canvas var1D97605435A680D4B9EC641401BFF9EE_1430995049 =         mRecordingCanvas
                             "Cannot draw a picture into its recording canvas");
                 varF06980F6141921D11E9F48E5562373BE_1088655599.addTaint(taint);
                 throw varF06980F6141921D11E9F48E5562373BE_1088655599;
-            } //End block
+            } 
             super.drawPicture(picture);
-            // ---------- Original Method ----------
-            //if (mPicture == picture) {
-                //throw new RuntimeException(
-                            //"Cannot draw a picture into its recording canvas");
-            //}
-            //super.drawPicture(picture);
+            
+            
+                
+                            
+            
+            
         }
 
         

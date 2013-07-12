@@ -1,6 +1,6 @@
 package com.android.internal.os;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -29,11 +29,11 @@ public class PkgUsageStats implements Parcelable {
         launchCount = count;
         usageTime = time;
         componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
-        // ---------- Original Method ----------
-        //packageName = pkgName;
-        //launchCount = count;
-        //usageTime = time;
-        //componentResumeTimes = new HashMap<String, Long>(lastResumeTimes);
+        
+        
+        
+        
+        
     }
 
     
@@ -49,18 +49,18 @@ for(int i = 0;i < N;i++)
             String component = source.readString();
             long lastResumeTime = source.readLong();
             componentResumeTimes.put(component, lastResumeTime);
-        } //End block
-        // ---------- Original Method ----------
-        //packageName = source.readString();
-        //launchCount = source.readInt();
-        //usageTime = source.readLong();
-        //final int N = source.readInt();
-        //componentResumeTimes = new HashMap<String, Long>(N);
-        //for (int i = 0; i < N; i++) {
-            //String component = source.readString();
-            //long lastResumeTime = source.readLong();
-            //componentResumeTimes.put(component, lastResumeTime);
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -70,11 +70,11 @@ for(int i = 0;i < N;i++)
         launchCount = pStats.launchCount;
         usageTime = pStats.usageTime;
         componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
-        // ---------- Original Method ----------
-        //packageName = pStats.packageName;
-        //launchCount = pStats.launchCount;
-        //usageTime = pStats.usageTime;
-        //componentResumeTimes = new HashMap<String, Long>(pStats.componentResumeTimes);
+        
+        
+        
+        
+        
     }
 
     
@@ -85,20 +85,21 @@ String varCA61EE736776B3A103C8DC641DCDABF4_1649350082 =         "PkgUsageStats{"
         + " " + packageName + "}";
         varCA61EE736776B3A103C8DC641DCDABF4_1649350082.addTaint(taint);
         return varCA61EE736776B3A103C8DC641DCDABF4_1649350082;
-        // ---------- Original Method ----------
-        //return "PkgUsageStats{"
-        //+ Integer.toHexString(System.identityHashCode(this))
-        //+ " " + packageName + "}";
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:19.074 -0400", hash_original_method = "00F8174F9E89D0C972FA6D3F19742382", hash_generated_method = "2D8E7513D179164CBC9A05BFA2CBDC13")
     public int describeContents() {
         int varCFCD208495D565EF66E7DFF9F98764DA_1924039331 = (0);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1298550588 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1298550588;
-        // ---------- Original Method ----------
-        //return 0;
+        
+        
     }
 
     
@@ -114,16 +115,16 @@ for(Map.Entry<String, Long> ent : componentResumeTimes.entrySet())
         {
             dest.writeString(ent.getKey());
             dest.writeLong(ent.getValue());
-        } //End block
-        // ---------- Original Method ----------
-        //dest.writeString(packageName);
-        //dest.writeInt(launchCount);
-        //dest.writeLong(usageTime);
-        //dest.writeInt(componentResumeTimes.size());
-        //for (Map.Entry<String, Long> ent : componentResumeTimes.entrySet()) {
-            //dest.writeString(ent.getKey());
-            //dest.writeLong(ent.getValue());
-        //}
+        } 
+        
+        
+        
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -139,12 +140,12 @@ for(Map.Entry<String, Long> ent : componentResumeTimes.entrySet())
             return new PkgUsageStats[size];
         }
     };
-    // orphaned legacy method
+    
     public PkgUsageStats createFromParcel(Parcel in) {
             return new PkgUsageStats(in);
         }
     
-    // orphaned legacy method
+    
     public PkgUsageStats[] newArray(int size) {
             return new PkgUsageStats[size];
         }

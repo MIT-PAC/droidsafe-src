@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -130,7 +130,7 @@ public class SlidingDrawer extends ViewGroup {
         this(context, attrs, 0);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -154,7 +154,7 @@ public class SlidingDrawer extends ViewGroup {
                     + "to a valid child.");
             var5439235E872863ACF4B62EBE88E47C5E_1426086338.addTaint(taint);
             throw var5439235E872863ACF4B62EBE88E47C5E_1426086338;
-        } //End block
+        } 
         int contentId = a.getResourceId(R.styleable.SlidingDrawer_content, 0);
     if(contentId == 0)        
         {
@@ -162,14 +162,14 @@ public class SlidingDrawer extends ViewGroup {
                     + "to a valid child.");
             varBEA526F4B61D519C6E6EE36231747F04_151090703.addTaint(taint);
             throw varBEA526F4B61D519C6E6EE36231747F04_151090703;
-        } //End block
+        } 
     if(handleId == contentId)        
         {
             IllegalArgumentException var2C5F7E1F10CCC54D942352B64341DD00_38200066 = new IllegalArgumentException("The content and handle attributes must refer "
                     + "to different children.");
             var2C5F7E1F10CCC54D942352B64341DD00_38200066.addTaint(taint);
             throw var2C5F7E1F10CCC54D942352B64341DD00_38200066;
-        } //End block
+        } 
         mHandleId = handleId;
         mContentId = contentId;
         final float density = getResources().getDisplayMetrics().density;
@@ -181,15 +181,15 @@ public class SlidingDrawer extends ViewGroup {
         mVelocityUnits = (int) (VELOCITY_UNITS * density + 0.5f);
         a.recycle();
         setAlwaysDrawnWithCacheEnabled(false);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.707 -0400", hash_original_method = "D4721D394CC37BD7B7DC0DFF43B7CD6B", hash_generated_method = "4EA6BE7541C6FF9223C23C84D3819389")
     @Override
     protected void onFinishInflate() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         mHandle = findViewById(mHandleId);
     if(mHandle == null)        
         {
@@ -197,7 +197,7 @@ public class SlidingDrawer extends ViewGroup {
                     + " existing child.");
             var0D245C5A21E1FE8AC78DA7281CE3CBB5_1133535871.addTaint(taint);
             throw var0D245C5A21E1FE8AC78DA7281CE3CBB5_1133535871;
-        } //End block
+        } 
         mHandle.setOnClickListener(new DrawerToggler());
         mContent = findViewById(mContentId);
     if(mContent == null)        
@@ -206,28 +206,28 @@ public class SlidingDrawer extends ViewGroup {
                     + " existing child.");
             var1E82C79EE502EF847EC1FA156599A707_1887401833.addTaint(taint);
             throw var1E82C79EE502EF847EC1FA156599A707_1887401833;
-        } //End block
+        } 
         mContent.setVisibility(View.GONE);
-        // ---------- Original Method ----------
-        //mHandle = findViewById(mHandleId);
-        //if (mHandle == null) {
-            //throw new IllegalArgumentException("The handle attribute is must refer to an"
-                    //+ " existing child.");
-        //}
-        //mHandle.setOnClickListener(new DrawerToggler());
-        //mContent = findViewById(mContentId);
-        //if (mContent == null) {
-            //throw new IllegalArgumentException("The content attribute is must refer to an" 
-                    //+ " existing child.");
-        //}
-        //mContent.setVisibility(View.GONE);
+        
+        
+        
+            
+                    
+        
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.708 -0400", hash_original_method = "45D03353ADB6FD3256F7B7DABD84ED03", hash_generated_method = "4FDFD1279B97E7BC72A2DE4605360469")
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(heightMeasureSpec);
         addTaint(widthMeasureSpec);
         int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -239,7 +239,7 @@ public class SlidingDrawer extends ViewGroup {
             RuntimeException var40119E22CBC60A0B042BB3392F9C3E11_572998653 = new RuntimeException("SlidingDrawer cannot have UNSPECIFIED dimensions");
             var40119E22CBC60A0B042BB3392F9C3E11_572998653.addTaint(taint);
             throw var40119E22CBC60A0B042BB3392F9C3E11_572998653;
-        } //End block
+        } 
         final View handle = mHandle;
         measureChild(handle, widthMeasureSpec, heightMeasureSpec);
     if(mVertical)        
@@ -247,16 +247,16 @@ public class SlidingDrawer extends ViewGroup {
             int height = heightSpecSize - handle.getMeasuredHeight() - mTopOffset;
             mContent.measure(MeasureSpec.makeMeasureSpec(widthSpecSize, MeasureSpec.EXACTLY),
                     MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
-        } //End block
+        } 
         else
         {
             int width = widthSpecSize - handle.getMeasuredWidth() - mTopOffset;
             mContent.measure(MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY),
                     MeasureSpec.makeMeasureSpec(heightSpecSize, MeasureSpec.EXACTLY));
-        } //End block
+        } 
         setMeasuredDimension(widthSpecSize, heightSpecSize);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -276,12 +276,12 @@ public class SlidingDrawer extends ViewGroup {
     if(isVertical)                
                 {
                     canvas.drawBitmap(cache, 0, handle.getBottom(), null);
-                } //End block
+                } 
                 else
                 {
                     canvas.drawBitmap(cache, handle.getRight(), 0, null);
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 canvas.save();
@@ -289,22 +289,22 @@ public class SlidingDrawer extends ViewGroup {
                         isVertical ? handle.getTop() - mTopOffset : 0);
                 drawChild(canvas, mContent, drawingTime);
                 canvas.restore();
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(mExpanded)        
         {
             drawChild(canvas, mContent, drawingTime);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.710 -0400", hash_original_method = "5CD9193E39A65D0460D4DE7F7A8E61BB", hash_generated_method = "3DC995BB7BB6F0FD711E20DF3A25781A")
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(b);
         addTaint(r);
         addTaint(t);
@@ -313,7 +313,7 @@ public class SlidingDrawer extends ViewGroup {
     if(mTracking)        
         {
             return;
-        } //End block
+        } 
         final int width = r - l;
         final int height = b - t;
         final View handle = mHandle;
@@ -328,7 +328,7 @@ public class SlidingDrawer extends ViewGroup {
             childTop = mExpanded ? mTopOffset : height - childHeight + mBottomOffset;
             content.layout(0, mTopOffset + childHeight, content.getMeasuredWidth(),
                     mTopOffset + childHeight + content.getMeasuredHeight());
-        } //End block
+        } 
         else
         {
             childLeft = mExpanded ? mTopOffset : width - childWidth + mBottomOffset;
@@ -336,26 +336,26 @@ public class SlidingDrawer extends ViewGroup {
             content.layout(mTopOffset + childWidth, 0,
                     mTopOffset + childWidth + content.getMeasuredWidth(),
                     content.getMeasuredHeight());
-        } //End block
+        } 
         handle.layout(childLeft, childTop, childLeft + childWidth, childTop + childHeight);
         mHandleHeight = handle.getHeight();
         mHandleWidth = handle.getWidth();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.711 -0400", hash_original_method = "DEC86D4E986198170B4E32A8C9B969F8", hash_generated_method = "3484DF20282D25F766F2ED10CE755950")
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
     if(mLocked)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1677126134 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_81310261 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_81310261;
-        } //End block
+        } 
         final int action = event.getAction();
         float x = event.getX();
         float y = event.getY();
@@ -367,7 +367,7 @@ public class SlidingDrawer extends ViewGroup {
             boolean var68934A3E9455FA72420237EB05902327_1683473240 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2052964576 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2052964576;
-        } //End block
+        } 
     if(action == MotionEvent.ACTION_DOWN)        
         {
             mTracking = true;
@@ -376,40 +376,40 @@ public class SlidingDrawer extends ViewGroup {
     if(mOnDrawerScrollListener != null)            
             {
                 mOnDrawerScrollListener.onScrollStarted();
-            } //End block
+            } 
     if(mVertical)            
             {
                 final int top = mHandle.getTop();
                 mTouchDelta = (int) y - top;
                 prepareTracking(top);
-            } //End block
+            } 
             else
             {
                 final int left = mHandle.getLeft();
                 mTouchDelta = (int) x - left;
                 prepareTracking(left);
-            } //End block
+            } 
             mVelocityTracker.addMovement(event);
-        } //End block
+        } 
         boolean varB326B5062B2F0E69046810717534CB09_17160114 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_373799542 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_373799542;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.714 -0400", hash_original_method = "BD859C70C763183DAB172469AFBE0279", hash_generated_method = "CE829700E8AE535786DFA2169FBE205B")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
     if(mLocked)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1937624116 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1037596541 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1037596541;
-        } //End block
+        } 
     if(mTracking)        
         {
             mVelocityTracker.addMovement(event);
@@ -433,29 +433,29 @@ switch(action){
     if(xVelocity < 0)                    
                     {
                         xVelocity = -xVelocity;
-                    } //End block
+                    } 
     if(xVelocity > mMaximumMinorVelocity)                    
                     {
                         xVelocity = mMaximumMinorVelocity;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     negative = xVelocity < 0;
     if(yVelocity < 0)                    
                     {
                         yVelocity = -yVelocity;
-                    } //End block
+                    } 
     if(yVelocity > mMaximumMinorVelocity)                    
                     {
                         yVelocity = mMaximumMinorVelocity;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 float velocity = (float) Math.hypot(xVelocity, yVelocity);
     if(negative)                
                 {
                     velocity = -velocity;
-                } //End block
+                } 
                 final int top = mHandle.getTop();
                 final int left = mHandle.getLeft();
     if(Math.abs(velocity) < mMaximumTapVelocity)                
@@ -473,35 +473,35 @@ switch(action){
     if(mExpanded)                            
                             {
                                 animateClose(vertical ? top : left);
-                            } //End block
+                            } 
                             else
                             {
                                 animateOpen(vertical ? top : left);
-                            } //End block
-                        } //End block
+                            } 
+                        } 
                         else
                         {
                             performFling(vertical ? top : left, velocity, false);
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         performFling(vertical ? top : left, velocity, false);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     performFling(vertical ? top : left, velocity, false);
-                } //End block
-            } //End block
+                } 
+            } 
             break;
 }
-        } //End block
+        } 
         boolean varCDCADA0FF00F152B6F2B05FCBD754767_2009570073 = (mTracking || mAnimating || super.onTouchEvent(event));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1475972568 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1475972568;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -510,9 +510,9 @@ switch(action){
         addTaint(position);
         prepareTracking(position);
         performFling(position, mMaximumAcceleration, true);
-        // ---------- Original Method ----------
-        //prepareTracking(position);
-        //performFling(position, mMaximumAcceleration, true);
+        
+        
+        
     }
 
     
@@ -521,9 +521,9 @@ switch(action){
         addTaint(position);
         prepareTracking(position);
         performFling(position, -mMaximumAcceleration, true);
-        // ---------- Original Method ----------
-        //prepareTracking(position);
-        //performFling(position, -mMaximumAcceleration, true);
+        
+        
+        
     }
 
     
@@ -542,17 +542,17 @@ switch(action){
     if(velocity < 0)                
                 {
                     mAnimatedVelocity = 0;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 mAnimatedAcceleration = -mMaximumAcceleration;
     if(velocity > 0)                
                 {
                     mAnimatedVelocity = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
     if(!always && (velocity > mMaximumMajorVelocity ||
@@ -563,17 +563,17 @@ switch(action){
     if(velocity < 0)                
                 {
                     mAnimatedVelocity = 0;
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 mAnimatedAcceleration = -mMaximumAcceleration;
     if(velocity > 0)                
                 {
                     mAnimatedVelocity = 0;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         long now = SystemClock.uptimeMillis();
         mAnimationLastTime = now;
         mCurrentAnimationTime = now + ANIMATION_FRAME_DURATION;
@@ -581,8 +581,8 @@ switch(action){
         mHandler.removeMessages(MSG_ANIMATE);
         mHandler.sendMessageAtTime(mHandler.obtainMessage(MSG_ANIMATE), mCurrentAnimationTime);
         stopTracking();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -605,18 +605,18 @@ switch(action){
             mAnimationLastTime = now;
             mCurrentAnimationTime = now + ANIMATION_FRAME_DURATION;
             mAnimating = true;
-        } //End block
+        } 
         else
         {
     if(mAnimating)            
             {
                 mAnimating = false;
                 mHandler.removeMessages(MSG_ANIMATE);
-            } //End block
+            } 
             moveHandle(position);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -630,14 +630,14 @@ switch(action){
             {
                 handle.offsetTopAndBottom(mTopOffset - handle.getTop());
                 invalidate();
-            } //End block
+            } 
             else
     if(position == COLLAPSED_FULL_CLOSED)            
             {
                 handle.offsetTopAndBottom(mBottomOffset + mBottom - mTop -
                         mHandleHeight - handle.getTop());
                 invalidate();
-            } //End block
+            } 
             else
             {
                 final int top = handle.getTop();
@@ -645,12 +645,12 @@ switch(action){
     if(position < mTopOffset)                
                 {
                     deltaY = mTopOffset - top;
-                } //End block
+                } 
                 else
     if(deltaY > mBottomOffset + mBottom - mTop - mHandleHeight - top)                
                 {
                     deltaY = mBottomOffset + mBottom - mTop - mHandleHeight - top;
-                } //End block
+                } 
                 handle.offsetTopAndBottom(deltaY);
                 final Rect frame = mFrame;
                 final Rect region = mInvalidate;
@@ -660,22 +660,22 @@ switch(action){
                 region.union(0, frame.bottom - deltaY, getWidth(),
                         frame.bottom - deltaY + mContent.getHeight());
                 invalidate(region);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
     if(position == EXPANDED_FULL_OPEN)            
             {
                 handle.offsetLeftAndRight(mTopOffset - handle.getLeft());
                 invalidate();
-            } //End block
+            } 
             else
     if(position == COLLAPSED_FULL_CLOSED)            
             {
                 handle.offsetLeftAndRight(mBottomOffset + mRight - mLeft -
                         mHandleWidth - handle.getLeft());
                 invalidate();
-            } //End block
+            } 
             else
             {
                 final int left = handle.getLeft();
@@ -683,12 +683,12 @@ switch(action){
     if(position < mTopOffset)                
                 {
                     deltaX = mTopOffset - left;
-                } //End block
+                } 
                 else
     if(deltaX > mBottomOffset + mRight - mLeft - mHandleWidth - left)                
                 {
                     deltaX = mBottomOffset + mRight - mLeft - mHandleWidth - left;
-                } //End block
+                } 
                 handle.offsetLeftAndRight(deltaX);
                 final Rect frame = mFrame;
                 final Rect region = mInvalidate;
@@ -698,10 +698,10 @@ switch(action){
                 region.union(frame.right - deltaX, 0,
                         frame.right - deltaX + mContent.getWidth(), getHeight());
                 invalidate(region);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -710,7 +710,7 @@ switch(action){
     if(mAnimating)        
         {
             return;
-        } //End block
+        } 
         final View content = mContent;
     if(content.isLayoutRequested())        
         {
@@ -722,7 +722,7 @@ switch(action){
                         MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY));
                 content.layout(0, mTopOffset + childHeight, content.getMeasuredWidth(),
                         mTopOffset + childHeight + content.getMeasuredHeight());
-            } //End block
+            } 
             else
             {
                 final int childWidth = mHandle.getWidth();
@@ -732,14 +732,14 @@ switch(action){
                 content.layout(childWidth + mTopOffset, 0,
                         mTopOffset + childWidth + content.getMeasuredWidth(),
                         content.getMeasuredHeight());
-            } //End block
-        } //End block
+            } 
+        } 
         content.getViewTreeObserver().dispatchOnPreDraw();
     if(!content.isHardwareAccelerated())        
         content.buildDrawingCache();
         content.setVisibility(View.GONE);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -750,22 +750,22 @@ switch(action){
     if(mOnDrawerScrollListener != null)        
         {
             mOnDrawerScrollListener.onScrollEnded();
-        } //End block
+        } 
     if(mVelocityTracker != null)        
         {
             mVelocityTracker.recycle();
             mVelocityTracker = null;
-        } //End block
-        // ---------- Original Method ----------
-        //mHandle.setPressed(false);
-        //mTracking = false;
-        //if (mOnDrawerScrollListener != null) {
-            //mOnDrawerScrollListener.onScrollEnded();
-        //}
-        //if (mVelocityTracker != null) {
-            //mVelocityTracker.recycle();
-            //mVelocityTracker = null;
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+            
+            
+        
     }
 
     
@@ -778,37 +778,37 @@ switch(action){
             {
                 mAnimating = false;
                 closeDrawer();
-            } //End block
+            } 
             else
     if(mAnimationPosition < mTopOffset)            
             {
                 mAnimating = false;
                 openDrawer();
-            } //End block
+            } 
             else
             {
                 moveHandle((int) mAnimationPosition);
                 mCurrentAnimationTime += ANIMATION_FRAME_DURATION;
                 mHandler.sendMessageAtTime(mHandler.obtainMessage(MSG_ANIMATE),
                         mCurrentAnimationTime);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (mAnimating) {
-            //incrementAnimation();
-            //if (mAnimationPosition >= mBottomOffset + (mVertical ? getHeight() : getWidth()) - 1) {
-                //mAnimating = false;
-                //closeDrawer();
-            //} else if (mAnimationPosition < mTopOffset) {
-                //mAnimating = false;
-                //openDrawer();
-            //} else {
-                //moveHandle((int) mAnimationPosition);
-                //mCurrentAnimationTime += ANIMATION_FRAME_DURATION;
-                //mHandler.sendMessageAtTime(mHandler.obtainMessage(MSG_ANIMATE),
-                        //mCurrentAnimationTime);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+                
+                
+            
+                
+                
+                
+                        
+            
+        
     }
 
     
@@ -822,15 +822,15 @@ switch(action){
         mAnimationPosition = position + (v * t) + (0.5f * a * t * t);
         mAnimatedVelocity = v + (a * t);
         mAnimationLastTime = now;
-        // ---------- Original Method ----------
-        //long now = SystemClock.uptimeMillis();
-        //float t = (now - mAnimationLastTime) / 1000.0f;
-        //final float position = mAnimationPosition;
-        //final float v = mAnimatedVelocity;
-        //final float a = mAnimatedAcceleration;
-        //mAnimationPosition = position + (v * t) + (0.5f * a * t * t);
-        //mAnimatedVelocity = v + (a * t);
-        //mAnimationLastTime = now;
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -839,21 +839,21 @@ switch(action){
     if(!mExpanded)        
         {
             openDrawer();
-        } //End block
+        } 
         else
         {
             closeDrawer();
-        } //End block
+        } 
         invalidate();
         requestLayout();
-        // ---------- Original Method ----------
-        //if (!mExpanded) {
-            //openDrawer();
-        //} else {
-            //closeDrawer();
-        //}
-        //invalidate();
-        //requestLayout();
+        
+        
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -862,17 +862,17 @@ switch(action){
     if(!mExpanded)        
         {
             animateOpen();
-        } //End block
+        } 
         else
         {
             animateClose();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mExpanded) {
-            //animateOpen();
-        //} else {
-            //animateClose();
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -882,11 +882,11 @@ switch(action){
         invalidate();
         requestLayout();
         sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
-        // ---------- Original Method ----------
-        //openDrawer();
-        //invalidate();
-        //requestLayout();
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
+        
+        
+        
+        
+        
     }
 
     
@@ -895,10 +895,10 @@ switch(action){
         closeDrawer();
         invalidate();
         requestLayout();
-        // ---------- Original Method ----------
-        //closeDrawer();
-        //invalidate();
-        //requestLayout();
+        
+        
+        
+        
     }
 
     
@@ -909,22 +909,22 @@ switch(action){
     if(scrollListener != null)        
         {
             scrollListener.onScrollStarted();
-        } //End block
+        } 
         animateClose(mVertical ? mHandle.getTop() : mHandle.getLeft());
     if(scrollListener != null)        
         {
             scrollListener.onScrollEnded();
-        } //End block
-        // ---------- Original Method ----------
-        //prepareContent();
-        //final OnDrawerScrollListener scrollListener = mOnDrawerScrollListener;
-        //if (scrollListener != null) {
-            //scrollListener.onScrollStarted();
-        //}
-        //animateClose(mVertical ? mHandle.getTop() : mHandle.getLeft());
-        //if (scrollListener != null) {
-            //scrollListener.onScrollEnded();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -935,24 +935,24 @@ switch(action){
     if(scrollListener != null)        
         {
             scrollListener.onScrollStarted();
-        } //End block
+        } 
         animateOpen(mVertical ? mHandle.getTop() : mHandle.getLeft());
         sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
     if(scrollListener != null)        
         {
             scrollListener.onScrollEnded();
-        } //End block
-        // ---------- Original Method ----------
-        //prepareContent();
-        //final OnDrawerScrollListener scrollListener = mOnDrawerScrollListener;
-        //if (scrollListener != null) {
-            //scrollListener.onScrollStarted();
-        //}
-        //animateOpen(mVertical ? mHandle.getTop() : mHandle.getLeft());
-        //sendAccessibilityEvent(AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED);
-        //if (scrollListener != null) {
-            //scrollListener.onScrollEnded();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -964,23 +964,23 @@ switch(action){
     if(!mExpanded)        
         {
             return;
-        } //End block
+        } 
         mExpanded = false;
     if(mOnDrawerCloseListener != null)        
         {
             mOnDrawerCloseListener.onDrawerClosed();
-        } //End block
-        // ---------- Original Method ----------
-        //moveHandle(COLLAPSED_FULL_CLOSED);
-        //mContent.setVisibility(View.GONE);
-        //mContent.destroyDrawingCache();
-        //if (!mExpanded) {
-            //return;
-        //}
-        //mExpanded = false;
-        //if (mOnDrawerCloseListener != null) {
-            //mOnDrawerCloseListener.onDrawerClosed();
-        //}
+        } 
+        
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
@@ -991,102 +991,111 @@ switch(action){
     if(mExpanded)        
         {
             return;
-        } //End block
+        } 
         mExpanded = true;
     if(mOnDrawerOpenListener != null)        
         {
             mOnDrawerOpenListener.onDrawerOpened();
-        } //End block
-        // ---------- Original Method ----------
-        //moveHandle(EXPANDED_FULL_OPEN);
-        //mContent.setVisibility(View.VISIBLE);
-        //if (mExpanded) {
-            //return;
-        //}
-        //mExpanded = true;
-        //if (mOnDrawerOpenListener != null) {
-            //mOnDrawerOpenListener.onDrawerOpened();
-        //}
+        } 
+        
+        
+        
+        
+            
+        
+        
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.726 -0400", hash_original_method = "2D7D8ECE305828F8F9DDACE01A4242C8", hash_generated_method = "E0B3A9851C5CE8512DC9E29CB4D86103")
     public void setOnDrawerOpenListener(OnDrawerOpenListener onDrawerOpenListener) {
         mOnDrawerOpenListener = onDrawerOpenListener;
-        // ---------- Original Method ----------
-        //mOnDrawerOpenListener = onDrawerOpenListener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.727 -0400", hash_original_method = "C6CA4E8603B3A8F496AF48C05AA699E0", hash_generated_method = "D9344A1513C556879AF916B3DDD50A11")
     public void setOnDrawerCloseListener(OnDrawerCloseListener onDrawerCloseListener) {
         mOnDrawerCloseListener = onDrawerCloseListener;
-        // ---------- Original Method ----------
-        //mOnDrawerCloseListener = onDrawerCloseListener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.727 -0400", hash_original_method = "F07CA388B1E1CC74CA965772D9BCDE7A", hash_generated_method = "0BFCFBDA38F914A759C4F0D488769B85")
     public void setOnDrawerScrollListener(OnDrawerScrollListener onDrawerScrollListener) {
         mOnDrawerScrollListener = onDrawerScrollListener;
-        // ---------- Original Method ----------
-        //mOnDrawerScrollListener = onDrawerScrollListener;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.727 -0400", hash_original_method = "AE3D3479E28037BEE2B8772FADCA394B", hash_generated_method = "94AB984A2429AFC7BDDF36D4FF0F276E")
     public View getHandle() {
 View varD901D87B73FFED5C94BAE428F6AEDBC4_2043823957 =         mHandle;
         varD901D87B73FFED5C94BAE428F6AEDBC4_2043823957.addTaint(taint);
         return varD901D87B73FFED5C94BAE428F6AEDBC4_2043823957;
-        // ---------- Original Method ----------
-        //return mHandle;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "383B97EB3876FB14240EC86DEF6C8427", hash_generated_method = "DD1C0840FF39634C85FCBF1774A491F4")
     public View getContent() {
 View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
         var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952.addTaint(taint);
         return var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952;
-        // ---------- Original Method ----------
-        //return mContent;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "2AEB4587AE0C07EB559A85B7E1ABA252", hash_generated_method = "E314C470674ECCC8403E0DBB0C6B63EB")
     public void unlock() {
         mLocked = false;
-        // ---------- Original Method ----------
-        //mLocked = false;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "32E6B7DBEEDBFAF28CCF0157F60F94F0", hash_generated_method = "AEE9AFA1D471F580D02FECAFDC04CE19")
     public void lock() {
         mLocked = true;
-        // ---------- Original Method ----------
-        //mLocked = true;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "A0663ABB788C8A0905C7EF76DE01C422", hash_generated_method = "4036FD1AAC322E0D562D830B86462887")
     public boolean isOpened() {
         boolean varEA52AC187B90D5B6EA1A48C8DE714672_2099520313 = (mExpanded);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_971851830 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_971851830;
-        // ---------- Original Method ----------
-        //return mExpanded;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "E24D6C05B3C8D3641FA197063B5CFCA4", hash_generated_method = "942325D77D986BE8C59ADFDA2F99BF57")
     public boolean isMoving() {
         boolean var060E86913631F7A7ACCFE3F8B176ED56_2036179173 = (mTracking || mAnimating);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1548641141 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1548641141;
-        // ---------- Original Method ----------
-        //return mTracking || mAnimating;
+        
+        
     }
 
     
@@ -1095,35 +1104,35 @@ View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.728 -0400", hash_original_method = "8DAFF423CC5901B0B532AD847FEA0938", hash_generated_method = "8DAFF423CC5901B0B532AD847FEA0938")
         public DrawerToggler ()
         {
-            //Synthesized constructor
+            
         }
 
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.729 -0400", hash_original_method = "D5ABF7EB3B9C4ED77CCCF3551465E2CF", hash_generated_method = "069C64D09D02AEAEBE2B605AA2A44B1B")
         public void onClick(View v) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(v.getTaint());
     if(mLocked)            
             {
                 return;
-            } //End block
+            } 
     if(mAnimateOnClick)            
             {
                 animateToggle();
-            } //End block
+            } 
             else
             {
                 toggle();
-            } //End block
-            // ---------- Original Method ----------
-            //if (mLocked) {
-                //return;
-            //}
-            //if (mAnimateOnClick) {
-                //animateToggle();
-            //} else {
-                //toggle();
-            //}
+            } 
+            
+            
+                
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1136,7 +1145,7 @@ View var5A3DC7582C8B2D33F643D83FF89F34A9_1984457952 =         mContent;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:10.729 -0400", hash_original_method = "44797BB1CCD092762141D42397C614B8", hash_generated_method = "44797BB1CCD092762141D42397C614B8")
         public SlidingHandler ()
         {
-            //Synthesized constructor
+            
         }
 
 
@@ -1148,12 +1157,12 @@ switch(m.what){
             doAnimation();
             break;
 }
-            // ---------- Original Method ----------
-            //switch (m.what) {
-                //case MSG_ANIMATE:
-                    //doAnimation();
-                    //break;
-            //}
+            
+            
+                
+                    
+                    
+            
         }
 
         

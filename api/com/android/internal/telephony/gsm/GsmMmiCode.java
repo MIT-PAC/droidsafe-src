@@ -1,6 +1,6 @@
 package com.android.internal.telephony.gsm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -64,9 +64,9 @@ public final class GsmMmiCode extends Handler implements MmiCode {
         super(phone.getHandler().getLooper());
         this.phone = phone;
         this.context = phone.getContext();
-        // ---------- Original Method ----------
-        //this.phone = phone;
-        //this.context = phone.getContext();
+        
+        
+        
     }
 
     
@@ -238,23 +238,25 @@ public final class GsmMmiCode extends Handler implements MmiCode {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "83A2E3FFD7B88E291F9EB06E3105AC3A", hash_generated_method = "1011BDE16286B5AA22D002FBB93D64A9")
     public State getState() {
 State var37C56C9D63C623261861C16DCFB73F6D_1866741360 =         state;
         var37C56C9D63C623261861C16DCFB73F6D_1866741360.addTaint(taint);
         return var37C56C9D63C623261861C16DCFB73F6D_1866741360;
-        // ---------- Original Method ----------
-        //return state;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.852 -0400", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "BA9F214D9A0EE5A893ABC2D8884C71D6")
     public CharSequence getMessage() {
 CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         varFD182D7074F3848E773A38B067BBB880_747266200.addTaint(taint);
         return varFD182D7074F3848E773A38B067BBB880_747266200;
-        // ---------- Original Method ----------
-        //return message;
+        
+        
     }
 
     
@@ -263,46 +265,48 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     if(state == State.COMPLETE || state == State.FAILED)        
         {
             return;
-        } //End block
+        } 
         state = State.CANCELLED;
     if(isPendingUSSD)        
         {
             phone.mCM.cancelPendingUssd(obtainMessage(EVENT_USSD_CANCEL_COMPLETE, this));
-        } //End block
+        } 
         else
         {
             phone.onMMIDone (this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == State.COMPLETE || state == State.FAILED) {
-            //return;
-        //}
-        //state = State.CANCELLED;
-        //if (isPendingUSSD) {
-            //phone.mCM.cancelPendingUssd(obtainMessage(EVENT_USSD_CANCEL_COMPLETE, this));
-        //} else {
-            //phone.onMMIDone (this);
-        //}
+        } 
+        
+        
+            
+        
+        
+        
+            
+        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "248235E8DF3E05BA5583B3AF86C41C77", hash_generated_method = "F919D4CF978BC51E826C8EED39D24FCF")
     public boolean isCancelable() {
         boolean var8D111C48FFCFB880A1878EEA7D383221_976621444 = (isPendingUSSD);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2101252221 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2101252221;
-        // ---------- Original Method ----------
-        //return isPendingUSSD;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.853 -0400", hash_original_method = "C3EFABB6ACCE73BCC8BAFC802C5DCA3C", hash_generated_method = "88234E2A4122F8F1349F78D51632D6E0")
      boolean isMMI() {
         boolean varFA8A19485DF9D2474D2439AA7B853812_1892326349 = (poundString != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2012395845 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2012395845;
-        // ---------- Original Method ----------
-        //return poundString != null;
+        
+        
     }
 
     
@@ -312,9 +316,9 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                     && dialingNumber != null && dialingNumber.length() <= 2);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_120720021 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_120720021;
-        // ---------- Original Method ----------
-        //return poundString == null
-                    //&& dialingNumber != null && dialingNumber.length() <= 2;
+        
+        
+                    
     }
 
     
@@ -375,9 +379,9 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                               || sc.equals(SC_PUK) || sc.equals(SC_PUK2)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_729503747 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_729503747;
-        // ---------- Original Method ----------
-        //return sc != null && (sc.equals(SC_PIN) || sc.equals(SC_PIN2)
-                              //|| sc.equals(SC_PUK) || sc.equals(SC_PUK2));
+        
+        
+                              
     }
 
     
@@ -387,9 +391,9 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                 && (isActivate() || isDeactivate()));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2068926924 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2068926924;
-        // ---------- Original Method ----------
-        //return sc != null && sc.equals(SC_CLIR) && dialingNumber != null
-                //&& (isActivate() || isDeactivate());
+        
+        
+                
     }
 
     
@@ -402,27 +406,27 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                 int varD38B27557D595B778DCFAE299AD92029_475630536 = (CommandsInterface.CLIR_SUPPRESSION);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828717328 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_828717328;
-            } //End block
+            } 
             else
     if(isDeactivate())            
             {
                 int varA3FE8AA79AD35CC33958C8A8D3703FFE_484501443 = (CommandsInterface.CLIR_INVOCATION);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237023369 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_237023369;
-            } //End block
-        } //End block
+            } 
+        } 
         int varD7A3850F0E720499810E0323D2FBBEBF_735304406 = (CommandsInterface.CLIR_DEFAULT);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43315797 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_43315797;
-        // ---------- Original Method ----------
-        //if (sc != null && sc.equals(SC_CLIR)) {
-            //if (isActivate()) {
-                //return CommandsInterface.CLIR_SUPPRESSION;
-            //} else if (isDeactivate()) {
-                //return CommandsInterface.CLIR_INVOCATION;
-            //}
-        //}
-        //return CommandsInterface.CLIR_DEFAULT;
+        
+        
+            
+                
+            
+                
+            
+        
+        
     }
 
     
@@ -431,8 +435,8 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         boolean varD51B6B7143DCE4C416EB68FBE2262A64_2084125401 = (action != null && action.equals(ACTION_ACTIVATE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2042777525 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2042777525;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_ACTIVATE);
+        
+        
     }
 
     
@@ -441,8 +445,8 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         boolean var356C7756771A8BB8E836AC8D33500DBC_1164131376 = (action != null && action.equals(ACTION_DEACTIVATE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1528719908 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1528719908;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_DEACTIVATE);
+        
+        
     }
 
     
@@ -451,8 +455,8 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         boolean var18153B4C33E04B05BBB237A6E5701168_1876145613 = (action != null && action.equals(ACTION_INTERROGATE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_292841985 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_292841985;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_INTERROGATE);
+        
+        
     }
 
     
@@ -461,8 +465,8 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         boolean var8AFE299431940E3F9012D8FC2BB2FDCF_2093416497 = (action != null && action.equals(ACTION_REGISTER));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1262444773 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1262444773;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_REGISTER);
+        
+        
     }
 
     
@@ -471,28 +475,30 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         boolean var3CF522A21BDFB54475D8AFDFA2BB1D25_224834027 = (action != null && action.equals(ACTION_ERASURE));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_778635161 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_778635161;
-        // ---------- Original Method ----------
-        //return action != null && action.equals(ACTION_ERASURE);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "18A8B0A5C57D2FDE667C353F321E4EE3", hash_generated_method = "D1426B38C98748E3CD9B89A94D662375")
     public boolean isPendingUSSD() {
         boolean var8D111C48FFCFB880A1878EEA7D383221_1736971155 = (isPendingUSSD);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1677432286 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1677432286;
-        // ---------- Original Method ----------
-        //return isPendingUSSD;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.856 -0400", hash_original_method = "29AF801768BF493864C8071B1DB2A48B", hash_generated_method = "221FF785768C43F8ADF9D4BB61D8A80E")
     public boolean isUssdRequest() {
         boolean var07574527064CCEC9D1F5EEA5FA7C4751_727021311 = (isUssdRequest);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_694110934 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_694110934;
-        // ---------- Original Method ----------
-        //return isUssdRequest;
+        
+        
     }
 
     
@@ -504,14 +510,14 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
             {
                 Log.d(LOG_TAG, "isShortCode");
                 sendUssd(dialingNumber);
-            } //End block
+            } 
             else
     if(dialingNumber != null)            
             {
                 RuntimeException var2E49DDD3355A805A242019B4EA18BC60_509650858 = new RuntimeException ("Invalid or Unsupported MMI Code");
                 var2E49DDD3355A805A242019B4EA18BC60_509650858.addTaint(taint);
                 throw var2E49DDD3355A805A242019B4EA18BC60_509650858;
-            } //End block
+            } 
             else
     if(sc != null && sc.equals(SC_CLIP))            
             {
@@ -520,14 +526,14 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                 {
                     phone.mCM.queryCLIP(
                             obtainMessage(EVENT_QUERY_COMPLETE, this));
-                } //End block
+                } 
                 else
                 {
                     RuntimeException var2E49DDD3355A805A242019B4EA18BC60_816508421 = new RuntimeException ("Invalid or Unsupported MMI Code");
                     var2E49DDD3355A805A242019B4EA18BC60_816508421.addTaint(taint);
                     throw var2E49DDD3355A805A242019B4EA18BC60_816508421;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(sc != null && sc.equals(SC_CLIR))            
             {
@@ -536,26 +542,26 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                 {
                     phone.mCM.setCLIR(CommandsInterface.CLIR_INVOCATION,
                         obtainMessage(EVENT_SET_COMPLETE, this));
-                } //End block
+                } 
                 else
     if(isDeactivate())                
                 {
                     phone.mCM.setCLIR(CommandsInterface.CLIR_SUPPRESSION,
                         obtainMessage(EVENT_SET_COMPLETE, this));
-                } //End block
+                } 
                 else
     if(isInterrogate())                
                 {
                     phone.mCM.getCLIR(
                         obtainMessage(EVENT_GET_CLIR_COMPLETE, this));
-                } //End block
+                } 
                 else
                 {
                     RuntimeException var2E49DDD3355A805A242019B4EA18BC60_1218181830 = new RuntimeException ("Invalid or Unsupported MMI Code");
                     var2E49DDD3355A805A242019B4EA18BC60_1218181830.addTaint(taint);
                     throw var2E49DDD3355A805A242019B4EA18BC60_1218181830;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(isServiceCodeCallForwarding(sc))            
             {
@@ -569,35 +575,35 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                     phone.mCM.queryCallForwardStatus(
                             reason, serviceClass,  dialingNumber,
                                 obtainMessage(EVENT_QUERY_CF_COMPLETE, this));
-                } //End block
+                } 
                 else
                 {
                     int cfAction;
     if(isActivate())                    
                     {
                         cfAction = CommandsInterface.CF_ACTION_ENABLE;
-                    } //End block
+                    } 
                     else
     if(isDeactivate())                    
                     {
                         cfAction = CommandsInterface.CF_ACTION_DISABLE;
-                    } //End block
+                    } 
                     else
     if(isRegister())                    
                     {
                         cfAction = CommandsInterface.CF_ACTION_REGISTRATION;
-                    } //End block
+                    } 
                     else
     if(isErasure())                    
                     {
                         cfAction = CommandsInterface.CF_ACTION_ERASURE;
-                    } //End block
+                    } 
                     else
                     {
                         RuntimeException varBE297E2E2298C577E9B1609E5D2C9636_687025510 = new RuntimeException ("invalid action");
                         varBE297E2E2298C577E9B1609E5D2C9636_687025510.addTaint(taint);
                         throw varBE297E2E2298C577E9B1609E5D2C9636_687025510;
-                    } //End block
+                    } 
                     int isSettingUnconditionalVoice = (((reason == CommandsInterface.CF_REASON_UNCONDITIONAL) ||
                                 (reason == CommandsInterface.CF_REASON_ALL)) &&
                                 (((serviceClass & CommandsInterface.SERVICE_CLASS_VOICE) != 0) ||
@@ -610,8 +616,8 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                                     EVENT_SET_CFF_COMPLETE,
                                     isSettingUnconditionalVoice,
                                     isEnableDesired, this));
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(isServiceCodeCallBarring(sc))            
             {
@@ -622,20 +628,20 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                 {
                     phone.mCM.queryFacilityLock(facility, password,
                             serviceClass, obtainMessage(EVENT_QUERY_COMPLETE, this));
-                } //End block
+                } 
                 else
     if(isActivate() || isDeactivate())                
                 {
                     phone.mCM.setFacilityLock(facility, isActivate(), password,
                             serviceClass, obtainMessage(EVENT_SET_COMPLETE, this));
-                } //End block
+                } 
                 else
                 {
                     RuntimeException var2E49DDD3355A805A242019B4EA18BC60_723520706 = new RuntimeException ("Invalid or Unsupported MMI Code");
                     var2E49DDD3355A805A242019B4EA18BC60_723520706.addTaint(taint);
                     throw var2E49DDD3355A805A242019B4EA18BC60_723520706;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(sc != null && sc.equals(SC_PWD))            
             {
@@ -648,28 +654,28 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     if(sia == null)                    
                     {
                         facility = CommandsInterface.CB_FACILITY_BA_ALL;
-                    } //End block
+                    } 
                     else
                     {
                         facility = scToBarringFacility(sia);
-                    } //End block
+                    } 
     if(newPwd.equals(pwd))                    
                     {
                         phone.mCM.changeBarringPassword(facility, oldPwd,
                                 newPwd, obtainMessage(EVENT_SET_COMPLETE, this));
-                    } //End block
+                    } 
                     else
                     {
                         handlePasswordError(com.android.internal.R.string.passwordIncorrect);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
                 {
                     RuntimeException var2E49DDD3355A805A242019B4EA18BC60_612347304 = new RuntimeException ("Invalid or Unsupported MMI Code");
                     var2E49DDD3355A805A242019B4EA18BC60_612347304.addTaint(taint);
                     throw var2E49DDD3355A805A242019B4EA18BC60_612347304;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(sc != null && sc.equals(SC_WAIT))            
             {
@@ -678,20 +684,20 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
                 {
                     phone.mCM.setCallWaiting(isActivate(), serviceClass,
                             obtainMessage(EVENT_SET_COMPLETE, this));
-                } //End block
+                } 
                 else
     if(isInterrogate())                
                 {
                     phone.mCM.queryCallWaiting(serviceClass,
                             obtainMessage(EVENT_QUERY_COMPLETE, this));
-                } //End block
+                } 
                 else
                 {
                     RuntimeException var2E49DDD3355A805A242019B4EA18BC60_712378043 = new RuntimeException ("Invalid or Unsupported MMI Code");
                     var2E49DDD3355A805A242019B4EA18BC60_712378043.addTaint(taint);
                     throw var2E49DDD3355A805A242019B4EA18BC60_712378043;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(isPinCommand())            
             {
@@ -703,72 +709,72 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
     if(!newPin.equals(sic))                    
                     {
                         handlePasswordError(com.android.internal.R.string.mismatchPin);
-                    } //End block
+                    } 
                     else
     if(pinLen < 4 || pinLen > 8)                    
                     {
                         handlePasswordError(com.android.internal.R.string.invalidPin);
-                    } //End block
+                    } 
                     else
     if(sc.equals(SC_PIN) &&
                                phone.mIccCard.getState() == SimCard.State.PUK_REQUIRED)                    
                     {
                         handlePasswordError(com.android.internal.R.string.needPuk);
-                    } //End block
+                    } 
                     else
                     {
     if(sc.equals(SC_PIN))                        
                         {
                             phone.mCM.changeIccPin(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                        } //End block
+                        } 
                         else
     if(sc.equals(SC_PIN2))                        
                         {
                             phone.mCM.changeIccPin2(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                        } //End block
+                        } 
                         else
     if(sc.equals(SC_PUK))                        
                         {
                             phone.mCM.supplyIccPuk(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                        } //End block
+                        } 
                         else
     if(sc.equals(SC_PUK2))                        
                         {
                             phone.mCM.supplyIccPuk2(oldPinOrPuk, newPin,
                                     obtainMessage(EVENT_SET_COMPLETE, this));
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 else
                 {
                     RuntimeException var2E49DDD3355A805A242019B4EA18BC60_1496510003 = new RuntimeException ("Invalid or Unsupported MMI Code");
                     var2E49DDD3355A805A242019B4EA18BC60_1496510003.addTaint(taint);
                     throw var2E49DDD3355A805A242019B4EA18BC60_1496510003;
-                } //End block
-            } //End block
+                } 
+            } 
             else
     if(poundString != null)            
             {
                 sendUssd(poundString);
-            } //End block
+            } 
             else
             {
                 RuntimeException var2E49DDD3355A805A242019B4EA18BC60_1417743853 = new RuntimeException ("Invalid or Unsupported MMI Code");
                 var2E49DDD3355A805A242019B4EA18BC60_1417743853.addTaint(taint);
                 throw var2E49DDD3355A805A242019B4EA18BC60_1417743853;
-            } //End block
-        } //End block
+            } 
+        } 
         catch (RuntimeException exc)
         {
             state = State.FAILED;
             message = context.getText(com.android.internal.R.string.mmiError);
             phone.onMMIDone(this);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
@@ -781,67 +787,67 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         sb.append(context.getText(res));
         message = sb;
         phone.onMMIDone(this);
-        // ---------- Original Method ----------
-        //state = State.FAILED;
-        //StringBuilder sb = new StringBuilder(getScString());
-        //sb.append("\n");
-        //sb.append(context.getText(res));
-        //message = sb;
-        //phone.onMMIDone(this);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.862 -0400", hash_original_method = "A7DAC75B31530E6CD4845B1030678B66", hash_generated_method = "C3D13BA2A2AC3FDB3D4B1F4B0F6DB9E6")
      void onUssdFinished(String ussdMessage, boolean isUssdRequest) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(state == State.PENDING)        
         {
     if(ussdMessage == null)            
             {
                 message = context.getText(com.android.internal.R.string.mmiComplete);
-            } //End block
+            } 
             else
             {
                 message = ussdMessage;
-            } //End block
+            } 
             this.isUssdRequest = isUssdRequest;
     if(!isUssdRequest)            
             {
                 state = State.COMPLETE;
-            } //End block
+            } 
             phone.onMMIDone(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == State.PENDING) {
-            //if (ussdMessage == null) {
-                //message = context.getText(com.android.internal.R.string.mmiComplete);
-            //} else {
-                //message = ussdMessage;
-            //}
-            //this.isUssdRequest = isUssdRequest;
-            //if (!isUssdRequest) {
-                //state = State.COMPLETE;
-            //}
-            //phone.onMMIDone(this);
-        //}
+        } 
+        
+        
+            
+                
+            
+                
+            
+            
+            
+                
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:27.863 -0400", hash_original_method = "6CB35EDB68C77D37EFB134F2D3B374DA", hash_generated_method = "29CB3DD3195A2DFA68F54C3B4624BDDA")
      void onUssdFinishedError() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(state == State.PENDING)        
         {
             state = State.FAILED;
             message = context.getText(com.android.internal.R.string.mmiError);
             phone.onMMIDone(this);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == State.PENDING) {
-            //state = State.FAILED;
-            //message = context.getText(com.android.internal.R.string.mmiError);
-            //phone.onMMIDone(this);
-        //}
+        } 
+        
+        
+            
+            
+            
+        
     }
 
     
@@ -851,10 +857,10 @@ CharSequence varFD182D7074F3848E773A38B067BBB880_747266200 =         message;
         isPendingUSSD = true;
         phone.mCM.sendUSSD(ussdMessage,
             obtainMessage(EVENT_USSD_COMPLETE, this));
-        // ---------- Original Method ----------
-        //isPendingUSSD = true;
-        //phone.mCM.sendUSSD(ussdMessage,
-            //obtainMessage(EVENT_USSD_COMPLETE, this));
+        
+        
+        
+            
     }
 
     
@@ -873,7 +879,7 @@ switch(msg.what){
         {
             boolean cffEnabled = (msg.arg2 == 1);
             phone.mIccRecords.setVoiceCallForwardingFlag(1, cffEnabled);
-        } //End block
+        } 
         onSetComplete(ar);
         break;
         case EVENT_GET_CLIR_COMPLETE:
@@ -895,14 +901,14 @@ switch(msg.what){
             state = State.FAILED;
             message = getErrorMessage(ar);
             phone.onMMIDone(this);
-        } //End block
+        } 
         break;
         case EVENT_USSD_CANCEL_COMPLETE:
         phone.onMMIDone(this);
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -917,20 +923,20 @@ switch(msg.what){
 CharSequence var7546541A18C8CA4977196FFAB1512D14_541575111 =                 context.getText(com.android.internal.R.string.mmiFdnError);
                 var7546541A18C8CA4977196FFAB1512D14_541575111.addTaint(taint);
                 return var7546541A18C8CA4977196FFAB1512D14_541575111;
-            } //End block
-        } //End block
+            } 
+        } 
 CharSequence varE3E2A91E37966F79091D0455567D108C_1836740320 =         context.getText(com.android.internal.R.string.mmiError);
         varE3E2A91E37966F79091D0455567D108C_1836740320.addTaint(taint);
         return varE3E2A91E37966F79091D0455567D108C_1836740320;
-        // ---------- Original Method ----------
-        //if (ar.exception instanceof CommandException) {
-            //CommandException.Error err = ((CommandException)(ar.exception)).getCommandError();
-            //if (err == CommandException.Error.FDN_CHECK_FAILURE) {
-                //Log.i(LOG_TAG, "FDN_CHECK_FAILURE");
-                //return context.getText(com.android.internal.R.string.mmiFdnError);
-            //}
-        //}
-        //return context.getText(com.android.internal.R.string.mmiError);
+        
+        
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -943,55 +949,55 @@ CharSequence varE3E2A91E37966F79091D0455567D108C_1836740320 =         context.ge
 CharSequence var4A219DBE1020D00C65614989003A417F_910417927 =                 context.getText(com.android.internal.R.string.BaMmi);
                 var4A219DBE1020D00C65614989003A417F_910417927.addTaint(taint);
                 return var4A219DBE1020D00C65614989003A417F_910417927;
-            } //End block
+            } 
             else
     if(isServiceCodeCallForwarding(sc))            
             {
 CharSequence var0AD241621EC157480BDF093743E656D7_1844214049 =                 context.getText(com.android.internal.R.string.CfMmi);
                 var0AD241621EC157480BDF093743E656D7_1844214049.addTaint(taint);
                 return var0AD241621EC157480BDF093743E656D7_1844214049;
-            } //End block
+            } 
             else
     if(sc.equals(SC_CLIP))            
             {
 CharSequence varF9D4057DC71DAAF42812A4FDFA85D981_924230241 =                 context.getText(com.android.internal.R.string.ClipMmi);
                 varF9D4057DC71DAAF42812A4FDFA85D981_924230241.addTaint(taint);
                 return varF9D4057DC71DAAF42812A4FDFA85D981_924230241;
-            } //End block
+            } 
             else
     if(sc.equals(SC_CLIR))            
             {
 CharSequence var3B89DE57E1E9329284D992EA4D22610A_1263603527 =                 context.getText(com.android.internal.R.string.ClirMmi);
                 var3B89DE57E1E9329284D992EA4D22610A_1263603527.addTaint(taint);
                 return var3B89DE57E1E9329284D992EA4D22610A_1263603527;
-            } //End block
+            } 
             else
     if(sc.equals(SC_PWD))            
             {
 CharSequence var0F4FB2DC421820976ED3BB3C99D0704C_1132629272 =                 context.getText(com.android.internal.R.string.PwdMmi);
                 var0F4FB2DC421820976ED3BB3C99D0704C_1132629272.addTaint(taint);
                 return var0F4FB2DC421820976ED3BB3C99D0704C_1132629272;
-            } //End block
+            } 
             else
     if(sc.equals(SC_WAIT))            
             {
 CharSequence var2C556777341C88B98256CC700C9D9AD1_1222362211 =                 context.getText(com.android.internal.R.string.CwMmi);
                 var2C556777341C88B98256CC700C9D9AD1_1222362211.addTaint(taint);
                 return var2C556777341C88B98256CC700C9D9AD1_1222362211;
-            } //End block
+            } 
             else
     if(isPinCommand())            
             {
 CharSequence varC01B34D797D5ECB0C81BDA0577666337_1289804495 =                 context.getText(com.android.internal.R.string.PinMmi);
                 varC01B34D797D5ECB0C81BDA0577666337_1289804495.addTaint(taint);
                 return varC01B34D797D5ECB0C81BDA0577666337_1289804495;
-            } //End block
-        } //End block
+            } 
+        } 
 CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
         var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704.addTaint(taint);
         return var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1014,19 +1020,19 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
                         {
                             sb.append(context.getText(
                                     com.android.internal.R.string.badPuk));
-                        } //End block
+                        } 
                         else
                         {
                             sb.append(context.getText(
                                     com.android.internal.R.string.badPin));
-                        } //End block
-                    } //End block
+                        } 
+                    } 
                     else
                     {
                         sb.append(context.getText(
                                 com.android.internal.R.string.passwordIncorrect));
-                    } //End block
-                } //End block
+                    } 
+                } 
                 else
     if(err == CommandException.Error.SIM_PUK2)                
                 {
@@ -1035,24 +1041,24 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
                     sb.append("\n");
                     sb.append(context.getText(
                             com.android.internal.R.string.needPuk2));
-                } //End block
+                } 
                 else
     if(err == CommandException.Error.FDN_CHECK_FAILURE)                
                 {
                     sb.append(context.getText(com.android.internal.R.string.mmiFdnError));
-                } //End block
+                } 
                 else
                 {
                     sb.append(context.getText(
                             com.android.internal.R.string.mmiError));
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 sb.append(context.getText(
                         com.android.internal.R.string.mmiError));
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(isActivate())        
         {
@@ -1062,8 +1068,8 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
     if(sc.equals(SC_CLIR))            
             {
                 phone.saveClirSetting(CommandsInterface.CLIR_INVOCATION);
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(isDeactivate())        
         {
@@ -1073,32 +1079,32 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
     if(sc.equals(SC_CLIR))            
             {
                 phone.saveClirSetting(CommandsInterface.CLIR_SUPPRESSION);
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(isRegister())        
         {
             state = State.COMPLETE;
             sb.append(context.getText(
                     com.android.internal.R.string.serviceRegistered));
-        } //End block
+        } 
         else
     if(isErasure())        
         {
             state = State.COMPLETE;
             sb.append(context.getText(
                     com.android.internal.R.string.serviceErased));
-        } //End block
+        } 
         else
         {
             state = State.FAILED;
             sb.append(context.getText(
                     com.android.internal.R.string.mmiError));
-        } //End block
+        } 
         message = sb;
         phone.onMMIDone(this);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1111,7 +1117,7 @@ CharSequence var9CB9B6C9951BF8E98E1ABAF5E2CADCAD_1000511704 =         "";
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } //End block
+        } 
         else
         {
             int clirArgs[];
@@ -1167,11 +1173,11 @@ switch(clirArgs[0]){
 }            state = State.COMPLETE;
             break;
 }
-        } //End block
+        } 
         message = sb;
         phone.onMMIDone(this);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1216,8 +1222,8 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1697281641 =         null;
         var540C13E9E156B687226421B24F2DF178_1697281641.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1697281641;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1237,32 +1243,32 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1697281641 =         null;
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateForwardedTime);
-            } //End block
+            } 
             else
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateForwarded);
-            } //End block
-        } //End block
+            } 
+        } 
         else
     if(info.status == 0 && isEmptyOrNull(info.number))        
         {
             template = context.getText(
                         com.android.internal.R.string.cfTemplateNotForwarded);
-        } //End block
+        } 
         else
         {
     if(needTimeTemplate)            
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateRegisteredTime);
-            } //End block
+            } 
             else
             {
                 template = context.getText(
                         com.android.internal.R.string.cfTemplateRegistered);
-            } //End block
-        } //End block
+            } 
+        } 
         destinations[0] = serviceClassToCFString(info.serviceClass & serviceClassMask);
         destinations[1] = PhoneNumberUtils.stringFromStringAndTOA(info.number, info.toa);
         destinations[2] = Integer.toString(info.timeSeconds);
@@ -1272,12 +1278,12 @@ CharSequence var540C13E9E156B687226421B24F2DF178_1697281641 =         null;
         {
             boolean cffEnabled = (info.status == 1);
             phone.mIccRecords.setVoiceCallForwardingFlag(1, cffEnabled);
-        } //End block
+        } 
 CharSequence varCC00AC05189E4C48DCF26ECA130B36A6_40736997 =         TextUtils.replace(template, sources, destinations);
         varCC00AC05189E4C48DCF26ECA130B36A6_40736997.addTaint(taint);
         return varCC00AC05189E4C48DCF26ECA130B36A6_40736997;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1290,7 +1296,7 @@ CharSequence varCC00AC05189E4C48DCF26ECA130B36A6_40736997 =         TextUtils.re
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } //End block
+        } 
         else
         {
             CallForwardInfo infos[];
@@ -1299,7 +1305,7 @@ CharSequence varCC00AC05189E4C48DCF26ECA130B36A6_40736997 =         TextUtils.re
             {
                 sb.append(context.getText(com.android.internal.R.string.serviceDisabled));
                 phone.mIccRecords.setVoiceCallForwardingFlag(1, false);
-            } //End block
+            } 
             else
             {
                 SpannableStringBuilder tb = new SpannableStringBuilder();
@@ -1312,17 +1318,17 @@ for(int i = 0, s = infos.length;i < s;i++)
                             tb.append(makeCFQueryResultMessage(infos[i],
                                             serviceClassMask));
                             tb.append("\n");
-                        } //End block
-                    } //End block
-                } //End block
+                        } 
+                    } 
+                } 
                 sb.append(tb);
-            } //End block
+            } 
             state = State.COMPLETE;
-        } //End block
+        } 
         message = sb;
         phone.onMMIDone(this);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1335,7 +1341,7 @@ for(int i = 0, s = infos.length;i < s;i++)
         {
             state = State.FAILED;
             sb.append(getErrorMessage(ar));
-        } //End block
+        } 
         else
         {
             int[] ints = (int[])ar.result;
@@ -1344,37 +1350,37 @@ for(int i = 0, s = infos.length;i < s;i++)
     if(ints[0] == 0)                
                 {
                     sb.append(context.getText(com.android.internal.R.string.serviceDisabled));
-                } //End block
+                } 
                 else
     if(sc.equals(SC_WAIT))                
                 {
                     sb.append(createQueryCallWaitingResultMessage(ints[1]));
-                } //End block
+                } 
                 else
     if(isServiceCodeCallBarring(sc))                
                 {
                     sb.append(createQueryCallBarringResultMessage(ints[0]));
-                } //End block
+                } 
                 else
     if(ints[0] == 1)                
                 {
                     sb.append(context.getText(com.android.internal.R.string.serviceEnabled));
-                } //End block
+                } 
                 else
                 {
                     sb.append(context.getText(com.android.internal.R.string.mmiError));
-                } //End block
-            } //End block
+                } 
+            } 
             else
             {
                 sb.append(context.getText(com.android.internal.R.string.mmiError));
-            } //End block
+            } 
             state = State.COMPLETE;
-        } //End block
+        } 
         message = sb;
         phone.onMMIDone(this);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1388,24 +1394,24 @@ for(int classMask = 1;classMask <= SERVICE_CLASS_MAX;classMask <<= 1)
             {
                 sb.append("\n");
                 sb.append(serviceClassToCFString(classMask & serviceClass));
-            } //End block
-        } //End block
+            } 
+        } 
 CharSequence var8C7F5CF7BA5191ABF78E376D65A0039D_1727678175 =         sb;
         var8C7F5CF7BA5191ABF78E376D65A0039D_1727678175.addTaint(taint);
         return var8C7F5CF7BA5191ABF78E376D65A0039D_1727678175;
-        // ---------- Original Method ----------
-        //StringBuilder sb =
-                //new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
-        //for (int classMask = 1
-                    //; classMask <= SERVICE_CLASS_MAX
-                    //; classMask <<= 1
-        //) {
-            //if ((classMask & serviceClass) != 0) {
-                //sb.append("\n");
-                //sb.append(serviceClassToCFString(classMask & serviceClass));
-            //}
-        //}
-        //return sb;
+        
+        
+                
+        
+                    
+                    
+        
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -1419,23 +1425,23 @@ for(int classMask = 1;classMask <= SERVICE_CLASS_MAX;classMask <<= 1)
             {
                 sb.append("\n");
                 sb.append(serviceClassToCFString(classMask & serviceClass));
-            } //End block
-        } //End block
+            } 
+        } 
 CharSequence var8C7F5CF7BA5191ABF78E376D65A0039D_568196531 =         sb;
         var8C7F5CF7BA5191ABF78E376D65A0039D_568196531.addTaint(taint);
         return var8C7F5CF7BA5191ABF78E376D65A0039D_568196531;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(context.getText(com.android.internal.R.string.serviceEnabledFor));
-        //for (int classMask = 1
-                    //; classMask <= SERVICE_CLASS_MAX
-                    //; classMask <<= 1
-        //) {
-            //if ((classMask & serviceClass) != 0) {
-                //sb.append("\n");
-                //sb.append(serviceClassToCFString(classMask & serviceClass));
-            //}
-        //}
-        //return sb;
+        
+        
+        
+                    
+                    
+        
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -1464,19 +1470,19 @@ CharSequence var8C7F5CF7BA5191ABF78E376D65A0039D_568196531 =         sb;
 String var2460B846747F8B22185AD8BE722266A5_648581733 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_648581733.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_648581733;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder("GsmMmiCode {");
-        //sb.append("State=" + getState());
-        //if (action != null) sb.append(" action=" + action);
-        //if (sc != null) sb.append(" sc=" + sc);
-        //if (sia != null) sb.append(" sia=" + sia);
-        //if (sib != null) sb.append(" sib=" + sib);
-        //if (sic != null) sb.append(" sic=" + sic);
-        //if (poundString != null) sb.append(" poundString=" + poundString);
-        //if (dialingNumber != null) sb.append(" dialingNumber=" + dialingNumber);
-        //if (pwd != null) sb.append(" pwd=" + pwd);
-        //sb.append("}");
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     

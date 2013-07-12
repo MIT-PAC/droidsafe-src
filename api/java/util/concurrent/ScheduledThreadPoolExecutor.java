@@ -1,6 +1,6 @@
 package java.util.concurrent;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,7 +24,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         super(corePoolSize, Integer.MAX_VALUE, 0, TimeUnit.NANOSECONDS,
               new DelayedWorkQueue());
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,7 +35,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
               new DelayedWorkQueue(), threadFactory);
         addTaint(threadFactory.getTaint());
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -46,7 +46,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
               new DelayedWorkQueue(), handler);
         addTaint(handler.getTaint());
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -59,7 +59,7 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         addTaint(handler.getTaint());
         addTaint(threadFactory.getTaint());
         addTaint(corePoolSize);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -68,11 +68,12 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
         long var97501587DA544101C263E23F58D1EE3B_736966400 = (System.nanoTime());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2098730714 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2098730714;
-        // ---------- Original Method ----------
-        //return System.nanoTime();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.248 -0400", hash_original_method = "43122228A318CAFA2BE5FD8EB8B7119A", hash_generated_method = "B107C9BDFA967B157C4F83BE407C39E9")
      boolean canRunInCurrentRunState(boolean periodic) {
         addTaint(periodic);
@@ -81,10 +82,10 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
                                    executeExistingDelayedTasksAfterShutdown));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_378113153 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_378113153;
-        // ---------- Original Method ----------
-        //return isRunningOrShutdown(periodic ?
-                                   //continueExistingPeriodicTasksAfterShutdown :
-                                   //executeExistingDelayedTasksAfterShutdown);
+        
+        
+                                   
+                                   
     }
 
     
@@ -102,19 +103,19 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             task.cancel(false);
             else
             prestartCoreThread();
-        } //End block
-        // ---------- Original Method ----------
-        //if (isShutdown())
-            //reject(task);
-        //else {
-            //super.getQueue().add(task);
-            //if (isShutdown() &&
-                //!canRunInCurrentRunState(task.isPeriodic()) &&
-                //remove(task))
-                //task.cancel(false);
-            //else
-                //prestartCoreThread();
-        //}
+        } 
+        
+        
+            
+        
+            
+            
+                
+                
+                
+            
+                
+        
     }
 
     
@@ -128,22 +129,23 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
             task.cancel(false);
             else
             prestartCoreThread();
-        } //End block
-        // ---------- Original Method ----------
-        //if (canRunInCurrentRunState(true)) {
-            //super.getQueue().add(task);
-            //if (!canRunInCurrentRunState(true) && remove(task))
-                //task.cancel(false);
-            //else
-                //prestartCoreThread();
-        //}
+        } 
+        
+        
+            
+            
+                
+            
+                
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.250 -0400", hash_original_method = "64FA3598D4BDF802451AB41ACA7E6BE8", hash_generated_method = "5C8AB3A2FC1CFD36495813FF3A05CD0D")
     @Override
      void onShutdown() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         BlockingQueue<Runnable> q = super.getQueue();
         boolean keepDelayed = getExecuteExistingDelayedTasksAfterShutdownPolicy();
         boolean keepPeriodic = getContinueExistingPeriodicTasksAfterShutdownPolicy();
@@ -153,7 +155,7 @@ for(Object e : q.toArray())
     if(e instanceof RunnableScheduledFuture<?>)            
             ((RunnableScheduledFuture<?>) e).cancel(false);
             q.clear();
-        } //End block
+        } 
         else
         {
 for(Object e : q.toArray())
@@ -166,13 +168,13 @@ for(Object e : q.toArray())
                     {
     if(q.remove(t))                        
                         t.cancel(false);
-                    } //End block
-                } //End block
-            } //End block
-        } //End block
+                    } 
+                } 
+            } 
+        } 
         tryTerminate();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -184,8 +186,8 @@ for(Object e : q.toArray())
 RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_727329168 =         task;
         varE3FBC805688C6CF32CF252D3CB460B3C_727329168.addTaint(taint);
         return varE3FBC805688C6CF32CF252D3CB460B3C_727329168;
-        // ---------- Original Method ----------
-        //return task;
+        
+        
     }
 
     
@@ -197,11 +199,12 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_727329168 =      
 RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =         task;
         varE3FBC805688C6CF32CF252D3CB460B3C_1770929068.addTaint(taint);
         return varE3FBC805688C6CF32CF252D3CB460B3C_1770929068;
-        // ---------- Original Method ----------
-        //return task;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.251 -0400", hash_original_method = "14F5A42293D1200CF8E952E9DCB67B90", hash_generated_method = "28563B9808E5014D83112C5DBC817C26")
     private long triggerTime(long delay, TimeUnit unit) {
         addTaint(unit.getTaint());
@@ -209,11 +212,12 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
         long var3A9A834774A9DD0E83B32D24A8FE0BA3_1507685005 = (triggerTime(unit.toNanos((delay < 0) ? 0 : delay)));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1804261011 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1804261011;
-        // ---------- Original Method ----------
-        //return triggerTime(unit.toNanos((delay < 0) ? 0 : delay));
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.251 -0400", hash_original_method = "43548DFC0EE197F487A673EC89A4A123", hash_generated_method = "923B4FB444FFD9364BF9772A284D8456")
      long triggerTime(long delay) {
         addTaint(delay);
@@ -221,12 +225,13 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
             ((delay < (Long.MAX_VALUE >> 1)) ? delay : overflowFree(delay)));
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_792576066 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_792576066;
-        // ---------- Original Method ----------
-        //return now() +
-            //((delay < (Long.MAX_VALUE >> 1)) ? delay : overflowFree(delay));
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.252 -0400", hash_original_method = "7169306CF31D42FCC72896372081E078", hash_generated_method = "355E6CD425AACD8D6E9A8F7F68DF0022")
     private long overflowFree(long delay) {
         addTaint(delay);
@@ -236,18 +241,18 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
             long headDelay = head.getDelay(TimeUnit.NANOSECONDS);
     if(headDelay < 0 && (delay - headDelay < 0))            
             delay = Long.MAX_VALUE + headDelay;
-        } //End block
+        } 
         long var7243F8BE75253AFBADF7477867021F8B_1407915405 = (delay);
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2089300358 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2089300358;
-        // ---------- Original Method ----------
-        //Delayed head = (Delayed) super.getQueue().peek();
-        //if (head != null) {
-            //long headDelay = head.getDelay(TimeUnit.NANOSECONDS);
-            //if (headDelay < 0 && (delay - headDelay < 0))
-                //delay = Long.MAX_VALUE + headDelay;
-        //}
-        //return delay;
+        
+        
+        
+            
+            
+                
+        
+        
     }
 
     
@@ -271,14 +276,14 @@ RunnableScheduledFuture<V> varE3FBC805688C6CF32CF252D3CB460B3C_1770929068 =     
 ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_490444668 =         t;
         varE0D714D758F1540A8DF364A965AF9150_490444668.addTaint(taint);
         return varE0D714D758F1540A8DF364A965AF9150_490444668;
-        // ---------- Original Method ----------
-        //if (command == null || unit == null)
-            //throw new NullPointerException();
-        //RunnableScheduledFuture<?> t = decorateTask(command,
-            //new ScheduledFutureTask<Void>(command, null,
-                                          //triggerTime(delay, unit)));
-        //delayedExecute(t);
-        //return t;
+        
+        
+            
+        
+            
+                                          
+        
+        
     }
 
     
@@ -302,14 +307,14 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_490444668 =         t;
 ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_1622805509 =         t;
         varE0D714D758F1540A8DF364A965AF9150_1622805509.addTaint(taint);
         return varE0D714D758F1540A8DF364A965AF9150_1622805509;
-        // ---------- Original Method ----------
-        //if (callable == null || unit == null)
-            //throw new NullPointerException();
-        //RunnableScheduledFuture<V> t = decorateTask(callable,
-            //new ScheduledFutureTask<V>(callable,
-                                       //triggerTime(delay, unit)));
-        //delayedExecute(t);
-        //return t;
+        
+        
+            
+        
+            
+                                       
+        
+        
     }
 
     
@@ -344,20 +349,20 @@ ScheduledFuture<V> varE0D714D758F1540A8DF364A965AF9150_1622805509 =         t;
 ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_1256387498 =         t;
         varE0D714D758F1540A8DF364A965AF9150_1256387498.addTaint(taint);
         return varE0D714D758F1540A8DF364A965AF9150_1256387498;
-        // ---------- Original Method ----------
-        //if (command == null || unit == null)
-            //throw new NullPointerException();
-        //if (period <= 0)
-            //throw new IllegalArgumentException();
-        //ScheduledFutureTask<Void> sft =
-            //new ScheduledFutureTask<Void>(command,
-                                          //null,
-                                          //triggerTime(initialDelay, unit),
-                                          //unit.toNanos(period));
-        //RunnableScheduledFuture<Void> t = decorateTask(command, sft);
-        //sft.outerTask = t;
-        //delayedExecute(t);
-        //return t;
+        
+        
+            
+        
+            
+        
+            
+                                          
+                                          
+                                          
+        
+        
+        
+        
     }
 
     
@@ -392,29 +397,30 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_1256387498 =         t;
 ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_932206056 =         t;
         varE0D714D758F1540A8DF364A965AF9150_932206056.addTaint(taint);
         return varE0D714D758F1540A8DF364A965AF9150_932206056;
-        // ---------- Original Method ----------
-        //if (command == null || unit == null)
-            //throw new NullPointerException();
-        //if (delay <= 0)
-            //throw new IllegalArgumentException();
-        //ScheduledFutureTask<Void> sft =
-            //new ScheduledFutureTask<Void>(command,
-                                          //null,
-                                          //triggerTime(initialDelay, unit),
-                                          //unit.toNanos(-delay));
-        //RunnableScheduledFuture<Void> t = decorateTask(command, sft);
-        //sft.outerTask = t;
-        //delayedExecute(t);
-        //return t;
+        
+        
+            
+        
+            
+        
+            
+                                          
+                                          
+                                          
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.255 -0400", hash_original_method = "106B54169234F208DA4A1738F707D69C", hash_generated_method = "298C226B5D3D89C38498C55CCC18C61C")
     public void execute(Runnable command) {
         addTaint(command.getTaint());
         schedule(command, 0, TimeUnit.NANOSECONDS);
-        // ---------- Original Method ----------
-        //schedule(command, 0, TimeUnit.NANOSECONDS);
+        
+        
     }
 
     
@@ -424,8 +430,8 @@ ScheduledFuture<?> varE0D714D758F1540A8DF364A965AF9150_932206056 =         t;
 Future<?> varC033FC2530DBD28BB1831A9C4CE5DB45_1225369233 =         schedule(task, 0, TimeUnit.NANOSECONDS);
         varC033FC2530DBD28BB1831A9C4CE5DB45_1225369233.addTaint(taint);
         return varC033FC2530DBD28BB1831A9C4CE5DB45_1225369233;
-        // ---------- Original Method ----------
-        //return schedule(task, 0, TimeUnit.NANOSECONDS);
+        
+        
     }
 
     
@@ -437,9 +443,9 @@ Future<T> var5F143B3617D15E425694BCB00707B794_1847818004 =         schedule(Exec
                         0, TimeUnit.NANOSECONDS);
         var5F143B3617D15E425694BCB00707B794_1847818004.addTaint(taint);
         return var5F143B3617D15E425694BCB00707B794_1847818004;
-        // ---------- Original Method ----------
-        //return schedule(Executors.callable(task, result),
-                        //0, TimeUnit.NANOSECONDS);
+        
+        
+                        
     }
 
     
@@ -449,78 +455,85 @@ Future<T> var5F143B3617D15E425694BCB00707B794_1847818004 =         schedule(Exec
 Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task, 0, TimeUnit.NANOSECONDS);
         varC033FC2530DBD28BB1831A9C4CE5DB45_346884904.addTaint(taint);
         return varC033FC2530DBD28BB1831A9C4CE5DB45_346884904;
-        // ---------- Original Method ----------
-        //return schedule(task, 0, TimeUnit.NANOSECONDS);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.257 -0400", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "103E279385ED13E49F15EF1C104DA70B")
     public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
         continueExistingPeriodicTasksAfterShutdown = value;
     if(!value && isShutdown())        
         onShutdown();
-        // ---------- Original Method ----------
-        //continueExistingPeriodicTasksAfterShutdown = value;
-        //if (!value && isShutdown())
-            //onShutdown();
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.258 -0400", hash_original_method = "23365684DD383694198E6F21D088C23A", hash_generated_method = "987980CF22A5834977FEF55B5ABBA5E9")
     public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
         boolean var16F5A356C77125C2C156C9F6B6F49691_2022338395 = (continueExistingPeriodicTasksAfterShutdown);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_101380176 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_101380176;
-        // ---------- Original Method ----------
-        //return continueExistingPeriodicTasksAfterShutdown;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.258 -0400", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "01E6D0A79A23EDC5CD9F0CB056E5E691")
     public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
         executeExistingDelayedTasksAfterShutdown = value;
     if(!value && isShutdown())        
         onShutdown();
-        // ---------- Original Method ----------
-        //executeExistingDelayedTasksAfterShutdown = value;
-        //if (!value && isShutdown())
-            //onShutdown();
+        
+        
+        
+            
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.258 -0400", hash_original_method = "691F6AED1700735267010AB69287CBB5", hash_generated_method = "AD0C6AA3615309BD3BE793AA777C1D50")
     public boolean getExecuteExistingDelayedTasksAfterShutdownPolicy() {
         boolean var07A18653AA39EFFB12C28D64E4CEBF7A_2003791241 = (executeExistingDelayedTasksAfterShutdown);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1211324173 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1211324173;
-        // ---------- Original Method ----------
-        //return executeExistingDelayedTasksAfterShutdown;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.259 -0400", hash_original_method = "C989154112CE4F835859D145255931FC", hash_generated_method = "8187F71188C5442EF4B01CC9510CDCEB")
      void setRemoveOnCancelPolicy(boolean value) {
         removeOnCancel = value;
-        // ---------- Original Method ----------
-        //removeOnCancel = value;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.259 -0400", hash_original_method = "3215CF4E7E81ACD4FCE62CEA9B692D35", hash_generated_method = "8546565E979774CA5754E3FD9ACA4B0D")
      boolean getRemoveOnCancelPolicy() {
         boolean varFD8692A9067DBD029B4BB7001C088F36_1606333115 = (removeOnCancel);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_803068095 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_803068095;
-        // ---------- Original Method ----------
-        //return removeOnCancel;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.259 -0400", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "F4BC997EF9BFFD2417FE8194C56E3FA6")
     public void shutdown() {
         super.shutdown();
-        // ---------- Original Method ----------
-        //super.shutdown();
+        
+        
     }
 
     
@@ -529,8 +542,8 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_346884904 =         schedule(task,
 List<Runnable> var7C14AB944B290776B3A5F9444C7B09E0_558156192 =         super.shutdownNow();
         var7C14AB944B290776B3A5F9444C7B09E0_558156192.addTaint(taint);
         return var7C14AB944B290776B3A5F9444C7B09E0_558156192;
-        // ---------- Original Method ----------
-        //return super.shutdownNow();
+        
+        
     }
 
     
@@ -539,8 +552,8 @@ List<Runnable> var7C14AB944B290776B3A5F9444C7B09E0_558156192 =         super.shu
 BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =         super.getQueue();
         var9B3B10850AFC3876BB673FC3C28B08E2_1469427309.addTaint(taint);
         return var9B3B10850AFC3876BB673FC3C28B08E2_1469427309;
-        // ---------- Original Method ----------
-        //return super.getQueue();
+        
+        
     }
 
     
@@ -569,10 +582,10 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             this.time = ns;
             this.period = 0;
             this.sequenceNumber = sequencer.getAndIncrement();
-            // ---------- Original Method ----------
-            //this.time = ns;
-            //this.period = 0;
-            //this.sequenceNumber = sequencer.getAndIncrement();
+            
+            
+            
+            
         }
 
         
@@ -584,10 +597,10 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             this.time = ns;
             this.period = period;
             this.sequenceNumber = sequencer.getAndIncrement();
-            // ---------- Original Method ----------
-            //this.time = ns;
-            //this.period = period;
-            //this.sequenceNumber = sequencer.getAndIncrement();
+            
+            
+            
+            
         }
 
         
@@ -598,10 +611,10 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             this.time = ns;
             this.period = 0;
             this.sequenceNumber = sequencer.getAndIncrement();
-            // ---------- Original Method ----------
-            //this.time = ns;
-            //this.period = 0;
-            //this.sequenceNumber = sequencer.getAndIncrement();
+            
+            
+            
+            
         }
 
         
@@ -611,8 +624,8 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             long varBF8187370753751666A6B77C869BDE59_2024836308 = (unit.convert(time - now(), TimeUnit.NANOSECONDS));
                         long var0F5264038205EDFB1AC05FBB0E8C5E94_320017682 = getTaintLong();
             return var0F5264038205EDFB1AC05FBB0E8C5E94_320017682;
-            // ---------- Original Method ----------
-            //return unit.convert(time - now(), TimeUnit.NANOSECONDS);
+            
+            
         }
 
         
@@ -655,40 +668,41 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638271484 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_638271484;
                 }
-            } //End block
+            } 
             long d = (getDelay(TimeUnit.NANOSECONDS) -
                       other.getDelay(TimeUnit.NANOSECONDS));
             int var5A2C85982B976DEBF1169EF72ABEF175_1759148113 = ((d == 0) ? 0 : ((d < 0) ? -1 : 1));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908787771 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1908787771;
-            // ---------- Original Method ----------
-            //if (other == this) 
-                //return 0;
-            //if (other instanceof ScheduledFutureTask) {
-                //ScheduledFutureTask<?> x = (ScheduledFutureTask<?>)other;
-                //long diff = time - x.time;
-                //if (diff < 0)
-                    //return -1;
-                //else if (diff > 0)
-                    //return 1;
-                //else if (sequenceNumber < x.sequenceNumber)
-                    //return -1;
-                //else
-                    //return 1;
-            //}
-            //long d = (getDelay(TimeUnit.NANOSECONDS) -
-                      //other.getDelay(TimeUnit.NANOSECONDS));
-            //return (d == 0) ? 0 : ((d < 0) ? -1 : 1);
+            
+            
+                
+            
+                
+                
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+            
+            
+                      
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.265 -0400", hash_original_method = "28936E7BC66C2ACF8A84332D0E4F56D6", hash_generated_method = "D65C30216EECC1536D63DF64DB1DF7F2")
         public boolean isPeriodic() {
             boolean var0D8D214ED9AA8437630C1305DCDAC649_2040974294 = (period != 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_427732661 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_427732661;
-            // ---------- Original Method ----------
-            //return period != 0;
+            
+            
         }
 
         
@@ -699,12 +713,12 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             time += p;
             else
             time = triggerTime(-p);
-            // ---------- Original Method ----------
-            //long p = period;
-            //if (p > 0)
-                //time += p;
-            //else
-                //time = triggerTime(-p);
+            
+            
+            
+                
+            
+                
         }
 
         
@@ -717,11 +731,11 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             boolean var38881E0A24039DC2621E1D6F86CB71F7_1519432795 = (cancelled);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2145819408 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2145819408;
-            // ---------- Original Method ----------
-            //boolean cancelled = super.cancel(mayInterruptIfRunning);
-            //if (cancelled && removeOnCancel && heapIndex >= 0)
-                //remove(this);
-            //return cancelled;
+            
+            
+            
+                
+            
         }
 
         
@@ -738,17 +752,17 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
             {
                 setNextRunTime();
                 reExecutePeriodic(outerTask);
-            } //End block
-            // ---------- Original Method ----------
-            //boolean periodic = isPeriodic();
-            //if (!canRunInCurrentRunState(periodic))
-                //cancel(false);
-            //else if (!periodic)
-                //ScheduledFutureTask.super.run();
-            //else if (ScheduledFutureTask.super.runAndReset()) {
-                //setNextRunTime();
-                //reExecutePeriodic(outerTask);
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+            
+                
+                
+            
         }
 
         
@@ -776,19 +790,20 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.267 -0400", hash_original_method = "5917AE9375A9F0D7E6AA869E9A88CC5E", hash_generated_method = "5917AE9375A9F0D7E6AA869E9A88CC5E")
         public DelayedWorkQueue ()
         {
-            //Synthesized constructor
+            
         }
 
 
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.268 -0400", hash_original_method = "871562DD277C0AC8BA441D82903E861A", hash_generated_method = "A2C53C2309413CED15321F200F5F1DAE")
         private void setIndex(RunnableScheduledFuture f, int idx) {
             addTaint(idx);
             addTaint(f.getTaint());
     if(f instanceof ScheduledFutureTask)            
             ((ScheduledFutureTask)f).heapIndex = idx;
-            // ---------- Original Method ----------
-            //if (f instanceof ScheduledFutureTask)
-                //((ScheduledFutureTask)f).heapIndex = idx;
+            
+            
+                
         }
 
         
@@ -804,21 +819,21 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
                 queue[k] = e;
                 setIndex(e, k);
                 k = parent;
-            } //End block
+            } 
             queue[k] = key;
             setIndex(key, k);
-            // ---------- Original Method ----------
-            //while (k > 0) {
-                //int parent = (k - 1) >>> 1;
-                //RunnableScheduledFuture e = queue[parent];
-                //if (key.compareTo(e) >= 0)
-                    //break;
-                //queue[k] = e;
-                //setIndex(e, k);
-                //k = parent;
-            //}
-            //queue[k] = key;
-            //setIndex(key, k);
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+            
+            
+            
         }
 
         
@@ -838,25 +853,25 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
                 queue[k] = c;
                 setIndex(c, k);
                 k = child;
-            } //End block
+            } 
             queue[k] = key;
             setIndex(key, k);
-            // ---------- Original Method ----------
-            //int half = size >>> 1;
-            //while (k < half) {
-                //int child = (k << 1) + 1;
-                //RunnableScheduledFuture c = queue[child];
-                //int right = child + 1;
-                //if (right < size && c.compareTo(queue[right]) > 0)
-                    //c = queue[child = right];
-                //if (key.compareTo(c) <= 0)
-                    //break;
-                //queue[k] = c;
-                //setIndex(c, k);
-                //k = child;
-            //}
-            //queue[k] = key;
-            //setIndex(key, k);
+            
+            
+            
+                
+                
+                
+                
+                    
+                
+                    
+                
+                
+                
+            
+            
+            
         }
 
         
@@ -867,12 +882,12 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
     if(newCapacity < 0)            
             newCapacity = Integer.MAX_VALUE;
             queue = Arrays.copyOf(queue, newCapacity);
-            // ---------- Original Method ----------
-            //int oldCapacity = queue.length;
-            //int newCapacity = oldCapacity + (oldCapacity >> 1);
-            //if (newCapacity < 0) 
-                //newCapacity = Integer.MAX_VALUE;
-            //queue = Arrays.copyOf(queue, newCapacity);
+            
+            
+            
+            
+                
+            
         }
 
         
@@ -890,7 +905,7 @@ BlockingQueue<Runnable> var9B3B10850AFC3876BB673FC3C28B08E2_1469427309 =        
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416158730 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1416158730;
                     }
-                } //End block
+                } 
                 else
                 {
 for(int i = 0;i < size;i++)
@@ -900,24 +915,24 @@ for(int i = 0;i < size;i++)
                                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760505316 = getTaintInt();
                     return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1760505316;
                     }
-                } //End block
-            } //End block
+                } 
+            } 
             int var6BB61E3B7BCE0931DA574D19D1D82C88_1577229598 = (-1);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757099550 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1757099550;
-            // ---------- Original Method ----------
-            //if (x != null) {
-                //if (x instanceof ScheduledFutureTask) {
-                    //int i = ((ScheduledFutureTask) x).heapIndex;
-                    //if (i >= 0 && i < size && queue[i] == x)
-                        //return i;
-                //} else {
-                    //for (int i = 0; i < size; i++)
-                        //if (x.equals(queue[i]))
-                            //return i;
-                //}
-            //}
-            //return -1;
+            
+            
+                
+                    
+                    
+                        
+                
+                    
+                        
+                            
+                
+            
+            
         }
 
         
@@ -931,19 +946,19 @@ for(int i = 0;i < size;i++)
                 boolean var54D34D412CCB92E9A609873D6F2FB757_1262533751 = (indexOf(x) != -1);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1087645229 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1087645229;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //return indexOf(x) != -1;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -970,35 +985,35 @@ for(int i = 0;i < size;i++)
                     siftDown(i, replacement);
     if(queue[i] == replacement)                    
                     siftUp(i, replacement);
-                } //End block
+                } 
                 boolean varB326B5062B2F0E69046810717534CB09_90326479 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_756361331 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_756361331;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //int i = indexOf(x);
-                //if (i < 0)
-                    //return false;
-                //setIndex(queue[i], -1);
-                //int s = --size;
-                //RunnableScheduledFuture replacement = queue[s];
-                //queue[s] = null;
-                //if (s != i) {
-                    //siftDown(i, replacement);
-                    //if (queue[i] == replacement)
-                        //siftUp(i, replacement);
-                //}
-                //return true;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                
+                
+                
+                    
+                    
+                        
+                
+                
+            
+                
+            
         }
 
         
@@ -1011,19 +1026,19 @@ for(int i = 0;i < size;i++)
                 int varF7BD60B75B29D79B660A2859395C1A24_1035494189 = (size);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1890225883 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1890225883;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //return size;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1032,18 +1047,19 @@ for(int i = 0;i < size;i++)
             boolean var5BD3446419BAE72903C4742BF777F0E0_1982467796 = (size() == 0);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_743891998 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_743891998;
-            // ---------- Original Method ----------
-            //return size() == 0;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.273 -0400", hash_original_method = "E7CDD1D543D1F61B1D969765A4629893", hash_generated_method = "541887B94F260399BC38FDDB6C7A9E31")
         public int remainingCapacity() {
             int varE7A95D949116A2DA0F0FA83DC6E76C00_718937268 = (Integer.MAX_VALUE);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885865433 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1885865433;
-            // ---------- Original Method ----------
-            //return Integer.MAX_VALUE;
+            
+            
         }
 
         
@@ -1056,19 +1072,19 @@ for(int i = 0;i < size;i++)
 RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1583951770 =                 queue[0];
                 var6B197F94F16A075B757ED2FE0B3729CA_1583951770.addTaint(taint);
                 return var6B197F94F16A075B757ED2FE0B3729CA_1583951770;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //return queue[0];
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1094,49 +1110,49 @@ RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1583951770 =        
                 {
                     queue[0] = e;
                     setIndex(e, 0);
-                } //End block
+                } 
                 else
                 {
                     siftUp(i, e);
-                } //End block
+                } 
     if(queue[0] == e)                
                 {
                     leader = null;
                     available.signal();
-                } //End block
-            } //End block
+                } 
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_1266803914 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1855836419 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1855836419;
-            // ---------- Original Method ----------
-            //if (x == null)
-                //throw new NullPointerException();
-            //RunnableScheduledFuture e = (RunnableScheduledFuture)x;
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //int i = size;
-                //if (i >= queue.length)
-                    //grow();
-                //size = i + 1;
-                //if (i == 0) {
-                    //queue[0] = e;
-                    //setIndex(e, 0);
-                //} else {
-                    //siftUp(i, e);
-                //}
-                //if (queue[0] == e) {
-                    //leader = null;
-                    //available.signal();
-                //}
-            //} finally {
-                //lock.unlock();
-            //}
-            //return true;
+            
+            
+                
+            
+            
+            
+            
+                
+                
+                    
+                
+                
+                    
+                    
+                
+                    
+                
+                
+                    
+                    
+                
+            
+                
+            
+            
         }
 
         
@@ -1144,8 +1160,8 @@ RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1583951770 =        
         public void put(Runnable e) {
             addTaint(e.getTaint());
             offer(e);
-            // ---------- Original Method ----------
-            //offer(e);
+            
+            
         }
 
         
@@ -1155,8 +1171,8 @@ RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1583951770 =        
             boolean var753C0332450253282F40FDC9097055BE_1369830565 = (offer(e));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1206965257 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1206965257;
-            // ---------- Original Method ----------
-            //return offer(e);
+            
+            
         }
 
         
@@ -1168,8 +1184,8 @@ RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1583951770 =        
             boolean var753C0332450253282F40FDC9097055BE_348546243 = (offer(e));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_438042276 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_438042276;
-            // ---------- Original Method ----------
-            //return offer(e);
+            
+            
         }
 
         
@@ -1185,14 +1201,14 @@ RunnableScheduledFuture var6B197F94F16A075B757ED2FE0B3729CA_1583951770 =        
 RunnableScheduledFuture varABE3CFB53FE4A79F34CB25BC80BFD6E2_2071179666 =             f;
             varABE3CFB53FE4A79F34CB25BC80BFD6E2_2071179666.addTaint(taint);
             return varABE3CFB53FE4A79F34CB25BC80BFD6E2_2071179666;
-            // ---------- Original Method ----------
-            //int s = --size;
-            //RunnableScheduledFuture x = queue[s];
-            //queue[s] = null;
-            //if (s != 0)
-                //siftDown(0, x);
-            //setIndex(f, -1);
-            //return f;
+            
+            
+            
+            
+            
+                
+            
+            
         }
 
         
@@ -1215,23 +1231,23 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_2090662170 =        
                 var783EE317EF3F20F6DB2D0D3EF00DE570_2090662170.addTaint(taint);
                 return var783EE317EF3F20F6DB2D0D3EF00DE570_2090662170;
                 }
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //RunnableScheduledFuture first = queue[0];
-                //if (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0)
-                    //return null;
-                //else
-                    //return finishPoll(first);
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+                
+                    
+                
+                    
+            
+                
+            
         }
 
         
@@ -1265,24 +1281,24 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_817894515 =         
                             try 
                             {
                                 available.awaitNanos(delay);
-                            } //End block
+                            } 
                             finally 
                             {
     if(leader == thisThread)                                
                                 leader = null;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
     if(leader == null && queue[0] != null)                
                 available.signal();
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1308,7 +1324,7 @@ RunnableScheduledFuture var540C13E9E156B687226421B24F2DF178_376374755 =         
                         }
                         else
                         nanos = available.awaitNanos(nanos);
-                    } //End block
+                    } 
                     else
                     {
                         long delay = first.getDelay(TimeUnit.NANOSECONDS);
@@ -1334,24 +1350,24 @@ RunnableScheduledFuture var540C13E9E156B687226421B24F2DF178_819316741 =         
                             {
                                 long timeLeft = available.awaitNanos(delay);
                                 nanos -= delay - timeLeft;
-                            } //End block
+                            } 
                             finally 
                             {
     if(leader == thisThread)                                
                                 leader = null;
-                            } //End block
-                        } //End block
-                    } //End block
-                } //End block
-            } //End block
+                            } 
+                        } 
+                    } 
+                } 
+            } 
             finally 
             {
     if(leader == null && queue[0] != null)                
                 available.signal();
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            } 
+            
+            
         }
 
         
@@ -1368,29 +1384,29 @@ for(int i = 0;i < size;i++)
                     {
                         queue[i] = null;
                         setIndex(t, -1);
-                    } //End block
-                } //End block
+                    } 
+                } 
                 size = 0;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //for (int i = 0; i < size; i++) {
-                    //RunnableScheduledFuture t = queue[i];
-                    //if (t != null) {
-                        //queue[i] = null;
-                        //setIndex(t, -1);
-                    //}
-                //}
-                //size = 0;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+                    
+                    
+                        
+                        
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -1406,11 +1422,11 @@ RunnableScheduledFuture var540C13E9E156B687226421B24F2DF178_1269043931 =        
 RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_838636062 =             finishPoll(first);
             var783EE317EF3F20F6DB2D0D3EF00DE570_838636062.addTaint(taint);
             return var783EE317EF3F20F6DB2D0D3EF00DE570_838636062;
-            // ---------- Original Method ----------
-            //RunnableScheduledFuture first = queue[0];
-            //if (first == null || first.getDelay(TimeUnit.NANOSECONDS) > 0)
-                //return null;
-            //return finishPoll(first);
+            
+            
+            
+                
+            
         }
 
         
@@ -1440,33 +1456,33 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_838636062 =         
                 {
                     c.add(first);
                     ++n;
-                } //End block
+                } 
                 int var7B8B965AD4BCA0E41AB51DE7B31363A1_1923064814 = (n);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409609100 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1409609100;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //if (c == null)
-                //throw new NullPointerException();
-            //if (c == this)
-                //throw new IllegalArgumentException();
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //RunnableScheduledFuture first;
-                //int n = 0;
-                //while ((first = pollExpired()) != null) {
-                    //c.add(first);
-                    //++n;
-                //}
-                //return n;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
+            
+            
+                
+                
+                
+                    
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -1503,35 +1519,35 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_838636062 =         
                 {
                     c.add(first);
                     ++n;
-                } //End block
+                } 
                 int var7B8B965AD4BCA0E41AB51DE7B31363A1_512518240 = (n);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667384571 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_667384571;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //if (c == null)
-                //throw new NullPointerException();
-            //if (c == this)
-                //throw new IllegalArgumentException();
-            //if (maxElements <= 0)
-                //return 0;
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //RunnableScheduledFuture first;
-                //int n = 0;
-                //while (n < maxElements && (first = pollExpired()) != null) {
-                    //c.add(first);
-                    //++n;
-                //}
-                //return n;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+                
+            
+                
+            
+                
+            
+            
+            
+                
+                
+                
+                    
+                    
+                
+                
+            
+                
+            
         }
 
         
@@ -1544,19 +1560,19 @@ RunnableScheduledFuture var783EE317EF3F20F6DB2D0D3EF00DE570_838636062 =         
 Object[] var3FF56653DBD966470290DFA853FBED83_3026448 =                 Arrays.copyOf(queue, size, Object[].class);
                 var3FF56653DBD966470290DFA853FBED83_3026448.addTaint(taint);
                 return var3FF56653DBD966470290DFA853FBED83_3026448;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //return Arrays.copyOf(queue, size, Object[].class);
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+            
+                
+            
         }
 
         
@@ -1579,24 +1595,24 @@ T[] varD7F9E2498EEEC82C28C16468811B6DF2_1798579974 =                 (T[]) Array
 T[] var3F5343BF1D849954A73F0BB303805FFD_1112510016 =                 a;
                 var3F5343BF1D849954A73F0BB303805FFD_1112510016.addTaint(taint);
                 return var3F5343BF1D849954A73F0BB303805FFD_1112510016;
-            } //End block
+            } 
             finally 
             {
                 lock.unlock();
-            } //End block
-            // ---------- Original Method ----------
-            //final ReentrantLock lock = this.lock;
-            //lock.lock();
-            //try {
-                //if (a.length < size)
-                    //return (T[]) Arrays.copyOf(queue, size, a.getClass());
-                //System.arraycopy(queue, 0, a, 0, size);
-                //if (a.length > size)
-                    //a[size] = null;
-                //return a;
-            //} finally {
-                //lock.unlock();
-            //}
+            } 
+            
+            
+            
+            
+                
+                    
+                
+                
+                    
+                
+            
+                
+            
         }
 
         
@@ -1605,8 +1621,8 @@ T[] var3F5343BF1D849954A73F0BB303805FFD_1112510016 =                 a;
 Iterator<Runnable> var204ADEB76305F0F46DB2D7013588DB62_802996502 =             new Itr(Arrays.copyOf(queue, size));
             var204ADEB76305F0F46DB2D7013588DB62_802996502.addTaint(taint);
             return var204ADEB76305F0F46DB2D7013588DB62_802996502;
-            // ---------- Original Method ----------
-            //return new Itr(Arrays.copyOf(queue, size));
+            
+            
         }
 
         
@@ -1624,18 +1640,19 @@ Iterator<Runnable> var204ADEB76305F0F46DB2D7013588DB62_802996502 =             n
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.297 -0400", hash_original_method = "78BE11BC04A59F667BA3E745B91EA864", hash_generated_method = "ABE1A6D5F6CC1003308B5A0719A48D00")
               Itr(RunnableScheduledFuture[] array) {
                 this.array = array;
-                // ---------- Original Method ----------
-                //this.array = array;
+                
+                
             }
 
             
+            @DSModeled(DSC.SAFE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:08.297 -0400", hash_original_method = "C1264B905CC60CA39EE5BE51F177AC9A", hash_generated_method = "3FEC0178F30D8A7E4790C311FB9C0748")
             public boolean hasNext() {
                 boolean varD3AC5C71D433D60E62F9BE66035EAE94_1256637129 = (cursor < array.length);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2051639231 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_2051639231;
-                // ---------- Original Method ----------
-                //return cursor < array.length;
+                
+                
             }
 
             
@@ -1651,11 +1668,11 @@ Iterator<Runnable> var204ADEB76305F0F46DB2D7013588DB62_802996502 =             n
 Runnable var21E6AD48A912A3158B7B729FDCFBCCF7_281661468 =                 array[cursor++];
                 var21E6AD48A912A3158B7B729FDCFBCCF7_281661468.addTaint(taint);
                 return var21E6AD48A912A3158B7B729FDCFBCCF7_281661468;
-                // ---------- Original Method ----------
-                //if (cursor >= array.length)
-                    //throw new NoSuchElementException();
-                //lastRet = cursor;
-                //return array[cursor++];
+                
+                
+                    
+                
+                
             }
 
             
@@ -1669,11 +1686,11 @@ Runnable var21E6AD48A912A3158B7B729FDCFBCCF7_281661468 =                 array[c
                 }
                 DelayedWorkQueue.this.remove(array[lastRet]);
                 lastRet = -1;
-                // ---------- Original Method ----------
-                //if (lastRet < 0)
-                    //throw new IllegalStateException();
-                //DelayedWorkQueue.this.remove(array[lastRet]);
-                //lastRet = -1;
+                
+                
+                    
+                
+                
             }
 
             

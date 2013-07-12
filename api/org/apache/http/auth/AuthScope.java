@@ -1,6 +1,6 @@
 package org.apache.http.auth;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,11 +28,11 @@ public class AuthScope {
         this.port =   (port < 0)       ? ANY_PORT: port;
         this.realm =  (realm == null)  ? ANY_REALM: realm;
         this.scheme = (scheme == null) ? ANY_SCHEME: scheme.toUpperCase(Locale.ENGLISH);
-        // ---------- Original Method ----------
-        //this.host =   (host == null)   ? ANY_HOST: host.toLowerCase(Locale.ENGLISH);
-        //this.port =   (port < 0)       ? ANY_PORT: port;
-        //this.realm =  (realm == null)  ? ANY_REALM: realm;
-        //this.scheme = (scheme == null) ? ANY_SCHEME: scheme.toUpperCase(Locale.ENGLISH);
+        
+        
+        
+        
+        
     }
 
     
@@ -42,7 +42,7 @@ public class AuthScope {
         addTaint(realm.getTaint());
         addTaint(port);
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -51,7 +51,7 @@ public class AuthScope {
         this(host, port, ANY_REALM, ANY_SCHEME);
         addTaint(port);
         addTaint(host.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -63,59 +63,63 @@ public class AuthScope {
             IllegalArgumentException var22538AF4DFFCFCE404BB493BAEC4BDD8_1944905491 = new IllegalArgumentException("Scope may not be null");
             var22538AF4DFFCFCE404BB493BAEC4BDD8_1944905491.addTaint(taint);
             throw var22538AF4DFFCFCE404BB493BAEC4BDD8_1944905491;
-        } //End block
+        } 
         this.host = authscope.getHost();
         this.port = authscope.getPort();
         this.realm = authscope.getRealm();
         this.scheme = authscope.getScheme();
-        // ---------- Original Method ----------
-        //if (authscope == null) {
-            //throw new IllegalArgumentException("Scope may not be null");
-        //}
-        //this.host = authscope.getHost();
-        //this.port = authscope.getPort();
-        //this.realm = authscope.getRealm();
-        //this.scheme = authscope.getScheme();
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.062 -0400", hash_original_method = "052AA62CF2AFB76178CB036EF4B7BAB4", hash_generated_method = "6CBEFC799544FE4D570504D086B48C28")
     public String getHost() {
 String var66CBD60FD8EB006652E02A446703F8AC_1198072236 =         this.host;
         var66CBD60FD8EB006652E02A446703F8AC_1198072236.addTaint(taint);
         return var66CBD60FD8EB006652E02A446703F8AC_1198072236;
-        // ---------- Original Method ----------
-        //return this.host;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.063 -0400", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "24BB0170CA37E9A9D21B31698649770C")
     public int getPort() {
         int var02075052AFB1BA5EC4413B52BC401B14_19432304 = (this.port);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066134055 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2066134055;
-        // ---------- Original Method ----------
-        //return this.port;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.063 -0400", hash_original_method = "5D06D5B53E6C13036F29936602C7EB58", hash_generated_method = "3EF8E3BEA2B3AC1274BBB249F9B13D6E")
     public String getRealm() {
 String varE5D7E56F4E58F69800590B650DF8A269_39970700 =         this.realm;
         varE5D7E56F4E58F69800590B650DF8A269_39970700.addTaint(taint);
         return varE5D7E56F4E58F69800590B650DF8A269_39970700;
-        // ---------- Original Method ----------
-        //return this.realm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.063 -0400", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "7B93E81DE68DDDC2D59B1C2F36BA75D1")
     public String getScheme() {
 String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
         varBF26C0D1E8CB9E7F67A307E664136E8F_695886047.addTaint(taint);
         return varBF26C0D1E8CB9E7F67A307E664136E8F_695886047;
-        // ---------- Original Method ----------
-        //return this.scheme;
+        
+        
     }
 
     
@@ -126,7 +130,7 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
     if(LangUtils.equals(this.scheme, that.scheme))        
         {
             factor += 1;
-        } //End block
+        } 
         else
         {
     if(this.scheme != ANY_SCHEME && that.scheme != ANY_SCHEME)            
@@ -134,12 +138,12 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_16057353 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717721183 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_717721183;
-            } //End block
-        } //End block
+            } 
+        } 
     if(LangUtils.equals(this.realm, that.realm))        
         {
             factor += 2;
-        } //End block
+        } 
         else
         {
     if(this.realm != ANY_REALM && that.realm != ANY_REALM)            
@@ -147,12 +151,12 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1115927635 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098693931 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2098693931;
-            } //End block
-        } //End block
+            } 
+        } 
     if(this.port == that.port)        
         {
             factor += 4;
-        } //End block
+        } 
         else
         {
     if(this.port != ANY_PORT && that.port != ANY_PORT)            
@@ -160,12 +164,12 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_1890854793 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835495495 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_835495495;
-            } //End block
-        } //End block
+            } 
+        } 
     if(LangUtils.equals(this.host, that.host))        
         {
             factor += 8;
-        } //End block
+        } 
         else
         {
     if(this.host != ANY_HOST && that.host != ANY_HOST)            
@@ -173,13 +177,13 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
                 int var6BB61E3B7BCE0931DA574D19D1D82C88_130588306 = (-1);
                                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594660724 = getTaintInt();
                 return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1594660724;
-            } //End block
-        } //End block
+            } 
+        } 
         int var742F32C65FFD18B766FA307F8DE2D47D_668111083 = (factor);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_239695983 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_239695983;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -192,19 +196,19 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
             boolean var68934A3E9455FA72420237EB05902327_1111614443 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1565087757 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1565087757;
-        } //End block
+        } 
     if(o == this)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1196953405 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1944961643 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1944961643;
-        } //End block
+        } 
     if(!(o instanceof AuthScope))        
         {
             boolean varDBD7B5E32CCD38E45E29A8227EF381FE_1506313048 = (super.equals(o));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_582278323 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_582278323;
-        } //End block
+        } 
         AuthScope that = (AuthScope) o;
         boolean varBC936FA7E3F12CB16B76BE7BAAC3525F_1139331064 = (LangUtils.equals(this.host, that.host) 
           && this.port == that.port
@@ -212,22 +216,22 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
           && LangUtils.equals(this.scheme, that.scheme));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048400993 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048400993;
-        // ---------- Original Method ----------
-        //if (o == null) {
-            //return false;
-        //}
-        //if (o == this) {
-            //return true;
-        //}
-        //if (!(o instanceof AuthScope)) {
-            //return super.equals(o);
-        //}
-        //AuthScope that = (AuthScope) o;
-        //return 
-        //LangUtils.equals(this.host, that.host) 
-          //&& this.port == that.port
-          //&& LangUtils.equals(this.realm, that.realm)
-          //&& LangUtils.equals(this.scheme, that.scheme);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+          
+          
+          
     }
 
     
@@ -239,17 +243,17 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
         {
             buffer.append(this.scheme.toUpperCase(Locale.ENGLISH));
             buffer.append(' ');
-        } //End block
+        } 
     if(this.realm != null)        
         {
             buffer.append('\'');
             buffer.append(this.realm);
             buffer.append('\'');
-        } //End block
+        } 
         else
         {
             buffer.append("<any realm>");
-        } //End block
+        } 
     if(this.host != null)        
         {
             buffer.append('@');
@@ -258,33 +262,33 @@ String varBF26C0D1E8CB9E7F67A307E664136E8F_695886047 =         this.scheme;
             {
                 buffer.append(':');
                 buffer.append(this.port);
-            } //End block
-        } //End block
+            } 
+        } 
 String varD03843288D33B9E1D3062E25339ECF6D_2136777181 =         buffer.toString();
         varD03843288D33B9E1D3062E25339ECF6D_2136777181.addTaint(taint);
         return varD03843288D33B9E1D3062E25339ECF6D_2136777181;
-        // ---------- Original Method ----------
-        //StringBuffer buffer = new StringBuffer();
-        //if (this.scheme != null) {
-            //buffer.append(this.scheme.toUpperCase(Locale.ENGLISH));
-            //buffer.append(' ');
-        //}
-        //if (this.realm != null) {
-            //buffer.append('\'');
-            //buffer.append(this.realm);
-            //buffer.append('\'');
-        //} else {
-            //buffer.append("<any realm>");
-        //}
-        //if (this.host != null) {
-            //buffer.append('@');
-            //buffer.append(this.host);
-            //if (this.port >= 0) {
-                //buffer.append(':');
-                //buffer.append(this.port);
-            //}
-        //}
-        //return buffer.toString();
+        
+        
+        
+            
+            
+        
+        
+            
+            
+            
+        
+            
+        
+        
+            
+            
+            
+                
+                
+            
+        
+        
     }
 
     
@@ -299,13 +303,13 @@ String varD03843288D33B9E1D3062E25339ECF6D_2136777181 =         buffer.toString(
         int var0800FC577294C34E0B28AD2839435945_98450449 = (hash);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620772157 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1620772157;
-        // ---------- Original Method ----------
-        //int hash = LangUtils.HASH_SEED;
-        //hash = LangUtils.hashCode(hash, this.host);
-        //hash = LangUtils.hashCode(hash, this.port);
-        //hash = LangUtils.hashCode(hash, this.realm);
-        //hash = LangUtils.hashCode(hash, this.scheme);
-        //return hash;
+        
+        
+        
+        
+        
+        
+        
     }
 
     

@@ -1,6 +1,6 @@
 package java.security.cert;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,8 +24,8 @@ public abstract class Certificate implements Serializable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:53.605 -0400", hash_original_method = "244ADEDBEBB96EF97070F535965BB014", hash_generated_method = "091FFA48FFD653C349D8D45027C4C179")
     protected  Certificate(String type) {
         this.type = type;
-        // ---------- Original Method ----------
-        //this.type = type;
+        
+        
     }
 
     
@@ -34,8 +34,8 @@ public abstract class Certificate implements Serializable {
 String varC5B9F25B4EEAD3E8E2C33F9429204397_462534867 =         type;
         varC5B9F25B4EEAD3E8E2C33F9429204397_462534867.addTaint(taint);
         return varC5B9F25B4EEAD3E8E2C33F9429204397_462534867;
-        // ---------- Original Method ----------
-        //return type;
+        
+        
     }
 
     
@@ -47,7 +47,7 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_462534867 =         type;
             boolean varB326B5062B2F0E69046810717534CB09_1247057391 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1327416529 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1327416529;
-        } //End block
+        } 
     if(other instanceof Certificate)        
         {
             try 
@@ -56,30 +56,30 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_462534867 =         type;
                         ((Certificate)other).getEncoded()));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_302721946 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_302721946;
-            } //End block
+            } 
             catch (CertificateEncodingException e)
             {
                 RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_2037699955 = new RuntimeException(e);
                 varC76ADF009CE2FEDD948F7A54F409BA37_2037699955.addTaint(taint);
                 throw varC76ADF009CE2FEDD948F7A54F409BA37_2037699955;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_1741674357 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_500118821 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_500118821;
-        // ---------- Original Method ----------
-        //if (this == other) {
-            //return true;
-        //}
-        //if (other instanceof Certificate) {
-            //try {
-                //return Arrays.equals(this.getEncoded(),
-                        //((Certificate)other).getEncoded());
-            //} catch (CertificateEncodingException e) {
-                //throw new RuntimeException(e);
-            //}
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+                
+                        
+            
+                
+            
+        
+        
     }
 
     
@@ -92,28 +92,28 @@ String varC5B9F25B4EEAD3E8E2C33F9429204397_462534867 =         type;
 for(int i=0;i<encoded.length;i++)
             {
                 hash += i*encoded[i];
-            } //End block
+            } 
             int var0800FC577294C34E0B28AD2839435945_1922674690 = (hash);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_687013322 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_687013322;
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             RuntimeException varC76ADF009CE2FEDD948F7A54F409BA37_825850947 = new RuntimeException(e);
             varC76ADF009CE2FEDD948F7A54F409BA37_825850947.addTaint(taint);
             throw varC76ADF009CE2FEDD948F7A54F409BA37_825850947;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //byte[] encoded = getEncoded();
-            //int hash = 0;
-            //for (int i=0; i<encoded.length; i++) {
-                //hash += i*encoded[i];
-            //}
-            //return hash;
-        //} catch (CertificateEncodingException e) {
-            //throw new RuntimeException(e);
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -149,19 +149,19 @@ for(int i=0;i<encoded.length;i++)
 Object varA4927F1440786F4D2449DB9A7837689C_2090865940 =             new CertificateRep(getType(), getEncoded());
             varA4927F1440786F4D2449DB9A7837689C_2090865940.addTaint(taint);
             return varA4927F1440786F4D2449DB9A7837689C_2090865940;
-        } //End block
+        } 
         catch (CertificateEncodingException e)
         {
             NotSerializableException varD10E63AB14446D5829D48417DD9728EF_432626177 = new NotSerializableException("Could not create serialization object: " + e);
             varD10E63AB14446D5829D48417DD9728EF_432626177.addTaint(taint);
             throw varD10E63AB14446D5829D48417DD9728EF_432626177;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //return new CertificateRep(getType(), getEncoded());
-        //} catch (CertificateEncodingException e) {
-            //throw new NotSerializableException("Could not create serialization object: " + e);
-        //}
+        } 
+        
+        
+            
+        
+            
+        
     }
 
     
@@ -177,9 +177,9 @@ Object varA4927F1440786F4D2449DB9A7837689C_2090865940 =             new Certific
         protected  CertificateRep(String type, byte[] data) {
             this.type = type;
             this.data = data;
-            // ---------- Original Method ----------
-            //this.type = type;
-            //this.data = data;
+            
+            
+            
         }
 
         
@@ -191,20 +191,20 @@ Object varA4927F1440786F4D2449DB9A7837689C_2090865940 =             new Certific
 Object varD5B1E3A57F58153FF178493DE243F922_1679012166 =                 cf.generateCertificate(new ByteArrayInputStream(data));
                 varD5B1E3A57F58153FF178493DE243F922_1679012166.addTaint(taint);
                 return varD5B1E3A57F58153FF178493DE243F922_1679012166;
-            } //End block
+            } 
             catch (Throwable t)
             {
                 NotSerializableException var94D0FAB119F18D6D8D1335EC6968AA1A_1148293927 = new NotSerializableException("Could not resolve certificate: " + t);
                 var94D0FAB119F18D6D8D1335EC6968AA1A_1148293927.addTaint(taint);
                 throw var94D0FAB119F18D6D8D1335EC6968AA1A_1148293927;
-            } //End block
-            // ---------- Original Method ----------
-            //try {
-                //CertificateFactory cf = CertificateFactory.getInstance(type);
-                //return cf.generateCertificate(new ByteArrayInputStream(data));
-            //} catch (Throwable t) {
-                //throw new NotSerializableException("Could not resolve certificate: " + t);
-            //}
+            } 
+            
+            
+                
+                
+            
+                
+            
         }
 
         

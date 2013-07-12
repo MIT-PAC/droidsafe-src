@@ -1,6 +1,6 @@
 package org.apache.http.util;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public final class EncodingUtils {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:38.088 -0400", hash_original_method = "9056910A11B8F7E2130B8014667A5810", hash_generated_method = "82860B6827C330C84D8DCE75D0CA6840")
     private  EncodingUtils() {
-        // ---------- Original Method ----------
+        
     }
 
     

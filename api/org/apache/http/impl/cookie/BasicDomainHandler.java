@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -15,7 +15,7 @@ public class BasicDomainHandler implements CookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.271 -0400", hash_original_method = "3582ADBB5BDD47EB6552162B7BD8CF14", hash_generated_method = "E0AB420DDF8D95126D472000ABC6448F")
     public  BasicDomainHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -28,31 +28,31 @@ public class BasicDomainHandler implements CookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_2003117578 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_2003117578.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_2003117578;
-        } //End block
+        } 
     if(value == null)        
         {
             MalformedCookieException var0F112B9FC8E3827692FDE0884407A29E_1350321560 = new MalformedCookieException("Missing value for domain attribute");
             var0F112B9FC8E3827692FDE0884407A29E_1350321560.addTaint(taint);
             throw var0F112B9FC8E3827692FDE0884407A29E_1350321560;
-        } //End block
+        } 
     if(value.trim().length() == 0)        
         {
             MalformedCookieException var07BAB46695E7C8E84A0A4107E34A960E_1433636415 = new MalformedCookieException("Blank value for domain attribute");
             var07BAB46695E7C8E84A0A4107E34A960E_1433636415.addTaint(taint);
             throw var07BAB46695E7C8E84A0A4107E34A960E_1433636415;
-        } //End block
+        } 
         cookie.setDomain(value);
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (value == null) {
-            //throw new MalformedCookieException("Missing value for domain attribute");
-        //}
-        //if (value.trim().length() == 0) {
-            //throw new MalformedCookieException("Blank value for domain attribute");
-        //}
-        //cookie.setDomain(value);
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     
@@ -65,13 +65,13 @@ public class BasicDomainHandler implements CookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_742469000 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_742469000.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_742469000;
-        } //End block
+        } 
     if(origin == null)        
         {
             IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_91174002 = new IllegalArgumentException("Cookie origin may not be null");
             var4264914F0057BA70A0B3E6621821A095_91174002.addTaint(taint);
             throw var4264914F0057BA70A0B3E6621821A095_91174002;
-        } //End block
+        } 
         String host = origin.getHost();
         String domain = cookie.getDomain();
     if(domain == null)        
@@ -79,7 +79,7 @@ public class BasicDomainHandler implements CookieAttributeHandler {
             MalformedCookieException varB79BAE8CA7273A58873D2185EA314BFC_1294704975 = new MalformedCookieException("Cookie domain may not be null");
             varB79BAE8CA7273A58873D2185EA314BFC_1294704975.addTaint(taint);
             throw varB79BAE8CA7273A58873D2185EA314BFC_1294704975;
-        } //End block
+        } 
     if(host.contains("."))        
         {
     if(!host.endsWith(domain))            
@@ -87,7 +87,7 @@ public class BasicDomainHandler implements CookieAttributeHandler {
     if(domain.startsWith("."))                
                 {
                     domain = domain.substring(1, domain.length());
-                } //End block
+                } 
     if(!host.equals(domain))                
                 {
                     MalformedCookieException var1FAEB6A838498A08609AB07AF40CFFB3_423559014 = new MalformedCookieException(
@@ -95,9 +95,9 @@ public class BasicDomainHandler implements CookieAttributeHandler {
                         + "\". Domain of origin: \"" + host + "\"");
                     var1FAEB6A838498A08609AB07AF40CFFB3_423559014.addTaint(taint);
                     throw var1FAEB6A838498A08609AB07AF40CFFB3_423559014;
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
     if(!host.equals(domain))            
@@ -107,10 +107,10 @@ public class BasicDomainHandler implements CookieAttributeHandler {
                     + "\". Domain of origin: \"" + host + "\"");
                 var1FAEB6A838498A08609AB07AF40CFFB3_2020329529.addTaint(taint);
                 throw var1FAEB6A838498A08609AB07AF40CFFB3_2020329529;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+            } 
+        } 
+        
+        
     }
 
     
@@ -123,13 +123,13 @@ public class BasicDomainHandler implements CookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1777791793 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_1777791793.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_1777791793;
-        } //End block
+        } 
     if(origin == null)        
         {
             IllegalArgumentException var4264914F0057BA70A0B3E6621821A095_1787159523 = new IllegalArgumentException("Cookie origin may not be null");
             var4264914F0057BA70A0B3E6621821A095_1787159523.addTaint(taint);
             throw var4264914F0057BA70A0B3E6621821A095_1787159523;
-        } //End block
+        } 
         String host = origin.getHost();
         String domain = cookie.getDomain();
     if(domain == null)        
@@ -137,39 +137,39 @@ public class BasicDomainHandler implements CookieAttributeHandler {
             boolean var68934A3E9455FA72420237EB05902327_1781450706 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1573120848 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1573120848;
-        } //End block
+        } 
     if(host.equals(domain))        
         {
             boolean varB326B5062B2F0E69046810717534CB09_859349803 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_143083074 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_143083074;
-        } //End block
+        } 
     if(!domain.startsWith("."))        
         {
             domain = '.' + domain;
-        } //End block
+        } 
         boolean varCF0A6EE333173A82BC6AB0183D01E0C9_355259498 = (host.endsWith(domain) || host.equals(domain.substring(1)));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_939223532 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_939223532;
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (origin == null) {
-            //throw new IllegalArgumentException("Cookie origin may not be null");
-        //}
-        //String host = origin.getHost();
-        //String domain = cookie.getDomain();
-        //if (domain == null) {
-            //return false;
-        //}
-        //if (host.equals(domain)) {
-            //return true;
-        //}
-        //if (!domain.startsWith(".")) {
-            //domain = '.' + domain;
-        //}
-        //return host.endsWith(domain) || host.equals(domain.substring(1));
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
     }
 
     

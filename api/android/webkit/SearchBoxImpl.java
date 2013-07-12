@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -41,11 +41,11 @@ final class SearchBoxImpl implements SearchBox {
         mWebViewCore = webViewCore;
         mCallbackProxy = callbackProxy;
         mEventCallbacks = new HashMap<Integer, SearchBoxListener>();
-        // ---------- Original Method ----------
-        //mListeners = new ArrayList<SearchBoxListener>();
-        //mWebViewCore = webViewCore;
-        //mCallbackProxy = callbackProxy;
-        //mEventCallbacks = new HashMap<Integer, SearchBoxListener>();
+        
+        
+        
+        
+        
     }
 
     
@@ -58,13 +58,13 @@ final class SearchBoxImpl implements SearchBox {
         {
             final String js = String.format(SET_QUERY_SCRIPT, formattedQuery);
             dispatchJs(js);
-        } //End block
-        // ---------- Original Method ----------
-        //final String formattedQuery = jsonSerialize(query);
-        //if (formattedQuery != null) {
-            //final String js = String.format(SET_QUERY_SCRIPT, formattedQuery);
-            //dispatchJs(js);
-        //}
+        } 
+        
+        
+        
+            
+            
+        
     }
 
     
@@ -74,9 +74,9 @@ final class SearchBoxImpl implements SearchBox {
         addTaint(verbatim);
         final String js = String.format(SET_VERBATIM_SCRIPT, String.valueOf(verbatim));
         dispatchJs(js);
-        // ---------- Original Method ----------
-        //final String js = String.format(SET_VERBATIM_SCRIPT, String.valueOf(verbatim));
-        //dispatchJs(js);
+        
+        
+        
     }
 
     
@@ -87,9 +87,9 @@ final class SearchBoxImpl implements SearchBox {
         addTaint(selectionStart);
         final String js = String.format(SET_SELECTION_SCRIPT, selectionStart, selectionEnd);
         dispatchJs(js);
-        // ---------- Original Method ----------
-        //final String js = String.format(SET_SELECTION_SCRIPT, selectionStart, selectionEnd);
-        //dispatchJs(js);
+        
+        
+        
     }
 
     
@@ -102,9 +102,9 @@ final class SearchBoxImpl implements SearchBox {
         addTaint(x);
         final String js = String.format(SET_DIMENSIONS_SCRIPT, x, y, width, height);
         dispatchJs(js);
-        // ---------- Original Method ----------
-        //final String js = String.format(SET_DIMENSIONS_SCRIPT, x, y, width, height);
-        //dispatchJs(js);
+        
+        
+        
     }
 
     
@@ -113,8 +113,8 @@ final class SearchBoxImpl implements SearchBox {
     public void onchange(SearchBoxListener callback) {
         addTaint(callback.getTaint());
         dispatchEvent(EVENT_CHANGE, callback);
-        // ---------- Original Method ----------
-        //dispatchEvent(EVENT_CHANGE, callback);
+        
+        
     }
 
     
@@ -123,8 +123,8 @@ final class SearchBoxImpl implements SearchBox {
     public void onsubmit(SearchBoxListener callback) {
         addTaint(callback.getTaint());
         dispatchEvent(EVENT_SUBMIT, callback);
-        // ---------- Original Method ----------
-        //dispatchEvent(EVENT_SUBMIT, callback);
+        
+        
     }
 
     
@@ -133,8 +133,8 @@ final class SearchBoxImpl implements SearchBox {
     public void onresize(SearchBoxListener callback) {
         addTaint(callback.getTaint());
         dispatchEvent(EVENT_RESIZE, callback);
-        // ---------- Original Method ----------
-        //dispatchEvent(EVENT_RESIZE, callback);
+        
+        
     }
 
     
@@ -143,8 +143,8 @@ final class SearchBoxImpl implements SearchBox {
     public void oncancel(SearchBoxListener callback) {
         addTaint(callback.getTaint());
         dispatchEvent(EVENT_CANCEL, callback);
-        // ---------- Original Method ----------
-        //dispatchEvent(EVENT_CANCEL, callback);
+        
+        
     }
 
     
@@ -159,26 +159,26 @@ final class SearchBoxImpl implements SearchBox {
 (this)            {
                 eventId = mNextEventId++;
                 mEventCallbacks.put(eventId, callback);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             eventId = 0;
-        } //End block
+        } 
         final String js = String.format(DISPATCH_EVENT_SCRIPT, eventName, eventId);
         dispatchJs(js);
-        // ---------- Original Method ----------
-        //int eventId;
-        //if (callback != null) {
-            //synchronized(this) {
-                //eventId = mNextEventId++;
-                //mEventCallbacks.put(eventId, callback);
-            //}
-        //} else {
-            //eventId = 0;
-        //}
-        //final String js = String.format(DISPATCH_EVENT_SCRIPT, eventName, eventId);
-        //dispatchJs(js);
+        
+        
+        
+            
+                
+                
+            
+        
+            
+        
+        
+        
     }
 
     
@@ -186,8 +186,8 @@ final class SearchBoxImpl implements SearchBox {
     private void dispatchJs(String js) {
         addTaint(js.getTaint());
         mWebViewCore.sendMessage(EventHub.EXECUTE_JS, js);
-        // ---------- Original Method ----------
-        //mWebViewCore.sendMessage(EventHub.EXECUTE_JS, js);
+        
+        
     }
 
     
@@ -198,11 +198,11 @@ final class SearchBoxImpl implements SearchBox {
         synchronized
 (mListeners)        {
             mListeners.add(l);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mListeners) {
-            //mListeners.add(l);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -213,11 +213,11 @@ final class SearchBoxImpl implements SearchBox {
         synchronized
 (mListeners)        {
             mListeners.remove(l);
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mListeners) {
-            //mListeners.remove(l);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -226,9 +226,9 @@ final class SearchBoxImpl implements SearchBox {
     public void isSupported(IsSupportedCallback callback) {
         mSupportedCallback = callback;
         dispatchJs(IS_SUPPORTED_SCRIPT);
-        // ---------- Original Method ----------
-        //mSupportedCallback = callback;
-        //dispatchJs(IS_SUPPORTED_SCRIPT);
+        
+        
+        
     }
 
     
@@ -236,8 +236,8 @@ final class SearchBoxImpl implements SearchBox {
     public void isSupportedCallback(boolean isSupported) {
         addTaint(isSupported);
         mCallbackProxy.onIsSupportedCallback(isSupported);
-        // ---------- Original Method ----------
-        //mCallbackProxy.onIsSupportedCallback(isSupported);
+        
+        
     }
 
     
@@ -249,13 +249,13 @@ final class SearchBoxImpl implements SearchBox {
     if(callback != null)        
         {
             callback.searchBoxIsSupported(isSupported);
-        } //End block
-        // ---------- Original Method ----------
-        //IsSupportedCallback callback = mSupportedCallback;
-        //mSupportedCallback = null;
-        //if (callback != null) {
-            //callback.searchBoxIsSupported(isSupported);
-        //}
+        } 
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -265,8 +265,8 @@ final class SearchBoxImpl implements SearchBox {
         addTaint(id);
         addTaint(function.getTaint());
         mCallbackProxy.onSearchboxDispatchCompleteCallback(function, id, successful);
-        // ---------- Original Method ----------
-        //mCallbackProxy.onSearchboxDispatchCompleteCallback(function, id, successful);
+        
+        
     }
 
     
@@ -282,49 +282,49 @@ final class SearchBoxImpl implements SearchBox {
 (this)            {
                 listener = mEventCallbacks.get(id);
                 mEventCallbacks.remove(id);
-            } //End block
+            } 
     if(listener != null)            
             {
     if(TextUtils.equals(EVENT_CHANGE, function))                
                 {
                     listener.onChangeComplete(successful);
-                } //End block
+                } 
                 else
     if(TextUtils.equals(EVENT_SUBMIT, function))                
                 {
                     listener.onSubmitComplete(successful);
-                } //End block
+                } 
                 else
     if(TextUtils.equals(EVENT_RESIZE, function))                
                 {
                     listener.onResizeComplete(successful);
-                } //End block
+                } 
                 else
     if(TextUtils.equals(EVENT_CANCEL, function))                
                 {
                     listener.onCancelComplete(successful);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (id != 0) {
-            //SearchBoxListener listener;
-            //synchronized(this) {
-                //listener = mEventCallbacks.get(id);
-                //mEventCallbacks.remove(id);
-            //}
-            //if (listener != null) {
-                //if (TextUtils.equals(EVENT_CHANGE, function)) {
-                    //listener.onChangeComplete(successful);
-                //} else if (TextUtils.equals(EVENT_SUBMIT, function)) {
-                    //listener.onSubmitComplete(successful);
-                //} else if (TextUtils.equals(EVENT_RESIZE, function)) {
-                    //listener.onResizeComplete(successful);
-                //} else if (TextUtils.equals(EVENT_CANCEL, function)) {
-                    //listener.onCancelComplete(successful);
-                //}
-            //}
-        //}
+                } 
+            } 
+        } 
+        
+        
+            
+            
+                
+                
+            
+            
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+            
+        
     }
 
     
@@ -346,7 +346,7 @@ final class SearchBoxImpl implements SearchBox {
     if(jsonArguments == null)        
         {
             return;
-        } //End block
+        } 
         String query = null;
         List<String> suggestions = new ArrayList<String>();
         try 
@@ -361,16 +361,16 @@ for(int i = 0;i < suggestionsArray.length();++i)
     if(value != null)                
                 {
                     suggestions.add(value);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         catch (JSONException je)
         {
             return;
-        } //End block
+        } 
         mCallbackProxy.onSearchboxSuggestionsReceived(query, suggestions);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -383,14 +383,14 @@ for(int i = 0;i < suggestionsArray.length();++i)
 for(int i = mListeners.size() - 1;i >= 0;i--)
             {
                 mListeners.get(i).onSuggestionsReceived(query, suggestions);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //synchronized (mListeners) {
-            //for (int i = mListeners.size() - 1; i >= 0; i--) {
-                //mListeners.get(i).onSuggestionsReceived(query, suggestions);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     

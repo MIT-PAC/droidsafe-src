@@ -1,6 +1,6 @@
 package org.apache.http.entity;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -24,14 +24,14 @@ public class HttpEntityWrapper implements HttpEntity {
                 ("wrapped entity must not be null");
             var891221892810DF8BECFD57BEC0767C7B_175850901.addTaint(taint);
             throw var891221892810DF8BECFD57BEC0767C7B_175850901;
-        } //End block
+        } 
         wrappedEntity = wrapped;
-        // ---------- Original Method ----------
-        //if (wrapped == null) {
-            //throw new IllegalArgumentException
-                //("wrapped entity must not be null");
-        //}
-        //wrappedEntity = wrapped;
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -40,8 +40,8 @@ public class HttpEntityWrapper implements HttpEntity {
         boolean var9B05981995E2CC50F5B2959ADB42FEAD_430774410 = (wrappedEntity.isRepeatable());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1224882689 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1224882689;
-        // ---------- Original Method ----------
-        //return wrappedEntity.isRepeatable();
+        
+        
     }
 
     
@@ -50,8 +50,8 @@ public class HttpEntityWrapper implements HttpEntity {
         boolean varC45756BB83310DF83D8CA2EF7D5FA04A_2089039443 = (wrappedEntity.isChunked());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1681593516 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1681593516;
-        // ---------- Original Method ----------
-        //return wrappedEntity.isChunked();
+        
+        
     }
 
     
@@ -60,8 +60,8 @@ public class HttpEntityWrapper implements HttpEntity {
         long varE16A3D9A28884C197B737656D3267561_1975306861 = (wrappedEntity.getContentLength());
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_2003238145 = getTaintLong();
         return var0F5264038205EDFB1AC05FBB0E8C5E94_2003238145;
-        // ---------- Original Method ----------
-        //return wrappedEntity.getContentLength();
+        
+        
     }
 
     
@@ -70,8 +70,8 @@ public class HttpEntityWrapper implements HttpEntity {
 Header var590535281942B049533B59980AFA506D_1877479784 =         wrappedEntity.getContentType();
         var590535281942B049533B59980AFA506D_1877479784.addTaint(taint);
         return var590535281942B049533B59980AFA506D_1877479784;
-        // ---------- Original Method ----------
-        //return wrappedEntity.getContentType();
+        
+        
     }
 
     
@@ -80,8 +80,8 @@ Header var590535281942B049533B59980AFA506D_1877479784 =         wrappedEntity.ge
 Header var0AA5129D0D17831211E9BEAEA729D4E5_71309972 =         wrappedEntity.getContentEncoding();
         var0AA5129D0D17831211E9BEAEA729D4E5_71309972.addTaint(taint);
         return var0AA5129D0D17831211E9BEAEA729D4E5_71309972;
-        // ---------- Original Method ----------
-        //return wrappedEntity.getContentEncoding();
+        
+        
     }
 
     
@@ -90,8 +90,8 @@ Header var0AA5129D0D17831211E9BEAEA729D4E5_71309972 =         wrappedEntity.getC
 InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_550231487 =         wrappedEntity.getContent();
         varF6ACD77A5F5C16B8B8AB61A8E0321333_550231487.addTaint(taint);
         return varF6ACD77A5F5C16B8B8AB61A8E0321333_550231487;
-        // ---------- Original Method ----------
-        //return wrappedEntity.getContent();
+        
+        
     }
 
     
@@ -99,8 +99,8 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_550231487 =         wrappedEntit
     public void writeTo(OutputStream outstream) throws IOException {
         addTaint(outstream.getTaint());
         wrappedEntity.writeTo(outstream);
-        // ---------- Original Method ----------
-        //wrappedEntity.writeTo(outstream);
+        
+        
     }
 
     
@@ -109,16 +109,16 @@ InputStream varF6ACD77A5F5C16B8B8AB61A8E0321333_550231487 =         wrappedEntit
         boolean varA1379DC23CA041DAFBB19393B6C62948_399115862 = (wrappedEntity.isStreaming());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_69628975 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_69628975;
-        // ---------- Original Method ----------
-        //return wrappedEntity.isStreaming();
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:34.952 -0400", hash_original_method = "D38253ACE34121886ACB6BC0EC310CC5", hash_generated_method = "B8262C4ECF5B4F1C60F7AA5E1B2551F2")
     public void consumeContent() throws IOException {
         wrappedEntity.consumeContent();
-        // ---------- Original Method ----------
-        //wrappedEntity.consumeContent();
+        
+        
     }
 
     

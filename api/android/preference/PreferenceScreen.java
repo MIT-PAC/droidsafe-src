@@ -1,6 +1,6 @@
 package android.preference;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -36,7 +36,7 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
         super(context, attrs, com.android.internal.R.attr.preferenceScreenStyle);
         addTaint(attrs.getTaint());
         addTaint(context.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,26 +45,26 @@ public final class PreferenceScreen extends PreferenceGroup implements AdapterVi
     if(mRootAdapter == null)        
         {
             mRootAdapter = onCreateRootAdapter();
-        } //End block
+        } 
 ListAdapter var69C649A5DFA7AE0E39B1A520D14F6450_1254740615 =         mRootAdapter;
         var69C649A5DFA7AE0E39B1A520D14F6450_1254740615.addTaint(taint);
         return var69C649A5DFA7AE0E39B1A520D14F6450_1254740615;
-        // ---------- Original Method ----------
-        //if (mRootAdapter == null) {
-            //mRootAdapter = onCreateRootAdapter();
-        //}
-        //return mRootAdapter;
+        
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.746 -0400", hash_original_method = "BDEF03D241AC1847AD8585ACF20EF682", hash_generated_method = "A8E6E0DE674C947CCA2858D29A5375A6")
     protected ListAdapter onCreateRootAdapter() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
 ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_46204206 =         new PreferenceGroupAdapter(this);
         var99AA28967D3A2946B59C82F1D9ABEEE0_46204206.addTaint(taint);
         return var99AA28967D3A2946B59C82F1D9ABEEE0_46204206;
-        // ---------- Original Method ----------
-        //return new PreferenceGroupAdapter(this);
+        
+        
     }
 
     
@@ -74,27 +74,27 @@ ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_46204206 =         new Preferenc
         listView.setOnItemClickListener(this);
         listView.setAdapter(getRootAdapter());
         onAttachedToActivity();
-        // ---------- Original Method ----------
-        //listView.setOnItemClickListener(this);
-        //listView.setAdapter(getRootAdapter());
-        //onAttachedToActivity();
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.746 -0400", hash_original_method = "0BA40F9F4173A0900F716D516252D657", hash_generated_method = "242F2A2F7647A1BE298DACFF84B8AB6B")
     @Override
     protected void onClick() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
     if(getIntent() != null || getFragment() != null || getPreferenceCount() == 0)        
         {
             return;
-        } //End block
+        } 
         showDialog(null);
-        // ---------- Original Method ----------
-        //if (getIntent() != null || getFragment() != null || getPreferenceCount() == 0) {
-            //return;
-        //}
-        //showDialog(null);
+        
+        
+            
+        
+        
     }
 
     
@@ -105,7 +105,7 @@ ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_46204206 =         new Preferenc
     if(mListView != null)        
         {
             mListView.setAdapter(null);
-        } //End block
+        } 
         mListView = new ListView(context);
         bind(mListView);
         final CharSequence title = getTitle();
@@ -113,68 +113,69 @@ ListAdapter var99AA28967D3A2946B59C82F1D9ABEEE0_46204206 =         new Preferenc
     if(TextUtils.isEmpty(title))        
         {
             dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        } //End block
+        } 
         else
         {
             dialog.setTitle(title);
-        } //End block
+        } 
         dialog.setContentView(mListView);
         dialog.setOnDismissListener(this);
     if(state != null)        
         {
             dialog.onRestoreInstanceState(state);
-        } //End block
+        } 
         getPreferenceManager().addPreferencesScreen(dialog);
         dialog.show();
-        // ---------- Original Method ----------
-        //Context context = getContext();
-        //if (mListView != null) {
-            //mListView.setAdapter(null);
-        //}
-        //mListView = new ListView(context);
-        //bind(mListView);
-        //final CharSequence title = getTitle();
-        //Dialog dialog = mDialog = new Dialog(context, context.getThemeResId());
-        //if (TextUtils.isEmpty(title)) {
-            //dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-        //} else {
-            //dialog.setTitle(title);
-        //}
-        //dialog.setContentView(mListView);
-        //dialog.setOnDismissListener(this);
-        //if (state != null) {
-            //dialog.onRestoreInstanceState(state);
-        //}
-        //getPreferenceManager().addPreferencesScreen(dialog);
-        //dialog.show();
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+            
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.748 -0400", hash_original_method = "1D545D21EF78185D798DBABDC99E4A1B", hash_generated_method = "E254BAF328A87547F1967737960675B6")
     public void onDismiss(DialogInterface dialog) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(dialog.getTaint());
         mDialog = null;
         getPreferenceManager().removePreferencesScreen(dialog);
-        // ---------- Original Method ----------
-        //mDialog = null;
-        //getPreferenceManager().removePreferencesScreen(dialog);
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.748 -0400", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "A698D0A15B2476EA8563F85C45922766")
     public Dialog getDialog() {
 Dialog var91E8306796CF70F787962B1CE02ED969_279382381 =         mDialog;
         var91E8306796CF70F787962B1CE02ED969_279382381.addTaint(taint);
         return var91E8306796CF70F787962B1CE02ED969_279382381;
-        // ---------- Original Method ----------
-        //return mDialog;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.750 -0400", hash_original_method = "4B6165E1F2A74727BF4AF10C08319E83", hash_generated_method = "64F36298B719C88128318CFB0F1B2EB7")
     public void onItemClick(AdapterView parent, View view, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(id);
         addTaint(position);
         addTaint(view.getTaint());
@@ -182,38 +183,39 @@ Dialog var91E8306796CF70F787962B1CE02ED969_279382381 =         mDialog;
     if(parent instanceof ListView)        
         {
             position -= ((ListView) parent).getHeaderViewsCount();
-        } //End block
+        } 
         Object item = getRootAdapter().getItem(position);
     if(!(item instanceof Preference))        
         return;
         final Preference preference = (Preference) item;
         preference.performClick(this);
-        // ---------- Original Method ----------
-        //if (parent instanceof ListView) {
-            //position -= ((ListView) parent).getHeaderViewsCount();
-        //}
-        //Object item = getRootAdapter().getItem(position);
-        //if (!(item instanceof Preference)) return;
-        //final Preference preference = (Preference) item;
-        //preference.performClick(this);
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.750 -0400", hash_original_method = "B68456EA6FB78586D0952577C0AE0058", hash_generated_method = "CF25DB06059BA24153F2578D2989595D")
     @Override
     protected boolean isOnSameScreenAsChildren() {
         boolean var68934A3E9455FA72420237EB05902327_669988878 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_516142372 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_516142372;
-        // ---------- Original Method ----------
-        //return false;
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.752 -0400", hash_original_method = "2F4F23BF6B6CEAFD77846C461E2361F8", hash_generated_method = "B891A900974E603DCD700DC5A4706038")
     @Override
     protected Parcelable onSaveInstanceState() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         final Parcelable superState = super.onSaveInstanceState();
         final Dialog dialog = mDialog;
     if(dialog == null || !dialog.isShowing())        
@@ -221,52 +223,52 @@ Dialog var91E8306796CF70F787962B1CE02ED969_279382381 =         mDialog;
 Parcelable varBA7A3E641095ABD11C9DBE16D47F122C_2124737846 =             superState;
             varBA7A3E641095ABD11C9DBE16D47F122C_2124737846.addTaint(taint);
             return varBA7A3E641095ABD11C9DBE16D47F122C_2124737846;
-        } //End block
+        } 
         final SavedState myState = new SavedState(superState);
         myState.isDialogShowing = true;
         myState.dialogBundle = dialog.onSaveInstanceState();
 Parcelable varA730247CC64767D7A83D25979CFF71FB_1215760172 =         myState;
         varA730247CC64767D7A83D25979CFF71FB_1215760172.addTaint(taint);
         return varA730247CC64767D7A83D25979CFF71FB_1215760172;
-        // ---------- Original Method ----------
-        //final Parcelable superState = super.onSaveInstanceState();
-        //final Dialog dialog = mDialog;
-        //if (dialog == null || !dialog.isShowing()) {
-            //return superState;
-        //}
-        //final SavedState myState = new SavedState(superState);
-        //myState.isDialogShowing = true;
-        //myState.dialogBundle = dialog.onSaveInstanceState();
-        //return myState;
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:34.752 -0400", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "8D1F140D5913A647832B8CB90D82789F")
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(state.getTaint());
     if(state == null || !state.getClass().equals(SavedState.class))        
         {
             super.onRestoreInstanceState(state);
             return;
-        } //End block
+        } 
         SavedState myState = (SavedState) state;
         super.onRestoreInstanceState(myState.getSuperState());
     if(myState.isDialogShowing)        
         {
             showDialog(myState.dialogBundle);
-        } //End block
-        // ---------- Original Method ----------
-        //if (state == null || !state.getClass().equals(SavedState.class)) {
-            //super.onRestoreInstanceState(state);
-            //return;
-        //}
-        //SavedState myState = (SavedState) state;
-        //super.onRestoreInstanceState(myState.getSuperState());
-        //if (myState.isDialogShowing) {
-            //showDialog(myState.dialogBundle);
-        //}
+        } 
+        
+        
+            
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -283,9 +285,9 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1215760172 =         myState;
             super(source);
             isDialogShowing = source.readInt() == 1;
             dialogBundle = source.readBundle();
-            // ---------- Original Method ----------
-            //isDialogShowing = source.readInt() == 1;
-            //dialogBundle = source.readBundle();
+            
+            
+            
         }
 
         
@@ -293,7 +295,7 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1215760172 =         myState;
         public  SavedState(Parcelable superState) {
             super(superState);
             addTaint(superState.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -305,10 +307,10 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1215760172 =         myState;
             super.writeToParcel(dest, flags);
             dest.writeInt(isDialogShowing ? 1 : 0);
             dest.writeBundle(dialogBundle);
-            // ---------- Original Method ----------
-            //super.writeToParcel(dest, flags);
-            //dest.writeInt(isDialogShowing ? 1 : 0);
-            //dest.writeBundle(dialogBundle);
+            
+            
+            
+            
         }
 
         
@@ -324,12 +326,12 @@ Parcelable varA730247CC64767D7A83D25979CFF71FB_1215760172 =         myState;
                 return new SavedState[size];
             }
         };
-        // orphaned legacy method
+        
         public SavedState createFromParcel(Parcel in) {
                 return new SavedState(in);
             }
         
-        // orphaned legacy method
+        
         public SavedState[] newArray(int size) {
                 return new SavedState[size];
             }

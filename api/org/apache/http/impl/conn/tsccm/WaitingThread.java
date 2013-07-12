@@ -1,6 +1,6 @@
 package org.apache.http.impl.conn.tsccm;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -28,15 +28,15 @@ public class WaitingThread {
             IllegalArgumentException var34D4FBFEC6ED6866DA5BDDE44FD11CF2_690950067 = new IllegalArgumentException("Condition must not be null.");
             var34D4FBFEC6ED6866DA5BDDE44FD11CF2_690950067.addTaint(taint);
             throw var34D4FBFEC6ED6866DA5BDDE44FD11CF2_690950067;
-        } //End block
+        } 
         this.cond = cond;
         this.pool = pool;
-        // ---------- Original Method ----------
-        //if (cond == null) {
-            //throw new IllegalArgumentException("Condition must not be null.");
-        //}
-        //this.cond = cond;
-        //this.pool = pool;
+        
+        
+            
+        
+        
+        
     }
 
     
@@ -45,8 +45,8 @@ public class WaitingThread {
 Condition var8E3679EF6AFF44D2ADE75707730E246F_1293663304 =         this.cond;
         var8E3679EF6AFF44D2ADE75707730E246F_1293663304.addTaint(taint);
         return var8E3679EF6AFF44D2ADE75707730E246F_1293663304;
-        // ---------- Original Method ----------
-        //return this.cond;
+        
+        
     }
 
     
@@ -55,8 +55,8 @@ Condition var8E3679EF6AFF44D2ADE75707730E246F_1293663304 =         this.cond;
 RouteSpecificPool var3D7A8FEF66EC1D1D80E6ECD3302B47BC_1561089731 =         this.pool;
         var3D7A8FEF66EC1D1D80E6ECD3302B47BC_1561089731.addTaint(taint);
         return var3D7A8FEF66EC1D1D80E6ECD3302B47BC_1561089731;
-        // ---------- Original Method ----------
-        //return this.pool;
+        
+        
     }
 
     
@@ -65,8 +65,8 @@ RouteSpecificPool var3D7A8FEF66EC1D1D80E6ECD3302B47BC_1561089731 =         this.
 Thread var760B1EA155F5CA2BBA827AEB44D8EA68_305168427 =         this.waiter;
         var760B1EA155F5CA2BBA827AEB44D8EA68_305168427.addTaint(taint);
         return var760B1EA155F5CA2BBA827AEB44D8EA68_305168427;
-        // ---------- Original Method ----------
-        //return this.waiter;
+        
+        
     }
 
     
@@ -81,7 +81,7 @@ Thread var760B1EA155F5CA2BBA827AEB44D8EA68_305168427 =         this.waiter;
                  "\nwaiter: " + this.waiter);
             varCE7AD081C18F30A16317EA83A08A4371_751638074.addTaint(taint);
             throw varCE7AD081C18F30A16317EA83A08A4371_751638074;
-        } //End block
+        } 
     if(aborted)        
         {
         InterruptedException var7EE922E5DCB3F92D72C13AFC121FC801_1029114214 = new InterruptedException("Operation interrupted");
@@ -95,28 +95,28 @@ Thread var760B1EA155F5CA2BBA827AEB44D8EA68_305168427 =         this.waiter;
     if(deadline != null)            
             {
                 success = this.cond.awaitUntil(deadline);
-            } //End block
+            } 
             else
             {
                 this.cond.await();
                 success = true;
-            } //End block
+            } 
     if(aborted)            
             {
             InterruptedException var7EE922E5DCB3F92D72C13AFC121FC801_2044591328 = new InterruptedException("Operation interrupted");
             var7EE922E5DCB3F92D72C13AFC121FC801_2044591328.addTaint(taint);
             throw var7EE922E5DCB3F92D72C13AFC121FC801_2044591328;
             }
-        } //End block
+        } 
         finally 
         {
             this.waiter = null;
-        } //End block
+        } 
         boolean var260CA9DD8A4577FC00B7BD5810298076_290612097 = (success);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_10738890 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_10738890;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -128,14 +128,14 @@ Thread var760B1EA155F5CA2BBA827AEB44D8EA68_305168427 =         this.waiter;
                 ("Nobody waiting on this object.");
             var734AD850447D0A571E2A31F53594F3FC_1811418506.addTaint(taint);
             throw var734AD850447D0A571E2A31F53594F3FC_1811418506;
-        } //End block
+        } 
         this.cond.signalAll();
-        // ---------- Original Method ----------
-        //if (this.waiter == null) {
-            //throw new IllegalStateException
-                //("Nobody waiting on this object.");
-        //}
-        //this.cond.signalAll();
+        
+        
+            
+                
+        
+        
     }
 
     
@@ -143,9 +143,9 @@ Thread var760B1EA155F5CA2BBA827AEB44D8EA68_305168427 =         this.waiter;
     public void interrupt() {
         aborted = true;
         this.cond.signalAll();
-        // ---------- Original Method ----------
-        //aborted = true;
-        //this.cond.signalAll();
+        
+        
+        
     }
 
     

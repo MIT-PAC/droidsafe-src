@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -14,7 +14,7 @@ public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:36.804 -0400", hash_original_method = "A02637D5820C2A953A6FE290A5D120D8", hash_generated_method = "78C075841E7848E13CAEA65D188AF82D")
     public  RFC2109VersionHandler() {
         super();
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -27,46 +27,46 @@ public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1834422305 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_1834422305.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_1834422305;
-        } //End block
+        } 
     if(value == null)        
         {
             MalformedCookieException var34DCCD1FCF80B922AD071CE3DF09605E_295107088 = new MalformedCookieException("Missing value for version attribute");
             var34DCCD1FCF80B922AD071CE3DF09605E_295107088.addTaint(taint);
             throw var34DCCD1FCF80B922AD071CE3DF09605E_295107088;
-        } //End block
+        } 
     if(value.trim().length() == 0)        
         {
             MalformedCookieException var9E0821B05EC087926FE26754E9A6E8A9_113896390 = new MalformedCookieException("Blank value for version attribute");
             var9E0821B05EC087926FE26754E9A6E8A9_113896390.addTaint(taint);
             throw var9E0821B05EC087926FE26754E9A6E8A9_113896390;
-        } //End block
+        } 
         try 
         {
             cookie.setVersion(Integer.parseInt(value));
-        } //End block
+        } 
         catch (NumberFormatException e)
         {
             MalformedCookieException varD51889F56C9974850BF557D7DEBC7B9B_1010459551 = new MalformedCookieException("Invalid version: " 
                 + e.getMessage());
             varD51889F56C9974850BF557D7DEBC7B9B_1010459551.addTaint(taint);
             throw varD51889F56C9974850BF557D7DEBC7B9B_1010459551;
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (value == null) {
-            //throw new MalformedCookieException("Missing value for version attribute");
-        //}
-        //if (value.trim().length() == 0) {
-            //throw new MalformedCookieException("Blank value for version attribute");
-        //}
-        //try {
-           //cookie.setVersion(Integer.parseInt(value));
-        //} catch (NumberFormatException e) {
-            //throw new MalformedCookieException("Invalid version: " 
-                //+ e.getMessage());
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+        
+           
+        
+            
+                
+        
     }
 
     
@@ -80,20 +80,20 @@ public class RFC2109VersionHandler extends AbstractCookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_672339690 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_672339690.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_672339690;
-        } //End block
+        } 
     if(cookie.getVersion() < 0)        
         {
             MalformedCookieException var7050461944FAC111CDEC8166970ACF79_1160388803 = new MalformedCookieException("Cookie version may not be negative");
             var7050461944FAC111CDEC8166970ACF79_1160388803.addTaint(taint);
             throw var7050461944FAC111CDEC8166970ACF79_1160388803;
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (cookie.getVersion() < 0) {
-            //throw new MalformedCookieException("Cookie version may not be negative");
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
     }
 
     

@@ -1,6 +1,6 @@
 package android.widget;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -57,8 +57,8 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         super(context);
         addTaint(context.getTaint());
         initTabHost();
-        // ---------- Original Method ----------
-        //initTabHost();
+        
+        
     }
 
     
@@ -75,18 +75,18 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     if(mTabLayoutId == 0)        
         {
             mTabLayoutId = R.layout.tab_indicator_holo;
-        } //End block
+        } 
         initTabHost();
-        // ---------- Original Method ----------
-        //TypedArray a = context.obtainStyledAttributes(attrs,
-                //com.android.internal.R.styleable.TabWidget,
-                //com.android.internal.R.attr.tabWidgetStyle, 0);
-        //mTabLayoutId = a.getResourceId(R.styleable.TabWidget_tabLayout, 0);
-        //a.recycle();
-        //if (mTabLayoutId == 0) {
-            //mTabLayoutId = R.layout.tab_indicator_holo;
-        //}
-        //initTabHost();
+        
+        
+                
+                
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -96,11 +96,11 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
         setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
         mCurrentTab = -1;
         mCurrentView = null;
-        // ---------- Original Method ----------
-        //setFocusableInTouchMode(true);
-        //setDescendantFocusability(FOCUS_AFTER_DESCENDANTS);
-        //mCurrentTab = -1;
-        //mCurrentView = null;
+        
+        
+        
+        
+        
     }
 
     
@@ -110,8 +110,8 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
 TabSpec var9394CA671E7F01C66F85FB413430087C_1638646835 =         new TabSpec(tag);
         var9394CA671E7F01C66F85FB413430087C_1638646835.addTaint(taint);
         return var9394CA671E7F01C66F85FB413430087C_1638646835;
-        // ---------- Original Method ----------
-        //return new TabSpec(tag);
+        
+        
     }
 
     
@@ -124,11 +124,11 @@ TabSpec var9394CA671E7F01C66F85FB413430087C_1638646835 =         new TabSpec(tag
                     "Your TabHost must have a TabWidget whose id attribute is 'android.R.id.tabs'");
             var5DC7F166BF9B3AC526B0E6AA20AA1352_1647024593.addTaint(taint);
             throw var5DC7F166BF9B3AC526B0E6AA20AA1352_1647024593;
-        } //End block
+        } 
         mTabKeyListener = new OnKeyListener() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.132 -0400", hash_original_method = "C0EA49319FD8B41812699E631E771535", hash_generated_method = "46A793EFCDC1E7601F8F901EEAABF704")
         public boolean onKey(View v, int keyCode, KeyEvent event) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(event.getTaint());
             addTaint(keyCode);
             addTaint(v.getTaint());
@@ -146,36 +146,36 @@ switch(keyCode){
             boolean var273DA003ADCFDB92D0EBA136175532C1_466177928 = (mTabContent.dispatchKeyEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2117616248 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2117616248;
-            // ---------- Original Method ----------
-            //switch (keyCode) {
-                    //case KeyEvent.KEYCODE_DPAD_CENTER:
-                    //case KeyEvent.KEYCODE_DPAD_LEFT:
-                    //case KeyEvent.KEYCODE_DPAD_RIGHT:
-                    //case KeyEvent.KEYCODE_DPAD_UP:
-                    //case KeyEvent.KEYCODE_DPAD_DOWN:
-                    //case KeyEvent.KEYCODE_ENTER:
-                        //return false;
-                //}
-            //mTabContent.requestFocus(View.FOCUS_FORWARD);
-            //return mTabContent.dispatchKeyEvent(event);
+            
+            
+                    
+                    
+                    
+                    
+                    
+                    
+                        
+                
+            
+            
         }
 };
         mTabWidget.setTabSelectionListener(new TabWidget.OnTabSelectionChanged() {        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.133 -0400", hash_original_method = "A259B917D04BDEAF062BC2DB0803EBFA", hash_generated_method = "01DB11C570923A2CD1267A6ECE6AA313")
         public void onTabSelectionChanged(int tabIndex, boolean clicked) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(clicked);
             addTaint(tabIndex);
             setCurrentTab(tabIndex);
     if(clicked)            
             {
                 mTabContent.requestFocus(View.FOCUS_FORWARD);
-            } //End block
-            // ---------- Original Method ----------
-            //setCurrentTab(tabIndex);
-            //if (clicked) {
-                    //mTabContent.requestFocus(View.FOCUS_FORWARD);
-                //}
+            } 
+            
+            
+            
+                    
+                
         }
 });
         mTabContent = (FrameLayout) findViewById(com.android.internal.R.id.tabcontent);
@@ -186,17 +186,18 @@ switch(keyCode){
                             + "'android.R.id.tabcontent'");
             var716C43C79B3FC02886B0E6FC5F09CF65_1220432741.addTaint(taint);
             throw var716C43C79B3FC02886B0E6FC5F09CF65_1220432741;
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.133 -0400", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "6A09BD8EA53A915AB5F822E12CBC5F98")
     @Override
     public void sendAccessibilityEvent(int eventType) {
         addTaint(eventType);
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -204,57 +205,57 @@ switch(keyCode){
     public void setup(LocalActivityManager activityGroup) {
         setup();
         mLocalActivityManager = activityGroup;
-        // ---------- Original Method ----------
-        //setup();
-        //mLocalActivityManager = activityGroup;
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.134 -0400", hash_original_method = "1749A697E4E6C7318205DA9AE02BC223", hash_generated_method = "4C1B09CC4A3161ACA376A60E7B4F4A76")
     @Override
     protected void onAttachedToWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onAttachedToWindow();
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         treeObserver.addOnTouchModeChangeListener(this);
-        // ---------- Original Method ----------
-        //super.onAttachedToWindow();
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //treeObserver.addOnTouchModeChangeListener(this);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.134 -0400", hash_original_method = "56196D931FB093B5A1146C07A075CA12", hash_generated_method = "F26B48291C057827C5C1790AF0239B41")
     @Override
     protected void onDetachedFromWindow() {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         super.onDetachedFromWindow();
         final ViewTreeObserver treeObserver = getViewTreeObserver();
         treeObserver.removeOnTouchModeChangeListener(this);
-        // ---------- Original Method ----------
-        //super.onDetachedFromWindow();
-        //final ViewTreeObserver treeObserver = getViewTreeObserver();
-        //treeObserver.removeOnTouchModeChangeListener(this);
+        
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.134 -0400", hash_original_method = "F30EBD0BC50E7240BEF5418DD0D95D1E", hash_generated_method = "7F48E72F2966E5F1130533C717A97650")
     public void onTouchModeChanged(boolean isInTouchMode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(isInTouchMode);
     if(!isInTouchMode)        
         {
     if(mCurrentView != null && (!mCurrentView.hasFocus() || mCurrentView.isFocused()))            
             {
                 mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (!isInTouchMode) {
-            //if (mCurrentView != null && (!mCurrentView.hasFocus() || mCurrentView.isFocused())) {
-                //mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+                
+            
+        
     }
 
     
@@ -266,42 +267,42 @@ switch(keyCode){
             IllegalArgumentException varA59285131EC8FBC7020DCD85D85A8377_1111744280 = new IllegalArgumentException("you must specify a way to create the tab indicator.");
             varA59285131EC8FBC7020DCD85D85A8377_1111744280.addTaint(taint);
             throw varA59285131EC8FBC7020DCD85D85A8377_1111744280;
-        } //End block
+        } 
     if(tabSpec.mContentStrategy == null)        
         {
             IllegalArgumentException var811A2D321ECE4A7272DFDBE4B3F1A05F_1204950450 = new IllegalArgumentException("you must specify a way to create the tab content");
             var811A2D321ECE4A7272DFDBE4B3F1A05F_1204950450.addTaint(taint);
             throw var811A2D321ECE4A7272DFDBE4B3F1A05F_1204950450;
-        } //End block
+        } 
         View tabIndicator = tabSpec.mIndicatorStrategy.createIndicatorView();
         tabIndicator.setOnKeyListener(mTabKeyListener);
     if(tabSpec.mIndicatorStrategy instanceof ViewIndicatorStrategy)        
         {
             mTabWidget.setStripEnabled(false);
-        } //End block
+        } 
         mTabWidget.addView(tabIndicator);
         mTabSpecs.add(tabSpec);
     if(mCurrentTab == -1)        
         {
             setCurrentTab(0);
-        } //End block
-        // ---------- Original Method ----------
-        //if (tabSpec.mIndicatorStrategy == null) {
-            //throw new IllegalArgumentException("you must specify a way to create the tab indicator.");
-        //}
-        //if (tabSpec.mContentStrategy == null) {
-            //throw new IllegalArgumentException("you must specify a way to create the tab content");
-        //}
-        //View tabIndicator = tabSpec.mIndicatorStrategy.createIndicatorView();
-        //tabIndicator.setOnKeyListener(mTabKeyListener);
-        //if (tabSpec.mIndicatorStrategy instanceof ViewIndicatorStrategy) {
-            //mTabWidget.setStripEnabled(false);
-        //}
-        //mTabWidget.addView(tabIndicator);
-        //mTabSpecs.add(tabSpec);
-        //if (mCurrentTab == -1) {
-            //setCurrentTab(0);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+        
+        
+        
+        
+            
+        
     }
 
     
@@ -313,33 +314,35 @@ switch(keyCode){
         mTabSpecs.clear();
         requestLayout();
         invalidate();
-        // ---------- Original Method ----------
-        //mTabWidget.removeAllViews();
-        //initTabHost();
-        //mTabContent.removeAllViews();
-        //mTabSpecs.clear();
-        //requestLayout();
-        //invalidate();
+        
+        
+        
+        
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.134 -0400", hash_original_method = "43D996FE1B0AF9FB74C6533DD719F381", hash_generated_method = "0E19BB31283DFF5D4470C4C5C2BFD534")
     public TabWidget getTabWidget() {
 TabWidget varB3FC95A9DAD9613B1E41023CF16F4D5C_1471722268 =         mTabWidget;
         varB3FC95A9DAD9613B1E41023CF16F4D5C_1471722268.addTaint(taint);
         return varB3FC95A9DAD9613B1E41023CF16F4D5C_1471722268;
-        // ---------- Original Method ----------
-        //return mTabWidget;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.135 -0400", hash_original_method = "715443AB3E5984F89EAA89C58AA4B1A0", hash_generated_method = "1AFF40CC1F6BC458D910FF36E302FE22")
     public int getCurrentTab() {
         int var6655CA683CFF0C7E3ACACBBF6B5DF883_7740136 = (mCurrentTab);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1026717297 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1026717297;
-        // ---------- Original Method ----------
-        //return mCurrentTab;
+        
+        
     }
 
     
@@ -350,15 +353,15 @@ TabWidget varB3FC95A9DAD9613B1E41023CF16F4D5C_1471722268 =         mTabWidget;
 String var2CDA14817F2AE5AD78244DB54528EE2A_172380820 =             mTabSpecs.get(mCurrentTab).getTag();
             var2CDA14817F2AE5AD78244DB54528EE2A_172380820.addTaint(taint);
             return var2CDA14817F2AE5AD78244DB54528EE2A_172380820;
-        } //End block
+        } 
 String var540C13E9E156B687226421B24F2DF178_649947201 =         null;
         var540C13E9E156B687226421B24F2DF178_649947201.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_649947201;
-        // ---------- Original Method ----------
-        //if (mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size()) {
-            //return mTabSpecs.get(mCurrentTab).getTag();
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
@@ -369,25 +372,26 @@ String var540C13E9E156B687226421B24F2DF178_649947201 =         null;
 View var1161A3EF81B3A36EBD6DFD15E63B3F4A_1587407431 =             mTabWidget.getChildTabViewAt(mCurrentTab);
             var1161A3EF81B3A36EBD6DFD15E63B3F4A_1587407431.addTaint(taint);
             return var1161A3EF81B3A36EBD6DFD15E63B3F4A_1587407431;
-        } //End block
+        } 
 View var540C13E9E156B687226421B24F2DF178_1309287318 =         null;
         var540C13E9E156B687226421B24F2DF178_1309287318.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_1309287318;
-        // ---------- Original Method ----------
-        //if (mCurrentTab >= 0 && mCurrentTab < mTabSpecs.size()) {
-            //return mTabWidget.getChildTabViewAt(mCurrentTab);
-        //}
-        //return null;
+        
+        
+            
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.135 -0400", hash_original_method = "EEE501665EA90FABC7BF921A8CA32190", hash_generated_method = "B2B37992B5174BCE407CB2C8459F082A")
     public View getCurrentView() {
 View var91CDA2CE07B9AFD30FCF6AED3E40A3D8_1508111769 =         mCurrentView;
         var91CDA2CE07B9AFD30FCF6AED3E40A3D8_1508111769.addTaint(taint);
         return var91CDA2CE07B9AFD30FCF6AED3E40A3D8_1508111769;
-        // ---------- Original Method ----------
-        //return mCurrentView;
+        
+        
     }
 
     
@@ -401,26 +405,27 @@ for(i = 0;i < mTabSpecs.size();i++)
             {
                 setCurrentTab(i);
                 break;
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //int i;
-        //for (i = 0; i < mTabSpecs.size(); i++) {
-            //if (mTabSpecs.get(i).getTag().equals(tag)) {
-                //setCurrentTab(i);
-                //break;
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.135 -0400", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "F6F7DD73AD57A4F1F540487A584AEA81")
     public FrameLayout getTabContentView() {
 FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
         varB62F3AA3ED8906E8B6C427D442F6F39B_465970612.addTaint(taint);
         return varB62F3AA3ED8906E8B6C427D442F6F39B_465970612;
-        // ---------- Original Method ----------
-        //return mTabContent;
+        
+        
     }
 
     
@@ -442,24 +447,24 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
             boolean varB326B5062B2F0E69046810717534CB09_605196298 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1525316967 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1525316967;
-        } //End block
+        } 
         boolean var98F0599AF776A1FE4101C199A40EEB8F_167083660 = (handled);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_766013908 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_766013908;
-        // ---------- Original Method ----------
-        //final boolean handled = super.dispatchKeyEvent(event);
-        //if (!handled
-                //&& (event.getAction() == KeyEvent.ACTION_DOWN)
-                //&& (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP)
-                //&& (mCurrentView != null)
-                //&& (mCurrentView.isRootNamespace())
-                //&& (mCurrentView.hasFocus())
-                //&& (mCurrentView.findFocus().focusSearch(View.FOCUS_UP) == null)) {
-            //mTabWidget.getChildTabViewAt(mCurrentTab).requestFocus();
-            //playSoundEffect(SoundEffectConstants.NAVIGATION_UP);
-            //return true;
-        //}
-        //return handled;
+        
+        
+        
+                
+                
+                
+                
+                
+                
+            
+            
+            
+        
+        
     }
 
     
@@ -470,11 +475,11 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
     if(mCurrentView != null)        
         {
             mCurrentView.dispatchWindowFocusChanged(hasFocus);
-        } //End block
-        // ---------- Original Method ----------
-        //if (mCurrentView != null){
-            //mCurrentView.dispatchWindowFocusChanged(hasFocus);
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -483,15 +488,15 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
     if(index < 0 || index >= mTabSpecs.size())        
         {
             return;
-        } //End block
+        } 
     if(index == mCurrentTab)        
         {
             return;
-        } //End block
+        } 
     if(mCurrentTab != -1)        
         {
             mTabSpecs.get(mCurrentTab).mContentStrategy.tabClosed();
-        } //End block
+        } 
         mCurrentTab = index;
         final TabHost.TabSpec spec = mTabSpecs.get(index);
         mTabWidget.focusCurrentTab(mCurrentTab);
@@ -504,22 +509,23 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
                             new ViewGroup.LayoutParams(
                                     ViewGroup.LayoutParams.MATCH_PARENT,
                                     ViewGroup.LayoutParams.MATCH_PARENT));
-        } //End block
+        } 
     if(!mTabWidget.hasFocus())        
         {
             mCurrentView.requestFocus();
-        } //End block
+        } 
         invokeOnTabChangeListener();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.136 -0400", hash_original_method = "CAD2636558BA92FD3B25434077F437FA", hash_generated_method = "81BDC8026576E158152F1D6A433CB82E")
     public void setOnTabChangedListener(OnTabChangeListener l) {
         mOnTabChangeListener = l;
-        // ---------- Original Method ----------
-        //mOnTabChangeListener = l;
+        
+        
     }
 
     
@@ -528,11 +534,11 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
     if(mOnTabChangeListener != null)        
         {
             mOnTabChangeListener.onTabChanged(getCurrentTabTag());
-        } //End block
-        // ---------- Original Method ----------
-        //if (mOnTabChangeListener != null) {
-            //mOnTabChangeListener.onTabChanged(getCurrentTabTag());
-        //}
+        } 
+        
+        
+            
+        
     }
 
     
@@ -550,8 +556,8 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.137 -0400", hash_original_method = "B448A25FB17665A97225C3E034B27800", hash_generated_method = "8C52576964B21F07DD2BCCD9B11DF51C")
         private  TabSpec(String tag) {
             mTag = tag;
-            // ---------- Original Method ----------
-            //mTag = tag;
+            
+            
         }
 
         
@@ -561,9 +567,9 @@ FrameLayout varB62F3AA3ED8906E8B6C427D442F6F39B_465970612 =         mTabContent;
 TabSpec var72A74007B2BE62B849F475C7BDA4658B_1168310804 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1168310804.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1168310804;
-            // ---------- Original Method ----------
-            //mIndicatorStrategy = new LabelIndicatorStrategy(label);
-            //return this;
+            
+            
+            
         }
 
         
@@ -573,9 +579,9 @@ TabSpec var72A74007B2BE62B849F475C7BDA4658B_1168310804 =             this;
 TabSpec var72A74007B2BE62B849F475C7BDA4658B_162790138 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_162790138.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_162790138;
-            // ---------- Original Method ----------
-            //mIndicatorStrategy = new LabelAndIconIndicatorStrategy(label, icon);
-            //return this;
+            
+            
+            
         }
 
         
@@ -585,9 +591,9 @@ TabSpec var72A74007B2BE62B849F475C7BDA4658B_162790138 =             this;
 TabSpec var72A74007B2BE62B849F475C7BDA4658B_1294377747 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1294377747.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1294377747;
-            // ---------- Original Method ----------
-            //mIndicatorStrategy = new ViewIndicatorStrategy(view);
-            //return this;
+            
+            
+            
         }
 
         
@@ -597,9 +603,9 @@ TabSpec var72A74007B2BE62B849F475C7BDA4658B_1294377747 =             this;
 TabSpec var72A74007B2BE62B849F475C7BDA4658B_641546029 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_641546029.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_641546029;
-            // ---------- Original Method ----------
-            //mContentStrategy = new ViewIdContentStrategy(viewId);
-            //return this;
+            
+            
+            
         }
 
         
@@ -609,31 +615,33 @@ TabSpec var72A74007B2BE62B849F475C7BDA4658B_641546029 =             this;
 TabSpec var72A74007B2BE62B849F475C7BDA4658B_1612647506 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1612647506.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1612647506;
-            // ---------- Original Method ----------
-            //mContentStrategy = new FactoryContentStrategy(mTag, contentFactory);
-            //return this;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.137 -0400", hash_original_method = "0D57BE6053E1E40100589C46AD4E8491", hash_generated_method = "E3D25F5683279CD9231341D7CE5A9850")
         public TabSpec setContent(Intent intent) {
             mContentStrategy = new IntentContentStrategy(mTag, intent);
 TabSpec var72A74007B2BE62B849F475C7BDA4658B_1255347860 =             this;
             var72A74007B2BE62B849F475C7BDA4658B_1255347860.addTaint(taint);
             return var72A74007B2BE62B849F475C7BDA4658B_1255347860;
-            // ---------- Original Method ----------
-            //mContentStrategy = new IntentContentStrategy(mTag, intent);
-            //return this;
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.138 -0400", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "64F464E5CBCF65EE1A50261DB8ADBF9C")
         public String getTag() {
 String varD6A25044F8E609F6CD67330C1523D33D_1270931722 =             mTag;
             varD6A25044F8E609F6CD67330C1523D33D_1270931722.addTaint(taint);
             return varD6A25044F8E609F6CD67330C1523D33D_1270931722;
-            // ---------- Original Method ----------
-            //return mTag;
+            
+            
         }
 
         
@@ -649,8 +657,8 @@ String varD6A25044F8E609F6CD67330C1523D33D_1270931722 =             mTag;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.138 -0400", hash_original_method = "8DE7E2F209482BC83865CDCF3C7C3957", hash_generated_method = "08E3A6DB2473BDD30016B577A75C17DA")
         private  LabelIndicatorStrategy(CharSequence label) {
             mLabel = label;
-            // ---------- Original Method ----------
-            //mLabel = label;
+            
+            
         }
 
         
@@ -667,24 +675,24 @@ String varD6A25044F8E609F6CD67330C1523D33D_1270931722 =             mTag;
             {
                 tabIndicator.setBackgroundResource(R.drawable.tab_indicator_v4);
                 tv.setTextColor(context.getResources().getColorStateList(R.color.tab_indicator_text_v4));
-            } //End block
+            } 
 View var01EB2B982C218B50E10E237D1B17CF95_32368455 =             tabIndicator;
             var01EB2B982C218B50E10E237D1B17CF95_32368455.addTaint(taint);
             return var01EB2B982C218B50E10E237D1B17CF95_32368455;
-            // ---------- Original Method ----------
-            //final Context context = getContext();
-            //LayoutInflater inflater =
-                    //(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            //View tabIndicator = inflater.inflate(mTabLayoutId,
-                    //mTabWidget, 
-                    //false);
-            //final TextView tv = (TextView) tabIndicator.findViewById(R.id.title);
-            //tv.setText(mLabel);
-            //if (context.getApplicationInfo().targetSdkVersion <= Build.VERSION_CODES.DONUT) {
-                //tabIndicator.setBackgroundResource(R.drawable.tab_indicator_v4);
-                //tv.setTextColor(context.getResources().getColorStateList(R.color.tab_indicator_text_v4));
-            //}
-            //return tabIndicator;
+            
+            
+            
+                    
+            
+                    
+                    
+            
+            
+            
+                
+                
+            
+            
         }
 
         
@@ -704,9 +712,9 @@ View var01EB2B982C218B50E10E237D1B17CF95_32368455 =             tabIndicator;
         private  LabelAndIconIndicatorStrategy(CharSequence label, Drawable icon) {
             mLabel = label;
             mIcon = icon;
-            // ---------- Original Method ----------
-            //mLabel = label;
-            //mIcon = icon;
+            
+            
+            
         }
 
         
@@ -726,17 +734,17 @@ View var01EB2B982C218B50E10E237D1B17CF95_32368455 =             tabIndicator;
             {
                 iconView.setImageDrawable(mIcon);
                 iconView.setVisibility(VISIBLE);
-            } //End block
+            } 
     if(context.getApplicationInfo().targetSdkVersion <= Build.VERSION_CODES.DONUT)            
             {
                 tabIndicator.setBackgroundResource(R.drawable.tab_indicator_v4);
                 tv.setTextColor(context.getResources().getColorStateList(R.color.tab_indicator_text_v4));
-            } //End block
+            } 
 View var01EB2B982C218B50E10E237D1B17CF95_1527556638 =             tabIndicator;
             var01EB2B982C218B50E10E237D1B17CF95_1527556638.addTaint(taint);
             return var01EB2B982C218B50E10E237D1B17CF95_1527556638;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -752,18 +760,19 @@ View var01EB2B982C218B50E10E237D1B17CF95_1527556638 =             tabIndicator;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.139 -0400", hash_original_method = "70774C2CF3D512F90368753CBBBC1864", hash_generated_method = "EDE3C0618D5B4758FB8E879A8598955F")
         private  ViewIndicatorStrategy(View view) {
             mView = view;
-            // ---------- Original Method ----------
-            //mView = view;
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.139 -0400", hash_original_method = "E81C3A0236D0948C1B54CB0897C263EB", hash_generated_method = "94B24954DEFC0E4074B81210D857EB8E")
         public View createIndicatorView() {
 View var2A050D4EA4182130A6C1E6806618CCD0_1693899814 =             mView;
             var2A050D4EA4182130A6C1E6806618CCD0_1693899814.addTaint(taint);
             return var2A050D4EA4182130A6C1E6806618CCD0_1693899814;
-            // ---------- Original Method ----------
-            //return mView;
+            
+            
         }
 
         
@@ -782,22 +791,22 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1693899814 =             mView;
     if(mView != null)            
             {
                 mView.setVisibility(View.GONE);
-            } //End block
+            } 
             else
             {
                 RuntimeException var14C4B813E7CF01D911162B729C89DFCA_428159367 = new RuntimeException("Could not create tab content because " +
                         "could not find view with id " + viewId);
                 var14C4B813E7CF01D911162B729C89DFCA_428159367.addTaint(taint);
                 throw var14C4B813E7CF01D911162B729C89DFCA_428159367;
-            } //End block
-            // ---------- Original Method ----------
-            //mView = mTabContent.findViewById(viewId);
-            //if (mView != null) {
-                //mView.setVisibility(View.GONE);
-            //} else {
-                //throw new RuntimeException("Could not create tab content because " +
-                        //"could not find view with id " + viewId);
-            //}
+            } 
+            
+            
+            
+                
+            
+                
+                        
+            
         }
 
         
@@ -807,17 +816,17 @@ View var2A050D4EA4182130A6C1E6806618CCD0_1693899814 =             mView;
 View var2A050D4EA4182130A6C1E6806618CCD0_2073465012 =             mView;
             var2A050D4EA4182130A6C1E6806618CCD0_2073465012.addTaint(taint);
             return var2A050D4EA4182130A6C1E6806618CCD0_2073465012;
-            // ---------- Original Method ----------
-            //mView.setVisibility(View.VISIBLE);
-            //return mView;
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.139 -0400", hash_original_method = "1538BDA0E7D9A0DE19E0F5AE4CBE24FE", hash_generated_method = "116E4E15B96A554AEE4000FB89294B7A")
         public void tabClosed() {
             mView.setVisibility(View.GONE);
-            // ---------- Original Method ----------
-            //mView.setVisibility(View.GONE);
+            
+            
         }
 
         
@@ -840,9 +849,9 @@ View var2A050D4EA4182130A6C1E6806618CCD0_2073465012 =             mView;
         public  FactoryContentStrategy(CharSequence tag, TabContentFactory factory) {
             mTag = tag;
             mFactory = factory;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //mFactory = factory;
+            
+            
+            
         }
 
         
@@ -851,25 +860,25 @@ View var2A050D4EA4182130A6C1E6806618CCD0_2073465012 =             mView;
     if(mTabContent == null)            
             {
                 mTabContent = mFactory.createTabContent(mTag.toString());
-            } //End block
+            } 
             mTabContent.setVisibility(View.VISIBLE);
 View varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090 =             mTabContent;
             varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090.addTaint(taint);
             return varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090;
-            // ---------- Original Method ----------
-            //if (mTabContent == null) {
-                //mTabContent = mFactory.createTabContent(mTag.toString());
-            //}
-            //mTabContent.setVisibility(View.VISIBLE);
-            //return mTabContent;
+            
+            
+                
+            
+            
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:11.139 -0400", hash_original_method = "F4CF7743D7975FC61814EFF15B52191C", hash_generated_method = "A6B6F41E27B96F885E5ACD81C8BD5D11")
         public void tabClosed() {
             mTabContent.setVisibility(View.GONE);
-            // ---------- Original Method ----------
-            //mTabContent.setVisibility(View.GONE);
+            
+            
         }
 
         
@@ -892,9 +901,9 @@ View varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090 =             mTabContent;
         private  IntentContentStrategy(String tag, Intent intent) {
             mTag = tag;
             mIntent = intent;
-            // ---------- Original Method ----------
-            //mTag = tag;
-            //mIntent = intent;
+            
+            
+            
         }
 
         
@@ -905,7 +914,7 @@ View varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090 =             mTabContent;
                 IllegalStateException varEFCC8C65F690CEBB889ED8137D9312F8_1093950817 = new IllegalStateException("Did you forget to call 'public void setup(LocalActivityManager activityGroup)'?");
                 varEFCC8C65F690CEBB889ED8137D9312F8_1093950817.addTaint(taint);
                 throw varEFCC8C65F690CEBB889ED8137D9312F8_1093950817;
-            } //End block
+            } 
             final Window w = mLocalActivityManager.startActivity(
                     mTag, mIntent);
             final View wd = w != null ? w.getDecorView() : null;
@@ -914,8 +923,8 @@ View varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090 =             mTabContent;
     if(mLaunchedView.getParent() != null)                
                 {
                     mTabContent.removeView(mLaunchedView);
-                } //End block
-            } //End block
+                } 
+            } 
             mLaunchedView = wd;
     if(mLaunchedView != null)            
             {
@@ -923,12 +932,12 @@ View varB62F3AA3ED8906E8B6C427D442F6F39B_1124164090 =             mTabContent;
                 mLaunchedView.setFocusableInTouchMode(true);
                 ((ViewGroup) mLaunchedView).setDescendantFocusability(
                         FOCUS_AFTER_DESCENDANTS);
-            } //End block
+            } 
 View var4E470CFFB94CC98352E53CCF75906AE0_1240375947 =             mLaunchedView;
             var4E470CFFB94CC98352E53CCF75906AE0_1240375947.addTaint(taint);
             return var4E470CFFB94CC98352E53CCF75906AE0_1240375947;
-            // ---------- Original Method ----------
-            // Original Method Too Long, Refer to Original Implementation
+            
+            
         }
 
         
@@ -937,11 +946,11 @@ View var4E470CFFB94CC98352E53CCF75906AE0_1240375947 =             mLaunchedView;
     if(mLaunchedView != null)            
             {
                 mLaunchedView.setVisibility(View.GONE);
-            } //End block
-            // ---------- Original Method ----------
-            //if (mLaunchedView != null) {
-                //mLaunchedView.setVisibility(View.GONE);
-            //}
+            } 
+            
+            
+                
+            
         }
 
         

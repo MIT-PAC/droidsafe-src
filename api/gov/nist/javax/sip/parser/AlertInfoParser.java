@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -17,7 +17,7 @@ public class AlertInfoParser extends ParametersParser {
     public  AlertInfoParser(String alertInfo) {
         super(alertInfo);
         addTaint(alertInfo.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -25,7 +25,7 @@ public class AlertInfoParser extends ParametersParser {
     protected  AlertInfoParser(Lexer lexer) {
         super(lexer);
         addTaint(lexer.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -54,35 +54,35 @@ public class AlertInfoParser extends ParametersParser {
                             uri = urlParser.uriReference( true );
                             alertInfo.setAlertInfo(uri);
                             this.lexer.match('>');
-                        } //End block
+                        } 
                         else
                         {
                             String alertInfoStr = this.lexer.byteStringNoSemicolon();
                             alertInfo.setAlertInfo(alertInfoStr);
-                        } //End block
+                        } 
                         this.lexer.SPorHT();
                         super.parse(alertInfo);
                         list.add(alertInfo);
     if(lexer.lookAhead(0) == ',')                        
                         {
                             this.lexer.match(',');
-                        } //End block
+                        } 
                         else
                         break;
-                    } //End block
+                    } 
 } while (true);
-            } //End block
+            } 
 SIPHeader varED12C351C2E8CA4F85F097DDC7E77B4D_1109355496 =             list;
             varED12C351C2E8CA4F85F097DDC7E77B4D_1109355496.addTaint(taint);
             return varED12C351C2E8CA4F85F097DDC7E77B4D_1109355496;
-        } //End block
+        } 
         finally 
         {
     if(debug)            
             dbg_leave("AlertInfoParser.parse");
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     

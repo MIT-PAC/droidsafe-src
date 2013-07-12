@@ -1,6 +1,6 @@
 package android.webkit;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -169,12 +169,12 @@ switch(msg.what){
             mWebView.autoFillForm(mQueryId);
             break;
 }
-            // ---------- Original Method ----------
-            //switch (msg.what) {
-                //case AUTOFILL_FORM:
-                    //mWebView.autoFillForm(mQueryId);
-                    //break;
-                //}
+            
+            
+                
+                    
+                    
+                
         }
 };
         mReceiver = new MyResultReceiver(mHandler);
@@ -183,8 +183,8 @@ switch(msg.what){
         setBackgroundDrawable(new BackgroundDrawable(mRingInset));
         setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(),
                 getPaddingBottom());
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -193,10 +193,10 @@ switch(msg.what){
         mAutoFillable = mWebView.getSettings().getAutoFillEnabled()
                 && (queryId != FORM_NOT_AUTOFILLABLE);
         mQueryId = queryId;
-        // ---------- Original Method ----------
-        //mAutoFillable = mWebView.getSettings().getAutoFillEnabled()
-                //&& (queryId != FORM_NOT_AUTOFILLABLE);
-        //mQueryId = queryId;
+        
+        
+                
+        
     }
 
     
@@ -209,9 +209,9 @@ switch(msg.what){
         addTaint(left);
         super.setPadding(left + mRingInset, top + mRingInset,
                 right + mRingInset, bottom + mRingInset);
-        // ---------- Original Method ----------
-        //super.setPadding(left + mRingInset, top + mRingInset,
-                //right + mRingInset, bottom + mRingInset);
+        
+        
+                
     }
 
     
@@ -224,7 +224,7 @@ switch(msg.what){
             boolean var639DD27D10E8FF69097B1398D445D1B9_1964386742 = (super.dispatchKeyEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_653004177 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_653004177;
-        } //End block
+        } 
         boolean down = event.getAction() != KeyEvent.ACTION_UP;
         int keyCode = event.getKeyCode();
         boolean isArrowKey = false;
@@ -240,11 +240,11 @@ switch(keyCode){
     if(down)            
             {
                 onEditorAction(EditorInfo.IME_ACTION_NEXT);
-            } //End block
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_679971930 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1173359803 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1173359803;
-        } //End block
+        } 
         Spannable text = (Spannable) getText();
         int oldStart = Selection.getSelectionStart(text);
         int oldEnd = Selection.getSelectionEnd(text);
@@ -256,14 +256,14 @@ switch(keyCode){
                 boolean varB326B5062B2F0E69046810717534CB09_1180265730 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_862563603 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_862563603;
-            } //End block
+            } 
     if(down)            
             {
                 mGotDelete = true;
                 mDelSelStart = oldStart;
                 mDelSelEnd = oldEnd;
-            } //End block
-        } //End block
+            } 
+        } 
     if(mSingle && (KeyEvent.KEYCODE_ENTER == keyCode
                     || KeyEvent.KEYCODE_NUMPAD_ENTER == keyCode))        
         {
@@ -272,18 +272,18 @@ switch(keyCode){
                 boolean var639DD27D10E8FF69097B1398D445D1B9_852871950 = (super.dispatchKeyEvent(event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1765052388 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1765052388;
-            } //End block
+            } 
     if(!down)            
             {
                 InputMethodManager.getInstance(mContext)
                         .hideSoftInputFromWindow(getWindowToken(), 0);
                 sendDomEvent(new KeyEvent(KeyEvent.ACTION_DOWN, keyCode));
                 sendDomEvent(event);
-            } //End block
+            } 
             boolean var639DD27D10E8FF69097B1398D445D1B9_1205926723 = (super.dispatchKeyEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1362403441 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1362403441;
-        } //End block
+        } 
         else
     if(KeyEvent.KEYCODE_DPAD_CENTER == keyCode)        
         {
@@ -292,37 +292,37 @@ switch(keyCode){
                 boolean var639DD27D10E8FF69097B1398D445D1B9_1778547761 = (super.dispatchKeyEvent(event));
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1747397835 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_1747397835;
-            } //End block
+            } 
     if(!down)            
             {
                 mWebView.centerKeyPressOnTextField();
-            } //End block
+            } 
             boolean var639DD27D10E8FF69097B1398D445D1B9_469246294 = (super.dispatchKeyEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_140844605 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_140844605;
-        } //End block
+        } 
     if(getLayout() == null)        
         {
             measure(mWidthSpec, mHeightSpec);
-        } //End block
+        } 
         int oldLength = text.length();
         boolean maxedOut = mMaxLength != -1 && oldLength == mMaxLength;
         String oldText;
     if(maxedOut && oldEnd != oldStart)        
         {
             oldText = text.toString();
-        } //End block
+        } 
         else
         {
             oldText = "";
-        } //End block
+        } 
     if(super.dispatchKeyEvent(event))        
         {
     if(KeyEvent.KEYCODE_ENTER == keyCode
                         || KeyEvent.KEYCODE_NUMPAD_ENTER == keyCode)            
             {
                 mGotEnterDown = true;
-            } //End block
+            } 
     if(maxedOut && !isArrowKey && keyCode != KeyEvent.KEYCODE_DEL)            
             {
     if(oldEnd == oldStart)                
@@ -330,7 +330,7 @@ switch(keyCode){
                     boolean varB326B5062B2F0E69046810717534CB09_1460105387 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2081089297 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_2081089297;
-                } //End block
+                } 
                 else
     if(!oldText.equals(getText().toString()))                
                 {
@@ -342,18 +342,18 @@ switch(keyCode){
                     boolean varB326B5062B2F0E69046810717534CB09_293179988 = (true);
                                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_123755151 = getTaintBoolean();
                     return var84E2C64F38F78BA3EA5C905AB5A2DA27_123755151;
-                } //End block
-            } //End block
+                } 
+            } 
             boolean varB326B5062B2F0E69046810717534CB09_485668914 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1152866740 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1152866740;
-        } //End block
+        } 
     if(mGotEnterDown && !down)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_1322443366 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1767243879 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1767243879;
-        } //End block
+        } 
     if(isArrowKey)        
         {
             mWebView.resetTrackballTime();
@@ -361,12 +361,12 @@ switch(keyCode){
                     .onKeyUp(keyCode, event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_625631104 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_625631104;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_487245728 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_645130144 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_645130144;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -380,38 +380,40 @@ switch(keyCode){
             {
                 layout(params.x, params.y, params.x + params.width,
                         params.y + params.height);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (getLayout() == null) {
-            //measure(mWidthSpec, mHeightSpec);
-            //LayoutParams params = (LayoutParams) getLayoutParams();
-            //if (params != null) {
-                //layout(params.x, params.y, params.x + params.width,
-                        //params.y + params.height);
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+                        
+            
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "7D5E495C9B289687F8273FA9EA57C0F7", hash_generated_method = "71A9668D278E13BFA32002A31F00CE22")
      ResultReceiver getResultReceiver() {
 ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceiver;
         var92BB1EAD1A7B04A11F11D488BE72928A_1437568378.addTaint(taint);
         return var92BB1EAD1A7B04A11F11D488BE72928A_1437568378;
-        // ---------- Original Method ----------
-        //return mReceiver;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.132 -0400", hash_original_method = "0D2A49DF88825D4B2D39C3141FFC083A", hash_generated_method = "6E1F9F12A85A5A438978D5E5B13A3A1B")
      boolean isSameTextField(int ptr) {
         addTaint(ptr);
         boolean varD762C1F7B903AB959D3C9EF57114B5DB_2138417008 = (ptr == mNodePointer);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_783296895 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_783296895;
-        // ---------- Original Method ----------
-        //return ptr == mNodePointer;
+        
+        
     }
 
     
@@ -425,30 +427,30 @@ ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceive
                 float maxScrollX = layout.getLineRight(0) - getWidth();
     if(DebugFlags.WEB_TEXT_VIEW)                
                 {
-                } //End block
+                } 
                 mWebView.scrollFocusedTextInputX(maxScrollX > 0 ?
                         mScrollX / maxScrollX : 0);
-            } //End block
+            } 
             else
             {
                 mWebView.scrollFocusedTextInputY(mScrollY);
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //Layout layout = getLayout();
-        //if (mWebView != null && layout != null) {
-            //if (mSingle) {
-                //float maxScrollX = layout.getLineRight(0) - getWidth();
-                //if (DebugFlags.WEB_TEXT_VIEW) {
-                    //Log.v(LOGTAG, "onTouchEvent x=" + mScrollX + " y="
-                            //+ mScrollY + " maxX=" + maxScrollX);
-                //}
-                //mWebView.scrollFocusedTextInputX(maxScrollX > 0 ?
-                        //mScrollX / maxScrollX : 0);
-            //} else {
-                //mWebView.scrollFocusedTextInputY(mScrollY);
-            //}
-        //}
+            } 
+        } 
+        
+        
+        
+            
+                
+                
+                    
+                            
+                
+                
+                        
+            
+                
+            
+        
     }
 
     
@@ -465,10 +467,10 @@ ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceive
         super.makeNewLayout(w, hintWidth, boring, hintBoring, ellipsisWidth,
                 bringIntoView);
         lineUpScroll();
-        // ---------- Original Method ----------
-        //super.makeNewLayout(w, hintWidth, boring, hintBoring, ellipsisWidth,
-                //bringIntoView);
-        //lineUpScroll();
+        
+        
+                
+        
     }
 
     
@@ -476,31 +478,31 @@ ResultReceiver var92BB1EAD1A7B04A11F11D488BE72928A_1437568378 =         mReceive
     @Override
     public InputConnection onCreateInputConnection(
             EditorInfo outAttrs) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(outAttrs.getTaint());
         InputConnection connection = super.onCreateInputConnection(outAttrs);
     if(mWebView != null)        
         {
             outAttrs.fieldName = mWebView.nativeFocusCandidateName() + "\\"
                     + mWebView.getUrl();
-        } //End block
+        } 
 InputConnection var9911BB1C5F1522C1630847C40E8BC67E_317531809 =         connection;
         var9911BB1C5F1522C1630847C40E8BC67E_317531809.addTaint(taint);
         return var9911BB1C5F1522C1630847C40E8BC67E_317531809;
-        // ---------- Original Method ----------
-        //InputConnection connection = super.onCreateInputConnection(outAttrs);
-        //if (mWebView != null) {
-            //outAttrs.fieldName = mWebView.nativeFocusCandidateName() + "\\"
-                    //+ mWebView.getUrl();
-        //}
-        //return connection;
+        
+        
+        
+            
+                    
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.134 -0400", hash_original_method = "804428A0FF8505961E29DE067C3E7206", hash_generated_method = "C3F111AD14178CE70473B85DA1229BFD")
     @Override
     public void onEditorAction(int actionCode) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(actionCode);
 switch(actionCode){
         case EditorInfo.IME_ACTION_NEXT:
@@ -509,7 +511,7 @@ switch(actionCode){
             mWebView.rebuildWebTextView();
             setDefaultSelection();
             mWebView.invalidate();
-        } //End block
+        } 
         break;
         case EditorInfo.IME_ACTION_DONE:
         super.onEditorAction(actionCode);
@@ -525,8 +527,8 @@ switch(actionCode){
         default:
         break;
 }
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -534,7 +536,7 @@ switch(actionCode){
     @Override
     protected void onFocusChanged(boolean focused, int direction,
             Rect previouslyFocusedRect) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(previouslyFocusedRect.getTaint());
         addTaint(direction);
         addTaint(focused);
@@ -543,29 +545,29 @@ switch(actionCode){
     if(focused)        
         {
             mWebView.setActive(true);
-        } //End block
+        } 
         else
     if(!mInsideRemove)        
         {
             mWebView.setActive(false);
-        } //End block
+        } 
         mFromFocusChange = false;
-        // ---------- Original Method ----------
-        //mFromFocusChange = true;
-        //super.onFocusChanged(focused, direction, previouslyFocusedRect);
-        //if (focused) {
-            //mWebView.setActive(true);
-        //} else if (!mInsideRemove) {
-            //mWebView.setActive(false);
-        //}
-        //mFromFocusChange = false;
+        
+        
+        
+        
+            
+        
+            
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.135 -0400", hash_original_method = "A29BC68952EA75E2FA60BFA3E7E77A14", hash_generated_method = "5F66268F73CE77DC1DE348768C490FCE")
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(id);
         addTaint(position);
         addTaint(view.getTaint());
@@ -577,47 +579,47 @@ switch(actionCode){
     if(mAutoFillProfileIsSet)            
             {
                 mWebView.autoFillForm(mQueryId);
-            } //End block
+            } 
             else
             {
                 mWebView.getWebChromeClient().setupAutoFill(
                         mHandler.obtainMessage(AUTOFILL_FORM));
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        //if (id == 0 && position == 0) {
-            //replaceText("");
-            //WebSettings settings = mWebView.getSettings();
-            //if (mAutoFillProfileIsSet) {
-                //mWebView.autoFillForm(mQueryId);
-            //} else {
-                //mWebView.getWebChromeClient().setupAutoFill(
-                        //mHandler.obtainMessage(AUTOFILL_FORM));
-            //}
-        //}
+            } 
+        } 
+        
+        
+            
+            
+            
+                
+            
+                
+                        
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.136 -0400", hash_original_method = "D3CDB855BC1EDCE86869BE708EA015CC", hash_generated_method = "0FC5C74D509F77AB0352511318DAA8D2")
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(oldt);
         addTaint(oldl);
         addTaint(t);
         addTaint(l);
         super.onScrollChanged(l, t, oldl, oldt);
         lineUpScroll();
-        // ---------- Original Method ----------
-        //super.onScrollChanged(l, t, oldl, oldt);
-        //lineUpScroll();
+        
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.137 -0400", hash_original_method = "8C1441039C2AFE6E28B135997E9DB205", hash_generated_method = "E4CB20CBA1B21B2292F0C68076E9C147")
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(selEnd);
         addTaint(selStart);
     if(!mFromWebKit && !mFromFocusChange && !mFromSetInputType
@@ -625,27 +627,27 @@ switch(actionCode){
         {
     if(DebugFlags.WEB_TEXT_VIEW)            
             {
-            } //End block
+            } 
             mWebView.setSelection(selStart, selEnd);
             lineUpScroll();
-        } //End block
-        // ---------- Original Method ----------
-        //if (!mFromWebKit && !mFromFocusChange && !mFromSetInputType
-                //&& mWebView != null && !mInSetTextAndKeepSelection) {
-            //if (DebugFlags.WEB_TEXT_VIEW) {
-                //Log.v(LOGTAG, "onSelectionChanged selStart=" + selStart
-                        //+ " selEnd=" + selEnd);
-            //}
-            //mWebView.setSelection(selStart, selEnd);
-            //lineUpScroll();
-        //}
+        } 
+        
+        
+                
+            
+                
+                        
+            
+            
+            
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.139 -0400", hash_original_method = "86E27647BFDE15D66BF8F4D142CAE4A5", hash_generated_method = "C07B6E53123F7ACA7ED7EF3728630AE4")
     @Override
     protected void onTextChanged(CharSequence s,int start,int before,int count) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(count);
         addTaint(before);
         addTaint(start);
@@ -657,7 +659,7 @@ switch(actionCode){
                 mPreChange.substring(0, mMaxLength).equals(postChange)))        
         {
             return;
-        } //End block
+        } 
     if(0 == count)        
         {
     if(before > 0)            
@@ -676,13 +678,13 @@ switch(actionCode){
                         sendDomEvent(new KeyEvent(KeyEvent.ACTION_UP,
                                 KeyEvent.KEYCODE_DEL));
                         return;
-                    } //End block
-                } //End block
+                    } 
+                } 
                 mWebView.deleteSelection(start, start + before);
-            } //End block
+            } 
             mGotDelete = false;
             return;
-        } //End block
+        } 
         mGotDelete = false;
     if(count > 1 && before == count - 1)        
         {
@@ -695,8 +697,8 @@ switch(actionCode){
                 start += before;
                 before = 0;
                 count = 1;
-            } //End block
-        } //End block
+            } 
+        } 
         mPreChange = postChange;
         KeyEvent[] events = null;
     if(count == 1)        
@@ -704,26 +706,26 @@ switch(actionCode){
             TextUtils.getChars(s, start + count - 1, start + count, mCharacter, 0);
             KeyCharacterMap kmap = KeyCharacterMap.load(KeyCharacterMap.VIRTUAL_KEYBOARD);
             events = kmap.getEvents(mCharacter);
-        } //End block
+        } 
         boolean useKeyEvents = (events != null);
     if(useKeyEvents)        
         {
     if(DebugFlags.WEB_TEXT_VIEW)            
             {
-            } //End block
+            } 
     if(!mInSetTextAndKeepSelection)            
             {
                 mWebView.setSelection(start, start + before);
-            } //End block
+            } 
             int length = events.length;
 for(int i = 0;i < length;i++)
             {
     if(!KeyEvent.isModifierKey(events[i].getKeyCode()))                
                 {
                     sendDomEvent(events[i]);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         else
         {
             String replace = s.subSequence(start,
@@ -731,17 +733,17 @@ for(int i = 0;i < length;i++)
             mWebView.replaceTextfieldText(start, start + before, replace,
                     start + count,
                     start + count);
-        } //End block
+        } 
         updateCachedTextfield();
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.142 -0400", hash_original_method = "C8E8CDF4C81BBE6A97ACE8DDCE593DE3", hash_generated_method = "5229AEB231EE8BEF3294FE7A1D99C2BC")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
 switch(event.getAction()){
         case MotionEvent.ACTION_DOWN:
         super.onTouchEvent(event);
@@ -760,7 +762,7 @@ switch(event.getAction()){
             boolean var68934A3E9455FA72420237EB05902327_448189939 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_38011083 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_38011083;
-        } //End block
+        } 
         int slop = ViewConfiguration.get(mContext).getScaledTouchSlop();
         Spannable buffer = getText();
         int initialScrollX = Touch.getInitialScrollX(this, buffer);
@@ -776,14 +778,14 @@ switch(event.getAction()){
             boolean varB326B5062B2F0E69046810717534CB09_1873971459 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_791867477 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_791867477;
-        } //End block
+        } 
     if(Math.abs((int) event.getX() - mDragStartX) < slop
                     && Math.abs((int) event.getY() - mDragStartY) < slop)        
         {
             boolean varB326B5062B2F0E69046810717534CB09_347543043 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_697278799 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_697278799;
-        } //End block
+        } 
     if(mWebView != null)        
         {
     if(!mDragSent)            
@@ -791,7 +793,7 @@ switch(event.getAction()){
                 mWebView.initiateTextFieldDrag(mDragStartX, mDragStartY,
                             mDragStartTime);
                 mDragSent = true;
-            } //End block
+            } 
             boolean scrolled = mWebView.textFieldDrag(event);
     if(scrolled)            
             {
@@ -800,8 +802,8 @@ switch(event.getAction()){
                 boolean varB326B5062B2F0E69046810717534CB09_712907394 = (true);
                                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_960313475 = getTaintBoolean();
                 return var84E2C64F38F78BA3EA5C905AB5A2DA27_960313475;
-            } //End block
-        } //End block
+            } 
+        } 
         boolean var68934A3E9455FA72420237EB05902327_359947668 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_864228521 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_864228521;
@@ -814,19 +816,19 @@ switch(event.getAction()){
             boolean var68934A3E9455FA72420237EB05902327_1987541753 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1903518985 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1903518985;
-        } //End block
+        } 
     if(!mScrolled)        
         {
             cancelLongPress();
     if(mGotTouchDown && mWebView != null)            
             {
                 mWebView.touchUpOnTextField(event);
-            } //End block
-        } //End block
+            } 
+        } 
     if(mWebView != null && mDragSent)        
         {
             mWebView.onTouchEvent(event);
-        } //End block
+        } 
         mGotTouchDown = false;
         break;
         default:
@@ -834,28 +836,28 @@ switch(event.getAction()){
 }        boolean varB326B5062B2F0E69046810717534CB09_1847906392 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_37915824 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_37915824;
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.143 -0400", hash_original_method = "39A98F4B040DD226E88FA29A15911D83", hash_generated_method = "E8098EDBF31110F724F658B613022657")
     @Override
     public boolean onTrackballEvent(MotionEvent event) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(event.getTaint());
     if(isPopupShowing())        
         {
             boolean varBF585A2510916F6245CF607EE867BAC0_1835956397 = (super.onTrackballEvent(event));
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_119140354 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_119140354;
-        } //End block
+        } 
     if(event.getAction() != MotionEvent.ACTION_MOVE)        
         {
             boolean var68934A3E9455FA72420237EB05902327_1466759844 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2143100685 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_2143100685;
-        } //End block
+        } 
         Spannable text = getText();
         MovementMethod move = getMovementMethod();
     if(move != null && getLayout() != null &&
@@ -864,24 +866,24 @@ switch(event.getAction()){
             boolean varB326B5062B2F0E69046810717534CB09_1491107754 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1648435365 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1648435365;
-        } //End block
+        } 
         boolean var68934A3E9455FA72420237EB05902327_834402271 = (false);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1460432154 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1460432154;
-        // ---------- Original Method ----------
-        //if (isPopupShowing()) {
-            //return super.onTrackballEvent(event);
-        //}
-        //if (event.getAction() != MotionEvent.ACTION_MOVE) {
-            //return false;
-        //}
-        //Spannable text = getText();
-        //MovementMethod move = getMovementMethod();
-        //if (move != null && getLayout() != null &&
-            //move.onTrackballEvent(this, text, event)) {
-            //return true;
-        //}
-        //return false;
+        
+        
+            
+        
+        
+            
+        
+        
+        
+        
+            
+            
+        
+        
     }
 
     
@@ -892,9 +894,9 @@ switch(event.getAction()){
         boolean var55D6A0DF0F5A5E2B1EE1FA3768B96A22_1979603100 = (super.performLongClick());
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_627665023 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_627665023;
-        // ---------- Original Method ----------
-        //mHasPerformedLongClick = true;
-        //return super.performLongClick();
+        
+        
+        
     }
 
     
@@ -904,32 +906,33 @@ switch(event.getAction()){
     if(imm.isActive(this))        
         {
             imm.hideSoftInputFromWindow(getWindowToken(), 0);
-        } //End block
+        } 
         mInsideRemove = true;
         boolean isFocused = hasFocus();
         mWebView.removeView(this);
     if(isFocused)        
         {
             mWebView.requestFocus();
-        } //End block
+        } 
         mInsideRemove = false;
         mHandler.removeCallbacksAndMessages(null);
-        // ---------- Original Method ----------
-        //InputMethodManager imm = InputMethodManager.getInstance(mContext);
-        //if (imm.isActive(this)) {
-            //imm.hideSoftInputFromWindow(getWindowToken(), 0);
-        //}
-        //mInsideRemove = true;
-        //boolean isFocused = hasFocus();
-        //mWebView.removeView(this);
-        //if (isFocused) {
-            //mWebView.requestFocus();
-        //}
-        //mInsideRemove = false;
-        //mHandler.removeCallbacksAndMessages(null);
+        
+        
+        
+            
+        
+        
+        
+        
+        
+            
+        
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.156 -0400", hash_original_method = "2AA5BA571DA39EAF8290098D28F58BC6", hash_generated_method = "9F7A21E2A62CF641E1F6B7CD175B9B70")
     @Override
     public boolean requestRectangleOnScreen(Rect rectangle, boolean immediate) {
@@ -938,8 +941,8 @@ switch(event.getAction()){
         boolean varB326B5062B2F0E69046810717534CB09_2037146129 = (true);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_723362522 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_723362522;
-        // ---------- Original Method ----------
-        //return true;
+        
+        
     }
 
     
@@ -947,8 +950,8 @@ switch(event.getAction()){
     private void sendDomEvent(KeyEvent event) {
         addTaint(event.getTaint());
         mWebView.passToJavaScript(getText().toString(), event);
-        // ---------- Original Method ----------
-        //mWebView.passToJavaScript(getText().toString(), event);
+        
+        
     }
 
     
@@ -963,33 +966,33 @@ switch(event.getAction()){
     if(mAutoFillable)            
             {
                 setOnItemClickListener(this);
-            } //End block
+            } 
             else
             {
                 setOnItemClickListener(null);
-            } //End block
+            } 
             showDropDown();
-        } //End block
+        } 
         else
         {
             dismissDropDown();
-        } //End block
+        } 
         super.setAdapter(adapter);
-        // ---------- Original Method ----------
-        //if (adapter != null) {
-            //setInputType(getInputType()
-                    //| InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
-            //adapter.setTextView(this);
-            //if (mAutoFillable) {
-                //setOnItemClickListener(this);
-            //} else {
-                //setOnItemClickListener(null);
-            //}
-            //showDropDown();
-        //} else {
-            //dismissDropDown();
-        //}
-        //super.setAdapter(adapter);
+        
+        
+            
+                    
+            
+            
+                
+            
+                
+            
+            
+        
+            
+        
+        
     }
 
     
@@ -1003,26 +1006,26 @@ switch(event.getAction()){
     if(mWebView != null)            
             {
                 mWebView.setSelection(selection, selection);
-            } //End block
-        } //End block
+            } 
+        } 
         else
         {
             Selection.setSelection(text, selection, selection);
-        } //End block
+        } 
     if(mWebView != null)        
         mWebView.incrementTextGeneration();
-        // ---------- Original Method ----------
-        //Spannable text = (Spannable) getText();
-        //int selection = mSingle ? text.length() : 0;
-        //if (Selection.getSelectionStart(text) == selection
-                //&& Selection.getSelectionEnd(text) == selection) {
-            //if (mWebView != null) {
-                //mWebView.setSelection(selection, selection);
-            //}
-        //} else {
-            //Selection.setSelection(text, selection, selection);
-        //}
-        //if (mWebView != null) mWebView.incrementTextGeneration();
+        
+        
+        
+        
+                
+            
+                
+            
+        
+            
+        
+        
     }
 
     
@@ -1033,10 +1036,10 @@ switch(event.getAction()){
         mFromSetInputType = true;
         super.setInputType(type);
         mFromSetInputType = false;
-        // ---------- Original Method ----------
-        //mFromSetInputType = true;
-        //super.setInputType(type);
-        //mFromSetInputType = false;
+        
+        
+        
+        
     }
 
     
@@ -1046,20 +1049,20 @@ switch(event.getAction()){
     if(-1 == maxLength)        
         {
             setFilters(NO_FILTERS);
-        } //End block
+        } 
         else
         {
             setFilters(new InputFilter[] {
                 new InputFilter.LengthFilter(maxLength) });
-        } //End block
-        // ---------- Original Method ----------
-        //mMaxLength = maxLength;
-        //if (-1 == maxLength) {
-            //setFilters(NO_FILTERS);
-        //} else {
-            //setFilters(new InputFilter[] {
-                //new InputFilter.LengthFilter(maxLength) });
-        //}
+        } 
+        
+        
+        
+            
+        
+            
+                
+        
     }
 
     
@@ -1069,12 +1072,12 @@ switch(event.getAction()){
         {
             mNodePointer = ptr;
             setAdapterCustom(null);
-        } //End block
-        // ---------- Original Method ----------
-        //if (ptr != mNodePointer) {
-            //mNodePointer = ptr;
-            //setAdapterCustom(null);
-        //}
+        } 
+        
+        
+            
+            
+        
     }
 
     
@@ -1091,7 +1094,7 @@ switch(event.getAction()){
     if(null == lp)        
         {
             lp = new LayoutParams(width, height, x, y);
-        } //End block
+        } 
         else
         {
     if((lp.x != x) || (lp.y != y) || (lp.width != width)
@@ -1102,21 +1105,21 @@ switch(event.getAction()){
                 lp.y = y;
                 lp.width = width;
                 lp.height = height;
-            } //End block
-        } //End block
+            } 
+        } 
     if(getParent() == null)        
         {
             mWebView.addView(this, 0, lp);
-        } //End block
+        } 
         else
     if(needsUpdate)        
         {
             setLayoutParams(lp);
-        } //End block
+        } 
         mWidthSpec = MeasureSpec.makeMeasureSpec(width, MeasureSpec.EXACTLY);
         mHeightSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
@@ -1133,14 +1136,14 @@ switch(event.getAction()){
         mFromWebKit = true;
         Selection.setSelection(text, start, end);
         mFromWebKit = false;
-        // ---------- Original Method ----------
-        //if (start < 0 || end < 0) return;
-        //Spannable text = (Spannable) getText();
-        //int length = text.length();
-        //if (start > length || end > length) return;
-        //mFromWebKit = true;
-        //Selection.setSelection(text, start, end);
-        //mFromWebKit = false;
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -1151,12 +1154,12 @@ switch(event.getAction()){
         float size = mWebView.nativeFocusCandidateTextSize()
                 * mWebView.getScale();
         setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
-        // ---------- Original Method ----------
-        //Assert.assertNotNull("updateTextSize should only be called from "
-                //+ "mWebView, so mWebView should never be null!", mWebView);
-        //float size = mWebView.nativeFocusCandidateTextSize()
-                //* mWebView.getScale();
-        //setTextSize(TypedValue.COMPLEX_UNIT_PX, size);
+        
+        
+                
+        
+                
+        
     }
 
     
@@ -1167,7 +1170,7 @@ switch(event.getAction()){
     if(edit.toString().equals(text))        
         {
             return;
-        } //End block
+        } 
         int selStart = Selection.getSelectionStart(edit);
         int selEnd = Selection.getSelectionEnd(edit);
         mInSetTextAndKeepSelection = true;
@@ -1183,28 +1186,28 @@ switch(event.getAction()){
     if(imm != null && imm.isActive(this))        
         {
             imm.restartInput(this);
-        } //End block
+        } 
         updateCachedTextfield();
-        // ---------- Original Method ----------
-        //Editable edit = getText();
-        //mPreChange = text;
-        //if (edit.toString().equals(text)) {
-            //return;
-        //}
-        //int selStart = Selection.getSelectionStart(edit);
-        //int selEnd = Selection.getSelectionEnd(edit);
-        //mInSetTextAndKeepSelection = true;
-        //edit.replace(0, edit.length(), text);
-        //int newLength = edit.length();
-        //if (selStart > newLength) selStart = newLength;
-        //if (selEnd > newLength) selEnd = newLength;
-        //Selection.setSelection(edit, selStart, selEnd);
-        //mInSetTextAndKeepSelection = false;
-        //InputMethodManager imm = InputMethodManager.peekInstance();
-        //if (imm != null && imm.isActive(this)) {
-            //imm.restartInput(this);
-        //}
-        //updateCachedTextfield();
+        
+        
+        
+        
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            
+        
+        
     }
 
     
@@ -1222,12 +1225,12 @@ switch(event.getAction()){
     if(!mWebView.nativeFocusCandidateIsSpellcheck())        
         {
             inputType |= InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS;
-        } //End block
+        } 
     if(TEXT_AREA != type
                 && mWebView.nativeFocusCandidateHasNextTextfield())        
         {
             imeOptions |= EditorInfo.IME_FLAG_NAVIGATE_NEXT;
-        } //End block
+        } 
 switch(type){
         case NORMAL_TEXT_FIELD:
         imeOptions |= EditorInfo.IME_ACTION_GO;
@@ -1282,9 +1285,9 @@ switch(type){
                 {
                     mWebView.requestFormData(name, mNodePointer, mAutoFillable,
                             autoComplete);
-                } //End block
-            } //End block
-        } //End block
+                } 
+            } 
+        } 
         mSingle = single;
         setMaxLength(maxLength);
         setHorizontallyScrolling(single);
@@ -1295,25 +1298,26 @@ switch(type){
     if(!autoComplete)        
         {
             setAdapterCustom(null);
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        } 
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "DC0208EAD79A0BCADD603C831599A0E0", hash_generated_method = "353A0AED74824F2EAB6775FEEFC50847")
      void updateCachedTextfield() {
         mWebView.updateCachedTextfield(getText().toString());
-        // ---------- Original Method ----------
-        //mWebView.updateCachedTextfield(getText().toString());
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "E906B54723AD6F9ED79F8F4825A6BCDE", hash_generated_method = "00DFCCEAEBCA5AF7E29ED7EACECB08F0")
      void setAutoFillProfileIsSet(boolean autoFillProfileIsSet) {
         mAutoFillProfileIsSet = autoFillProfileIsSet;
-        // ---------- Original Method ----------
-        //mAutoFillProfileIsSet = autoFillProfileIsSet;
+        
+        
     }
 
     
@@ -1334,10 +1338,10 @@ switch(type){
         int gravity = rtl ? Gravity.RIGHT : Gravity.LEFT;
         gravity |= mSingle ? Gravity.CENTER_VERTICAL : Gravity.TOP;
         setGravity(gravity);
-        // ---------- Original Method ----------
-        //int gravity = rtl ? Gravity.RIGHT : Gravity.LEFT;
-        //gravity |= mSingle ? Gravity.CENTER_VERTICAL : Gravity.TOP;
-        //setGravity(gravity);
+        
+        
+        
+        
     }
 
     
@@ -1347,26 +1351,26 @@ switch(type){
         public  MyResultReceiver(Handler handler) {
             super(handler);
             addTaint(handler.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.160 -0400", hash_original_method = "8968B16CB33DBBA966B5E497FFEF8D80", hash_generated_method = "DD922F53C155BE28083B412536DAB0AC")
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {
-            //DSFIXME:  CODE0009: Possible callback target function detected
+            
             addTaint(resultData.getTaint());
             addTaint(resultCode);
     if(resultCode == InputMethodManager.RESULT_SHOWN
                     && mWebView != null)            
             {
                 mWebView.revealSelection();
-            } //End block
-            // ---------- Original Method ----------
-            //if (resultCode == InputMethodManager.RESULT_SHOWN
-                    //&& mWebView != null) {
-                //mWebView.revealSelection();
-            //}
+            } 
+            
+            
+                    
+                
+            
         }
 
         
@@ -1390,10 +1394,10 @@ switch(type){
             mPaint = new Paint();
             mPaint.setStrokeWidth(width);
             mBorderWidth = width;
-            // ---------- Original Method ----------
-            //mPaint = new Paint();
-            //mPaint.setStrokeWidth(width);
-            //mBorderWidth = width;
+            
+            
+            
+            
         }
 
         
@@ -1409,42 +1413,45 @@ switch(type){
             mInsetRect.bottom = getBounds().bottom - mBorderWidth;
             mPaint.setColor(Color.WHITE);
             canvas.drawRect(mInsetRect, mPaint);
-            // ---------- Original Method ----------
-            //mPaint.setColor(0x6633b5e5);
-            //canvas.drawRect(getBounds(), mPaint);
-            //mInsetRect.left = getBounds().left + mBorderWidth;
-            //mInsetRect.top = getBounds().top + mBorderWidth;
-            //mInsetRect.right = getBounds().right - mBorderWidth;
-            //mInsetRect.bottom = getBounds().bottom - mBorderWidth;
-            //mPaint.setColor(Color.WHITE);
-            //canvas.drawRect(mInsetRect, mPaint);
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "5784D116F3F796E4D5324F7E68A41209", hash_generated_method = "DCDCC287CA9BC5217D3FA2BC94984F3E")
         @Override
         public void setAlpha(int alpha) {
             addTaint(alpha);
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "77240A7357C6E5E7293BFF14ACDD79D8", hash_generated_method = "18D8B35FAE562ED5B4F19A1CD78B9AEE")
         @Override
         public void setColorFilter(ColorFilter cf) {
             addTaint(cf.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.161 -0400", hash_original_method = "AB3D570DA2A917C408AB4F7D8FCD7103", hash_generated_method = "75B5E7D017875A02959B632C64D863F1")
         @Override
         public int getOpacity() {
             int var26C79996E92FCFBDC98A49C80BC91AD0_1333787444 = (PixelFormat.TRANSLUCENT);
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_855931342 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_855931342;
-            // ---------- Original Method ----------
-            //return PixelFormat.TRANSLUCENT;
+            
+            
         }
 
         
@@ -1485,21 +1492,21 @@ switch(type){
             {
                 mLineHeight = paintLineHeight;
                 mDifference = 0f;
-            } //End block
+            } 
             else
             {
                 mLineHeight = lineHeight;
                 mDifference = (lineHeight - paintLineHeight) / 2;
-            } //End block
-            // ---------- Original Method ----------
-            //float paintLineHeight = paint.descent() - paint.ascent();
-            //if (lineHeight == -1f) {
-                //mLineHeight = paintLineHeight;
-                //mDifference = 0f;
-            //} else {
-                //mLineHeight = lineHeight;
-                //mDifference = (lineHeight - paintLineHeight) / 2;
-            //}
+            } 
+            
+            
+            
+                
+                
+            
+                
+                
+            
         }
 
         
@@ -1510,8 +1517,8 @@ switch(type){
             int var56728EC2CA63827C80DE6FD3123A1ECF_1643188921 = (Math.round(mLineHeight * line - mDifference));
                         int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547330572 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_547330572;
-            // ---------- Original Method ----------
-            //return Math.round(mLineHeight * line - mDifference);
+            
+            
         }
 
         
@@ -1530,7 +1537,7 @@ switch(type){
                     .web_text_view_dropdown, entries);
             addTaint(entries.getTaint());
             addTaint(context.getTaint());
-            // ---------- Original Method ----------
+            
         }
 
         
@@ -1544,25 +1551,26 @@ switch(type){
     if(tv != null && mTextView != null)            
             {
                 tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextView.getTextSize());
-            } //End block
+            } 
 View var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969 =             tv;
             var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969.addTaint(taint);
             return var8BB2C09B3FFE775E9F9FBFEC00A28511_1971200969;
-            // ---------- Original Method ----------
-            //TextView tv =
-                    //(TextView) super.getView(position, convertView, parent);
-            //if (tv != null && mTextView != null) {
-                //tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTextView.getTextSize());
-            //}
-            //return tv;
+            
+            
+                    
+            
+                
+            
+            
         }
 
         
+        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:00.162 -0400", hash_original_method = "C453A8A8AADC44244B92E3146B6F4B07", hash_generated_method = "E29443429247A5B5E60DF42163779843")
         private void setTextView(TextView tv) {
             mTextView = tv;
-            // ---------- Original Method ----------
-            //mTextView = tv;
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package java.nio.charset;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -11,7 +11,7 @@ public class CoderMalfunctionError extends Error {
     public  CoderMalfunctionError(Exception ex) {
         super(ex);
         addTaint(ex.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     

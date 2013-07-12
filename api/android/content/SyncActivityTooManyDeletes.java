@@ -1,6 +1,6 @@
 package android.content;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -34,14 +34,14 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.345 -0400", hash_original_method = "F88E45C8A992B3EE5445BCFA92AD005E", hash_generated_method = "F88E45C8A992B3EE5445BCFA92AD005E")
     public SyncActivityTooManyDeletes ()
     {
-        //Synthesized constructor
+        
     }
 
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.346 -0400", hash_original_method = "4083F5BA5A170FDE3F4AF132A8D59C6A", hash_generated_method = "98A3E22FF15ABDA25FA8ABF6512F6333")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(savedInstanceState.getTaint());
         super.onCreate(savedInstanceState);
         Bundle extras = getIntent().getExtras();
@@ -49,7 +49,7 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         {
             finish();
             return;
-        } //End block
+        } 
         mNumDeletes = extras.getLong("numDeletes");
         mAccount = (Account) extras.getParcelable("account");
         mAuthority = extras.getString("authority");
@@ -78,14 +78,14 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         ll.addView(textView, lp);
         ll.addView(listView, lp);
         setContentView(ll);
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+        
+        
     }
 
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:10.348 -0400", hash_original_method = "87A49239DD26172CC00A29DE94A05FAE", hash_generated_method = "6C2ECF414388A6290117C4C87D97E6B3")
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        //DSFIXME:  CODE0009: Possible callback target function detected
+        
         addTaint(id);
         addTaint(position);
         addTaint(view.getTaint());
@@ -96,10 +96,10 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
     if(position == 1)        
         startSyncUndoDeletes();
         finish();
-        // ---------- Original Method ----------
-        //if (position == 0) startSyncReallyDelete();
-        //else if (position == 1) startSyncUndoDeletes();
-        //finish();
+        
+        
+        
+        
     }
 
     
@@ -111,13 +111,13 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         ContentResolver.requestSync(mAccount, mAuthority, extras);
-        // ---------- Original Method ----------
-        //Bundle extras = new Bundle();
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_OVERRIDE_TOO_MANY_DELETIONS, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
-        //ContentResolver.requestSync(mAccount, mAuthority, extras);
+        
+        
+        
+        
+        
+        
+        
     }
 
     
@@ -129,13 +129,13 @@ public class SyncActivityTooManyDeletes extends Activity implements AdapterView.
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
         extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
         ContentResolver.requestSync(mAccount, mAuthority, extras);
-        // ---------- Original Method ----------
-        //Bundle extras = new Bundle();
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_DISCARD_LOCAL_DELETIONS, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
-        //extras.putBoolean(ContentResolver.SYNC_EXTRAS_UPLOAD, true);
-        //ContentResolver.requestSync(mAccount, mAuthority, extras);
+        
+        
+        
+        
+        
+        
+        
     }
 
     

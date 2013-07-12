@@ -1,6 +1,6 @@
 package org.apache.http.impl.cookie;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -19,13 +19,13 @@ public class BasicExpiresHandler extends AbstractCookieAttributeHandler {
             IllegalArgumentException var600C82C6EC93A77239214F22A32CCB46_1188231693 = new IllegalArgumentException("Array of date patterns may not be null");
             var600C82C6EC93A77239214F22A32CCB46_1188231693.addTaint(taint);
             throw var600C82C6EC93A77239214F22A32CCB46_1188231693;
-        } //End block
+        } 
         this.datepatterns = datepatterns;
-        // ---------- Original Method ----------
-        //if (datepatterns == null) {
-            //throw new IllegalArgumentException("Array of date patterns may not be null");
-        //}
-        //this.datepatterns = datepatterns;
+        
+        
+            
+        
+        
     }
 
     
@@ -38,37 +38,37 @@ public class BasicExpiresHandler extends AbstractCookieAttributeHandler {
             IllegalArgumentException varFBA11BCFA12F6CB336E0E79489ED6755_1946742396 = new IllegalArgumentException("Cookie may not be null");
             varFBA11BCFA12F6CB336E0E79489ED6755_1946742396.addTaint(taint);
             throw varFBA11BCFA12F6CB336E0E79489ED6755_1946742396;
-        } //End block
+        } 
     if(value == null)        
         {
             MalformedCookieException var3A3CEB57EAC3D650F76EA92E658CB669_1681136011 = new MalformedCookieException("Missing value for expires attribute");
             var3A3CEB57EAC3D650F76EA92E658CB669_1681136011.addTaint(taint);
             throw var3A3CEB57EAC3D650F76EA92E658CB669_1681136011;
-        } //End block
+        } 
         try 
         {
             cookie.setExpiryDate(DateUtils.parseDate(value, this.datepatterns));
-        } //End block
+        } 
         catch (DateParseException dpe)
         {
             MalformedCookieException var36A2A0FD39C70C07A3CF6C79005BEC31_301886656 = new MalformedCookieException("Unable to parse expires attribute: " 
                 + value);
             var36A2A0FD39C70C07A3CF6C79005BEC31_301886656.addTaint(taint);
             throw var36A2A0FD39C70C07A3CF6C79005BEC31_301886656;
-        } //End block
-        // ---------- Original Method ----------
-        //if (cookie == null) {
-            //throw new IllegalArgumentException("Cookie may not be null");
-        //}
-        //if (value == null) {
-            //throw new MalformedCookieException("Missing value for expires attribute");
-        //}
-        //try {
-            //cookie.setExpiryDate(DateUtils.parseDate(value, this.datepatterns));
-        //} catch (DateParseException dpe) {
-            //throw new MalformedCookieException("Unable to parse expires attribute: " 
-                //+ value);
-        //}
+        } 
+        
+        
+            
+        
+        
+            
+        
+        
+            
+        
+            
+                
+        
     }
 
     

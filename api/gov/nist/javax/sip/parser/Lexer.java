@@ -1,6 +1,6 @@
 package gov.nist.javax.sip.parser;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,8 +18,8 @@ public class Lexer extends LexerCore {
         addTaint(buffer.getTaint());
         addTaint(lexerName.getTaint());
         this.selectLexer(lexerName);
-        // ---------- Original Method ----------
-        //this.selectLexer(lexerName);
+        
+        
     }
 
     
@@ -39,7 +39,8 @@ public class Lexer extends LexerCore {
     }
 
     
-        public static String getHeaderValue(String line) {
+        @DSModeled(DSC.SAFE)
+    public static String getHeaderValue(String line) {
         if (line == null)
             return null;
         String headerValue = null;
@@ -76,7 +77,7 @@ public class Lexer extends LexerCore {
                     addKeyword(TokenNames.NOTIFY, TokenTypes.NOTIFY);
                     addKeyword(TokenNames.MESSAGE, TokenTypes.MESSAGE);
                     addKeyword(TokenNames.PUBLISH, TokenTypes.PUBLISH);
-                } //End block
+                } 
                 else
     if(lexerName.equals("command_keywordLexer"))                
                 {
@@ -245,28 +246,28 @@ public class Lexer extends LexerCore {
                     addKeyword(PAssertedServiceHeader.NAME.toUpperCase(),
                             TokenTypes.P_ASSERTED_SERVICE);
                     addKeyword(ReferencesHeader.NAME.toUpperCase(),TokenTypes.REFERENCES);
-                } //End block
+                } 
                 else
     if(lexerName.equals("status_lineLexer"))                
                 {
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
-                } //End block
+                } 
                 else
     if(lexerName.equals("request_lineLexer"))                
                 {
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
-                } //End block
+                } 
                 else
     if(lexerName.equals("sip_urlLexer"))                
                 {
                     addKeyword(TokenNames.TEL.toUpperCase(), TokenTypes.TEL);
                     addKeyword(TokenNames.SIP.toUpperCase(), TokenTypes.SIP);
                     addKeyword(TokenNames.SIPS.toUpperCase(), TokenTypes.SIPS);
-                } //End block
-            } //End block
-        } //End block
-        // ---------- Original Method ----------
-        // Original Method Too Long, Refer to Original Implementation
+                } 
+            } 
+        } 
+        
+        
     }
 
     

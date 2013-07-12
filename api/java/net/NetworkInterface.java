@@ -1,6 +1,6 @@
 package java.net;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -48,11 +48,11 @@ public final class NetworkInterface extends Object {
         this.interfaceIndex = interfaceIndex;
         this.addresses = addresses;
         this.interfaceAddresses = interfaceAddresses;
-        // ---------- Original Method ----------
-        //this.name = name;
-        //this.interfaceIndex = interfaceIndex;
-        //this.addresses = addresses;
-        //this.interfaceAddresses = interfaceAddresses;
+        
+        
+        
+        
+        
     }
 
     
@@ -62,23 +62,25 @@ public final class NetworkInterface extends Object {
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.908 -0400", hash_original_method = "BFC291A64FD07504405088442BFF58AA", hash_generated_method = "9FA6390392605119A81D7D3A6DDA9003")
     public int getIndex() {
         int varFE04D40BAE669C85DC9915B41E74EBC1_730434724 = (interfaceIndex);
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2054101231 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2054101231;
-        // ---------- Original Method ----------
-        //return interfaceIndex;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.909 -0400", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "78713B056FB86F4F3519E2ADC34DDED4")
     public String getName() {
 String varB017984728AC60AD1F0BF8734F33F15C_944716827 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_944716827.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_944716827;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -87,18 +89,19 @@ String varB017984728AC60AD1F0BF8734F33F15C_944716827 =         name;
 Enumeration<InetAddress> varD3B470D483B8F9354A0737BFC5858998_1807495023 =         Collections.enumeration(addresses);
         varD3B470D483B8F9354A0737BFC5858998_1807495023.addTaint(taint);
         return varD3B470D483B8F9354A0737BFC5858998_1807495023;
-        // ---------- Original Method ----------
-        //return Collections.enumeration(addresses);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.909 -0400", hash_original_method = "8EA44302895F236212D41E0DDEBDF9A7", hash_generated_method = "4E2E0197ECCFA00A50DDD1011025F9B1")
     public String getDisplayName() {
 String varB017984728AC60AD1F0BF8734F33F15C_1568993641 =         name;
         varB017984728AC60AD1F0BF8734F33F15C_1568993641.addTaint(taint);
         return varB017984728AC60AD1F0BF8734F33F15C_1568993641;
-        // ---------- Original Method ----------
-        //return name;
+        
+        
     }
 
     
@@ -270,30 +273,30 @@ String varB017984728AC60AD1F0BF8734F33F15C_1568993641 =         name;
             boolean varB326B5062B2F0E69046810717534CB09_2082738656 = (true);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_176995539 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_176995539;
-        } //End block
+        } 
     if(!(obj instanceof NetworkInterface))        
         {
             boolean var68934A3E9455FA72420237EB05902327_2005418844 = (false);
                         boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1773900775 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_1773900775;
-        } //End block
+        } 
         NetworkInterface rhs = (NetworkInterface) obj;
         boolean var93A2255EF5D2F61EF98EF817A72B3CFF_535016315 = (interfaceIndex == rhs.interfaceIndex &&
                 name.equals(rhs.name) &&
                 addresses.equals(rhs.addresses));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1162621792 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1162621792;
-        // ---------- Original Method ----------
-        //if (obj == this) {
-            //return true;
-        //}
-        //if (!(obj instanceof NetworkInterface)) {
-            //return false;
-        //}
-        //NetworkInterface rhs = (NetworkInterface) obj;
-        //return interfaceIndex == rhs.interfaceIndex &&
-                //name.equals(rhs.name) &&
-                //addresses.equals(rhs.addresses);
+        
+        
+            
+        
+        
+            
+        
+        
+        
+                
+                
     }
 
     
@@ -303,8 +306,8 @@ String varB017984728AC60AD1F0BF8734F33F15C_1568993641 =         name;
         int var5715838B66EDF423F24A871806972EB3_1483254002 = (name.hashCode());
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453401661 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1453401661;
-        // ---------- Original Method ----------
-        //return name.hashCode();
+        
+        
     }
 
     
@@ -322,23 +325,23 @@ for(InetAddress address : addresses)
             sb.append("[");
             sb.append(address.toString());
             sb.append("]");
-        } //End block
+        } 
 String var2460B846747F8B22185AD8BE722266A5_537398661 =         sb.toString();
         var2460B846747F8B22185AD8BE722266A5_537398661.addTaint(taint);
         return var2460B846747F8B22185AD8BE722266A5_537398661;
-        // ---------- Original Method ----------
-        //StringBuilder sb = new StringBuilder(25);
-        //sb.append("[");
-        //sb.append(name);
-        //sb.append("][");
-        //sb.append(interfaceIndex);
-        //sb.append("]");
-        //for (InetAddress address : addresses) {
-            //sb.append("[");
-            //sb.append(address.toString());
-            //sb.append("]");
-        //}
-        //return sb.toString();
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+            
+        
+        
     }
 
     
@@ -347,8 +350,8 @@ String var2460B846747F8B22185AD8BE722266A5_537398661 =         sb.toString();
 List<InterfaceAddress> var1AE6140156ED59D7B38A38420D0276CF_110967196 =         Collections.unmodifiableList(interfaceAddresses);
         var1AE6140156ED59D7B38A38420D0276CF_110967196.addTaint(taint);
         return var1AE6140156ED59D7B38A38420D0276CF_110967196;
-        // ---------- Original Method ----------
-        //return Collections.unmodifiableList(interfaceAddresses);
+        
+        
     }
 
     
@@ -357,18 +360,19 @@ List<InterfaceAddress> var1AE6140156ED59D7B38A38420D0276CF_110967196 =         C
 Enumeration<NetworkInterface> varFB917036CF4C112A6E28D983C9E7D865_2073447740 =         Collections.enumeration(children);
         varFB917036CF4C112A6E28D983C9E7D865_2073447740.addTaint(taint);
         return varFB917036CF4C112A6E28D983C9E7D865_2073447740;
-        // ---------- Original Method ----------
-        //return Collections.enumeration(children);
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.915 -0400", hash_original_method = "0171D836B0B5DAF8B2EBF67B786C53D8", hash_generated_method = "AE09CBC66151CAC83DB9637BEF29BD8D")
     public NetworkInterface getParent() {
 NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent;
         var0F49909EA73F8892C338E4DCA6EB9906_1195826118.addTaint(taint);
         return var0F49909EA73F8892C338E4DCA6EB9906_1195826118;
-        // ---------- Original Method ----------
-        //return parent;
+        
+        
     }
 
     
@@ -377,8 +381,8 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent
         boolean var26DF8EC98758B1380AC5855D3A8FEF83_359117436 = (hasFlag(IFF_UP));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331553211 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_331553211;
-        // ---------- Original Method ----------
-        //return hasFlag(IFF_UP);
+        
+        
     }
 
     
@@ -387,8 +391,8 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent
         boolean var9AB8438077177BEA1D608C258B4B8B26_680004974 = (hasFlag(IFF_LOOPBACK));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_160441891 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_160441891;
-        // ---------- Original Method ----------
-        //return hasFlag(IFF_LOOPBACK);
+        
+        
     }
 
     
@@ -397,8 +401,8 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent
         boolean var5E74952569B8C838CE61A4AB61CD82BC_1665351669 = (hasFlag(IFF_POINTOPOINT));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1863126131 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1863126131;
-        // ---------- Original Method ----------
-        //return hasFlag(IFF_POINTOPOINT);
+        
+        
     }
 
     
@@ -407,8 +411,8 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent
         boolean varCAF320F4BB75DE7DCBCC3CDA3F430534_1979270457 = (hasFlag(IFF_MULTICAST));
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1999450100 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1999450100;
-        // ---------- Original Method ----------
-        //return hasFlag(IFF_MULTICAST);
+        
+        
     }
 
     
@@ -419,9 +423,9 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent
         boolean varF56F93CDAFC8ABFF067CEB42438DE12B_540569748 = ((flags & mask) != 0);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1223547694 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1223547694;
-        // ---------- Original Method ----------
-        //int flags = readIntFile("/sys/class/net/" + name + "/flags");
-        //return (flags & mask) != 0;
+        
+        
+        
     }
 
     
@@ -434,7 +438,7 @@ NetworkInterface var0F49909EA73F8892C338E4DCA6EB9906_1195826118 =         parent
 for(int i = 0;i < result.length;++i)
             {
                 result[i] = (byte) Integer.parseInt(s.substring(3*i, 3*i + 2), 16);
-            } //End block
+            } 
 for(int i = 0;i < result.length;++i)
             {
     if(result[i] != 0)                
@@ -442,34 +446,34 @@ for(int i = 0;i < result.length;++i)
                     byte[] varB4A88417B3D0170D754C647C30B7216A_1103439529 = (result);
                                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_174632909 = {getTaintByte()};
                     return var2F9C81BC6E497382285CD6B7A7E33DE1_174632909;
-                } //End block
-            } //End block
+                } 
+            } 
             byte[] var37A6259CC0C1DAE299A7866489DFF0BD_283865565 = (null);
                         byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_1335534166 = {getTaintByte()};
             return var2F9C81BC6E497382285CD6B7A7E33DE1_1335534166;
-        } //End block
+        } 
         catch (Exception ex)
         {
             SocketException var8E41BFA796BE9F8FB9DC270405E20F86_1814482532 = rethrowAsSocketException(ex);
             var8E41BFA796BE9F8FB9DC270405E20F86_1814482532.addTaint(taint);
             throw var8E41BFA796BE9F8FB9DC270405E20F86_1814482532;
-        } //End block
-        // ---------- Original Method ----------
-        //try {
-            //String s = IoUtils.readFileAsString("/sys/class/net/" + name + "/address");
-            //byte[] result = new byte[s.length()/3];
-            //for (int i = 0; i < result.length; ++i) {
-                //result[i] = (byte) Integer.parseInt(s.substring(3*i, 3*i + 2), 16);
-            //}
-            //for (int i = 0; i < result.length; ++i) {
-                //if (result[i] != 0) {
-                    //return result;
-                //}
-            //}
-            //return null;
-        //} catch (Exception ex) {
-            //throw rethrowAsSocketException(ex);
-        //}
+        } 
+        
+        
+            
+            
+            
+                
+            
+            
+                
+                    
+                
+            
+            
+        
+            
+        
     }
 
     
@@ -478,18 +482,19 @@ for(int i = 0;i < result.length;++i)
         int varBC4143F5BD08A4B8EF95741872F7167D_1719973063 = (readIntFile("/sys/class/net/" + name + "/mtu"));
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085739244 = getTaintInt();
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1085739244;
-        // ---------- Original Method ----------
-        //return readIntFile("/sys/class/net/" + name + "/mtu");
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.944 -0400", hash_original_method = "8D88E2F84D40F104BBA78B3610BC12B1", hash_generated_method = "CA9A0608358FAE9370FC0C3EF5F4D797")
     public boolean isVirtual() {
         boolean var01B1E92D3155F4DF341F8D5C1B791189_1972456112 = (parent != null);
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1954856273 = getTaintBoolean();
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1954856273;
-        // ---------- Original Method ----------
-        //return parent != null;
+        
+        
     }
 
     

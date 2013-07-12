@@ -1,6 +1,6 @@
 package java.security;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -18,18 +18,19 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.075 -0400", hash_original_method = "5546FFAC9B42B6F49AEA710C665EF80A", hash_generated_method = "934C359343DE9AB631BA86A99151E869")
     protected  KeyPairGenerator(String algorithm) {
         this.algorithm = algorithm;
-        // ---------- Original Method ----------
-        //this.algorithm = algorithm;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.076 -0400", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "46CBFE61A2526531D59B59F8E79CCD95")
     public String getAlgorithm() {
 String var44A46B4003FC81ACB0223385BA1FA818_1454773368 =         algorithm;
         var44A46B4003FC81ACB0223385BA1FA818_1454773368.addTaint(taint);
         return var44A46B4003FC81ACB0223385BA1FA818_1454773368;
-        // ---------- Original Method ----------
-        //return algorithm;
+        
+        
     }
 
     
@@ -86,8 +87,8 @@ String var44A46B4003FC81ACB0223385BA1FA818_1454773368 =         algorithm;
 Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_903554309 =         provider;
         varC1EB7B12CCABB27D431E5B91E5FF9ECB_903554309.addTaint(taint);
         return varC1EB7B12CCABB27D431E5B91E5FF9ECB_903554309;
-        // ---------- Original Method ----------
-        //return provider;
+        
+        
     }
 
     
@@ -95,8 +96,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_903554309 =         provider;
     public void initialize(int keysize) {
         addTaint(keysize);
         initialize(keysize, RANDOM);
-        // ---------- Original Method ----------
-        //initialize(keysize, RANDOM);
+        
+        
     }
 
     
@@ -104,8 +105,8 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_903554309 =         provider;
     public void initialize(AlgorithmParameterSpec param) throws InvalidAlgorithmParameterException {
         addTaint(param.getTaint());
         initialize(param, RANDOM);
-        // ---------- Original Method ----------
-        //initialize(param, RANDOM);
+        
+        
     }
 
     
@@ -114,37 +115,40 @@ Provider varC1EB7B12CCABB27D431E5B91E5FF9ECB_903554309 =         provider;
 KeyPair var7EF0CBCA1B0CA80E47B1AE4032BB7E5C_776959235 =         generateKeyPair();
         var7EF0CBCA1B0CA80E47B1AE4032BB7E5C_776959235.addTaint(taint);
         return var7EF0CBCA1B0CA80E47B1AE4032BB7E5C_776959235;
-        // ---------- Original Method ----------
-        //return generateKeyPair();
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.078 -0400", hash_original_method = "7972015D8BC3BAE6F8655706849D6EC4", hash_generated_method = "72A7E2D9191D0F6155EA7AEA36CB62BA")
     @Override
     public KeyPair generateKeyPair() {
 KeyPair var540C13E9E156B687226421B24F2DF178_307866138 =         null;
         var540C13E9E156B687226421B24F2DF178_307866138.addTaint(taint);
         return var540C13E9E156B687226421B24F2DF178_307866138;
-        // ---------- Original Method ----------
-        //return null;
+        
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.079 -0400", hash_original_method = "C1E2700C4D7C78BCD077B4B9FB70A89A", hash_generated_method = "1E8E4750002A943752775DFA2D8B52A0")
     @Override
     public void initialize(int keysize, SecureRandom random) {
         addTaint(random.getTaint());
         addTaint(keysize);
-        // ---------- Original Method ----------
+        
     }
 
     
+    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:48:58.079 -0400", hash_original_method = "3E787A500B01324B444CF13BE7390B3D", hash_generated_method = "D43A9F4E58FDFBDDD4BDF1CFC44F4964")
     @Override
     public void initialize(AlgorithmParameterSpec param, SecureRandom random) throws InvalidAlgorithmParameterException {
         addTaint(random.getTaint());
         addTaint(param.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -161,9 +165,9 @@ KeyPair var540C13E9E156B687226421B24F2DF178_307866138 =         null;
             addTaint(provider.getTaint());
             super.provider = provider;
             spiImpl = keyPairGeneratorSpi;
-            // ---------- Original Method ----------
-            //super.provider = provider;
-            //spiImpl = keyPairGeneratorSpi;
+            
+            
+            
         }
 
         
@@ -173,8 +177,8 @@ KeyPair var540C13E9E156B687226421B24F2DF178_307866138 =         null;
             addTaint(random.getTaint());
             addTaint(keysize);
             spiImpl.initialize(keysize, random);
-            // ---------- Original Method ----------
-            //spiImpl.initialize(keysize, random);
+            
+            
         }
 
         
@@ -184,8 +188,8 @@ KeyPair var540C13E9E156B687226421B24F2DF178_307866138 =         null;
 KeyPair var7EFEDE5F49B93533C358711F7FDA93A1_1935354793 =             spiImpl.generateKeyPair();
             var7EFEDE5F49B93533C358711F7FDA93A1_1935354793.addTaint(taint);
             return var7EFEDE5F49B93533C358711F7FDA93A1_1935354793;
-            // ---------- Original Method ----------
-            //return spiImpl.generateKeyPair();
+            
+            
         }
 
         
@@ -195,8 +199,8 @@ KeyPair var7EFEDE5F49B93533C358711F7FDA93A1_1935354793 =             spiImpl.gen
             addTaint(random.getTaint());
             addTaint(param.getTaint());
             spiImpl.initialize(param, random);
-            // ---------- Original Method ----------
-            //spiImpl.initialize(param, random);
+            
+            
         }
 
         

@@ -1,6 +1,6 @@
 package javax.xml.transform;
 
-// Droidsafe Imports
+
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.*;
@@ -10,7 +10,7 @@ public class TransformerConfigurationException extends TransformerException {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:21.009 -0400", hash_original_method = "BD9B4D3E21457DCFC8705065705F7747", hash_generated_method = "A2C224685083B7346EB781B715051790")
     public  TransformerConfigurationException() {
         super("Configuration Error");
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -18,7 +18,7 @@ public class TransformerConfigurationException extends TransformerException {
     public  TransformerConfigurationException(String msg) {
         super(msg);
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -26,7 +26,7 @@ public class TransformerConfigurationException extends TransformerException {
     public  TransformerConfigurationException(Throwable e) {
         super(e);
         addTaint(e.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -35,7 +35,7 @@ public class TransformerConfigurationException extends TransformerException {
         super(msg, e);
         addTaint(e.getTaint());
         addTaint(msg.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -45,7 +45,7 @@ public class TransformerConfigurationException extends TransformerException {
         super(message, locator);
         addTaint(locator.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
@@ -57,7 +57,7 @@ public class TransformerConfigurationException extends TransformerException {
         addTaint(e.getTaint());
         addTaint(locator.getTaint());
         addTaint(message.getTaint());
-        // ---------- Original Method ----------
+        
     }
 
     
