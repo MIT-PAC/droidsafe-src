@@ -210,7 +210,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("Couldn't replace findViewById(): {} ", stmt);
+				logger.info("Couldn't replace findViewById(): {} ", stmt);
 				return;
 			}
 
@@ -270,7 +270,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(stringId);
 			}
 			catch (Exception ex) {
-				logger.warn("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+				logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
 				return;
 			}
 
@@ -340,7 +340,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idValueBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("Couldn't replace {} ", stmt);
+				logger.info("Couldn't replace {} ", stmt);
 				return;
 			}
 
@@ -403,7 +403,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idValueBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("Couldn't replace {} ", stmt);
+				logger.info("Couldn't replace {} ", stmt);
 				return;
 			}
 
