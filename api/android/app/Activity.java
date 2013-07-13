@@ -2792,13 +2792,13 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
         return null;
     }
 		*/
-		return null;
+		return new View(context);
 	}
 	
 	public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
-		return null;
+		return new View(context);
 	}
 	
 	public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){

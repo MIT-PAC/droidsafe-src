@@ -25,7 +25,9 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
 	@DSModeled
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		return null;
+		//return null;
+		return new View(container.getContext());
+		
 	}
 	
 	@Override
