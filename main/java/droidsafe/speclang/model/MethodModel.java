@@ -81,7 +81,6 @@ public class MethodModel extends ModelChangeSupport
    */
   private List<String> methodArgumentValues = new ArrayList<String>();
 
-
   /**
    * The source code location where the method is defined or called.
    */
@@ -111,9 +110,7 @@ public class MethodModel extends ModelChangeSupport
   /**
    * The receiver of the method call.
    */
-  private String receiver;
-
-
+  private String receiver = "";
 
   /**
    * Main constructor.
@@ -131,8 +128,8 @@ public class MethodModel extends ModelChangeSupport
     this.permissions = Permissions.v().getPermissions(originalMethod.getSootMethod());
     if (originalMethod.hasReceiver()) {
       Object receiver = originalMethod.getReceiver();
-      if (receiver instanceof ConcreteListArgumentValue){
-      this.receiver = receiver.toString();
+      if (receiver instanceof ConcreteListArgumentValue) {
+        this.receiver = receiver.toString();
       }
     }
     for (SourceLocationTag line : originalMethod.getLines()) {
@@ -143,7 +140,8 @@ public class MethodModel extends ModelChangeSupport
     SootMethod sootMethod = originalMethod.getSootMethod();
     for (Type parType : sootMethod.getParameterTypes()) {
       this.methodArgumentTypes.add(parType.toString());
-      // logger.debug("Argument for soot method {} is {}", new Object[] {methodSignature,
+      // logger.debug("Argument for soot method {} is {}", new Object[]
+      // {methodSignature,
       // parType.toString()});
     }
 
@@ -151,11 +149,13 @@ public class MethodModel extends ModelChangeSupport
     for (ArgumentValue arg : arguments) {
       String argValue = arg.toString();
       this.methodArgumentValues.add(argValue);
-      // logger.debug("Argument for method {} is {}", new Object[] {methodSignature, argValue});
+      // logger.debug("Argument for method {} is {}", new Object[]
+      // {methodSignature, argValue});
     }
     // if (originalMethod.getReceiver() != null) {
     // Object receiver = originalMethod.getReceiver();
-    // logger.debug("Receiver for method {}", originalMethod.getReceiver().getClass());
+    // logger.debug("Receiver for method {}",
+    // originalMethod.getReceiver().getClass());
     // }
   }
 
@@ -168,7 +168,6 @@ public class MethodModel extends ModelChangeSupport
   public String getMethodName() {
     return methodName;
   }
-
 
   /**
    * Getter for method class.
@@ -224,7 +223,6 @@ public class MethodModel extends ModelChangeSupport
     return this.methodShortSignature;
   }
 
-
   /**
    * Getter for the set of permissions needed to run this method at run time.
    * 
@@ -233,7 +231,6 @@ public class MethodModel extends ModelChangeSupport
   public Set<String> getPermissions() {
     return this.permissions;
   }
-
 
   /**
    * @return the receiver object string representation.
@@ -248,8 +245,7 @@ public class MethodModel extends ModelChangeSupport
    */
   private String computeShortSignature(Method m) {
     StringBuffer out = new StringBuffer();
-    out.append(Utils.extractClassname(getClassName()) + " " + getMethodName()
-        + " (");
+    out.append(Utils.extractClassname(getClassName()) + " " + getMethodName() + " (");
     String delim = "";
     for (ArgumentValue arg : m.getArgs()) {
       out.append(delim);
@@ -378,21 +374,45 @@ public class MethodModel extends ModelChangeSupport
     if (declarationLocation == null) {
       if (other.declarationLocation != null) return false;
     } else if (!declarationLocation.equals(other.declarationLocation)) return false;
+    if (receiver == null) {
+      if (other.receiver != null) return false;
+    } else if (!receiver.equals(other.receiver)) return false;
     return true;
   }
 
   /** Sort by class and method name **/
   public int compareTo(MethodModel m) {
     // if both method have lines, then compare them on lines
-    if (!this.lines.isEmpty() && !m.lines.isEmpty()) {
-      return this.lines.get(0).compareTo(m.lines.get(0));
-    }
-    // otherwise, compare them on class name, methodname, and return type
-    String str1 = this.className + " " + this.methodName + " " + this.returnType;
-    String str2 = m.className + " " + m.methodName + " " + m.returnType;
-    return str1.compareTo(str2);
-  }
+    // if (!this.lines.isEmpty() && !m.lines.isEmpty()) {
+    // return this.lines.get(0).compareTo(m.lines.get(0));
+    // }
+    // // otherwise, compare them on class name, methodname, and return type
+    // String str1 = this.className + " " + this.methodName + " " + this.returnType;
+    // String str2 = m.className + " " + m.methodName + " " + m.returnType;
+    // return str1.compareTo(str2);
 
+    int result = this.getSignature().compareTo(m.getSignature());
+    if (result == 0) {
+      result = this.receiver.compareTo(m.getReceiver());
+    }
+    if (result == 0) {
+      if (this.getDeclSourceLocation() != null && m.getDeclSourceLocation() != null) {
+        result = this.getDeclSourceLocation().compareTo(m.getDeclSourceLocation());
+      }
+    }
+    if (result == 0) {
+      result = Integer.compare(this.getLines().size(), m.getLines().size());
+    }
+    if (result == 0) {
+      for (int i = 0; i < this.getLines().size(); i++) {
+        result = this.lines.get(i).compareTo(m.lines.get(i));
+        if (result != 0) {
+          return result;
+        }
+      }
+    }
+    return result;
+  }
 
   /**
    * @return A string with all elements of the method. Used mainly for debug purposed since we want

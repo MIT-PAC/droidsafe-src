@@ -32,7 +32,8 @@ import droidsafe.speclang.model.MethodModel;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider {
+public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider
+                                                                       // {
 
   /** Logger for class */
   @SuppressWarnings("unused")
@@ -93,7 +94,9 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
       Object data = ((TreeElement<?, ?>) element).getData();
       if (data instanceof MethodModel) {
         MethodModel method = (MethodModel) data;
-        String receiver = (method.getReceiver() == null) ? "" : "\n" + method.getReceiver();
+        String receiver =
+            (method.getReceiver() == null || method.getReceiver().equals("")) ? "" : "\n"
+                + method.getReceiver();
         if (!useShortSignatureForMethods) {
           return method.getSignature() + receiver;
         } else {
@@ -103,7 +106,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
     return element.toString();
   }
-
 
   public String getText_Saved(Object element) {
     if (!useShortSignatureForMethods) {
@@ -137,7 +139,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
     return null;
   }
-
 
   /**
    * Returns the icon image for the tree node.
