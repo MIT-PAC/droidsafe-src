@@ -110,6 +110,25 @@ To model a method, start by copying it's implementation in the [android
 source](http://grepcode.com/file/repository.grepcode.com/java/ext/com.google.android/android/4.0.3_r1/android). Then
 follow the set of rules below -
 
+### Factory Methods
+
+* Factory methods, such as "java.net.URI create(String)" and "android.net.Uri parse(String)" should not be modeled, but 
+  instead added to the set of methods that will be walked through, in ValueAnalysis.signaturesOfMethodsToStepThru.
+
+* Calls to factory methods in other modeled methods should be replaced by calls to the appropriate constructor.
+  e.g. org.apache.http.client.HttpGet _init_ method should call "setURI(new URI(uri))" instead of 
+  "setURI(URI.create(uri))"
+
+### Exceptions
+
+* Exception try/catch statements should be taken out, but their effects modeled conservatively. 
+  In other words, the statements in try and catch blocks that may modify the attributes/objects we care about should be 
+  preserved.
+
+* Method "throws" statements on methods should be stripped.
+
+### Constructors
+
 * Constructors should be methods with return type void and name _init_
 
 * Only the parts of the method that modify a security-sensitive attribute of the model should be kept.

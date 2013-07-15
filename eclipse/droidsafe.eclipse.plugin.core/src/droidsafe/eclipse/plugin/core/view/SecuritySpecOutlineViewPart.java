@@ -36,12 +36,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import droidsafe.eclipse.plugin.core.Activator;
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.eclipse.plugin.core.view.TreeElementContentProvider.TopLevelParentEntity;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.utils.SourceLocationTag;
 
 
@@ -108,7 +108,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
           + "\nSelect an Android project in the Project Explorer."
           + "\nYou may also need to run the Droidsafe spec generation "
           + "command from the project context menu.");
-      this.textViewer.setDocument(document);
+      //parent.redraw();
+      parent.layout();
     } else {
       String projectRootPath = this.selectedProject.getLocation().toOSString();
       this.securitySpecModel = SecuritySpecModel.deserializeSpecFromFile(projectRootPath);
@@ -122,6 +123,8 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
             + "\nSelect the project on the Project Explorer "
             + "\nand run the Droidsafe spec generation command from the project context menu.");
         this.textViewer.setDocument(document);
+       //parent.redraw();
+       parent.layout();
 
       }
     }
@@ -174,6 +177,9 @@ public class SecuritySpecOutlineViewPart extends ViewPart {
       } else {
         getViewer().setInput(securitySpecModel);
       }
+    }
+    if (getViewer() != null) {
+     this.parentComposite.layout();
     }
   }
 

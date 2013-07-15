@@ -21,10 +21,10 @@ import org.osgi.framework.FrameworkUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
 import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.HotspotModel;
+import droidsafe.speclang.model.MethodModel;
 
 /**
  * Label provider for the nodes of the Droidsafe outline view.
@@ -32,7 +32,8 @@ import droidsafe.eclipse.plugin.core.specmodel.TreeElement;
  * @author Marcel Becker (becker@kestrel.edu)
  * 
  */
-public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider {
+public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelProvider
+                                                                       // {
 
   /** Logger for class */
   @SuppressWarnings("unused")
@@ -89,6 +90,24 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
    */
   // @Override
   public String getText(Object element) {
+    if (element instanceof TreeElement<?, ?>) {
+      Object data = ((TreeElement<?, ?>) element).getData();
+      if (data instanceof MethodModel) {
+        MethodModel method = (MethodModel) data;
+        String receiver =
+            (method.getReceiver() == null || method.getReceiver().equals("")) ? "" : "\n"
+                + method.getReceiver();
+        if (!useShortSignatureForMethods) {
+          return method.getSignature() + receiver;
+        } else {
+          return method.getShortSignature() + receiver;
+        }
+      }
+    }
+    return element.toString();
+  }
+
+  public String getText_Saved(Object element) {
     if (!useShortSignatureForMethods) {
       if (element instanceof TreeElement<?, ?>) {
         Object data = ((TreeElement<?, ?>) element).getData();
@@ -99,7 +118,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
     return element.toString();
   }
-
 
   public String getToolTipText(Object obj) {
     if (obj instanceof TreeElement<?, ?>) {
@@ -121,7 +139,6 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
     }
     return null;
   }
-
 
   /**
    * Returns the icon image for the tree node.
@@ -199,7 +216,7 @@ public class TreeElementLabelProvider extends StyledCellLabelProvider {// LabelP
         MethodModel method = (MethodModel) data;
         if (method.isSafe()) {
           styledString.setStyle(0, styledString.length(), STRIKEOUT);
-        } else if (!method.getPermissions().isEmpty()) {
+        } else if (method.getPermissions() != null && !method.getPermissions().isEmpty()) {
           styledString.setStyle(0, styledString.length(), BOLD);
           // cell.setForeground(RED);
         }

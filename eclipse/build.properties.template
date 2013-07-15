@@ -1,7 +1,5 @@
 runPackager=true
 target.eclipse.platform=/home/becker/eclipse42/eclipse
-target.eclipse.ant.launcher=${target.eclipse.platform}/plugins/org.eclipse.equinox.launcher_1.3.0.v20120522-1813.jar
-target.eclipse.pde.plugin=${target.eclipse.platform}/plugins/org.eclipse.pde.build_3.8.2.v20121114-140810
 
 feature.id=droidsafe.eclipse.plugin.feature
 plugin.id=droidsafe.eclipse.plugin.core

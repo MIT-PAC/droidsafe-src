@@ -51,16 +51,16 @@ import droidsafe.android.system.API;
 import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.preferences.PreferenceConstants;
-import droidsafe.eclipse.plugin.core.specmodel.CodeLocationModel;
-import droidsafe.eclipse.plugin.core.specmodel.HotspotModel;
-import droidsafe.eclipse.plugin.core.specmodel.MethodModel;
-import droidsafe.eclipse.plugin.core.specmodel.SecuritySpecModel;
 import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.main.Config;
 import droidsafe.main.Main;
 import droidsafe.main.SootConfig;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.speclang.model.CodeLocationModel;
+import droidsafe.speclang.model.HotspotModel;
+import droidsafe.speclang.model.MethodModel;
+import droidsafe.speclang.model.SecuritySpecModel;
 import droidsafe.transforms.AddAllocsForAPICalls;
 import droidsafe.transforms.InsertDSTaintAllocs;
 import droidsafe.transforms.IntegrateXMLLayouts;
@@ -77,6 +77,11 @@ import droidsafe.utils.SourceLocationTag;
  */
 public class DroidsafeAnalysisRunner extends Main {
   private static final Logger logger = LoggerFactory.getLogger(DroidsafeAnalysisRunner.class);
+
+  /**
+   * Id for the markers to be added to the Android app files.
+   */
+  public final String DROIDSAFE_MARKER_ID = Activator.PLUGIN_ID + ".droidsafemarker";
 
   IProject project;
 
@@ -333,7 +338,8 @@ public class DroidsafeAnalysisRunner extends Main {
       if (spec != null) {
         SecuritySpecModel securitySpecModel = new SecuritySpecModel(spec, Config.v().APP_ROOT_DIR);
         SecuritySpecModel.serializeSpecToFile(securitySpecModel, Config.v().APP_ROOT_DIR);
-        generateMarkersForSecuritySpecification(securitySpecModel);
+        DroidsafePluginUtilities
+            .generateMarkersForSecuritySpecification(securitySpecModel, this.project);
       }
       monitor.worked(1);
       if (monitor.isCanceled()) {
@@ -458,177 +464,4 @@ public class DroidsafeAnalysisRunner extends Main {
     StatusPrinter.printInCaseOfErrorsOrWarnings(context);
   }
 
-
-  /**
-   * Creates eclipse task markers for all input events locations in the selected app.
-   * 
-   * @param spec
-   */
-  @SuppressWarnings("unused")
-  private void generateMarkersForSecuritySpecification(SecuritySpecification spec) {
-    String markerId = Activator.PLUGIN_ID + ".droidsafemarker";
-    IMarker markers[];
-    try {
-      markers = this.project.findMarkers(markerId, true, IResource.DEPTH_INFINITE);
-      for (IMarker marker : markers) {
-        marker.delete();
-      }
-    } catch (CoreException ex) {
-      ex.printStackTrace();
-    }
-
-    // for (Method m : spec.getWhitelist()) {
-    // SourceLocationTag line = m.getDeclSourceLocation();
-    // if (line != null) {
-    // String clz = line.getClz();
-    // int lineNbr = line.getLine();
-    // //logger.info("White List Method " + m.toString(true) + " class " + clz + " Line Number = "
-    // // + lineNbr);
-    // }
-    // }
-
-    List<Method> methods = new ArrayList<Method>(spec.getEventBlocks().keySet());
-    Collections.sort(methods);
-
-    for (Method inputMethod : methods) {
-      SourceLocationTag line = inputMethod.getDeclSourceLocation();
-      if (line != null) {
-        String clz = line.getClz();
-        String classPath = DroidsafePluginUtilities.classNamePath(clz);
-        IFile file = this.project.getFile(classPath);
-        int lineNbr = line.getLine();
-        // logger.info("Main Method " + inputMethod.toString(true) + " class " + clz
-        // + " Line Number = " + lineNbr + "\n Class Name path = " + classPath + " \n File = "
-        // + file);
-        if (file.exists()) {
-          try {
-            IMarker marker = file.createMarker(markerId);
-            marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-            marker.setAttribute(IMarker.MESSAGE, inputMethod.toString(true));
-            marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-            marker.setAttribute("methodName", inputMethod.getName());
-            marker.setAttribute("methodClass", inputMethod.getCname());
-            if (inputMethod.getReceiver() != null) {
-              marker.setAttribute("methodReceiver", inputMethod.getReceiver().toString());
-            }
-          } catch (CoreException ex) {
-            ex.printStackTrace();
-          }
-        }
-      }
-
-
-      // List<Method> outputMethods = new ArrayList<Method>(spec.getEventBlocks().get(inputMethod));
-      // Collections.sort(outputMethods);
-      // for (Method outputMethod : outputMethods) {
-      // SourceLocationTag outputMethodLine = outputMethod.getDeclSourceLocation();
-
-      // if (outputMethodLine != null) {
-      // String clz = outputMethodLine.getClz();
-      // int lineNbr = outputMethodLine.getLine();
-      // logger.info("Output Method " + outputMethod.toString(true) + " class " + clz
-      // + " Line Number = " + lineNbr + "\n Class Name path = "
-      // + DroidsafePluginUtilities.classNamePath(clz));
-      // }
-      // }
-    }
-  }
-
-
-
-  /**
-   * Creates eclipse task markers for all input events locations in the selected app.
-   * 
-   * @param spec
-   */
-  private void generateMarkersForSecuritySpecification(SecuritySpecModel spec) {
-    String markerId = Activator.PLUGIN_ID + ".droidsafemarker";
-    IMarker markers[];
-    try {
-      markers = this.project.findMarkers(markerId, true, IResource.DEPTH_INFINITE);
-      for (IMarker marker : markers) {
-        marker.delete();
-      }
-    } catch (CoreException ex) {
-      ex.printStackTrace();
-    }
-    List<MethodModel> methods = new ArrayList<MethodModel>(spec.getEntryPoints());
-    Collections.sort(methods);
-    Map<MethodModel, List<MethodModel>> inputEventBlocks = spec.getInputEventBlocks();
-    if (inputEventBlocks != null) {
-      for (MethodModel inputMethod : inputEventBlocks.keySet()) {
-        SourceLocationTag line = inputMethod.getDeclSourceLocation();
-        if (line != null) {
-          String clz = line.getClz();
-          String classPath = DroidsafePluginUtilities.classNamePath(clz);
-          IFile file = this.project.getFile(classPath);
-          int lineNbr = line.getLine() - 1;
-          if (file.exists()) {
-            try {
-              IMarker marker = file.createMarker(markerId);
-              marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-              marker.setAttribute(IMarker.MESSAGE, inputMethod.getShortSignature());
-              marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-              marker.setAttribute("methodName", inputMethod.getMethodName());
-              marker.setAttribute("methodClass", inputMethod.getClassName());
-
-              marker = file.createMarker(markerId);
-              marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-              marker.setAttribute(IMarker.MESSAGE, inputMethod.getSignature());
-              marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-              marker.setAttribute("methodName", inputMethod.getMethodName());
-              marker.setAttribute("methodClass", inputMethod.getClassName());
-
-            } catch (CoreException ex) {
-              ex.printStackTrace();
-            }
-          }
-        }
-        for (MethodModel outputMethod : inputEventBlocks.get(inputMethod)) {
-          List<CodeLocationModel> locations = outputMethod.getLines();
-          if (locations != null) {
-            for (CodeLocationModel location : locations) {
-              String clz = location.getClz();
-              String classPath = DroidsafePluginUtilities.classNamePath(clz);
-              IFile file = this.project.getFile(classPath);
-              int lineNbr = location.getLine();
-              if (file.exists()) {
-                try {
-                  IMarker marker = file.createMarker(markerId);
-                  marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-                  marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-                  marker.setAttribute("methodName", outputMethod.getMethodName());
-                  marker.setAttribute("methodClass", outputMethod.getClassName());
-                  marker.setAttribute(IMarker.MESSAGE, outputMethod.getShortSignature());
-
-                  marker = file.createMarker(markerId);
-                  marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-                  marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-                  marker.setAttribute("methodName", inputMethod.getMethodName());
-                  marker.setAttribute("methodClass", inputMethod.getClassName());
-                  marker.setAttribute(IMarker.MESSAGE, outputMethod.getSignature());
-
-                  List<HotspotModel> hotspots = location.getHotspots();
-                  for (HotspotModel hotspot : hotspots) {
-                    marker = file.createMarker(markerId);
-                    marker.setAttribute(IMarker.LINE_NUMBER, lineNbr);
-                    marker.setAttribute(IMarker.SEVERITY, IMarker.SEVERITY_INFO);
-                    marker.setAttribute("methodName", inputMethod.getMethodName());
-                    marker.setAttribute("methodClass", inputMethod.getClassName());
-                    marker.setAttribute(IMarker.MESSAGE, hotspot.toString());
-                  }
-                } catch (CoreException ex) {
-                  ex.printStackTrace();
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  public static void exit(int status) {
-    throw new IllegalStateException();
-  }
 }

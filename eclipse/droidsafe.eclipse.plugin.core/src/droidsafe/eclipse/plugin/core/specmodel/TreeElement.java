@@ -18,6 +18,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.eclipse.core.runtime.Assert;
 
+import droidsafe.speclang.model.ModelChangeSupport;
+
 
 /**
  * A container element for tree elements. Based on the class hierarchy plugin developed by Andrei

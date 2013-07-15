@@ -46,4 +46,12 @@ public class Utils {
         
         return classes;
     }   
+    
+    /**
+     * Return the terminal classname from a fully specified classname
+     * 
+     */
+    public static String extractClassname(String fullname) {
+      return fullname.replaceFirst("^.*[.]", "");
+    }
 }

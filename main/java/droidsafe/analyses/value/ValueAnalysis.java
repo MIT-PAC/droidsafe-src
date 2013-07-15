@@ -119,6 +119,19 @@ import soot.Value;
 public class ValueAnalysis {
 
     //==================================================================================================================
+    // Methods to step through
+    //==================================================================================================================
+
+    /** Set of methods to not invalidate */
+    private Set<String> signaturesOfMethodsToStepThru = new HashSet<String>(
+    Arrays.asList("<android.app.Activity: void startActivityForResult(android.content.Intent,int)>", 
+                  "<android.app.Activity: void onActivityResult(int,int,android.content.Intent)>",
+                  "<droidsafe.helpers.DSUtils: void translateIntent(android.content.Intent,android.content.Intent)>",
+                  "<android.net.URI: android.net.Uri parse(java.lang.String)", 
+                  "<java.net.URI: java.lang.URI create(java.lang.String)>"));
+
+
+    //==================================================================================================================
     // Attributes
     //==================================================================================================================
 
@@ -137,16 +150,6 @@ public class ValueAnalysis {
 
     /** Set of methods we simulated and thus don't want to step through */
     private Set<SootMethod> simulatedMethods;
-
-    /** Set of methods to not invalidate */
-    private Set<String> sigsOfMethodsToNotInvalidate = new HashSet<String>(Arrays.asList("startActivityForResult", 
-                "onActivityResult",
-                "query",
-                "translateIntent",
-                "toString",
-                "<init>",
-                "_init_",
-                "parse"));
 
     /** FileWriter used to log what we still don't model but perhaps should */
     private FileWriter attrModelingTodoLog;
@@ -474,11 +477,11 @@ public class ValueAnalysis {
         // objects returned by the simulation of the invoke exprs will be aggregated here
         ArrayList<Object> objectsToReturn = new ArrayList<Object>();
 
-        // get the name of the method we will simulate
-        String methodName = invokeExpr.getMethod().getName();
+        SootMethod sootMethod= invokeExpr.getMethod();
 
         // init methods are constructors
         // they can't have angled brackets in the name so we use underscores instead
+        String methodName = sootMethod.getName();
         if(methodName.equals("<init>")){
             methodName = "_init_";
         }
@@ -501,7 +504,10 @@ public class ValueAnalysis {
             }
             this.simulatedMethods.add(invokeExpr.getMethod());
         } catch (Exception e) {
-            if(!this.sigsOfMethodsToNotInvalidate.contains(methodName)) {
+            // If we don't have the method market as one we will step through, that means we haven't modeled it at all
+            // and thus the receiver and argument models 
+           String methodSignature = sootMethod.getSignature();
+           if(!this.signaturesOfMethodsToStepThru.contains(methodSignature)) {
                 String error = "The InvokeExpr " + invokeExpr + this.sourceLocation + " hasn't been modeled: " 
                     + e.toString() + "\n";
                 error += Throwables.getStackTraceAsString(e);
