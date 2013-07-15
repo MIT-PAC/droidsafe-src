@@ -1,64 +1,52 @@
 package droidsafe.transforms;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.lang.reflect.Method;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.LinkedList;
 import java.util.Map;
-import java.lang.*;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.Body;
 import soot.BodyTransformer;
+import soot.BooleanType;
+import soot.Immediate;
 import soot.RefType;
 import soot.Type;
 import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Local;
-import soot.UnitBox;
 import soot.Unit;
-import soot.ValueBox;
-import soot.SootField;
 import soot.Value;
-import soot.NullType;
-import soot.jimple.NullConstant;
-import soot.SootMethodRef; 
+import soot.ValueBox;
 
+import soot.jimple.AssignStmt;
+import soot.jimple.ConditionExpr;
+import soot.jimple.FieldRef;
 import soot.jimple.InstanceInvokeExpr;
+import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.StmtBody;
-import soot.jimple.ArrayRef;
-import soot.jimple.InvokeExpr;
-import soot.jimple.FieldRef;
+import soot.jimple.StringConstant;
 import soot.jimple.spark.pag.AllocNode;
 import soot.jimple.Jimple;
-import soot.jimple.NewExpr;
 import soot.jimple.Expr;
-import soot.jimple.StringConstant;
-
-import soot.jimple.internal.JimpleLocalBox;
-import soot.jimple.internal.ImmediateBox;
-import soot.jimple.internal.VariableBox;
 
 import soot.util.Chain;
-import soot.util.HashChain;
-import soot.PatchingChain;
 
 import droidsafe.analyses.GeoPTA;
 import droidsafe.android.app.Project;
-import droidsafe.transforms.APICallSpecialization.CallSpecialization;
 import droidsafe.utils.CannotFindMethodException;
 import droidsafe.utils.SootUtils;
 import droidsafe.android.app.resources.ResourcesSoot;
 
+import com.google.common.collect.BiMap;
 import com.google.common.collect.HashBiMap;
 
 public class IntegrateXMLLayouts extends BodyTransformer {
@@ -66,18 +54,18 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		
 		private static IntegrateXMLLayouts v;
 		
-		private SootMethod findViewById;
-		private SootMethod setContentView;
-		
-		/** debug */
-		private SootClass  activityClass;
-		private SootClass  javaObjClass;
-		
 		/** list of possible findViewById methods */
 		private List<SootMethod>  findViewByIdList    = new LinkedList<SootMethod>();
 		
 		/** list of possible setContentViewList */
 		private List<SootMethod>  setContentViewList = new LinkedList<SootMethod>();
+		
+		private List<SootMethod>  getCharSequenceList = new LinkedList<SootMethod>();
+		
+		/** variable argument getString*/
+		private List<SootMethod>  getVarArgCharSequenceList = new LinkedList<SootMethod>();
+		
+		private List<SootMethod>  findFragmentByIdList = new LinkedList<SootMethod>();		
 		
 		/** all classes that have findViewById */
 		private final String[] findViewByIdClasses = new String[] {
@@ -89,30 +77,106 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 		        "android.app.Activity", "android.app.Dialog", "android.view.Window" 
 		    };
 		
+		private final String[] getStringAndGetTextClasses = new String[] {
+				"android.content.res.Resources", "android.app.Fragment",
+				"android.content.Context", "android.support.v4.app.Fragment"
+			};
+		
+		private final String[] findFragmentByIdClasses = new String[] {
+				"android.app.FragmentManager",
+				"android.support.v4.app.FragmentManager"
+		};
+		
+		static boolean debugOn = false;
 		/**
 		 * Constructor
 		 */
 		public IntegrateXMLLayouts() {
-			activityClass =  Scene.v().getSootClass("android.app.Activity");
-			javaObjClass  =  Scene.v().getSootClass("java.lang.Object");
 			
 			//build findViewByIDList
 			for (String className: findViewByIdClasses){
 			    String methodName = String.format("<%s: android.view.View findViewById(int)>",
 			                               className);
 			    SootMethod method = Scene.v().getMethod(methodName); 
-			    logger.debug("findViewById method {} ", method);
 			    findViewByIdList.add(method);
+			    logger.debug("findViewById: {} ", method);
 			}
 			
 			// setcontentview list
 			for (String className: setContentViewClasses){
-			    String methodName = String.format("<%s: void setContentView(int)>",
-			                               className);
-			    SootMethod method = Scene.v().getMethod(methodName); 
-			    setContentViewList.add(method);
+			    String methodName = String.format("<%s: void setContentView(int)>", className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	setContentViewList.add(method);			    
+			    	logger.debug("setContentView: {} ", method);
+			    } catch (Exception ex) {
+			    	
+			    }
 			    
-			    logger.debug("setContentView method {} ", method);
+			    methodName = String.format("<%s: void setContentView(int, android.view.ViewGroup.LayoutParams)>", className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	setContentViewList.add(method);			    
+			    	logger.debug("setContentView: {} ", method);
+			    } catch (Exception ex) {
+			    	
+			    }
+			}
+			
+			// getString / getText
+			for (String className: getStringAndGetTextClasses){
+				String methodName;
+			    methodName = String.format("<%s: java.lang.String getString(int)>", className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getCharSequenceList.add(method);			    
+			    	logger.debug("getString: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			    
+			    methodName = String.format("<%s: java.lang.CharSequence getText(int)>", className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getCharSequenceList.add(method);			    
+			    	logger.debug("getString: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			    
+			    // variable argument getString(int resId, Object[])
+			    methodName = String.format("<%s: java.lang.String getString(int,java.lang.Object[])>",
+			                               className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getVarArgCharSequenceList.add(method);			    
+			    	logger.debug("getVarArgCharSequenceList: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			    methodName = String.format("<%s: java.lang.String getText(int,java.lang.Object[])>",
+			                               className);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	getVarArgCharSequenceList.add(method);			    
+			    	logger.debug("getVarArgCharSequenceList: {} ", method);
+			    } catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
+			}
+			
+			//deal with findFragmentById's Classes
+			for (String className: findFragmentByIdClasses){
+				String fragmentClass = className.replace("FragmentManager", "Fragment");
+			    String methodName = String.format("<%s: %s findFragmentById(int)>",
+			                               className, fragmentClass);
+			    try {
+			    	SootMethod method = Scene.v().getMethod(methodName); 
+			    	findFragmentByIdList.add(method);			    
+			    }
+			    catch (Exception ex) {
+			    	logger.info("method {} not in soot scene ", methodName);
+			    }
 			}
 		}
 		
@@ -128,14 +192,32 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 
 			v = new IntegrateXMLLayouts();
 
+			// we probably will need to do 2 pass 
 			for (SootClass clz : Scene.v().getClasses()) {
-				if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
+				//if (Project.v().isSrcClass(clz.toString()) || Project.v().isLibClass(clz.toString())) {
+				debugOn = false;
+				if (clz.getName().contains("com.challenge")) {
+					logger.info("Class {} ", clz);
+					debugOn = true;
+				}
+				
+				if (true) {
 					for (SootMethod meth : clz.getMethods()) {
-						if (meth.isConcrete())
+						if (debugOn) {
+							logger.info("Checking method {} ", meth);
+						}
+						if (meth.isConcrete()) {
+							if (debugOn) {
+								logger.info("XML transform: {} ", meth);
+								logger.info("{}", meth.retrieveActiveBody());
+							}
 							v.transform(meth.retrieveActiveBody());
+						}
 					}
 				}
 			}
+			
+			ResourcesSoot.v().writeFile(Project.v().getOutputDir());
 		}
 
 
@@ -165,8 +247,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("stmt {} ", stmt);
-				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				logger.info("Couldn't replace findViewById(): {} ", stmt);
 				return;
 			}
 
@@ -180,18 +261,325 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(method.makeRef(), objectBox.getValue()); 
 			Stmt invokeStmt = Jimple.v().newInvokeStmt(invokeExpr);
 
+			logger.info("replacing {} ", stmt);
 			try {
 			    units.swapWith(stmt, invokeStmt);
-			    logger.info("replacing {} ", stmt);
 			    logger.info("with {} => OK", invokeStmt);
 			}
 			catch (Exception ex) {
-			    logger.warn("replacing {} ", stmt);
-			    logger.warn("with {} => NOT OK", invokeStmt);
+			    logger.warn("Replacing with {} => NOT OK", invokeStmt);
+			}
+        }
+		
+		
+		/**
+		 * method to perform replacing of getString
+		 * @param stmtBody
+		 * @param stmt
+		 */
+		void replaceGetCharSequence(StmtBody stmtBody, Stmt stmt) {
+
+			// get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> useBoxList = stmt.getUseBoxes();
+			List<ValueBox> defBoxList = stmt.getDefBoxes();
+
+			ValueBox callerObjectBox = useBoxList.get(0);
+			ValueBox idValueBox      = useBoxList.get(1);
+			ValueBox assignToBox = null;
+			
+			if (defBoxList != null && defBoxList.size() > 0)
+			    assignToBox = defBoxList.get(0);
+			
+			logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
+			logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+
+			if (callerObjectBox == null || idValueBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
+			}
+
+			Integer intId;
+			String stringId = idValueBox.getValue().toString();
+			
+			try {
+				intId = new Integer(stringId);
+			}
+			catch (Exception ex) {
+				logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+				return;
+			}
+
+			SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
+
+			if (getStringMethod == null) {
+				logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
+				logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
+				return;
 			}
 			
-        }
+			/*
+			if (getStringMethod != null) {
+				logger.warn("Skipped replacing getString() for now ");
+				return;
+			}
+			*/
 
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
+			
+			Stmt lookupStmt; 
+			if (assignToBox != null)
+			    lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+			else
+			    lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
+
+			logger.info("replaced {} ", stmt);
+			try {
+			    units.swapWith(stmt, lookupStmt);
+			    logger.info("replacing with {}, OK ", lookupStmt);
+			}
+			catch (Exception ex) {
+			    logger.warn("replacing with {} => NOT OK", lookupStmt);
+			}
+		}
+		
+		
+		/**
+		 * extract variable arguments used in this statement, and resolve string constants if possible
+		 * @param stmtBody
+		 * @param stmt
+		 * @return
+		 */
+		Object[] extractVariableArguments(StmtBody stmtBody, Stmt stmt) {
+			// get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> useBoxList = stmt.getUseBoxes();
+			List<ValueBox> defBoxList = stmt.getDefBoxes();
+
+			ValueBox callerObjectBox = useBoxList.get(0);
+			ValueBox idValueBox      = useBoxList.get(1);
+			ValueBox objArrayBox     = useBoxList.get(2);
+			ValueBox assignToBox = null;
+			
+			Value objectArray = objArrayBox.getValue();
+			
+			if (defBoxList != null && defBoxList.size() > 0)
+			    assignToBox = defBoxList.get(0);
+			
+			logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
+			logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+
+			if (callerObjectBox == null || idValueBox == null) {
+				logger.debug("Couldnot get boxes for replacement "); 
+				return null;
+			}
+
+			InvokeExpr invokeExpr = stmt.getInvokeExpr();
+			logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
+			
+			//Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getStringMethod.makeRef()); 
+			List<String> argList = new LinkedList<String>();
+			
+			Stmt prevStatement = (Stmt) units.getPredOf(stmt);
+			HashBiMap<Value, Value> map = HashBiMap.create();
+			
+			String objectPattern = String.format("%s[", objectArray.toString());
+			String objectName = objectArray.toString();
+			
+			List<Value> valueList = new LinkedList<Value>();
+			
+			while (prevStatement != null) {
+				logger.debug("prevStatement {} ", prevStatement);
+				if (!(prevStatement instanceof AssignStmt)) {
+					prevStatement = (Stmt)units.getPredOf(prevStatement);
+					continue;
+				}
+				defBoxList = prevStatement.getDefBoxes();
+				useBoxList = prevStatement.getUseBoxes();
+				Value leftSide  = defBoxList.get(0).getValue();
+				Value rightSide = useBoxList.get(useBoxList.size() - 1).getValue();
+				
+				String leftSideName = leftSide.toString();
+				
+				if (leftSideName.startsWith(objectPattern) ||
+				    map.inverse().containsKey(leftSide))
+				{
+					if (leftSideName.startsWith(objectPattern))
+						valueList.add(leftSide);
+					map.put(leftSide, rightSide);
+					logger.debug("added");
+				}
+				
+				prevStatement = (Stmt)units.getPredOf(prevStatement);
+			}
+			
+			if (valueList.size() == 0)
+				return null;
+			
+			Collections.reverse(valueList);
+			
+			Object[] objArray = new Object[valueList.size()];
+			
+			for (int i = 0; i < valueList.size(); i++) {
+				Value obj = valueList.get(i);
+				Value assignedFrom = map.get(obj);
+				while (map.containsKey(assignedFrom))
+					assignedFrom = map.get(assignedFrom);
+				
+				String varTypeName = assignedFrom.getType().toString();
+				
+				logger.debug("Type {} => {} ", assignedFrom.getType(), assignedFrom.getType().toString());
+				
+				if (!varTypeName.startsWith("java.lang.")) {
+					logger.info("not java.lang objects, give up ");
+					return null;
+				}
+				
+				if (assignedFrom.getType().equals(RefType.v("java.lang.String"))) {
+					if (!(assignedFrom instanceof StringConstant)) {
+						logger.debug("String {} is not constant ", assignedFrom);
+						return null;
+					}
+					objArray[i] = assignedFrom.toString().replaceAll("\"", "");
+				
+					logger.debug("String constant => {} ", objArray[i]);
+					continue;
+				}
+				
+				logger.debug("varTypeName {} ", varTypeName);
+			
+				Value paramValue = ((ValueBox)assignedFrom.getUseBoxes().get(0)).getValue();
+				logger.debug("useboxes {} ", assignedFrom.getUseBoxes());
+					
+				if (paramValue instanceof Immediate) {
+					try {
+						Class clz = Class.forName(assignedFrom.getType().toString());
+						Class[] paramString = new Class[] { String.class };
+						logger.debug("Immediate => {}, type {} ", paramValue, paramValue.getType());
+						Method method = clz.getDeclaredMethod("valueOf", paramString);
+						Object data = method.invoke(null, paramValue.toString());
+						objArray[i] = data;
+					}
+					catch (Exception ex) {
+						logger.debug("Exception {} ", ex);
+						return null;
+					}
+				}
+			}
+			
+			return objArray;
+		}
+		
+		int localStringIndex = 0;
+
+		/**
+		 * replace getSTring(int, ...)
+		 * @param stmtBody
+		 * @param stmt
+		 */
+		void replaceGetStringVariableArgs(StmtBody stmtBody, Stmt stmt) {
+
+			// get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> useBoxList = stmt.getUseBoxes();
+			List<ValueBox> defBoxList = stmt.getDefBoxes();
+
+			ValueBox callerObjectBox = useBoxList.get(0);
+			ValueBox idValueBox      = useBoxList.get(1);
+			ValueBox objArrayBox     = useBoxList.get(2);
+			ValueBox assignToBox = null;
+			
+			Value objectArray = objArrayBox.getValue();
+			
+			if (defBoxList != null && defBoxList.size() > 0)
+			    assignToBox = defBoxList.get(0);
+			
+			if (assignToBox == null) {
+				logger.warn("Cannot replace {} ", stmt);
+				return;
+			}
+			 
+			if (callerObjectBox == null || idValueBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
+			}
+
+			Integer intId;
+			String stringId = idValueBox.getValue().toString();
+			
+			try {
+				intId = new Integer(stringId);
+			}
+			catch (Exception ex) {
+				logger.info("Couldn't replace getString()  - {} NOT an integer constant", stringId);
+				return;
+			}
+
+			SootMethod getStringMethod = ResourcesSoot.v().addGetCharSequence_ID(intId);
+
+			if (getStringMethod == null) {
+				logger.warn("Could not replace {}, id={} ", stmt, String.format("%x", intId));
+				logger.warn("Class {} ", stmtBody.getMethod().getDeclaringClass());
+				return;
+			}
+			
+			InvokeExpr invokeExpr = stmt.getInvokeExpr();
+			logger.debug("invokeExpr args {} ", invokeExpr.getArgs());
+			
+			Object[] paramList = extractVariableArguments(stmtBody, stmt);
+			
+			if (paramList == null)
+				return;
+			
+			String localStringName = String.format("%s%03d", "localString", localStringIndex++);
+			
+			Local localString = Jimple.v().newLocal(localStringName,  RefType.v("java.lang.String"));
+			stmtBody.getLocals().add(localString);
+			
+			Local localCond = Jimple.v().newLocal("localCond",  BooleanType.v());
+			stmtBody.getLocals().add(localCond);
+			
+			FieldRef fieldRef =  Jimple.v().newStaticFieldRef(
+										ResourcesSoot.v().getConditionField().makeRef());
+			units.insertBefore(Jimple.v().newAssignStmt(localCond, fieldRef), stmt); 
+
+			ConditionExpr condExpr = Jimple.v().newEqExpr(localCond, IntConstant.v(0));
+
+			Stmt afterStmt = (Stmt)units.getSuccOf(stmt);
+			
+			for (String stringValue: ResourcesSoot.v().getStringValues(intId)) {
+				String resolvedString = null;
+				try {
+					resolvedString = String.format(stringValue, paramList);
+				}
+				catch(Exception ex) {
+					return;
+				}
+				
+				// condition statement
+				//Stmt condStmt =  Jimple.v().newIfStmt(condExpr, stmt);
+				Stmt ifStmt = Jimple.v().newIfStmt(condExpr, afterStmt);
+				units.insertBefore(ifStmt, stmt);
+				
+				Stmt localAssign = Jimple.v().newAssignStmt(localString, StringConstant.v(resolvedString));
+				units.insertBefore(localAssign, stmt);
+			}
+			
+			Stmt lookupStmt; 
+			lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), localString);
+
+			logger.info("replaced {} ", stmt);
+			try {
+			    units.swapWith(stmt, lookupStmt);
+			    logger.info("replacing with {}, OK ", lookupStmt);
+			}
+			catch (Exception ex) {
+			    logger.warn("replacing with {} => NOT OK", lookupStmt);
+			}
+		}
         /**
          * replaceFindViewById:
          *    replace findViewById invocation statement with replacement code that call getView_<id>
@@ -225,12 +613,75 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 				intId = new Integer(idValueBox.getValue().toString());
 			}
 			catch (Exception ex) {
-				logger.warn("stmt {} ", stmt);
-				logger.warn("Couldn't replace findViewById() NOT an integer constant");
+				logger.info("Couldn't replace {} ", stmt);
 				return;
 			}
 
-			SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+			//SootMethod getViewMethod = ResourcesSoot.v().lookupGetView_ID(intId);
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
+
+			if (getViewMethod == null) {
+				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
+				return;
+			}
+
+			Expr invokeExpr = Jimple.v().newStaticInvokeExpr(getViewMethod.makeRef(), callerObjectBox.getValue()); 
+			
+			Stmt lookupStmt; 
+			if (assignToBox != null)
+			    lookupStmt = Jimple.v().newAssignStmt(assignToBox.getValue(), invokeExpr);
+			else
+			    lookupStmt = Jimple.v().newInvokeStmt(invokeExpr);
+
+			try {
+			    units.swapWith(stmt, lookupStmt);
+			    logger.info("replacing {} ", stmt);
+			    logger.info("with {}, OK ", lookupStmt);
+			}
+			catch (Exception ex) {
+			    logger.warn("replacing {} ", stmt);
+			    logger.warn("with {} => NOT OK", lookupStmt);
+			}
+		}
+		
+		/**
+         * replaceFindFragment
+         *    replace findFragmentById invocation statement with replacement code that call getFragment_<id>
+         */
+		void replaceFindFragmentById(StmtBody stmtBody, Stmt stmt) {
+
+			// get body's unit as a chain
+			Chain<Unit> units = stmtBody.getUnits();
+
+			List<ValueBox> useBoxList = stmt.getUseBoxes();
+			List<ValueBox> defBoxList = stmt.getDefBoxes();
+
+			ValueBox callerObjectBox = useBoxList.get(0);
+			ValueBox idValueBox      = useBoxList.get(1);
+			ValueBox assignToBox = null;
+			
+			if (defBoxList != null && defBoxList.size() > 0)
+			    assignToBox = defBoxList.get(0);
+			
+			logger.debug("UseBoxes: {} ", stmt.getUseBoxes());
+			logger.debug("DefBoxes: {} ", stmt.getDefBoxes());
+
+			if (callerObjectBox == null || idValueBox == null) {
+				logger.warn("Couldnot get boxes for replacement "); 
+				return;
+			}
+
+			Integer intId;
+			
+			try {
+				intId = new Integer(idValueBox.getValue().toString());
+			}
+			catch (Exception ex) {
+				logger.info("Couldn't replace {} ", stmt);
+				return;
+			}
+
+			SootMethod getViewMethod = ResourcesSoot.v().lookupGetUi_ID(intId);
 
 			if (getViewMethod == null) {
 				logger.warn("NOT replacing {}, id={} ", stmt, String.format("0x%x", intId));
@@ -256,6 +707,7 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			}
 		}
 
+
 		/**
 		* This method is called by the v.transform() as part of soot framework
 		*/
@@ -268,121 +720,131 @@ public class IntegrateXMLLayouts extends BodyTransformer {
 			// get a snapshot iterator of the unit since we are going to
 			// mutate the chain when iterating over it.
 			Iterator<Unit> stmtIt = units.snapshotIterator();
-
+			
+			if (debugOn) {
+				logger.info("Output body again ");
+				logger.info("{} ", b);
+			}
+			
 			while (stmtIt.hasNext()) {
 				Stmt stmt = (Stmt)stmtIt.next();
 
+				if (debugOn)
+					logger.info("{}", stmt);
+				
 				if (!stmt.containsInvokeExpr()) {
+					if (debugOn)
+						logger.info("Skipped ");
+					continue;
+				}
+
+
+				//get the receiver, receivers are only present for instance invokes 
+				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
+				if (iie == null) {
+					if (stmt.toString().contains("findViewById()")) {
+						logger.warn("findViewById: cannot get instanceInvokde ");
+					}
 					continue;
 				}
 				
+				if (debugOn) {
+					logger.info("iie.getBase(): {} ", iie.getBase());
+					logger.info("getPointToSet: {} ", 
+							GeoPTA.v().getPTSetContextIns(iie.getBase()));
+				}
 				
-				//get the receiver, receivers are only present for instance invokes 
-				InstanceInvokeExpr iie = SootUtils.getInstanceInvokeExpr(stmt);
-				if (iie != null) {
-					for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+				for (AllocNode node : GeoPTA.v().getPTSetContextIns(iie.getBase())) {
+					
+					if (debugOn) {
+						logger.info("AllocNode {} ", node);
+					}
 
-						Type nodeType = node.getType();
+					Type nodeType = node.getType();
 
-						if (!(nodeType instanceof RefType)) {
-							logger.info("Skipping type {} ", nodeType);
-							continue;
-						}
-						
-						//if replaced, done.  Not sure why YARR showed up 2 times
-						if (!units.contains(stmt))
-						    break;
+					if (!(nodeType instanceof RefType)) {
+						logger.info("Skipping type {} ", nodeType);
+						continue;
+					}
 
-						SootClass allocClz = ((RefType)node.getType()).getSootClass();
-						SootMethod resolved = null; 
-						try {
-							resolved = SootUtils.
+					//if replaced, done.  Not sure why YARR showed up 2 times
+					if (!units.contains(stmt)) {
+						logger.info("statmen {} repated ", stmt);
+						break;
+					}
+
+					SootClass allocClz = ((RefType)node.getType()).getSootClass();
+					SootMethod resolved = null; 
+					try {
+						resolved = SootUtils.
 								resolveConcreteDispatch(allocClz, iie.getMethod());
-						
-						} catch (CannotFindMethodException e) {
-							continue;
+
+					} catch (CannotFindMethodException e) {
+						if (iie.getMethod().toString().contains("findView")) {
+							logger.warn("exception {} ", e);
 						}
-						
-						// replacing findViewById
-						for (SootMethod method: findViewByIdList) {
-						    if (method.equals(resolved))  {
-						        logger.info(String.format("Found findViewById(): %s - %s\n", 
-						                    stmt, b.getMethod()));
-						        replaceFindViewById(stmtBody, stmt);
-						    }
+						continue;
+					} catch (Exception ex) {
+						logger.warn("Exception ex {} ", ex);
+					}
+
+					// replacing getString/getText
+					for (SootMethod method: getCharSequenceList) {
+						if (method.equals(resolved))  {
+							logger.info(String.format("Found getString/getText(): %s - %s\n", 
+									stmt, b.getMethod()));
+							replaceGetCharSequence(stmtBody, stmt);
 						}
-						
-						// replacing 
-						for (SootMethod method: setContentViewList) {
-						    if (method.equals(resolved)) {
-						        logger.info(String.format("Found setContentView(): %s - %s\n", 
-						                    stmt, b.getMethod()));
-						        replaceSetContentView(stmtBody, stmt);
-						        break;
-						    }
+					}
+					
+					//
+					for (SootMethod method: getVarArgCharSequenceList) {
+						if (method.equals(resolved))  {
+							logger.info(String.format("Found getString(int, ...): %s - %s\n", 
+									stmt, b.getMethod()));
+							replaceGetStringVariableArgs(stmtBody, stmt);
+						}
+					}	
+					
+					if (resolved.toString().contains("findView")) {
+						logger.info("findView resolved {} ", resolved);
+					}
+	
+					// replacing findViewById
+					for (SootMethod method: findViewByIdList) {
+					
+						if (method.equals(resolved))  {
+							logger.info(String.format("Found findViewById(): %s - %s\n", 
+									stmt, b.getMethod()));
+							replaceFindViewById(stmtBody, stmt);
+						}
+					}
+
+					// replacing 
+					for (SootMethod method: setContentViewList) {
+						if (method.equals(resolved)) {
+							logger.info(String.format("Found setContentView(): %s - %s\n", 
+									stmt, b.getMethod()));
+							replaceSetContentView(stmtBody, stmt);
+							break;
+						}
+					}
+					
+					for (SootMethod method: findFragmentByIdList) {
+						if (method.equals(resolved)) {
+							logger.warn(String.format("Found findFragmentById(): %s - %s\n", 
+									stmt, b.getMethod()));
+							replaceFindFragmentById(stmtBody, stmt);
+							break;
 						}
 					}
 				}
-				
 			}
 		}
 
 		/************************************************************
 		* Helper methods
 		*************************************************************/
-		protected boolean isActivitySubclass(SootClass sootClass) {
-			SootClass parentClass = sootClass.getSuperclass();
-
-			while (parentClass != javaObjClass) {
-				if (parentClass == activityClass)
-					return true;
-
-				parentClass = parentClass.getSuperclass();
-			}
-			return false;
-		}
-
-		// debug function
-		protected void dumpActivities() {
-			String[] androidActivityNames = new String[] {
-					"android.app.Activity", 
-					"android.app.ActivityGroup", 
-					"android.app.NativeActivity", 
-					"android.app.AliasActivity", 
-					"android.app.ExpandableListActivity",
-					"android.app.TabActivity",
-					"android.app.ListActivity",
-					"android.app.LauncherActivity",
-					"android.preference.PreferenceActivity",
-					"android.accounts.AccountAuthenticatorActivity"
-					 }; 
-
-			HashMap<SootClass, SootClass> androidActivityMap = new HashMap<SootClass, SootClass>();
-
-			for (int i = 0; i < androidActivityNames.length; i++) {
-				String className = androidActivityNames[i];
-				SootClass sc = Scene.v().getSootClass(className);
-				androidActivityMap.put(sc, sc);
-			}
-				 
-			for (SootClass clz : Scene.v().getClasses()) {
-				try {
-					if (androidActivityMap.get(clz) != null)
-						continue;
-
-					SootClass superClz = clz.getSuperclass();
-
-					if (androidActivityMap.get(superClz) != null) {
-						logger.warn("Found {} a child class of {} ", 
-									clz.toString(), superClz.toString());
-					}
-				} catch (Exception ex) {
-					continue;
-				}
-			}
-
-		}
-
 		// debug function
 		protected void dumpStmtBody(StmtBody stmtBody) {
             //System.out.printf("Dumping body %s \n", stmtBody);
