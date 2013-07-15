@@ -996,6 +996,27 @@ public class ResourcesSoot {
     	return method;
     }
     
+    
+    /**
+     * get all possible values of string given by a strId
+     * @param strId
+     * @return
+     */
+    public Set<String> getStringValues(Integer intId) {
+    	String stringName = mNumberToIDMap.get(intId);
+    	Set<RString> rvalueSet = mStringToValueSet.get(stringName);
+    	Set<String> valueSet = new HashSet<String>();
+
+    	if (rvalueSet == null || rvalueSet.size() == 0) {
+    		logger.warn("String {} has no values ", stringName);
+    		return valueSet;
+    	}
+    	
+    	for (RString rstring: rvalueSet) {
+    		valueSet.add(rstring.value);
+    	}
+    	return valueSet;
+    }
 
 
     /*****************************************************************************
