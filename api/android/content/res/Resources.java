@@ -209,6 +209,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	private static int attrForQuantityCode(int quantityCode){
 		
 		// Original method
@@ -227,6 +228,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	private static String stringForQuantityCode(int quantityCode){
 		
 		// Original method
@@ -245,6 +247,7 @@ public class Resources {
 		return "";
 	}
 	
+	@DSModeled
 	public String getString(int id){
 		
 		// Original method
@@ -261,6 +264,7 @@ public class Resources {
 		return "";
 	}
 	
+	@DSModeled
 	public String getString(int id, Object... formatArgs){
 		
 		// Original method
@@ -273,6 +277,7 @@ public class Resources {
 		return "";
 	}
 	
+	@DSModeled
 	public String getQuantityString(int id, int quantity, Object... formatArgs){
 		
 		// Original method
@@ -285,6 +290,7 @@ public class Resources {
 		return "";
 	}
 	
+	@DSModeled
 	public String getQuantityString(int id, int quantity){
 		
 		// Original method
@@ -296,6 +302,7 @@ public class Resources {
 		return "";
 	}
 	
+	@DSModeled
 	public CharSequence getText(int id, CharSequence def){
 		
 		// Original method
@@ -308,6 +315,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public CharSequence[] getTextArray(int id){
 		
 		// Original method
@@ -324,6 +332,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public String[] getStringArray(int id){
 		
 		// Original method
@@ -340,6 +349,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public int[] getIntArray(int id){
 		
 		// Original method
@@ -356,6 +366,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public TypedArray obtainTypedArray(int id){
 		
 		// Original method
@@ -377,6 +388,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public float getDimension(int id){
 		
 		// Original method
@@ -397,6 +409,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	public int getDimensionPixelOffset(int id){
 		
 		// Original method
@@ -418,6 +431,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	public int getDimensionPixelSize(int id){
 		
 		// Original method
@@ -439,6 +453,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	public float getFraction(int id, int base, int pbase){
 		
 		// Original method
@@ -459,6 +474,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	public Drawable getDrawable(int id){
 		
 		// Original method
@@ -474,6 +490,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public Drawable getDrawableForDensity(int id, int density){
 		
 		// Original method
@@ -499,6 +516,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public Movie getMovie(int id){
 		
 		// Original method
@@ -518,6 +536,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public int getColor(int id){
 		
 		// Original method
@@ -542,6 +561,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	public ColorStateList getColorStateList(int id){
 		
 		// Original method
@@ -557,6 +577,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public boolean getBoolean(int id){
 		
 		// Original method
@@ -578,6 +599,7 @@ public class Resources {
 		return false;
 	}
 	
+	@DSModeled
 	public int getInteger(int id){
 		
 		// Original method
@@ -599,6 +621,7 @@ public class Resources {
 		return 0;
 	}
 	
+	@DSModeled
 	public XmlResourceParser getLayout(int id){
 		
 		// Original method
@@ -610,6 +633,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public XmlResourceParser getAnimation(int id){
 		
 		// Original method
@@ -621,6 +645,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public XmlResourceParser getXml(int id){
 		
 		// Original method
@@ -632,6 +657,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public InputStream openRawResource(int id){
 		
 		// Original method
@@ -645,6 +671,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public InputStream openRawResource(int id, TypedValue value){
 		
 		// Original method
@@ -666,6 +693,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public AssetFileDescriptor openRawResourceFd(int id){
 		
 		// Original method
@@ -693,6 +721,7 @@ public class Resources {
 		return null;
 	}
 	
+	@DSModeled
 	public void getValue(int id, TypedValue outValue, boolean resolveRefs){
 		
 		// Original method
@@ -709,6 +738,7 @@ public class Resources {
 		//Return nothing
 	}
 	
+	@DSModeled
 	public void getValueForDensity(int id, int density, TypedValue outValue, boolean resolveRefs){
 		
 		// Original method
@@ -724,6 +754,7 @@ public class Resources {
 		//Return nothing
 	}
 	
+	@DSModeled
 	public void getValue(String name, TypedValue outValue, boolean resolveRefs){
 		
 		// Original method
