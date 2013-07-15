@@ -488,7 +488,7 @@ public class ValueAnalysis {
         try {
             // get the method we are going to simulate
             Class[] paramObjectClassArray = paramObjectClasses.toArray(new Class[paramObjectClasses.size()]);
-            java.lang.reflect.Method method = invokeExprClass.getDeclaredMethod(methodName, paramObjectClassArray);    
+            java.lang.reflect.Method method = invokeExprClass.getMethod(methodName, paramObjectClassArray);    
 
             // simulate the method using reflection for every permutation of parameter values, aggregating the returned
             // objects
